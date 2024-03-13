@@ -1,0 +1,21 @@
+@use './node_modules/sass-true/' as *;
+
+@mixin bg-blue-500 {
+  color: blue;
+}
+
+
+@include it('Oaaaa') {
+  @include assert {
+    @include output {
+      @include bg-blue-500;
+    }
+
+    @include expect {
+      color: blue
+    }
+  }
+}
+
+
+@include report;
