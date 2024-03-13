@@ -1,0 +1,32 @@
+@use '../node_modules/sass-true' as *;
+
+@mixin red {
+  color: red
+}
+
+@include describe('this is describe') {
+  @include it('aaa') {
+    @include assert {
+      @include output {
+        @include red;
+      }
+  
+      @include expect {
+        color: red;
+      }
+    }
+  }
+  @include it('b') {
+    @include assert {
+      @include output {
+        @include red;
+      }
+  
+      @include expect {
+        color: red;
+      }
+    }
+  }
+}
+
+@include report
