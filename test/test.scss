@@ -1,32 +1,788 @@
 @use '../node_modules/sass-true' as *;
+@import './tailwindv3.4.1.scss';
 
-@mixin red {
-  color: red
-}
-
-@include describe('this is describe') {
-  @include it('aaa') {
-    @include assert {
-      @include output {
-        @include red;
-      }
-  
-      @include expect {
-        color: red;
-      }
+// api usage: https://www.oddbird.net/true/docs/
+@include describe('Default Parameters(DO NOT TOUCH)') {
+  @include describe('BLACK') {
+    @include it('BLACK') {
+      @include is-equal($BLACK, 0 0 0);
     }
   }
-  @include it('b') {
-    @include assert {
-      @include output {
-        @include red;
-      }
-  
-      @include expect {
-        color: red;
-      }
+  @include describe('WHITE') {
+    @include it('WHITE') {
+      @include is-equal($WHITE, 255 255 255);
+    }
+  }
+  @include describe('SLATE') {
+    @include it('50') {
+      @include is-equal($SLATE-50, 248 250 252);
+    }
+    @include it('100') {
+      @include is-equal($SLATE-100, 241 245 249);
+    }
+    @include it('200') {
+      @include is-equal($SLATE-200, 226 232 240);
+    }
+    @include it('300') {
+      @include is-equal($SLATE-300, 203 213 225);
+    }
+    @include it('400') {
+      @include is-equal($SLATE-400, 148 163 184);
+    }
+    @include it('500') {
+      @include is-equal($SLATE-500, 100 116 139);
+    }
+    @include it('600') {
+      @include is-equal($SLATE-600, 71 85 105);
+    }
+    @include it('700') {
+      @include is-equal($SLATE-700, 51 65 85);
+    }
+    @include it('800') {
+      @include is-equal($SLATE-800, 30 41 59);
+    }
+    @include it('900') {
+      @include is-equal($SLATE-900, 15 23 42);
+    }
+    @include it('950') {
+      @include is-equal($SLATE-950, 2 6 23);
+    }
+  }
+  @include describe('GRAY') {
+    @include it('50') {
+      @include is-equal($GRAY-50, 249 250 251);
+    }
+    @include it('100') {
+      @include is-equal($GRAY-100, 243 244 246);
+    }
+    @include it('200') {
+      @include is-equal($GRAY-200, 229 231 235);
+    }
+    @include it('300') {
+      @include is-equal($GRAY-300, 209 213 219);
+    }
+    @include it('400') {
+      @include is-equal($GRAY-400, 156 163 175);
+    }
+    @include it('500') {
+      @include is-equal($GRAY-500, 107 114 128);
+    }
+    @include it('600') {
+      @include is-equal($GRAY-600, 75 85 99);
+    }
+    @include it('700') {
+      @include is-equal($GRAY-700, 55 65 81);
+    }
+    @include it('800') {
+      @include is-equal($GRAY-800, 31 41 55);
+    }
+    @include it('900') {
+      @include is-equal($GRAY-900, 17 24 39);
+    }
+    @include it('950') {
+      @include is-equal($GRAY-950, 3 7 18);
+    }
+  }
+  @include describe('ZINC') {
+    @include it('50') {
+      @include is-equal($ZINC-50, 250 250 250);
+    }
+    @include it('100') {
+      @include is-equal($ZINC-100, 244 244 245);
+    }
+    @include it('200') {
+      @include is-equal($ZINC-200, 228 228 231);
+    }
+    @include it('300') {
+      @include is-equal($ZINC-300, 212 212 216);
+    }
+    @include it('400') {
+      @include is-equal($ZINC-400, 161 161 170);
+    }
+    @include it('500') {
+      @include is-equal($ZINC-500, 113 113 122);
+    }
+    @include it('600') {
+      @include is-equal($ZINC-600, 82 82 91);
+    }
+    @include it('700') {
+      @include is-equal($ZINC-700, 63 63 70);
+    }
+    @include it('800') {
+      @include is-equal($ZINC-800, 39 39 42);
+    }
+    @include it('900') {
+      @include is-equal($ZINC-900, 24 24 27);
+    }
+    @include it('950') {
+      @include is-equal($ZINC-950, 9 9 11);
+    }
+  }
+  @include describe('NEUTRAL') {
+    @include it('50') {
+      @include is-equal($NEUTRAL-50, 250 250 250);
+    }
+    @include it('100') {
+      @include is-equal($NEUTRAL-100, 245 245 245);
+    }
+    @include it('200') {
+      @include is-equal($NEUTRAL-200, 229 229 229);
+    }
+    @include it('300') {
+      @include is-equal($NEUTRAL-300, 212 212 212);
+    }
+    @include it('400') {
+      @include is-equal($NEUTRAL-400, 163 163 163);
+    }
+    @include it('500') {
+      @include is-equal($NEUTRAL-500, 115 115 115);
+    }
+    @include it('600') {
+      @include is-equal($NEUTRAL-600, 82 82 82);
+    }
+    @include it('700') {
+      @include is-equal($NEUTRAL-700, 64 64 64);
+    }
+    @include it('800') {
+      @include is-equal($NEUTRAL-800, 38 38 38);
+    }
+    @include it('900') {
+      @include is-equal($NEUTRAL-900, 23 23 23);
+    }
+    @include it('950') {
+      @include is-equal($NEUTRAL-950, 10 10 10);
+    }
+  }
+  @include describe('STONE') {
+    @include it('50') {
+      @include is-equal($STONE-50, 250 250 249);
+    }
+    @include it('100') {
+      @include is-equal($STONE-100, 245 245 244);
+    }
+    @include it('200') {
+      @include is-equal($STONE-200, 231 229 228);
+    }
+    @include it('300') {
+      @include is-equal($STONE-300, 214 211 209);
+    }
+    @include it('400') {
+      @include is-equal($STONE-400, 168 162 158);
+    }
+    @include it('500') {
+      @include is-equal($STONE-500, 120 113 108);
+    }
+    @include it('600') {
+      @include is-equal($STONE-600, 87 83 78);
+    }
+    @include it('700') {
+      @include is-equal($STONE-700, 68 64 60);
+    }
+    @include it('800') {
+      @include is-equal($STONE-800, 41 37 36);
+    }
+    @include it('900') {
+      @include is-equal($STONE-900, 28 25 23);
+    }
+    @include it('950') {
+      @include is-equal($STONE-950, 12 10 9);
+    }
+  }
+  @include describe('RED') {
+    @include it('50') {
+      @include is-equal($RED-50, 254 242 242);
+    }
+    @include it('100') {
+      @include is-equal($RED-100, 254 226 226);
+    }
+    @include it('200') {
+      @include is-equal($RED-200, 254 202 202);
+    }
+    @include it('300') {
+      @include is-equal($RED-300, 252 165 165);
+    }
+    @include it('400') {
+      @include is-equal($RED-400, 248 113 113);
+    }
+    @include it('500') {
+      @include is-equal($RED-500, 239 68 68);
+    }
+    @include it('600') {
+      @include is-equal($RED-600, 220 38 38);
+    }
+    @include it('700') {
+      @include is-equal($RED-700, 185 28 28);
+    }
+    @include it('800') {
+      @include is-equal($RED-800, 153 27 27);
+    }
+    @include it('900') {
+      @include is-equal($RED-900, 127 29 29);
+    }
+    @include it('950') {
+      @include is-equal($RED-950, 69 10 10);
+    }
+  }
+  @include describe('ORANGE') {
+    @include it('50') {
+      @include is-equal($ORANGE-50, 255 247 237);
+    }
+    @include it('100') {
+      @include is-equal($ORANGE-100, 255 237 213);
+    }
+    @include it('200') {
+      @include is-equal($ORANGE-200, 254 215 170);
+    }
+    @include it('300') {
+      @include is-equal($ORANGE-300, 252 186 116);
+    }
+    @include it('400') {
+      @include is-equal($ORANGE-400, 251 146 60);
+    }
+    @include it('500') {
+      @include is-equal($ORANGE-500, 249 115 22);
+    }
+    @include it('600') {
+      @include is-equal($ORANGE-600, 234 88 12);
+    }
+    @include it('700') {
+      @include is-equal($ORANGE-700, 194 65 12);
+    }
+    @include it('800') {
+      @include is-equal($ORANGE-800, 154 52 18);
+    }
+    @include it('900') {
+      @include is-equal($ORANGE-900, 124 45 18);
+    }
+    @include it('950') {
+      @include is-equal($ORANGE-950, 67 20 7);
+    }
+  }
+  @include describe('AMBER') {
+    @include it('50') {
+      @include is-equal($AMBER-50, 255 251 235);
+    }
+    @include it('100') {
+      @include is-equal($AMBER-100, 254 243 199);
+    }
+    @include it('200') {
+      @include is-equal($AMBER-200, 253 214 138);
+    }
+    @include it('300') {
+      @include is-equal($AMBER-300, 252 211 77);
+    }
+    @include it('400') {
+      @include is-equal($AMBER-400, 251 191 36);
+    }
+    @include it('500') {
+      @include is-equal($AMBER-500, 245 158 11);
+    }
+    @include it('600') {
+      @include is-equal($AMBER-600, 234 119 6);
+    }
+    @include it('700') {
+      @include is-equal($AMBER-700, 194 65 12);
+    }
+    @include it('800') {
+      @include is-equal($AMBER-800, 154 64 14);
+    }
+    @include it('900') {
+      @include is-equal($AMBER-900, 124 53 15);
+    }
+    @include it('950') {
+      @include is-equal($AMBER-950, 69 26 3);
+    }
+  }
+  @include describe('YELLOW') {
+    @include it('50') {
+      @include is-equal($YELLOW-50, 254 252 232);
+    }
+    @include it('100') {
+      @include is-equal($YELLOW-100, 254 249 195);
+    }
+    @include it('200') {
+      @include is-equal($YELLOW-200, 254 240 138);
+    }
+    @include it('300') {
+      @include is-equal($YELLOW-300, 253 224 71);
+    }
+    @include it('400') {
+      @include is-equal($YELLOW-400, 250 204 21);
+    }
+    @include it('500') {
+      @include is-equal($YELLOW-500, 234 179 8);
+    }
+    @include it('600') {
+      @include is-equal($YELLOW-600, 202 138 4);
+    }
+    @include it('700') {
+      @include is-equal($YELLOW-700, 161 98 7);
+    }
+    @include it('800') {
+      @include is-equal($YELLOW-800, 133 77 14);
+    }
+    @include it('900') {
+      @include is-equal($YELLOW-900, 113 63 18);
+    }
+    @include it('950') {
+      @include is-equal($YELLOW-950, 66 32 6);
+    }
+  }
+  @include describe('LIME') {
+    @include it('50') {
+      @include is-equal($LIME-50, 247 254 231);
+    }
+    @include it('100') {
+      @include is-equal($LIME-100, 236 252 203);
+    }
+    @include it('200') {
+      @include is-equal($LIME-200, 217 249 157);
+    }
+    @include it('300') {
+      @include is-equal($LIME-300, 190 242 100);
+    }
+    @include it('400') {
+      @include is-equal($LIME-400, 163 230 53);
+    }
+    @include it('500') {
+      @include is-equal($LIME-500, 132 204 22);
+    }
+    @include it('600') {
+      @include is-equal($LIME-600, 101 163 13);
+    }
+    @include it('700') {
+      @include is-equal($LIME-700, 77 124 15);
+    }
+    @include it('800') {
+      @include is-equal($LIME-800, 63 98 18);
+    }
+    @include it('900') {
+      @include is-equal($LIME-900, 54 83 20);
+    }
+    @include it('950') {
+      @include is-equal($LIME-950, 26 46 5);
+    }
+  }
+  @include describe('GREEN') {
+    @include it('50') {
+      @include is-equal($GREEN-50, 240 253 244);
+    }
+    @include it('100') {
+      @include is-equal($GREEN-100, 220 252 231);
+    }
+    @include it('200') {
+      @include is-equal($GREEN-200, 187 247 208);
+    }
+    @include it('300') {
+      @include is-equal($GREEN-300, 134 239 172);
+    }
+    @include it('400') {
+      @include is-equal($GREEN-400, 74 222 128);
+    }
+    @include it('500') {
+      @include is-equal($GREEN-500, 34 222 94);
+    }
+    @include it('600') {
+      @include is-equal($GREEN-600, 22 163 74);
+    }
+    @include it('700') {
+      @include is-equal($GREEN-700, 21 128 61);
+    }
+    @include it('800') {
+      @include is-equal($GREEN-800, 22 101 52);
+    }
+    @include it('900') {
+      @include is-equal($GREEN-900, 20 83 45);
+    }
+    @include it('950') {
+      @include is-equal($GREEN-950, 5 46 22);
+    }
+  }
+  @include describe('EMERALD') {
+    @include it('50') {
+      @include is-equal($EMERALD-50, 236 253 245);
+    }
+    @include it('100') {
+      @include is-equal($EMERALD-100, 209 250 229);
+    }
+    @include it('200') {
+      @include is-equal($EMERALD-200, 167 243 208);
+    }
+    @include it('300') {
+      @include is-equal($EMERALD-300, 110 231 183);
+    }
+    @include it('400') {
+      @include is-equal($EMERALD-400, 52 211 153);
+    }
+    @include it('500') {
+      @include is-equal($EMERALD-500, 16 185 129);
+    }
+    @include it('600') {
+      @include is-equal($EMERALD-600, 5 150 105);
+    }
+    @include it('700') {
+      @include is-equal($EMERALD-700, 4 120 103);
+    }
+    @include it('800') {
+      @include is-equal($EMERALD-800, 6 95 70);
+    }
+    @include it('900') {
+      @include is-equal($EMERALD-900, 6 78 59);
+    }
+    @include it('950') {
+      @include is-equal($EMERALD-950, 2 44 34);
+    }
+  }
+  @include describe('TEAL') {
+    @include it('50') {
+      @include is-equal($TEAL-50, 240 253 250);
+    }
+    @include it('100') {
+      @include is-equal($TEAL-100, 204 251 241);
+    }
+    @include it('200') {
+      @include is-equal($TEAL-200, 153 246 228);
+    }
+    @include it('300') {
+      @include is-equal($TEAL-300, 94 234 212);
+    }
+    @include it('400') {
+      @include is-equal($TEAL-400, 45 212 191);
+    }
+    @include it('500') {
+      @include is-equal($TEAL-500, 20 184 166);
+    }
+    @include it('600') {
+      @include is-equal($TEAL-600, 13 148 136);
+    }
+    @include it('700') {
+      @include is-equal($TEAL-700, 15 118 110);
+    }
+    @include it('800') {
+      @include is-equal($TEAL-800, 17 94 89);
+    }
+    @include it('900') {
+      @include is-equal($TEAL-900, 19 78 74);
+    }
+    @include it('950') {
+      @include is-equal($TEAL-950, 4 47 46);
+    }
+  }
+  @include describe('CYAN') {
+    @include it('50') {
+      @include is-equal($CYAN-50, 236 254 255);
+    }
+    @include it('100') {
+      @include is-equal($CYAN-100, 207 250 254);
+    }
+    @include it('200') {
+      @include is-equal($CYAN-200, 165 243 252);
+    }
+    @include it('300') {
+      @include is-equal($CYAN-300, 103 232 249);
+    }
+    @include it('400') {
+      @include is-equal($CYAN-400, 34 211 238);
+    }
+    @include it('500') {
+      @include is-equal($CYAN-500, 6 182 212);
+    }
+    @include it('600') {
+      @include is-equal($CYAN-600, 8 145 178);
+    }
+    @include it('700') {
+      @include is-equal($CYAN-700, 14 116 144);
+    }
+    @include it('800') {
+      @include is-equal($CYAN-800, 21 94 117);
+    }
+    @include it('900') {
+      @include is-equal($CYAN-900, 22 78 99);
+    }
+    @include it('950') {
+      @include is-equal($CYAN-950, 8 51 68);
+    }
+  }
+  @include describe('SKY') {
+    @include it('50') {
+      @include is-equal($SKY-50, 240 249 255);
+    }
+    @include it('100') {
+      @include is-equal($SKY-100, 224 242 254);
+    }
+    @include it('200') {
+      @include is-equal($SKY-200, 186 230 253);
+    }
+    @include it('300') {
+      @include is-equal($SKY-300, 125 211 252);
+    }
+    @include it('400') {
+      @include is-equal($SKY-400, 56 189 248);
+    }
+    @include it('500') {
+      @include is-equal($SKY-500, 14 165 233);
+    }
+    @include it('600') {
+      @include is-equal($SKY-600, 2 132 199);
+    }
+    @include it('700') {
+      @include is-equal($SKY-700, 3 105 161);
+    }
+    @include it('800') {
+      @include is-equal($SKY-800, 7 89 133);
+    }
+    @include it('900') {
+      @include is-equal($SKY-900, 12 74 110);
+    }
+    @include it('950') {
+      @include is-equal($SKY-950, 8 47 73);
+    }
+  }
+  @include describe('BLUE') {
+    @include it('50') {
+      @include is-equal($BLUE-50, 239 246 255);
+    }
+    @include it('100') {
+      @include is-equal($BLUE-100, 219 234 254);
+    }
+    @include it('200') {
+      @include is-equal($BLUE-200, 191 219 254);
+    }
+    @include it('300') {
+      @include is-equal($BLUE-300, 147 197 253);
+    }
+    @include it('400') {
+      @include is-equal($BLUE-400, 96 165 250);
+    }
+    @include it('500') {
+      @include is-equal($BLUE-500, 59 130 246);
+    }
+    @include it('600') {
+      @include is-equal($BLUE-600, 37 99 235);
+    }
+    @include it('700') {
+      @include is-equal($BLUE-700, 29 78 216);
+    }
+    @include it('800') {
+      @include is-equal($BLUE-800, 30 64 175);
+    }
+    @include it('900') {
+      @include is-equal($BLUE-900, 30 58 138);
+    }
+    @include it('950') {
+      @include is-equal($BLUE-950, 23 37 84);
+    }
+  }
+  @include describe('INDIGO') {
+    @include it('50') {
+      @include is-equal($INDIGO-50, 238 242 255);
+    }
+    @include it('100') {
+      @include is-equal($INDIGO-100, 224 231 255);
+    }
+    @include it('200') {
+      @include is-equal($INDIGO-200, 199 210 254);
+    }
+    @include it('300') {
+      @include is-equal($INDIGO-300, 165 180 252);
+    }
+    @include it('400') {
+      @include is-equal($INDIGO-400, 129 140 248);
+    }
+    @include it('500') {
+      @include is-equal($INDIGO-500, 99 102 241);
+    }
+    @include it('600') {
+      @include is-equal($INDIGO-600, 79 70 229);
+    }
+    @include it('700') {
+      @include is-equal($INDIGO-700, 67 56 202);
+    }
+    @include it('800') {
+      @include is-equal($INDIGO-800, 55 48 163);
+    }
+    @include it('900') {
+      @include is-equal($INDIGO-900, 49 46 129);
+    }
+    @include it('950') {
+      @include is-equal($INDIGO-950, 30 27 75);
+    }
+  }
+  @include describe('VIOLET') {
+    @include it('50') {
+      @include is-equal($VIOLET-50, 245 243 255);
+    }
+    @include it('100') {
+      @include is-equal($VIOLET-100, 237 233 254);
+    }
+    @include it('200') {
+      @include is-equal($VIOLET-200, 221 214 254);
+    }
+    @include it('300') {
+      @include is-equal($VIOLET-300, 196 181 253);
+    }
+    @include it('400') {
+      @include is-equal($VIOLET-400, 167 139 250);
+    }
+    @include it('500') {
+      @include is-equal($VIOLET-500, 139 92 246);
+    }
+    @include it('600') {
+      @include is-equal($VIOLET-600, 124 58 237);
+    }
+    @include it('700') {
+      @include is-equal($VIOLET-700, 109 40 217);
+    }
+    @include it('800') {
+      @include is-equal($VIOLET-800, 91 33 182);
+    }
+    @include it('900') {
+      @include is-equal($VIOLET-900, 76 29 149);
+    }
+    @include it('950') {
+      @include is-equal($VIOLET-950, 46 16 101);
+    }
+  }
+  @include describe('PURPLE') {
+    @include it('50') {
+      @include is-equal($PURPLE-50, 250 245 255);
+    }
+    @include it('100') {
+      @include is-equal($PURPLE-100, 243 232 255);
+    }
+    @include it('200') {
+      @include is-equal($PURPLE-200, 233 213 255);
+    }
+    @include it('300') {
+      @include is-equal($PURPLE-300, 216 180 254);
+    }
+    @include it('400') {
+      @include is-equal($PURPLE-400, 192 132 252);
+    }
+    @include it('500') {
+      @include is-equal($PURPLE-500, 168 85 247);
+    }
+    @include it('600') {
+      @include is-equal($PURPLE-600, 147 51 234);
+    }
+    @include it('700') {
+      @include is-equal($PURPLE-700, 126 34 206);
+    }
+    @include it('800') {
+      @include is-equal($PURPLE-800, 107 33 168);
+    }
+    @include it('900') {
+      @include is-equal($PURPLE-900, 88 28 135);
+    }
+    @include it('950') {
+      @include is-equal($PURPLE-950, 59 7 100);
+    }
+  }
+  @include describe('FUCHSIA') {
+    @include it('50') {
+      @include is-equal($FUCHSIA-50, 253 244 255);
+    }
+    @include it('100') {
+      @include is-equal($FUCHSIA-100, 250 232 255);
+    }
+    @include it('200') {
+      @include is-equal($FUCHSIA-200, 245 208 254);
+    }
+    @include it('300') {
+      @include is-equal($FUCHSIA-300, 240 171 252);
+    }
+    @include it('400') {
+      @include is-equal($FUCHSIA-400, 232 121 249);
+    }
+    @include it('500') {
+      @include is-equal($FUCHSIA-500, 217 70 239);
+    }
+    @include it('600') {
+      @include is-equal($FUCHSIA-600, 192 38 211);
+    }
+    @include it('700') {
+      @include is-equal($FUCHSIA-700, 162 26 175);
+    }
+    @include it('800') {
+      @include is-equal($FUCHSIA-800, 134 25 143);
+    }
+    @include it('900') {
+      @include is-equal($FUCHSIA-900, 112 26 117);
+    }
+    @include it('950') {
+      @include is-equal($FUCHSIA-950, 74 4 78);
+    }
+  }
+  @include describe('PINK') {
+    @include it('50') {
+      @include is-equal($PINK-50, 253 242 248);
+    }
+    @include it('100') {
+      @include is-equal($PINK-100, 252 231 243);
+    }
+    @include it('200') {
+      @include is-equal($PINK-200, 251 207 232);
+    }
+    @include it('300') {
+      @include is-equal($PINK-300, 249 168 212);
+    }
+    @include it('400') {
+      @include is-equal($PINK-400, 244 114 182);
+    }
+    @include it('500') {
+      @include is-equal($PINK-500, 236 72 153);
+    }
+    @include it('600') {
+      @include is-equal($PINK-600, 219 39 119);
+    }
+    @include it('700') {
+      @include is-equal($PINK-700, 190 24 93);
+    }
+    @include it('800') {
+      @include is-equal($PINK-800, 157 23 77);
+    }
+    @include it('900') {
+      @include is-equal($PINK-900, 131 24 67);
+    }
+    @include it('950') {
+      @include is-equal($PINK-950, 80 7 36);
+    }
+  }
+  @include describe('ROSE') {
+    @include it('50') {
+      @include is-equal($ROSE-50, 255 241 242);
+    }
+    @include it('100') {
+      @include is-equal($ROSE-100, 255 228 230);
+    }
+    @include it('200') {
+      @include is-equal($ROSE-200, 254 205 211);
+    }
+    @include it('300') {
+      @include is-equal($ROSE-300, 253 164 175);
+    }
+    @include it('400') {
+      @include is-equal($ROSE-400, 251 113 133);
+    }
+    @include it('500') {
+      @include is-equal($ROSE-500, 244 63 94);
+    }
+    @include it('600') {
+      @include is-equal($ROSE-600, 225 29 72);
+    }
+    @include it('700') {
+      @include is-equal($ROSE-700, 190 18 60);
+    }
+    @include it('800') {
+      @include is-equal($ROSE-800, 159 18 57);
+    }
+    @include it('900') {
+      @include is-equal($ROSE-900, 136 19 55);
+    }
+    @include it('950') {
+      @include is-equal($ROSE-950, 76 5 25);
     }
   }
 }
 
-@include report
+@include report;
