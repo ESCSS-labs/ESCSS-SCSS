@@ -1140,4 +1140,126 @@
   }
 }
 
+@include describe('Layout') {
+  @include describe('AspectRatio') {
+    @include it('aspect-auto') {
+      @include assert {
+        @include output {
+          @include aspect-auto
+        }
+
+        @include expect {
+          aspect-ratio: auto;
+        }
+      }
+    }
+
+    @include it('aspect-square') {
+      @include assert {
+        @include output {
+          @include aspect-square
+        }
+
+        @include expect {
+          aspect-ratio: 1 / 1;
+        }
+      }
+    }
+
+    @include it('aspect-video') {
+      @include assert {
+        @include output {
+          @include aspect-video
+        }
+
+        @include expect {
+          aspect-ratio: 16 / 9;
+        }
+      }
+    }
+
+    @include it('sm\:aspect-(4/3)') {
+      @include assert {
+        @include output {
+          @include sm\:aspect-(4/3)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-SM) {
+            aspect-ratio: 1.3333333333
+          }
+        }
+      }
+    }
+
+    @include it('md\:aspect-(4/3)') {
+      @include assert {
+        @include output {
+          @include md\:aspect-(4/3)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-MD) {
+            aspect-ratio: 1.3333333333
+          }
+        }
+      }
+    }
+
+    @include it('lg\:aspect-(4/3)') {
+      @include assert {
+        @include output {
+          @include lg\:aspect-(4/3)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-LG) {
+            aspect-ratio: 1.3333333333
+          }
+        }
+      }
+    }
+
+    @include it('xl\:aspect-(4/3)') {
+      @include assert {
+        @include output {
+          @include xl\:aspect-(4/3)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-XL) {
+            aspect-ratio: 1.3333333333
+          }
+        }
+      }
+    }
+
+    @include it('\2xl\:aspect-(4/3)') {
+      @include assert {
+        @include output {
+          @include \2xl\:aspect-(4/3)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-2XL) {
+            aspect-ratio: 1.3333333333
+          }
+        }
+      }
+    }
+
+    @include it('aspect-(4/3)') {
+      @include assert {
+        @include output {
+          @include aspect-(4/3)
+        }
+
+        @include expect {
+          aspect-ratio: 1.3333333333
+        }
+      }
+    }
+  }
+}
+
 @include report;
