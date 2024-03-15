@@ -1234,7 +1234,7 @@
       }
     }
 
-    @include it('\2xl\:aspect-(4/3)') {
+    @include it('2xl\:aspect-(4/3)') {
       @include assert {
         @include output {
           @include \2xl\:aspect-(4/3)
@@ -1256,6 +1256,87 @@
 
         @include expect {
           aspect-ratio: 1.3333333333
+        }
+      }
+    }
+  }
+
+  @include describe('Container') {
+    @include it('container') {
+      @include assert {
+        @include output {
+          @include container
+        }
+
+        @include expect {
+          width: 100%;
+        }
+      }
+    }
+
+    @include it('sm\:container') {
+      @include assert {
+        @include output {
+          @include sm\:container
+        }
+
+        @include expect {
+          @media (width <= $__MEDIA-SM) {
+            max-width: $__MEDIA-SM;
+          }
+        }
+      }
+    }
+
+    @include it('md\:container') {
+      @include assert {
+        @include output {
+          @include md\:container
+        }
+
+        @include expect {
+          @media (width <= $__MEDIA-MD) {
+            max-width: $__MEDIA-MD;
+          }
+        }
+      }
+    }
+    @include it('lg\:container') {
+      @include assert {
+        @include output {
+          @include lg\:container
+        }
+
+        @include expect {
+          @media (width <= $__MEDIA-LG) {
+            max-width: $__MEDIA-LG;
+          }
+        }
+      }
+    }
+    @include it('xl\:container') {
+      @include assert {
+        @include output {
+          @include xl\:container
+        }
+
+        @include expect {
+          @media (width <= $__MEDIA-XL) {
+            max-width: $__MEDIA-XL;
+          }
+        }
+      }
+    }
+    @include it('2xl\:container') {
+      @include assert {
+        @include output {
+          @include \2xl\:container
+        }
+
+        @include expect {
+          @media (width <= $__MEDIA-2XL) {
+            max-width: $__MEDIA-2XL;
+          }
         }
       }
     }
