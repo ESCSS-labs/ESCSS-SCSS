@@ -1180,7 +1180,7 @@
       }
     }
 
-    @include describe('Breakpoints') {
+    @include describe('RWD') {
       @include describe('SM') {
         @include it('aspect-(4/3)') {
           @include assert {
@@ -1292,7 +1292,7 @@
       }
     }
 
-    @include describe('Breakpoints') {
+    @include describe('RWD') {
       @include describe('SM') {
         @include it('container') {
           @include assert {
@@ -1308,6 +1308,7 @@
           }
         }
       }
+
       @include describe('MD') {
         @include it('container') {
           @include assert {
@@ -1323,6 +1324,7 @@
           }
         }
       }
+
       @include describe('LG') {
         @include it('container') {
           @include assert {
@@ -1338,6 +1340,7 @@
           }
         }
       }
+
       @include describe('XL') {
         @include it('container') {
           @include assert {
@@ -1353,6 +1356,7 @@
           }
         }
       }
+
       @include describe('2XL') {
         @include it('container') {
           @include assert {
@@ -1699,14 +1703,14 @@
 
     }
 
-    @include describe('Breakpoints') {
+    @include describe('RWD') {
       @include describe('SM') {
         @include it('columns-(10rem)') {
           @include assert {
             @include output {
               @include sm\:columns-(10rem)
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 columns: 10rem;
@@ -1715,13 +1719,14 @@
           }
         }
       }
+
       @include describe('MD') {
         @include it('columns-(10rem)') {
           @include assert {
             @include output {
               @include md\:columns-(10rem)
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-MD) {
                 columns: 10rem;
@@ -1730,13 +1735,14 @@
           }
         }
       }
+
       @include describe('LG') {
         @include it('columns-(10rem)') {
           @include assert {
             @include output {
               @include lg\:columns-(10rem)
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-LG) {
                 columns: 10rem;
@@ -1745,13 +1751,14 @@
           }
         }
       }
+
       @include describe('XL') {
         @include it('columns-(10rem)') {
           @include assert {
             @include output {
               @include xl\:columns-(10rem)
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-XL) {
                 columns: 10rem;
@@ -1760,13 +1767,14 @@
           }
         }
       }
+
       @include describe('2XL') {
         @include it('columns-(10rem)') {
           @include assert {
             @include output {
               @include \2xl\:columns-(10rem)
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-2XL) {
                 columns: 10rem;
@@ -1891,14 +1899,15 @@
         }
       }
     }
-    @include describe('Breakpoints') {
+
+    @include describe('RWD') {
       @include describe('SM') {
         @include it('break-after-auto') {
           @include assert {
             @include output {
               @include sm\:break-after-auto
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 break-after: auto;
@@ -1906,12 +1915,13 @@
             }
           }
         }
+
         @include it('break-after-avoid') {
           @include assert {
             @include output {
               @include sm\:break-after-avoid
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 break-after: avoid;
@@ -1919,12 +1929,13 @@
             }
           }
         }
+
         @include it('break-after-all') {
           @include assert {
             @include output {
               @include sm\:break-after-all
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 break-after: all;
@@ -1932,12 +1943,13 @@
             }
           }
         }
+
         @include it('break-after-avoid-page') {
           @include assert {
             @include output {
               @include sm\:break-after-avoid-page
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 break-after: avoid-page;
@@ -1945,12 +1957,13 @@
             }
           }
         }
+
         @include it('break-after-page') {
           @include assert {
             @include output {
               @include sm\:break-after-page
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 break-after: page;
@@ -1958,12 +1971,13 @@
             }
           }
         }
+
         @include it('break-after-left') {
           @include assert {
             @include output {
               @include sm\:break-after-left
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 break-after: left;
@@ -1971,12 +1985,13 @@
             }
           }
         }
+
         @include it('break-after-right') {
           @include assert {
             @include output {
               @include sm\:break-after-right
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 break-after: right;
@@ -1984,15 +1999,1145 @@
             }
           }
         }
+
         @include it('break-after-column') {
           @include assert {
             @include output {
               @include sm\:break-after-column
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 break-after: column;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe('MD') {
+        @include it('break-after-auto') {
+          @include assert {
+            @include output {
+              @include md\:break-after-auto
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-after: auto;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-avoid') {
+          @include assert {
+            @include output {
+              @include md\:break-after-avoid
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-after: avoid;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-all') {
+          @include assert {
+            @include output {
+              @include md\:break-after-all
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-after: all;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-avoid-page') {
+          @include assert {
+            @include output {
+              @include md\:break-after-avoid-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-after: avoid-page;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-page') {
+          @include assert {
+            @include output {
+              @include md\:break-after-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-after: page;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-left') {
+          @include assert {
+            @include output {
+              @include md\:break-after-left
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-after: left;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-right') {
+          @include assert {
+            @include output {
+              @include md\:break-after-right
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-after: right;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-column') {
+          @include assert {
+            @include output {
+              @include md\:break-after-column
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-after: column;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe('LG') {
+        @include it('break-after-auto') {
+          @include assert {
+            @include output {
+              @include lg\:break-after-auto
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-after: auto;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-avoid') {
+          @include assert {
+            @include output {
+              @include lg\:break-after-avoid
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-after: avoid;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-all') {
+          @include assert {
+            @include output {
+              @include lg\:break-after-all
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-after: all;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-avoid-page') {
+          @include assert {
+            @include output {
+              @include lg\:break-after-avoid-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-after: avoid-page;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-page') {
+          @include assert {
+            @include output {
+              @include lg\:break-after-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-after: page;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-left') {
+          @include assert {
+            @include output {
+              @include lg\:break-after-left
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-after: left;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-right') {
+          @include assert {
+            @include output {
+              @include lg\:break-after-right
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-after: right;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-column') {
+          @include assert {
+            @include output {
+              @include lg\:break-after-column
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-after: column;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe('XL') {
+        @include it('break-after-auto') {
+          @include assert {
+            @include output {
+              @include xl\:break-after-auto
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-after: auto;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-avoid') {
+          @include assert {
+            @include output {
+              @include xl\:break-after-avoid
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-after: avoid;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-all') {
+          @include assert {
+            @include output {
+              @include xl\:break-after-all
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-after: all;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-avoid-page') {
+          @include assert {
+            @include output {
+              @include xl\:break-after-avoid-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-after: avoid-page;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-page') {
+          @include assert {
+            @include output {
+              @include xl\:break-after-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-after: page;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-left') {
+          @include assert {
+            @include output {
+              @include xl\:break-after-left
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-after: left;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-right') {
+          @include assert {
+            @include output {
+              @include xl\:break-after-right
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-after: right;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-column') {
+          @include assert {
+            @include output {
+              @include xl\:break-after-column
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-after: column;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe('2XL') {
+        @include it('break-after-auto') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-after-auto
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-after: auto;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-avoid') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-after-avoid
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-after: avoid;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-all') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-after-all
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-after: all;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-avoid-page') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-after-avoid-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-after: avoid-page;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-page') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-after-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-after: page;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-left') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-after-left
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-after: left;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-right') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-after-right
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-after: right;
+              }
+            }
+          }
+        }
+
+        @include it('break-after-column') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-after-column
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-after: column;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  @include describe('Break Before') {
+    @include describe('Basic') {
+      @include it('break-before-auto') {
+        @include assert {
+          @include output {
+            @include break-before-auto
+          }
+
+          @include expect {
+            break-before: auto;
+          }
+        }
+      }
+
+      @include it('break-before-avoid') {
+        @include assert {
+          @include output {
+            @include break-before-avoid
+          }
+
+          @include expect {
+            break-before: avoid;
+          }
+        }
+      }
+
+      @include it('break-before-all') {
+        @include assert {
+          @include output {
+            @include break-before-all
+          }
+
+          @include expect {
+            break-before: all;
+          }
+        }
+      }
+
+      @include it('break-before-avoid-page') {
+        @include assert {
+          @include output {
+            @include break-before-avoid-page
+          }
+
+          @include expect {
+            break-before: avoid-page;
+          }
+        }
+      }
+
+      @include it('break-before-page') {
+        @include assert {
+          @include output {
+            @include break-before-page
+          }
+
+          @include expect {
+            break-before: page;
+          }
+        }
+      }
+
+      @include it('break-before-left') {
+        @include assert {
+          @include output {
+            @include break-before-left
+          }
+
+          @include expect {
+            break-before: left;
+          }
+        }
+      }
+
+      @include it('break-before-right') {
+        @include assert {
+          @include output {
+            @include break-before-right
+          }
+
+          @include expect {
+            break-before: right;
+          }
+        }
+      }
+
+      @include it('break-before-column') {
+        @include assert {
+          @include output {
+            @include break-before-column
+          }
+
+          @include expect {
+            break-before: column;
+          }
+        }
+      }
+    }
+
+    @include describe('RWD') {
+      @include describe('SM') {
+        @include it('break-before-auto') {
+          @include assert {
+            @include output {
+              @include sm\:break-before-auto
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                break-before: auto;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid') {
+          @include assert {
+            @include output {
+              @include sm\:break-before-avoid
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                break-before: avoid;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-all') {
+          @include assert {
+            @include output {
+              @include sm\:break-before-all
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                break-before: all;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid-page') {
+          @include assert {
+            @include output {
+              @include sm\:break-before-avoid-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                break-before: avoid-page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-page') {
+          @include assert {
+            @include output {
+              @include sm\:break-before-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                break-before: page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-left') {
+          @include assert {
+            @include output {
+              @include sm\:break-before-left
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                break-before: left;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-right') {
+          @include assert {
+            @include output {
+              @include sm\:break-before-right
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                break-before: right;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-column') {
+          @include assert {
+            @include output {
+              @include sm\:break-before-column
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                break-before: column;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe('MD') {
+        @include it('break-before-auto') {
+          @include assert {
+            @include output {
+              @include md\:break-before-auto
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-before: auto;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid') {
+          @include assert {
+            @include output {
+              @include md\:break-before-avoid
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-before: avoid;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-all') {
+          @include assert {
+            @include output {
+              @include md\:break-before-all
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-before: all;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid-page') {
+          @include assert {
+            @include output {
+              @include md\:break-before-avoid-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-before: avoid-page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-page') {
+          @include assert {
+            @include output {
+              @include md\:break-before-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-before: page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-left') {
+          @include assert {
+            @include output {
+              @include md\:break-before-left
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-before: left;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-right') {
+          @include assert {
+            @include output {
+              @include md\:break-before-right
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-before: right;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-column') {
+          @include assert {
+            @include output {
+              @include md\:break-before-column
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                break-before: column;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe('LG') {
+        @include it('break-before-auto') {
+          @include assert {
+            @include output {
+              @include lg\:break-before-auto
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-before: auto;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid') {
+          @include assert {
+            @include output {
+              @include lg\:break-before-avoid
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-before: avoid;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-all') {
+          @include assert {
+            @include output {
+              @include lg\:break-before-all
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-before: all;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid-page') {
+          @include assert {
+            @include output {
+              @include lg\:break-before-avoid-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-before: avoid-page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-page') {
+          @include assert {
+            @include output {
+              @include lg\:break-before-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-before: page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-left') {
+          @include assert {
+            @include output {
+              @include lg\:break-before-left
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-before: left;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-right') {
+          @include assert {
+            @include output {
+              @include lg\:break-before-right
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-before: right;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-column') {
+          @include assert {
+            @include output {
+              @include lg\:break-before-column
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                break-before: column;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe('XL') {
+        @include it('break-before-auto') {
+          @include assert {
+            @include output {
+              @include xl\:break-before-auto
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-before: auto;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid') {
+          @include assert {
+            @include output {
+              @include xl\:break-before-avoid
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-before: avoid;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-all') {
+          @include assert {
+            @include output {
+              @include xl\:break-before-all
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-before: all;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid-page') {
+          @include assert {
+            @include output {
+              @include xl\:break-before-avoid-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-before: avoid-page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-page') {
+          @include assert {
+            @include output {
+              @include xl\:break-before-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-before: page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-left') {
+          @include assert {
+            @include output {
+              @include xl\:break-before-left
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-before: left;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-right') {
+          @include assert {
+            @include output {
+              @include xl\:break-before-right
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-before: right;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-column') {
+          @include assert {
+            @include output {
+              @include xl\:break-before-column
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                break-before: column;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe('2XL') {
+        @include it('break-before-auto') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-before-auto
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-before: auto;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-before-avoid
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-before: avoid;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-all') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-before-all
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-before: all;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-avoid-page') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-before-avoid-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-before: avoid-page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-page') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-before-page
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-before: page;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-left') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-before-left
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-before: left;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-right') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-before-right
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-before: right;
+              }
+            }
+          }
+        }
+
+        @include it('break-before-column') {
+          @include assert {
+            @include output {
+              @include \2xl\:break-before-column
+            }
+
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                break-before: column;
               }
             }
           }
