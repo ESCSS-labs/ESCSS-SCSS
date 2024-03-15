@@ -1372,7 +1372,7 @@
   }
 
   @include describe('Columns') {
-    @include describe('Basic usage') {
+    @include describe('Basic') {
       @include it('columns-1') {
         @include assert {
           @include output {
@@ -1699,80 +1699,86 @@
 
     }
 
-    @include describe('Breakpoints and media queries') {
-      @include it('sm\:columns-(10rem)') {
-        @include assert {
-          @include output {
-            @include sm\:columns-(10rem)
-          }
-
-          @include expect {
-            @media (min-width: $__MEDIA-SM) {
-              columns: 10rem;
+    @include describe('RWD') {
+      @include describe('SM') {
+        @include it('columns-(10rem)') {
+          @include assert {
+            @include output {
+              @include sm\:columns-(10rem)
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                columns: 10rem;
+              }
             }
           }
         }
       }
-
-      @include it('md\:columns-(10rem)') {
-        @include assert {
-          @include output {
-            @include md\:columns-(10rem)
-          }
-
-          @include expect {
-            @media (min-width: $__MEDIA-MD) {
-              columns: 10rem;
+      @include describe('MD') {
+        @include it('columns-(10rem)') {
+          @include assert {
+            @include output {
+              @include md\:columns-(10rem)
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                columns: 10rem;
+              }
             }
           }
         }
       }
-
-      @include it('lg\:columns-(10rem)') {
-        @include assert {
-          @include output {
-            @include lg\:columns-(10rem)
-          }
-
-          @include expect {
-            @media (min-width: $__MEDIA-LG) {
-              columns: 10rem;
+      @include describe('LG') {
+        @include it('columns-(10rem)') {
+          @include assert {
+            @include output {
+              @include lg\:columns-(10rem)
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                columns: 10rem;
+              }
             }
           }
         }
       }
-
-      @include it('xl\:columns-(10rem)') {
-        @include assert {
-          @include output {
-            @include xl\:columns-(10rem)
-          }
-
-          @include expect {
-            @media (min-width: $__MEDIA-XL) {
-              columns: 10rem;
+      @include describe('XL') {
+        @include it('columns-(10rem)') {
+          @include assert {
+            @include output {
+              @include xl\:columns-(10rem)
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                columns: 10rem;
+              }
             }
           }
         }
       }
-
-      @include it('2xl\:columns-(10rem)') {
-        @include assert {
-          @include output {
-            @include \2xl\:columns-(10rem)
-          }
-
-          @include expect {
-            @media (min-width: $__MEDIA-2XL) {
-              columns: 10rem;
-              ;
+      @include describe('2XL') {
+        @include it('columns-(10rem)') {
+          @include assert {
+            @include output {
+              @include \2xl\:columns-(10rem)
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                columns: 10rem;
+                ;
+              }
             }
           }
         }
       }
     }
 
-    @include describe('Arbitrary values') {
+    @include describe('Custom') {
       @include it('columns-(10rem)') {
         @include assert {
           @include output {
