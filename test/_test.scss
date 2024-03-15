@@ -3547,6 +3547,7 @@
           }
         }
       }
+
       @include describe('MD') {
         @include it('box-decoration-clone') {
           @include assert {
@@ -3576,6 +3577,7 @@
           }
         }
       }
+
       @include describe('LG') {
         @include it('box-decoration-clone') {
           @include assert {
@@ -3605,6 +3607,7 @@
           }
         }
       }
+
       @include describe('XL') {
         @include it('box-decoration-clone') {
           @include assert {
@@ -3634,6 +3637,7 @@
           }
         }
       }
+
       @include describe('2XL') {
         @include it('box-decoration-clone') {
           @include assert {
@@ -3700,7 +3704,7 @@
             @include output {
               @include sm\:box-border
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 box-sizing: border-box;
@@ -3708,13 +3712,13 @@
             }
           }
         }
-  
+
         @include it('box-content') {
           @include assert {
             @include output {
               @include sm\:box-content
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-SM) {
                 box-sizing: content-box;
@@ -3723,13 +3727,14 @@
           }
         }
       }
+
       @include describe('MD') {
         @include it('box-border') {
           @include assert {
             @include output {
               @include md\:box-border
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-MD) {
                 box-sizing: border-box;
@@ -3737,13 +3742,13 @@
             }
           }
         }
-  
+
         @include it('box-content') {
           @include assert {
             @include output {
               @include md\:box-content
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-MD) {
                 box-sizing: content-box;
@@ -3752,13 +3757,14 @@
           }
         }
       }
+
       @include describe('LG') {
         @include it('box-border') {
           @include assert {
             @include output {
               @include lg\:box-border
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-LG) {
                 box-sizing: border-box;
@@ -3766,13 +3772,13 @@
             }
           }
         }
-  
+
         @include it('box-content') {
           @include assert {
             @include output {
               @include lg\:box-content
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-LG) {
                 box-sizing: content-box;
@@ -3781,13 +3787,14 @@
           }
         }
       }
+
       @include describe('XL') {
         @include it('box-border') {
           @include assert {
             @include output {
               @include xl\:box-border
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-XL) {
                 box-sizing: border-box;
@@ -3795,13 +3802,13 @@
             }
           }
         }
-  
+
         @include it('box-content') {
           @include assert {
             @include output {
               @include xl\:box-content
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-XL) {
                 box-sizing: content-box;
@@ -3810,13 +3817,14 @@
           }
         }
       }
+
       @include describe('2XL') {
         @include it('box-border') {
           @include assert {
             @include output {
               @include \2xl\:box-border
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-2XL) {
                 box-sizing: border-box;
@@ -3824,13 +3832,13 @@
             }
           }
         }
-  
+
         @include it('box-content') {
           @include assert {
             @include output {
               @include \2xl\:box-content
             }
-  
+
             @include expect {
               @media (min-width: $__MEDIA-2XL) {
                 box-sizing: content-box;
@@ -3840,6 +3848,263 @@
         }
       }
     }
+  }
+
+  @include describe('Display') {
+    @include describe('Basic') {
+      @include it('block') {
+        @include assert {
+          @include output {
+            @include block
+          }
+
+          @include expect {
+            display: block;
+          }
+        }
+      }
+
+      @include it('inline-block') {
+        @include assert {
+          @include output {
+            @include inline-block
+          }
+
+          @include expect {
+            display: inline-block;
+          }
+        }
+      }
+
+      @include it('inline') {
+        @include assert {
+          @include output {
+            @include inline
+          }
+
+          @include expect {
+            display: inline;
+          }
+        }
+      }
+
+      @include it('flex') {
+        @include assert {
+          @include output {
+            @include flex
+          }
+
+          @include expect {
+            display: flex;
+          }
+        }
+      }
+
+      @include it('inline-flex') {
+        @include assert {
+          @include output {
+            @include inline-flex
+          }
+
+          @include expect {
+            display: inline-flex;
+          }
+        }
+      }
+
+      @include it('table') {
+        @include assert {
+          @include output {
+            @include table
+          }
+
+          @include expect {
+            display: table;
+          }
+        }
+      }
+
+      @include it('inline-table') {
+        @include assert {
+          @include output {
+            @include inline-table
+          }
+
+          @include expect {
+            display: inline-table;
+          }
+        }
+      }
+
+      @include it('table-caption') {
+        @include assert {
+          @include output {
+            @include table-caption
+          }
+
+          @include expect {
+            display: table-caption;
+          }
+        }
+      }
+
+      @include it('table-cell') {
+        @include assert {
+          @include output {
+            @include table-cell
+          }
+
+          @include expect {
+            display: table-cell;
+          }
+        }
+      }
+
+      @include it('table-column') {
+        @include assert {
+          @include output {
+            @include table-column
+          }
+
+          @include expect {
+            display: table-column;
+          }
+        }
+      }
+
+      @include it('table-column-group') {
+        @include assert {
+          @include output {
+            @include table-column-group
+          }
+
+          @include expect {
+            display: table-column-group;
+          }
+        }
+      }
+
+      @include it('table-footer-group') {
+        @include assert {
+          @include output {
+            @include table-footer-group
+          }
+
+          @include expect {
+            display: table-footer-group;
+          }
+        }
+      }
+
+      @include it('table-header-group') {
+        @include assert {
+          @include output {
+            @include table-header-group
+          }
+
+          @include expect {
+            display: table-header-group;
+          }
+        }
+      }
+
+      @include it('table-row-group') {
+        @include assert {
+          @include output {
+            @include table-row-group
+          }
+
+          @include expect {
+            display: table-row-group;
+          }
+        }
+      }
+
+      @include it('table-row') {
+        @include assert {
+          @include output {
+            @include table-row
+          }
+
+          @include expect {
+            display: table-row;
+          }
+        }
+      }
+
+      @include it('flow-root') {
+        @include assert {
+          @include output {
+            @include flow-root
+          }
+
+          @include expect {
+            display: flow-root;
+          }
+        }
+      }
+
+      @include it('grid') {
+        @include assert {
+          @include output {
+            @include grid
+          }
+
+          @include expect {
+            display: grid;
+          }
+        }
+      }
+
+      @include it('inline-grid') {
+        @include assert {
+          @include output {
+            @include inline-grid
+          }
+
+          @include expect {
+            display: inline-grid;
+          }
+        }
+      }
+
+      @include it('contents') {
+        @include assert {
+          @include output {
+            @include contents
+          }
+
+          @include expect {
+            display: contents;
+          }
+        }
+      }
+
+      @include it('list-item') {
+        @include assert {
+          @include output {
+            @include list-item
+          }
+
+          @include expect {
+            display: list-item;
+          }
+        }
+      }
+
+      @include it('hidden') {
+        @include assert {
+          @include output {
+            @include hidden
+          }
+
+          @include expect {
+            display: none;
+          }
+        }
+      }
+    }
+
   }
 }
 
