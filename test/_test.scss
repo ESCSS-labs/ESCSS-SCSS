@@ -1,5 +1,5 @@
 @use '../node_modules/sass-true' as *;
-@import './tailwindv3.4.1.scss';
+@import './tailwind_extend_v3.4.1.scss';
 
 // api usage: https://www.oddbird.net/true/docs/
 @include describe('Setting') {
@@ -5580,6 +5580,419 @@
             @include expect {
               @media (min-width: $__MEDIA-2XL) {
                 display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  @include describe('Floats') {
+    @include describe('Basic') {
+      @include it('float-start') {
+        @include assert {
+          @include output {
+            @include float-start
+          }
+
+          @include expect {
+            float: inline-start;
+          }
+        }
+      }
+
+      @include it('float-end') {
+        @include assert {
+          @include output {
+            @include float-end
+          }
+
+          @include expect {
+            float: inline-end;
+          }
+        }
+      }
+
+      @include it('float-right') {
+        @include assert {
+          @include output {
+            @include float-right
+          }
+
+          @include expect {
+            float: right;
+          }
+        }
+      }
+
+      @include it('float-left') {
+        @include assert {
+          @include output {
+            @include float-left
+          }
+
+          @include expect {
+            float: left;
+          }
+        }
+      }
+
+      @include it('float-none') {
+        @include assert {
+          @include output {
+            @include float-none
+          }
+
+          @include expect {
+            float: none;
+          }
+        }
+      }
+    }
+
+    @include describe('RWD') {
+      @include describe('SM') {
+        @include it('float-start') {
+          @include assert {
+            @include output {
+              @include sm\:float-start
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                float: inline-start;
+              }
+            }
+          }
+        }
+
+        @include it('float-end') {
+          @include assert {
+            @include output {
+              @include sm\:float-end
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                float: inline-end;
+              }
+            }
+          }
+        }
+
+        @include it('float-right') {
+          @include assert {
+            @include output {
+              @include sm\:float-right
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                float: right;
+              }
+            }
+          }
+        }
+        @include it('float-left') {
+          @include assert {
+            @include output {
+              @include sm\:float-left
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                float: left;
+              }
+            }
+          }
+        }
+        @include it('float-none') {
+          @include assert {
+            @include output {
+              @include sm\:float-none
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                float: none;
+              }
+            }
+          }
+        }
+      }
+      @include describe('MD') {
+        @include it('float-start') {
+          @include assert {
+            @include output {
+              @include md\:float-start
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                float: inline-start;
+              }
+            }
+          }
+        }
+
+        @include it('float-end') {
+          @include assert {
+            @include output {
+              @include md\:float-end
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                float: inline-end;
+              }
+            }
+          }
+        }
+
+        @include it('float-right') {
+          @include assert {
+            @include output {
+              @include md\:float-right
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                float: right;
+              }
+            }
+          }
+        }
+        @include it('float-left') {
+          @include assert {
+            @include output {
+              @include md\:float-left
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                float: left;
+              }
+            }
+          }
+        }
+        @include it('float-none') {
+          @include assert {
+            @include output {
+              @include md\:float-none
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                float: none;
+              }
+            }
+          }
+        }
+      }
+      @include describe('LG') {
+        @include it('float-start') {
+          @include assert {
+            @include output {
+              @include lg\:float-start
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                float: inline-start;
+              }
+            }
+          }
+        }
+
+        @include it('float-end') {
+          @include assert {
+            @include output {
+              @include lg\:float-end
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                float: inline-end;
+              }
+            }
+          }
+        }
+
+        @include it('float-right') {
+          @include assert {
+            @include output {
+              @include lg\:float-right
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                float: right;
+              }
+            }
+          }
+        }
+        @include it('float-left') {
+          @include assert {
+            @include output {
+              @include lg\:float-left
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                float: left;
+              }
+            }
+          }
+        }
+        @include it('float-none') {
+          @include assert {
+            @include output {
+              @include lg\:float-none
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                float: none;
+              }
+            }
+          }
+        }
+      }
+      @include describe('XL') {
+        @include it('float-start') {
+          @include assert {
+            @include output {
+              @include xl\:float-start
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                float: inline-start;
+              }
+            }
+          }
+        }
+
+        @include it('float-end') {
+          @include assert {
+            @include output {
+              @include xl\:float-end
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                float: inline-end;
+              }
+            }
+          }
+        }
+
+        @include it('float-right') {
+          @include assert {
+            @include output {
+              @include xl\:float-right
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                float: right;
+              }
+            }
+          }
+        }
+        @include it('float-left') {
+          @include assert {
+            @include output {
+              @include xl\:float-left
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                float: left;
+              }
+            }
+          }
+        }
+        @include it('float-none') {
+          @include assert {
+            @include output {
+              @include xl\:float-none
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                float: none;
+              }
+            }
+          }
+        }
+      }
+      @include describe('2XL') {
+        @include it('float-start') {
+          @include assert {
+            @include output {
+              @include \2xl\:float-start
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                float: inline-start;
+              }
+            }
+          }
+        }
+
+        @include it('float-end') {
+          @include assert {
+            @include output {
+              @include \2xl\:float-end
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                float: inline-end;
+              }
+            }
+          }
+        }
+
+        @include it('float-right') {
+          @include assert {
+            @include output {
+              @include \2xl\:float-right
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                float: right;
+              }
+            }
+          }
+        }
+        @include it('float-left') {
+          @include assert {
+            @include output {
+              @include \2xl\:float-left
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                float: left;
+              }
+            }
+          }
+        }
+        @include it('float-none') {
+          @include assert {
+            @include output {
+              @include \2xl\:float-none
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                float: none;
               }
             }
           }
