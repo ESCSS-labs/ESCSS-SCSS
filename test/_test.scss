@@ -1281,7 +1281,7 @@
         }
 
         @include expect {
-          @media (width <= $__MEDIA-SM) {
+          @media (width <=$__MEDIA-SM) {
             max-width: $__MEDIA-SM;
           }
         }
@@ -1295,12 +1295,13 @@
         }
 
         @include expect {
-          @media (width <= $__MEDIA-MD) {
+          @media (width <=$__MEDIA-MD) {
             max-width: $__MEDIA-MD;
           }
         }
       }
     }
+
     @include it('lg\:container') {
       @include assert {
         @include output {
@@ -1308,12 +1309,13 @@
         }
 
         @include expect {
-          @media (width <= $__MEDIA-LG) {
+          @media (width <=$__MEDIA-LG) {
             max-width: $__MEDIA-LG;
           }
         }
       }
     }
+
     @include it('xl\:container') {
       @include assert {
         @include output {
@@ -1321,12 +1323,13 @@
         }
 
         @include expect {
-          @media (width <= $__MEDIA-XL) {
+          @media (width <=$__MEDIA-XL) {
             max-width: $__MEDIA-XL;
           }
         }
       }
     }
+
     @include it('2xl\:container') {
       @include assert {
         @include output {
@@ -1334,9 +1337,418 @@
         }
 
         @include expect {
-          @media (width <= $__MEDIA-2XL) {
+          @media (width <=$__MEDIA-2XL) {
             max-width: $__MEDIA-2XL;
           }
+        }
+      }
+    }
+  }
+
+  @include describe('Columns') {
+    @include it('columns-1') {
+      @include assert {
+        @include output {
+          @include columns-1
+        }
+
+        @include expect {
+          columns: 1;
+        }
+      }
+    }
+
+    @include it('columns-1') {
+      @include assert {
+        @include output {
+          @include columns-1
+        }
+
+        @include expect {
+          columns: 1;
+        }
+      }
+    }
+
+    @include it('columns-2') {
+      @include assert {
+        @include output {
+          @include columns-2
+        }
+
+        @include expect {
+          columns: 2;
+        }
+      }
+    }
+
+    @include it('columns-3') {
+      @include assert {
+        @include output {
+          @include columns-3
+        }
+
+        @include expect {
+          columns: 3;
+        }
+      }
+    }
+
+    @include it('columns-4') {
+      @include assert {
+        @include output {
+          @include columns-4
+        }
+
+        @include expect {
+          columns: 4;
+        }
+      }
+    }
+
+    @include it('columns-5') {
+      @include assert {
+        @include output {
+          @include columns-5
+        }
+
+        @include expect {
+          columns: 5;
+        }
+      }
+    }
+
+    @include it('columns-6') {
+      @include assert {
+        @include output {
+          @include columns-6
+        }
+
+        @include expect {
+          columns: 6;
+        }
+      }
+    }
+
+    @include it('columns-7') {
+      @include assert {
+        @include output {
+          @include columns-7
+        }
+
+        @include expect {
+          columns: 7;
+        }
+      }
+    }
+
+    @include it('columns-8') {
+      @include assert {
+        @include output {
+          @include columns-8
+        }
+
+        @include expect {
+          columns: 8;
+        }
+      }
+    }
+
+    @include it('columns-9') {
+      @include assert {
+        @include output {
+          @include columns-9
+        }
+
+        @include expect {
+          columns: 9;
+        }
+      }
+    }
+
+    @include it('columns-10') {
+      @include assert {
+        @include output {
+          @include columns-10
+        }
+
+        @include expect {
+          columns: 10;
+        }
+      }
+    }
+
+    @include it('columns-11') {
+      @include assert {
+        @include output {
+          @include columns-11
+        }
+
+        @include expect {
+          columns: 11;
+        }
+      }
+    }
+
+    @include it('columns-12') {
+      @include assert {
+        @include output {
+          @include columns-12
+        }
+
+        @include expect {
+          columns: 12;
+        }
+      }
+    }
+
+    @include it('columns-auto') {
+      @include assert {
+        @include output {
+          @include columns-auto
+        }
+
+        @include expect {
+          columns: auto;
+        }
+      }
+    }
+
+    @include it('columns-3xs') {
+      @include assert {
+        @include output {
+          @include columns-3xs
+        }
+
+        @include expect {
+          columns: 16rem;
+        }
+      }
+    }
+
+    @include it('columns-2xs') {
+      @include assert {
+        @include output {
+          @include columns-2xs
+        }
+
+        @include expect {
+          columns: 18rem;
+        }
+      }
+    }
+
+    @include it('columns-xs') {
+      @include assert {
+        @include output {
+          @include columns-xs
+        }
+
+        @include expect {
+          columns: 20rem;
+        }
+      }
+    }
+
+    @include it('columns-sm') {
+      @include assert {
+        @include output {
+          @include columns-sm
+        }
+
+        @include expect {
+          columns: 24rem;
+        }
+      }
+    }
+
+    @include it('columns-md') {
+      @include assert {
+        @include output {
+          @include columns-md
+        }
+
+        @include expect {
+          columns: 28rem;
+        }
+      }
+    }
+
+    @include it('columns-lg') {
+      @include assert {
+        @include output {
+          @include columns-lg
+        }
+
+        @include expect {
+          columns: 32rem;
+        }
+      }
+    }
+
+    @include it('columns-xl') {
+      @include assert {
+        @include output {
+          @include columns-xl
+        }
+
+        @include expect {
+          columns: 36rem;
+        }
+      }
+    }
+
+    @include it('columns-2xl') {
+      @include assert {
+        @include output {
+          @include columns-2xl
+        }
+
+        @include expect {
+          columns: 42rem;
+        }
+      }
+    }
+
+    @include it('columns-3xl') {
+      @include assert {
+        @include output {
+          @include columns-3xl
+        }
+
+        @include expect {
+          columns: 48rem;
+        }
+      }
+    }
+
+    @include it('columns-4xl') {
+      @include assert {
+        @include output {
+          @include columns-4xl
+        }
+
+        @include expect {
+          columns: 56rem;
+        }
+      }
+    }
+
+    @include it('columns-5xl') {
+      @include assert {
+        @include output {
+          @include columns-5xl
+        }
+
+        @include expect {
+          columns: 64rem;
+        }
+      }
+    }
+
+    @include it('columns-6xl') {
+      @include assert {
+        @include output {
+          @include columns-6xl
+        }
+
+        @include expect {
+          columns: 72rem;
+        }
+      }
+    }
+
+    @include it('columns-7xl') {
+      @include assert {
+        @include output {
+          @include columns-7xl
+        }
+
+        @include expect {
+          columns: 80rem;
+        }
+      }
+    }
+
+    @include it('sm\:columns-(10rem)') {
+      @include assert {
+        @include output {
+          @include sm\:columns-(10rem)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-SM) {
+            columns: 10rem;
+          }
+        }
+      }
+    }
+
+    @include it('md\:columns-(10rem)') {
+      @include assert {
+        @include output {
+          @include md\:columns-(10rem)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-MD) {
+            columns: 10rem;
+          }
+        }
+      }
+    }
+
+    @include it('lg\:columns-(10rem)') {
+      @include assert {
+        @include output {
+          @include lg\:columns-(10rem)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-LG) {
+            columns: 10rem;
+          }
+        }
+      }
+    }
+
+    @include it('xl\:columns-(10rem)') {
+      @include assert {
+        @include output {
+          @include xl\:columns-(10rem)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-XL) {
+            columns: 10rem;
+          }
+        }
+      }
+    }
+
+    @include it('2xl\:columns-(10rem)') {
+      @include assert {
+        @include output {
+          @include \2xl\:columns-(10rem)
+        }
+
+        @include expect {
+          @media (width > $__MEDIA-2XL) {
+            columns: 10rem;
+            ;
+          }
+        }
+      }
+    }
+    
+    @include it('columns-(10rem)') {
+      @include assert {
+        @include output {
+          @include columns-(10rem)
+        }
+
+        @include expect {
+          columns: 10rem
         }
       }
     }
