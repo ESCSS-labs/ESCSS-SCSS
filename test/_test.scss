@@ -14918,4 +14918,110 @@
       }
     }
   }
+  @include describe('Flex Direction') {
+    @include describe('Basic') {
+      @include it('flex-row') {
+        @include assert {
+          @include output {
+            @include flex-row
+          }
+  
+          @include expect {
+            flex-direction: row;
+          }
+        }
+      }
+      @include it('flex-row-reverse') {
+        @include assert {
+          @include output {
+            @include flex-row-reverse
+          }
+  
+          @include expect {
+            flex-direction: row-reverse;
+          }
+        }
+      }
+      @include it('flex-col') {
+        @include assert {
+          @include output {
+            @include flex-col
+          }
+  
+          @include expect {
+            flex-direction: column;
+          }
+        }
+      }
+      @include it('flex-col-reverse') {
+        @include assert {
+          @include output {
+            @include flex-col-reverse
+          }
+  
+          @include expect {
+            flex-direction: column-reverse;
+          }
+        }
+      }
+    }
+  
+    @include describe('RWD') {
+      @include describe('SM') {
+        @include it('flex-row') {
+          @include assert {
+            @include output {
+              @include sm\:flex-row 
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                flex-direction: row;
+              }
+            }
+          }
+        }
+        @include it('flex-row-reverse') {
+          @include assert {
+            @include output {
+              @include sm\:flex-row-reverse 
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                flex-direction: row-reverse;
+              }
+            }
+          }
+        }
+        @include it('flex-col') {
+          @include assert {
+            @include output {
+              @include sm\:flex-col 
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                flex-direction: column;
+              }
+            }
+          }
+        }
+        @include it('flex-col-reverse') {
+          @include assert {
+            @include output {
+              @include sm\:flex-col-reverse 
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                flex-direction: column-reverse;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
 }
