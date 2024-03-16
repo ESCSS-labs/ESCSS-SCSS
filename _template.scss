@@ -30,4 +30,18 @@
       }
     }
   }
+
+  @include describe('Custom') {
+    @include it('zzz') {
+      @include assert {
+        @include output {
+          @include zzz
+        }
+
+        @include expect {
+          zzz: 14.2857143%
+        }
+      }
+    }
+  }
 }
