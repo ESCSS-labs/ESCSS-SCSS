@@ -15751,7 +15751,6 @@
           }
         }
       }
-
     }
 
     @include describe('Custom') {
@@ -15769,4 +15768,268 @@
     }
   }
 
+  @include describe("Order") {
+    @include describe("Basic") {
+      @include it("order-1") {
+        @include assert {
+          @include output {
+            @include order-1;
+          }
+  
+          @include expect {
+            order: 1;
+          }
+        }
+      }
+
+      @include it("order-2") {
+        @include assert {
+          @include output {
+            @include order-2;
+          }
+  
+          @include expect {
+            order: 2;
+          }
+        }
+      }
+
+      @include it("order-3") {
+        @include assert {
+          @include output {
+            @include order-3;
+          }
+  
+          @include expect {
+            order: 3;
+          }
+        }
+      }
+      @include it("order-4") {
+        @include assert {
+          @include output {
+            @include order-4;
+          }
+  
+          @include expect {
+            order: 4;
+          }
+        }
+      }
+      @include it("order-5") {
+        @include assert {
+          @include output {
+            @include order-5;
+          }
+  
+          @include expect {
+            order: 5;
+          }
+        }
+      }
+      @include it("order-6") {
+        @include assert {
+          @include output {
+            @include order-6;
+          }
+  
+          @include expect {
+            order: 6;
+          }
+        }
+      }
+      @include it("order-7") {
+        @include assert {
+          @include output {
+            @include order-7;
+          }
+  
+          @include expect {
+            order: 7;
+          }
+        }
+      }
+      @include it("order-8") {
+        @include assert {
+          @include output {
+            @include order-8;
+          }
+  
+          @include expect {
+            order: 8;
+          }
+        }
+      }
+      @include it("order-9") {
+        @include assert {
+          @include output {
+            @include order-9;
+          }
+  
+          @include expect {
+            order: 9;
+          }
+        }
+      }
+      @include it("order-10") {
+        @include assert {
+          @include output {
+            @include order-10;
+          }
+  
+          @include expect {
+            order: 10;
+          }
+        }
+      }
+      @include it("order-11") {
+        @include assert {
+          @include output {
+            @include order-11;
+          }
+  
+          @include expect {
+            order: 11;
+          }
+        }
+      }
+      @include it("order-12") {
+        @include assert {
+          @include output {
+            @include order-12;
+          }
+  
+          @include expect {
+            order: 12;
+          }
+        }
+      }
+      @include it("order-first") {
+        @include assert {
+          @include output {
+            @include order-first;
+          }
+  
+          @include expect {
+            order: -9999;
+          }
+        }
+      }
+      @include it("order-last") {
+        @include assert {
+          @include output {
+            @include order-last;
+          }
+  
+          @include expect {
+            order: 9999;
+          }
+        }
+      }
+      @include it("order-none") {
+        @include assert {
+          @include output {
+            @include order-none;
+          }
+  
+          @include expect {
+            order: 0;
+          }
+        }
+      }
+    }
+  
+    @include describe("RWD") {
+      @include describe("SM") {
+        @include it("order-(13)") {
+          @include assert {
+            @include output {
+              @include sm\:order-(13);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                order: 13;
+              }
+            }
+          }
+        }
+      }
+      @include describe("MD") {
+        @include it("order-(13)") {
+          @include assert {
+            @include output {
+              @include md\:order-(13);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                order: 13;
+              }
+            }
+          }
+        }
+      }
+      @include describe("LG") {
+        @include it("order-(13)") {
+          @include assert {
+            @include output {
+              @include lg\:order-(13);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                order: 13;
+              }
+            }
+          }
+        }
+      }
+      @include describe("XL") {
+        @include it("order-(13)") {
+          @include assert {
+            @include output {
+              @include xl\:order-(13);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                order: 13;
+              }
+            }
+          }
+        }
+      }
+      @include describe("2XL") {
+        @include it("order-(13)") {
+          @include assert {
+            @include output {
+              @include \2xl\:order-(13);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                order: 13;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    @include describe("Custom") {
+      @include it("order-(13)") {
+        @include assert {
+          @include output {
+            @include order-(13);
+          }
+  
+          @include expect {
+            order: 13;
+          }
+        }
+      }
+    }
+  }
+  
 }
