@@ -1,47 +1,47 @@
-@include describe('zzz') {
-  @include describe('Basic') {
-    @include it('xxx') {
-      @include assert {
-        @include output {
-          @include xxx
-        }
+@include describe("zzz") {
+	@include describe("Basic") {
+		@include it("xxx") {
+			@include assert {
+				@include output {
+					@include xxx;
+				}
 
-        @include expect {
-          xxx: auto;
-        }
-      }
-    }
-  }
+				@include expect {
+					xxx: auto;
+				}
+			}
+		}
+	}
 
-  @include describe('RWD') {
-    @include describe('SM') {
-      @include it('ggg') {
-        @include assert {
-          @include output {
-            @include sm\:ggg
-          }
+	@include describe("RWD") {
+		@include describe("SM") {
+			@include it("ggg") {
+				@include assert {
+					@include output {
+						@include sm\:ggg;
+					}
 
-          @include expect {
-            @media (min-width: $__MEDIA-SM) {
-              ggg: 1.3333333333
-            }
-          }
-        }
-      }
-    }
-  }
+					@include expect {
+						@media (min-width: $__MEDIA-SM) {
+							ggg: 1.3333333333;
+						}
+					}
+				}
+			}
+		}
+	}
 
-  @include describe('Custom') {
-    @include it('zzz') {
-      @include assert {
-        @include output {
-          @include zzz
-        }
+	@include describe("Custom") {
+		@include it("zzz") {
+			@include assert {
+				@include output {
+					@include zzz;
+				}
 
-        @include expect {
-          zzz: 14.2857143%
-        }
-      }
-    }
-  }
+				@include expect {
+					zzz: 14.2857143%;
+				}
+			}
+		}
+	}
 }
