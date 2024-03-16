@@ -1,0 +1,695 @@
+// tailwindcss v3.3.2 All Arbitrary values
+
+
+// Layout
+@mixin aspect-($value) {
+  aspect-ratio: $value
+}
+
+@mixin columns-($value) {
+  columns: $value
+}
+
+@mixin object-($value) {
+  object-position: $value
+}
+
+@mixin top-($value) {
+  top: $value
+}
+
+@mixin right-($value) {
+  right: $value
+}
+
+@mixin bottom-($value) {
+  bottom: $value
+}
+
+@mixin left-($value) {
+  left: $value
+}
+
+@mixin z-($value) {
+  z-index: $value
+}
+
+
+// Flexbox Grid
+@mixin basis-($value) {
+  flex-basis: $value
+}
+
+@mixin flex-($value) {
+  flex: $value
+}
+
+@mixin grow-($value) {
+  flex-grow: $value
+}
+
+@mixin shrink-($value) {
+  flex-shrink: $value
+}
+
+@mixin order-($value) {
+  order: $value
+}
+
+@mixin grid-cols-($value) {
+  grid-template-columns: $value
+}
+
+@mixin col-($value) {
+  grid-column: $value
+}
+
+@mixin grid-rows-($value) {
+  grid-template-rows: $value
+}
+
+@mixin row-($value) {
+  grid-row: $value
+}
+
+@mixin auto-cols-($value) {
+  grid-auto-columns: $value
+}
+
+@mixin auto-rows-($value) {
+  grid-auto-rows: $value
+}
+
+@mixin gap-($value) {
+  gap: $value
+}
+
+
+// Spacing
+@mixin p-($value) {
+  padding: $value
+}
+
+@mixin m-($value) {
+  margin: $value
+}
+
+@mixin space-x-($value) {
+  >*+* {
+    margin-left: $value
+  }
+}
+
+@mixin space-y-($value) {
+  >*+* {
+    margin-top: $value
+  }
+}
+
+
+// Sizing
+@mixin w-($value) {
+  width: $value
+}
+
+@mixin min-w-($value) {
+  min-width: $value
+}
+
+@mixin max-w-($value) {
+  max-width: $value
+}
+
+@mixin h-($value) {
+  height: $value
+}
+
+@mixin min-h-($value) {
+  min-height: $value
+}
+
+@mixin max-h-($value) {
+  max-height: $value
+}
+
+@mixin size-($value) {
+  width: $value height: $value
+}
+
+
+// Typography
+@mixin font-family-($value) // font (tailwind arbitrory values)  --> font-family
+
+  {
+  font-family: $value
+}
+
+@mixin text-($value) {
+  font-size: $value
+}
+
+@mixin font-weight-($value) // font (tailwind arbitrory values)  -->  font-weight
+
+  {
+  font-weight: $value
+}
+
+@mixin tracking-($value) {
+  letter-spacing: $value
+}
+
+@mixin line-clamp-($value) {
+  overflow: hidden display: -webkit-box -webkit-box-orient: vertical -webkit-line-clamp: $value
+}
+
+@mixin leading-($value) {
+  line-height: $value
+}
+
+@mixin list-image-($value) {
+  list-style-image: $value
+}
+
+@mixin list-($value) {
+  list-style-type: $value
+}
+
+@mixin text-color-($value) // text (tailwind arbitrory values)  -->  text-color
+
+  {
+  color: $value
+}
+
+@mixin decoration-color-($value) // decoration (tailwind arbitrory values)  -->  decoration-color
+
+  {
+  text-decoration-color: $value
+}
+
+@mixin decoration-($value) {
+  text-decoration-thickness: $value
+}
+
+@mixin underline-offset-($value) {
+  text-underline-offset: $value
+}
+
+@mixin indent-($value) {
+  text-indent: $value
+}
+
+@mixin align-($value) {
+  vertical-align: $value
+}
+
+@mixin content-($value) // not spport pseudo element
+
+  {
+  content: $value
+}
+
+
+// Backgrounds
+@mixin bg-color-($value) // bg (tailwind arbitrory values)  -->  bg-color
+
+  {
+  background-color: $value
+}
+
+@mixin bg-position-($value) // bg (tailwind arbitrory values)  -->  bg-position
+
+  {
+  background-position: $value
+}
+
+@mixin bg-size-($value) // bg (tailwind arbitrory values)  -->  bg-size
+
+  {
+  background-size: $quote
+}
+
+@mixin bg-image-($value) // bg (tailwind arbitrory values)  -->  bg-image
+
+  {
+  background-image: $value
+}
+
+@mixin from-color-($value) // from (tailwind arbitrory values)  -->  from-color
+
+  {
+  --tw-gradient-from: #{$value} var(--tw-gradient-from-position) --tw-gradient-to: rgb(#{$value} / 0) var(--tw-gradient-to-position) --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+}
+
+@mixin via-color-($value) // via (tailwind arbitrory values)  -->  via-color
+
+  {
+  --tw-gradient-to: rgb(#{$value} / 0) var(--tw-gradient-to-position) --tw-gradient-stops: var(--tw-gradient-from),
+  #{$value} var(--tw-gradient-via-position),
+  var(--tw-gradient-to)
+}
+
+@mixin to-color-($value) // to (tailwind arbitrory values)  -->  to-color
+
+  {
+  --tw-gradient-to: #{$value} var(--tw-gradient-to-position)
+}
+
+@mixin from-($value) {
+  --tw-gradient-from-position: #{$value}
+}
+
+@mixin via-($value) {
+  --tw-gradient-via-position: #{$value}
+}
+
+@mixin to-($value) {
+  --tw-gradient-to-position: #{$value}
+}
+
+
+// Borders
+@mixin rounded-($value) {
+  border-radius: $value
+}
+
+@mixin border-($value) {
+  border-width: $value
+}
+
+@mixin border-x-($value) {
+  border-left-width: $value border-right-width: $value
+}
+
+@mixin border-y-($value) {
+  border-top-width: $value border-bottom-width: $value
+}
+
+@mixin border-s-($value) {
+  border-inline-start-width: $value
+}
+
+@mixin border-e-($value) {
+  border-inline-end-width: $value
+}
+
+@mixin border-t-($value) {
+  border-top-width: $value
+}
+
+@mixin border-r-($value) {
+  border-right-width: $value
+}
+
+@mixin border-b-($value) {
+  border-bottom-width: $value
+}
+
+@mixin border-l-($value) {
+  border-left-width: $value
+}
+
+@mixin border-color-($value) // border (tailwind arbitrory values)  -->  border-color
+
+  {
+  border-color: $value
+}
+
+@mixin border-x-color-($value) // border (tailwind arbitrory values)  -->  border-x-color
+
+  {
+  border-left-color: $value border-right-color: $value
+}
+
+@mixin border-y-color-($value) // border (tailwind arbitrory values)  -->  border-y-color
+
+  {
+  border-top-color: $value border-bottom-color: $value
+}
+
+@mixin border-s-color-($value) // border (tailwind arbitrory values)  -->  border-s-color
+
+  {
+  border-inline-start-color: $value
+}
+
+@mixin border-e-color-($value) // border (tailwind arbitrory values)  -->  border-e-color
+
+  {
+  border-inline-end-color: $value
+}
+
+@mixin border-t-color-($value) // border (tailwind arbitrory values)  -->  border-t-color
+
+  {
+  border-top-color: $value
+}
+
+@mixin border-r-color-($value) // border (tailwind arbitrory values)  -->  border-r-color
+
+  {
+  border-right-color: $value
+}
+
+@mixin border-b-color-($value) // border (tailwind arbitrory values)  -->  border-b-color
+
+  {
+  border-bottom-color: $value
+}
+
+@mixin border-l-color-($value) // border (tailwind arbitrory values)  -->  border-l-color
+
+  {
+  border-left-color: $value
+}
+
+@mixin divide-x-($value) {
+  >*+* {
+    border-right-width: 0px border-left-width: $value
+  }
+}
+
+@mixin divide-y-($value) {
+  >*+* {
+    border-top-width: $value border-bottom-width: 0px
+  }
+}
+
+@mixin divide-color-($value) // divide (tailwind arbitrory values)  -->  divide-color
+
+  {
+  >*+* {
+    border-color: $value
+  }
+}
+
+@mixin outline-($value) {
+  outline-width: $value
+}
+
+@mixin outline-color-($value) // outline (tailwind arbitrory values)  -->  outline-color
+
+  {
+  outline-color: $value
+}
+
+@mixin outline-offset-($value) {
+  outline-offset: $value
+}
+
+@mixin ring-($value) {
+  box-shadow: var(--tw-ring-inset) 0 0 0 calc($value + var(--tw-ring-offset-width)) var(--tw-ring-color)
+}
+
+@mixin ring-color-($value) // ring (tailwind arbitrory values)  -->  ring-color
+
+  {
+  --tw-ring-color: #{$value}
+}
+
+@mixin ring-offset-($value) {
+  --tw-ring-offset-width: #{$value} box-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow)
+}
+
+@mixin ring-offset-color-($value) // ring (tailwind arbitrory values)-offset  -->  ring-offset-color
+
+  {
+  --tw-ring-offset-color: #{$value} box-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow)
+}
+
+
+// Effects 
+@mixin shadow-($value) {
+  box-shadow: $value
+}
+
+@mixin shadow-color-($value) // shodow (tailwind arbitrory values)  -->  shadow-color
+
+  {
+  --tw-shadow-color: #{$value}
+}
+
+@mixin opacity-($value) {
+  opacity: $value
+}
+
+
+// Filters
+@mixin blur-($value) {
+  filter: blur($value)
+}
+
+@mixin brightness-($value) {
+  filter: brightness($value)
+}
+
+@mixin contrast-($value) {
+  filter: contrast($value)
+}
+
+@mixin drop-shadow-($value) {
+  filter: drop-shadow($value)
+}
+
+@mixin grayscale-($vlaue) {
+  filter: grayscale($vlaue)
+}
+
+@mixin hue-rotate-($value) {
+  filter: hue-rotate($value)
+}
+
+@mixin invert-($value) {
+  filter: invert($value)
+}
+
+@mixin saturate-($value) {
+  filter: saturate($value)
+}
+
+@mixin sepia-($value) {
+  filter: sepia($value)
+}
+
+@mixin backdrop-blur-($value) {
+  backdrop-filter: blur($value)
+}
+
+@mixin backdrop-brightness-($value) {
+  backdrop-filter: brightness($value)
+}
+
+@mixin backdrop-contrast-($value) {
+  backdrop-filter: contrast($value)
+}
+
+@mixin backdrop-grayscale-($value) {
+  backdrop-filter: grayscale($value)
+}
+
+@mixin backdrop-hue-rotate-($value) {
+  backdrop-filter: hue-rotate($value)
+}
+
+@mixin backdrop-invert-($value) {
+  backdrop-filter: invert($value)
+}
+
+@mixin backdrop-opacity-($value) {
+  backdrop-filter: opacity($value)
+}
+
+@mixin backdrop-saturate-($value) {
+  backdrop-filter: saturate($value)
+}
+
+@mixin backdrop-sepia-($value) {
+  backdrop-filter: sepia($value)
+}
+
+
+// Tables
+@mixin border-spacing-($value) {
+  border-spacing: $value
+}
+
+
+// Transitions & Animation
+@mixin transition-($value) {
+  transition-property: $value
+}
+
+@mixin duration-($value) {
+  transition-duration: ($value)
+}
+
+@mixin ease-($value) {
+  transition-timing-function: $value
+}
+
+@mixin delay-($value) {
+  transition-delay: $value
+}
+
+@mixin animate-($value) {
+  animation: $value
+}
+
+
+// Transforms
+@mixin scale-($value) {
+  transform: scale($value)
+}
+
+@mixin scale-x-($value) {
+  transform: scaleX($value)
+}
+
+@mixin scale-y-($value) {
+  transform: scaleY($value)
+}
+
+@mixin rotate-($value) {
+  transform: rotate($value)
+}
+
+@mixin translate-($value) {
+  transform: translate($value)
+}
+
+@mixin translate-x-($value) {
+  transform: translateX($value)
+}
+
+@mixin translate-y-($value) {
+  transform: translateY($value)
+}
+
+@mixin skew-($value) {
+  transform: skew($value)
+}
+
+@mixin skew-x-($value) {
+  transform: skewX($value)
+}
+
+@mixin skew-y-($value) {
+  transform: skewY($value)
+}
+
+@mixin origin-($value) {
+  transform-origin: $value
+}
+
+
+// Interactivity
+@mixin accent-color-($value) // accent (tailwind arbitrory values)  -->  accent-color
+
+  {
+  accent-color: $value
+}
+
+@mixin cursor-($value, $value2: null) {
+  cursor: $value, $value2
+}
+
+@mixin caret-color-($value) // caret (tailwind arbitrory values)  -->  caret-color
+
+  {
+  caret-color: $value
+}
+
+@mixin scroll-m-($value) {
+  scroll-margin: $value
+}
+
+@mixin scroll-mx-($value) {
+  scroll-margin-left: $value;
+  scroll-margin-right: $value;
+}
+
+@mixin scroll-my-($value) {
+  scroll-margin-top: $value;
+  scroll-margin-bottom: $value;
+}
+
+@mixin scroll-ms-($value) {
+  scroll-margin-inline-start: $value
+}
+
+@mixin scroll-me-($value) {
+  scroll-margin-inline-end: $value
+}
+
+@mixin scroll-mt-($value) {
+  scroll-margin-top: $value
+}
+
+@mixin scroll-mr-($value) {
+  scroll-margin-right: $value
+}
+
+@mixin scroll-mb-($value) {
+  scroll-margin-bottom: $value
+}
+
+@mixin scroll-ml-($value) {
+  scroll-margin-left: $value
+}
+
+@mixin scroll-p-($value) {
+  scroll-padding: $value
+}
+
+@mixin scroll-px-($value) {
+  scroll-padding-left: $value;
+  scroll-padding-right: $value;
+}
+
+@mixin scroll-py-($value) {
+  scroll-padding-top: $value;
+  scroll-padding-bottom: $value;
+}
+
+@mixin scroll-ps-($value) {
+  scroll-padding-inline-start: $value
+}
+
+@mixin scroll-pe-($value) {
+  scroll-padding-inline-end: $value
+}
+
+@mixin scroll-pt-($value) {
+  scroll-padding-top: $value
+}
+
+@mixin scroll-pr-($value) {
+  scroll-padding-right: $value
+}
+
+@mixin scroll-pb-($value) {
+  scroll-padding-bottom: $value
+}
+
+@mixin scroll-pl-($value) {
+  scroll-padding-left: $value
+}
+
+@mixin will-change-($value, $value2: null) {
+  will-change: $value, $value2
+}
+
+
+// SVG
+@mixin fill-($value) {
+  fill: $value
+}
+
+@mixin stroke-($value) {
+  stroke: $value
+}
+
+@mixin stroke-width-($value) // stroke (tailwind arbitrory values)  -->  stroke-width
+
+  {
+  stroke-width: $value
+}
