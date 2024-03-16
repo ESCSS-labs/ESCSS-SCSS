@@ -16288,4 +16288,260 @@
     }
   }
   
+
+  @include describe("Grid Template Rows") {
+    @include describe("Basic") {
+      @include it("grid-rows-1") {
+        @include assert {
+          @include output {
+            @include grid-rows-1;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(1, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-2") {
+        @include assert {
+          @include output {
+            @include grid-rows-2;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-3") {
+        @include assert {
+          @include output {
+            @include grid-rows-3;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(3, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-4") {
+        @include assert {
+          @include output {
+            @include grid-rows-4;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(4, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-5") {
+        @include assert {
+          @include output {
+            @include grid-rows-5;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(5, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-6") {
+        @include assert {
+          @include output {
+            @include grid-rows-6;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(6, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-7") {
+        @include assert {
+          @include output {
+            @include grid-rows-7;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(7, minmax(0, 1fr));
+          }
+        }
+      }
+
+      @include it("grid-rows-8") {
+        @include assert {
+          @include output {
+            @include grid-rows-8;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(8, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-9") {
+        @include assert {
+          @include output {
+            @include grid-rows-9;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(9, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-10") {
+        @include assert {
+          @include output {
+            @include grid-rows-10;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(10, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-11") {
+        @include assert {
+          @include output {
+            @include grid-rows-11;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(11, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-12") {
+        @include assert {
+          @include output {
+            @include grid-rows-12;
+          }
+  
+          @include expect {
+            grid-template-rows: repeat(12, minmax(0, 1fr));
+          }
+        }
+      }
+      @include it("grid-rows-none") {
+        @include assert {
+          @include output {
+            @include grid-rows-none;
+          }
+  
+          @include expect {
+            grid-template-rows: none;
+          }
+        }
+      }
+      @include it("grid-rows-subgrid") {
+        @include assert {
+          @include output {
+            @include grid-rows-subgrid;
+          }
+  
+          @include expect {
+            grid-template-rows: subgrid;
+          }
+        }
+      }
+    }
+  
+    @include describe("RWD") {
+      @include describe("SM") {
+        @include it("grid-rows-(200px minmax(900px,_1fr) 100px)") {
+          @include assert {
+            @include output {
+              @include sm\:grid-rows-(200px minmax(900px, 1fr) 100px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                grid-template-rows: 200px minmax(900px, 1fr) 100px;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe("MD") {
+        @include it("grid-rows-(200px minmax(900px,_1fr) 100px)") {
+          @include assert {
+            @include output {
+              @include md\:grid-rows-(200px minmax(900px, 1fr) 100px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                grid-template-rows: 200px minmax(900px, 1fr) 100px;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe("LG") {
+        @include it("grid-rows-(200px minmax(900px,_1fr) 100px)") {
+          @include assert {
+            @include output {
+              @include lg\:grid-rows-(200px minmax(900px, 1fr) 100px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                grid-template-rows: 200px minmax(900px, 1fr) 100px;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe("XL") {
+        @include it("grid-rows-(200px minmax(900px,_1fr) 100px)") {
+          @include assert {
+            @include output {
+              @include xl\:grid-rows-(200px minmax(900px, 1fr) 100px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                grid-template-rows: 200px minmax(900px, 1fr) 100px;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe("2XL") {
+        @include it("grid-rows-(200px minmax(900px,_1fr) 100px)") {
+          @include assert {
+            @include output {
+              @include \2xl\:grid-rows-(200px minmax(900px, 1fr) 100px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                grid-template-rows: 200px minmax(900px, 1fr) 100px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    @include describe("Custom") {
+      @include it("grid-rows-(200px minmax(900px, 1fr) 100px)") {
+        @include assert {
+          @include output {
+            @include grid-rows-(200px minmax(900px, 1fr) 100px);
+          }
+  
+          @include expect {
+            grid-template-rows: 200px minmax(900px, 1fr) 100px;
+          }
+        }
+      }
+    }
+  }
 }
