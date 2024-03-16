@@ -13820,6 +13820,252 @@
 
     }
   }
+
+  @include describe('Visibility') {
+    @include describe('Basic') {
+      @include it('visible') {
+        @include assert {
+          @include output {
+            @include visible
+          }
+  
+          @include expect {
+            visibility: visible;
+          }
+        }
+      }
+      @include it('invisible') {
+        @include assert {
+          @include output {
+            @include invisible
+          }
+  
+          @include expect {
+            visibility: hidden;
+          }
+        }
+      }
+      @include it('collapse') {
+        @include assert {
+          @include output {
+            @include collapse
+          }
+  
+          @include expect {
+            visibility: collapse;
+          }
+        }
+      }
+    }
+  
+    @include describe('RWD') {
+      @include describe('SM') {
+        @include it('visible') {
+          @include assert {
+            @include output {
+              @include sm\:visible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                visibility: visible;
+              }
+            }
+          }
+        }
+        @include it('invisible') {
+          @include assert {
+            @include output {
+              @include sm\:invisible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                visibility: hidden;
+              }
+            }
+          }
+        }
+        @include it('collapse') {
+          @include assert {
+            @include output {
+              @include sm\:collapse
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                visibility: collapse;
+              }
+            }
+          }
+        }
+      }
+      @include describe('MD') {
+        @include it('visible') {
+          @include assert {
+            @include output {
+              @include md\:visible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                visibility: visible;
+              }
+            }
+          }
+        }
+        @include it('invisible') {
+          @include assert {
+            @include output {
+              @include md\:invisible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                visibility: hidden;
+              }
+            }
+          }
+        }
+        @include it('collapse') {
+          @include assert {
+            @include output {
+              @include md\:collapse
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                visibility: collapse;
+              }
+            }
+          }
+        }
+      }
+      @include describe('LG') {
+        @include it('visible') {
+          @include assert {
+            @include output {
+              @include lg\:visible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                visibility: visible;
+              }
+            }
+          }
+        }
+        @include it('invisible') {
+          @include assert {
+            @include output {
+              @include lg\:invisible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                visibility: hidden;
+              }
+            }
+          }
+        }
+        @include it('collapse') {
+          @include assert {
+            @include output {
+              @include lg\:collapse
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                visibility: collapse;
+              }
+            }
+          }
+        }
+      }
+      @include describe('XL') {
+        @include it('visible') {
+          @include assert {
+            @include output {
+              @include xl\:visible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                visibility: visible;
+              }
+            }
+          }
+        }
+        @include it('invisible') {
+          @include assert {
+            @include output {
+              @include xl\:invisible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                visibility: hidden;
+              }
+            }
+          }
+        }
+        @include it('collapse') {
+          @include assert {
+            @include output {
+              @include xl\:collapse
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                visibility: collapse;
+              }
+            }
+          }
+        }
+      }
+      @include describe('2XL') {
+        @include it('visible') {
+          @include assert {
+            @include output {
+              @include \2xl\:visible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                visibility: visible;
+              }
+            }
+          }
+        }
+        @include it('invisible') {
+          @include assert {
+            @include output {
+              @include \2xl\:invisible
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                visibility: hidden;
+              }
+            }
+          }
+        }
+        @include it('collapse') {
+          @include assert {
+            @include output {
+              @include \2xl\:collapse
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                visibility: collapse;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @include report;
