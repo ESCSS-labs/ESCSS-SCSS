@@ -18095,578 +18095,725 @@
 		}
 	}
 
-  @include describe("Grid Auto Flow") {
-    @include describe("Basic") {
-      @include it("grid-flow-row") {
-        @include assert {
-          @include output {
-            @include grid-flow-row;
-          }
-  
-          @include expect {
-            grid-auto-flow: row;
-          }
-        }
-      }
+	@include describe("Grid Auto Flow") {
+		@include describe("Basic") {
+			@include it("grid-flow-row") {
+				@include assert {
+					@include output {
+						@include grid-flow-row;
+					}
 
-      @include it("grid-flow-col") {
-        @include assert {
-          @include output {
-            @include grid-flow-col;
-          }
-  
-          @include expect {
-            grid-auto-flow: column;
-          }
-        }
-      }
+					@include expect {
+						grid-auto-flow: row;
+					}
+				}
+			}
 
-      @include it("grid-flow-dense") {
-        @include assert {
-          @include output {
-            @include grid-flow-dense;
-          }
-  
-          @include expect {
-            grid-auto-flow: dense;
-          }
-        }
-      }
+			@include it("grid-flow-col") {
+				@include assert {
+					@include output {
+						@include grid-flow-col;
+					}
 
-      @include it("grid-flow-row-dense") {
-        @include assert {
-          @include output {
-            @include grid-flow-row-dense;
-          }
-  
-          @include expect {
-            grid-auto-flow: row dense;
-          }
-        }
-      }
+					@include expect {
+						grid-auto-flow: column;
+					}
+				}
+			}
 
-      @include it("grid-flow-col-dense") {
-        @include assert {
-          @include output {
-            @include grid-flow-col-dense;
-          }
-  
-          @include expect {
-            grid-auto-flow: column dense;
-          }
-        }
-      }
-    }
-  
-    @include describe("RWD") {
-      @include describe("SM") {
-        @include it("grid-flow-row") {
-          @include assert {
-            @include output {
-              @include sm\:grid-flow-row;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-SM) {
-                grid-auto-flow: row;
-              }
-            }
-          }
-        }
+			@include it("grid-flow-dense") {
+				@include assert {
+					@include output {
+						@include grid-flow-dense;
+					}
 
-        @include it("grid-flow-col") {
-          @include assert {
-            @include output {
-              @include sm\:grid-flow-col;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-SM) {
-                grid-auto-flow: column;
-              }
-            }
-          }
-        }
+					@include expect {
+						grid-auto-flow: dense;
+					}
+				}
+			}
 
-        @include it("grid-flow-dense") {
-          @include assert {
-            @include output {
-              @include sm\:grid-flow-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-SM) {
-                grid-auto-flow: dense;
-              }
-            }
-          }
-        }
+			@include it("grid-flow-row-dense") {
+				@include assert {
+					@include output {
+						@include grid-flow-row-dense;
+					}
 
-        @include it("grid-flow-row-dense") {
-          @include assert {
-            @include output {
-              @include sm\:grid-flow-row-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-SM) {
-                grid-auto-flow: row dense;
-              }
-            }
-          }
-        }
+					@include expect {
+						grid-auto-flow: row dense;
+					}
+				}
+			}
 
-        @include it("grid-flow-col-dense") {
-          @include assert {
-            @include output {
-              @include sm\:grid-flow-col-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-SM) {
-                grid-auto-flow: column dense;
-              }
-            }
-          }
-        }
-      }
+			@include it("grid-flow-col-dense") {
+				@include assert {
+					@include output {
+						@include grid-flow-col-dense;
+					}
 
-      @include describe("MD") {
-        @include it("grid-flow-row") {
-          @include assert {
-            @include output {
-              @include md\:grid-flow-row;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-MD) {
-                grid-auto-flow: row;
-              }
-            }
-          }
-        }
+					@include expect {
+						grid-auto-flow: column dense;
+					}
+				}
+			}
+		}
 
-        @include it("grid-flow-col") {
-          @include assert {
-            @include output {
-              @include md\:grid-flow-col;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-MD) {
-                grid-auto-flow: column;
-              }
-            }
-          }
-        }
+		@include describe("RWD") {
+			@include describe("SM") {
+				@include it("grid-flow-row") {
+					@include assert {
+						@include output {
+							@include sm\:grid-flow-row;
+						}
 
-        @include it("grid-flow-dense") {
-          @include assert {
-            @include output {
-              @include md\:grid-flow-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-MD) {
-                grid-auto-flow: dense;
-              }
-            }
-          }
-        }
+						@include expect {
+							@media (min-width: $__MEDIA-SM) {
+								grid-auto-flow: row;
+							}
+						}
+					}
+				}
 
-        @include it("grid-flow-row-dense") {
-          @include assert {
-            @include output {
-              @include md\:grid-flow-row-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-MD) {
-                grid-auto-flow: row dense;
-              }
-            }
-          }
-        }
+				@include it("grid-flow-col") {
+					@include assert {
+						@include output {
+							@include sm\:grid-flow-col;
+						}
 
-        @include it("grid-flow-col-dense") {
-          @include assert {
-            @include output {
-              @include md\:grid-flow-col-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-MD) {
-                grid-auto-flow: column dense;
-              }
-            }
-          }
-        }
-      }
+						@include expect {
+							@media (min-width: $__MEDIA-SM) {
+								grid-auto-flow: column;
+							}
+						}
+					}
+				}
 
-      @include describe("LG") {
-        @include it("grid-flow-row") {
-          @include assert {
-            @include output {
-              @include lg\:grid-flow-row;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-LG) {
-                grid-auto-flow: row;
-              }
-            }
-          }
-        }
+				@include it("grid-flow-dense") {
+					@include assert {
+						@include output {
+							@include sm\:grid-flow-dense;
+						}
 
-        @include it("grid-flow-col") {
-          @include assert {
-            @include output {
-              @include lg\:grid-flow-col;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-LG) {
-                grid-auto-flow: column;
-              }
-            }
-          }
-        }
+						@include expect {
+							@media (min-width: $__MEDIA-SM) {
+								grid-auto-flow: dense;
+							}
+						}
+					}
+				}
 
-        @include it("grid-flow-dense") {
-          @include assert {
-            @include output {
-              @include lg\:grid-flow-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-LG) {
-                grid-auto-flow: dense;
-              }
-            }
-          }
-        }
+				@include it("grid-flow-row-dense") {
+					@include assert {
+						@include output {
+							@include sm\:grid-flow-row-dense;
+						}
 
-        @include it("grid-flow-row-dense") {
-          @include assert {
-            @include output {
-              @include lg\:grid-flow-row-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-LG) {
-                grid-auto-flow: row dense;
-              }
-            }
-          }
-        }
+						@include expect {
+							@media (min-width: $__MEDIA-SM) {
+								grid-auto-flow: row dense;
+							}
+						}
+					}
+				}
 
-        @include it("grid-flow-col-dense") {
-          @include assert {
-            @include output {
-              @include lg\:grid-flow-col-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-LG) {
-                grid-auto-flow: column dense;
-              }
-            }
-          }
-        }
-      }
+				@include it("grid-flow-col-dense") {
+					@include assert {
+						@include output {
+							@include sm\:grid-flow-col-dense;
+						}
 
-      @include describe("XL") {
-        @include it("grid-flow-row") {
-          @include assert {
-            @include output {
-              @include xl\:grid-flow-row;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-XL) {
-                grid-auto-flow: row;
-              }
-            }
-          }
-        }
+						@include expect {
+							@media (min-width: $__MEDIA-SM) {
+								grid-auto-flow: column dense;
+							}
+						}
+					}
+				}
+			}
 
-        @include it("grid-flow-col") {
-          @include assert {
-            @include output {
-              @include xl\:grid-flow-col;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-XL) {
-                grid-auto-flow: column;
-              }
-            }
-          }
-        }
+			@include describe("MD") {
+				@include it("grid-flow-row") {
+					@include assert {
+						@include output {
+							@include md\:grid-flow-row;
+						}
 
-        @include it("grid-flow-dense") {
-          @include assert {
-            @include output {
-              @include xl\:grid-flow-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-XL) {
-                grid-auto-flow: dense;
-              }
-            }
-          }
-        }
+						@include expect {
+							@media (min-width: $__MEDIA-MD) {
+								grid-auto-flow: row;
+							}
+						}
+					}
+				}
 
-        @include it("grid-flow-row-dense") {
-          @include assert {
-            @include output {
-              @include xl\:grid-flow-row-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-XL) {
-                grid-auto-flow: row dense;
-              }
-            }
-          }
-        }
+				@include it("grid-flow-col") {
+					@include assert {
+						@include output {
+							@include md\:grid-flow-col;
+						}
 
-        @include it("grid-flow-col-dense") {
-          @include assert {
-            @include output {
-              @include xl\:grid-flow-col-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-XL) {
-                grid-auto-flow: column dense;
-              }
-            }
-          }
-        }
-      }
+						@include expect {
+							@media (min-width: $__MEDIA-MD) {
+								grid-auto-flow: column;
+							}
+						}
+					}
+				}
 
-      @include describe("2XL") {
-        @include it("grid-flow-row") {
-          @include assert {
-            @include output {
-              @include \2xl\:grid-flow-row;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-2XL) {
-                grid-auto-flow: row;
-              }
-            }
-          }
-        }
+				@include it("grid-flow-dense") {
+					@include assert {
+						@include output {
+							@include md\:grid-flow-dense;
+						}
 
-        @include it("grid-flow-col") {
-          @include assert {
-            @include output {
-              @include \2xl\:grid-flow-col;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-2XL) {
-                grid-auto-flow: column;
-              }
-            }
-          }
-        }
+						@include expect {
+							@media (min-width: $__MEDIA-MD) {
+								grid-auto-flow: dense;
+							}
+						}
+					}
+				}
 
-        @include it("grid-flow-dense") {
-          @include assert {
-            @include output {
-              @include \2xl\:grid-flow-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-2XL) {
-                grid-auto-flow: dense;
-              }
-            }
-          }
-        }
+				@include it("grid-flow-row-dense") {
+					@include assert {
+						@include output {
+							@include md\:grid-flow-row-dense;
+						}
 
-        @include it("grid-flow-row-dense") {
-          @include assert {
-            @include output {
-              @include \2xl\:grid-flow-row-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-2XL) {
-                grid-auto-flow: row dense;
-              }
-            }
-          }
-        }
+						@include expect {
+							@media (min-width: $__MEDIA-MD) {
+								grid-auto-flow: row dense;
+							}
+						}
+					}
+				}
 
-        @include it("grid-flow-col-dense") {
-          @include assert {
-            @include output {
-              @include \2xl\:grid-flow-col-dense;
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-2XL) {
-                grid-auto-flow: column dense;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  
-  @include describe("Grid Auto Columns") {
-    @include describe("Basic") {
-      @include it("auto-cols-auto") {
-        @include assert {
-          @include output {
-            @include auto-cols-auto;
-          }
-  
-          @include expect {
-            grid-auto-columns: auto;
-          }
-        }
-      }
+				@include it("grid-flow-col-dense") {
+					@include assert {
+						@include output {
+							@include md\:grid-flow-col-dense;
+						}
 
-      @include it("auto-cols-min") {
-        @include assert {
-          @include output {
-            @include auto-cols-min;
-          }
-  
-          @include expect {
-            grid-auto-columns: min-content;
-          }
-        }
-      }
+						@include expect {
+							@media (min-width: $__MEDIA-MD) {
+								grid-auto-flow: column dense;
+							}
+						}
+					}
+				}
+			}
 
-      @include it("auto-cols-max") {
-        @include assert {
-          @include output {
-            @include auto-cols-max;
-          }
-  
-          @include expect {
-            grid-auto-columns: max-content;
-          }
-        }
-      }
+			@include describe("LG") {
+				@include it("grid-flow-row") {
+					@include assert {
+						@include output {
+							@include lg\:grid-flow-row;
+						}
 
-      @include it("auto-cols-fr") {
-        @include assert {
-          @include output {
-            @include auto-cols-fr;
-          }
-  
-          @include expect {
-            grid-auto-columns: minmax(0, 1fr);
-          }
-        }
-      }
-    }
-  
-    @include describe("RWD") {
-      @include describe("SM") {
-        @include it("auto-cols-(minmax(0, 2fr))") {
-          @include assert {
-            @include output {
-              @include sm\:auto-cols-(minmax(0, 2fr));
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-SM) {
-                grid-auto-columns: minmax(0, 2fr);
-              }
-            }
-          }
-        }
-      }
+						@include expect {
+							@media (min-width: $__MEDIA-LG) {
+								grid-auto-flow: row;
+							}
+						}
+					}
+				}
 
-      @include describe("MD") {
-        @include it("auto-cols-(minmax(0, 2fr))") {
-          @include assert {
-            @include output {
-              @include md\:auto-cols-(minmax(0, 2fr));
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-MD) {
-                grid-auto-columns: minmax(0, 2fr);
-              }
-            }
-          }
-        }
-      }
+				@include it("grid-flow-col") {
+					@include assert {
+						@include output {
+							@include lg\:grid-flow-col;
+						}
 
-      @include describe("LG") {
-        @include it("auto-cols-(minmax(0, 2fr))") {
-          @include assert {
-            @include output {
-              @include lg\:auto-cols-(minmax(0, 2fr));
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-LG) {
-                grid-auto-columns: minmax(0, 2fr);
-              }
-            }
-          }
-        }
-      }
+						@include expect {
+							@media (min-width: $__MEDIA-LG) {
+								grid-auto-flow: column;
+							}
+						}
+					}
+				}
 
-      @include describe("XL") {
-        @include it("auto-cols-(minmax(0, 2fr))") {
-          @include assert {
-            @include output {
-              @include xl\:auto-cols-(minmax(0, 2fr));
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-XL) {
-                grid-auto-columns: minmax(0, 2fr);
-              }
-            }
-          }
-        }
-      }
+				@include it("grid-flow-dense") {
+					@include assert {
+						@include output {
+							@include lg\:grid-flow-dense;
+						}
 
-      @include describe("2XL") {
-        @include it("auto-cols-(minmax(0, 2fr))") {
-          @include assert {
-            @include output {
-              @include \2xl\:auto-cols-(minmax(0, 2fr));
-            }
-  
-            @include expect {
-              @media (min-width: $__MEDIA-2XL) {
-                grid-auto-columns: minmax(0, 2fr);
-              }
-            }
-          }
-        }
-      }
-    }
-  
-    @include describe("Custom") {
-      @include it("auto-cols-(minmax(0, 2fr))") {
-        @include assert {
-          @include output {
-            @include auto-cols-(minmax(0, 2fr));
-          }
-  
-          @include expect {
-            grid-auto-columns: minmax(0, 2fr);
-          }
-        }
-      }
-    }
-  }
-  
+						@include expect {
+							@media (min-width: $__MEDIA-LG) {
+								grid-auto-flow: dense;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-row-dense") {
+					@include assert {
+						@include output {
+							@include lg\:grid-flow-row-dense;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-LG) {
+								grid-auto-flow: row dense;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-col-dense") {
+					@include assert {
+						@include output {
+							@include lg\:grid-flow-col-dense;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-LG) {
+								grid-auto-flow: column dense;
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("XL") {
+				@include it("grid-flow-row") {
+					@include assert {
+						@include output {
+							@include xl\:grid-flow-row;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-XL) {
+								grid-auto-flow: row;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-col") {
+					@include assert {
+						@include output {
+							@include xl\:grid-flow-col;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-XL) {
+								grid-auto-flow: column;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-dense") {
+					@include assert {
+						@include output {
+							@include xl\:grid-flow-dense;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-XL) {
+								grid-auto-flow: dense;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-row-dense") {
+					@include assert {
+						@include output {
+							@include xl\:grid-flow-row-dense;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-XL) {
+								grid-auto-flow: row dense;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-col-dense") {
+					@include assert {
+						@include output {
+							@include xl\:grid-flow-col-dense;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-XL) {
+								grid-auto-flow: column dense;
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("2XL") {
+				@include it("grid-flow-row") {
+					@include assert {
+						@include output {
+							@include \2xl\:grid-flow-row;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-2XL) {
+								grid-auto-flow: row;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-col") {
+					@include assert {
+						@include output {
+							@include \2xl\:grid-flow-col;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-2XL) {
+								grid-auto-flow: column;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-dense") {
+					@include assert {
+						@include output {
+							@include \2xl\:grid-flow-dense;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-2XL) {
+								grid-auto-flow: dense;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-row-dense") {
+					@include assert {
+						@include output {
+							@include \2xl\:grid-flow-row-dense;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-2XL) {
+								grid-auto-flow: row dense;
+							}
+						}
+					}
+				}
+
+				@include it("grid-flow-col-dense") {
+					@include assert {
+						@include output {
+							@include \2xl\:grid-flow-col-dense;
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-2XL) {
+								grid-auto-flow: column dense;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include describe("Grid Auto Columns") {
+		@include describe("Basic") {
+			@include it("auto-cols-auto") {
+				@include assert {
+					@include output {
+						@include auto-cols-auto;
+					}
+
+					@include expect {
+						grid-auto-columns: auto;
+					}
+				}
+			}
+
+			@include it("auto-cols-min") {
+				@include assert {
+					@include output {
+						@include auto-cols-min;
+					}
+
+					@include expect {
+						grid-auto-columns: min-content;
+					}
+				}
+			}
+
+			@include it("auto-cols-max") {
+				@include assert {
+					@include output {
+						@include auto-cols-max;
+					}
+
+					@include expect {
+						grid-auto-columns: max-content;
+					}
+				}
+			}
+
+			@include it("auto-cols-fr") {
+				@include assert {
+					@include output {
+						@include auto-cols-fr;
+					}
+
+					@include expect {
+						grid-auto-columns: minmax(0, 1fr);
+					}
+				}
+			}
+		}
+
+		@include describe("RWD") {
+			@include describe("SM") {
+				@include it("auto-cols-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include sm\:auto-cols-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-SM) {
+								grid-auto-columns: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("MD") {
+				@include it("auto-cols-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include md\:auto-cols-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-MD) {
+								grid-auto-columns: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("LG") {
+				@include it("auto-cols-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include lg\:auto-cols-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-LG) {
+								grid-auto-columns: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("XL") {
+				@include it("auto-cols-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include xl\:auto-cols-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-XL) {
+								grid-auto-columns: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("2XL") {
+				@include it("auto-cols-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include \2xl\:auto-cols-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-2XL) {
+								grid-auto-columns: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@include describe("Custom") {
+			@include it("auto-cols-(minmax(0, 2fr))") {
+				@include assert {
+					@include output {
+						@include auto-cols-(minmax(0, 2fr));
+					}
+
+					@include expect {
+						grid-auto-columns: minmax(0, 2fr);
+					}
+				}
+			}
+		}
+	}
+
+	@include describe("Grid Auto Rows") {
+		@include describe("Basic") {
+			@include it("auto-rows-auto") {
+				@include assert {
+					@include output {
+						@include auto-rows-auto;
+					}
+
+					@include expect {
+						grid-auto-rows: auto;
+					}
+				}
+			}
+
+			@include it("auto-rows-min") {
+				@include assert {
+					@include output {
+						@include auto-rows-min;
+					}
+
+					@include expect {
+						grid-auto-rows: min-content;
+					}
+				}
+			}
+
+			@include it("auto-rows-max") {
+				@include assert {
+					@include output {
+						@include auto-rows-max;
+					}
+
+					@include expect {
+						grid-auto-rows: max-content;
+					}
+				}
+			}
+
+			@include it("auto-rows-fr") {
+				@include assert {
+					@include output {
+						@include auto-rows-fr;
+					}
+
+					@include expect {
+						grid-auto-rows: minmax(0, 1fr);
+					}
+				}
+			}
+		}
+
+		@include describe("RWD") {
+			@include describe("SM") {
+				@include it("auto-rows-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include sm\:auto-rows-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-SM) {
+								grid-auto-rows: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("MD") {
+				@include it("auto-rows-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include md\:auto-rows-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-MD) {
+								grid-auto-rows: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("LG") {
+				@include it("auto-rows-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include lg\:auto-rows-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-LG) {
+								grid-auto-rows: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("XL") {
+				@include it("auto-rows-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include xl\:auto-rows-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-XL) {
+								grid-auto-rows: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+
+			@include describe("2XL") {
+				@include it("auto-rows-(minmax(0, 2fr))") {
+					@include assert {
+						@include output {
+							@include \2xl\:auto-rows-(minmax(0, 2fr));
+						}
+
+						@include expect {
+							@media (min-width: $__MEDIA-2XL) {
+								grid-auto-rows: minmax(0, 2fr);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@include describe("Custom") {
+			@include it("auto-rows-(minmax(0, 2fr))") {
+				@include assert {
+					@include output {
+						@include auto-rows-(minmax(0, 2fr));
+					}
+
+					@include expect {
+						grid-auto-rows: minmax(0, 2fr);
+					}
+				}
+			}
+		}
+	}
 }
