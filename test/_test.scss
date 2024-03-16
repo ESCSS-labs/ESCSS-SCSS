@@ -13498,6 +13498,24 @@
         }
       }
     }
+
+    @include describe('RWD') {
+      @include describe('SM') {
+        @include it('top-(0px)') {
+          @include assert {
+            @include output {
+              @include sm\:top-(0px)
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                top: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
