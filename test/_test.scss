@@ -35238,37 +35238,208 @@
       }
     }
   
-    // @include describe("RWD") {
-    //   @include describe("SM") {
-    //     @include it("群組二") {
-    //       @include assert {
-    //         @include output {
-    //           @include sm\:群組二;
-    //         }
+    @include describe("RWD") {
+      @include describe("SM") {
+        @include it("space-x-(5px)") {
+          @include assert {
+            @include output {
+              @include sm\:space-x-(5px);
+            }
   
-    //         @include expect {
-    //           @media (min-width: $__MEDIA-SM) {
-    //             群組二: 1.3333333333;
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                > * + * {
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("space-y-(5px)") {
+          @include assert {
+            @include output {
+              @include sm\:space-y-(5px);
+            }
   
-    // @include describe("Custom") {
-    //   @include it("群組二") {
-    //     @include assert {
-    //       @include output {
-    //         @include 群組二;
-    //       }
+            @include expect {
+              @media (min-width: $__MEDIA-SM) {
+                > * + * {
+                  margin-top: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @include describe("MD") {
+        @include it("space-x-(5px)") {
+          @include assert {
+            @include output {
+              @include md\:space-x-(5px);
+            }
   
-    //       @include expect {
-    //         群組二: 1.3333333333;
-    //       }
-    //     }
-    //   }
-    // }
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                > * + * {
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("space-y-(5px)") {
+          @include assert {
+            @include output {
+              @include md\:space-y-(5px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-MD) {
+                > * + * {
+                  margin-top: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @include describe("LG") {
+        @include it("space-x-(5px)") {
+          @include assert {
+            @include output {
+              @include lg\:space-x-(5px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                > * + * {
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("space-y-(5px)") {
+          @include assert {
+            @include output {
+              @include lg\:space-y-(5px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-LG) {
+                > * + * {
+                  margin-top: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @include describe("XL") {
+        @include it("space-x-(5px)") {
+          @include assert {
+            @include output {
+              @include xl\:space-x-(5px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                > * + * {
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("space-y-(5px)") {
+          @include assert {
+            @include output {
+              @include xl\:space-y-(5px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-XL) {
+                > * + * {
+                  margin-top: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+      @include describe("2XL") {
+        @include it("space-x-(5px)") {
+          @include assert {
+            @include output {
+              @include \2xl\:space-x-(5px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                > * + * {
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("space-y-(5px)") {
+          @include assert {
+            @include output {
+              @include \2xl\:space-y-(5px);
+            }
+  
+            @include expect {
+              @media (min-width: $__MEDIA-2XL) {
+                > * + * {
+                  margin-top: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    @include describe("Custom") {
+      @include it("space-x-(5px)") {
+        @include assert {
+          @include output {
+            @include space-x-(5px);
+          }
+  
+          @include expect {
+            > * + * {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
+      @include it("space-y-(5px)") {
+        @include assert {
+          @include output {
+            @include space-y-(5px);
+          }
+  
+          @include expect {
+            > * + * {
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
   }
   
   
