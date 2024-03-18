@@ -1,4 +1,14 @@
 // Tailwind css v3.4.1 All Arbitrary values
+@use "sass:color";
+
+// --tw-gradient-to needs RGB number
+@function get_HexToRgb($color) {
+  $red: color.red($color);
+  $green: color.green($color);
+  $blue: color.blue($color);
+
+  @return $red $green $blue;
+}
 
 // Layout
 @mixin aspect-($value) {
@@ -242,13 +252,13 @@
 // from (tailwind arbitrary values)  -->  from-color
 @mixin from-color-($value) {
 	--tw-gradient-from: #{$value} var(--tw-gradient-from-position);
-	--tw-gradient-to: rgb(#{$value} / 0) var(--tw-gradient-to-position);
+	--tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 // via (tailwind arbitrary values)  -->  via-color
 @mixin via-color-($value) {
-	--tw-gradient-to: rgb(#{$value} / 0) var(--tw-gradient-to-position);
+	--tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
 	--tw-gradient-stops: var(--tw-gradient-from),
 		#{$value} var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
