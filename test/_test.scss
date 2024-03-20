@@ -7017,3 +7017,461 @@
 		}
 	}
 }
+
+@include describe("Text Decoration") {
+	@include describe("Basic") {
+		@include it("underline") {
+			@include assert {
+				@include output {
+					@include underline;
+				}
+
+				@include expect {
+          text-decoration-line: underline;
+				}
+			}
+		}
+
+    @include it("overline") {
+			@include assert {
+				@include output {
+					@include overline;
+				}
+
+				@include expect {
+          text-decoration-line: overline;
+				}
+			}
+		}
+
+    @include it("line-through") {
+			@include assert {
+				@include output {
+					@include line-through;
+				}
+
+				@include expect {
+          text-decoration-line: line-through;
+				}
+			}
+		}
+
+    @include it("no-underline") {
+			@include assert {
+				@include output {
+					@include no-underline;
+				}
+
+				@include expect {
+          text-decoration-line: none;
+				}
+			}
+		}
+	}
+
+	@include describe("RWD") {
+		@include describe("SM") {
+			@include it("underline") {
+				@include assert {
+					@include output {
+						@include sm\:underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-SM) {
+              text-decoration-line: underline;
+						}
+					}
+				}
+			}
+
+      @include it("overline") {
+				@include assert {
+					@include output {
+						@include sm\:overline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-SM) {
+              text-decoration-line: overline;
+						}
+					}
+				}
+			}
+
+      @include it("line-through") {
+				@include assert {
+					@include output {
+						@include sm\:line-through;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-SM) {
+              text-decoration-line: line-through;
+						}
+					}
+				}
+			}
+
+      @include it("no-underline") {
+				@include assert {
+					@include output {
+						@include sm\:no-underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-SM) {
+              text-decoration-line: none;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("MD") {
+			@include it("underline") {
+				@include assert {
+					@include output {
+						@include md\:underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-MD) {
+              text-decoration-line: underline;
+						}
+					}
+				}
+			}
+
+      @include it("overline") {
+				@include assert {
+					@include output {
+						@include md\:overline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-MD) {
+              text-decoration-line: overline;
+						}
+					}
+				}
+			}
+
+      @include it("line-through") {
+				@include assert {
+					@include output {
+						@include md\:line-through;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-MD) {
+              text-decoration-line: line-through;
+						}
+					}
+				}
+			}
+
+      @include it("no-underline") {
+				@include assert {
+					@include output {
+						@include md\:no-underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-MD) {
+              text-decoration-line: none;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("LG") {
+			@include it("underline") {
+				@include assert {
+					@include output {
+						@include lg\:underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-LG) {
+              text-decoration-line: underline;
+						}
+					}
+				}
+			}
+
+      @include it("overline") {
+				@include assert {
+					@include output {
+						@include lg\:overline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-LG) {
+              text-decoration-line: overline;
+						}
+					}
+				}
+			}
+
+      @include it("line-through") {
+				@include assert {
+					@include output {
+						@include lg\:line-through;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-LG) {
+              text-decoration-line: line-through;
+						}
+					}
+				}
+			}
+
+      @include it("no-underline") {
+				@include assert {
+					@include output {
+						@include lg\:no-underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-LG) {
+              text-decoration-line: none;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("XL") {
+			@include it("underline") {
+				@include assert {
+					@include output {
+						@include xl\:underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-XL) {
+              text-decoration-line: underline;
+						}
+					}
+				}
+			}
+
+      @include it("overline") {
+				@include assert {
+					@include output {
+						@include xl\:overline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-XL) {
+              text-decoration-line: overline;
+						}
+					}
+				}
+			}
+
+      @include it("line-through") {
+				@include assert {
+					@include output {
+						@include xl\:line-through;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-XL) {
+              text-decoration-line: line-through;
+						}
+					}
+				}
+			}
+
+      @include it("no-underline") {
+				@include assert {
+					@include output {
+						@include xl\:no-underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-XL) {
+              text-decoration-line: none;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("2XL") {
+			@include it("underline") {
+				@include assert {
+					@include output {
+						@include \2xl\:underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-2XL) {
+              text-decoration-line: underline;
+						}
+					}
+				}
+			}
+
+      @include it("overline") {
+				@include assert {
+					@include output {
+						@include \2xl\:overline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-2XL) {
+              text-decoration-line: overline;
+						}
+					}
+				}
+			}
+
+      @include it("line-through") {
+				@include assert {
+					@include output {
+						@include \2xl\:line-through;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-2XL) {
+              text-decoration-line: line-through;
+						}
+					}
+				}
+			}
+
+      @include it("no-underline") {
+				@include assert {
+					@include output {
+						@include \2xl\:no-underline;
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-2XL) {
+              text-decoration-line: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include describe("Text Decoration Color") {
+	@include describe("Basic") {
+		@include it("群組一") {
+			@include assert {
+				@include output {
+					@include 群組一;
+				}
+
+				@include expect {
+					群組一: auto;
+				}
+			}
+		}
+	}
+
+	@include describe("RWD") {
+		@include describe("SM") {
+			@include it("decoration-(#50d71e)") {
+				@include assert {
+					@include output {
+						@include sm\:decoration-(#50d71e);
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-SM) {
+              text-decoration-color: #50d71e;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("MD") {
+			@include it("decoration-(#50d71e)") {
+				@include assert {
+					@include output {
+						@include md\:decoration-(#50d71e);
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-MD) {
+              text-decoration-color: #50d71e;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("LG") {
+			@include it("decoration-(#50d71e)") {
+				@include assert {
+					@include output {
+						@include lg\:decoration-(#50d71e);
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-LG) {
+              text-decoration-color: #50d71e;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("XL") {
+			@include it("decoration-(#50d71e)") {
+				@include assert {
+					@include output {
+						@include xl\:decoration-(#50d71e);
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-XL) {
+              text-decoration-color: #50d71e;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("2XL") {
+			@include it("decoration-(#50d71e)") {
+				@include assert {
+					@include output {
+						@include \2xl\:decoration-(#50d71e);
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-2XL) {
+              text-decoration-color: #50d71e;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include describe("Custom") {
+		@include it("decoration-(#50d71e)") {
+			@include assert {
+				@include output {
+					@include decoration-(#50d71e);
+				}
+
+				@include expect {
+          text-decoration-color: #50d71e;
+				}
+			}
+		}
+	}
+}
+
+
