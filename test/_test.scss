@@ -36133,36 +36133,100 @@
     }
 	}
 
-	// @include describe("RWD") {
-	// 	@include describe("SM") {
-	// 		@include it("群組二") {
-	// 			@include assert {
-	// 				@include output {
-	// 					@include sm\:群組二;
-	// 				}
+	@include describe("RWD") {
+		@include describe("SM") {
+			@include it("w-(32rem)") {
+				@include assert {
+					@include output {
+						@include sm\:w-(32rem);
+					}
 
-	// 				@include expect {
-	// 					@media (min-width: $__MEDIA-SM) {
-	// 						群組二: 1.3333333333;
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
+					@include expect {
+						@media (min-width: $__MEDIA-SM) {
+							width: 32rem;
+						}
+					}
+				}
+			}
+		}
 
-	// @include describe("Custom") {
-	// 	@include it("群組二") {
-	// 		@include assert {
-	// 			@include output {
-	// 				@include 群組二;
-	// 			}
+    @include describe("MD") {
+			@include it("w-(32rem)") {
+				@include assert {
+					@include output {
+						@include md\:w-(32rem);
+					}
 
-	// 			@include expect {
-	// 				群組二: 1.3333333333;
-	// 			}
-	// 		}
-	// 	}
-	// }
+					@include expect {
+						@media (min-width: $__MEDIA-MD) {
+							width: 32rem;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("LG") {
+			@include it("w-(32rem)") {
+				@include assert {
+					@include output {
+						@include lg\:w-(32rem);
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-LG) {
+							width: 32rem;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("XL") {
+			@include it("w-(32rem)") {
+				@include assert {
+					@include output {
+						@include xl\:w-(32rem);
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-XL) {
+							width: 32rem;
+						}
+					}
+				}
+			}
+		}
+
+    @include describe("2XL") {
+			@include it("w-(32rem)") {
+				@include assert {
+					@include output {
+						@include \2xl\:w-(32rem);
+					}
+
+					@include expect {
+						@media (min-width: $__MEDIA-2XL) {
+							width: 32rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include describe("Custom") {
+		@include it("w-(32rem)") {
+			@include assert {
+				@include output {
+					@include w-(32rem);
+				}
+
+				@include expect {
+					width: 32rem;
+				}
+			}
+		}
+	}
 }
 
