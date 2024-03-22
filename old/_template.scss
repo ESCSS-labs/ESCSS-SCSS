@@ -1,48 +1,47 @@
 @include describe("請輸入名稱") {
-	@include describe("Basic") {
-		@include it("群組一") {
-			@include assert {
-				@include output {
-					@include 群組一;
-				}
+  @include describe("Basic") {
+    @include it("群組一") {
+      @include assert {
+        @include output {
+          @include 群組一;
+        }
 
-				@include expect {
-					群組一: auto;
-				}
-			}
-		}
-	}
+        @include expect {
+          群組一: auto;
+        }
+      }
+    }
+  }
 
-	@include describe("RWD") {
-		@include describe("SM") {
-			@include it("群組二") {
-				@include assert {
-					@include output {
-						@include sm\:群組二;
-					}
+  @include describe("RWD") {
+    @include describe("SM") {
+      @include it("群組二") {
+        @include assert {
+          @include output {
+            @include sm\:群組二;
+          }
 
-					@include expect {
-						@media (min-width: $_MEDIA-SM) {
-							群組二: 1.3333333333;
-						}
-					}
-				}
-			}
-		}
-	}
+          @include expect {
+            @media (min-width: $_MEDIA-SM) {
+              群組二: 1.3333333333;
+            }
+          }
+        }
+      }
+    }
+  }
 
-	@include describe("Custom") {
-		@include it("群組二") {
-			@include assert {
-				@include output {
-					@include 群組二;
-				}
+  @include describe("Custom") {
+    @include it("群組二") {
+      @include assert {
+        @include output {
+          @include 群組二;
+        }
 
-				@include expect {
-					群組二: 1.3333333333;
-				}
-			}
-		}
-	}
+        @include expect {
+          群組二: 1.3333333333;
+        }
+      }
+    }
+  }
 }
-
