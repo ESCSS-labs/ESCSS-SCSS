@@ -1,15 +1,20 @@
 @use "../../../settings/structures" as *;
 
-@if $AspectRatio {
-	%aspect-auto {
-		aspect-ratio: auto;
-	}
+@if $GridAutoRows {
+  %auto-rows-auto {
+    grid-auto-rows: auto;
+  }
 
-	%aspect-square {
-		aspect-ratio: 1 / 1;
-	}
+  %auto-rows-min {
+    grid-auto-rows: min-content;
+  }
 
-	%aspect-video {
-		aspect-ratio: 16 / 9;
-	}
+  %auto-rows-max {
+    grid-auto-rows: max-content;
+  }
+
+  %auto-rows-fr {
+    grid-auto-rows: minmax(0, 1fr);
+  }
 }
+
