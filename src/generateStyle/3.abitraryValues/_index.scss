@@ -17,6 +17,32 @@
 }
 
 // Top / Right / Bottom / Left
+@mixin inset-($value) {
+  inset: $value;
+}
+
+@mixin inset-x-($value) {
+  left: $value;
+  right: $value;
+}
+
+@mixin inset-y-($value) {
+  top: $value;
+  bottom: $value;
+}
+
+@mixin start-($value) {
+  inset-inline-start: $value;
+}
+
+@mixin end-($value) {
+  inset-inline-end: $value;
+}
+
+@mixin top-($value) {
+  top: $value;
+}
+
 @mixin top-($value) {
   top: $value;
 }
@@ -113,6 +139,14 @@
 // Gap
 @mixin gap-($value) {
   gap: $value;
+}
+
+@mixin gap-x-($value) {
+  column-gap: $value;
+}
+
+@mixin gap-y-($value) {
+  row-gap: $value;
 }
 
 // Spacing
@@ -727,6 +761,8 @@
 // Transition Property
 @mixin transition-($value) {
   transition-property: $value;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 // Transition Duration
