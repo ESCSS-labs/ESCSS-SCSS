@@ -10348,7 +10348,201 @@
   }
 }
 
-// Gradient Color Stops(pending)
+// Gradient Color Stops
+@mixin sm\:from-color-($value) {
+  @media (min-width: $breakpoint-sm) {
+    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+}
+
+@mixin sm\:via-color-($value) {
+  @media (min-width: $breakpoint-sm) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  }
+}
+
+@mixin sm\:to-color-($value) {
+  @media (min-width: $breakpoint-sm) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+  }
+}
+
+@mixin sm\:from-($value) {
+  @media (min-width: $breakpoint-sm) {
+    --tw-gradient-from-position: #{$value};
+  }
+}
+
+@mixin sm\:via-($value) {
+  @media (min-width: $breakpoint-sm) {
+    --tw-gradient-via-position: #{$value};
+  }
+}
+
+@mixin sm\:to-($value) {
+  @media (min-width: $breakpoint-sm) {
+    --tw-gradient-to-position: #{$value};
+  }
+}
+
+@mixin md\:from-color-($value) {
+  @media (min-width: $breakpoint-md) {
+    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+}
+
+@mixin md\:via-color-($value) {
+  @media (min-width: $breakpoint-md) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  }
+}
+
+@mixin md\:to-color-($value) {
+  @media (min-width: $breakpoint-md) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+  }
+}
+
+@mixin md\:from-($value) {
+  @media (min-width: $breakpoint-md) {
+    --tw-gradient-from-position: #{$value};
+  }
+}
+
+@mixin md\:via-($value) {
+  @media (min-width: $breakpoint-md) {
+    --tw-gradient-via-position: #{$value};
+  }
+}
+
+@mixin md\:to-($value) {
+  @media (min-width: $breakpoint-md) {
+    --tw-gradient-to-position: #{$value};
+  }
+}
+
+@mixin lg\:from-color-($value) {
+  @media (min-width: $breakpoint-lg) {
+    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+}
+
+@mixin lg\:via-color-($value) {
+  @media (min-width: $breakpoint-lg) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  }
+}
+
+@mixin lg\:to-color-($value) {
+  @media (min-width: $breakpoint-lg) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+  }
+}
+
+@mixin lg\:from-($value) {
+  @media (min-width: $breakpoint-lg) {
+    --tw-gradient-from-position: #{$value};
+  }
+}
+
+@mixin lg\:via-($value) {
+  @media (min-width: $breakpoint-lg) {
+    --tw-gradient-via-position: #{$value};
+  }
+}
+
+@mixin lg\:to-($value) {
+  @media (min-width: $breakpoint-lg) {
+    --tw-gradient-to-position: #{$value};
+  }
+}
+
+@mixin xl\:from-color-($value) {
+  @media (min-width: $breakpoint-xl) {
+    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+}
+
+@mixin xl\:via-color-($value) {
+  @media (min-width: $breakpoint-xl) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  }
+}
+
+@mixin xl\:to-color-($value) {
+  @media (min-width: $breakpoint-xl) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+  }
+}
+
+@mixin xl\:from-($value) {
+  @media (min-width: $breakpoint-xl) {
+    --tw-gradient-from-position: #{$value};
+  }
+}
+
+@mixin xl\:via-($value) {
+  @media (min-width: $breakpoint-xl) {
+    --tw-gradient-via-position: #{$value};
+  }
+}
+
+@mixin xl\:to-($value) {
+  @media (min-width: $breakpoint-xl) {
+    --tw-gradient-to-position: #{$value};
+  }
+}
+
+@mixin \2xl\:from-color-($value) {
+  @media (min-width: $breakpoint-2xl) {
+    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+}
+
+@mixin \2xl\:via-color-($value) {
+  @media (min-width: $breakpoint-2xl) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  }
+}
+
+@mixin \2xl\:to-color-($value) {
+  @media (min-width: $breakpoint-2xl) {
+    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+  }
+}
+
+@mixin \2xl\:from-($value) {
+  @media (min-width: $breakpoint-2xl) {
+    --tw-gradient-from-position: #{$value};
+  }
+}
+
+@mixin \2xl\:via-($value) {
+  @media (min-width: $breakpoint-2xl) {
+    --tw-gradient-via-position: #{$value};
+  }
+}
+
+@mixin \2xl\:to-($value) {
+  @media (min-width: $breakpoint-2xl) {
+    --tw-gradient-to-position: #{$value};
+  }
+}
 
 // Borders
 // Border Radius
@@ -12155,41 +12349,66 @@
 // Ring Width (pending)
 @mixin sm\:ring-($value) {
   @media (min-width: $breakpoint-sm) {
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+      var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+      calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow:
+      var(--tw-ring-offset-shadow),
+      var(--tw-ring-shadow),
+      0 0 #0000;
   }
 }
 
 @mixin md\:ring-($value) {
   @media (min-width: $breakpoint-md) {
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+      var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+      calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow:
+      var(--tw-ring-offset-shadow),
+      var(--tw-ring-shadow),
+      0 0 #0000;
   }
 }
 
 @mixin lg\:ring-($value) {
   @media (min-width: $breakpoint-lg) {
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+      var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+      calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow:
+      var(--tw-ring-offset-shadow),
+      var(--tw-ring-shadow),
+      0 0 #0000;
   }
 }
 
 @mixin xl\:ring-($value) {
   @media (min-width: $breakpoint-xl) {
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+      var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+      calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow:
+      var(--tw-ring-offset-shadow),
+      var(--tw-ring-shadow),
+      0 0 #0000;
   }
 }
 
 @mixin \2xl\:ring-($value) {
   @media (min-width: $breakpoint-2xl) {
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+      var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+      calc(#{$value} + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow:
+      var(--tw-ring-offset-shadow),
+      var(--tw-ring-shadow),
+      0 0 #0000;
   }
 }
 
