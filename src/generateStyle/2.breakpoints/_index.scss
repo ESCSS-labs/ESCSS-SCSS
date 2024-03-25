@@ -10351,22 +10351,22 @@
 // Gradient Color Stops
 @mixin sm\:from-color-($value) {
   @media (min-width: $breakpoint-sm) {
-    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-from: #{$value} var(--tw-gradient-from-position);
+    --tw-gradient-to: transparent var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 }
 
 @mixin sm\:via-color-($value) {
   @media (min-width: $breakpoint-sm) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+    --tw-gradient-stops: var(--tw-gradient-from),
+      #{$value} var(--tw-gradient-via-position), var(--tw-gradient-to);
   }
 }
 
 @mixin sm\:to-color-($value) {
   @media (min-width: $breakpoint-sm) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+    --tw-gradient-to: #{$value} var(--tw-gradient-to-position);
   }
 }
 
@@ -10390,22 +10390,22 @@
 
 @mixin md\:from-color-($value) {
   @media (min-width: $breakpoint-md) {
-    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-from: #{$value} var(--tw-gradient-from-position);
+    --tw-gradient-to: transparent var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 }
 
 @mixin md\:via-color-($value) {
   @media (min-width: $breakpoint-md) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+    --tw-gradient-stops: var(--tw-gradient-from),
+      #{$value} var(--tw-gradient-via-position), var(--tw-gradient-to);
   }
 }
 
 @mixin md\:to-color-($value) {
   @media (min-width: $breakpoint-md) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+    --tw-gradient-to: #{$value} var(--tw-gradient-to-position);
   }
 }
 
@@ -10429,22 +10429,22 @@
 
 @mixin lg\:from-color-($value) {
   @media (min-width: $breakpoint-lg) {
-    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-from: #{$value} var(--tw-gradient-from-position);
+    --tw-gradient-to: transparent var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 }
 
 @mixin lg\:via-color-($value) {
   @media (min-width: $breakpoint-lg) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+    --tw-gradient-stops: var(--tw-gradient-from),
+      #{$value} var(--tw-gradient-via-position), var(--tw-gradient-to);
   }
 }
 
 @mixin lg\:to-color-($value) {
   @media (min-width: $breakpoint-lg) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+    --tw-gradient-to: #{$value} var(--tw-gradient-to-position);
   }
 }
 
@@ -10468,22 +10468,22 @@
 
 @mixin xl\:from-color-($value) {
   @media (min-width: $breakpoint-xl) {
-    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-from: #{$value} var(--tw-gradient-from-position);
+    --tw-gradient-to: transparent var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 }
 
 @mixin xl\:via-color-($value) {
   @media (min-width: $breakpoint-xl) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+    --tw-gradient-stops: var(--tw-gradient-from),
+      #{$value} var(--tw-gradient-via-position), var(--tw-gradient-to);
   }
 }
 
 @mixin xl\:to-color-($value) {
   @media (min-width: $breakpoint-xl) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+    --tw-gradient-to: #{$value} var(--tw-gradient-to-position);
   }
 }
 
@@ -10507,22 +10507,22 @@
 
 @mixin \2xl\:from-color-($value) {
   @media (min-width: $breakpoint-2xl) {
-    --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+    --tw-gradient-from: #{$value} var(--tw-gradient-from-position);
+    --tw-gradient-to: transparent var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 }
 
 @mixin \2xl\:via-color-($value) {
   @media (min-width: $breakpoint-2xl) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+    --tw-gradient-stops: var(--tw-gradient-from),
+      #{$value} var(--tw-gradient-via-position), var(--tw-gradient-to);
   }
 }
 
 @mixin \2xl\:to-color-($value) {
   @media (min-width: $breakpoint-2xl) {
-    --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+    --tw-gradient-to: #{$value} var(--tw-gradient-to-position);
   }
 }
 

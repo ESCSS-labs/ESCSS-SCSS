@@ -497,20 +497,20 @@
 // Gradient Color Stops
 // changed(name-conflict): from (tailwind arbitrary values)  -->  from-color
 @mixin from-color-($value) {
-  --tw-gradient-from: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: #{$value} var(--tw-gradient-from-position);
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 // changed(name-conflict): via (tailwind arbitrary values)  -->  via-color
 @mixin via-color-($value) {
-  --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-stops: var(--tw-gradient-from),
+    #{$value} var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 // changed(name-conflict): to (tailwind arbitrary values)  -->  to-color
 @mixin to-color-($value) {
-  --tw-gradient-to: rgb(#{get_HexToRgb($value)} / 1) var(--tw-gradient-to-position);
+  --tw-gradient-to: #{$value} var(--tw-gradient-to-position);
 }
 
 @mixin from-($value) {
