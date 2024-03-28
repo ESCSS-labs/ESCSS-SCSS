@@ -1,54 +1,75 @@
-@mixin \2xl\:delay-0 {
+@mixin \2xl\:animate-none {
   @media (min-width: $breakpoint-2xl) {
-    transition-delay: 0s;
+    animation: none;
   }
 }
 
-@mixin \2xl\:delay-75 {
+@mixin \2xl\:animate-spin {
   @media (min-width: $breakpoint-2xl) {
-    transition-delay: 75ms;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
 
-@mixin \2xl\:delay-100 {
+@mixin \2xl\:animate-ping {
   @media (min-width: $breakpoint-2xl) {
-    transition-delay: 100ms;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping {
+
+    75%,
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
   }
 }
 
-@mixin \2xl\:delay-150 {
+@mixin \2xl\:animate-pulse {
   @media (min-width: $breakpoint-2xl) {
-    transition-delay: 150ms;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
   }
 }
 
-@mixin \2xl\:delay-200 {
+@mixin \2xl\:animate-bounce {
   @media (min-width: $breakpoint-2xl) {
-    transition-delay: 200ms;
+    animation: bounce 1s infinite;
   }
-}
 
-@mixin \2xl\:delay-300 {
-  @media (min-width: $breakpoint-2xl) {
-    transition-delay: 300ms;
-  }
-}
+  @keyframes bounce {
 
-@mixin \2xl\:delay-500 {
-  @media (min-width: $breakpoint-2xl) {
-    transition-delay: 500ms;
-  }
-}
+    0%,
+    100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
 
-@mixin \2xl\:delay-700 {
-  @media (min-width: $breakpoint-2xl) {
-    transition-delay: 700ms;
-  }
-}
-
-@mixin \2xl\:delay-1000 {
-  @media (min-width: $breakpoint-2xl) {
-    transition-delay: 1000ms;
+    50% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
   }
 }
 
