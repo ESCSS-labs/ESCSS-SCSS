@@ -1,378 +1,7443 @@
-@mixin sm\:animate-none {
+@mixin sm\:accent-inherit {
   @media (min-width: $breakpoint-sm) {
-    animation: none;
+    accent-color: inherit;
   }
 }
 
-@mixin sm\:animate-spin {
+@mixin sm\:accent-current {
   @media (min-width: $breakpoint-sm) {
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+    accent-color: currentColor;
   }
 }
 
-@mixin sm\:animate-ping {
+@mixin sm\:accent-transparent {
   @media (min-width: $breakpoint-sm) {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  @keyframes ping {
-
-    75%,
-    100% {
-      transform: scale(2);
-      opacity: 0;
-    }
+    accent-color: transparent;
   }
 }
 
-@mixin sm\:animate-pulse {
+@mixin sm\:accent-black {
   @media (min-width: $breakpoint-sm) {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  @keyframes pulse {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
+    accent-color: rgb(0 0 0);
   }
 }
 
-@mixin sm\:animate-bounce {
+@mixin sm\:accent-white {
   @media (min-width: $breakpoint-sm) {
-    animation: bounce 1s infinite;
+    accent-color: rgb(255 255 255);
   }
+}
 
-  @keyframes bounce {
+@mixin sm\:accent-slate-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(248 250 252);
+  }
+}
 
-    0%,
-    100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
+@mixin sm\:accent-slate-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(241 245 249);
+  }
+}
 
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
+@mixin sm\:accent-slate-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(226 232 240);
+  }
+}
+
+@mixin sm\:accent-slate-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(203 213 225);
+  }
+}
+
+@mixin sm\:accent-slate-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(148 163 184);
+  }
+}
+
+@mixin sm\:accent-slate-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(100 116 139);
+  }
+}
+
+@mixin sm\:accent-slate-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(71 85 105);
+  }
+}
+
+@mixin sm\:accent-slate-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(51 65 85);
+  }
+}
+
+@mixin sm\:accent-slate-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(30 41 59);
+  }
+}
+
+@mixin sm\:accent-slate-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(15 23 42);
+  }
+}
+
+@mixin sm\:accent-slate-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(2 6 23);
+  }
+}
+
+@mixin sm\:accent-gray-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(249 250 251);
+  }
+}
+
+@mixin sm\:accent-gray-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(243 244 246);
+  }
+}
+
+@mixin sm\:accent-gray-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(229 231 235);
+  }
+}
+
+@mixin sm\:accent-gray-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(209 213 219);
+  }
+}
+
+@mixin sm\:accent-gray-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(156 163 175);
+  }
+}
+
+@mixin sm\:accent-gray-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(107 114 128);
+  }
+}
+
+@mixin sm\:accent-gray-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(75 85 99);
+  }
+}
+
+@mixin sm\:accent-gray-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(55 65 81);
+  }
+}
+
+@mixin sm\:accent-gray-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(31 41 55);
+  }
+}
+
+@mixin sm\:accent-gray-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(17 24 39);
+  }
+}
+
+@mixin sm\:accent-gray-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(3 7 18);
+  }
+}
+
+@mixin sm\:accent-zinc-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin sm\:accent-zinc-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(244 244 245);
+  }
+}
+
+@mixin sm\:accent-zinc-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(228 228 231);
+  }
+}
+
+@mixin sm\:accent-zinc-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(212 212 216);
+  }
+}
+
+@mixin sm\:accent-zinc-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(161 161 170);
+  }
+}
+
+@mixin sm\:accent-zinc-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(113 113 122);
+  }
+}
+
+@mixin sm\:accent-zinc-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(82 82 91);
+  }
+}
+
+@mixin sm\:accent-zinc-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(63 63 70);
+  }
+}
+
+@mixin sm\:accent-zinc-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(39 39 42);
+  }
+}
+
+@mixin sm\:accent-zinc-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(24 24 27);
+  }
+}
+
+@mixin sm\:accent-zinc-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(9 9 11);
+  }
+}
+
+@mixin sm\:accent-neutral-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin sm\:accent-neutral-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(245 245 245);
+  }
+}
+
+@mixin sm\:accent-neutral-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(229 229 229);
+  }
+}
+
+@mixin sm\:accent-neutral-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(212 212 212);
+  }
+}
+
+@mixin sm\:accent-neutral-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(163 163 163);
+  }
+}
+
+@mixin sm\:accent-neutral-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(115 115 115);
+  }
+}
+
+@mixin sm\:accent-neutral-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(82 82 82);
+  }
+}
+
+@mixin sm\:accent-neutral-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(64 64 64);
+  }
+}
+
+@mixin sm\:accent-neutral-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(38 38 38);
+  }
+}
+
+@mixin sm\:accent-neutral-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(23 23 23);
+  }
+}
+
+@mixin sm\:accent-neutral-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(10 10 10);
+  }
+}
+
+@mixin sm\:accent-stone-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(250 250 249);
+  }
+}
+
+@mixin sm\:accent-stone-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(245 245 244);
+  }
+}
+
+@mixin sm\:accent-stone-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(231 229 228);
+  }
+}
+
+@mixin sm\:accent-stone-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(214 211 209);
+  }
+}
+
+@mixin sm\:accent-stone-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(168 162 158);
+  }
+}
+
+@mixin sm\:accent-stone-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(120 113 108);
+  }
+}
+
+@mixin sm\:accent-stone-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(87 83 78);
+  }
+}
+
+@mixin sm\:accent-stone-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(68 64 60);
+  }
+}
+
+@mixin sm\:accent-stone-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(41 37 36);
+  }
+}
+
+@mixin sm\:accent-stone-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(28 25 23);
+  }
+}
+
+@mixin sm\:accent-stone-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(12 10 9);
+  }
+}
+
+@mixin sm\:accent-red-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(254 242 242);
+  }
+}
+
+@mixin sm\:accent-red-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(254 226 226);
+  }
+}
+
+@mixin sm\:accent-red-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(254 202 202);
+  }
+}
+
+@mixin sm\:accent-red-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(252 165 165);
+  }
+}
+
+@mixin sm\:accent-red-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(248 113 113);
+  }
+}
+
+@mixin sm\:accent-red-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(239 68 68);
+  }
+}
+
+@mixin sm\:accent-red-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(220 38 38);
+  }
+}
+
+@mixin sm\:accent-red-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(185 28 28);
+  }
+}
+
+@mixin sm\:accent-red-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(153 27 27);
+  }
+}
+
+@mixin sm\:accent-red-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(127 29 29);
+  }
+}
+
+@mixin sm\:accent-red-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(69 10 10);
+  }
+}
+
+@mixin sm\:accent-orange-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(255 247 237);
+  }
+}
+
+@mixin sm\:accent-orange-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(255 237 213);
+  }
+}
+
+@mixin sm\:accent-orange-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(254 215 170);
+  }
+}
+
+@mixin sm\:accent-orange-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(253 186 116);
+  }
+}
+
+@mixin sm\:accent-orange-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(251 146 60);
+  }
+}
+
+@mixin sm\:accent-orange-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(249 115 22);
+  }
+}
+
+@mixin sm\:accent-orange-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(234 88 12);
+  }
+}
+
+@mixin sm\:accent-orange-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(194 65 12);
+  }
+}
+
+@mixin sm\:accent-orange-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(154 52 18);
+  }
+}
+
+@mixin sm\:accent-orange-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(124 45 18);
+  }
+}
+
+@mixin sm\:accent-orange-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(67 20 7);
+  }
+}
+
+@mixin sm\:accent-amber-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(255 251 235);
+  }
+}
+
+@mixin sm\:accent-amber-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(254 243 199);
+  }
+}
+
+@mixin sm\:accent-amber-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(253 230 138);
+  }
+}
+
+@mixin sm\:accent-amber-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(252 211 77);
+  }
+}
+
+@mixin sm\:accent-amber-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(251 191 36);
+  }
+}
+
+@mixin sm\:accent-amber-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(245 158 11);
+  }
+}
+
+@mixin sm\:accent-amber-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(217 119 6);
+  }
+}
+
+@mixin sm\:accent-amber-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(180 83 9);
+  }
+}
+
+@mixin sm\:accent-amber-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(146 64 14);
+  }
+}
+
+@mixin sm\:accent-amber-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(120 53 15);
+  }
+}
+
+@mixin sm\:accent-amber-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(69 26 3);
+  }
+}
+
+@mixin sm\:accent-yellow-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(254 252 232);
+  }
+}
+
+@mixin sm\:accent-yellow-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(254 249 195);
+  }
+}
+
+@mixin sm\:accent-yellow-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(254 240 138);
+  }
+}
+
+@mixin sm\:accent-yellow-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(253 224 71);
+  }
+}
+
+@mixin sm\:accent-yellow-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(250 204 21);
+  }
+}
+
+@mixin sm\:accent-yellow-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(234 179 8);
+  }
+}
+
+@mixin sm\:accent-yellow-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(202 138 4);
+  }
+}
+
+@mixin sm\:accent-yellow-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(161 98 7);
+  }
+}
+
+@mixin sm\:accent-yellow-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(133 77 14);
+  }
+}
+
+@mixin sm\:accent-yellow-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(113 63 18);
+  }
+}
+
+@mixin sm\:accent-yellow-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(66 32 6);
+  }
+}
+
+@mixin sm\:accent-lime-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(247 254 231);
+  }
+}
+
+@mixin sm\:accent-lime-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(236 252 203);
+  }
+}
+
+@mixin sm\:accent-lime-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(217 249 157);
+  }
+}
+
+@mixin sm\:accent-lime-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(190 242 100);
+  }
+}
+
+@mixin sm\:accent-lime-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(163 230 53);
+  }
+}
+
+@mixin sm\:accent-lime-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(132 204 22);
+  }
+}
+
+@mixin sm\:accent-lime-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(101 163 13);
+  }
+}
+
+@mixin sm\:accent-lime-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(77 124 15);
+  }
+}
+
+@mixin sm\:accent-lime-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(63 98 18);
+  }
+}
+
+@mixin sm\:accent-lime-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(54 83 20);
+  }
+}
+
+@mixin sm\:accent-lime-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(26 46 5);
+  }
+}
+
+@mixin sm\:accent-green-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(240 253 244);
+  }
+}
+
+@mixin sm\:accent-green-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(220 252 231);
+  }
+}
+
+@mixin sm\:accent-green-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(187 247 208);
+  }
+}
+
+@mixin sm\:accent-green-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(134 239 172);
+  }
+}
+
+@mixin sm\:accent-green-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(74 222 128);
+  }
+}
+
+@mixin sm\:accent-green-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(34 197 94);
+  }
+}
+
+@mixin sm\:accent-green-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(22 163 74);
+  }
+}
+
+@mixin sm\:accent-green-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(21 128 61);
+  }
+}
+
+@mixin sm\:accent-green-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(22 101 52);
+  }
+}
+
+@mixin sm\:accent-green-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(20 83 45);
+  }
+}
+
+@mixin sm\:accent-green-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(5 46 22);
+  }
+}
+
+@mixin sm\:accent-emerald-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(236 253 245);
+  }
+}
+
+@mixin sm\:accent-emerald-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(209 250 229);
+  }
+}
+
+@mixin sm\:accent-emerald-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(167 243 208);
+  }
+}
+
+@mixin sm\:accent-emerald-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(110 231 183);
+  }
+}
+
+@mixin sm\:accent-emerald-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(52 211 153);
+  }
+}
+
+@mixin sm\:accent-emerald-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(16 185 129);
+  }
+}
+
+@mixin sm\:accent-emerald-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(5 150 105);
+  }
+}
+
+@mixin sm\:accent-emerald-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(4 120 87);
+  }
+}
+
+@mixin sm\:accent-emerald-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(6 95 70);
+  }
+}
+
+@mixin sm\:accent-emerald-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(6 78 59);
+  }
+}
+
+@mixin sm\:accent-emerald-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(2 44 34);
+  }
+}
+
+@mixin sm\:accent-teal-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(240 253 250);
+  }
+}
+
+@mixin sm\:accent-teal-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(204 251 241);
+  }
+}
+
+@mixin sm\:accent-teal-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(153 246 228);
+  }
+}
+
+@mixin sm\:accent-teal-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(94 234 212);
+  }
+}
+
+@mixin sm\:accent-teal-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(45 212 191);
+  }
+}
+
+@mixin sm\:accent-teal-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(20 184 166);
+  }
+}
+
+@mixin sm\:accent-teal-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(13 148 136);
+  }
+}
+
+@mixin sm\:accent-teal-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(15 118 110);
+  }
+}
+
+@mixin sm\:accent-teal-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(17 94 89);
+  }
+}
+
+@mixin sm\:accent-teal-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(19 78 74);
+  }
+}
+
+@mixin sm\:accent-teal-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(4 47 46);
+  }
+}
+
+@mixin sm\:accent-cyan-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(236 254 255);
+  }
+}
+
+@mixin sm\:accent-cyan-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(207 250 254);
+  }
+}
+
+@mixin sm\:accent-cyan-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(165 243 252);
+  }
+}
+
+@mixin sm\:accent-cyan-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(103 232 249);
+  }
+}
+
+@mixin sm\:accent-cyan-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(34 211 238);
+  }
+}
+
+@mixin sm\:accent-cyan-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(6 182 212);
+  }
+}
+
+@mixin sm\:accent-cyan-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(8 145 178);
+  }
+}
+
+@mixin sm\:accent-cyan-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(14 116 144);
+  }
+}
+
+@mixin sm\:accent-cyan-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(21 94 117);
+  }
+}
+
+@mixin sm\:accent-cyan-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(22 78 99);
+  }
+}
+
+@mixin sm\:accent-cyan-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(8 51 68);
+  }
+}
+
+@mixin sm\:accent-sky-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(240 249 255);
+  }
+}
+
+@mixin sm\:accent-sky-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(224 242 254);
+  }
+}
+
+@mixin sm\:accent-sky-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(186 230 253);
+  }
+}
+
+@mixin sm\:accent-sky-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(125 211 252);
+  }
+}
+
+@mixin sm\:accent-sky-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(56 189 248);
+  }
+}
+
+@mixin sm\:accent-sky-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(14 165 233);
+  }
+}
+
+@mixin sm\:accent-sky-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(2 132 199);
+  }
+}
+
+@mixin sm\:accent-sky-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(3 105 161);
+  }
+}
+
+@mixin sm\:accent-sky-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(7 89 133);
+  }
+}
+
+@mixin sm\:accent-sky-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(12 74 110);
+  }
+}
+
+@mixin sm\:accent-sky-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(8 47 73);
+  }
+}
+
+@mixin sm\:accent-blue-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(239 246 255);
+  }
+}
+
+@mixin sm\:accent-blue-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(219 234 254);
+  }
+}
+
+@mixin sm\:accent-blue-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(191 219 254);
+  }
+}
+
+@mixin sm\:accent-blue-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(147 197 253);
+  }
+}
+
+@mixin sm\:accent-blue-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(96 165 250);
+  }
+}
+
+@mixin sm\:accent-blue-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(59 130 246);
+  }
+}
+
+@mixin sm\:accent-blue-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(37 99 235);
+  }
+}
+
+@mixin sm\:accent-blue-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(29 78 216);
+  }
+}
+
+@mixin sm\:accent-blue-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(30 64 175);
+  }
+}
+
+@mixin sm\:accent-blue-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(30 58 138);
+  }
+}
+
+@mixin sm\:accent-blue-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(23 37 84);
+  }
+}
+
+@mixin sm\:accent-indigo-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(238 242 255);
+  }
+}
+
+@mixin sm\:accent-indigo-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(224 231 255);
+  }
+}
+
+@mixin sm\:accent-indigo-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(199 210 254);
+  }
+}
+
+@mixin sm\:accent-indigo-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(165 180 252);
+  }
+}
+
+@mixin sm\:accent-indigo-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(129 140 248);
+  }
+}
+
+@mixin sm\:accent-indigo-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(99 102 241);
+  }
+}
+
+@mixin sm\:accent-indigo-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(79 70 229);
+  }
+}
+
+@mixin sm\:accent-indigo-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(67 56 202);
+  }
+}
+
+@mixin sm\:accent-indigo-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(55 48 163);
+  }
+}
+
+@mixin sm\:accent-indigo-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(49 46 129);
+  }
+}
+
+@mixin sm\:accent-indigo-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(30 27 75);
+  }
+}
+
+@mixin sm\:accent-violet-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(245 243 255);
+  }
+}
+
+@mixin sm\:accent-violet-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(237 233 254);
+  }
+}
+
+@mixin sm\:accent-violet-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(221 214 254);
+  }
+}
+
+@mixin sm\:accent-violet-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(196 181 253);
+  }
+}
+
+@mixin sm\:accent-violet-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(167 139 250);
+  }
+}
+
+@mixin sm\:accent-violet-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(139 92 246);
+  }
+}
+
+@mixin sm\:accent-violet-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(124 58 237);
+  }
+}
+
+@mixin sm\:accent-violet-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(109 40 217);
+  }
+}
+
+@mixin sm\:accent-violet-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(91 33 182);
+  }
+}
+
+@mixin sm\:accent-violet-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(76 29 149);
+  }
+}
+
+@mixin sm\:accent-violet-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(46 16 101);
+  }
+}
+
+@mixin sm\:accent-purple-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(250 245 255);
+  }
+}
+
+@mixin sm\:accent-purple-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(243 232 255);
+  }
+}
+
+@mixin sm\:accent-purple-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(233 213 255);
+  }
+}
+
+@mixin sm\:accent-purple-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(216 180 254);
+  }
+}
+
+@mixin sm\:accent-purple-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(192 132 252);
+  }
+}
+
+@mixin sm\:accent-purple-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(168 85 247);
+  }
+}
+
+@mixin sm\:accent-purple-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(147 51 234);
+  }
+}
+
+@mixin sm\:accent-purple-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(126 34 206);
+  }
+}
+
+@mixin sm\:accent-purple-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(107 33 168);
+  }
+}
+
+@mixin sm\:accent-purple-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(88 28 135);
+  }
+}
+
+@mixin sm\:accent-purple-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(59 7 100);
+  }
+}
+
+@mixin sm\:accent-fuchsia-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(253 244 255);
+  }
+}
+
+@mixin sm\:accent-fuchsia-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(250 232 255);
+  }
+}
+
+@mixin sm\:accent-fuchsia-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(245 208 254);
+  }
+}
+
+@mixin sm\:accent-fuchsia-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(240 171 252);
+  }
+}
+
+@mixin sm\:accent-fuchsia-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(232 121 249);
+  }
+}
+
+@mixin sm\:accent-fuchsia-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(217 70 239);
+  }
+}
+
+@mixin sm\:accent-fuchsia-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(192 38 211);
+  }
+}
+
+@mixin sm\:accent-fuchsia-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(162 28 175);
+  }
+}
+
+@mixin sm\:accent-fuchsia-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(134 25 143);
+  }
+}
+
+@mixin sm\:accent-fuchsia-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(112 26 117);
+  }
+}
+
+@mixin sm\:accent-fuchsia-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(74 4 78);
+  }
+}
+
+@mixin sm\:accent-pink-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(253 242 248);
+  }
+}
+
+@mixin sm\:accent-pink-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(252 231 243);
+  }
+}
+
+@mixin sm\:accent-pink-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(251 207 232);
+  }
+}
+
+@mixin sm\:accent-pink-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(249 168 212);
+  }
+}
+
+@mixin sm\:accent-pink-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(244 114 182);
+  }
+}
+
+@mixin sm\:accent-pink-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(236 72 153);
+  }
+}
+
+@mixin sm\:accent-pink-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(219 39 119);
+  }
+}
+
+@mixin sm\:accent-pink-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(190 24 93);
+  }
+}
+
+@mixin sm\:accent-pink-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(157 23 77);
+  }
+}
+
+@mixin sm\:accent-pink-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(131 24 67);
+  }
+}
+
+@mixin sm\:accent-pink-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(80 7 36);
+  }
+}
+
+@mixin sm\:accent-rose-50 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(255 241 242);
+  }
+}
+
+@mixin sm\:accent-rose-100 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(255 228 230);
+  }
+}
+
+@mixin sm\:accent-rose-200 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(254 205 211);
+  }
+}
+
+@mixin sm\:accent-rose-300 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(253 164 175);
+  }
+}
+
+@mixin sm\:accent-rose-400 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(251 113 133);
+  }
+}
+
+@mixin sm\:accent-rose-500 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(244 63 94);
+  }
+}
+
+@mixin sm\:accent-rose-600 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(225 29 72);
+  }
+}
+
+@mixin sm\:accent-rose-700 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(190 18 60);
+  }
+}
+
+@mixin sm\:accent-rose-800 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(159 18 57);
+  }
+}
+
+@mixin sm\:accent-rose-900 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(136 19 55);
+  }
+}
+
+@mixin sm\:accent-rose-950 {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: rgb(76 5 25);
+  }
+}
+
+@mixin sm\:accent-auto {
+  @media (min-width: $breakpoint-sm) {
+    accent-color: auto;
   }
 }
 
 
-@mixin md\:animate-none {
+@mixin md\:accent-inherit {
   @media (min-width: $breakpoint-md) {
-    animation: none;
+    accent-color: inherit;
   }
 }
 
-@mixin md\:animate-spin {
+@mixin md\:accent-current {
   @media (min-width: $breakpoint-md) {
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+    accent-color: currentColor;
   }
 }
 
-@mixin md\:animate-ping {
+@mixin md\:accent-transparent {
   @media (min-width: $breakpoint-md) {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  @keyframes ping {
-
-    75%,
-    100% {
-      transform: scale(2);
-      opacity: 0;
-    }
+    accent-color: transparent;
   }
 }
 
-@mixin md\:animate-pulse {
+@mixin md\:accent-black {
   @media (min-width: $breakpoint-md) {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  @keyframes pulse {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
+    accent-color: rgb(0 0 0);
   }
 }
 
-@mixin md\:animate-bounce {
+@mixin md\:accent-white {
   @media (min-width: $breakpoint-md) {
-    animation: bounce 1s infinite;
+    accent-color: rgb(255 255 255);
   }
+}
 
-  @keyframes bounce {
+@mixin md\:accent-slate-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(248 250 252);
+  }
+}
 
-    0%,
-    100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
+@mixin md\:accent-slate-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(241 245 249);
+  }
+}
 
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
+@mixin md\:accent-slate-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(226 232 240);
+  }
+}
+
+@mixin md\:accent-slate-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(203 213 225);
+  }
+}
+
+@mixin md\:accent-slate-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(148 163 184);
+  }
+}
+
+@mixin md\:accent-slate-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(100 116 139);
+  }
+}
+
+@mixin md\:accent-slate-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(71 85 105);
+  }
+}
+
+@mixin md\:accent-slate-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(51 65 85);
+  }
+}
+
+@mixin md\:accent-slate-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(30 41 59);
+  }
+}
+
+@mixin md\:accent-slate-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(15 23 42);
+  }
+}
+
+@mixin md\:accent-slate-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(2 6 23);
+  }
+}
+
+@mixin md\:accent-gray-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(249 250 251);
+  }
+}
+
+@mixin md\:accent-gray-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(243 244 246);
+  }
+}
+
+@mixin md\:accent-gray-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(229 231 235);
+  }
+}
+
+@mixin md\:accent-gray-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(209 213 219);
+  }
+}
+
+@mixin md\:accent-gray-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(156 163 175);
+  }
+}
+
+@mixin md\:accent-gray-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(107 114 128);
+  }
+}
+
+@mixin md\:accent-gray-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(75 85 99);
+  }
+}
+
+@mixin md\:accent-gray-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(55 65 81);
+  }
+}
+
+@mixin md\:accent-gray-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(31 41 55);
+  }
+}
+
+@mixin md\:accent-gray-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(17 24 39);
+  }
+}
+
+@mixin md\:accent-gray-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(3 7 18);
+  }
+}
+
+@mixin md\:accent-zinc-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin md\:accent-zinc-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(244 244 245);
+  }
+}
+
+@mixin md\:accent-zinc-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(228 228 231);
+  }
+}
+
+@mixin md\:accent-zinc-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(212 212 216);
+  }
+}
+
+@mixin md\:accent-zinc-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(161 161 170);
+  }
+}
+
+@mixin md\:accent-zinc-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(113 113 122);
+  }
+}
+
+@mixin md\:accent-zinc-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(82 82 91);
+  }
+}
+
+@mixin md\:accent-zinc-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(63 63 70);
+  }
+}
+
+@mixin md\:accent-zinc-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(39 39 42);
+  }
+}
+
+@mixin md\:accent-zinc-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(24 24 27);
+  }
+}
+
+@mixin md\:accent-zinc-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(9 9 11);
+  }
+}
+
+@mixin md\:accent-neutral-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin md\:accent-neutral-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(245 245 245);
+  }
+}
+
+@mixin md\:accent-neutral-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(229 229 229);
+  }
+}
+
+@mixin md\:accent-neutral-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(212 212 212);
+  }
+}
+
+@mixin md\:accent-neutral-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(163 163 163);
+  }
+}
+
+@mixin md\:accent-neutral-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(115 115 115);
+  }
+}
+
+@mixin md\:accent-neutral-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(82 82 82);
+  }
+}
+
+@mixin md\:accent-neutral-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(64 64 64);
+  }
+}
+
+@mixin md\:accent-neutral-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(38 38 38);
+  }
+}
+
+@mixin md\:accent-neutral-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(23 23 23);
+  }
+}
+
+@mixin md\:accent-neutral-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(10 10 10);
+  }
+}
+
+@mixin md\:accent-stone-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(250 250 249);
+  }
+}
+
+@mixin md\:accent-stone-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(245 245 244);
+  }
+}
+
+@mixin md\:accent-stone-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(231 229 228);
+  }
+}
+
+@mixin md\:accent-stone-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(214 211 209);
+  }
+}
+
+@mixin md\:accent-stone-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(168 162 158);
+  }
+}
+
+@mixin md\:accent-stone-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(120 113 108);
+  }
+}
+
+@mixin md\:accent-stone-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(87 83 78);
+  }
+}
+
+@mixin md\:accent-stone-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(68 64 60);
+  }
+}
+
+@mixin md\:accent-stone-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(41 37 36);
+  }
+}
+
+@mixin md\:accent-stone-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(28 25 23);
+  }
+}
+
+@mixin md\:accent-stone-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(12 10 9);
+  }
+}
+
+@mixin md\:accent-red-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(254 242 242);
+  }
+}
+
+@mixin md\:accent-red-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(254 226 226);
+  }
+}
+
+@mixin md\:accent-red-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(254 202 202);
+  }
+}
+
+@mixin md\:accent-red-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(252 165 165);
+  }
+}
+
+@mixin md\:accent-red-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(248 113 113);
+  }
+}
+
+@mixin md\:accent-red-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(239 68 68);
+  }
+}
+
+@mixin md\:accent-red-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(220 38 38);
+  }
+}
+
+@mixin md\:accent-red-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(185 28 28);
+  }
+}
+
+@mixin md\:accent-red-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(153 27 27);
+  }
+}
+
+@mixin md\:accent-red-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(127 29 29);
+  }
+}
+
+@mixin md\:accent-red-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(69 10 10);
+  }
+}
+
+@mixin md\:accent-orange-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(255 247 237);
+  }
+}
+
+@mixin md\:accent-orange-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(255 237 213);
+  }
+}
+
+@mixin md\:accent-orange-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(254 215 170);
+  }
+}
+
+@mixin md\:accent-orange-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(253 186 116);
+  }
+}
+
+@mixin md\:accent-orange-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(251 146 60);
+  }
+}
+
+@mixin md\:accent-orange-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(249 115 22);
+  }
+}
+
+@mixin md\:accent-orange-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(234 88 12);
+  }
+}
+
+@mixin md\:accent-orange-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(194 65 12);
+  }
+}
+
+@mixin md\:accent-orange-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(154 52 18);
+  }
+}
+
+@mixin md\:accent-orange-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(124 45 18);
+  }
+}
+
+@mixin md\:accent-orange-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(67 20 7);
+  }
+}
+
+@mixin md\:accent-amber-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(255 251 235);
+  }
+}
+
+@mixin md\:accent-amber-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(254 243 199);
+  }
+}
+
+@mixin md\:accent-amber-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(253 230 138);
+  }
+}
+
+@mixin md\:accent-amber-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(252 211 77);
+  }
+}
+
+@mixin md\:accent-amber-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(251 191 36);
+  }
+}
+
+@mixin md\:accent-amber-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(245 158 11);
+  }
+}
+
+@mixin md\:accent-amber-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(217 119 6);
+  }
+}
+
+@mixin md\:accent-amber-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(180 83 9);
+  }
+}
+
+@mixin md\:accent-amber-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(146 64 14);
+  }
+}
+
+@mixin md\:accent-amber-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(120 53 15);
+  }
+}
+
+@mixin md\:accent-amber-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(69 26 3);
+  }
+}
+
+@mixin md\:accent-yellow-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(254 252 232);
+  }
+}
+
+@mixin md\:accent-yellow-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(254 249 195);
+  }
+}
+
+@mixin md\:accent-yellow-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(254 240 138);
+  }
+}
+
+@mixin md\:accent-yellow-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(253 224 71);
+  }
+}
+
+@mixin md\:accent-yellow-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(250 204 21);
+  }
+}
+
+@mixin md\:accent-yellow-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(234 179 8);
+  }
+}
+
+@mixin md\:accent-yellow-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(202 138 4);
+  }
+}
+
+@mixin md\:accent-yellow-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(161 98 7);
+  }
+}
+
+@mixin md\:accent-yellow-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(133 77 14);
+  }
+}
+
+@mixin md\:accent-yellow-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(113 63 18);
+  }
+}
+
+@mixin md\:accent-yellow-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(66 32 6);
+  }
+}
+
+@mixin md\:accent-lime-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(247 254 231);
+  }
+}
+
+@mixin md\:accent-lime-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(236 252 203);
+  }
+}
+
+@mixin md\:accent-lime-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(217 249 157);
+  }
+}
+
+@mixin md\:accent-lime-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(190 242 100);
+  }
+}
+
+@mixin md\:accent-lime-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(163 230 53);
+  }
+}
+
+@mixin md\:accent-lime-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(132 204 22);
+  }
+}
+
+@mixin md\:accent-lime-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(101 163 13);
+  }
+}
+
+@mixin md\:accent-lime-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(77 124 15);
+  }
+}
+
+@mixin md\:accent-lime-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(63 98 18);
+  }
+}
+
+@mixin md\:accent-lime-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(54 83 20);
+  }
+}
+
+@mixin md\:accent-lime-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(26 46 5);
+  }
+}
+
+@mixin md\:accent-green-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(240 253 244);
+  }
+}
+
+@mixin md\:accent-green-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(220 252 231);
+  }
+}
+
+@mixin md\:accent-green-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(187 247 208);
+  }
+}
+
+@mixin md\:accent-green-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(134 239 172);
+  }
+}
+
+@mixin md\:accent-green-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(74 222 128);
+  }
+}
+
+@mixin md\:accent-green-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(34 197 94);
+  }
+}
+
+@mixin md\:accent-green-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(22 163 74);
+  }
+}
+
+@mixin md\:accent-green-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(21 128 61);
+  }
+}
+
+@mixin md\:accent-green-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(22 101 52);
+  }
+}
+
+@mixin md\:accent-green-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(20 83 45);
+  }
+}
+
+@mixin md\:accent-green-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(5 46 22);
+  }
+}
+
+@mixin md\:accent-emerald-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(236 253 245);
+  }
+}
+
+@mixin md\:accent-emerald-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(209 250 229);
+  }
+}
+
+@mixin md\:accent-emerald-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(167 243 208);
+  }
+}
+
+@mixin md\:accent-emerald-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(110 231 183);
+  }
+}
+
+@mixin md\:accent-emerald-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(52 211 153);
+  }
+}
+
+@mixin md\:accent-emerald-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(16 185 129);
+  }
+}
+
+@mixin md\:accent-emerald-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(5 150 105);
+  }
+}
+
+@mixin md\:accent-emerald-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(4 120 87);
+  }
+}
+
+@mixin md\:accent-emerald-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(6 95 70);
+  }
+}
+
+@mixin md\:accent-emerald-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(6 78 59);
+  }
+}
+
+@mixin md\:accent-emerald-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(2 44 34);
+  }
+}
+
+@mixin md\:accent-teal-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(240 253 250);
+  }
+}
+
+@mixin md\:accent-teal-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(204 251 241);
+  }
+}
+
+@mixin md\:accent-teal-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(153 246 228);
+  }
+}
+
+@mixin md\:accent-teal-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(94 234 212);
+  }
+}
+
+@mixin md\:accent-teal-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(45 212 191);
+  }
+}
+
+@mixin md\:accent-teal-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(20 184 166);
+  }
+}
+
+@mixin md\:accent-teal-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(13 148 136);
+  }
+}
+
+@mixin md\:accent-teal-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(15 118 110);
+  }
+}
+
+@mixin md\:accent-teal-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(17 94 89);
+  }
+}
+
+@mixin md\:accent-teal-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(19 78 74);
+  }
+}
+
+@mixin md\:accent-teal-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(4 47 46);
+  }
+}
+
+@mixin md\:accent-cyan-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(236 254 255);
+  }
+}
+
+@mixin md\:accent-cyan-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(207 250 254);
+  }
+}
+
+@mixin md\:accent-cyan-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(165 243 252);
+  }
+}
+
+@mixin md\:accent-cyan-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(103 232 249);
+  }
+}
+
+@mixin md\:accent-cyan-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(34 211 238);
+  }
+}
+
+@mixin md\:accent-cyan-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(6 182 212);
+  }
+}
+
+@mixin md\:accent-cyan-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(8 145 178);
+  }
+}
+
+@mixin md\:accent-cyan-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(14 116 144);
+  }
+}
+
+@mixin md\:accent-cyan-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(21 94 117);
+  }
+}
+
+@mixin md\:accent-cyan-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(22 78 99);
+  }
+}
+
+@mixin md\:accent-cyan-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(8 51 68);
+  }
+}
+
+@mixin md\:accent-sky-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(240 249 255);
+  }
+}
+
+@mixin md\:accent-sky-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(224 242 254);
+  }
+}
+
+@mixin md\:accent-sky-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(186 230 253);
+  }
+}
+
+@mixin md\:accent-sky-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(125 211 252);
+  }
+}
+
+@mixin md\:accent-sky-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(56 189 248);
+  }
+}
+
+@mixin md\:accent-sky-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(14 165 233);
+  }
+}
+
+@mixin md\:accent-sky-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(2 132 199);
+  }
+}
+
+@mixin md\:accent-sky-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(3 105 161);
+  }
+}
+
+@mixin md\:accent-sky-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(7 89 133);
+  }
+}
+
+@mixin md\:accent-sky-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(12 74 110);
+  }
+}
+
+@mixin md\:accent-sky-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(8 47 73);
+  }
+}
+
+@mixin md\:accent-blue-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(239 246 255);
+  }
+}
+
+@mixin md\:accent-blue-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(219 234 254);
+  }
+}
+
+@mixin md\:accent-blue-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(191 219 254);
+  }
+}
+
+@mixin md\:accent-blue-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(147 197 253);
+  }
+}
+
+@mixin md\:accent-blue-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(96 165 250);
+  }
+}
+
+@mixin md\:accent-blue-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(59 130 246);
+  }
+}
+
+@mixin md\:accent-blue-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(37 99 235);
+  }
+}
+
+@mixin md\:accent-blue-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(29 78 216);
+  }
+}
+
+@mixin md\:accent-blue-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(30 64 175);
+  }
+}
+
+@mixin md\:accent-blue-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(30 58 138);
+  }
+}
+
+@mixin md\:accent-blue-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(23 37 84);
+  }
+}
+
+@mixin md\:accent-indigo-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(238 242 255);
+  }
+}
+
+@mixin md\:accent-indigo-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(224 231 255);
+  }
+}
+
+@mixin md\:accent-indigo-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(199 210 254);
+  }
+}
+
+@mixin md\:accent-indigo-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(165 180 252);
+  }
+}
+
+@mixin md\:accent-indigo-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(129 140 248);
+  }
+}
+
+@mixin md\:accent-indigo-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(99 102 241);
+  }
+}
+
+@mixin md\:accent-indigo-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(79 70 229);
+  }
+}
+
+@mixin md\:accent-indigo-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(67 56 202);
+  }
+}
+
+@mixin md\:accent-indigo-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(55 48 163);
+  }
+}
+
+@mixin md\:accent-indigo-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(49 46 129);
+  }
+}
+
+@mixin md\:accent-indigo-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(30 27 75);
+  }
+}
+
+@mixin md\:accent-violet-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(245 243 255);
+  }
+}
+
+@mixin md\:accent-violet-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(237 233 254);
+  }
+}
+
+@mixin md\:accent-violet-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(221 214 254);
+  }
+}
+
+@mixin md\:accent-violet-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(196 181 253);
+  }
+}
+
+@mixin md\:accent-violet-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(167 139 250);
+  }
+}
+
+@mixin md\:accent-violet-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(139 92 246);
+  }
+}
+
+@mixin md\:accent-violet-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(124 58 237);
+  }
+}
+
+@mixin md\:accent-violet-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(109 40 217);
+  }
+}
+
+@mixin md\:accent-violet-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(91 33 182);
+  }
+}
+
+@mixin md\:accent-violet-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(76 29 149);
+  }
+}
+
+@mixin md\:accent-violet-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(46 16 101);
+  }
+}
+
+@mixin md\:accent-purple-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(250 245 255);
+  }
+}
+
+@mixin md\:accent-purple-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(243 232 255);
+  }
+}
+
+@mixin md\:accent-purple-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(233 213 255);
+  }
+}
+
+@mixin md\:accent-purple-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(216 180 254);
+  }
+}
+
+@mixin md\:accent-purple-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(192 132 252);
+  }
+}
+
+@mixin md\:accent-purple-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(168 85 247);
+  }
+}
+
+@mixin md\:accent-purple-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(147 51 234);
+  }
+}
+
+@mixin md\:accent-purple-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(126 34 206);
+  }
+}
+
+@mixin md\:accent-purple-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(107 33 168);
+  }
+}
+
+@mixin md\:accent-purple-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(88 28 135);
+  }
+}
+
+@mixin md\:accent-purple-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(59 7 100);
+  }
+}
+
+@mixin md\:accent-fuchsia-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(253 244 255);
+  }
+}
+
+@mixin md\:accent-fuchsia-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(250 232 255);
+  }
+}
+
+@mixin md\:accent-fuchsia-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(245 208 254);
+  }
+}
+
+@mixin md\:accent-fuchsia-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(240 171 252);
+  }
+}
+
+@mixin md\:accent-fuchsia-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(232 121 249);
+  }
+}
+
+@mixin md\:accent-fuchsia-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(217 70 239);
+  }
+}
+
+@mixin md\:accent-fuchsia-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(192 38 211);
+  }
+}
+
+@mixin md\:accent-fuchsia-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(162 28 175);
+  }
+}
+
+@mixin md\:accent-fuchsia-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(134 25 143);
+  }
+}
+
+@mixin md\:accent-fuchsia-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(112 26 117);
+  }
+}
+
+@mixin md\:accent-fuchsia-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(74 4 78);
+  }
+}
+
+@mixin md\:accent-pink-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(253 242 248);
+  }
+}
+
+@mixin md\:accent-pink-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(252 231 243);
+  }
+}
+
+@mixin md\:accent-pink-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(251 207 232);
+  }
+}
+
+@mixin md\:accent-pink-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(249 168 212);
+  }
+}
+
+@mixin md\:accent-pink-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(244 114 182);
+  }
+}
+
+@mixin md\:accent-pink-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(236 72 153);
+  }
+}
+
+@mixin md\:accent-pink-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(219 39 119);
+  }
+}
+
+@mixin md\:accent-pink-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(190 24 93);
+  }
+}
+
+@mixin md\:accent-pink-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(157 23 77);
+  }
+}
+
+@mixin md\:accent-pink-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(131 24 67);
+  }
+}
+
+@mixin md\:accent-pink-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(80 7 36);
+  }
+}
+
+@mixin md\:accent-rose-50 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(255 241 242);
+  }
+}
+
+@mixin md\:accent-rose-100 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(255 228 230);
+  }
+}
+
+@mixin md\:accent-rose-200 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(254 205 211);
+  }
+}
+
+@mixin md\:accent-rose-300 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(253 164 175);
+  }
+}
+
+@mixin md\:accent-rose-400 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(251 113 133);
+  }
+}
+
+@mixin md\:accent-rose-500 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(244 63 94);
+  }
+}
+
+@mixin md\:accent-rose-600 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(225 29 72);
+  }
+}
+
+@mixin md\:accent-rose-700 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(190 18 60);
+  }
+}
+
+@mixin md\:accent-rose-800 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(159 18 57);
+  }
+}
+
+@mixin md\:accent-rose-900 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(136 19 55);
+  }
+}
+
+@mixin md\:accent-rose-950 {
+  @media (min-width: $breakpoint-md) {
+    accent-color: rgb(76 5 25);
+  }
+}
+
+@mixin md\:accent-auto {
+  @media (min-width: $breakpoint-md) {
+    accent-color: auto;
   }
 }
 
 
-@mixin lg\:animate-none {
+@mixin lg\:accent-inherit {
   @media (min-width: $breakpoint-lg) {
-    animation: none;
+    accent-color: inherit;
   }
 }
 
-@mixin lg\:animate-spin {
+@mixin lg\:accent-current {
   @media (min-width: $breakpoint-lg) {
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+    accent-color: currentColor;
   }
 }
 
-@mixin lg\:animate-ping {
+@mixin lg\:accent-transparent {
   @media (min-width: $breakpoint-lg) {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  @keyframes ping {
-
-    75%,
-    100% {
-      transform: scale(2);
-      opacity: 0;
-    }
+    accent-color: transparent;
   }
 }
 
-@mixin lg\:animate-pulse {
+@mixin lg\:accent-black {
   @media (min-width: $breakpoint-lg) {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  @keyframes pulse {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
+    accent-color: rgb(0 0 0);
   }
 }
 
-@mixin lg\:animate-bounce {
+@mixin lg\:accent-white {
   @media (min-width: $breakpoint-lg) {
-    animation: bounce 1s infinite;
+    accent-color: rgb(255 255 255);
   }
+}
 
-  @keyframes bounce {
+@mixin lg\:accent-slate-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(248 250 252);
+  }
+}
 
-    0%,
-    100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
+@mixin lg\:accent-slate-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(241 245 249);
+  }
+}
 
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
+@mixin lg\:accent-slate-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(226 232 240);
+  }
+}
+
+@mixin lg\:accent-slate-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(203 213 225);
+  }
+}
+
+@mixin lg\:accent-slate-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(148 163 184);
+  }
+}
+
+@mixin lg\:accent-slate-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(100 116 139);
+  }
+}
+
+@mixin lg\:accent-slate-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(71 85 105);
+  }
+}
+
+@mixin lg\:accent-slate-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(51 65 85);
+  }
+}
+
+@mixin lg\:accent-slate-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(30 41 59);
+  }
+}
+
+@mixin lg\:accent-slate-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(15 23 42);
+  }
+}
+
+@mixin lg\:accent-slate-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(2 6 23);
+  }
+}
+
+@mixin lg\:accent-gray-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(249 250 251);
+  }
+}
+
+@mixin lg\:accent-gray-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(243 244 246);
+  }
+}
+
+@mixin lg\:accent-gray-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(229 231 235);
+  }
+}
+
+@mixin lg\:accent-gray-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(209 213 219);
+  }
+}
+
+@mixin lg\:accent-gray-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(156 163 175);
+  }
+}
+
+@mixin lg\:accent-gray-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(107 114 128);
+  }
+}
+
+@mixin lg\:accent-gray-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(75 85 99);
+  }
+}
+
+@mixin lg\:accent-gray-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(55 65 81);
+  }
+}
+
+@mixin lg\:accent-gray-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(31 41 55);
+  }
+}
+
+@mixin lg\:accent-gray-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(17 24 39);
+  }
+}
+
+@mixin lg\:accent-gray-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(3 7 18);
+  }
+}
+
+@mixin lg\:accent-zinc-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin lg\:accent-zinc-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(244 244 245);
+  }
+}
+
+@mixin lg\:accent-zinc-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(228 228 231);
+  }
+}
+
+@mixin lg\:accent-zinc-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(212 212 216);
+  }
+}
+
+@mixin lg\:accent-zinc-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(161 161 170);
+  }
+}
+
+@mixin lg\:accent-zinc-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(113 113 122);
+  }
+}
+
+@mixin lg\:accent-zinc-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(82 82 91);
+  }
+}
+
+@mixin lg\:accent-zinc-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(63 63 70);
+  }
+}
+
+@mixin lg\:accent-zinc-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(39 39 42);
+  }
+}
+
+@mixin lg\:accent-zinc-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(24 24 27);
+  }
+}
+
+@mixin lg\:accent-zinc-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(9 9 11);
+  }
+}
+
+@mixin lg\:accent-neutral-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin lg\:accent-neutral-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(245 245 245);
+  }
+}
+
+@mixin lg\:accent-neutral-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(229 229 229);
+  }
+}
+
+@mixin lg\:accent-neutral-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(212 212 212);
+  }
+}
+
+@mixin lg\:accent-neutral-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(163 163 163);
+  }
+}
+
+@mixin lg\:accent-neutral-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(115 115 115);
+  }
+}
+
+@mixin lg\:accent-neutral-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(82 82 82);
+  }
+}
+
+@mixin lg\:accent-neutral-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(64 64 64);
+  }
+}
+
+@mixin lg\:accent-neutral-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(38 38 38);
+  }
+}
+
+@mixin lg\:accent-neutral-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(23 23 23);
+  }
+}
+
+@mixin lg\:accent-neutral-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(10 10 10);
+  }
+}
+
+@mixin lg\:accent-stone-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(250 250 249);
+  }
+}
+
+@mixin lg\:accent-stone-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(245 245 244);
+  }
+}
+
+@mixin lg\:accent-stone-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(231 229 228);
+  }
+}
+
+@mixin lg\:accent-stone-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(214 211 209);
+  }
+}
+
+@mixin lg\:accent-stone-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(168 162 158);
+  }
+}
+
+@mixin lg\:accent-stone-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(120 113 108);
+  }
+}
+
+@mixin lg\:accent-stone-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(87 83 78);
+  }
+}
+
+@mixin lg\:accent-stone-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(68 64 60);
+  }
+}
+
+@mixin lg\:accent-stone-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(41 37 36);
+  }
+}
+
+@mixin lg\:accent-stone-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(28 25 23);
+  }
+}
+
+@mixin lg\:accent-stone-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(12 10 9);
+  }
+}
+
+@mixin lg\:accent-red-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(254 242 242);
+  }
+}
+
+@mixin lg\:accent-red-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(254 226 226);
+  }
+}
+
+@mixin lg\:accent-red-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(254 202 202);
+  }
+}
+
+@mixin lg\:accent-red-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(252 165 165);
+  }
+}
+
+@mixin lg\:accent-red-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(248 113 113);
+  }
+}
+
+@mixin lg\:accent-red-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(239 68 68);
+  }
+}
+
+@mixin lg\:accent-red-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(220 38 38);
+  }
+}
+
+@mixin lg\:accent-red-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(185 28 28);
+  }
+}
+
+@mixin lg\:accent-red-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(153 27 27);
+  }
+}
+
+@mixin lg\:accent-red-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(127 29 29);
+  }
+}
+
+@mixin lg\:accent-red-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(69 10 10);
+  }
+}
+
+@mixin lg\:accent-orange-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(255 247 237);
+  }
+}
+
+@mixin lg\:accent-orange-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(255 237 213);
+  }
+}
+
+@mixin lg\:accent-orange-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(254 215 170);
+  }
+}
+
+@mixin lg\:accent-orange-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(253 186 116);
+  }
+}
+
+@mixin lg\:accent-orange-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(251 146 60);
+  }
+}
+
+@mixin lg\:accent-orange-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(249 115 22);
+  }
+}
+
+@mixin lg\:accent-orange-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(234 88 12);
+  }
+}
+
+@mixin lg\:accent-orange-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(194 65 12);
+  }
+}
+
+@mixin lg\:accent-orange-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(154 52 18);
+  }
+}
+
+@mixin lg\:accent-orange-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(124 45 18);
+  }
+}
+
+@mixin lg\:accent-orange-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(67 20 7);
+  }
+}
+
+@mixin lg\:accent-amber-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(255 251 235);
+  }
+}
+
+@mixin lg\:accent-amber-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(254 243 199);
+  }
+}
+
+@mixin lg\:accent-amber-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(253 230 138);
+  }
+}
+
+@mixin lg\:accent-amber-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(252 211 77);
+  }
+}
+
+@mixin lg\:accent-amber-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(251 191 36);
+  }
+}
+
+@mixin lg\:accent-amber-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(245 158 11);
+  }
+}
+
+@mixin lg\:accent-amber-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(217 119 6);
+  }
+}
+
+@mixin lg\:accent-amber-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(180 83 9);
+  }
+}
+
+@mixin lg\:accent-amber-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(146 64 14);
+  }
+}
+
+@mixin lg\:accent-amber-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(120 53 15);
+  }
+}
+
+@mixin lg\:accent-amber-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(69 26 3);
+  }
+}
+
+@mixin lg\:accent-yellow-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(254 252 232);
+  }
+}
+
+@mixin lg\:accent-yellow-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(254 249 195);
+  }
+}
+
+@mixin lg\:accent-yellow-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(254 240 138);
+  }
+}
+
+@mixin lg\:accent-yellow-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(253 224 71);
+  }
+}
+
+@mixin lg\:accent-yellow-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(250 204 21);
+  }
+}
+
+@mixin lg\:accent-yellow-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(234 179 8);
+  }
+}
+
+@mixin lg\:accent-yellow-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(202 138 4);
+  }
+}
+
+@mixin lg\:accent-yellow-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(161 98 7);
+  }
+}
+
+@mixin lg\:accent-yellow-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(133 77 14);
+  }
+}
+
+@mixin lg\:accent-yellow-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(113 63 18);
+  }
+}
+
+@mixin lg\:accent-yellow-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(66 32 6);
+  }
+}
+
+@mixin lg\:accent-lime-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(247 254 231);
+  }
+}
+
+@mixin lg\:accent-lime-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(236 252 203);
+  }
+}
+
+@mixin lg\:accent-lime-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(217 249 157);
+  }
+}
+
+@mixin lg\:accent-lime-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(190 242 100);
+  }
+}
+
+@mixin lg\:accent-lime-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(163 230 53);
+  }
+}
+
+@mixin lg\:accent-lime-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(132 204 22);
+  }
+}
+
+@mixin lg\:accent-lime-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(101 163 13);
+  }
+}
+
+@mixin lg\:accent-lime-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(77 124 15);
+  }
+}
+
+@mixin lg\:accent-lime-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(63 98 18);
+  }
+}
+
+@mixin lg\:accent-lime-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(54 83 20);
+  }
+}
+
+@mixin lg\:accent-lime-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(26 46 5);
+  }
+}
+
+@mixin lg\:accent-green-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(240 253 244);
+  }
+}
+
+@mixin lg\:accent-green-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(220 252 231);
+  }
+}
+
+@mixin lg\:accent-green-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(187 247 208);
+  }
+}
+
+@mixin lg\:accent-green-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(134 239 172);
+  }
+}
+
+@mixin lg\:accent-green-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(74 222 128);
+  }
+}
+
+@mixin lg\:accent-green-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(34 197 94);
+  }
+}
+
+@mixin lg\:accent-green-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(22 163 74);
+  }
+}
+
+@mixin lg\:accent-green-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(21 128 61);
+  }
+}
+
+@mixin lg\:accent-green-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(22 101 52);
+  }
+}
+
+@mixin lg\:accent-green-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(20 83 45);
+  }
+}
+
+@mixin lg\:accent-green-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(5 46 22);
+  }
+}
+
+@mixin lg\:accent-emerald-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(236 253 245);
+  }
+}
+
+@mixin lg\:accent-emerald-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(209 250 229);
+  }
+}
+
+@mixin lg\:accent-emerald-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(167 243 208);
+  }
+}
+
+@mixin lg\:accent-emerald-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(110 231 183);
+  }
+}
+
+@mixin lg\:accent-emerald-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(52 211 153);
+  }
+}
+
+@mixin lg\:accent-emerald-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(16 185 129);
+  }
+}
+
+@mixin lg\:accent-emerald-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(5 150 105);
+  }
+}
+
+@mixin lg\:accent-emerald-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(4 120 87);
+  }
+}
+
+@mixin lg\:accent-emerald-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(6 95 70);
+  }
+}
+
+@mixin lg\:accent-emerald-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(6 78 59);
+  }
+}
+
+@mixin lg\:accent-emerald-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(2 44 34);
+  }
+}
+
+@mixin lg\:accent-teal-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(240 253 250);
+  }
+}
+
+@mixin lg\:accent-teal-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(204 251 241);
+  }
+}
+
+@mixin lg\:accent-teal-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(153 246 228);
+  }
+}
+
+@mixin lg\:accent-teal-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(94 234 212);
+  }
+}
+
+@mixin lg\:accent-teal-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(45 212 191);
+  }
+}
+
+@mixin lg\:accent-teal-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(20 184 166);
+  }
+}
+
+@mixin lg\:accent-teal-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(13 148 136);
+  }
+}
+
+@mixin lg\:accent-teal-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(15 118 110);
+  }
+}
+
+@mixin lg\:accent-teal-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(17 94 89);
+  }
+}
+
+@mixin lg\:accent-teal-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(19 78 74);
+  }
+}
+
+@mixin lg\:accent-teal-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(4 47 46);
+  }
+}
+
+@mixin lg\:accent-cyan-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(236 254 255);
+  }
+}
+
+@mixin lg\:accent-cyan-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(207 250 254);
+  }
+}
+
+@mixin lg\:accent-cyan-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(165 243 252);
+  }
+}
+
+@mixin lg\:accent-cyan-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(103 232 249);
+  }
+}
+
+@mixin lg\:accent-cyan-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(34 211 238);
+  }
+}
+
+@mixin lg\:accent-cyan-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(6 182 212);
+  }
+}
+
+@mixin lg\:accent-cyan-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(8 145 178);
+  }
+}
+
+@mixin lg\:accent-cyan-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(14 116 144);
+  }
+}
+
+@mixin lg\:accent-cyan-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(21 94 117);
+  }
+}
+
+@mixin lg\:accent-cyan-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(22 78 99);
+  }
+}
+
+@mixin lg\:accent-cyan-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(8 51 68);
+  }
+}
+
+@mixin lg\:accent-sky-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(240 249 255);
+  }
+}
+
+@mixin lg\:accent-sky-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(224 242 254);
+  }
+}
+
+@mixin lg\:accent-sky-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(186 230 253);
+  }
+}
+
+@mixin lg\:accent-sky-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(125 211 252);
+  }
+}
+
+@mixin lg\:accent-sky-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(56 189 248);
+  }
+}
+
+@mixin lg\:accent-sky-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(14 165 233);
+  }
+}
+
+@mixin lg\:accent-sky-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(2 132 199);
+  }
+}
+
+@mixin lg\:accent-sky-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(3 105 161);
+  }
+}
+
+@mixin lg\:accent-sky-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(7 89 133);
+  }
+}
+
+@mixin lg\:accent-sky-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(12 74 110);
+  }
+}
+
+@mixin lg\:accent-sky-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(8 47 73);
+  }
+}
+
+@mixin lg\:accent-blue-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(239 246 255);
+  }
+}
+
+@mixin lg\:accent-blue-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(219 234 254);
+  }
+}
+
+@mixin lg\:accent-blue-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(191 219 254);
+  }
+}
+
+@mixin lg\:accent-blue-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(147 197 253);
+  }
+}
+
+@mixin lg\:accent-blue-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(96 165 250);
+  }
+}
+
+@mixin lg\:accent-blue-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(59 130 246);
+  }
+}
+
+@mixin lg\:accent-blue-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(37 99 235);
+  }
+}
+
+@mixin lg\:accent-blue-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(29 78 216);
+  }
+}
+
+@mixin lg\:accent-blue-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(30 64 175);
+  }
+}
+
+@mixin lg\:accent-blue-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(30 58 138);
+  }
+}
+
+@mixin lg\:accent-blue-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(23 37 84);
+  }
+}
+
+@mixin lg\:accent-indigo-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(238 242 255);
+  }
+}
+
+@mixin lg\:accent-indigo-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(224 231 255);
+  }
+}
+
+@mixin lg\:accent-indigo-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(199 210 254);
+  }
+}
+
+@mixin lg\:accent-indigo-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(165 180 252);
+  }
+}
+
+@mixin lg\:accent-indigo-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(129 140 248);
+  }
+}
+
+@mixin lg\:accent-indigo-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(99 102 241);
+  }
+}
+
+@mixin lg\:accent-indigo-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(79 70 229);
+  }
+}
+
+@mixin lg\:accent-indigo-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(67 56 202);
+  }
+}
+
+@mixin lg\:accent-indigo-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(55 48 163);
+  }
+}
+
+@mixin lg\:accent-indigo-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(49 46 129);
+  }
+}
+
+@mixin lg\:accent-indigo-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(30 27 75);
+  }
+}
+
+@mixin lg\:accent-violet-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(245 243 255);
+  }
+}
+
+@mixin lg\:accent-violet-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(237 233 254);
+  }
+}
+
+@mixin lg\:accent-violet-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(221 214 254);
+  }
+}
+
+@mixin lg\:accent-violet-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(196 181 253);
+  }
+}
+
+@mixin lg\:accent-violet-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(167 139 250);
+  }
+}
+
+@mixin lg\:accent-violet-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(139 92 246);
+  }
+}
+
+@mixin lg\:accent-violet-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(124 58 237);
+  }
+}
+
+@mixin lg\:accent-violet-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(109 40 217);
+  }
+}
+
+@mixin lg\:accent-violet-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(91 33 182);
+  }
+}
+
+@mixin lg\:accent-violet-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(76 29 149);
+  }
+}
+
+@mixin lg\:accent-violet-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(46 16 101);
+  }
+}
+
+@mixin lg\:accent-purple-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(250 245 255);
+  }
+}
+
+@mixin lg\:accent-purple-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(243 232 255);
+  }
+}
+
+@mixin lg\:accent-purple-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(233 213 255);
+  }
+}
+
+@mixin lg\:accent-purple-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(216 180 254);
+  }
+}
+
+@mixin lg\:accent-purple-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(192 132 252);
+  }
+}
+
+@mixin lg\:accent-purple-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(168 85 247);
+  }
+}
+
+@mixin lg\:accent-purple-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(147 51 234);
+  }
+}
+
+@mixin lg\:accent-purple-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(126 34 206);
+  }
+}
+
+@mixin lg\:accent-purple-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(107 33 168);
+  }
+}
+
+@mixin lg\:accent-purple-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(88 28 135);
+  }
+}
+
+@mixin lg\:accent-purple-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(59 7 100);
+  }
+}
+
+@mixin lg\:accent-fuchsia-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(253 244 255);
+  }
+}
+
+@mixin lg\:accent-fuchsia-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(250 232 255);
+  }
+}
+
+@mixin lg\:accent-fuchsia-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(245 208 254);
+  }
+}
+
+@mixin lg\:accent-fuchsia-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(240 171 252);
+  }
+}
+
+@mixin lg\:accent-fuchsia-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(232 121 249);
+  }
+}
+
+@mixin lg\:accent-fuchsia-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(217 70 239);
+  }
+}
+
+@mixin lg\:accent-fuchsia-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(192 38 211);
+  }
+}
+
+@mixin lg\:accent-fuchsia-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(162 28 175);
+  }
+}
+
+@mixin lg\:accent-fuchsia-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(134 25 143);
+  }
+}
+
+@mixin lg\:accent-fuchsia-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(112 26 117);
+  }
+}
+
+@mixin lg\:accent-fuchsia-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(74 4 78);
+  }
+}
+
+@mixin lg\:accent-pink-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(253 242 248);
+  }
+}
+
+@mixin lg\:accent-pink-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(252 231 243);
+  }
+}
+
+@mixin lg\:accent-pink-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(251 207 232);
+  }
+}
+
+@mixin lg\:accent-pink-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(249 168 212);
+  }
+}
+
+@mixin lg\:accent-pink-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(244 114 182);
+  }
+}
+
+@mixin lg\:accent-pink-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(236 72 153);
+  }
+}
+
+@mixin lg\:accent-pink-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(219 39 119);
+  }
+}
+
+@mixin lg\:accent-pink-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(190 24 93);
+  }
+}
+
+@mixin lg\:accent-pink-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(157 23 77);
+  }
+}
+
+@mixin lg\:accent-pink-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(131 24 67);
+  }
+}
+
+@mixin lg\:accent-pink-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(80 7 36);
+  }
+}
+
+@mixin lg\:accent-rose-50 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(255 241 242);
+  }
+}
+
+@mixin lg\:accent-rose-100 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(255 228 230);
+  }
+}
+
+@mixin lg\:accent-rose-200 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(254 205 211);
+  }
+}
+
+@mixin lg\:accent-rose-300 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(253 164 175);
+  }
+}
+
+@mixin lg\:accent-rose-400 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(251 113 133);
+  }
+}
+
+@mixin lg\:accent-rose-500 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(244 63 94);
+  }
+}
+
+@mixin lg\:accent-rose-600 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(225 29 72);
+  }
+}
+
+@mixin lg\:accent-rose-700 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(190 18 60);
+  }
+}
+
+@mixin lg\:accent-rose-800 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(159 18 57);
+  }
+}
+
+@mixin lg\:accent-rose-900 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(136 19 55);
+  }
+}
+
+@mixin lg\:accent-rose-950 {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: rgb(76 5 25);
+  }
+}
+
+@mixin lg\:accent-auto {
+  @media (min-width: $breakpoint-lg) {
+    accent-color: auto;
   }
 }
 
 
-@mixin xl\:animate-none {
+@mixin xl\:accent-inherit {
   @media (min-width: $breakpoint-xl) {
-    animation: none;
+    accent-color: inherit;
   }
 }
 
-@mixin xl\:animate-spin {
+@mixin xl\:accent-current {
   @media (min-width: $breakpoint-xl) {
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+    accent-color: currentColor;
   }
 }
 
-@mixin xl\:animate-ping {
+@mixin xl\:accent-transparent {
   @media (min-width: $breakpoint-xl) {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  @keyframes ping {
-
-    75%,
-    100% {
-      transform: scale(2);
-      opacity: 0;
-    }
+    accent-color: transparent;
   }
 }
 
-@mixin xl\:animate-pulse {
+@mixin xl\:accent-black {
   @media (min-width: $breakpoint-xl) {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  @keyframes pulse {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
+    accent-color: rgb(0 0 0);
   }
 }
 
-@mixin xl\:animate-bounce {
+@mixin xl\:accent-white {
   @media (min-width: $breakpoint-xl) {
-    animation: bounce 1s infinite;
+    accent-color: rgb(255 255 255);
   }
+}
 
-  @keyframes bounce {
+@mixin xl\:accent-slate-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(248 250 252);
+  }
+}
 
-    0%,
-    100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
+@mixin xl\:accent-slate-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(241 245 249);
+  }
+}
 
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
+@mixin xl\:accent-slate-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(226 232 240);
+  }
+}
+
+@mixin xl\:accent-slate-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(203 213 225);
+  }
+}
+
+@mixin xl\:accent-slate-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(148 163 184);
+  }
+}
+
+@mixin xl\:accent-slate-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(100 116 139);
+  }
+}
+
+@mixin xl\:accent-slate-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(71 85 105);
+  }
+}
+
+@mixin xl\:accent-slate-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(51 65 85);
+  }
+}
+
+@mixin xl\:accent-slate-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(30 41 59);
+  }
+}
+
+@mixin xl\:accent-slate-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(15 23 42);
+  }
+}
+
+@mixin xl\:accent-slate-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(2 6 23);
+  }
+}
+
+@mixin xl\:accent-gray-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(249 250 251);
+  }
+}
+
+@mixin xl\:accent-gray-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(243 244 246);
+  }
+}
+
+@mixin xl\:accent-gray-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(229 231 235);
+  }
+}
+
+@mixin xl\:accent-gray-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(209 213 219);
+  }
+}
+
+@mixin xl\:accent-gray-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(156 163 175);
+  }
+}
+
+@mixin xl\:accent-gray-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(107 114 128);
+  }
+}
+
+@mixin xl\:accent-gray-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(75 85 99);
+  }
+}
+
+@mixin xl\:accent-gray-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(55 65 81);
+  }
+}
+
+@mixin xl\:accent-gray-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(31 41 55);
+  }
+}
+
+@mixin xl\:accent-gray-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(17 24 39);
+  }
+}
+
+@mixin xl\:accent-gray-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(3 7 18);
+  }
+}
+
+@mixin xl\:accent-zinc-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin xl\:accent-zinc-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(244 244 245);
+  }
+}
+
+@mixin xl\:accent-zinc-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(228 228 231);
+  }
+}
+
+@mixin xl\:accent-zinc-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(212 212 216);
+  }
+}
+
+@mixin xl\:accent-zinc-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(161 161 170);
+  }
+}
+
+@mixin xl\:accent-zinc-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(113 113 122);
+  }
+}
+
+@mixin xl\:accent-zinc-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(82 82 91);
+  }
+}
+
+@mixin xl\:accent-zinc-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(63 63 70);
+  }
+}
+
+@mixin xl\:accent-zinc-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(39 39 42);
+  }
+}
+
+@mixin xl\:accent-zinc-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(24 24 27);
+  }
+}
+
+@mixin xl\:accent-zinc-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(9 9 11);
+  }
+}
+
+@mixin xl\:accent-neutral-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin xl\:accent-neutral-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(245 245 245);
+  }
+}
+
+@mixin xl\:accent-neutral-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(229 229 229);
+  }
+}
+
+@mixin xl\:accent-neutral-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(212 212 212);
+  }
+}
+
+@mixin xl\:accent-neutral-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(163 163 163);
+  }
+}
+
+@mixin xl\:accent-neutral-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(115 115 115);
+  }
+}
+
+@mixin xl\:accent-neutral-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(82 82 82);
+  }
+}
+
+@mixin xl\:accent-neutral-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(64 64 64);
+  }
+}
+
+@mixin xl\:accent-neutral-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(38 38 38);
+  }
+}
+
+@mixin xl\:accent-neutral-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(23 23 23);
+  }
+}
+
+@mixin xl\:accent-neutral-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(10 10 10);
+  }
+}
+
+@mixin xl\:accent-stone-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(250 250 249);
+  }
+}
+
+@mixin xl\:accent-stone-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(245 245 244);
+  }
+}
+
+@mixin xl\:accent-stone-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(231 229 228);
+  }
+}
+
+@mixin xl\:accent-stone-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(214 211 209);
+  }
+}
+
+@mixin xl\:accent-stone-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(168 162 158);
+  }
+}
+
+@mixin xl\:accent-stone-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(120 113 108);
+  }
+}
+
+@mixin xl\:accent-stone-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(87 83 78);
+  }
+}
+
+@mixin xl\:accent-stone-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(68 64 60);
+  }
+}
+
+@mixin xl\:accent-stone-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(41 37 36);
+  }
+}
+
+@mixin xl\:accent-stone-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(28 25 23);
+  }
+}
+
+@mixin xl\:accent-stone-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(12 10 9);
+  }
+}
+
+@mixin xl\:accent-red-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(254 242 242);
+  }
+}
+
+@mixin xl\:accent-red-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(254 226 226);
+  }
+}
+
+@mixin xl\:accent-red-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(254 202 202);
+  }
+}
+
+@mixin xl\:accent-red-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(252 165 165);
+  }
+}
+
+@mixin xl\:accent-red-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(248 113 113);
+  }
+}
+
+@mixin xl\:accent-red-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(239 68 68);
+  }
+}
+
+@mixin xl\:accent-red-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(220 38 38);
+  }
+}
+
+@mixin xl\:accent-red-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(185 28 28);
+  }
+}
+
+@mixin xl\:accent-red-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(153 27 27);
+  }
+}
+
+@mixin xl\:accent-red-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(127 29 29);
+  }
+}
+
+@mixin xl\:accent-red-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(69 10 10);
+  }
+}
+
+@mixin xl\:accent-orange-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(255 247 237);
+  }
+}
+
+@mixin xl\:accent-orange-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(255 237 213);
+  }
+}
+
+@mixin xl\:accent-orange-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(254 215 170);
+  }
+}
+
+@mixin xl\:accent-orange-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(253 186 116);
+  }
+}
+
+@mixin xl\:accent-orange-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(251 146 60);
+  }
+}
+
+@mixin xl\:accent-orange-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(249 115 22);
+  }
+}
+
+@mixin xl\:accent-orange-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(234 88 12);
+  }
+}
+
+@mixin xl\:accent-orange-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(194 65 12);
+  }
+}
+
+@mixin xl\:accent-orange-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(154 52 18);
+  }
+}
+
+@mixin xl\:accent-orange-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(124 45 18);
+  }
+}
+
+@mixin xl\:accent-orange-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(67 20 7);
+  }
+}
+
+@mixin xl\:accent-amber-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(255 251 235);
+  }
+}
+
+@mixin xl\:accent-amber-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(254 243 199);
+  }
+}
+
+@mixin xl\:accent-amber-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(253 230 138);
+  }
+}
+
+@mixin xl\:accent-amber-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(252 211 77);
+  }
+}
+
+@mixin xl\:accent-amber-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(251 191 36);
+  }
+}
+
+@mixin xl\:accent-amber-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(245 158 11);
+  }
+}
+
+@mixin xl\:accent-amber-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(217 119 6);
+  }
+}
+
+@mixin xl\:accent-amber-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(180 83 9);
+  }
+}
+
+@mixin xl\:accent-amber-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(146 64 14);
+  }
+}
+
+@mixin xl\:accent-amber-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(120 53 15);
+  }
+}
+
+@mixin xl\:accent-amber-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(69 26 3);
+  }
+}
+
+@mixin xl\:accent-yellow-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(254 252 232);
+  }
+}
+
+@mixin xl\:accent-yellow-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(254 249 195);
+  }
+}
+
+@mixin xl\:accent-yellow-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(254 240 138);
+  }
+}
+
+@mixin xl\:accent-yellow-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(253 224 71);
+  }
+}
+
+@mixin xl\:accent-yellow-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(250 204 21);
+  }
+}
+
+@mixin xl\:accent-yellow-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(234 179 8);
+  }
+}
+
+@mixin xl\:accent-yellow-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(202 138 4);
+  }
+}
+
+@mixin xl\:accent-yellow-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(161 98 7);
+  }
+}
+
+@mixin xl\:accent-yellow-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(133 77 14);
+  }
+}
+
+@mixin xl\:accent-yellow-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(113 63 18);
+  }
+}
+
+@mixin xl\:accent-yellow-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(66 32 6);
+  }
+}
+
+@mixin xl\:accent-lime-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(247 254 231);
+  }
+}
+
+@mixin xl\:accent-lime-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(236 252 203);
+  }
+}
+
+@mixin xl\:accent-lime-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(217 249 157);
+  }
+}
+
+@mixin xl\:accent-lime-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(190 242 100);
+  }
+}
+
+@mixin xl\:accent-lime-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(163 230 53);
+  }
+}
+
+@mixin xl\:accent-lime-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(132 204 22);
+  }
+}
+
+@mixin xl\:accent-lime-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(101 163 13);
+  }
+}
+
+@mixin xl\:accent-lime-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(77 124 15);
+  }
+}
+
+@mixin xl\:accent-lime-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(63 98 18);
+  }
+}
+
+@mixin xl\:accent-lime-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(54 83 20);
+  }
+}
+
+@mixin xl\:accent-lime-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(26 46 5);
+  }
+}
+
+@mixin xl\:accent-green-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(240 253 244);
+  }
+}
+
+@mixin xl\:accent-green-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(220 252 231);
+  }
+}
+
+@mixin xl\:accent-green-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(187 247 208);
+  }
+}
+
+@mixin xl\:accent-green-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(134 239 172);
+  }
+}
+
+@mixin xl\:accent-green-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(74 222 128);
+  }
+}
+
+@mixin xl\:accent-green-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(34 197 94);
+  }
+}
+
+@mixin xl\:accent-green-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(22 163 74);
+  }
+}
+
+@mixin xl\:accent-green-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(21 128 61);
+  }
+}
+
+@mixin xl\:accent-green-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(22 101 52);
+  }
+}
+
+@mixin xl\:accent-green-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(20 83 45);
+  }
+}
+
+@mixin xl\:accent-green-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(5 46 22);
+  }
+}
+
+@mixin xl\:accent-emerald-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(236 253 245);
+  }
+}
+
+@mixin xl\:accent-emerald-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(209 250 229);
+  }
+}
+
+@mixin xl\:accent-emerald-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(167 243 208);
+  }
+}
+
+@mixin xl\:accent-emerald-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(110 231 183);
+  }
+}
+
+@mixin xl\:accent-emerald-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(52 211 153);
+  }
+}
+
+@mixin xl\:accent-emerald-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(16 185 129);
+  }
+}
+
+@mixin xl\:accent-emerald-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(5 150 105);
+  }
+}
+
+@mixin xl\:accent-emerald-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(4 120 87);
+  }
+}
+
+@mixin xl\:accent-emerald-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(6 95 70);
+  }
+}
+
+@mixin xl\:accent-emerald-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(6 78 59);
+  }
+}
+
+@mixin xl\:accent-emerald-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(2 44 34);
+  }
+}
+
+@mixin xl\:accent-teal-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(240 253 250);
+  }
+}
+
+@mixin xl\:accent-teal-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(204 251 241);
+  }
+}
+
+@mixin xl\:accent-teal-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(153 246 228);
+  }
+}
+
+@mixin xl\:accent-teal-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(94 234 212);
+  }
+}
+
+@mixin xl\:accent-teal-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(45 212 191);
+  }
+}
+
+@mixin xl\:accent-teal-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(20 184 166);
+  }
+}
+
+@mixin xl\:accent-teal-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(13 148 136);
+  }
+}
+
+@mixin xl\:accent-teal-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(15 118 110);
+  }
+}
+
+@mixin xl\:accent-teal-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(17 94 89);
+  }
+}
+
+@mixin xl\:accent-teal-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(19 78 74);
+  }
+}
+
+@mixin xl\:accent-teal-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(4 47 46);
+  }
+}
+
+@mixin xl\:accent-cyan-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(236 254 255);
+  }
+}
+
+@mixin xl\:accent-cyan-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(207 250 254);
+  }
+}
+
+@mixin xl\:accent-cyan-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(165 243 252);
+  }
+}
+
+@mixin xl\:accent-cyan-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(103 232 249);
+  }
+}
+
+@mixin xl\:accent-cyan-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(34 211 238);
+  }
+}
+
+@mixin xl\:accent-cyan-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(6 182 212);
+  }
+}
+
+@mixin xl\:accent-cyan-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(8 145 178);
+  }
+}
+
+@mixin xl\:accent-cyan-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(14 116 144);
+  }
+}
+
+@mixin xl\:accent-cyan-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(21 94 117);
+  }
+}
+
+@mixin xl\:accent-cyan-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(22 78 99);
+  }
+}
+
+@mixin xl\:accent-cyan-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(8 51 68);
+  }
+}
+
+@mixin xl\:accent-sky-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(240 249 255);
+  }
+}
+
+@mixin xl\:accent-sky-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(224 242 254);
+  }
+}
+
+@mixin xl\:accent-sky-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(186 230 253);
+  }
+}
+
+@mixin xl\:accent-sky-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(125 211 252);
+  }
+}
+
+@mixin xl\:accent-sky-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(56 189 248);
+  }
+}
+
+@mixin xl\:accent-sky-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(14 165 233);
+  }
+}
+
+@mixin xl\:accent-sky-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(2 132 199);
+  }
+}
+
+@mixin xl\:accent-sky-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(3 105 161);
+  }
+}
+
+@mixin xl\:accent-sky-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(7 89 133);
+  }
+}
+
+@mixin xl\:accent-sky-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(12 74 110);
+  }
+}
+
+@mixin xl\:accent-sky-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(8 47 73);
+  }
+}
+
+@mixin xl\:accent-blue-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(239 246 255);
+  }
+}
+
+@mixin xl\:accent-blue-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(219 234 254);
+  }
+}
+
+@mixin xl\:accent-blue-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(191 219 254);
+  }
+}
+
+@mixin xl\:accent-blue-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(147 197 253);
+  }
+}
+
+@mixin xl\:accent-blue-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(96 165 250);
+  }
+}
+
+@mixin xl\:accent-blue-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(59 130 246);
+  }
+}
+
+@mixin xl\:accent-blue-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(37 99 235);
+  }
+}
+
+@mixin xl\:accent-blue-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(29 78 216);
+  }
+}
+
+@mixin xl\:accent-blue-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(30 64 175);
+  }
+}
+
+@mixin xl\:accent-blue-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(30 58 138);
+  }
+}
+
+@mixin xl\:accent-blue-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(23 37 84);
+  }
+}
+
+@mixin xl\:accent-indigo-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(238 242 255);
+  }
+}
+
+@mixin xl\:accent-indigo-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(224 231 255);
+  }
+}
+
+@mixin xl\:accent-indigo-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(199 210 254);
+  }
+}
+
+@mixin xl\:accent-indigo-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(165 180 252);
+  }
+}
+
+@mixin xl\:accent-indigo-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(129 140 248);
+  }
+}
+
+@mixin xl\:accent-indigo-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(99 102 241);
+  }
+}
+
+@mixin xl\:accent-indigo-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(79 70 229);
+  }
+}
+
+@mixin xl\:accent-indigo-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(67 56 202);
+  }
+}
+
+@mixin xl\:accent-indigo-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(55 48 163);
+  }
+}
+
+@mixin xl\:accent-indigo-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(49 46 129);
+  }
+}
+
+@mixin xl\:accent-indigo-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(30 27 75);
+  }
+}
+
+@mixin xl\:accent-violet-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(245 243 255);
+  }
+}
+
+@mixin xl\:accent-violet-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(237 233 254);
+  }
+}
+
+@mixin xl\:accent-violet-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(221 214 254);
+  }
+}
+
+@mixin xl\:accent-violet-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(196 181 253);
+  }
+}
+
+@mixin xl\:accent-violet-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(167 139 250);
+  }
+}
+
+@mixin xl\:accent-violet-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(139 92 246);
+  }
+}
+
+@mixin xl\:accent-violet-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(124 58 237);
+  }
+}
+
+@mixin xl\:accent-violet-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(109 40 217);
+  }
+}
+
+@mixin xl\:accent-violet-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(91 33 182);
+  }
+}
+
+@mixin xl\:accent-violet-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(76 29 149);
+  }
+}
+
+@mixin xl\:accent-violet-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(46 16 101);
+  }
+}
+
+@mixin xl\:accent-purple-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(250 245 255);
+  }
+}
+
+@mixin xl\:accent-purple-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(243 232 255);
+  }
+}
+
+@mixin xl\:accent-purple-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(233 213 255);
+  }
+}
+
+@mixin xl\:accent-purple-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(216 180 254);
+  }
+}
+
+@mixin xl\:accent-purple-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(192 132 252);
+  }
+}
+
+@mixin xl\:accent-purple-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(168 85 247);
+  }
+}
+
+@mixin xl\:accent-purple-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(147 51 234);
+  }
+}
+
+@mixin xl\:accent-purple-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(126 34 206);
+  }
+}
+
+@mixin xl\:accent-purple-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(107 33 168);
+  }
+}
+
+@mixin xl\:accent-purple-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(88 28 135);
+  }
+}
+
+@mixin xl\:accent-purple-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(59 7 100);
+  }
+}
+
+@mixin xl\:accent-fuchsia-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(253 244 255);
+  }
+}
+
+@mixin xl\:accent-fuchsia-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(250 232 255);
+  }
+}
+
+@mixin xl\:accent-fuchsia-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(245 208 254);
+  }
+}
+
+@mixin xl\:accent-fuchsia-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(240 171 252);
+  }
+}
+
+@mixin xl\:accent-fuchsia-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(232 121 249);
+  }
+}
+
+@mixin xl\:accent-fuchsia-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(217 70 239);
+  }
+}
+
+@mixin xl\:accent-fuchsia-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(192 38 211);
+  }
+}
+
+@mixin xl\:accent-fuchsia-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(162 28 175);
+  }
+}
+
+@mixin xl\:accent-fuchsia-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(134 25 143);
+  }
+}
+
+@mixin xl\:accent-fuchsia-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(112 26 117);
+  }
+}
+
+@mixin xl\:accent-fuchsia-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(74 4 78);
+  }
+}
+
+@mixin xl\:accent-pink-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(253 242 248);
+  }
+}
+
+@mixin xl\:accent-pink-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(252 231 243);
+  }
+}
+
+@mixin xl\:accent-pink-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(251 207 232);
+  }
+}
+
+@mixin xl\:accent-pink-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(249 168 212);
+  }
+}
+
+@mixin xl\:accent-pink-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(244 114 182);
+  }
+}
+
+@mixin xl\:accent-pink-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(236 72 153);
+  }
+}
+
+@mixin xl\:accent-pink-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(219 39 119);
+  }
+}
+
+@mixin xl\:accent-pink-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(190 24 93);
+  }
+}
+
+@mixin xl\:accent-pink-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(157 23 77);
+  }
+}
+
+@mixin xl\:accent-pink-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(131 24 67);
+  }
+}
+
+@mixin xl\:accent-pink-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(80 7 36);
+  }
+}
+
+@mixin xl\:accent-rose-50 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(255 241 242);
+  }
+}
+
+@mixin xl\:accent-rose-100 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(255 228 230);
+  }
+}
+
+@mixin xl\:accent-rose-200 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(254 205 211);
+  }
+}
+
+@mixin xl\:accent-rose-300 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(253 164 175);
+  }
+}
+
+@mixin xl\:accent-rose-400 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(251 113 133);
+  }
+}
+
+@mixin xl\:accent-rose-500 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(244 63 94);
+  }
+}
+
+@mixin xl\:accent-rose-600 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(225 29 72);
+  }
+}
+
+@mixin xl\:accent-rose-700 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(190 18 60);
+  }
+}
+
+@mixin xl\:accent-rose-800 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(159 18 57);
+  }
+}
+
+@mixin xl\:accent-rose-900 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(136 19 55);
+  }
+}
+
+@mixin xl\:accent-rose-950 {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: rgb(76 5 25);
+  }
+}
+
+@mixin xl\:accent-auto {
+  @media (min-width: $breakpoint-xl) {
+    accent-color: auto;
   }
 }
 
 
-@mixin \2xl\:animate-none {
+@mixin \2xl\:accent-inherit {
   @media (min-width: $breakpoint-2xl) {
-    animation: none;
+    accent-color: inherit;
   }
 }
 
-@mixin \2xl\:animate-spin {
+@mixin \2xl\:accent-current {
   @media (min-width: $breakpoint-2xl) {
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+    accent-color: currentColor;
   }
 }
 
-@mixin \2xl\:animate-ping {
+@mixin \2xl\:accent-transparent {
   @media (min-width: $breakpoint-2xl) {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  @keyframes ping {
-
-    75%,
-    100% {
-      transform: scale(2);
-      opacity: 0;
-    }
+    accent-color: transparent;
   }
 }
 
-@mixin \2xl\:animate-pulse {
+@mixin \2xl\:accent-black {
   @media (min-width: $breakpoint-2xl) {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  @keyframes pulse {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
+    accent-color: rgb(0 0 0);
   }
 }
 
-@mixin \2xl\:animate-bounce {
+@mixin \2xl\:accent-white {
   @media (min-width: $breakpoint-2xl) {
-    animation: bounce 1s infinite;
+    accent-color: rgb(255 255 255);
   }
+}
 
-  @keyframes bounce {
+@mixin \2xl\:accent-slate-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(248 250 252);
+  }
+}
 
-    0%,
-    100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
+@mixin \2xl\:accent-slate-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(241 245 249);
+  }
+}
 
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
+@mixin \2xl\:accent-slate-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(226 232 240);
+  }
+}
+
+@mixin \2xl\:accent-slate-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(203 213 225);
+  }
+}
+
+@mixin \2xl\:accent-slate-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(148 163 184);
+  }
+}
+
+@mixin \2xl\:accent-slate-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(100 116 139);
+  }
+}
+
+@mixin \2xl\:accent-slate-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(71 85 105);
+  }
+}
+
+@mixin \2xl\:accent-slate-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(51 65 85);
+  }
+}
+
+@mixin \2xl\:accent-slate-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(30 41 59);
+  }
+}
+
+@mixin \2xl\:accent-slate-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(15 23 42);
+  }
+}
+
+@mixin \2xl\:accent-slate-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(2 6 23);
+  }
+}
+
+@mixin \2xl\:accent-gray-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(249 250 251);
+  }
+}
+
+@mixin \2xl\:accent-gray-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(243 244 246);
+  }
+}
+
+@mixin \2xl\:accent-gray-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(229 231 235);
+  }
+}
+
+@mixin \2xl\:accent-gray-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(209 213 219);
+  }
+}
+
+@mixin \2xl\:accent-gray-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(156 163 175);
+  }
+}
+
+@mixin \2xl\:accent-gray-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(107 114 128);
+  }
+}
+
+@mixin \2xl\:accent-gray-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(75 85 99);
+  }
+}
+
+@mixin \2xl\:accent-gray-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(55 65 81);
+  }
+}
+
+@mixin \2xl\:accent-gray-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(31 41 55);
+  }
+}
+
+@mixin \2xl\:accent-gray-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(17 24 39);
+  }
+}
+
+@mixin \2xl\:accent-gray-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(3 7 18);
+  }
+}
+
+@mixin \2xl\:accent-zinc-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin \2xl\:accent-zinc-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(244 244 245);
+  }
+}
+
+@mixin \2xl\:accent-zinc-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(228 228 231);
+  }
+}
+
+@mixin \2xl\:accent-zinc-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(212 212 216);
+  }
+}
+
+@mixin \2xl\:accent-zinc-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(161 161 170);
+  }
+}
+
+@mixin \2xl\:accent-zinc-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(113 113 122);
+  }
+}
+
+@mixin \2xl\:accent-zinc-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(82 82 91);
+  }
+}
+
+@mixin \2xl\:accent-zinc-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(63 63 70);
+  }
+}
+
+@mixin \2xl\:accent-zinc-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(39 39 42);
+  }
+}
+
+@mixin \2xl\:accent-zinc-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(24 24 27);
+  }
+}
+
+@mixin \2xl\:accent-zinc-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(9 9 11);
+  }
+}
+
+@mixin \2xl\:accent-neutral-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(250 250 250);
+  }
+}
+
+@mixin \2xl\:accent-neutral-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(245 245 245);
+  }
+}
+
+@mixin \2xl\:accent-neutral-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(229 229 229);
+  }
+}
+
+@mixin \2xl\:accent-neutral-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(212 212 212);
+  }
+}
+
+@mixin \2xl\:accent-neutral-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(163 163 163);
+  }
+}
+
+@mixin \2xl\:accent-neutral-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(115 115 115);
+  }
+}
+
+@mixin \2xl\:accent-neutral-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(82 82 82);
+  }
+}
+
+@mixin \2xl\:accent-neutral-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(64 64 64);
+  }
+}
+
+@mixin \2xl\:accent-neutral-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(38 38 38);
+  }
+}
+
+@mixin \2xl\:accent-neutral-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(23 23 23);
+  }
+}
+
+@mixin \2xl\:accent-neutral-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(10 10 10);
+  }
+}
+
+@mixin \2xl\:accent-stone-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(250 250 249);
+  }
+}
+
+@mixin \2xl\:accent-stone-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(245 245 244);
+  }
+}
+
+@mixin \2xl\:accent-stone-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(231 229 228);
+  }
+}
+
+@mixin \2xl\:accent-stone-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(214 211 209);
+  }
+}
+
+@mixin \2xl\:accent-stone-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(168 162 158);
+  }
+}
+
+@mixin \2xl\:accent-stone-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(120 113 108);
+  }
+}
+
+@mixin \2xl\:accent-stone-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(87 83 78);
+  }
+}
+
+@mixin \2xl\:accent-stone-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(68 64 60);
+  }
+}
+
+@mixin \2xl\:accent-stone-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(41 37 36);
+  }
+}
+
+@mixin \2xl\:accent-stone-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(28 25 23);
+  }
+}
+
+@mixin \2xl\:accent-stone-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(12 10 9);
+  }
+}
+
+@mixin \2xl\:accent-red-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(254 242 242);
+  }
+}
+
+@mixin \2xl\:accent-red-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(254 226 226);
+  }
+}
+
+@mixin \2xl\:accent-red-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(254 202 202);
+  }
+}
+
+@mixin \2xl\:accent-red-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(252 165 165);
+  }
+}
+
+@mixin \2xl\:accent-red-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(248 113 113);
+  }
+}
+
+@mixin \2xl\:accent-red-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(239 68 68);
+  }
+}
+
+@mixin \2xl\:accent-red-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(220 38 38);
+  }
+}
+
+@mixin \2xl\:accent-red-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(185 28 28);
+  }
+}
+
+@mixin \2xl\:accent-red-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(153 27 27);
+  }
+}
+
+@mixin \2xl\:accent-red-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(127 29 29);
+  }
+}
+
+@mixin \2xl\:accent-red-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(69 10 10);
+  }
+}
+
+@mixin \2xl\:accent-orange-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(255 247 237);
+  }
+}
+
+@mixin \2xl\:accent-orange-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(255 237 213);
+  }
+}
+
+@mixin \2xl\:accent-orange-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(254 215 170);
+  }
+}
+
+@mixin \2xl\:accent-orange-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(253 186 116);
+  }
+}
+
+@mixin \2xl\:accent-orange-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(251 146 60);
+  }
+}
+
+@mixin \2xl\:accent-orange-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(249 115 22);
+  }
+}
+
+@mixin \2xl\:accent-orange-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(234 88 12);
+  }
+}
+
+@mixin \2xl\:accent-orange-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(194 65 12);
+  }
+}
+
+@mixin \2xl\:accent-orange-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(154 52 18);
+  }
+}
+
+@mixin \2xl\:accent-orange-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(124 45 18);
+  }
+}
+
+@mixin \2xl\:accent-orange-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(67 20 7);
+  }
+}
+
+@mixin \2xl\:accent-amber-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(255 251 235);
+  }
+}
+
+@mixin \2xl\:accent-amber-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(254 243 199);
+  }
+}
+
+@mixin \2xl\:accent-amber-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(253 230 138);
+  }
+}
+
+@mixin \2xl\:accent-amber-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(252 211 77);
+  }
+}
+
+@mixin \2xl\:accent-amber-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(251 191 36);
+  }
+}
+
+@mixin \2xl\:accent-amber-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(245 158 11);
+  }
+}
+
+@mixin \2xl\:accent-amber-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(217 119 6);
+  }
+}
+
+@mixin \2xl\:accent-amber-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(180 83 9);
+  }
+}
+
+@mixin \2xl\:accent-amber-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(146 64 14);
+  }
+}
+
+@mixin \2xl\:accent-amber-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(120 53 15);
+  }
+}
+
+@mixin \2xl\:accent-amber-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(69 26 3);
+  }
+}
+
+@mixin \2xl\:accent-yellow-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(254 252 232);
+  }
+}
+
+@mixin \2xl\:accent-yellow-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(254 249 195);
+  }
+}
+
+@mixin \2xl\:accent-yellow-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(254 240 138);
+  }
+}
+
+@mixin \2xl\:accent-yellow-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(253 224 71);
+  }
+}
+
+@mixin \2xl\:accent-yellow-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(250 204 21);
+  }
+}
+
+@mixin \2xl\:accent-yellow-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(234 179 8);
+  }
+}
+
+@mixin \2xl\:accent-yellow-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(202 138 4);
+  }
+}
+
+@mixin \2xl\:accent-yellow-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(161 98 7);
+  }
+}
+
+@mixin \2xl\:accent-yellow-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(133 77 14);
+  }
+}
+
+@mixin \2xl\:accent-yellow-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(113 63 18);
+  }
+}
+
+@mixin \2xl\:accent-yellow-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(66 32 6);
+  }
+}
+
+@mixin \2xl\:accent-lime-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(247 254 231);
+  }
+}
+
+@mixin \2xl\:accent-lime-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(236 252 203);
+  }
+}
+
+@mixin \2xl\:accent-lime-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(217 249 157);
+  }
+}
+
+@mixin \2xl\:accent-lime-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(190 242 100);
+  }
+}
+
+@mixin \2xl\:accent-lime-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(163 230 53);
+  }
+}
+
+@mixin \2xl\:accent-lime-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(132 204 22);
+  }
+}
+
+@mixin \2xl\:accent-lime-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(101 163 13);
+  }
+}
+
+@mixin \2xl\:accent-lime-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(77 124 15);
+  }
+}
+
+@mixin \2xl\:accent-lime-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(63 98 18);
+  }
+}
+
+@mixin \2xl\:accent-lime-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(54 83 20);
+  }
+}
+
+@mixin \2xl\:accent-lime-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(26 46 5);
+  }
+}
+
+@mixin \2xl\:accent-green-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(240 253 244);
+  }
+}
+
+@mixin \2xl\:accent-green-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(220 252 231);
+  }
+}
+
+@mixin \2xl\:accent-green-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(187 247 208);
+  }
+}
+
+@mixin \2xl\:accent-green-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(134 239 172);
+  }
+}
+
+@mixin \2xl\:accent-green-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(74 222 128);
+  }
+}
+
+@mixin \2xl\:accent-green-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(34 197 94);
+  }
+}
+
+@mixin \2xl\:accent-green-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(22 163 74);
+  }
+}
+
+@mixin \2xl\:accent-green-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(21 128 61);
+  }
+}
+
+@mixin \2xl\:accent-green-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(22 101 52);
+  }
+}
+
+@mixin \2xl\:accent-green-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(20 83 45);
+  }
+}
+
+@mixin \2xl\:accent-green-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(5 46 22);
+  }
+}
+
+@mixin \2xl\:accent-emerald-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(236 253 245);
+  }
+}
+
+@mixin \2xl\:accent-emerald-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(209 250 229);
+  }
+}
+
+@mixin \2xl\:accent-emerald-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(167 243 208);
+  }
+}
+
+@mixin \2xl\:accent-emerald-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(110 231 183);
+  }
+}
+
+@mixin \2xl\:accent-emerald-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(52 211 153);
+  }
+}
+
+@mixin \2xl\:accent-emerald-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(16 185 129);
+  }
+}
+
+@mixin \2xl\:accent-emerald-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(5 150 105);
+  }
+}
+
+@mixin \2xl\:accent-emerald-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(4 120 87);
+  }
+}
+
+@mixin \2xl\:accent-emerald-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(6 95 70);
+  }
+}
+
+@mixin \2xl\:accent-emerald-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(6 78 59);
+  }
+}
+
+@mixin \2xl\:accent-emerald-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(2 44 34);
+  }
+}
+
+@mixin \2xl\:accent-teal-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(240 253 250);
+  }
+}
+
+@mixin \2xl\:accent-teal-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(204 251 241);
+  }
+}
+
+@mixin \2xl\:accent-teal-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(153 246 228);
+  }
+}
+
+@mixin \2xl\:accent-teal-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(94 234 212);
+  }
+}
+
+@mixin \2xl\:accent-teal-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(45 212 191);
+  }
+}
+
+@mixin \2xl\:accent-teal-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(20 184 166);
+  }
+}
+
+@mixin \2xl\:accent-teal-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(13 148 136);
+  }
+}
+
+@mixin \2xl\:accent-teal-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(15 118 110);
+  }
+}
+
+@mixin \2xl\:accent-teal-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(17 94 89);
+  }
+}
+
+@mixin \2xl\:accent-teal-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(19 78 74);
+  }
+}
+
+@mixin \2xl\:accent-teal-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(4 47 46);
+  }
+}
+
+@mixin \2xl\:accent-cyan-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(236 254 255);
+  }
+}
+
+@mixin \2xl\:accent-cyan-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(207 250 254);
+  }
+}
+
+@mixin \2xl\:accent-cyan-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(165 243 252);
+  }
+}
+
+@mixin \2xl\:accent-cyan-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(103 232 249);
+  }
+}
+
+@mixin \2xl\:accent-cyan-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(34 211 238);
+  }
+}
+
+@mixin \2xl\:accent-cyan-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(6 182 212);
+  }
+}
+
+@mixin \2xl\:accent-cyan-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(8 145 178);
+  }
+}
+
+@mixin \2xl\:accent-cyan-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(14 116 144);
+  }
+}
+
+@mixin \2xl\:accent-cyan-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(21 94 117);
+  }
+}
+
+@mixin \2xl\:accent-cyan-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(22 78 99);
+  }
+}
+
+@mixin \2xl\:accent-cyan-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(8 51 68);
+  }
+}
+
+@mixin \2xl\:accent-sky-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(240 249 255);
+  }
+}
+
+@mixin \2xl\:accent-sky-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(224 242 254);
+  }
+}
+
+@mixin \2xl\:accent-sky-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(186 230 253);
+  }
+}
+
+@mixin \2xl\:accent-sky-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(125 211 252);
+  }
+}
+
+@mixin \2xl\:accent-sky-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(56 189 248);
+  }
+}
+
+@mixin \2xl\:accent-sky-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(14 165 233);
+  }
+}
+
+@mixin \2xl\:accent-sky-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(2 132 199);
+  }
+}
+
+@mixin \2xl\:accent-sky-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(3 105 161);
+  }
+}
+
+@mixin \2xl\:accent-sky-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(7 89 133);
+  }
+}
+
+@mixin \2xl\:accent-sky-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(12 74 110);
+  }
+}
+
+@mixin \2xl\:accent-sky-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(8 47 73);
+  }
+}
+
+@mixin \2xl\:accent-blue-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(239 246 255);
+  }
+}
+
+@mixin \2xl\:accent-blue-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(219 234 254);
+  }
+}
+
+@mixin \2xl\:accent-blue-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(191 219 254);
+  }
+}
+
+@mixin \2xl\:accent-blue-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(147 197 253);
+  }
+}
+
+@mixin \2xl\:accent-blue-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(96 165 250);
+  }
+}
+
+@mixin \2xl\:accent-blue-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(59 130 246);
+  }
+}
+
+@mixin \2xl\:accent-blue-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(37 99 235);
+  }
+}
+
+@mixin \2xl\:accent-blue-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(29 78 216);
+  }
+}
+
+@mixin \2xl\:accent-blue-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(30 64 175);
+  }
+}
+
+@mixin \2xl\:accent-blue-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(30 58 138);
+  }
+}
+
+@mixin \2xl\:accent-blue-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(23 37 84);
+  }
+}
+
+@mixin \2xl\:accent-indigo-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(238 242 255);
+  }
+}
+
+@mixin \2xl\:accent-indigo-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(224 231 255);
+  }
+}
+
+@mixin \2xl\:accent-indigo-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(199 210 254);
+  }
+}
+
+@mixin \2xl\:accent-indigo-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(165 180 252);
+  }
+}
+
+@mixin \2xl\:accent-indigo-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(129 140 248);
+  }
+}
+
+@mixin \2xl\:accent-indigo-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(99 102 241);
+  }
+}
+
+@mixin \2xl\:accent-indigo-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(79 70 229);
+  }
+}
+
+@mixin \2xl\:accent-indigo-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(67 56 202);
+  }
+}
+
+@mixin \2xl\:accent-indigo-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(55 48 163);
+  }
+}
+
+@mixin \2xl\:accent-indigo-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(49 46 129);
+  }
+}
+
+@mixin \2xl\:accent-indigo-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(30 27 75);
+  }
+}
+
+@mixin \2xl\:accent-violet-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(245 243 255);
+  }
+}
+
+@mixin \2xl\:accent-violet-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(237 233 254);
+  }
+}
+
+@mixin \2xl\:accent-violet-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(221 214 254);
+  }
+}
+
+@mixin \2xl\:accent-violet-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(196 181 253);
+  }
+}
+
+@mixin \2xl\:accent-violet-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(167 139 250);
+  }
+}
+
+@mixin \2xl\:accent-violet-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(139 92 246);
+  }
+}
+
+@mixin \2xl\:accent-violet-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(124 58 237);
+  }
+}
+
+@mixin \2xl\:accent-violet-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(109 40 217);
+  }
+}
+
+@mixin \2xl\:accent-violet-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(91 33 182);
+  }
+}
+
+@mixin \2xl\:accent-violet-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(76 29 149);
+  }
+}
+
+@mixin \2xl\:accent-violet-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(46 16 101);
+  }
+}
+
+@mixin \2xl\:accent-purple-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(250 245 255);
+  }
+}
+
+@mixin \2xl\:accent-purple-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(243 232 255);
+  }
+}
+
+@mixin \2xl\:accent-purple-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(233 213 255);
+  }
+}
+
+@mixin \2xl\:accent-purple-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(216 180 254);
+  }
+}
+
+@mixin \2xl\:accent-purple-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(192 132 252);
+  }
+}
+
+@mixin \2xl\:accent-purple-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(168 85 247);
+  }
+}
+
+@mixin \2xl\:accent-purple-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(147 51 234);
+  }
+}
+
+@mixin \2xl\:accent-purple-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(126 34 206);
+  }
+}
+
+@mixin \2xl\:accent-purple-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(107 33 168);
+  }
+}
+
+@mixin \2xl\:accent-purple-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(88 28 135);
+  }
+}
+
+@mixin \2xl\:accent-purple-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(59 7 100);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(253 244 255);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(250 232 255);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(245 208 254);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(240 171 252);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(232 121 249);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(217 70 239);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(192 38 211);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(162 28 175);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(134 25 143);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(112 26 117);
+  }
+}
+
+@mixin \2xl\:accent-fuchsia-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(74 4 78);
+  }
+}
+
+@mixin \2xl\:accent-pink-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(253 242 248);
+  }
+}
+
+@mixin \2xl\:accent-pink-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(252 231 243);
+  }
+}
+
+@mixin \2xl\:accent-pink-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(251 207 232);
+  }
+}
+
+@mixin \2xl\:accent-pink-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(249 168 212);
+  }
+}
+
+@mixin \2xl\:accent-pink-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(244 114 182);
+  }
+}
+
+@mixin \2xl\:accent-pink-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(236 72 153);
+  }
+}
+
+@mixin \2xl\:accent-pink-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(219 39 119);
+  }
+}
+
+@mixin \2xl\:accent-pink-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(190 24 93);
+  }
+}
+
+@mixin \2xl\:accent-pink-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(157 23 77);
+  }
+}
+
+@mixin \2xl\:accent-pink-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(131 24 67);
+  }
+}
+
+@mixin \2xl\:accent-pink-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(80 7 36);
+  }
+}
+
+@mixin \2xl\:accent-rose-50 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(255 241 242);
+  }
+}
+
+@mixin \2xl\:accent-rose-100 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(255 228 230);
+  }
+}
+
+@mixin \2xl\:accent-rose-200 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(254 205 211);
+  }
+}
+
+@mixin \2xl\:accent-rose-300 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(253 164 175);
+  }
+}
+
+@mixin \2xl\:accent-rose-400 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(251 113 133);
+  }
+}
+
+@mixin \2xl\:accent-rose-500 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(244 63 94);
+  }
+}
+
+@mixin \2xl\:accent-rose-600 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(225 29 72);
+  }
+}
+
+@mixin \2xl\:accent-rose-700 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(190 18 60);
+  }
+}
+
+@mixin \2xl\:accent-rose-800 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(159 18 57);
+  }
+}
+
+@mixin \2xl\:accent-rose-900 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(136 19 55);
+  }
+}
+
+@mixin \2xl\:accent-rose-950 {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: rgb(76 5 25);
+  }
+}
+
+@mixin \2xl\:accent-auto {
+  @media (min-width: $breakpoint-2xl) {
+    accent-color: auto;
   }
 }
