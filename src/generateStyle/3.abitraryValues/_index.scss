@@ -372,7 +372,7 @@
 
 // Typography
 // Font Family
-// Purpose(change name-conflict): font (tailwind arbitrary values)  --> font-family
+// Purpose(name conflict): font -> font-family
 @mixin font-family-($value) {
   font-family: $value;
 }
@@ -383,7 +383,7 @@
 }
 
 // Font Weight
-// Purpose(change name-conflict): font (tailwind arbitrary values)  -->  font-weight
+// Purpose(name conflict): font -> font-weight
 @mixin font-weight-($value) {
   font-weight: $value;
 }
@@ -421,7 +421,6 @@
 }
 
 // Text Color
-// Purpose(change name-conflict): text (tailwind arbitrary values)  -->  text-color
 @mixin text-black\/($value) {
   $opacity: $value / 100;
   color: rgb(0 0 0 / #{$opacity});
@@ -1642,12 +1641,12 @@
   color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): text -> text-color
 @mixin text-color-($value) {
   color: $value;
 }
 
 // Text Decoration Color
-// Purpose(change name-conflict): decoration (tailwind arbitrary values)  -->  decoration-color
 @mixin decoration-black\/($value) {
   $opacity: $value / 100;
   text-decoration-color: rgb(0 0 0 / #{$opacity});
@@ -2868,6 +2867,7 @@
   text-decoration-color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): decoration -> decoration-color
 @mixin decoration-color-($value) {
   text-decoration-color: $value;
 }
@@ -2903,7 +2903,6 @@
 
 // Backgrounds
 // Background Color
-// Purpose(change name-conflict): bg (tailwind arbitrary values)  -->  bg-color
 @mixin bg-black\/($value) {
   $opacity: $value / 100;
   background-color: rgb(0 0 0 / #{$opacity});
@@ -4124,30 +4123,30 @@
   background-color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): bg -> bg-color
 @mixin bg-color-($value) {
   background-color: $value;
 }
 
 // Background Position
-// Purpose(change name-conflict): bg (tailwind arbitrary values)  -->  bg-position
+// Purpose(name conflict): bg -> bg-position
 @mixin bg-position-($value) {
   background-position: $value;
 }
 
 // Background Size
-// Purpose(change name-conflict): bg (tailwind arbitrary values)  -->  bg-size
+// Purpose(name conflict): bg -> bg-size
 @mixin bg-size-($value) {
   background-size: $value;
 }
 
 // Background Image
-// Purpose(change name-conflict): bg (tailwind arbitrary values)  -->  bg-image
+// Purpose(name conflict): bg -> bg-image
 @mixin bg-image-($value) {
   background-image: $value;
 }
 
 // Gradient Color Stops
-// Purpose(change name-conflict): from (tailwind arbitrary values)  -->  from-color
 @mixin from-black\/($value) {
   $opacity: $value / 100;
   --tw-gradient-from: rgb(0 0 0 / #{$opacity}) var(--tw-gradient-from-position);
@@ -6096,13 +6095,6 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-@mixin from-color-($value) {
-  --tw-gradient-from: #{$value} var(--tw-gradient-from-position);
-  --tw-gradient-to: transparent var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-// Purpose(change name-conflict): via (tailwind arbitrary values)  -->  via-color
 @mixin via-black\/($value) {
   $opacity: $value / 100;
   --tw-gradient-stops: var(--tw-gradient-from),
@@ -7810,12 +7802,7 @@
     rgb(76 5 25 / #{$opacity}) var(--tw-gradient-via-position),
     var(--tw-gradient-to);
 }
-@mixin via-color-($value) {
-  --tw-gradient-stops: var(--tw-gradient-from),
-    #{$value} var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
 
-// Purpose(change name-conflict): to (tailwind arbitrary values)  -->  to-color
 @mixin to-black\/($value) {
   $opacity: $value / 100;
   --tw-gradient-to: rgb(0 0 0 / #{$opacity}) var(--tw-gradient-to-position);
@@ -9138,6 +9125,21 @@
   $opacity: $value / 100;
   --tw-gradient-to: rgb(76 5 25 / #{$opacity}) var(--tw-gradient-to-position);
 }
+
+// Purpose(name conflict): from -> from-color
+@mixin from-color-($value) {
+  --tw-gradient-from: #{$value} var(--tw-gradient-from-position);
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+// Purpose(name conflict): via -> via-color
+@mixin via-color-($value) {
+  --tw-gradient-stops: var(--tw-gradient-from),
+    #{$value} var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+// Purpose(name conflict): to -> to-color
 @mixin to-color-($value) {
   --tw-gradient-to: #{$value} var(--tw-gradient-to-position);
 }
@@ -9262,7 +9264,6 @@
 }
 
 // Border Color
-// Purpose(change name-conflict): border (tailwind arbitrary values)  -->  border-color
 @mixin border-black\/($value) {
   $opacity: $value / 100;
   border-color: rgb(0 0 0 / #{$opacity});
@@ -10482,12 +10483,6 @@
   $opacity: $value / 100;
   border-color: rgb(76 5 25 / #{$opacity});
 }
-
-@mixin border-color-($value) {
-  border-color: $value;
-}
-
-// Purpose(change name-conflict): border (tailwind arbitrary values)  -->  border-x-color
 
 @mixin border-x-black\/($value) {
   $opacity: $value / 100;
@@ -11953,13 +11948,6 @@
   border-right-color: rgb(76 5 25 / #{$opacity});
 }
 
-@mixin border-x-color-($value) {
-  border-left-color: $value;
-  border-right-color: $value;
-}
-
-// Purpose(change name-conflict): border (tailwind arbitrary values)  -->  border-y-color
-
 @mixin border-y-black\/($value) {
   $opacity: $value / 100;
   border-top-color: rgb(0 0 0 / #{$opacity});
@@ -13424,12 +13412,6 @@
   border-bottom-color: rgb(76 5 25 / #{$opacity});
 }
 
-@mixin border-y-color-($value) {
-  border-top-color: $value;
-  border-bottom-color: $value;
-}
-
-// Purpose(change name-conflict): border (tailwind arbitrary values)  -->  border-s-color
 @mixin border-s-black\/($value) {
   $opacity: $value / 100;
   border-inline-start-color: rgb(0 0 0 / #{$opacity});
@@ -14650,11 +14632,6 @@
   border-inline-start-color: rgb(76 5 25 / #{$opacity});
 }
 
-@mixin border-s-color-($value) {
-  border-inline-start-color: $value;
-}
-
-// Purpose(change name-conflict): border (tailwind arbitrary values)  -->  border-e-color
 @mixin border-e-black\/($value) {
   $opacity: $value / 100;
   border-inline-end-color: rgb(0 0 0 / #{$opacity});
@@ -15875,11 +15852,6 @@
   border-inline-end-color: rgb(76 5 25 / #{$opacity});
 }
 
-@mixin border-e-color-($value) {
-  border-inline-end-color: $value;
-}
-
-// Purpose(change name-conflict): border (tailwind arbitrary values)  -->  border-t-color
 @mixin border-t-black\/($value) {
   $opacity: $value / 100;
   border-top-color: rgb(0 0 0 / #{$opacity});
@@ -17100,11 +17072,6 @@
   border-top-color: rgb(76 5 25 / #{$opacity});
 }
 
-@mixin border-t-color-($value) {
-  border-top-color: $value;
-}
-
-// Purpose(change name-conflict): border (tailwind arbitrary values)  -->  border-r-color
 @mixin border-r-black\/($value) {
   $opacity: $value / 100;
   border-right-color: rgb(0 0 0 / #{$opacity});
@@ -18325,11 +18292,6 @@
   border-right-color: rgb(76 5 25 / #{$opacity});
 }
 
-@mixin border-r-color-($value) {
-  border-right-color: $value;
-}
-
-// Purpose(change name-conflict): border (tailwind arbitrary values)  -->  border-b-color
 @mixin border-b-black\/($value) {
   $opacity: $value / 100;
   border-bottom-color: rgb(0 0 0 / #{$opacity});
@@ -19550,11 +19512,6 @@
   border-bottom-color: rgb(76 5 25 / #{$opacity});
 }
 
-@mixin border-b-color-($value) {
-  border-bottom-color: $value;
-}
-
-// Purpose(change name-conflict): border (tailwind arbitrary values)  -->  border-l-color
 @mixin border-l-black\/($value) {
   $opacity: $value / 100;
   border-left-color: rgb(0 0 0 / #{$opacity});
@@ -20775,6 +20732,49 @@
   border-left-color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): border -> border-color
+@mixin border-color-($value) {
+  border-color: $value;
+}
+
+// Purpose(name conflict): border -> border-x-color
+@mixin border-x-color-($value) {
+  border-left-color: $value;
+  border-right-color: $value;
+}
+
+// Purpose(name conflict): border -> border-y-color
+@mixin border-y-color-($value) {
+  border-top-color: $value;
+  border-bottom-color: $value;
+}
+
+// Purpose(name conflict): border -> border-s-color
+@mixin border-s-color-($value) {
+  border-inline-start-color: $value;
+}
+
+// Purpose(name conflict): border -> border-e-color
+@mixin border-e-color-($value) {
+  border-inline-end-color: $value;
+}
+
+// Purpose(name conflict): border -> border-t-color
+@mixin border-t-color-($value) {
+  border-top-color: $value;
+}
+
+// Purpose(name conflict): border -> border-r-color
+@mixin border-r-color-($value) {
+  border-right-color: $value;
+}
+
+// Purpose(name conflict): border -> border-b-color
+@mixin border-b-color-($value) {
+  border-bottom-color: $value;
+}
+
+// Purpose(name conflict): border -> border-l-color
 @mixin border-l-color-($value) {
   border-left-color: $value;
 }
@@ -20795,7 +20795,6 @@
 }
 
 // Divide Color
-// Purpose(change name-conflict): divide (tailwind arbitrary values)  -->  divide-color
 @mixin divide-black\/($value) {
   > * + * {
     $opacity: $value / 100;
@@ -22504,6 +22503,7 @@
   }
 }
 
+// Purpose(name conflict): divide -> divide-color
 @mixin divide-color-($value) {
   > * + * {
     border-color: $value;
@@ -22516,7 +22516,6 @@
 }
 
 // Outline Color
-// Purpose(change name-conflict): outline (tailwind arbitrary values)  -->  outline-color
 @mixin outline-black\/($value) {
   $opacity: $value / 100;
   outline-color: rgb(0 0 0 / #{$opacity});
@@ -23737,6 +23736,7 @@
   outline-color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): outline -> outline-color
 @mixin outline-color-($value) {
   outline-color: $value;
 }
@@ -23756,7 +23756,6 @@
 }
 
 // Ring Color
-// Purpose(change name-conflict): ring (tailwind arbitrary values)  -->  ring-color
 @mixin ring-black\/($value) {
   $opacity: $value / 100;
   --tw-ring-color: rgb(0 0 0 / #{$opacity});
@@ -24977,6 +24976,7 @@
   --tw-ring-color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): ring -> ring-color
 @mixin ring-color-($value) {
   --tw-ring-color: #{$value};
 }
@@ -24987,7 +24987,6 @@
 }
 
 // Ring Offset Color
-// Purpose(change name-conflict): ring-offset (tailwind arbitrary values)  -->  ring-offset-color
 @mixin ring-offset-black\/($value) {
   $opacity: $value / 100;
   --tw-ring-offset-color: rgb(0 0 0 / #{$opacity});
@@ -26208,6 +26207,7 @@
   --tw-ring-offset-color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): ring-offset -> ring-offset-color
 @mixin ring-offset-color-($value) {
   --tw-ring-offset-color: #{$value};
 }
@@ -26219,7 +26219,6 @@
 }
 
 // Box Shadow Color
-// Purpose(change name-conflict): shadow (tailwind arbitrary values)  -->  shadow-color
 @mixin shadow-black\/($value) {
   $opacity: $value / 100;
   --tw-shadow-color: rgb(0 0 0 / #{$opacity});
@@ -27440,6 +27439,7 @@
   --tw-shadow-color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): shadow -> shadow-color
 @mixin shadow-color-($value) {
   --tw-shadow-color: #{$value};
 }
@@ -27678,7 +27678,6 @@
 
 // Interactivity
 // Accent Color
-// Purpose(change name-conflict): accent (tailwind arbitrary values)  -->  accent-color
 @mixin accent-black\/($value) {
   $opacity: $value / 100;
   accent-color: rgb(0 0 0 / #{$opacity});
@@ -28899,6 +28898,7 @@
   accent-color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): accent -> accent-color
 @mixin accent-color-($value) {
   accent-color: $value;
 }
@@ -28909,7 +28909,6 @@
 }
 
 // Caret Color
-// Purpose(change name-conflict): caret (tailwind arbitrary values)  -->  caret-color
 @mixin caret-black\/($value) {
   $opacity: $value / 100;
   caret-color: rgb(0 0 0 / #{$opacity});
@@ -30130,6 +30129,7 @@
   caret-color: rgb(76 5 25 / #{$opacity});
 }
 
+// Purpose(name conflict): caret -> caret-color
 @mixin caret-color-($value) {
   caret-color: $value;
 }
@@ -30267,7 +30267,7 @@
 }
 
 // Stroke Width
-// Purpose(change name-conflict): stroke (tailwind arbitrary values)  -->  stroke-width
+// Purpose(name conflict): stroke -> stroke-width
 @mixin stroke-width-($value) {
   stroke-width: $value;
 }
