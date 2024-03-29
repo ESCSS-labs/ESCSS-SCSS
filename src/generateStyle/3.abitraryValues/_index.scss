@@ -27663,86 +27663,63 @@
 // Transforms
 // Scale
 @mixin scale-($value) {
-  transform: scale($value);
+  --tw-scale-x: #{scale($value)};
+  --tw-scale-y: #{scale($value)};
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @mixin scale-x-($value) {
-  transform: scaleX($value);
+  --tw-scale-x: #{scale($value)};
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @mixin scale-y-($value) {
-  transform: scaleY($value);
-}
-
-@mixin -scale-($value) {
-  transform: scale(-($value));
-}
-
-@mixin -scale-x-($value) {
-  transform: scaleX(-($value));
-}
-
-@mixin -scale-y-($value) {
-  transform: scaleY(-($value));
+  --tw-scale-y: #{scale($value)};
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 // Rotate
 @mixin rotate-($value) {
-  transform: rotate($value);
-}
-
-@mixin -rotate-($value) {
-  transform: rotate(-$value);
+  --tw-rotate: #{rotate($value)};
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 // Translate
-@mixin translate-($value) {
-  transform: translate($value);
-}
-
 @mixin translate-x-($value) {
-  transform: translateX($value);
+  --tw-translate-x: #{translateX($value)};
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @mixin translate-y-($value) {
-  transform: translateY($value);
-}
-
-@mixin -translate-($value) {
-  transform: translate(-($value));
-}
-
-@mixin -translate-x-($value) {
-  transform: translateX(-($value));
-}
-
-@mixin -translate-y-($value) {
-  transform: translateY(-($value));
+  --tw-translate-y: #{translateY($value)};
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 // Skew
-@mixin skew-($value) {
-  transform: skew($value);
-}
-
 @mixin skew-x-($value) {
-  transform: skewX($value);
+  --tw-skew-x: #{skewX($value)};
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @mixin skew-y-($value) {
-  transform: skewY($value);
-}
-
-@mixin -skew-($value) {
-  transform: skew(-($value));
-}
-
-@mixin -skew-x-($value) {
-  transform: skewX(-($value));
-}
-
-@mixin -skew-y-($value) {
-  transform: skewY(-($value));
+  --tw-skew-y: #{skewY($value)};
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 // Transform Origin
