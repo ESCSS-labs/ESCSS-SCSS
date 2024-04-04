@@ -1,65 +1,63 @@
 @use "../../setting" as *;
 
-@if $BackgroundsSize {
-  /* BackgroundsSize */
-  @if $Basic {
-    @mixin_bg-auto {
-      background-size: auto;
-    }
+/* Backgrounds Size */
+@if $Basic {
+  @mixin_bg-auto {
+    background-size: auto;
+  }
 
-    @mixin_bg-cover {
-      background-size: cover;
-    }
+  @mixin_bg-cover {
+    background-size: cover;
+  }
 
-    @mixin_bg-contain {
-      background-size: contain;
-    }
+  @mixin_bg-contain {
+    background-size: contain;
+  }
 
-    @if $Rwd {
-      // reducing size for updating speed
-      @if $isLite {
-        /* Purpose(name conflict): bg -> bg-size */
-        @mixin_sm\:bg-size-($value) {
-          @media (min-width: $breakpoint-sm) {
-            background-size: _value;
-          }
-        }
-
-        @mixin_md\:bg-size-($value) {
-          @media (min-width: $breakpoint-md) {
-            background-size: _value;
-          }
-        }
-
-        @mixin_lg\:bg-size-($value) {
-          @media (min-width: $breakpoint-lg) {
-            background-size: _value;
-          }
-        }
-
-        @mixin_xl\:bg-size-($value) {
-          @media (min-width: $breakpoint-xl) {
-            background-size: _value;
-          }
-        }
-
-        @mixin_\\2xl\:bg-size-($value) {
-          @media (min-width: $breakpoint-2xl) {
-            background-size: _value;
-          }
-        }
-      }
-
-      // tailwind default
-      @else {
-      }
-    }
-
-    @if $Custom {
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
       /* Purpose(name conflict): bg -> bg-size */
-      @mixin_bg-size-($value) {
-        background-size: _value;
+      @mixin_sm\:bg-size- ($value) {
+        @media (min-width: $breakpoint-sm) {
+          background-size: _value;
+        }
       }
+
+      @mixin_md\:bg-size- ($value) {
+        @media (min-width: $breakpoint-md) {
+          background-size: _value;
+        }
+      }
+
+      @mixin_lg\:bg-size- ($value) {
+        @media (min-width: $breakpoint-lg) {
+          background-size: _value;
+        }
+      }
+
+      @mixin_xl\:bg-size- ($value) {
+        @media (min-width: $breakpoint-xl) {
+          background-size: _value;
+        }
+      }
+
+      @mixin_\\2xl\:bg-size- ($value) {
+        @media (min-width: $breakpoint-2xl) {
+          background-size: _value;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    /* Purpose(name conflict): bg -> bg-size */
+    @mixin_bg-size- ($value) {
+      background-size: _value;
     }
   }
 }

@@ -1,67 +1,65 @@
 @use "../../setting" as *;
 
-@if $GridAutoRows {
-  /* Grid Auto Rows */
-  @if $Basic {
-    @mixin_auto-rows-auto {
-      grid-auto-rows: auto;
+/* Grid Auto Rows */
+@if $Basic {
+  @mixin_auto-rows-auto {
+    grid-auto-rows: auto;
+  }
+
+  @mixin_auto-rows-min {
+    grid-auto-rows: min-content;
+  }
+
+  @mixin_auto-rows-max {
+    grid-auto-rows: max-content;
+  }
+
+  @mixin_auto-rows-fr {
+    grid-auto-rows: minmax(0, 1fr);
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:auto-rows- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        grid-auto-rows: _value;
+      }
     }
 
-    @mixin_auto-rows-min {
-      grid-auto-rows: min-content;
+    @mixin_md\:auto-rows- ($value) {
+      @media (min-width: $breakpoint-md) {
+        grid-auto-rows: _value;
+      }
     }
 
-    @mixin_auto-rows-max {
-      grid-auto-rows: max-content;
+    @mixin_lg\:auto-rows- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        grid-auto-rows: _value;
+      }
     }
 
-    @mixin_auto-rows-fr {
-      grid-auto-rows: minmax(0, 1fr);
+    @mixin_xl\:auto-rows- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        grid-auto-rows: _value;
+      }
+    }
+
+    @mixin_\\2xl\:auto-rows- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        grid-auto-rows: _value;
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:auto-rows-($value) {
-        @media (min-width: $breakpoint-sm) {
-          grid-auto-rows: _value;
-        }
-      }
-
-      @mixin_md\:auto-rows-($value) {
-        @media (min-width: $breakpoint-md) {
-          grid-auto-rows: _value;
-        }
-      }
-
-      @mixin_lg\:auto-rows-($value) {
-        @media (min-width: $breakpoint-lg) {
-          grid-auto-rows: _value;
-        }
-      }
-
-      @mixin_xl\:auto-rows-($value) {
-        @media (min-width: $breakpoint-xl) {
-          grid-auto-rows: _value;
-        }
-      }
-
-      @mixin_\\2xl\:auto-rows-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          grid-auto-rows: _value;
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+  // tailwind default
+  @else {
   }
+}
 
-  @if $Custom {
-    @mixin_auto-rows-($value) {
-      grid-auto-rows: _value;
-    }
+@if $Custom {
+  @mixin_auto-rows- ($value) {
+    grid-auto-rows: _value;
   }
 }

@@ -1,83 +1,81 @@
 @use "../../setting" as *;
 
-@if $Grayscale {
-  /* Grayscale */
-  @if $Basic {
-    @mixin_grayscale-0 {
-      --tw-grayscale: grayscale(0);
-      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+/* Grayscale */
+@if $Basic {
+  @mixin_grayscale-0 {
+    --tw-grayscale: grayscale(0);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+
+  @mixin_grayscale {
+    --tw-grayscale: grayscale(100%);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:grayscale- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        --tw-grayscale: "#<grayscale(_value)>";
+        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+      }
     }
 
-    @mixin_grayscale {
-      --tw-grayscale: grayscale(100%);
-      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    @mixin_md\:grayscale- ($value) {
+      @media (min-width: $breakpoint-md) {
+        --tw-grayscale: "#<grayscale(_value)>";
+        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+      }
+    }
+
+    @mixin_lg\:grayscale- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        --tw-grayscale: "#<grayscale(_value)>";
+        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+      }
+    }
+
+    @mixin_xl\:grayscale- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        --tw-grayscale: "#<grayscale(_value)>";
+        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+      }
+    }
+
+    @mixin_\\2xl\:grayscale- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        --tw-grayscale: "#<grayscale(_value)>";
+        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:grayscale-($value) {
-        @media (min-width: $breakpoint-sm) {
-          --tw-grayscale: "#<grayscale(_value)>";
-          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-        }
-      }
-
-      @mixin_md\:grayscale-($value) {
-        @media (min-width: $breakpoint-md) {
-          --tw-grayscale: "#<grayscale(_value)>";
-          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-        }
-      }
-
-      @mixin_lg\:grayscale-($value) {
-        @media (min-width: $breakpoint-lg) {
-          --tw-grayscale: "#<grayscale(_value)>";
-          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-        }
-      }
-
-      @mixin_xl\:grayscale-($value) {
-        @media (min-width: $breakpoint-xl) {
-          --tw-grayscale: "#<grayscale(_value)>";
-          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-        }
-      }
-
-      @mixin_\\2xl\:grayscale-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          --tw-grayscale: "#<grayscale(_value)>";
-          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+  // tailwind default
+  @else {
   }
+}
 
-  @if $Custom {
-    @mixin_grayscale-($value) {
-      --tw-grayscale: "#<grayscale(_value)>";
-      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-    }
+@if $Custom {
+  @mixin_grayscale- ($value) {
+    --tw-grayscale: "#<grayscale(_value)>";
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 }

@@ -1,76 +1,74 @@
 @use "../../setting" as *;
 
-@if $Appearance {
-  /* Appearance */
-  @if $Basic {
-    @mixin_appearance-none {
+/* Appearance */
+@if $Basic {
+  @mixin_appearance-none {
+    appearance: none;
+  }
+
+  @mixin_appearance-auto {
+    appearance: auto;
+  }
+}
+
+@if $Rwd {
+  @mixin_sm\:appearance-none {
+    @media (min-width: $breakpoint-sm) {
       appearance: none;
     }
+  }
 
-    @mixin_appearance-auto {
+  @mixin_sm\:appearance-auto {
+    @media (min-width: $breakpoint-sm) {
       appearance: auto;
     }
   }
 
-  @if $Rwd {
-    @mixin_sm\:appearance-none {
-      @media (min-width: $breakpoint-sm) {
-        appearance: none;
-      }
+  @mixin_md\:appearance-none {
+    @media (min-width: $breakpoint-md) {
+      appearance: none;
     }
+  }
 
-    @mixin_sm\:appearance-auto {
-      @media (min-width: $breakpoint-sm) {
-        appearance: auto;
-      }
+  @mixin_md\:appearance-auto {
+    @media (min-width: $breakpoint-md) {
+      appearance: auto;
     }
+  }
 
-    @mixin_md\:appearance-none {
-      @media (min-width: $breakpoint-md) {
-        appearance: none;
-      }
+  @mixin_lg\:appearance-none {
+    @media (min-width: $breakpoint-lg) {
+      appearance: none;
     }
+  }
 
-    @mixin_md\:appearance-auto {
-      @media (min-width: $breakpoint-md) {
-        appearance: auto;
-      }
+  @mixin_lg\:appearance-auto {
+    @media (min-width: $breakpoint-lg) {
+      appearance: auto;
     }
+  }
 
-    @mixin_lg\:appearance-none {
-      @media (min-width: $breakpoint-lg) {
-        appearance: none;
-      }
+  @mixin_xl\:appearance-none {
+    @media (min-width: $breakpoint-xl) {
+      appearance: none;
     }
+  }
 
-    @mixin_lg\:appearance-auto {
-      @media (min-width: $breakpoint-lg) {
-        appearance: auto;
-      }
+  @mixin_xl\:appearance-auto {
+    @media (min-width: $breakpoint-xl) {
+      appearance: auto;
     }
+  }
 
-    @mixin_xl\:appearance-none {
-      @media (min-width: $breakpoint-xl) {
-        appearance: none;
-      }
+  @mixin_\\2xl\:appearance-none {
+    @media (min-width: $breakpoint-2xl) {
+      appearance: none;
     }
+  }
 
-    @mixin_xl\:appearance-auto {
-      @media (min-width: $breakpoint-xl) {
-        appearance: auto;
-      }
-    }
-
-    @mixin_\\2xl\:appearance-none {
-      @media (min-width: $breakpoint-2xl) {
-        appearance: none;
-      }
-    }
-
-    @mixin_\\2xl\:appearance-auto {
-      @media (min-width: $breakpoint-2xl) {
-        appearance: auto;
-      }
+  @mixin_\\2xl\:appearance-auto {
+    @media (min-width: $breakpoint-2xl) {
+      appearance: auto;
     }
   }
 }

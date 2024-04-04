@@ -1,71 +1,69 @@
 @use "../../setting" as *;
 
-@if $OutlineOffset {
-  /* OutlineOffset */
-  @if $Basic {
-    @mixin_outline-offset-0 {
-      outline-offset: 0px;
+/* Outline Offset */
+@if $Basic {
+  @mixin_outline-offset-0 {
+    outline-offset: 0px;
+  }
+
+  @mixin_outline-offset-1 {
+    outline-offset: 1px;
+  }
+
+  @mixin_outline-offset-2 {
+    outline-offset: 2px;
+  }
+
+  @mixin_outline-offset-4 {
+    outline-offset: 4px;
+  }
+
+  @mixin_outline-offset-8 {
+    outline-offset: 8px;
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:outline-offset- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        outline-offset: _value;
+      }
     }
 
-    @mixin_outline-offset-1 {
-      outline-offset: 1px;
+    @mixin_md\:outline-offset- ($value) {
+      @media (min-width: $breakpoint-md) {
+        outline-offset: _value;
+      }
     }
 
-    @mixin_outline-offset-2 {
-      outline-offset: 2px;
+    @mixin_lg\:outline-offset- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        outline-offset: _value;
+      }
     }
 
-    @mixin_outline-offset-4 {
-      outline-offset: 4px;
+    @mixin_xl\:outline-offset- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        outline-offset: _value;
+      }
     }
 
-    @mixin_outline-offset-8 {
-      outline-offset: 8px;
+    @mixin_\\2xl\:outline-offset- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        outline-offset: _value;
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:outline-offset-($value) {
-        @media (min-width: $breakpoint-sm) {
-          outline-offset: _value;
-        }
-      }
-
-      @mixin_md\:outline-offset-($value) {
-        @media (min-width: $breakpoint-md) {
-          outline-offset: _value;
-        }
-      }
-
-      @mixin_lg\:outline-offset-($value) {
-        @media (min-width: $breakpoint-lg) {
-          outline-offset: _value;
-        }
-      }
-
-      @mixin_xl\:outline-offset-($value) {
-        @media (min-width: $breakpoint-xl) {
-          outline-offset: _value;
-        }
-      }
-
-      @mixin_\\2xl\:outline-offset-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          outline-offset: _value;
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+  // tailwind default
+  @else {
   }
+}
 
-  @if $Custom {
-    @mixin_outline-offset-($value) {
-      outline-offset: _value;
-    }
+@if $Custom {
+  @mixin_outline-offset- ($value) {
+    outline-offset: _value;
   }
 }

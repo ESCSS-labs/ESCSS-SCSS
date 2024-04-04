@@ -1,195 +1,193 @@
 @use "../../setting" as *;
 
-@if $Cursor {
-  /* Cursor */
-  @if $Basic {
-    @mixin_cursor-auto {
-      cursor: auto;
+/* Cursor */
+@if $Basic {
+  @mixin_cursor-auto {
+    cursor: auto;
+  }
+
+  @mixin_cursor-default {
+    cursor: default;
+  }
+
+  @mixin_cursor-pointer {
+    cursor: pointer;
+  }
+
+  @mixin_cursor-wait {
+    cursor: wait;
+  }
+
+  @mixin_cursor-text {
+    cursor: text;
+  }
+
+  @mixin_cursor-move {
+    cursor: move;
+  }
+
+  @mixin_cursor-help {
+    cursor: help;
+  }
+
+  @mixin_cursor-not-allowed {
+    cursor: not-allowed;
+  }
+
+  @mixin_cursor-none {
+    cursor: none;
+  }
+
+  @mixin_cursor-context-menu {
+    cursor: context-menu;
+  }
+
+  @mixin_cursor-progress {
+    cursor: progress;
+  }
+
+  @mixin_cursor-cell {
+    cursor: cell;
+  }
+
+  @mixin_cursor-crosshair {
+    cursor: crosshair;
+  }
+
+  @mixin_cursor-vertical-text {
+    cursor: vertical-text;
+  }
+
+  @mixin_cursor-alias {
+    cursor: alias;
+  }
+
+  @mixin_cursor-copy {
+    cursor: copy;
+  }
+
+  @mixin_cursor-no-drop {
+    cursor: no-drop;
+  }
+
+  @mixin_cursor-grab {
+    cursor: grab;
+  }
+
+  @mixin_cursor-grabbing {
+    cursor: grabbing;
+  }
+
+  @mixin_cursor-all-scroll {
+    cursor: all-scroll;
+  }
+
+  @mixin_cursor-col-resize {
+    cursor: col-resize;
+  }
+
+  @mixin_cursor-row-resize {
+    cursor: row-resize;
+  }
+
+  @mixin_cursor-n-resize {
+    cursor: n-resize;
+  }
+
+  @mixin_cursor-e-resize {
+    cursor: e-resize;
+  }
+
+  @mixin_cursor-s-resize {
+    cursor: s-resize;
+  }
+
+  @mixin_cursor-w-resize {
+    cursor: w-resize;
+  }
+
+  @mixin_cursor-ne-resize {
+    cursor: ne-resize;
+  }
+
+  @mixin_cursor-nw-resize {
+    cursor: nw-resize;
+  }
+
+  @mixin_cursor-se-resize {
+    cursor: se-resize;
+  }
+
+  @mixin_cursor-sw-resize {
+    cursor: sw-resize;
+  }
+
+  @mixin_cursor-ew-resize {
+    cursor: ew-resize;
+  }
+
+  @mixin_cursor-ns-resize {
+    cursor: ns-resize;
+  }
+
+  @mixin_cursor-nesw-resize {
+    cursor: nesw-resize;
+  }
+
+  @mixin_cursor-nwse-resize {
+    cursor: nwse-resize;
+  }
+
+  @mixin_cursor-zoom-in {
+    cursor: zoom-in;
+  }
+
+  @mixin_cursor-zoom-out {
+    cursor: zoom-out;
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:cursor- ($value, $value2: null) {
+      @media (min-width: $breakpoint-sm) {
+        cursor: _value, _value2;
+      }
     }
 
-    @mixin_cursor-default {
-      cursor: default;
+    @mixin_md\:cursor- ($value, $value2: null) {
+      @media (min-width: $breakpoint-md) {
+        cursor: _value, _value2;
+      }
     }
 
-    @mixin_cursor-pointer {
-      cursor: pointer;
+    @mixin_lg\:cursor- ($value, $value2: null) {
+      @media (min-width: $breakpoint-lg) {
+        cursor: _value, _value2;
+      }
     }
 
-    @mixin_cursor-wait {
-      cursor: wait;
+    @mixin_xl\:cursor- ($value, $value2: null) {
+      @media (min-width: $breakpoint-xl) {
+        cursor: _value, _value2;
+      }
     }
 
-    @mixin_cursor-text {
-      cursor: text;
-    }
-
-    @mixin_cursor-move {
-      cursor: move;
-    }
-
-    @mixin_cursor-help {
-      cursor: help;
-    }
-
-    @mixin_cursor-not-allowed {
-      cursor: not-allowed;
-    }
-
-    @mixin_cursor-none {
-      cursor: none;
-    }
-
-    @mixin_cursor-context-menu {
-      cursor: context-menu;
-    }
-
-    @mixin_cursor-progress {
-      cursor: progress;
-    }
-
-    @mixin_cursor-cell {
-      cursor: cell;
-    }
-
-    @mixin_cursor-crosshair {
-      cursor: crosshair;
-    }
-
-    @mixin_cursor-vertical-text {
-      cursor: vertical-text;
-    }
-
-    @mixin_cursor-alias {
-      cursor: alias;
-    }
-
-    @mixin_cursor-copy {
-      cursor: copy;
-    }
-
-    @mixin_cursor-no-drop {
-      cursor: no-drop;
-    }
-
-    @mixin_cursor-grab {
-      cursor: grab;
-    }
-
-    @mixin_cursor-grabbing {
-      cursor: grabbing;
-    }
-
-    @mixin_cursor-all-scroll {
-      cursor: all-scroll;
-    }
-
-    @mixin_cursor-col-resize {
-      cursor: col-resize;
-    }
-
-    @mixin_cursor-row-resize {
-      cursor: row-resize;
-    }
-
-    @mixin_cursor-n-resize {
-      cursor: n-resize;
-    }
-
-    @mixin_cursor-e-resize {
-      cursor: e-resize;
-    }
-
-    @mixin_cursor-s-resize {
-      cursor: s-resize;
-    }
-
-    @mixin_cursor-w-resize {
-      cursor: w-resize;
-    }
-
-    @mixin_cursor-ne-resize {
-      cursor: ne-resize;
-    }
-
-    @mixin_cursor-nw-resize {
-      cursor: nw-resize;
-    }
-
-    @mixin_cursor-se-resize {
-      cursor: se-resize;
-    }
-
-    @mixin_cursor-sw-resize {
-      cursor: sw-resize;
-    }
-
-    @mixin_cursor-ew-resize {
-      cursor: ew-resize;
-    }
-
-    @mixin_cursor-ns-resize {
-      cursor: ns-resize;
-    }
-
-    @mixin_cursor-nesw-resize {
-      cursor: nesw-resize;
-    }
-
-    @mixin_cursor-nwse-resize {
-      cursor: nwse-resize;
-    }
-
-    @mixin_cursor-zoom-in {
-      cursor: zoom-in;
-    }
-
-    @mixin_cursor-zoom-out {
-      cursor: zoom-out;
+    @mixin_\\2xl\:cursor- ($value, $value2: null) {
+      @media (min-width: $breakpoint-2xl) {
+        cursor: _value, _value2;
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:cursor-($value, $value2: null) {
-        @media (min-width: $breakpoint-sm) {
-          cursor: _value, _value2;
-        }
-      }
-
-      @mixin_md\:cursor-($value, $value2: null) {
-        @media (min-width: $breakpoint-md) {
-          cursor: _value, _value2;
-        }
-      }
-
-      @mixin_lg\:cursor-($value, $value2: null) {
-        @media (min-width: $breakpoint-lg) {
-          cursor: _value, _value2;
-        }
-      }
-
-      @mixin_xl\:cursor-($value, $value2: null) {
-        @media (min-width: $breakpoint-xl) {
-          cursor: _value, _value2;
-        }
-      }
-
-      @mixin_\\2xl\:cursor-($value, $value2: null) {
-        @media (min-width: $breakpoint-2xl) {
-          cursor: _value, _value2;
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+  // tailwind default
+  @else {
   }
+}
 
-  @if $Custom {
-    @mixin_cursor-($value, $value2: null) {
-      cursor: _value, _value2;
-    }
+@if $Custom {
+  @mixin_cursor- ($value, $value2: null) {
+    cursor: _value, _value2;
   }
 }

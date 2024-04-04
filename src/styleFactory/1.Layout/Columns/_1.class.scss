@@ -1,168 +1,166 @@
 @use "../../setting" as *;
 
-@if $Columns {
-  /* Columns */
-  @if $Basic {
-    @mixin_columns-1 {
-      columns: 1;
+/* Columns */
+@if $Basic {
+  @mixin_columns-1 {
+    columns: 1;
+  }
+
+  @mixin_columns-2 {
+    columns: 2;
+  }
+
+  @mixin_columns-3 {
+    columns: 3;
+  }
+
+  @mixin_columns-4 {
+    columns: 4;
+  }
+
+  @mixin_columns-5 {
+    columns: 5;
+  }
+
+  @mixin_columns-6 {
+    columns: 6;
+  }
+
+  @mixin_columns-7 {
+    columns: 7;
+  }
+
+  @mixin_columns-8 {
+    columns: 8;
+  }
+
+  @mixin_columns-9 {
+    columns: 9;
+  }
+
+  @mixin_columns-10 {
+    columns: 10;
+  }
+
+  @mixin_columns-11 {
+    columns: 11;
+  }
+
+  @mixin_columns-12 {
+    columns: 12;
+  }
+
+  @mixin_columns-auto {
+    columns: auto;
+  }
+
+  /* 256px */
+  @mixin_columns-3xs {
+    columns: 16rem;
+  }
+
+  /* 288px */
+  @mixin_columns-2xs {
+    columns: 18rem;
+  }
+
+  /* 320px */
+  @mixin_columns-xs {
+    columns: 20rem;
+  }
+
+  /* 384px */
+  @mixin_columns-sm {
+    columns: 24rem;
+  }
+
+  /* 448px */
+  @mixin_columns-md {
+    columns: 28rem;
+  }
+
+  /* 512px */
+  @mixin_columns-lg {
+    columns: 32rem;
+  }
+
+  /* 576px */
+  @mixin_columns-xl {
+    columns: 36rem;
+  }
+
+  /* 672px */
+  @mixin_columns-2xl {
+    columns: 42rem;
+  }
+
+  /* 768px */
+  @mixin_columns-3xl {
+    columns: 48rem;
+  }
+
+  /* 896px */
+  @mixin_columns-4xl {
+    columns: 56rem;
+  }
+
+  /* 1024px */
+  @mixin_columns-5xl {
+    columns: 64rem;
+  }
+
+  /* 1152px */
+  @mixin_columns-6xl {
+    columns: 72rem;
+  }
+
+  /* 1280px */
+  @mixin_columns-7xl {
+    columns: 80rem;
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:columns- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        columns: _value;
+      }
     }
 
-    @mixin_columns-2 {
-      columns: 2;
+    @mixin_md\:columns- ($value) {
+      @media (min-width: $breakpoint-md) {
+        columns: _value;
+      }
     }
 
-    @mixin_columns-3 {
-      columns: 3;
+    @mixin_lg\:columns- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        columns: _value;
+      }
     }
 
-    @mixin_columns-4 {
-      columns: 4;
+    @mixin_xl\:columns- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        columns: _value;
+      }
     }
 
-    @mixin_columns-5 {
-      columns: 5;
-    }
-
-    @mixin_columns-6 {
-      columns: 6;
-    }
-
-    @mixin_columns-7 {
-      columns: 7;
-    }
-
-    @mixin_columns-8 {
-      columns: 8;
-    }
-
-    @mixin_columns-9 {
-      columns: 9;
-    }
-
-    @mixin_columns-10 {
-      columns: 10;
-    }
-
-    @mixin_columns-11 {
-      columns: 11;
-    }
-
-    @mixin_columns-12 {
-      columns: 12;
-    }
-
-    @mixin_columns-auto {
-      columns: auto;
-    }
-
-    /* 256px */
-    @mixin_columns-3xs {
-      columns: 16rem;
-    }
-
-    /* 288px */
-    @mixin_columns-2xs {
-      columns: 18rem;
-    }
-
-    /* 320px */
-    @mixin_columns-xs {
-      columns: 20rem;
-    }
-
-    /* 384px */
-    @mixin_columns-sm {
-      columns: 24rem;
-    }
-
-    /* 448px */
-    @mixin_columns-md {
-      columns: 28rem;
-    }
-
-    /* 512px */
-    @mixin_columns-lg {
-      columns: 32rem;
-    }
-
-    /* 576px */
-    @mixin_columns-xl {
-      columns: 36rem;
-    }
-
-    /* 672px */
-    @mixin_columns-2xl {
-      columns: 42rem;
-    }
-
-    /* 768px */
-    @mixin_columns-3xl {
-      columns: 48rem;
-    }
-
-    /* 896px */
-    @mixin_columns-4xl {
-      columns: 56rem;
-    }
-
-    /* 1024px */
-    @mixin_columns-5xl {
-      columns: 64rem;
-    }
-
-    /* 1152px */
-    @mixin_columns-6xl {
-      columns: 72rem;
-    }
-
-    /* 1280px */
-    @mixin_columns-7xl {
-      columns: 80rem;
+    @mixin_\\2xl\:columns- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        columns: _value;
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:columns-($value) {
-        @media (min-width: $breakpoint-sm) {
-          columns: _value;
-        }
-      }
-
-      @mixin_md\:columns-($value) {
-        @media (min-width: $breakpoint-md) {
-          columns: _value;
-        }
-      }
-
-      @mixin_lg\:columns-($value) {
-        @media (min-width: $breakpoint-lg) {
-          columns: _value;
-        }
-      }
-
-      @mixin_xl\:columns-($value) {
-        @media (min-width: $breakpoint-xl) {
-          columns: _value;
-        }
-      }
-
-      @mixin_\\2xl\:columns-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          columns: _value;
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+  // tailwind default
+  @else {
   }
+}
 
-  @if $Custom {
-    @mixin_columns-($value) {
-      columns: _value;
-    }
+@if $Custom {
+  @mixin_columns- ($value) {
+    columns: _value;
   }
 }

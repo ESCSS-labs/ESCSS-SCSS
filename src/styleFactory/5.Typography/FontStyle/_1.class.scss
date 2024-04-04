@@ -1,76 +1,74 @@
 @use "../../setting" as *;
 
-@if $FontStyle {
-  /* Font Style */
-  @if $Basic {
-    @mixin_italic {
+/* Font Style */
+@if $Basic {
+  @mixin_italic {
+    font-style: italic;
+  }
+
+  @mixin_not-italic {
+    font-style: normal;
+  }
+}
+
+@if $Rwd {
+  @mixin_sm\:italic {
+    @media (min-width: $breakpoint-sm) {
       font-style: italic;
     }
+  }
 
-    @mixin_not-italic {
+  @mixin_sm\:not-italic {
+    @media (min-width: $breakpoint-sm) {
       font-style: normal;
     }
   }
 
-  @if $Rwd {
-    @mixin_sm\:italic {
-      @media (min-width: $breakpoint-sm) {
-        font-style: italic;
-      }
+  @mixin_md\:italic {
+    @media (min-width: $breakpoint-md) {
+      font-style: italic;
     }
+  }
 
-    @mixin_sm\:not-italic {
-      @media (min-width: $breakpoint-sm) {
-        font-style: normal;
-      }
+  @mixin_md\:not-italic {
+    @media (min-width: $breakpoint-md) {
+      font-style: normal;
     }
+  }
 
-    @mixin_md\:italic {
-      @media (min-width: $breakpoint-md) {
-        font-style: italic;
-      }
+  @mixin_lg\:italic {
+    @media (min-width: $breakpoint-lg) {
+      font-style: italic;
     }
+  }
 
-    @mixin_md\:not-italic {
-      @media (min-width: $breakpoint-md) {
-        font-style: normal;
-      }
+  @mixin_lg\:not-italic {
+    @media (min-width: $breakpoint-lg) {
+      font-style: normal;
     }
+  }
 
-    @mixin_lg\:italic {
-      @media (min-width: $breakpoint-lg) {
-        font-style: italic;
-      }
+  @mixin_xl\:italic {
+    @media (min-width: $breakpoint-xl) {
+      font-style: italic;
     }
+  }
 
-    @mixin_lg\:not-italic {
-      @media (min-width: $breakpoint-lg) {
-        font-style: normal;
-      }
+  @mixin_xl\:not-italic {
+    @media (min-width: $breakpoint-xl) {
+      font-style: normal;
     }
+  }
 
-    @mixin_xl\:italic {
-      @media (min-width: $breakpoint-xl) {
-        font-style: italic;
-      }
+  @mixin_\\2xl\:italic {
+    @media (min-width: $breakpoint-2xl) {
+      font-style: italic;
     }
+  }
 
-    @mixin_xl\:not-italic {
-      @media (min-width: $breakpoint-xl) {
-        font-style: normal;
-      }
-    }
-
-    @mixin_\\2xl\:italic {
-      @media (min-width: $breakpoint-2xl) {
-        font-style: italic;
-      }
-    }
-
-    @mixin_\\2xl\:not-italic {
-      @media (min-width: $breakpoint-2xl) {
-        font-style: normal;
-      }
+  @mixin_\\2xl\:not-italic {
+    @media (min-width: $breakpoint-2xl) {
+      font-style: normal;
     }
   }
 }

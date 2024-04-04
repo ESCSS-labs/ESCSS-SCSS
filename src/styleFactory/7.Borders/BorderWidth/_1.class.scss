@@ -1,525 +1,523 @@
 @use "../../setting" as *;
 
-@if $BorderWidth {
-  /* BorderWidth */
-  @if $Basic {
-    @mixin_border-0 {
-      border-width: 0px;
+/* Border Width */
+@if $Basic {
+  @mixin_border-0 {
+    border-width: 0px;
+  }
+
+  @mixin_border-2 {
+    border-width: 2px;
+  }
+
+  @mixin_border-4 {
+    border-width: 4px;
+  }
+
+  @mixin_border-8 {
+    border-width: 8px;
+  }
+
+  @mixin_border {
+    border-width: 1px;
+  }
+
+  @mixin_border-x-0 {
+    border-left-width: 0px;
+    border-right-width: 0px;
+  }
+
+  @mixin_border-x-2 {
+    border-left-width: 2px;
+    border-right-width: 2px;
+  }
+
+  @mixin_border-x-4 {
+    border-left-width: 4px;
+    border-right-width: 4px;
+  }
+
+  @mixin_border-x-8 {
+    border-left-width: 8px;
+    border-right-width: 8px;
+  }
+
+  @mixin_border-x {
+    border-left-width: 1px;
+    border-right-width: 1px;
+  }
+
+  @mixin_border-y-0 {
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+  }
+
+  @mixin_border-y-2 {
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+  }
+
+  @mixin_border-y-4 {
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+  }
+
+  @mixin_border-y-8 {
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+  }
+
+  @mixin_border-y {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+
+  @mixin_border-s-0 {
+    border-inline-start-width: 0px;
+  }
+
+  @mixin_border-s-2 {
+    border-inline-start-width: 2px;
+  }
+
+  @mixin_border-s-4 {
+    border-inline-start-width: 4px;
+  }
+
+  @mixin_border-s-8 {
+    border-inline-start-width: 8px;
+  }
+
+  @mixin_border-s {
+    border-inline-start-width: 1px;
+  }
+
+  @mixin_border-e-0 {
+    border-inline-end-width: 0px;
+  }
+
+  @mixin_border-e-2 {
+    border-inline-end-width: 2px;
+  }
+
+  @mixin_border-e-4 {
+    border-inline-end-width: 4px;
+  }
+
+  @mixin_border-e-8 {
+    border-inline-end-width: 8px;
+  }
+
+  @mixin_border-e {
+    border-inline-end-width: 1px;
+  }
+
+  @mixin_border-t-0 {
+    border-top-width: 0px;
+  }
+
+  @mixin_border-t-2 {
+    border-top-width: 2px;
+  }
+
+  @mixin_border-t-4 {
+    border-top-width: 4px;
+  }
+
+  @mixin_border-t-8 {
+    border-top-width: 8px;
+  }
+
+  @mixin_border-t {
+    border-top-width: 1px;
+  }
+
+  @mixin_border-r-0 {
+    border-right-width: 0px;
+  }
+
+  @mixin_border-r-2 {
+    border-right-width: 2px;
+  }
+
+  @mixin_border-r-4 {
+    border-right-width: 4px;
+  }
+
+  @mixin_border-r-8 {
+    border-right-width: 8px;
+  }
+
+  @mixin_border-r {
+    border-right-width: 1px;
+  }
+
+  @mixin_border-b-0 {
+    border-bottom-width: 0px;
+  }
+
+  @mixin_border-b-2 {
+    border-bottom-width: 2px;
+  }
+
+  @mixin_border-b-4 {
+    border-bottom-width: 4px;
+  }
+
+  @mixin_border-b-8 {
+    border-bottom-width: 8px;
+  }
+
+  @mixin_border-b {
+    border-bottom-width: 1px;
+  }
+
+  @mixin_border-l-0 {
+    border-left-width: 0px;
+  }
+
+  @mixin_border-l-2 {
+    border-left-width: 2px;
+  }
+
+  @mixin_border-l-4 {
+    border-left-width: 4px;
+  }
+
+  @mixin_border-l-8 {
+    border-left-width: 8px;
+  }
+
+  @mixin_border-l {
+    border-left-width: 1px;
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:border- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        border-width: _value;
+      }
     }
 
-    @mixin_border-2 {
-      border-width: 2px;
+    @mixin_sm\:border-x- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        border-left-width: _value;
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-4 {
-      border-width: 4px;
+    @mixin_sm\:border-y- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        border-top-width: _value;
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-8 {
-      border-width: 8px;
+    @mixin_sm\:border-s- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        border-inline-start-width: _value;
+      }
     }
 
-    @mixin_border {
-      border-width: 1px;
+    @mixin_sm\:border-e- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        border-inline-end-width: _value;
+      }
     }
 
-    @mixin_border-x-0 {
-      border-left-width: 0px;
-      border-right-width: 0px;
+    @mixin_sm\:border-t- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        border-top-width: _value;
+      }
     }
 
-    @mixin_border-x-2 {
-      border-left-width: 2px;
-      border-right-width: 2px;
+    @mixin_sm\:border-r- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-x-4 {
-      border-left-width: 4px;
-      border-right-width: 4px;
+    @mixin_sm\:border-b- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-x-8 {
-      border-left-width: 8px;
-      border-right-width: 8px;
+    @mixin_sm\:border-l- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        border-left-width: _value;
+      }
     }
 
-    @mixin_border-x {
-      border-left-width: 1px;
-      border-right-width: 1px;
+    @mixin_md\:border- ($value) {
+      @media (min-width: $breakpoint-md) {
+        border-width: _value;
+      }
     }
 
-    @mixin_border-y-0 {
-      border-top-width: 0px;
-      border-bottom-width: 0px;
+    @mixin_md\:border-x- ($value) {
+      @media (min-width: $breakpoint-md) {
+        border-left-width: _value;
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-y-2 {
-      border-top-width: 2px;
-      border-bottom-width: 2px;
+    @mixin_md\:border-y- ($value) {
+      @media (min-width: $breakpoint-md) {
+        border-top-width: _value;
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-y-4 {
-      border-top-width: 4px;
-      border-bottom-width: 4px;
+    @mixin_md\:border-s- ($value) {
+      @media (min-width: $breakpoint-md) {
+        border-inline-start-width: _value;
+      }
     }
 
-    @mixin_border-y-8 {
-      border-top-width: 8px;
-      border-bottom-width: 8px;
+    @mixin_md\:border-e- ($value) {
+      @media (min-width: $breakpoint-md) {
+        border-inline-end-width: _value;
+      }
     }
 
-    @mixin_border-y {
-      border-top-width: 1px;
-      border-bottom-width: 1px;
+    @mixin_md\:border-t- ($value) {
+      @media (min-width: $breakpoint-md) {
+        border-top-width: _value;
+      }
     }
 
-    @mixin_border-s-0 {
-      border-inline-start-width: 0px;
+    @mixin_md\:border-r- ($value) {
+      @media (min-width: $breakpoint-md) {
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-s-2 {
-      border-inline-start-width: 2px;
+    @mixin_md\:border-b- ($value) {
+      @media (min-width: $breakpoint-md) {
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-s-4 {
-      border-inline-start-width: 4px;
+    @mixin_md\:border-l- ($value) {
+      @media (min-width: $breakpoint-md) {
+        border-left-width: _value;
+      }
     }
 
-    @mixin_border-s-8 {
-      border-inline-start-width: 8px;
+    @mixin_lg\:border- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        border-width: _value;
+      }
     }
 
-    @mixin_border-s {
-      border-inline-start-width: 1px;
+    @mixin_lg\:border-x- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        border-left-width: _value;
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-e-0 {
-      border-inline-end-width: 0px;
+    @mixin_lg\:border-y- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        border-top-width: _value;
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-e-2 {
-      border-inline-end-width: 2px;
+    @mixin_lg\:border-s- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        border-inline-start-width: _value;
+      }
     }
 
-    @mixin_border-e-4 {
-      border-inline-end-width: 4px;
+    @mixin_lg\:border-e- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        border-inline-end-width: _value;
+      }
     }
 
-    @mixin_border-e-8 {
-      border-inline-end-width: 8px;
+    @mixin_lg\:border-t- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        border-top-width: _value;
+      }
     }
 
-    @mixin_border-e {
-      border-inline-end-width: 1px;
+    @mixin_lg\:border-r- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-t-0 {
-      border-top-width: 0px;
+    @mixin_lg\:border-b- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-t-2 {
-      border-top-width: 2px;
+    @mixin_lg\:border-l- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        border-left-width: _value;
+      }
     }
 
-    @mixin_border-t-4 {
-      border-top-width: 4px;
+    @mixin_xl\:border- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        border-width: _value;
+      }
     }
 
-    @mixin_border-t-8 {
-      border-top-width: 8px;
+    @mixin_xl\:border-x- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        border-left-width: _value;
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-t {
-      border-top-width: 1px;
+    @mixin_xl\:border-y- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        border-top-width: _value;
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-r-0 {
-      border-right-width: 0px;
+    @mixin_xl\:border-s- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        border-inline-start-width: _value;
+      }
     }
 
-    @mixin_border-r-2 {
-      border-right-width: 2px;
+    @mixin_xl\:border-e- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        border-inline-end-width: _value;
+      }
     }
 
-    @mixin_border-r-4 {
-      border-right-width: 4px;
+    @mixin_xl\:border-t- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        border-top-width: _value;
+      }
     }
 
-    @mixin_border-r-8 {
-      border-right-width: 8px;
+    @mixin_xl\:border-r- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-r {
-      border-right-width: 1px;
+    @mixin_xl\:border-b- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-b-0 {
-      border-bottom-width: 0px;
+    @mixin_xl\:border-l- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        border-left-width: _value;
+      }
     }
 
-    @mixin_border-b-2 {
-      border-bottom-width: 2px;
+    @mixin_\\2xl\:border- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        border-width: _value;
+      }
     }
 
-    @mixin_border-b-4 {
-      border-bottom-width: 4px;
+    @mixin_\\2xl\:border-x- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        border-left-width: _value;
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-b-8 {
-      border-bottom-width: 8px;
+    @mixin_\\2xl\:border-y- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        border-top-width: _value;
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-b {
-      border-bottom-width: 1px;
+    @mixin_\\2xl\:border-s- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        border-inline-start-width: _value;
+      }
     }
 
-    @mixin_border-l-0 {
-      border-left-width: 0px;
+    @mixin_\\2xl\:border-e- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        border-inline-end-width: _value;
+      }
     }
 
-    @mixin_border-l-2 {
-      border-left-width: 2px;
+    @mixin_\\2xl\:border-t- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        border-top-width: _value;
+      }
     }
 
-    @mixin_border-l-4 {
-      border-left-width: 4px;
+    @mixin_\\2xl\:border-r- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        border-right-width: _value;
+      }
     }
 
-    @mixin_border-l-8 {
-      border-left-width: 8px;
+    @mixin_\\2xl\:border-b- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        border-bottom-width: _value;
+      }
     }
 
-    @mixin_border-l {
-      border-left-width: 1px;
+    @mixin_\\2xl\:border-l- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        border-left-width: _value;
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:border-($value) {
-        @media (min-width: $breakpoint-sm) {
-          border-width: _value;
-        }
-      }
+  // tailwind default
+  @else {
+  }
+}
 
-      @mixin_sm\:border-x-($value) {
-        @media (min-width: $breakpoint-sm) {
-          border-left-width: _value;
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_sm\:border-y-($value) {
-        @media (min-width: $breakpoint-sm) {
-          border-top-width: _value;
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_sm\:border-s-($value) {
-        @media (min-width: $breakpoint-sm) {
-          border-inline-start-width: _value;
-        }
-      }
-
-      @mixin_sm\:border-e-($value) {
-        @media (min-width: $breakpoint-sm) {
-          border-inline-end-width: _value;
-        }
-      }
-
-      @mixin_sm\:border-t-($value) {
-        @media (min-width: $breakpoint-sm) {
-          border-top-width: _value;
-        }
-      }
-
-      @mixin_sm\:border-r-($value) {
-        @media (min-width: $breakpoint-sm) {
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_sm\:border-b-($value) {
-        @media (min-width: $breakpoint-sm) {
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_sm\:border-l-($value) {
-        @media (min-width: $breakpoint-sm) {
-          border-left-width: _value;
-        }
-      }
-
-      @mixin_md\:border-($value) {
-        @media (min-width: $breakpoint-md) {
-          border-width: _value;
-        }
-      }
-
-      @mixin_md\:border-x-($value) {
-        @media (min-width: $breakpoint-md) {
-          border-left-width: _value;
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_md\:border-y-($value) {
-        @media (min-width: $breakpoint-md) {
-          border-top-width: _value;
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_md\:border-s-($value) {
-        @media (min-width: $breakpoint-md) {
-          border-inline-start-width: _value;
-        }
-      }
-
-      @mixin_md\:border-e-($value) {
-        @media (min-width: $breakpoint-md) {
-          border-inline-end-width: _value;
-        }
-      }
-
-      @mixin_md\:border-t-($value) {
-        @media (min-width: $breakpoint-md) {
-          border-top-width: _value;
-        }
-      }
-
-      @mixin_md\:border-r-($value) {
-        @media (min-width: $breakpoint-md) {
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_md\:border-b-($value) {
-        @media (min-width: $breakpoint-md) {
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_md\:border-l-($value) {
-        @media (min-width: $breakpoint-md) {
-          border-left-width: _value;
-        }
-      }
-
-      @mixin_lg\:border-($value) {
-        @media (min-width: $breakpoint-lg) {
-          border-width: _value;
-        }
-      }
-
-      @mixin_lg\:border-x-($value) {
-        @media (min-width: $breakpoint-lg) {
-          border-left-width: _value;
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_lg\:border-y-($value) {
-        @media (min-width: $breakpoint-lg) {
-          border-top-width: _value;
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_lg\:border-s-($value) {
-        @media (min-width: $breakpoint-lg) {
-          border-inline-start-width: _value;
-        }
-      }
-
-      @mixin_lg\:border-e-($value) {
-        @media (min-width: $breakpoint-lg) {
-          border-inline-end-width: _value;
-        }
-      }
-
-      @mixin_lg\:border-t-($value) {
-        @media (min-width: $breakpoint-lg) {
-          border-top-width: _value;
-        }
-      }
-
-      @mixin_lg\:border-r-($value) {
-        @media (min-width: $breakpoint-lg) {
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_lg\:border-b-($value) {
-        @media (min-width: $breakpoint-lg) {
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_lg\:border-l-($value) {
-        @media (min-width: $breakpoint-lg) {
-          border-left-width: _value;
-        }
-      }
-
-      @mixin_xl\:border-($value) {
-        @media (min-width: $breakpoint-xl) {
-          border-width: _value;
-        }
-      }
-
-      @mixin_xl\:border-x-($value) {
-        @media (min-width: $breakpoint-xl) {
-          border-left-width: _value;
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_xl\:border-y-($value) {
-        @media (min-width: $breakpoint-xl) {
-          border-top-width: _value;
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_xl\:border-s-($value) {
-        @media (min-width: $breakpoint-xl) {
-          border-inline-start-width: _value;
-        }
-      }
-
-      @mixin_xl\:border-e-($value) {
-        @media (min-width: $breakpoint-xl) {
-          border-inline-end-width: _value;
-        }
-      }
-
-      @mixin_xl\:border-t-($value) {
-        @media (min-width: $breakpoint-xl) {
-          border-top-width: _value;
-        }
-      }
-
-      @mixin_xl\:border-r-($value) {
-        @media (min-width: $breakpoint-xl) {
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_xl\:border-b-($value) {
-        @media (min-width: $breakpoint-xl) {
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_xl\:border-l-($value) {
-        @media (min-width: $breakpoint-xl) {
-          border-left-width: _value;
-        }
-      }
-
-      @mixin_\\2xl\:border-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          border-width: _value;
-        }
-      }
-
-      @mixin_\\2xl\:border-x-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          border-left-width: _value;
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_\\2xl\:border-y-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          border-top-width: _value;
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_\\2xl\:border-s-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          border-inline-start-width: _value;
-        }
-      }
-
-      @mixin_\\2xl\:border-e-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          border-inline-end-width: _value;
-        }
-      }
-
-      @mixin_\\2xl\:border-t-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          border-top-width: _value;
-        }
-      }
-
-      @mixin_\\2xl\:border-r-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          border-right-width: _value;
-        }
-      }
-
-      @mixin_\\2xl\:border-b-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          border-bottom-width: _value;
-        }
-      }
-
-      @mixin_\\2xl\:border-l-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          border-left-width: _value;
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+@if $Custom {
+  @mixin_border- ($value) {
+    border-width: _value;
   }
 
-  @if $Custom {
-    @mixin_border-($value) {
-      border-width: _value;
-    }
+  @mixin_border-x- ($value) {
+    border-left-width: _value;
+    border-right-width: _value;
+  }
 
-    @mixin_border-x-($value) {
-      border-left-width: _value;
-      border-right-width: _value;
-    }
+  @mixin_border-y- ($value) {
+    border-top-width: _value;
+    border-bottom-width: _value;
+  }
 
-    @mixin_border-y-($value) {
-      border-top-width: _value;
-      border-bottom-width: _value;
-    }
+  @mixin_border-s- ($value) {
+    border-inline-start-width: _value;
+  }
 
-    @mixin_border-s-($value) {
-      border-inline-start-width: _value;
-    }
+  @mixin_border-e- ($value) {
+    border-inline-end-width: _value;
+  }
 
-    @mixin_border-e-($value) {
-      border-inline-end-width: _value;
-    }
+  @mixin_border-t- ($value) {
+    border-top-width: _value;
+  }
 
-    @mixin_border-t-($value) {
-      border-top-width: _value;
-    }
+  @mixin_border-r- ($value) {
+    border-right-width: _value;
+  }
 
-    @mixin_border-r-($value) {
-      border-right-width: _value;
-    }
+  @mixin_border-b- ($value) {
+    border-bottom-width: _value;
+  }
 
-    @mixin_border-b-($value) {
-      border-bottom-width: _value;
-    }
-
-    @mixin_border-l-($value) {
-      border-left-width: _value;
-    }
+  @mixin_border-l- ($value) {
+    border-left-width: _value;
   }
 }

@@ -1,76 +1,74 @@
 @use "../../setting" as *;
 
-@if $BoxDecorationBreak {
-  /* Box Decoration Break */
-  @if $Basic {
-    @mixin_box-decoration-clone {
+/* Box Decoration Break */
+@if $Basic {
+  @mixin_box-decoration-clone {
+    box-decoration-break: clone;
+  }
+
+  @mixin_box-decoration-slice {
+    box-decoration-break: slice;
+  }
+}
+
+@if $Rwd {
+  @mixin_sm\:box-decoration-clone {
+    @media (min-width: $breakpoint-sm) {
       box-decoration-break: clone;
     }
+  }
 
-    @mixin_box-decoration-slice {
+  @mixin_sm\:box-decoration-slice {
+    @media (min-width: $breakpoint-sm) {
       box-decoration-break: slice;
     }
   }
 
-  @if $Rwd {
-    @mixin_sm\:box-decoration-clone {
-      @media (min-width: $breakpoint-sm) {
-        box-decoration-break: clone;
-      }
+  @mixin_md\:box-decoration-clone {
+    @media (min-width: $breakpoint-md) {
+      box-decoration-break: clone;
     }
+  }
 
-    @mixin_sm\:box-decoration-slice {
-      @media (min-width: $breakpoint-sm) {
-        box-decoration-break: slice;
-      }
+  @mixin_md\:box-decoration-slice {
+    @media (min-width: $breakpoint-md) {
+      box-decoration-break: slice;
     }
+  }
 
-    @mixin_md\:box-decoration-clone {
-      @media (min-width: $breakpoint-md) {
-        box-decoration-break: clone;
-      }
+  @mixin_lg\:box-decoration-clone {
+    @media (min-width: $breakpoint-lg) {
+      box-decoration-break: clone;
     }
+  }
 
-    @mixin_md\:box-decoration-slice {
-      @media (min-width: $breakpoint-md) {
-        box-decoration-break: slice;
-      }
+  @mixin_lg\:box-decoration-slice {
+    @media (min-width: $breakpoint-lg) {
+      box-decoration-break: slice;
     }
+  }
 
-    @mixin_lg\:box-decoration-clone {
-      @media (min-width: $breakpoint-lg) {
-        box-decoration-break: clone;
-      }
+  @mixin_xl\:box-decoration-clone {
+    @media (min-width: $breakpoint-xl) {
+      box-decoration-break: clone;
     }
+  }
 
-    @mixin_lg\:box-decoration-slice {
-      @media (min-width: $breakpoint-lg) {
-        box-decoration-break: slice;
-      }
+  @mixin_xl\:box-decoration-slice {
+    @media (min-width: $breakpoint-xl) {
+      box-decoration-break: slice;
     }
+  }
 
-    @mixin_xl\:box-decoration-clone {
-      @media (min-width: $breakpoint-xl) {
-        box-decoration-break: clone;
-      }
+  @mixin_\\2xl\:box-decoration-clone {
+    @media (min-width: $breakpoint-2xl) {
+      box-decoration-break: clone;
     }
+  }
 
-    @mixin_xl\:box-decoration-slice {
-      @media (min-width: $breakpoint-xl) {
-        box-decoration-break: slice;
-      }
-    }
-
-    @mixin_\\2xl\:box-decoration-clone {
-      @media (min-width: $breakpoint-2xl) {
-        box-decoration-break: clone;
-      }
-    }
-
-    @mixin_\\2xl\:box-decoration-slice {
-      @media (min-width: $breakpoint-2xl) {
-        box-decoration-break: slice;
-      }
+  @mixin_\\2xl\:box-decoration-slice {
+    @media (min-width: $breakpoint-2xl) {
+      box-decoration-break: slice;
     }
   }
 }

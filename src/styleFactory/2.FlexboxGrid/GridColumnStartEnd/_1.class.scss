@@ -1,287 +1,285 @@
 @use "../../setting" as *;
 
-@if $GridColumnStartEnd {
-  /* Grid Column Start / End */
-  @if $Basic {
-    @mixin_col-auto {
-      grid-column: auto;
+/* Grid Column Start / End */
+@if $Basic {
+  @mixin_col-auto {
+    grid-column: auto;
+  }
+
+  @mixin_col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  @mixin_col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  @mixin_col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
+  @mixin_col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
+  @mixin_col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+
+  @mixin_col-span-6 {
+    grid-column: span 6 / span 6;
+  }
+
+  @mixin_col-span-7 {
+    grid-column: span 7 / span 7;
+  }
+
+  @mixin_col-span-8 {
+    grid-column: span 8 / span 8;
+  }
+
+  @mixin_col-span-9 {
+    grid-column: span 9 / span 9;
+  }
+
+  @mixin_col-span-10 {
+    grid-column: span 10 / span 10;
+  }
+
+  @mixin_col-span-11 {
+    grid-column: span 11 / span 11;
+  }
+
+  @mixin_col-span-12 {
+    grid-column: span 12 / span 12;
+  }
+
+  @mixin_col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  @mixin_col-start-1 {
+    grid-column-start: 1;
+  }
+
+  @mixin_col-start-2 {
+    grid-column-start: 2;
+  }
+
+  @mixin_col-start-3 {
+    grid-column-start: 3;
+  }
+
+  @mixin_col-start-4 {
+    grid-column-start: 4;
+  }
+
+  @mixin_col-start-5 {
+    grid-column-start: 5;
+  }
+
+  @mixin_col-start-6 {
+    grid-column-start: 6;
+  }
+
+  @mixin_col-start-7 {
+    grid-column-start: 7;
+  }
+
+  @mixin_col-start-8 {
+    grid-column-start: 8;
+  }
+
+  @mixin_col-start-9 {
+    grid-column-start: 9;
+  }
+
+  @mixin_col-start-10 {
+    grid-column-start: 10;
+  }
+
+  @mixin_col-start-11 {
+    grid-column-start: 11;
+  }
+
+  @mixin_col-start-12 {
+    grid-column-start: 12;
+  }
+
+  @mixin_col-start-13 {
+    grid-column-start: 13;
+  }
+
+  @mixin_col-start-auto {
+    grid-column-start: auto;
+  }
+
+  @mixin_col-end-1 {
+    grid-column-end: 1;
+  }
+
+  @mixin_col-end-2 {
+    grid-column-end: 2;
+  }
+
+  @mixin_col-end-3 {
+    grid-column-end: 3;
+  }
+
+  @mixin_col-end-4 {
+    grid-column-end: 4;
+  }
+
+  @mixin_col-end-5 {
+    grid-column-end: 5;
+  }
+
+  @mixin_col-end-6 {
+    grid-column-end: 6;
+  }
+
+  @mixin_col-end-7 {
+    grid-column-end: 7;
+  }
+
+  @mixin_col-end-8 {
+    grid-column-end: 8;
+  }
+
+  @mixin_col-end-9 {
+    grid-column-end: 9;
+  }
+
+  @mixin_col-end-10 {
+    grid-column-end: 10;
+  }
+
+  @mixin_col-end-11 {
+    grid-column-end: 11;
+  }
+
+  @mixin_col-end-12 {
+    grid-column-end: 12;
+  }
+
+  @mixin_col-end-13 {
+    grid-column-end: 13;
+  }
+
+  @mixin_col-end-auto {
+    grid-column-end: auto;
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:col- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        grid-column: _value;
+      }
     }
 
-    @mixin_col-span-1 {
-      grid-column: span 1 / span 1;
+    @mixin_sm\:col-start- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        grid-column-start: _value;
+      }
     }
 
-    @mixin_col-span-2 {
-      grid-column: span 2 / span 2;
+    @mixin_sm\:col-end- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        grid-column-end: _value;
+      }
     }
 
-    @mixin_col-span-3 {
-      grid-column: span 3 / span 3;
+    @mixin_md\:col- ($value) {
+      @media (min-width: $breakpoint-md) {
+        grid-column: _value;
+      }
     }
 
-    @mixin_col-span-4 {
-      grid-column: span 4 / span 4;
+    @mixin_md\:col-start- ($value) {
+      @media (min-width: $breakpoint-md) {
+        grid-column-start: _value;
+      }
     }
 
-    @mixin_col-span-5 {
-      grid-column: span 5 / span 5;
+    @mixin_md\:col-end- ($value) {
+      @media (min-width: $breakpoint-md) {
+        grid-column-end: _value;
+      }
     }
 
-    @mixin_col-span-6 {
-      grid-column: span 6 / span 6;
+    @mixin_lg\:col- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        grid-column: _value;
+      }
     }
 
-    @mixin_col-span-7 {
-      grid-column: span 7 / span 7;
+    @mixin_lg\:col-start- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        grid-column-start: _value;
+      }
     }
 
-    @mixin_col-span-8 {
-      grid-column: span 8 / span 8;
+    @mixin_lg\:col-end- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        grid-column-end: _value;
+      }
     }
 
-    @mixin_col-span-9 {
-      grid-column: span 9 / span 9;
+    @mixin_xl\:col- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        grid-column: _value;
+      }
     }
 
-    @mixin_col-span-10 {
-      grid-column: span 10 / span 10;
+    @mixin_xl\:col-start- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        grid-column-start: _value;
+      }
     }
 
-    @mixin_col-span-11 {
-      grid-column: span 11 / span 11;
+    @mixin_xl\:col-end- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        grid-column-end: _value;
+      }
     }
 
-    @mixin_col-span-12 {
-      grid-column: span 12 / span 12;
+    @mixin_\\2xl\:col- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        grid-column: _value;
+      }
     }
 
-    @mixin_col-span-full {
-      grid-column: 1 / -1;
+    @mixin_\\2xl\:col-start- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        grid-column-start: _value;
+      }
     }
 
-    @mixin_col-start-1 {
-      grid-column-start: 1;
-    }
-
-    @mixin_col-start-2 {
-      grid-column-start: 2;
-    }
-
-    @mixin_col-start-3 {
-      grid-column-start: 3;
-    }
-
-    @mixin_col-start-4 {
-      grid-column-start: 4;
-    }
-
-    @mixin_col-start-5 {
-      grid-column-start: 5;
-    }
-
-    @mixin_col-start-6 {
-      grid-column-start: 6;
-    }
-
-    @mixin_col-start-7 {
-      grid-column-start: 7;
-    }
-
-    @mixin_col-start-8 {
-      grid-column-start: 8;
-    }
-
-    @mixin_col-start-9 {
-      grid-column-start: 9;
-    }
-
-    @mixin_col-start-10 {
-      grid-column-start: 10;
-    }
-
-    @mixin_col-start-11 {
-      grid-column-start: 11;
-    }
-
-    @mixin_col-start-12 {
-      grid-column-start: 12;
-    }
-
-    @mixin_col-start-13 {
-      grid-column-start: 13;
-    }
-
-    @mixin_col-start-auto {
-      grid-column-start: auto;
-    }
-
-    @mixin_col-end-1 {
-      grid-column-end: 1;
-    }
-
-    @mixin_col-end-2 {
-      grid-column-end: 2;
-    }
-
-    @mixin_col-end-3 {
-      grid-column-end: 3;
-    }
-
-    @mixin_col-end-4 {
-      grid-column-end: 4;
-    }
-
-    @mixin_col-end-5 {
-      grid-column-end: 5;
-    }
-
-    @mixin_col-end-6 {
-      grid-column-end: 6;
-    }
-
-    @mixin_col-end-7 {
-      grid-column-end: 7;
-    }
-
-    @mixin_col-end-8 {
-      grid-column-end: 8;
-    }
-
-    @mixin_col-end-9 {
-      grid-column-end: 9;
-    }
-
-    @mixin_col-end-10 {
-      grid-column-end: 10;
-    }
-
-    @mixin_col-end-11 {
-      grid-column-end: 11;
-    }
-
-    @mixin_col-end-12 {
-      grid-column-end: 12;
-    }
-
-    @mixin_col-end-13 {
-      grid-column-end: 13;
-    }
-
-    @mixin_col-end-auto {
-      grid-column-end: auto;
+    @mixin_\\2xl\:col-end- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        grid-column-end: _value;
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:col-($value) {
-        @media (min-width: $breakpoint-sm) {
-          grid-column: _value;
-        }
-      }
+  // tailwind default
+  @else {
+  }
+}
 
-      @mixin_sm\:col-start-($value) {
-        @media (min-width: $breakpoint-sm) {
-          grid-column-start: _value;
-        }
-      }
-
-      @mixin_sm\:col-end-($value) {
-        @media (min-width: $breakpoint-sm) {
-          grid-column-end: _value;
-        }
-      }
-
-      @mixin_md\:col-($value) {
-        @media (min-width: $breakpoint-md) {
-          grid-column: _value;
-        }
-      }
-
-      @mixin_md\:col-start-($value) {
-        @media (min-width: $breakpoint-md) {
-          grid-column-start: _value;
-        }
-      }
-
-      @mixin_md\:col-end-($value) {
-        @media (min-width: $breakpoint-md) {
-          grid-column-end: _value;
-        }
-      }
-
-      @mixin_lg\:col-($value) {
-        @media (min-width: $breakpoint-lg) {
-          grid-column: _value;
-        }
-      }
-
-      @mixin_lg\:col-start-($value) {
-        @media (min-width: $breakpoint-lg) {
-          grid-column-start: _value;
-        }
-      }
-
-      @mixin_lg\:col-end-($value) {
-        @media (min-width: $breakpoint-lg) {
-          grid-column-end: _value;
-        }
-      }
-
-      @mixin_xl\:col-($value) {
-        @media (min-width: $breakpoint-xl) {
-          grid-column: _value;
-        }
-      }
-
-      @mixin_xl\:col-start-($value) {
-        @media (min-width: $breakpoint-xl) {
-          grid-column-start: _value;
-        }
-      }
-
-      @mixin_xl\:col-end-($value) {
-        @media (min-width: $breakpoint-xl) {
-          grid-column-end: _value;
-        }
-      }
-
-      @mixin_\\2xl\:col-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          grid-column: _value;
-        }
-      }
-
-      @mixin_\\2xl\:col-start-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          grid-column-start: _value;
-        }
-      }
-
-      @mixin_\\2xl\:col-end-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          grid-column-end: _value;
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+@if $Custom {
+  @mixin_col- ($value) {
+    grid-column: _value;
   }
 
-  @if $Custom {
-    @mixin_col-($value) {
-      grid-column: _value;
-    }
+  @mixin_col-start- ($value) {
+    grid-column-start: _value;
+  }
 
-    @mixin_col-start-($value) {
-      grid-column-start: _value;
-    }
-
-    @mixin_col-end-($value) {
-      grid-column-end: _value;
-    }
+  @mixin_col-end- ($value) {
+    grid-column-end: _value;
   }
 }

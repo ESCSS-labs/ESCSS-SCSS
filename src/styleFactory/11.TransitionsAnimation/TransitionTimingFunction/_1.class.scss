@@ -1,67 +1,65 @@
 @use "../../setting" as *;
 
-@if $TransitionTimingFunction {
-  /* TransitionTimingFunction */
-  @if $Basic {
-    @mixin_ease-linear {
-      transition-timing-function: linear;
+/* Transition Timing Function */
+@if $Basic {
+  @mixin_ease-linear {
+    transition-timing-function: linear;
+  }
+
+  @mixin_ease-in {
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  @mixin_ease-out {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  @mixin_ease-in-out {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:ease- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        transition-timing-function: _value;
+      }
     }
 
-    @mixin_ease-in {
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    @mixin_md\:ease- ($value) {
+      @media (min-width: $breakpoint-md) {
+        transition-timing-function: _value;
+      }
     }
 
-    @mixin_ease-out {
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    @mixin_lg\:ease- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        transition-timing-function: _value;
+      }
     }
 
-    @mixin_ease-in-out {
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @mixin_xl\:ease- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        transition-timing-function: _value;
+      }
+    }
+
+    @mixin_\\2xl\:ease- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        transition-timing-function: _value;
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:ease-($value) {
-        @media (min-width: $breakpoint-sm) {
-          transition-timing-function: _value;
-        }
-      }
-
-      @mixin_md\:ease-($value) {
-        @media (min-width: $breakpoint-md) {
-          transition-timing-function: _value;
-        }
-      }
-
-      @mixin_lg\:ease-($value) {
-        @media (min-width: $breakpoint-lg) {
-          transition-timing-function: _value;
-        }
-      }
-
-      @mixin_xl\:ease-($value) {
-        @media (min-width: $breakpoint-xl) {
-          transition-timing-function: _value;
-        }
-      }
-
-      @mixin_\\2xl\:ease-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          transition-timing-function: _value;
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+  // tailwind default
+  @else {
   }
+}
 
-  @if $Custom {
-    @mixin_ease-($value) {
-      transition-timing-function: _value;
-    }
+@if $Custom {
+  @mixin_ease- ($value) {
+    transition-timing-function: _value;
   }
 }

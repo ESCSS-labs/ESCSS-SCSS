@@ -1,87 +1,85 @@
 @use "../../setting" as *;
 
-@if $ObjectPosition {
-  /* Object Position */
-  @if $Basic {
-    @mixin_object-bottom {
-      object-position: bottom;
+/* Object Position */
+@if $Basic {
+  @mixin_object-bottom {
+    object-position: bottom;
+  }
+
+  @mixin_object-center {
+    object-position: center;
+  }
+
+  @mixin_object-left {
+    object-position: left;
+  }
+
+  @mixin_object-left-bottom {
+    object-position: left bottom;
+  }
+
+  @mixin_object-left-top {
+    object-position: left top;
+  }
+
+  @mixin_object-right {
+    object-position: right;
+  }
+
+  @mixin_object-right-bottom {
+    object-position: right bottom;
+  }
+
+  @mixin_object-right-top {
+    object-position: right top;
+  }
+
+  @mixin_object-top {
+    object-position: top;
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:object- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        object-position: _value;
+      }
     }
 
-    @mixin_object-center {
-      object-position: center;
+    @mixin_md\:object- ($value) {
+      @media (min-width: $breakpoint-md) {
+        object-position: _value;
+      }
     }
 
-    @mixin_object-left {
-      object-position: left;
+    @mixin_lg\:object- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        object-position: _value;
+      }
     }
 
-    @mixin_object-left-bottom {
-      object-position: left bottom;
+    @mixin_xl\:object- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        object-position: _value;
+      }
     }
 
-    @mixin_object-left-top {
-      object-position: left top;
-    }
-
-    @mixin_object-right {
-      object-position: right;
-    }
-
-    @mixin_object-right-bottom {
-      object-position: right bottom;
-    }
-
-    @mixin_object-right-top {
-      object-position: right top;
-    }
-
-    @mixin_object-top {
-      object-position: top;
+    @mixin_\\2xl\:object- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        object-position: _value;
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:object-($value) {
-        @media (min-width: $breakpoint-sm) {
-          object-position: _value;
-        }
-      }
-
-      @mixin_md\:object-($value) {
-        @media (min-width: $breakpoint-md) {
-          object-position: _value;
-        }
-      }
-
-      @mixin_lg\:object-($value) {
-        @media (min-width: $breakpoint-lg) {
-          object-position: _value;
-        }
-      }
-
-      @mixin_xl\:object-($value) {
-        @media (min-width: $breakpoint-xl) {
-          object-position: _value;
-        }
-      }
-
-      @mixin_\\2xl\:object-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          object-position: _value;
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+  // tailwind default
+  @else {
   }
+}
 
-  @if $Custom {
-    @mixin_object-($value) {
-      object-position: _value;
-    }
+@if $Custom {
+  @mixin_object- ($value) {
+    object-position: _value;
   }
 }

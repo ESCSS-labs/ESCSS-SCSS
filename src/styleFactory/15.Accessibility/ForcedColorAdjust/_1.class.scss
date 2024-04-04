@@ -1,151 +1,149 @@
 @use "../../setting" as *;
 
-@if $ForcedColorAdjust {
-  /* ForcedColorAdjust */
-  @if $Basic {
-    @mixin_forced-color-adjust-auto {
-      forced-color-adjust: auto;
-    }
+/* Forced Color Adjust */
+@if $Basic {
+  @mixin_forced-color-adjust-auto {
+    forced-color-adjust: auto;
+  }
 
-    @mixin_forced-color-adjust-none {
-      forced-color-adjust: none;
+  @mixin_forced-color-adjust-none {
+    forced-color-adjust: none;
+  }
+}
+
+@if $Rwd {
+  @mixin_sm\:sr-only {
+    @media (min-width: $breakpoint-sm) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
     }
   }
 
-  @if $Rwd {
-    @mixin_sm\:sr-only {
-      @media (min-width: $breakpoint-sm) {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
+  @mixin_sm\:not-sr-only {
+    @media (min-width: $breakpoint-sm) {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
     }
+  }
 
-    @mixin_sm\:not-sr-only {
-      @media (min-width: $breakpoint-sm) {
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        overflow: visible;
-        clip: auto;
-        white-space: normal;
-      }
+  @mixin_md\:sr-only {
+    @media (min-width: $breakpoint-md) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
     }
+  }
 
-    @mixin_md\:sr-only {
-      @media (min-width: $breakpoint-md) {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
+  @mixin_md\:not-sr-only {
+    @media (min-width: $breakpoint-md) {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
     }
+  }
 
-    @mixin_md\:not-sr-only {
-      @media (min-width: $breakpoint-md) {
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        overflow: visible;
-        clip: auto;
-        white-space: normal;
-      }
+  @mixin_lg\:sr-only {
+    @media (min-width: $breakpoint-lg) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
     }
+  }
 
-    @mixin_lg\:sr-only {
-      @media (min-width: $breakpoint-lg) {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
+  @mixin_lg\:not-sr-only {
+    @media (min-width: $breakpoint-lg) {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
     }
+  }
 
-    @mixin_lg\:not-sr-only {
-      @media (min-width: $breakpoint-lg) {
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        overflow: visible;
-        clip: auto;
-        white-space: normal;
-      }
+  @mixin_xl\:sr-only {
+    @media (min-width: $breakpoint-xl) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
     }
+  }
 
-    @mixin_xl\:sr-only {
-      @media (min-width: $breakpoint-xl) {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
+  @mixin_xl\:not-sr-only {
+    @media (min-width: $breakpoint-xl) {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
     }
+  }
 
-    @mixin_xl\:not-sr-only {
-      @media (min-width: $breakpoint-xl) {
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        overflow: visible;
-        clip: auto;
-        white-space: normal;
-      }
+  @mixin_\\2xl\:sr-only {
+    @media (min-width: $breakpoint-2xl) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
     }
+  }
 
-    @mixin_\\2xl\:sr-only {
-      @media (min-width: $breakpoint-2xl) {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
-    }
-
-    @mixin_\\2xl\:not-sr-only {
-      @media (min-width: $breakpoint-2xl) {
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        overflow: visible;
-        clip: auto;
-        white-space: normal;
-      }
+  @mixin_\\2xl\:not-sr-only {
+    @media (min-width: $breakpoint-2xl) {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
     }
   }
 }

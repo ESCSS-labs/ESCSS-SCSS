@@ -1,99 +1,97 @@
 @use "../../setting" as *;
 
-@if $LetterSpacing {
-  /* LetterSpacing */
-  @if $Basic {
-    @mixin_tracking-tighter {
-      letter-spacing: -0.05em;
+/* Letter Spacing */
+@if $Basic {
+  @mixin_tracking-tighter {
+    letter-spacing: -0.05em;
+  }
+
+  @mixin_tracking-tight {
+    letter-spacing: -0.025em;
+  }
+
+  @mixin_tracking-normal {
+    letter-spacing: 0em;
+  }
+
+  @mixin_tracking-wide {
+    letter-spacing: 0.025em;
+  }
+
+  @mixin_tracking-wider {
+    letter-spacing: 0.05em;
+  }
+
+  @mixin_tracking-widest {
+    letter-spacing: 0.1em;
+  }
+
+  @mixin_-tracking-tighter {
+    letter-spacing: -(-0.05em);
+  }
+
+  @mixin_-tracking-tight {
+    letter-spacing: -(-0.025em);
+  }
+
+  @mixin_-tracking-normal {
+    letter-spacing: -0em;
+  }
+
+  @mixin_-tracking-wide {
+    letter-spacing: -0.025em;
+  }
+
+  @mixin_-tracking-wider {
+    letter-spacing: -0.05em;
+  }
+
+  @mixin_-tracking-widest {
+    letter-spacing: -0.1em;
+  }
+}
+
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    @mixin_sm\:tracking- ($value) {
+      @media (min-width: $breakpoint-sm) {
+        letter-spacing: _value;
+      }
     }
 
-    @mixin_tracking-tight {
-      letter-spacing: -0.025em;
+    @mixin_md\:tracking- ($value) {
+      @media (min-width: $breakpoint-md) {
+        letter-spacing: _value;
+      }
     }
 
-    @mixin_tracking-normal {
-      letter-spacing: 0em;
+    @mixin_lg\:tracking- ($value) {
+      @media (min-width: $breakpoint-lg) {
+        letter-spacing: _value;
+      }
     }
 
-    @mixin_tracking-wide {
-      letter-spacing: 0.025em;
+    @mixin_xl\:tracking- ($value) {
+      @media (min-width: $breakpoint-xl) {
+        letter-spacing: _value;
+      }
     }
 
-    @mixin_tracking-wider {
-      letter-spacing: 0.05em;
-    }
-
-    @mixin_tracking-widest {
-      letter-spacing: 0.1em;
-    }
-
-    @mixin_-tracking-tighter {
-      letter-spacing: -(-0.05em);
-    }
-
-    @mixin_-tracking-tight {
-      letter-spacing: -(-0.025em);
-    }
-
-    @mixin_-tracking-normal {
-      letter-spacing: -0em;
-    }
-
-    @mixin_-tracking-wide {
-      letter-spacing: -0.025em;
-    }
-
-    @mixin_-tracking-wider {
-      letter-spacing: -0.05em;
-    }
-
-    @mixin_-tracking-widest {
-      letter-spacing: -0.1em;
+    @mixin_\\2xl\:tracking- ($value) {
+      @media (min-width: $breakpoint-2xl) {
+        letter-spacing: _value;
+      }
     }
   }
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:tracking-($value) {
-        @media (min-width: $breakpoint-sm) {
-          letter-spacing: _value;
-        }
-      }
-
-      @mixin_md\:tracking-($value) {
-        @media (min-width: $breakpoint-md) {
-          letter-spacing: _value;
-        }
-      }
-
-      @mixin_lg\:tracking-($value) {
-        @media (min-width: $breakpoint-lg) {
-          letter-spacing: _value;
-        }
-      }
-
-      @mixin_xl\:tracking-($value) {
-        @media (min-width: $breakpoint-xl) {
-          letter-spacing: _value;
-        }
-      }
-
-      @mixin_\\2xl\:tracking-($value) {
-        @media (min-width: $breakpoint-2xl) {
-          letter-spacing: _value;
-        }
-      }
-    }
-
-    // tailwind default
-    @else {
-    }
+  // tailwind default
+  @else {
   }
+}
 
-  @if $Custom {
-    @mixin_tracking-($value) {
-      letter-spacing: _value;
-    }
+@if $Custom {
+  @mixin_tracking- ($value) {
+    letter-spacing: _value;
   }
 }
