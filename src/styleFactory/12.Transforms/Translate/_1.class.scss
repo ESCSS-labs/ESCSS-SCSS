@@ -1183,9 +1183,9 @@
   @if $Rwd {
     // reducing size for updating speed
     @if $isLite {
-      @mixin_sm\:translate-x-value {
+      @mixin_sm\:translate-x-($value) {
         @media (min-width: $breakpoint-sm) {
-          --tw-translate-x: #{v};
+          --tw-translate-x: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1193,9 +1193,9 @@
         }
       }
 
-      @mixin_sm\:translate-y-value {
+      @mixin_sm\:translate-y-($value) {
         @media (min-width: $breakpoint-sm) {
-          --tw-translate-y: #{v};
+          --tw-translate-y: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1203,9 +1203,9 @@
         }
       }
 
-      @mixin_md\:translate-x-value {
+      @mixin_md\:translate-x-($value) {
         @media (min-width: $breakpoint-md) {
-          --tw-translate-x: #{v};
+          --tw-translate-x: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1213,9 +1213,9 @@
         }
       }
 
-      @mixin_md\:translate-y-value {
+      @mixin_md\:translate-y-($value) {
         @media (min-width: $breakpoint-md) {
-          --tw-translate-y: #{v};
+          --tw-translate-y: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1223,9 +1223,9 @@
         }
       }
 
-      @mixin_lg\:translate-x-value {
+      @mixin_lg\:translate-x-($value) {
         @media (min-width: $breakpoint-lg) {
-          --tw-translate-x: #{v};
+          --tw-translate-x: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1233,9 +1233,9 @@
         }
       }
 
-      @mixin_lg\:translate-y-value {
+      @mixin_lg\:translate-y-($value) {
         @media (min-width: $breakpoint-lg) {
-          --tw-translate-y: #{v};
+          --tw-translate-y: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1243,9 +1243,9 @@
         }
       }
 
-      @mixin_xl\:translate-x-value {
+      @mixin_xl\:translate-x-($value) {
         @media (min-width: $breakpoint-xl) {
-          --tw-translate-x: #{v};
+          --tw-translate-x: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1253,9 +1253,9 @@
         }
       }
 
-      @mixin_xl\:translate-y-value {
+      @mixin_xl\:translate-y-($value) {
         @media (min-width: $breakpoint-xl) {
-          --tw-translate-y: #{v};
+          --tw-translate-y: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1263,9 +1263,9 @@
         }
       }
 
-      @mixin_\\2xl\:translate-x-value {
+      @mixin_\\2xl\:translate-x-($value) {
         @media (min-width: $breakpoint-2xl) {
-          --tw-translate-x: #{v};
+          --tw-translate-x: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1273,9 +1273,9 @@
         }
       }
 
-      @mixin_\\2xl\:translate-y-value {
+      @mixin_\\2xl\:translate-y-($value) {
         @media (min-width: $breakpoint-2xl) {
-          --tw-translate-y: #{v};
+          --tw-translate-y: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -1290,15 +1290,15 @@
   }
 
   @if $Custom {
-    @mixin_translate-x-value {
-      --tw-translate-x: #{v};
+    @mixin_translate-x-($value) {
+      --tw-translate-x: #{_value}
       transform: translate(var(--tw-translate-x), var(--tw-translate-y))
         rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
         scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     }
 
-    @mixin_translate-y-value {
-      --tw-translate-y: #{v};
+    @mixin_translate-y-($value) {
+      --tw-translate-y: #{_value}
       transform: translate(var(--tw-translate-x), var(--tw-translate-y))
         rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
         scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));

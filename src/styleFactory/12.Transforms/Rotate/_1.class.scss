@@ -133,9 +133,9 @@
   @if $Rwd {
     // reducing size for updating speed
     @if $isLite {
-      @mixin_sm\:rotate-value {
+      @mixin_sm\:rotate-($value) {
         @media (min-width: $breakpoint-sm) {
-          --tw-rotate: #{v};
+          --tw-rotate: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -143,9 +143,9 @@
         }
       }
 
-      @mixin_md\:rotate-value {
+      @mixin_md\:rotate-($value) {
         @media (min-width: $breakpoint-md) {
-          --tw-rotate: #{v};
+          --tw-rotate: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -153,9 +153,9 @@
         }
       }
 
-      @mixin_lg\:rotate-value {
+      @mixin_lg\:rotate-($value) {
         @media (min-width: $breakpoint-lg) {
-          --tw-rotate: #{v};
+          --tw-rotate: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -163,9 +163,9 @@
         }
       }
 
-      @mixin_xl\:rotate-value {
+      @mixin_xl\:rotate-($value) {
         @media (min-width: $breakpoint-xl) {
-          --tw-rotate: #{v};
+          --tw-rotate: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -173,9 +173,9 @@
         }
       }
 
-      @mixin_\\2xl\:rotate-value {
+      @mixin_\\2xl\:rotate-($value) {
         @media (min-width: $breakpoint-2xl) {
-          --tw-rotate: #{v};
+          --tw-rotate: #{_value}
           transform: translate(var(--tw-translate-x), var(--tw-translate-y))
             rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
             skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
@@ -190,8 +190,8 @@
   }
 
   @if $Custom {
-    @mixin_rotate-value {
-      --tw-rotate: #{v};
+    @mixin_rotate-($value) {
+      --tw-rotate: #{_value}
       transform: translate(var(--tw-translate-x), var(--tw-translate-y))
         rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
         scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));

@@ -84,7 +84,7 @@
   @if $Rwd {
     // reducing size for updating speed
     @if $isLite {
-      @mixin_sm\:brightness-value {
+      @mixin_sm\:brightness-($value) {
         @media (min-width: $breakpoint-sm) {
           --tw-brightness: "#<brightness(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -93,7 +93,7 @@
         }
       }
 
-      @mixin_md\:brightness-value {
+      @mixin_md\:brightness-($value) {
         @media (min-width: $breakpoint-md) {
           --tw-brightness: "#<brightness(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -102,7 +102,7 @@
         }
       }
 
-      @mixin_lg\:brightness-value {
+      @mixin_lg\:brightness-($value) {
         @media (min-width: $breakpoint-lg) {
           --tw-brightness: "#<brightness(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -111,7 +111,7 @@
         }
       }
 
-      @mixin_xl\:brightness-value {
+      @mixin_xl\:brightness-($value) {
         @media (min-width: $breakpoint-xl) {
           --tw-brightness: "#<brightness(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -120,7 +120,7 @@
         }
       }
 
-      @mixin_\\2xl\:brightness-value {
+      @mixin_\\2xl\:brightness-($value) {
         @media (min-width: $breakpoint-2xl) {
           --tw-brightness: "#<brightness(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -136,7 +136,7 @@
   }
 
   @if $Custom {
-    @mixin_brightness-value {
+    @mixin_brightness-($value) {
       --tw-brightness: "#<brightness(_value)>";
       filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
         var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)

@@ -42,7 +42,7 @@
   @if $Rwd {
     // reducing size for updating speed
     @if $isLite {
-      @mixin_sm\:saturate-value {
+      @mixin_sm\:saturate-($value) {
         @media (min-width: $breakpoint-sm) {
           --tw-saturate: "#<saturate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -51,7 +51,7 @@
         }
       }
 
-      @mixin_md\:saturate-value {
+      @mixin_md\:saturate-($value) {
         @media (min-width: $breakpoint-md) {
           --tw-saturate: "#<saturate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -60,7 +60,7 @@
         }
       }
 
-      @mixin_lg\:saturate-value {
+      @mixin_lg\:saturate-($value) {
         @media (min-width: $breakpoint-lg) {
           --tw-saturate: "#<saturate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -69,7 +69,7 @@
         }
       }
 
-      @mixin_xl\:saturate-value {
+      @mixin_xl\:saturate-($value) {
         @media (min-width: $breakpoint-xl) {
           --tw-saturate: "#<saturate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -78,7 +78,7 @@
         }
       }
 
-      @mixin_\\2xl\:saturate-value {
+      @mixin_\\2xl\:saturate-($value) {
         @media (min-width: $breakpoint-2xl) {
           --tw-saturate: "#<saturate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -94,7 +94,7 @@
   }
 
   @if $Custom {
-    @mixin_saturate-value {
+    @mixin_saturate-($value) {
       --tw-saturate: "#<saturate(_value)>";
       filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
         var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)

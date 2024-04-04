@@ -90,7 +90,7 @@
   @if $Rwd {
     // reducing size for updating speed
     @if $isLite {
-      @mixin_sm\:hue-rotate-value {
+      @mixin_sm\:hue-rotate-($value) {
         @media (min-width: $breakpoint-sm) {
           --tw-hue-rotate: "#<hue-rotate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -99,7 +99,7 @@
         }
       }
 
-      @mixin_md\:hue-rotate-value {
+      @mixin_md\:hue-rotate-($value) {
         @media (min-width: $breakpoint-md) {
           --tw-hue-rotate: "#<hue-rotate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -108,7 +108,7 @@
         }
       }
 
-      @mixin_lg\:hue-rotate-value {
+      @mixin_lg\:hue-rotate-($value) {
         @media (min-width: $breakpoint-lg) {
           --tw-hue-rotate: "#<hue-rotate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -117,7 +117,7 @@
         }
       }
 
-      @mixin_xl\:hue-rotate-value {
+      @mixin_xl\:hue-rotate-($value) {
         @media (min-width: $breakpoint-xl) {
           --tw-hue-rotate: "#<hue-rotate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -126,7 +126,7 @@
         }
       }
 
-      @mixin_\\2xl\:hue-rotate-value {
+      @mixin_\\2xl\:hue-rotate-($value) {
         @media (min-width: $breakpoint-2xl) {
           --tw-hue-rotate: "#<hue-rotate(_value)>";
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
@@ -142,7 +142,7 @@
   }
 
   @if $Custom {
-    @mixin_hue-rotate-value {
+    @mixin_hue-rotate-($value) {
       --tw-hue-rotate: "#<hue-rotate(_value)>";
       filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
         var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)

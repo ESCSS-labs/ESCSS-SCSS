@@ -50,7 +50,7 @@
   @if $Rwd {
     // reducing size for updating speed
     @if $isLite {
-      @mixin_sm\:transition-value {
+      @mixin_sm\:transition-($value) {
         @media (min-width: $breakpoint-sm) {
           transition-property: _value;
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,7 +58,7 @@
         }
       }
 
-      @mixin_md\:transition-value {
+      @mixin_md\:transition-($value) {
         @media (min-width: $breakpoint-md) {
           transition-property: _value;
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,7 +66,7 @@
         }
       }
 
-      @mixin_lg\:transition-value {
+      @mixin_lg\:transition-($value) {
         @media (min-width: $breakpoint-lg) {
           transition-property: _value;
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -74,7 +74,7 @@
         }
       }
 
-      @mixin_xl\:transition-value {
+      @mixin_xl\:transition-($value) {
         @media (min-width: $breakpoint-xl) {
           transition-property: _value;
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,7 +82,7 @@
         }
       }
 
-      @mixin_\\2xl\:transition-value {
+      @mixin_\\2xl\:transition-($value) {
         @media (min-width: $breakpoint-2xl) {
           transition-property: _value;
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -97,7 +97,7 @@
   }
 
   @if $Custom {
-    @mixin_transition-value {
+    @mixin_transition-($value) {
       transition-property: _value;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       transition-duration: 150ms;
