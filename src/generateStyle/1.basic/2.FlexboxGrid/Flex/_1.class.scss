@@ -1,19 +1,67 @@
 @use "../../../settings/structures" as *;
 
 @if $Flex {
-  #mixin__flex-1 {
-    flex: 1 1 0%;
+  /* Flex */
+  @if $Basic {
+    #mixin__flex-1 {
+      flex: 1 1 0%;
+    }
+
+    #mixin__flex-auto {
+      flex: 1 1 auto;
+    }
+
+    #mixin__flex-initial {
+      flex: 0 1 auto;
+    }
+
+    #mixin__flex-none {
+      flex: none;
+    }
   }
 
-  #mixin__flex-auto {
-    flex: 1 1 auto;
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:flex-v {
+        @media (min-width: $breakpoint-sm) {
+          flex: v;
+        }
+      }
+
+      #mixin__md\:flex-v {
+        @media (min-width: $breakpoint-md) {
+          flex: v;
+        }
+      }
+
+      #mixin__lg\:flex-v {
+        @media (min-width: $breakpoint-lg) {
+          flex: v;
+        }
+      }
+
+      #mixin__xl\:flex-v {
+        @media (min-width: $breakpoint-xl) {
+          flex: v;
+        }
+      }
+
+      #mixin__\\2xl\:flex-v {
+        @media (min-width: $breakpoint-2xl) {
+          flex: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
   }
 
-  #mixin__flex-initial {
-    flex: 0 1 auto;
-  }
-
-  #mixin__flex-none {
-    flex: none;
+  @if $Custom {
+    #mixin__flex-v {
+      flex: v;
+    }
   }
 }
