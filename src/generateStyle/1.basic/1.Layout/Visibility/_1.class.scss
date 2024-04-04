@@ -1,15 +1,110 @@
 @use "../../../settings/structures" as *;
 
 @if $Visibility {
-  #mixin__visible {
-    visibility: visible;
+  /* Visibility */
+  @if $Basic {
+    #mixin__visible {
+      visibility: visible;
+    }
+
+    #mixin__invisible {
+      visibility: hidden;
+    }
+
+    #mixin__collapse {
+      visibility: collapse;
+    }
   }
 
-  #mixin__invisible {
-    visibility: hidden;
-  }
+  @if $Rwd {
+    #mixin__sm\:visible {
+      @media (min-width: $breakpoint-sm) {
+        visibility: visible;
+      }
+    }
 
-  #mixin__collapse {
-    visibility: collapse;
+    #mixin__sm\:invisible {
+      @media (min-width: $breakpoint-sm) {
+        visibility: hidden;
+      }
+    }
+
+    #mixin__sm\:collapse {
+      @media (min-width: $breakpoint-sm) {
+        visibility: collapse;
+      }
+    }
+
+    #mixin__md\:visible {
+      @media (min-width: $breakpoint-md) {
+        visibility: visible;
+      }
+    }
+
+    #mixin__md\:invisible {
+      @media (min-width: $breakpoint-md) {
+        visibility: hidden;
+      }
+    }
+
+    #mixin__md\:collapse {
+      @media (min-width: $breakpoint-md) {
+        visibility: collapse;
+      }
+    }
+
+    #mixin__lg\:visible {
+      @media (min-width: $breakpoint-lg) {
+        visibility: visible;
+      }
+    }
+
+    #mixin__lg\:invisible {
+      @media (min-width: $breakpoint-lg) {
+        visibility: hidden;
+      }
+    }
+
+    #mixin__lg\:collapse {
+      @media (min-width: $breakpoint-lg) {
+        visibility: collapse;
+      }
+    }
+
+    #mixin__xl\:visible {
+      @media (min-width: $breakpoint-xl) {
+        visibility: visible;
+      }
+    }
+
+    #mixin__xl\:invisible {
+      @media (min-width: $breakpoint-xl) {
+        visibility: hidden;
+      }
+    }
+
+    #mixin__xl\:collapse {
+      @media (min-width: $breakpoint-xl) {
+        visibility: collapse;
+      }
+    }
+
+    #mixin__\\2xl\:visible {
+      @media (min-width: $breakpoint-2xl) {
+        visibility: visible;
+      }
+    }
+
+    #mixin__\\2xl\:invisible {
+      @media (min-width: $breakpoint-2xl) {
+        visibility: hidden;
+      }
+    }
+
+    #mixin__\\2xl\:collapse {
+      @media (min-width: $breakpoint-2xl) {
+        visibility: collapse;
+      }
+    }
   }
 }

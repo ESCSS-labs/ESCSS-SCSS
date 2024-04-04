@@ -1,11 +1,76 @@
 @use "../../../settings/structures" as *;
 
 @if $BoxSizing {
-  #mixin__box-border {
-    box-sizing: border-box;
+  /* Box Sizing */
+  @if $Basic {
+    #mixin__box-border {
+      box-sizing: border-box;
+    }
+
+    #mixin__box-content {
+      box-sizing: content-box;
+    }
   }
 
-  #mixin__box-content {
-    box-sizing: content-box;
+  @if $Rwd {
+    #mixin__sm\:box-border {
+      @media (min-width: $breakpoint-sm) {
+        box-sizing: border-box;
+      }
+    }
+
+    #mixin__sm\:box-content {
+      @media (min-width: $breakpoint-sm) {
+        box-sizing: content-box;
+      }
+    }
+
+    #mixin__md\:box-border {
+      @media (min-width: $breakpoint-md) {
+        box-sizing: border-box;
+      }
+    }
+
+    #mixin__md\:box-content {
+      @media (min-width: $breakpoint-md) {
+        box-sizing: content-box;
+      }
+    }
+
+    #mixin__lg\:box-border {
+      @media (min-width: $breakpoint-lg) {
+        box-sizing: border-box;
+      }
+    }
+
+    #mixin__lg\:box-content {
+      @media (min-width: $breakpoint-lg) {
+        box-sizing: content-box;
+      }
+    }
+
+    #mixin__xl\:box-border {
+      @media (min-width: $breakpoint-xl) {
+        box-sizing: border-box;
+      }
+    }
+
+    #mixin__xl\:box-content {
+      @media (min-width: $breakpoint-xl) {
+        box-sizing: content-box;
+      }
+    }
+
+    #mixin__\\2xl\:box-border {
+      @media (min-width: $breakpoint-2xl) {
+        box-sizing: border-box;
+      }
+    }
+
+    #mixin__\\2xl\:box-content {
+      @media (min-width: $breakpoint-2xl) {
+        box-sizing: content-box;
+      }
+    }
   }
 }

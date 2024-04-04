@@ -1,39 +1,314 @@
 @use "../../../settings/structures" as *;
 
 @if $OverscrollBehavior {
-  #mixin__overscroll-auto {
-    overscroll-behavior: auto;
+  /* Overscroll Behavior */
+  @if $Basic {
+    #mixin__overscroll-auto {
+      overscroll-behavior: auto;
+    }
+
+    #mixin__overscroll-contain {
+      overscroll-behavior: contain;
+    }
+
+    #mixin__overscroll-none {
+      overscroll-behavior: none;
+    }
+
+    #mixin__overscroll-y-auto {
+      overscroll-behavior-y: auto;
+    }
+
+    #mixin__overscroll-y-contain {
+      overscroll-behavior-y: contain;
+    }
+
+    #mixin__overscroll-y-none {
+      overscroll-behavior-y: none;
+    }
+
+    #mixin__overscroll-x-auto {
+      overscroll-behavior-x: auto;
+    }
+
+    #mixin__overscroll-x-contain {
+      overscroll-behavior-x: contain;
+    }
+
+    #mixin__overscroll-x-none {
+      overscroll-behavior-x: none;
+    }
   }
 
-  #mixin__overscroll-contain {
-    overscroll-behavior: contain;
-  }
+  @if $Rwd {
+    #mixin__sm\:overscroll-auto {
+      @media (min-width: $breakpoint-sm) {
+        overscroll-behavior: auto;
+      }
+    }
 
-  #mixin__overscroll-none {
-    overscroll-behavior: none;
-  }
+    #mixin__sm\:overscroll-contain {
+      @media (min-width: $breakpoint-sm) {
+        overscroll-behavior: contain;
+      }
+    }
 
-  #mixin__overscroll-y-auto {
-    overscroll-behavior-y: auto;
-  }
+    #mixin__sm\:overscroll-none {
+      @media (min-width: $breakpoint-sm) {
+        overscroll-behavior: none;
+      }
+    }
 
-  #mixin__overscroll-y-contain {
-    overscroll-behavior-y: contain;
-  }
+    #mixin__sm\:overscroll-y-auto {
+      @media (min-width: $breakpoint-sm) {
+        overscroll-behavior-y: auto;
+      }
+    }
 
-  #mixin__overscroll-y-none {
-    overscroll-behavior-y: none;
-  }
+    #mixin__sm\:overscroll-y-contain {
+      @media (min-width: $breakpoint-sm) {
+        overscroll-behavior-y: contain;
+      }
+    }
 
-  #mixin__overscroll-x-auto {
-    overscroll-behavior-x: auto;
-  }
+    #mixin__sm\:overscroll-y-none {
+      @media (min-width: $breakpoint-sm) {
+        overscroll-behavior-y: none;
+      }
+    }
 
-  #mixin__overscroll-x-contain {
-    overscroll-behavior-x: contain;
-  }
+    #mixin__sm\:overscroll-x-auto {
+      @media (min-width: $breakpoint-sm) {
+        overscroll-behavior-x: auto;
+      }
+    }
 
-  #mixin__overscroll-x-none {
-    overscroll-behavior-x: none;
+    #mixin__sm\:overscroll-x-contain {
+      @media (min-width: $breakpoint-sm) {
+        overscroll-behavior-x: contain;
+      }
+    }
+
+    #mixin__sm\:overscroll-x-none {
+      @media (min-width: $breakpoint-sm) {
+        overscroll-behavior-x: none;
+      }
+    }
+
+    #mixin__md\:overscroll-auto {
+      @media (min-width: $breakpoint-md) {
+        overscroll-behavior: auto;
+      }
+    }
+
+    #mixin__md\:overscroll-contain {
+      @media (min-width: $breakpoint-md) {
+        overscroll-behavior: contain;
+      }
+    }
+
+    #mixin__md\:overscroll-none {
+      @media (min-width: $breakpoint-md) {
+        overscroll-behavior: none;
+      }
+    }
+
+    #mixin__md\:overscroll-y-auto {
+      @media (min-width: $breakpoint-md) {
+        overscroll-behavior-y: auto;
+      }
+    }
+
+    #mixin__md\:overscroll-y-contain {
+      @media (min-width: $breakpoint-md) {
+        overscroll-behavior-y: contain;
+      }
+    }
+
+    #mixin__md\:overscroll-y-none {
+      @media (min-width: $breakpoint-md) {
+        overscroll-behavior-y: none;
+      }
+    }
+
+    #mixin__md\:overscroll-x-auto {
+      @media (min-width: $breakpoint-md) {
+        overscroll-behavior-x: auto;
+      }
+    }
+
+    #mixin__md\:overscroll-x-contain {
+      @media (min-width: $breakpoint-md) {
+        overscroll-behavior-x: contain;
+      }
+    }
+
+    #mixin__md\:overscroll-x-none {
+      @media (min-width: $breakpoint-md) {
+        overscroll-behavior-x: none;
+      }
+    }
+
+    #mixin__lg\:overscroll-auto {
+      @media (min-width: $breakpoint-lg) {
+        overscroll-behavior: auto;
+      }
+    }
+
+    #mixin__lg\:overscroll-contain {
+      @media (min-width: $breakpoint-lg) {
+        overscroll-behavior: contain;
+      }
+    }
+
+    #mixin__lg\:overscroll-none {
+      @media (min-width: $breakpoint-lg) {
+        overscroll-behavior: none;
+      }
+    }
+
+    #mixin__lg\:overscroll-y-auto {
+      @media (min-width: $breakpoint-lg) {
+        overscroll-behavior-y: auto;
+      }
+    }
+
+    #mixin__lg\:overscroll-y-contain {
+      @media (min-width: $breakpoint-lg) {
+        overscroll-behavior-y: contain;
+      }
+    }
+
+    #mixin__lg\:overscroll-y-none {
+      @media (min-width: $breakpoint-lg) {
+        overscroll-behavior-y: none;
+      }
+    }
+
+    #mixin__lg\:overscroll-x-auto {
+      @media (min-width: $breakpoint-lg) {
+        overscroll-behavior-x: auto;
+      }
+    }
+
+    #mixin__lg\:overscroll-x-contain {
+      @media (min-width: $breakpoint-lg) {
+        overscroll-behavior-x: contain;
+      }
+    }
+
+    #mixin__lg\:overscroll-x-none {
+      @media (min-width: $breakpoint-lg) {
+        overscroll-behavior-x: none;
+      }
+    }
+
+    #mixin__xl\:overscroll-auto {
+      @media (min-width: $breakpoint-xl) {
+        overscroll-behavior: auto;
+      }
+    }
+
+    #mixin__xl\:overscroll-contain {
+      @media (min-width: $breakpoint-xl) {
+        overscroll-behavior: contain;
+      }
+    }
+
+    #mixin__xl\:overscroll-none {
+      @media (min-width: $breakpoint-xl) {
+        overscroll-behavior: none;
+      }
+    }
+
+    #mixin__xl\:overscroll-y-auto {
+      @media (min-width: $breakpoint-xl) {
+        overscroll-behavior-y: auto;
+      }
+    }
+
+    #mixin__xl\:overscroll-y-contain {
+      @media (min-width: $breakpoint-xl) {
+        overscroll-behavior-y: contain;
+      }
+    }
+
+    #mixin__xl\:overscroll-y-none {
+      @media (min-width: $breakpoint-xl) {
+        overscroll-behavior-y: none;
+      }
+    }
+
+    #mixin__xl\:overscroll-x-auto {
+      @media (min-width: $breakpoint-xl) {
+        overscroll-behavior-x: auto;
+      }
+    }
+
+    #mixin__xl\:overscroll-x-contain {
+      @media (min-width: $breakpoint-xl) {
+        overscroll-behavior-x: contain;
+      }
+    }
+
+    #mixin__xl\:overscroll-x-none {
+      @media (min-width: $breakpoint-xl) {
+        overscroll-behavior-x: none;
+      }
+    }
+
+    #mixin__\\2xl\:overscroll-auto {
+      @media (min-width: $breakpoint-2xl) {
+        overscroll-behavior: auto;
+      }
+    }
+
+    #mixin__\\2xl\:overscroll-contain {
+      @media (min-width: $breakpoint-2xl) {
+        overscroll-behavior: contain;
+      }
+    }
+
+    #mixin__\\2xl\:overscroll-none {
+      @media (min-width: $breakpoint-2xl) {
+        overscroll-behavior: none;
+      }
+    }
+
+    #mixin__\\2xl\:overscroll-y-auto {
+      @media (min-width: $breakpoint-2xl) {
+        overscroll-behavior-y: auto;
+      }
+    }
+
+    #mixin__\\2xl\:overscroll-y-contain {
+      @media (min-width: $breakpoint-2xl) {
+        overscroll-behavior-y: contain;
+      }
+    }
+
+    #mixin__\\2xl\:overscroll-y-none {
+      @media (min-width: $breakpoint-2xl) {
+        overscroll-behavior-y: none;
+      }
+    }
+
+    #mixin__\\2xl\:overscroll-x-auto {
+      @media (min-width: $breakpoint-2xl) {
+        overscroll-behavior-x: auto;
+      }
+    }
+
+    #mixin__\\2xl\:overscroll-x-contain {
+      @media (min-width: $breakpoint-2xl) {
+        overscroll-behavior-x: contain;
+      }
+    }
+
+    #mixin__\\2xl\:overscroll-x-none {
+      @media (min-width: $breakpoint-2xl) {
+        overscroll-behavior-x: none;
+      }
+    }
   }
 }
