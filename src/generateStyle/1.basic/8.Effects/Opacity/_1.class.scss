@@ -1,87 +1,135 @@
 @use "../../../settings/structures" as *;
 
 @if $Opacity {
-  #mixin__opacity-0 {
-    opacity: 0;
+  /* Opacity */
+  @if $Basic {
+    #mixin__opacity-0 {
+      opacity: 0;
+    }
+
+    #mixin__opacity-5 {
+      opacity: 0.05;
+    }
+
+    #mixin__opacity-10 {
+      opacity: 0.1;
+    }
+
+    #mixin__opacity-15 {
+      opacity: 0.15;
+    }
+
+    #mixin__opacity-20 {
+      opacity: 0.2;
+    }
+
+    #mixin__opacity-25 {
+      opacity: 0.25;
+    }
+
+    #mixin__opacity-30 {
+      opacity: 0.3;
+    }
+
+    #mixin__opacity-35 {
+      opacity: 0.35;
+    }
+
+    #mixin__opacity-40 {
+      opacity: 0.4;
+    }
+
+    #mixin__opacity-45 {
+      opacity: 0.45;
+    }
+
+    #mixin__opacity-50 {
+      opacity: 0.5;
+    }
+
+    #mixin__opacity-55 {
+      opacity: 0.55;
+    }
+
+    #mixin__opacity-60 {
+      opacity: 0.6;
+    }
+
+    #mixin__opacity-65 {
+      opacity: 0.65;
+    }
+
+    #mixin__opacity-70 {
+      opacity: 0.7;
+    }
+
+    #mixin__opacity-75 {
+      opacity: 0.75;
+    }
+
+    #mixin__opacity-80 {
+      opacity: 0.8;
+    }
+
+    #mixin__opacity-85 {
+      opacity: 0.85;
+    }
+
+    #mixin__opacity-90 {
+      opacity: 0.9;
+    }
+
+    #mixin__opacity-95 {
+      opacity: 0.95;
+    }
+
+    #mixin__opacity-100 {
+      opacity: 1;
+    }
   }
 
-  #mixin__opacity-5 {
-    opacity: 0.05;
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:opacity-v {
+        @media (min-width: $breakpoint-sm) {
+          opacity: v;
+        }
+      }
+
+      #mixin__md\:opacity-v {
+        @media (min-width: $breakpoint-md) {
+          opacity: v;
+        }
+      }
+
+      #mixin__lg\:opacity-v {
+        @media (min-width: $breakpoint-lg) {
+          opacity: v;
+        }
+      }
+
+      #mixin__xl\:opacity-v {
+        @media (min-width: $breakpoint-xl) {
+          opacity: v;
+        }
+      }
+
+      #mixin__\\2xl\:opacity-v {
+        @media (min-width: $breakpoint-2xl) {
+          opacity: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
   }
 
-  #mixin__opacity-10 {
-    opacity: 0.1;
-  }
-
-  #mixin__opacity-15 {
-    opacity: 0.15;
-  }
-
-  #mixin__opacity-20 {
-    opacity: 0.2;
-  }
-
-  #mixin__opacity-25 {
-    opacity: 0.25;
-  }
-
-  #mixin__opacity-30 {
-    opacity: 0.3;
-  }
-
-  #mixin__opacity-35 {
-    opacity: 0.35;
-  }
-
-  #mixin__opacity-40 {
-    opacity: 0.4;
-  }
-
-  #mixin__opacity-45 {
-    opacity: 0.45;
-  }
-
-  #mixin__opacity-50 {
-    opacity: 0.5;
-  }
-
-  #mixin__opacity-55 {
-    opacity: 0.55;
-  }
-
-  #mixin__opacity-60 {
-    opacity: 0.6;
-  }
-
-  #mixin__opacity-65 {
-    opacity: 0.65;
-  }
-
-  #mixin__opacity-70 {
-    opacity: 0.7;
-  }
-
-  #mixin__opacity-75 {
-    opacity: 0.75;
-  }
-
-  #mixin__opacity-80 {
-    opacity: 0.8;
-  }
-
-  #mixin__opacity-85 {
-    opacity: 0.85;
-  }
-
-  #mixin__opacity-90 {
-    opacity: 0.9;
-  }
-
-  #mixin__opacity-95 {
-    opacity: 0.95;
-  }
-
-  #mixin__opacity-100 {
-    opacity: 1;
+  @if $Custom {
+    #mixin__opacity-v {
+      opacity: v;
+    }
   }
 }

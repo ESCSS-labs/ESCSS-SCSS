@@ -1,15 +1,65 @@
 @use "../../../settings/structures" as *;
 
 @if $BackgroundsSize {
-  #mixin__bg-auto {
-    background-size: auto;
-  }
+  /* BackgroundsSize */
+  @if $Basic {
+    #mixin__bg-auto {
+      background-size: auto;
+    }
 
-  #mixin__bg-cover {
-    background-size: cover;
-  }
+    #mixin__bg-cover {
+      background-size: cover;
+    }
 
-  #mixin__bg-contain {
-    background-size: contain;
+    #mixin__bg-contain {
+      background-size: contain;
+    }
+
+    @if $Rwd {
+      // reducing size for updating speed
+      @if $isLite {
+        /* Purpose(name conflict): bg -> bg-size */
+        #mixin__sm\:bg-size-v {
+          @media (min-width: $breakpoint-sm) {
+            background-size: v;
+          }
+        }
+
+        #mixin__md\:bg-size-v {
+          @media (min-width: $breakpoint-md) {
+            background-size: v;
+          }
+        }
+
+        #mixin__lg\:bg-size-v {
+          @media (min-width: $breakpoint-lg) {
+            background-size: v;
+          }
+        }
+
+        #mixin__xl\:bg-size-v {
+          @media (min-width: $breakpoint-xl) {
+            background-size: v;
+          }
+        }
+
+        #mixin__\\2xl\:bg-size-v {
+          @media (min-width: $breakpoint-2xl) {
+            background-size: v;
+          }
+        }
+      }
+
+      // tailwind default
+      @else {
+      }
+    }
+
+    @if $Custom {
+      /* Purpose(name conflict): bg -> bg-size */
+      #mixin__bg-size-v {
+        background-size: v;
+      }
+    }
   }
 }
