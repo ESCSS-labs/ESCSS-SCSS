@@ -1,0 +1,91 @@
+@use "../../setting" as *;
+
+@if $ScreenReaders {
+  /* ScreenReaders */
+  @if $Basic {
+    @mixin_sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    @mixin_not-sr-only {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+    }
+  }
+
+  @if $Rwd {
+    @mixin_sm\:forced-color-adjust-auto {
+      @media (min-width: $breakpoint-sm) {
+        forced-color-adjust: auto;
+      }
+    }
+
+    @mixin_sm\:forced-color-adjust-none {
+      @media (min-width: $breakpoint-sm) {
+        forced-color-adjust: none;
+      }
+    }
+
+    @mixin_md\:forced-color-adjust-auto {
+      @media (min-width: $breakpoint-md) {
+        forced-color-adjust: auto;
+      }
+    }
+
+    @mixin_md\:forced-color-adjust-none {
+      @media (min-width: $breakpoint-md) {
+        forced-color-adjust: none;
+      }
+    }
+
+    @mixin_lg\:forced-color-adjust-auto {
+      @media (min-width: $breakpoint-lg) {
+        forced-color-adjust: auto;
+      }
+    }
+
+    @mixin_lg\:forced-color-adjust-none {
+      @media (min-width: $breakpoint-lg) {
+        forced-color-adjust: none;
+      }
+    }
+
+    @mixin_xl\:forced-color-adjust-auto {
+      @media (min-width: $breakpoint-xl) {
+        forced-color-adjust: auto;
+      }
+    }
+
+    @mixin_xl\:forced-color-adjust-none {
+      @media (min-width: $breakpoint-xl) {
+        forced-color-adjust: none;
+      }
+    }
+
+    @mixin_\\2xl\:forced-color-adjust-auto {
+      @media (min-width: $breakpoint-2xl) {
+        forced-color-adjust: auto;
+      }
+    }
+
+    @mixin_\\2xl\:forced-color-adjust-none {
+      @media (min-width: $breakpoint-2xl) {
+        forced-color-adjust: none;
+      }
+    }
+  }
+}

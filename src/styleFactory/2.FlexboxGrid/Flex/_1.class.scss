@@ -1,0 +1,67 @@
+@use "../../setting" as *;
+
+@if $Flex {
+  /* Flex */
+  @if $Basic {
+    @mixin_flex-1 {
+      flex: 1 1 0%;
+    }
+
+    @mixin_flex-auto {
+      flex: 1 1 auto;
+    }
+
+    @mixin_flex-initial {
+      flex: 0 1 auto;
+    }
+
+    @mixin_flex-none {
+      flex: none;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      @mixin_sm\:flex-value {
+        @media (min-width: $breakpoint-sm) {
+          flex: _value;
+        }
+      }
+
+      @mixin_md\:flex-value {
+        @media (min-width: $breakpoint-md) {
+          flex: _value;
+        }
+      }
+
+      @mixin_lg\:flex-value {
+        @media (min-width: $breakpoint-lg) {
+          flex: _value;
+        }
+      }
+
+      @mixin_xl\:flex-value {
+        @media (min-width: $breakpoint-xl) {
+          flex: _value;
+        }
+      }
+
+      @mixin_\\2xl\:flex-value {
+        @media (min-width: $breakpoint-2xl) {
+          flex: _value;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    @mixin_flex-value {
+      flex: _value;
+    }
+  }
+}

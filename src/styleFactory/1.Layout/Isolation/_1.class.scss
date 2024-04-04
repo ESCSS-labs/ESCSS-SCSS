@@ -1,0 +1,76 @@
+@use "../../setting" as *;
+
+@if $Isolation {
+  /* Isolation */
+  @if $Basic {
+    @mixin_isolate {
+      isolation: isolate;
+    }
+
+    @mixin_isolation-auto {
+      isolation: auto;
+    }
+  }
+
+  @if $Rwd {
+    @mixin_sm\:isolate {
+      @media (min-width: $breakpoint-sm) {
+        isolation: isolate;
+      }
+    }
+
+    @mixin_sm\:isolation-auto {
+      @media (min-width: $breakpoint-sm) {
+        isolation: auto;
+      }
+    }
+
+    @mixin_md\:isolate {
+      @media (min-width: $breakpoint-md) {
+        isolation: isolate;
+      }
+    }
+
+    @mixin_md\:isolation-auto {
+      @media (min-width: $breakpoint-md) {
+        isolation: auto;
+      }
+    }
+
+    @mixin_lg\:isolate {
+      @media (min-width: $breakpoint-lg) {
+        isolation: isolate;
+      }
+    }
+
+    @mixin_lg\:isolation-auto {
+      @media (min-width: $breakpoint-lg) {
+        isolation: auto;
+      }
+    }
+
+    @mixin_xl\:isolate {
+      @media (min-width: $breakpoint-xl) {
+        isolation: isolate;
+      }
+    }
+
+    @mixin_xl\:isolation-auto {
+      @media (min-width: $breakpoint-xl) {
+        isolation: auto;
+      }
+    }
+
+    @mixin_\\2xl\:isolate {
+      @media (min-width: $breakpoint-2xl) {
+        isolation: isolate;
+      }
+    }
+
+    @mixin_\\2xl\:isolation-auto {
+      @media (min-width: $breakpoint-2xl) {
+        isolation: auto;
+      }
+    }
+  }
+}

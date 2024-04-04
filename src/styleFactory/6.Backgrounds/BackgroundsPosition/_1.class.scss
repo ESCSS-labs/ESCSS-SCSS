@@ -1,0 +1,89 @@
+@use "../../setting" as *;
+
+@if $BackgroundsPosition {
+  /* BackgroundsPosition */
+  @if $Basic {
+    @mixin_bg-bottom {
+      background-position: bottom;
+    }
+
+    @mixin_bg-center {
+      background-position: center;
+    }
+
+    @mixin_bg-left {
+      background-position: left;
+    }
+
+    @mixin_bg-left-bottom {
+      background-position: left bottom;
+    }
+
+    @mixin_bg-left-top {
+      background-position: left top;
+    }
+
+    @mixin_bg-right {
+      background-position: right;
+    }
+
+    @mixin_bg-right-bottom {
+      background-position: right bottom;
+    }
+
+    @mixin_bg-right-top {
+      background-position: right top;
+    }
+
+    @mixin_bg-top {
+      background-position: top;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      /* Purpose(name conflict): bg -> bg-position */
+      @mixin_sm\:bg-position-value {
+        @media (min-width: $breakpoint-sm) {
+          background-position: _value;
+        }
+      }
+
+      @mixin_md\:bg-position-value {
+        @media (min-width: $breakpoint-md) {
+          background-position: _value;
+        }
+      }
+
+      @mixin_lg\:bg-position-value {
+        @media (min-width: $breakpoint-lg) {
+          background-position: _value;
+        }
+      }
+
+      @mixin_xl\:bg-position-value {
+        @media (min-width: $breakpoint-xl) {
+          background-position: _value;
+        }
+      }
+
+      @mixin_\\2xl\:bg-position-value {
+        @media (min-width: $breakpoint-2xl) {
+          background-position: _value;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    /* Purpose(name conflict): bg -> bg-position */
+    @mixin_bg-position-value {
+      background-position: _value;
+    }
+  }
+}

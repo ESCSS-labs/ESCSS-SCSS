@@ -1,0 +1,137 @@
+@use "../../setting" as *;
+
+@if $FontSize {
+  /* FontSize */
+  @if $Basic {
+    /* 12px */
+    /* 16px */
+    @mixin_text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+
+    /* 14px */
+    /* 20px */
+    @mixin_text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    /* 16px */
+    /* 24px */
+    @mixin_text-base {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    /* 18px */
+    /* 28px */
+    @mixin_text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    /* 20px */
+    /* 28px */
+    @mixin_text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    /* 24px */
+    /* 32px */
+    @mixin_text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    /* 30px */
+    /* 36px */
+    @mixin_text-3xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    /* 36px */
+    /* 40px */
+    @mixin_text-4xl {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    /* 48px */
+    @mixin_text-5xl {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    /* 60px */
+    @mixin_text-6xl {
+      font-size: 3.75rem;
+      line-height: 1;
+    }
+
+    /* 72px */
+    @mixin_text-7xl {
+      font-size: 4.5rem;
+      line-height: 1;
+    }
+
+    /* 96px */
+    @mixin_text-8xl {
+      font-size: 6rem;
+      line-height: 1;
+    }
+
+    /* 128px */
+    @mixin_text-9xl {
+      font-size: 8rem;
+      line-height: 1;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      @mixin_sm\:text-value {
+        @media (min-width: $breakpoint-sm) {
+          font-size: _value;
+        }
+      }
+
+      @mixin_md\:text-value {
+        @media (min-width: $breakpoint-md) {
+          font-size: _value;
+        }
+      }
+
+      @mixin_lg\:text-value {
+        @media (min-width: $breakpoint-lg) {
+          font-size: _value;
+        }
+      }
+
+      @mixin_xl\:text-value {
+        @media (min-width: $breakpoint-xl) {
+          font-size: _value;
+        }
+      }
+
+      @mixin_\\2xl\:text-value {
+        @media (min-width: $breakpoint-2xl) {
+          font-size: _value;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    @mixin_text-value {
+      font-size: _value;
+    }
+  }
+}

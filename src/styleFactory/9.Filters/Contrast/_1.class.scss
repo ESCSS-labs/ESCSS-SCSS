@@ -1,0 +1,118 @@
+@use "../../setting" as *;
+
+@if $Contrast {
+  /* Contrast */
+  @if $Basic {
+    @mixin_contrast-0 {
+      --tw-contrast: contrast(0);
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    }
+
+    @mixin_contrast-50 {
+      --tw-contrast: contrast(0.5);
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    }
+
+    @mixin_contrast-75 {
+      --tw-contrast: contrast(0.75);
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    }
+
+    @mixin_contrast-100 {
+      --tw-contrast: contrast(1);
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    }
+
+    @mixin_contrast-125 {
+      --tw-contrast: contrast(1.25);
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    }
+
+    @mixin_contrast-150 {
+      --tw-contrast: contrast(1.5);
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    }
+
+    @mixin_contrast-200 {
+      --tw-contrast: contrast(2);
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      @mixin_sm\:contrast-value {
+        @media (min-width: $breakpoint-sm) {
+          --tw-contrast: "#<contrast(_value)>";
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+
+      @mixin_md\:contrast-value {
+        @media (min-width: $breakpoint-md) {
+          --tw-contrast: "#<contrast(_value)>";
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+
+      @mixin_lg\:contrast-value {
+        @media (min-width: $breakpoint-lg) {
+          --tw-contrast: "#<contrast(_value)>";
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+
+      @mixin_xl\:contrast-value {
+        @media (min-width: $breakpoint-xl) {
+          --tw-contrast: "#<contrast(_value)>";
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+
+      @mixin_\\2xl\:contrast-value {
+        @media (min-width: $breakpoint-2xl) {
+          --tw-contrast: "#<contrast(_value)>";
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    @mixin_contrast-value {
+      --tw-contrast: "#<contrast(_value)>";
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    }
+  }
+}

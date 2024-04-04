@@ -1,0 +1,79 @@
+@use "../../setting" as *;
+
+@if $TextDecorationThickness {
+  /* TextDecorationThickness */
+  @if $Basic {
+    @mixin_decoration-auto {
+      text-decoration-thickness: auto;
+    }
+
+    @mixin_decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+
+    @mixin_decoration-0 {
+      text-decoration-thickness: 0px;
+    }
+
+    @mixin_decoration-1 {
+      text-decoration-thickness: 1px;
+    }
+
+    @mixin_decoration-2 {
+      text-decoration-thickness: 2px;
+    }
+
+    @mixin_decoration-4 {
+      text-decoration-thickness: 4px;
+    }
+
+    @mixin_decoration-8 {
+      text-decoration-thickness: 8px;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      @mixin_sm\:decoration-value {
+        @media (min-width: $breakpoint-sm) {
+          text-decoration-thickness: _value;
+        }
+      }
+
+      @mixin_md\:decoration-value {
+        @media (min-width: $breakpoint-md) {
+          text-decoration-thickness: _value;
+        }
+      }
+
+      @mixin_lg\:decoration-value {
+        @media (min-width: $breakpoint-lg) {
+          text-decoration-thickness: _value;
+        }
+      }
+
+      @mixin_xl\:decoration-value {
+        @media (min-width: $breakpoint-xl) {
+          text-decoration-thickness: _value;
+        }
+      }
+
+      @mixin_\\2xl\:decoration-value {
+        @media (min-width: $breakpoint-2xl) {
+          text-decoration-thickness: _value;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    @mixin_decoration-value {
+      text-decoration-thickness: _value;
+    }
+  }
+}

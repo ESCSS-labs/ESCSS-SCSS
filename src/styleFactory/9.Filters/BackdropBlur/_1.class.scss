@@ -1,0 +1,148 @@
+@use "../../setting" as *;
+
+@if $BackdropBlur {
+  /* BackdropBlur */
+  @if $Basic {
+    @mixin_backdrop-blur-none {
+      --tw-backdrop-blur: blur(0);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+
+    @mixin_backdrop-blur-sm {
+      --tw-backdrop-blur: blur(4px);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+
+    @mixin_backdrop-blur {
+      --tw-backdrop-blur: blur(8px);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+
+    @mixin_backdrop-blur-md {
+      --tw-backdrop-blur: blur(12px);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+
+    @mixin_backdrop-blur-lg {
+      --tw-backdrop-blur: blur(16px);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+
+    @mixin_backdrop-blur-xl {
+      --tw-backdrop-blur: blur(24px);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+
+    @mixin_backdrop-blur-2xl {
+      --tw-backdrop-blur: blur(40px);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+
+    @mixin_backdrop-blur-3xl {
+      --tw-backdrop-blur: blur(64px);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      @mixin_sm\:backdrop-blur-value {
+        @media (min-width: $breakpoint-sm) {
+          --tw-backdrop-blur: "#<blur(_value)>";
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+
+      @mixin_md\:backdrop-blur-value {
+        @media (min-width: $breakpoint-md) {
+          --tw-backdrop-blur: "#<blur(_value)>";
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+
+      @mixin_lg\:backdrop-blur-value {
+        @media (min-width: $breakpoint-lg) {
+          --tw-backdrop-blur: "#<blur(_value)>";
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+
+      @mixin_xl\:backdrop-blur-value {
+        @media (min-width: $breakpoint-xl) {
+          --tw-backdrop-blur: "#<blur(_value)>";
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+
+      @mixin_\\2xl\:backdrop-blur-value {
+        @media (min-width: $breakpoint-2xl) {
+          --tw-backdrop-blur: "#<blur(_value)>";
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    @mixin_backdrop-blur-value {
+      --tw-backdrop-blur: "#<blur(_value)>";
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+  }
+}

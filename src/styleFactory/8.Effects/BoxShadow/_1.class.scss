@@ -1,0 +1,103 @@
+@use "../../setting" as *;
+
+@if $BoxShadow {
+  /* BoxShadow */
+  @if $Basic {
+    @mixin_shadow-sm {
+      --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+      box-shadow: var(--tw-shadow);
+    }
+
+    @mixin_shadow {
+      --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+        0 1px 2px -1px var(--tw-shadow-color);
+      box-shadow: var(--tw-shadow);
+    }
+
+    @mixin_shadow-md {
+      --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+        0 2px 4px -2px var(--tw-shadow-color);
+      box-shadow: var(--tw-shadow);
+    }
+
+    @mixin_shadow-lg {
+      --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+        0 4px 6px -4px var(--tw-shadow-color);
+      box-shadow: var(--tw-shadow);
+    }
+
+    @mixin_shadow-xl {
+      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+        0 8px 10px -6px var(--tw-shadow-color);
+      box-shadow: var(--tw-shadow);
+    }
+
+    @mixin_shadow-2xl {
+      --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+      --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+      box-shadow: var(--tw-shadow);
+    }
+
+    @mixin_shadow-inner {
+      --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+      --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+      box-shadow: var(--tw-shadow);
+    }
+
+    @mixin_shadow-none {
+      box-shadow: 0 0 #0000;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      @mixin_sm\:shadow-value {
+        @media (min-width: $breakpoint-sm) {
+          box-shadow: _value;
+        }
+      }
+      @mixin_md\:shadow-value {
+        @media (min-width: $breakpoint-md) {
+          box-shadow: _value;
+        }
+      }
+
+      @mixin_lg\:shadow-value {
+        @media (min-width: $breakpoint-lg) {
+          box-shadow: _value;
+        }
+      }
+
+      @mixin_xl\:shadow-value {
+        @media (min-width: $breakpoint-xl) {
+          box-shadow: _value;
+        }
+      }
+
+      @mixin_\\2xl\:shadow-value {
+        @media (min-width: $breakpoint-2xl) {
+          box-shadow: _value;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    @mixin_shadow-value {
+      box-shadow: _value;
+    }
+  }
+}

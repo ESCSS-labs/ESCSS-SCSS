@@ -1,0 +1,83 @@
+@use "../../setting" as *;
+
+@if $VerticalAlign {
+  /* VerticalAlign */
+  @if $Basic {
+    @mixin_align-baseline {
+      vertical-align: baseline;
+    }
+
+    @mixin_align-top {
+      vertical-align: top;
+    }
+
+    @mixin_align-middle {
+      vertical-align: middle;
+    }
+
+    @mixin_align-bottom {
+      vertical-align: bottom;
+    }
+
+    @mixin_align-text-top {
+      vertical-align: text-top;
+    }
+
+    @mixin_align-text-bottom {
+      vertical-align: text-bottom;
+    }
+
+    @mixin_align-sub {
+      vertical-align: sub;
+    }
+
+    @mixin_align-super {
+      vertical-align: super;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      @mixin_sm\:align-value {
+        @media (min-width: $breakpoint-sm) {
+          vertical-align: _value;
+        }
+      }
+
+      @mixin_md\:align-value {
+        @media (min-width: $breakpoint-md) {
+          vertical-align: _value;
+        }
+      }
+
+      @mixin_lg\:align-value {
+        @media (min-width: $breakpoint-lg) {
+          vertical-align: _value;
+        }
+      }
+
+      @mixin_xl\:align-value {
+        @media (min-width: $breakpoint-xl) {
+          vertical-align: _value;
+        }
+      }
+
+      @mixin_\\2xl\:align-value {
+        @media (min-width: $breakpoint-2xl) {
+          vertical-align: _value;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    @mixin_align-value {
+      vertical-align: _value;
+    }
+  }
+}

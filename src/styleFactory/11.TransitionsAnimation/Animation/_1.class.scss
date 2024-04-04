@@ -1,0 +1,113 @@
+@use "../../setting" as *;
+
+@if $Animation {
+  /* Animation */
+  @if $Basic {
+    @mixin_animate-none {
+      animation: none;
+    }
+
+    @mixin_animate-spin {
+      animation: spin 1s linear infinite;
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    @mixin_animate-ping {
+      animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+      @keyframes ping {
+        75%,
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+    }
+
+    @mixin_animate-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    @mixin_animate-bounce {
+      animation: bounce 1s infinite;
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(-25%);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+
+        50% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      @mixin_sm\:animate-value {
+        @media (min-width: $breakpoint-sm) {
+          animation: _value;
+        }
+      }
+
+      @mixin_md\:animate-value {
+        @media (min-width: $breakpoint-md) {
+          animation: _value;
+        }
+      }
+
+      @mixin_lg\:animate-value {
+        @media (min-width: $breakpoint-lg) {
+          animation: _value;
+        }
+      }
+
+      @mixin_xl\:animate-value {
+        @media (min-width: $breakpoint-xl) {
+          animation: _value;
+        }
+      }
+
+      @mixin_\\2xl\:animate-value {
+        @media (min-width: $breakpoint-2xl) {
+          animation: _value;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    @mixin_animate-value {
+      animation: _value;
+    }
+  }
+}

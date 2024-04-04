@@ -1,0 +1,89 @@
+@use "../../setting" as *;
+
+@if $FontWeight {
+  /* FontWeight */
+  @if $Basic {
+    @mixin_font-thin {
+      font-weight: 100;
+    }
+
+    @mixin_font-extralight {
+      font-weight: 200;
+    }
+
+    @mixin_font-light {
+      font-weight: 300;
+    }
+
+    @mixin_font-normal {
+      font-weight: 400;
+    }
+
+    @mixin_font-medium {
+      font-weight: 500;
+    }
+
+    @mixin_font-semibold {
+      font-weight: 600;
+    }
+
+    @mixin_font-bold {
+      font-weight: 700;
+    }
+
+    @mixin_font-extrabold {
+      font-weight: 800;
+    }
+
+    @mixin_font-black {
+      font-weight: 900;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      /* Purpose(name conflict): font -> font-weight */
+      @mixin_sm\:font-weight-value {
+        @media (min-width: $breakpoint-sm) {
+          font-weight: _value;
+        }
+      }
+
+      @mixin_md\:font-weight-value {
+        @media (min-width: $breakpoint-md) {
+          font-weight: _value;
+        }
+      }
+
+      @mixin_lg\:font-weight-value {
+        @media (min-width: $breakpoint-lg) {
+          font-weight: _value;
+        }
+      }
+
+      @mixin_xl\:font-weight-value {
+        @media (min-width: $breakpoint-xl) {
+          font-weight: _value;
+        }
+      }
+
+      @mixin_\\2xl\:font-weight-value {
+        @media (min-width: $breakpoint-2xl) {
+          font-weight: _value;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    /* Purpose(name conflict): font -> font-weight */
+    @mixin_font-weight-value {
+      font-weight: _value;
+    }
+  }
+}
