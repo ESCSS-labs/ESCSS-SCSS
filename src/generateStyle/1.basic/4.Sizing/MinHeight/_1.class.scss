@@ -1,208 +1,256 @@
 @use "../../../settings/structures" as *;
 
 @if $MinHeight {
-  #mixin__min-h-0 {
-    min-height: 0px;
+  /* MinHeight */
+  @if $Basic {
+    #mixin__min-h-0 {
+      min-height: 0px;
+    }
+
+    /* 4px */
+    #mixin__min-h-1 {
+      min-height: 0.25rem;
+    }
+
+    /* 8px */
+    #mixin__min-h-2 {
+      min-height: 0.5rem;
+    }
+
+    /* 12px */
+    #mixin__min-h-3 {
+      min-height: 0.75rem;
+    }
+
+    /* 16px */
+    #mixin__min-h-4 {
+      min-height: 1rem;
+    }
+
+    /* 20px */
+    #mixin__min-h-5 {
+      min-height: 1.25rem;
+    }
+
+    /* 24px */
+    #mixin__min-h-6 {
+      min-height: 1.5rem;
+    }
+
+    /* 28px */
+    #mixin__min-h-7 {
+      min-height: 1.75rem;
+    }
+
+    /* 32px */
+    #mixin__min-h-8 {
+      min-height: 2rem;
+    }
+
+    /* 36px */
+    #mixin__min-h-9 {
+      min-height: 2.25rem;
+    }
+
+    /* 40px */
+    #mixin__min-h-10 {
+      min-height: 2.5rem;
+    }
+
+    /* 44px */
+    #mixin__min-h-11 {
+      min-height: 2.75rem;
+    }
+
+    /* 48px */
+    #mixin__min-h-12 {
+      min-height: 3rem;
+    }
+
+    /* 56px */
+    #mixin__min-h-14 {
+      min-height: 3.5rem;
+    }
+
+    /* 64px */
+    #mixin__min-h-16 {
+      min-height: 4rem;
+    }
+
+    /* 80px */
+    #mixin__min-h-20 {
+      min-height: 5rem;
+    }
+
+    /* 96px */
+    #mixin__min-h-24 {
+      min-height: 6rem;
+    }
+
+    /* 112px */
+    #mixin__min-h-28 {
+      min-height: 7rem;
+    }
+
+    /* 128px */
+    #mixin__min-h-32 {
+      min-height: 8rem;
+    }
+
+    /* 144px */
+    #mixin__min-h-36 {
+      min-height: 9rem;
+    }
+
+    /* 160px */
+    #mixin__min-h-40 {
+      min-height: 10rem;
+    }
+
+    /* 176px */
+    #mixin__min-h-44 {
+      min-height: 11rem;
+    }
+
+    /* 192px */
+    #mixin__min-h-48 {
+      min-height: 12rem;
+    }
+
+    /* 208px */
+    #mixin__min-h-52 {
+      min-height: 13rem;
+    }
+
+    /* 224px */
+    #mixin__min-h-56 {
+      min-height: 14rem;
+    }
+
+    /* 240px */
+    #mixin__min-h-60 {
+      min-height: 15rem;
+    }
+
+    /* 256px */
+    #mixin__min-h-64 {
+      min-height: 16rem;
+    }
+
+    /* 288px */
+    #mixin__min-h-72 {
+      min-height: 18rem;
+    }
+
+    /* 320px */
+    #mixin__min-h-80 {
+      min-height: 20rem;
+    }
+
+    /* 384px */
+    #mixin__min-h-96 {
+      min-height: 24rem;
+    }
+
+    #mixin__min-h-px {
+      min-height: 1px;
+    }
+
+    /* 2px */
+    #mixin__min-h-0\.5 {
+      min-height: 0.125rem;
+    }
+
+    /* 6px */
+    #mixin__min-h-1\.5 {
+      min-height: 0.375rem;
+    }
+
+    /* 10px */
+    #mixin__min-h-2\.5 {
+      min-height: 0.625rem;
+    }
+
+    /* 14px */
+    #mixin__min-h-3\.5 {
+      min-height: 0.875rem;
+    }
+
+    #mixin__min-h-full {
+      min-height: 100%;
+    }
+
+    #mixin__min-h-screen {
+      min-height: 100vh;
+    }
+
+    #mixin__min-h-svh {
+      min-height: 100svh;
+    }
+
+    #mixin__min-h-lvh {
+      min-height: 100lvh;
+    }
+
+    #mixin__min-h-dvh {
+      min-height: 100dvh;
+    }
+
+    #mixin__min-h-min {
+      min-height: min-content;
+    }
+
+    #mixin__min-h-max {
+      min-height: max-content;
+    }
+
+    #mixin__min-h-fit {
+      min-height: fit-content;
+    }
   }
 
-  /* 4px */
-  #mixin__min-h-1 {
-    min-height: 0.25rem;
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:min-h-v {
+        @media (min-width: $breakpoint-sm) {
+          min-height: v;
+        }
+      }
+
+      #mixin__md\:min-h-v {
+        @media (min-width: $breakpoint-md) {
+          min-height: v;
+        }
+      }
+
+      #mixin__lg\:min-h-v {
+        @media (min-width: $breakpoint-lg) {
+          min-height: v;
+        }
+      }
+
+      #mixin__xl\:min-h-v {
+        @media (min-width: $breakpoint-xl) {
+          min-height: v;
+        }
+      }
+
+      #mixin__\\2xl\:min-h-v {
+        @media (min-width: $breakpoint-2xl) {
+          min-height: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
   }
 
-  /* 8px */
-  #mixin__min-h-2 {
-    min-height: 0.5rem;
-  }
-
-  /* 12px */
-  #mixin__min-h-3 {
-    min-height: 0.75rem;
-  }
-
-  /* 16px */
-  #mixin__min-h-4 {
-    min-height: 1rem;
-  }
-
-  /* 20px */
-  #mixin__min-h-5 {
-    min-height: 1.25rem;
-  }
-
-  /* 24px */
-  #mixin__min-h-6 {
-    min-height: 1.5rem;
-  }
-
-  /* 28px */
-  #mixin__min-h-7 {
-    min-height: 1.75rem;
-  }
-
-  /* 32px */
-  #mixin__min-h-8 {
-    min-height: 2rem;
-  }
-
-  /* 36px */
-  #mixin__min-h-9 {
-    min-height: 2.25rem;
-  }
-
-  /* 40px */
-  #mixin__min-h-10 {
-    min-height: 2.5rem;
-  }
-
-  /* 44px */
-  #mixin__min-h-11 {
-    min-height: 2.75rem;
-  }
-
-  /* 48px */
-  #mixin__min-h-12 {
-    min-height: 3rem;
-  }
-
-  /* 56px */
-  #mixin__min-h-14 {
-    min-height: 3.5rem;
-  }
-
-  /* 64px */
-  #mixin__min-h-16 {
-    min-height: 4rem;
-  }
-
-  /* 80px */
-  #mixin__min-h-20 {
-    min-height: 5rem;
-  }
-
-  /* 96px */
-  #mixin__min-h-24 {
-    min-height: 6rem;
-  }
-
-  /* 112px */
-  #mixin__min-h-28 {
-    min-height: 7rem;
-  }
-
-  /* 128px */
-  #mixin__min-h-32 {
-    min-height: 8rem;
-  }
-
-  /* 144px */
-  #mixin__min-h-36 {
-    min-height: 9rem;
-  }
-
-  /* 160px */
-  #mixin__min-h-40 {
-    min-height: 10rem;
-  }
-
-  /* 176px */
-  #mixin__min-h-44 {
-    min-height: 11rem;
-  }
-
-  /* 192px */
-  #mixin__min-h-48 {
-    min-height: 12rem;
-  }
-
-  /* 208px */
-  #mixin__min-h-52 {
-    min-height: 13rem;
-  }
-
-  /* 224px */
-  #mixin__min-h-56 {
-    min-height: 14rem;
-  }
-
-  /* 240px */
-  #mixin__min-h-60 {
-    min-height: 15rem;
-  }
-
-  /* 256px */
-  #mixin__min-h-64 {
-    min-height: 16rem;
-  }
-
-  /* 288px */
-  #mixin__min-h-72 {
-    min-height: 18rem;
-  }
-
-  /* 320px */
-  #mixin__min-h-80 {
-    min-height: 20rem;
-  }
-
-  /* 384px */
-  #mixin__min-h-96 {
-    min-height: 24rem;
-  }
-
-  #mixin__min-h-px {
-    min-height: 1px;
-  }
-
-  /* 2px */
-  #mixin__min-h-0\.5 {
-    min-height: 0.125rem;
-  }
-
-  /* 6px */
-  #mixin__min-h-1\.5 {
-    min-height: 0.375rem;
-  }
-
-  /* 10px */
-  #mixin__min-h-2\.5 {
-    min-height: 0.625rem;
-  }
-
-  /* 14px */
-  #mixin__min-h-3\.5 {
-    min-height: 0.875rem;
-  }
-
-  #mixin__min-h-full {
-    min-height: 100%;
-  }
-
-  #mixin__min-h-screen {
-    min-height: 100vh;
-  }
-
-  #mixin__min-h-svh {
-    min-height: 100svh;
-  }
-
-  #mixin__min-h-lvh {
-    min-height: 100lvh;
-  }
-
-  #mixin__min-h-dvh {
-    min-height: 100dvh;
-  }
-
-  #mixin__min-h-min {
-    min-height: min-content;
-  }
-
-  #mixin__min-h-max {
-    min-height: max-content;
-  }
-
-  #mixin__min-h-fit {
-    min-height: fit-content;
+  @if $Custom {
+    #mixin__min-h-v {
+      min-height: v;
+    }
   }
 }

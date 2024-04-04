@@ -1,192 +1,240 @@
 @use "../../../settings/structures" as *;
 
 @if $MinWidth {
-  #mixin__min-w-0 {
-    min-width: 0px;
+  /* MinWidth */
+  @if $Basic {
+    #mixin__min-w-0 {
+      min-width: 0px;
+    }
+
+    /* 4px */
+    #mixin__min-w-1 {
+      min-width: 0.25rem;
+    }
+
+    /* 8px */
+    #mixin__min-w-2 {
+      min-width: 0.5rem;
+    }
+
+    /* 12px */
+    #mixin__min-w-3 {
+      min-width: 0.75rem;
+    }
+
+    /* 16px */
+    #mixin__min-w-4 {
+      min-width: 1rem;
+    }
+
+    /* 20px */
+    #mixin__min-w-5 {
+      min-width: 1.25rem;
+    }
+
+    /* 24px */
+    #mixin__min-w-6 {
+      min-width: 1.5rem;
+    }
+
+    /* 28px */
+    #mixin__min-w-7 {
+      min-width: 1.75rem;
+    }
+
+    /* 32px */
+    #mixin__min-w-8 {
+      min-width: 2rem;
+    }
+
+    /* 36px */
+    #mixin__min-w-9 {
+      min-width: 2.25rem;
+    }
+
+    /* 40px */
+    #mixin__min-w-10 {
+      min-width: 2.5rem;
+    }
+
+    /* 44px */
+    #mixin__min-w-11 {
+      min-width: 2.75rem;
+    }
+
+    /* 48px */
+    #mixin__min-w-12 {
+      min-width: 3rem;
+    }
+
+    /* 56px */
+    #mixin__min-w-14 {
+      min-width: 3.5rem;
+    }
+
+    /* 64px */
+    #mixin__min-w-16 {
+      min-width: 4rem;
+    }
+
+    /* 80px */
+    #mixin__min-w-20 {
+      min-width: 5rem;
+    }
+
+    /* 96px */
+    #mixin__min-w-24 {
+      min-width: 6rem;
+    }
+
+    /* 112px */
+    #mixin__min-w-28 {
+      min-width: 7rem;
+    }
+
+    /* 128px */
+    #mixin__min-w-32 {
+      min-width: 8rem;
+    }
+
+    /* 144px */
+    #mixin__min-w-36 {
+      min-width: 9rem;
+    }
+
+    /* 160px */
+    #mixin__min-w-40 {
+      min-width: 10rem;
+    }
+
+    /* 176px */
+    #mixin__min-w-44 {
+      min-width: 11rem;
+    }
+
+    /* 192px */
+    #mixin__min-w-48 {
+      min-width: 12rem;
+    }
+
+    /* 208px */
+    #mixin__min-w-52 {
+      min-width: 13rem;
+    }
+
+    /* 224px */
+    #mixin__min-w-56 {
+      min-width: 14rem;
+    }
+
+    /* 240px */
+    #mixin__min-w-60 {
+      min-width: 15rem;
+    }
+
+    /* 256px */
+    #mixin__min-w-64 {
+      min-width: 16rem;
+    }
+
+    /* 288px */
+    #mixin__min-w-72 {
+      min-width: 18rem;
+    }
+
+    /* 320px */
+    #mixin__min-w-80 {
+      min-width: 20rem;
+    }
+
+    /* 384px */
+    #mixin__min-w-96 {
+      min-width: 24rem;
+    }
+
+    #mixin__min-w-px {
+      min-width: 1px;
+    }
+
+    /* 2px */
+    #mixin__min-w-0\.5 {
+      min-width: 0.125rem;
+    }
+
+    /* 6px */
+    #mixin__min-w-1\.5 {
+      min-width: 0.375rem;
+    }
+
+    /* 10px */
+    #mixin__min-w-2\.5 {
+      min-width: 0.625rem;
+    }
+
+    /* 14px */
+    #mixin__min-w-3\.5 {
+      min-width: 0.875rem;
+    }
+
+    #mixin__min-w-full {
+      min-width: 100%;
+    }
+
+    #mixin__min-w-min {
+      min-width: min-content;
+    }
+
+    #mixin__min-w-max {
+      min-width: max-content;
+    }
+
+    #mixin__min-w-fit {
+      min-width: fit-content;
+    }
   }
 
-  /* 4px */
-  #mixin__min-w-1 {
-    min-width: 0.25rem;
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:min-w-v {
+        @media (min-width: $breakpoint-sm) {
+          min-width: v;
+        }
+      }
+
+      #mixin__md\:min-w-v {
+        @media (min-width: $breakpoint-md) {
+          min-width: v;
+        }
+      }
+
+      #mixin__lg\:min-w-v {
+        @media (min-width: $breakpoint-lg) {
+          min-width: v;
+        }
+      }
+
+      #mixin__xl\:min-w-v {
+        @media (min-width: $breakpoint-xl) {
+          min-width: v;
+        }
+      }
+
+      #mixin__\\2xl\:min-w-v {
+        @media (min-width: $breakpoint-2xl) {
+          min-width: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
   }
 
-  /* 8px */
-  #mixin__min-w-2 {
-    min-width: 0.5rem;
-  }
-
-  /* 12px */
-  #mixin__min-w-3 {
-    min-width: 0.75rem;
-  }
-
-  /* 16px */
-  #mixin__min-w-4 {
-    min-width: 1rem;
-  }
-
-  /* 20px */
-  #mixin__min-w-5 {
-    min-width: 1.25rem;
-  }
-
-  /* 24px */
-  #mixin__min-w-6 {
-    min-width: 1.5rem;
-  }
-
-  /* 28px */
-  #mixin__min-w-7 {
-    min-width: 1.75rem;
-  }
-
-  /* 32px */
-  #mixin__min-w-8 {
-    min-width: 2rem;
-  }
-
-  /* 36px */
-  #mixin__min-w-9 {
-    min-width: 2.25rem;
-  }
-
-  /* 40px */
-  #mixin__min-w-10 {
-    min-width: 2.5rem;
-  }
-
-  /* 44px */
-  #mixin__min-w-11 {
-    min-width: 2.75rem;
-  }
-
-  /* 48px */
-  #mixin__min-w-12 {
-    min-width: 3rem;
-  }
-
-  /* 56px */
-  #mixin__min-w-14 {
-    min-width: 3.5rem;
-  }
-
-  /* 64px */
-  #mixin__min-w-16 {
-    min-width: 4rem;
-  }
-
-  /* 80px */
-  #mixin__min-w-20 {
-    min-width: 5rem;
-  }
-
-  /* 96px */
-  #mixin__min-w-24 {
-    min-width: 6rem;
-  }
-
-  /* 112px */
-  #mixin__min-w-28 {
-    min-width: 7rem;
-  }
-
-  /* 128px */
-  #mixin__min-w-32 {
-    min-width: 8rem;
-  }
-
-  /* 144px */
-  #mixin__min-w-36 {
-    min-width: 9rem;
-  }
-
-  /* 160px */
-  #mixin__min-w-40 {
-    min-width: 10rem;
-  }
-
-  /* 176px */
-  #mixin__min-w-44 {
-    min-width: 11rem;
-  }
-
-  /* 192px */
-  #mixin__min-w-48 {
-    min-width: 12rem;
-  }
-
-  /* 208px */
-  #mixin__min-w-52 {
-    min-width: 13rem;
-  }
-
-  /* 224px */
-  #mixin__min-w-56 {
-    min-width: 14rem;
-  }
-
-  /* 240px */
-  #mixin__min-w-60 {
-    min-width: 15rem;
-  }
-
-  /* 256px */
-  #mixin__min-w-64 {
-    min-width: 16rem;
-  }
-
-  /* 288px */
-  #mixin__min-w-72 {
-    min-width: 18rem;
-  }
-
-  /* 320px */
-  #mixin__min-w-80 {
-    min-width: 20rem;
-  }
-
-  /* 384px */
-  #mixin__min-w-96 {
-    min-width: 24rem;
-  }
-
-  #mixin__min-w-px {
-    min-width: 1px;
-  }
-
-  /* 2px */
-  #mixin__min-w-0\.5 {
-    min-width: 0.125rem;
-  }
-
-  /* 6px */
-  #mixin__min-w-1\.5 {
-    min-width: 0.375rem;
-  }
-
-  /* 10px */
-  #mixin__min-w-2\.5 {
-    min-width: 0.625rem;
-  }
-
-  /* 14px */
-  #mixin__min-w-3\.5 {
-    min-width: 0.875rem;
-  }
-
-  #mixin__min-w-full {
-    min-width: 100%;
-  }
-
-  #mixin__min-w-min {
-    min-width: min-content;
-  }
-
-  #mixin__min-w-max {
-    min-width: max-content;
-  }
-
-  #mixin__min-w-fit {
-    min-width: fit-content;
+  @if $Custom {
+    #mixin__min-w-v {
+      min-width: v;
+    }
   }
 }
