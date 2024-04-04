@@ -1,11 +1,76 @@
 @use "../../../settings/structures" as *;
 
 @if $TableLayout {
-  #mixin__table-auto {
-    table-layout: auto;
+  /* TableLayout */
+  @if $Basic {
+    #mixin__table-auto {
+      table-layout: auto;
+    }
+
+    #mixin__table-fixed {
+      table-layout: fixed;
+    }
   }
 
-  #mixin__table-fixed {
-    table-layout: fixed;
+  @if $Rwd {
+    #mixin__sm\:table-auto {
+      @media (min-width: $breakpoint-sm) {
+        table-layout: auto;
+      }
+    }
+
+    #mixin__sm\:table-fixed {
+      @media (min-width: $breakpoint-sm) {
+        table-layout: fixed;
+      }
+    }
+
+    #mixin__md\:table-auto {
+      @media (min-width: $breakpoint-md) {
+        table-layout: auto;
+      }
+    }
+
+    #mixin__md\:table-fixed {
+      @media (min-width: $breakpoint-md) {
+        table-layout: fixed;
+      }
+    }
+
+    #mixin__lg\:table-auto {
+      @media (min-width: $breakpoint-lg) {
+        table-layout: auto;
+      }
+    }
+
+    #mixin__lg\:table-fixed {
+      @media (min-width: $breakpoint-lg) {
+        table-layout: fixed;
+      }
+    }
+
+    #mixin__xl\:table-auto {
+      @media (min-width: $breakpoint-xl) {
+        table-layout: auto;
+      }
+    }
+
+    #mixin__xl\:table-fixed {
+      @media (min-width: $breakpoint-xl) {
+        table-layout: fixed;
+      }
+    }
+
+    #mixin__\\2xl\:table-auto {
+      @media (min-width: $breakpoint-2xl) {
+        table-layout: auto;
+      }
+    }
+
+    #mixin__\\2xl\:table-fixed {
+      @media (min-width: $breakpoint-2xl) {
+        table-layout: fixed;
+      }
+    }
   }
 }

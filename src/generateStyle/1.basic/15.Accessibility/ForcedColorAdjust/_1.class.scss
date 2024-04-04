@@ -1,11 +1,151 @@
 @use "../../../settings/structures" as *;
 
 @if $ForcedColorAdjust {
-  #mixin__forced-color-adjust-auto {
-    forced-color-adjust: auto;
+  /* ForcedColorAdjust */
+  @if $Basic {
+    #mixin__forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    #mixin__forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
   }
 
-  #mixin__forced-color-adjust-none {
-    forced-color-adjust: none;
+  @if $Rwd {
+    #mixin__sm\:sr-only {
+      @media (min-width: $breakpoint-sm) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    }
+
+    #mixin__sm\:not-sr-only {
+      @media (min-width: $breakpoint-sm) {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+      }
+    }
+
+    #mixin__md\:sr-only {
+      @media (min-width: $breakpoint-md) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    }
+
+    #mixin__md\:not-sr-only {
+      @media (min-width: $breakpoint-md) {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+      }
+    }
+
+    #mixin__lg\:sr-only {
+      @media (min-width: $breakpoint-lg) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    }
+
+    #mixin__lg\:not-sr-only {
+      @media (min-width: $breakpoint-lg) {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+      }
+    }
+
+    #mixin__xl\:sr-only {
+      @media (min-width: $breakpoint-xl) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    }
+
+    #mixin__xl\:not-sr-only {
+      @media (min-width: $breakpoint-xl) {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+      }
+    }
+
+    #mixin__\\2xl\:sr-only {
+      @media (min-width: $breakpoint-2xl) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    }
+
+    #mixin__\\2xl\:not-sr-only {
+      @media (min-width: $breakpoint-2xl) {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+      }
+    }
   }
 }

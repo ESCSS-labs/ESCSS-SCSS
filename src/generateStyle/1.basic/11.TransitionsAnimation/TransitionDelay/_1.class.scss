@@ -1,39 +1,87 @@
 @use "../../../settings/structures" as *;
 
 @if $TransitionDelay {
-  #mixin__delay-0 {
-    transition-delay: 0s;
+  /* TransitionDelay */
+  @if $Basic {
+    #mixin__delay-0 {
+      transition-delay: 0s;
+    }
+
+    #mixin__delay-75 {
+      transition-delay: 75ms;
+    }
+
+    #mixin__delay-100 {
+      transition-delay: 100ms;
+    }
+
+    #mixin__delay-150 {
+      transition-delay: 150ms;
+    }
+
+    #mixin__delay-200 {
+      transition-delay: 200ms;
+    }
+
+    #mixin__delay-300 {
+      transition-delay: 300ms;
+    }
+
+    #mixin__delay-500 {
+      transition-delay: 500ms;
+    }
+
+    #mixin__delay-700 {
+      transition-delay: 700ms;
+    }
+
+    #mixin__delay-1000 {
+      transition-delay: 1000ms;
+    }
   }
 
-  #mixin__delay-75 {
-    transition-delay: 75ms;
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:delay-v {
+        @media (min-width: $breakpoint-sm) {
+          transition-delay: v;
+        }
+      }
+
+      #mixin__md\:delay-v {
+        @media (min-width: $breakpoint-md) {
+          transition-delay: v;
+        }
+      }
+
+      #mixin__lg\:delay-v {
+        @media (min-width: $breakpoint-lg) {
+          transition-delay: v;
+        }
+      }
+
+      #mixin__xl\:delay-v {
+        @media (min-width: $breakpoint-xl) {
+          transition-delay: v;
+        }
+      }
+
+      #mixin__\\2xl\:delay-v {
+        @media (min-width: $breakpoint-2xl) {
+          transition-delay: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
   }
 
-  #mixin__delay-100 {
-    transition-delay: 100ms;
-  }
-
-  #mixin__delay-150 {
-    transition-delay: 150ms;
-  }
-
-  #mixin__delay-200 {
-    transition-delay: 200ms;
-  }
-
-  #mixin__delay-300 {
-    transition-delay: 300ms;
-  }
-
-  #mixin__delay-500 {
-    transition-delay: 500ms;
-  }
-
-  #mixin__delay-700 {
-    transition-delay: 700ms;
-  }
-
-  #mixin__delay-1000 {
-    transition-delay: 1000ms;
+  @if $Custom {
+    #mixin__delay-v {
+      transition-delay: v;
+    }
   }
 }

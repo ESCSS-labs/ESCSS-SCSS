@@ -1,39 +1,357 @@
 @use "../../../settings/structures" as *;
 
 @if $TransformOrigin {
-  #mixin__origin-center {
-    transform-origin: center;
+  /* TransformOrigin */
+  @if $Basic {
+    #mixin__origin-center {
+      transform-origin: center;
+    }
+
+    #mixin__origin-top {
+      transform-origin: top;
+    }
+
+    #mixin__origin-top-right {
+      transform-origin: top right;
+    }
+
+    #mixin__origin-right {
+      transform-origin: right;
+    }
+
+    #mixin__origin-bottom-right {
+      transform-origin: bottom right;
+    }
+
+    #mixin__origin-bottom {
+      transform-origin: bottom;
+    }
+
+    #mixin__origin-bottom-left {
+      transform-origin: bottom left;
+    }
+
+    #mixin__origin-left {
+      transform-origin: left;
+    }
+
+    #mixin__origin-top-left {
+      transform-origin: top left;
+    }
   }
 
-  #mixin__origin-top {
-    transform-origin: top;
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:origin-center {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: center;
+        }
+      }
+
+      #mixin__sm\:origin-top {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: top;
+        }
+      }
+
+      #mixin__sm\:origin-top-right {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: top right;
+        }
+      }
+
+      #mixin__sm\:origin-right {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: right;
+        }
+      }
+
+      #mixin__sm\:origin-bottom-right {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: bottom right;
+        }
+      }
+
+      #mixin__sm\:origin-bottom {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: bottom;
+        }
+      }
+
+      #mixin__sm\:origin-bottom-left {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: bottom left;
+        }
+      }
+
+      #mixin__sm\:origin-left {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: left;
+        }
+      }
+
+      #mixin__sm\:origin-top-left {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: top left;
+        }
+      }
+
+      #mixin__md\:origin-center {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: center;
+        }
+      }
+
+      #mixin__md\:origin-top {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: top;
+        }
+      }
+
+      #mixin__md\:origin-top-right {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: top right;
+        }
+      }
+
+      #mixin__md\:origin-right {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: right;
+        }
+      }
+
+      #mixin__md\:origin-bottom-right {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: bottom right;
+        }
+      }
+
+      #mixin__md\:origin-bottom {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: bottom;
+        }
+      }
+
+      #mixin__md\:origin-bottom-left {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: bottom left;
+        }
+      }
+
+      #mixin__md\:origin-left {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: left;
+        }
+      }
+
+      #mixin__md\:origin-top-left {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: top left;
+        }
+      }
+
+      #mixin__lg\:origin-center {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: center;
+        }
+      }
+
+      #mixin__lg\:origin-top {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: top;
+        }
+      }
+
+      #mixin__lg\:origin-top-right {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: top right;
+        }
+      }
+
+      #mixin__lg\:origin-right {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: right;
+        }
+      }
+
+      #mixin__lg\:origin-bottom-right {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: bottom right;
+        }
+      }
+
+      #mixin__lg\:origin-bottom {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: bottom;
+        }
+      }
+
+      #mixin__lg\:origin-bottom-left {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: bottom left;
+        }
+      }
+
+      #mixin__lg\:origin-left {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: left;
+        }
+      }
+
+      #mixin__lg\:origin-top-left {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: top left;
+        }
+      }
+
+      #mixin__xl\:origin-center {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: center;
+        }
+      }
+
+      #mixin__xl\:origin-top {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: top;
+        }
+      }
+
+      #mixin__xl\:origin-top-right {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: top right;
+        }
+      }
+
+      #mixin__xl\:origin-right {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: right;
+        }
+      }
+
+      #mixin__xl\:origin-bottom-right {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: bottom right;
+        }
+      }
+
+      #mixin__xl\:origin-bottom {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: bottom;
+        }
+      }
+
+      #mixin__xl\:origin-bottom-left {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: bottom left;
+        }
+      }
+
+      #mixin__xl\:origin-left {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: left;
+        }
+      }
+
+      #mixin__xl\:origin-top-left {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: top left;
+        }
+      }
+
+      #mixin__\\2xl\:origin-center {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: center;
+        }
+      }
+
+      #mixin__\\2xl\:origin-top {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: top;
+        }
+      }
+
+      #mixin__\\2xl\:origin-top-right {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: top right;
+        }
+      }
+
+      #mixin__\\2xl\:origin-right {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: right;
+        }
+      }
+
+      #mixin__\\2xl\:origin-bottom-right {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: bottom right;
+        }
+      }
+
+      #mixin__\\2xl\:origin-bottom {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: bottom;
+        }
+      }
+
+      #mixin__\\2xl\:origin-bottom-left {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: bottom left;
+        }
+      }
+
+      #mixin__\\2xl\:origin-left {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: left;
+        }
+      }
+
+      #mixin__\\2xl\:origin-top-left {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: top left;
+        }
+      }
+
+      #mixin__sm\:origin-v {
+        @media (min-width: $breakpoint-sm) {
+          transform-origin: v;
+        }
+      }
+
+      #mixin__md\:origin-v {
+        @media (min-width: $breakpoint-md) {
+          transform-origin: v;
+        }
+      }
+
+      #mixin__lg\:origin-v {
+        @media (min-width: $breakpoint-lg) {
+          transform-origin: v;
+        }
+      }
+
+      #mixin__xl\:origin-v {
+        @media (min-width: $breakpoint-xl) {
+          transform-origin: v;
+        }
+      }
+
+      #mixin__\\2xl\:origin-v {
+        @media (min-width: $breakpoint-2xl) {
+          transform-origin: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
   }
 
-  #mixin__origin-top-right {
-    transform-origin: top right;
-  }
-
-  #mixin__origin-right {
-    transform-origin: right;
-  }
-
-  #mixin__origin-bottom-right {
-    transform-origin: bottom right;
-  }
-
-  #mixin__origin-bottom {
-    transform-origin: bottom;
-  }
-
-  #mixin__origin-bottom-left {
-    transform-origin: bottom left;
-  }
-
-  #mixin__origin-left {
-    transform-origin: left;
-  }
-
-  #mixin__origin-top-left {
-    transform-origin: top left;
+  @if $Custom {
+    #mixin__origin-v {
+      transform-origin: v;
+    }
   }
 }

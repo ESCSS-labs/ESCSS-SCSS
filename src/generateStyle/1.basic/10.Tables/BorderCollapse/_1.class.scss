@@ -1,11 +1,76 @@
 @use "../../../settings/structures" as *;
 
 @if $BorderCollapse {
-  #mixin__border-collapse {
-    border-collapse: collapse;
+  /* BorderCollapse */
+  @if $Basic {
+    #mixin__border-collapse {
+      border-collapse: collapse;
+    }
+
+    #mixin__border-separate {
+      border-collapse: separate;
+    }
   }
 
-  #mixin__border-separate {
-    border-collapse: separate;
+  @if $Rwd {
+    #mixin__sm\:border-collapse {
+      @media (min-width: $breakpoint-sm) {
+        border-collapse: collapse;
+      }
+    }
+
+    #mixin__sm\:border-separate {
+      @media (min-width: $breakpoint-sm) {
+        border-collapse: separate;
+      }
+    }
+
+    #mixin__md\:border-collapse {
+      @media (min-width: $breakpoint-md) {
+        border-collapse: collapse;
+      }
+    }
+
+    #mixin__md\:border-separate {
+      @media (min-width: $breakpoint-md) {
+        border-collapse: separate;
+      }
+    }
+
+    #mixin__lg\:border-collapse {
+      @media (min-width: $breakpoint-lg) {
+        border-collapse: collapse;
+      }
+    }
+
+    #mixin__lg\:border-separate {
+      @media (min-width: $breakpoint-lg) {
+        border-collapse: separate;
+      }
+    }
+
+    #mixin__xl\:border-collapse {
+      @media (min-width: $breakpoint-xl) {
+        border-collapse: collapse;
+      }
+    }
+
+    #mixin__xl\:border-separate {
+      @media (min-width: $breakpoint-xl) {
+        border-collapse: separate;
+      }
+    }
+
+    #mixin__\\2xl\:border-collapse {
+      @media (min-width: $breakpoint-2xl) {
+        border-collapse: collapse;
+      }
+    }
+
+    #mixin__\\2xl\:border-separate {
+      @media (min-width: $breakpoint-2xl) {
+        border-collapse: separate;
+      }
+    }
   }
 }

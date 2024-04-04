@@ -1,11 +1,76 @@
 @use "../../../settings/structures" as *;
 
 @if $CaptionSide {
-  #mixin__caption-top {
-    caption-side: top;
+  /* CaptionSide */
+  @if $Basic {
+    #mixin__caption-top {
+      caption-side: top;
+    }
+
+    #mixin__caption-bottom {
+      caption-side: bottom;
+    }
   }
 
-  #mixin__caption-bottom {
-    caption-side: bottom;
+  @if $Rwd {
+    #mixin__sm\:caption-top {
+      @media (min-width: $breakpoint-sm) {
+        caption-side: top;
+      }
+    }
+
+    #mixin__sm\:caption-bottom {
+      @media (min-width: $breakpoint-sm) {
+        caption-side: bottom;
+      }
+    }
+
+    #mixin__md\:caption-top {
+      @media (min-width: $breakpoint-md) {
+        caption-side: top;
+      }
+    }
+
+    #mixin__md\:caption-bottom {
+      @media (min-width: $breakpoint-md) {
+        caption-side: bottom;
+      }
+    }
+
+    #mixin__lg\:caption-top {
+      @media (min-width: $breakpoint-lg) {
+        caption-side: top;
+      }
+    }
+
+    #mixin__lg\:caption-bottom {
+      @media (min-width: $breakpoint-lg) {
+        caption-side: bottom;
+      }
+    }
+
+    #mixin__xl\:caption-top {
+      @media (min-width: $breakpoint-xl) {
+        caption-side: top;
+      }
+    }
+
+    #mixin__xl\:caption-bottom {
+      @media (min-width: $breakpoint-xl) {
+        caption-side: bottom;
+      }
+    }
+
+    #mixin__\\2xl\:caption-top {
+      @media (min-width: $breakpoint-2xl) {
+        caption-side: top;
+      }
+    }
+
+    #mixin__\\2xl\:caption-bottom {
+      @media (min-width: $breakpoint-2xl) {
+        caption-side: bottom;
+      }
+    }
   }
 }
