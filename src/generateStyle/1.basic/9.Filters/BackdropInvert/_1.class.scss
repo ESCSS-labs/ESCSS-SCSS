@@ -1,29 +1,106 @@
 @use "../../../settings/structures" as *;
 
 @if $BackdropInvert {
-  #mixin__backdrop-invert-0 {
-    --tw-backdrop-invert: invert(0);
-    backdrop-filter: var(--tw-backdrop-blur)
-      var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast)
-      var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate)
-      var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity)
-      var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+  /* BackdropInvert */
+  @if $Basic {
+    #mixin__backdrop-invert-0 {
+      --tw-backdrop-invert: invert(0);
+      backdrop-filter: var(--tw-backdrop-blur)
+        var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast)
+        var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate)
+        var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity)
+        var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
+
+    #mixin__backdrop-invert {
+      --tw-backdrop-invert: invert(100%);
+      backdrop-filter: var(--tw-backdrop-blur)
+        var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast)
+        var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate)
+        var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity)
+        var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
   }
 
-  #mixin__backdrop-invert {
-    --tw-backdrop-invert: invert(100%);
-    backdrop-filter: var(--tw-backdrop-blur)
-      var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast)
-      var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate)
-      var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity)
-      var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:backdrop-invert-v {
+        @media (min-width: $breakpoint-sm) {
+          --tw-backdrop-invert: #{invert(v)};
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+
+      #mixin__md\:backdrop-invert-v {
+        @media (min-width: $breakpoint-md) {
+          --tw-backdrop-invert: #{invert(v)};
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+
+      #mixin__lg\:backdrop-invert-v {
+        @media (min-width: $breakpoint-lg) {
+          --tw-backdrop-invert: #{invert(v)};
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+
+      #mixin__xl\:backdrop-invert-v {
+        @media (min-width: $breakpoint-xl) {
+          --tw-backdrop-invert: #{invert(v)};
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+
+      #mixin__\\2xl\:backdrop-invert-v {
+        @media (min-width: $breakpoint-2xl) {
+          --tw-backdrop-invert: #{invert(v)};
+          backdrop-filter: var(--tw-blur) var(--tw-brightness)
+            var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate)
+            var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+            var(--tw-drop-shadow);
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    #mixin__backdrop-invert-v {
+      --tw-backdrop-invert: #{invert(v)};
+      backdrop-filter: var(--tw-backdrop-blur)
+        var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast)
+        var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate)
+        var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity)
+        var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
+    }
   }
 }

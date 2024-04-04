@@ -1,146 +1,218 @@
 @use "../../../settings/structures" as *;
 
 @if $Brightness {
-  #mixin__brightness-0 {
-    --tw-brightness: brightness(0);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
+  /* Brightness */
+  @if $Basic {
+    #mixin__brightness-0 {
+      --tw-brightness: brightness(0);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-50 {
+      --tw-brightness: brightness(0.5);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-75 {
+      --tw-brightness: brightness(0.75);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-90 {
+      --tw-brightness: brightness(0.9);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-95 {
+      --tw-brightness: brightness(0.95);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-100 {
+      --tw-brightness: brightness(1);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-105 {
+      --tw-brightness: brightness(1.05);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-110 {
+      --tw-brightness: brightness(1.1);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-125 {
+      --tw-brightness: brightness(1.25);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-150 {
+      --tw-brightness: brightness(1.5);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
+
+    #mixin__brightness-200 {
+      --tw-brightness: brightness(2);
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
   }
 
-  #mixin__brightness-50 {
-    --tw-brightness: brightness(0.5);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:brightness-v {
+        @media (min-width: $breakpoint-sm) {
+          --tw-brightness: #{brightness(v)};
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+
+      #mixin__md\:brightness-v {
+        @media (min-width: $breakpoint-md) {
+          --tw-brightness: #{brightness(v)};
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+
+      #mixin__lg\:brightness-v {
+        @media (min-width: $breakpoint-lg) {
+          --tw-brightness: #{brightness(v)};
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+
+      #mixin__xl\:brightness-v {
+        @media (min-width: $breakpoint-xl) {
+          --tw-brightness: #{brightness(v)};
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+
+      #mixin__\\2xl\:brightness-v {
+        @media (min-width: $breakpoint-2xl) {
+          --tw-brightness: #{brightness(v)};
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
   }
 
-  #mixin__brightness-75 {
-    --tw-brightness: brightness(0.75);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
-  }
-
-  #mixin__brightness-90 {
-    --tw-brightness: brightness(0.9);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
-  }
-
-  #mixin__brightness-95 {
-    --tw-brightness: brightness(0.95);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
-  }
-
-  #mixin__brightness-100 {
-    --tw-brightness: brightness(1);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
-  }
-
-  #mixin__brightness-105 {
-    --tw-brightness: brightness(1.05);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
-  }
-
-  #mixin__brightness-110 {
-    --tw-brightness: brightness(1.1);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
-  }
-
-  #mixin__brightness-125 {
-    --tw-brightness: brightness(1.25);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
-  }
-
-  #mixin__brightness-150 {
-    --tw-brightness: brightness(1.5);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
-  }
-
-  #mixin__brightness-200 {
-    --tw-brightness: brightness(2);
-    filter: var(--tw-blur)
-      var(--tw-brightness)
-      var(--tw-contrast)
-      var(--tw-grayscale)
-      var(--tw-hue-rotate)
-      var(--tw-invert)
-      var(--tw-saturate)
-      var(--tw-sepia)
-      var(--tw-drop-shadow);
+  @if $Custom {
+    #mixin__brightness-v {
+      --tw-brightness: #{brightness(v)};
+      filter: var(--tw-blur)
+        var(--tw-brightness)
+        var(--tw-contrast)
+        var(--tw-grayscale)
+        var(--tw-hue-rotate)
+        var(--tw-invert)
+        var(--tw-saturate)
+        var(--tw-sepia)
+        var(--tw-drop-shadow);
+    }
   }
 }
