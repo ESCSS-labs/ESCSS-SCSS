@@ -1,0 +1,71 @@
+@use "../../setting" as *;
+
+@if $OutlineOffset {
+  /* OutlineOffset */
+  @if $Basic {
+    #mixin__outline-offset-0 {
+      outline-offset: 0px;
+    }
+
+    #mixin__outline-offset-1 {
+      outline-offset: 1px;
+    }
+
+    #mixin__outline-offset-2 {
+      outline-offset: 2px;
+    }
+
+    #mixin__outline-offset-4 {
+      outline-offset: 4px;
+    }
+
+    #mixin__outline-offset-8 {
+      outline-offset: 8px;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:outline-offset-v {
+        @media (min-width: $breakpoint-sm) {
+          outline-offset: v;
+        }
+      }
+
+      #mixin__md\:outline-offset-v {
+        @media (min-width: $breakpoint-md) {
+          outline-offset: v;
+        }
+      }
+
+      #mixin__lg\:outline-offset-v {
+        @media (min-width: $breakpoint-lg) {
+          outline-offset: v;
+        }
+      }
+
+      #mixin__xl\:outline-offset-v {
+        @media (min-width: $breakpoint-xl) {
+          outline-offset: v;
+        }
+      }
+
+      #mixin__\\2xl\:outline-offset-v {
+        @media (min-width: $breakpoint-2xl) {
+          outline-offset: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    #mixin__outline-offset-v {
+      outline-offset: v;
+    }
+  }
+}

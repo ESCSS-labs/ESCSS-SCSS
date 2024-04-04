@@ -1,0 +1,102 @@
+@use "../../setting" as *;
+
+@if $Z-Index {
+  /* Z-Index */
+  @if $Basic {
+    #mixin__z-0 {
+      z-index: 0;
+    }
+
+    #mixin__z-10 {
+      z-index: 10;
+    }
+
+    #mixin__z-20 {
+      z-index: 20;
+    }
+
+    #mixin__z-30 {
+      z-index: 30;
+    }
+
+    #mixin__z-40 {
+      z-index: 40;
+    }
+
+    #mixin__z-50 {
+      z-index: 50;
+    }
+
+    #mixin__z-auto {
+      z-index: auto;
+    }
+    #mixin__-z-0 {
+      z-index: -0;
+    }
+
+    #mixin__-z-10 {
+      z-index: -10;
+    }
+
+    #mixin__-z-20 {
+      z-index: -20;
+    }
+
+    #mixin__-z-30 {
+      z-index: -30;
+    }
+
+    #mixin__-z-40 {
+      z-index: -40;
+    }
+
+    #mixin__-z-50 {
+      z-index: -50;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:z-v {
+        @media (min-width: $breakpoint-sm) {
+          z-index: v;
+        }
+      }
+
+      #mixin__md\:z-v {
+        @media (min-width: $breakpoint-md) {
+          z-index: v;
+        }
+      }
+
+      #mixin__lg\:z-v {
+        @media (min-width: $breakpoint-lg) {
+          z-index: v;
+        }
+      }
+
+      #mixin__xl\:z-v {
+        @media (min-width: $breakpoint-xl) {
+          z-index: v;
+        }
+      }
+
+      #mixin__\\2xl\:z-v {
+        @media (min-width: $breakpoint-2xl) {
+          z-index: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    #mixin__z-v {
+      z-index: v;
+    }
+  }
+}

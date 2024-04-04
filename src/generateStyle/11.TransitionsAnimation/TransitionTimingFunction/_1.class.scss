@@ -1,0 +1,67 @@
+@use "../../setting" as *;
+
+@if $TransitionTimingFunction {
+  /* TransitionTimingFunction */
+  @if $Basic {
+    #mixin__ease-linear {
+      transition-timing-function: linear;
+    }
+
+    #mixin__ease-in {
+      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    }
+
+    #mixin__ease-out {
+      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    #mixin__ease-in-out {
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:ease-v {
+        @media (min-width: $breakpoint-sm) {
+          transition-timing-function: v;
+        }
+      }
+
+      #mixin__md\:ease-v {
+        @media (min-width: $breakpoint-md) {
+          transition-timing-function: v;
+        }
+      }
+
+      #mixin__lg\:ease-v {
+        @media (min-width: $breakpoint-lg) {
+          transition-timing-function: v;
+        }
+      }
+
+      #mixin__xl\:ease-v {
+        @media (min-width: $breakpoint-xl) {
+          transition-timing-function: v;
+        }
+      }
+
+      #mixin__\\2xl\:ease-v {
+        @media (min-width: $breakpoint-2xl) {
+          transition-timing-function: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    #mixin__ease-v {
+      transition-timing-function: v;
+    }
+  }
+}

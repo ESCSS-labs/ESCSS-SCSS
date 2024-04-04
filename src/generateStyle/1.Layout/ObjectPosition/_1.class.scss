@@ -1,0 +1,87 @@
+@use "../../setting" as *;
+
+@if $ObjectPosition {
+  /* Object Position */
+  @if $Basic {
+    #mixin__object-bottom {
+      object-position: bottom;
+    }
+
+    #mixin__object-center {
+      object-position: center;
+    }
+
+    #mixin__object-left {
+      object-position: left;
+    }
+
+    #mixin__object-left-bottom {
+      object-position: left bottom;
+    }
+
+    #mixin__object-left-top {
+      object-position: left top;
+    }
+
+    #mixin__object-right {
+      object-position: right;
+    }
+
+    #mixin__object-right-bottom {
+      object-position: right bottom;
+    }
+
+    #mixin__object-right-top {
+      object-position: right top;
+    }
+
+    #mixin__object-top {
+      object-position: top;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:object-v {
+        @media (min-width: $breakpoint-sm) {
+          object-position: v;
+        }
+      }
+
+      #mixin__md\:object-v {
+        @media (min-width: $breakpoint-md) {
+          object-position: v;
+        }
+      }
+
+      #mixin__lg\:object-v {
+        @media (min-width: $breakpoint-lg) {
+          object-position: v;
+        }
+      }
+
+      #mixin__xl\:object-v {
+        @media (min-width: $breakpoint-xl) {
+          object-position: v;
+        }
+      }
+
+      #mixin__\\2xl\:object-v {
+        @media (min-width: $breakpoint-2xl) {
+          object-position: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    #mixin__object-v {
+      object-position: v;
+    }
+  }
+}

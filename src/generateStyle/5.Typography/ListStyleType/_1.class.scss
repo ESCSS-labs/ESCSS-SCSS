@@ -1,0 +1,63 @@
+@use "../../setting" as *;
+
+@if $ListStyleType {
+  /* ListStyleType */
+  @if $Basic {
+    #mixin__list-none {
+      list-style-type: none;
+    }
+
+    #mixin__list-disc {
+      list-style-type: disc;
+    }
+
+    #mixin__list-decimal {
+      list-style-type: decimal;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:list-v {
+        @media (min-width: $breakpoint-sm) {
+          list-style-type: v;
+        }
+      }
+
+      #mixin__md\:list-v {
+        @media (min-width: $breakpoint-md) {
+          list-style-type: v;
+        }
+      }
+
+      #mixin__lg\:list-v {
+        @media (min-width: $breakpoint-lg) {
+          list-style-type: v;
+        }
+      }
+
+      #mixin__xl\:list-v {
+        @media (min-width: $breakpoint-xl) {
+          list-style-type: v;
+        }
+      }
+
+      #mixin__\\2xl\:list-v {
+        @media (min-width: $breakpoint-2xl) {
+          list-style-type: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    #mixin__list-v {
+      list-style-type: v;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@use "../../setting" as *;
+
+@if $FlexGrow {
+  /* FlexGrow */
+  @if $Basic {
+    #mixin__grow {
+      flex-grow: 1;
+    }
+
+    #mixin__grow-0 {
+      flex-grow: 0;
+    }
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:grow-v {
+        @media (min-width: $breakpoint-sm) {
+          flex-grow: v;
+        }
+      }
+
+      #mixin__md\:grow-v {
+        @media (min-width: $breakpoint-md) {
+          flex-grow: v;
+        }
+      }
+
+      #mixin__lg\:grow-v {
+        @media (min-width: $breakpoint-lg) {
+          flex-grow: v;
+        }
+      }
+
+      #mixin__xl\:grow-v {
+        @media (min-width: $breakpoint-xl) {
+          flex-grow: v;
+        }
+      }
+
+      #mixin__\\2xl\:grow-v {
+        @media (min-width: $breakpoint-2xl) {
+          flex-grow: v;
+        }
+      }
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    #mixin__grow-v {
+      flex-grow: v;
+    }
+  }
+}
