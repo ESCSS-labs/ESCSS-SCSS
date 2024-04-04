@@ -1,7 +1,9 @@
 @use "../../../settings/structures" as *;
 
 @if $LineHeight {
-  /* 12px */
+  /* LineHeight */
+  @if $Basic {
+    /* 12px */
   #mixin__leading-3 {
     line-height: 0.75rem;
   }
@@ -64,4 +66,57 @@
   #mixin__leading-loose {
     line-height: 2;
   }
+    
+    
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      
+      #mixin__sm\:leading-v {
+        @media (min-width: $breakpoint-sm) {
+          line-height: v;
+        }
+      }
+      
+      #mixin__md\:leading-v {
+        @media (min-width: $breakpoint-md) {
+          line-height: v;
+        }
+      }
+      
+      #mixin__lg\:leading-v {
+        @media (min-width: $breakpoint-lg) {
+          line-height: v;
+        }
+      }
+      
+      #mixin__xl\:leading-v {
+        @media (min-width: $breakpoint-xl) {
+          line-height: v;
+        }
+      }
+      
+      #mixin__\\2xl\:leading-v {
+        @media (min-width: $breakpoint-2xl) {
+          line-height: v;
+        }
+      }
+      
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    
+    #mixin__leading-v {
+      line-height: v;
+    }
+    
+  }
 }
+

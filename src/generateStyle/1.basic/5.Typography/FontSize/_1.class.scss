@@ -1,7 +1,9 @@
 @use "../../../settings/structures" as *;
 
 @if $FontSize {
-  /* 12px */
+  /* FontSize */
+  @if $Basic {
+    /* 12px */
   /* 16px */
   #mixin__text-xs {
     font-size: 0.75rem;
@@ -86,4 +88,57 @@
     font-size: 8rem;
     line-height: 1;
   }
+    
+    
+  }
+
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      
+      #mixin__sm\:text-v {
+        @media (min-width: $breakpoint-sm) {
+          font-size: v;
+        }
+      }
+      
+      #mixin__md\:text-v {
+        @media (min-width: $breakpoint-md) {
+          font-size: v;
+        }
+      }
+      
+      #mixin__lg\:text-v {
+        @media (min-width: $breakpoint-lg) {
+          font-size: v;
+        }
+      }
+      
+      #mixin__xl\:text-v {
+        @media (min-width: $breakpoint-xl) {
+          font-size: v;
+        }
+      }
+      
+      #mixin__\\2xl\:text-v {
+        @media (min-width: $breakpoint-2xl) {
+          font-size: v;
+        }
+      }
+      
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    
+    #mixin__text-v {
+      font-size: v;
+    }
+    
+  }
 }
+

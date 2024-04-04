@@ -1,39 +1,96 @@
 @use "../../../settings/structures" as *;
 
 @if $FontWeight {
-  #mixin__font-thin {
-    font-weight: 100;
+  /* FontWeight */
+  @if $Basic {
+    
+    #mixin__font-thin {
+      font-weight: 100;
+    }
+  
+    #mixin__font-extralight {
+      font-weight: 200;
+    }
+  
+    #mixin__font-light {
+      font-weight: 300;
+    }
+  
+    #mixin__font-normal {
+      font-weight: 400;
+    }
+  
+    #mixin__font-medium {
+      font-weight: 500;
+    }
+  
+    #mixin__font-semibold {
+      font-weight: 600;
+    }
+  
+    #mixin__font-bold {
+      font-weight: 700;
+    }
+  
+    #mixin__font-extrabold {
+      font-weight: 800;
+    }
+  
+    #mixin__font-black {
+      font-weight: 900;
+    }
+    
   }
 
-  #mixin__font-extralight {
-    font-weight: 200;
-  }
-
-  #mixin__font-light {
-    font-weight: 300;
-  }
-
-  #mixin__font-normal {
-    font-weight: 400;
-  }
-
-  #mixin__font-medium {
-    font-weight: 500;
-  }
-
-  #mixin__font-semibold {
-    font-weight: 600;
-  }
-
-  #mixin__font-bold {
-    font-weight: 700;
-  }
-
-  #mixin__font-extrabold {
-    font-weight: 800;
-  }
-
-  #mixin__font-black {
-    font-weight: 900;
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      /* Purpose(name conflict): font -> font-weight */
+#mixin__sm\:font-weight-v {
+  @media (min-width: $breakpoint-sm) {
+    font-weight: v;
   }
 }
+
+#mixin__md\:font-weight-v {
+  @media (min-width: $breakpoint-md) {
+    font-weight: v;
+  }
+}
+
+#mixin__lg\:font-weight-v {
+  @media (min-width: $breakpoint-lg) {
+    font-weight: v;
+  }
+}
+
+#mixin__xl\:font-weight-v {
+  @media (min-width: $breakpoint-xl) {
+    font-weight: v;
+  }
+}
+
+#mixin__\\2xl\:font-weight-v {
+  @media (min-width: $breakpoint-2xl) {
+    font-weight: v;
+  }
+}
+      
+      
+    }
+
+    // tailwind default
+    @else {
+    }
+  }
+
+  @if $Custom {
+    
+    /* Purpose(name conflict): font -> font-weight */
+#mixin__font-weight-v {
+  font-weight: v;
+}
+    
+  }
+}
+

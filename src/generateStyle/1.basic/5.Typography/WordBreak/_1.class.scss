@@ -1,20 +1,153 @@
 @use "../../../settings/structures" as *;
 
 @if $WordBreak {
-  #mixin__break-normal {
-    overflow-wrap: normal;
-    word-break: normal;
+  /* WordBreak */
+  @if $Basic {
+    #mixin__break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+  
+    #mixin__break-words {
+      overflow-wrap: break-word;
+    }
+  
+    #mixin__break-all {
+      word-break: break-all;
+    }
+  
+    #mixin__break-keep {
+      word-break: keep-all;
+    }
+    
+    
   }
 
-  #mixin__break-words {
-    overflow-wrap: break-word;
-  }
-
-  #mixin__break-all {
-    word-break: break-all;
-  }
-
-  #mixin__break-keep {
-    word-break: keep-all;
+  @if $Rwd {
+    #mixin__sm\:break-normal {
+      @media (min-width: $breakpoint-sm) {
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+    }
+    
+    #mixin__sm\:break-words {
+      @media (min-width: $breakpoint-sm) {
+        overflow-wrap: break-word;
+      }
+    }
+    
+    #mixin__sm\:break-all {
+      @media (min-width: $breakpoint-sm) {
+        word-break: all;
+      }
+    }
+    
+    #mixin__sm\:break-keep {
+      @media (min-width: $breakpoint-sm) {
+        word-break: keep-all;
+      }
+    }
+    
+    #mixin__md\:break-normal {
+      @media (min-width: $breakpoint-md) {
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+    }
+    
+    #mixin__md\:break-words {
+      @media (min-width: $breakpoint-md) {
+        overflow-wrap: break-word;
+      }
+    }
+    
+    #mixin__md\:break-all {
+      @media (min-width: $breakpoint-md) {
+        word-break: all;
+      }
+    }
+    
+    #mixin__md\:break-keep {
+      @media (min-width: $breakpoint-md) {
+        word-break: keep-all;
+      }
+    }
+    
+    #mixin__lg\:break-normal {
+      @media (min-width: $breakpoint-lg) {
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+    }
+    
+    #mixin__lg\:break-words {
+      @media (min-width: $breakpoint-lg) {
+        overflow-wrap: break-word;
+      }
+    }
+    
+    #mixin__lg\:break-all {
+      @media (min-width: $breakpoint-lg) {
+        word-break: all;
+      }
+    }
+    
+    #mixin__lg\:break-keep {
+      @media (min-width: $breakpoint-lg) {
+        word-break: keep-all;
+      }
+    }
+    
+    #mixin__xl\:break-normal {
+      @media (min-width: $breakpoint-xl) {
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+    }
+    
+    #mixin__xl\:break-words {
+      @media (min-width: $breakpoint-xl) {
+        overflow-wrap: break-word;
+      }
+    }
+    
+    #mixin__xl\:break-all {
+      @media (min-width: $breakpoint-xl) {
+        word-break: all;
+      }
+    }
+    
+    #mixin__xl\:break-keep {
+      @media (min-width: $breakpoint-xl) {
+        word-break: keep-all;
+      }
+    }
+    
+    #mixin__\\2xl\:break-normal {
+      @media (min-width: $breakpoint-2xl) {
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+    }
+    
+    #mixin__\\2xl\:break-words {
+      @media (min-width: $breakpoint-2xl) {
+        overflow-wrap: break-word;
+      }
+    }
+    
+    #mixin__\\2xl\:break-all {
+      @media (min-width: $breakpoint-2xl) {
+        word-break: all;
+      }
+    }
+    
+    #mixin__\\2xl\:break-keep {
+      @media (min-width: $breakpoint-2xl) {
+        word-break: keep-all;
+      }
+    }
   }
 }
+

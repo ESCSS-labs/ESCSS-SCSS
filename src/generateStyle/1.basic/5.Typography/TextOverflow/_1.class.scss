@@ -1,17 +1,124 @@
 @use "../../../settings/structures" as *;
 
 @if $TextOverflow {
-  #mixin__truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  /* TextOverflow */
+  @if $Basic {
+    #mixin__truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  
+    #mixin__text-ellipsis {
+      text-overflow: ellipsis;
+    }
+  
+    #mixin__text-clip {
+      text-overflow: clip;
+    }
+    
+    
   }
 
-  #mixin__text-ellipsis {
-    text-overflow: ellipsis;
-  }
-
-  #mixin__text-clip {
-    text-overflow: clip;
+  @if $Rwd {
+    #mixin__sm\:truncate {
+      @media (min-width: $breakpoint-sm) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    
+    #mixin__sm\:text-ellipsis {
+      @media (min-width: $breakpoint-sm) {
+        text-overflow: ellipsis;
+      }
+    }
+    
+    #mixin__sm\:text-clip {
+      @media (min-width: $breakpoint-sm) {
+        text-overflow: clip;
+      }
+    }
+    
+    #mixin__md\:truncate {
+      @media (min-width: $breakpoint-md) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    
+    #mixin__md\:text-ellipsis {
+      @media (min-width: $breakpoint-md) {
+        text-overflow: ellipsis;
+      }
+    }
+    
+    #mixin__md\:text-clip {
+      @media (min-width: $breakpoint-md) {
+        text-overflow: clip;
+      }
+    }
+    
+    #mixin__lg\:truncate {
+      @media (min-width: $breakpoint-lg) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    
+    #mixin__lg\:text-ellipsis {
+      @media (min-width: $breakpoint-lg) {
+        text-overflow: ellipsis;
+      }
+    }
+    
+    #mixin__lg\:text-clip {
+      @media (min-width: $breakpoint-lg) {
+        text-overflow: clip;
+      }
+    }
+    
+    #mixin__xl\:truncate {
+      @media (min-width: $breakpoint-xl) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    
+    #mixin__xl\:text-ellipsis {
+      @media (min-width: $breakpoint-xl) {
+        text-overflow: ellipsis;
+      }
+    }
+    
+    #mixin__xl\:text-clip {
+      @media (min-width: $breakpoint-xl) {
+        text-overflow: clip;
+      }
+    }
+    
+    #mixin__\\2xl\:truncate {
+      @media (min-width: $breakpoint-2xl) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    
+    #mixin__\\2xl\:text-ellipsis {
+      @media (min-width: $breakpoint-2xl) {
+        text-overflow: ellipsis;
+      }
+    }
+    
+    #mixin__\\2xl\:text-clip {
+      @media (min-width: $breakpoint-2xl) {
+        text-overflow: clip;
+      }
+    }
   }
 }

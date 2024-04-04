@@ -1,11 +1,80 @@
 @use "../../../settings/structures" as *;
 
 @if $ListStylePosition {
-  #mixin__list-inside {
-    list-style-position: inside;
+  /* ListStylePosition */
+  @if $Basic {
+    
+    #mixin__list-inside {
+      list-style-position: inside;
+    }
+  
+    #mixin__list-outside {
+      list-style-position: outside;
+    }
+    
   }
 
-  #mixin__list-outside {
-    list-style-position: outside;
+  @if $Rwd {
+    #mixin__sm\:list-inside {
+      @media (min-width: $breakpoint-sm) {
+        list-style-position: inside;
+      }
+    }
+    
+    #mixin__sm\:list-outside {
+      @media (min-width: $breakpoint-sm) {
+        list-style-position: outside;
+      }
+    }
+    
+    #mixin__md\:list-inside {
+      @media (min-width: $breakpoint-md) {
+        list-style-position: inside;
+      }
+    }
+    
+    #mixin__md\:list-outside {
+      @media (min-width: $breakpoint-md) {
+        list-style-position: outside;
+      }
+    }
+    
+    #mixin__lg\:list-inside {
+      @media (min-width: $breakpoint-lg) {
+        list-style-position: inside;
+      }
+    }
+    
+    #mixin__lg\:list-outside {
+      @media (min-width: $breakpoint-lg) {
+        list-style-position: outside;
+      }
+    }
+    
+    #mixin__xl\:list-inside {
+      @media (min-width: $breakpoint-xl) {
+        list-style-position: inside;
+      }
+    }
+    
+    #mixin__xl\:list-outside {
+      @media (min-width: $breakpoint-xl) {
+        list-style-position: outside;
+      }
+    }
+    
+    #mixin__\\2xl\:list-inside {
+      @media (min-width: $breakpoint-2xl) {
+        list-style-position: inside;
+      }
+    }
+    
+    #mixin__\\2xl\:list-outside {
+      @media (min-width: $breakpoint-2xl) {
+        list-style-position: outside;
+      }
+    }
   }
+
+
 }

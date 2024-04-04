@@ -1,35 +1,90 @@
 @use "../../../settings/structures" as *;
 
 @if $VerticalAlign {
-  #mixin__align-baseline {
-    vertical-align: baseline;
+  /* VerticalAlign */
+  @if $Basic {
+    #mixin__align-baseline {
+      vertical-align: baseline;
+    }
+  
+    #mixin__align-top {
+      vertical-align: top;
+    }
+  
+    #mixin__align-middle {
+      vertical-align: middle;
+    }
+  
+    #mixin__align-bottom {
+      vertical-align: bottom;
+    }
+  
+    #mixin__align-text-top {
+      vertical-align: text-top;
+    }
+  
+    #mixin__align-text-bottom {
+      vertical-align: text-bottom;
+    }
+  
+    #mixin__align-sub {
+      vertical-align: sub;
+    }
+  
+    #mixin__align-super {
+      vertical-align: super;
+    }
+    
+    
   }
 
-  #mixin__align-top {
-    vertical-align: top;
+  @if $Rwd {
+    // reducing size for updating speed
+    @if $isLite {
+      #mixin__sm\:align-v {
+        @media (min-width: $breakpoint-sm) {
+          vertical-align: v;
+        }
+      }
+      
+      #mixin__md\:align-v {
+        @media (min-width: $breakpoint-md) {
+          vertical-align: v;
+        }
+      }
+      
+      #mixin__lg\:align-v {
+        @media (min-width: $breakpoint-lg) {
+          vertical-align: v;
+        }
+      }
+      
+      #mixin__xl\:align-v {
+        @media (min-width: $breakpoint-xl) {
+          vertical-align: v;
+        }
+      }
+      
+      #mixin__\\2xl\:align-v {
+        @media (min-width: $breakpoint-2xl) {
+          vertical-align: v;
+        }
+      }
+      
+      
+    }
+
+    // tailwind default
+    @else {
+    }
   }
 
-  #mixin__align-middle {
-    vertical-align: middle;
-  }
-
-  #mixin__align-bottom {
-    vertical-align: bottom;
-  }
-
-  #mixin__align-text-top {
-    vertical-align: text-top;
-  }
-
-  #mixin__align-text-bottom {
-    vertical-align: text-bottom;
-  }
-
-  #mixin__align-sub {
-    vertical-align: sub;
-  }
-
-  #mixin__align-super {
-    vertical-align: super;
+  @if $Custom {
+    #mixin__align-v {
+      vertical-align: v;
+    }
+    
+    
   }
 }
+
