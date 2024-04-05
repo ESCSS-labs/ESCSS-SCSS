@@ -2,11 +2,11 @@
 
 /* Animation */
 @if $Basic {
-  #mixin_animate-none {
+  @mixin_animate-none {
     animation: none;
   }
 
-  #mixin_animate-spin {
+  @mixin_animate-spin {
     animation: spin 1s linear infinite;
 
     @keyframes spin {
@@ -20,7 +20,7 @@
     }
   }
 
-  #mixin_animate-ping {
+  @mixin_animate-ping {
     animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 
     @keyframes ping {
@@ -32,7 +32,7 @@
     }
   }
 
-  #mixin_animate-pulse {
+  @mixin_animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
     @keyframes pulse {
@@ -47,7 +47,7 @@
     }
   }
 
-  #mixin_animate-bounce {
+  @mixin_animate-bounce {
     animation: bounce 1s infinite;
 
     @keyframes bounce {
@@ -68,31 +68,31 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    #mixin_sm\:animate- ($value) {
+    @mixin_sm\:animate- ($value) {
       @media (min-width: $breakpoint-sm) {
         animation: _value;
       }
     }
 
-    #mixin_md\:animate- ($value) {
+    @mixin_md\:animate- ($value) {
       @media (min-width: $breakpoint-md) {
         animation: _value;
       }
     }
 
-    #mixin_lg\:animate- ($value) {
+    @mixin_lg\:animate- ($value) {
       @media (min-width: $breakpoint-lg) {
         animation: _value;
       }
     }
 
-    #mixin_xl\:animate- ($value) {
+    @mixin_xl\:animate- ($value) {
       @media (min-width: $breakpoint-xl) {
         animation: _value;
       }
     }
 
-    #mixin_\\2xl\:animate- ($value) {
+    @mixin_\\2xl\:animate- ($value) {
       @media (min-width: $breakpoint-2xl) {
         animation: _value;
       }
@@ -105,7 +105,7 @@
 }
 
 @if $Custom {
-  #mixin_animate- ($value) {
+  @mixin_animate- ($value) {
     animation: _value;
   }
 }

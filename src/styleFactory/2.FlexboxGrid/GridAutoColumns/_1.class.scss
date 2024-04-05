@@ -2,19 +2,19 @@
 
 /* Grid Auto Columns */
 @if $Basic {
-  #mixin_auto-cols-auto {
+  @mixin_auto-cols-auto {
     grid-auto-columns: auto;
   }
 
-  #mixin_auto-cols-min {
+  @mixin_auto-cols-min {
     grid-auto-columns: min-content;
   }
 
-  #mixin_auto-cols-max {
+  @mixin_auto-cols-max {
     grid-auto-columns: max-content;
   }
 
-  #mixin_auto-cols-fr {
+  @mixin_auto-cols-fr {
     grid-auto-columns: minmax(0, 1fr);
   }
 }
@@ -22,31 +22,31 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    #mixin_sm\:auto-cols- ($value) {
+    @mixin_sm\:auto-cols- ($value) {
       @media (min-width: $breakpoint-sm) {
         grid-auto-columns: _value;
       }
     }
 
-    #mixin_md\:auto-cols- ($value) {
+    @mixin_md\:auto-cols- ($value) {
       @media (min-width: $breakpoint-md) {
         grid-auto-columns: _value;
       }
     }
 
-    #mixin_lg\:auto-cols- ($value) {
+    @mixin_lg\:auto-cols- ($value) {
       @media (min-width: $breakpoint-lg) {
         grid-auto-columns: _value;
       }
     }
 
-    #mixin_xl\:auto-cols- ($value) {
+    @mixin_xl\:auto-cols- ($value) {
       @media (min-width: $breakpoint-xl) {
         grid-auto-columns: _value;
       }
     }
 
-    #mixin_\\2xl\:auto-cols- ($value) {
+    @mixin_\\2xl\:auto-cols- ($value) {
       @media (min-width: $breakpoint-2xl) {
         grid-auto-columns: _value;
       }
@@ -59,7 +59,7 @@
 }
 
 @if $Custom {
-  #mixin_auto-cols- ($value) {
+  @mixin_auto-cols- ($value) {
     grid-auto-columns: _value;
   }
 }

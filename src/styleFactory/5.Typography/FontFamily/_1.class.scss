@@ -2,16 +2,16 @@
 
 /* Font Family */
 @if $Basic {
-  #mixin_font-sans {
+  @mixin_font-sans {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  #mixin_font-serif {
+  @mixin_font-serif {
     font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  #mixin_font-mono {
+  @mixin_font-mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
       "Liberation Mono", "Courier New", monospace;
   }
@@ -21,31 +21,31 @@
   // reducing size for updating speed
   @if $isLite {
     /* Purpose(name conflict): font -> font-family */
-    #mixin_sm\:font-family- ($value) {
+    @mixin_sm\:font-family- ($value) {
       @media (min-width: $breakpoint-sm) {
         font-family: _value;
       }
     }
 
-    #mixin_md\:font-family- ($value) {
+    @mixin_md\:font-family- ($value) {
       @media (min-width: $breakpoint-md) {
         font-family: _value;
       }
     }
 
-    #mixin_lg\:font-family- ($value) {
+    @mixin_lg\:font-family- ($value) {
       @media (min-width: $breakpoint-lg) {
         font-family: _value;
       }
     }
 
-    #mixin_xl\:font-family- ($value) {
+    @mixin_xl\:font-family- ($value) {
       @media (min-width: $breakpoint-xl) {
         font-family: _value;
       }
     }
 
-    #mixin_\\2xl\:font-family- ($value) {
+    @mixin_\\2xl\:font-family- ($value) {
       @media (min-width: $breakpoint-2xl) {
         font-family: _value;
       }
@@ -59,7 +59,7 @@
 
 @if $Custom {
   /* Purpose(name conflict): font -> font-family */
-  #mixin_font-family- ($value) {
+  @mixin_font-family- ($value) {
     font-family: _value;
   }
 }
