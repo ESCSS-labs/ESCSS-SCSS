@@ -3,14 +3,15 @@
 
 /* Box Shadow */
 @if $Basic {
-  @mixin_shadow-sm {
+  /*x
+  @mixin shadow-sm {
     --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
       var(--tw-shadow);
   }
 
-  @mixin_shadow {
+  @mixin shadow {
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
       0 1px 2px -1px var(--tw-shadow-color);
@@ -18,7 +19,7 @@
       var(--tw-shadow);
   }
 
-  @mixin_shadow-md {
+  @mixin shadow-md {
     --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
       0 2px 4px -2px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
@@ -27,7 +28,7 @@
       var(--tw-shadow);
   }
 
-  @mixin_shadow-lg {
+  @mixin shadow-lg {
     --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
       0 4px 6px -4px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
@@ -36,7 +37,7 @@
       var(--tw-shadow);
   }
 
-  @mixin_shadow-xl {
+  @mixin shadow-xl {
     --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
       0 8px 10px -6px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
@@ -45,170 +46,171 @@
       var(--tw-shadow);
   }
 
-  @mixin_shadow-2xl {
+  @mixin shadow-2xl {
     --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
     --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
       var(--tw-shadow);
   }
 
-  @mixin_shadow-inner {
+  @mixin shadow-inner {
     --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
     --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
       var(--tw-shadow);
   }
 
-  @mixin_shadow-none {
+  @mixin shadow-none {
     --tw-shadow: 0 0 #0000;
     --tw-shadow-colored: 0 0 #0000;
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
       var(--tw-shadow);
-  }
+  }x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    @mixin_sm\:shadow- (_value) {
+    /*x
+    @mixin sm\:shadow-($value) {
       @media (min-width: $breakpoint-sm) {
-        _value-property: null;
+        $value-property: null;
 
-        @if "xlist.nth(_value, 1)x" ==inset {
-          $x: "xlist.nth(_value, 2)x";
-          $y: "xlist.nth(_value, 3)x";
-          $blur: "xlist.nth(_value, 4)x";
-          $spread: "xlist.nth(_value, 5)x";
+        @if list.nth($value, 1) ==inset {
+          $x: list.nth($value, 2);
+          $y: list.nth($value, 3);
+          $blur: list.nth($value, 4);
+          $spread: list.nth($value, 5);
 
-          _value-property: inset $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: inset $x $y $blur $spread var(--tw-shadow-color);
         } @else {
-          $x: "xlist.nth(_value, 1)x";
-          $y: "xlist.nth(_value, 2)x";
-          $blur: "xlist.nth(_value, 3)x";
-          $spread: "xlist.nth(_value, 4)x";
+          $x: list.nth($value, 1);
+          $y: list.nth($value, 2);
+          $blur: list.nth($value, 3);
+          $spread: list.nth($value, 4);
 
-          _value-property: $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: $x $y $blur $spread var(--tw-shadow-color);
         }
 
-        --tw-shadow: "#<_value>";
-        --tw-shadow-colored: "#<_value-property>";
+        --tw-shadow: #{$value};
+        --tw-shadow-colored: #{$value-property};
 
         box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
           var(--tw-shadow);
       }
     }
 
-    @mixin_md\:shadow- (_value) {
+    @mixin md\:shadow-($value) {
       @media (min-width: $breakpoint-md) {
-        _value-property: null;
+        $value-property: null;
 
-        @if "xlist.nth(_value, 1)x" ==inset {
-          $x: "xlist.nth(_value, 2)x";
-          $y: "xlist.nth(_value, 3)x";
-          $blur: "xlist.nth(_value, 4)x";
-          $spread: "xlist.nth(_value, 5)x";
+        @if list.nth($value, 1) ==inset {
+          $x: list.nth($value, 2);
+          $y: list.nth($value, 3);
+          $blur: list.nth($value, 4);
+          $spread: list.nth($value, 5);
 
-          _value-property: inset $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: inset $x $y $blur $spread var(--tw-shadow-color);
         } @else {
-          $x: "xlist.nth(_value, 1)x";
-          $y: "xlist.nth(_value, 2)x";
-          $blur: "xlist.nth(_value, 3)x";
-          $spread: "xlist.nth(_value, 4)x";
+          $x: list.nth($value, 1);
+          $y: list.nth($value, 2);
+          $blur: list.nth($value, 3);
+          $spread: list.nth($value, 4);
 
-          _value-property: $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: $x $y $blur $spread var(--tw-shadow-color);
         }
 
-        --tw-shadow: "#<_value>";
-        --tw-shadow-colored: "#<_value-property>";
+        --tw-shadow: #{$value};
+        --tw-shadow-colored: #{$value-property};
 
         box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
           var(--tw-shadow);
       }
     }
 
-    @mixin_lg\:shadow- (_value) {
+    @mixin lg\:shadow-($value) {
       @media (min-width: $breakpoint-lg) {
-        _value-property: null;
+        $value-property: null;
 
-        @if "xlist.nth(_value, 1)x" ==inset {
-          $x: "xlist.nth(_value, 2)x";
-          $y: "xlist.nth(_value, 3)x";
-          $blur: "xlist.nth(_value, 4)x";
-          $spread: "xlist.nth(_value, 5)x";
+        @if list.nth($value, 1) ==inset {
+          $x: list.nth($value, 2);
+          $y: list.nth($value, 3);
+          $blur: list.nth($value, 4);
+          $spread: list.nth($value, 5);
 
-          _value-property: inset $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: inset $x $y $blur $spread var(--tw-shadow-color);
         } @else {
-          $x: "xlist.nth(_value, 1)x";
-          $y: "xlist.nth(_value, 2)x";
-          $blur: "xlist.nth(_value, 3)x";
-          $spread: "xlist.nth(_value, 4)x";
+          $x: list.nth($value, 1);
+          $y: list.nth($value, 2);
+          $blur: list.nth($value, 3);
+          $spread: list.nth($value, 4);
 
-          _value-property: $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: $x $y $blur $spread var(--tw-shadow-color);
         }
 
-        --tw-shadow: "#<_value>";
-        --tw-shadow-colored: "#<_value-property>";
+        --tw-shadow: #{$value};
+        --tw-shadow-colored: #{$value-property};
 
         box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
           var(--tw-shadow);
       }
     }
 
-    @mixin_xl\:shadow- (_value) {
+    @mixin xl\:shadow-($value) {
       @media (min-width: $breakpoint-xl) {
-        _value-property: null;
+        $value-property: null;
 
-        @if "xlist.nth(_value, 1)x" ==inset {
-          $x: "xlist.nth(_value, 2)x";
-          $y: "xlist.nth(_value, 3)x";
-          $blur: "xlist.nth(_value, 4)x";
-          $spread: "xlist.nth(_value, 5)x";
+        @if list.nth($value, 1) ==inset {
+          $x: list.nth($value, 2);
+          $y: list.nth($value, 3);
+          $blur: list.nth($value, 4);
+          $spread: list.nth($value, 5);
 
-          _value-property: inset $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: inset $x $y $blur $spread var(--tw-shadow-color);
         } @else {
-          $x: "xlist.nth(_value, 1)x";
-          $y: "xlist.nth(_value, 2)x";
-          $blur: "xlist.nth(_value, 3)x";
-          $spread: "xlist.nth(_value, 4)x";
+          $x: list.nth($value, 1);
+          $y: list.nth($value, 2);
+          $blur: list.nth($value, 3);
+          $spread: list.nth($value, 4);
 
-          _value-property: $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: $x $y $blur $spread var(--tw-shadow-color);
         }
 
-        --tw-shadow: "#<_value>";
-        --tw-shadow-colored: "#<_value-property>";
+        --tw-shadow: #{$value};
+        --tw-shadow-colored: #{$value-property};
 
         box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
           var(--tw-shadow);
       }
     }
 
-    @mixin_\\2xl\:shadow- (_value) {
+    @mixin \2xl\:shadow-($value) {
       @media (min-width: $breakpoint-2xl) {
-        _value-property: null;
+        $value-property: null;
 
-        @if "xlist.nth(_value, 1)x" ==inset {
-          $x: "xlist.nth(_value, 2)x";
-          $y: "xlist.nth(_value, 3)x";
-          $blur: "xlist.nth(_value, 4)x";
-          $spread: "xlist.nth(_value, 5)x";
+        @if list.nth($value, 1) ==inset {
+          $x: list.nth($value, 2);
+          $y: list.nth($value, 3);
+          $blur: list.nth($value, 4);
+          $spread: list.nth($value, 5);
 
-          _value-property: inset $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: inset $x $y $blur $spread var(--tw-shadow-color);
         } @else {
-          $x: "xlist.nth(_value, 1)x";
-          $y: "xlist.nth(_value, 2)x";
-          $blur: "xlist.nth(_value, 3)x";
-          $spread: "xlist.nth(_value, 4)x";
+          $x: list.nth($value, 1);
+          $y: list.nth($value, 2);
+          $blur: list.nth($value, 3);
+          $spread: list.nth($value, 4);
 
-          _value-property: $x $y $blur $spread var(--tw-shadow-color);
+          $value-property: $x $y $blur $spread var(--tw-shadow-color);
         }
 
-        --tw-shadow: "#<_value>";
-        --tw-shadow-colored: "#<_value-property>";
+        --tw-shadow: #{$value};
+        --tw-shadow-colored: #{$value-property};
 
         box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
           var(--tw-shadow);
       }
-    }
+    }x*/
   }
 
   // tailwind default
@@ -217,29 +219,30 @@
 }
 
 @if $Custom {
-  @mixin_shadow- (_value) {
-    _value-property: null;
+  /*x
+  @mixin shadow-($value) {
+    $value-property: null;
 
-    @if "xlist.nth(_value, 1)x" ==inset {
-      $x: "xlist.nth(_value, 2)x";
-      $y: "xlist.nth(_value, 3)x";
-      $blur: "xlist.nth(_value, 4)x";
-      $spread: "xlist.nth(_value, 5)x";
+    @if list.nth($value, 1) ==inset {
+      $x: list.nth($value, 2);
+      $y: list.nth($value, 3);
+      $blur: list.nth($value, 4);
+      $spread: list.nth($value, 5);
 
-      _value-property: inset $x $y $blur $spread var(--tw-shadow-color);
+      $value-property: inset $x $y $blur $spread var(--tw-shadow-color);
     } @else {
-      $x: "xlist.nth(_value, 1)x";
-      $y: "xlist.nth(_value, 2)x";
-      $blur: "xlist.nth(_value, 3)x";
-      $spread: "xlist.nth(_value, 4)x";
+      $x: list.nth($value, 1);
+      $y: list.nth($value, 2);
+      $blur: list.nth($value, 3);
+      $spread: list.nth($value, 4);
 
-      _value-property: $x $y $blur $spread var(--tw-shadow-color);
+      $value-property: $x $y $blur $spread var(--tw-shadow-color);
     }
 
-    --tw-shadow: "#<_value>";
-    --tw-shadow-colored: "#<_value-property>";
+    --tw-shadow: #{$value};
+    --tw-shadow-colored: #{$value-property};
 
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
       var(--tw-shadow);
-  }
+  }x*/
 }

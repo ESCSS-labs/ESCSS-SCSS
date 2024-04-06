@@ -2,11 +2,12 @@
 
 /* Animation */
 @if $Basic {
-  @mixin_animate-none {
+  /*x
+  @mixin animate-none {
     animation: none;
   }
 
-  @mixin_animate-spin {
+  @mixin animate-spin {
     animation: spin 1s linear infinite;
 
     @keyframes spin {
@@ -20,7 +21,7 @@
     }
   }
 
-  @mixin_animate-ping {
+  @mixin animate-ping {
     animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 
     @keyframes ping {
@@ -32,7 +33,7 @@
     }
   }
 
-  @mixin_animate-pulse {
+  @mixin animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
     @keyframes pulse {
@@ -47,7 +48,7 @@
     }
   }
 
-  @mixin_animate-bounce {
+  @mixin animate-bounce {
     animation: bounce 1s infinite;
 
     @keyframes bounce {
@@ -62,41 +63,42 @@
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
       }
     }
-  }
+  }x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    @mixin_sm\:animate- (_value) {
+    /*x
+    @mixin sm\:animate-($value) {
       @media (min-width: $breakpoint-sm) {
-        animation: _value;
+        animation: $value;
       }
     }
 
-    @mixin_md\:animate- (_value) {
+    @mixin md\:animate-($value) {
       @media (min-width: $breakpoint-md) {
-        animation: _value;
+        animation: $value;
       }
     }
 
-    @mixin_lg\:animate- (_value) {
+    @mixin lg\:animate-($value) {
       @media (min-width: $breakpoint-lg) {
-        animation: _value;
+        animation: $value;
       }
     }
 
-    @mixin_xl\:animate- (_value) {
+    @mixin xl\:animate-($value) {
       @media (min-width: $breakpoint-xl) {
-        animation: _value;
+        animation: $value;
       }
     }
 
-    @mixin_\\2xl\:animate- (_value) {
+    @mixin \2xl\:animate-($value) {
       @media (min-width: $breakpoint-2xl) {
-        animation: _value;
+        animation: $value;
       }
-    }
+    }x*/
   }
 
   // tailwind default
@@ -105,7 +107,8 @@
 }
 
 @if $Custom {
-  @mixin_animate- (_value) {
-    animation: _value;
-  }
+  /*x
+  @mixin animate-($value) {
+    animation: $value;
+  }x*/
 }

@@ -2,61 +2,64 @@
 
 /* Backgrounds Size */
 @if $Basic {
-  @mixin_bg-auto {
+  /*x
+  @mixin bg-auto {
     background-size: auto;
   }
 
-  @mixin_bg-cover {
+  @mixin bg-cover {
     background-size: cover;
   }
 
-  @mixin_bg-contain {
+  @mixin bg-contain {
     background-size: contain;
-  }
+  }x*/
+}
 
-  @if $Rwd {
-    // reducing size for updating speed
-    @if $isLite {
-      @mixin_sm\:bg-size- (_value) {
-        @media (min-width: $breakpoint-sm) {
-          background-size: _value;
-        }
-      }
-
-      @mixin_md\:bg-size- (_value) {
-        @media (min-width: $breakpoint-md) {
-          background-size: _value;
-        }
-      }
-
-      @mixin_lg\:bg-size- (_value) {
-        @media (min-width: $breakpoint-lg) {
-          background-size: _value;
-        }
-      }
-
-      @mixin_xl\:bg-size- (_value) {
-        @media (min-width: $breakpoint-xl) {
-          background-size: _value;
-        }
-      }
-
-      @mixin_\\2xl\:bg-size- (_value) {
-        @media (min-width: $breakpoint-2xl) {
-          background-size: _value;
-        }
+@if $Rwd {
+  // reducing size for updating speed
+  @if $isLite {
+    /*x
+    @mixin sm\:bg-size-($value) {
+      @media (min-width: $breakpoint-sm) {
+        background-size: _value;
       }
     }
 
-    // tailwind default
-    @else {
+    @mixin md\:bg-size-($value) {
+      @media (min-width: $breakpoint-md) {
+        background-size: _value;
+      }
     }
+
+    @mixin lg\:bg-size-($value) {
+      @media (min-width: $breakpoint-lg) {
+        background-size: _value;
+      }
+    }
+
+    @mixin xl\:bg-size-($value) {
+      @media (min-width: $breakpoint-xl) {
+        background-size: _value;
+      }
+    }
+
+    @mixin \\2xl\:bg-size-($value) {
+      @media (min-width: $breakpoint-2xl) {
+        background-size: _value;
+      }
+    }x*/
   }
 
-  @if $Custom {
-    /* Naming collision: bg -> bg-size */
-    @mixin_bg-size- (_value) {
-      background-size: _value;
-    }
+  // tailwind default
+  @else {
   }
+}
+
+/* Purpose(name conflict): bg -> bg-size */
+@if $Custom {
+  /*x
+  @mixin bg-size-($value) {
+    background-size: _value;
+  }x*/
 }
