@@ -994,7 +994,6 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    /* Purpose(name conflict): ring -> ring-color */
     @mixin_sm\:ring-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         --tw-ring-color: "#<_value>";
@@ -1031,12 +1030,13 @@
   }
 }
 
+/* Naming collision: ring -> ring-color */
 @if $Custom {
-  /* Purpose(name conflict): ring -> ring-color */
   @mixin_ring-color- (_value) {
     --tw-ring-color: "#<_value>";
   }
 
+  /* Color Opacity */
   @mixin_ring-black\/ (_value) {
     --tw-ring-color: rgb(0 0 0 / "#<_value / 100>");
   }

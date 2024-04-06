@@ -1241,7 +1241,6 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    /* Purpose(name conflict): shadow -> shadow-color */
     @mixin_sm\:shadow-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         --tw-shadow-color: "#<_value>";
@@ -1283,13 +1282,13 @@
   }
 }
 
+/* Naming collision: shadow -> shadow-color */
 @if $Custom {
-  /* Purpose(name conflict): shadow -> shadow-color */
   @mixin_shadow-color- (_value) {
     --tw-shadow-color: "#<_value>";
     --tw-shadow: var(--tw-shadow-colored);
   }
-
+  /* Color Opacity */
   @mixin_shadow-black\/ (_value) {
     --tw-shadow-color: rgb(0 0 0 / "#<_value / 100>");
     --tw-shadow: var(--tw-shadow-colored);

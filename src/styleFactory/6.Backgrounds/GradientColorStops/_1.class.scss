@@ -3963,7 +3963,6 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    /* Purpose(name conflict): from -> from-color */
     @mixin_sm\:from-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         --tw-gradient-from: "#<_value>" var(--tw-gradient-from-position);
@@ -4004,7 +4003,6 @@
       }
     }
 
-    /* Purpose(name conflict): via -> via-color */
     @mixin_sm\:via-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         --tw-gradient-stops: var(--tw-gradient-from),
@@ -4040,7 +4038,6 @@
       }
     }
 
-    /* Purpose(name conflict): to -> to-color */
     @mixin_sm\:to-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         --tw-gradient-to: "#<_value>" var(--tw-gradient-to-position);
@@ -4167,21 +4164,21 @@
   }
 }
 
+/* Naming collision: from -> from-color */
+/* Naming collision: via -> via-color */
+/* Naming collision: to -> to-color */
 @if $Custom {
-  /* Purpose(name conflict): from -> from-color */
   @mixin_from-color- (_value) {
     --tw-gradient-from: "#<_value>" var(--tw-gradient-from-position);
     --tw-gradient-to: transparent var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 
-  /* Purpose(name conflict): via -> via-color */
   @mixin_via-color- (_value) {
     --tw-gradient-stops: var(--tw-gradient-from),
       "#<_value>" var(--tw-gradient-via-position), var(--tw-gradient-to);
   }
 
-  /* Purpose(name conflict): to -> to-color */
   @mixin_to-color- (_value) {
     --tw-gradient-to: "#<_value>" var(--tw-gradient-to-position);
   }
@@ -4198,6 +4195,7 @@
     --tw-gradient-to-position: "#<_value>";
   }
 
+  /* Color Opacity */
   @mixin_from-black\/ (_value) {
     --tw-gradient-from: rgb(0 0 0 / "#<_value / 100>")
       var(--tw-gradient-from-position);

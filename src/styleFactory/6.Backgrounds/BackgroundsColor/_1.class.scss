@@ -994,7 +994,6 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    /* Purpose(name conflict): bg -> bg-color */
     @mixin_sm\:bg-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         background-color: _value;
@@ -1031,13 +1030,13 @@
   }
 }
 
+/* Naming collision: bg -> bg-color */
 @if $Custom {
-  /* Purpose(name conflict): bg -> bg-color */
   @mixin_bg-color- (_value) {
     background-color: _value;
   }
 
-  // Background Color
+  /* Color Opacity */
   @mixin_bg-black\/ (_value) {
     background-color: rgb(0 0 0 / "#<_value / 100>");
   }

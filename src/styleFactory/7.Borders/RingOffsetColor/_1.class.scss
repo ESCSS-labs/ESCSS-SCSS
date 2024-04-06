@@ -994,7 +994,6 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    /* Purpose(name conflict): ring-offset -> ring-offset-color */
     @mixin_sm\:ring-offset-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         --tw-ring-offset-color: "#<_value>";
@@ -1031,12 +1030,13 @@
   }
 }
 
+/* Naming collision: ring-offset -> ring-offset-color */
 @if $Custom {
-  /* Purpose(name conflict): ring-offset -> ring-offset-color */
   @mixin_ring-offset-color- (_value) {
     --tw-ring-offset-color: "#<_value>";
   }
 
+  /* Color Opacity */
   @mixin_ring-offset-black\/ (_value) {
     --tw-ring-offset-color: rgb(0 0 0 / "#<_value / 100>");
   }

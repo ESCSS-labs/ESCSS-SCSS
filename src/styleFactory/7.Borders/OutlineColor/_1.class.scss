@@ -994,7 +994,6 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    /* Purpose(name conflict): outline -> outline-color */
     @mixin_sm\:outline-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         outline-color: _value;
@@ -1031,12 +1030,13 @@
   }
 }
 
+/* Naming collision: outline -> outline-color */
 @if $Custom {
-  /* Purpose(name conflict): outline -> outline-color */
   @mixin_outline-color- (_value) {
     outline-color: _value;
   }
 
+  /* Color Opacity */
   @mixin_outline-black\/ (_value) {
     outline-color: rgb(0 0 0 / "#<_value / 100>");
   }

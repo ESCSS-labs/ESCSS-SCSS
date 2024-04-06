@@ -994,7 +994,6 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    /* Purpose(name conflict): caret -> caret-color */
     @mixin_sm\:caret-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         caret-color: _value;
@@ -1031,12 +1030,13 @@
   }
 }
 
+/* Naming collision: caret -> caret-color */
 @if $Custom {
-  /* Purpose(name conflict): caret -> caret-color */
   @mixin_caret-color- (_value) {
     caret-color: _value;
   }
 
+  /* Color Opacity */
   @mixin_caret-black\/ (_value) {
     caret-color: rgb(0 0 0 / "#<_value / 100>");
   }

@@ -998,7 +998,6 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    /* Purpose(name conflict): accent -> accent-color */
     @mixin_sm\:accent-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         accent-color: _value;
@@ -1035,12 +1034,13 @@
   }
 }
 
+/* Naming collision: accent -> accent-color */
 @if $Custom {
-  /* Purpose(name conflict): accent -> accent-color */
   @mixin_accent-color- (_value) {
     accent-color: _value;
   }
 
+  /* Color Opacity */
   @mixin_accent-black\/ (_value) {
     accent-color: rgb(0 0 0 / "#<_value / 100>");
   }

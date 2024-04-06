@@ -994,7 +994,6 @@
 @if $Rwd {
   // reducing size for updating speed
   @if $isLite {
-    /* Purpose(name conflict): decoration -> decoration-color */
     @mixin_sm\:decoration-color- (_value) {
       @media (min-width: $breakpoint-sm) {
         text-decoration-color: _value;
@@ -1031,12 +1030,13 @@
   }
 }
 
+/* Naming collision: decoration -> decoration-color */
 @if $Custom {
-  /* Purpose(name conflict): decoration -> decoration-color */
   @mixin_decoration-color- (_value) {
     text-decoration-color: _value;
   }
 
+  /* Color Opacity */
   @mixin_decoration-black\/ (_value) {
     text-decoration-color: rgb(0 0 0 / "#<_value / 100>");
   }
