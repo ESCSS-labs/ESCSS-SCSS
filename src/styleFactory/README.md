@@ -1,14 +1,14 @@
-use css compiler to compile _index.scss, replace x*/, /*x  and good to go.
+use css compiler to compile \_index.scss, replace x*/, /*x and good to go.
 
-/* Tailwind css v3.4.1 All Arbitrary values */
+/_ Tailwind css v3.4.1 All Arbitrary values _/
 
-/* Layout */
+/_ Layout _/
 // Columns
 // Object Position
 // Top / Right / Bottom / Left
 // Z-Index
 
-/* Flexbox & Grid */
+/_ Flexbox & Grid _/
 // Flex Basis
 // Flex
 // Flex Grow
@@ -22,12 +22,12 @@ use css compiler to compile _index.scss, replace x*/, /*x  and good to go.
 // Grid Auto Rows
 // Gap
 
-/* Spacing */
+/_ Spacing _/
 // Padding
 // Margin
 // Space Between
 
-/* Sizing */
+/_ Sizing _/
 // Width
 // Min-Width
 // Max-Width
@@ -36,7 +36,7 @@ use css compiler to compile _index.scss, replace x*/, /*x  and good to go.
 // Max-Height
 // Size
 
-/* Typography */
+/_ Typography _/
 // Font Family
 // Font Size
 // Font Weight
@@ -52,13 +52,13 @@ use css compiler to compile _index.scss, replace x*/, /*x  and good to go.
 // Text Indent
 // Vertical Align
 
-/* Backgrounds */
+/_ Backgrounds _/
 // Background Position
 // Background Size
 // Background Image
 // Gradient Color Stops
 
-/* Borders */
+/_ Borders _/
 // Border Radius
 // Border Width
 // Border Color
@@ -72,12 +72,12 @@ use css compiler to compile _index.scss, replace x*/, /*x  and good to go.
 // Ring Offset Width
 // Ring Offset Color
 
-/* Effects */
+/_ Effects _/
 // Box Shadow
 // Box Shadow Color
 // Opacity
 
-/* Filters */
+/_ Filters _/
 // Blur
 // Brightness
 // Contrast
@@ -97,24 +97,24 @@ use css compiler to compile _index.scss, replace x*/, /*x  and good to go.
 // Backdrop Saturate
 // Backdrop Sepia
 
-/* Tables */
+/_ Tables _/
 // Border Spacing
 
-/* Transitions & Animation */
+/_ Transitions & Animation _/
 // Transition Property
 // Transition Duration
 // Transition Timing Function
 // Transition Delay
 // Animation
 
-/* Transforms */
+/_ Transforms _/
 // Scale
 // Rotate
 // Translate
 // Skew
 // Transform Origin
 
-/* Interactivity */
+/_ Interactivity _/
 // Accent Color
 // Cursor
 // Caret Color
@@ -122,9 +122,9 @@ use css compiler to compile _index.scss, replace x*/, /*x  and good to go.
 // Scroll Padding
 // Will Change
 
-/* SVG */
+/_ SVG _/
 // Fill
 // Stroke
 // Stroke Width
 
-/* Accessibility */
+/_ Accessibility _/
