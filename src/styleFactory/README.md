@@ -1,12 +1,14 @@
-/_ Tailwind css v3.4.1 All Arbitrary values _/
+use css compiler to compile _index.scss, replace x*/, /*x  and good to go.
 
-/_ Layout _/
+/* Tailwind css v3.4.1 All Arbitrary values */
+
+/* Layout */
 // Columns
 // Object Position
 // Top / Right / Bottom / Left
 // Z-Index
 
-/_ Flexbox & Grid _/
+/* Flexbox & Grid */
 // Flex Basis
 // Flex
 // Flex Grow
@@ -20,12 +22,12 @@
 // Grid Auto Rows
 // Gap
 
-/_ Spacing _/
+/* Spacing */
 // Padding
 // Margin
 // Space Between
 
-/_ Sizing _/
+/* Sizing */
 // Width
 // Min-Width
 // Max-Width
@@ -34,7 +36,7 @@
 // Max-Height
 // Size
 
-/_ Typography _/
+/* Typography */
 // Font Family
 // Font Size
 // Font Weight
@@ -50,13 +52,13 @@
 // Text Indent
 // Vertical Align
 
-/_ Backgrounds _/
+/* Backgrounds */
 // Background Position
 // Background Size
 // Background Image
 // Gradient Color Stops
 
-/_ Borders _/
+/* Borders */
 // Border Radius
 // Border Width
 // Border Color
@@ -70,12 +72,12 @@
 // Ring Offset Width
 // Ring Offset Color
 
-/_ Effects _/
+/* Effects */
 // Box Shadow
 // Box Shadow Color
 // Opacity
 
-/_ Filters _/
+/* Filters */
 // Blur
 // Brightness
 // Contrast
@@ -95,24 +97,24 @@
 // Backdrop Saturate
 // Backdrop Sepia
 
-/_ Tables _/
+/* Tables */
 // Border Spacing
 
-/_ Transitions & Animation _/
+/* Transitions & Animation */
 // Transition Property
 // Transition Duration
 // Transition Timing Function
 // Transition Delay
 // Animation
 
-/_ Transforms _/
+/* Transforms */
 // Scale
 // Rotate
 // Translate
 // Skew
 // Transform Origin
 
-/_ Interactivity _/
+/* Interactivity */
 // Accent Color
 // Cursor
 // Caret Color
@@ -120,9 +122,9 @@
 // Scroll Padding
 // Will Change
 
-/_ SVG _/
+/* SVG */
 // Fill
 // Stroke
 // Stroke Width
 
-/_ Accessibility _/
+/* Accessibility */
