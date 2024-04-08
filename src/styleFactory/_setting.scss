@@ -22,8 +22,9 @@ $rwd-xl: 1280px;
 $rwd-2xl: 1536px;
 
 // Gradient Color Stops
-$from-color: "from-color"; // Display purpose
-$via-color: null; // Detect the use of 2 or 3 gradient stops
+$direction: "NO-DIRECTION"; // Display purpose
+$from-color: "NO-FROM-COLOR"; // Display purpose
+$via-color: null; // @function get_BgImg() detects the use of 2 or 3 gradient stops
 $to-color: transparent;
 
 $from-position: null;
@@ -49,6 +50,20 @@ $to-position: null;
   }
 
   @return $temp;
+}
+
+@function get_BgImg() {
+  @if $via-color==null {
+    @return linear-gradient($direction,
+      $from-color $from-position,
+      $to-color $to-position );
+  }
+  @else {
+    @return linear-gradient($direction,
+      $from-color $from-position,
+      $via-color $via-position,
+      $to-color $to-position );
+  }
 }
 
 @function get_LineHeight($value) {
@@ -103,5 +118,7 @@ $to-position: null;
 
   @return $temp;
 }
+
+
 
 x*/
