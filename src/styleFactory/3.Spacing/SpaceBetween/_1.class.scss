@@ -713,81 +713,116 @@
     /*x
     @mixin sm\:space-x-($value) {
       @media (min-width: $rwd-sm) {
-        > * + * {
-          margin-left: $value;
-        }
+        @include get_SpaceX($value);
       }
     }
-
     @mixin sm\:space-y-($value) {
       @media (min-width: $rwd-sm) {
-        > * + * {
-          margin-top: $value;
-        }
+        @include get_SpaceY($value);
+      }
+    }
+    @mixin sm\:space-x-reverse {
+      @media (min-width: $rwd-sm) {
+        $space-x-reverse: 1 !global;
+        @include get_SpaceX();
+      }
+    }
+    @mixin sm\:space-y-reverse {
+      @media (min-width: $rwd-sm) {
+        $space-y-reverse: 1 !global;
+        @include get_SpaceY();
       }
     }
 
     @mixin md\:space-x-($value) {
       @media (min-width: $rwd-md) {
-        > * + * {
-          margin-left: $value;
-        }
+        @include get_SpaceX($value);
       }
     }
-
     @mixin md\:space-y-($value) {
       @media (min-width: $rwd-md) {
-        > * + * {
-          margin-top: $value;
-        }
+        @include get_SpaceY($value);
+      }
+    }
+    @mixin md\:space-x-reverse {
+      @media (min-width: $rwd-md) {
+        $space-x-reverse: 1 !global;
+        @include get_SpaceX();
+      }
+    }
+    @mixin md\:space-y-reverse {
+      @media (min-width: $rwd-md) {
+        $space-y-reverse: 1 !global;
+        @include get_SpaceY();
       }
     }
 
     @mixin lg\:space-x-($value) {
       @media (min-width: $rwd-lg) {
-        > * + * {
-          margin-left: $value;
-        }
+        @include get_SpaceX($value);
       }
     }
-
     @mixin lg\:space-y-($value) {
       @media (min-width: $rwd-lg) {
-        > * + * {
-          margin-top: $value;
-        }
+        @include get_SpaceY($value);
+      }
+    }
+    @mixin lg\:space-x-reverse {
+      @media (min-width: $rwd-lg) {
+        $space-x-reverse: 1 !global;
+        @include get_SpaceX();
+      }
+    }
+    @mixin lg\:space-y-reverse {
+      @media (min-width: $rwd-lg) {
+        $space-y-reverse: 1 !global;
+        @include get_SpaceY();
       }
     }
 
     @mixin xl\:space-x-($value) {
       @media (min-width: $rwd-xl) {
-        > * + * {
-          margin-left: $value;
-        }
+        @include get_SpaceX($value);
       }
     }
-
     @mixin xl\:space-y-($value) {
       @media (min-width: $rwd-xl) {
-        > * + * {
-          margin-top: $value;
-        }
+        @include get_SpaceY($value);
+      }
+    }
+    @mixin xl\:space-x-reverse {
+      @media (min-width: $rwd-xl) {
+        $space-x-reverse: 1 !global;
+        @include get_SpaceX();
+      }
+    }
+    @mixin xl\:space-y-reverse {
+      @media (min-width: $rwd-xl) {
+        $space-y-reverse: 1 !global;
+        @include get_SpaceY();
       }
     }
 
     @mixin \2xl\:space-x-($value) {
       @media (min-width: $rwd-2xl) {
-        > * + * {
-          margin-left: $value;
-        }
+        @include get_SpaceX($value);
       }
     }
-
     @mixin \2xl\:space-y-($value) {
       @media (min-width: $rwd-2xl) {
-        > * + * {
-          margin-top: $value;
-        }
+        @include get_SpaceY($value);
+      }
+    }
+    @mixin \2xl\:space-x-reverse {
+      @media (min-width: $rwd-2xl) {
+        $space-x-reverse: 1 !global;
+        @include get_SpaceX();
+      }
+    }
+    @mixin \2xl\:space-y-reverse {
+      @media (min-width: $rwd-2xl) {
+        $space-y-reverse: 1 !global;
+        @include get_SpaceY();
       }
     }
     x*/
@@ -801,15 +836,10 @@
 @if $Custom {
   /*x
   @mixin space-x-($value) {
-    > * + * {
-      margin-left: $value;
-    }
+    @include get_SpaceX($value);
   }
-
   @mixin space-y-($value) {
-    > * + * {
-      margin-top: $value;
-    }
+    @include get_SpaceY($value);
   }
   x*/
 }
