@@ -22,13 +22,13 @@ $rwd-xl: 1280px;
 $rwd-2xl: 1536px;
 
 // Gradient Color Stops
-$direction: "NO-DIRECTION"; // Display purpose
-$from-color: "NO-FROM-COLOR"; // Display purpose
-$via-color: null; // @function get_BgImg() detects the use of 2 or 3 gradient stops
-$to-color: transparent;
-$from-position: null;
-$via-position: null;
-$to-position: null;
+$gradient-direction: "NO-DIRECTION"; // Display purpose
+$gradient-from: "NO-FROM-COLOR"; // Display purpose
+$gradient-via: null; // @function get_BgImg() detects the use of 2 or 3 gradient stops
+$gradient-to: transparent;
+$gradient-from-position: null;
+$gradient-via-position: null;
+$gradient-to-position: null;
 
 // 
 $space-value: 0; // let space-x/y-reverse to know what the current value is
@@ -57,16 +57,16 @@ $space-y-reverse: 0;
 }
 
 @function get_BgImg() {
-  @if $via-color==null {
-    @return linear-gradient($direction,
-      $from-color $from-position,
-      $to-color $to-position );
+  @if $gradient-via==null {
+    @return linear-gradient($gradient-direction,
+      $gradient-from $gradient-from-position,
+      $gradient-to $gradient-to-position);
   }
   @else {
-    @return linear-gradient($direction,
-      $from-color $from-position,
-      $via-color $via-position,
-      $to-color $to-position );
+    @return linear-gradient($gradient-direction,
+      $gradient-from $gradient-from-position,
+      $gradient-via $gradient-via-position,
+      $gradient-to $gradient-to-position);
   }
 }
 
