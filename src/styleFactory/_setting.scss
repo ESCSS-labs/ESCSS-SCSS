@@ -22,18 +22,18 @@ $rwd-xl: 1280px;
 $rwd-2xl: 1536px;
 
 // Gradient Color Stops
-$gradient-direction: "NO-DIRECTION"; // Display purpose
-$gradient-from: "NO-FROM-COLOR"; // Display purpose
-$gradient-via: null; // @function get_BgImg() detects the use of 2 or 3 gradient stops
-$gradient-to: transparent;
-$gradient-from-position: null;
-$gradient-via-position: null;
-$gradient-to-position: null;
+$-gradient-direction: "NO-DIRECTION"; // Display purpose
+$--tw-gradient-from: "NO-FROM-COLOR"; // Display purpose
+$--tw-gradient-via: null; // @function get_BgImg() detects the use of 2 or 3 gradient stops
+$--tw-gradient-to: transparent;
+$--tw-gradient-from-position: null;
+$--tw-gradient-via-position: null;
+$--tw-gradient-to-position: null;
 
-// 
-$space-value: 0; // let space-x/y-reverse to know what the current value is
-$space-x-reverse: 0;
-$space-y-reverse: 0;
+// Space Between
+$-space-value: 0; // let space-x/y-reverse to know what the current value is
+$--tw-space-x-reverse: 0;
+$--tw-space-y-reverse: 0;
 
 
 // Helper Function
@@ -57,32 +57,32 @@ $space-y-reverse: 0;
 }
 
 @function get_BgImg() {
-  @if $gradient-via==null {
-    @return linear-gradient($gradient-direction,
-      $gradient-from $gradient-from-position,
-      $gradient-to $gradient-to-position);
+  @if $--tw-gradient-via==null {
+    @return linear-gradient($-gradient-direction,
+      $--tw-gradient-from $--tw-gradient-from-position,
+      $--tw-gradient-to $--tw-gradient-to-position);
   }
   @else {
-    @return linear-gradient($gradient-direction,
-      $gradient-from $gradient-from-position,
-      $gradient-via $gradient-via-position,
-      $gradient-to $gradient-to-position);
+    @return linear-gradient($-gradient-direction,
+      $--tw-gradient-from $--tw-gradient-from-position,
+      $--tw-gradient-via $--tw-gradient-via-position,
+      $--tw-gradient-to $--tw-gradient-to-position);
   }
 }
 
-@mixin get_SpaceY($value: $space-value) {
-  $space-value: $value !global;
+@mixin get_SpaceY($value: $-space-value) {
+  $-space-value: $value !global;
   > * + * {
-    margin-top: $space-value * (1 - $space-y-reverse);
-    margin-bottom: $space-value * $space-y-reverse;
+    margin-top: $-space-value * (1 - $--tw-space-y-reverse);
+    margin-bottom: $-space-value * $--tw-space-y-reverse;
   }
 }
 
-@mixin get_SpaceX($value: $space-value) {
-  $space-value: $value !global;
+@mixin get_SpaceX($value: $-space-value) {
+  $-space-value: $value !global;
   > * + * {
-    margin-left: $space-value * (1 - $space-x-reverse);
-    margin-right: $space-value * $space-x-reverse;
+    margin-left: $-space-value * (1 - $--tw-space-x-reverse);
+    margin-right: $-space-value * $--tw-space-x-reverse;
   }
 }
 
