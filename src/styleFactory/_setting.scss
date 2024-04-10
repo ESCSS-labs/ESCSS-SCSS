@@ -24,7 +24,7 @@ $rwd-2xl: 1536px;
 // Gradient Color Stops
 $-gradient-direction: "NO-DIRECTION"; // Display purpose
 $--tw-gradient-from: "NO-FROM-COLOR"; // Display purpose
-$--tw-gradient-via: null; // @function get_BgImg() detects the use of 2 or 3 gradient stops
+$--tw-gradient-via: null; // detects the use of 2 or 3 gradient stops
 $--tw-gradient-to: transparent;
 $--tw-gradient-from-position: null;
 $--tw-gradient-via-position: null;
@@ -43,11 +43,9 @@ $--tw-divide-y-reverse: 0;
 // Box Shadow
 $--tw-ring-offset-width: 0;
 $--tw-ring-offset-color: #fff; // default ring offset color
-
 $--tw-ring-inset: null;
 $-ring-width: 0;
 $--tw-ring-color: rgb(59 130 246 / 0.5); // default ring color
-
 $-shadow-token: null;
 $-shadow-length: null;
 $--tw-shadow-color: null;
@@ -55,6 +53,14 @@ $--tw-shadow-color: null;
 // Scroll Snap Type
 $--tw-scroll-snap-strictness: proximity;
 
+// Transforms
+$--tw-translate-x: 0;
+$--tw-translate-y: 0;
+$--tw-rotate: 0; 
+$--tw-skew-x: 0; 
+$--tw-skew-y: 0;
+$--tw-scale-x: 1;
+$--tw-scale-y: 1;
 
 // Helper Function
 @function get_Opacity($value) {
@@ -205,6 +211,11 @@ $--tw-scroll-snap-strictness: proximity;
     border-top-width: $-divide-current-value * (1 - $--tw-divide-y-reverse);
     border-bottom-width: $-divide-current-value * $--tw-divide-y-reverse;
   }
+}
+
+
+@mixin get_Transform {
+  transform: translate($--tw-translate-x, $--tw-translate-y) rotate($--tw-rotate) skewX($--tw-skew-x) skewY($--tw-skew-y) scaleX($--tw-scale-x) scaleY($--tw-scale-y);
 }
 
 x*/
