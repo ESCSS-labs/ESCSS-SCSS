@@ -4,24 +4,30 @@
 @if $Basic {
   /*x
   @mixin ring-offset-0 {
-    --tw-ring-offset-width: 0px;
+    $--tw-ring-offset-width: 0px !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-offset-1 {
-    --tw-ring-offset-width: 1px;
+    $--tw-ring-offset-width: 1px !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-offset-2 {
-    --tw-ring-offset-width: 2px;
+    $--tw-ring-offset-width: 2px !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-offset-4 {
-    --tw-ring-offset-width: 4px;
+    $--tw-ring-offset-width: 4px !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-offset-8 {
-    --tw-ring-offset-width: 8px;
-  }x*/
+    $--tw-ring-offset-width: 8px !global;
+    @include get_BoxShadow;
+  }
+  x*/
 }
 
 @if $Rwd {
@@ -30,33 +36,39 @@
     /*x
     @mixin sm\:ring-offset-($value) {
       @media (min-width: $rwd-sm) {
-        --tw-ring-offset-width: #/*x{$value};
+        $--tw-ring-offset-width: $value !global;
+        @include get_BoxShadow;
       }
     }
 
     @mixin md\:ring-offset-($value) {
       @media (min-width: $rwd-md) {
-        --tw-ring-offset-width: #/*x{$value};
+        $--tw-ring-offset-width: $value !global;
+        @include get_BoxShadow;
       }
     }
 
     @mixin lg\:ring-offset-($value) {
       @media (min-width: $rwd-lg) {
-        --tw-ring-offset-width: #/*x{$value};
+        $--tw-ring-offset-width: $value !global;
+        @include get_BoxShadow;
       }
     }
 
     @mixin xl\:ring-offset-($value) {
       @media (min-width: $rwd-xl) {
-        --tw-ring-offset-width: #/*x{$value};
+        $--tw-ring-offset-width: $value !global;
+        @include get_BoxShadow;
       }
     }
 
     @mixin \2xl\:ring-offset-($value) {
       @media (min-width: $rwd-2xl) {
-        --tw-ring-offset-width: #/*x{$value};
+        $--tw-ring-offset-width: $value !global;
+        @include get_BoxShadow;
       }
-    }x*/
+    }
+    x*/
   }
 
   // tailwind default
@@ -67,6 +79,7 @@
 @if $Custom {
   /*x
   @mixin ring-offset-($value) {
-    --tw-ring-offset-width: #/*x{$value};
+    $--tw-ring-offset-width: $value !global;
+    @include get_BoxShadow;
   }x*/
 }

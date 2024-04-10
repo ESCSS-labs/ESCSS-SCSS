@@ -4,993 +4,1239 @@
 @if $Basic {
   /*x
   @mixin ring-inherit {
-    --tw-ring-color: inherit;
+    $--tw-ring-color: inherit !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-current {
-    --tw-ring-color: currentColor;
+    $--tw-ring-color: currentColor !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-transparent {
-    --tw-ring-color: transparent;
+    $--tw-ring-color: transparent !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-black($value: 1) {
-    --tw-ring-color: rgb(0 0 0 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(0 0 0 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-white($value: 1) {
-    --tw-ring-color: rgb(255 255 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(255 255 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-50($value: 1) {
-    --tw-ring-color: rgb(248 250 252 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(248 250 252 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-100($value: 1) {
-    --tw-ring-color: rgb(241 245 249 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(241 245 249 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-200($value: 1) {
-    --tw-ring-color: rgb(226 232 240 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(226 232 240 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-300($value: 1) {
-    --tw-ring-color: rgb(203 213 225 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(203 213 225 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-400($value: 1) {
-    --tw-ring-color: rgb(148 163 184 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(148 163 184 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-500($value: 1) {
-    --tw-ring-color: rgb(100 116 139 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(100 116 139 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-600($value: 1) {
-    --tw-ring-color: rgb(71 85 105 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(71 85 105 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-700($value: 1) {
-    --tw-ring-color: rgb(51 65 85 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(51 65 85 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-800($value: 1) {
-    --tw-ring-color: rgb(30 41 59 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(30 41 59 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-900($value: 1) {
-    --tw-ring-color: rgb(15 23 42 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(15 23 42 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-slate-950($value: 1) {
-    --tw-ring-color: rgb(2 6 23 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(2 6 23 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-50($value: 1) {
-    --tw-ring-color: rgb(249 250 251 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(249 250 251 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-100($value: 1) {
-    --tw-ring-color: rgb(243 244 246 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(243 244 246 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-200($value: 1) {
-    --tw-ring-color: rgb(229 231 235 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(229 231 235 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-300($value: 1) {
-    --tw-ring-color: rgb(209 213 219 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(209 213 219 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-400($value: 1) {
-    --tw-ring-color: rgb(156 163 175 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(156 163 175 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-500($value: 1) {
-    --tw-ring-color: rgb(107 114 128 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(107 114 128 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-600($value: 1) {
-    --tw-ring-color: rgb(75 85 99 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(75 85 99 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-700($value: 1) {
-    --tw-ring-color: rgb(55 65 81 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(55 65 81 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-800($value: 1) {
-    --tw-ring-color: rgb(31 41 55 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(31 41 55 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-900($value: 1) {
-    --tw-ring-color: rgb(17 24 39 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(17 24 39 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-gray-950($value: 1) {
-    --tw-ring-color: rgb(3 7 18 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(3 7 18 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-50($value: 1) {
-    --tw-ring-color: rgb(250 250 250 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(250 250 250 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-100($value: 1) {
-    --tw-ring-color: rgb(244 244 245 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(244 244 245 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-200($value: 1) {
-    --tw-ring-color: rgb(228 228 231 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(228 228 231 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-300($value: 1) {
-    --tw-ring-color: rgb(212 212 216 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(212 212 216 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-400($value: 1) {
-    --tw-ring-color: rgb(161 161 170 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(161 161 170 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-500($value: 1) {
-    --tw-ring-color: rgb(113 113 122 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(113 113 122 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-600($value: 1) {
-    --tw-ring-color: rgb(82 82 91 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(82 82 91 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-700($value: 1) {
-    --tw-ring-color: rgb(63 63 70 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(63 63 70 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-800($value: 1) {
-    --tw-ring-color: rgb(39 39 42 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(39 39 42 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-900($value: 1) {
-    --tw-ring-color: rgb(24 24 27 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(24 24 27 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-zinc-950($value: 1) {
-    --tw-ring-color: rgb(9 9 11 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(9 9 11 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-50($value: 1) {
-    --tw-ring-color: rgb(250 250 250 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(250 250 250 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-100($value: 1) {
-    --tw-ring-color: rgb(245 245 245 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(245 245 245 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-200($value: 1) {
-    --tw-ring-color: rgb(229 229 229 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(229 229 229 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-300($value: 1) {
-    --tw-ring-color: rgb(212 212 212 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(212 212 212 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-400($value: 1) {
-    --tw-ring-color: rgb(163 163 163 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(163 163 163 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-500($value: 1) {
-    --tw-ring-color: rgb(115 115 115 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(115 115 115 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-600($value: 1) {
-    --tw-ring-color: rgb(82 82 82 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(82 82 82 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-700($value: 1) {
-    --tw-ring-color: rgb(64 64 64 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(64 64 64 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-800($value: 1) {
-    --tw-ring-color: rgb(38 38 38 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(38 38 38 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-900($value: 1) {
-    --tw-ring-color: rgb(23 23 23 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(23 23 23 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-neutral-950($value: 1) {
-    --tw-ring-color: rgb(10 10 10 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(10 10 10 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-50($value: 1) {
-    --tw-ring-color: rgb(250 250 249 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(250 250 249 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-100($value: 1) {
-    --tw-ring-color: rgb(245 245 244 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(245 245 244 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-200($value: 1) {
-    --tw-ring-color: rgb(231 229 228 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(231 229 228 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-300($value: 1) {
-    --tw-ring-color: rgb(214 211 209 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(214 211 209 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-400($value: 1) {
-    --tw-ring-color: rgb(168 162 158 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(168 162 158 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-500($value: 1) {
-    --tw-ring-color: rgb(120 113 108 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(120 113 108 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-600($value: 1) {
-    --tw-ring-color: rgb(87 83 78 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(87 83 78 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-700($value: 1) {
-    --tw-ring-color: rgb(68 64 60 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(68 64 60 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-800($value: 1) {
-    --tw-ring-color: rgb(41 37 36 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(41 37 36 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-900($value: 1) {
-    --tw-ring-color: rgb(28 25 23 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(28 25 23 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-stone-950($value: 1) {
-    --tw-ring-color: rgb(12 10 9 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(12 10 9 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-50($value: 1) {
-    --tw-ring-color: rgb(254 242 242 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(254 242 242 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-100($value: 1) {
-    --tw-ring-color: rgb(254 226 226 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(254 226 226 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-200($value: 1) {
-    --tw-ring-color: rgb(254 202 202 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(254 202 202 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-300($value: 1) {
-    --tw-ring-color: rgb(252 165 165 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(252 165 165 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-400($value: 1) {
-    --tw-ring-color: rgb(248 113 113 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(248 113 113 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-500($value: 1) {
-    --tw-ring-color: rgb(239 68 68 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(239 68 68 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-600($value: 1) {
-    --tw-ring-color: rgb(220 38 38 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(220 38 38 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-700($value: 1) {
-    --tw-ring-color: rgb(185 28 28 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(185 28 28 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-800($value: 1) {
-    --tw-ring-color: rgb(153 27 27 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(153 27 27 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-900($value: 1) {
-    --tw-ring-color: rgb(127 29 29 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(127 29 29 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-red-950($value: 1) {
-    --tw-ring-color: rgb(69 10 10 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(69 10 10 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-50($value: 1) {
-    --tw-ring-color: rgb(255 247 237 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(255 247 237 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-100($value: 1) {
-    --tw-ring-color: rgb(255 237 213 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(255 237 213 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-200($value: 1) {
-    --tw-ring-color: rgb(254 215 170 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(254 215 170 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-300($value: 1) {
-    --tw-ring-color: rgb(253 186 116 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(253 186 116 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-400($value: 1) {
-    --tw-ring-color: rgb(251 146 60 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(251 146 60 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-500($value: 1) {
-    --tw-ring-color: rgb(249 115 22 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(249 115 22 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-600($value: 1) {
-    --tw-ring-color: rgb(234 88 12 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(234 88 12 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-700($value: 1) {
-    --tw-ring-color: rgb(194 65 12 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(194 65 12 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-800($value: 1) {
-    --tw-ring-color: rgb(154 52 18 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(154 52 18 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-900($value: 1) {
-    --tw-ring-color: rgb(124 45 18 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(124 45 18 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-orange-950($value: 1) {
-    --tw-ring-color: rgb(67 20 7 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(67 20 7 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-50($value: 1) {
-    --tw-ring-color: rgb(255 251 235 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(255 251 235 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-100($value: 1) {
-    --tw-ring-color: rgb(254 243 199 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(254 243 199 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-200($value: 1) {
-    --tw-ring-color: rgb(253 230 138 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(253 230 138 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-300($value: 1) {
-    --tw-ring-color: rgb(252 211 77 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(252 211 77 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-400($value: 1) {
-    --tw-ring-color: rgb(251 191 36 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(251 191 36 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-500($value: 1) {
-    --tw-ring-color: rgb(245 158 11 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(245 158 11 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-600($value: 1) {
-    --tw-ring-color: rgb(217 119 6 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(217 119 6 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-700($value: 1) {
-    --tw-ring-color: rgb(180 83 9 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(180 83 9 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-800($value: 1) {
-    --tw-ring-color: rgb(146 64 14 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(146 64 14 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-900($value: 1) {
-    --tw-ring-color: rgb(120 53 15 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(120 53 15 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-amber-950($value: 1) {
-    --tw-ring-color: rgb(69 26 3 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(69 26 3 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-50($value: 1) {
-    --tw-ring-color: rgb(254 252 232 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(254 252 232 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-100($value: 1) {
-    --tw-ring-color: rgb(254 249 195 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(254 249 195 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-200($value: 1) {
-    --tw-ring-color: rgb(254 240 138 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(254 240 138 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-300($value: 1) {
-    --tw-ring-color: rgb(253 224 71 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(253 224 71 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-400($value: 1) {
-    --tw-ring-color: rgb(250 204 21 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(250 204 21 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-500($value: 1) {
-    --tw-ring-color: rgb(234 179 8 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(234 179 8 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-600($value: 1) {
-    --tw-ring-color: rgb(202 138 4 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(202 138 4 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-700($value: 1) {
-    --tw-ring-color: rgb(161 98 7 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(161 98 7 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-800($value: 1) {
-    --tw-ring-color: rgb(133 77 14 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(133 77 14 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-900($value: 1) {
-    --tw-ring-color: rgb(113 63 18 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(113 63 18 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-yellow-950($value: 1) {
-    --tw-ring-color: rgb(66 32 6 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(66 32 6 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-50($value: 1) {
-    --tw-ring-color: rgb(247 254 231 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(247 254 231 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-100($value: 1) {
-    --tw-ring-color: rgb(236 252 203 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(236 252 203 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-200($value: 1) {
-    --tw-ring-color: rgb(217 249 157 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(217 249 157 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-300($value: 1) {
-    --tw-ring-color: rgb(190 242 100 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(190 242 100 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-400($value: 1) {
-    --tw-ring-color: rgb(163 230 53 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(163 230 53 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-500($value: 1) {
-    --tw-ring-color: rgb(132 204 22 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(132 204 22 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-600($value: 1) {
-    --tw-ring-color: rgb(101 163 13 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(101 163 13 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-700($value: 1) {
-    --tw-ring-color: rgb(77 124 15 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(77 124 15 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-800($value: 1) {
-    --tw-ring-color: rgb(63 98 18 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(63 98 18 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-900($value: 1) {
-    --tw-ring-color: rgb(54 83 20 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(54 83 20 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-lime-950($value: 1) {
-    --tw-ring-color: rgb(26 46 5 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(26 46 5 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-50($value: 1) {
-    --tw-ring-color: rgb(240 253 244 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(240 253 244 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-100($value: 1) {
-    --tw-ring-color: rgb(220 252 231 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(220 252 231 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-200($value: 1) {
-    --tw-ring-color: rgb(187 247 208 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(187 247 208 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-300($value: 1) {
-    --tw-ring-color: rgb(134 239 172 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(134 239 172 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-400($value: 1) {
-    --tw-ring-color: rgb(74 222 128 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(74 222 128 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-500($value: 1) {
-    --tw-ring-color: rgb(34 197 94 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(34 197 94 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-600($value: 1) {
-    --tw-ring-color: rgb(22 163 74 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(22 163 74 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-700($value: 1) {
-    --tw-ring-color: rgb(21 128 61 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(21 128 61 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-800($value: 1) {
-    --tw-ring-color: rgb(22 101 52 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(22 101 52 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-900($value: 1) {
-    --tw-ring-color: rgb(20 83 45 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(20 83 45 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-green-950($value: 1) {
-    --tw-ring-color: rgb(5 46 22 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(5 46 22 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-50($value: 1) {
-    --tw-ring-color: rgb(236 253 245 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(236 253 245 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-100($value: 1) {
-    --tw-ring-color: rgb(209 250 229 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(209 250 229 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-200($value: 1) {
-    --tw-ring-color: rgb(167 243 208 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(167 243 208 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-300($value: 1) {
-    --tw-ring-color: rgb(110 231 183 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(110 231 183 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-400($value: 1) {
-    --tw-ring-color: rgb(52 211 153 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(52 211 153 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-500($value: 1) {
-    --tw-ring-color: rgb(16 185 129 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(16 185 129 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-600($value: 1) {
-    --tw-ring-color: rgb(5 150 105 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(5 150 105 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-700($value: 1) {
-    --tw-ring-color: rgb(4 120 87 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(4 120 87 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-800($value: 1) {
-    --tw-ring-color: rgb(6 95 70 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(6 95 70 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-900($value: 1) {
-    --tw-ring-color: rgb(6 78 59 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(6 78 59 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-emerald-950($value: 1) {
-    --tw-ring-color: rgb(2 44 34 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(2 44 34 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-50($value: 1) {
-    --tw-ring-color: rgb(240 253 250 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(240 253 250 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-100($value: 1) {
-    --tw-ring-color: rgb(204 251 241 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(204 251 241 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-200($value: 1) {
-    --tw-ring-color: rgb(153 246 228 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(153 246 228 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-300($value: 1) {
-    --tw-ring-color: rgb(94 234 212 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(94 234 212 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-400($value: 1) {
-    --tw-ring-color: rgb(45 212 191 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(45 212 191 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-500($value: 1) {
-    --tw-ring-color: rgb(20 184 166 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(20 184 166 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-600($value: 1) {
-    --tw-ring-color: rgb(13 148 136 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(13 148 136 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-700($value: 1) {
-    --tw-ring-color: rgb(15 118 110 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(15 118 110 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-800($value: 1) {
-    --tw-ring-color: rgb(17 94 89 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(17 94 89 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-900($value: 1) {
-    --tw-ring-color: rgb(19 78 74 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(19 78 74 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-teal-950($value: 1) {
-    --tw-ring-color: rgb(4 47 46 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(4 47 46 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-50($value: 1) {
-    --tw-ring-color: rgb(236 254 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(236 254 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-100($value: 1) {
-    --tw-ring-color: rgb(207 250 254 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(207 250 254 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-200($value: 1) {
-    --tw-ring-color: rgb(165 243 252 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(165 243 252 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-300($value: 1) {
-    --tw-ring-color: rgb(103 232 249 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(103 232 249 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-400($value: 1) {
-    --tw-ring-color: rgb(34 211 238 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(34 211 238 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-500($value: 1) {
-    --tw-ring-color: rgb(6 182 212 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(6 182 212 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-600($value: 1) {
-    --tw-ring-color: rgb(8 145 178 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(8 145 178 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-700($value: 1) {
-    --tw-ring-color: rgb(14 116 144 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(14 116 144 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-800($value: 1) {
-    --tw-ring-color: rgb(21 94 117 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(21 94 117 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-900($value: 1) {
-    --tw-ring-color: rgb(22 78 99 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(22 78 99 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-cyan-950($value: 1) {
-    --tw-ring-color: rgb(8 51 68 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(8 51 68 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-50($value: 1) {
-    --tw-ring-color: rgb(240 249 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(240 249 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-100($value: 1) {
-    --tw-ring-color: rgb(224 242 254 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(224 242 254 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-200($value: 1) {
-    --tw-ring-color: rgb(186 230 253 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(186 230 253 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-300($value: 1) {
-    --tw-ring-color: rgb(125 211 252 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(125 211 252 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-400($value: 1) {
-    --tw-ring-color: rgb(56 189 248 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(56 189 248 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-500($value: 1) {
-    --tw-ring-color: rgb(14 165 233 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(14 165 233 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-600($value: 1) {
-    --tw-ring-color: rgb(2 132 199 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(2 132 199 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-700($value: 1) {
-    --tw-ring-color: rgb(3 105 161 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(3 105 161 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-800($value: 1) {
-    --tw-ring-color: rgb(7 89 133 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(7 89 133 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-900($value: 1) {
-    --tw-ring-color: rgb(12 74 110 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(12 74 110 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-sky-950($value: 1) {
-    --tw-ring-color: rgb(8 47 73 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(8 47 73 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-50($value: 1) {
-    --tw-ring-color: rgb(239 246 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(239 246 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-100($value: 1) {
-    --tw-ring-color: rgb(219 234 254 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(219 234 254 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-200($value: 1) {
-    --tw-ring-color: rgb(191 219 254 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(191 219 254 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-300($value: 1) {
-    --tw-ring-color: rgb(147 197 253 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(147 197 253 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-400($value: 1) {
-    --tw-ring-color: rgb(96 165 250 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(96 165 250 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-500($value: 1) {
-    --tw-ring-color: rgb(59 130 246 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(59 130 246 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-600($value: 1) {
-    --tw-ring-color: rgb(37 99 235 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(37 99 235 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-700($value: 1) {
-    --tw-ring-color: rgb(29 78 216 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(29 78 216 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-800($value: 1) {
-    --tw-ring-color: rgb(30 64 175 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(30 64 175 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-900($value: 1) {
-    --tw-ring-color: rgb(30 58 138 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(30 58 138 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-blue-950($value: 1) {
-    --tw-ring-color: rgb(23 37 84 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(23 37 84 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-50($value: 1) {
-    --tw-ring-color: rgb(238 242 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(238 242 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-100($value: 1) {
-    --tw-ring-color: rgb(224 231 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(224 231 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-200($value: 1) {
-    --tw-ring-color: rgb(199 210 254 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(199 210 254 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-300($value: 1) {
-    --tw-ring-color: rgb(165 180 252 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(165 180 252 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-400($value: 1) {
-    --tw-ring-color: rgb(129 140 248 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(129 140 248 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-500($value: 1) {
-    --tw-ring-color: rgb(99 102 241 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(99 102 241 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-600($value: 1) {
-    --tw-ring-color: rgb(79 70 229 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(79 70 229 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-700($value: 1) {
-    --tw-ring-color: rgb(67 56 202 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(67 56 202 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-800($value: 1) {
-    --tw-ring-color: rgb(55 48 163 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(55 48 163 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-900($value: 1) {
-    --tw-ring-color: rgb(49 46 129 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(49 46 129 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-indigo-950($value: 1) {
-    --tw-ring-color: rgb(30 27 75 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(30 27 75 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-50($value: 1) {
-    --tw-ring-color: rgb(245 243 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(245 243 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-100($value: 1) {
-    --tw-ring-color: rgb(237 233 254 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(237 233 254 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-200($value: 1) {
-    --tw-ring-color: rgb(221 214 254 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(221 214 254 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-300($value: 1) {
-    --tw-ring-color: rgb(196 181 253 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(196 181 253 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-400($value: 1) {
-    --tw-ring-color: rgb(167 139 250 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(167 139 250 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-500($value: 1) {
-    --tw-ring-color: rgb(139 92 246 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(139 92 246 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-600($value: 1) {
-    --tw-ring-color: rgb(124 58 237 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(124 58 237 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-700($value: 1) {
-    --tw-ring-color: rgb(109 40 217 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(109 40 217 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-800($value: 1) {
-    --tw-ring-color: rgb(91 33 182 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(91 33 182 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-900($value: 1) {
-    --tw-ring-color: rgb(76 29 149 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(76 29 149 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-violet-950($value: 1) {
-    --tw-ring-color: rgb(46 16 101 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(46 16 101 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-50($value: 1) {
-    --tw-ring-color: rgb(250 245 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(250 245 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-100($value: 1) {
-    --tw-ring-color: rgb(243 232 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(243 232 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-200($value: 1) {
-    --tw-ring-color: rgb(233 213 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(233 213 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-300($value: 1) {
-    --tw-ring-color: rgb(216 180 254 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(216 180 254 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-400($value: 1) {
-    --tw-ring-color: rgb(192 132 252 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(192 132 252 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-500($value: 1) {
-    --tw-ring-color: rgb(168 85 247 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(168 85 247 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-600($value: 1) {
-    --tw-ring-color: rgb(147 51 234 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(147 51 234 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-700($value: 1) {
-    --tw-ring-color: rgb(126 34 206 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(126 34 206 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-800($value: 1) {
-    --tw-ring-color: rgb(107 33 168 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(107 33 168 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-900($value: 1) {
-    --tw-ring-color: rgb(88 28 135 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(88 28 135 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-purple-950($value: 1) {
-    --tw-ring-color: rgb(59 7 100 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(59 7 100 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-50($value: 1) {
-    --tw-ring-color: rgb(253 244 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(253 244 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-100($value: 1) {
-    --tw-ring-color: rgb(250 232 255 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(250 232 255 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-200($value: 1) {
-    --tw-ring-color: rgb(245 208 254 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(245 208 254 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-300($value: 1) {
-    --tw-ring-color: rgb(240 171 252 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(240 171 252 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-400($value: 1) {
-    --tw-ring-color: rgb(232 121 249 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(232 121 249 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-500($value: 1) {
-    --tw-ring-color: rgb(217 70 239 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(217 70 239 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-600($value: 1) {
-    --tw-ring-color: rgb(192 38 211 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(192 38 211 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-700($value: 1) {
-    --tw-ring-color: rgb(162 28 175 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(162 28 175 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-800($value: 1) {
-    --tw-ring-color: rgb(134 25 143 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(134 25 143 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-900($value: 1) {
-    --tw-ring-color: rgb(112 26 117 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(112 26 117 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-fuchsia-950($value: 1) {
-    --tw-ring-color: rgb(74 4 78 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(74 4 78 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-50($value: 1) {
-    --tw-ring-color: rgb(253 242 248 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(253 242 248 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-100($value: 1) {
-    --tw-ring-color: rgb(252 231 243 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(252 231 243 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-200($value: 1) {
-    --tw-ring-color: rgb(251 207 232 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(251 207 232 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-300($value: 1) {
-    --tw-ring-color: rgb(249 168 212 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(249 168 212 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-400($value: 1) {
-    --tw-ring-color: rgb(244 114 182 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(244 114 182 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-500($value: 1) {
-    --tw-ring-color: rgb(236 72 153 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(236 72 153 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-600($value: 1) {
-    --tw-ring-color: rgb(219 39 119 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(219 39 119 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-700($value: 1) {
-    --tw-ring-color: rgb(190 24 93 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(190 24 93 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-800($value: 1) {
-    --tw-ring-color: rgb(157 23 77 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(157 23 77 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-900($value: 1) {
-    --tw-ring-color: rgb(131 24 67 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(131 24 67 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-pink-950($value: 1) {
-    --tw-ring-color: rgb(80 7 36 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(80 7 36 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-50($value: 1) {
-    --tw-ring-color: rgb(255 241 242 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(255 241 242 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-100($value: 1) {
-    --tw-ring-color: rgb(255 228 230 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(255 228 230 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-200($value: 1) {
-    --tw-ring-color: rgb(254 205 211 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(254 205 211 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-300($value: 1) {
-    --tw-ring-color: rgb(253 164 175 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(253 164 175 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-400($value: 1) {
-    --tw-ring-color: rgb(251 113 133 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(251 113 133 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-500($value: 1) {
-    --tw-ring-color: rgb(244 63 94 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(244 63 94 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-600($value: 1) {
-    --tw-ring-color: rgb(225 29 72 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(225 29 72 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-700($value: 1) {
-    --tw-ring-color: rgb(190 18 60 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(190 18 60 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-800($value: 1) {
-    --tw-ring-color: rgb(159 18 57 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(159 18 57 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-900($value: 1) {
-    --tw-ring-color: rgb(136 19 55 / #/*x{get_Opacity($value)});
+    $--tw-ring-color: rgb(136 19 55 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
   }
 
   @mixin ring-rose-950($value: 1) {
-    --tw-ring-color: rgb(76 5 25 / #/*x{get_Opacity($value)});
-  }
-  x*/
+    $--tw-ring-color: rgb(76 5 25 / get_Opacity($value)) !global;
+    @include get_BoxShadow;
+  }x*/
 }
 
 @if $Rwd {
@@ -999,31 +1245,36 @@
     /*x
     @mixin sm\:ring-color-($value) {
       @media (min-width: $rwd-sm) {
-        --tw-ring-color: #/*x{$value};
+        $--tw-ring-color: $value !global;
+        @include get_BoxShadow;
       }
     }
 
     @mixin md\:ring-color-($value) {
       @media (min-width: $rwd-md) {
-        --tw-ring-color: #/*x{$value};
+        $--tw-ring-color: $value !global;
+        @include get_BoxShadow;
       }
     }
 
     @mixin lg\:ring-color-($value) {
       @media (min-width: $rwd-lg) {
-        --tw-ring-color: #/*x{$value};
+        $--tw-ring-color: $value !global;
+        @include get_BoxShadow;
       }
     }
 
     @mixin xl\:ring-color-($value) {
       @media (min-width: $rwd-xl) {
-        --tw-ring-color: #/*x{$value};
+        $--tw-ring-color: $value !global;
+        @include get_BoxShadow;
       }
     }
 
     @mixin \2xl\:ring-color-($value) {
       @media (min-width: $rwd-2xl) {
-        --tw-ring-color: #/*x{$value};
+        $--tw-ring-color: $value !global;
+        @include get_BoxShadow;
       }
     }x*/
   }
@@ -1037,7 +1288,7 @@
 @if $Custom {
   /*x
   @mixin ring-color-($value) {
-    --tw-ring-color: #/*x{$value};
-  }
-  x*/
+    $--tw-ring-color: $value !global;
+    @include get_BoxShadow;
+  }x*/
 }
