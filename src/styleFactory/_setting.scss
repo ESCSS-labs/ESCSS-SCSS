@@ -31,9 +31,14 @@ $--tw-gradient-via-position: null;
 $--tw-gradient-to-position: null;
 
 // Space Between
-$-space-value: 0; // let space-x/y-reverse to know what the current value is
+$-space-current-value: 0; 
 $--tw-space-x-reverse: 0;
 $--tw-space-y-reverse: 0;
+
+// Divide Width
+$-divide-current-value: 0;
+$--tw-divide-x-reverse: 0;
+$--tw-divide-y-reverse: 0;
 
 // Box Shadow
 $--tw-ring-offset-width: 0;
@@ -84,24 +89,24 @@ $--tw-shadow-color: null;
   }
 }
 
-@mixin get_SpaceY($value: $-space-value) {
-  $-space-value: $value !global;
+
+@mixin get_SpaceX($value: $-space-current-value) {
+  $-space-current-value: $value !global; // update to global;
 
   >*+* {
-    margin-top: $-space-value * (1 - $--tw-space-y-reverse);
-    margin-bottom: $-space-value * $--tw-space-y-reverse;
+    margin-left: $-space-current-value * (1 - $--tw-space-x-reverse);
+    margin-right: $-space-current-value * $--tw-space-x-reverse;
   }
 }
 
-@mixin get_SpaceX($value: $-space-value) {
-  $-space-value: $value !global;
+@mixin get_SpaceY($value: $-space-current-value) {
+  $-space-current-value: $value !global; // update to global;
 
   >*+* {
-    margin-left: $-space-value * (1 - $--tw-space-x-reverse);
-    margin-right: $-space-value * $--tw-space-x-reverse;
+    margin-top: $-space-current-value * (1 - $--tw-space-y-reverse);
+    margin-bottom: $-space-current-value * $--tw-space-y-reverse;
   }
 }
-
 
 @function get_LineHeight($value) {
   $temp: null;
@@ -179,4 +184,24 @@ $--tw-shadow-color: null;
   $--tw-ring-shadow,
   $--tw-shadow;
 }
+
+@mixin get_DivideX($value: $-divide-current-value) {
+  $-divide-current-value: $value !global; // update to global;
+
+  >*~* {
+    border-left-width: $-divide-current-value * (1 - $--tw-divide-x-reverse);
+    border-right-width: $-divide-current-value * $--tw-divide-x-reverse;
+  }
+}
+
+
+@mixin get_DivideY($value: $-divide-current-value) {
+  $-divide-current-value: $value !global; // update to global;
+
+  >*~* {
+    border-top-width: $-divide-current-value * (1 - $--tw-divide-y-reverse);
+    border-bottom-width: $-divide-current-value * $--tw-divide-y-reverse;
+  }
+}
+
 x*/

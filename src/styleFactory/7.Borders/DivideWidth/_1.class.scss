@@ -4,287 +4,135 @@
 @if $Basic {
   /*x
   @mixin divide-x-0 {
-    > * + * {
-      border-right-width: 0px;
-      border-left-width: 0px;
-    }
+    @include get_DivideX(0px);
   }
 
   @mixin divide-x-2 {
-    > * + * {
-      border-right-width: 0px;
-      border-left-width: 2px;
-    }
+    @include get_DivideX(2px);
   }
 
   @mixin divide-x-4 {
-    > * + * {
-      border-right-width: 0px;
-      border-left-width: 4px;
-    }
+    @include get_DivideX(4px);
   }
 
   @mixin divide-x-8 {
-    > * + * {
-      border-right-width: 0px;
-      border-left-width: 8px;
-    }
+    @include get_DivideX(8px);
   }
 
   @mixin divide-x {
-    > * + * {
-      border-right-width: 0px;
-      border-left-width: 1px;
-    }
+    @include get_DivideX(1px);
   }
 
   @mixin divide-y-0 {
-    > * + * {
-      border-top-width: 0px;
-      border-bottom-width: 0px;
-    }
+    @include get_DivideY(0px);
   }
 
   @mixin divide-y-2 {
-    > * + * {
-      border-top-width: 2px;
-      border-bottom-width: 0px;
-    }
+    @include get_DivideY(2px);
   }
 
   @mixin divide-y-4 {
-    > * + * {
-      border-top-width: 4px;
-      border-bottom-width: 0px;
-    }
+    @include get_DivideY(4px);
   }
 
   @mixin divide-y-8 {
-    > * + * {
-      border-top-width: 8px;
-      border-bottom-width: 0px;
-    }
+    @include get_DivideY(8px);
   }
 
   @mixin divide-y {
-    > * + * {
-      border-top-width: 1px;
-      border-bottom-width: 0px;
-    }
-  }
-
-  @mixin divide-y-reverse {
-    > * + * {
-      --tw-divide-y-reverse: 1;
-    }
+    @include get_DivideY(1px);
   }
 
   @mixin divide-x-reverse {
-    > * + * {
-      --tw-divide-x-reverse: 1;
-    }
+    $--tw-divide-x-reverse: 1 !global;
+    @include get_DivideX;
+  }
+
+  @mixin divide-y-reverse {
+    $--tw-divide-y-reverse: 1 !global;
+    @include get_DivideY;
   }x*/
 }
 
 @if $Rwd {
+  // reducing size for updating speed
+  @if $isLiteMode {
+    /*x
+    @mixin sm\:divide-x-($value) {
+      @media (min-width: $rwd-sm) {
+        @include get_DivideX($value);
+      }
+    }
+
+    @mixin sm\:divide-y-($value) {
+      @media (min-width: $rwd-sm) {
+        @include get_DivideY($value);
+      }
+    }
+
+    @mixin md\:divide-x-($value) {
+      @media (min-width: $rwd-md) {
+        @include get_DivideX($value);
+      }
+    }
+
+    @mixin md\:divide-y-($value) {
+      @media (min-width: $rwd-md) {
+        @include get_DivideY($value);
+      }
+    }
+
+    @mixin lg\:divide-x-($value) {
+      @media (min-width: $rwd-lg) {
+        @include get_DivideX($value);
+      }
+    }
+
+    @mixin lg\:divide-y-($value) {
+      @media (min-width: $rwd-lg) {
+        @include get_DivideY($value);
+      }
+    }
+
+    @mixin xl\:divide-x-($value) {
+      @media (min-width: $rwd-xl) {
+        @include get_DivideX($value);
+      }
+    }
+
+    @mixin xl\:divide-y-($value) {
+      @media (min-width: $rwd-xl) {
+        @include get_DivideY($value);
+      }
+    }
+
+    @mixin \2xl\:divide-x-($value) {
+      @media (min-width: $rwd-2xl) {
+        @include get_DivideX($value);
+      }
+    }
+
+    @mixin \2xl\:divide-y-($value) {
+      @media (min-width: $rwd-2xl) {
+        @include get_DivideY($value);
+      }
+    }x*/
+  }
+
+  // tailwind default
+  @else {
+  }
+
+}
+
+@if $Custom {
   /*x
-  @mixin sm\:divide-solid {
-    @media (min-width: $rwd-sm) {
-      > * + * {
-        border-style: solid;
-      }
-    }
+  @mixin divide-x-($value) {
+    @include get_DivideX($value);
   }
 
-  @mixin sm\:divide-dashed {
-    @media (min-width: $rwd-sm) {
-      > * + * {
-        border-style: dashed;
-      }
-    }
+  @mixin divide-y-($value) {
+    @include get_DivideY($value);
   }
-
-  @mixin sm\:divide-dotted {
-    @media (min-width: $rwd-sm) {
-      > * + * {
-        border-style: dotted;
-      }
-    }
-  }
-
-  @mixin sm\:divide-double {
-    @media (min-width: $rwd-sm) {
-      > * + * {
-        border-style: double;
-      }
-    }
-  }
-
-  @mixin sm\:divide-none {
-    @media (min-width: $rwd-sm) {
-      > * + * {
-        border-style: none;
-      }
-    }
-  }
-
-  @mixin md\:divide-solid {
-    @media (min-width: $rwd-md) {
-      > * + * {
-        border-style: solid;
-      }
-    }
-  }
-
-  @mixin md\:divide-dashed {
-    @media (min-width: $rwd-md) {
-      > * + * {
-        border-style: dashed;
-      }
-    }
-  }
-
-  @mixin md\:divide-dotted {
-    @media (min-width: $rwd-md) {
-      > * + * {
-        border-style: dotted;
-      }
-    }
-  }
-
-  @mixin md\:divide-double {
-    @media (min-width: $rwd-md) {
-      > * + * {
-        border-style: double;
-      }
-    }
-  }
-
-  @mixin md\:divide-none {
-    @media (min-width: $rwd-md) {
-      > * + * {
-        border-style: none;
-      }
-    }
-  }
-
-  @mixin lg\:divide-solid {
-    @media (min-width: $rwd-lg) {
-      > * + * {
-        border-style: solid;
-      }
-    }
-  }
-
-  @mixin lg\:divide-dashed {
-    @media (min-width: $rwd-lg) {
-      > * + * {
-        border-style: dashed;
-      }
-    }
-  }
-
-  @mixin lg\:divide-dotted {
-    @media (min-width: $rwd-lg) {
-      > * + * {
-        border-style: dotted;
-      }
-    }
-  }
-
-  @mixin lg\:divide-double {
-    @media (min-width: $rwd-lg) {
-      > * + * {
-        border-style: double;
-      }
-    }
-  }
-
-  @mixin lg\:divide-none {
-    @media (min-width: $rwd-lg) {
-      > * + * {
-        border-style: none;
-      }
-    }
-  }
-
-  @mixin xl\:divide-solid {
-    @media (min-width: $rwd-xl) {
-      > * + * {
-        border-style: solid;
-      }
-    }
-  }
-
-  @mixin xl\:divide-dashed {
-    @media (min-width: $rwd-xl) {
-      > * + * {
-        border-style: dashed;
-      }
-    }
-  }
-
-  @mixin xl\:divide-dotted {
-    @media (min-width: $rwd-xl) {
-      > * + * {
-        border-style: dotted;
-      }
-    }
-  }
-
-  @mixin xl\:divide-double {
-    @media (min-width: $rwd-xl) {
-      > * + * {
-        border-style: double;
-      }
-    }
-  }
-
-  @mixin xl\:divide-none {
-    @media (min-width: $rwd-xl) {
-      > * + * {
-        border-style: none;
-      }
-    }
-  }
-
-  @mixin \2xl\:divide-solid {
-    @media (min-width: $rwd-2xl) {
-      > * + * {
-        border-style: solid;
-      }
-    }
-  }
-
-  @mixin \2xl\:divide-dashed {
-    @media (min-width: $rwd-2xl) {
-      > * + * {
-        border-style: dashed;
-      }
-    }
-  }
-
-  @mixin \2xl\:divide-dotted {
-    @media (min-width: $rwd-2xl) {
-      > * + * {
-        border-style: dotted;
-      }
-    }
-  }
-
-  @mixin \2xl\:divide-double {
-    @media (min-width: $rwd-2xl) {
-      > * + * {
-        border-style: double;
-      }
-    }
-  }
-
-  @mixin \2xl\:divide-none {
-    @media (min-width: $rwd-2xl) {
-      > * + * {
-        border-style: none;
-      }
-    }
-  }x*/
+  x*/
 }
