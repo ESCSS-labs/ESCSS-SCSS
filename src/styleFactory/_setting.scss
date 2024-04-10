@@ -62,6 +62,26 @@ $--tw-skew-y: 0;
 $--tw-scale-x: 1;
 $--tw-scale-y: 1;
 
+// Filters
+$--tw-blur: null;
+$--tw-brightness: null;
+$--tw-contrast: null;
+$--tw-grayscale: null;
+$--tw-hue-rotate: null;
+$--tw-invert: null;
+$--tw-saturate: null;
+$--tw-sepia: null;
+$--tw-drop-shadow: null;
+$--tw-backdrop-blur: null;
+$--tw-backdrop-brightness: null;
+$--tw-backdrop-contrast: null;
+$--tw-backdrop-grayscale: null;
+$--tw-backdrop-hue-rotate: null;
+$--tw-backdrop-invert: null;
+$--tw-backdrop-opacity: null;
+$--tw-backdrop-saturate: null;
+$--tw-backdrop-sepia: null;
+
 // Helper Function
 @function get_Opacity($value) {
   $temp: null;
@@ -218,4 +238,11 @@ $--tw-scale-y: 1;
   transform: translate($--tw-translate-x, $--tw-translate-y) rotate($--tw-rotate) skewX($--tw-skew-x) skewY($--tw-skew-y) scaleX($--tw-scale-x) scaleY($--tw-scale-y);
 }
 
+@mixin get_Filter {
+  filter: $--tw-blur $--tw-brightness $--tw-contrast $--tw-grayscale $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
+}
+
+@mixin get_BackdropFilter {
+  backdrop-filter: $--tw-backdrop-blur $--tw-backdrop-brightness $--tw-backdrop-contrast $--tw-backdrop-grayscale $--tw-backdrop-hue-rotate $--tw-backdrop-invert $--tw-backdrop-opacity $--tw-backdrop-saturate $--tw-backdrop-sepia;
+}
 x*/

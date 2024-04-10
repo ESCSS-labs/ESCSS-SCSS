@@ -4,59 +4,43 @@
 @if $Basic {
   /*x
   @mixin blur-none {
-    --tw-blur: blur(0);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-blur: blur(0) !global;
+    @include get_Filter;
   }
 
   @mixin blur-sm {
-    --tw-blur: blur(4px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-blur: blur(4px) !global;
+    @include get_Filter;
   }
 
   @mixin blur {
-    --tw-blur: blur(8px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-blur: blur(8px) !global;
+    @include get_Filter;
   }
 
   @mixin blur-md {
-    --tw-blur: blur(12px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-blur: blur(12px) !global;
+    @include get_Filter;
   }
 
   @mixin blur-lg {
-    --tw-blur: blur(16px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-blur: blur(16px) !global;
+    @include get_Filter;
   }
 
   @mixin blur-xl {
-    --tw-blur: blur(24px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-blur: blur(24px) !global;
+    @include get_Filter;
   }
 
   @mixin blur-2xl {
-    --tw-blur: blur(40px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-blur: blur(40px) !global;
+    @include get_Filter;
   }
 
   @mixin blur-3xl {
-    --tw-blur: blur(64px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-blur: blur(64px) !global;
+    @include get_Filter;
   }x*/
 }
 
@@ -66,46 +50,36 @@
     /*x
     @mixin sm\:blur-($value) {
       @media (min-width: $rwd-sm) {
-        --tw-blur: #/*x{blur($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-blur: blur($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin md\:blur-($value) {
       @media (min-width: $rwd-md) {
-        --tw-blur: #/*x{blur($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-blur: blur($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin lg\:blur-($value) {
       @media (min-width: $rwd-lg) {
-        --tw-blur: #/*x{blur($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-blur: blur($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin xl\:blur-($value) {
       @media (min-width: $rwd-xl) {
-        --tw-blur: #/*x{blur($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-blur: blur($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin \2xl\:blur-($value) {
       @media (min-width: $rwd-2xl) {
-        --tw-blur: #/*x{blur($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-blur: blur($value) !global;
+        @include get_Filter;
       }
     }x*/
   }
@@ -118,9 +92,7 @@
 @if $Custom {
   /*x
   @mixin blur-($value) {
-    --tw-blur: #/*x{blur($value)};
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-blur: blur($value) !global;
+    @include get_Filter;
   }x*/
 }

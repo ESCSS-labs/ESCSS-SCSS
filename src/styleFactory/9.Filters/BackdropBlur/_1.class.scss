@@ -4,75 +4,43 @@
 @if $Basic {
   /*x
   @mixin backdrop-blur-none {
-    --tw-backdrop-blur: blur(0);
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+    $--tw-backdrop-blur: blur(0) !global;
+    @include get_BackdropFilter;
   }
 
   @mixin backdrop-blur-sm {
-    --tw-backdrop-blur: blur(4px);
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+    $--tw-backdrop-blur: blur(4px) !global;
+    @include get_BackdropFilter;
   }
 
   @mixin backdrop-blur {
-    --tw-backdrop-blur: blur(8px);
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+    $--tw-backdrop-blur: blur(8px) !global;
+    @include get_BackdropFilter;
   }
 
   @mixin backdrop-blur-md {
-    --tw-backdrop-blur: blur(12px);
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+    $--tw-backdrop-blur: blur(12px) !global;
+    @include get_BackdropFilter;
   }
 
   @mixin backdrop-blur-lg {
-    --tw-backdrop-blur: blur(16px);
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+    $--tw-backdrop-blur: blur(16px) !global;
+    @include get_BackdropFilter;
   }
 
   @mixin backdrop-blur-xl {
-    --tw-backdrop-blur: blur(24px);
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+    $--tw-backdrop-blur: blur(24px) !global;
+    @include get_BackdropFilter;
   }
 
   @mixin backdrop-blur-2xl {
-    --tw-backdrop-blur: blur(40px);
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+    $--tw-backdrop-blur: blur(40px) !global;
+    @include get_BackdropFilter;
   }
 
   @mixin backdrop-blur-3xl {
-    --tw-backdrop-blur: blur(64px);
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+    $--tw-backdrop-blur: blur(64px) !global;
+    @include get_BackdropFilter;
   }x*/
 }
 
@@ -82,46 +50,36 @@
     /*x
     @mixin sm\:backdrop-blur-($value) {
       @media (min-width: $rwd-sm) {
-        --tw-backdrop-blur: #/*x{blur($value)};
-        backdrop-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-backdrop-blur: blur($value) !global;
+        @include get_BackdropFilter;
       }
     }
 
     @mixin md\:backdrop-blur-($value) {
       @media (min-width: $rwd-md) {
-        --tw-backdrop-blur: #/*x{blur($value)};
-        backdrop-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-backdrop-blur: blur($value) !global;
+        @include get_BackdropFilter;
       }
     }
 
     @mixin lg\:backdrop-blur-($value) {
       @media (min-width: $rwd-lg) {
-        --tw-backdrop-blur: #/*x{blur($value)};
-        backdrop-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-backdrop-blur: blur($value) !global;
+        @include get_BackdropFilter;
       }
     }
 
     @mixin xl\:backdrop-blur-($value) {
       @media (min-width: $rwd-xl) {
-        --tw-backdrop-blur: #/*x{blur($value)};
-        backdrop-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-backdrop-blur: blur($value) !global;
+        @include get_BackdropFilter;
       }
     }
 
     @mixin \2xl\:backdrop-blur-($value) {
       @media (min-width: $rwd-2xl) {
-        --tw-backdrop-blur: #/*x{blur($value)};
-        backdrop-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-backdrop-blur: blur($value) !global;
+        @include get_BackdropFilter;
       }
     }x*/
   }
@@ -134,11 +92,7 @@
 @if $Custom {
   /*x
   @mixin backdrop-blur-($value) {
-    --tw-backdrop-blur: #/*x{blur($value)};
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-      var(--tw-backdrop-sepia);
+    $--tw-backdrop-blur: blur($value) !global;
+    @include get_BackdropFilter;
   }x*/
 }

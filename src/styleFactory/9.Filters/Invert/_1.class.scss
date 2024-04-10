@@ -4,17 +4,13 @@
 @if $Basic {
   /*x
   @mixin invert-0 {
-    --tw-invert: invert(0);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-invert: invert(0) !global;
+    @include get_Filter;
   }
 
   @mixin invert {
-    --tw-invert: invert(100%);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-invert: invert(100%) !global;
+    @include get_Filter;
   }x*/
 }
 
@@ -24,46 +20,36 @@
     /*x
     @mixin sm\:invert-($value) {
       @media (min-width: $rwd-sm) {
-        --tw-invert: #/*x{invert($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-invert: invert($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin md\:invert-($value) {
       @media (min-width: $rwd-md) {
-        --tw-invert: #/*x{invert($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-invert: invert($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin lg\:invert-($value) {
       @media (min-width: $rwd-lg) {
-        --tw-invert: #/*x{invert($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-invert: invert($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin xl\:invert-($value) {
       @media (min-width: $rwd-xl) {
-        --tw-invert: #/*x{invert($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-invert: invert($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin \2xl\:invert-($value) {
       @media (min-width: $rwd-2xl) {
-        --tw-invert: #/*x{invert($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-invert: invert($value) !global;
+        @include get_Filter;
       }
     }x*/
   }
@@ -76,9 +62,7 @@
 @if $Custom {
   /*x
   @mixin invert-($value) {
-    --tw-invert: #/*x{invert($value)};
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-invert: invert($value) !global;
+    @include get_Filter;
   }x*/
 }

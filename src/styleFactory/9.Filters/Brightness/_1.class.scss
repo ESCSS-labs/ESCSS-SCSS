@@ -4,80 +4,58 @@
 @if $Basic {
   /*x
   @mixin brightness-0 {
-    --tw-brightness: brightness(0);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(0) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-50 {
-    --tw-brightness: brightness(0.5);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(0.5) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-75 {
-    --tw-brightness: brightness(0.75);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(0.75) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-90 {
-    --tw-brightness: brightness(0.9);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(0.9) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-95 {
-    --tw-brightness: brightness(0.95);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(0.95) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-100 {
-    --tw-brightness: brightness(1);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(1) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-105 {
-    --tw-brightness: brightness(1.05);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(1.05) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-110 {
-    --tw-brightness: brightness(1.1);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(1.1) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-125 {
-    --tw-brightness: brightness(1.25);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(1.25) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-150 {
-    --tw-brightness: brightness(1.5);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(1.5) !global;
+    @include get_Filter;
   }
 
   @mixin brightness-200 {
-    --tw-brightness: brightness(2);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness(2) !global;
+    @include get_Filter;
   }x*/
 }
 
@@ -87,46 +65,36 @@
     /*x
     @mixin sm\:brightness-($value) {
       @media (min-width: $rwd-sm) {
-        --tw-brightness: #/*x{brightness($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-brightness: brightness($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin md\:brightness-($value) {
       @media (min-width: $rwd-md) {
-        --tw-brightness: #/*x{brightness($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-brightness: brightness($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin lg\:brightness-($value) {
       @media (min-width: $rwd-lg) {
-        --tw-brightness: #/*x{brightness($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-brightness: brightness($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin xl\:brightness-($value) {
       @media (min-width: $rwd-xl) {
-        --tw-brightness: #/*x{brightness($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-brightness: brightness($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin \2xl\:brightness-($value) {
       @media (min-width: $rwd-2xl) {
-        --tw-brightness: #/*x{brightness($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-brightness: brightness($value) !global;
+        @include get_Filter;
       }
     }x*/
   }
@@ -139,9 +107,7 @@
 @if $Custom {
   /*x
   @mixin brightness-($value) {
-    --tw-brightness: #/*x{brightness($value)};
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-brightness: brightness($value) !global;
+    @include get_Filter;
   }x*/
 }

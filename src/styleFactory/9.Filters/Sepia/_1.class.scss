@@ -4,17 +4,13 @@
 @if $Basic {
   /*x
   @mixin sepia-0 {
-    --tw-sepia: sepia(0);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-sepia: sepia(0) !global;
+    @include get_Filter;
   }
 
   @mixin sepia {
-    --tw-sepia: sepia(100%);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-sepia: sepia(100%) !global;
+    @include get_Filter;
   }x*/
 }
 
@@ -24,46 +20,36 @@
     /*x
     @mixin sm\:sepia-($value) {
       @media (min-width: $rwd-sm) {
-        --tw-sepia: #/*x{sepia($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-sepia: sepia($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin md\:sepia-($value) {
       @media (min-width: $rwd-md) {
-        --tw-sepia: #/*x{sepia($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-sepia: sepia($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin lg\:sepia-($value) {
       @media (min-width: $rwd-lg) {
-        --tw-sepia: #/*x{sepia($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-sepia: sepia($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin xl\:sepia-($value) {
       @media (min-width: $rwd-xl) {
-        --tw-sepia: #/*x{sepia($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-sepia: sepia($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin \2xl\:sepia-($value) {
       @media (min-width: $rwd-2xl) {
-        --tw-sepia: #/*x{sepia($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-sepia: sepia($value) !global;
+        @include get_Filter;
       }
     }x*/
   }
@@ -76,9 +62,7 @@
 @if $Custom {
   /*x
   @mixin sepia-($value) {
-    --tw-sepia: #/*x{sepia($value)};
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-sepia: sepia($value) !global;
+    @include get_Filter;
   }x*/
 }

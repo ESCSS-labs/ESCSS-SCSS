@@ -4,17 +4,13 @@
 @if $Basic {
   /*x
   @mixin grayscale-0 {
-    --tw-grayscale: grayscale(0);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-grayscale: grayscale(0) !global;
+    @include get_Filter;
   }
 
   @mixin grayscale {
-    --tw-grayscale: grayscale(100%);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-grayscale: grayscale(100%) !global;
+    @include get_Filter;
   }x*/
 }
 
@@ -24,46 +20,36 @@
     /*x
     @mixin sm\:grayscale-($value) {
       @media (min-width: $rwd-sm) {
-        --tw-grayscale: #/*x{grayscale($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-grayscale: grayscale($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin md\:grayscale-($value) {
       @media (min-width: $rwd-md) {
-        --tw-grayscale: #/*x{grayscale($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-grayscale: grayscale($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin lg\:grayscale-($value) {
       @media (min-width: $rwd-lg) {
-        --tw-grayscale: #/*x{grayscale($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-grayscale: grayscale($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin xl\:grayscale-($value) {
       @media (min-width: $rwd-xl) {
-        --tw-grayscale: #/*x{grayscale($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-grayscale: grayscale($value) !global;
+        @include get_Filter;
       }
     }
 
     @mixin \2xl\:grayscale-($value) {
       @media (min-width: $rwd-2xl) {
-        --tw-grayscale: #/*x{grayscale($value)};
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-          var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-          var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+        $--tw-grayscale: grayscale($value) !global;
+        @include get_Filter;
       }
     }x*/
   }
@@ -76,9 +62,7 @@
 @if $Custom {
   /*x
   @mixin grayscale-($value) {
-    --tw-grayscale: #/*x{grayscale($value)};
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    $--tw-grayscale: grayscale($value) !global;
+    @include get_Filter;
   }x*/
 }
