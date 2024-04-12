@@ -83,21 +83,21 @@ $--tw-backdrop-saturate: null;
 $--tw-backdrop-sepia: null;
 
 // Helper Function
-@function get_Opacity($value) {
+@function get_Opa($value) {
   $temp: null;
 
   // 5、10、15...100
-  @if $value >1 and math.is-unitless($value) {
-    @if not ($value % 5==0 and $value <=100) {
-      @error "only 5、10、15...100, https://tailwindcss.com/docs/opacity";
+  @if $v >1 and math.is-unitless($v) {
+    @if not($v % 5==0 and $v <=100) {
+      @error "This @mixin combines tailwind /value & /[value] into one(file size concerns). Try: 0, 5, 10...100 or 0.05, 47%... see https://tailwindcss.com/docs/opacity";
     }
 
-    $temp: calc(#/*x{$value} /100);
+    $temp: #{$v / 100};
   }
 
   // 0、0.35、35%
   @else {
-    $temp: #/*x{$value};
+    $temp: #{$v};
   }
 
   @return $temp;
