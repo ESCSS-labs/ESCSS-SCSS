@@ -83,7 +83,7 @@ $--tw-backdrop-saturate: null;
 $--tw-backdrop-sepia: null;
 
 // Helper Function
-@function get_Opa($value) {
+@function get_Opa($v) {
   $temp: null;
 
   // 5、10、15...100
@@ -119,8 +119,8 @@ $--tw-backdrop-sepia: null;
 }
 
 
-@mixin get_SpaceX($value: $--space-current-value) {
-  $--space-current-value: $value !global; // update to global;
+@mixin get_SpaceX($v: $--space-current-value) {
+  $--space-current-value: $v !global; // update to global;
 
   >*~* {
     margin-left: $--space-current-value * (1 - $--tw-space-x-reverse);
@@ -128,8 +128,8 @@ $--tw-backdrop-sepia: null;
   }
 }
 
-@mixin get_SpaceY($value: $--space-current-value) {
-  $--space-current-value: $value !global; // update to global;
+@mixin get_SpaceY($v: $--space-current-value) {
+  $--space-current-value: $v !global; // update to global;
 
   >*~* {
     margin-top: $--space-current-value * (1 - $--tw-space-y-reverse);
@@ -137,48 +137,48 @@ $--tw-backdrop-sepia: null;
   }
 }
 
-@function get_LineHeight($value) {
+@function get_LineHeight($v) {
   $temp: null;
 
-  @if meta.type-of($value)==number {
+  @if meta.type-of($v)==number {
 
     // no unit: 3、4... 10
-    @if math.is-unitless($value) {
-      @if not ($value>=3 and $value <=10) {
+    @if math.is-unitless($v) {
+      @if not ($v>=3 and $v <=10) {
         @error "Only 3 ~ 10, see in tailwind play";
       }
 
-      $temp: math.floor($value) * 0.25rem;
+      $temp: math.floor($v) * 0.25rem;
     }
 
     // has unit: 1.5px、1rem、3%...
     @else {
-      $temp: $value;
+      $temp: $v;
     }
   }
 
-  @else if meta.type-of($value)==string {
-    @if $value==none {
+  @else if meta.type-of($v)==string {
+    @if $v==none {
       $temp: 1;
     }
 
-    @else if $value==tight {
+    @else if $v==tight {
       $temp: 1.25;
     }
 
-    @else if $value==snug {
+    @else if $v==snug {
       $temp: 1.375;
     }
 
-    @else if $value==normal {
+    @else if $v==normal {
       $temp: 1.5;
     }
 
-    @else if $value==relax {
+    @else if $v==relax {
       $temp: 1.625;
     }
 
-    @else if $value==loose {
+    @else if $v==loose {
       $temp: 2;
     }
 
@@ -214,8 +214,8 @@ $--tw-backdrop-sepia: null;
   $--tw-shadow;
 }
 
-@mixin get_DivideX($value: $--divide-current-value) {
-  $--divide-current-value: $value !global; // update to global;
+@mixin get_DivideX($v: $--divide-current-value) {
+  $--divide-current-value: $v !global; // update to global;
 
   >*~* {
     border-left-width: $--divide-current-value * (1 - $--tw-divide-x-reverse);
@@ -224,8 +224,8 @@ $--tw-backdrop-sepia: null;
 }
 
 
-@mixin get_DivideY($value: $--divide-current-value) {
-  $--divide-current-value: $value !global; // update to global;
+@mixin get_DivideY($v: $--divide-current-value) {
+  $--divide-current-value: $v !global; // update to global;
 
   >*~* {
     border-top-width: $--divide-current-value * (1 - $--tw-divide-y-reverse);
