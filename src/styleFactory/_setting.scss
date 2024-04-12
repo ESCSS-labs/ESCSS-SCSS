@@ -22,7 +22,7 @@ $rwd-xl: 1280px;
 $rwd-2xl: 1536px;
 
 // Gradient Color Stops
-$-gradient-direction: "NO-DIRECTION"; // Display purpose
+$--gradient-direction: "NO-DIRECTION"; // Display purpose
 $--tw-gradient-from: "NO-FROM-COLOR"; // Display purpose
 $--tw-gradient-via: null; // detects the use of 2 or 3 gradient stops
 $--tw-gradient-to: transparent;
@@ -31,12 +31,12 @@ $--tw-gradient-via-position: null;
 $--tw-gradient-to-position: null;
 
 // Space Between
-$-space-current-value: 0; 
+$--space-current-value: 0; 
 $--tw-space-x-reverse: 0;
 $--tw-space-y-reverse: 0;
 
 // Divide Width
-$-divide-current-value: 0;
+$--divide-current-value: 0;
 $--tw-divide-x-reverse: 0;
 $--tw-divide-y-reverse: 0;
 
@@ -44,10 +44,10 @@ $--tw-divide-y-reverse: 0;
 $--tw-ring-offset-width: 0;
 $--tw-ring-offset-color: #fff; 
 $--tw-ring-inset: null;
-$-ring-width: 0;
+$--ring-width: 0;
 $--tw-ring-color: rgb(59 130 246 / 0.5); // default ring color
 $-shadow-token: null;
-$-shadow-length: 0 0 0 0;
+$--shadow-length: 0 0 0 0;
 $--tw-shadow-color: #fff;
 
 // Scroll Snap Type
@@ -105,13 +105,13 @@ $--tw-backdrop-sepia: null;
 
 @function get_BgImg() {
   @if $--tw-gradient-via==null {
-    @return linear-gradient($-gradient-direction,
+    @return linear-gradient($--gradient-direction,
       $--tw-gradient-from $--tw-gradient-from-position,
       $--tw-gradient-to $--tw-gradient-to-position);
   }
 
   @else {
-    @return linear-gradient($-gradient-direction,
+    @return linear-gradient($--gradient-direction,
       $--tw-gradient-from $--tw-gradient-from-position,
       $--tw-gradient-via $--tw-gradient-via-position,
       $--tw-gradient-to $--tw-gradient-to-position);
@@ -119,21 +119,21 @@ $--tw-backdrop-sepia: null;
 }
 
 
-@mixin get_SpaceX($value: $-space-current-value) {
-  $-space-current-value: $value !global; // update to global;
+@mixin get_SpaceX($value: $--space-current-value) {
+  $--space-current-value: $value !global; // update to global;
 
   >*+* {
-    margin-left: $-space-current-value * (1 - $--tw-space-x-reverse);
-    margin-right: $-space-current-value * $--tw-space-x-reverse;
+    margin-left: $--space-current-value * (1 - $--tw-space-x-reverse);
+    margin-right: $--space-current-value * $--tw-space-x-reverse;
   }
 }
 
-@mixin get_SpaceY($value: $-space-current-value) {
-  $-space-current-value: $value !global; // update to global;
+@mixin get_SpaceY($value: $--space-current-value) {
+  $--space-current-value: $value !global; // update to global;
 
   >*+* {
-    margin-top: $-space-current-value * (1 - $--tw-space-y-reverse);
-    margin-bottom: $-space-current-value * $--tw-space-y-reverse;
+    margin-top: $--space-current-value * (1 - $--tw-space-y-reverse);
+    margin-bottom: $--space-current-value * $--tw-space-y-reverse;
   }
 }
 
@@ -192,21 +192,21 @@ $--tw-backdrop-sepia: null;
 
 @mixin get_BoxShadow {
   $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width $--tw-ring-offset-color;
-  $--tw-ring-shadow: $--tw-ring-inset 0 0 0 $-ring-width $--tw-ring-color;
+  $--tw-ring-shadow: $--tw-ring-inset 0 0 0 $--ring-width $--tw-ring-color;
   $--tw-shadow: null;
 
 
   @if list.index(shadow md lg xl, $-shadow-token) {
-    $--tw-shadow: list.nth($-shadow-length, 1) $--tw-shadow-color,
-      list.nth($-shadow-length, 2) $--tw-shadow-color;
+    $--tw-shadow: list.nth($--shadow-length, 1) $--tw-shadow-color,
+      list.nth($--shadow-length, 2) $--tw-shadow-color;
   }
 
   @else if $-shadow-token ==inner {
-    $--tw-shadow: inset $-shadow-length $--tw-shadow-color;
+    $--tw-shadow: inset $--shadow-length $--tw-shadow-color;
   }
 
   @else {
-    $--tw-shadow: $-shadow-length $--tw-shadow-color;
+    $--tw-shadow: $--shadow-length $--tw-shadow-color;
   }
 
   box-shadow: $--tw-ring-offset-shadow,
@@ -214,22 +214,22 @@ $--tw-backdrop-sepia: null;
   $--tw-shadow;
 }
 
-@mixin get_DivideX($value: $-divide-current-value) {
-  $-divide-current-value: $value !global; // update to global;
+@mixin get_DivideX($value: $--divide-current-value) {
+  $--divide-current-value: $value !global; // update to global;
 
   >*~* {
-    border-left-width: $-divide-current-value * (1 - $--tw-divide-x-reverse);
-    border-right-width: $-divide-current-value * $--tw-divide-x-reverse;
+    border-left-width: $--divide-current-value * (1 - $--tw-divide-x-reverse);
+    border-right-width: $--divide-current-value * $--tw-divide-x-reverse;
   }
 }
 
 
-@mixin get_DivideY($value: $-divide-current-value) {
-  $-divide-current-value: $value !global; // update to global;
+@mixin get_DivideY($value: $--divide-current-value) {
+  $--divide-current-value: $value !global; // update to global;
 
   >*~* {
-    border-top-width: $-divide-current-value * (1 - $--tw-divide-y-reverse);
-    border-bottom-width: $-divide-current-value * $--tw-divide-y-reverse;
+    border-top-width: $--divide-current-value * (1 - $--tw-divide-y-reverse);
+    border-bottom-width: $--divide-current-value * $--tw-divide-y-reverse;
   }
 }
 
