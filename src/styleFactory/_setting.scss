@@ -83,26 +83,6 @@ $--tw-backdrop-saturate: null;
 $--tw-backdrop-sepia: null;
 
 // Helper Function
-@function get_Opa($v) {
-  $temp: null;
-
-  // 5、10、15...100
-  @if $v >1 and math.is-unitless($v) {
-    @if not($v % 5==0 and $v <=100) {
-      @error "This @mixin combines tailwind /value & /[value] into one(file size concerns). Try: 0, 5, 10...100 or 0.05, 47%... see https://tailwindcss.com/docs/opacity";
-    }
-
-    $temp: #{$v / 100};
-  }
-
-  // 0、0.35、35%
-  @else {
-    $temp: #{$v};
-  }
-
-  @return $temp;
-}
-
 @function get_BgImg() {
   @if $--tw-gradient-via==null {
     @return linear-gradient($--gradient-direction,
