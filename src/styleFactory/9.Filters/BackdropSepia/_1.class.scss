@@ -4,14 +4,13 @@
 @if $Basic {
   /*x
   @mixin backdrop-sepia-0 {
-    $--tw-backdrop-sepia: sepia(0) !global;
-    @include get_BackdropFilter;
+    @include _backdrop-filter(sepia, 0);
   }
 
   @mixin backdrop-sepia {
-    $--tw-backdrop-sepia: sepia(100%) !global;
-    @include get_BackdropFilter;
-  }x*/
+    @include _backdrop-filter(sepia, 100%);
+  }
+  x*/
 }
 
 @if $Rwd {
@@ -20,38 +19,34 @@
     /*x
     @mixin sm\:backdrop-sepia-($v) {
       @media (min-width: $rwd-sm) {
-        $--tw-backdrop-sepia: sepia($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(sepia, $v);
       }
     }
 
     @mixin md\:backdrop-sepia-($v) {
       @media (min-width: $rwd-md) {
-        $--tw-backdrop-sepia: sepia($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(sepia, $v);
       }
     }
 
     @mixin lg\:backdrop-sepia-($v) {
       @media (min-width: $rwd-lg) {
-        $--tw-backdrop-sepia: sepia($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(sepia, $v);
       }
     }
 
     @mixin xl\:backdrop-sepia-($v) {
       @media (min-width: $rwd-xl) {
-        $--tw-backdrop-sepia: sepia($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(sepia, $v);
       }
     }
 
     @mixin \2xl\:backdrop-sepia-($v) {
       @media (min-width: $rwd-2xl) {
-        $--tw-backdrop-sepia: sepia($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(sepia, $v);
       }
-    }x*/
+    }
+    x*/
   }
 
   // tailwind default
@@ -62,7 +57,7 @@
 @if $Custom {
   /*x
   @mixin backdrop-sepia-($v) {
-    $--tw-backdrop-sepia: sepia($v) !global;
-    @include get_BackdropFilter;
-  }x*/
+    @include _backdrop-filter(sepia, $v);
+  }
+  x*/
 }

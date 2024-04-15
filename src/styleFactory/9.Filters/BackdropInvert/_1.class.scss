@@ -4,14 +4,13 @@
 @if $Basic {
   /*x
   @mixin backdrop-invert-0 {
-    $--tw-backdrop-invert: invert(0) !global;
-    @include get_BackdropFilter;
+    @include _backdrop-filter(invert, 0);
   }
 
   @mixin backdrop-invert {
-    $--tw-backdrop-invert: invert(100%) !global;
-    @include get_BackdropFilter;
-  }x*/
+    @include _backdrop-filter(invert, 100%);
+  }
+  x*/
 }
 
 @if $Rwd {
@@ -20,38 +19,34 @@
     /*x
     @mixin sm\:backdrop-invert-($v) {
       @media (min-width: $rwd-sm) {
-        $--tw-backdrop-invert: invert($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(invert, $v);
       }
     }
 
     @mixin md\:backdrop-invert-($v) {
       @media (min-width: $rwd-md) {
-        $--tw-backdrop-invert: invert($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(invert, $v);
       }
     }
 
     @mixin lg\:backdrop-invert-($v) {
       @media (min-width: $rwd-lg) {
-        $--tw-backdrop-invert: invert($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(invert, $v);
       }
     }
 
     @mixin xl\:backdrop-invert-($v) {
       @media (min-width: $rwd-xl) {
-        $--tw-backdrop-invert: invert($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(invert, $v);
       }
     }
 
     @mixin \2xl\:backdrop-invert-($v) {
       @media (min-width: $rwd-2xl) {
-        $--tw-backdrop-invert: invert($v) !global;
-        @include get_BackdropFilter;
+        @include _backdrop-filter(invert, $v);
       }
-    }x*/
+    }
+    x*/
   }
 
   // tailwind default
@@ -62,7 +57,7 @@
 @if $Custom {
   /*x
   @mixin backdrop-invert-($v) {
-    $--tw-backdrop-invert: invert($v) !global;
-    @include get_BackdropFilter;
-  }x*/
+    @include _backdrop-filter(invert, $v);
+  }
+  x*/
 }

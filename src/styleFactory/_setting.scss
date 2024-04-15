@@ -489,7 +489,39 @@ $--tw-backdrop-sepia: null;
   filter: $--tw-blur $--tw-brightness $--tw-contrast $--tw-grayscale $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
 }
 
-@mixin get_BackdropFilter {
+@mixin _backdrop-filter($token, $value) {
+  @if $token ==blur {
+    $--tw-backdrop-blur: blur($value) !global;
+  }
+  @else if $token ==brightness {
+    $--tw-backdrop-brightness: brightness($value) !global;
+  }
+  @else if $token ==contrast {
+    $--tw-backdrop-contrast: contrast($value) !global;
+  }
+  @else if $token ==grayscale {
+    $--tw-backdrop-grayscale: grayscale($value) !global;
+  }
+  @else if $token ==hue-rotate {
+    $--tw-backdrop-hue-rotate: hue-rotate($value) !global;
+  }
+  @else if $token ==invert {
+    $--tw-backdrop-invert: invert($value) !global;
+  }
+  @else if $token ==opacity {
+    $--tw-backdrop-opacity: opacity($value) !global;
+  }
+  @else if $token ==saturate {
+    $--tw-backdrop-saturate: saturate($value) !global;
+  }
+  @else if $token ==sepia {
+    $--tw-backdrop-sepia: sepia($value) !global;
+  }
+
+  @include get_backdrop-filter;
+}
+
+@mixin get_backdrop-filter {
   backdrop-filter: $--tw-backdrop-blur $--tw-backdrop-brightness $--tw-backdrop-contrast $--tw-backdrop-grayscale $--tw-backdrop-hue-rotate $--tw-backdrop-invert $--tw-backdrop-opacity $--tw-backdrop-saturate $--tw-backdrop-sepia;
 }
 
