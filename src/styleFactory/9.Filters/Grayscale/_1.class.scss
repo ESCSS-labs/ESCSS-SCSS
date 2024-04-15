@@ -4,14 +4,13 @@
 @if $Basic {
   /*x
   @mixin grayscale-0 {
-    $--tw-grayscale: grayscale(0) !global;
-    @include get_Filter;
+    @include _filter(grayscale, 0);
   }
 
   @mixin grayscale {
-    $--tw-grayscale: grayscale(100%) !global;
-    @include get_Filter;
-  }x*/
+    @include _filter(grayscale, 100%);
+  }
+  x*/
 }
 
 @if $Rwd {
@@ -20,38 +19,34 @@
     /*x
     @mixin sm\:grayscale-($v) {
       @media (min-width: $rwd-sm) {
-        $--tw-grayscale: grayscale($v) !global;
-        @include get_Filter;
+        @include _filter(grayscale, $v);
       }
     }
 
     @mixin md\:grayscale-($v) {
       @media (min-width: $rwd-md) {
-        $--tw-grayscale: grayscale($v) !global;
-        @include get_Filter;
+        @include _filter(grayscale, $v);
       }
     }
 
     @mixin lg\:grayscale-($v) {
       @media (min-width: $rwd-lg) {
-        $--tw-grayscale: grayscale($v) !global;
-        @include get_Filter;
+        @include _filter(grayscale, $v);
       }
     }
 
     @mixin xl\:grayscale-($v) {
       @media (min-width: $rwd-xl) {
-        $--tw-grayscale: grayscale($v) !global;
-        @include get_Filter;
+        @include _filter(grayscale, $v);
       }
     }
 
     @mixin \2xl\:grayscale-($v) {
       @media (min-width: $rwd-2xl) {
-        $--tw-grayscale: grayscale($v) !global;
-        @include get_Filter;
+        @include _filter(grayscale, $v);
       }
-    }x*/
+    }
+    x*/
   }
 
   // tailwind default
@@ -62,7 +57,7 @@
 @if $Custom {
   /*x
   @mixin grayscale-($v) {
-    $--tw-grayscale: grayscale($v) !global;
-    @include get_Filter;
-  }x*/
+    @include _filter(grayscale, $v);
+  }
+  x*/
 }

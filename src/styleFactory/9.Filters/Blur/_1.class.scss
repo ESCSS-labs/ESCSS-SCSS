@@ -4,44 +4,37 @@
 @if $Basic {
   /*x
   @mixin blur-none {
-    $--tw-blur: blur(0) !global;
-    @include get_Filter;
+    @include _filter(blur, 0);
   }
 
   @mixin blur-sm {
-    $--tw-blur: blur(4px) !global;
-    @include get_Filter;
+    @include _filter(blur, 4px);
   }
 
   @mixin blur {
-    $--tw-blur: blur(8px) !global;
-    @include get_Filter;
+    @include _filter(blur, 8px);
   }
 
   @mixin blur-md {
-    $--tw-blur: blur(12px) !global;
-    @include get_Filter;
+    @include _filter(blur, 12px);
   }
 
   @mixin blur-lg {
-    $--tw-blur: blur(16px) !global;
-    @include get_Filter;
+    @include _filter(blur, 16px);
   }
 
   @mixin blur-xl {
-    $--tw-blur: blur(24px) !global;
-    @include get_Filter;
+    @include _filter(blur, 24px);
   }
 
   @mixin blur-2xl {
-    $--tw-blur: blur(40px) !global;
-    @include get_Filter;
+    @include _filter(blur, 40px);
   }
 
   @mixin blur-3xl {
-    $--tw-blur: blur(64px) !global;
-    @include get_Filter;
-  }x*/
+    @include _filter(blur, 64px);
+  }
+  x*/
 }
 
 @if $Rwd {
@@ -50,38 +43,34 @@
     /*x
     @mixin sm\:blur-($v) {
       @media (min-width: $rwd-sm) {
-        $--tw-blur: blur($v) !global;
-        @include get_Filter;
+        @include _filter(blur, $v);
       }
     }
 
     @mixin md\:blur-($v) {
       @media (min-width: $rwd-md) {
-        $--tw-blur: blur($v) !global;
-        @include get_Filter;
+        @include _filter(blur, $v);
       }
     }
 
     @mixin lg\:blur-($v) {
       @media (min-width: $rwd-lg) {
-        $--tw-blur: blur($v) !global;
-        @include get_Filter;
+        @include _filter(blur, $v);
       }
     }
 
     @mixin xl\:blur-($v) {
       @media (min-width: $rwd-xl) {
-        $--tw-blur: blur($v) !global;
-        @include get_Filter;
+        @include _filter(blur, $v);
       }
     }
 
     @mixin \2xl\:blur-($v) {
       @media (min-width: $rwd-2xl) {
-        $--tw-blur: blur($v) !global;
-        @include get_Filter;
+        @include _filter(blur, $v);
       }
-    }x*/
+    }
+    x*/
   }
 
   // tailwind default
@@ -92,7 +81,7 @@
 @if $Custom {
   /*x
   @mixin blur-($v) {
-    $--tw-blur: blur($v) !global;
-    @include get_Filter;
-  }x*/
+    @include _filter(blur, $v);
+  }
+  x*/
 }

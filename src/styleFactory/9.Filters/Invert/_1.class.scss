@@ -4,14 +4,13 @@
 @if $Basic {
   /*x
   @mixin invert-0 {
-    $--tw-invert: invert(0) !global;
-    @include get_Filter;
+    @include _filter(invert, 0);
   }
 
   @mixin invert {
-    $--tw-invert: invert(100%) !global;
-    @include get_Filter;
-  }x*/
+    @include _filter(invert, 100%);
+  }
+  x*/
 }
 
 @if $Rwd {
@@ -20,38 +19,34 @@
     /*x
     @mixin sm\:invert-($v) {
       @media (min-width: $rwd-sm) {
-        $--tw-invert: invert($v) !global;
-        @include get_Filter;
+        @include _filter(invert, $v);
       }
     }
 
     @mixin md\:invert-($v) {
       @media (min-width: $rwd-md) {
-        $--tw-invert: invert($v) !global;
-        @include get_Filter;
+        @include _filter(invert, $v);
       }
     }
 
     @mixin lg\:invert-($v) {
       @media (min-width: $rwd-lg) {
-        $--tw-invert: invert($v) !global;
-        @include get_Filter;
+        @include _filter(invert, $v);
       }
     }
 
     @mixin xl\:invert-($v) {
       @media (min-width: $rwd-xl) {
-        $--tw-invert: invert($v) !global;
-        @include get_Filter;
+        @include _filter(invert, $v);
       }
     }
 
     @mixin \2xl\:invert-($v) {
       @media (min-width: $rwd-2xl) {
-        $--tw-invert: invert($v) !global;
-        @include get_Filter;
+        @include _filter(invert, $v);
       }
-    }x*/
+    }
+    x*/
   }
 
   // tailwind default
@@ -62,7 +57,7 @@
 @if $Custom {
   /*x
   @mixin invert-($v) {
-    $--tw-invert: invert($v) !global;
-    @include get_Filter;
-  }x*/
+    @include _filter(invert, $v);
+  }
+  x*/
 }

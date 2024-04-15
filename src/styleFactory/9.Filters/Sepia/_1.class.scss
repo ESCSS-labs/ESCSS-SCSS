@@ -4,14 +4,13 @@
 @if $Basic {
   /*x
   @mixin sepia-0 {
-    $--tw-sepia: sepia(0) !global;
-    @include get_Filter;
+    @include _filter(sepia, 0);
   }
 
   @mixin sepia {
-    $--tw-sepia: sepia(100%) !global;
-    @include get_Filter;
-  }x*/
+    @include _filter(sepia, 100%);
+  }
+  x*/
 }
 
 @if $Rwd {
@@ -20,38 +19,34 @@
     /*x
     @mixin sm\:sepia-($v) {
       @media (min-width: $rwd-sm) {
-        $--tw-sepia: sepia($v) !global;
-        @include get_Filter;
+        @include _filter(sepia, $v);
       }
     }
 
     @mixin md\:sepia-($v) {
       @media (min-width: $rwd-md) {
-        $--tw-sepia: sepia($v) !global;
-        @include get_Filter;
+        @include _filter(sepia, $v);
       }
     }
 
     @mixin lg\:sepia-($v) {
       @media (min-width: $rwd-lg) {
-        $--tw-sepia: sepia($v) !global;
-        @include get_Filter;
+        @include _filter(sepia, $v);
       }
     }
 
     @mixin xl\:sepia-($v) {
       @media (min-width: $rwd-xl) {
-        $--tw-sepia: sepia($v) !global;
-        @include get_Filter;
+        @include _filter(sepia, $v);
       }
     }
 
     @mixin \2xl\:sepia-($v) {
       @media (min-width: $rwd-2xl) {
-        $--tw-sepia: sepia($v) !global;
-        @include get_Filter;
+        @include _filter(sepia, $v);
       }
-    }x*/
+    }
+    x*/
   }
 
   // tailwind default
@@ -62,7 +57,7 @@
 @if $Custom {
   /*x
   @mixin sepia-($v) {
-    $--tw-sepia: sepia($v) !global;
-    @include get_Filter;
-  }x*/
+    @include _filter(sepia, $v);
+  }
+  x*/
 }
