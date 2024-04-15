@@ -298,13 +298,12 @@ $--tw-gradient-via-position: null;
 $--tw-gradient-to-position: null;
 
 // Space Between
-$--space-current-value: 0;
+$--space-value: 0;
 $--tw-space-x-reverse: 0;
 $--tw-space-y-reverse: 0;
 
 // Divide Width
-$--divide-x: 0;
-$--divide-y: 0;
+$--divide-value: 0;
 $--tw-divide-x-reverse: 0;
 $--tw-divide-y-reverse: 0;
 
@@ -368,21 +367,29 @@ $--tw-backdrop-sepia: null;
   }
 }
 
-@mixin get_SpaceX($v: $--space-current-value) {
-  $--space-current-value: $v !global; // update to global;
+@mixin _space($token, $v: $--space-value, $isReverse: false) {
+  @if $token==x {
+    @if $isReverse {
+      $--tw-space-x-reverse: 1 !global;
+    }
 
-  > * ~ * {
-    margin-left: $--space-current-value * (1 - $--tw-space-x-reverse);
-    margin-right: $--space-current-value * $--tw-space-x-reverse;
-  }
-}
+    $--space-value: $v !global; // update for using reverse
 
-@mixin get_SpaceY($v: $--space-current-value) {
-  $--space-current-value: $v !global; // update to global;
+    > * ~ * {
+      margin-left: $--space-value * (1 - $--tw-space-x-reverse);
+      margin-right: $--space-value * $--tw-space-x-reverse;
+    }
+  } @else if $token ==y {
+    @if $isReverse {
+      $--tw-space-y-reverse: 1 !global;
+    }
 
-  > * ~ * {
-    margin-top: $--space-current-value * (1 - $--tw-space-y-reverse);
-    margin-bottom: $--space-current-value * $--tw-space-y-reverse;
+    $--space-value: $v !global; // update for using reverse
+
+    > * ~ * {
+      margin-top: $--space-value * (1 - $--tw-space-y-reverse);
+      margin-bottom: $--space-value * $--tw-space-y-reverse;
+    }
   }
 }
 
@@ -443,27 +450,28 @@ $--tw-backdrop-sepia: null;
   box-shadow: $--tw-ring-offset-shadow, $--tw-ring-shadow, $--tw-shadow;
 }
 
-@mixin _divide($token, $value: $--divide-x, $isReverse: false) {
+@mixin _divide($token, $value: $--divide-value, $isReverse: false) {
   @if $token==x {
     @if $isReverse {
       $--tw-divide-x-reverse: 1 !global;
     }
-    $--divide-x: $value !global; // update for using reverse
-  
+
+    $--divide-value: $value !global; // update for using reverse
+
     > * ~ * {
-      border-left-width: $--divide-x * (1 - $--tw-divide-x-reverse);
-      border-right-width: $--divide-x * $--tw-divide-x-reverse;
+      border-left-width: $--divide-value * (1 - $--tw-divide-x-reverse);
+      border-right-width: $--divide-value * $--tw-divide-x-reverse;
     }
-  }
-  @else if $token==y {
+  } @else if $token==y {
     @if $isReverse {
       $--tw-divide-y-reverse: 1 !global;
     }
-    $--divide-y: $value !global; // update for using reverse
-  
+
+    $--divide-value: $value !global; // update for using reverse
+
     > * ~ * {
-      border-top-width: $--divide-y * (1 - $--tw-divide-y-reverse);
-      border-bottom-width: $--divide-y * $--tw-divide-y-reverse;
+      border-top-width: $--divide-value * (1 - $--tw-divide-y-reverse);
+      border-bottom-width: $--divide-value * $--tw-divide-y-reverse;
     }
   }
 }
