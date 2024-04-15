@@ -8,7 +8,7 @@ $Rwd: true;
 $Custom: true;
 
 // RENDER OUT
-
+/*x
 // Using Built-In Modules
 @use "sass:meta";
 @use "sass:math";
@@ -431,7 +431,98 @@ $--tw-backdrop-sepia: null;
   @return $temp;
 }
 
-@mixin get_BoxShadow {
+@mixin _box-shadow($token, $value) {
+  @if $token ==shadow {
+    @if $value ==sm {
+      $-shadow-token: sm !global;
+      $--shadow-length: 0 1px 2px 0 !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.05) !global;
+    }
+
+    @else if $value ==null {
+      $-shadow-token: shadow !global;
+      $--shadow-length: 0 1px 3px 0, 0 1px 2px -1px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+    }
+
+    @else if $value ==md {
+      $-shadow-token: md !global;
+      $--shadow-length: 0 4px 6px -1px, 0 2px 4px -2px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+    }
+
+    @else if $value ==lg {
+      $-shadow-token: lg !global;
+      $--shadow-length: 0 10px 15px -3px,
+        0 4px 6px -4px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+    }
+
+    @else if $value ==xl {
+      $-shadow-token: xl !global;
+      $--shadow-length: 0 20px 25px -5px,
+        0 8px 10px -6px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+    }
+
+    @else if $value ==2xl {
+      $-shadow-token: 2xl !global;
+      $--shadow-length: 0 25px 50px -12px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.25) !global;
+    }
+
+    @else if $value ==inner {
+      $-shadow-token: inner !global;
+      $--shadow-length: 0 2px 4px 0 !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.05) !global;
+    }
+
+    @else if $value ==none {
+      $-shadow-token: none !global;
+      $--shadow-length: 0 0 0 0 !global;
+      $--tw-shadow-color: #fff !global;
+    }
+
+    @else {
+      $-shadow-token: custom !global;
+      $--tw-shadow-color: list.nth($v, -1) !global; // red
+
+      @if list.nth($v, 1)==inset {
+        $--shadow-length: list.set-nth($v, -1, $space) !global; // inset 0px 0px 5px 10px
+      }
+
+      @else {
+        $--shadow-length: list.set-nth($v, -1, $space) !global; // inset 0px 0px 5px 10px
+      }
+
+      @include _box-shadow(shadow, $v);
+    }
+  }
+
+  @else if $token ==ring-color {
+    $--tw-ring-color: $value !global;
+  }
+
+  @else if $token ==ring-offset-color {
+    $--tw-ring-offset-color: $value !global;
+  }
+
+  @else if $token ==ring-offset-width {
+    $--tw-ring-offset-width: $value !global;
+  }
+
+  @else if $token ==ring-width {
+    $--ring-width: $value + $--tw-ring-offset-width !global;
+  }
+
+  @else if $token ==shadow-color {
+    $--tw-shadow-color: $value !global;
+  }
+
+  @include get_box-shadow;
+}
+
+@mixin get_box-shadow {
   $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width
     $--tw-ring-offset-color;
   $--tw-ring-shadow: $--tw-ring-inset 0 0 0 $--ring-width $--tw-ring-color;
@@ -585,3 +676,4 @@ $--tw-backdrop-sepia: null;
   // $alpha only accepts 0 ~ 1, https://sass-lang.com/documentation/modules/color/#change
   @return color.change($color, $alpha: $opacity);
 }
+x*/
