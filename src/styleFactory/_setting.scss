@@ -8,7 +8,7 @@ $Rwd: true;
 $Custom: true;
 
 // RENDER OUT
-
+/*x
 // Using Built-In Modules
 @use "sass:map";
 @use "sass:meta";
@@ -420,21 +420,53 @@ $--tw-backdrop-sepia: null !default;
   $--tw-backdrop-sepia: null !global;
 }
 
-@function get_BgImg() {
-  @if $--tw-gradient-via==null {
-    @return linear-gradient(
-      $--gradient-direction,
-      $--tw-gradient-from $--tw-gradient-from-position,
-      $--tw-gradient-to $--tw-gradient-to-position
-    );
-  } @else {
-    @return linear-gradient(
-      $--gradient-direction,
-      $--tw-gradient-from $--tw-gradient-from-position,
-      $--tw-gradient-via $--tw-gradient-via-position,
-      $--tw-gradient-to $--tw-gradient-to-position
-    );
+@mixin _background-image($token, $color, $value) {
+  @mixin ___background-image {
+    @if $--tw-gradient-via==null {
+      background-image: linear-gradient(
+        $--gradient-direction,
+        $--tw-gradient-from $--tw-gradient-from-position,
+        $--tw-gradient-to $--tw-gradient-to-position
+      );
+    } @else {
+      background-image: linear-gradient(
+        $--gradient-direction,
+        $--tw-gradient-from $--tw-gradient-from-position,
+        $--tw-gradient-via $--tw-gradient-via-position,
+        $--tw-gradient-to $--tw-gradient-to-position
+      );
+    }
   }
+
+  @if $token ==from {
+    @if $color ==color {
+      $--tw-gradient-from: $value !global; // custom color
+    } @else if $color ==null { // position
+      $--tw-gradient-from-position: $value !global;
+    } @else {
+      $--tw-gradient-from: c($color, $value) !global;
+    }
+  } @else if $token ==via {
+    @if $color ==color {
+      $--tw-gradient-via: $value !global; // custom color
+    } @else if $color ==null { // position
+      $--tw-gradient-via-position: $value !global;
+    } @else {
+      $--tw-gradient-via: c($color, $value) !global;
+    }
+  } @else if $token ==to {
+    @if $color ==color {
+      $--tw-gradient-to: $value !global; // custom color
+    } @else if $color ==null { // position
+      $--tw-gradient-to-position: $value !global;
+    } @else {
+      $--tw-gradient-to: c($color, $value) !global;
+    }
+  } @else if $token ==gradient {
+    $--gradient-direction: $value !global;
+  }
+
+  @include ___background-image;
 }
 
 @mixin _space($token, $v: $--space-value, $isReverse: false) {
@@ -466,17 +498,17 @@ $--tw-backdrop-sepia: null !default;
 @mixin _font-size($token, $value) {
   @function _dynamic($value) {
     $temp: null;
-  
+
     @if meta.type-of($value) ==number {
       // no unit: 3、4... 10
       @if math.is-unitless($value) {
         @if not($value>=3 and $value <=10) {
-          @error "✅ 3 ~ 10 ❌ #{$value}, see in tailwind play https://play.tailwindcss.com/";
+          @error "only 3 ~ 10, see in tailwind play https://play.tailwindcss.com/";
         }
-  
+
         $temp: math.floor($value) * 0.25rem;
       }
-  
+
       // has unit: 1.5px、1rem、3%...
       @else {
         $temp: $value;
@@ -495,10 +527,10 @@ $--tw-backdrop-sepia: null !default;
       } @else if $value==loose {
         $temp: 2;
       } @else {
-        @error "❌ #{$value} Parameter does not exist, see in tailwind play https://play.tailwindcss.com/";
+        @error "Parameter does not exist, see in tailwind play https://play.tailwindcss.com/";
       }
     }
-  
+
     @return $temp;
   }
 
@@ -550,7 +582,7 @@ $--tw-backdrop-sepia: null !default;
       $--tw-ring-offset-color;
     $--tw-ring-shadow: $--tw-ring-inset 0 0 0 $--ring-width $--tw-ring-color;
     $--tw-shadow: null;
-  
+
     @if list.index(shadow md lg xl, $-shadow-token) {
       $--tw-shadow:
         list.nth($--shadow-length, 1) $--tw-shadow-color,
@@ -560,7 +592,7 @@ $--tw-backdrop-sepia: null !default;
     } @else {
       $--tw-shadow: $--shadow-length $--tw-shadow-color;
     }
-  
+
     box-shadow: $--tw-ring-offset-shadow, $--tw-ring-shadow, $--tw-shadow;
   }
 
@@ -749,7 +781,7 @@ $--tw-backdrop-sepia: null !default;
     $--tw-backdrop-sepia;
 }
 
-// c means color (file size concern)
+// c stands for  color (file size concern)
 @function c($token, $value) {
   $color: map.get($COLORS, $token);
   $opacity: null;
@@ -775,3 +807,4 @@ $--tw-backdrop-sepia: null !default;
   // $alpha only accepts 0 ~ 1, https://sass-lang.com/documentation/modules/color/#change
   @return color.change($color, $alpha: $opacity);
 }
+x*/
