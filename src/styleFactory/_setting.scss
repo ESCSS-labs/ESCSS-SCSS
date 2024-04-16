@@ -8,14 +8,26 @@ $Rwd: true;
 $Custom: true;
 
 // RENDER OUT
-/*x
+
 // Using Built-In Modules
+@use "sass:map";
 @use "sass:meta";
 @use "sass:math";
 @use "sass:list";
+@use "sass:color";
 
+// Breakpoints
+$Rwd-sm: 640px;
+$Rwd-md: 768px;
+$Rwd-lg: 1024px;
+$Rwd-xl: 1280px;
+$Rwd-2xl: 1536px;
+
+// abbrev name for file concern
 $COLORS: (
+  // Black
   bla: #000,
+  // White
   whi: #fff,
   // Slate
   sla-50: #f8fafc,
@@ -283,75 +295,131 @@ $COLORS: (
   ros-950: #4c0519
 );
 
-// Breakpoints
-$rwd-sm: 640px;
-$rwd-md: 768px;
-$rwd-lg: 1024px;
-$rwd-xl: 1280px;
-$rwd-2xl: 1536px;
-
 // Gradient Color Stops
-$--gradient-direction: "NO-DIRECTION"; // Display purpose
-$--tw-gradient-from: "NO-FROM-COLOR"; // Display purpose
-$--tw-gradient-via: null; // detects the use of 2 or 3 gradient stops
-$--tw-gradient-to: transparent;
-$--tw-gradient-from-position: null;
-$--tw-gradient-via-position: null;
-$--tw-gradient-to-position: null;
+$--gradient-direction: "NO-DIRECTION" !default;
+$--tw-gradient-from: "NO-FROM-COLOR" !default;
+$--tw-gradient-via: null !default; // detects the use of 2 or 3 gradient stops
+$--tw-gradient-to: transparent !default;
+$--tw-gradient-from-position: null !default;
+$--tw-gradient-via-position: null !default;
+$--tw-gradient-to-position: null !default;
 
 // Space Between
-$--space-value: 0;
-$--tw-space-x-reverse: 0;
-$--tw-space-y-reverse: 0;
+$--space-value: 0 !default;
+$--tw-space-x-reverse: 0 !default;
+$--tw-space-y-reverse: 0 !default;
 
 // Divide Width
-$--divide-value: 0;
-$--tw-divide-x-reverse: 0;
-$--tw-divide-y-reverse: 0;
+$--divide-value: 0 !default;
+$--tw-divide-x-reverse: 0 !default;
+$--tw-divide-y-reverse: 0 !default;
 
 // Box Shadow
-$--tw-ring-offset-width: 0;
-$--tw-ring-offset-color: #fff;
-$--tw-ring-inset: null;
-$--ring-width: 0;
-$--tw-ring-color: rgb(59 130 246 / 0.5); // default ring color
-$-shadow-token: null;
-$--shadow-length: 0 0 0 0;
-$--tw-shadow-color: #fff;
+$--tw-ring-offset-width: 0 !default;
+$--tw-ring-offset-color: #fff !default;
+$--tw-ring-inset: null !default;
+$--ring-width: 0 !default;
+$--tw-ring-color: rgb(59 130 246 / 0.5) !default;
+$-shadow-token: null !default;
+$--shadow-length: 0 0 0 0 !default;
+$--tw-shadow-color: #fff !default;
 
 // Scroll Snap Type
-$--tw-scroll-snap-strictness: proximity;
+$--tw-scroll-snap-strictness: proximity !default;
 
 // Transforms
-$--tw-translate-x: 0;
-$--tw-translate-y: 0;
-$--tw-rotate: 0;
-$--tw-skew-x: 0;
-$--tw-skew-y: 0;
-$--tw-scale-x: 1;
-$--tw-scale-y: 1;
+$--tw-translate-x: 0 !default;
+$--tw-translate-y: 0 !default;
+$--tw-rotate: 0 !default;
+$--tw-skew-x: 0 !default;
+$--tw-skew-y: 0 !default;
+$--tw-scale-x: 1 !default;
+$--tw-scale-y: 1 !default;
 
 // Filters
-$--tw-blur: null;
-$--tw-brightness: null;
-$--tw-contrast: null;
-$--tw-grayscale: null;
-$--tw-hue-rotate: null;
-$--tw-invert: null;
-$--tw-saturate: null;
-$--tw-sepia: null;
-$--tw-drop-shadow: null;
-$--tw-backdrop-blur: null;
-$--tw-backdrop-brightness: null;
-$--tw-backdrop-contrast: null;
-$--tw-backdrop-grayscale: null;
-$--tw-backdrop-hue-rotate: null;
-$--tw-backdrop-invert: null;
-$--tw-backdrop-opacity: null;
-$--tw-backdrop-saturate: null;
-$--tw-backdrop-sepia: null;
+$--tw-blur: null !default;
+$--tw-brightness: null !default;
+$--tw-contrast: null !default;
+$--tw-grayscale: null !default;
+$--tw-hue-rotate: null !default;
+$--tw-invert: null !default;
+$--tw-saturate: null !default;
+$--tw-sepia: null !default;
+$--tw-drop-shadow: null !default;
+$--tw-backdrop-blur: null !default;
+$--tw-backdrop-brightness: null !default;
+$--tw-backdrop-contrast: null !default;
+$--tw-backdrop-grayscale: null !default;
+$--tw-backdrop-hue-rotate: null !default;
+$--tw-backdrop-invert: null !default;
+$--tw-backdrop-opacity: null !default;
+$--tw-backdrop-saturate: null !default;
+$--tw-backdrop-sepia: null !default;
 
 // Helper Function
+@mixin reset {
+  // Gradient Color Stops
+  $--gradient-direction: "NO-DIRECTION" !global;
+  $--tw-gradient-from: "NO-FROM-COLOR" !global;
+  $--tw-gradient-via: null !global; // detects the use of 2 or 3 gradient stops
+  $--tw-gradient-to: transparent !global;
+  $--tw-gradient-from-position: null !global;
+  $--tw-gradient-via-position: null !global;
+  $--tw-gradient-to-position: null !global;
+
+  // Space Between
+  $--space-value: 0 !global;
+  $--tw-space-x-reverse: 0 !global;
+  $--tw-space-y-reverse: 0 !global;
+
+  // Divide Width
+  $--divide-value: 0 !global;
+  $--tw-divide-x-reverse: 0 !global;
+  $--tw-divide-y-reverse: 0 !global;
+
+  // Box Shadow
+  $--tw-ring-offset-width: 0 !global;
+  $--tw-ring-offset-color: #fff !global;
+  $--tw-ring-inset: null !global;
+  $--ring-width: 0 !global;
+  $--tw-ring-color: rgb(59 130 246 / 0.5) !global;
+  $-shadow-token: null !global;
+  $--shadow-length: 0 0 0 0 !global;
+  $--tw-shadow-color: #fff !global;
+
+  // Scroll Snap Type
+  $--tw-scroll-snap-strictness: proximity !global;
+
+  // Transforms
+  $--tw-translate-x: 0 !global;
+  $--tw-translate-y: 0 !global;
+  $--tw-rotate: 0 !global;
+  $--tw-skew-x: 0 !global;
+  $--tw-skew-y: 0 !global;
+  $--tw-scale-x: 1 !global;
+  $--tw-scale-y: 1 !global;
+
+  // Filters
+  $--tw-blur: null !global;
+  $--tw-brightness: null !global;
+  $--tw-contrast: null !global;
+  $--tw-grayscale: null !global;
+  $--tw-hue-rotate: null !global;
+  $--tw-invert: null !global;
+  $--tw-saturate: null !global;
+  $--tw-sepia: null !global;
+  $--tw-drop-shadow: null !global;
+  $--tw-backdrop-blur: null !global;
+  $--tw-backdrop-brightness: null !global;
+  $--tw-backdrop-contrast: null !global;
+  $--tw-backdrop-grayscale: null !global;
+  $--tw-backdrop-hue-rotate: null !global;
+  $--tw-backdrop-invert: null !global;
+  $--tw-backdrop-opacity: null !global;
+  $--tw-backdrop-saturate: null !global;
+  $--tw-backdrop-sepia: null !global;
+}
+
 @function get_BgImg() {
   @if $--tw-gradient-via==null {
     @return linear-gradient(
@@ -439,85 +507,71 @@ $--tw-backdrop-sepia: null;
       $-shadow-token: sm !global;
       $--shadow-length: 0 1px 2px 0 !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.05) !global;
-    }
-
-    @else if $value ==null {
+    } @else if $value ==null {
       $-shadow-token: shadow !global;
-      $--shadow-length: 0 1px 3px 0, 0 1px 2px -1px !global;
+      $--shadow-length:
+        0 1px 3px 0,
+        0 1px 2px -1px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
-    }
-
-    @else if $value ==md {
+    } @else if $value ==md {
       $-shadow-token: md !global;
-      $--shadow-length: 0 4px 6px -1px, 0 2px 4px -2px !global;
+      $--shadow-length:
+        0 4px 6px -1px,
+        0 2px 4px -2px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
-    }
-
-    @else if $value ==lg {
+    } @else if $value ==lg {
       $-shadow-token: lg !global;
-      $--shadow-length: 0 10px 15px -3px,
+      $--shadow-length:
+        0 10px 15px -3px,
         0 4px 6px -4px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
-    }
-
-    @else if $value ==xl {
+    } @else if $value ==xl {
       $-shadow-token: xl !global;
-      $--shadow-length: 0 20px 25px -5px,
+      $--shadow-length:
+        0 20px 25px -5px,
         0 8px 10px -6px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
-    }
-
-    @else if $value ==2xl {
+    } @else if $value ==2xl {
       $-shadow-token: 2xl !global;
       $--shadow-length: 0 25px 50px -12px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.25) !global;
-    }
-
-    @else if $value ==inner {
+    } @else if $value ==inner {
       $-shadow-token: inner !global;
       $--shadow-length: 0 2px 4px 0 !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.05) !global;
-    }
-
-    @else if $value ==none {
+    } @else if $value ==none {
       $-shadow-token: none !global;
       $--shadow-length: 0 0 0 0 !global;
       $--tw-shadow-color: #fff !global;
-    }
-
-    @else {
+    } @else {
       $-shadow-token: custom !global;
       $--tw-shadow-color: list.nth($v, -1) !global; // red
 
-      @if list.nth($v, 1)==inset {
-        $--shadow-length: list.set-nth($v, -1, $space) !global; // inset 0px 0px 5px 10px
-      }
-
-      @else {
-        $--shadow-length: list.set-nth($v, -1, $space) !global; // inset 0px 0px 5px 10px
+      @if list.nth($v, 1) ==inset {
+        $--shadow-length: list.set-nth(
+          $v,
+          -1,
+          $space
+        ) !global; // inset 0px 0px 5px 10px
+      } @else {
+        $--shadow-length: list.set-nth(
+          $v,
+          -1,
+          $space
+        ) !global; // inset 0px 0px 5px 10px
       }
 
       @include _box-shadow(shadow, $v);
     }
-  }
-
-  @else if $token ==ring-color {
+  } @else if $token ==ring-color {
     $--tw-ring-color: $value !global;
-  }
-
-  @else if $token ==ring-offset-color {
+  } @else if $token ==ring-offset-color {
     $--tw-ring-offset-color: $value !global;
-  }
-
-  @else if $token ==ring-offset-width {
+  } @else if $token ==ring-offset-width {
     $--tw-ring-offset-width: $value !global;
-  }
-
-  @else if $token ==ring-width {
+  } @else if $token ==ring-width {
     $--ring-width: $value + $--tw-ring-offset-width !global;
-  }
-
-  @else if $token ==shadow-color {
+  } @else if $token ==shadow-color {
     $--tw-shadow-color: $value !global;
   }
 
@@ -678,4 +732,3 @@ $--tw-backdrop-sepia: null;
   // $alpha only accepts 0 ~ 1, https://sass-lang.com/documentation/modules/color/#change
   @return color.change($color, $alpha: $opacity);
 }
-x*/
