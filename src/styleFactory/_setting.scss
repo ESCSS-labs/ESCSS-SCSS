@@ -8,7 +8,7 @@ $Rwd: true;
 $Custom: true;
 
 // RENDER OUT
-
+/*x
 // Using Built-In Modules
 @use "sass:map";
 @use "sass:meta";
@@ -420,7 +420,7 @@ $--tw-backdrop-sepia: null !default;
   $--tw-backdrop-sepia: null !global;
 }
 
-@mixin _background-image($token, $color, $value) {
+@mixin background-image_($token, $color, $value) {
   @if $token ==from {
     @if $color ==color {
       $--tw-gradient-from: $value !global; // custom color
@@ -452,10 +452,10 @@ $--tw-backdrop-sepia: null !default;
     $--gradient-direction: $value !global;
   }
 
-  @include ___background-image;
+  @include __background-image_;
 }
 
-@mixin ___background-image {
+@mixin __background-image_ {
   @if $--tw-gradient-via==null {
     background-image: linear-gradient(
       $--gradient-direction,
@@ -472,7 +472,7 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-@mixin _space($token, $v: $--space-value, $isReverse: false) {
+@mixin space_($token, $v: $--space-value, $isReverse: false) {
   @if $token==x {
     @if $isReverse {
       $--tw-space-x-reverse: 1 !global;
@@ -498,50 +498,50 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-@mixin _font-size($token, $value) {
+@mixin font-size_($token, $value) {
   @if $token==xs {
     font-size: 0.75rem;
-    line-height: if($value, ___font-size($value), 1rem); // $value? true: false;
+    line-height: if($value, __font-size($value), 1rem); // $value? true: false;
   } @else if $token==sm {
     font-size: 0.875rem;
-    line-height: if($value, ___font-size($value), 1.25rem);
+    line-height: if($value, __font-size($value), 1.25rem);
   } @else if $token==base {
     font-size: 1rem;
-    line-height: if($value, ___font-size($value), 1.5rem);
+    line-height: if($value, __font-size($value), 1.5rem);
   } @else if $token==lg {
     font-size: 1.125rem;
-    line-height: if($value, ___font-size($value), 1.75rem);
+    line-height: if($value, __font-size($value), 1.75rem);
   } @else if $token==xl {
     font-size: 1.25rem;
-    line-height: if($value, ___font-size($value), 1.75rem);
+    line-height: if($value, __font-size($value), 1.75rem);
   } @else if $token==2xl {
     font-size: 1.5rem;
-    line-height: if($value, ___font-size($value), 2rem);
+    line-height: if($value, __font-size($value), 2rem);
   } @else if $token==3xl {
     font-size: 1.875rem;
-    line-height: if($value, ___font-size($value), 2.25rem);
+    line-height: if($value, __font-size($value), 2.25rem);
   } @else if $token==4xl {
     font-size: 2.25rem;
-    line-height: if($value, ___font-size($value), 2.5rem);
+    line-height: if($value, __font-size($value), 2.5rem);
   } @else if $token==5xl {
     font-size: 3rem;
-    line-height: if($value, ___font-size($value), 1);
+    line-height: if($value, __font-size($value), 1);
   } @else if $token==6xl {
     font-size: 3.75rem;
-    line-height: if($value, ___font-size($value), 1);
+    line-height: if($value, __font-size($value), 1);
   } @else if $token==7xl {
     font-size: 4.5rem;
-    line-height: if($value, ___font-size($value), 1);
+    line-height: if($value, __font-size($value), 1);
   } @else if $token==8xl {
     font-size: 6rem;
-    line-height: if($value, ___font-size($value), 1);
+    line-height: if($value, __font-size($value), 1);
   } @else if $token==9xl {
     font-size: 8rem;
-    line-height: if($value, ___font-size($value), 1);
+    line-height: if($value, __font-size($value), 1);
   }
 }
 
-@function ___font-size($value) {
+@function __font-size($value) {
   $temp: null;
 
   @if meta.type-of($value) ==number {
@@ -579,7 +579,7 @@ $--tw-backdrop-sepia: null !default;
   @return $temp;
 }
 
-@mixin _box-shadow($token, $value) {
+@mixin box-shadow_($token, $value) {
   @if $token ==shadow {
     @if $value ==sm {
       $-shadow-token: sm !global;
@@ -639,7 +639,7 @@ $--tw-backdrop-sepia: null !default;
         ) !global; // inset 0px 0px 5px 10px
       }
 
-      @include _box-shadow(shadow, $v);
+      @include box-shadow_(shadow, $v);
     }
   } @else if $token ==ring-color {
     $--tw-ring-color: $value !global;
@@ -653,10 +653,10 @@ $--tw-backdrop-sepia: null !default;
     $--tw-shadow-color: $value !global;
   }
 
-  @include ___box-shadow;
+  box-shadow: __box-shadow();
 }
 
-@mixin ___box-shadow {
+@function __box-shadow() {
   $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width
     $--tw-ring-offset-color;
   $--tw-ring-shadow: $--tw-ring-inset 0 0 0 $--ring-width $--tw-ring-color;
@@ -672,10 +672,10 @@ $--tw-backdrop-sepia: null !default;
     $--tw-shadow: $--shadow-length $--tw-shadow-color;
   }
 
-  box-shadow: $--tw-ring-offset-shadow, $--tw-ring-shadow, $--tw-shadow;
+  @return $--tw-ring-offset-shadow, $--tw-ring-shadow, $--tw-shadow;
 }
 
-@mixin _divide($token, $value: $--divide-value, $isReverse: false) {
+@mixin divide_($token, $value: $--divide-value, $isReverse: false) {
   @if $token==x {
     @if $isReverse {
       $--tw-divide-x-reverse: 1 !global;
@@ -701,7 +701,7 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-@mixin _transform($token, $value, $axis: null) {
+@mixin transform_($token, $value, $axis: null) {
   @if $token ==rotate {
     $--tw-rotate: $value !global;
   } @else if $token ==scale {
@@ -732,7 +732,7 @@ $--tw-backdrop-sepia: null !default;
     scaleX($--tw-scale-x) scaleY($--tw-scale-y);
 }
 
-@mixin _filter($token, $value) {
+@mixin filter_($token, $value) {
   @if $token ==blur {
     $--tw-blur: blur($value) !global;
   } @else if $token ==brightness {
@@ -757,7 +757,7 @@ $--tw-backdrop-sepia: null !default;
     $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
 }
 
-@mixin _backdrop-filter($token, $value) {
+@mixin backdrop-filter_($token, $value) {
   @if $token ==blur {
     $--tw-backdrop-blur: blur($value) !global;
   } @else if $token ==brightness {
@@ -810,3 +810,4 @@ $--tw-backdrop-sepia: null !default;
   // $alpha only accepts 0 ~ 1, https://sass-lang.com/documentation/modules/color/#change
   @return color.change($color, $alpha: $opacity);
 }
+x*/
