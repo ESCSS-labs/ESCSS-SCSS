@@ -420,7 +420,7 @@ $--tw-backdrop-sepia: null !default;
   $--tw-backdrop-sepia: null !global;
 }
 
-@mixin background-image_($token, $color, $value) {
+@mixin _background-image($token, $color, $value) {
   @if $token ==from {
     @if $color ==color {
       $--tw-gradient-from: $value !global; // custom color
@@ -452,18 +452,18 @@ $--tw-backdrop-sepia: null !default;
     $--gradient-direction: $value !global;
   }
 
-  @include __background-image_;
+  background-image: __background-image();
 }
 
-@mixin __background-image_ {
+@function __background-image() {
   @if $--tw-gradient-via==null {
-    background-image: linear-gradient(
+    @return linear-gradient(
       $--gradient-direction,
       $--tw-gradient-from $--tw-gradient-from-position,
       $--tw-gradient-to $--tw-gradient-to-position
     );
   } @else {
-    background-image: linear-gradient(
+    @return linear-gradient(
       $--gradient-direction,
       $--tw-gradient-from $--tw-gradient-from-position,
       $--tw-gradient-via $--tw-gradient-via-position,
@@ -472,7 +472,7 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-@mixin font-size_($token, $value) {
+@mixin _font-size($token, $value) {
   @if $token==xs {
     font-size: 0.75rem;
     line-height: if($value, __font-size($value), 1rem); // $value? true: false;
@@ -553,7 +553,7 @@ $--tw-backdrop-sepia: null !default;
   @return $temp;
 }
 
-@mixin box-shadow_($token, $value) {
+@mixin _box-shadow($token, $value) {
   @if $token ==shadow {
     @if $value ==sm {
       $-shadow-token: sm !global;
@@ -613,7 +613,7 @@ $--tw-backdrop-sepia: null !default;
         ) !global; // inset 0px 0px 5px 10px
       }
 
-      @include box-shadow_(shadow, $v);
+      @include _box-shadow(shadow, $v);
     }
   } @else if $token ==ring-color {
     $--tw-ring-color: $value !global;
@@ -649,7 +649,7 @@ $--tw-backdrop-sepia: null !default;
   @return $--tw-ring-offset-shadow, $--tw-ring-shadow, $--tw-shadow;
 }
 
-@mixin transform_($token, $value, $axis: null) {
+@mixin _transform($token, $value, $axis: null) {
   @if $token ==rotate {
     $--tw-rotate: $value !global;
   } @else if $token ==scale {
@@ -680,7 +680,7 @@ $--tw-backdrop-sepia: null !default;
     scaleX($--tw-scale-x) scaleY($--tw-scale-y);
 }
 
-@mixin filter_($token, $value) {
+@mixin _filter($token, $value) {
   @if $token ==blur {
     $--tw-blur: blur($value) !global;
   } @else if $token ==brightness {
@@ -705,7 +705,7 @@ $--tw-backdrop-sepia: null !default;
     $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
 }
 
-@mixin backdrop-filter_($token, $value) {
+@mixin _backdrop-filter($token, $value) {
   @if $token ==blur {
     $--tw-backdrop-blur: blur($value) !global;
   } @else if $token ==brightness {
@@ -760,7 +760,7 @@ $--tw-backdrop-sepia: null !default;
 }
 
 // Space
-@mixin margin-left_margin-right_($v: $--space-value, $isReverse: false) {
+@mixin _margin-left_margin-right($v: $--space-value, $isReverse: false) {
   @if $isReverse {
     $--tw-space-x-reverse: 1 !global;
   }
@@ -773,7 +773,7 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-@mixin margin-top_margin-bottom_($v: $--space-value, $isReverse: false) {
+@mixin _margin-top_margin-bottom($v: $--space-value, $isReverse: false) {
   @if $isReverse {
     $--tw-space-y-reverse: 1 !global;
   }
@@ -787,7 +787,7 @@ $--tw-backdrop-sepia: null !default;
 }
 
 // Divide
-@mixin border-left-width_border-right-width_(
+@mixin _border-left-width_border-right-width(
   $value: $--divide-value,
   $isReverse: false
 ) {
@@ -803,7 +803,7 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-@mixin border-top-width_border-bottom-width_(
+@mixin _border-top-width_border-bottom-width(
   $value: $--divide-value,
   $isReverse: false
 ) {
@@ -819,14 +819,14 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-@mixin border-style_($token) {
-  > *~* {
+@mixin _border-style($token) {
+  > * ~ * {
     border-style: $token;
   }
 }
 
-@mixin border-color_($token, $value: 1) {
-  >*~* {
+@mixin _border-color($token, $value: 1) {
+  > * ~ * {
     border-color: c($token, $value);
   }
 }
