@@ -732,31 +732,14 @@ $--tw-backdrop-sepia: null !default;
     $--tw-backdrop-sepia;
 }
 
-// c stands for  color (file size concern)
+// c stands for color (file size concern)
 @function c($token, $value) {
-  $color: map.get($COLORS, $token);
-  $opacity: null;
-
-  // 0 ~ 100% => 0 ~ 1
   @if not math.is-unitless($value) {
-    @if not($value >=0% and $value <=100%) {
-      @error "opacity should be 0 ~ 100%";
-    }
-
-    $opacity: $value / 100%;
-  }
-
-  // 0 ~ 1
-  @else {
-    @if not($value >=0 and $value <=1) {
-      @error "opacity should be 0 ~ 1";
-    }
-
-    $opacity: $value;
-  }
+    @error "TRY 0.xx INSTEAD OF xx%. Concerning performance: Since all colors depend on this function, removing the xx% code to simulate opacity will speed up processing."
+  };
 
   // $alpha only accepts 0 ~ 1, https://sass-lang.com/documentation/modules/color/#change
-  @return color.change($color, $alpha: $opacity);
+  @return color.change(map.get($COLORS, $token), $alpha: $value);
 }
 
 // Space
