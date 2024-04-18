@@ -708,483 +708,393 @@
   @if $isLiteMode {
     /*x
     @mixin sm\:rounded-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-radius: $v;
-      }
+      @include r(sm, border-radius, $v);
     }
 
     @mixin sm\:rounded-s-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-start-start-radius: $v;
-        border-end-start-radius: $v;
-      }
+      @include r(
+        sm,
+        border-start-start-radius,
+        $v,
+        border-end-start-radius,
+        $v
+      );
     }
 
     @mixin sm\:rounded-e-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-start-end-radius: $v;
-        border-end-end-radius: $v;
-      }
+      @include r(sm, border-start-end-radius, $v, border-end-end-radius, $v);
     }
 
     @mixin sm\:rounded-t-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-top-left-radius: $v;
-        border-top-right-radius: $v;
-      }
+      @include r(sm, border-top-left-radius, $v, border-top-right-radius, $v);
     }
 
     @mixin sm\:rounded-r-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-top-right-radius: $v;
-        border-bottom-right-radius: $v;
-      }
+      @include r(
+        sm,
+        border-top-right-radius,
+        $v,
+        border-bottom-right-radius,
+        $v
+      );
     }
 
     @mixin sm\:rounded-b-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-bottom-right-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(
+        sm,
+        border-bottom-right-radius,
+        $v,
+        border-bottom-left-radius,
+        $v
+      );
     }
 
     @mixin sm\:rounded-l-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-top-left-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(sm, border-top-left-radius, $v, border-bottom-left-radius, $v);
     }
 
     @mixin sm\:rounded-ss-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-start-start-radius: $v;
-      }
+      @include r(sm, border-start-start-radius, $v);
     }
 
     @mixin sm\:rounded-se-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-start-end-radius: $v;
-      }
+      @include r(sm, border-start-end-radius, $v);
     }
 
     @mixin sm\:rounded-ee-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-end-end-radius: $v;
-      }
+      @include r(sm, border-end-end-radius, $v);
     }
 
     @mixin sm\:rounded-es-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-end-start-radius: $v;
-      }
+      @include r(sm, border-end-start-radius, $v);
     }
 
     @mixin sm\:rounded-tl-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-top-left-radius: $v;
-      }
+      @include r(sm, border-top-left-radius, $v);
     }
 
     @mixin sm\:rounded-tr-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-top-right-radius: $v;
-      }
+      @include r(sm, border-top-right-radius, $v);
     }
 
     @mixin sm\:rounded-br-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-bottom-right-radius: $v;
-      }
+      @include r(sm, border-bottom-right-radius, $v);
     }
 
     @mixin sm\:rounded-bl-($v) {
-      @media (min-width: $Rwd-sm) {
-        border-bottom-left-radius: $v;
-      }
+      @include r(sm, border-bottom-left-radius, $v);
     }
 
     @mixin md\:rounded-($v) {
-      @media (min-width: $Rwd-md) {
-        border-radius: $v;
-      }
+      @include r(md, border-radius, $v);
     }
 
     @mixin md\:rounded-s-($v) {
-      @media (min-width: $Rwd-md) {
-        border-start-start-radius: $v;
-        border-end-start-radius: $v;
-      }
+      @include r(
+        md,
+        border-start-start-radius,
+        $v,
+        border-end-start-radius,
+        $v
+      );
     }
 
     @mixin md\:rounded-e-($v) {
-      @media (min-width: $Rwd-md) {
-        border-start-end-radius: $v;
-        border-end-end-radius: $v;
-      }
+      @include r(md, border-start-end-radius, $v, border-end-end-radius, $v);
     }
 
     @mixin md\:rounded-t-($v) {
-      @media (min-width: $Rwd-md) {
-        border-top-left-radius: $v;
-        border-top-right-radius: $v;
-      }
+      @include r(md, border-top-left-radius, $v, border-top-right-radius, $v);
     }
 
     @mixin md\:rounded-r-($v) {
-      @media (min-width: $Rwd-md) {
-        border-top-right-radius: $v;
-        border-bottom-right-radius: $v;
-      }
+      @include r(
+        md,
+        border-top-right-radius,
+        $v,
+        border-bottom-right-radius,
+        $v
+      );
     }
 
     @mixin md\:rounded-b-($v) {
-      @media (min-width: $Rwd-md) {
-        border-bottom-right-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(
+        md,
+        border-bottom-right-radius,
+        $v,
+        border-bottom-left-radius,
+        $v
+      );
     }
 
     @mixin md\:rounded-l-($v) {
-      @media (min-width: $Rwd-md) {
-        border-top-left-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(md, border-top-left-radius, $v, border-bottom-left-radius, $v);
     }
 
     @mixin md\:rounded-ss-($v) {
-      @media (min-width: $Rwd-md) {
-        border-start-start-radius: $v;
-      }
+      @include r(md, border-start-start-radius, $v);
     }
 
     @mixin md\:rounded-se-($v) {
-      @media (min-width: $Rwd-md) {
-        border-start-end-radius: $v;
-      }
+      @include r(md, border-start-end-radius, $v);
     }
 
     @mixin md\:rounded-ee-($v) {
-      @media (min-width: $Rwd-md) {
-        border-end-end-radius: $v;
-      }
+      @include r(md, border-end-end-radius, $v);
     }
 
     @mixin md\:rounded-es-($v) {
-      @media (min-width: $Rwd-md) {
-        border-end-start-radius: $v;
-      }
+      @include r(md, border-end-start-radius, $v);
     }
 
     @mixin md\:rounded-tl-($v) {
-      @media (min-width: $Rwd-md) {
-        border-top-left-radius: $v;
-      }
+      @include r(md, border-top-left-radius, $v);
     }
 
     @mixin md\:rounded-tr-($v) {
-      @media (min-width: $Rwd-md) {
-        border-top-right-radius: $v;
-      }
+      @include r(md, border-top-right-radius, $v);
     }
 
     @mixin md\:rounded-br-($v) {
-      @media (min-width: $Rwd-md) {
-        border-bottom-right-radius: $v;
-      }
+      @include r(md, border-bottom-right-radius, $v);
     }
 
     @mixin md\:rounded-bl-($v) {
-      @media (min-width: $Rwd-md) {
-        border-bottom-left-radius: $v;
-      }
+      @include r(md, border-bottom-left-radius, $v);
     }
 
     @mixin lg\:rounded-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-radius: $v;
-      }
+      @include r(lg, border-radius, $v);
     }
 
     @mixin lg\:rounded-s-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-start-start-radius: $v;
-        border-end-start-radius: $v;
-      }
+      @include r(
+        lg,
+        border-start-start-radius,
+        $v,
+        border-end-start-radius,
+        $v
+      );
     }
 
     @mixin lg\:rounded-e-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-start-end-radius: $v;
-        border-end-end-radius: $v;
-      }
+      @include r(lg, border-start-end-radius, $v, border-end-end-radius, $v);
     }
 
     @mixin lg\:rounded-t-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-top-left-radius: $v;
-        border-top-right-radius: $v;
-      }
+      @include r(lg, border-top-left-radius, $v, border-top-right-radius, $v);
     }
 
     @mixin lg\:rounded-r-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-top-right-radius: $v;
-        border-bottom-right-radius: $v;
-      }
+      @include r(
+        lg,
+        border-top-right-radius,
+        $v,
+        border-bottom-right-radius,
+        $v
+      );
     }
 
     @mixin lg\:rounded-b-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-bottom-right-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(
+        lg,
+        border-bottom-right-radius,
+        $v,
+        border-bottom-left-radius,
+        $v
+      );
     }
 
     @mixin lg\:rounded-l-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-top-left-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(lg, border-top-left-radius, $v, border-bottom-left-radius, $v);
     }
 
     @mixin lg\:rounded-ss-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-start-start-radius: $v;
-      }
+      @include r(lg, border-start-start-radius, $v);
     }
 
     @mixin lg\:rounded-se-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-start-end-radius: $v;
-      }
+      @include r(lg, border-start-end-radius, $v);
     }
 
     @mixin lg\:rounded-ee-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-end-end-radius: $v;
-      }
+      @include r(lg, border-end-end-radius, $v);
     }
 
     @mixin lg\:rounded-es-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-end-start-radius: $v;
-      }
+      @include r(lg, border-end-start-radius, $v);
     }
 
     @mixin lg\:rounded-tl-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-top-left-radius: $v;
-      }
+      @include r(lg, border-top-left-radius, $v);
     }
 
     @mixin lg\:rounded-tr-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-top-right-radius: $v;
-      }
+      @include r(lg, border-top-right-radius, $v);
     }
 
     @mixin lg\:rounded-br-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-bottom-right-radius: $v;
-      }
+      @include r(lg, border-bottom-right-radius, $v);
     }
 
     @mixin lg\:rounded-bl-($v) {
-      @media (min-width: $Rwd-lg) {
-        border-bottom-left-radius: $v;
-      }
+      @include r(lg, border-bottom-left-radius, $v);
     }
 
     @mixin xl\:rounded-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-radius: $v;
-      }
+      @include r(xl, border-radius, $v);
     }
 
     @mixin xl\:rounded-s-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-start-start-radius: $v;
-        border-end-start-radius: $v;
-      }
+      @include r(
+        xl,
+        border-start-start-radius,
+        $v,
+        border-end-start-radius,
+        $v
+      );
     }
 
     @mixin xl\:rounded-e-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-start-end-radius: $v;
-        border-end-end-radius: $v;
-      }
+      @include r(xl, border-start-end-radius, $v, border-end-end-radius, $v);
     }
 
     @mixin xl\:rounded-t-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-top-left-radius: $v;
-        border-top-right-radius: $v;
-      }
+      @include r(xl, border-top-left-radius, $v, border-top-right-radius, $v);
     }
 
     @mixin xl\:rounded-r-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-top-right-radius: $v;
-        border-bottom-right-radius: $v;
-      }
+      @include r(
+        xl,
+        border-top-right-radius,
+        $v,
+        border-bottom-right-radius,
+        $v
+      );
     }
 
     @mixin xl\:rounded-b-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-bottom-right-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(
+        xl,
+        border-bottom-right-radius,
+        $v,
+        border-bottom-left-radius,
+        $v
+      );
     }
 
     @mixin xl\:rounded-l-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-top-left-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(xl, border-top-left-radius, $v, border-bottom-left-radius, $v);
     }
 
     @mixin xl\:rounded-ss-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-start-start-radius: $v;
-      }
+      @include r(xl, border-start-start-radius, $v);
     }
 
     @mixin xl\:rounded-se-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-start-end-radius: $v;
-      }
+      @include r(xl, border-start-end-radius, $v);
     }
 
     @mixin xl\:rounded-ee-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-end-end-radius: $v;
-      }
+      @include r(xl, border-end-end-radius, $v);
     }
 
     @mixin xl\:rounded-es-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-end-start-radius: $v;
-      }
+      @include r(xl, border-end-start-radius, $v);
     }
 
     @mixin xl\:rounded-tl-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-top-left-radius: $v;
-      }
+      @include r(xl, border-top-left-radius, $v);
     }
 
     @mixin xl\:rounded-tr-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-top-right-radius: $v;
-      }
+      @include r(xl, border-top-right-radius, $v);
     }
 
     @mixin xl\:rounded-br-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-bottom-right-radius: $v;
-      }
+      @include r(xl, border-bottom-right-radius, $v);
     }
 
     @mixin xl\:rounded-bl-($v) {
-      @media (min-width: $Rwd-xl) {
-        border-bottom-left-radius: $v;
-      }
+      @include r(xl, border-bottom-left-radius, $v);
     }
 
     @mixin \2xl\:rounded-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-radius: $v;
-      }
+      @include r(2xl, border-radius, $v);
     }
 
     @mixin \2xl\:rounded-s-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-start-start-radius: $v;
-        border-end-start-radius: $v;
-      }
+      @include r(
+        \2,
+        border-start-start-radius,
+        $v,
+        border-end-start-radius,
+        $v
+      );
     }
 
     @mixin \2xl\:rounded-e-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-start-end-radius: $v;
-        border-end-end-radius: $v;
-      }
+      @include r(2xl, border-start-end-radius, $v, border-end-end-radius, $v);
     }
 
     @mixin \2xl\:rounded-t-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-top-left-radius: $v;
-        border-top-right-radius: $v;
-      }
+      @include r(2xl, border-top-left-radius, $v, border-top-right-radius, $v);
     }
 
     @mixin \2xl\:rounded-r-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-top-right-radius: $v;
-        border-bottom-right-radius: $v;
-      }
+      @include r(
+        \2,
+        border-top-right-radius,
+        $v,
+        border-bottom-right-radius,
+        $v
+      );
     }
 
     @mixin \2xl\:rounded-b-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-bottom-right-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(
+        \2,
+        border-bottom-right-radius,
+        $v,
+        border-bottom-left-radius,
+        $v
+      );
     }
 
     @mixin \2xl\:rounded-l-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-top-left-radius: $v;
-        border-bottom-left-radius: $v;
-      }
+      @include r(2xl, border-top-left-radius, $v, border-bottom-left-radius, $v);
     }
 
     @mixin \2xl\:rounded-ss-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-start-start-radius: $v;
-      }
+      @include r(2xl, border-start-start-radius, $v);
     }
 
     @mixin \2xl\:rounded-se-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-start-end-radius: $v;
-      }
+      @include r(2xl, border-start-end-radius, $v);
     }
 
     @mixin \2xl\:rounded-ee-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-end-end-radius: $v;
-      }
+      @include r(2xl, border-end-end-radius, $v);
     }
 
     @mixin \2xl\:rounded-es-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-end-start-radius: $v;
-      }
+      @include r(2xl, border-end-start-radius, $v);
     }
 
     @mixin \2xl\:rounded-tl-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-top-left-radius: $v;
-      }
+      @include r(2xl, border-top-left-radius, $v);
     }
 
     @mixin \2xl\:rounded-tr-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-top-right-radius: $v;
-      }
+      @include r(2xl, border-top-right-radius, $v);
     }
 
     @mixin \2xl\:rounded-br-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-bottom-right-radius: $v;
-      }
+      @include r(2xl, border-bottom-right-radius, $v);
     }
 
     @mixin \2xl\:rounded-bl-($v) {
-      @media (min-width: $Rwd-2xl) {
-        border-bottom-left-radius: $v;
-      }
+      @include r(2xl, border-bottom-left-radius, $v);
     }x*/
   }
 

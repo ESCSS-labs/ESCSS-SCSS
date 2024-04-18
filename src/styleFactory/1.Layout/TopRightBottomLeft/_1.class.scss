@@ -3825,8 +3825,7 @@
 
   @mixin -left-full {
     left: -100%;
-  }
-  x*/
+  }x*/
 }
 
 @if $Rwd {
@@ -3834,285 +3833,184 @@
   @if $isLiteMode {
     /*x
     @mixin sm\:inset-($v) {
-      @media (min-width: $Rwd-sm) {
-        inset: $v;
-      }
+      @include r(sm, inset, $v);
     }
 
     @mixin sm\:inset-x-($v) {
-      @media (min-width: $Rwd-sm) {
-        left: $v;
-        right: $v;
-      }
+      @include r(sm, left, $v, right, $v);
     }
 
     @mixin sm\:inset-y-($v) {
-      @media (min-width: $Rwd-sm) {
-        top: $v;
-        bottom: $v;
-      }
+      @include r(sm, top, $v, bottom, $v);
     }
 
     @mixin sm\:start-($v) {
-      @media (min-width: $Rwd-sm) {
-        inset-inline-start: $v;
-      }
+      @include r(sm, inset-inline-start, $v);
     }
 
     @mixin sm\:end-($v) {
-      @media (min-width: $Rwd-sm) {
-        inset-inline-end: $v;
-      }
+      @include r(sm, inset-inline-end, $v);
     }
 
     @mixin sm\:top-($v) {
-      @media (min-width: $Rwd-sm) {
-        top: $v;
-      }
+      @include r(sm, top, $v);
     }
 
     @mixin sm\:right-($v) {
-      @media (min-width: $Rwd-sm) {
-        right: $v;
-      }
+      @include r(sm, right, $v);
     }
 
     @mixin sm\:bottom-($v) {
-      @media (min-width: $Rwd-sm) {
-        bottom: $v;
-      }
+      @include r(sm, bottom, $v);
     }
 
     @mixin sm\:left-($v) {
-      @media (min-width: $Rwd-sm) {
-        left: $v;
-      }
+      @include r(sm, left, $v);
     }
 
     @mixin md\:inset-($v) {
-      @media (min-width: $Rwd-md) {
-        inset: $v;
-      }
+      @include r(md, inset, $v);
     }
 
     @mixin md\:inset-x-($v) {
-      @media (min-width: $Rwd-md) {
-        left: $v;
-        right: $v;
-      }
+      @include r(md, left, $v, right, $v);
     }
 
     @mixin md\:inset-y-($v) {
-      @media (min-width: $Rwd-md) {
-        top: $v;
-        bottom: $v;
-      }
+      @include r(md, top, $v, bottom, $v);
     }
 
     @mixin md\:start-($v) {
-      @media (min-width: $Rwd-md) {
-        inset-inline-start: $v;
-      }
+      @include r(md, inset-inline-start, $v);
     }
 
     @mixin md\:end-($v) {
-      @media (min-width: $Rwd-md) {
-        inset-inline-end: $v;
-      }
+      @include r(md, inset-inline-end, $v);
     }
 
     @mixin md\:top-($v) {
-      @media (min-width: $Rwd-md) {
-        top: $v;
-      }
+      @include r(md, top, $v);
     }
 
     @mixin md\:right-($v) {
-      @media (min-width: $Rwd-md) {
-        right: $v;
-      }
+      @include r(md, right, $v);
     }
 
     @mixin md\:bottom-($v) {
-      @media (min-width: $Rwd-md) {
-        bottom: $v;
-      }
+      @include r(md, bottom, $v);
     }
 
     @mixin md\:left-($v) {
-      @media (min-width: $Rwd-md) {
-        left: $v;
-      }
+      @include r(md, left, $v);
     }
 
     @mixin lg\:inset-($v) {
-      @media (min-width: $Rwd-lg) {
-        inset: $v;
-      }
+      @include r(lg, inset, $v);
     }
 
     @mixin lg\:inset-x-($v) {
-      @media (min-width: $Rwd-lg) {
-        left: $v;
-        right: $v;
-      }
+      @include r(lg, left, $v, right, $v);
     }
 
     @mixin lg\:inset-y-($v) {
-      @media (min-width: $Rwd-lg) {
-        top: $v;
-        bottom: $v;
-      }
+      @include r(lg, top, $v, bottom, $v);
     }
 
     @mixin lg\:start-($v) {
-      @media (min-width: $Rwd-lg) {
-        inset-inline-start: $v;
-      }
+      @include r(lg, inset-inline-start, $v);
     }
 
     @mixin lg\:end-($v) {
-      @media (min-width: $Rwd-lg) {
-        inset-inline-end: $v;
-      }
+      @include r(lg, inset-inline-end, $v);
     }
 
     @mixin lg\:top-($v) {
-      @media (min-width: $Rwd-lg) {
-        top: $v;
-      }
+      @include r(lg, top, $v);
     }
 
     @mixin lg\:right-($v) {
-      @media (min-width: $Rwd-lg) {
-        right: $v;
-      }
+      @include r(lg, right, $v);
     }
 
     @mixin lg\:bottom-($v) {
-      @media (min-width: $Rwd-lg) {
-        bottom: $v;
-      }
+      @include r(lg, bottom, $v);
     }
 
     @mixin lg\:left-($v) {
-      @media (min-width: $Rwd-lg) {
-        left: $v;
-      }
+      @include r(lg, left, $v);
     }
 
     @mixin xl\:inset-($v) {
-      @media (min-width: $Rwd-xl) {
-        inset: $v;
-      }
+      @include r(xl, inset, $v);
     }
 
     @mixin xl\:inset-x-($v) {
-      @media (min-width: $Rwd-xl) {
-        left: $v;
-        right: $v;
-      }
+      @include r(xl, left, $v, right, $v);
     }
 
     @mixin xl\:inset-y-($v) {
-      @media (min-width: $Rwd-xl) {
-        top: $v;
-        bottom: $v;
-      }
+      @include r(xl, top, $v, bottom, $v);
     }
 
     @mixin xl\:start-($v) {
-      @media (min-width: $Rwd-xl) {
-        inset-inline-start: $v;
-      }
+      @include r(xl, inset-inline-start, $v);
     }
 
     @mixin xl\:end-($v) {
-      @media (min-width: $Rwd-xl) {
-        inset-inline-end: $v;
-      }
+      @include r(xl, inset-inline-end, $v);
     }
 
     @mixin xl\:top-($v) {
-      @media (min-width: $Rwd-xl) {
-        top: $v;
-      }
+      @include r(xl, top, $v);
     }
 
     @mixin xl\:right-($v) {
-      @media (min-width: $Rwd-xl) {
-        right: $v;
-      }
+      @include r(xl, right, $v);
     }
 
     @mixin xl\:bottom-($v) {
-      @media (min-width: $Rwd-xl) {
-        bottom: $v;
-      }
+      @include r(xl, bottom, $v);
     }
 
     @mixin xl\:left-($v) {
-      @media (min-width: $Rwd-xl) {
-        left: $v;
-      }
+      @include r(xl, left, $v);
     }
 
     @mixin \2xl\:inset-($v) {
-      @media (min-width: $Rwd-2xl) {
-        inset: $v;
-      }
+      @include r(2xl, inset, $v);
     }
 
     @mixin \2xl\:inset-x-($v) {
-      @media (min-width: $Rwd-2xl) {
-        left: $v;
-        right: $v;
-      }
+      @include r(2xl, left, $v, right, $v);
     }
 
     @mixin \2xl\:inset-y-($v) {
-      @media (min-width: $Rwd-2xl) {
-        top: $v;
-        bottom: $v;
-      }
+      @include r(2xl, top, $v, bottom, $v);
     }
 
     @mixin \2xl\:start-($v) {
-      @media (min-width: $Rwd-2xl) {
-        inset-inline-start: $v;
-      }
+      @include r(2xl, inset-inline-start, $v);
     }
 
     @mixin \2xl\:end-($v) {
-      @media (min-width: $Rwd-2xl) {
-        inset-inline-end: $v;
-      }
+      @include r(2xl, inset-inline-end, $v);
     }
 
     @mixin \2xl\:top-($v) {
-      @media (min-width: $Rwd-2xl) {
-        top: $v;
-      }
+      @include r(2xl, top, $v);
     }
 
     @mixin \2xl\:right-($v) {
-      @media (min-width: $Rwd-2xl) {
-        right: $v;
-      }
+      @include r(2xl, right, $v);
     }
 
     @mixin \2xl\:bottom-($v) {
-      @media (min-width: $Rwd-2xl) {
-        bottom: $v;
-      }
+      @include r(2xl, bottom, $v);
     }
 
     @mixin \2xl\:left-($v) {
-      @media (min-width: $Rwd-2xl) {
-        left: $v;
-      }
-    }
-    x*/
+      @include r(2xl, left, $v);
+    }x*/
   }
 
   // tailwind default
@@ -4158,6 +4056,5 @@
 
   @mixin left-($v) {
     left: $v;
-  }
-  x*/
+  }x*/
 }

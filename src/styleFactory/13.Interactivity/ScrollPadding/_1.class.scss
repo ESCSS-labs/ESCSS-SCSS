@@ -1636,283 +1636,183 @@
   @if $isLiteMode {
     /*x
     @mixin sm\:scroll-p-($v) {
-      @media (min-width: $Rwd-sm) {
-        scroll-padding: $v;
-      }
+      @include r(sm, scroll-padding, $v);
     }
 
     @mixin sm\:scroll-px-($v) {
-      @media (min-width: $Rwd-sm) {
-        scroll-padding-left: $v;
-        scroll-padding-right: $v;
-      }
+      @include r(sm, scroll-padding-left, $v, scroll-padding-right, $v);
     }
 
     @mixin sm\:scroll-py-($v) {
-      @media (min-width: $Rwd-sm) {
-        scroll-padding-top: $v;
-        scroll-padding-bottom: $v;
-      }
+      @include r(sm, scroll-padding-top, $v, scroll-padding-bottom, $v);
     }
 
     @mixin sm\:scroll-ps-($v) {
-      @media (min-width: $Rwd-sm) {
-        scroll-padding-inline-start: $v;
-      }
+      @include r(sm, scroll-padding-inline-start, $v);
     }
 
     @mixin sm\:scroll-pe-($v) {
-      @media (min-width: $Rwd-sm) {
-        scroll-padding-inline-end: $v;
-      }
+      @include r(sm, scroll-padding-inline-end, $v);
     }
 
     @mixin sm\:scroll-pt-($v) {
-      @media (min-width: $Rwd-sm) {
-        scroll-padding-top: $v;
-      }
+      @include r(sm, scroll-padding-top, $v);
     }
 
     @mixin sm\:scroll-pr-($v) {
-      @media (min-width: $Rwd-sm) {
-        scroll-padding-right: $v;
-      }
+      @include r(sm, scroll-padding-right, $v);
     }
 
     @mixin sm\:scroll-pb-($v) {
-      @media (min-width: $Rwd-sm) {
-        scroll-padding-bottom: $v;
-      }
+      @include r(sm, scroll-padding-bottom, $v);
     }
 
     @mixin sm\:scroll-pl-($v) {
-      @media (min-width: $Rwd-sm) {
-        scroll-padding-left: $v;
-      }
+      @include r(sm, scroll-padding-left, $v);
     }
 
     @mixin md\:scroll-p-($v) {
-      @media (min-width: $Rwd-md) {
-        scroll-padding: $v;
-      }
+      @include r(md, scroll-padding, $v);
     }
 
     @mixin md\:scroll-px-($v) {
-      @media (min-width: $Rwd-md) {
-        scroll-padding-left: $v;
-        scroll-padding-right: $v;
-      }
+      @include r(md, scroll-padding-left, $v, scroll-padding-right, $v);
     }
 
     @mixin md\:scroll-py-($v) {
-      @media (min-width: $Rwd-md) {
-        scroll-padding-top: $v;
-        scroll-padding-bottom: $v;
-      }
+      @include r(md, scroll-padding-top, $v, scroll-padding-bottom, $v);
     }
 
     @mixin md\:scroll-ps-($v) {
-      @media (min-width: $Rwd-md) {
-        scroll-padding-inline-start: $v;
-      }
+      @include r(md, scroll-padding-inline-start, $v);
     }
 
     @mixin md\:scroll-pe-($v) {
-      @media (min-width: $Rwd-md) {
-        scroll-padding-inline-end: $v;
-      }
+      @include r(md, scroll-padding-inline-end, $v);
     }
 
     @mixin md\:scroll-pt-($v) {
-      @media (min-width: $Rwd-md) {
-        scroll-padding-top: $v;
-      }
+      @include r(md, scroll-padding-top, $v);
     }
 
     @mixin md\:scroll-pr-($v) {
-      @media (min-width: $Rwd-md) {
-        scroll-padding-right: $v;
-      }
+      @include r(md, scroll-padding-right, $v);
     }
 
     @mixin md\:scroll-pb-($v) {
-      @media (min-width: $Rwd-md) {
-        scroll-padding-bottom: $v;
-      }
+      @include r(md, scroll-padding-bottom, $v);
     }
 
     @mixin md\:scroll-pl-($v) {
-      @media (min-width: $Rwd-md) {
-        scroll-padding-left: $v;
-      }
+      @include r(md, scroll-padding-left, $v);
     }
 
     @mixin lg\:scroll-p-($v) {
-      @media (min-width: $Rwd-lg) {
-        scroll-padding: $v;
-      }
+      @include r(lg, scroll-padding, $v);
     }
 
     @mixin lg\:scroll-px-($v) {
-      @media (min-width: $Rwd-lg) {
-        scroll-padding-left: $v;
-        scroll-padding-right: $v;
-      }
+      @include r(lg, scroll-padding-left, $v, scroll-padding-right, $v);
     }
 
     @mixin lg\:scroll-py-($v) {
-      @media (min-width: $Rwd-lg) {
-        scroll-padding-top: $v;
-        scroll-padding-bottom: $v;
-      }
+      @include r(lg, scroll-padding-top, $v, scroll-padding-bottom, $v);
     }
 
     @mixin lg\:scroll-ps-($v) {
-      @media (min-width: $Rwd-lg) {
-        scroll-padding-inline-start: $v;
-      }
+      @include r(lg, scroll-padding-inline-start, $v);
     }
 
     @mixin lg\:scroll-pe-($v) {
-      @media (min-width: $Rwd-lg) {
-        scroll-padding-inline-end: $v;
-      }
+      @include r(lg, scroll-padding-inline-end, $v);
     }
 
     @mixin lg\:scroll-pt-($v) {
-      @media (min-width: $Rwd-lg) {
-        scroll-padding-top: $v;
-      }
+      @include r(lg, scroll-padding-top, $v);
     }
 
     @mixin lg\:scroll-pr-($v) {
-      @media (min-width: $Rwd-lg) {
-        scroll-padding-right: $v;
-      }
+      @include r(lg, scroll-padding-right, $v);
     }
 
     @mixin lg\:scroll-pb-($v) {
-      @media (min-width: $Rwd-lg) {
-        scroll-padding-bottom: $v;
-      }
+      @include r(lg, scroll-padding-bottom, $v);
     }
 
     @mixin lg\:scroll-pl-($v) {
-      @media (min-width: $Rwd-lg) {
-        scroll-padding-left: $v;
-      }
+      @include r(lg, scroll-padding-left, $v);
     }
 
     @mixin xl\:scroll-p-($v) {
-      @media (min-width: $Rwd-xl) {
-        scroll-padding: $v;
-      }
+      @include r(xl, scroll-padding, $v);
     }
 
     @mixin xl\:scroll-px-($v) {
-      @media (min-width: $Rwd-xl) {
-        scroll-padding-left: $v;
-        scroll-padding-right: $v;
-      }
+      @include r(xl, scroll-padding-left, $v, scroll-padding-right, $v);
     }
 
     @mixin xl\:scroll-py-($v) {
-      @media (min-width: $Rwd-xl) {
-        scroll-padding-top: $v;
-        scroll-padding-bottom: $v;
-      }
+      @include r(xl, scroll-padding-top, $v, scroll-padding-bottom, $v);
     }
 
     @mixin xl\:scroll-ps-($v) {
-      @media (min-width: $Rwd-xl) {
-        scroll-padding-inline-start: $v;
-      }
+      @include r(xl, scroll-padding-inline-start, $v);
     }
 
     @mixin xl\:scroll-pe-($v) {
-      @media (min-width: $Rwd-xl) {
-        scroll-padding-inline-end: $v;
-      }
+      @include r(xl, scroll-padding-inline-end, $v);
     }
 
     @mixin xl\:scroll-pt-($v) {
-      @media (min-width: $Rwd-xl) {
-        scroll-padding-top: $v;
-      }
+      @include r(xl, scroll-padding-top, $v);
     }
 
     @mixin xl\:scroll-pr-($v) {
-      @media (min-width: $Rwd-xl) {
-        scroll-padding-right: $v;
-      }
+      @include r(xl, scroll-padding-right, $v);
     }
 
     @mixin xl\:scroll-pb-($v) {
-      @media (min-width: $Rwd-xl) {
-        scroll-padding-bottom: $v;
-      }
+      @include r(xl, scroll-padding-bottom, $v);
     }
 
     @mixin xl\:scroll-pl-($v) {
-      @media (min-width: $Rwd-xl) {
-        scroll-padding-left: $v;
-      }
+      @include r(xl, scroll-padding-left, $v);
     }
 
     @mixin \2xl\:scroll-p-($v) {
-      @media (min-width: $Rwd-2xl) {
-        scroll-padding: $v;
-      }
+      @include r(2xl, scroll-padding, $v);
     }
 
     @mixin \2xl\:scroll-px-($v) {
-      @media (min-width: $Rwd-2xl) {
-        scroll-padding-left: $v;
-        scroll-padding-right: $v;
-      }
+      @include r(2xl, scroll-padding-left, $v, scroll-padding-right, $v);
     }
 
     @mixin \2xl\:scroll-py-($v) {
-      @media (min-width: $Rwd-2xl) {
-        scroll-padding-top: $v;
-        scroll-padding-bottom: $v;
-      }
+      @include r(2xl, scroll-padding-top, $v, scroll-padding-bottom, $v);
     }
 
     @mixin \2xl\:scroll-ps-($v) {
-      @media (min-width: $Rwd-2xl) {
-        scroll-padding-inline-start: $v;
-      }
+      @include r(2xl, scroll-padding-inline-start, $v);
     }
 
     @mixin \2xl\:scroll-pe-($v) {
-      @media (min-width: $Rwd-2xl) {
-        scroll-padding-inline-end: $v;
-      }
+      @include r(2xl, scroll-padding-inline-end, $v);
     }
 
     @mixin \2xl\:scroll-pt-($v) {
-      @media (min-width: $Rwd-2xl) {
-        scroll-padding-top: $v;
-      }
+      @include r(2xl, scroll-padding-top, $v);
     }
 
     @mixin \2xl\:scroll-pr-($v) {
-      @media (min-width: $Rwd-2xl) {
-        scroll-padding-right: $v;
-      }
+      @include r(2xl, scroll-padding-right, $v);
     }
 
     @mixin \2xl\:scroll-pb-($v) {
-      @media (min-width: $Rwd-2xl) {
-        scroll-padding-bottom: $v;
-      }
+      @include r(2xl, scroll-padding-bottom, $v);
     }
 
     @mixin \2xl\:scroll-pl-($v) {
-      @media (min-width: $Rwd-2xl) {
-        scroll-padding-left: $v;
-      }
+      @include r(2xl, scroll-padding-left, $v);
     }x*/
   }
 

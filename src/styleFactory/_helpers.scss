@@ -461,4 +461,40 @@
     border-color: c($token, $value);
   }
 }
+
+// sr-only requires 9 properties
+@mixin r(
+  $rwd,
+  $key,
+  $value: null,
+  // some properties don't have custom property
+  $key2: null,
+  $value2: null,
+  $key3: null,
+  $value3: null,
+  $key4: null,
+  $value4: null,
+  $key5: null,
+  $value5: null,
+  $key6: null,
+  $value6: null,
+  $key7: null,
+  $value7: null,
+  $key8: null,
+  $value8: null,
+  $key9: null,
+  $value9: null
+) {
+  @media (min-width: map.get($Rwd, $rwd)) {
+    #{$key}: $value;
+    #{$key2}: $value2;
+    #{$key3}: $value3;
+    #{$key4}: $value4;
+    #{$key5}: $value5;
+    #{$key6}: $value6;
+    #{$key7}: $value7;
+    #{$key8}: $value8;
+    #{$key9}: $value9;
+  }
+}
 x*/

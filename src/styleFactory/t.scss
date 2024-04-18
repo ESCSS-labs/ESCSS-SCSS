@@ -340,7 +340,6 @@ $--tw-backdrop-opacity: null !default;
 $--tw-backdrop-saturate: null !default;
 $--tw-backdrop-sepia: null !default;
 
-
 // Using Built-In Modules
 @use "sass:map";
 @use "sass:meta";
@@ -817,7 +816,6 @@ $--tw-backdrop-sepia: null !default;
   aspect-ratio: 16 / 9;
 }
 
-
 @mixin sm\:aspect-($v) {
   @media (min-width: $Rwd-sm) {
     aspect-ratio: $v;
@@ -848,14 +846,38 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin aspect-($v) {
   aspect-ratio: $v;
 }
 
 /* Container */
 
-  @mixin container {
+@mixin container {
+  width: 100%;
+
+  @media (min-width: $Rwd-sm) {
+    max-width: $Rwd-sm;
+  }
+
+  @media (min-width: $Rwd-md) {
+    max-width: $Rwd-md;
+  }
+
+  @media (min-width: $Rwd-lg) {
+    max-width: $Rwd-lg;
+  }
+
+  @media (min-width: $Rwd-xl) {
+    max-width: $Rwd-xl;
+  }
+
+  @media (min-width: $Rwd-2xl) {
+    max-width: $Rwd-2xl;
+  }
+}
+
+@mixin sm\:container {
+  @media (min-width: $Rwd-sm) {
     width: 100%;
 
     @media (min-width: $Rwd-sm) {
@@ -878,137 +900,111 @@ $--tw-backdrop-sepia: null !default;
       max-width: $Rwd-2xl;
     }
   }
+}
 
+@mixin md\:container {
+  @media (min-width: $Rwd-md) {
+    width: 100%;
 
-  @mixin sm\:container {
     @media (min-width: $Rwd-sm) {
-      width: 100%;
-
-      @media (min-width: $Rwd-sm) {
-        max-width: $Rwd-sm;
-      }
-
-      @media (min-width: $Rwd-md) {
-        max-width: $Rwd-md;
-      }
-
-      @media (min-width: $Rwd-lg) {
-        max-width: $Rwd-lg;
-      }
-
-      @media (min-width: $Rwd-xl) {
-        max-width: $Rwd-xl;
-      }
-
-      @media (min-width: $Rwd-2xl) {
-        max-width: $Rwd-2xl;
-      }
+      max-width: $Rwd-sm;
     }
-  }
 
-  @mixin md\:container {
     @media (min-width: $Rwd-md) {
-      width: 100%;
-
-      @media (min-width: $Rwd-sm) {
-        max-width: $Rwd-sm;
-      }
-
-      @media (min-width: $Rwd-md) {
-        max-width: $Rwd-md;
-      }
-
-      @media (min-width: $Rwd-lg) {
-        max-width: $Rwd-lg;
-      }
-
-      @media (min-width: $Rwd-xl) {
-        max-width: $Rwd-xl;
-      }
-
-      @media (min-width: $Rwd-2xl) {
-        max-width: $Rwd-2xl;
-      }
+      max-width: $Rwd-md;
     }
-  }
 
-  @mixin lg\:container {
     @media (min-width: $Rwd-lg) {
-      width: 100%;
-
-      @media (min-width: $Rwd-sm) {
-        max-width: $Rwd-sm;
-      }
-
-      @media (min-width: $Rwd-md) {
-        max-width: $Rwd-md;
-      }
-
-      @media (min-width: $Rwd-lg) {
-        max-width: $Rwd-lg;
-      }
-
-      @media (min-width: $Rwd-xl) {
-        max-width: $Rwd-xl;
-      }
-
-      @media (min-width: $Rwd-2xl) {
-        max-width: $Rwd-2xl;
-      }
+      max-width: $Rwd-lg;
     }
-  }
 
-  @mixin xl\:container {
     @media (min-width: $Rwd-xl) {
-      width: 100%;
-
-      @media (min-width: $Rwd-sm) {
-        max-width: $Rwd-sm;
-      }
-
-      @media (min-width: $Rwd-md) {
-        max-width: $Rwd-md;
-      }
-
-      @media (min-width: $Rwd-lg) {
-        max-width: $Rwd-lg;
-      }
-
-      @media (min-width: $Rwd-xl) {
-        max-width: $Rwd-xl;
-      }
-
-      @media (min-width: $Rwd-2xl) {
-        max-width: $Rwd-2xl;
-      }
+      max-width: $Rwd-xl;
     }
-  }
 
-  @mixin \2xl\:container {
     @media (min-width: $Rwd-2xl) {
-      width: 100%;
-
-      @media (min-width: $Rwd-sm) {
-        max-width: $Rwd-sm;
-      }
-
-      @media (min-width: $Rwd-md) {
-        max-width: $Rwd-md;
-      }
-
-      @media (min-width: $Rwd-lg) {
-        max-width: $Rwd-lg;
-      }
-
-      @media (min-width: $Rwd-xl) {
-        max-width: $Rwd-xl;
-      }
-
-      @media (min-width: $Rwd-2xl) {
-        max-width: $Rwd-2xl;
-      }
+      max-width: $Rwd-2xl;
     }
   }
+}
+
+@mixin lg\:container {
+  @media (min-width: $Rwd-lg) {
+    width: 100%;
+
+    @media (min-width: $Rwd-sm) {
+      max-width: $Rwd-sm;
+    }
+
+    @media (min-width: $Rwd-md) {
+      max-width: $Rwd-md;
+    }
+
+    @media (min-width: $Rwd-lg) {
+      max-width: $Rwd-lg;
+    }
+
+    @media (min-width: $Rwd-xl) {
+      max-width: $Rwd-xl;
+    }
+
+    @media (min-width: $Rwd-2xl) {
+      max-width: $Rwd-2xl;
+    }
+  }
+}
+
+@mixin xl\:container {
+  @media (min-width: $Rwd-xl) {
+    width: 100%;
+
+    @media (min-width: $Rwd-sm) {
+      max-width: $Rwd-sm;
+    }
+
+    @media (min-width: $Rwd-md) {
+      max-width: $Rwd-md;
+    }
+
+    @media (min-width: $Rwd-lg) {
+      max-width: $Rwd-lg;
+    }
+
+    @media (min-width: $Rwd-xl) {
+      max-width: $Rwd-xl;
+    }
+
+    @media (min-width: $Rwd-2xl) {
+      max-width: $Rwd-2xl;
+    }
+  }
+}
+
+@mixin \2xl\:container {
+  @media (min-width: $Rwd-2xl) {
+    width: 100%;
+
+    @media (min-width: $Rwd-sm) {
+      max-width: $Rwd-sm;
+    }
+
+    @media (min-width: $Rwd-md) {
+      max-width: $Rwd-md;
+    }
+
+    @media (min-width: $Rwd-lg) {
+      max-width: $Rwd-lg;
+    }
+
+    @media (min-width: $Rwd-xl) {
+      max-width: $Rwd-xl;
+    }
+
+    @media (min-width: $Rwd-2xl) {
+      max-width: $Rwd-2xl;
+    }
+  }
+}
 
 /* Columns */
 
@@ -1084,22 +1080,22 @@ $--tw-backdrop-sepia: null !default;
   columns: 24rem;
 }
 
-// 448px 
+// 448px
 @mixin columns-md {
   columns: 28rem;
 }
 
-// 512px 
+// 512px
 @mixin columns-lg {
   columns: 32rem;
 }
 
-// 576px 
+// 576px
 @mixin columns-xl {
   columns: 36rem;
 }
 
-// 672px 
+// 672px
 @mixin columns-2xl {
   columns: 42rem;
 }
@@ -1109,7 +1105,7 @@ $--tw-backdrop-sepia: null !default;
   columns: 48rem;
 }
 
-// 896px 
+// 896px
 @mixin columns-4xl {
   columns: 56rem;
 }
@@ -1128,8 +1124,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin columns-7xl {
   columns: 80rem;
 }
-
-
 
 @mixin sm\:columns-($v) {
   @media (min-width: $Rwd-sm) {
@@ -1160,7 +1154,6 @@ $--tw-backdrop-sepia: null !default;
     columns: $v;
   }
 }
-
 
 @mixin columns-($v) {
   columns: $v;
@@ -1199,7 +1192,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin break-after-column {
   break-after: column;
 }
-
 
 @mixin sm\:break-after-auto {
   @media (min-width: $Rwd-sm) {
@@ -1475,7 +1467,6 @@ $--tw-backdrop-sepia: null !default;
   break-before: column;
 }
 
-
 @mixin sm\:break-before-auto {
   @media (min-width: $Rwd-sm) {
     break-before: auto;
@@ -1734,7 +1725,6 @@ $--tw-backdrop-sepia: null !default;
   break-inside: avoid-column;
 }
 
-
 @mixin sm\:break-inside-auto {
   @media (min-width: $Rwd-sm) {
     break-inside: auto;
@@ -1865,7 +1855,6 @@ $--tw-backdrop-sepia: null !default;
   box-decoration-break: slice;
 }
 
-
 @mixin sm\:box-decoration-clone {
   @media (min-width: $Rwd-sm) {
     box-decoration-break: clone;
@@ -1935,7 +1924,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin box-content {
   box-sizing: content-box;
 }
-
 
 @mixin sm\:box-border {
   @media (min-width: $Rwd-sm) {
@@ -2082,7 +2070,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin hidden {
   display: none;
 }
-
 
 @mixin sm\:block {
   @media (min-width: $Rwd-sm) {
@@ -2736,7 +2723,6 @@ $--tw-backdrop-sepia: null !default;
   float: none;
 }
 
-
 @mixin sm\:float-start {
   @media (min-width: $Rwd-sm) {
     float: inline-start;
@@ -2912,7 +2898,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin clear-none {
   clear: none;
 }
-
 
 @mixin sm\:clear-start {
   @media (min-width: $Rwd-sm) {
@@ -3104,7 +3089,6 @@ $--tw-backdrop-sepia: null !default;
   isolation: auto;
 }
 
-
 @mixin sm\:isolate {
   @media (min-width: $Rwd-sm) {
     isolation: isolate;
@@ -3186,7 +3170,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin object-scale-down {
   object-fit: scale-down;
 }
-
 
 @mixin sm\:object-contain {
   @media (min-width: $Rwd-sm) {
@@ -3376,7 +3359,6 @@ $--tw-backdrop-sepia: null !default;
   object-position: top;
 }
 
-
 @mixin sm\:object-($v) {
   @media (min-width: $Rwd-sm) {
     object-position: $v;
@@ -3406,7 +3388,6 @@ $--tw-backdrop-sepia: null !default;
     object-position: $v;
   }
 }
-
 
 @mixin object-($v) {
   object-position: $v;
@@ -3473,7 +3454,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin overflow-y-scroll {
   overflow-y: scroll;
 }
-
 
 @mixin sm\:overflow-auto {
   @media (min-width: $Rwd-sm) {
@@ -3963,7 +3943,6 @@ $--tw-backdrop-sepia: null !default;
   overscroll-behavior-x: none;
 }
 
-
 @mixin sm\:overscroll-auto {
   @media (min-width: $Rwd-sm) {
     overscroll-behavior: auto;
@@ -4255,7 +4234,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin sticky {
   position: sticky;
 }
-
 
 @mixin sm\:static {
   @media (min-width: $Rwd-sm) {
@@ -8233,7 +8211,6 @@ $--tw-backdrop-sepia: null !default;
   left: -100%;
 }
 
-
 @mixin sm\:inset-($v) {
   @media (min-width: $Rwd-sm) {
     inset: $v;
@@ -8514,7 +8491,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin inset-($v) {
   inset: $v;
 }
@@ -8566,7 +8542,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin collapse {
   visibility: collapse;
 }
-
 
 @mixin sm\:visible {
   @media (min-width: $Rwd-sm) {
@@ -8712,7 +8687,6 @@ $--tw-backdrop-sepia: null !default;
   z-index: -50;
 }
 
-
 @mixin sm\:z-($v) {
   @media (min-width: $Rwd-sm) {
     z-index: $v;
@@ -8742,7 +8716,6 @@ $--tw-backdrop-sepia: null !default;
     z-index: $v;
   }
 }
-
 
 @mixin z-($v) {
   z-index: $v;
@@ -9035,7 +9008,6 @@ $--tw-backdrop-sepia: null !default;
   flex-basis: 100%;
 }
 
-
 @mixin sm\:basis-($v) {
   @media (min-width: $Rwd-sm) {
     flex-basis: $v;
@@ -9066,7 +9038,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin basis-($v) {
   flex-basis: $v;
 }
@@ -9089,126 +9060,125 @@ $--tw-backdrop-sepia: null !default;
   flex-direction: column-reverse;
 }
 
-
-  @mixin sm\:flex-row {
-    @media (min-width: $Rwd-sm) {
-      flex-direction: row;
-    }
+@mixin sm\:flex-row {
+  @media (min-width: $Rwd-sm) {
+    flex-direction: row;
   }
+}
 
-  @mixin sm\:flex-row-reverse {
-    @media (min-width: $Rwd-sm) {
-      flex-direction: row-reverse;
-    }
+@mixin sm\:flex-row-reverse {
+  @media (min-width: $Rwd-sm) {
+    flex-direction: row-reverse;
   }
+}
 
-  @mixin sm\:flex-col {
-    @media (min-width: $Rwd-sm) {
-      flex-direction: column;
-    }
+@mixin sm\:flex-col {
+  @media (min-width: $Rwd-sm) {
+    flex-direction: column;
   }
+}
 
-  @mixin sm\:flex-col-reverse {
-    @media (min-width: $Rwd-sm) {
-      flex-direction: column-reverse;
-    }
+@mixin sm\:flex-col-reverse {
+  @media (min-width: $Rwd-sm) {
+    flex-direction: column-reverse;
   }
+}
 
-  @mixin md\:flex-row {
-    @media (min-width: $Rwd-md) {
-      flex-direction: row;
-    }
+@mixin md\:flex-row {
+  @media (min-width: $Rwd-md) {
+    flex-direction: row;
   }
+}
 
-  @mixin md\:flex-row-reverse {
-    @media (min-width: $Rwd-md) {
-      flex-direction: row-reverse;
-    }
+@mixin md\:flex-row-reverse {
+  @media (min-width: $Rwd-md) {
+    flex-direction: row-reverse;
   }
+}
 
-  @mixin md\:flex-col {
-    @media (min-width: $Rwd-md) {
-      flex-direction: column;
-    }
+@mixin md\:flex-col {
+  @media (min-width: $Rwd-md) {
+    flex-direction: column;
   }
+}
 
-  @mixin md\:flex-col-reverse {
-    @media (min-width: $Rwd-md) {
-      flex-direction: column-reverse;
-    }
+@mixin md\:flex-col-reverse {
+  @media (min-width: $Rwd-md) {
+    flex-direction: column-reverse;
   }
+}
 
-  @mixin lg\:flex-row {
-    @media (min-width: $Rwd-lg) {
-      flex-direction: row;
-    }
+@mixin lg\:flex-row {
+  @media (min-width: $Rwd-lg) {
+    flex-direction: row;
   }
+}
 
-  @mixin lg\:flex-row-reverse {
-    @media (min-width: $Rwd-lg) {
-      flex-direction: row-reverse;
-    }
+@mixin lg\:flex-row-reverse {
+  @media (min-width: $Rwd-lg) {
+    flex-direction: row-reverse;
   }
+}
 
-  @mixin lg\:flex-col {
-    @media (min-width: $Rwd-lg) {
-      flex-direction: column;
-    }
+@mixin lg\:flex-col {
+  @media (min-width: $Rwd-lg) {
+    flex-direction: column;
   }
+}
 
-  @mixin lg\:flex-col-reverse {
-    @media (min-width: $Rwd-lg) {
-      flex-direction: column-reverse;
-    }
+@mixin lg\:flex-col-reverse {
+  @media (min-width: $Rwd-lg) {
+    flex-direction: column-reverse;
   }
+}
 
-  @mixin xl\:flex-row {
-    @media (min-width: $Rwd-xl) {
-      flex-direction: row;
-    }
+@mixin xl\:flex-row {
+  @media (min-width: $Rwd-xl) {
+    flex-direction: row;
   }
+}
 
-  @mixin xl\:flex-row-reverse {
-    @media (min-width: $Rwd-xl) {
-      flex-direction: row-reverse;
-    }
+@mixin xl\:flex-row-reverse {
+  @media (min-width: $Rwd-xl) {
+    flex-direction: row-reverse;
   }
+}
 
-  @mixin xl\:flex-col {
-    @media (min-width: $Rwd-xl) {
-      flex-direction: column;
-    }
+@mixin xl\:flex-col {
+  @media (min-width: $Rwd-xl) {
+    flex-direction: column;
   }
+}
 
-  @mixin xl\:flex-col-reverse {
-    @media (min-width: $Rwd-xl) {
-      flex-direction: column-reverse;
-    }
+@mixin xl\:flex-col-reverse {
+  @media (min-width: $Rwd-xl) {
+    flex-direction: column-reverse;
   }
+}
 
-  @mixin \2xl\:flex-row {
-    @media (min-width: $Rwd-2xl) {
-      flex-direction: row;
-    }
+@mixin \2xl\:flex-row {
+  @media (min-width: $Rwd-2xl) {
+    flex-direction: row;
   }
+}
 
-  @mixin \2xl\:flex-row-reverse {
-    @media (min-width: $Rwd-2xl) {
-      flex-direction: row-reverse;
-    }
+@mixin \2xl\:flex-row-reverse {
+  @media (min-width: $Rwd-2xl) {
+    flex-direction: row-reverse;
   }
+}
 
-  @mixin \2xl\:flex-col {
-    @media (min-width: $Rwd-2xl) {
-      flex-direction: column;
-    }
+@mixin \2xl\:flex-col {
+  @media (min-width: $Rwd-2xl) {
+    flex-direction: column;
   }
+}
 
-  @mixin \2xl\:flex-col-reverse {
-    @media (min-width: $Rwd-2xl) {
-      flex-direction: column-reverse;
-    }
+@mixin \2xl\:flex-col-reverse {
+  @media (min-width: $Rwd-2xl) {
+    flex-direction: column-reverse;
   }
+}
 
 /* Flex Wrap */
 
@@ -9223,7 +9193,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin flex-nowrap {
   flex-wrap: nowrap;
 }
-
 
 @mixin sm\:flex-wrap {
   @media (min-width: $Rwd-sm) {
@@ -9316,7 +9285,7 @@ $--tw-backdrop-sepia: null !default;
 }
 
 /* Flex */
- 
+
 @mixin flex-1 {
   flex: 1 1 0%;
 }
@@ -9332,7 +9301,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin flex-none {
   flex: none;
 }
-
 
 @mixin sm\:flex-($v) {
   @media (min-width: $Rwd-sm) {
@@ -9364,7 +9332,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin flex-($v) {
   flex: $v;
 }
@@ -9378,7 +9345,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin grow-0 {
   flex-grow: 0;
 }
-
 
 @mixin sm\:grow-($v) {
   @media (min-width: $Rwd-sm) {
@@ -9410,7 +9376,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin grow-($v) {
   flex-grow: $v;
 }
@@ -9424,7 +9389,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin shrink-0 {
   flex-shrink: 0;
 }
-
 
 @mixin sm\:shrink-($v) {
   @media (min-width: $Rwd-sm) {
@@ -9455,7 +9419,6 @@ $--tw-backdrop-sepia: null !default;
     flex-shrink: $v;
   }
 }
-
 
 @mixin shrink-($v) {
   flex-shrink: $v;
@@ -9583,7 +9546,6 @@ $--tw-backdrop-sepia: null !default;
   order: -0;
 }
 
-
 @mixin sm\:order-($v) {
   @media (min-width: $Rwd-sm) {
     order: $v;
@@ -9613,7 +9575,6 @@ $--tw-backdrop-sepia: null !default;
     order: $v;
   }
 }
-
 
 @mixin order-($v) {
   order: $v;
@@ -9677,7 +9638,6 @@ $--tw-backdrop-sepia: null !default;
   grid-template-columns: subgrid;
 }
 
-
 @mixin sm\:grid-cols-($v) {
   @media (min-width: $Rwd-sm) {
     grid-template-columns: $v;
@@ -9707,7 +9667,6 @@ $--tw-backdrop-sepia: null !default;
     grid-template-columns: $v;
   }
 }
-
 
 @mixin grid-cols-($v) {
   grid-template-columns: $v;
@@ -9883,7 +9842,6 @@ $--tw-backdrop-sepia: null !default;
   grid-column-end: auto;
 }
 
-
 @mixin sm\:col-($v) {
   @media (min-width: $Rwd-sm) {
     grid-column: $v;
@@ -9974,7 +9932,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin col-($v) {
   grid-column: $v;
 }
@@ -10045,7 +10002,6 @@ $--tw-backdrop-sepia: null !default;
   grid-template-rows: subgrid;
 }
 
-
 @mixin sm\:grid-rows-($v) {
   @media (min-width: $Rwd-sm) {
     grid-template-rows: $v;
@@ -10075,7 +10031,6 @@ $--tw-backdrop-sepia: null !default;
     grid-template-rows: $v;
   }
 }
-
 
 @mixin grid-rows-($v) {
   grid-template-rows: $v;
@@ -10251,7 +10206,6 @@ $--tw-backdrop-sepia: null !default;
   grid-row-end: auto;
 }
 
-
 @mixin sm\:row-($v) {
   @media (min-width: $Rwd-sm) {
     grid-row: $v;
@@ -10342,7 +10296,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin row-($v) {
   grid-row: $v;
 }
@@ -10377,156 +10330,155 @@ $--tw-backdrop-sepia: null !default;
   grid-auto-flow: column dense;
 }
 
-
-  @mixin sm\:grid-flow-row {
-    @media (min-width: $Rwd-sm) {
-      grid-auto-flow: row;
-    }
+@mixin sm\:grid-flow-row {
+  @media (min-width: $Rwd-sm) {
+    grid-auto-flow: row;
   }
+}
 
-  @mixin sm\:grid-flow-col {
-    @media (min-width: $Rwd-sm) {
-      grid-auto-flow: column;
-    }
+@mixin sm\:grid-flow-col {
+  @media (min-width: $Rwd-sm) {
+    grid-auto-flow: column;
   }
+}
 
-  @mixin sm\:grid-flow-dense {
-    @media (min-width: $Rwd-sm) {
-      grid-auto-flow: dense;
-    }
+@mixin sm\:grid-flow-dense {
+  @media (min-width: $Rwd-sm) {
+    grid-auto-flow: dense;
   }
+}
 
-  @mixin sm\:grid-flow-row-dense {
-    @media (min-width: $Rwd-sm) {
-      grid-auto-flow: row dense;
-    }
+@mixin sm\:grid-flow-row-dense {
+  @media (min-width: $Rwd-sm) {
+    grid-auto-flow: row dense;
   }
+}
 
-  @mixin sm\:grid-flow-col-dense {
-    @media (min-width: $Rwd-sm) {
-      grid-auto-flow: column dense;
-    }
+@mixin sm\:grid-flow-col-dense {
+  @media (min-width: $Rwd-sm) {
+    grid-auto-flow: column dense;
   }
+}
 
-  @mixin md\:grid-flow-row {
-    @media (min-width: $Rwd-md) {
-      grid-auto-flow: row;
-    }
+@mixin md\:grid-flow-row {
+  @media (min-width: $Rwd-md) {
+    grid-auto-flow: row;
   }
+}
 
-  @mixin md\:grid-flow-col {
-    @media (min-width: $Rwd-md) {
-      grid-auto-flow: column;
-    }
+@mixin md\:grid-flow-col {
+  @media (min-width: $Rwd-md) {
+    grid-auto-flow: column;
   }
+}
 
-  @mixin md\:grid-flow-dense {
-    @media (min-width: $Rwd-md) {
-      grid-auto-flow: dense;
-    }
+@mixin md\:grid-flow-dense {
+  @media (min-width: $Rwd-md) {
+    grid-auto-flow: dense;
   }
+}
 
-  @mixin md\:grid-flow-row-dense {
-    @media (min-width: $Rwd-md) {
-      grid-auto-flow: row dense;
-    }
+@mixin md\:grid-flow-row-dense {
+  @media (min-width: $Rwd-md) {
+    grid-auto-flow: row dense;
   }
+}
 
-  @mixin md\:grid-flow-col-dense {
-    @media (min-width: $Rwd-md) {
-      grid-auto-flow: column dense;
-    }
+@mixin md\:grid-flow-col-dense {
+  @media (min-width: $Rwd-md) {
+    grid-auto-flow: column dense;
   }
+}
 
-  @mixin lg\:grid-flow-row {
-    @media (min-width: $Rwd-lg) {
-      grid-auto-flow: row;
-    }
+@mixin lg\:grid-flow-row {
+  @media (min-width: $Rwd-lg) {
+    grid-auto-flow: row;
   }
+}
 
-  @mixin lg\:grid-flow-col {
-    @media (min-width: $Rwd-lg) {
-      grid-auto-flow: column;
-    }
+@mixin lg\:grid-flow-col {
+  @media (min-width: $Rwd-lg) {
+    grid-auto-flow: column;
   }
+}
 
-  @mixin lg\:grid-flow-dense {
-    @media (min-width: $Rwd-lg) {
-      grid-auto-flow: dense;
-    }
+@mixin lg\:grid-flow-dense {
+  @media (min-width: $Rwd-lg) {
+    grid-auto-flow: dense;
   }
+}
 
-  @mixin lg\:grid-flow-row-dense {
-    @media (min-width: $Rwd-lg) {
-      grid-auto-flow: row dense;
-    }
+@mixin lg\:grid-flow-row-dense {
+  @media (min-width: $Rwd-lg) {
+    grid-auto-flow: row dense;
   }
+}
 
-  @mixin lg\:grid-flow-col-dense {
-    @media (min-width: $Rwd-lg) {
-      grid-auto-flow: column dense;
-    }
+@mixin lg\:grid-flow-col-dense {
+  @media (min-width: $Rwd-lg) {
+    grid-auto-flow: column dense;
   }
+}
 
-  @mixin xl\:grid-flow-row {
-    @media (min-width: $Rwd-xl) {
-      grid-auto-flow: row;
-    }
+@mixin xl\:grid-flow-row {
+  @media (min-width: $Rwd-xl) {
+    grid-auto-flow: row;
   }
+}
 
-  @mixin xl\:grid-flow-col {
-    @media (min-width: $Rwd-xl) {
-      grid-auto-flow: column;
-    }
+@mixin xl\:grid-flow-col {
+  @media (min-width: $Rwd-xl) {
+    grid-auto-flow: column;
   }
+}
 
-  @mixin xl\:grid-flow-dense {
-    @media (min-width: $Rwd-xl) {
-      grid-auto-flow: dense;
-    }
+@mixin xl\:grid-flow-dense {
+  @media (min-width: $Rwd-xl) {
+    grid-auto-flow: dense;
   }
+}
 
-  @mixin xl\:grid-flow-row-dense {
-    @media (min-width: $Rwd-xl) {
-      grid-auto-flow: row dense;
-    }
+@mixin xl\:grid-flow-row-dense {
+  @media (min-width: $Rwd-xl) {
+    grid-auto-flow: row dense;
   }
+}
 
-  @mixin xl\:grid-flow-col-dense {
-    @media (min-width: $Rwd-xl) {
-      grid-auto-flow: column dense;
-    }
+@mixin xl\:grid-flow-col-dense {
+  @media (min-width: $Rwd-xl) {
+    grid-auto-flow: column dense;
   }
+}
 
-  @mixin \2xl\:grid-flow-row {
-    @media (min-width: $Rwd-2xl) {
-      grid-auto-flow: row;
-    }
+@mixin \2xl\:grid-flow-row {
+  @media (min-width: $Rwd-2xl) {
+    grid-auto-flow: row;
   }
+}
 
-  @mixin \2xl\:grid-flow-col {
-    @media (min-width: $Rwd-2xl) {
-      grid-auto-flow: column;
-    }
+@mixin \2xl\:grid-flow-col {
+  @media (min-width: $Rwd-2xl) {
+    grid-auto-flow: column;
   }
+}
 
-  @mixin \2xl\:grid-flow-dense {
-    @media (min-width: $Rwd-2xl) {
-      grid-auto-flow: dense;
-    }
+@mixin \2xl\:grid-flow-dense {
+  @media (min-width: $Rwd-2xl) {
+    grid-auto-flow: dense;
   }
+}
 
-  @mixin \2xl\:grid-flow-row-dense {
-    @media (min-width: $Rwd-2xl) {
-      grid-auto-flow: row dense;
-    }
+@mixin \2xl\:grid-flow-row-dense {
+  @media (min-width: $Rwd-2xl) {
+    grid-auto-flow: row dense;
   }
+}
 
-  @mixin \2xl\:grid-flow-col-dense {
-    @media (min-width: $Rwd-2xl) {
-      grid-auto-flow: column dense;
-    }
+@mixin \2xl\:grid-flow-col-dense {
+  @media (min-width: $Rwd-2xl) {
+    grid-auto-flow: column dense;
   }
+}
 
 /* Grid Auto Columns */
 
@@ -10545,7 +10497,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin auto-cols-fr {
   grid-auto-columns: minmax(0, 1fr);
 }
-
 
 @mixin sm\:auto-cols-($v) {
   @media (min-width: $Rwd-sm) {
@@ -10577,7 +10528,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin auto-cols-($v) {
   grid-auto-columns: $v;
 }
@@ -10599,7 +10549,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin auto-rows-fr {
   grid-auto-rows: minmax(0, 1fr);
 }
-
 
 @mixin sm\:auto-rows-($v) {
   @media (min-width: $Rwd-sm) {
@@ -10630,7 +10579,6 @@ $--tw-backdrop-sepia: null !default;
     grid-auto-rows: $v;
   }
 }
-
 
 @mixin auto-rows-($v) {
   grid-auto-rows: $v;
@@ -11157,7 +11105,6 @@ $--tw-backdrop-sepia: null !default;
   row-gap: 24rem;
 }
 
-
 @mixin sm\:gap-($v) {
   @media (min-width: $Rwd-sm) {
     gap: $v;
@@ -11248,7 +11195,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin gap-($v) {
   gap: $v;
 }
@@ -11294,7 +11240,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin justify-stretch {
   justify-content: stretch;
 }
-
 
 @mixin sm\:justify-normal {
   @media (min-width: $Rwd-sm) {
@@ -11554,126 +11499,125 @@ $--tw-backdrop-sepia: null !default;
   justify-items: stretch;
 }
 
-
-  @mixin sm\:justify-items-start {
-    @media (min-width: $Rwd-sm) {
-      justify-items: start;
-    }
+@mixin sm\:justify-items-start {
+  @media (min-width: $Rwd-sm) {
+    justify-items: start;
   }
+}
 
-  @mixin sm\:justify-items-end {
-    @media (min-width: $Rwd-sm) {
-      justify-items: end;
-    }
+@mixin sm\:justify-items-end {
+  @media (min-width: $Rwd-sm) {
+    justify-items: end;
   }
+}
 
-  @mixin sm\:justify-items-center {
-    @media (min-width: $Rwd-sm) {
-      justify-items: center;
-    }
+@mixin sm\:justify-items-center {
+  @media (min-width: $Rwd-sm) {
+    justify-items: center;
   }
+}
 
-  @mixin sm\:justify-items-stretch {
-    @media (min-width: $Rwd-sm) {
-      justify-items: stretch;
-    }
+@mixin sm\:justify-items-stretch {
+  @media (min-width: $Rwd-sm) {
+    justify-items: stretch;
   }
+}
 
-  @mixin md\:justify-items-start {
-    @media (min-width: $Rwd-md) {
-      justify-items: start;
-    }
+@mixin md\:justify-items-start {
+  @media (min-width: $Rwd-md) {
+    justify-items: start;
   }
+}
 
-  @mixin md\:justify-items-end {
-    @media (min-width: $Rwd-md) {
-      justify-items: end;
-    }
+@mixin md\:justify-items-end {
+  @media (min-width: $Rwd-md) {
+    justify-items: end;
   }
+}
 
-  @mixin md\:justify-items-center {
-    @media (min-width: $Rwd-md) {
-      justify-items: center;
-    }
+@mixin md\:justify-items-center {
+  @media (min-width: $Rwd-md) {
+    justify-items: center;
   }
+}
 
-  @mixin md\:justify-items-stretch {
-    @media (min-width: $Rwd-md) {
-      justify-items: stretch;
-    }
+@mixin md\:justify-items-stretch {
+  @media (min-width: $Rwd-md) {
+    justify-items: stretch;
   }
+}
 
-  @mixin lg\:justify-items-start {
-    @media (min-width: $Rwd-lg) {
-      justify-items: start;
-    }
+@mixin lg\:justify-items-start {
+  @media (min-width: $Rwd-lg) {
+    justify-items: start;
   }
+}
 
-  @mixin lg\:justify-items-end {
-    @media (min-width: $Rwd-lg) {
-      justify-items: end;
-    }
+@mixin lg\:justify-items-end {
+  @media (min-width: $Rwd-lg) {
+    justify-items: end;
   }
+}
 
-  @mixin lg\:justify-items-center {
-    @media (min-width: $Rwd-lg) {
-      justify-items: center;
-    }
+@mixin lg\:justify-items-center {
+  @media (min-width: $Rwd-lg) {
+    justify-items: center;
   }
+}
 
-  @mixin lg\:justify-items-stretch {
-    @media (min-width: $Rwd-lg) {
-      justify-items: stretch;
-    }
+@mixin lg\:justify-items-stretch {
+  @media (min-width: $Rwd-lg) {
+    justify-items: stretch;
   }
+}
 
-  @mixin xl\:justify-items-start {
-    @media (min-width: $Rwd-xl) {
-      justify-items: start;
-    }
+@mixin xl\:justify-items-start {
+  @media (min-width: $Rwd-xl) {
+    justify-items: start;
   }
+}
 
-  @mixin xl\:justify-items-end {
-    @media (min-width: $Rwd-xl) {
-      justify-items: end;
-    }
+@mixin xl\:justify-items-end {
+  @media (min-width: $Rwd-xl) {
+    justify-items: end;
   }
+}
 
-  @mixin xl\:justify-items-center {
-    @media (min-width: $Rwd-xl) {
-      justify-items: center;
-    }
+@mixin xl\:justify-items-center {
+  @media (min-width: $Rwd-xl) {
+    justify-items: center;
   }
+}
 
-  @mixin xl\:justify-items-stretch {
-    @media (min-width: $Rwd-xl) {
-      justify-items: stretch;
-    }
+@mixin xl\:justify-items-stretch {
+  @media (min-width: $Rwd-xl) {
+    justify-items: stretch;
   }
+}
 
-  @mixin \2xl\:justify-items-start {
-    @media (min-width: $Rwd-2xl) {
-      justify-items: start;
-    }
+@mixin \2xl\:justify-items-start {
+  @media (min-width: $Rwd-2xl) {
+    justify-items: start;
   }
+}
 
-  @mixin \2xl\:justify-items-end {
-    @media (min-width: $Rwd-2xl) {
-      justify-items: end;
-    }
+@mixin \2xl\:justify-items-end {
+  @media (min-width: $Rwd-2xl) {
+    justify-items: end;
   }
+}
 
-  @mixin \2xl\:justify-items-center {
-    @media (min-width: $Rwd-2xl) {
-      justify-items: center;
-    }
+@mixin \2xl\:justify-items-center {
+  @media (min-width: $Rwd-2xl) {
+    justify-items: center;
   }
+}
 
-  @mixin \2xl\:justify-items-stretch {
-    @media (min-width: $Rwd-2xl) {
-      justify-items: stretch;
-    }
+@mixin \2xl\:justify-items-stretch {
+  @media (min-width: $Rwd-2xl) {
+    justify-items: stretch;
   }
+}
 
 /* Justify Self */
 
@@ -11696,7 +11640,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin justify-self-stretch {
   justify-self: stretch;
 }
-
 
 @mixin sm\:justify-self-auto {
   @media (min-width: $Rwd-sm) {
@@ -11886,276 +11829,275 @@ $--tw-backdrop-sepia: null !default;
   align-content: stretch;
 }
 
-
-  @mixin sm\:content-normal {
-    @media (min-width: $Rwd-sm) {
-      align-content: normal;
-    }
+@mixin sm\:content-normal {
+  @media (min-width: $Rwd-sm) {
+    align-content: normal;
   }
+}
 
-  @mixin sm\:content-center {
-    @media (min-width: $Rwd-sm) {
-      align-content: center;
-    }
+@mixin sm\:content-center {
+  @media (min-width: $Rwd-sm) {
+    align-content: center;
   }
+}
 
-  @mixin sm\:content-start {
-    @media (min-width: $Rwd-sm) {
-      align-content: flex-start;
-    }
+@mixin sm\:content-start {
+  @media (min-width: $Rwd-sm) {
+    align-content: flex-start;
   }
+}
 
-  @mixin sm\:content-end {
-    @media (min-width: $Rwd-sm) {
-      align-content: flex-end;
-    }
+@mixin sm\:content-end {
+  @media (min-width: $Rwd-sm) {
+    align-content: flex-end;
   }
+}
 
-  @mixin sm\:content-between {
-    @media (min-width: $Rwd-sm) {
-      align-content: space-between;
-    }
+@mixin sm\:content-between {
+  @media (min-width: $Rwd-sm) {
+    align-content: space-between;
   }
+}
 
-  @mixin sm\:content-around {
-    @media (min-width: $Rwd-sm) {
-      align-content: space-around;
-    }
+@mixin sm\:content-around {
+  @media (min-width: $Rwd-sm) {
+    align-content: space-around;
   }
+}
 
-  @mixin sm\:content-evenly {
-    @media (min-width: $Rwd-sm) {
-      align-content: space-evenly;
-    }
+@mixin sm\:content-evenly {
+  @media (min-width: $Rwd-sm) {
+    align-content: space-evenly;
   }
+}
 
-  @mixin sm\:content-baseline {
-    @media (min-width: $Rwd-sm) {
-      align-content: baseline;
-    }
+@mixin sm\:content-baseline {
+  @media (min-width: $Rwd-sm) {
+    align-content: baseline;
   }
+}
 
-  @mixin sm\:content-stretch {
-    @media (min-width: $Rwd-sm) {
-      align-content: stretch;
-    }
+@mixin sm\:content-stretch {
+  @media (min-width: $Rwd-sm) {
+    align-content: stretch;
   }
+}
 
-  @mixin md\:content-normal {
-    @media (min-width: $Rwd-md) {
-      align-content: normal;
-    }
+@mixin md\:content-normal {
+  @media (min-width: $Rwd-md) {
+    align-content: normal;
   }
+}
 
-  @mixin md\:content-center {
-    @media (min-width: $Rwd-md) {
-      align-content: center;
-    }
+@mixin md\:content-center {
+  @media (min-width: $Rwd-md) {
+    align-content: center;
   }
+}
 
-  @mixin md\:content-start {
-    @media (min-width: $Rwd-md) {
-      align-content: flex-start;
-    }
+@mixin md\:content-start {
+  @media (min-width: $Rwd-md) {
+    align-content: flex-start;
   }
+}
 
-  @mixin md\:content-end {
-    @media (min-width: $Rwd-md) {
-      align-content: flex-end;
-    }
+@mixin md\:content-end {
+  @media (min-width: $Rwd-md) {
+    align-content: flex-end;
   }
+}
 
-  @mixin md\:content-between {
-    @media (min-width: $Rwd-md) {
-      align-content: space-between;
-    }
+@mixin md\:content-between {
+  @media (min-width: $Rwd-md) {
+    align-content: space-between;
   }
+}
 
-  @mixin md\:content-around {
-    @media (min-width: $Rwd-md) {
-      align-content: space-around;
-    }
+@mixin md\:content-around {
+  @media (min-width: $Rwd-md) {
+    align-content: space-around;
   }
+}
 
-  @mixin md\:content-evenly {
-    @media (min-width: $Rwd-md) {
-      align-content: space-evenly;
-    }
+@mixin md\:content-evenly {
+  @media (min-width: $Rwd-md) {
+    align-content: space-evenly;
   }
+}
 
-  @mixin md\:content-baseline {
-    @media (min-width: $Rwd-md) {
-      align-content: baseline;
-    }
+@mixin md\:content-baseline {
+  @media (min-width: $Rwd-md) {
+    align-content: baseline;
   }
+}
 
-  @mixin md\:content-stretch {
-    @media (min-width: $Rwd-md) {
-      align-content: stretch;
-    }
+@mixin md\:content-stretch {
+  @media (min-width: $Rwd-md) {
+    align-content: stretch;
   }
+}
 
-  @mixin lg\:content-normal {
-    @media (min-width: $Rwd-lg) {
-      align-content: normal;
-    }
+@mixin lg\:content-normal {
+  @media (min-width: $Rwd-lg) {
+    align-content: normal;
   }
+}
 
-  @mixin lg\:content-center {
-    @media (min-width: $Rwd-lg) {
-      align-content: center;
-    }
+@mixin lg\:content-center {
+  @media (min-width: $Rwd-lg) {
+    align-content: center;
   }
+}
 
-  @mixin lg\:content-start {
-    @media (min-width: $Rwd-lg) {
-      align-content: flex-start;
-    }
+@mixin lg\:content-start {
+  @media (min-width: $Rwd-lg) {
+    align-content: flex-start;
   }
+}
 
-  @mixin lg\:content-end {
-    @media (min-width: $Rwd-lg) {
-      align-content: flex-end;
-    }
+@mixin lg\:content-end {
+  @media (min-width: $Rwd-lg) {
+    align-content: flex-end;
   }
+}
 
-  @mixin lg\:content-between {
-    @media (min-width: $Rwd-lg) {
-      align-content: space-between;
-    }
+@mixin lg\:content-between {
+  @media (min-width: $Rwd-lg) {
+    align-content: space-between;
   }
+}
 
-  @mixin lg\:content-around {
-    @media (min-width: $Rwd-lg) {
-      align-content: space-around;
-    }
+@mixin lg\:content-around {
+  @media (min-width: $Rwd-lg) {
+    align-content: space-around;
   }
+}
 
-  @mixin lg\:content-evenly {
-    @media (min-width: $Rwd-lg) {
-      align-content: space-evenly;
-    }
+@mixin lg\:content-evenly {
+  @media (min-width: $Rwd-lg) {
+    align-content: space-evenly;
   }
+}
 
-  @mixin lg\:content-baseline {
-    @media (min-width: $Rwd-lg) {
-      align-content: baseline;
-    }
+@mixin lg\:content-baseline {
+  @media (min-width: $Rwd-lg) {
+    align-content: baseline;
   }
+}
 
-  @mixin lg\:content-stretch {
-    @media (min-width: $Rwd-lg) {
-      align-content: stretch;
-    }
+@mixin lg\:content-stretch {
+  @media (min-width: $Rwd-lg) {
+    align-content: stretch;
   }
+}
 
-  @mixin xl\:content-normal {
-    @media (min-width: $Rwd-xl) {
-      align-content: normal;
-    }
+@mixin xl\:content-normal {
+  @media (min-width: $Rwd-xl) {
+    align-content: normal;
   }
+}
 
-  @mixin xl\:content-center {
-    @media (min-width: $Rwd-xl) {
-      align-content: center;
-    }
+@mixin xl\:content-center {
+  @media (min-width: $Rwd-xl) {
+    align-content: center;
   }
+}
 
-  @mixin xl\:content-start {
-    @media (min-width: $Rwd-xl) {
-      align-content: flex-start;
-    }
+@mixin xl\:content-start {
+  @media (min-width: $Rwd-xl) {
+    align-content: flex-start;
   }
+}
 
-  @mixin xl\:content-end {
-    @media (min-width: $Rwd-xl) {
-      align-content: flex-end;
-    }
+@mixin xl\:content-end {
+  @media (min-width: $Rwd-xl) {
+    align-content: flex-end;
   }
+}
 
-  @mixin xl\:content-between {
-    @media (min-width: $Rwd-xl) {
-      align-content: space-between;
-    }
+@mixin xl\:content-between {
+  @media (min-width: $Rwd-xl) {
+    align-content: space-between;
   }
+}
 
-  @mixin xl\:content-around {
-    @media (min-width: $Rwd-xl) {
-      align-content: space-around;
-    }
+@mixin xl\:content-around {
+  @media (min-width: $Rwd-xl) {
+    align-content: space-around;
   }
+}
 
-  @mixin xl\:content-evenly {
-    @media (min-width: $Rwd-xl) {
-      align-content: space-evenly;
-    }
+@mixin xl\:content-evenly {
+  @media (min-width: $Rwd-xl) {
+    align-content: space-evenly;
   }
+}
 
-  @mixin xl\:content-baseline {
-    @media (min-width: $Rwd-xl) {
-      align-content: baseline;
-    }
+@mixin xl\:content-baseline {
+  @media (min-width: $Rwd-xl) {
+    align-content: baseline;
   }
+}
 
-  @mixin xl\:content-stretch {
-    @media (min-width: $Rwd-xl) {
-      align-content: stretch;
-    }
+@mixin xl\:content-stretch {
+  @media (min-width: $Rwd-xl) {
+    align-content: stretch;
   }
+}
 
-  @mixin \2xl\:content-normal {
-    @media (min-width: $Rwd-2xl) {
-      align-content: normal;
-    }
+@mixin \2xl\:content-normal {
+  @media (min-width: $Rwd-2xl) {
+    align-content: normal;
   }
+}
 
-  @mixin \2xl\:content-center {
-    @media (min-width: $Rwd-2xl) {
-      align-content: center;
-    }
+@mixin \2xl\:content-center {
+  @media (min-width: $Rwd-2xl) {
+    align-content: center;
   }
+}
 
-  @mixin \2xl\:content-start {
-    @media (min-width: $Rwd-2xl) {
-      align-content: flex-start;
-    }
+@mixin \2xl\:content-start {
+  @media (min-width: $Rwd-2xl) {
+    align-content: flex-start;
   }
+}
 
-  @mixin \2xl\:content-end {
-    @media (min-width: $Rwd-2xl) {
-      align-content: flex-end;
-    }
+@mixin \2xl\:content-end {
+  @media (min-width: $Rwd-2xl) {
+    align-content: flex-end;
   }
+}
 
-  @mixin \2xl\:content-between {
-    @media (min-width: $Rwd-2xl) {
-      align-content: space-between;
-    }
+@mixin \2xl\:content-between {
+  @media (min-width: $Rwd-2xl) {
+    align-content: space-between;
   }
+}
 
-  @mixin \2xl\:content-around {
-    @media (min-width: $Rwd-2xl) {
-      align-content: space-around;
-    }
+@mixin \2xl\:content-around {
+  @media (min-width: $Rwd-2xl) {
+    align-content: space-around;
   }
+}
 
-  @mixin \2xl\:content-evenly {
-    @media (min-width: $Rwd-2xl) {
-      align-content: space-evenly;
-    }
+@mixin \2xl\:content-evenly {
+  @media (min-width: $Rwd-2xl) {
+    align-content: space-evenly;
   }
+}
 
-  @mixin \2xl\:content-baseline {
-    @media (min-width: $Rwd-2xl) {
-      align-content: baseline;
-    }
+@mixin \2xl\:content-baseline {
+  @media (min-width: $Rwd-2xl) {
+    align-content: baseline;
   }
+}
 
-  @mixin \2xl\:content-stretch {
-    @media (min-width: $Rwd-2xl) {
-      align-content: stretch;
-    }
+@mixin \2xl\:content-stretch {
+  @media (min-width: $Rwd-2xl) {
+    align-content: stretch;
   }
+}
 
 /* Align Items */
 
@@ -12179,156 +12121,155 @@ $--tw-backdrop-sepia: null !default;
   align-items: stretch;
 }
 
-
-  @mixin sm\:items-start {
-    @media (min-width: $Rwd-sm) {
-      align-items: flex-start;
-    }
+@mixin sm\:items-start {
+  @media (min-width: $Rwd-sm) {
+    align-items: flex-start;
   }
+}
 
-  @mixin sm\:items-end {
-    @media (min-width: $Rwd-sm) {
-      align-items: flex-end;
-    }
+@mixin sm\:items-end {
+  @media (min-width: $Rwd-sm) {
+    align-items: flex-end;
   }
+}
 
-  @mixin sm\:items-center {
-    @media (min-width: $Rwd-sm) {
-      align-items: center;
-    }
+@mixin sm\:items-center {
+  @media (min-width: $Rwd-sm) {
+    align-items: center;
   }
+}
 
-  @mixin sm\:items-baseline {
-    @media (min-width: $Rwd-sm) {
-      align-items: baseline;
-    }
+@mixin sm\:items-baseline {
+  @media (min-width: $Rwd-sm) {
+    align-items: baseline;
   }
+}
 
-  @mixin sm\:items-stretch {
-    @media (min-width: $Rwd-sm) {
-      align-items: stretch;
-    }
+@mixin sm\:items-stretch {
+  @media (min-width: $Rwd-sm) {
+    align-items: stretch;
   }
+}
 
-  @mixin md\:items-start {
-    @media (min-width: $Rwd-md) {
-      align-items: flex-start;
-    }
+@mixin md\:items-start {
+  @media (min-width: $Rwd-md) {
+    align-items: flex-start;
   }
+}
 
-  @mixin md\:items-end {
-    @media (min-width: $Rwd-md) {
-      align-items: flex-end;
-    }
+@mixin md\:items-end {
+  @media (min-width: $Rwd-md) {
+    align-items: flex-end;
   }
+}
 
-  @mixin md\:items-center {
-    @media (min-width: $Rwd-md) {
-      align-items: center;
-    }
+@mixin md\:items-center {
+  @media (min-width: $Rwd-md) {
+    align-items: center;
   }
+}
 
-  @mixin md\:items-baseline {
-    @media (min-width: $Rwd-md) {
-      align-items: baseline;
-    }
+@mixin md\:items-baseline {
+  @media (min-width: $Rwd-md) {
+    align-items: baseline;
   }
+}
 
-  @mixin md\:items-stretch {
-    @media (min-width: $Rwd-md) {
-      align-items: stretch;
-    }
+@mixin md\:items-stretch {
+  @media (min-width: $Rwd-md) {
+    align-items: stretch;
   }
+}
 
-  @mixin lg\:items-start {
-    @media (min-width: $Rwd-lg) {
-      align-items: flex-start;
-    }
+@mixin lg\:items-start {
+  @media (min-width: $Rwd-lg) {
+    align-items: flex-start;
   }
+}
 
-  @mixin lg\:items-end {
-    @media (min-width: $Rwd-lg) {
-      align-items: flex-end;
-    }
+@mixin lg\:items-end {
+  @media (min-width: $Rwd-lg) {
+    align-items: flex-end;
   }
+}
 
-  @mixin lg\:items-center {
-    @media (min-width: $Rwd-lg) {
-      align-items: center;
-    }
+@mixin lg\:items-center {
+  @media (min-width: $Rwd-lg) {
+    align-items: center;
   }
+}
 
-  @mixin lg\:items-baseline {
-    @media (min-width: $Rwd-lg) {
-      align-items: baseline;
-    }
+@mixin lg\:items-baseline {
+  @media (min-width: $Rwd-lg) {
+    align-items: baseline;
   }
+}
 
-  @mixin lg\:items-stretch {
-    @media (min-width: $Rwd-lg) {
-      align-items: stretch;
-    }
+@mixin lg\:items-stretch {
+  @media (min-width: $Rwd-lg) {
+    align-items: stretch;
   }
+}
 
-  @mixin xl\:items-start {
-    @media (min-width: $Rwd-xl) {
-      align-items: flex-start;
-    }
+@mixin xl\:items-start {
+  @media (min-width: $Rwd-xl) {
+    align-items: flex-start;
   }
+}
 
-  @mixin xl\:items-end {
-    @media (min-width: $Rwd-xl) {
-      align-items: flex-end;
-    }
+@mixin xl\:items-end {
+  @media (min-width: $Rwd-xl) {
+    align-items: flex-end;
   }
+}
 
-  @mixin xl\:items-center {
-    @media (min-width: $Rwd-xl) {
-      align-items: center;
-    }
+@mixin xl\:items-center {
+  @media (min-width: $Rwd-xl) {
+    align-items: center;
   }
+}
 
-  @mixin xl\:items-baseline {
-    @media (min-width: $Rwd-xl) {
-      align-items: baseline;
-    }
+@mixin xl\:items-baseline {
+  @media (min-width: $Rwd-xl) {
+    align-items: baseline;
   }
+}
 
-  @mixin xl\:items-stretch {
-    @media (min-width: $Rwd-xl) {
-      align-items: stretch;
-    }
+@mixin xl\:items-stretch {
+  @media (min-width: $Rwd-xl) {
+    align-items: stretch;
   }
+}
 
-  @mixin \2xl\:items-start {
-    @media (min-width: $Rwd-2xl) {
-      align-items: flex-start;
-    }
+@mixin \2xl\:items-start {
+  @media (min-width: $Rwd-2xl) {
+    align-items: flex-start;
   }
+}
 
-  @mixin \2xl\:items-end {
-    @media (min-width: $Rwd-2xl) {
-      align-items: flex-end;
-    }
+@mixin \2xl\:items-end {
+  @media (min-width: $Rwd-2xl) {
+    align-items: flex-end;
   }
+}
 
-  @mixin \2xl\:items-center {
-    @media (min-width: $Rwd-2xl) {
-      align-items: center;
-    }
+@mixin \2xl\:items-center {
+  @media (min-width: $Rwd-2xl) {
+    align-items: center;
   }
+}
 
-  @mixin \2xl\:items-baseline {
-    @media (min-width: $Rwd-2xl) {
-      align-items: baseline;
-    }
+@mixin \2xl\:items-baseline {
+  @media (min-width: $Rwd-2xl) {
+    align-items: baseline;
   }
+}
 
-  @mixin \2xl\:items-stretch {
-    @media (min-width: $Rwd-2xl) {
-      align-items: stretch;
-    }
+@mixin \2xl\:items-stretch {
+  @media (min-width: $Rwd-2xl) {
+    align-items: stretch;
   }
+}
 
 /* Align Self */
 
@@ -12355,7 +12296,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin self-baseline {
   align-self: baseline;
 }
-
 
 @mixin sm\:self-auto {
   @media (min-width: $Rwd-sm) {
@@ -12571,246 +12511,245 @@ $--tw-backdrop-sepia: null !default;
   place-content: stretch;
 }
 
-
-  @mixin sm\:place-content-center {
-    @media (min-width: $Rwd-sm) {
-      place-content: center;
-    }
+@mixin sm\:place-content-center {
+  @media (min-width: $Rwd-sm) {
+    place-content: center;
   }
+}
 
-  @mixin sm\:place-content-start {
-    @media (min-width: $Rwd-sm) {
-      place-content: start;
-    }
+@mixin sm\:place-content-start {
+  @media (min-width: $Rwd-sm) {
+    place-content: start;
   }
+}
 
-  @mixin sm\:place-content-end {
-    @media (min-width: $Rwd-sm) {
-      place-content: end;
-    }
+@mixin sm\:place-content-end {
+  @media (min-width: $Rwd-sm) {
+    place-content: end;
   }
+}
 
-  @mixin sm\:place-content-between {
-    @media (min-width: $Rwd-sm) {
-      place-content: space-between;
-    }
+@mixin sm\:place-content-between {
+  @media (min-width: $Rwd-sm) {
+    place-content: space-between;
   }
+}
 
-  @mixin sm\:place-content-around {
-    @media (min-width: $Rwd-sm) {
-      place-content: space-around;
-    }
+@mixin sm\:place-content-around {
+  @media (min-width: $Rwd-sm) {
+    place-content: space-around;
   }
+}
 
-  @mixin sm\:place-content-evenly {
-    @media (min-width: $Rwd-sm) {
-      place-content: space-evenly;
-    }
+@mixin sm\:place-content-evenly {
+  @media (min-width: $Rwd-sm) {
+    place-content: space-evenly;
   }
+}
 
-  @mixin sm\:place-content-baseline {
-    @media (min-width: $Rwd-sm) {
-      place-content: baseline;
-    }
+@mixin sm\:place-content-baseline {
+  @media (min-width: $Rwd-sm) {
+    place-content: baseline;
   }
+}
 
-  @mixin sm\:place-content-stretch {
-    @media (min-width: $Rwd-sm) {
-      place-content: stretch;
-    }
+@mixin sm\:place-content-stretch {
+  @media (min-width: $Rwd-sm) {
+    place-content: stretch;
   }
+}
 
-  @mixin md\:place-content-center {
-    @media (min-width: $Rwd-md) {
-      place-content: center;
-    }
+@mixin md\:place-content-center {
+  @media (min-width: $Rwd-md) {
+    place-content: center;
   }
+}
 
-  @mixin md\:place-content-start {
-    @media (min-width: $Rwd-md) {
-      place-content: start;
-    }
+@mixin md\:place-content-start {
+  @media (min-width: $Rwd-md) {
+    place-content: start;
   }
+}
 
-  @mixin md\:place-content-end {
-    @media (min-width: $Rwd-md) {
-      place-content: end;
-    }
+@mixin md\:place-content-end {
+  @media (min-width: $Rwd-md) {
+    place-content: end;
   }
+}
 
-  @mixin md\:place-content-between {
-    @media (min-width: $Rwd-md) {
-      place-content: space-between;
-    }
+@mixin md\:place-content-between {
+  @media (min-width: $Rwd-md) {
+    place-content: space-between;
   }
+}
 
-  @mixin md\:place-content-around {
-    @media (min-width: $Rwd-md) {
-      place-content: space-around;
-    }
+@mixin md\:place-content-around {
+  @media (min-width: $Rwd-md) {
+    place-content: space-around;
   }
+}
 
-  @mixin md\:place-content-evenly {
-    @media (min-width: $Rwd-md) {
-      place-content: space-evenly;
-    }
+@mixin md\:place-content-evenly {
+  @media (min-width: $Rwd-md) {
+    place-content: space-evenly;
   }
+}
 
-  @mixin md\:place-content-baseline {
-    @media (min-width: $Rwd-md) {
-      place-content: baseline;
-    }
+@mixin md\:place-content-baseline {
+  @media (min-width: $Rwd-md) {
+    place-content: baseline;
   }
+}
 
-  @mixin md\:place-content-stretch {
-    @media (min-width: $Rwd-md) {
-      place-content: stretch;
-    }
+@mixin md\:place-content-stretch {
+  @media (min-width: $Rwd-md) {
+    place-content: stretch;
   }
+}
 
-  @mixin lg\:place-content-center {
-    @media (min-width: $Rwd-lg) {
-      place-content: center;
-    }
+@mixin lg\:place-content-center {
+  @media (min-width: $Rwd-lg) {
+    place-content: center;
   }
+}
 
-  @mixin lg\:place-content-start {
-    @media (min-width: $Rwd-lg) {
-      place-content: start;
-    }
+@mixin lg\:place-content-start {
+  @media (min-width: $Rwd-lg) {
+    place-content: start;
   }
+}
 
-  @mixin lg\:place-content-end {
-    @media (min-width: $Rwd-lg) {
-      place-content: end;
-    }
+@mixin lg\:place-content-end {
+  @media (min-width: $Rwd-lg) {
+    place-content: end;
   }
+}
 
-  @mixin lg\:place-content-between {
-    @media (min-width: $Rwd-lg) {
-      place-content: space-between;
-    }
+@mixin lg\:place-content-between {
+  @media (min-width: $Rwd-lg) {
+    place-content: space-between;
   }
+}
 
-  @mixin lg\:place-content-around {
-    @media (min-width: $Rwd-lg) {
-      place-content: space-around;
-    }
+@mixin lg\:place-content-around {
+  @media (min-width: $Rwd-lg) {
+    place-content: space-around;
   }
+}
 
-  @mixin lg\:place-content-evenly {
-    @media (min-width: $Rwd-lg) {
-      place-content: space-evenly;
-    }
+@mixin lg\:place-content-evenly {
+  @media (min-width: $Rwd-lg) {
+    place-content: space-evenly;
   }
+}
 
-  @mixin lg\:place-content-baseline {
-    @media (min-width: $Rwd-lg) {
-      place-content: baseline;
-    }
+@mixin lg\:place-content-baseline {
+  @media (min-width: $Rwd-lg) {
+    place-content: baseline;
   }
+}
 
-  @mixin lg\:place-content-stretch {
-    @media (min-width: $Rwd-lg) {
-      place-content: stretch;
-    }
+@mixin lg\:place-content-stretch {
+  @media (min-width: $Rwd-lg) {
+    place-content: stretch;
   }
+}
 
-  @mixin xl\:place-content-center {
-    @media (min-width: $Rwd-xl) {
-      place-content: center;
-    }
+@mixin xl\:place-content-center {
+  @media (min-width: $Rwd-xl) {
+    place-content: center;
   }
+}
 
-  @mixin xl\:place-content-start {
-    @media (min-width: $Rwd-xl) {
-      place-content: start;
-    }
+@mixin xl\:place-content-start {
+  @media (min-width: $Rwd-xl) {
+    place-content: start;
   }
+}
 
-  @mixin xl\:place-content-end {
-    @media (min-width: $Rwd-xl) {
-      place-content: end;
-    }
+@mixin xl\:place-content-end {
+  @media (min-width: $Rwd-xl) {
+    place-content: end;
   }
+}
 
-  @mixin xl\:place-content-between {
-    @media (min-width: $Rwd-xl) {
-      place-content: space-between;
-    }
+@mixin xl\:place-content-between {
+  @media (min-width: $Rwd-xl) {
+    place-content: space-between;
   }
+}
 
-  @mixin xl\:place-content-around {
-    @media (min-width: $Rwd-xl) {
-      place-content: space-around;
-    }
+@mixin xl\:place-content-around {
+  @media (min-width: $Rwd-xl) {
+    place-content: space-around;
   }
+}
 
-  @mixin xl\:place-content-evenly {
-    @media (min-width: $Rwd-xl) {
-      place-content: space-evenly;
-    }
+@mixin xl\:place-content-evenly {
+  @media (min-width: $Rwd-xl) {
+    place-content: space-evenly;
   }
+}
 
-  @mixin xl\:place-content-baseline {
-    @media (min-width: $Rwd-xl) {
-      place-content: baseline;
-    }
+@mixin xl\:place-content-baseline {
+  @media (min-width: $Rwd-xl) {
+    place-content: baseline;
   }
+}
 
-  @mixin xl\:place-content-stretch {
-    @media (min-width: $Rwd-xl) {
-      place-content: stretch;
-    }
+@mixin xl\:place-content-stretch {
+  @media (min-width: $Rwd-xl) {
+    place-content: stretch;
   }
+}
 
-  @mixin \2xl\:place-content-center {
-    @media (min-width: $Rwd-2xl) {
-      place-content: center;
-    }
+@mixin \2xl\:place-content-center {
+  @media (min-width: $Rwd-2xl) {
+    place-content: center;
   }
+}
 
-  @mixin \2xl\:place-content-start {
-    @media (min-width: $Rwd-2xl) {
-      place-content: start;
-    }
+@mixin \2xl\:place-content-start {
+  @media (min-width: $Rwd-2xl) {
+    place-content: start;
   }
+}
 
-  @mixin \2xl\:place-content-end {
-    @media (min-width: $Rwd-2xl) {
-      place-content: end;
-    }
+@mixin \2xl\:place-content-end {
+  @media (min-width: $Rwd-2xl) {
+    place-content: end;
   }
+}
 
-  @mixin \2xl\:place-content-between {
-    @media (min-width: $Rwd-2xl) {
-      place-content: space-between;
-    }
+@mixin \2xl\:place-content-between {
+  @media (min-width: $Rwd-2xl) {
+    place-content: space-between;
   }
+}
 
-  @mixin \2xl\:place-content-around {
-    @media (min-width: $Rwd-2xl) {
-      place-content: space-around;
-    }
+@mixin \2xl\:place-content-around {
+  @media (min-width: $Rwd-2xl) {
+    place-content: space-around;
   }
+}
 
-  @mixin \2xl\:place-content-evenly {
-    @media (min-width: $Rwd-2xl) {
-      place-content: space-evenly;
-    }
+@mixin \2xl\:place-content-evenly {
+  @media (min-width: $Rwd-2xl) {
+    place-content: space-evenly;
   }
+}
 
-  @mixin \2xl\:place-content-baseline {
-    @media (min-width: $Rwd-2xl) {
-      place-content: baseline;
-    }
+@mixin \2xl\:place-content-baseline {
+  @media (min-width: $Rwd-2xl) {
+    place-content: baseline;
   }
+}
 
-  @mixin \2xl\:place-content-stretch {
-    @media (min-width: $Rwd-2xl) {
-      place-content: stretch;
-    }
+@mixin \2xl\:place-content-stretch {
+  @media (min-width: $Rwd-2xl) {
+    place-content: stretch;
   }
+}
 
 /* Place Items */
 
@@ -12834,156 +12773,155 @@ $--tw-backdrop-sepia: null !default;
   place-items: stretch;
 }
 
-
-  @mixin sm\:place-items-start {
-    @media (min-width: $Rwd-sm) {
-      place-items: start;
-    }
+@mixin sm\:place-items-start {
+  @media (min-width: $Rwd-sm) {
+    place-items: start;
   }
+}
 
-  @mixin sm\:place-items-end {
-    @media (min-width: $Rwd-sm) {
-      place-items: end;
-    }
+@mixin sm\:place-items-end {
+  @media (min-width: $Rwd-sm) {
+    place-items: end;
   }
+}
 
-  @mixin sm\:place-items-center {
-    @media (min-width: $Rwd-sm) {
-      place-items: center;
-    }
+@mixin sm\:place-items-center {
+  @media (min-width: $Rwd-sm) {
+    place-items: center;
   }
+}
 
-  @mixin sm\:place-items-baseline {
-    @media (min-width: $Rwd-sm) {
-      place-items: baseline;
-    }
+@mixin sm\:place-items-baseline {
+  @media (min-width: $Rwd-sm) {
+    place-items: baseline;
   }
+}
 
-  @mixin sm\:place-items-stretch {
-    @media (min-width: $Rwd-sm) {
-      place-items: stretch;
-    }
+@mixin sm\:place-items-stretch {
+  @media (min-width: $Rwd-sm) {
+    place-items: stretch;
   }
+}
 
-  @mixin md\:place-items-start {
-    @media (min-width: $Rwd-md) {
-      place-items: start;
-    }
+@mixin md\:place-items-start {
+  @media (min-width: $Rwd-md) {
+    place-items: start;
   }
+}
 
-  @mixin md\:place-items-end {
-    @media (min-width: $Rwd-md) {
-      place-items: end;
-    }
+@mixin md\:place-items-end {
+  @media (min-width: $Rwd-md) {
+    place-items: end;
   }
+}
 
-  @mixin md\:place-items-center {
-    @media (min-width: $Rwd-md) {
-      place-items: center;
-    }
+@mixin md\:place-items-center {
+  @media (min-width: $Rwd-md) {
+    place-items: center;
   }
+}
 
-  @mixin md\:place-items-baseline {
-    @media (min-width: $Rwd-md) {
-      place-items: baseline;
-    }
+@mixin md\:place-items-baseline {
+  @media (min-width: $Rwd-md) {
+    place-items: baseline;
   }
+}
 
-  @mixin md\:place-items-stretch {
-    @media (min-width: $Rwd-md) {
-      place-items: stretch;
-    }
+@mixin md\:place-items-stretch {
+  @media (min-width: $Rwd-md) {
+    place-items: stretch;
   }
+}
 
-  @mixin lg\:place-items-start {
-    @media (min-width: $Rwd-lg) {
-      place-items: start;
-    }
+@mixin lg\:place-items-start {
+  @media (min-width: $Rwd-lg) {
+    place-items: start;
   }
+}
 
-  @mixin lg\:place-items-end {
-    @media (min-width: $Rwd-lg) {
-      place-items: end;
-    }
+@mixin lg\:place-items-end {
+  @media (min-width: $Rwd-lg) {
+    place-items: end;
   }
+}
 
-  @mixin lg\:place-items-center {
-    @media (min-width: $Rwd-lg) {
-      place-items: center;
-    }
+@mixin lg\:place-items-center {
+  @media (min-width: $Rwd-lg) {
+    place-items: center;
   }
+}
 
-  @mixin lg\:place-items-baseline {
-    @media (min-width: $Rwd-lg) {
-      place-items: baseline;
-    }
+@mixin lg\:place-items-baseline {
+  @media (min-width: $Rwd-lg) {
+    place-items: baseline;
   }
+}
 
-  @mixin lg\:place-items-stretch {
-    @media (min-width: $Rwd-lg) {
-      place-items: stretch;
-    }
+@mixin lg\:place-items-stretch {
+  @media (min-width: $Rwd-lg) {
+    place-items: stretch;
   }
+}
 
-  @mixin xl\:place-items-start {
-    @media (min-width: $Rwd-xl) {
-      place-items: start;
-    }
+@mixin xl\:place-items-start {
+  @media (min-width: $Rwd-xl) {
+    place-items: start;
   }
+}
 
-  @mixin xl\:place-items-end {
-    @media (min-width: $Rwd-xl) {
-      place-items: end;
-    }
+@mixin xl\:place-items-end {
+  @media (min-width: $Rwd-xl) {
+    place-items: end;
   }
+}
 
-  @mixin xl\:place-items-center {
-    @media (min-width: $Rwd-xl) {
-      place-items: center;
-    }
+@mixin xl\:place-items-center {
+  @media (min-width: $Rwd-xl) {
+    place-items: center;
   }
+}
 
-  @mixin xl\:place-items-baseline {
-    @media (min-width: $Rwd-xl) {
-      place-items: baseline;
-    }
+@mixin xl\:place-items-baseline {
+  @media (min-width: $Rwd-xl) {
+    place-items: baseline;
   }
+}
 
-  @mixin xl\:place-items-stretch {
-    @media (min-width: $Rwd-xl) {
-      place-items: stretch;
-    }
+@mixin xl\:place-items-stretch {
+  @media (min-width: $Rwd-xl) {
+    place-items: stretch;
   }
+}
 
-  @mixin \2xl\:place-items-start {
-    @media (min-width: $Rwd-2xl) {
-      place-items: start;
-    }
+@mixin \2xl\:place-items-start {
+  @media (min-width: $Rwd-2xl) {
+    place-items: start;
   }
+}
 
-  @mixin \2xl\:place-items-end {
-    @media (min-width: $Rwd-2xl) {
-      place-items: end;
-    }
+@mixin \2xl\:place-items-end {
+  @media (min-width: $Rwd-2xl) {
+    place-items: end;
   }
+}
 
-  @mixin \2xl\:place-items-center {
-    @media (min-width: $Rwd-2xl) {
-      place-items: center;
-    }
+@mixin \2xl\:place-items-center {
+  @media (min-width: $Rwd-2xl) {
+    place-items: center;
   }
+}
 
-  @mixin \2xl\:place-items-baseline {
-    @media (min-width: $Rwd-2xl) {
-      place-items: baseline;
-    }
+@mixin \2xl\:place-items-baseline {
+  @media (min-width: $Rwd-2xl) {
+    place-items: baseline;
   }
+}
 
-  @mixin \2xl\:place-items-stretch {
-    @media (min-width: $Rwd-2xl) {
-      place-items: stretch;
-    }
+@mixin \2xl\:place-items-stretch {
+  @media (min-width: $Rwd-2xl) {
+    place-items: stretch;
   }
+}
 
 /* Place Self */
 
@@ -14785,7 +14723,6 @@ $--tw-backdrop-sepia: null !default;
   padding-left: 24rem;
 }
 
-
 @mixin sm\:p-($v) {
   @media (min-width: $Rwd-sm) {
     padding: $v;
@@ -15065,7 +15002,6 @@ $--tw-backdrop-sepia: null !default;
     padding-left: $v;
   }
 }
-
 
 @mixin p-($v) {
   padding: $v;
@@ -18399,7 +18335,6 @@ $--tw-backdrop-sepia: null !default;
   margin-left: -24rem;
 }
 
-
 @mixin sm\:m-($v) {
   @media (min-width: $Rwd-sm) {
     margin: $v;
@@ -18679,7 +18614,6 @@ $--tw-backdrop-sepia: null !default;
     margin-left: $v;
   }
 }
-
 
 @mixin m-($v) {
   margin: $v;
@@ -19422,7 +19356,6 @@ $--tw-backdrop-sepia: null !default;
   @include _margin-top_margin-bottom(-1px);
 }
 
-
 @mixin sm\:space-x-($v) {
   @media (min-width: $Rwd-sm) {
     @include _margin-left_margin-right($v);
@@ -19527,7 +19460,6 @@ $--tw-backdrop-sepia: null !default;
     @include _margin-top_margin-bottom(0px, true);
   }
 }
-
 
 @mixin space-x-($v) {
   @include _margin-left_margin-right($v);
@@ -19851,7 +19783,6 @@ $--tw-backdrop-sepia: null !default;
   width: fit-content;
 }
 
-
 @mixin sm\:w-($v) {
   @media (min-width: $Rwd-sm) {
     width: $v;
@@ -19881,7 +19812,6 @@ $--tw-backdrop-sepia: null !default;
     width: $v;
   }
 }
-
 
 @mixin w-($v) {
   width: $v;
@@ -20078,7 +20008,6 @@ $--tw-backdrop-sepia: null !default;
   min-width: fit-content;
 }
 
-
 @mixin sm\:min-w-($v) {
   @media (min-width: $Rwd-sm) {
     min-width: $v;
@@ -20108,7 +20037,6 @@ $--tw-backdrop-sepia: null !default;
     min-width: $v;
   }
 }
-
 
 @mixin min-w-($v) {
   min-width: $v;
@@ -20388,7 +20316,6 @@ $--tw-backdrop-sepia: null !default;
   max-width: 1536px;
 }
 
-
 @mixin sm\:max-w-($v) {
   @media (min-width: $Rwd-sm) {
     max-width: $v;
@@ -20418,7 +20345,6 @@ $--tw-backdrop-sepia: null !default;
     max-width: $v;
   }
 }
-
 
 @mixin max-w-($v) {
   max-width: $v;
@@ -20695,7 +20621,6 @@ $--tw-backdrop-sepia: null !default;
   height: fit-content;
 }
 
-
 @mixin sm\:h-($v) {
   @media (min-width: $Rwd-sm) {
     height: $v;
@@ -20725,7 +20650,6 @@ $--tw-backdrop-sepia: null !default;
     height: $v;
   }
 }
-
 
 @mixin h-($v) {
   height: $v;
@@ -20938,7 +20862,6 @@ $--tw-backdrop-sepia: null !default;
   min-height: fit-content;
 }
 
-
 @mixin sm\:min-h-($v) {
   @media (min-width: $Rwd-sm) {
     min-height: $v;
@@ -20968,7 +20891,6 @@ $--tw-backdrop-sepia: null !default;
     min-height: $v;
   }
 }
-
 
 @mixin min-h-($v) {
   min-height: $v;
@@ -21185,7 +21107,6 @@ $--tw-backdrop-sepia: null !default;
   max-height: fit-content;
 }
 
-
 @mixin sm\:max-h-($v) {
   @media (min-width: $Rwd-sm) {
     max-height: $v;
@@ -21215,7 +21136,6 @@ $--tw-backdrop-sepia: null !default;
     max-height: $v;
   }
 }
-
 
 @mixin max-h-($v) {
   max-height: $v;
@@ -21586,7 +21506,6 @@ $--tw-backdrop-sepia: null !default;
   height: fit-content;
 }
 
-
 @mixin sm\:size-($v) {
   @media (min-width: $Rwd-sm) {
     width: $v;
@@ -21622,7 +21541,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin size-($v) {
   width: $v;
   height: $v;
@@ -21643,7 +21561,6 @@ $--tw-backdrop-sepia: null !default;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
-
 
 @mixin sm\:font-family-($v) {
   @media (min-width: $Rwd-sm) {
@@ -21735,7 +21652,6 @@ $--tw-backdrop-sepia: null !default;
   @include _font-size(9xl, $v);
 }
 
-
 @mixin sm\:text-($v) {
   @media (min-width: $Rwd-sm) {
     font-size: $v;
@@ -21766,7 +21682,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin text-($v) {
   font-size: $v;
 }
@@ -21783,75 +21698,75 @@ $--tw-backdrop-sepia: null !default;
   -moz-osx-font-smoothing: auto;
 }
 
-  @mixin sm\:antialiased {
-    @media (min-width: $Rwd-sm) {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+@mixin sm\:antialiased {
+  @media (min-width: $Rwd-sm) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+}
 
-  @mixin sm\:subpixel-antialiased {
-    @media (min-width: $Rwd-sm) {
-      -webkit-font-smoothing: auto;
-      -moz-osx-font-smoothing: auto;
-    }
+@mixin sm\:subpixel-antialiased {
+  @media (min-width: $Rwd-sm) {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
+}
 
-  @mixin md\:antialiased {
-    @media (min-width: $Rwd-md) {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+@mixin md\:antialiased {
+  @media (min-width: $Rwd-md) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+}
 
-  @mixin md\:subpixel-antialiased {
-    @media (min-width: $Rwd-md) {
-      -webkit-font-smoothing: auto;
-      -moz-osx-font-smoothing: auto;
-    }
+@mixin md\:subpixel-antialiased {
+  @media (min-width: $Rwd-md) {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
+}
 
-  @mixin lg\:antialiased {
-    @media (min-width: $Rwd-lg) {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+@mixin lg\:antialiased {
+  @media (min-width: $Rwd-lg) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+}
 
-  @mixin lg\:subpixel-antialiased {
-    @media (min-width: $Rwd-lg) {
-      -webkit-font-smoothing: auto;
-      -moz-osx-font-smoothing: auto;
-    }
+@mixin lg\:subpixel-antialiased {
+  @media (min-width: $Rwd-lg) {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
+}
 
-  @mixin xl\:antialiased {
-    @media (min-width: $Rwd-xl) {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+@mixin xl\:antialiased {
+  @media (min-width: $Rwd-xl) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+}
 
-  @mixin xl\:subpixel-antialiased {
-    @media (min-width: $Rwd-xl) {
-      -webkit-font-smoothing: auto;
-      -moz-osx-font-smoothing: auto;
-    }
+@mixin xl\:subpixel-antialiased {
+  @media (min-width: $Rwd-xl) {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
+}
 
-  @mixin \2xl\:antialiased {
-    @media (min-width: $Rwd-2xl) {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+@mixin \2xl\:antialiased {
+  @media (min-width: $Rwd-2xl) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+}
 
-  @mixin \2xl\:subpixel-antialiased {
-    @media (min-width: $Rwd-2xl) {
-      -webkit-font-smoothing: auto;
-      -moz-osx-font-smoothing: auto;
-    }
+@mixin \2xl\:subpixel-antialiased {
+  @media (min-width: $Rwd-2xl) {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
+}
 
 /* Font Style */
 
@@ -21863,65 +21778,65 @@ $--tw-backdrop-sepia: null !default;
   font-style: normal;
 }
 
-  @mixin sm\:italic {
-    @media (min-width: $Rwd-sm) {
-      font-style: italic;
-    }
+@mixin sm\:italic {
+  @media (min-width: $Rwd-sm) {
+    font-style: italic;
   }
+}
 
-  @mixin sm\:not-italic {
-    @media (min-width: $Rwd-sm) {
-      font-style: normal;
-    }
+@mixin sm\:not-italic {
+  @media (min-width: $Rwd-sm) {
+    font-style: normal;
   }
+}
 
-  @mixin md\:italic {
-    @media (min-width: $Rwd-md) {
-      font-style: italic;
-    }
+@mixin md\:italic {
+  @media (min-width: $Rwd-md) {
+    font-style: italic;
   }
+}
 
-  @mixin md\:not-italic {
-    @media (min-width: $Rwd-md) {
-      font-style: normal;
-    }
+@mixin md\:not-italic {
+  @media (min-width: $Rwd-md) {
+    font-style: normal;
   }
+}
 
-  @mixin lg\:italic {
-    @media (min-width: $Rwd-lg) {
-      font-style: italic;
-    }
+@mixin lg\:italic {
+  @media (min-width: $Rwd-lg) {
+    font-style: italic;
   }
+}
 
-  @mixin lg\:not-italic {
-    @media (min-width: $Rwd-lg) {
-      font-style: normal;
-    }
+@mixin lg\:not-italic {
+  @media (min-width: $Rwd-lg) {
+    font-style: normal;
   }
+}
 
-  @mixin xl\:italic {
-    @media (min-width: $Rwd-xl) {
-      font-style: italic;
-    }
+@mixin xl\:italic {
+  @media (min-width: $Rwd-xl) {
+    font-style: italic;
   }
+}
 
-  @mixin xl\:not-italic {
-    @media (min-width: $Rwd-xl) {
-      font-style: normal;
-    }
+@mixin xl\:not-italic {
+  @media (min-width: $Rwd-xl) {
+    font-style: normal;
   }
+}
 
-  @mixin \2xl\:italic {
-    @media (min-width: $Rwd-2xl) {
-      font-style: italic;
-    }
+@mixin \2xl\:italic {
+  @media (min-width: $Rwd-2xl) {
+    font-style: italic;
   }
+}
 
-  @mixin \2xl\:not-italic {
-    @media (min-width: $Rwd-2xl) {
-      font-style: normal;
-    }
+@mixin \2xl\:not-italic {
+  @media (min-width: $Rwd-2xl) {
+    font-style: normal;
   }
+}
 
 /* Font Weight */
 
@@ -23936,7 +23851,6 @@ $--tw-backdrop-sepia: null !default;
   color: c(ros-950, $v);
 }
 
-
 @mixin sm\:text-color-($v) {
   @media (min-width: $Rwd-sm) {
     color: $v;
@@ -25099,7 +25013,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin decoration-rose-950($v: 1) {
   text-decoration-color: c(ros-950, $v);
 }
-
 
 @mixin sm\:decoration-color-($v) {
   @media (min-width: $Rwd-sm) {
@@ -27947,7 +27860,6 @@ $--tw-backdrop-sepia: null !default;
   background-color: c(ros-950, $v);
 }
 
-
 @mixin sm\:bg-color-($v) {
   @media (min-width: $Rwd-sm) {
     background-color: $v;
@@ -28448,7 +28360,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin bg-gradient-to-tl {
   @include _background-image(gradient, null, to top right);
 }
-
 
 @mixin sm\:bg-image-($v) {
   @media (min-width: $Rwd-sm) {
@@ -31703,7 +31614,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin to-100\% {
   @include _background-image(to, null, 100%);
 }
-
 
 @mixin sm\:from-color-($v) {
   @media (min-width: $Rwd-sm) {
@@ -43056,7 +42966,6 @@ $--tw-backdrop-sepia: null !default;
   border-left-color: c(ros-950, $v);
 }
 
-
 @mixin sm\:border-color-($v) {
   @media (min-width: $Rwd-sm) {
     border-color: $v;
@@ -43639,7 +43548,6 @@ $--tw-backdrop-sepia: null !default;
   @include _border-top-width_border-bottom-width(0px, true);
 }
 
-
 @mixin sm\:divide-x-($v) {
   @media (min-width: $Rwd-sm) {
     @include _border-left-width_border-right-width($v);
@@ -43700,7 +43608,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin divide-x-($v) {
   @include _border-left-width_border-right-width($v);
 }
@@ -43712,22 +43619,22 @@ $--tw-backdrop-sepia: null !default;
 /* Divide Color */
 
 @mixin divide-inherit {
-  >* ~ * {
+  > * ~ * {
     border-color: inherit;
   }
 }
 
 @mixin divide-current {
-  >* ~ * {
+  > * ~ * {
     border-color: currentColor;
   }
 }
 
 @mixin divide-transparent {
-  >* ~ * {
+  > * ~ * {
     border-color: transparent;
   }
-}  
+}
 
 @mixin divide-black($v: 1) {
   @include _border-color(bla, $v);
@@ -44705,7 +44612,6 @@ $--tw-backdrop-sepia: null !default;
   @include _border-color(ros-950, $v);
 }
 
-
 @mixin sm\:divide-color-($v) {
   @media (min-width: $Rwd-sm) {
     > * ~ * {
@@ -44775,7 +44681,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin divide-none {
   @include _border-style(none);
 }
-
 
 @mixin sm\:divide-solid {
   @media (min-width: $Rwd-sm) {
@@ -45970,8 +45875,7 @@ $--tw-backdrop-sepia: null !default;
 
 @mixin outline-rose-950($v: 1) {
   outline-color: c(ros-950, $v);
-}  
-
+}
 
 @mixin sm\:outline-color-($v) {
   @media (min-width: $Rwd-sm) {
@@ -47294,7 +47198,6 @@ $--tw-backdrop-sepia: null !default;
   @include _box-shadow(ring-color, c(ros-950, $v));
 }
 
-
 @mixin sm\:ring-color-($v) {
   @media (min-width: $Rwd-sm) {
     @include _box-shadow(ring-color, $v);
@@ -47353,7 +47256,6 @@ $--tw-backdrop-sepia: null !default;
   @include _box-shadow(ring-offset-width, 8px);
 }
 
-
 @mixin sm\:ring-offset-($v) {
   @media (min-width: $Rwd-sm) {
     @include _box-shadow(ring-offset-width, $v);
@@ -47383,7 +47285,6 @@ $--tw-backdrop-sepia: null !default;
     @include _box-shadow(ring-offset-width, $v);
   }
 }
-
 
 @mixin ring-offset-($v) {
   @include _box-shadow(ring-offset-width, $v);
@@ -48379,7 +48280,6 @@ $--tw-backdrop-sepia: null !default;
   @include _box-shadow(ring-offset-color, c(ros-950, $v));
 }
 
-
 @mixin sm\:ring-offset-color-($v) {
   @media (min-width: $Rwd-sm) {
     @include _box-shadow(ring-offset-color, $v);
@@ -48450,7 +48350,6 @@ $--tw-backdrop-sepia: null !default;
   @include _box-shadow(shadow, none);
 }
 
-
 @mixin sm\:shadow-($v) {
   @media (min-width: $Rwd-sm) {
     @include _box-shadow(shadow, $v);
@@ -48480,7 +48379,6 @@ $--tw-backdrop-sepia: null !default;
     @include _box-shadow(shadow, $v);
   }
 }
-
 
 @mixin shadow-($v) {
   @include _box-shadow(shadow, $v);
@@ -49475,7 +49373,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin shadow-rose-950($v: 1) {
   @include _box-shadow(shadow-color, c(ros-950, $v));
 }
-
 
 @mixin sm\:shadow-color-($v) {
   @media (min-width: $Rwd-sm) {
@@ -50789,7 +50686,6 @@ $--tw-backdrop-sepia: null !default;
   @include _filter(blur, 64px);
 }
 
-
 @mixin sm\:blur-($v) {
   @media (min-width: $Rwd-sm) {
     @include _filter(blur, $v);
@@ -50819,7 +50715,6 @@ $--tw-backdrop-sepia: null !default;
     @include _filter(blur, $v);
   }
 }
-
 
 @mixin blur-($v) {
   @include _filter(blur, $v);
@@ -50871,7 +50766,6 @@ $--tw-backdrop-sepia: null !default;
   @include _filter(brightness, 2);
 }
 
-
 @mixin sm\:brightness-($v) {
   @media (min-width: $Rwd-sm) {
     @include _filter(brightness, $v);
@@ -50901,7 +50795,6 @@ $--tw-backdrop-sepia: null !default;
     @include _filter(brightness, $v);
   }
 }
-
 
 @mixin brightness-($v) {
   @include _filter(brightness, $v);
@@ -50937,7 +50830,6 @@ $--tw-backdrop-sepia: null !default;
   @include _filter(contrast, 2);
 }
 
-
 @mixin sm\:contrast-($v) {
   @media (min-width: $Rwd-sm) {
     @include _filter(contrast, $v);
@@ -50968,7 +50860,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin contrast-($v) {
   @include _filter(contrast, $v);
 }
@@ -50980,19 +50871,35 @@ $--tw-backdrop-sepia: null !default;
 }
 
 @mixin drop-shadow {
-  @include _filter(drop-shadow, drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)));
+  @include _filter(
+    drop-shadow,
+    drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+      drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))
+  );
 }
 
 @mixin drop-shadow-md {
-  @include _filter(drop-shadow, drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)));
+  @include _filter(
+    drop-shadow,
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+      drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))
+  );
 }
 
 @mixin drop-shadow-lg {
-  @include _filter(drop-shadow, drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)));
+  @include _filter(
+    drop-shadow,
+    drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+      drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))
+  );
 }
 
 @mixin drop-shadow-xl {
-  @include _filter(drop-shadow, drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08)));
+  @include _filter(
+    drop-shadow,
+    drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+      drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))
+  );
 }
 
 @mixin drop-shadow-2xl {
@@ -51002,7 +50909,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin drop-shadow-none {
   @include _filter(drop-shadow, drop-shadow(0 0 #fff));
 }
-
 
 @mixin sm\:drop-shadow-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51034,7 +50940,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin drop-shadow-($v) {
   @include _filter(drop-shadow, $v);
 }
@@ -51048,7 +50953,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin grayscale {
   @include _filter(grayscale, 100%);
 }
-
 
 @mixin sm\:grayscale-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51079,7 +50983,6 @@ $--tw-backdrop-sepia: null !default;
     @include _filter(grayscale, $v);
   }
 }
-
 
 @mixin grayscale-($v) {
   @include _filter(grayscale, $v);
@@ -51136,7 +51039,6 @@ $--tw-backdrop-sepia: null !default;
   @include _filter(hue-rotate, -180deg);
 }
 
-
 @mixin sm\:hue-rotate-($v) {
   @media (min-width: $Rwd-sm) {
     @include _filter(hue-rotate, $v);
@@ -51167,7 +51069,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin hue-rotate-($v) {
   @include _filter(hue-rotate, $v);
 }
@@ -51181,7 +51082,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin invert {
   @include _filter(invert, 100%);
 }
-
 
 @mixin sm\:invert-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51213,7 +51113,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin invert-($v) {
   @include _filter(invert, $v);
 }
@@ -51239,7 +51138,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin saturate-200 {
   @include _filter(saturate, 2);
 }
-
 
 @mixin sm\:saturate-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51271,7 +51169,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin saturate-($v) {
   @include _filter(saturate, $v);
 }
@@ -51285,7 +51182,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin sepia {
   @include _filter(sepia, 100%);
 }
-
 
 @mixin sm\:sepia-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51316,7 +51212,6 @@ $--tw-backdrop-sepia: null !default;
     @include _filter(sepia, $v);
   }
 }
-
 
 @mixin sepia-($v) {
   @include _filter(sepia, $v);
@@ -51356,7 +51251,6 @@ $--tw-backdrop-sepia: null !default;
   @include _backdrop-filter(blur, 64px);
 }
 
-
 @mixin sm\:backdrop-blur-($v) {
   @media (min-width: $Rwd-sm) {
     @include _backdrop-filter(blur, $v);
@@ -51386,7 +51280,6 @@ $--tw-backdrop-sepia: null !default;
     @include _backdrop-filter(blur, $v);
   }
 }
-
 
 @mixin backdrop-blur-($v) {
   @include _backdrop-filter(blur, $v);
@@ -51437,7 +51330,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin backdrop-brightness-200 {
   @include _backdrop-filter(brightness, 2);
 }
-
 
 @mixin sm\:backdrop-brightness-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51503,7 +51395,6 @@ $--tw-backdrop-sepia: null !default;
   @include _backdrop-filter(contrast, 2);
 }
 
-
 @mixin sm\:backdrop-contrast-($v) {
   @media (min-width: $Rwd-sm) {
     @include _backdrop-filter(contrast, $v);
@@ -51534,7 +51425,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin backdrop-contrast-($v) {
   @include _backdrop-filter(contrast, $v);
 }
@@ -51548,7 +51438,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin backdrop-grayscale {
   @include _backdrop-filter(grayscale, 100%);
 }
-
 
 @mixin sm\:backdrop-grayscale-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51579,7 +51468,6 @@ $--tw-backdrop-sepia: null !default;
     @include _backdrop-filter(grayscale, $v);
   }
 }
-
 
 @mixin backdrop-grayscale-($v) {
   @include _backdrop-filter(grayscale, $v);
@@ -51636,7 +51524,6 @@ $--tw-backdrop-sepia: null !default;
   @include _backdrop-filter(hue-rotate, -180deg);
 }
 
-
 @mixin sm\:backdrop-hue-rotate-($v) {
   @media (min-width: $Rwd-sm) {
     @include _backdrop-filter(hue-rotate, $v);
@@ -51667,7 +51554,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin backdrop-hue-rotate-($v) {
   @include _backdrop-filter(hue-rotate, $v);
 }
@@ -51681,7 +51567,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin backdrop-invert {
   @include _backdrop-filter(invert, 100%);
 }
-
 
 @mixin sm\:backdrop-invert-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51712,7 +51597,6 @@ $--tw-backdrop-sepia: null !default;
     @include _backdrop-filter(invert, $v);
   }
 }
-
 
 @mixin backdrop-invert-($v) {
   @include _backdrop-filter(invert, $v);
@@ -51804,7 +51688,6 @@ $--tw-backdrop-sepia: null !default;
   @include _backdrop-filter(opacity, 1);
 }
 
-
 @mixin sm\:backdrop-opacity-($v) {
   @media (min-width: $Rwd-sm) {
     @include _backdrop-filter(opacity, $v);
@@ -51835,7 +51718,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin backdrop-opacity-($v) {
   @include _backdrop-filter(opacity, $v);
 }
@@ -51861,7 +51743,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin backdrop-saturate-200 {
   @include _backdrop-filter(saturate, 2);
 }
-
 
 @mixin sm\:backdrop-saturate-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51893,7 +51774,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin backdrop-saturate-($v) {
   @include _backdrop-filter(saturate, $v);
 }
@@ -51907,7 +51787,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin backdrop-sepia {
   @include _backdrop-filter(sepia, 100%);
 }
-
 
 @mixin sm\:backdrop-sepia-($v) {
   @media (min-width: $Rwd-sm) {
@@ -51938,7 +51817,6 @@ $--tw-backdrop-sepia: null !default;
     @include _backdrop-filter(sepia, $v);
   }
 }
-
 
 @mixin backdrop-sepia-($v) {
   @include _backdrop-filter(sepia, $v);
@@ -52615,7 +52493,6 @@ $--tw-backdrop-sepia: null !default;
   caption-side: bottom;
 }
 
-
 @mixin sm\:caption-top {
   @media (min-width: $Rwd-sm) {
     caption-side: top;
@@ -52690,8 +52567,8 @@ $--tw-backdrop-sepia: null !default;
 
 @mixin transition {
   transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-    filter, backdrop-filter;
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -53299,7 +53176,6 @@ $--tw-backdrop-sepia: null !default;
   @include _transform(scale, -1.5, y);
 }
 
-
 @mixin sm\:scale-($v) {
   @media (min-width: $Rwd-sm) {
     @include _transform(scale, $v);
@@ -53390,7 +53266,6 @@ $--tw-backdrop-sepia: null !default;
   }
 }
 
-
 @mixin scale-($v) {
   @include _transform(scale, $v);
 }
@@ -53478,7 +53353,6 @@ $--tw-backdrop-sepia: null !default;
   @include _transform(rotate, -180deg);
 }
 
-
 @mixin sm\:rotate-($v) {
   @media (min-width: $Rwd-sm) {
     @include _transform(rotate, $v);
@@ -53508,7 +53382,6 @@ $--tw-backdrop-sepia: null !default;
     @include _transform(rotate, $v);
   }
 }
-
 
 @mixin rotate-($v) {
   @include _transform(rotate, $v);
@@ -54189,7 +54062,6 @@ $--tw-backdrop-sepia: null !default;
   @include _transform(translate, -100%, y);
 }
 
-
 @mixin sm\:translate-x-($v) {
   @media (min-width: $Rwd-sm) {
     @include _transform(translate, $v, x);
@@ -54249,7 +54121,6 @@ $--tw-backdrop-sepia: null !default;
     @include _transform(translate, $v, y);
   }
 }
-
 
 @mixin translate-x-($v) {
   @include _transform(translate, $v, x);
@@ -54358,7 +54229,6 @@ $--tw-backdrop-sepia: null !default;
   @include _transform(skew, -12deg, y);
 }
 
-
 @mixin sm\:skew-x-($v) {
   @media (min-width: $Rwd-sm) {
     @include _transform(skew, $v, x);
@@ -54418,7 +54288,6 @@ $--tw-backdrop-sepia: null !default;
     @include _transform(skew, $v, y);
   }
 }
-
 
 @mixin skew-x-($v) {
   @include _transform(skew, $v, x);
@@ -55763,7 +55632,6 @@ $--tw-backdrop-sepia: null !default;
   accent-color: auto;
 }
 
-
 @mixin sm\:accent-color-($v) {
   @media (min-width: $Rwd-sm) {
     accent-color: $v;
@@ -57036,7 +56904,6 @@ $--tw-backdrop-sepia: null !default;
 @mixin caret-rose-950($v: 1) {
   caret-color: c(ros-950, $v);
 }
-
 
 @mixin sm\:caret-color-($v) {
   @media (min-width: $Rwd-sm) {
@@ -64802,7 +64669,6 @@ $--tw-backdrop-sepia: null !default;
   fill: c(ros-950, $v);
 }
 
-
 @mixin sm\:fill-($v) {
   @media (min-width: $Rwd-sm) {
     fill: $v;
@@ -65830,7 +65696,6 @@ $--tw-backdrop-sepia: null !default;
   stroke: c(ros-950, $v);
 }
 
-
 @mixin sm\:stroke-($v) {
   @media (min-width: $Rwd-sm) {
     stroke: $v;
@@ -66139,4 +66004,4 @@ $--tw-backdrop-sepia: null !default;
     clip: auto;
     white-space: normal;
   }
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */
