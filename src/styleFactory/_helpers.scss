@@ -1,0 +1,464 @@
+// RENDER OUT
+/*x
+// Using Built-In Modules
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+@use "sass:list";
+@use "sass:color";
+
+// c stands for color (file size concern)
+@function c($token, $value) {
+  @if not math.is-unitless($value) {
+    @error "TRY 0.xx INSTEAD OF xx%. Concerning performance: Since all colors depend on this function, removing the xx% code to simulate opacity will speed up processing.";
+  }
+
+  // $alpha only accepts 0 ~ 1, https://sass-lang.com/documentation/modules/color/#change
+  @return color.change(map.get($COLORS, $token), $alpha: $value);
+}
+
+// let @mixin code to be clean
+@function __background-image() {
+  @if $--tw-gradient-via==null {
+    @return linear-gradient(
+      $--gradient-direction,
+      $--tw-gradient-from $--tw-gradient-from-position,
+      $--tw-gradient-to $--tw-gradient-to-position
+    );
+  } @else {
+    @return linear-gradient(
+      $--gradient-direction,
+      $--tw-gradient-from $--tw-gradient-from-position,
+      $--tw-gradient-via $--tw-gradient-via-position,
+      $--tw-gradient-to $--tw-gradient-to-position
+    );
+  }
+}
+@function __font-size($value) {
+  $temp: null;
+
+  @if meta.type-of($value) ==number {
+    // no unit: 3、4... 10
+    @if math.is-unitless($value) {
+      @if not($value>=3 and $value <=10) {
+        @error "only 3 ~ 10, see in tailwind play https://play.tailwindcss.com/";
+      }
+
+      $temp: math.floor($value) * 0.25rem;
+    }
+
+    // has unit: 1.5px、1rem、3%...
+    @else {
+      $temp: $value;
+    }
+  } @else if meta.type-of($value) ==string {
+    @if $value==none {
+      $temp: 1;
+    } @else if $value==tight {
+      $temp: 1.25;
+    } @else if $value==snug {
+      $temp: 1.375;
+    } @else if $value==normal {
+      $temp: 1.5;
+    } @else if $value==relax {
+      $temp: 1.625;
+    } @else if $value==loose {
+      $temp: 2;
+    } @else {
+      @error "Parameter does not exist, see in tailwind play https://play.tailwindcss.com/";
+    }
+  }
+
+  @return $temp;
+}
+@function __box-shadow() {
+  $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width
+    $--tw-ring-offset-color;
+  $--tw-ring-shadow: $--tw-ring-inset 0 0 0 $--ring-width $--tw-ring-color;
+  $--tw-shadow: null;
+
+  @if list.index(shadow md lg xl, $-shadow-token) {
+    $--tw-shadow:
+      list.nth($--shadow-length, 1) $--tw-shadow-color,
+      list.nth($--shadow-length, 2) $--tw-shadow-color;
+  } @else if $-shadow-token ==inner {
+    $--tw-shadow: inset $--shadow-length $--tw-shadow-color;
+  } @else {
+    $--tw-shadow: $--shadow-length $--tw-shadow-color;
+  }
+
+  @return $--tw-ring-offset-shadow, $--tw-ring-shadow, $--tw-shadow;
+}
+
+// Helper Function
+@mixin reset {
+  // Gradient Color Stops
+  $--gradient-direction: "NO-DIRECTION" !global;
+  $--tw-gradient-from: "NO-FROM-COLOR" !global;
+  $--tw-gradient-via: null !global; // detects the use of 2 or 3 gradient stops
+  $--tw-gradient-to: transparent !global;
+  $--tw-gradient-from-position: null !global;
+  $--tw-gradient-via-position: null !global;
+  $--tw-gradient-to-position: null !global;
+
+  // Space Between
+  $--space-value: 0 !global;
+  $--tw-space-x-reverse: 0 !global;
+  $--tw-space-y-reverse: 0 !global;
+
+  // Divide Width
+  $--divide-value: 0 !global;
+  $--tw-divide-x-reverse: 0 !global;
+  $--tw-divide-y-reverse: 0 !global;
+
+  // Box Shadow
+  $--tw-ring-offset-width: 0 !global;
+  $--tw-ring-offset-color: #fff !global;
+  $--tw-ring-inset: null !global;
+  $--ring-width: 0 !global;
+  $--tw-ring-color: rgb(59 130 246 / 0.5) !global;
+  $-shadow-token: null !global;
+  $--shadow-length: 0 0 0 0 !global;
+  $--tw-shadow-color: #fff !global;
+
+  // Scroll Snap Type
+  $--tw-scroll-snap-strictness: proximity !global;
+
+  // Transforms
+  $--tw-translate-x: 0 !global;
+  $--tw-translate-y: 0 !global;
+  $--tw-rotate: 0 !global;
+  $--tw-skew-x: 0 !global;
+  $--tw-skew-y: 0 !global;
+  $--tw-scale-x: 1 !global;
+  $--tw-scale-y: 1 !global;
+
+  // Filters
+  $--tw-blur: null !global;
+  $--tw-brightness: null !global;
+  $--tw-contrast: null !global;
+  $--tw-grayscale: null !global;
+  $--tw-hue-rotate: null !global;
+  $--tw-invert: null !global;
+  $--tw-saturate: null !global;
+  $--tw-sepia: null !global;
+  $--tw-drop-shadow: null !global;
+  $--tw-backdrop-blur: null !global;
+  $--tw-backdrop-brightness: null !global;
+  $--tw-backdrop-contrast: null !global;
+  $--tw-backdrop-grayscale: null !global;
+  $--tw-backdrop-hue-rotate: null !global;
+  $--tw-backdrop-invert: null !global;
+  $--tw-backdrop-opacity: null !global;
+  $--tw-backdrop-saturate: null !global;
+  $--tw-backdrop-sepia: null !global;
+}
+
+@mixin _background-image($token, $color, $value) {
+  @if $token ==from {
+    @if $color ==color {
+      $--tw-gradient-from: $value !global; // custom color
+    } @else if $color ==null {
+      // position
+      $--tw-gradient-from-position: $value !global;
+    } @else {
+      $--tw-gradient-from: c($color, $value) !global;
+    }
+  } @else if $token ==via {
+    @if $color ==color {
+      $--tw-gradient-via: $value !global; // custom color
+    } @else if $color ==null {
+      // position
+      $--tw-gradient-via-position: $value !global;
+    } @else {
+      $--tw-gradient-via: c($color, $value) !global;
+    }
+  } @else if $token ==to {
+    @if $color ==color {
+      $--tw-gradient-to: $value !global; // custom color
+    } @else if $color ==null {
+      // position
+      $--tw-gradient-to-position: $value !global;
+    } @else {
+      $--tw-gradient-to: c($color, $value) !global;
+    }
+  } @else if $token ==gradient {
+    $--gradient-direction: $value !global;
+  }
+
+  background-image: __background-image();
+}
+
+@mixin _font-size($token, $value) {
+  @if $token==xs {
+    font-size: 0.75rem;
+    line-height: if($value, __font-size($value), 1rem); // $value? true: false;
+  } @else if $token==sm {
+    font-size: 0.875rem;
+    line-height: if($value, __font-size($value), 1.25rem);
+  } @else if $token==base {
+    font-size: 1rem;
+    line-height: if($value, __font-size($value), 1.5rem);
+  } @else if $token==lg {
+    font-size: 1.125rem;
+    line-height: if($value, __font-size($value), 1.75rem);
+  } @else if $token==xl {
+    font-size: 1.25rem;
+    line-height: if($value, __font-size($value), 1.75rem);
+  } @else if $token==2xl {
+    font-size: 1.5rem;
+    line-height: if($value, __font-size($value), 2rem);
+  } @else if $token==3xl {
+    font-size: 1.875rem;
+    line-height: if($value, __font-size($value), 2.25rem);
+  } @else if $token==4xl {
+    font-size: 2.25rem;
+    line-height: if($value, __font-size($value), 2.5rem);
+  } @else if $token==5xl {
+    font-size: 3rem;
+    line-height: if($value, __font-size($value), 1);
+  } @else if $token==6xl {
+    font-size: 3.75rem;
+    line-height: if($value, __font-size($value), 1);
+  } @else if $token==7xl {
+    font-size: 4.5rem;
+    line-height: if($value, __font-size($value), 1);
+  } @else if $token==8xl {
+    font-size: 6rem;
+    line-height: if($value, __font-size($value), 1);
+  } @else if $token==9xl {
+    font-size: 8rem;
+    line-height: if($value, __font-size($value), 1);
+  }
+}
+
+@mixin _box-shadow($token, $value) {
+  @if $token ==shadow {
+    @if $value ==sm {
+      $-shadow-token: sm !global;
+      $--shadow-length: 0 1px 2px 0 !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.05) !global;
+    } @else if $value ==null {
+      $-shadow-token: shadow !global;
+      $--shadow-length:
+        0 1px 3px 0,
+        0 1px 2px -1px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+    } @else if $value ==md {
+      $-shadow-token: md !global;
+      $--shadow-length:
+        0 4px 6px -1px,
+        0 2px 4px -2px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+    } @else if $value ==lg {
+      $-shadow-token: lg !global;
+      $--shadow-length:
+        0 10px 15px -3px,
+        0 4px 6px -4px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+    } @else if $value ==xl {
+      $-shadow-token: xl !global;
+      $--shadow-length:
+        0 20px 25px -5px,
+        0 8px 10px -6px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+    } @else if $value ==2xl {
+      $-shadow-token: 2xl !global;
+      $--shadow-length: 0 25px 50px -12px !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.25) !global;
+    } @else if $value ==inner {
+      $-shadow-token: inner !global;
+      $--shadow-length: 0 2px 4px 0 !global;
+      $--tw-shadow-color: rgb(0 0 0 / 0.05) !global;
+    } @else if $value ==none {
+      $-shadow-token: none !global;
+      $--shadow-length: 0 0 0 0 !global;
+      $--tw-shadow-color: #fff !global;
+    } @else {
+      $-shadow-token: custom !global;
+      $--tw-shadow-color: list.nth($v, -1) !global; // red
+
+      @if list.nth($v, 1) ==inset {
+        $--shadow-length: list.set-nth(
+          $v,
+          -1,
+          $space
+        ) !global; // inset 0px 0px 5px 10px
+      } @else {
+        $--shadow-length: list.set-nth(
+          $v,
+          -1,
+          $space
+        ) !global; // inset 0px 0px 5px 10px
+      }
+
+      @include _box-shadow(shadow, $v);
+    }
+  } @else if $token ==ring-color {
+    $--tw-ring-color: $value !global;
+  } @else if $token ==ring-offset-color {
+    $--tw-ring-offset-color: $value !global;
+  } @else if $token ==ring-offset-width {
+    $--tw-ring-offset-width: $value !global;
+  } @else if $token ==ring-width {
+    $--ring-width: $value + $--tw-ring-offset-width !global;
+  } @else if $token ==shadow-color {
+    $--tw-shadow-color: $value !global;
+  }
+
+  box-shadow: __box-shadow();
+}
+
+@mixin _transform($token, $value, $axis: null) {
+  @if $token ==rotate {
+    $--tw-rotate: $value !global;
+  } @else if $token ==scale {
+    @if $axis ==null {
+      $--tw-scale-x: $value !global;
+      $--tw-scale-y: $value !global;
+    } @else if $axis ==x {
+      $--tw-scale-x: $value !global;
+    } @else if $axis ==y {
+      $--tw-scale-y: $value !global;
+    }
+  } @else if $token ==skew {
+    @if $axis ==x {
+      $--tw-skew-x: $value !global;
+    } @else if $axis ==y {
+      $--tw-skew-y: $value !global;
+    }
+  } @else if $token ==translate {
+    @if $axis ==x {
+      $--tw-translate-x: $value !global;
+    } @else if $axis ==y {
+      $--tw-translate-y: $value !global;
+    }
+  }
+
+  transform: translate($--tw-translate-x, $--tw-translate-y)
+    rotate($--tw-rotate) skewX($--tw-skew-x) skewY($--tw-skew-y)
+    scaleX($--tw-scale-x) scaleY($--tw-scale-y);
+}
+
+@mixin _filter($token, $value) {
+  @if $token ==blur {
+    $--tw-blur: blur($value) !global;
+  } @else if $token ==brightness {
+    $--tw-brightness: brightness($value) !global;
+  } @else if $token ==contrast {
+    $--tw-contrast: contrast($value) !global;
+  } @else if $token ==drop-shadow {
+    $--tw-drop-shadow: $value !global;
+  } @else if $token ==grayscale {
+    $--tw-grayscale: grayscale($value) !global;
+  } @else if $token ==hue-rotate {
+    $--tw-hue-rotate: hue-rotate($value) !global;
+  } @else if $token ==invert {
+    $--tw-invert: invert($value) !global;
+  } @else if $token ==saturate {
+    $--tw-saturate: saturate($value) !global;
+  } @else if $token ==sepia {
+    $--tw-sepia: sepia($value) !global;
+  }
+
+  filter: $--tw-blur $--tw-brightness $--tw-contrast $--tw-grayscale
+    $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
+}
+
+@mixin _backdrop-filter($token, $value) {
+  @if $token ==blur {
+    $--tw-backdrop-blur: blur($value) !global;
+  } @else if $token ==brightness {
+    $--tw-backdrop-brightness: brightness($value) !global;
+  } @else if $token ==contrast {
+    $--tw-backdrop-contrast: contrast($value) !global;
+  } @else if $token ==grayscale {
+    $--tw-backdrop-grayscale: grayscale($value) !global;
+  } @else if $token ==hue-rotate {
+    $--tw-backdrop-hue-rotate: hue-rotate($value) !global;
+  } @else if $token ==invert {
+    $--tw-backdrop-invert: invert($value) !global;
+  } @else if $token ==opacity {
+    $--tw-backdrop-opacity: opacity($value) !global;
+  } @else if $token ==saturate {
+    $--tw-backdrop-saturate: saturate($value) !global;
+  } @else if $token ==sepia {
+    $--tw-backdrop-sepia: sepia($value) !global;
+  }
+
+  backdrop-filter: $--tw-backdrop-blur $--tw-backdrop-brightness
+    $--tw-backdrop-contrast $--tw-backdrop-grayscale $--tw-backdrop-hue-rotate
+    $--tw-backdrop-invert $--tw-backdrop-opacity $--tw-backdrop-saturate
+    $--tw-backdrop-sepia;
+}
+
+@mixin _margin-left_margin-right($v: $--space-value, $isReverse: false) {
+  @if $isReverse {
+    $--tw-space-x-reverse: 1 !global;
+  }
+
+  $--space-value: $v !global; // update for using reverse
+
+  > * ~ * {
+    margin-left: $--space-value * (1 - $--tw-space-x-reverse);
+    margin-right: $--space-value * $--tw-space-x-reverse;
+  }
+}
+
+@mixin _margin-top_margin-bottom($v: $--space-value, $isReverse: false) {
+  @if $isReverse {
+    $--tw-space-y-reverse: 1 !global;
+  }
+
+  $--space-value: $v !global; // update for using reverse
+
+  > * ~ * {
+    margin-top: $--space-value * (1 - $--tw-space-y-reverse);
+    margin-bottom: $--space-value * $--tw-space-y-reverse;
+  }
+}
+
+@mixin _border-left-width_border-right-width(
+  $value: $--divide-value,
+  $isReverse: false
+) {
+  @if $isReverse {
+    $--tw-divide-x-reverse: 1 !global;
+  }
+
+  $--divide-value: $value !global; // update for using reverse
+
+  > * ~ * {
+    border-left-width: $--divide-value * (1 - $--tw-divide-x-reverse);
+    border-right-width: $--divide-value * $--tw-divide-x-reverse;
+  }
+}
+
+@mixin _border-top-width_border-bottom-width(
+  $value: $--divide-value,
+  $isReverse: false
+) {
+  @if $isReverse {
+    $--tw-divide-y-reverse: 1 !global;
+  }
+
+  $--divide-value: $value !global; // update for using reverse
+
+  > * ~ * {
+    border-top-width: $--divide-value * (1 - $--tw-divide-y-reverse);
+    border-bottom-width: $--divide-value * $--tw-divide-y-reverse;
+  }
+}
+
+@mixin _border-style($token) {
+  > * ~ * {
+    border-style: $token;
+  }
+}
+
+@mixin _border-color($token, $value: 1) {
+  > * ~ * {
+    border-color: c($token, $value);
+  }
+}
+x*/
