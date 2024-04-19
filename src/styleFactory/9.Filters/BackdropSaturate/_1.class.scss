@@ -2,7 +2,7 @@
 
 /* Backdrop Saturate */
 @if $Basic {
-  /*x
+  // /*x
   @mixin backdrop-saturate-0 {
     @include _backdrop-filter(saturate, 0);
   }
@@ -21,42 +21,32 @@
 
   @mixin backdrop-saturate-200 {
     @include _backdrop-filter(saturate, 2);
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:backdrop-saturate-($v) {
-      @media (min-width: $Rwd-sm) {
-        @include _backdrop-filter(saturate, $v);
-      }
+      @include _r(sm, _backdrop-filter, saturate, $v);
     }
 
     @mixin md\:backdrop-saturate-($v) {
-      @media (min-width: $Rwd-md) {
-        @include _backdrop-filter(saturate, $v);
-      }
+      @include _r(md, _backdrop-filter, saturate, $v);
     }
 
     @mixin lg\:backdrop-saturate-($v) {
-      @media (min-width: $Rwd-lg) {
-        @include _backdrop-filter(saturate, $v);
-      }
+      @include _r(lg, _backdrop-filter, saturate, $v);
     }
 
     @mixin xl\:backdrop-saturate-($v) {
-      @media (min-width: $Rwd-xl) {
-        @include _backdrop-filter(saturate, $v);
-      }
+      @include _r(xl, _backdrop-filter, saturate, $v);
     }
 
     @mixin \2xl\:backdrop-saturate-($v) {
-      @media (min-width: $Rwd-2xl) {
-        @include _backdrop-filter(saturate, $v);
-      }
-    }x*/
+      @include _r(2xl, _backdrop-filter, saturate, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -65,8 +55,8 @@
 }
 
 @if $Custom {
-  /*x
+  // /*x
   @mixin backdrop-saturate-($v) {
     @include _backdrop-filter(saturate, $v);
-  }x*/
+  } // x*/
 }

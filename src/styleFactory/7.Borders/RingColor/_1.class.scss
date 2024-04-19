@@ -2,7 +2,7 @@
 
 /* Ring Color */
 @if $Basic {
-  /*x
+  // /*x
   @mixin ring-inherit {
     @include _box-shadow(ring-color, inherit);
   }
@@ -989,42 +989,32 @@
 
   @mixin ring-rose-950($v: 1) {
     @include _box-shadow(ring-color, c(ros-950, $v));
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:ring-color-($v) {
-      @media (min-width: $Rwd-sm) {
-        @include _box-shadow(ring-color, $v);
-      }
+      @include _r(sm, _box-shadow, ring-color, $v);
     }
 
     @mixin md\:ring-color-($v) {
-      @media (min-width: $Rwd-md) {
-        @include _box-shadow(ring-color, $v);
-      }
+      @include _r(md, _box-shadow, ring-color, $v);
     }
 
     @mixin lg\:ring-color-($v) {
-      @media (min-width: $Rwd-lg) {
-        @include _box-shadow(ring-color, $v);
-      }
+      @include _r(lg, _box-shadow, ring-color, $v);
     }
 
     @mixin xl\:ring-color-($v) {
-      @media (min-width: $Rwd-xl) {
-        @include _box-shadow(ring-color, $v);
-      }
+      @include _r(xl, _box-shadow, ring-color, $v);
     }
 
     @mixin \2xl\:ring-color-($v) {
-      @media (min-width: $Rwd-2xl) {
-        @include _box-shadow(ring-color, $v);
-      }
-    }x*/
+      @include _r(2xl, _box-shadow, ring-color, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -1034,8 +1024,8 @@
 
 /* Naming collision: ring -> ring-color */
 @if $Custom {
-  /*x
+  // /*x
   @mixin ring-color-($v) {
     @include _box-shadow(ring-color, $v);
-  }x*/
+  } // x*/
 }

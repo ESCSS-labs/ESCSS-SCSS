@@ -2,7 +2,7 @@
 
 /* Ring Width */
 @if $Basic {
-  /*x
+  // /*x
   @mixin ring-0 {
     @include _box-shadow(ring-width, 0px);
   }
@@ -29,42 +29,32 @@
 
   @mixin ring-inset {
     @include _box-shadow(ring-width, inset);
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:ring-($v) {
-      @media (min-width: $Rwd-sm) {
-        @include _box-shadow(ring-width, $v);
-      }
+      @include _r(sm, _box-shadow, ring-width, $v);
     }
 
     @mixin md\:ring-($v) {
-      @media (min-width: $Rwd-md) {
-        @include _box-shadow(ring-width, $v);
-      }
+      @include _r(md, _box-shadow, ring-width, $v);
     }
 
     @mixin lg\:ring-($v) {
-      @media (min-width: $Rwd-lg) {
-        @include _box-shadow(ring-width, $v);
-      }
+      @include _r(lg, _box-shadow, ring-width, $v);
     }
 
     @mixin xl\:ring-($v) {
-      @media (min-width: $Rwd-xl) {
-        @include _box-shadow(ring-width, $v);
-      }
+      @include _r(xl, _box-shadow, ring-width, $v);
     }
 
     @mixin \2xl\:ring-($v) {
-      @media (min-width: $Rwd-2xl) {
-        @include _box-shadow(ring-width, $v);
-      }
-    }x*/
+      @include _r(2xl, _box-shadow, ring-width, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -73,8 +63,8 @@
 }
 
 @if $Custom {
-  /*x
+  // /*x
   @mixin ring-($v) {
     @include _box-shadow(ring-width, $v);
-  }x*/
+  } // x*/
 }

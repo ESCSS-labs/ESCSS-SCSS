@@ -2,7 +2,7 @@
 
 /* Transform Origin */
 @if $Basic {
-  /*x
+  // /*x
   @mixin origin-center {
     transform-origin: center;
   }
@@ -37,312 +37,212 @@
 
   @mixin origin-top-left {
     transform-origin: top left;
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:origin-center {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: center;
-      }
+      @include r(sm, transform-origin, center);
     }
 
     @mixin sm\:origin-top {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: top;
-      }
+      @include r(sm, transform-origin, top);
     }
 
     @mixin sm\:origin-top-right {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: top right;
-      }
+      @include r(sm, transform-origin, top right);
     }
 
     @mixin sm\:origin-right {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: right;
-      }
+      @include r(sm, transform-origin, right);
     }
 
     @mixin sm\:origin-bottom-right {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: bottom right;
-      }
+      @include r(sm, transform-origin, bottom right);
     }
 
     @mixin sm\:origin-bottom {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: bottom;
-      }
+      @include r(sm, transform-origin, bottom);
     }
 
     @mixin sm\:origin-bottom-left {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: bottom left;
-      }
+      @include r(sm, transform-origin, bottom left);
     }
 
     @mixin sm\:origin-left {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: left;
-      }
+      @include r(sm, transform-origin, left);
     }
 
     @mixin sm\:origin-top-left {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: top left;
-      }
+      @include r(sm, transform-origin, top left);
     }
 
     @mixin md\:origin-center {
-      @media (min-width: $Rwd-md) {
-        transform-origin: center;
-      }
+      @include r(md, transform-origin, center);
     }
 
     @mixin md\:origin-top {
-      @media (min-width: $Rwd-md) {
-        transform-origin: top;
-      }
+      @include r(md, transform-origin, top);
     }
 
     @mixin md\:origin-top-right {
-      @media (min-width: $Rwd-md) {
-        transform-origin: top right;
-      }
+      @include r(md, transform-origin, top right);
     }
 
     @mixin md\:origin-right {
-      @media (min-width: $Rwd-md) {
-        transform-origin: right;
-      }
+      @include r(md, transform-origin, right);
     }
 
     @mixin md\:origin-bottom-right {
-      @media (min-width: $Rwd-md) {
-        transform-origin: bottom right;
-      }
+      @include r(md, transform-origin, bottom right);
     }
 
     @mixin md\:origin-bottom {
-      @media (min-width: $Rwd-md) {
-        transform-origin: bottom;
-      }
+      @include r(md, transform-origin, bottom);
     }
 
     @mixin md\:origin-bottom-left {
-      @media (min-width: $Rwd-md) {
-        transform-origin: bottom left;
-      }
+      @include r(md, transform-origin, bottom left);
     }
 
     @mixin md\:origin-left {
-      @media (min-width: $Rwd-md) {
-        transform-origin: left;
-      }
+      @include r(md, transform-origin, left);
     }
 
     @mixin md\:origin-top-left {
-      @media (min-width: $Rwd-md) {
-        transform-origin: top left;
-      }
+      @include r(md, transform-origin, top left);
     }
 
     @mixin lg\:origin-center {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: center;
-      }
+      @include r(lg, transform-origin, center);
     }
 
     @mixin lg\:origin-top {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: top;
-      }
+      @include r(lg, transform-origin, top);
     }
 
     @mixin lg\:origin-top-right {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: top right;
-      }
+      @include r(lg, transform-origin, top right);
     }
 
     @mixin lg\:origin-right {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: right;
-      }
+      @include r(lg, transform-origin, right);
     }
 
     @mixin lg\:origin-bottom-right {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: bottom right;
-      }
+      @include r(lg, transform-origin, bottom right);
     }
 
     @mixin lg\:origin-bottom {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: bottom;
-      }
+      @include r(lg, transform-origin, bottom);
     }
 
     @mixin lg\:origin-bottom-left {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: bottom left;
-      }
+      @include r(lg, transform-origin, bottom left);
     }
 
     @mixin lg\:origin-left {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: left;
-      }
+      @include r(lg, transform-origin, left);
     }
 
     @mixin lg\:origin-top-left {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: top left;
-      }
+      @include r(lg, transform-origin, top left);
     }
 
     @mixin xl\:origin-center {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: center;
-      }
+      @include r(xl, transform-origin, center);
     }
 
     @mixin xl\:origin-top {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: top;
-      }
+      @include r(xl, transform-origin, top);
     }
 
     @mixin xl\:origin-top-right {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: top right;
-      }
+      @include r(xl, transform-origin, top right);
     }
 
     @mixin xl\:origin-right {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: right;
-      }
+      @include r(xl, transform-origin, right);
     }
 
     @mixin xl\:origin-bottom-right {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: bottom right;
-      }
+      @include r(xl, transform-origin, bottom right);
     }
 
     @mixin xl\:origin-bottom {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: bottom;
-      }
+      @include r(xl, transform-origin, bottom);
     }
 
     @mixin xl\:origin-bottom-left {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: bottom left;
-      }
+      @include r(xl, transform-origin, bottom left);
     }
 
     @mixin xl\:origin-left {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: left;
-      }
+      @include r(xl, transform-origin, left);
     }
 
     @mixin xl\:origin-top-left {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: top left;
-      }
+      @include r(xl, transform-origin, top left);
     }
 
     @mixin \2xl\:origin-center {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: center;
-      }
+      @include r(2xl, transform-origin, center);
     }
 
     @mixin \2xl\:origin-top {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: top;
-      }
+      @include r(2xl, transform-origin, top);
     }
 
     @mixin \2xl\:origin-top-right {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: top right;
-      }
+      @include r(2xl, transform-origin, top right);
     }
 
     @mixin \2xl\:origin-right {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: right;
-      }
+      @include r(2xl, transform-origin, right);
     }
 
     @mixin \2xl\:origin-bottom-right {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: bottom right;
-      }
+      @include r(2xl, transform-origin, bottom right);
     }
 
     @mixin \2xl\:origin-bottom {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: bottom;
-      }
+      @include r(2xl, transform-origin, bottom);
     }
 
     @mixin \2xl\:origin-bottom-left {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: bottom left;
-      }
+      @include r(2xl, transform-origin, bottom left);
     }
 
     @mixin \2xl\:origin-left {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: left;
-      }
+      @include r(2xl, transform-origin, left);
     }
 
     @mixin \2xl\:origin-top-left {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: top left;
-      }
+      @include r(2xl, transform-origin, top left);
     }
 
     @mixin sm\:origin-($v) {
-      @media (min-width: $Rwd-sm) {
-        transform-origin: $v;
-      }
+      @include r(sm, transform-origin, $v);
     }
 
     @mixin md\:origin-($v) {
-      @media (min-width: $Rwd-md) {
-        transform-origin: $v;
-      }
+      @include r(md, transform-origin, $v);
     }
 
     @mixin lg\:origin-($v) {
-      @media (min-width: $Rwd-lg) {
-        transform-origin: $v;
-      }
+      @include r(lg, transform-origin, $v);
     }
 
     @mixin xl\:origin-($v) {
-      @media (min-width: $Rwd-xl) {
-        transform-origin: $v;
-      }
+      @include r(xl, transform-origin, $v);
     }
 
     @mixin \2xl\:origin-($v) {
-      @media (min-width: $Rwd-2xl) {
-        transform-origin: $v;
-      }
-    }x*/
+      @include r(2xl, transform-origin, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -351,8 +251,8 @@
 }
 
 @if $Custom {
-  /*x
+  // /*x
   @mixin origin-($v) {
     transform-origin: $v;
-  }x*/
+  } // x*/
 }

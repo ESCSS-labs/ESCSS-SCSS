@@ -2,7 +2,7 @@
 
 /* Brightness */
 @if $Basic {
-  /*x
+  // /*x
   @mixin brightness-0 {
     @include _filter(brightness, 0);
   }
@@ -45,42 +45,32 @@
 
   @mixin brightness-200 {
     @include _filter(brightness, 2);
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:brightness-($v) {
-      @media (min-width: $Rwd-sm) {
-        @include _filter(brightness, $v);
-      }
+      @include _r(sm, _filter, brightness, $v);
     }
 
     @mixin md\:brightness-($v) {
-      @media (min-width: $Rwd-md) {
-        @include _filter(brightness, $v);
-      }
+      @include _r(md, _filter, brightness, $v);
     }
 
     @mixin lg\:brightness-($v) {
-      @media (min-width: $Rwd-lg) {
-        @include _filter(brightness, $v);
-      }
+      @include _r(lg, _filter, brightness, $v);
     }
 
     @mixin xl\:brightness-($v) {
-      @media (min-width: $Rwd-xl) {
-        @include _filter(brightness, $v);
-      }
+      @include _r(xl, _filter, brightness, $v);
     }
 
     @mixin \2xl\:brightness-($v) {
-      @media (min-width: $Rwd-2xl) {
-        @include _filter(brightness, $v);
-      }
-    }x*/
+      @include _r(2xl, _filter, brightness, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -89,8 +79,8 @@
 }
 
 @if $Custom {
-  /*x
+  // /*x
   @mixin brightness-($v) {
     @include _filter(brightness, $v);
-  }x*/
+  } // x*/
 }

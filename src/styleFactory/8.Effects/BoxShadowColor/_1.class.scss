@@ -2,7 +2,7 @@
 
 /* Box Shadow Color */
 @if $Basic {
-  /*x
+  // /*x
   @mixin shadow-inherit {
     @include _box-shadow(shadow-color, inherit);
   }
@@ -989,42 +989,32 @@
 
   @mixin shadow-rose-950($v: 1) {
     @include _box-shadow(shadow-color, c(ros-950, $v));
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:shadow-color-($v) {
-      @media (min-width: $Rwd-sm) {
-        @include _box-shadow(shadow-color, $v);
-      }
+      @include _r(sm, _box-shadow, shadow-color, $v);
     }
 
     @mixin md\:shadow-color-($v) {
-      @media (min-width: $Rwd-md) {
-        @include _box-shadow(shadow-color, $v);
-      }
+      @include _r(md, _box-shadow, shadow-color, $v);
     }
 
     @mixin lg\:shadow-color-($v) {
-      @media (min-width: $Rwd-lg) {
-        @include _box-shadow(shadow-color, $v);
-      }
+      @include _r(lg, _box-shadow, shadow-color, $v);
     }
 
     @mixin xl\:shadow-color-($v) {
-      @media (min-width: $Rwd-xl) {
-        @include _box-shadow(shadow-color, $v);
-      }
+      @include _r(xl, _box-shadow, shadow-color, $v);
     }
 
     @mixin \2xl\:shadow-color-($v) {
-      @media (min-width: $Rwd-2xl) {
-        @include _box-shadow(shadow-color, $v);
-      }
-    }x*/
+      @include _r(2xl, _box-shadow, shadow-color, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -1034,8 +1024,8 @@
 
 /* Naming collision: shadow -> shadow-color */
 @if $Custom {
-  /*x
+  // /*x
   @mixin shadow-color-($v) {
     @include _box-shadow(shadow-color, $v);
-  }x*/
+  } // x*/
 }

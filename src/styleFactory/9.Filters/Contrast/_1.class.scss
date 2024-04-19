@@ -2,7 +2,7 @@
 
 /* Contrast */
 @if $Basic {
-  /*x
+  // /*x
   @mixin contrast-0 {
     @include _filter(contrast, 0);
   }
@@ -29,42 +29,32 @@
 
   @mixin contrast-200 {
     @include _filter(contrast, 2);
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:contrast-($v) {
-      @media (min-width: $Rwd-sm) {
-        @include _filter(contrast, $v);
-      }
+      @include _r(sm, _filter, contrast, $v);
     }
 
     @mixin md\:contrast-($v) {
-      @media (min-width: $Rwd-md) {
-        @include _filter(contrast, $v);
-      }
+      @include _r(md, _filter, contrast, $v);
     }
 
     @mixin lg\:contrast-($v) {
-      @media (min-width: $Rwd-lg) {
-        @include _filter(contrast, $v);
-      }
+      @include _r(lg, _filter, contrast, $v);
     }
 
     @mixin xl\:contrast-($v) {
-      @media (min-width: $Rwd-xl) {
-        @include _filter(contrast, $v);
-      }
+      @include _r(xl, _filter, contrast, $v);
     }
 
     @mixin \2xl\:contrast-($v) {
-      @media (min-width: $Rwd-2xl) {
-        @include _filter(contrast, $v);
-      }
-    }x*/
+      @include _r(2xl, _filter, contrast, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -73,8 +63,8 @@
 }
 
 @if $Custom {
-  /*x
+  // /*x
   @mixin contrast-($v) {
     @include _filter(contrast, $v);
-  }x*/
+  } // x*/
 }

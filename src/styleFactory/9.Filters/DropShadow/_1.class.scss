@@ -2,7 +2,7 @@
 
 /* DropShadow */
 @if $Basic {
-  /*x
+  // /*x
   @mixin drop-shadow-sm {
     @include _filter(drop-shadow, drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)));
   }
@@ -45,42 +45,32 @@
 
   @mixin drop-shadow-none {
     @include _filter(drop-shadow, drop-shadow(0 0 #fff));
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:drop-shadow-($v) {
-      @media (min-width: $Rwd-sm) {
-        @include _filter(drop-shadow, $v);
-      }
+      @include _r(sm, _filter, drop-shadow, $v);
     }
 
     @mixin md\:drop-shadow-($v) {
-      @media (min-width: $Rwd-md) {
-        @include _filter(drop-shadow, $v);
-      }
+      @include _r(md, _filter, drop-shadow, $v);
     }
 
     @mixin lg\:drop-shadow-($v) {
-      @media (min-width: $Rwd-lg) {
-        @include _filter(drop-shadow, $v);
-      }
+      @include _r(lg, _filter, drop-shadow, $v);
     }
 
     @mixin xl\:drop-shadow-($v) {
-      @media (min-width: $Rwd-xl) {
-        @include _filter(drop-shadow, $v);
-      }
+      @include _r(xl, _filter, drop-shadow, $v);
     }
 
     @mixin \2xl\:drop-shadow-($v) {
-      @media (min-width: $Rwd-2xl) {
-        @include _filter(drop-shadow, $v);
-      }
-    }x*/
+      @include _r(2xl, _filter, drop-shadow, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -89,8 +79,8 @@
 }
 
 @if $Custom {
-  /*x
+  // /*x
   @mixin drop-shadow-($v) {
     @include _filter(drop-shadow, $v);
-  }x*/
+  } // x*/
 }

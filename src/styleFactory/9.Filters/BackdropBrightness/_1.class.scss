@@ -2,7 +2,7 @@
 
 /* Backdrop Brightness */
 @if $Basic {
-  /*x
+  // /*x
   @mixin backdrop-brightness-0 {
     @include _backdrop-filter(brightness, 0);
   }
@@ -45,42 +45,32 @@
 
   @mixin backdrop-brightness-200 {
     @include _backdrop-filter(brightness, 2);
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:backdrop-brightness-($v) {
-      @media (min-width: $Rwd-sm) {
-        @include _backdrop-filter(brightness, $v);
-      }
+      @include _r(sm, _backdrop-filter, brightness, $v);
     }
 
     @mixin md\:backdrop-brightness-($v) {
-      @media (min-width: $Rwd-md) {
-        @include _backdrop-filter(brightness, $v);
-      }
+      @include _r(md, _backdrop-filter, brightness, $v);
     }
 
     @mixin lg\:backdrop-brightness-($v) {
-      @media (min-width: $Rwd-lg) {
-        @include _backdrop-filter(brightness, $v);
-      }
+      @include _r(lg, _backdrop-filter, brightness, $v);
     }
 
     @mixin xl\:backdrop-brightness-($v) {
-      @media (min-width: $Rwd-xl) {
-        @include _backdrop-filter(brightness, $v);
-      }
+      @include _r(xl, _backdrop-filter, brightness, $v);
     }
 
     @mixin \2xl\:backdrop-brightness-($v) {
-      @media (min-width: $Rwd-2xl) {
-        @include _backdrop-filter(brightness, $v);
-      }
-    }x*/
+      @include _r(2xl, _backdrop-filter, brightness, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -89,8 +79,8 @@
 }
 
 @if $Custom {
-  /*x
+  // /*x
   @mixin backdrop-brightness-($v) {
     @include _backdrop-filter(brightness, $v);
-  }x*/
+  } // x*/
 }

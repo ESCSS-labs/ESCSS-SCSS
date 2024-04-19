@@ -2,7 +2,7 @@
 
 /* Divide Color */
 @if $Basic {
-  /*x
+  // /*x
   @mixin divide-inherit {
     > * ~ * {
       border-color: inherit;
@@ -995,52 +995,32 @@
 
   @mixin divide-rose-950($v: 1) {
     @include _border-color(ros-950, $v);
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:divide-color-($v) {
-      @media (min-width: $Rwd-sm) {
-        > * ~ * {
-          border-color: $v;
-        }
-      }
+      @include _r(sm, _border-color, null, $v);
     }
 
     @mixin md\:divide-color-($v) {
-      @media (min-width: $Rwd-md) {
-        > * ~ * {
-          border-color: $v;
-        }
-      }
+      @include _r(md, _border-color, null, $v);
     }
 
     @mixin lg\:divide-color-($v) {
-      @media (min-width: $Rwd-lg) {
-        > * ~ * {
-          border-color: $v;
-        }
-      }
+      @include _r(lg, _border-color, null, $v);
     }
 
     @mixin xl\:divide-color-($v) {
-      @media (min-width: $Rwd-xl) {
-        > * ~ * {
-          border-color: $v;
-        }
-      }
+      @include _r(xl, _border-color, null, $v);
     }
 
     @mixin \2xl\:divide-color-($v) {
-      @media (min-width: $Rwd-2xl) {
-        > * ~ * {
-          border-color: $v;
-        }
-      }
-    }x*/
+      @include _r(2xl, _border-color, null, $v);
+    } // x*/
   }
 
   // tailwind default
@@ -1050,10 +1030,10 @@
 
 /* Naming collision: divide -> divide-color */
 @if $Custom {
-  /*x
+  // /*x
   @mixin divide-color-($v) {
     > * ~ * {
-      border-color: $v;
+      @include _border-color(null, $v);
     }
-  }x*/
+  } // x*/
 }

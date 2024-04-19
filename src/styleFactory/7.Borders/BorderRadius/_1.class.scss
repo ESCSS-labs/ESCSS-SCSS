@@ -2,7 +2,7 @@
 
 /* Border Radius */
 @if $Basic {
-  /*x
+  // /*x
   @mixin rounded-none {
     border-radius: 0px;
   }
@@ -700,13 +700,13 @@
 
   @mixin rounded-bl-full {
     border-bottom-left-radius: 9999px;
-  }x*/
+  } // x*/
 }
 
 @if $Rwd {
   // reducing size for updating speed
   @if $isLiteMode {
-    /*x
+    // /*x
     @mixin sm\:rounded-($v) {
       @include r(sm, border-radius, $v);
     }
@@ -1062,7 +1062,13 @@
     }
 
     @mixin \2xl\:rounded-l-($v) {
-      @include r(2xl, border-top-left-radius, $v, border-bottom-left-radius, $v);
+      @include r(
+        2xl,
+        border-top-left-radius,
+        $v,
+        border-bottom-left-radius,
+        $v
+      );
     }
 
     @mixin \2xl\:rounded-ss-($v) {
@@ -1095,7 +1101,7 @@
 
     @mixin \2xl\:rounded-bl-($v) {
       @include r(2xl, border-bottom-left-radius, $v);
-    }x*/
+    } // x*/
   }
 
   // tailwind default
@@ -1104,7 +1110,7 @@
 }
 
 @if $Custom {
-  /*x
+  // /*x
   @mixin rounded-($v) {
     border-radius: $v;
   }
@@ -1169,5 +1175,5 @@
 
   @mixin rounded-bl-($v) {
     border-bottom-left-radius: $v;
-  }x*/
+  } // x*/
 }
