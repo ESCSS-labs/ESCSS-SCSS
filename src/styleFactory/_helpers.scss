@@ -20,24 +20,25 @@
 // let @mixin code to be clean
 @function __background-image() {
   @if $--tw-gradient-via==null {
-    @return linear-gradient($--gradient-direction,
+    @return linear-gradient(
+      $--gradient-direction,
       $--tw-gradient-from $--tw-gradient-from-position,
-      $--tw-gradient-to $--tw-gradient-to-position );
-  }
-
-  @else {
-    @return linear-gradient($--gradient-direction,
+      $--tw-gradient-to $--tw-gradient-to-position
+    );
+  } @else {
+    @return linear-gradient(
+      $--gradient-direction,
       $--tw-gradient-from $--tw-gradient-from-position,
       $--tw-gradient-via $--tw-gradient-via-position,
-      $--tw-gradient-to $--tw-gradient-to-position );
+      $--tw-gradient-to $--tw-gradient-to-position
+    );
   }
 }
 
 @function __font-size($value) {
   $temp: null;
 
-  @if meta.type-of($value)==number {
-
+  @if meta.type-of($value) ==number {
     // no unit: 3、4... 10
     @if math.is-unitless($value) {
       @if not($value>=3 and $value <=10) {
@@ -51,34 +52,20 @@
     @else {
       $temp: $value;
     }
-  }
-
-  @else if meta.type-of($value)==string {
+  } @else if meta.type-of($value) ==string {
     @if $value==none {
       $temp: 1;
-    }
-
-    @else if $value==tight {
+    } @else if $value==tight {
       $temp: 1.25;
-    }
-
-    @else if $value==snug {
+    } @else if $value==snug {
       $temp: 1.375;
-    }
-
-    @else if $value==normal {
+    } @else if $value==normal {
       $temp: 1.5;
-    }
-
-    @else if $value==relax {
+    } @else if $value==relax {
       $temp: 1.625;
-    }
-
-    @else if $value==loose {
+    } @else if $value==loose {
       $temp: 2;
-    }
-
-    @else {
+    } @else {
       @error "Parameter does not exist, see in tailwind play https://play.tailwindcss.com/";
     }
   }
@@ -87,20 +74,18 @@
 }
 
 @function __box-shadow() {
-  $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width $--tw-ring-offset-color;
+  $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width
+    $--tw-ring-offset-color;
   $--tw-ring-shadow: $--tw-ring-inset 0 0 0 $--ring-width $--tw-ring-color;
   $--tw-shadow: null;
 
   @if list.index(shadow md lg xl, $-shadow-token) {
-    $--tw-shadow: list.nth($--shadow-length, 1) $--tw-shadow-color,
+    $--tw-shadow:
+      list.nth($--shadow-length, 1) $--tw-shadow-color,
       list.nth($--shadow-length, 2) $--tw-shadow-color;
-  }
-
-  @else if $-shadow-token ==inner {
+  } @else if $-shadow-token ==inner {
     $--tw-shadow: inset $--shadow-length $--tw-shadow-color;
-  }
-
-  @else {
+  } @else {
     $--tw-shadow: $--shadow-length $--tw-shadow-color;
   }
 
@@ -173,7 +158,7 @@
 
 // 1 params
 @mixin _border-style($token) {
-  >*~* {
+  > * ~ * {
     border-style: $token;
   }
 }
@@ -182,105 +167,66 @@
 @mixin _filter($token, $value) {
   @if $token ==blur {
     $--tw-blur: blur($value) !global;
-  }
-
-  @else if $token ==brightness {
+  } @else if $token ==brightness {
     $--tw-brightness: brightness($value) !global;
-  }
-
-  @else if $token ==contrast {
+  } @else if $token ==contrast {
     $--tw-contrast: contrast($value) !global;
-  }
-
-  @else if $token ==drop-shadow {
+  } @else if $token ==drop-shadow {
     $--tw-drop-shadow: $value !global;
-  }
-
-  @else if $token ==grayscale {
+  } @else if $token ==grayscale {
     $--tw-grayscale: grayscale($value) !global;
-  }
-
-  @else if $token ==hue-rotate {
+  } @else if $token ==hue-rotate {
     $--tw-hue-rotate: hue-rotate($value) !global;
-  }
-
-  @else if $token ==invert {
+  } @else if $token ==invert {
     $--tw-invert: invert($value) !global;
-  }
-
-  @else if $token ==saturate {
+  } @else if $token ==saturate {
     $--tw-saturate: saturate($value) !global;
-  }
-
-  @else if $token ==sepia {
+  } @else if $token ==sepia {
     $--tw-sepia: sepia($value) !global;
   }
 
-  filter: $--tw-blur $--tw-brightness $--tw-contrast $--tw-grayscale $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
+  filter: $--tw-blur $--tw-brightness $--tw-contrast $--tw-grayscale
+    $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
 }
 
 @mixin _font-size($token, $value) {
   @if $token==xs {
     font-size: 0.75rem;
     line-height: if($value, __font-size($value), 1rem); // $value? true: false;
-  }
-
-  @else if $token==sm {
+  } @else if $token==sm {
     font-size: 0.875rem;
     line-height: if($value, __font-size($value), 1.25rem);
-  }
-
-  @else if $token==base {
+  } @else if $token==base {
     font-size: 1rem;
     line-height: if($value, __font-size($value), 1.5rem);
-  }
-
-  @else if $token==lg {
+  } @else if $token==lg {
     font-size: 1.125rem;
     line-height: if($value, __font-size($value), 1.75rem);
-  }
-
-  @else if $token==xl {
+  } @else if $token==xl {
     font-size: 1.25rem;
     line-height: if($value, __font-size($value), 1.75rem);
-  }
-
-  @else if $token==2xl {
+  } @else if $token==2xl {
     font-size: 1.5rem;
     line-height: if($value, __font-size($value), 2rem);
-  }
-
-  @else if $token==3xl {
+  } @else if $token==3xl {
     font-size: 1.875rem;
     line-height: if($value, __font-size($value), 2.25rem);
-  }
-
-  @else if $token==4xl {
+  } @else if $token==4xl {
     font-size: 2.25rem;
     line-height: if($value, __font-size($value), 2.5rem);
-  }
-
-  @else if $token==5xl {
+  } @else if $token==5xl {
     font-size: 3rem;
     line-height: if($value, __font-size($value), 1);
-  }
-
-  @else if $token==6xl {
+  } @else if $token==6xl {
     font-size: 3.75rem;
     line-height: if($value, __font-size($value), 1);
-  }
-
-  @else if $token==7xl {
+  } @else if $token==7xl {
     font-size: 4.5rem;
     line-height: if($value, __font-size($value), 1);
-  }
-
-  @else if $token==8xl {
+  } @else if $token==8xl {
     font-size: 6rem;
     line-height: if($value, __font-size($value), 1);
-  }
-
-  @else if $token==9xl {
+  } @else if $token==9xl {
     font-size: 8rem;
     line-height: if($value, __font-size($value), 1);
   }
@@ -292,91 +238,71 @@
       $-shadow-token: sm !global;
       $--shadow-length: 0 1px 2px 0 !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.05) !global;
-    }
-
-    @else if $value ==null {
+    } @else if $value ==null {
       $-shadow-token: shadow !global;
-      $--shadow-length: 0 1px 3px 0,
+      $--shadow-length:
+        0 1px 3px 0,
         0 1px 2px -1px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
-    }
-
-    @else if $value ==md {
+    } @else if $value ==md {
       $-shadow-token: md !global;
-      $--shadow-length: 0 4px 6px -1px,
+      $--shadow-length:
+        0 4px 6px -1px,
         0 2px 4px -2px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
-    }
-
-    @else if $value ==lg {
+    } @else if $value ==lg {
       $-shadow-token: lg !global;
-      $--shadow-length: 0 10px 15px -3px,
+      $--shadow-length:
+        0 10px 15px -3px,
         0 4px 6px -4px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
-    }
-
-    @else if $value ==xl {
+    } @else if $value ==xl {
       $-shadow-token: xl !global;
-      $--shadow-length: 0 20px 25px -5px,
+      $--shadow-length:
+        0 20px 25px -5px,
         0 8px 10px -6px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.1) !global;
-    }
-
-    @else if $value ==2xl {
+    } @else if $value ==2xl {
       $-shadow-token: 2xl !global;
       $--shadow-length: 0 25px 50px -12px !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.25) !global;
-    }
-
-    @else if $value ==inner {
+    } @else if $value ==inner {
       $-shadow-token: inner !global;
       $--shadow-length: 0 2px 4px 0 !global;
       $--tw-shadow-color: rgb(0 0 0 / 0.05) !global;
-    }
-
-    @else if $value ==none {
+    } @else if $value ==none {
       $-shadow-token: none !global;
       $--shadow-length: 0 0 0 0 !global;
       $--tw-shadow-color: #fff !global;
-    }
-
-    @else {
+    } @else {
       $-shadow-token: custom !global;
       $--tw-shadow-color: list.nth($v, -1) !global; // red
 
-      @if list.nth($v, 1)==inset {
-        $--shadow-length: list.set-nth($v,
-            -1,
-            $space ) !global; // inset 0px 0px 5px 10px
-      }
-
-      @else {
-        $--shadow-length: list.set-nth($v,
-            -1,
-            $space ) !global; // inset 0px 0px 5px 10px
+      @if list.nth($v, 1) ==inset {
+        $--shadow-length: list.set-nth(
+          $v,
+          -1,
+          $space
+        ) !global; // inset 0px 0px 5px 10px
+      } @else {
+        $--shadow-length: list.set-nth(
+          $v,
+          -1,
+          $space
+        ) !global; // inset 0px 0px 5px 10px
       }
 
       @include _box-shadow(shadow, $v);
     }
-  }
-
-  @else if $token ==ring-color {
+  } @else if $token ==ring-color {
     $--tw-ring-color: $value !global;
-  }
-
-  @else if $token ==ring-offset-color {
+  } @else if $token ==ring-offset-color {
     $--tw-ring-offset-color: $value !global;
-  }
-
-  @else if $token ==ring-offset-width {
+  } @else if $token ==ring-offset-width {
     $--tw-ring-offset-width: $value !global;
-  }
-
-  @else if $token ==ring-width {
+  } @else if $token ==ring-width {
     $--ring-width: $value + $--tw-ring-offset-width !global;
-  }
-
-  @else if $token ==shadow-color {
+  } @else if $token ==shadow-color {
     $--tw-shadow-color: $value !global;
   }
 
@@ -384,12 +310,10 @@
 }
 
 @mixin _border-color($token, $value: 1) {
-  >*~* {
+  > * ~ * {
     @if $token ==null {
       border-color: $value; // custom
-    }
-
-    @else {
+    } @else {
       border-color: c($token, $value);
     }
   }
@@ -398,41 +322,28 @@
 @mixin _backdrop-filter($token, $value) {
   @if $token ==blur {
     $--tw-backdrop-blur: blur($value) !global;
-  }
-
-  @else if $token ==brightness {
+  } @else if $token ==brightness {
     $--tw-backdrop-brightness: brightness($value) !global;
-  }
-
-  @else if $token ==contrast {
+  } @else if $token ==contrast {
     $--tw-backdrop-contrast: contrast($value) !global;
-  }
-
-  @else if $token ==grayscale {
+  } @else if $token ==grayscale {
     $--tw-backdrop-grayscale: grayscale($value) !global;
-  }
-
-  @else if $token ==hue-rotate {
+  } @else if $token ==hue-rotate {
     $--tw-backdrop-hue-rotate: hue-rotate($value) !global;
-  }
-
-  @else if $token ==invert {
+  } @else if $token ==invert {
     $--tw-backdrop-invert: invert($value) !global;
-  }
-
-  @else if $token ==opacity {
+  } @else if $token ==opacity {
     $--tw-backdrop-opacity: opacity($value) !global;
-  }
-
-  @else if $token ==saturate {
+  } @else if $token ==saturate {
     $--tw-backdrop-saturate: saturate($value) !global;
-  }
-
-  @else if $token ==sepia {
+  } @else if $token ==sepia {
     $--tw-backdrop-sepia: sepia($value) !global;
   }
 
-  backdrop-filter: $--tw-backdrop-blur $--tw-backdrop-brightness $--tw-backdrop-contrast $--tw-backdrop-grayscale $--tw-backdrop-hue-rotate $--tw-backdrop-invert $--tw-backdrop-opacity $--tw-backdrop-saturate $--tw-backdrop-sepia;
+  backdrop-filter: $--tw-backdrop-blur $--tw-backdrop-brightness
+    $--tw-backdrop-contrast $--tw-backdrop-grayscale $--tw-backdrop-hue-rotate
+    $--tw-backdrop-invert $--tw-backdrop-opacity $--tw-backdrop-saturate
+    $--tw-backdrop-sepia;
 }
 
 @mixin _margin-left_margin-right($v: $--space-value, $isReverse: false) {
@@ -442,7 +353,7 @@
 
   $--space-value: $v !global; // update for using reverse
 
-  >*~* {
+  > * ~ * {
     margin-left: $--space-value * (1 - $--tw-space-x-reverse);
     margin-right: $--space-value * $--tw-space-x-reverse;
   }
@@ -455,35 +366,39 @@
 
   $--space-value: $v !global; // update for using reverse
 
-  >*~* {
+  > * ~ * {
     margin-top: $--space-value * (1 - $--tw-space-y-reverse);
     margin-bottom: $--space-value * $--tw-space-y-reverse;
   }
 }
 
-@mixin _border-left-width_border-right-width($value: $--divide-value,
-  $isReverse: false) {
+@mixin _border-left-width_border-right-width(
+  $value: $--divide-value,
+  $isReverse: false
+) {
   @if $isReverse {
     $--tw-divide-x-reverse: 1 !global;
   }
 
   $--divide-value: $value !global; // update for using reverse
 
-  >*~* {
+  > * ~ * {
     border-left-width: $--divide-value * (1 - $--tw-divide-x-reverse);
     border-right-width: $--divide-value * $--tw-divide-x-reverse;
   }
 }
 
-@mixin _border-top-width_border-bottom-width($value: $--divide-value,
-  $isReverse: false) {
+@mixin _border-top-width_border-bottom-width(
+  $value: $--divide-value,
+  $isReverse: false
+) {
   @if $isReverse {
     $--tw-divide-y-reverse: 1 !global;
   }
 
   $--divide-value: $value !global; // update for using reverse
 
-  >*~* {
+  > * ~ * {
     border-top-width: $--divide-value * (1 - $--tw-divide-y-reverse);
     border-bottom-width: $--divide-value * $--tw-divide-y-reverse;
   }
@@ -493,93 +408,63 @@
 @mixin _transform($token, $value, $axis: null) {
   @if $token ==rotate {
     $--tw-rotate: $value !global;
-  }
-
-  @else if $token ==scale {
+  } @else if $token ==scale {
     @if $axis ==null {
       $--tw-scale-x: $value !global;
       $--tw-scale-y: $value !global;
-    }
-
-    @else if $axis ==x {
+    } @else if $axis ==x {
       $--tw-scale-x: $value !global;
-    }
-
-    @else if $axis ==y {
+    } @else if $axis ==y {
       $--tw-scale-y: $value !global;
     }
-  }
-
-  @else if $token ==skew {
+  } @else if $token ==skew {
     @if $axis ==x {
       $--tw-skew-x: $value !global;
-    }
-
-    @else if $axis ==y {
+    } @else if $axis ==y {
       $--tw-skew-y: $value !global;
     }
-  }
-
-  @else if $token ==translate {
+  } @else if $token ==translate {
     @if $axis ==x {
       $--tw-translate-x: $value !global;
-    }
-
-    @else if $axis ==y {
+    } @else if $axis ==y {
       $--tw-translate-y: $value !global;
     }
   }
 
-  transform: translate($--tw-translate-x, $--tw-translate-y) rotate($--tw-rotate) skewX($--tw-skew-x) skewY($--tw-skew-y) scaleX($--tw-scale-x) scaleY($--tw-scale-y);
+  transform: translate($--tw-translate-x, $--tw-translate-y)
+    rotate($--tw-rotate) skewX($--tw-skew-x) skewY($--tw-skew-y)
+    scaleX($--tw-scale-x) scaleY($--tw-scale-y);
 }
 
 @mixin _background-image($token, $color, $value) {
   @if $token ==from {
     @if $color ==color {
       $--tw-gradient-from: $value !global; // custom color
-    }
-
-    @else if $color ==null {
+    } @else if $color ==null {
       // position
       $--tw-gradient-from-position: $value !global;
-    }
-
-    @else {
+    } @else {
       $--tw-gradient-from: c($color, $value) !global;
     }
-  }
-
-  @else if $token ==via {
+  } @else if $token ==via {
     @if $color ==color {
       $--tw-gradient-via: $value !global; // custom color
-    }
-
-    @else if $color ==null {
+    } @else if $color ==null {
       // position
       $--tw-gradient-via-position: $value !global;
-    }
-
-    @else {
+    } @else {
       $--tw-gradient-via: c($color, $value) !global;
     }
-  }
-
-  @else if $token ==to {
+  } @else if $token ==to {
     @if $color ==color {
       $--tw-gradient-to: $value !global; // custom color
-    }
-
-    @else if $color ==null {
+    } @else if $color ==null {
       // position
       $--tw-gradient-to-position: $value !global;
-    }
-
-    @else {
+    } @else {
       $--tw-gradient-to: c($color, $value) !global;
     }
-  }
-
-  @else if $token ==gradient {
+  } @else if $token ==gradient {
     $--gradient-direction: $value !global;
   }
 
@@ -587,7 +472,8 @@
 }
 
 // sr-only requires 9 properties
-@mixin r($rwd,
+@mixin r(
+  $rwd,
   $key,
   $value: null,
   $key2: null,
@@ -605,81 +491,72 @@
   $key8: null,
   $value8: null,
   $key9: null,
-  $value9: null) {
+  $value9: null
+) {
   @media (min-width: map.get($RWD, $rwd)) {
-    #{$key}: $value;
-    #{$key2}: $value2;
-    #{$key3}: $value3;
-    #{$key4}: $value4;
-    #{$key5}: $value5;
-    #{$key6}: $value6;
-    #{$key7}: $value7;
-    #{$key8}: $value8;
-    #{$key9}: $value9;
+    #/*x{$key}: $value;
+    #/*x{$key2}: $value2;
+    #/*x{$key3}: $value3;
+    #/*x{$key4}: $value4;
+    #/*x{$key5}: $value5;
+    #/*x{$key6}: $value6;
+    #/*x{$key7}: $value7;
+    #/*x{$key8}: $value8;
+    #/*x{$key9}: $value9;
   }
 }
 
 // encapsulation for cursor/will-change that has 2 values in one property
 @mixin r2($rwd, $key, $value, $value2: null) {
   @media (min-width: map.get($RWD, $rwd)) {
-    #{$key}: $value, $value2;
+    #/*x{$key}: $value, $value2;
   }
 }
 
 // encapsulation for helper function to rwd(file size concern)
-@mixin _r($rwd, $token, $slot, $slot2: null, $slot3: null) {
+@mixin _r($rwd, $token, $slot: null, $slot2: null, $slot3: null) {
   @media (min-width: map.get($RWD, $rwd)) {
+    // 0 params (special case: basic is enough, it's not necessary to make another function abstraction)
+    @if $token ==container {
+      @include container;
+    }
 
     // 1 params
-    @if $token ==_border-style {
+    @else if $token ==_border-style {
       @include _border-style($slot);
     }
 
     // 2 params
     @else if $token ==_filter {
       @include _filter($slot, $slot2);
-    }
-
-    @else if $token ==_font-size {
+    } @else if $token ==_font-size {
       @include _font-size($slot, $slot2);
-    }
-
-    @else if $token ==_box-shadow {
+    } @else if $token ==_box-shadow {
       @include _box-shadow($slot, $slot2);
-    }
-
-    @else if $token ==_border-color {
+    } @else if $token ==_border-color {
       @include _border-color($slot, $slot2: 1);
-    }
-
-    @else if $token ==_backdrop-filter {
+    } @else if $token ==_backdrop-filter {
       @include _backdrop-filter($slot, $slot2);
-    }
-
-    @else if $token ==_margin-left_margin-right {
+    } @else if $token ==_margin-left_margin-right {
       @include _margin-left_margin-right($slot: $--space-value, $slot2: false);
-    }
-
-    @else if $token ==_margin-top_margin-bottom {
+    } @else if $token ==_margin-top_margin-bottom {
       @include _margin-top_margin-bottom($slot: $--space-value, $slot2: false);
-    }
-
-    @else if $token ==_border-left-width_border-right-width {
-      @include _border-left-width_border-right-width($slot: $--divide-value,
-        $slot2: false);
-    }
-
-    @else if $token ==_border-top-width_border-bottom-width {
-      @include _border-top-width_border-bottom-width($slot: $--divide-value,
-        $slot2: false);
+    } @else if $token ==_border-left-width_border-right-width {
+      @include _border-left-width_border-right-width(
+        $slot: $--divide-value,
+        $slot2: false
+      );
+    } @else if $token ==_border-top-width_border-bottom-width {
+      @include _border-top-width_border-bottom-width(
+        $slot: $--divide-value,
+        $slot2: false
+      );
     }
 
     // 3 params
     @else if $token ==_transform {
       @include _transform($slot, $slot2, $slot3: null);
-    }
-
-    @else if $token ==_background-image {
+    } @else if $token ==_background-image {
       @include _background-image($slot, $slot2, $slot3);
     }
   }
