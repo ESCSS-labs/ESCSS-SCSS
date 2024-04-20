@@ -2,7 +2,7 @@
 
 /* DropShadow */
 @if $Basic {
-  // /*x 
+  // /*x
   @mixin drop-shadow-sm {
     @include _filter(drop-shadow, drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)));
   }
@@ -49,37 +49,336 @@
 }
 
 @if $Rwd {
-  // reducing size for updating speed
-  @if $isLiteMode {
-    // /*x 
-    @mixin sm\:drop-shadow-($v) {
-      @include _r(sm, _filter, drop-shadow, $v);
-    }
-
-    @mixin md\:drop-shadow-($v) {
-      @include _r(md, _filter, drop-shadow, $v);
-    }
-
-    @mixin lg\:drop-shadow-($v) {
-      @include _r(lg, _filter, drop-shadow, $v);
-    }
-
-    @mixin xl\:drop-shadow-($v) {
-      @include _r(xl, _filter, drop-shadow, $v);
-    }
-
-    @mixin \2xl\:drop-shadow-($v) {
-      @include _r(2xl, _filter, drop-shadow, $v);
-    } // x*/
+  // /*x
+  @mixin sm\:drop-shadow-sm {
+    @include _r(
+      sm,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))
+    );
   }
 
-  // tailwind default
-  @else {
+  @mixin sm\:drop-shadow {
+    @include _r(
+      sm,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+        drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))
+    );
   }
+
+  @mixin sm\:drop-shadow-md {
+    @include _r(
+      sm,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+        drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))
+    );
+  }
+
+  @mixin sm\:drop-shadow-lg {
+    @include _r(
+      sm,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+        drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))
+    );
+  }
+
+  @mixin sm\:drop-shadow-xl {
+    @include _r(
+      sm,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+        drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))
+    );
+  }
+
+  @mixin sm\:drop-shadow-2xl {
+    @include _r(
+      sm,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))
+    );
+  }
+
+  @mixin sm\:drop-shadow-none {
+    @include _r(sm, _filter, drop-shadow, drop-shadow(0 0 #fff));
+  }
+  @mixin md\:drop-shadow-sm {
+    @include _r(
+      md,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))
+    );
+  }
+
+  @mixin md\:drop-shadow {
+    @include _r(
+      md,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+        drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))
+    );
+  }
+
+  @mixin md\:drop-shadow-md {
+    @include _r(
+      md,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+        drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))
+    );
+  }
+
+  @mixin md\:drop-shadow-lg {
+    @include _r(
+      md,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+        drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))
+    );
+  }
+
+  @mixin md\:drop-shadow-xl {
+    @include _r(
+      md,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+        drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))
+    );
+  }
+
+  @mixin md\:drop-shadow-2xl {
+    @include _r(
+      md,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))
+    );
+  }
+
+  @mixin md\:drop-shadow-none {
+    @include _r(md, _filter, drop-shadow, drop-shadow(0 0 #fff));
+  }
+  @mixin lg\:drop-shadow-sm {
+    @include _r(
+      lg,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))
+    );
+  }
+
+  @mixin lg\:drop-shadow {
+    @include _r(
+      lg,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+        drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))
+    );
+  }
+
+  @mixin lg\:drop-shadow-md {
+    @include _r(
+      lg,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+        drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))
+    );
+  }
+
+  @mixin lg\:drop-shadow-lg {
+    @include _r(
+      lg,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+        drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))
+    );
+  }
+
+  @mixin lg\:drop-shadow-xl {
+    @include _r(
+      lg,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+        drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))
+    );
+  }
+
+  @mixin lg\:drop-shadow-2xl {
+    @include _r(
+      lg,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))
+    );
+  }
+
+  @mixin lg\:drop-shadow-none {
+    @include _r(lg, _filter, drop-shadow, drop-shadow(0 0 #fff));
+  }
+  @mixin xl\:drop-shadow-sm {
+    @include _r(
+      xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))
+    );
+  }
+
+  @mixin xl\:drop-shadow {
+    @include _r(
+      xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+        drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))
+    );
+  }
+
+  @mixin xl\:drop-shadow-md {
+    @include _r(
+      xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+        drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))
+    );
+  }
+
+  @mixin xl\:drop-shadow-lg {
+    @include _r(
+      xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+        drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))
+    );
+  }
+
+  @mixin xl\:drop-shadow-xl {
+    @include _r(
+      xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+        drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))
+    );
+  }
+
+  @mixin xl\:drop-shadow-2xl {
+    @include _r(
+      xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))
+    );
+  }
+
+  @mixin xl\:drop-shadow-none {
+    @include _r(xl, _filter, drop-shadow, drop-shadow(0 0 #fff));
+  }
+  @mixin \2xl\:drop-shadow-sm {
+    @include _r(
+      2xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))
+    );
+  }
+
+  @mixin \2xl\:drop-shadow {
+    @include _r(
+      2xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+        drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))
+    );
+  }
+
+  @mixin \2xl\:drop-shadow-md {
+    @include _r(
+      2xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+        drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))
+    );
+  }
+
+  @mixin \2xl\:drop-shadow-lg {
+    @include _r(
+      2xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+        drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))
+    );
+  }
+
+  @mixin \2xl\:drop-shadow-xl {
+    @include _r(
+      2xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+        drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))
+    );
+  }
+
+  @mixin \2xl\:drop-shadow-2xl {
+    @include _r(
+      2xl,
+      _filter,
+      drop-shadow,
+      drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))
+    );
+  }
+
+  @mixin \2xl\:drop-shadow-none {
+    @include _r(2xl, _filter, drop-shadow, drop-shadow(0 0 #fff));
+  }
+  @mixin sm\:drop-shadow-($v) {
+    @include _r(sm, _filter, drop-shadow, $v);
+  }
+
+  @mixin md\:drop-shadow-($v) {
+    @include _r(md, _filter, drop-shadow, $v);
+  }
+
+  @mixin lg\:drop-shadow-($v) {
+    @include _r(lg, _filter, drop-shadow, $v);
+  }
+
+  @mixin xl\:drop-shadow-($v) {
+    @include _r(xl, _filter, drop-shadow, $v);
+  }
+
+  @mixin \2xl\:drop-shadow-($v) {
+    @include _r(2xl, _filter, drop-shadow, $v);
+  }
+  // x*/
 }
 
 @if $Custom {
-  // /*x 
+  // /*x
   @mixin drop-shadow-($v) {
     @include _filter(drop-shadow, $v);
   } // x*/

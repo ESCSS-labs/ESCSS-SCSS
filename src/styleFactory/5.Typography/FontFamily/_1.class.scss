@@ -2,7 +2,7 @@
 
 /* Font Family */
 @if $Basic {
-  // /*x 
+  // /*x
   @mixin font-sans {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -19,38 +19,127 @@
 }
 
 @if $Rwd {
-  // reducing size for updating speed
-  @if $isLiteMode {
-    // /*x 
-    @mixin sm\:font-family-($v) {
-      @include r(sm, font-family, $v);
+  // /*x
+  @mixin sm\:font-sans {
+    @media (min-width: map.get($RWD, sm)) {
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
-
-    @mixin md\:font-family-($v) {
-      @include r(md, font-family, $v);
-    }
-
-    @mixin lg\:font-family-($v) {
-      @include r(lg, font-family, $v);
-    }
-
-    @mixin xl\:font-family-($v) {
-      @include r(xl, font-family, $v);
-    }
-
-    @mixin \2xl\:font-family-($v) {
-      @include r(2xl, font-family, $v);
-    } // x*/
   }
 
-  // tailwind default
-  @else {
+  @mixin sm\:font-serif {
+    @media (min-width: map.get($RWD, sm)) {
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
   }
+
+  @mixin sm\:font-mono {
+    @media (min-width: map.get($RWD, sm)) {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    }
+  }
+  @mixin md\:font-sans {
+    @media (min-width: map.get($RWD, md)) {
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+  }
+
+  @mixin md\:font-serif {
+    @media (min-width: map.get($RWD, md)) {
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+  }
+
+  @mixin md\:font-mono {
+    @media (min-width: map.get($RWD, md)) {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    }
+  }
+  @mixin lg\:font-sans {
+    @media (min-width: map.get($RWD, lg)) {
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+  }
+
+  @mixin lg\:font-serif {
+    @media (min-width: map.get($RWD, lg)) {
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+  }
+
+  @mixin lg\:font-mono {
+    @media (min-width: map.get($RWD, lg)) {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    }
+  }
+  @mixin xl\:font-sans {
+    @media (min-width: map.get($RWD, xl)) {
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+  }
+
+  @mixin xl\:font-serif {
+    @media (min-width: map.get($RWD, xl)) {
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+  }
+
+  @mixin xl\:font-mono {
+    @media (min-width: map.get($RWD, xl)) {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    }
+  }
+  @mixin \2xl\:font-sans {
+    @media (min-width: map.get($RWD, 2xl)) {
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+  }
+
+  @mixin \2xl\:font-serif {
+    @media (min-width: map.get($RWD, 2xl)) {
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+  }
+
+  @mixin \2xl\:font-mono {
+    @media (min-width: map.get($RWD, 2xl)) {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    }
+  }
+  @mixin sm\:font-family-($v) {
+    @include r(sm, font-family, $v);
+  }
+
+  @mixin md\:font-family-($v) {
+    @include r(md, font-family, $v);
+  }
+
+  @mixin lg\:font-family-($v) {
+    @include r(lg, font-family, $v);
+  }
+
+  @mixin xl\:font-family-($v) {
+    @include r(xl, font-family, $v);
+  }
+
+  @mixin \2xl\:font-family-($v) {
+    @include r(2xl, font-family, $v);
+  }
+  // x*/
 }
 
 /* Naming collision: font -> font-family */
 @if $Custom {
-  // /*x 
+  // /*x
   @mixin font-family-($v) {
     font-family: $v;
   } // x*/

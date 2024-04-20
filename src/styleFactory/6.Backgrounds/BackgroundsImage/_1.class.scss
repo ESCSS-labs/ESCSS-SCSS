@@ -2,7 +2,7 @@
 
 /* Backgrounds Image */
 @if $Basic {
-  // /*x 
+  // /*x
   @mixin bg-none {
     background-image: none;
   }
@@ -41,38 +41,201 @@
 }
 
 @if $Rwd {
-  // reducing size for updating speed
-  @if $isLiteMode {
-    // /*x 
-    @mixin sm\:bg-image-($v) {
-      @include r(sm, background-image, $v);
-    }
-
-    @mixin md\:bg-image-($v) {
-      @include r(md, background-image, $v);
-    }
-
-    @mixin lg\:bg-image-($v) {
-      @include r(lg, background-image, $v);
-    }
-
-    @mixin xl\:bg-image-($v) {
-      @include r(xl, background-image, $v);
-    }
-
-    @mixin \2xl\:bg-image-($v) {
-      @include r(2xl, background-image, $v);
-    } // x*/
+  // /*x
+  @mixin sm\:bg-none {
+    @include r(sm, background-image, none);
+  }
+  @mixin sm\:bg-gradient-to-t {
+    @include _r(sm, _background-image, gradient, null, to top);
   }
 
-  // tailwind default
-  @else {
+  @mixin sm\:bg-gradient-to-tr {
+    @include _r(sm, _background-image, gradient, null, to top right);
   }
+
+  @mixin sm\:bg-gradient-to-r {
+    @include _r(sm, _background-image, gradient, null, to right);
+  }
+
+  @mixin sm\:bg-gradient-to-br {
+    @include _r(sm, _background-image, gradient, null, to bottom right);
+  }
+
+  @mixin sm\:bg-gradient-to-b {
+    @include _r(sm, _background-image, gradient, null, to bottom);
+  }
+
+  @mixin sm\:bg-gradient-to-bl {
+    @include _r(sm, _background-image, gradient, null, to bottom left);
+  }
+
+  @mixin sm\:bg-gradient-to-l {
+    @include _r(sm, _background-image, gradient, null, to left);
+  }
+
+  @mixin sm\:bg-gradient-to-tl {
+    @include _r(sm, _background-image, gradient, null, to top right);
+  }
+  @mixin md\:bg-none {
+    @include r(md, background-image, none);
+  }
+  @mixin md\:bg-gradient-to-t {
+    @include _r(md, _background-image, gradient, null, to top);
+  }
+
+  @mixin md\:bg-gradient-to-tr {
+    @include _r(md, _background-image, gradient, null, to top right);
+  }
+
+  @mixin md\:bg-gradient-to-r {
+    @include _r(md, _background-image, gradient, null, to right);
+  }
+
+  @mixin md\:bg-gradient-to-br {
+    @include _r(md, _background-image, gradient, null, to bottom right);
+  }
+
+  @mixin md\:bg-gradient-to-b {
+    @include _r(md, _background-image, gradient, null, to bottom);
+  }
+
+  @mixin md\:bg-gradient-to-bl {
+    @include _r(md, _background-image, gradient, null, to bottom left);
+  }
+
+  @mixin md\:bg-gradient-to-l {
+    @include _r(md, _background-image, gradient, null, to left);
+  }
+
+  @mixin md\:bg-gradient-to-tl {
+    @include _r(md, _background-image, gradient, null, to top right);
+  }
+  @mixin lg\:bg-none {
+    @include r(lg, background-image, none);
+  }
+  @mixin lg\:bg-gradient-to-t {
+    @include _r(lg, _background-image, gradient, null, to top);
+  }
+
+  @mixin lg\:bg-gradient-to-tr {
+    @include _r(lg, _background-image, gradient, null, to top right);
+  }
+
+  @mixin lg\:bg-gradient-to-r {
+    @include _r(lg, _background-image, gradient, null, to right);
+  }
+
+  @mixin lg\:bg-gradient-to-br {
+    @include _r(lg, _background-image, gradient, null, to bottom right);
+  }
+
+  @mixin lg\:bg-gradient-to-b {
+    @include _r(lg, _background-image, gradient, null, to bottom);
+  }
+
+  @mixin lg\:bg-gradient-to-bl {
+    @include _r(lg, _background-image, gradient, null, to bottom left);
+  }
+
+  @mixin lg\:bg-gradient-to-l {
+    @include _r(lg, _background-image, gradient, null, to left);
+  }
+
+  @mixin lg\:bg-gradient-to-tl {
+    @include _r(lg, _background-image, gradient, null, to top right);
+  }
+  @mixin xl\:bg-none {
+    @include r(xl, background-image, none);
+  }
+  @mixin xl\:bg-gradient-to-t {
+    @include _r(xl, _background-image, gradient, null, to top);
+  }
+
+  @mixin xl\:bg-gradient-to-tr {
+    @include _r(xl, _background-image, gradient, null, to top right);
+  }
+
+  @mixin xl\:bg-gradient-to-r {
+    @include _r(xl, _background-image, gradient, null, to right);
+  }
+
+  @mixin xl\:bg-gradient-to-br {
+    @include _r(xl, _background-image, gradient, null, to bottom right);
+  }
+
+  @mixin xl\:bg-gradient-to-b {
+    @include _r(xl, _background-image, gradient, null, to bottom);
+  }
+
+  @mixin xl\:bg-gradient-to-bl {
+    @include _r(xl, _background-image, gradient, null, to bottom left);
+  }
+
+  @mixin xl\:bg-gradient-to-l {
+    @include _r(xl, _background-image, gradient, null, to left);
+  }
+
+  @mixin xl\:bg-gradient-to-tl {
+    @include _r(xl, _background-image, gradient, null, to top right);
+  }
+  @mixin \2xl\:bg-none {
+    @include r(2xl, background-image, none);
+  }
+  @mixin \2xl\:bg-gradient-to-t {
+    @include _r(2xl, _background-image, gradient, null, to top);
+  }
+
+  @mixin \2xl\:bg-gradient-to-tr {
+    @include _r(2xl, _background-image, gradient, null, to top right);
+  }
+
+  @mixin \2xl\:bg-gradient-to-r {
+    @include _r(2xl, _background-image, gradient, null, to right);
+  }
+
+  @mixin \2xl\:bg-gradient-to-br {
+    @include _r(2xl, _background-image, gradient, null, to bottom right);
+  }
+
+  @mixin \2xl\:bg-gradient-to-b {
+    @include _r(2xl, _background-image, gradient, null, to bottom);
+  }
+
+  @mixin \2xl\:bg-gradient-to-bl {
+    @include _r(2xl, _background-image, gradient, null, to bottom left);
+  }
+
+  @mixin \2xl\:bg-gradient-to-l {
+    @include _r(2xl, _background-image, gradient, null, to left);
+  }
+
+  @mixin \2xl\:bg-gradient-to-tl {
+    @include _r(2xl, _background-image, gradient, null, to top right);
+  }
+  @mixin sm\:bg-image-($v) {
+    @include r(sm, background-image, $v);
+  }
+
+  @mixin md\:bg-image-($v) {
+    @include r(md, background-image, $v);
+  }
+
+  @mixin lg\:bg-image-($v) {
+    @include r(lg, background-image, $v);
+  }
+
+  @mixin xl\:bg-image-($v) {
+    @include r(xl, background-image, $v);
+  }
+
+  @mixin \2xl\:bg-image-($v) {
+    @include r(2xl, background-image, $v);
+  } // x*/
 }
 
 /* Naming collision: bg -> bg-image */
 @if $Custom {
-  // /*x 
+  // /*x
   @mixin bg-image-($v) {
     background-image: $v;
   } // x*/

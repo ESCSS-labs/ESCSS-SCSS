@@ -2,7 +2,7 @@
 
 /* Flex Grow */
 @if $Basic {
-  // /*x 
+  // /*x
   @mixin grow {
     flex-grow: 1;
   }
@@ -13,37 +13,70 @@
 }
 
 @if $Rwd {
-  // reducing size for updating speed
-  @if $isLiteMode {
-    // /*x 
-    @mixin sm\:grow-($v) {
-      @include r(sm, flex-grow, $v);
-    }
-
-    @mixin md\:grow-($v) {
-      @include r(md, flex-grow, $v);
-    }
-
-    @mixin lg\:grow-($v) {
-      @include r(lg, flex-grow, $v);
-    }
-
-    @mixin xl\:grow-($v) {
-      @include r(xl, flex-grow, $v);
-    }
-
-    @mixin \2xl\:grow-($v) {
-      @include r(2xl, flex-grow, $v);
-    } // x*/
+  // /*x
+  @mixin sm\:grow {
+    @include r(sm, flex-grow, 1);
   }
 
-  // tailwind default
-  @else {
+  @mixin sm\:grow-0 {
+    @include r(sm, flex-grow, 0);
   }
+
+  @mixin md\:grow {
+    @include r(md, flex-grow, 1);
+  }
+
+  @mixin md\:grow-0 {
+    @include r(md, flex-grow, 0);
+  }
+
+  @mixin lg\:grow {
+    @include r(lg, flex-grow, 1);
+  }
+
+  @mixin lg\:grow-0 {
+    @include r(lg, flex-grow, 0);
+  }
+
+  @mixin xl\:grow {
+    @include r(xl, flex-grow, 1);
+  }
+
+  @mixin xl\:grow-0 {
+    @include r(xl, flex-grow, 0);
+  }
+
+  @mixin \2xl\:grow {
+    @include r(2xl, flex-grow, 1);
+  }
+
+  @mixin \2xl\:grow-0 {
+    @include r(2xl, flex-grow, 0);
+  }
+  @mixin sm\:grow-($v) {
+    @include r(sm, flex-grow, $v);
+  }
+
+  @mixin md\:grow-($v) {
+    @include r(md, flex-grow, $v);
+  }
+
+  @mixin lg\:grow-($v) {
+    @include r(lg, flex-grow, $v);
+  }
+
+  @mixin xl\:grow-($v) {
+    @include r(xl, flex-grow, $v);
+  }
+
+  @mixin \2xl\:grow-($v) {
+    @include r(2xl, flex-grow, $v);
+  }
+  // x*/
 }
 
 @if $Custom {
-  // /*x 
+  // /*x
   @mixin grow-($v) {
     flex-grow: $v;
   } // x*/

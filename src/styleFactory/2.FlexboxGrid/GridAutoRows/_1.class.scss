@@ -2,7 +2,7 @@
 
 /* Grid Auto Rows */
 @if $Basic {
-  // /*x 
+  // /*x
   @mixin auto-rows-auto {
     grid-auto-rows: auto;
   }
@@ -21,37 +21,110 @@
 }
 
 @if $Rwd {
-  // reducing size for updating speed
-  @if $isLiteMode {
-    // /*x 
-    @mixin sm\:auto-rows-($v) {
-      @include r(sm, grid-auto-rows, $v);
-    }
-
-    @mixin md\:auto-rows-($v) {
-      @include r(md, grid-auto-rows, $v);
-    }
-
-    @mixin lg\:auto-rows-($v) {
-      @include r(lg, grid-auto-rows, $v);
-    }
-
-    @mixin xl\:auto-rows-($v) {
-      @include r(xl, grid-auto-rows, $v);
-    }
-
-    @mixin \2xl\:auto-rows-($v) {
-      @include r(2xl, grid-auto-rows, $v);
-    } // x*/
+  // /*x
+  @mixin sm\:auto-rows-auto {
+    @include r(sm, grid-auto-rows, auto);
   }
 
-  // tailwind default
-  @else {
+  @mixin sm\:auto-rows-min {
+    @include r(sm, grid-auto-rows, min-content);
   }
+
+  @mixin sm\:auto-rows-max {
+    @include r(sm, grid-auto-rows, max-content);
+  }
+
+  @mixin sm\:auto-rows-fr {
+    @include r(sm, grid-auto-rows, minmax(0, 1fr));
+  }
+
+  @mixin md\:auto-rows-auto {
+    @include r(md, grid-auto-rows, auto);
+  }
+
+  @mixin md\:auto-rows-min {
+    @include r(md, grid-auto-rows, min-content);
+  }
+
+  @mixin md\:auto-rows-max {
+    @include r(md, grid-auto-rows, max-content);
+  }
+
+  @mixin md\:auto-rows-fr {
+    @include r(md, grid-auto-rows, minmax(0, 1fr));
+  }
+
+  @mixin lg\:auto-rows-auto {
+    @include r(lg, grid-auto-rows, auto);
+  }
+
+  @mixin lg\:auto-rows-min {
+    @include r(lg, grid-auto-rows, min-content);
+  }
+
+  @mixin lg\:auto-rows-max {
+    @include r(lg, grid-auto-rows, max-content);
+  }
+
+  @mixin lg\:auto-rows-fr {
+    @include r(lg, grid-auto-rows, minmax(0, 1fr));
+  }
+
+  @mixin xl\:auto-rows-auto {
+    @include r(xl, grid-auto-rows, auto);
+  }
+
+  @mixin xl\:auto-rows-min {
+    @include r(xl, grid-auto-rows, min-content);
+  }
+
+  @mixin xl\:auto-rows-max {
+    @include r(xl, grid-auto-rows, max-content);
+  }
+
+  @mixin xl\:auto-rows-fr {
+    @include r(xl, grid-auto-rows, minmax(0, 1fr));
+  }
+
+  @mixin \2xl\:auto-rows-auto {
+    @include r(2xl, grid-auto-rows, auto);
+  }
+
+  @mixin \2xl\:auto-rows-min {
+    @include r(2xl, grid-auto-rows, min-content);
+  }
+
+  @mixin \2xl\:auto-rows-max {
+    @include r(2xl, grid-auto-rows, max-content);
+  }
+
+  @mixin \2xl\:auto-rows-fr {
+    @include r(2xl, grid-auto-rows, minmax(0, 1fr));
+  }
+  @mixin sm\:auto-rows-($v) {
+    @include r(sm, grid-auto-rows, $v);
+  }
+
+  @mixin md\:auto-rows-($v) {
+    @include r(md, grid-auto-rows, $v);
+  }
+
+  @mixin lg\:auto-rows-($v) {
+    @include r(lg, grid-auto-rows, $v);
+  }
+
+  @mixin xl\:auto-rows-($v) {
+    @include r(xl, grid-auto-rows, $v);
+  }
+
+  @mixin \2xl\:auto-rows-($v) {
+    @include r(2xl, grid-auto-rows, $v);
+  }
+  // x*/
 }
 
 @if $Custom {
-  // /*x 
+  // /*x
   @mixin auto-rows-($v) {
     grid-auto-rows: $v;
   } // x*/

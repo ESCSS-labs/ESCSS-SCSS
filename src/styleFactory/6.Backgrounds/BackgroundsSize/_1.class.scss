@@ -2,7 +2,7 @@
 
 /* Backgrounds Size */
 @if $Basic {
-  // /*x 
+  // /*x
   @mixin bg-auto {
     background-size: auto;
   }
@@ -17,38 +17,87 @@
 }
 
 @if $Rwd {
-  // reducing size for updating speed
-  @if $isLiteMode {
-    // /*x 
-    @mixin sm\:bg-size-($v) {
-      @include r(sm, background-size, $v);
-    }
-
-    @mixin md\:bg-size-($v) {
-      @include r(md, background-size, $v);
-    }
-
-    @mixin lg\:bg-size-($v) {
-      @include r(lg, background-size, $v);
-    }
-
-    @mixin xl\:bg-size-($v) {
-      @include r(xl, background-size, $v);
-    }
-
-    @mixin \2xl\:bg-size-($v) {
-      @include r(2xl, background-size, $v);
-    } // x*/
+  // /*x
+  @mixin sm\:bg-auto {
+    @include r(sm, background-size, auto);
   }
 
-  // tailwind default
-  @else {
+  @mixin sm\:bg-cover {
+    @include r(sm, background-size, cover);
   }
+
+  @mixin sm\:bg-contain {
+    @include r(sm, background-size, contain);
+  }
+  @mixin md\:bg-auto {
+    @include r(md, background-size, auto);
+  }
+
+  @mixin md\:bg-cover {
+    @include r(md, background-size, cover);
+  }
+
+  @mixin md\:bg-contain {
+    @include r(md, background-size, contain);
+  }
+  @mixin lg\:bg-auto {
+    @include r(lg, background-size, auto);
+  }
+
+  @mixin lg\:bg-cover {
+    @include r(lg, background-size, cover);
+  }
+
+  @mixin lg\:bg-contain {
+    @include r(lg, background-size, contain);
+  }
+  @mixin xl\:bg-auto {
+    @include r(xl, background-size, auto);
+  }
+
+  @mixin xl\:bg-cover {
+    @include r(xl, background-size, cover);
+  }
+
+  @mixin xl\:bg-contain {
+    @include r(xl, background-size, contain);
+  }
+  @mixin \2xl\:bg-auto {
+    @include r(2xl, background-size, auto);
+  }
+
+  @mixin \2xl\:bg-cover {
+    @include r(2xl, background-size, cover);
+  }
+
+  @mixin \2xl\:bg-contain {
+    @include r(2xl, background-size, contain);
+  }
+  @mixin sm\:bg-size-($v) {
+    @include r(sm, background-size, $v);
+  }
+
+  @mixin md\:bg-size-($v) {
+    @include r(md, background-size, $v);
+  }
+
+  @mixin lg\:bg-size-($v) {
+    @include r(lg, background-size, $v);
+  }
+
+  @mixin xl\:bg-size-($v) {
+    @include r(xl, background-size, $v);
+  }
+
+  @mixin \2xl\:bg-size-($v) {
+    @include r(2xl, background-size, $v);
+  }
+  // x*/
 }
 
 /* Purpose(name conflict): bg -> bg-size */
 @if $Custom {
-  // /*x 
+  // /*x
   @mixin bg-size-($v) {
     background-size: $v;
   } // x*/

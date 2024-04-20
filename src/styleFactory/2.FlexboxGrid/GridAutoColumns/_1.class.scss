@@ -2,7 +2,7 @@
 
 /* Grid Auto Columns */
 @if $Basic {
-  // /*x 
+  // /*x
   @mixin auto-cols-auto {
     grid-auto-columns: auto;
   }
@@ -21,37 +21,106 @@
 }
 
 @if $Rwd {
-  // reducing size for updating speed
-  @if $isLiteMode {
-    // /*x 
-    @mixin sm\:auto-cols-($v) {
-      @include r(sm, grid-auto-columns, $v);
-    }
-
-    @mixin md\:auto-cols-($v) {
-      @include r(md, grid-auto-columns, $v);
-    }
-
-    @mixin lg\:auto-cols-($v) {
-      @include r(lg, grid-auto-columns, $v);
-    }
-
-    @mixin xl\:auto-cols-($v) {
-      @include r(xl, grid-auto-columns, $v);
-    }
-
-    @mixin \2xl\:auto-cols-($v) {
-      @include r(2xl, grid-auto-columns, $v);
-    } // x*/
+  // /*x
+  @mixin sm\:auto-cols-auto {
+    @include r(sm, grid-auto-columns, auto);
   }
 
-  // tailwind default
-  @else {
+  @mixin sm\:auto-cols-min {
+    @include r(sm, grid-auto-columns, min-content);
   }
+
+  @mixin sm\:auto-cols-max {
+    @include r(sm, grid-auto-columns, max-content);
+  }
+
+  @mixin sm\:auto-cols-fr {
+    @include r(sm, grid-auto-columns, minmax(0, 1fr));
+  }
+  @mixin md\:auto-cols-auto {
+    @include r(md, grid-auto-columns, auto);
+  }
+
+  @mixin md\:auto-cols-min {
+    @include r(md, grid-auto-columns, min-content);
+  }
+
+  @mixin md\:auto-cols-max {
+    @include r(md, grid-auto-columns, max-content);
+  }
+
+  @mixin md\:auto-cols-fr {
+    @include r(md, grid-auto-columns, minmax(0, 1fr));
+  }
+  @mixin lg\:auto-cols-auto {
+    @include r(lg, grid-auto-columns, auto);
+  }
+
+  @mixin lg\:auto-cols-min {
+    @include r(lg, grid-auto-columns, min-content);
+  }
+
+  @mixin lg\:auto-cols-max {
+    @include r(lg, grid-auto-columns, max-content);
+  }
+
+  @mixin lg\:auto-cols-fr {
+    @include r(lg, grid-auto-columns, minmax(0, 1fr));
+  }
+  @mixin xl\:auto-cols-auto {
+    @include r(xl, grid-auto-columns, auto);
+  }
+
+  @mixin xl\:auto-cols-min {
+    @include r(xl, grid-auto-columns, min-content);
+  }
+
+  @mixin xl\:auto-cols-max {
+    @include r(xl, grid-auto-columns, max-content);
+  }
+
+  @mixin xl\:auto-cols-fr {
+    @include r(xl, grid-auto-columns, minmax(0, 1fr));
+  }
+  @mixin \2xl\:auto-cols-auto {
+    @include r(2xl, grid-auto-columns, auto);
+  }
+
+  @mixin \2xl\:auto-cols-min {
+    @include r(2xl, grid-auto-columns, min-content);
+  }
+
+  @mixin \2xl\:auto-cols-max {
+    @include r(2xl, grid-auto-columns, max-content);
+  }
+
+  @mixin \2xl\:auto-cols-fr {
+    @include r(2xl, grid-auto-columns, minmax(0, 1fr));
+  }
+  @mixin sm\:auto-cols-($v) {
+    @include r(sm, grid-auto-columns, $v);
+  }
+
+  @mixin md\:auto-cols-($v) {
+    @include r(md, grid-auto-columns, $v);
+  }
+
+  @mixin lg\:auto-cols-($v) {
+    @include r(lg, grid-auto-columns, $v);
+  }
+
+  @mixin xl\:auto-cols-($v) {
+    @include r(xl, grid-auto-columns, $v);
+  }
+
+  @mixin \2xl\:auto-cols-($v) {
+    @include r(2xl, grid-auto-columns, $v);
+  }
+  // x*/
 }
 
 @if $Custom {
-  // /*x 
+  // /*x
   @mixin auto-cols-($v) {
     grid-auto-columns: $v;
   } // x*/

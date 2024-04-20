@@ -2,7 +2,7 @@
 
 /* Stroke Width */
 @if $Basic {
-  // /*x 
+  // /*x
   @mixin stroke-0 {
     stroke-width: 0;
   }
@@ -17,38 +17,91 @@
 }
 
 @if $Rwd {
-  // reducing size for updating speed
-  @if $isLiteMode {
-    // /*x 
-    @mixin sm\:stroke-width-($v) {
-      @include r(sm, stroke-width, $v);
-    }
-
-    @mixin md\:stroke-width-($v) {
-      @include r(md, stroke-width, $v);
-    }
-
-    @mixin lg\:stroke-width-($v) {
-      @include r(lg, stroke-width, $v);
-    }
-
-    @mixin xl\:stroke-width-($v) {
-      @include r(xl, stroke-width, $v);
-    }
-
-    @mixin \2xl\:stroke-width-($v) {
-      @include r(2xl, stroke-width, $v);
-    } // x*/
+  // /*x
+  @mixin sm\:stroke-0 {
+    @include r(sm, stroke-width, 0);
   }
 
-  // tailwind default
-  @else {
+  @mixin sm\:stroke-1 {
+    @include r(sm, stroke-width, 1);
   }
+
+  @mixin sm\:stroke-2 {
+    @include r(sm, stroke-width, 2);
+  }
+
+  @mixin md\:stroke-0 {
+    @include r(md, stroke-width, 0);
+  }
+
+  @mixin md\:stroke-1 {
+    @include r(md, stroke-width, 1);
+  }
+
+  @mixin md\:stroke-2 {
+    @include r(md, stroke-width, 2);
+  }
+
+  @mixin lg\:stroke-0 {
+    @include r(lg, stroke-width, 0);
+  }
+
+  @mixin lg\:stroke-1 {
+    @include r(lg, stroke-width, 1);
+  }
+
+  @mixin lg\:stroke-2 {
+    @include r(lg, stroke-width, 2);
+  }
+
+  @mixin xl\:stroke-0 {
+    @include r(xl, stroke-width, 0);
+  }
+
+  @mixin xl\:stroke-1 {
+    @include r(xl, stroke-width, 1);
+  }
+
+  @mixin xl\:stroke-2 {
+    @include r(xl, stroke-width, 2);
+  }
+
+  @mixin \2xl\:stroke-0 {
+    @include r(2xl, stroke-width, 0);
+  }
+
+  @mixin \2xl\:stroke-1 {
+    @include r(2xl, stroke-width, 1);
+  }
+
+  @mixin \2xl\:stroke-2 {
+    @include r(2xl, stroke-width, 2);
+  }
+
+  @mixin sm\:stroke-width-($v) {
+    @include r(sm, stroke-width, $v);
+  }
+
+  @mixin md\:stroke-width-($v) {
+    @include r(md, stroke-width, $v);
+  }
+
+  @mixin lg\:stroke-width-($v) {
+    @include r(lg, stroke-width, $v);
+  }
+
+  @mixin xl\:stroke-width-($v) {
+    @include r(xl, stroke-width, $v);
+  }
+
+  @mixin \2xl\:stroke-width-($v) {
+    @include r(2xl, stroke-width, $v);
+  } // x*/
 }
 
 /* Naming collision: stroke -> stroke-width */
 @if $Custom {
-  // /*x 
+  // /*x
   @mixin stroke-width-($v) {
     stroke-width: $v;
   } // x*/
