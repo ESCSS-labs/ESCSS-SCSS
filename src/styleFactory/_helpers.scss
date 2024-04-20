@@ -155,6 +155,30 @@
   $--tw-backdrop-saturate: null !global;
   $--tw-backdrop-sepia: null !global;
 }
+// 0 param 
+@mixin _max-width_container {
+  width: 100%;
+
+  @media (min-width: map.get($RWD, sm)) {
+    max-width: map.get($RWD, sm);
+  }
+
+  @media (min-width: map.get($RWD, md)) {
+    max-width: map.get($RWD, md);
+  }
+
+  @media (min-width: map.get($RWD, lg)) {
+    max-width: map.get($RWD, lg);
+  }
+
+  @media (min-width: map.get($RWD, xl)) {
+    max-width: map.get($RWD, xl);
+  }
+
+  @media (min-width: map.get($RWD, 2xl)) {
+    max-width: map.get($RWD, 2xl);
+  }
+}
 
 // 1 params
 @mixin _border-style($token) {
@@ -516,9 +540,9 @@
 // encapsulation for helper function to rwd(file size concern)
 @mixin _r($rwd, $token, $slot: null, $slot2: null, $slot3: null) {
   @media (min-width: map.get($RWD, $rwd)) {
-    // 0 params (special case: basic is enough, it's not necessary to make another function abstraction)
-    @if $token ==container {
-      @include container;
+    // 0 params
+    @if $token ==_max-width_container {
+      @include _max-width_container;
     }
 
     // 1 params
