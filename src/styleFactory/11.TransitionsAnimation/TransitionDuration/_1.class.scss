@@ -221,7 +221,14 @@
   @mixin \2xl\:duration-1000 {
     @include r(2xl, transition-duration, 1000ms);
   }
+  // x*/
+}
 
+@if $Custom {
+  // /*x
+  @mixin duration-($v) {
+    transition-duration: $v;
+  }
   @mixin sm\:duration-($v) {
     @include r(sm, transition-duration, $v);
   }
@@ -240,12 +247,5 @@
 
   @mixin \2xl\:duration-($v) {
     @include r(2xl, transition-duration, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin duration-($v) {
-    transition-duration: $v;
   } // x*/
 }

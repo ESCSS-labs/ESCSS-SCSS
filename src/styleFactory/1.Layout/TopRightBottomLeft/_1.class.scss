@@ -1933,7 +1933,7 @@
   @mixin left-full {
     left: 100%;
   }
-  
+
   @mixin -inset-0 {
     inset: -0px;
   }
@@ -5675,7 +5675,6 @@
     @include r(sm, left, 100%);
   }
 
-  
   @mixin sm\:-inset-0 {
     @include r(sm, inset, -0px);
   }
@@ -9330,7 +9329,6 @@
     @include r(md, left, 100%);
   }
 
-  
   @mixin md\:-inset-0 {
     @include r(md, inset, -0px);
   }
@@ -12985,7 +12983,6 @@
     @include r(lg, left, 100%);
   }
 
-  
   @mixin lg\:-inset-0 {
     @include r(lg, inset, -0px);
   }
@@ -16640,7 +16637,6 @@
     @include r(xl, left, 100%);
   }
 
-  
   @mixin xl\:-inset-0 {
     @include r(xl, inset, -0px);
   }
@@ -20295,7 +20291,6 @@
     @include r(2xl, left, 100%);
   }
 
-  
   @mixin \2xl\:-inset-0 {
     @include r(2xl, inset, -0px);
   }
@@ -22104,6 +22099,48 @@
   @mixin \2xl\:-left-full {
     @include r(2xl, left, -100%);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin inset-($v) {
+    inset: $v;
+  }
+
+  @mixin inset-x-($v) {
+    left: $v;
+    right: $v;
+  }
+
+  @mixin inset-y-($v) {
+    top: $v;
+    bottom: $v;
+  }
+
+  @mixin start-($v) {
+    inset-inline-start: $v;
+  }
+
+  @mixin end-($v) {
+    inset-inline-end: $v;
+  }
+
+  @mixin top-($v) {
+    top: $v;
+  }
+
+  @mixin right-($v) {
+    right: $v;
+  }
+
+  @mixin bottom-($v) {
+    bottom: $v;
+  }
+
+  @mixin left-($v) {
+    left: $v;
+  }
 
   @mixin sm\:inset-($v) {
     @include r(sm, inset, $v);
@@ -22283,48 +22320,5 @@
 
   @mixin \2xl\:left-($v) {
     @include r(2xl, left, $v);
-  }
-
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin inset-($v) {
-    inset: $v;
-  }
-
-  @mixin inset-x-($v) {
-    left: $v;
-    right: $v;
-  }
-
-  @mixin inset-y-($v) {
-    top: $v;
-    bottom: $v;
-  }
-
-  @mixin start-($v) {
-    inset-inline-start: $v;
-  }
-
-  @mixin end-($v) {
-    inset-inline-end: $v;
-  }
-
-  @mixin top-($v) {
-    top: $v;
-  }
-
-  @mixin right-($v) {
-    right: $v;
-  }
-
-  @mixin bottom-($v) {
-    bottom: $v;
-  }
-
-  @mixin left-($v) {
-    left: $v;
   } // x*/
 }

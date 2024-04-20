@@ -1009,6 +1009,22 @@
   @mixin \2xl\:row-end-auto {
     @include r(2xl, grid-row-end, auto);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin row-($v) {
+    grid-row: $v;
+  }
+
+  @mixin row-start-($v) {
+    grid-row-start: $v;
+  }
+
+  @mixin row-end-($v) {
+    grid-row-end: $v;
+  }
   @mixin sm\:row-($v) {
     @include r(sm, grid-row, $v);
   }
@@ -1067,22 +1083,5 @@
 
   @mixin \2xl\:row-end-($v) {
     @include r(2xl, grid-row-end, $v);
-  }
-
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin row-($v) {
-    grid-row: $v;
-  }
-
-  @mixin row-start-($v) {
-    grid-row-start: $v;
-  }
-
-  @mixin row-end-($v) {
-    grid-row-end: $v;
   } // x*/
 }

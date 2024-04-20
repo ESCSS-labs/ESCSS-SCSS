@@ -49,6 +49,16 @@
   @mixin \2xl\:invert {
     @include _r(2xl, _filter, invert, 100%);
   }
+
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin invert-($v) {
+    @include _filter(invert, $v);
+  }
+
   @mixin sm\:invert-($v) {
     @include _r(sm, _filter, invert, $v);
   }
@@ -67,13 +77,5 @@
 
   @mixin \2xl\:invert-($v) {
     @include _r(2xl, _filter, invert, $v);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin invert-($v) {
-    @include _filter(invert, $v);
   } // x*/
 }

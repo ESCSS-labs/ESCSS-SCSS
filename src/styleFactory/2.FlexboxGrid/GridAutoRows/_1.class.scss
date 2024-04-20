@@ -101,6 +101,15 @@
   @mixin \2xl\:auto-rows-fr {
     @include r(2xl, grid-auto-rows, minmax(0, 1fr));
   }
+
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin auto-rows-($v) {
+    grid-auto-rows: $v;
+  }
   @mixin sm\:auto-rows-($v) {
     @include r(sm, grid-auto-rows, $v);
   }
@@ -119,13 +128,5 @@
 
   @mixin \2xl\:auto-rows-($v) {
     @include r(2xl, grid-auto-rows, $v);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin auto-rows-($v) {
-    grid-auto-rows: $v;
   } // x*/
 }

@@ -505,6 +505,16 @@
   @mixin \2xl\:backdrop-opacity-100 {
     @include _r(2xl, _backdrop-filter, opacity, 1);
   }
+
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin backdrop-opacity-($v) {
+    @include _backdrop-filter(opacity, $v);
+  }
+
   @mixin sm\:backdrop-opacity-($v) {
     @include _r(sm, _backdrop-filter, opacity, $v);
   }
@@ -523,13 +533,5 @@
 
   @mixin \2xl\:backdrop-opacity-($v) {
     @include _r(2xl, _backdrop-filter, opacity, $v);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-opacity-($v) {
-    @include _backdrop-filter(opacity, $v);
   } // x*/
 }

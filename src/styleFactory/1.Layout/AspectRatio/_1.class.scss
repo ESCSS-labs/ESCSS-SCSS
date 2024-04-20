@@ -77,6 +77,15 @@
   @mixin \2xl\:aspect-video {
     @include r(2xl, aspect-ratio, 16 / 9);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin aspect-($v) {
+    aspect-ratio: $v;
+  }
+
   @mixin sm\:aspect-($v) {
     @include r(sm, aspect-ratio, $v);
   }
@@ -95,12 +104,5 @@
 
   @mixin \2xl\:aspect-($v) {
     @include r(2xl, aspect-ratio, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin aspect-($v) {
-    aspect-ratio: $v;
   } // x*/
 }

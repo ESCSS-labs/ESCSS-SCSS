@@ -218,6 +218,14 @@
     @include r(2xl, transition-delay, 1000ms);
   }
 
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin delay-($v) {
+    transition-delay: $v;
+  }
   @mixin sm\:delay-($v) {
     @include r(sm, transition-delay, $v);
   }
@@ -236,12 +244,5 @@
 
   @mixin \2xl\:delay-($v) {
     @include r(2xl, transition-delay, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin delay-($v) {
-    transition-delay: $v;
   } // x*/
 }

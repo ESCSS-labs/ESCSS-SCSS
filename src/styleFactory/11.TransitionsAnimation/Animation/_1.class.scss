@@ -160,7 +160,14 @@
   @mixin \2xl\:animate-bounce {
     @include r(2xl, animation, bounce 1s infinite);
   }
+  // x*/
+}
 
+@if $Custom {
+  // /*x
+  @mixin animate-($v) {
+    animation: $v;
+  }
   @mixin sm\:animate-($v) {
     @include r(sm, animation, $v);
   }
@@ -179,12 +186,5 @@
 
   @mixin \2xl\:animate-($v) {
     @include r(2xl, animation, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin animate-($v) {
-    animation: $v;
   } // x*/
 }

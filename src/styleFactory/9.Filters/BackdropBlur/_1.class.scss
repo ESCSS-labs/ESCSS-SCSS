@@ -193,6 +193,16 @@
   @mixin \2xl\:backdrop-blur-3xl {
     @include _r(2xl, _backdrop-filter, blur, 64px);
   }
+
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin backdrop-blur-($v) {
+    @include _backdrop-filter(blur, $v);
+  }
+
   @mixin sm\:backdrop-blur-($v) {
     @include _r(sm, _backdrop-filter, blur, $v);
   }
@@ -211,13 +221,5 @@
 
   @mixin \2xl\:backdrop-blur-($v) {
     @include _r(2xl, _backdrop-filter, blur, $v);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-blur-($v) {
-    @include _backdrop-filter(blur, $v);
   } // x*/
 }

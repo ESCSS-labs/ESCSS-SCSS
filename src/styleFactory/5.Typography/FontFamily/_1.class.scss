@@ -115,6 +115,16 @@
         "Liberation Mono", "Courier New", monospace;
     }
   }
+  // x*/
+}
+
+/* Naming collision: font -> font-family */
+@if $Custom {
+  // /*x
+  @mixin font-family-($v) {
+    font-family: $v;
+  }
+
   @mixin sm\:font-family-($v) {
     @include r(sm, font-family, $v);
   }
@@ -133,14 +143,5 @@
 
   @mixin \2xl\:font-family-($v) {
     @include r(2xl, font-family, $v);
-  }
-  // x*/
-}
-
-/* Naming collision: font -> font-family */
-@if $Custom {
-  // /*x
-  @mixin font-family-($v) {
-    font-family: $v;
   } // x*/
 }

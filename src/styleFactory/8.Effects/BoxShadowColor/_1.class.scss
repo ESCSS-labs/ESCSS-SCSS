@@ -995,29 +995,6 @@
 @if $Rwd {
   @if $isLiteMode {
     // /*x
-    @mixin sm\:shadow-color-($v) {
-      @include _r(sm, _box-shadow, shadow-color, $v);
-    }
-
-    @mixin md\:shadow-color-($v) {
-      @include _r(md, _box-shadow, shadow-color, $v);
-    }
-
-    @mixin lg\:shadow-color-($v) {
-      @include _r(lg, _box-shadow, shadow-color, $v);
-    }
-
-    @mixin xl\:shadow-color-($v) {
-      @include _r(xl, _box-shadow, shadow-color, $v);
-    }
-
-    @mixin \2xl\:shadow-color-($v) {
-      @include _r(2xl, _box-shadow, shadow-color, $v);
-    } // x*/
-  }
-
-  // tailwind default
-  @else { // /*x
     @mixin sm\:shadow-inherit {
       @include _r(sm, _box-shadow, shadow-color, inherit);
     }
@@ -5953,26 +5930,7 @@
     @mixin \2xl\:shadow-rose-950($v: 1) {
       @include _r(2xl, _box-shadow, shadow-color, c(ros-950, $v));
     }
-
-    @mixin sm\:shadow-color-($v) {
-      @include _r(sm, _box-shadow, shadow-color, $v);
-    }
-
-    @mixin md\:shadow-color-($v) {
-      @include _r(md, _box-shadow, shadow-color, $v);
-    }
-
-    @mixin lg\:shadow-color-($v) {
-      @include _r(lg, _box-shadow, shadow-color, $v);
-    }
-
-    @mixin xl\:shadow-color-($v) {
-      @include _r(xl, _box-shadow, shadow-color, $v);
-    }
-
-    @mixin \2xl\:shadow-color-($v) {
-      @include _r(2xl, _box-shadow, shadow-color, $v);
-    }// x*/
+    // x*/
   }
 }
 
@@ -5981,5 +5939,25 @@
   // /*x
   @mixin shadow-color-($v) {
     @include _box-shadow(shadow-color, $v);
+  }
+
+  @mixin sm\:shadow-color-($v) {
+    @include _r(sm, _box-shadow, shadow-color, $v);
+  }
+
+  @mixin md\:shadow-color-($v) {
+    @include _r(md, _box-shadow, shadow-color, $v);
+  }
+
+  @mixin lg\:shadow-color-($v) {
+    @include _r(lg, _box-shadow, shadow-color, $v);
+  }
+
+  @mixin xl\:shadow-color-($v) {
+    @include _r(xl, _box-shadow, shadow-color, $v);
+  }
+
+  @mixin \2xl\:shadow-color-($v) {
+    @include _r(2xl, _box-shadow, shadow-color, $v);
   } // x*/
 }

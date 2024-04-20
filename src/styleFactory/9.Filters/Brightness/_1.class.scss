@@ -265,6 +265,15 @@
   @mixin \2xl\:brightness-200 {
     @include _r(2xl, _filter, brightness, 2);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin brightness-($v) {
+    @include _filter(brightness, $v);
+  }
+
   @mixin sm\:brightness-($v) {
     @include _r(sm, _filter, brightness, $v);
   }
@@ -283,12 +292,5 @@
 
   @mixin \2xl\:brightness-($v) {
     @include _r(2xl, _filter, brightness, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin brightness-($v) {
-    @include _filter(brightness, $v);
   } // x*/
 }

@@ -51,7 +51,6 @@
     @include _transform(skew, 12deg, y);
   }
 
-  
   @mixin -skew-x-0 {
     @include _transform(skew, -0deg, x);
   }
@@ -151,7 +150,6 @@
     @include _r(sm, _transform, skew, 12deg, y);
   }
 
-  
   @mixin sm\:-skew-x-0 {
     @include _r(sm, _transform, skew, -0deg, x);
   }
@@ -247,7 +245,6 @@
     @include _r(md, _transform, skew, 12deg, y);
   }
 
-  
   @mixin md\:-skew-x-0 {
     @include _r(md, _transform, skew, -0deg, x);
   }
@@ -344,7 +341,6 @@
     @include _r(lg, _transform, skew, 12deg, y);
   }
 
-  
   @mixin lg\:-skew-x-0 {
     @include _r(lg, _transform, skew, -0deg, x);
   }
@@ -441,7 +437,6 @@
     @include _r(xl, _transform, skew, 12deg, y);
   }
 
-  
   @mixin xl\:-skew-x-0 {
     @include _r(xl, _transform, skew, -0deg, x);
   }
@@ -538,7 +533,6 @@
     @include _r(2xl, _transform, skew, 12deg, y);
   }
 
-  
   @mixin \2xl\:-skew-x-0 {
     @include _r(2xl, _transform, skew, -0deg, x);
   }
@@ -587,6 +581,18 @@
     @include _r(2xl, _transform, skew, -12deg, y);
   }
 
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin skew-x-($v) {
+    @include _transform(skew, $v, x);
+  }
+
+  @mixin skew-y-($v) {
+    @include _transform(skew, $v, y);
+  }
   @mixin sm\:skew-x-($v) {
     @include _r(sm, _transform, skew, $v, x);
   }
@@ -625,16 +631,5 @@
 
   @mixin \2xl\:skew-y-($v) {
     @include _r(2xl, _transform, skew, $v, y);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin skew-x-($v) {
-    @include _transform(skew, $v, x);
-  }
-
-  @mixin skew-y-($v) {
-    @include _transform(skew, $v, y);
   } // x*/
 }

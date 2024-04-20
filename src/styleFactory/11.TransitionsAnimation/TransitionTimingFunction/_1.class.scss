@@ -82,7 +82,14 @@
   @mixin \2xl\:ease-in-out {
     @include r(2xl, transition-timing-function, cubic-bezier(0.4, 0, 0.2, 1));
   }
+  // x*/
+}
 
+@if $Custom {
+  // /*x
+  @mixin ease-($v) {
+    transition-timing-function: $v;
+  }
   @mixin sm\:ease-($v) {
     @include r(sm, transition-timing-function, $v);
   }
@@ -101,12 +108,5 @@
 
   @mixin \2xl\:ease-($v) {
     @include r(2xl, transition-timing-function, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin ease-($v) {
-    transition-timing-function: $v;
   } // x*/
 }

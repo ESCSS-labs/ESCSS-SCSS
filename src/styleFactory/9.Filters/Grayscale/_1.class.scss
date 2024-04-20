@@ -49,6 +49,16 @@
   @mixin \2xl\:grayscale {
     @include _r(2xl, _filter, grayscale, 100%);
   }
+
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin grayscale-($v) {
+    @include _filter(grayscale, $v);
+  }
+
   @mixin sm\:grayscale-($v) {
     @include _r(sm, _filter, grayscale, $v);
   }
@@ -67,13 +77,5 @@
 
   @mixin \2xl\:grayscale-($v) {
     @include _r(2xl, _filter, grayscale, $v);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin grayscale-($v) {
-    @include _filter(grayscale, $v);
   } // x*/
 }

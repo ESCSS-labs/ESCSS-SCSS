@@ -169,6 +169,16 @@
   @mixin \2xl\:ring-inset {
     @include _r(2xl, _box-shadow, ring-width, inset);
   }
+
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin ring-($v) {
+    @include _box-shadow(ring-width, $v);
+  }
+
   @mixin sm\:ring-($v) {
     @include _r(sm, _box-shadow, ring-width, $v);
   }
@@ -187,13 +197,5 @@
 
   @mixin \2xl\:ring-($v) {
     @include _r(2xl, _box-shadow, ring-width, $v);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin ring-($v) {
-    @include _box-shadow(ring-width, $v);
   } // x*/
 }

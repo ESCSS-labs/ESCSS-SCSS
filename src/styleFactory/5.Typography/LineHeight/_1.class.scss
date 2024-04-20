@@ -384,6 +384,14 @@
   @mixin \2xl\:leading-loose {
     @include r(2xl, line-height, 2);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin leading-($v) {
+    line-height: $v;
+  }
 
   @mixin sm\:leading-($v) {
     @include r(sm, line-height, $v);
@@ -403,12 +411,5 @@
 
   @mixin \2xl\:leading-($v) {
     @include r(2xl, line-height, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin leading-($v) {
-    line-height: $v;
   } // x*/
 }

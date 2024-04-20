@@ -1001,29 +1001,6 @@
 @if $Rwd {
   @if $isLiteMode {
     // /*x
-    @mixin sm\:divide-color-($v) {
-      @include _r(sm, _border-color, null, $v);
-    }
-
-    @mixin md\:divide-color-($v) {
-      @include _r(md, _border-color, null, $v);
-    }
-
-    @mixin lg\:divide-color-($v) {
-      @include _r(lg, _border-color, null, $v);
-    }
-
-    @mixin xl\:divide-color-($v) {
-      @include _r(xl, _border-color, null, $v);
-    }
-
-    @mixin \2xl\:divide-color-($v) {
-      @include _r(2xl, _border-color, null, $v);
-    } // x*/
-  }
-
-  // tailwind default
-  @else {// /*x
     @mixin sm\:divide-inherit {
       > * ~ * {
         border-color: inherit;
@@ -5993,26 +5970,7 @@
     @mixin \2xl\:divide-rose-950($v: 1) {
       @include _r(2xl, _border-color, ros-950, $v);
     }
-
-    @mixin sm\:divide-color-($v) {
-      @include _r(sm, _border-color, null, $v);
-    }
-
-    @mixin md\:divide-color-($v) {
-      @include _r(md, _border-color, null, $v);
-    }
-
-    @mixin lg\:divide-color-($v) {
-      @include _r(lg, _border-color, null, $v);
-    }
-
-    @mixin xl\:divide-color-($v) {
-      @include _r(xl, _border-color, null, $v);
-    }
-
-    @mixin \2xl\:divide-color-($v) {
-      @include _r(2xl, _border-color, null, $v);
-    }// x*/
+    // x*/
   }
 }
 
@@ -6023,5 +5981,25 @@
     > * ~ * {
       @include _border-color(null, $v);
     }
+  }
+
+  @mixin sm\:divide-color-($v) {
+    @include _r(sm, _border-color, null, $v);
+  }
+
+  @mixin md\:divide-color-($v) {
+    @include _r(md, _border-color, null, $v);
+  }
+
+  @mixin lg\:divide-color-($v) {
+    @include _r(lg, _border-color, null, $v);
+  }
+
+  @mixin xl\:divide-color-($v) {
+    @include _r(xl, _border-color, null, $v);
+  }
+
+  @mixin \2xl\:divide-color-($v) {
+    @include _r(2xl, _border-color, null, $v);
   } // x*/
 }

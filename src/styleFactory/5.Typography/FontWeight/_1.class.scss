@@ -217,6 +217,16 @@
   @mixin \2xl\:font-black {
     @include r(2xl, font-weight, 900);
   }
+  // x*/
+}
+
+/* Naming collision: font -> font-weight */
+@if $Custom {
+  // /*x
+  @mixin font-weight-($v) {
+    font-weight: $v;
+  }
+
   @mixin sm\:font-weight-($v) {
     @include r(sm, font-weight, $v);
   }
@@ -235,13 +245,5 @@
 
   @mixin \2xl\:font-weight-($v) {
     @include r(2xl, font-weight, $v);
-  } // x*/
-}
-
-/* Naming collision: font -> font-weight */
-@if $Custom {
-  // /*x
-  @mixin font-weight-($v) {
-    font-weight: $v;
   } // x*/
 }

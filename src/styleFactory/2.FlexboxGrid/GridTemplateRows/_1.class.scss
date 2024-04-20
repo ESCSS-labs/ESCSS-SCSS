@@ -342,6 +342,14 @@
     @include r(2xl, grid-template-rows, subgrid);
   }
 
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin grid-rows-($v) {
+    grid-template-rows: $v;
+  }
   @mixin sm\:grid-rows-($v) {
     @include r(sm, grid-template-rows, $v);
   }
@@ -360,12 +368,5 @@
 
   @mixin \2xl\:grid-rows-($v) {
     @include r(2xl, grid-template-rows, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin grid-rows-($v) {
-    grid-template-rows: $v;
   } // x*/
 }

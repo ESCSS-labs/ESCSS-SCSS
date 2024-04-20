@@ -169,6 +169,15 @@
   @mixin \2xl\:backdrop-contrast-200 {
     @include _r(2xl, _backdrop-filter, contrast, 2);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin backdrop-contrast-($v) {
+    @include _backdrop-filter(contrast, $v);
+  }
+
   @mixin sm\:backdrop-contrast-($v) {
     @include _r(_backdrop-filter, contrast, $v);
   }
@@ -187,12 +196,5 @@
 
   @mixin \2xl\:backdrop-contrast-($v) {
     @include _r(_backdrop-filter, contrast, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-contrast-($v) {
-    @include _backdrop-filter(contrast, $v);
   } // x*/
 }

@@ -197,6 +197,15 @@
   @mixin \2xl\:shadow-none {
     @include _r(2xl, _box-shadow, shadow, none);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin shadow-($v) {
+    @include _box-shadow(shadow, $v);
+  }
+
   @mixin sm\:shadow-($v) {
     @include _r(sm, _box-shadow, shadow, $v);
   }
@@ -215,12 +224,5 @@
 
   @mixin \2xl\:shadow-($v) {
     @include _r(2xl, _box-shadow, shadow, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin shadow-($v) {
-    @include _box-shadow(shadow, $v);
   } // x*/
 }

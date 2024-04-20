@@ -49,6 +49,15 @@
   @mixin \2xl\:backdrop-invert {
     @include _r(2xl, _backdrop-filter, invert, 100%);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin backdrop-invert-($v) {
+    @include _backdrop-filter(invert, $v);
+  }
+
   @mixin sm\:backdrop-invert-($v) {
     @include _r(sm, _backdrop-filter, invert, $v);
   }
@@ -67,12 +76,5 @@
 
   @mixin \2xl\:backdrop-invert-($v) {
     @include _r(2xl, _backdrop-filter, invert, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-invert-($v) {
-    @include _backdrop-filter(invert, $v);
   } // x*/
 }

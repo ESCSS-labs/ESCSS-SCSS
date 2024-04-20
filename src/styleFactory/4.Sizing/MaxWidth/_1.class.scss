@@ -1633,6 +1633,15 @@
   @mixin \2xl\:max-w-screen-2xl {
     @include r(2xl, max-width, 1536px);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin max-w-($v) {
+    max-width: $v;
+  }
+
   @mixin sm\:max-w-($v) {
     @include r(sm, max-width, $v);
   }
@@ -1651,14 +1660,5 @@
 
   @mixin \2xl\:max-w-($v) {
     @include r(2xl, max-width, $v);
-  }
-
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin max-w-($v) {
-    max-width: $v;
   } // x*/
 }

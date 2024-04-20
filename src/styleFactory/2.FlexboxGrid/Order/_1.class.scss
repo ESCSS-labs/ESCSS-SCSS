@@ -62,7 +62,7 @@
   @mixin order-none {
     order: 0;
   }
-  
+
   @mixin -order-1 {
     order: -1;
   }
@@ -185,7 +185,7 @@
   @mixin sm\:order-none {
     @include r(sm, order, 0);
   }
-  
+
   @mixin sm\:-order-1 {
     @include r(sm, order, -1);
   }
@@ -304,7 +304,7 @@
   @mixin md\:order-none {
     @include r(md, order, 0);
   }
-  
+
   @mixin md\:-order-1 {
     @include r(md, order, -1);
   }
@@ -423,7 +423,7 @@
   @mixin lg\:order-none {
     @include r(lg, order, 0);
   }
-  
+
   @mixin lg\:-order-1 {
     @include r(lg, order, -1);
   }
@@ -542,7 +542,7 @@
   @mixin xl\:order-none {
     @include r(xl, order, 0);
   }
-  
+
   @mixin xl\:-order-1 {
     @include r(xl, order, -1);
   }
@@ -661,7 +661,7 @@
   @mixin \2xl\:order-none {
     @include r(2xl, order, 0);
   }
-  
+
   @mixin \2xl\:-order-1 {
     @include r(2xl, order, -1);
   }
@@ -721,6 +721,15 @@
   @mixin \2xl\:-order-none {
     @include r(2xl, order, -0);
   }
+
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin order-($v) {
+    order: $v;
+  }
   @mixin sm\:order-($v) {
     @include r(sm, order, $v);
   }
@@ -739,14 +748,5 @@
 
   @mixin \2xl\:order-($v) {
     @include r(2xl, order, $v);
-  }
-
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin order-($v) {
-    order: $v;
   } // x*/
 }

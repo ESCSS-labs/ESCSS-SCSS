@@ -123,7 +123,6 @@
     @include _transform(scale, 1.5, y);
   }
 
-  
   @mixin -scale-0 {
     @include _transform(scale, -0);
   }
@@ -367,7 +366,6 @@
     @include _r(sm, _transform, scale, 1.5, y);
   }
 
-  
   @mixin sm\:-scale-0 {
     @include _r(sm, _transform, scale, -0);
   }
@@ -608,7 +606,6 @@
     @include _r(md, _transform, scale, 1.5, y);
   }
 
-  
   @mixin md\:-scale-0 {
     @include _r(md, _transform, scale, -0);
   }
@@ -849,7 +846,6 @@
     @include _r(lg, _transform, scale, 1.5, y);
   }
 
-  
   @mixin lg\:-scale-0 {
     @include _r(lg, _transform, scale, -0);
   }
@@ -1090,7 +1086,6 @@
     @include _r(xl, _transform, scale, 1.5, y);
   }
 
-  
   @mixin xl\:-scale-0 {
     @include _r(xl, _transform, scale, -0);
   }
@@ -1331,7 +1326,6 @@
     @include _r(2xl, _transform, scale, 1.5, y);
   }
 
-  
   @mixin \2xl\:-scale-0 {
     @include _r(2xl, _transform, scale, -0);
   }
@@ -1452,6 +1446,22 @@
     @include _r(2xl, _transform, scale, -1.5, y);
   }
 
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin scale-($v) {
+    @include _transform(scale, $v);
+  }
+
+  @mixin scale-x-($v) {
+    @include _transform(scale, $v, x);
+  }
+
+  @mixin scale-y-($v) {
+    @include _transform(scale, $v, y);
+  }
   @mixin sm\:scale-($v) {
     @include _r(sm, _transform, scale, $v);
   }
@@ -1510,20 +1520,5 @@
 
   @mixin \2xl\:scale-y-($v) {
     @include _r(2xl, _transform, scale, $v, y);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin scale-($v) {
-    @include _transform(scale, $v);
-  }
-
-  @mixin scale-x-($v) {
-    @include _transform(scale, $v, x);
-  }
-
-  @mixin scale-y-($v) {
-    @include _transform(scale, $v, y);
   } // x*/
 }

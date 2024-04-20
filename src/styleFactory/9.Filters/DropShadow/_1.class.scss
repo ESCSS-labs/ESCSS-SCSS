@@ -355,6 +355,16 @@
   @mixin \2xl\:drop-shadow-none {
     @include _r(2xl, _filter, drop-shadow, drop-shadow(0 0 #fff));
   }
+
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin drop-shadow-($v) {
+    @include _filter(drop-shadow, $v);
+  }
+
   @mixin sm\:drop-shadow-($v) {
     @include _r(sm, _filter, drop-shadow, $v);
   }
@@ -373,13 +383,5 @@
 
   @mixin \2xl\:drop-shadow-($v) {
     @include _r(2xl, _filter, drop-shadow, $v);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin drop-shadow-($v) {
-    @include _filter(drop-shadow, $v);
   } // x*/
 }

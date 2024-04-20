@@ -5411,6 +5411,76 @@
   @mixin \2xl\:rounded-bl-full {
     @include r(2xl, border-bottom-left-radius, 9999px);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin rounded-($v) {
+    border-radius: $v;
+  }
+
+  @mixin rounded-s-($v) {
+    border-start-start-radius: $v;
+    border-end-start-radius: $v;
+  }
+
+  @mixin rounded-e-($v) {
+    border-start-end-radius: $v;
+    border-end-end-radius: $v;
+  }
+
+  @mixin rounded-t-($v) {
+    border-top-left-radius: $v;
+    border-top-right-radius: $v;
+  }
+
+  @mixin rounded-r-($v) {
+    border-top-right-radius: $v;
+    border-bottom-right-radius: $v;
+  }
+
+  @mixin rounded-b-($v) {
+    border-bottom-right-radius: $v;
+    border-bottom-left-radius: $v;
+  }
+
+  @mixin rounded-l-($v) {
+    border-top-left-radius: $v;
+    border-bottom-left-radius: $v;
+  }
+
+  @mixin rounded-ss-($v) {
+    border-start-start-radius: $v;
+  }
+
+  @mixin rounded-se-($v) {
+    border-start-end-radius: $v;
+  }
+
+  @mixin rounded-ee-($v) {
+    border-end-end-radius: $v;
+  }
+
+  @mixin rounded-es-($v) {
+    border-end-start-radius: $v;
+  }
+
+  @mixin rounded-tl-($v) {
+    border-top-left-radius: $v;
+  }
+
+  @mixin rounded-tr-($v) {
+    border-top-right-radius: $v;
+  }
+
+  @mixin rounded-br-($v) {
+    border-bottom-right-radius: $v;
+  }
+
+  @mixin rounded-bl-($v) {
+    border-bottom-left-radius: $v;
+  }
 
   @mixin sm\:rounded-($v) {
     @include r(sm, border-radius, $v);
@@ -5693,7 +5763,13 @@
   }
 
   @mixin \2xl\:rounded-r-($v) {
-    @include r(2xl, border-top-right-radius, $v, border-bottom-right-radius, $v);
+    @include r(
+      2xl,
+      border-top-right-radius,
+      $v,
+      border-bottom-right-radius,
+      $v
+    );
   }
 
   @mixin \2xl\:rounded-b-($v) {
@@ -5740,75 +5816,5 @@
 
   @mixin \2xl\:rounded-bl-($v) {
     @include r(2xl, border-bottom-left-radius, $v);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin rounded-($v) {
-    border-radius: $v;
-  }
-
-  @mixin rounded-s-($v) {
-    border-start-start-radius: $v;
-    border-end-start-radius: $v;
-  }
-
-  @mixin rounded-e-($v) {
-    border-start-end-radius: $v;
-    border-end-end-radius: $v;
-  }
-
-  @mixin rounded-t-($v) {
-    border-top-left-radius: $v;
-    border-top-right-radius: $v;
-  }
-
-  @mixin rounded-r-($v) {
-    border-top-right-radius: $v;
-    border-bottom-right-radius: $v;
-  }
-
-  @mixin rounded-b-($v) {
-    border-bottom-right-radius: $v;
-    border-bottom-left-radius: $v;
-  }
-
-  @mixin rounded-l-($v) {
-    border-top-left-radius: $v;
-    border-bottom-left-radius: $v;
-  }
-
-  @mixin rounded-ss-($v) {
-    border-start-start-radius: $v;
-  }
-
-  @mixin rounded-se-($v) {
-    border-start-end-radius: $v;
-  }
-
-  @mixin rounded-ee-($v) {
-    border-end-end-radius: $v;
-  }
-
-  @mixin rounded-es-($v) {
-    border-end-start-radius: $v;
-  }
-
-  @mixin rounded-tl-($v) {
-    border-top-left-radius: $v;
-  }
-
-  @mixin rounded-tr-($v) {
-    border-top-right-radius: $v;
-  }
-
-  @mixin rounded-br-($v) {
-    border-bottom-right-radius: $v;
-  }
-
-  @mixin rounded-bl-($v) {
-    border-bottom-left-radius: $v;
   } // x*/
 }

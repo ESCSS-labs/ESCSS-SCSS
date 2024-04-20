@@ -218,6 +218,16 @@
     @include r(2xl, background-position, top);
   }
 
+  // x*/
+}
+
+/* Naming collision: bg -> bg-position */
+@if $Custom {
+  // /*x
+  @mixin bg-position-($v) {
+    background-position: $v;
+  }
+
   @mixin sm\:bg-position-($v) {
     @include r(sm, background-position, $v);
   }
@@ -236,13 +246,5 @@
 
   @mixin \2xl\:bg-position-($v) {
     @include r(2xl, background-position, $v);
-  } // x*/
-}
-
-/* Naming collision: bg -> bg-position */
-@if $Custom {
-  // /*x
-  @mixin bg-position-($v) {
-    background-position: $v;
   } // x*/
 }

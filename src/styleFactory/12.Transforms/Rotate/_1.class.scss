@@ -39,7 +39,6 @@
     @include _transform(rotate, 180deg);
   }
 
-  
   @mixin -rotate-0 {
     @include _transform(rotate, -0deg);
   }
@@ -115,7 +114,6 @@
     @include _r(sm, _transform, rotate, 180deg);
   }
 
-  
   @mixin sm\:-rotate-0 {
     @include _r(sm, _transform, rotate, -0deg);
   }
@@ -187,7 +185,6 @@
     @include _r(md, _transform, rotate, 180deg);
   }
 
-  
   @mixin md\:-rotate-0 {
     @include _r(md, _transform, rotate, -0deg);
   }
@@ -259,7 +256,6 @@
     @include _r(lg, _transform, rotate, 180deg);
   }
 
-  
   @mixin lg\:-rotate-0 {
     @include _r(lg, _transform, rotate, -0deg);
   }
@@ -331,7 +327,6 @@
     @include _r(xl, _transform, rotate, 180deg);
   }
 
-  
   @mixin xl\:-rotate-0 {
     @include _r(xl, _transform, rotate, -0deg);
   }
@@ -403,7 +398,6 @@
     @include _r(2xl, _transform, rotate, 180deg);
   }
 
-  
   @mixin \2xl\:-rotate-0 {
     @include _r(2xl, _transform, rotate, -0deg);
   }
@@ -440,6 +434,14 @@
     @include _r(2xl, _transform, rotate, -180deg);
   }
 
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin rotate-($v) {
+    @include _transform(rotate, $v);
+  }
   @mixin sm\:rotate-($v) {
     @include _r(sm, _transform, rotate, $v);
   }
@@ -458,12 +460,5 @@
 
   @mixin \2xl\:rotate-($v) {
     @include _r(2xl, _transform, rotate, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin rotate-($v) {
-    @include _transform(rotate, $v);
   } // x*/
 }

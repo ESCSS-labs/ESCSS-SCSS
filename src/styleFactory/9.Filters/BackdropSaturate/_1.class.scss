@@ -121,6 +121,15 @@
   @mixin \2xl\:backdrop-saturate-200 {
     @include _r(2xl, _backdrop-filter, saturate, 2);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin backdrop-saturate-($v) {
+    @include _backdrop-filter(saturate, $v);
+  }
+
   @mixin sm\:backdrop-saturate-($v) {
     @include _r(sm, _backdrop-filter, saturate, $v);
   }
@@ -139,12 +148,5 @@
 
   @mixin \2xl\:backdrop-saturate-($v) {
     @include _r(2xl, _backdrop-filter, saturate, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-saturate-($v) {
-    @include _backdrop-filter(saturate, $v);
   } // x*/
 }

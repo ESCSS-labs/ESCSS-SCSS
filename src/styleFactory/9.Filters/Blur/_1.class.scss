@@ -193,6 +193,15 @@
   @mixin \2xl\:blur-3xl {
     @include _r(2xl, _filter, blur, 64px);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin blur-($v) {
+    @include _filter(blur, $v);
+  }
+
   @mixin sm\:blur-($v) {
     @include _r(sm, _filter, blur, $v);
   }
@@ -211,12 +220,5 @@
 
   @mixin \2xl\:blur-($v) {
     @include _r(2xl, _filter, blur, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin blur-($v) {
-    @include _filter(blur, $v);
   } // x*/
 }

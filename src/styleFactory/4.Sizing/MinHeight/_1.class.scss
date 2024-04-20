@@ -1232,6 +1232,15 @@
   @mixin \2xl\:min-h-fit {
     @include r(2xl, min-height, fit-content);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin min-h-($v) {
+    min-height: $v;
+  }
+
   @mixin sm\:min-h-($v) {
     @include r(sm, min-height, $v);
   }
@@ -1250,14 +1259,5 @@
 
   @mixin \2xl\:min-h-($v) {
     @include r(2xl, min-height, $v);
-  }
-
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin min-h-($v) {
-    min-height: $v;
   } // x*/
 }

@@ -3118,7 +3118,22 @@
   @mixin \2xl\:gap-y-96 {
     @include r(2xl, row-gap, 24rem);
   }
+  // x*/
+}
 
+@if $Custom {
+  // /*x
+  @mixin gap-($v) {
+    gap: $v;
+  }
+
+  @mixin gap-x-($v) {
+    column-gap: $v;
+  }
+
+  @mixin gap-y-($v) {
+    row-gap: $v;
+  }
   @mixin sm\:gap-($v) {
     @include r(sm, gap, $v);
   }
@@ -3177,21 +3192,5 @@
 
   @mixin \2xl\:gap-y-($v) {
     @include r(2xl, row-gap, $v);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin gap-($v) {
-    gap: $v;
-  }
-
-  @mixin gap-x-($v) {
-    column-gap: $v;
-  }
-
-  @mixin gap-y-($v) {
-    row-gap: $v;
   } // x*/
 }

@@ -707,7 +707,14 @@
   @mixin \2xl\:columns-7xl {
     @include r(2xl, columns, 80rem);
   }
+  // x*/
+}
 
+@if $Custom {
+  // /*x
+  @mixin columns-($v) {
+    columns: $v;
+  }
   @mixin sm\:columns-($v) {
     @include r(sm, columns, $v);
   }
@@ -726,12 +733,5 @@
 
   @mixin \2xl\:columns-($v) {
     @include r(2xl, columns, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin columns-($v) {
-    columns: $v;
   } // x*/
 }

@@ -169,6 +169,15 @@
   @mixin \2xl\:contrast-200 {
     @include _r(2xl, _filter, contrast, 2);
   }
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin contrast-($v) {
+    @include _filter(contrast, $v);
+  }
+
   @mixin sm\:contrast-($v) {
     @include _r(sm, _filter, contrast, $v);
   }
@@ -187,14 +196,5 @@
 
   @mixin \2xl\:contrast-($v) {
     @include _r(2xl, _filter, contrast, $v);
-  }
-
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin contrast-($v) {
-    @include _filter(contrast, $v);
   } // x*/
 }

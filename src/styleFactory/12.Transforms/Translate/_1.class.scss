@@ -339,7 +339,6 @@
     @include _transform(translate, 100%, y);
   }
 
-  
   @mixin -translate-x-0 {
     @include _transform(translate, -0px, x);
   }
@@ -1015,7 +1014,6 @@
     @include _r(sm, _transform, translate, 100%, y);
   }
 
-  
   @mixin sm\:-translate-x-0 {
     @include _r(sm, _transform, translate, -0px, x);
   }
@@ -1687,7 +1685,6 @@
     @include _r(md, _transform, translate, 100%, y);
   }
 
-  
   @mixin md\:-translate-x-0 {
     @include _r(md, _transform, translate, -0px, x);
   }
@@ -2359,7 +2356,6 @@
     @include _r(lg, _transform, translate, 100%, y);
   }
 
-  
   @mixin lg\:-translate-x-0 {
     @include _r(lg, _transform, translate, -0px, x);
   }
@@ -3031,7 +3027,6 @@
     @include _r(xl, _transform, translate, 100%, y);
   }
 
-  
   @mixin xl\:-translate-x-0 {
     @include _r(xl, _transform, translate, -0px, x);
   }
@@ -3703,7 +3698,6 @@
     @include _r(2xl, _transform, translate, 100%, y);
   }
 
-  
   @mixin \2xl\:-translate-x-0 {
     @include _r(2xl, _transform, translate, -0px, x);
   }
@@ -4040,6 +4034,18 @@
     @include _r(2xl, _transform, translate, -100%, y);
   }
 
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin translate-x-($v) {
+    @include _transform(translate, $v, x);
+  }
+
+  @mixin translate-y-($v) {
+    @include _transform(translate, $v, y);
+  }
   @mixin sm\:translate-x-($v) {
     @include _r(sm, _transform, translate, $v, x);
   }
@@ -4078,16 +4084,5 @@
 
   @mixin \2xl\:translate-y-($v) {
     @include _r(2xl, _transform, translate, $v, y);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin translate-x-($v) {
-    @include _transform(translate, $v, x);
-  }
-
-  @mixin translate-y-($v) {
-    @include _transform(translate, $v, y);
   } // x*/
 }

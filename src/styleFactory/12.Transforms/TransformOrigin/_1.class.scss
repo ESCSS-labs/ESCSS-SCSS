@@ -222,6 +222,14 @@
     @include r(2xl, transform-origin, top left);
   }
 
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin origin-($v) {
+    transform-origin: $v;
+  }
   @mixin sm\:origin-($v) {
     @include r(sm, transform-origin, $v);
   }
@@ -240,12 +248,5 @@
 
   @mixin \2xl\:origin-($v) {
     @include r(2xl, transform-origin, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin origin-($v) {
-    transform-origin: $v;
   } // x*/
 }

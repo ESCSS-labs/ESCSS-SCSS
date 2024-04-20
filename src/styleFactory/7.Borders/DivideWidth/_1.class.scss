@@ -293,6 +293,20 @@
   @mixin \2xl\:divide-y-reverse {
     @include _r(2xl, _border-top-width_border-bottom-width, 0px, true);
   }
+
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin divide-x-($v) {
+    @include _border-left-width_border-right-width($v);
+  }
+
+  @mixin divide-y-($v) {
+    @include _border-top-width_border-bottom-width($v);
+  }
+
   @mixin sm\:divide-x-($v) {
     @include _r(sm, _border-left-width_border-right-width, $v);
   }
@@ -331,18 +345,5 @@
 
   @mixin \2xl\:divide-y-($v) {
     @include _r(2xl, _border-top-width_border-bottom-width, $v);
-  }
-
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin divide-x-($v) {
-    @include _border-left-width_border-right-width($v);
-  }
-
-  @mixin divide-y-($v) {
-    @include _border-top-width_border-bottom-width($v);
   } // x*/
 }

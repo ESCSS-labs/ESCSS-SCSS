@@ -357,7 +357,6 @@
     @include _margin-top_margin-bottom(0px, true);
   }
 
-  
   @mixin -space-x-0 {
     @include _margin-left_margin-right(-0px);
   }
@@ -1061,7 +1060,6 @@
     @include _r(sm, _margin-top_margin-bottom(0px, true));
   }
 
-  
   @mixin sm\:-space-x-0 {
     @include _r(sm, _margin-left_margin-right(-0px));
   }
@@ -1762,7 +1760,6 @@
     @include _r(md, _margin-top_margin-bottom(0px, true));
   }
 
-  
   @mixin md\:-space-x-0 {
     @include _r(md, _margin-left_margin-right(-0px));
   }
@@ -2462,7 +2459,6 @@
     @include _r(lg, _margin-top_margin-bottom(0px, true));
   }
 
-  
   @mixin lg\:-space-x-0 {
     @include _r(lg, _margin-left_margin-right(-0px));
   }
@@ -3162,7 +3158,6 @@
     @include _r(xl, _margin-top_margin-bottom(0px, true));
   }
 
-  
   @mixin xl\:-space-x-0 {
     @include _r(xl, _margin-left_margin-right(-0px));
   }
@@ -3862,7 +3857,6 @@
     @include _r(2xl, _margin-top_margin-bottom(0px, true));
   }
 
-  
   @mixin \2xl\:-space-x-0 {
     @include _r(2xl, _margin-left_margin-right(-0px));
   }
@@ -4209,6 +4203,18 @@
     @include _r(2xl, _margin-top_margin-bottom(-1px));
   }
 
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin space-x-($v) {
+    @include _margin-left_margin-right($v);
+  }
+  @mixin space-y-($v) {
+    @include _margin-top_margin-bottom($v);
+  }
+
   @mixin sm\:space-x-($v) {
     @include _r(sm, _margin-left_margin-right, $v);
   }
@@ -4273,16 +4279,5 @@
   }
   @mixin \2xl\:space-y-reverse {
     @include _r(2xl, _margin-top_margin-bottom, 0px, true);
-  }
-  // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin space-x-($v) {
-    @include _margin-left_margin-right($v);
-  }
-  @mixin space-y-($v) {
-    @include _margin-top_margin-bottom($v);
   } // x*/
 }

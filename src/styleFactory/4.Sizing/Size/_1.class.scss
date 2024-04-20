@@ -1850,6 +1850,16 @@
     @include r(2xl, width, fit-content, height, fit-content);
   }
 
+  // x*/
+}
+
+@if $Custom {
+  // /*x
+  @mixin size-($v) {
+    width: $v;
+    height: $v;
+  }
+
   @mixin sm\:size-($v) {
     @include r(sm, width, $v, height, $v);
   }
@@ -1868,13 +1878,5 @@
 
   @mixin \2xl\:size-($v) {
     @include r(2xl, width, $v, height, $v);
-  } // x*/
-}
-
-@if $Custom {
-  // /*x
-  @mixin size-($v) {
-    width: $v;
-    height: $v;
   } // x*/
 }

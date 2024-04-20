@@ -73,6 +73,17 @@
   @mixin \2xl\:bg-contain {
     @include r(2xl, background-size, contain);
   }
+
+  // x*/
+}
+
+/* Purpose(name conflict): bg -> bg-size */
+@if $Custom {
+  // /*x
+  @mixin bg-size-($v) {
+    background-size: $v;
+  }
+
   @mixin sm\:bg-size-($v) {
     @include r(sm, background-size, $v);
   }
@@ -91,14 +102,5 @@
 
   @mixin \2xl\:bg-size-($v) {
     @include r(2xl, background-size, $v);
-  }
-  // x*/
-}
-
-/* Purpose(name conflict): bg -> bg-size */
-@if $Custom {
-  // /*x
-  @mixin bg-size-($v) {
-    background-size: $v;
   } // x*/
 }
