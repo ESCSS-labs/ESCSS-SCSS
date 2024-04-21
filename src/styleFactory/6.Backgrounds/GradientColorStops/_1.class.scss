@@ -19306,152 +19306,150 @@
   }
 }
 
-/* Naming collision: from -> from-color */
-/* Naming collision: via -> via-color */
-/* Naming collision: to -> to-color */
 @if $Custom {
   // /*x
-  @mixin from-color-($v) {
-    @include _background-image(from, color, $v);
-  }
-
-  @mixin via-color-($v) {
-    @include _background-image(via, color, $v);
-  }
-
-  @mixin to-color-($v) {
-    @include _background-image(to, color, $v);
-  }
-
   @mixin from-($v) {
-    @include _background-image(from, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _background-image(from, color, $v);
+    } @else {
+      @include _background-image(from, null, $v);
+    }
   }
 
   @mixin via-($v) {
-    @include _background-image(via, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _background-image(via, color, $v);
+    } @else {
+      @include _background-image(via, null, $v);
+    }
   }
 
   @mixin to-($v) {
-    @include _background-image(to, null, $v);
-  }
-
-  @mixin sm\:from-color-($v) {
-    @include _r(sm, _background-image, from, color, $v);
-  }
-
-  @mixin md\:from-color-($v) {
-    @include _r(md, _background-image, from, color, $v);
-  }
-
-  @mixin lg\:from-color-($v) {
-    @include _r(lg, _background-image, from, color, $v);
-  }
-
-  @mixin xl\:from-color-($v) {
-    @include _r(xl, _background-image, from, color, $v);
-  }
-
-  @mixin \2xl\:from-color-($v) {
-    @include _r(2xl, _background-image, from, color, $v);
-  }
-
-  @mixin sm\:via-color-($v) {
-    @include _r(sm, _background-image, via, color, $v);
-  }
-
-  @mixin md\:via-color-($v) {
-    @include _r(md, _background-image, via, color, $v);
-  }
-
-  @mixin lg\:via-color-($v) {
-    @include _r(lg, _background-image, via, color, $v);
-  }
-
-  @mixin xl\:via-color-($v) {
-    @include _r(xl, _background-image, via, color, $v);
-  }
-
-  @mixin \2xl\:via-color-($v) {
-    @include _r(2xl, _background-image, via, color, $v);
-  }
-
-  @mixin sm\:to-color-($v) {
-    @include _r(sm, _background-image, to, color, $v);
-  }
-
-  @mixin md\:to-color-($v) {
-    @include _r(md, _background-image, to, color, $v);
-  }
-
-  @mixin lg\:to-color-($v) {
-    @include _r(lg, _background-image, to, color, $v);
-  }
-
-  @mixin xl\:to-color-($v) {
-    @include _r(xl, _background-image, to, color, $v);
-  }
-
-  @mixin \2xl\:to-color-($v) {
-    @include _r(2xl, _background-image, to, color, $v);
+    @if meta.type-of($v) ==color {
+      @include _background-image(to, color, $v);
+    } @else {
+      @include _background-image(to, null, $v);
+    }
   }
 
   @mixin sm\:from-($v) {
-    @include _r(sm, _background-image, from, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(sm, _background-image, from, color, $v);
+    } @else {
+      @include _r(sm, _background-image, from, null, $v);
+    }
   }
 
   @mixin md\:from-($v) {
-    @include _r(md, _background-image, from, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(md, _background-image, from, color, $v);
+    } @else {
+      @include _r(md, _background-image, from, null, $v);
+    }
   }
 
   @mixin lg\:from-($v) {
-    @include _r(lg, _background-image, from, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(lg, _background-image, from, color, $v);
+    } @else {
+      @include _r(lg, _background-image, from, null, $v);
+    }
   }
 
   @mixin xl\:from-($v) {
-    @include _r(xl, _background-image, from, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(xl, _background-image, from, color, $v);
+    } @else {
+      @include _r(xl, _background-image, from, null, $v);
+    }
   }
 
   @mixin \2xl\:from-($v) {
-    @include _r(2xl, _background-image, from, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(2xl, _background-image, from, color, $v);
+    } @else {
+      @include _r(2xl, _background-image, from, null, $v);
+    }
   }
 
   @mixin sm\:via-($v) {
-    @include _r(sm, _background-image, via, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(sm, _background-image, via, color, $v);
+    } @else {
+      @include _r(sm, _background-image, via, null, $v);
+    }
   }
 
   @mixin md\:via-($v) {
-    @include _r(md, _background-image, via, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(md, _background-image, via, color, $v);
+    } @else {
+      @include _r(md, _background-image, via, null, $v);
+    }
   }
 
   @mixin lg\:via-($v) {
-    @include _r(lg, _background-image, via, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(lg, _background-image, via, color, $v);
+    } @else {
+      @include _r(lg, _background-image, via, null, $v);
+    }
   }
 
   @mixin xl\:via-($v) {
-    @include _r(xl, _background-image, via, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(xl, _background-image, via, color, $v);
+    } @else {
+      @include _r(xl, _background-image, via, null, $v);
+    }
   }
 
   @mixin \2xl\:via-($v) {
-    @include _r(2xl, _background-image, via, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(2xl, _background-image, via, color, $v);
+    } @else {
+      @include _r(2xl, _background-image, via, null, $v);
+    }
   }
 
   @mixin sm\:to-($v) {
-    @include _r(sm, _background-image, to, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(sm, _background-image, to, color, $v);
+    } @else {
+      @include _r(sm, _background-image, to, null, $v);
+    }
   }
 
   @mixin md\:to-($v) {
-    @include _r(md, _background-image, to, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(md, _background-image, to, color, $v);
+    } @else {
+      @include _r(md, _background-image, to, null, $v);
+    }
   }
 
   @mixin lg\:to-($v) {
-    @include _r(lg, _background-image, to, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(lg, _background-image, to, color, $v);
+    } @else {
+      @include _r(lg, _background-image, to, null, $v);
+    }
   }
 
   @mixin xl\:to-($v) {
-    @include _r(xl, _background-image, to, null, $v);
+    @if meta.type-of($v) ==color {
+      @include _r(xl, _background-image, to, color, $v);
+    } @else {
+      @include _r(xl, _background-image, to, null, $v);
+    }
   }
 
   @mixin \2xl\:to-($v) {
-    @include _r(2xl, _background-image, to, null, $v);
-  } // x*/
+    @if meta.type-of($v) ==color {
+      @include _r(2xl, _background-image, to, color, $v);
+    } @else {
+      @include _r(2xl, _background-image, to, null, $v);
+    }
+  }
+  // x*/
 }

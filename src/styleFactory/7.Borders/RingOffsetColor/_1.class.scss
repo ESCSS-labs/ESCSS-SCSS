@@ -5934,30 +5934,53 @@
   }
 }
 
-/* Naming collision: ring-offset -> ring-offset-color */
 @if $Custom {
   // /*x
-  @mixin ring-offset-color-($v) {
-    @include _box-shadow(ring-offset-color, $v);
+  @mixin ring-offset-($v) {
+    @if meta.type-of($v) ==color {
+      @include _box-shadow(ring-offset-color, $v);
+    } @else {
+      @include _box-shadow(ring-offset-width, $v);
+    }
   }
 
-  @mixin sm\:ring-offset-color-($v) {
-    @include _r(sm, _box-shadow, ring-offset-color, $v);
+  @mixin sm\:ring-offset-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(sm, _box-shadow, ring-offset-color, $v);
+    } @else {
+      @include _r(sm, _box-shadow, ring-offset-width, $v);
+    }
   }
 
-  @mixin md\:ring-offset-color-($v) {
-    @include _r(md, _box-shadow, ring-offset-color, $v);
+  @mixin md\:ring-offset-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(md, _box-shadow, ring-offset-color, $v);
+    } @else {
+      @include _r(md, _box-shadow, ring-offset-width, $v);
+    }
   }
 
-  @mixin lg\:ring-offset-color-($v) {
-    @include _r(lg, _box-shadow, ring-offset-color, $v);
+  @mixin lg\:ring-offset-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(lg, _box-shadow, ring-offset-color, $v);
+    } @else {
+      @include _r(lg, _box-shadow, ring-offset-width, $v);
+    }
   }
 
-  @mixin xl\:ring-offset-color-($v) {
-    @include _r(xl, _box-shadow, ring-offset-color, $v);
+  @mixin xl\:ring-offset-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(xl, _box-shadow, ring-offset-color, $v);
+    } @else {
+      @include _r(xl, _box-shadow, ring-offset-width, $v);
+    }
   }
 
-  @mixin \2xl\:ring-offset-color-($v) {
-    @include _r(2xl, _box-shadow, ring-offset-color, $v);
+  @mixin \2xl\:ring-offset-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(2xl, _box-shadow, ring-offset-color, $v);
+    } @else {
+      @include _r(2xl, _box-shadow, ring-offset-width, $v);
+    }
   } // x*/
 }

@@ -989,7 +989,9 @@
 
   @mixin bg-rose-950($v: 1) {
     background-color: c(ros-950, $v);
-  } // x*/
+  }
+
+  // x*/
 }
 
 @if $Rwd {
@@ -5934,34 +5936,84 @@
     @mixin \2xl\:bg-rose-950($v: 1) {
       @include r(2xl, background-color, c(ros-950, $v));
     }
+
     // x*/
   }
 }
 
-/* Naming collision: bg -> bg-color */
 @if $Custom {
   // /*x
-  @mixin bg-color-($v) {
-    background-color: $v;
+  @mixin bg-($v) {
+    @if meta.type-of($v) ==color {
+      background-color: $v;
+    } @else if meta.type-of($v) ==string {
+      background-image: $v;
+    } @else if meta.type-of($v) ==list and list.nth($v, 1) ==length {
+      background-size: $v;
+    } @else {
+      background-position: $v;
+    }
   }
 
-  @mixin sm\:bg-color-($v) {
-    @include r(sm, background-color, $v);
+  @mixin sm\:bg-($v) {
+    @if meta.type-of($v) ==color {
+      @include r(sm, background-color, $v);
+    } @else if meta.type-of($v) ==string {
+      @include r(sm, background-image, $v);
+    } @else if meta.type-of($v) ==list and list.nth($v, 1) ==length {
+      @include r(sm, background-size, $v);
+    } @else {
+      @include r(sm, background-position, $v);
+    }
   }
 
-  @mixin md\:bg-color-($v) {
-    @include r(md, background-color, $v);
+  @mixin md\:bg-($v) {
+    @if meta.type-of($v) ==color {
+      @include r(md, background-color, $v);
+    } @else if meta.type-of($v) ==string {
+      @include r(md, background-image, $v);
+    } @else if meta.type-of($v) ==list and list.nth($v, 1) ==length {
+      @include r(md, background-size, $v);
+    } @else {
+      @include r(md, background-position, $v);
+    }
   }
 
-  @mixin lg\:bg-color-($v) {
-    @include r(lg, background-color, $v);
+  @mixin lg\:bg-($v) {
+    @if meta.type-of($v) ==color {
+      @include r(lg, background-color, $v);
+    } @else if meta.type-of($v) ==string {
+      @include r(lg, background-image, $v);
+    } @else if meta.type-of($v) ==list and list.nth($v, 1) ==length {
+      @include r(lg, background-size, $v);
+    } @else {
+      @include r(lg, background-position, $v);
+    }
   }
 
-  @mixin xl\:bg-color-($v) {
-    @include r(xl, background-color, $v);
+  @mixin xl\:bg-($v) {
+    @if meta.type-of($v) ==color {
+      @include r(xl, background-color, $v);
+    } @else if meta.type-of($v) ==string {
+      @include r(xl, background-image, $v);
+    } @else if meta.type-of($v) ==list and list.nth($v, 1) ==length {
+      @include r(xl, background-size, $v);
+    } @else {
+      @include r(xl, background-position, $v);
+    }
   }
 
-  @mixin \2xl\:bg-color-($v) {
-    @include r(2xl, background-color, $v);
-  } // x*/
+  @mixin \2xl\:bg-($v) {
+    @if meta.type-of($v) ==color {
+      @include r(2xl, background-color, $v);
+    } @else if meta.type-of($v) ==string {
+      @include r(2xl, background-image, $v);
+    } @else if meta.type-of($v) ==list and list.nth($v, 1) ==length {
+      @include r(2xl, background-size, $v);
+    } @else {
+      @include r(2xl, background-position, $v);
+    }
+  }
+
+  // x*/
 }

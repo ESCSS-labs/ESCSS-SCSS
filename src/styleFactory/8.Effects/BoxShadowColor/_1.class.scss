@@ -5934,30 +5934,53 @@
   }
 }
 
-/* Naming collision: shadow -> shadow-color */
 @if $Custom {
   // /*x
-  @mixin shadow-color-($v) {
-    @include _box-shadow(shadow-color, $v);
+  @mixin shadow-($v) {
+    @if meta.type-of($v) ==color {
+      @include _box-shadow(shadow-color, $v);
+    } @else {
+      @include _box-shadow(shadow, $v);
+    }
   }
 
-  @mixin sm\:shadow-color-($v) {
-    @include _r(sm, _box-shadow, shadow-color, $v);
+  @mixin sm\:shadow-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(sm, _box-shadow, shadow-color, $v);
+    } @else {
+      @include _r(sm, _box-shadow, shadow, $v);
+    }
   }
 
-  @mixin md\:shadow-color-($v) {
-    @include _r(md, _box-shadow, shadow-color, $v);
+  @mixin md\:shadow-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(md, _box-shadow, shadow-color, $v);
+    } @else {
+      @include _r(md, _box-shadow, shadow, $v);
+    }
   }
 
-  @mixin lg\:shadow-color-($v) {
-    @include _r(lg, _box-shadow, shadow-color, $v);
+  @mixin lg\:shadow-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(lg, _box-shadow, shadow-color, $v);
+    } @else {
+      @include _r(lg, _box-shadow, shadow, $v);
+    }
   }
 
-  @mixin xl\:shadow-color-($v) {
-    @include _r(xl, _box-shadow, shadow-color, $v);
+  @mixin xl\:shadow-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(xl, _box-shadow, shadow-color, $v);
+    } @else {
+      @include _r(xl, _box-shadow, shadow, $v);
+    }
   }
 
-  @mixin \2xl\:shadow-color-($v) {
-    @include _r(2xl, _box-shadow, shadow-color, $v);
+  @mixin \2xl\:shadow-($v) {
+    @if meta.type-of($v) ==color {
+      @include _r(2xl, _box-shadow, shadow-color, $v);
+    } @else {
+      @include _r(2xl, _box-shadow, shadow, $v);
+    }
   } // x*/
 }

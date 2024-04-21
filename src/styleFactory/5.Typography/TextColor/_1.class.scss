@@ -5938,30 +5938,53 @@
   }
 }
 
-/* Naming collision: text -> text-color */
 @if $Custom {
   // /*x
-  @mixin text-color-($v) {
-    color: $v;
+  @mixin text-($v) {
+    @if meta.type-of($value) == color {
+      color: $v;
+    } @else {
+      font-size: $v;
+    }
   }
 
-  @mixin sm\:text-color-($v) {
-    @include r(sm, color, $v);
+  @mixin sm\:text-($v) {
+    @if meta.type-of($value) == color {
+      @include r(sm, color, $v);
+    } @else {
+      @include r(sm, font-size, $v);
+    }
   }
 
-  @mixin md\:text-color-($v) {
-    @include r(md, color, $v);
+  @mixin md\:text-($v) {
+    @if meta.type-of($value) == color {
+      @include r(md, color, $v);
+    } @else {
+      @include r(md, font-size, $v);
+    }
   }
 
-  @mixin lg\:text-color-($v) {
-    @include r(lg, color, $v);
+  @mixin lg\:text-($v) {
+    @if meta.type-of($value) == color {
+      @include r(lg, color, $v);
+    } @else {
+      @include r(lg, font-size, $v);
+    }
   }
 
-  @mixin xl\:text-color-($v) {
-    @include r(xl, color, $v);
+  @mixin xl\:text-($v) {
+    @if meta.type-of($value) == color {
+      @include r(xl, color, $v);
+    } @else {
+      @include r(xl, font-size, $v);
+    }
   }
 
-  @mixin \2xl\:text-color-($v) {
-    @include r(2xl, color, $v);
+  @mixin \2xl\:text-($v) {
+    @if meta.type-of($value) == color {
+      @include r(2xl, color, $v);
+    } @else {
+      @include r(2xl, font-size, $v);
+    }
   } // x*/
 }

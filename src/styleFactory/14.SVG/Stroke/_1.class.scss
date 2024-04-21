@@ -5962,26 +5962,52 @@
 @if $Custom {
   // /*x
   @mixin stroke-($v) {
-    stroke: $v;
+    @if meta.type-of($v) ==color {
+      stroke: $v;
+    } @else {
+      stroke-width: $v;
+    }
   }
 
   @mixin sm\:stroke-($v) {
-    @include r(sm, stroke, $v);
+    @if meta.type-of($v) ==color {
+      @include r(sm, stroke, $v);
+    } @else {
+      @include r(sm, stroke-width, $v);
+    }
   }
 
   @mixin md\:stroke-($v) {
-    @include r(md, stroke, $v);
+    @if meta.type-of($v) ==color {
+      @include r(md, stroke, $v);
+    } @else {
+      @include r(md, stroke-width, $v);
+    }
   }
 
   @mixin lg\:stroke-($v) {
-    @include r(lg, stroke, $v);
+    @if meta.type-of($v) ==color {
+      @include r(lg, stroke, $v);
+    } @else {
+      @include r(lg, stroke-width, $v);
+    }
   }
 
   @mixin xl\:stroke-($v) {
-    @include r(xl, stroke, $v);
+    @if meta.type-of($v) ==color {
+      @include r(xl, stroke, $v);
+    } @else {
+      @include r(xl, stroke-width, $v);
+    }
   }
 
   @mixin \2xl\:stroke-($v) {
-    @include r(2xl, stroke, $v);
-  } // x*/
+    @if meta.type-of($v) ==color {
+      @include r(2xl, stroke, $v);
+    } @else {
+      @include r(2xl, stroke-width, $v);
+    }
+  }
+
+  // x*/
 }

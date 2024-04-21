@@ -5968,30 +5968,53 @@
   }
 }
 
-/* Naming collision: outline -> outline-color */
 @if $Custom {
   // /*x
-  @mixin outline-color-($v) {
-    outline-color: $v;
+  @mixin outline-($v) {
+    @if meta.type-of($v) == color {
+      outline-color: $v;
+    } @else {
+      outline-width: $v;
+    }
   }
 
-  @mixin sm\:outline-color-($v) {
-    @include r(sm, outline-color, $v);
+  @mixin sm\:outline-($v) {
+    @if meta.type-of($v) == color {
+      @include r(sm, outline-color, $v);
+    } @else {
+      @include r(sm, outline-width, $v);
+    }
   }
 
-  @mixin md\:outline-color-($v) {
-    @include r(md, outline-color, $v);
+  @mixin md\:outline-($v) {
+    @if meta.type-of($v) == color {
+      @include r(md, outline-color, $v);
+    } @else {
+      @include r(md, outline-width, $v);
+    }
   }
 
-  @mixin lg\:outline-color-($v) {
-    @include r(lg, outline-color, $v);
+  @mixin lg\:outline-($v) {
+    @if meta.type-of($v) == color {
+      @include r(lg, outline-color, $v);
+    } @else {
+      @include r(lg, outline-width, $v);
+    }
   }
 
-  @mixin xl\:outline-color-($v) {
-    @include r(xl, outline-color, $v);
+  @mixin xl\:outline-($v) {
+    @if meta.type-of($v) == color {
+      @include r(xl, outline-color, $v);
+    } @else {
+      @include r(xl, outline-width, $v);
+    }
   }
 
-  @mixin \2xl\:outline-color-($v) {
-    @include r(2xl, outline-color, $v);
+  @mixin \2xl\:outline-($v) {
+    @if meta.type-of($v) == color {
+      @include r(2xl, outline-color, $v);
+    } @else {
+      @include r(2xl, outline-width, $v);
+    }
   } // x*/
 }
