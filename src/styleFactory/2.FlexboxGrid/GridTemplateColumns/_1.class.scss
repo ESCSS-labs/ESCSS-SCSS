@@ -61,286 +61,287 @@
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:grid-cols-1 {
-    @include r(sm, grid-template-columns, repeat(1, minmax(0, 1fr)));
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:grid-cols-1 {
+      @include r(sm, grid-template-columns, repeat(1, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-2 {
+      @include r(sm, grid-template-columns, repeat(2, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-3 {
+      @include r(sm, grid-template-columns, repeat(3, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-4 {
+      @include r(sm, grid-template-columns, repeat(4, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-5 {
+      @include r(sm, grid-template-columns, repeat(5, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-6 {
+      @include r(sm, grid-template-columns, repeat(6, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-7 {
+      @include r(sm, grid-template-columns, repeat(7, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-8 {
+      @include r(sm, grid-template-columns, repeat(8, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-9 {
+      @include r(sm, grid-template-columns, repeat(9, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-10 {
+      @include r(sm, grid-template-columns, repeat(10, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-11 {
+      @include r(sm, grid-template-columns, repeat(11, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-12 {
+      @include r(sm, grid-template-columns, repeat(12, minmax(0, 1fr)));
+    }
+
+    @mixin sm\:grid-cols-none {
+      @include r(sm, grid-template-columns, none);
+    }
+
+    @mixin sm\:grid-cols-subgrid {
+      @include r(sm, grid-template-columns, subgrid);
+    }
+    @mixin md\:grid-cols-1 {
+      @include r(md, grid-template-columns, repeat(1, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-2 {
+      @include r(md, grid-template-columns, repeat(2, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-3 {
+      @include r(md, grid-template-columns, repeat(3, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-4 {
+      @include r(md, grid-template-columns, repeat(4, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-5 {
+      @include r(md, grid-template-columns, repeat(5, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-6 {
+      @include r(md, grid-template-columns, repeat(6, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-7 {
+      @include r(md, grid-template-columns, repeat(7, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-8 {
+      @include r(md, grid-template-columns, repeat(8, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-9 {
+      @include r(md, grid-template-columns, repeat(9, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-10 {
+      @include r(md, grid-template-columns, repeat(10, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-11 {
+      @include r(md, grid-template-columns, repeat(11, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-12 {
+      @include r(md, grid-template-columns, repeat(12, minmax(0, 1fr)));
+    }
+
+    @mixin md\:grid-cols-none {
+      @include r(md, grid-template-columns, none);
+    }
+
+    @mixin md\:grid-cols-subgrid {
+      @include r(md, grid-template-columns, subgrid);
+    }
+    @mixin lg\:grid-cols-1 {
+      @include r(lg, grid-template-columns, repeat(1, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-2 {
+      @include r(lg, grid-template-columns, repeat(2, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-3 {
+      @include r(lg, grid-template-columns, repeat(3, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-4 {
+      @include r(lg, grid-template-columns, repeat(4, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-5 {
+      @include r(lg, grid-template-columns, repeat(5, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-6 {
+      @include r(lg, grid-template-columns, repeat(6, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-7 {
+      @include r(lg, grid-template-columns, repeat(7, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-8 {
+      @include r(lg, grid-template-columns, repeat(8, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-9 {
+      @include r(lg, grid-template-columns, repeat(9, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-10 {
+      @include r(lg, grid-template-columns, repeat(10, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-11 {
+      @include r(lg, grid-template-columns, repeat(11, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-12 {
+      @include r(lg, grid-template-columns, repeat(12, minmax(0, 1fr)));
+    }
+
+    @mixin lg\:grid-cols-none {
+      @include r(lg, grid-template-columns, none);
+    }
+
+    @mixin lg\:grid-cols-subgrid {
+      @include r(lg, grid-template-columns, subgrid);
+    }
+    @mixin xl\:grid-cols-1 {
+      @include r(xl, grid-template-columns, repeat(1, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-2 {
+      @include r(xl, grid-template-columns, repeat(2, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-3 {
+      @include r(xl, grid-template-columns, repeat(3, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-4 {
+      @include r(xl, grid-template-columns, repeat(4, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-5 {
+      @include r(xl, grid-template-columns, repeat(5, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-6 {
+      @include r(xl, grid-template-columns, repeat(6, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-7 {
+      @include r(xl, grid-template-columns, repeat(7, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-8 {
+      @include r(xl, grid-template-columns, repeat(8, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-9 {
+      @include r(xl, grid-template-columns, repeat(9, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-10 {
+      @include r(xl, grid-template-columns, repeat(10, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-11 {
+      @include r(xl, grid-template-columns, repeat(11, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-12 {
+      @include r(xl, grid-template-columns, repeat(12, minmax(0, 1fr)));
+    }
+
+    @mixin xl\:grid-cols-none {
+      @include r(xl, grid-template-columns, none);
+    }
+
+    @mixin xl\:grid-cols-subgrid {
+      @include r(xl, grid-template-columns, subgrid);
+    }
+    @mixin \2xl\:grid-cols-1 {
+      @include r(2xl, grid-template-columns, repeat(1, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-2 {
+      @include r(2xl, grid-template-columns, repeat(2, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-3 {
+      @include r(2xl, grid-template-columns, repeat(3, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-4 {
+      @include r(2xl, grid-template-columns, repeat(4, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-5 {
+      @include r(2xl, grid-template-columns, repeat(5, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-6 {
+      @include r(2xl, grid-template-columns, repeat(6, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-7 {
+      @include r(2xl, grid-template-columns, repeat(7, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-8 {
+      @include r(2xl, grid-template-columns, repeat(8, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-9 {
+      @include r(2xl, grid-template-columns, repeat(9, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-10 {
+      @include r(2xl, grid-template-columns, repeat(10, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-11 {
+      @include r(2xl, grid-template-columns, repeat(11, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-12 {
+      @include r(2xl, grid-template-columns, repeat(12, minmax(0, 1fr)));
+    }
+
+    @mixin \2xl\:grid-cols-none {
+      @include r(2xl, grid-template-columns, none);
+    }
+
+    @mixin \2xl\:grid-cols-subgrid {
+      @include r(2xl, grid-template-columns, subgrid);
+    }
+
+    // x*/
   }
-
-  @mixin sm\:grid-cols-2 {
-    @include r(sm, grid-template-columns, repeat(2, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-3 {
-    @include r(sm, grid-template-columns, repeat(3, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-4 {
-    @include r(sm, grid-template-columns, repeat(4, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-5 {
-    @include r(sm, grid-template-columns, repeat(5, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-6 {
-    @include r(sm, grid-template-columns, repeat(6, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-7 {
-    @include r(sm, grid-template-columns, repeat(7, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-8 {
-    @include r(sm, grid-template-columns, repeat(8, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-9 {
-    @include r(sm, grid-template-columns, repeat(9, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-10 {
-    @include r(sm, grid-template-columns, repeat(10, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-11 {
-    @include r(sm, grid-template-columns, repeat(11, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-12 {
-    @include r(sm, grid-template-columns, repeat(12, minmax(0, 1fr)));
-  }
-
-  @mixin sm\:grid-cols-none {
-    @include r(sm, grid-template-columns, none);
-  }
-
-  @mixin sm\:grid-cols-subgrid {
-    @include r(sm, grid-template-columns, subgrid);
-  }
-  @mixin md\:grid-cols-1 {
-    @include r(md, grid-template-columns, repeat(1, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-2 {
-    @include r(md, grid-template-columns, repeat(2, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-3 {
-    @include r(md, grid-template-columns, repeat(3, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-4 {
-    @include r(md, grid-template-columns, repeat(4, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-5 {
-    @include r(md, grid-template-columns, repeat(5, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-6 {
-    @include r(md, grid-template-columns, repeat(6, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-7 {
-    @include r(md, grid-template-columns, repeat(7, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-8 {
-    @include r(md, grid-template-columns, repeat(8, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-9 {
-    @include r(md, grid-template-columns, repeat(9, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-10 {
-    @include r(md, grid-template-columns, repeat(10, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-11 {
-    @include r(md, grid-template-columns, repeat(11, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-12 {
-    @include r(md, grid-template-columns, repeat(12, minmax(0, 1fr)));
-  }
-
-  @mixin md\:grid-cols-none {
-    @include r(md, grid-template-columns, none);
-  }
-
-  @mixin md\:grid-cols-subgrid {
-    @include r(md, grid-template-columns, subgrid);
-  }
-  @mixin lg\:grid-cols-1 {
-    @include r(lg, grid-template-columns, repeat(1, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-2 {
-    @include r(lg, grid-template-columns, repeat(2, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-3 {
-    @include r(lg, grid-template-columns, repeat(3, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-4 {
-    @include r(lg, grid-template-columns, repeat(4, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-5 {
-    @include r(lg, grid-template-columns, repeat(5, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-6 {
-    @include r(lg, grid-template-columns, repeat(6, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-7 {
-    @include r(lg, grid-template-columns, repeat(7, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-8 {
-    @include r(lg, grid-template-columns, repeat(8, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-9 {
-    @include r(lg, grid-template-columns, repeat(9, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-10 {
-    @include r(lg, grid-template-columns, repeat(10, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-11 {
-    @include r(lg, grid-template-columns, repeat(11, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-12 {
-    @include r(lg, grid-template-columns, repeat(12, minmax(0, 1fr)));
-  }
-
-  @mixin lg\:grid-cols-none {
-    @include r(lg, grid-template-columns, none);
-  }
-
-  @mixin lg\:grid-cols-subgrid {
-    @include r(lg, grid-template-columns, subgrid);
-  }
-  @mixin xl\:grid-cols-1 {
-    @include r(xl, grid-template-columns, repeat(1, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-2 {
-    @include r(xl, grid-template-columns, repeat(2, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-3 {
-    @include r(xl, grid-template-columns, repeat(3, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-4 {
-    @include r(xl, grid-template-columns, repeat(4, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-5 {
-    @include r(xl, grid-template-columns, repeat(5, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-6 {
-    @include r(xl, grid-template-columns, repeat(6, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-7 {
-    @include r(xl, grid-template-columns, repeat(7, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-8 {
-    @include r(xl, grid-template-columns, repeat(8, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-9 {
-    @include r(xl, grid-template-columns, repeat(9, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-10 {
-    @include r(xl, grid-template-columns, repeat(10, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-11 {
-    @include r(xl, grid-template-columns, repeat(11, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-12 {
-    @include r(xl, grid-template-columns, repeat(12, minmax(0, 1fr)));
-  }
-
-  @mixin xl\:grid-cols-none {
-    @include r(xl, grid-template-columns, none);
-  }
-
-  @mixin xl\:grid-cols-subgrid {
-    @include r(xl, grid-template-columns, subgrid);
-  }
-  @mixin \2xl\:grid-cols-1 {
-    @include r(2xl, grid-template-columns, repeat(1, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-2 {
-    @include r(2xl, grid-template-columns, repeat(2, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-3 {
-    @include r(2xl, grid-template-columns, repeat(3, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-4 {
-    @include r(2xl, grid-template-columns, repeat(4, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-5 {
-    @include r(2xl, grid-template-columns, repeat(5, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-6 {
-    @include r(2xl, grid-template-columns, repeat(6, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-7 {
-    @include r(2xl, grid-template-columns, repeat(7, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-8 {
-    @include r(2xl, grid-template-columns, repeat(8, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-9 {
-    @include r(2xl, grid-template-columns, repeat(9, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-10 {
-    @include r(2xl, grid-template-columns, repeat(10, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-11 {
-    @include r(2xl, grid-template-columns, repeat(11, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-12 {
-    @include r(2xl, grid-template-columns, repeat(12, minmax(0, 1fr)));
-  }
-
-  @mixin \2xl\:grid-cols-none {
-    @include r(2xl, grid-template-columns, none);
-  }
-
-  @mixin \2xl\:grid-cols-subgrid {
-    @include r(2xl, grid-template-columns, subgrid);
-  }
-
-  // x*/
 }
-
 @if $Custom {
   // /*x
   @mixin grid-cols-($v) {

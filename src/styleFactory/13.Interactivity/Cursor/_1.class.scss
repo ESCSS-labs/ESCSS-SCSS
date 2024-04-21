@@ -149,726 +149,727 @@
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:cursor-auto {
-    @include r2(sm, cursor, auto);
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:cursor-auto {
+      @include r2(sm, cursor, auto);
+    }
+
+    @mixin sm\:cursor-default {
+      @include r2(sm, cursor, default);
+    }
+
+    @mixin sm\:cursor-pointer {
+      @include r2(sm, cursor, pointer);
+    }
+
+    @mixin sm\:cursor-wait {
+      @include r2(sm, cursor, wait);
+    }
+
+    @mixin sm\:cursor-text {
+      @include r2(sm, cursor, text);
+    }
+
+    @mixin sm\:cursor-move {
+      @include r2(sm, cursor, move);
+    }
+
+    @mixin sm\:cursor-help {
+      @include r2(sm, cursor, help);
+    }
+
+    @mixin sm\:cursor-not-allowed {
+      @include r2(sm, cursor, not-allowed);
+    }
+
+    @mixin sm\:cursor-none {
+      @include r2(sm, cursor, none);
+    }
+
+    @mixin sm\:cursor-context-menu {
+      @include r2(sm, cursor, context-menu);
+    }
+
+    @mixin sm\:cursor-progress {
+      @include r2(sm, cursor, progress);
+    }
+
+    @mixin sm\:cursor-cell {
+      @include r2(sm, cursor, cell);
+    }
+
+    @mixin sm\:cursor-crosshair {
+      @include r2(sm, cursor, crosshair);
+    }
+
+    @mixin sm\:cursor-vertical-text {
+      @include r2(sm, cursor, vertical-text);
+    }
+
+    @mixin sm\:cursor-alias {
+      @include r2(sm, cursor, alias);
+    }
+
+    @mixin sm\:cursor-copy {
+      @include r2(sm, cursor, copy);
+    }
+
+    @mixin sm\:cursor-no-drop {
+      @include r2(sm, cursor, no-drop);
+    }
+
+    @mixin sm\:cursor-grab {
+      @include r2(sm, cursor, grab);
+    }
+
+    @mixin sm\:cursor-grabbing {
+      @include r2(sm, cursor, grabbing);
+    }
+
+    @mixin sm\:cursor-all-scroll {
+      @include r2(sm, cursor, all-scroll);
+    }
+
+    @mixin sm\:cursor-col-resize {
+      @include r2(sm, cursor, col-resize);
+    }
+
+    @mixin sm\:cursor-row-resize {
+      @include r2(sm, cursor, row-resize);
+    }
+
+    @mixin sm\:cursor-n-resize {
+      @include r2(sm, cursor, n-resize);
+    }
+
+    @mixin sm\:cursor-e-resize {
+      @include r2(sm, cursor, e-resize);
+    }
+
+    @mixin sm\:cursor-s-resize {
+      @include r2(sm, cursor, s-resize);
+    }
+
+    @mixin sm\:cursor-w-resize {
+      @include r2(sm, cursor, w-resize);
+    }
+
+    @mixin sm\:cursor-ne-resize {
+      @include r2(sm, cursor, ne-resize);
+    }
+
+    @mixin sm\:cursor-nw-resize {
+      @include r2(sm, cursor, nw-resize);
+    }
+
+    @mixin sm\:cursor-se-resize {
+      @include r2(sm, cursor, se-resize);
+    }
+
+    @mixin sm\:cursor-sw-resize {
+      @include r2(sm, cursor, sw-resize);
+    }
+
+    @mixin sm\:cursor-ew-resize {
+      @include r2(sm, cursor, ew-resize);
+    }
+
+    @mixin sm\:cursor-ns-resize {
+      @include r2(sm, cursor, ns-resize);
+    }
+
+    @mixin sm\:cursor-nesw-resize {
+      @include r2(sm, cursor, nesw-resize);
+    }
+
+    @mixin sm\:cursor-nwse-resize {
+      @include r2(sm, cursor, nwse-resize);
+    }
+
+    @mixin sm\:cursor-zoom-in {
+      @include r2(sm, cursor, zoom-in);
+    }
+
+    @mixin sm\:cursor-zoom-out {
+      @include r2(sm, cursor, zoom-out);
+    }
+    @mixin md\:cursor-auto {
+      @include r2(md, cursor, auto);
+    }
+
+    @mixin md\:cursor-default {
+      @include r2(md, cursor, default);
+    }
+
+    @mixin md\:cursor-pointer {
+      @include r2(md, cursor, pointer);
+    }
+
+    @mixin md\:cursor-wait {
+      @include r2(md, cursor, wait);
+    }
+
+    @mixin md\:cursor-text {
+      @include r2(md, cursor, text);
+    }
+
+    @mixin md\:cursor-move {
+      @include r2(md, cursor, move);
+    }
+
+    @mixin md\:cursor-help {
+      @include r2(md, cursor, help);
+    }
+
+    @mixin md\:cursor-not-allowed {
+      @include r2(md, cursor, not-allowed);
+    }
+
+    @mixin md\:cursor-none {
+      @include r2(md, cursor, none);
+    }
+
+    @mixin md\:cursor-context-menu {
+      @include r2(md, cursor, context-menu);
+    }
+
+    @mixin md\:cursor-progress {
+      @include r2(md, cursor, progress);
+    }
+
+    @mixin md\:cursor-cell {
+      @include r2(md, cursor, cell);
+    }
+
+    @mixin md\:cursor-crosshair {
+      @include r2(md, cursor, crosshair);
+    }
+
+    @mixin md\:cursor-vertical-text {
+      @include r2(md, cursor, vertical-text);
+    }
+
+    @mixin md\:cursor-alias {
+      @include r2(md, cursor, alias);
+    }
+
+    @mixin md\:cursor-copy {
+      @include r2(md, cursor, copy);
+    }
+
+    @mixin md\:cursor-no-drop {
+      @include r2(md, cursor, no-drop);
+    }
+
+    @mixin md\:cursor-grab {
+      @include r2(md, cursor, grab);
+    }
+
+    @mixin md\:cursor-grabbing {
+      @include r2(md, cursor, grabbing);
+    }
+
+    @mixin md\:cursor-all-scroll {
+      @include r2(md, cursor, all-scroll);
+    }
+
+    @mixin md\:cursor-col-resize {
+      @include r2(md, cursor, col-resize);
+    }
+
+    @mixin md\:cursor-row-resize {
+      @include r2(md, cursor, row-resize);
+    }
+
+    @mixin md\:cursor-n-resize {
+      @include r2(md, cursor, n-resize);
+    }
+
+    @mixin md\:cursor-e-resize {
+      @include r2(md, cursor, e-resize);
+    }
+
+    @mixin md\:cursor-s-resize {
+      @include r2(md, cursor, s-resize);
+    }
+
+    @mixin md\:cursor-w-resize {
+      @include r2(md, cursor, w-resize);
+    }
+
+    @mixin md\:cursor-ne-resize {
+      @include r2(md, cursor, ne-resize);
+    }
+
+    @mixin md\:cursor-nw-resize {
+      @include r2(md, cursor, nw-resize);
+    }
+
+    @mixin md\:cursor-se-resize {
+      @include r2(md, cursor, se-resize);
+    }
+
+    @mixin md\:cursor-sw-resize {
+      @include r2(md, cursor, sw-resize);
+    }
+
+    @mixin md\:cursor-ew-resize {
+      @include r2(md, cursor, ew-resize);
+    }
+
+    @mixin md\:cursor-ns-resize {
+      @include r2(md, cursor, ns-resize);
+    }
+
+    @mixin md\:cursor-nesw-resize {
+      @include r2(md, cursor, nesw-resize);
+    }
+
+    @mixin md\:cursor-nwse-resize {
+      @include r2(md, cursor, nwse-resize);
+    }
+
+    @mixin md\:cursor-zoom-in {
+      @include r2(md, cursor, zoom-in);
+    }
+
+    @mixin md\:cursor-zoom-out {
+      @include r2(md, cursor, zoom-out);
+    }
+    @mixin lg\:cursor-auto {
+      @include r2(lg, cursor, auto);
+    }
+
+    @mixin lg\:cursor-default {
+      @include r2(lg, cursor, default);
+    }
+
+    @mixin lg\:cursor-pointer {
+      @include r2(lg, cursor, pointer);
+    }
+
+    @mixin lg\:cursor-wait {
+      @include r2(lg, cursor, wait);
+    }
+
+    @mixin lg\:cursor-text {
+      @include r2(lg, cursor, text);
+    }
+
+    @mixin lg\:cursor-move {
+      @include r2(lg, cursor, move);
+    }
+
+    @mixin lg\:cursor-help {
+      @include r2(lg, cursor, help);
+    }
+
+    @mixin lg\:cursor-not-allowed {
+      @include r2(lg, cursor, not-allowed);
+    }
+
+    @mixin lg\:cursor-none {
+      @include r2(lg, cursor, none);
+    }
+
+    @mixin lg\:cursor-context-menu {
+      @include r2(lg, cursor, context-menu);
+    }
+
+    @mixin lg\:cursor-progress {
+      @include r2(lg, cursor, progress);
+    }
+
+    @mixin lg\:cursor-cell {
+      @include r2(lg, cursor, cell);
+    }
+
+    @mixin lg\:cursor-crosshair {
+      @include r2(lg, cursor, crosshair);
+    }
+
+    @mixin lg\:cursor-vertical-text {
+      @include r2(lg, cursor, vertical-text);
+    }
+
+    @mixin lg\:cursor-alias {
+      @include r2(lg, cursor, alias);
+    }
+
+    @mixin lg\:cursor-copy {
+      @include r2(lg, cursor, copy);
+    }
+
+    @mixin lg\:cursor-no-drop {
+      @include r2(lg, cursor, no-drop);
+    }
+
+    @mixin lg\:cursor-grab {
+      @include r2(lg, cursor, grab);
+    }
+
+    @mixin lg\:cursor-grabbing {
+      @include r2(lg, cursor, grabbing);
+    }
+
+    @mixin lg\:cursor-all-scroll {
+      @include r2(lg, cursor, all-scroll);
+    }
+
+    @mixin lg\:cursor-col-resize {
+      @include r2(lg, cursor, col-resize);
+    }
+
+    @mixin lg\:cursor-row-resize {
+      @include r2(lg, cursor, row-resize);
+    }
+
+    @mixin lg\:cursor-n-resize {
+      @include r2(lg, cursor, n-resize);
+    }
+
+    @mixin lg\:cursor-e-resize {
+      @include r2(lg, cursor, e-resize);
+    }
+
+    @mixin lg\:cursor-s-resize {
+      @include r2(lg, cursor, s-resize);
+    }
+
+    @mixin lg\:cursor-w-resize {
+      @include r2(lg, cursor, w-resize);
+    }
+
+    @mixin lg\:cursor-ne-resize {
+      @include r2(lg, cursor, ne-resize);
+    }
+
+    @mixin lg\:cursor-nw-resize {
+      @include r2(lg, cursor, nw-resize);
+    }
+
+    @mixin lg\:cursor-se-resize {
+      @include r2(lg, cursor, se-resize);
+    }
+
+    @mixin lg\:cursor-sw-resize {
+      @include r2(lg, cursor, sw-resize);
+    }
+
+    @mixin lg\:cursor-ew-resize {
+      @include r2(lg, cursor, ew-resize);
+    }
+
+    @mixin lg\:cursor-ns-resize {
+      @include r2(lg, cursor, ns-resize);
+    }
+
+    @mixin lg\:cursor-nesw-resize {
+      @include r2(lg, cursor, nesw-resize);
+    }
+
+    @mixin lg\:cursor-nwse-resize {
+      @include r2(lg, cursor, nwse-resize);
+    }
+
+    @mixin lg\:cursor-zoom-in {
+      @include r2(lg, cursor, zoom-in);
+    }
+
+    @mixin lg\:cursor-zoom-out {
+      @include r2(lg, cursor, zoom-out);
+    }
+    @mixin xl\:cursor-auto {
+      @include r2(xl, cursor, auto);
+    }
+
+    @mixin xl\:cursor-default {
+      @include r2(xl, cursor, default);
+    }
+
+    @mixin xl\:cursor-pointer {
+      @include r2(xl, cursor, pointer);
+    }
+
+    @mixin xl\:cursor-wait {
+      @include r2(xl, cursor, wait);
+    }
+
+    @mixin xl\:cursor-text {
+      @include r2(xl, cursor, text);
+    }
+
+    @mixin xl\:cursor-move {
+      @include r2(xl, cursor, move);
+    }
+
+    @mixin xl\:cursor-help {
+      @include r2(xl, cursor, help);
+    }
+
+    @mixin xl\:cursor-not-allowed {
+      @include r2(xl, cursor, not-allowed);
+    }
+
+    @mixin xl\:cursor-none {
+      @include r2(xl, cursor, none);
+    }
+
+    @mixin xl\:cursor-context-menu {
+      @include r2(xl, cursor, context-menu);
+    }
+
+    @mixin xl\:cursor-progress {
+      @include r2(xl, cursor, progress);
+    }
+
+    @mixin xl\:cursor-cell {
+      @include r2(xl, cursor, cell);
+    }
+
+    @mixin xl\:cursor-crosshair {
+      @include r2(xl, cursor, crosshair);
+    }
+
+    @mixin xl\:cursor-vertical-text {
+      @include r2(xl, cursor, vertical-text);
+    }
+
+    @mixin xl\:cursor-alias {
+      @include r2(xl, cursor, alias);
+    }
+
+    @mixin xl\:cursor-copy {
+      @include r2(xl, cursor, copy);
+    }
+
+    @mixin xl\:cursor-no-drop {
+      @include r2(xl, cursor, no-drop);
+    }
+
+    @mixin xl\:cursor-grab {
+      @include r2(xl, cursor, grab);
+    }
+
+    @mixin xl\:cursor-grabbing {
+      @include r2(xl, cursor, grabbing);
+    }
+
+    @mixin xl\:cursor-all-scroll {
+      @include r2(xl, cursor, all-scroll);
+    }
+
+    @mixin xl\:cursor-col-resize {
+      @include r2(xl, cursor, col-resize);
+    }
+
+    @mixin xl\:cursor-row-resize {
+      @include r2(xl, cursor, row-resize);
+    }
+
+    @mixin xl\:cursor-n-resize {
+      @include r2(xl, cursor, n-resize);
+    }
+
+    @mixin xl\:cursor-e-resize {
+      @include r2(xl, cursor, e-resize);
+    }
+
+    @mixin xl\:cursor-s-resize {
+      @include r2(xl, cursor, s-resize);
+    }
+
+    @mixin xl\:cursor-w-resize {
+      @include r2(xl, cursor, w-resize);
+    }
+
+    @mixin xl\:cursor-ne-resize {
+      @include r2(xl, cursor, ne-resize);
+    }
+
+    @mixin xl\:cursor-nw-resize {
+      @include r2(xl, cursor, nw-resize);
+    }
+
+    @mixin xl\:cursor-se-resize {
+      @include r2(xl, cursor, se-resize);
+    }
+
+    @mixin xl\:cursor-sw-resize {
+      @include r2(xl, cursor, sw-resize);
+    }
+
+    @mixin xl\:cursor-ew-resize {
+      @include r2(xl, cursor, ew-resize);
+    }
+
+    @mixin xl\:cursor-ns-resize {
+      @include r2(xl, cursor, ns-resize);
+    }
+
+    @mixin xl\:cursor-nesw-resize {
+      @include r2(xl, cursor, nesw-resize);
+    }
+
+    @mixin xl\:cursor-nwse-resize {
+      @include r2(xl, cursor, nwse-resize);
+    }
+
+    @mixin xl\:cursor-zoom-in {
+      @include r2(xl, cursor, zoom-in);
+    }
+
+    @mixin xl\:cursor-zoom-out {
+      @include r2(xl, cursor, zoom-out);
+    }
+    @mixin \2xl\:cursor-auto {
+      @include r2(2xl, cursor, auto);
+    }
+
+    @mixin \2xl\:cursor-default {
+      @include r2(2xl, cursor, default);
+    }
+
+    @mixin \2xl\:cursor-pointer {
+      @include r2(2xl, cursor, pointer);
+    }
+
+    @mixin \2xl\:cursor-wait {
+      @include r2(2xl, cursor, wait);
+    }
+
+    @mixin \2xl\:cursor-text {
+      @include r2(2xl, cursor, text);
+    }
+
+    @mixin \2xl\:cursor-move {
+      @include r2(2xl, cursor, move);
+    }
+
+    @mixin \2xl\:cursor-help {
+      @include r2(2xl, cursor, help);
+    }
+
+    @mixin \2xl\:cursor-not-allowed {
+      @include r2(2xl, cursor, not-allowed);
+    }
+
+    @mixin \2xl\:cursor-none {
+      @include r2(2xl, cursor, none);
+    }
+
+    @mixin \2xl\:cursor-context-menu {
+      @include r2(2xl, cursor, context-menu);
+    }
+
+    @mixin \2xl\:cursor-progress {
+      @include r2(2xl, cursor, progress);
+    }
+
+    @mixin \2xl\:cursor-cell {
+      @include r2(2xl, cursor, cell);
+    }
+
+    @mixin \2xl\:cursor-crosshair {
+      @include r2(2xl, cursor, crosshair);
+    }
+
+    @mixin \2xl\:cursor-vertical-text {
+      @include r2(2xl, cursor, vertical-text);
+    }
+
+    @mixin \2xl\:cursor-alias {
+      @include r2(2xl, cursor, alias);
+    }
+
+    @mixin \2xl\:cursor-copy {
+      @include r2(2xl, cursor, copy);
+    }
+
+    @mixin \2xl\:cursor-no-drop {
+      @include r2(2xl, cursor, no-drop);
+    }
+
+    @mixin \2xl\:cursor-grab {
+      @include r2(2xl, cursor, grab);
+    }
+
+    @mixin \2xl\:cursor-grabbing {
+      @include r2(2xl, cursor, grabbing);
+    }
+
+    @mixin \2xl\:cursor-all-scroll {
+      @include r2(2xl, cursor, all-scroll);
+    }
+
+    @mixin \2xl\:cursor-col-resize {
+      @include r2(2xl, cursor, col-resize);
+    }
+
+    @mixin \2xl\:cursor-row-resize {
+      @include r2(2xl, cursor, row-resize);
+    }
+
+    @mixin \2xl\:cursor-n-resize {
+      @include r2(2xl, cursor, n-resize);
+    }
+
+    @mixin \2xl\:cursor-e-resize {
+      @include r2(2xl, cursor, e-resize);
+    }
+
+    @mixin \2xl\:cursor-s-resize {
+      @include r2(2xl, cursor, s-resize);
+    }
+
+    @mixin \2xl\:cursor-w-resize {
+      @include r2(2xl, cursor, w-resize);
+    }
+
+    @mixin \2xl\:cursor-ne-resize {
+      @include r2(2xl, cursor, ne-resize);
+    }
+
+    @mixin \2xl\:cursor-nw-resize {
+      @include r2(2xl, cursor, nw-resize);
+    }
+
+    @mixin \2xl\:cursor-se-resize {
+      @include r2(2xl, cursor, se-resize);
+    }
+
+    @mixin \2xl\:cursor-sw-resize {
+      @include r2(2xl, cursor, sw-resize);
+    }
+
+    @mixin \2xl\:cursor-ew-resize {
+      @include r2(2xl, cursor, ew-resize);
+    }
+
+    @mixin \2xl\:cursor-ns-resize {
+      @include r2(2xl, cursor, ns-resize);
+    }
+
+    @mixin \2xl\:cursor-nesw-resize {
+      @include r2(2xl, cursor, nesw-resize);
+    }
+
+    @mixin \2xl\:cursor-nwse-resize {
+      @include r2(2xl, cursor, nwse-resize);
+    }
+
+    @mixin \2xl\:cursor-zoom-in {
+      @include r2(2xl, cursor, zoom-in);
+    }
+
+    @mixin \2xl\:cursor-zoom-out {
+      @include r2(2xl, cursor, zoom-out);
+    }
+
+    // x*/
   }
-
-  @mixin sm\:cursor-default {
-    @include r2(sm, cursor, default);
-  }
-
-  @mixin sm\:cursor-pointer {
-    @include r2(sm, cursor, pointer);
-  }
-
-  @mixin sm\:cursor-wait {
-    @include r2(sm, cursor, wait);
-  }
-
-  @mixin sm\:cursor-text {
-    @include r2(sm, cursor, text);
-  }
-
-  @mixin sm\:cursor-move {
-    @include r2(sm, cursor, move);
-  }
-
-  @mixin sm\:cursor-help {
-    @include r2(sm, cursor, help);
-  }
-
-  @mixin sm\:cursor-not-allowed {
-    @include r2(sm, cursor, not-allowed);
-  }
-
-  @mixin sm\:cursor-none {
-    @include r2(sm, cursor, none);
-  }
-
-  @mixin sm\:cursor-context-menu {
-    @include r2(sm, cursor, context-menu);
-  }
-
-  @mixin sm\:cursor-progress {
-    @include r2(sm, cursor, progress);
-  }
-
-  @mixin sm\:cursor-cell {
-    @include r2(sm, cursor, cell);
-  }
-
-  @mixin sm\:cursor-crosshair {
-    @include r2(sm, cursor, crosshair);
-  }
-
-  @mixin sm\:cursor-vertical-text {
-    @include r2(sm, cursor, vertical-text);
-  }
-
-  @mixin sm\:cursor-alias {
-    @include r2(sm, cursor, alias);
-  }
-
-  @mixin sm\:cursor-copy {
-    @include r2(sm, cursor, copy);
-  }
-
-  @mixin sm\:cursor-no-drop {
-    @include r2(sm, cursor, no-drop);
-  }
-
-  @mixin sm\:cursor-grab {
-    @include r2(sm, cursor, grab);
-  }
-
-  @mixin sm\:cursor-grabbing {
-    @include r2(sm, cursor, grabbing);
-  }
-
-  @mixin sm\:cursor-all-scroll {
-    @include r2(sm, cursor, all-scroll);
-  }
-
-  @mixin sm\:cursor-col-resize {
-    @include r2(sm, cursor, col-resize);
-  }
-
-  @mixin sm\:cursor-row-resize {
-    @include r2(sm, cursor, row-resize);
-  }
-
-  @mixin sm\:cursor-n-resize {
-    @include r2(sm, cursor, n-resize);
-  }
-
-  @mixin sm\:cursor-e-resize {
-    @include r2(sm, cursor, e-resize);
-  }
-
-  @mixin sm\:cursor-s-resize {
-    @include r2(sm, cursor, s-resize);
-  }
-
-  @mixin sm\:cursor-w-resize {
-    @include r2(sm, cursor, w-resize);
-  }
-
-  @mixin sm\:cursor-ne-resize {
-    @include r2(sm, cursor, ne-resize);
-  }
-
-  @mixin sm\:cursor-nw-resize {
-    @include r2(sm, cursor, nw-resize);
-  }
-
-  @mixin sm\:cursor-se-resize {
-    @include r2(sm, cursor, se-resize);
-  }
-
-  @mixin sm\:cursor-sw-resize {
-    @include r2(sm, cursor, sw-resize);
-  }
-
-  @mixin sm\:cursor-ew-resize {
-    @include r2(sm, cursor, ew-resize);
-  }
-
-  @mixin sm\:cursor-ns-resize {
-    @include r2(sm, cursor, ns-resize);
-  }
-
-  @mixin sm\:cursor-nesw-resize {
-    @include r2(sm, cursor, nesw-resize);
-  }
-
-  @mixin sm\:cursor-nwse-resize {
-    @include r2(sm, cursor, nwse-resize);
-  }
-
-  @mixin sm\:cursor-zoom-in {
-    @include r2(sm, cursor, zoom-in);
-  }
-
-  @mixin sm\:cursor-zoom-out {
-    @include r2(sm, cursor, zoom-out);
-  }
-  @mixin md\:cursor-auto {
-    @include r2(md, cursor, auto);
-  }
-
-  @mixin md\:cursor-default {
-    @include r2(md, cursor, default);
-  }
-
-  @mixin md\:cursor-pointer {
-    @include r2(md, cursor, pointer);
-  }
-
-  @mixin md\:cursor-wait {
-    @include r2(md, cursor, wait);
-  }
-
-  @mixin md\:cursor-text {
-    @include r2(md, cursor, text);
-  }
-
-  @mixin md\:cursor-move {
-    @include r2(md, cursor, move);
-  }
-
-  @mixin md\:cursor-help {
-    @include r2(md, cursor, help);
-  }
-
-  @mixin md\:cursor-not-allowed {
-    @include r2(md, cursor, not-allowed);
-  }
-
-  @mixin md\:cursor-none {
-    @include r2(md, cursor, none);
-  }
-
-  @mixin md\:cursor-context-menu {
-    @include r2(md, cursor, context-menu);
-  }
-
-  @mixin md\:cursor-progress {
-    @include r2(md, cursor, progress);
-  }
-
-  @mixin md\:cursor-cell {
-    @include r2(md, cursor, cell);
-  }
-
-  @mixin md\:cursor-crosshair {
-    @include r2(md, cursor, crosshair);
-  }
-
-  @mixin md\:cursor-vertical-text {
-    @include r2(md, cursor, vertical-text);
-  }
-
-  @mixin md\:cursor-alias {
-    @include r2(md, cursor, alias);
-  }
-
-  @mixin md\:cursor-copy {
-    @include r2(md, cursor, copy);
-  }
-
-  @mixin md\:cursor-no-drop {
-    @include r2(md, cursor, no-drop);
-  }
-
-  @mixin md\:cursor-grab {
-    @include r2(md, cursor, grab);
-  }
-
-  @mixin md\:cursor-grabbing {
-    @include r2(md, cursor, grabbing);
-  }
-
-  @mixin md\:cursor-all-scroll {
-    @include r2(md, cursor, all-scroll);
-  }
-
-  @mixin md\:cursor-col-resize {
-    @include r2(md, cursor, col-resize);
-  }
-
-  @mixin md\:cursor-row-resize {
-    @include r2(md, cursor, row-resize);
-  }
-
-  @mixin md\:cursor-n-resize {
-    @include r2(md, cursor, n-resize);
-  }
-
-  @mixin md\:cursor-e-resize {
-    @include r2(md, cursor, e-resize);
-  }
-
-  @mixin md\:cursor-s-resize {
-    @include r2(md, cursor, s-resize);
-  }
-
-  @mixin md\:cursor-w-resize {
-    @include r2(md, cursor, w-resize);
-  }
-
-  @mixin md\:cursor-ne-resize {
-    @include r2(md, cursor, ne-resize);
-  }
-
-  @mixin md\:cursor-nw-resize {
-    @include r2(md, cursor, nw-resize);
-  }
-
-  @mixin md\:cursor-se-resize {
-    @include r2(md, cursor, se-resize);
-  }
-
-  @mixin md\:cursor-sw-resize {
-    @include r2(md, cursor, sw-resize);
-  }
-
-  @mixin md\:cursor-ew-resize {
-    @include r2(md, cursor, ew-resize);
-  }
-
-  @mixin md\:cursor-ns-resize {
-    @include r2(md, cursor, ns-resize);
-  }
-
-  @mixin md\:cursor-nesw-resize {
-    @include r2(md, cursor, nesw-resize);
-  }
-
-  @mixin md\:cursor-nwse-resize {
-    @include r2(md, cursor, nwse-resize);
-  }
-
-  @mixin md\:cursor-zoom-in {
-    @include r2(md, cursor, zoom-in);
-  }
-
-  @mixin md\:cursor-zoom-out {
-    @include r2(md, cursor, zoom-out);
-  }
-  @mixin lg\:cursor-auto {
-    @include r2(lg, cursor, auto);
-  }
-
-  @mixin lg\:cursor-default {
-    @include r2(lg, cursor, default);
-  }
-
-  @mixin lg\:cursor-pointer {
-    @include r2(lg, cursor, pointer);
-  }
-
-  @mixin lg\:cursor-wait {
-    @include r2(lg, cursor, wait);
-  }
-
-  @mixin lg\:cursor-text {
-    @include r2(lg, cursor, text);
-  }
-
-  @mixin lg\:cursor-move {
-    @include r2(lg, cursor, move);
-  }
-
-  @mixin lg\:cursor-help {
-    @include r2(lg, cursor, help);
-  }
-
-  @mixin lg\:cursor-not-allowed {
-    @include r2(lg, cursor, not-allowed);
-  }
-
-  @mixin lg\:cursor-none {
-    @include r2(lg, cursor, none);
-  }
-
-  @mixin lg\:cursor-context-menu {
-    @include r2(lg, cursor, context-menu);
-  }
-
-  @mixin lg\:cursor-progress {
-    @include r2(lg, cursor, progress);
-  }
-
-  @mixin lg\:cursor-cell {
-    @include r2(lg, cursor, cell);
-  }
-
-  @mixin lg\:cursor-crosshair {
-    @include r2(lg, cursor, crosshair);
-  }
-
-  @mixin lg\:cursor-vertical-text {
-    @include r2(lg, cursor, vertical-text);
-  }
-
-  @mixin lg\:cursor-alias {
-    @include r2(lg, cursor, alias);
-  }
-
-  @mixin lg\:cursor-copy {
-    @include r2(lg, cursor, copy);
-  }
-
-  @mixin lg\:cursor-no-drop {
-    @include r2(lg, cursor, no-drop);
-  }
-
-  @mixin lg\:cursor-grab {
-    @include r2(lg, cursor, grab);
-  }
-
-  @mixin lg\:cursor-grabbing {
-    @include r2(lg, cursor, grabbing);
-  }
-
-  @mixin lg\:cursor-all-scroll {
-    @include r2(lg, cursor, all-scroll);
-  }
-
-  @mixin lg\:cursor-col-resize {
-    @include r2(lg, cursor, col-resize);
-  }
-
-  @mixin lg\:cursor-row-resize {
-    @include r2(lg, cursor, row-resize);
-  }
-
-  @mixin lg\:cursor-n-resize {
-    @include r2(lg, cursor, n-resize);
-  }
-
-  @mixin lg\:cursor-e-resize {
-    @include r2(lg, cursor, e-resize);
-  }
-
-  @mixin lg\:cursor-s-resize {
-    @include r2(lg, cursor, s-resize);
-  }
-
-  @mixin lg\:cursor-w-resize {
-    @include r2(lg, cursor, w-resize);
-  }
-
-  @mixin lg\:cursor-ne-resize {
-    @include r2(lg, cursor, ne-resize);
-  }
-
-  @mixin lg\:cursor-nw-resize {
-    @include r2(lg, cursor, nw-resize);
-  }
-
-  @mixin lg\:cursor-se-resize {
-    @include r2(lg, cursor, se-resize);
-  }
-
-  @mixin lg\:cursor-sw-resize {
-    @include r2(lg, cursor, sw-resize);
-  }
-
-  @mixin lg\:cursor-ew-resize {
-    @include r2(lg, cursor, ew-resize);
-  }
-
-  @mixin lg\:cursor-ns-resize {
-    @include r2(lg, cursor, ns-resize);
-  }
-
-  @mixin lg\:cursor-nesw-resize {
-    @include r2(lg, cursor, nesw-resize);
-  }
-
-  @mixin lg\:cursor-nwse-resize {
-    @include r2(lg, cursor, nwse-resize);
-  }
-
-  @mixin lg\:cursor-zoom-in {
-    @include r2(lg, cursor, zoom-in);
-  }
-
-  @mixin lg\:cursor-zoom-out {
-    @include r2(lg, cursor, zoom-out);
-  }
-  @mixin xl\:cursor-auto {
-    @include r2(xl, cursor, auto);
-  }
-
-  @mixin xl\:cursor-default {
-    @include r2(xl, cursor, default);
-  }
-
-  @mixin xl\:cursor-pointer {
-    @include r2(xl, cursor, pointer);
-  }
-
-  @mixin xl\:cursor-wait {
-    @include r2(xl, cursor, wait);
-  }
-
-  @mixin xl\:cursor-text {
-    @include r2(xl, cursor, text);
-  }
-
-  @mixin xl\:cursor-move {
-    @include r2(xl, cursor, move);
-  }
-
-  @mixin xl\:cursor-help {
-    @include r2(xl, cursor, help);
-  }
-
-  @mixin xl\:cursor-not-allowed {
-    @include r2(xl, cursor, not-allowed);
-  }
-
-  @mixin xl\:cursor-none {
-    @include r2(xl, cursor, none);
-  }
-
-  @mixin xl\:cursor-context-menu {
-    @include r2(xl, cursor, context-menu);
-  }
-
-  @mixin xl\:cursor-progress {
-    @include r2(xl, cursor, progress);
-  }
-
-  @mixin xl\:cursor-cell {
-    @include r2(xl, cursor, cell);
-  }
-
-  @mixin xl\:cursor-crosshair {
-    @include r2(xl, cursor, crosshair);
-  }
-
-  @mixin xl\:cursor-vertical-text {
-    @include r2(xl, cursor, vertical-text);
-  }
-
-  @mixin xl\:cursor-alias {
-    @include r2(xl, cursor, alias);
-  }
-
-  @mixin xl\:cursor-copy {
-    @include r2(xl, cursor, copy);
-  }
-
-  @mixin xl\:cursor-no-drop {
-    @include r2(xl, cursor, no-drop);
-  }
-
-  @mixin xl\:cursor-grab {
-    @include r2(xl, cursor, grab);
-  }
-
-  @mixin xl\:cursor-grabbing {
-    @include r2(xl, cursor, grabbing);
-  }
-
-  @mixin xl\:cursor-all-scroll {
-    @include r2(xl, cursor, all-scroll);
-  }
-
-  @mixin xl\:cursor-col-resize {
-    @include r2(xl, cursor, col-resize);
-  }
-
-  @mixin xl\:cursor-row-resize {
-    @include r2(xl, cursor, row-resize);
-  }
-
-  @mixin xl\:cursor-n-resize {
-    @include r2(xl, cursor, n-resize);
-  }
-
-  @mixin xl\:cursor-e-resize {
-    @include r2(xl, cursor, e-resize);
-  }
-
-  @mixin xl\:cursor-s-resize {
-    @include r2(xl, cursor, s-resize);
-  }
-
-  @mixin xl\:cursor-w-resize {
-    @include r2(xl, cursor, w-resize);
-  }
-
-  @mixin xl\:cursor-ne-resize {
-    @include r2(xl, cursor, ne-resize);
-  }
-
-  @mixin xl\:cursor-nw-resize {
-    @include r2(xl, cursor, nw-resize);
-  }
-
-  @mixin xl\:cursor-se-resize {
-    @include r2(xl, cursor, se-resize);
-  }
-
-  @mixin xl\:cursor-sw-resize {
-    @include r2(xl, cursor, sw-resize);
-  }
-
-  @mixin xl\:cursor-ew-resize {
-    @include r2(xl, cursor, ew-resize);
-  }
-
-  @mixin xl\:cursor-ns-resize {
-    @include r2(xl, cursor, ns-resize);
-  }
-
-  @mixin xl\:cursor-nesw-resize {
-    @include r2(xl, cursor, nesw-resize);
-  }
-
-  @mixin xl\:cursor-nwse-resize {
-    @include r2(xl, cursor, nwse-resize);
-  }
-
-  @mixin xl\:cursor-zoom-in {
-    @include r2(xl, cursor, zoom-in);
-  }
-
-  @mixin xl\:cursor-zoom-out {
-    @include r2(xl, cursor, zoom-out);
-  }
-  @mixin \2xl\:cursor-auto {
-    @include r2(2xl, cursor, auto);
-  }
-
-  @mixin \2xl\:cursor-default {
-    @include r2(2xl, cursor, default);
-  }
-
-  @mixin \2xl\:cursor-pointer {
-    @include r2(2xl, cursor, pointer);
-  }
-
-  @mixin \2xl\:cursor-wait {
-    @include r2(2xl, cursor, wait);
-  }
-
-  @mixin \2xl\:cursor-text {
-    @include r2(2xl, cursor, text);
-  }
-
-  @mixin \2xl\:cursor-move {
-    @include r2(2xl, cursor, move);
-  }
-
-  @mixin \2xl\:cursor-help {
-    @include r2(2xl, cursor, help);
-  }
-
-  @mixin \2xl\:cursor-not-allowed {
-    @include r2(2xl, cursor, not-allowed);
-  }
-
-  @mixin \2xl\:cursor-none {
-    @include r2(2xl, cursor, none);
-  }
-
-  @mixin \2xl\:cursor-context-menu {
-    @include r2(2xl, cursor, context-menu);
-  }
-
-  @mixin \2xl\:cursor-progress {
-    @include r2(2xl, cursor, progress);
-  }
-
-  @mixin \2xl\:cursor-cell {
-    @include r2(2xl, cursor, cell);
-  }
-
-  @mixin \2xl\:cursor-crosshair {
-    @include r2(2xl, cursor, crosshair);
-  }
-
-  @mixin \2xl\:cursor-vertical-text {
-    @include r2(2xl, cursor, vertical-text);
-  }
-
-  @mixin \2xl\:cursor-alias {
-    @include r2(2xl, cursor, alias);
-  }
-
-  @mixin \2xl\:cursor-copy {
-    @include r2(2xl, cursor, copy);
-  }
-
-  @mixin \2xl\:cursor-no-drop {
-    @include r2(2xl, cursor, no-drop);
-  }
-
-  @mixin \2xl\:cursor-grab {
-    @include r2(2xl, cursor, grab);
-  }
-
-  @mixin \2xl\:cursor-grabbing {
-    @include r2(2xl, cursor, grabbing);
-  }
-
-  @mixin \2xl\:cursor-all-scroll {
-    @include r2(2xl, cursor, all-scroll);
-  }
-
-  @mixin \2xl\:cursor-col-resize {
-    @include r2(2xl, cursor, col-resize);
-  }
-
-  @mixin \2xl\:cursor-row-resize {
-    @include r2(2xl, cursor, row-resize);
-  }
-
-  @mixin \2xl\:cursor-n-resize {
-    @include r2(2xl, cursor, n-resize);
-  }
-
-  @mixin \2xl\:cursor-e-resize {
-    @include r2(2xl, cursor, e-resize);
-  }
-
-  @mixin \2xl\:cursor-s-resize {
-    @include r2(2xl, cursor, s-resize);
-  }
-
-  @mixin \2xl\:cursor-w-resize {
-    @include r2(2xl, cursor, w-resize);
-  }
-
-  @mixin \2xl\:cursor-ne-resize {
-    @include r2(2xl, cursor, ne-resize);
-  }
-
-  @mixin \2xl\:cursor-nw-resize {
-    @include r2(2xl, cursor, nw-resize);
-  }
-
-  @mixin \2xl\:cursor-se-resize {
-    @include r2(2xl, cursor, se-resize);
-  }
-
-  @mixin \2xl\:cursor-sw-resize {
-    @include r2(2xl, cursor, sw-resize);
-  }
-
-  @mixin \2xl\:cursor-ew-resize {
-    @include r2(2xl, cursor, ew-resize);
-  }
-
-  @mixin \2xl\:cursor-ns-resize {
-    @include r2(2xl, cursor, ns-resize);
-  }
-
-  @mixin \2xl\:cursor-nesw-resize {
-    @include r2(2xl, cursor, nesw-resize);
-  }
-
-  @mixin \2xl\:cursor-nwse-resize {
-    @include r2(2xl, cursor, nwse-resize);
-  }
-
-  @mixin \2xl\:cursor-zoom-in {
-    @include r2(2xl, cursor, zoom-in);
-  }
-
-  @mixin \2xl\:cursor-zoom-out {
-    @include r2(2xl, cursor, zoom-out);
-  }
-
-  // x*/
 }
-
 @if $Custom {
   // /*x
   @mixin cursor-($v, $v2: null) {

@@ -122,594 +122,595 @@
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:columns-1 {
-    @include r(sm, columns, 1);
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:columns-1 {
+      @include r(sm, columns, 1);
+    }
+
+    @mixin sm\:columns-2 {
+      @include r(sm, columns, 2);
+    }
+
+    @mixin sm\:columns-3 {
+      @include r(sm, columns, 3);
+    }
+
+    @mixin sm\:columns-4 {
+      @include r(sm, columns, 4);
+    }
+
+    @mixin sm\:columns-5 {
+      @include r(sm, columns, 5);
+    }
+
+    @mixin sm\:columns-6 {
+      @include r(sm, columns, 6);
+    }
+
+    @mixin sm\:columns-7 {
+      @include r(sm, columns, 7);
+    }
+
+    @mixin sm\:columns-8 {
+      @include r(sm, columns, 8);
+    }
+
+    @mixin sm\:columns-9 {
+      @include r(sm, columns, 9);
+    }
+
+    @mixin sm\:columns-10 {
+      @include r(sm, columns, 10);
+    }
+
+    @mixin sm\:columns-11 {
+      @include r(sm, columns, 11);
+    }
+
+    @mixin sm\:columns-12 {
+      @include r(sm, columns, 12);
+    }
+
+    @mixin sm\:columns-auto {
+      @include r(sm, columns, auto);
+    }
+
+    // 256px
+    @mixin sm\:columns-3xs {
+      @include r(sm, columns, 16rem);
+    }
+
+    // 288px
+    @mixin sm\:columns-2xs {
+      @include r(sm, columns, 18rem);
+    }
+
+    // 320px
+    @mixin sm\:columns-xs {
+      @include r(sm, columns, 20rem);
+    }
+
+    // 384px
+    @mixin sm\:columns-sm {
+      @include r(sm, columns, 24rem);
+    }
+
+    // 448px
+    @mixin sm\:columns-md {
+      @include r(sm, columns, 28rem);
+    }
+
+    // 512px
+    @mixin sm\:columns-lg {
+      @include r(sm, columns, 32rem);
+    }
+
+    // 576px
+    @mixin sm\:columns-xl {
+      @include r(sm, columns, 36rem);
+    }
+
+    // 672px
+    @mixin sm\:columns-2xl {
+      @include r(sm, columns, 42rem);
+    }
+
+    // 768px
+    @mixin sm\:columns-3xl {
+      @include r(sm, columns, 48rem);
+    }
+
+    // 896px
+    @mixin sm\:columns-4xl {
+      @include r(sm, columns, 56rem);
+    }
+
+    // 1024px
+    @mixin sm\:columns-5xl {
+      @include r(sm, columns, 64rem);
+    }
+
+    // 1152px
+    @mixin sm\:columns-6xl {
+      @include r(sm, columns, 72rem);
+    }
+
+    // 1280px
+    @mixin sm\:columns-7xl {
+      @include r(sm, columns, 80rem);
+    }
+
+    @mixin md\:columns-1 {
+      @include r(md, columns, 1);
+    }
+
+    @mixin md\:columns-2 {
+      @include r(md, columns, 2);
+    }
+
+    @mixin md\:columns-3 {
+      @include r(md, columns, 3);
+    }
+
+    @mixin md\:columns-4 {
+      @include r(md, columns, 4);
+    }
+
+    @mixin md\:columns-5 {
+      @include r(md, columns, 5);
+    }
+
+    @mixin md\:columns-6 {
+      @include r(md, columns, 6);
+    }
+
+    @mixin md\:columns-7 {
+      @include r(md, columns, 7);
+    }
+
+    @mixin md\:columns-8 {
+      @include r(md, columns, 8);
+    }
+
+    @mixin md\:columns-9 {
+      @include r(md, columns, 9);
+    }
+
+    @mixin md\:columns-10 {
+      @include r(md, columns, 10);
+    }
+
+    @mixin md\:columns-11 {
+      @include r(md, columns, 11);
+    }
+
+    @mixin md\:columns-12 {
+      @include r(md, columns, 12);
+    }
+
+    @mixin md\:columns-auto {
+      @include r(md, columns, auto);
+    }
+
+    // 256px
+    @mixin md\:columns-3xs {
+      @include r(md, columns, 16rem);
+    }
+
+    // 288px
+    @mixin md\:columns-2xs {
+      @include r(md, columns, 18rem);
+    }
+
+    // 320px
+    @mixin md\:columns-xs {
+      @include r(md, columns, 20rem);
+    }
+
+    // 384px
+    @mixin md\:columns-md {
+      @include r(md, columns, 24rem);
+    }
+
+    // 448px
+    @mixin md\:columns-md {
+      @include r(md, columns, 28rem);
+    }
+
+    // 512px
+    @mixin md\:columns-lg {
+      @include r(md, columns, 32rem);
+    }
+
+    // 576px
+    @mixin md\:columns-xl {
+      @include r(md, columns, 36rem);
+    }
+
+    // 672px
+    @mixin md\:columns-2xl {
+      @include r(md, columns, 42rem);
+    }
+
+    // 768px
+    @mixin md\:columns-3xl {
+      @include r(md, columns, 48rem);
+    }
+
+    // 896px
+    @mixin md\:columns-4xl {
+      @include r(md, columns, 56rem);
+    }
+
+    // 1024px
+    @mixin md\:columns-5xl {
+      @include r(md, columns, 64rem);
+    }
+
+    // 1152px
+    @mixin md\:columns-6xl {
+      @include r(md, columns, 72rem);
+    }
+
+    // 1280px
+    @mixin md\:columns-7xl {
+      @include r(md, columns, 80rem);
+    }
+
+    @mixin lg\:columns-1 {
+      @include r(lg, columns, 1);
+    }
+
+    @mixin lg\:columns-2 {
+      @include r(lg, columns, 2);
+    }
+
+    @mixin lg\:columns-3 {
+      @include r(lg, columns, 3);
+    }
+
+    @mixin lg\:columns-4 {
+      @include r(lg, columns, 4);
+    }
+
+    @mixin lg\:columns-5 {
+      @include r(lg, columns, 5);
+    }
+
+    @mixin lg\:columns-6 {
+      @include r(lg, columns, 6);
+    }
+
+    @mixin lg\:columns-7 {
+      @include r(lg, columns, 7);
+    }
+
+    @mixin lg\:columns-8 {
+      @include r(lg, columns, 8);
+    }
+
+    @mixin lg\:columns-9 {
+      @include r(lg, columns, 9);
+    }
+
+    @mixin lg\:columns-10 {
+      @include r(lg, columns, 10);
+    }
+
+    @mixin lg\:columns-11 {
+      @include r(lg, columns, 11);
+    }
+
+    @mixin lg\:columns-12 {
+      @include r(lg, columns, 12);
+    }
+
+    @mixin lg\:columns-auto {
+      @include r(lg, columns, auto);
+    }
+
+    // 256px
+    @mixin lg\:columns-3xs {
+      @include r(lg, columns, 16rem);
+    }
+
+    // 288px
+    @mixin lg\:columns-2xs {
+      @include r(lg, columns, 18rem);
+    }
+
+    // 320px
+    @mixin lg\:columns-xs {
+      @include r(lg, columns, 20rem);
+    }
+
+    // 384px
+    @mixin lg\:columns-lg {
+      @include r(lg, columns, 24rem);
+    }
+
+    // 448px
+    @mixin lg\:columns-md {
+      @include r(lg, columns, 28rem);
+    }
+
+    // 512px
+    @mixin lg\:columns-lg {
+      @include r(lg, columns, 32rem);
+    }
+
+    // 576px
+    @mixin lg\:columns-xl {
+      @include r(lg, columns, 36rem);
+    }
+
+    // 672px
+    @mixin lg\:columns-2xl {
+      @include r(lg, columns, 42rem);
+    }
+
+    // 768px
+    @mixin lg\:columns-3xl {
+      @include r(lg, columns, 48rem);
+    }
+
+    // 896px
+    @mixin lg\:columns-4xl {
+      @include r(lg, columns, 56rem);
+    }
+
+    // 1024px
+    @mixin lg\:columns-5xl {
+      @include r(lg, columns, 64rem);
+    }
+
+    // 1152px
+    @mixin lg\:columns-6xl {
+      @include r(lg, columns, 72rem);
+    }
+
+    // 1280px
+    @mixin lg\:columns-7xl {
+      @include r(lg, columns, 80rem);
+    }
+
+    @mixin xl\:columns-1 {
+      @include r(xl, columns, 1);
+    }
+
+    @mixin xl\:columns-2 {
+      @include r(xl, columns, 2);
+    }
+
+    @mixin xl\:columns-3 {
+      @include r(xl, columns, 3);
+    }
+
+    @mixin xl\:columns-4 {
+      @include r(xl, columns, 4);
+    }
+
+    @mixin xl\:columns-5 {
+      @include r(xl, columns, 5);
+    }
+
+    @mixin xl\:columns-6 {
+      @include r(xl, columns, 6);
+    }
+
+    @mixin xl\:columns-7 {
+      @include r(xl, columns, 7);
+    }
+
+    @mixin xl\:columns-8 {
+      @include r(xl, columns, 8);
+    }
+
+    @mixin xl\:columns-9 {
+      @include r(xl, columns, 9);
+    }
+
+    @mixin xl\:columns-10 {
+      @include r(xl, columns, 10);
+    }
+
+    @mixin xl\:columns-11 {
+      @include r(xl, columns, 11);
+    }
+
+    @mixin xl\:columns-12 {
+      @include r(xl, columns, 12);
+    }
+
+    @mixin xl\:columns-auto {
+      @include r(xl, columns, auto);
+    }
+
+    // 256px
+    @mixin xl\:columns-3xs {
+      @include r(xl, columns, 16rem);
+    }
+
+    // 288px
+    @mixin xl\:columns-2xs {
+      @include r(xl, columns, 18rem);
+    }
+
+    // 320px
+    @mixin xl\:columns-xs {
+      @include r(xl, columns, 20rem);
+    }
+
+    // 384px
+    @mixin xl\:columns-xl {
+      @include r(xl, columns, 24rem);
+    }
+
+    // 448px
+    @mixin xl\:columns-md {
+      @include r(xl, columns, 28rem);
+    }
+
+    // 512px
+    @mixin xl\:columns-lg {
+      @include r(xl, columns, 32rem);
+    }
+
+    // 576px
+    @mixin xl\:columns-xl {
+      @include r(xl, columns, 36rem);
+    }
+
+    // 672px
+    @mixin xl\:columns-2xl {
+      @include r(xl, columns, 42rem);
+    }
+
+    // 768px
+    @mixin xl\:columns-3xl {
+      @include r(xl, columns, 48rem);
+    }
+
+    // 896px
+    @mixin xl\:columns-4xl {
+      @include r(xl, columns, 56rem);
+    }
+
+    // 1024px
+    @mixin xl\:columns-5xl {
+      @include r(xl, columns, 64rem);
+    }
+
+    // 1152px
+    @mixin xl\:columns-6xl {
+      @include r(xl, columns, 72rem);
+    }
+
+    // 1280px
+    @mixin xl\:columns-7xl {
+      @include r(xl, columns, 80rem);
+    }
+
+    @mixin \2xl\:columns-1 {
+      @include r(2xl, columns, 1);
+    }
+
+    @mixin \2xl\:columns-2 {
+      @include r(2xl, columns, 2);
+    }
+
+    @mixin \2xl\:columns-3 {
+      @include r(2xl, columns, 3);
+    }
+
+    @mixin \2xl\:columns-4 {
+      @include r(2xl, columns, 4);
+    }
+
+    @mixin \2xl\:columns-5 {
+      @include r(2xl, columns, 5);
+    }
+
+    @mixin \2xl\:columns-6 {
+      @include r(2xl, columns, 6);
+    }
+
+    @mixin \2xl\:columns-7 {
+      @include r(2xl, columns, 7);
+    }
+
+    @mixin \2xl\:columns-8 {
+      @include r(2xl, columns, 8);
+    }
+
+    @mixin \2xl\:columns-9 {
+      @include r(2xl, columns, 9);
+    }
+
+    @mixin \2xl\:columns-10 {
+      @include r(2xl, columns, 10);
+    }
+
+    @mixin \2xl\:columns-11 {
+      @include r(2xl, columns, 11);
+    }
+
+    @mixin \2xl\:columns-12 {
+      @include r(2xl, columns, 12);
+    }
+
+    @mixin \2xl\:columns-auto {
+      @include r(2xl, columns, auto);
+    }
+
+    // 256px
+    @mixin \2xl\:columns-3xs {
+      @include r(2xl, columns, 16rem);
+    }
+
+    // 288px
+    @mixin \2xl\:columns-2xs {
+      @include r(2xl, columns, 18rem);
+    }
+
+    // 320px
+    @mixin \2xl\:columns-xs {
+      @include r(2xl, columns, 20rem);
+    }
+
+    // 384px
+    @mixin \2xl\:columns-2xl {
+      @include r(2xl, columns, 24rem);
+    }
+
+    // 448px
+    @mixin \2xl\:columns-md {
+      @include r(2xl, columns, 28rem);
+    }
+
+    // 512px
+    @mixin \2xl\:columns-lg {
+      @include r(2xl, columns, 32rem);
+    }
+
+    // 576px
+    @mixin \2xl\:columns-xl {
+      @include r(2xl, columns, 36rem);
+    }
+
+    // 672px
+    @mixin \2xl\:columns-2xl {
+      @include r(2xl, columns, 42rem);
+    }
+
+    // 768px
+    @mixin \2xl\:columns-3xl {
+      @include r(2xl, columns, 48rem);
+    }
+
+    // 896px
+    @mixin \2xl\:columns-4xl {
+      @include r(2xl, columns, 56rem);
+    }
+
+    // 1024px
+    @mixin \2xl\:columns-5xl {
+      @include r(2xl, columns, 64rem);
+    }
+
+    // 1152px
+    @mixin \2xl\:columns-6xl {
+      @include r(2xl, columns, 72rem);
+    }
+
+    // 1280px
+    @mixin \2xl\:columns-7xl {
+      @include r(2xl, columns, 80rem);
+    }
+    // x*/
   }
-
-  @mixin sm\:columns-2 {
-    @include r(sm, columns, 2);
-  }
-
-  @mixin sm\:columns-3 {
-    @include r(sm, columns, 3);
-  }
-
-  @mixin sm\:columns-4 {
-    @include r(sm, columns, 4);
-  }
-
-  @mixin sm\:columns-5 {
-    @include r(sm, columns, 5);
-  }
-
-  @mixin sm\:columns-6 {
-    @include r(sm, columns, 6);
-  }
-
-  @mixin sm\:columns-7 {
-    @include r(sm, columns, 7);
-  }
-
-  @mixin sm\:columns-8 {
-    @include r(sm, columns, 8);
-  }
-
-  @mixin sm\:columns-9 {
-    @include r(sm, columns, 9);
-  }
-
-  @mixin sm\:columns-10 {
-    @include r(sm, columns, 10);
-  }
-
-  @mixin sm\:columns-11 {
-    @include r(sm, columns, 11);
-  }
-
-  @mixin sm\:columns-12 {
-    @include r(sm, columns, 12);
-  }
-
-  @mixin sm\:columns-auto {
-    @include r(sm, columns, auto);
-  }
-
-  // 256px
-  @mixin sm\:columns-3xs {
-    @include r(sm, columns, 16rem);
-  }
-
-  // 288px
-  @mixin sm\:columns-2xs {
-    @include r(sm, columns, 18rem);
-  }
-
-  // 320px
-  @mixin sm\:columns-xs {
-    @include r(sm, columns, 20rem);
-  }
-
-  // 384px
-  @mixin sm\:columns-sm {
-    @include r(sm, columns, 24rem);
-  }
-
-  // 448px
-  @mixin sm\:columns-md {
-    @include r(sm, columns, 28rem);
-  }
-
-  // 512px
-  @mixin sm\:columns-lg {
-    @include r(sm, columns, 32rem);
-  }
-
-  // 576px
-  @mixin sm\:columns-xl {
-    @include r(sm, columns, 36rem);
-  }
-
-  // 672px
-  @mixin sm\:columns-2xl {
-    @include r(sm, columns, 42rem);
-  }
-
-  // 768px
-  @mixin sm\:columns-3xl {
-    @include r(sm, columns, 48rem);
-  }
-
-  // 896px
-  @mixin sm\:columns-4xl {
-    @include r(sm, columns, 56rem);
-  }
-
-  // 1024px
-  @mixin sm\:columns-5xl {
-    @include r(sm, columns, 64rem);
-  }
-
-  // 1152px
-  @mixin sm\:columns-6xl {
-    @include r(sm, columns, 72rem);
-  }
-
-  // 1280px
-  @mixin sm\:columns-7xl {
-    @include r(sm, columns, 80rem);
-  }
-
-  @mixin md\:columns-1 {
-    @include r(md, columns, 1);
-  }
-
-  @mixin md\:columns-2 {
-    @include r(md, columns, 2);
-  }
-
-  @mixin md\:columns-3 {
-    @include r(md, columns, 3);
-  }
-
-  @mixin md\:columns-4 {
-    @include r(md, columns, 4);
-  }
-
-  @mixin md\:columns-5 {
-    @include r(md, columns, 5);
-  }
-
-  @mixin md\:columns-6 {
-    @include r(md, columns, 6);
-  }
-
-  @mixin md\:columns-7 {
-    @include r(md, columns, 7);
-  }
-
-  @mixin md\:columns-8 {
-    @include r(md, columns, 8);
-  }
-
-  @mixin md\:columns-9 {
-    @include r(md, columns, 9);
-  }
-
-  @mixin md\:columns-10 {
-    @include r(md, columns, 10);
-  }
-
-  @mixin md\:columns-11 {
-    @include r(md, columns, 11);
-  }
-
-  @mixin md\:columns-12 {
-    @include r(md, columns, 12);
-  }
-
-  @mixin md\:columns-auto {
-    @include r(md, columns, auto);
-  }
-
-  // 256px
-  @mixin md\:columns-3xs {
-    @include r(md, columns, 16rem);
-  }
-
-  // 288px
-  @mixin md\:columns-2xs {
-    @include r(md, columns, 18rem);
-  }
-
-  // 320px
-  @mixin md\:columns-xs {
-    @include r(md, columns, 20rem);
-  }
-
-  // 384px
-  @mixin md\:columns-md {
-    @include r(md, columns, 24rem);
-  }
-
-  // 448px
-  @mixin md\:columns-md {
-    @include r(md, columns, 28rem);
-  }
-
-  // 512px
-  @mixin md\:columns-lg {
-    @include r(md, columns, 32rem);
-  }
-
-  // 576px
-  @mixin md\:columns-xl {
-    @include r(md, columns, 36rem);
-  }
-
-  // 672px
-  @mixin md\:columns-2xl {
-    @include r(md, columns, 42rem);
-  }
-
-  // 768px
-  @mixin md\:columns-3xl {
-    @include r(md, columns, 48rem);
-  }
-
-  // 896px
-  @mixin md\:columns-4xl {
-    @include r(md, columns, 56rem);
-  }
-
-  // 1024px
-  @mixin md\:columns-5xl {
-    @include r(md, columns, 64rem);
-  }
-
-  // 1152px
-  @mixin md\:columns-6xl {
-    @include r(md, columns, 72rem);
-  }
-
-  // 1280px
-  @mixin md\:columns-7xl {
-    @include r(md, columns, 80rem);
-  }
-
-  @mixin lg\:columns-1 {
-    @include r(lg, columns, 1);
-  }
-
-  @mixin lg\:columns-2 {
-    @include r(lg, columns, 2);
-  }
-
-  @mixin lg\:columns-3 {
-    @include r(lg, columns, 3);
-  }
-
-  @mixin lg\:columns-4 {
-    @include r(lg, columns, 4);
-  }
-
-  @mixin lg\:columns-5 {
-    @include r(lg, columns, 5);
-  }
-
-  @mixin lg\:columns-6 {
-    @include r(lg, columns, 6);
-  }
-
-  @mixin lg\:columns-7 {
-    @include r(lg, columns, 7);
-  }
-
-  @mixin lg\:columns-8 {
-    @include r(lg, columns, 8);
-  }
-
-  @mixin lg\:columns-9 {
-    @include r(lg, columns, 9);
-  }
-
-  @mixin lg\:columns-10 {
-    @include r(lg, columns, 10);
-  }
-
-  @mixin lg\:columns-11 {
-    @include r(lg, columns, 11);
-  }
-
-  @mixin lg\:columns-12 {
-    @include r(lg, columns, 12);
-  }
-
-  @mixin lg\:columns-auto {
-    @include r(lg, columns, auto);
-  }
-
-  // 256px
-  @mixin lg\:columns-3xs {
-    @include r(lg, columns, 16rem);
-  }
-
-  // 288px
-  @mixin lg\:columns-2xs {
-    @include r(lg, columns, 18rem);
-  }
-
-  // 320px
-  @mixin lg\:columns-xs {
-    @include r(lg, columns, 20rem);
-  }
-
-  // 384px
-  @mixin lg\:columns-lg {
-    @include r(lg, columns, 24rem);
-  }
-
-  // 448px
-  @mixin lg\:columns-md {
-    @include r(lg, columns, 28rem);
-  }
-
-  // 512px
-  @mixin lg\:columns-lg {
-    @include r(lg, columns, 32rem);
-  }
-
-  // 576px
-  @mixin lg\:columns-xl {
-    @include r(lg, columns, 36rem);
-  }
-
-  // 672px
-  @mixin lg\:columns-2xl {
-    @include r(lg, columns, 42rem);
-  }
-
-  // 768px
-  @mixin lg\:columns-3xl {
-    @include r(lg, columns, 48rem);
-  }
-
-  // 896px
-  @mixin lg\:columns-4xl {
-    @include r(lg, columns, 56rem);
-  }
-
-  // 1024px
-  @mixin lg\:columns-5xl {
-    @include r(lg, columns, 64rem);
-  }
-
-  // 1152px
-  @mixin lg\:columns-6xl {
-    @include r(lg, columns, 72rem);
-  }
-
-  // 1280px
-  @mixin lg\:columns-7xl {
-    @include r(lg, columns, 80rem);
-  }
-
-  @mixin xl\:columns-1 {
-    @include r(xl, columns, 1);
-  }
-
-  @mixin xl\:columns-2 {
-    @include r(xl, columns, 2);
-  }
-
-  @mixin xl\:columns-3 {
-    @include r(xl, columns, 3);
-  }
-
-  @mixin xl\:columns-4 {
-    @include r(xl, columns, 4);
-  }
-
-  @mixin xl\:columns-5 {
-    @include r(xl, columns, 5);
-  }
-
-  @mixin xl\:columns-6 {
-    @include r(xl, columns, 6);
-  }
-
-  @mixin xl\:columns-7 {
-    @include r(xl, columns, 7);
-  }
-
-  @mixin xl\:columns-8 {
-    @include r(xl, columns, 8);
-  }
-
-  @mixin xl\:columns-9 {
-    @include r(xl, columns, 9);
-  }
-
-  @mixin xl\:columns-10 {
-    @include r(xl, columns, 10);
-  }
-
-  @mixin xl\:columns-11 {
-    @include r(xl, columns, 11);
-  }
-
-  @mixin xl\:columns-12 {
-    @include r(xl, columns, 12);
-  }
-
-  @mixin xl\:columns-auto {
-    @include r(xl, columns, auto);
-  }
-
-  // 256px
-  @mixin xl\:columns-3xs {
-    @include r(xl, columns, 16rem);
-  }
-
-  // 288px
-  @mixin xl\:columns-2xs {
-    @include r(xl, columns, 18rem);
-  }
-
-  // 320px
-  @mixin xl\:columns-xs {
-    @include r(xl, columns, 20rem);
-  }
-
-  // 384px
-  @mixin xl\:columns-xl {
-    @include r(xl, columns, 24rem);
-  }
-
-  // 448px
-  @mixin xl\:columns-md {
-    @include r(xl, columns, 28rem);
-  }
-
-  // 512px
-  @mixin xl\:columns-lg {
-    @include r(xl, columns, 32rem);
-  }
-
-  // 576px
-  @mixin xl\:columns-xl {
-    @include r(xl, columns, 36rem);
-  }
-
-  // 672px
-  @mixin xl\:columns-2xl {
-    @include r(xl, columns, 42rem);
-  }
-
-  // 768px
-  @mixin xl\:columns-3xl {
-    @include r(xl, columns, 48rem);
-  }
-
-  // 896px
-  @mixin xl\:columns-4xl {
-    @include r(xl, columns, 56rem);
-  }
-
-  // 1024px
-  @mixin xl\:columns-5xl {
-    @include r(xl, columns, 64rem);
-  }
-
-  // 1152px
-  @mixin xl\:columns-6xl {
-    @include r(xl, columns, 72rem);
-  }
-
-  // 1280px
-  @mixin xl\:columns-7xl {
-    @include r(xl, columns, 80rem);
-  }
-
-  @mixin \2xl\:columns-1 {
-    @include r(2xl, columns, 1);
-  }
-
-  @mixin \2xl\:columns-2 {
-    @include r(2xl, columns, 2);
-  }
-
-  @mixin \2xl\:columns-3 {
-    @include r(2xl, columns, 3);
-  }
-
-  @mixin \2xl\:columns-4 {
-    @include r(2xl, columns, 4);
-  }
-
-  @mixin \2xl\:columns-5 {
-    @include r(2xl, columns, 5);
-  }
-
-  @mixin \2xl\:columns-6 {
-    @include r(2xl, columns, 6);
-  }
-
-  @mixin \2xl\:columns-7 {
-    @include r(2xl, columns, 7);
-  }
-
-  @mixin \2xl\:columns-8 {
-    @include r(2xl, columns, 8);
-  }
-
-  @mixin \2xl\:columns-9 {
-    @include r(2xl, columns, 9);
-  }
-
-  @mixin \2xl\:columns-10 {
-    @include r(2xl, columns, 10);
-  }
-
-  @mixin \2xl\:columns-11 {
-    @include r(2xl, columns, 11);
-  }
-
-  @mixin \2xl\:columns-12 {
-    @include r(2xl, columns, 12);
-  }
-
-  @mixin \2xl\:columns-auto {
-    @include r(2xl, columns, auto);
-  }
-
-  // 256px
-  @mixin \2xl\:columns-3xs {
-    @include r(2xl, columns, 16rem);
-  }
-
-  // 288px
-  @mixin \2xl\:columns-2xs {
-    @include r(2xl, columns, 18rem);
-  }
-
-  // 320px
-  @mixin \2xl\:columns-xs {
-    @include r(2xl, columns, 20rem);
-  }
-
-  // 384px
-  @mixin \2xl\:columns-2xl {
-    @include r(2xl, columns, 24rem);
-  }
-
-  // 448px
-  @mixin \2xl\:columns-md {
-    @include r(2xl, columns, 28rem);
-  }
-
-  // 512px
-  @mixin \2xl\:columns-lg {
-    @include r(2xl, columns, 32rem);
-  }
-
-  // 576px
-  @mixin \2xl\:columns-xl {
-    @include r(2xl, columns, 36rem);
-  }
-
-  // 672px
-  @mixin \2xl\:columns-2xl {
-    @include r(2xl, columns, 42rem);
-  }
-
-  // 768px
-  @mixin \2xl\:columns-3xl {
-    @include r(2xl, columns, 48rem);
-  }
-
-  // 896px
-  @mixin \2xl\:columns-4xl {
-    @include r(2xl, columns, 56rem);
-  }
-
-  // 1024px
-  @mixin \2xl\:columns-5xl {
-    @include r(2xl, columns, 64rem);
-  }
-
-  // 1152px
-  @mixin \2xl\:columns-6xl {
-    @include r(2xl, columns, 72rem);
-  }
-
-  // 1280px
-  @mixin \2xl\:columns-7xl {
-    @include r(2xl, columns, 80rem);
-  }
-  // x*/
 }
-
 @if $Custom {
   // /*x
   @mixin columns-($v) {

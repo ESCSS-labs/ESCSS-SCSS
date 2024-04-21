@@ -214,1051 +214,1052 @@
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:max-h-0 {
-    @include r(sm, max-height, 0px);
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:max-h-0 {
+      @include r(sm, max-height, 0px);
+    }
+
+    @mixin sm\:max-h-px {
+      @include r(sm, max-height, 1px);
+    }
+
+    // 2px
+    @mixin sm\:max-h-0\.5 {
+      @include r(sm, max-height, 0.125rem);
+    }
+
+    // 4px
+    @mixin sm\:max-h-1 {
+      @include r(sm, max-height, 0.25rem);
+    }
+
+    // 6px
+    @mixin sm\:max-h-1\.5 {
+      @include r(sm, max-height, 0.375rem);
+    }
+
+    // 8px
+    @mixin sm\:max-h-2 {
+      @include r(sm, max-height, 0.5rem);
+    }
+
+    // 10px
+    @mixin sm\:max-h-2\.5 {
+      @include r(sm, max-height, 0.625rem);
+    }
+
+    // 12px
+    @mixin sm\:max-h-3 {
+      @include r(sm, max-height, 0.75rem);
+    }
+
+    // 14px
+    @mixin sm\:max-h-3\.5 {
+      @include r(sm, max-height, 0.875rem);
+    }
+
+    // 16px
+    @mixin sm\:max-h-4 {
+      @include r(sm, max-height, 1rem);
+    }
+
+    // 20px
+    @mixin sm\:max-h-5 {
+      @include r(sm, max-height, 1.25rem);
+    }
+
+    // 24px
+    @mixin sm\:max-h-6 {
+      @include r(sm, max-height, 1.5rem);
+    }
+
+    // 28px
+    @mixin sm\:max-h-7 {
+      @include r(sm, max-height, 1.75rem);
+    }
+
+    // 32px
+    @mixin sm\:max-h-8 {
+      @include r(sm, max-height, 2rem);
+    }
+
+    // 36px
+    @mixin sm\:max-h-9 {
+      @include r(sm, max-height, 2.25rem);
+    }
+
+    // 40px
+    @mixin sm\:max-h-10 {
+      @include r(sm, max-height, 2.5rem);
+    }
+
+    // 44px
+    @mixin sm\:max-h-11 {
+      @include r(sm, max-height, 2.75rem);
+    }
+
+    // 48px
+    @mixin sm\:max-h-12 {
+      @include r(sm, max-height, 3rem);
+    }
+
+    // 56px
+    @mixin sm\:max-h-14 {
+      @include r(sm, max-height, 3.5rem);
+    }
+
+    // 64px
+    @mixin sm\:max-h-16 {
+      @include r(sm, max-height, 4rem);
+    }
+
+    // 80px
+    @mixin sm\:max-h-20 {
+      @include r(sm, max-height, 5rem);
+    }
+
+    // 96px
+    @mixin sm\:max-h-24 {
+      @include r(sm, max-height, 6rem);
+    }
+
+    // 112px
+    @mixin sm\:max-h-28 {
+      @include r(sm, max-height, 7rem);
+    }
+
+    // 128px
+    @mixin sm\:max-h-32 {
+      @include r(sm, max-height, 8rem);
+    }
+
+    // 144px
+    @mixin sm\:max-h-36 {
+      @include r(sm, max-height, 9rem);
+    }
+
+    // 160px
+    @mixin sm\:max-h-40 {
+      @include r(sm, max-height, 10rem);
+    }
+
+    // 176px
+    @mixin sm\:max-h-44 {
+      @include r(sm, max-height, 11rem);
+    }
+
+    // 192px
+    @mixin sm\:max-h-48 {
+      @include r(sm, max-height, 12rem);
+    }
+
+    // 208px
+    @mixin sm\:max-h-52 {
+      @include r(sm, max-height, 13rem);
+    }
+
+    // 224px
+    @mixin sm\:max-h-56 {
+      @include r(sm, max-height, 14rem);
+    }
+
+    // 240px
+    @mixin sm\:max-h-60 {
+      @include r(sm, max-height, 15rem);
+    }
+
+    // 256px
+    @mixin sm\:max-h-64 {
+      @include r(sm, max-height, 16rem);
+    }
+
+    // 288px
+    @mixin sm\:max-h-72 {
+      @include r(sm, max-height, 18rem);
+    }
+
+    // 320px
+    @mixin sm\:max-h-80 {
+      @include r(sm, max-height, 20rem);
+    }
+
+    // 384px
+    @mixin sm\:max-h-96 {
+      @include r(sm, max-height, 24rem);
+    }
+
+    @mixin sm\:max-h-none {
+      @include r(sm, max-height, none);
+    }
+
+    @mixin sm\:max-h-full {
+      @include r(sm, max-height, 100%);
+    }
+
+    @mixin sm\:max-h-screen {
+      @include r(sm, max-height, 100vh);
+    }
+
+    @mixin sm\:max-h-svh {
+      @include r(sm, max-height, 100svh);
+    }
+
+    @mixin sm\:max-h-lvh {
+      @include r(sm, max-height, 100lvh);
+    }
+
+    @mixin sm\:max-h-dvh {
+      @include r(sm, max-height, 100dvh);
+    }
+
+    @mixin sm\:max-h-min {
+      @include r(sm, max-height, min-content);
+    }
+
+    @mixin sm\:max-h-max {
+      @include r(sm, max-height, max-content);
+    }
+
+    @mixin sm\:max-h-fit {
+      @include r(sm, max-height, fit-content);
+    }
+    @mixin md\:max-h-0 {
+      @include r(md, max-height, 0px);
+    }
+
+    @mixin md\:max-h-px {
+      @include r(md, max-height, 1px);
+    }
+
+    // 2px
+    @mixin md\:max-h-0\.5 {
+      @include r(md, max-height, 0.125rem);
+    }
+
+    // 4px
+    @mixin md\:max-h-1 {
+      @include r(md, max-height, 0.25rem);
+    }
+
+    // 6px
+    @mixin md\:max-h-1\.5 {
+      @include r(md, max-height, 0.375rem);
+    }
+
+    // 8px
+    @mixin md\:max-h-2 {
+      @include r(md, max-height, 0.5rem);
+    }
+
+    // 10px
+    @mixin md\:max-h-2\.5 {
+      @include r(md, max-height, 0.625rem);
+    }
+
+    // 12px
+    @mixin md\:max-h-3 {
+      @include r(md, max-height, 0.75rem);
+    }
+
+    // 14px
+    @mixin md\:max-h-3\.5 {
+      @include r(md, max-height, 0.875rem);
+    }
+
+    // 16px
+    @mixin md\:max-h-4 {
+      @include r(md, max-height, 1rem);
+    }
+
+    // 20px
+    @mixin md\:max-h-5 {
+      @include r(md, max-height, 1.25rem);
+    }
+
+    // 24px
+    @mixin md\:max-h-6 {
+      @include r(md, max-height, 1.5rem);
+    }
+
+    // 28px
+    @mixin md\:max-h-7 {
+      @include r(md, max-height, 1.75rem);
+    }
+
+    // 32px
+    @mixin md\:max-h-8 {
+      @include r(md, max-height, 2rem);
+    }
+
+    // 36px
+    @mixin md\:max-h-9 {
+      @include r(md, max-height, 2.25rem);
+    }
+
+    // 40px
+    @mixin md\:max-h-10 {
+      @include r(md, max-height, 2.5rem);
+    }
+
+    // 44px
+    @mixin md\:max-h-11 {
+      @include r(md, max-height, 2.75rem);
+    }
+
+    // 48px
+    @mixin md\:max-h-12 {
+      @include r(md, max-height, 3rem);
+    }
+
+    // 56px
+    @mixin md\:max-h-14 {
+      @include r(md, max-height, 3.5rem);
+    }
+
+    // 64px
+    @mixin md\:max-h-16 {
+      @include r(md, max-height, 4rem);
+    }
+
+    // 80px
+    @mixin md\:max-h-20 {
+      @include r(md, max-height, 5rem);
+    }
+
+    // 96px
+    @mixin md\:max-h-24 {
+      @include r(md, max-height, 6rem);
+    }
+
+    // 112px
+    @mixin md\:max-h-28 {
+      @include r(md, max-height, 7rem);
+    }
+
+    // 128px
+    @mixin md\:max-h-32 {
+      @include r(md, max-height, 8rem);
+    }
+
+    // 144px
+    @mixin md\:max-h-36 {
+      @include r(md, max-height, 9rem);
+    }
+
+    // 160px
+    @mixin md\:max-h-40 {
+      @include r(md, max-height, 10rem);
+    }
+
+    // 176px
+    @mixin md\:max-h-44 {
+      @include r(md, max-height, 11rem);
+    }
+
+    // 192px
+    @mixin md\:max-h-48 {
+      @include r(md, max-height, 12rem);
+    }
+
+    // 208px
+    @mixin md\:max-h-52 {
+      @include r(md, max-height, 13rem);
+    }
+
+    // 224px
+    @mixin md\:max-h-56 {
+      @include r(md, max-height, 14rem);
+    }
+
+    // 240px
+    @mixin md\:max-h-60 {
+      @include r(md, max-height, 15rem);
+    }
+
+    // 256px
+    @mixin md\:max-h-64 {
+      @include r(md, max-height, 16rem);
+    }
+
+    // 288px
+    @mixin md\:max-h-72 {
+      @include r(md, max-height, 18rem);
+    }
+
+    // 320px
+    @mixin md\:max-h-80 {
+      @include r(md, max-height, 20rem);
+    }
+
+    // 384px
+    @mixin md\:max-h-96 {
+      @include r(md, max-height, 24rem);
+    }
+
+    @mixin md\:max-h-none {
+      @include r(md, max-height, none);
+    }
+
+    @mixin md\:max-h-full {
+      @include r(md, max-height, 100%);
+    }
+
+    @mixin md\:max-h-screen {
+      @include r(md, max-height, 100vh);
+    }
+
+    @mixin md\:max-h-svh {
+      @include r(md, max-height, 100svh);
+    }
+
+    @mixin md\:max-h-lvh {
+      @include r(md, max-height, 100lvh);
+    }
+
+    @mixin md\:max-h-dvh {
+      @include r(md, max-height, 100dvh);
+    }
+
+    @mixin md\:max-h-min {
+      @include r(md, max-height, min-content);
+    }
+
+    @mixin md\:max-h-max {
+      @include r(md, max-height, max-content);
+    }
+
+    @mixin md\:max-h-fit {
+      @include r(md, max-height, fit-content);
+    }
+    @mixin lg\:max-h-0 {
+      @include r(lg, max-height, 0px);
+    }
+
+    @mixin lg\:max-h-px {
+      @include r(lg, max-height, 1px);
+    }
+
+    // 2px
+    @mixin lg\:max-h-0\.5 {
+      @include r(lg, max-height, 0.125rem);
+    }
+
+    // 4px
+    @mixin lg\:max-h-1 {
+      @include r(lg, max-height, 0.25rem);
+    }
+
+    // 6px
+    @mixin lg\:max-h-1\.5 {
+      @include r(lg, max-height, 0.375rem);
+    }
+
+    // 8px
+    @mixin lg\:max-h-2 {
+      @include r(lg, max-height, 0.5rem);
+    }
+
+    // 10px
+    @mixin lg\:max-h-2\.5 {
+      @include r(lg, max-height, 0.625rem);
+    }
+
+    // 12px
+    @mixin lg\:max-h-3 {
+      @include r(lg, max-height, 0.75rem);
+    }
+
+    // 14px
+    @mixin lg\:max-h-3\.5 {
+      @include r(lg, max-height, 0.875rem);
+    }
+
+    // 16px
+    @mixin lg\:max-h-4 {
+      @include r(lg, max-height, 1rem);
+    }
+
+    // 20px
+    @mixin lg\:max-h-5 {
+      @include r(lg, max-height, 1.25rem);
+    }
+
+    // 24px
+    @mixin lg\:max-h-6 {
+      @include r(lg, max-height, 1.5rem);
+    }
+
+    // 28px
+    @mixin lg\:max-h-7 {
+      @include r(lg, max-height, 1.75rem);
+    }
+
+    // 32px
+    @mixin lg\:max-h-8 {
+      @include r(lg, max-height, 2rem);
+    }
+
+    // 36px
+    @mixin lg\:max-h-9 {
+      @include r(lg, max-height, 2.25rem);
+    }
+
+    // 40px
+    @mixin lg\:max-h-10 {
+      @include r(lg, max-height, 2.5rem);
+    }
+
+    // 44px
+    @mixin lg\:max-h-11 {
+      @include r(lg, max-height, 2.75rem);
+    }
+
+    // 48px
+    @mixin lg\:max-h-12 {
+      @include r(lg, max-height, 3rem);
+    }
+
+    // 56px
+    @mixin lg\:max-h-14 {
+      @include r(lg, max-height, 3.5rem);
+    }
+
+    // 64px
+    @mixin lg\:max-h-16 {
+      @include r(lg, max-height, 4rem);
+    }
+
+    // 80px
+    @mixin lg\:max-h-20 {
+      @include r(lg, max-height, 5rem);
+    }
+
+    // 96px
+    @mixin lg\:max-h-24 {
+      @include r(lg, max-height, 6rem);
+    }
+
+    // 112px
+    @mixin lg\:max-h-28 {
+      @include r(lg, max-height, 7rem);
+    }
+
+    // 128px
+    @mixin lg\:max-h-32 {
+      @include r(lg, max-height, 8rem);
+    }
+
+    // 144px
+    @mixin lg\:max-h-36 {
+      @include r(lg, max-height, 9rem);
+    }
+
+    // 160px
+    @mixin lg\:max-h-40 {
+      @include r(lg, max-height, 10rem);
+    }
+
+    // 176px
+    @mixin lg\:max-h-44 {
+      @include r(lg, max-height, 11rem);
+    }
+
+    // 192px
+    @mixin lg\:max-h-48 {
+      @include r(lg, max-height, 12rem);
+    }
+
+    // 208px
+    @mixin lg\:max-h-52 {
+      @include r(lg, max-height, 13rem);
+    }
+
+    // 224px
+    @mixin lg\:max-h-56 {
+      @include r(lg, max-height, 14rem);
+    }
+
+    // 240px
+    @mixin lg\:max-h-60 {
+      @include r(lg, max-height, 15rem);
+    }
+
+    // 256px
+    @mixin lg\:max-h-64 {
+      @include r(lg, max-height, 16rem);
+    }
+
+    // 288px
+    @mixin lg\:max-h-72 {
+      @include r(lg, max-height, 18rem);
+    }
+
+    // 320px
+    @mixin lg\:max-h-80 {
+      @include r(lg, max-height, 20rem);
+    }
+
+    // 384px
+    @mixin lg\:max-h-96 {
+      @include r(lg, max-height, 24rem);
+    }
+
+    @mixin lg\:max-h-none {
+      @include r(lg, max-height, none);
+    }
+
+    @mixin lg\:max-h-full {
+      @include r(lg, max-height, 100%);
+    }
+
+    @mixin lg\:max-h-screen {
+      @include r(lg, max-height, 100vh);
+    }
+
+    @mixin lg\:max-h-svh {
+      @include r(lg, max-height, 100svh);
+    }
+
+    @mixin lg\:max-h-lvh {
+      @include r(lg, max-height, 100lvh);
+    }
+
+    @mixin lg\:max-h-dvh {
+      @include r(lg, max-height, 100dvh);
+    }
+
+    @mixin lg\:max-h-min {
+      @include r(lg, max-height, min-content);
+    }
+
+    @mixin lg\:max-h-max {
+      @include r(lg, max-height, max-content);
+    }
+
+    @mixin lg\:max-h-fit {
+      @include r(lg, max-height, fit-content);
+    }
+    @mixin xl\:max-h-0 {
+      @include r(xl, max-height, 0px);
+    }
+
+    @mixin xl\:max-h-px {
+      @include r(xl, max-height, 1px);
+    }
+
+    // 2px
+    @mixin xl\:max-h-0\.5 {
+      @include r(xl, max-height, 0.125rem);
+    }
+
+    // 4px
+    @mixin xl\:max-h-1 {
+      @include r(xl, max-height, 0.25rem);
+    }
+
+    // 6px
+    @mixin xl\:max-h-1\.5 {
+      @include r(xl, max-height, 0.375rem);
+    }
+
+    // 8px
+    @mixin xl\:max-h-2 {
+      @include r(xl, max-height, 0.5rem);
+    }
+
+    // 10px
+    @mixin xl\:max-h-2\.5 {
+      @include r(xl, max-height, 0.625rem);
+    }
+
+    // 12px
+    @mixin xl\:max-h-3 {
+      @include r(xl, max-height, 0.75rem);
+    }
+
+    // 14px
+    @mixin xl\:max-h-3\.5 {
+      @include r(xl, max-height, 0.875rem);
+    }
+
+    // 16px
+    @mixin xl\:max-h-4 {
+      @include r(xl, max-height, 1rem);
+    }
+
+    // 20px
+    @mixin xl\:max-h-5 {
+      @include r(xl, max-height, 1.25rem);
+    }
+
+    // 24px
+    @mixin xl\:max-h-6 {
+      @include r(xl, max-height, 1.5rem);
+    }
+
+    // 28px
+    @mixin xl\:max-h-7 {
+      @include r(xl, max-height, 1.75rem);
+    }
+
+    // 32px
+    @mixin xl\:max-h-8 {
+      @include r(xl, max-height, 2rem);
+    }
+
+    // 36px
+    @mixin xl\:max-h-9 {
+      @include r(xl, max-height, 2.25rem);
+    }
+
+    // 40px
+    @mixin xl\:max-h-10 {
+      @include r(xl, max-height, 2.5rem);
+    }
+
+    // 44px
+    @mixin xl\:max-h-11 {
+      @include r(xl, max-height, 2.75rem);
+    }
+
+    // 48px
+    @mixin xl\:max-h-12 {
+      @include r(xl, max-height, 3rem);
+    }
+
+    // 56px
+    @mixin xl\:max-h-14 {
+      @include r(xl, max-height, 3.5rem);
+    }
+
+    // 64px
+    @mixin xl\:max-h-16 {
+      @include r(xl, max-height, 4rem);
+    }
+
+    // 80px
+    @mixin xl\:max-h-20 {
+      @include r(xl, max-height, 5rem);
+    }
+
+    // 96px
+    @mixin xl\:max-h-24 {
+      @include r(xl, max-height, 6rem);
+    }
+
+    // 112px
+    @mixin xl\:max-h-28 {
+      @include r(xl, max-height, 7rem);
+    }
+
+    // 128px
+    @mixin xl\:max-h-32 {
+      @include r(xl, max-height, 8rem);
+    }
+
+    // 144px
+    @mixin xl\:max-h-36 {
+      @include r(xl, max-height, 9rem);
+    }
+
+    // 160px
+    @mixin xl\:max-h-40 {
+      @include r(xl, max-height, 10rem);
+    }
+
+    // 176px
+    @mixin xl\:max-h-44 {
+      @include r(xl, max-height, 11rem);
+    }
+
+    // 192px
+    @mixin xl\:max-h-48 {
+      @include r(xl, max-height, 12rem);
+    }
+
+    // 208px
+    @mixin xl\:max-h-52 {
+      @include r(xl, max-height, 13rem);
+    }
+
+    // 224px
+    @mixin xl\:max-h-56 {
+      @include r(xl, max-height, 14rem);
+    }
+
+    // 240px
+    @mixin xl\:max-h-60 {
+      @include r(xl, max-height, 15rem);
+    }
+
+    // 256px
+    @mixin xl\:max-h-64 {
+      @include r(xl, max-height, 16rem);
+    }
+
+    // 288px
+    @mixin xl\:max-h-72 {
+      @include r(xl, max-height, 18rem);
+    }
+
+    // 320px
+    @mixin xl\:max-h-80 {
+      @include r(xl, max-height, 20rem);
+    }
+
+    // 384px
+    @mixin xl\:max-h-96 {
+      @include r(xl, max-height, 24rem);
+    }
+
+    @mixin xl\:max-h-none {
+      @include r(xl, max-height, none);
+    }
+
+    @mixin xl\:max-h-full {
+      @include r(xl, max-height, 100%);
+    }
+
+    @mixin xl\:max-h-screen {
+      @include r(xl, max-height, 100vh);
+    }
+
+    @mixin xl\:max-h-svh {
+      @include r(xl, max-height, 100svh);
+    }
+
+    @mixin xl\:max-h-lvh {
+      @include r(xl, max-height, 100lvh);
+    }
+
+    @mixin xl\:max-h-dvh {
+      @include r(xl, max-height, 100dvh);
+    }
+
+    @mixin xl\:max-h-min {
+      @include r(xl, max-height, min-content);
+    }
+
+    @mixin xl\:max-h-max {
+      @include r(xl, max-height, max-content);
+    }
+
+    @mixin xl\:max-h-fit {
+      @include r(xl, max-height, fit-content);
+    }
+    @mixin \2xl\:max-h-0 {
+      @include r(2xl, max-height, 0px);
+    }
+
+    @mixin \2xl\:max-h-px {
+      @include r(2xl, max-height, 1px);
+    }
+
+    // 2px
+    @mixin \2xl\:max-h-0\.5 {
+      @include r(2xl, max-height, 0.125rem);
+    }
+
+    // 4px
+    @mixin \2xl\:max-h-1 {
+      @include r(2xl, max-height, 0.25rem);
+    }
+
+    // 6px
+    @mixin \2xl\:max-h-1\.5 {
+      @include r(2xl, max-height, 0.375rem);
+    }
+
+    // 8px
+    @mixin \2xl\:max-h-2 {
+      @include r(2xl, max-height, 0.5rem);
+    }
+
+    // 10px
+    @mixin \2xl\:max-h-2\.5 {
+      @include r(2xl, max-height, 0.625rem);
+    }
+
+    // 12px
+    @mixin \2xl\:max-h-3 {
+      @include r(2xl, max-height, 0.75rem);
+    }
+
+    // 14px
+    @mixin \2xl\:max-h-3\.5 {
+      @include r(2xl, max-height, 0.875rem);
+    }
+
+    // 16px
+    @mixin \2xl\:max-h-4 {
+      @include r(2xl, max-height, 1rem);
+    }
+
+    // 20px
+    @mixin \2xl\:max-h-5 {
+      @include r(2xl, max-height, 1.25rem);
+    }
+
+    // 24px
+    @mixin \2xl\:max-h-6 {
+      @include r(2xl, max-height, 1.5rem);
+    }
+
+    // 28px
+    @mixin \2xl\:max-h-7 {
+      @include r(2xl, max-height, 1.75rem);
+    }
+
+    // 32px
+    @mixin \2xl\:max-h-8 {
+      @include r(2xl, max-height, 2rem);
+    }
+
+    // 36px
+    @mixin \2xl\:max-h-9 {
+      @include r(2xl, max-height, 2.25rem);
+    }
+
+    // 40px
+    @mixin \2xl\:max-h-10 {
+      @include r(2xl, max-height, 2.5rem);
+    }
+
+    // 44px
+    @mixin \2xl\:max-h-11 {
+      @include r(2xl, max-height, 2.75rem);
+    }
+
+    // 48px
+    @mixin \2xl\:max-h-12 {
+      @include r(2xl, max-height, 3rem);
+    }
+
+    // 56px
+    @mixin \2xl\:max-h-14 {
+      @include r(2xl, max-height, 3.5rem);
+    }
+
+    // 64px
+    @mixin \2xl\:max-h-16 {
+      @include r(2xl, max-height, 4rem);
+    }
+
+    // 80px
+    @mixin \2xl\:max-h-20 {
+      @include r(2xl, max-height, 5rem);
+    }
+
+    // 96px
+    @mixin \2xl\:max-h-24 {
+      @include r(2xl, max-height, 6rem);
+    }
+
+    // 112px
+    @mixin \2xl\:max-h-28 {
+      @include r(2xl, max-height, 7rem);
+    }
+
+    // 128px
+    @mixin \2xl\:max-h-32 {
+      @include r(2xl, max-height, 8rem);
+    }
+
+    // 144px
+    @mixin \2xl\:max-h-36 {
+      @include r(2xl, max-height, 9rem);
+    }
+
+    // 160px
+    @mixin \2xl\:max-h-40 {
+      @include r(2xl, max-height, 10rem);
+    }
+
+    // 176px
+    @mixin \2xl\:max-h-44 {
+      @include r(2xl, max-height, 11rem);
+    }
+
+    // 192px
+    @mixin \2xl\:max-h-48 {
+      @include r(2xl, max-height, 12rem);
+    }
+
+    // 208px
+    @mixin \2xl\:max-h-52 {
+      @include r(2xl, max-height, 13rem);
+    }
+
+    // 224px
+    @mixin \2xl\:max-h-56 {
+      @include r(2xl, max-height, 14rem);
+    }
+
+    // 240px
+    @mixin \2xl\:max-h-60 {
+      @include r(2xl, max-height, 15rem);
+    }
+
+    // 256px
+    @mixin \2xl\:max-h-64 {
+      @include r(2xl, max-height, 16rem);
+    }
+
+    // 288px
+    @mixin \2xl\:max-h-72 {
+      @include r(2xl, max-height, 18rem);
+    }
+
+    // 320px
+    @mixin \2xl\:max-h-80 {
+      @include r(2xl, max-height, 20rem);
+    }
+
+    // 384px
+    @mixin \2xl\:max-h-96 {
+      @include r(2xl, max-height, 24rem);
+    }
+
+    @mixin \2xl\:max-h-none {
+      @include r(2xl, max-height, none);
+    }
+
+    @mixin \2xl\:max-h-full {
+      @include r(2xl, max-height, 100%);
+    }
+
+    @mixin \2xl\:max-h-screen {
+      @include r(2xl, max-height, 100vh);
+    }
+
+    @mixin \2xl\:max-h-svh {
+      @include r(2xl, max-height, 100svh);
+    }
+
+    @mixin \2xl\:max-h-lvh {
+      @include r(2xl, max-height, 100lvh);
+    }
+
+    @mixin \2xl\:max-h-dvh {
+      @include r(2xl, max-height, 100dvh);
+    }
+
+    @mixin \2xl\:max-h-min {
+      @include r(2xl, max-height, min-content);
+    }
+
+    @mixin \2xl\:max-h-max {
+      @include r(2xl, max-height, max-content);
+    }
+
+    @mixin \2xl\:max-h-fit {
+      @include r(2xl, max-height, fit-content);
+    }
+
+    // x*/
   }
-
-  @mixin sm\:max-h-px {
-    @include r(sm, max-height, 1px);
-  }
-
-  // 2px
-  @mixin sm\:max-h-0\.5 {
-    @include r(sm, max-height, 0.125rem);
-  }
-
-  // 4px
-  @mixin sm\:max-h-1 {
-    @include r(sm, max-height, 0.25rem);
-  }
-
-  // 6px
-  @mixin sm\:max-h-1\.5 {
-    @include r(sm, max-height, 0.375rem);
-  }
-
-  // 8px
-  @mixin sm\:max-h-2 {
-    @include r(sm, max-height, 0.5rem);
-  }
-
-  // 10px
-  @mixin sm\:max-h-2\.5 {
-    @include r(sm, max-height, 0.625rem);
-  }
-
-  // 12px
-  @mixin sm\:max-h-3 {
-    @include r(sm, max-height, 0.75rem);
-  }
-
-  // 14px
-  @mixin sm\:max-h-3\.5 {
-    @include r(sm, max-height, 0.875rem);
-  }
-
-  // 16px
-  @mixin sm\:max-h-4 {
-    @include r(sm, max-height, 1rem);
-  }
-
-  // 20px
-  @mixin sm\:max-h-5 {
-    @include r(sm, max-height, 1.25rem);
-  }
-
-  // 24px
-  @mixin sm\:max-h-6 {
-    @include r(sm, max-height, 1.5rem);
-  }
-
-  // 28px
-  @mixin sm\:max-h-7 {
-    @include r(sm, max-height, 1.75rem);
-  }
-
-  // 32px
-  @mixin sm\:max-h-8 {
-    @include r(sm, max-height, 2rem);
-  }
-
-  // 36px
-  @mixin sm\:max-h-9 {
-    @include r(sm, max-height, 2.25rem);
-  }
-
-  // 40px
-  @mixin sm\:max-h-10 {
-    @include r(sm, max-height, 2.5rem);
-  }
-
-  // 44px
-  @mixin sm\:max-h-11 {
-    @include r(sm, max-height, 2.75rem);
-  }
-
-  // 48px
-  @mixin sm\:max-h-12 {
-    @include r(sm, max-height, 3rem);
-  }
-
-  // 56px
-  @mixin sm\:max-h-14 {
-    @include r(sm, max-height, 3.5rem);
-  }
-
-  // 64px
-  @mixin sm\:max-h-16 {
-    @include r(sm, max-height, 4rem);
-  }
-
-  // 80px
-  @mixin sm\:max-h-20 {
-    @include r(sm, max-height, 5rem);
-  }
-
-  // 96px
-  @mixin sm\:max-h-24 {
-    @include r(sm, max-height, 6rem);
-  }
-
-  // 112px
-  @mixin sm\:max-h-28 {
-    @include r(sm, max-height, 7rem);
-  }
-
-  // 128px
-  @mixin sm\:max-h-32 {
-    @include r(sm, max-height, 8rem);
-  }
-
-  // 144px
-  @mixin sm\:max-h-36 {
-    @include r(sm, max-height, 9rem);
-  }
-
-  // 160px
-  @mixin sm\:max-h-40 {
-    @include r(sm, max-height, 10rem);
-  }
-
-  // 176px
-  @mixin sm\:max-h-44 {
-    @include r(sm, max-height, 11rem);
-  }
-
-  // 192px
-  @mixin sm\:max-h-48 {
-    @include r(sm, max-height, 12rem);
-  }
-
-  // 208px
-  @mixin sm\:max-h-52 {
-    @include r(sm, max-height, 13rem);
-  }
-
-  // 224px
-  @mixin sm\:max-h-56 {
-    @include r(sm, max-height, 14rem);
-  }
-
-  // 240px
-  @mixin sm\:max-h-60 {
-    @include r(sm, max-height, 15rem);
-  }
-
-  // 256px
-  @mixin sm\:max-h-64 {
-    @include r(sm, max-height, 16rem);
-  }
-
-  // 288px
-  @mixin sm\:max-h-72 {
-    @include r(sm, max-height, 18rem);
-  }
-
-  // 320px
-  @mixin sm\:max-h-80 {
-    @include r(sm, max-height, 20rem);
-  }
-
-  // 384px
-  @mixin sm\:max-h-96 {
-    @include r(sm, max-height, 24rem);
-  }
-
-  @mixin sm\:max-h-none {
-    @include r(sm, max-height, none);
-  }
-
-  @mixin sm\:max-h-full {
-    @include r(sm, max-height, 100%);
-  }
-
-  @mixin sm\:max-h-screen {
-    @include r(sm, max-height, 100vh);
-  }
-
-  @mixin sm\:max-h-svh {
-    @include r(sm, max-height, 100svh);
-  }
-
-  @mixin sm\:max-h-lvh {
-    @include r(sm, max-height, 100lvh);
-  }
-
-  @mixin sm\:max-h-dvh {
-    @include r(sm, max-height, 100dvh);
-  }
-
-  @mixin sm\:max-h-min {
-    @include r(sm, max-height, min-content);
-  }
-
-  @mixin sm\:max-h-max {
-    @include r(sm, max-height, max-content);
-  }
-
-  @mixin sm\:max-h-fit {
-    @include r(sm, max-height, fit-content);
-  }
-  @mixin md\:max-h-0 {
-    @include r(md, max-height, 0px);
-  }
-
-  @mixin md\:max-h-px {
-    @include r(md, max-height, 1px);
-  }
-
-  // 2px
-  @mixin md\:max-h-0\.5 {
-    @include r(md, max-height, 0.125rem);
-  }
-
-  // 4px
-  @mixin md\:max-h-1 {
-    @include r(md, max-height, 0.25rem);
-  }
-
-  // 6px
-  @mixin md\:max-h-1\.5 {
-    @include r(md, max-height, 0.375rem);
-  }
-
-  // 8px
-  @mixin md\:max-h-2 {
-    @include r(md, max-height, 0.5rem);
-  }
-
-  // 10px
-  @mixin md\:max-h-2\.5 {
-    @include r(md, max-height, 0.625rem);
-  }
-
-  // 12px
-  @mixin md\:max-h-3 {
-    @include r(md, max-height, 0.75rem);
-  }
-
-  // 14px
-  @mixin md\:max-h-3\.5 {
-    @include r(md, max-height, 0.875rem);
-  }
-
-  // 16px
-  @mixin md\:max-h-4 {
-    @include r(md, max-height, 1rem);
-  }
-
-  // 20px
-  @mixin md\:max-h-5 {
-    @include r(md, max-height, 1.25rem);
-  }
-
-  // 24px
-  @mixin md\:max-h-6 {
-    @include r(md, max-height, 1.5rem);
-  }
-
-  // 28px
-  @mixin md\:max-h-7 {
-    @include r(md, max-height, 1.75rem);
-  }
-
-  // 32px
-  @mixin md\:max-h-8 {
-    @include r(md, max-height, 2rem);
-  }
-
-  // 36px
-  @mixin md\:max-h-9 {
-    @include r(md, max-height, 2.25rem);
-  }
-
-  // 40px
-  @mixin md\:max-h-10 {
-    @include r(md, max-height, 2.5rem);
-  }
-
-  // 44px
-  @mixin md\:max-h-11 {
-    @include r(md, max-height, 2.75rem);
-  }
-
-  // 48px
-  @mixin md\:max-h-12 {
-    @include r(md, max-height, 3rem);
-  }
-
-  // 56px
-  @mixin md\:max-h-14 {
-    @include r(md, max-height, 3.5rem);
-  }
-
-  // 64px
-  @mixin md\:max-h-16 {
-    @include r(md, max-height, 4rem);
-  }
-
-  // 80px
-  @mixin md\:max-h-20 {
-    @include r(md, max-height, 5rem);
-  }
-
-  // 96px
-  @mixin md\:max-h-24 {
-    @include r(md, max-height, 6rem);
-  }
-
-  // 112px
-  @mixin md\:max-h-28 {
-    @include r(md, max-height, 7rem);
-  }
-
-  // 128px
-  @mixin md\:max-h-32 {
-    @include r(md, max-height, 8rem);
-  }
-
-  // 144px
-  @mixin md\:max-h-36 {
-    @include r(md, max-height, 9rem);
-  }
-
-  // 160px
-  @mixin md\:max-h-40 {
-    @include r(md, max-height, 10rem);
-  }
-
-  // 176px
-  @mixin md\:max-h-44 {
-    @include r(md, max-height, 11rem);
-  }
-
-  // 192px
-  @mixin md\:max-h-48 {
-    @include r(md, max-height, 12rem);
-  }
-
-  // 208px
-  @mixin md\:max-h-52 {
-    @include r(md, max-height, 13rem);
-  }
-
-  // 224px
-  @mixin md\:max-h-56 {
-    @include r(md, max-height, 14rem);
-  }
-
-  // 240px
-  @mixin md\:max-h-60 {
-    @include r(md, max-height, 15rem);
-  }
-
-  // 256px
-  @mixin md\:max-h-64 {
-    @include r(md, max-height, 16rem);
-  }
-
-  // 288px
-  @mixin md\:max-h-72 {
-    @include r(md, max-height, 18rem);
-  }
-
-  // 320px
-  @mixin md\:max-h-80 {
-    @include r(md, max-height, 20rem);
-  }
-
-  // 384px
-  @mixin md\:max-h-96 {
-    @include r(md, max-height, 24rem);
-  }
-
-  @mixin md\:max-h-none {
-    @include r(md, max-height, none);
-  }
-
-  @mixin md\:max-h-full {
-    @include r(md, max-height, 100%);
-  }
-
-  @mixin md\:max-h-screen {
-    @include r(md, max-height, 100vh);
-  }
-
-  @mixin md\:max-h-svh {
-    @include r(md, max-height, 100svh);
-  }
-
-  @mixin md\:max-h-lvh {
-    @include r(md, max-height, 100lvh);
-  }
-
-  @mixin md\:max-h-dvh {
-    @include r(md, max-height, 100dvh);
-  }
-
-  @mixin md\:max-h-min {
-    @include r(md, max-height, min-content);
-  }
-
-  @mixin md\:max-h-max {
-    @include r(md, max-height, max-content);
-  }
-
-  @mixin md\:max-h-fit {
-    @include r(md, max-height, fit-content);
-  }
-  @mixin lg\:max-h-0 {
-    @include r(lg, max-height, 0px);
-  }
-
-  @mixin lg\:max-h-px {
-    @include r(lg, max-height, 1px);
-  }
-
-  // 2px
-  @mixin lg\:max-h-0\.5 {
-    @include r(lg, max-height, 0.125rem);
-  }
-
-  // 4px
-  @mixin lg\:max-h-1 {
-    @include r(lg, max-height, 0.25rem);
-  }
-
-  // 6px
-  @mixin lg\:max-h-1\.5 {
-    @include r(lg, max-height, 0.375rem);
-  }
-
-  // 8px
-  @mixin lg\:max-h-2 {
-    @include r(lg, max-height, 0.5rem);
-  }
-
-  // 10px
-  @mixin lg\:max-h-2\.5 {
-    @include r(lg, max-height, 0.625rem);
-  }
-
-  // 12px
-  @mixin lg\:max-h-3 {
-    @include r(lg, max-height, 0.75rem);
-  }
-
-  // 14px
-  @mixin lg\:max-h-3\.5 {
-    @include r(lg, max-height, 0.875rem);
-  }
-
-  // 16px
-  @mixin lg\:max-h-4 {
-    @include r(lg, max-height, 1rem);
-  }
-
-  // 20px
-  @mixin lg\:max-h-5 {
-    @include r(lg, max-height, 1.25rem);
-  }
-
-  // 24px
-  @mixin lg\:max-h-6 {
-    @include r(lg, max-height, 1.5rem);
-  }
-
-  // 28px
-  @mixin lg\:max-h-7 {
-    @include r(lg, max-height, 1.75rem);
-  }
-
-  // 32px
-  @mixin lg\:max-h-8 {
-    @include r(lg, max-height, 2rem);
-  }
-
-  // 36px
-  @mixin lg\:max-h-9 {
-    @include r(lg, max-height, 2.25rem);
-  }
-
-  // 40px
-  @mixin lg\:max-h-10 {
-    @include r(lg, max-height, 2.5rem);
-  }
-
-  // 44px
-  @mixin lg\:max-h-11 {
-    @include r(lg, max-height, 2.75rem);
-  }
-
-  // 48px
-  @mixin lg\:max-h-12 {
-    @include r(lg, max-height, 3rem);
-  }
-
-  // 56px
-  @mixin lg\:max-h-14 {
-    @include r(lg, max-height, 3.5rem);
-  }
-
-  // 64px
-  @mixin lg\:max-h-16 {
-    @include r(lg, max-height, 4rem);
-  }
-
-  // 80px
-  @mixin lg\:max-h-20 {
-    @include r(lg, max-height, 5rem);
-  }
-
-  // 96px
-  @mixin lg\:max-h-24 {
-    @include r(lg, max-height, 6rem);
-  }
-
-  // 112px
-  @mixin lg\:max-h-28 {
-    @include r(lg, max-height, 7rem);
-  }
-
-  // 128px
-  @mixin lg\:max-h-32 {
-    @include r(lg, max-height, 8rem);
-  }
-
-  // 144px
-  @mixin lg\:max-h-36 {
-    @include r(lg, max-height, 9rem);
-  }
-
-  // 160px
-  @mixin lg\:max-h-40 {
-    @include r(lg, max-height, 10rem);
-  }
-
-  // 176px
-  @mixin lg\:max-h-44 {
-    @include r(lg, max-height, 11rem);
-  }
-
-  // 192px
-  @mixin lg\:max-h-48 {
-    @include r(lg, max-height, 12rem);
-  }
-
-  // 208px
-  @mixin lg\:max-h-52 {
-    @include r(lg, max-height, 13rem);
-  }
-
-  // 224px
-  @mixin lg\:max-h-56 {
-    @include r(lg, max-height, 14rem);
-  }
-
-  // 240px
-  @mixin lg\:max-h-60 {
-    @include r(lg, max-height, 15rem);
-  }
-
-  // 256px
-  @mixin lg\:max-h-64 {
-    @include r(lg, max-height, 16rem);
-  }
-
-  // 288px
-  @mixin lg\:max-h-72 {
-    @include r(lg, max-height, 18rem);
-  }
-
-  // 320px
-  @mixin lg\:max-h-80 {
-    @include r(lg, max-height, 20rem);
-  }
-
-  // 384px
-  @mixin lg\:max-h-96 {
-    @include r(lg, max-height, 24rem);
-  }
-
-  @mixin lg\:max-h-none {
-    @include r(lg, max-height, none);
-  }
-
-  @mixin lg\:max-h-full {
-    @include r(lg, max-height, 100%);
-  }
-
-  @mixin lg\:max-h-screen {
-    @include r(lg, max-height, 100vh);
-  }
-
-  @mixin lg\:max-h-svh {
-    @include r(lg, max-height, 100svh);
-  }
-
-  @mixin lg\:max-h-lvh {
-    @include r(lg, max-height, 100lvh);
-  }
-
-  @mixin lg\:max-h-dvh {
-    @include r(lg, max-height, 100dvh);
-  }
-
-  @mixin lg\:max-h-min {
-    @include r(lg, max-height, min-content);
-  }
-
-  @mixin lg\:max-h-max {
-    @include r(lg, max-height, max-content);
-  }
-
-  @mixin lg\:max-h-fit {
-    @include r(lg, max-height, fit-content);
-  }
-  @mixin xl\:max-h-0 {
-    @include r(xl, max-height, 0px);
-  }
-
-  @mixin xl\:max-h-px {
-    @include r(xl, max-height, 1px);
-  }
-
-  // 2px
-  @mixin xl\:max-h-0\.5 {
-    @include r(xl, max-height, 0.125rem);
-  }
-
-  // 4px
-  @mixin xl\:max-h-1 {
-    @include r(xl, max-height, 0.25rem);
-  }
-
-  // 6px
-  @mixin xl\:max-h-1\.5 {
-    @include r(xl, max-height, 0.375rem);
-  }
-
-  // 8px
-  @mixin xl\:max-h-2 {
-    @include r(xl, max-height, 0.5rem);
-  }
-
-  // 10px
-  @mixin xl\:max-h-2\.5 {
-    @include r(xl, max-height, 0.625rem);
-  }
-
-  // 12px
-  @mixin xl\:max-h-3 {
-    @include r(xl, max-height, 0.75rem);
-  }
-
-  // 14px
-  @mixin xl\:max-h-3\.5 {
-    @include r(xl, max-height, 0.875rem);
-  }
-
-  // 16px
-  @mixin xl\:max-h-4 {
-    @include r(xl, max-height, 1rem);
-  }
-
-  // 20px
-  @mixin xl\:max-h-5 {
-    @include r(xl, max-height, 1.25rem);
-  }
-
-  // 24px
-  @mixin xl\:max-h-6 {
-    @include r(xl, max-height, 1.5rem);
-  }
-
-  // 28px
-  @mixin xl\:max-h-7 {
-    @include r(xl, max-height, 1.75rem);
-  }
-
-  // 32px
-  @mixin xl\:max-h-8 {
-    @include r(xl, max-height, 2rem);
-  }
-
-  // 36px
-  @mixin xl\:max-h-9 {
-    @include r(xl, max-height, 2.25rem);
-  }
-
-  // 40px
-  @mixin xl\:max-h-10 {
-    @include r(xl, max-height, 2.5rem);
-  }
-
-  // 44px
-  @mixin xl\:max-h-11 {
-    @include r(xl, max-height, 2.75rem);
-  }
-
-  // 48px
-  @mixin xl\:max-h-12 {
-    @include r(xl, max-height, 3rem);
-  }
-
-  // 56px
-  @mixin xl\:max-h-14 {
-    @include r(xl, max-height, 3.5rem);
-  }
-
-  // 64px
-  @mixin xl\:max-h-16 {
-    @include r(xl, max-height, 4rem);
-  }
-
-  // 80px
-  @mixin xl\:max-h-20 {
-    @include r(xl, max-height, 5rem);
-  }
-
-  // 96px
-  @mixin xl\:max-h-24 {
-    @include r(xl, max-height, 6rem);
-  }
-
-  // 112px
-  @mixin xl\:max-h-28 {
-    @include r(xl, max-height, 7rem);
-  }
-
-  // 128px
-  @mixin xl\:max-h-32 {
-    @include r(xl, max-height, 8rem);
-  }
-
-  // 144px
-  @mixin xl\:max-h-36 {
-    @include r(xl, max-height, 9rem);
-  }
-
-  // 160px
-  @mixin xl\:max-h-40 {
-    @include r(xl, max-height, 10rem);
-  }
-
-  // 176px
-  @mixin xl\:max-h-44 {
-    @include r(xl, max-height, 11rem);
-  }
-
-  // 192px
-  @mixin xl\:max-h-48 {
-    @include r(xl, max-height, 12rem);
-  }
-
-  // 208px
-  @mixin xl\:max-h-52 {
-    @include r(xl, max-height, 13rem);
-  }
-
-  // 224px
-  @mixin xl\:max-h-56 {
-    @include r(xl, max-height, 14rem);
-  }
-
-  // 240px
-  @mixin xl\:max-h-60 {
-    @include r(xl, max-height, 15rem);
-  }
-
-  // 256px
-  @mixin xl\:max-h-64 {
-    @include r(xl, max-height, 16rem);
-  }
-
-  // 288px
-  @mixin xl\:max-h-72 {
-    @include r(xl, max-height, 18rem);
-  }
-
-  // 320px
-  @mixin xl\:max-h-80 {
-    @include r(xl, max-height, 20rem);
-  }
-
-  // 384px
-  @mixin xl\:max-h-96 {
-    @include r(xl, max-height, 24rem);
-  }
-
-  @mixin xl\:max-h-none {
-    @include r(xl, max-height, none);
-  }
-
-  @mixin xl\:max-h-full {
-    @include r(xl, max-height, 100%);
-  }
-
-  @mixin xl\:max-h-screen {
-    @include r(xl, max-height, 100vh);
-  }
-
-  @mixin xl\:max-h-svh {
-    @include r(xl, max-height, 100svh);
-  }
-
-  @mixin xl\:max-h-lvh {
-    @include r(xl, max-height, 100lvh);
-  }
-
-  @mixin xl\:max-h-dvh {
-    @include r(xl, max-height, 100dvh);
-  }
-
-  @mixin xl\:max-h-min {
-    @include r(xl, max-height, min-content);
-  }
-
-  @mixin xl\:max-h-max {
-    @include r(xl, max-height, max-content);
-  }
-
-  @mixin xl\:max-h-fit {
-    @include r(xl, max-height, fit-content);
-  }
-  @mixin \2xl\:max-h-0 {
-    @include r(2xl, max-height, 0px);
-  }
-
-  @mixin \2xl\:max-h-px {
-    @include r(2xl, max-height, 1px);
-  }
-
-  // 2px
-  @mixin \2xl\:max-h-0\.5 {
-    @include r(2xl, max-height, 0.125rem);
-  }
-
-  // 4px
-  @mixin \2xl\:max-h-1 {
-    @include r(2xl, max-height, 0.25rem);
-  }
-
-  // 6px
-  @mixin \2xl\:max-h-1\.5 {
-    @include r(2xl, max-height, 0.375rem);
-  }
-
-  // 8px
-  @mixin \2xl\:max-h-2 {
-    @include r(2xl, max-height, 0.5rem);
-  }
-
-  // 10px
-  @mixin \2xl\:max-h-2\.5 {
-    @include r(2xl, max-height, 0.625rem);
-  }
-
-  // 12px
-  @mixin \2xl\:max-h-3 {
-    @include r(2xl, max-height, 0.75rem);
-  }
-
-  // 14px
-  @mixin \2xl\:max-h-3\.5 {
-    @include r(2xl, max-height, 0.875rem);
-  }
-
-  // 16px
-  @mixin \2xl\:max-h-4 {
-    @include r(2xl, max-height, 1rem);
-  }
-
-  // 20px
-  @mixin \2xl\:max-h-5 {
-    @include r(2xl, max-height, 1.25rem);
-  }
-
-  // 24px
-  @mixin \2xl\:max-h-6 {
-    @include r(2xl, max-height, 1.5rem);
-  }
-
-  // 28px
-  @mixin \2xl\:max-h-7 {
-    @include r(2xl, max-height, 1.75rem);
-  }
-
-  // 32px
-  @mixin \2xl\:max-h-8 {
-    @include r(2xl, max-height, 2rem);
-  }
-
-  // 36px
-  @mixin \2xl\:max-h-9 {
-    @include r(2xl, max-height, 2.25rem);
-  }
-
-  // 40px
-  @mixin \2xl\:max-h-10 {
-    @include r(2xl, max-height, 2.5rem);
-  }
-
-  // 44px
-  @mixin \2xl\:max-h-11 {
-    @include r(2xl, max-height, 2.75rem);
-  }
-
-  // 48px
-  @mixin \2xl\:max-h-12 {
-    @include r(2xl, max-height, 3rem);
-  }
-
-  // 56px
-  @mixin \2xl\:max-h-14 {
-    @include r(2xl, max-height, 3.5rem);
-  }
-
-  // 64px
-  @mixin \2xl\:max-h-16 {
-    @include r(2xl, max-height, 4rem);
-  }
-
-  // 80px
-  @mixin \2xl\:max-h-20 {
-    @include r(2xl, max-height, 5rem);
-  }
-
-  // 96px
-  @mixin \2xl\:max-h-24 {
-    @include r(2xl, max-height, 6rem);
-  }
-
-  // 112px
-  @mixin \2xl\:max-h-28 {
-    @include r(2xl, max-height, 7rem);
-  }
-
-  // 128px
-  @mixin \2xl\:max-h-32 {
-    @include r(2xl, max-height, 8rem);
-  }
-
-  // 144px
-  @mixin \2xl\:max-h-36 {
-    @include r(2xl, max-height, 9rem);
-  }
-
-  // 160px
-  @mixin \2xl\:max-h-40 {
-    @include r(2xl, max-height, 10rem);
-  }
-
-  // 176px
-  @mixin \2xl\:max-h-44 {
-    @include r(2xl, max-height, 11rem);
-  }
-
-  // 192px
-  @mixin \2xl\:max-h-48 {
-    @include r(2xl, max-height, 12rem);
-  }
-
-  // 208px
-  @mixin \2xl\:max-h-52 {
-    @include r(2xl, max-height, 13rem);
-  }
-
-  // 224px
-  @mixin \2xl\:max-h-56 {
-    @include r(2xl, max-height, 14rem);
-  }
-
-  // 240px
-  @mixin \2xl\:max-h-60 {
-    @include r(2xl, max-height, 15rem);
-  }
-
-  // 256px
-  @mixin \2xl\:max-h-64 {
-    @include r(2xl, max-height, 16rem);
-  }
-
-  // 288px
-  @mixin \2xl\:max-h-72 {
-    @include r(2xl, max-height, 18rem);
-  }
-
-  // 320px
-  @mixin \2xl\:max-h-80 {
-    @include r(2xl, max-height, 20rem);
-  }
-
-  // 384px
-  @mixin \2xl\:max-h-96 {
-    @include r(2xl, max-height, 24rem);
-  }
-
-  @mixin \2xl\:max-h-none {
-    @include r(2xl, max-height, none);
-  }
-
-  @mixin \2xl\:max-h-full {
-    @include r(2xl, max-height, 100%);
-  }
-
-  @mixin \2xl\:max-h-screen {
-    @include r(2xl, max-height, 100vh);
-  }
-
-  @mixin \2xl\:max-h-svh {
-    @include r(2xl, max-height, 100svh);
-  }
-
-  @mixin \2xl\:max-h-lvh {
-    @include r(2xl, max-height, 100lvh);
-  }
-
-  @mixin \2xl\:max-h-dvh {
-    @include r(2xl, max-height, 100dvh);
-  }
-
-  @mixin \2xl\:max-h-min {
-    @include r(2xl, max-height, min-content);
-  }
-
-  @mixin \2xl\:max-h-max {
-    @include r(2xl, max-height, max-content);
-  }
-
-  @mixin \2xl\:max-h-fit {
-    @include r(2xl, max-height, fit-content);
-  }
-
-  // x*/
 }
-
 @if $Custom {
   // /*x
   @mixin max-h-($v) {

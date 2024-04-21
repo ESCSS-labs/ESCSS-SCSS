@@ -318,1570 +318,1571 @@
 }
 
 @if $Rwd {
-  // /*x
-  @mixin w-0 {
-    width: 0px;
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin w-0 {
+      width: 0px;
+    }
+
+    @mixin sm\:w-px {
+      @include r(sm, width, 1px);
+    }
+
+    // 2px
+    @mixin sm\:w-0\.5 {
+      @include r(sm, width, 0.125rem);
+    }
+
+    // 4px
+    @mixin sm\:w-1 {
+      @include r(sm, width, 0.25rem);
+    }
+
+    // 6px
+    @mixin sm\:w-1\.5 {
+      @include r(sm, width, 0.375rem);
+    }
+
+    // 8px
+    @mixin sm\:w-2 {
+      @include r(sm, width, 0.5rem);
+    }
+
+    // 10px
+    @mixin sm\:w-2\.5 {
+      @include r(sm, width, 0.625rem);
+    }
+
+    // 12px
+    @mixin sm\:w-3 {
+      @include r(sm, width, 0.75rem);
+    }
+
+    // 14px
+    @mixin sm\:w-3\.5 {
+      @include r(sm, width, 0.875rem);
+    }
+
+    // 16px
+    @mixin sm\:w-4 {
+      @include r(sm, width, 1rem);
+    }
+
+    // 20px
+    @mixin sm\:w-5 {
+      @include r(sm, width, 1.25rem);
+    }
+
+    // 24px
+    @mixin sm\:w-6 {
+      @include r(sm, width, 1.5rem);
+    }
+
+    // 28px
+    @mixin sm\:w-7 {
+      @include r(sm, width, 1.75rem);
+    }
+
+    // 32px
+    @mixin sm\:w-8 {
+      @include r(sm, width, 2rem);
+    }
+
+    // 36px
+    @mixin sm\:w-9 {
+      @include r(sm, width, 2.25rem);
+    }
+
+    // 40px
+    @mixin sm\:w-10 {
+      @include r(sm, width, 2.5rem);
+    }
+
+    // 44px
+    @mixin sm\:w-11 {
+      @include r(sm, width, 2.75rem);
+    }
+
+    // 48px
+    @mixin sm\:w-12 {
+      @include r(sm, width, 3rem);
+    }
+
+    // 56px
+    @mixin sm\:w-14 {
+      @include r(sm, width, 3.5rem);
+    }
+
+    // 64px
+    @mixin sm\:w-16 {
+      @include r(sm, width, 4rem);
+    }
+
+    // 80px
+    @mixin sm\:w-20 {
+      @include r(sm, width, 5rem);
+    }
+
+    // 96px
+    @mixin sm\:w-24 {
+      @include r(sm, width, 6rem);
+    }
+
+    // 112px
+    @mixin sm\:w-28 {
+      @include r(sm, width, 7rem);
+    }
+
+    // 128px
+    @mixin sm\:w-32 {
+      @include r(sm, width, 8rem);
+    }
+
+    // 144px
+    @mixin sm\:w-36 {
+      @include r(sm, width, 9rem);
+    }
+
+    // 160px
+    @mixin sm\:w-40 {
+      @include r(sm, width, 10rem);
+    }
+
+    // 176px
+    @mixin sm\:w-44 {
+      @include r(sm, width, 11rem);
+    }
+
+    // 192px
+    @mixin sm\:w-48 {
+      @include r(sm, width, 12rem);
+    }
+
+    // 208px
+    @mixin sm\:w-52 {
+      @include r(sm, width, 13rem);
+    }
+
+    // 224px
+    @mixin sm\:w-56 {
+      @include r(sm, width, 14rem);
+    }
+
+    // 240px
+    @mixin sm\:w-60 {
+      @include r(sm, width, 15rem);
+    }
+
+    // 256px
+    @mixin sm\:w-64 {
+      @include r(sm, width, 16rem);
+    }
+
+    // 288px
+    @mixin sm\:w-72 {
+      @include r(sm, width, 18rem);
+    }
+
+    // 320px
+    @mixin sm\:w-80 {
+      @include r(sm, width, 20rem);
+    }
+
+    // 384px
+    @mixin sm\:w-96 {
+      @include r(sm, width, 24rem);
+    }
+
+    @mixin sm\:w-auto {
+      @include r(sm, width, auto);
+    }
+
+    @mixin sm\:w-1\/2 {
+      @include r(sm, width, 50%);
+    }
+
+    @mixin sm\:w-1\/3 {
+      @include r(sm, width, 33.333333%);
+    }
+
+    @mixin sm\:w-2\/3 {
+      @include r(sm, width, 66.666667%);
+    }
+
+    @mixin sm\:w-1\/4 {
+      @include r(sm, width, 25%);
+    }
+
+    @mixin sm\:w-2\/4 {
+      @include r(sm, width, 50%);
+    }
+
+    @mixin sm\:w-3\/4 {
+      @include r(sm, width, 75%);
+    }
+
+    @mixin sm\:w-1\/5 {
+      @include r(sm, width, 20%);
+    }
+
+    @mixin sm\:w-2\/5 {
+      @include r(sm, width, 40%);
+    }
+
+    @mixin sm\:w-3\/5 {
+      @include r(sm, width, 60%);
+    }
+
+    @mixin sm\:w-4\/5 {
+      @include r(sm, width, 80%);
+    }
+
+    @mixin sm\:w-1\/6 {
+      @include r(sm, width, 16.666667%);
+    }
+
+    @mixin sm\:w-2\/6 {
+      @include r(sm, width, 33.333333%);
+    }
+
+    @mixin sm\:w-3\/6 {
+      @include r(sm, width, 50%);
+    }
+
+    @mixin sm\:w-4\/6 {
+      @include r(sm, width, 66.666667%);
+    }
+
+    @mixin sm\:w-5\/6 {
+      @include r(sm, width, 83.333333%);
+    }
+
+    @mixin sm\:w-1\/12 {
+      @include r(sm, width, 8.333333%);
+    }
+
+    @mixin sm\:w-2\/12 {
+      @include r(sm, width, 16.666667%);
+    }
+
+    @mixin sm\:w-3\/12 {
+      @include r(sm, width, 25%);
+    }
+
+    @mixin sm\:w-4\/12 {
+      @include r(sm, width, 33.333333%);
+    }
+
+    @mixin sm\:w-5\/12 {
+      @include r(sm, width, 41.666667%);
+    }
+
+    @mixin sm\:w-6\/12 {
+      @include r(sm, width, 50%);
+    }
+
+    @mixin sm\:w-7\/12 {
+      @include r(sm, width, 58.333333%);
+    }
+
+    @mixin sm\:w-8\/12 {
+      @include r(sm, width, 66.666667%);
+    }
+
+    @mixin sm\:w-9\/12 {
+      @include r(sm, width, 75%);
+    }
+
+    @mixin sm\:w-10\/12 {
+      @include r(sm, width, 83.333333%);
+    }
+
+    @mixin sm\:w-11\/12 {
+      @include r(sm, width, 91.666667%);
+    }
+
+    @mixin sm\:w-full {
+      @include r(sm, width, 100%);
+    }
+
+    @mixin sm\:w-screen {
+      @include r(sm, width, 100vw);
+    }
+
+    @mixin sm\:w-svw {
+      @include r(sm, width, 100svw);
+    }
+
+    @mixin sm\:w-lvw {
+      @include r(sm, width, 100lvw);
+    }
+
+    @mixin sm\:w-dvw {
+      @include r(sm, width, 100dvw);
+    }
+
+    @mixin sm\:w-min {
+      @include r(sm, width, min-content);
+    }
+
+    @mixin sm\:w-max {
+      @include r(sm, width, max-content);
+    }
+
+    @mixin sm\:w-fit {
+      @include r(sm, width, fit-content);
+    }
+    @mixin w-0 {
+      width: 0px;
+    }
+
+    @mixin md\:w-px {
+      @include r(md, width, 1px);
+    }
+
+    // 2px
+    @mixin md\:w-0\.5 {
+      @include r(md, width, 0.125rem);
+    }
+
+    // 4px
+    @mixin md\:w-1 {
+      @include r(md, width, 0.25rem);
+    }
+
+    // 6px
+    @mixin md\:w-1\.5 {
+      @include r(md, width, 0.375rem);
+    }
+
+    // 8px
+    @mixin md\:w-2 {
+      @include r(md, width, 0.5rem);
+    }
+
+    // 10px
+    @mixin md\:w-2\.5 {
+      @include r(md, width, 0.625rem);
+    }
+
+    // 12px
+    @mixin md\:w-3 {
+      @include r(md, width, 0.75rem);
+    }
+
+    // 14px
+    @mixin md\:w-3\.5 {
+      @include r(md, width, 0.875rem);
+    }
+
+    // 16px
+    @mixin md\:w-4 {
+      @include r(md, width, 1rem);
+    }
+
+    // 20px
+    @mixin md\:w-5 {
+      @include r(md, width, 1.25rem);
+    }
+
+    // 24px
+    @mixin md\:w-6 {
+      @include r(md, width, 1.5rem);
+    }
+
+    // 28px
+    @mixin md\:w-7 {
+      @include r(md, width, 1.75rem);
+    }
+
+    // 32px
+    @mixin md\:w-8 {
+      @include r(md, width, 2rem);
+    }
+
+    // 36px
+    @mixin md\:w-9 {
+      @include r(md, width, 2.25rem);
+    }
+
+    // 40px
+    @mixin md\:w-10 {
+      @include r(md, width, 2.5rem);
+    }
+
+    // 44px
+    @mixin md\:w-11 {
+      @include r(md, width, 2.75rem);
+    }
+
+    // 48px
+    @mixin md\:w-12 {
+      @include r(md, width, 3rem);
+    }
+
+    // 56px
+    @mixin md\:w-14 {
+      @include r(md, width, 3.5rem);
+    }
+
+    // 64px
+    @mixin md\:w-16 {
+      @include r(md, width, 4rem);
+    }
+
+    // 80px
+    @mixin md\:w-20 {
+      @include r(md, width, 5rem);
+    }
+
+    // 96px
+    @mixin md\:w-24 {
+      @include r(md, width, 6rem);
+    }
+
+    // 112px
+    @mixin md\:w-28 {
+      @include r(md, width, 7rem);
+    }
+
+    // 128px
+    @mixin md\:w-32 {
+      @include r(md, width, 8rem);
+    }
+
+    // 144px
+    @mixin md\:w-36 {
+      @include r(md, width, 9rem);
+    }
+
+    // 160px
+    @mixin md\:w-40 {
+      @include r(md, width, 10rem);
+    }
+
+    // 176px
+    @mixin md\:w-44 {
+      @include r(md, width, 11rem);
+    }
+
+    // 192px
+    @mixin md\:w-48 {
+      @include r(md, width, 12rem);
+    }
+
+    // 208px
+    @mixin md\:w-52 {
+      @include r(md, width, 13rem);
+    }
+
+    // 224px
+    @mixin md\:w-56 {
+      @include r(md, width, 14rem);
+    }
+
+    // 240px
+    @mixin md\:w-60 {
+      @include r(md, width, 15rem);
+    }
+
+    // 256px
+    @mixin md\:w-64 {
+      @include r(md, width, 16rem);
+    }
+
+    // 288px
+    @mixin md\:w-72 {
+      @include r(md, width, 18rem);
+    }
+
+    // 320px
+    @mixin md\:w-80 {
+      @include r(md, width, 20rem);
+    }
+
+    // 384px
+    @mixin md\:w-96 {
+      @include r(md, width, 24rem);
+    }
+
+    @mixin md\:w-auto {
+      @include r(md, width, auto);
+    }
+
+    @mixin md\:w-1\/2 {
+      @include r(md, width, 50%);
+    }
+
+    @mixin md\:w-1\/3 {
+      @include r(md, width, 33.333333%);
+    }
+
+    @mixin md\:w-2\/3 {
+      @include r(md, width, 66.666667%);
+    }
+
+    @mixin md\:w-1\/4 {
+      @include r(md, width, 25%);
+    }
+
+    @mixin md\:w-2\/4 {
+      @include r(md, width, 50%);
+    }
+
+    @mixin md\:w-3\/4 {
+      @include r(md, width, 75%);
+    }
+
+    @mixin md\:w-1\/5 {
+      @include r(md, width, 20%);
+    }
+
+    @mixin md\:w-2\/5 {
+      @include r(md, width, 40%);
+    }
+
+    @mixin md\:w-3\/5 {
+      @include r(md, width, 60%);
+    }
+
+    @mixin md\:w-4\/5 {
+      @include r(md, width, 80%);
+    }
+
+    @mixin md\:w-1\/6 {
+      @include r(md, width, 16.666667%);
+    }
+
+    @mixin md\:w-2\/6 {
+      @include r(md, width, 33.333333%);
+    }
+
+    @mixin md\:w-3\/6 {
+      @include r(md, width, 50%);
+    }
+
+    @mixin md\:w-4\/6 {
+      @include r(md, width, 66.666667%);
+    }
+
+    @mixin md\:w-5\/6 {
+      @include r(md, width, 83.333333%);
+    }
+
+    @mixin md\:w-1\/12 {
+      @include r(md, width, 8.333333%);
+    }
+
+    @mixin md\:w-2\/12 {
+      @include r(md, width, 16.666667%);
+    }
+
+    @mixin md\:w-3\/12 {
+      @include r(md, width, 25%);
+    }
+
+    @mixin md\:w-4\/12 {
+      @include r(md, width, 33.333333%);
+    }
+
+    @mixin md\:w-5\/12 {
+      @include r(md, width, 41.666667%);
+    }
+
+    @mixin md\:w-6\/12 {
+      @include r(md, width, 50%);
+    }
+
+    @mixin md\:w-7\/12 {
+      @include r(md, width, 58.333333%);
+    }
+
+    @mixin md\:w-8\/12 {
+      @include r(md, width, 66.666667%);
+    }
+
+    @mixin md\:w-9\/12 {
+      @include r(md, width, 75%);
+    }
+
+    @mixin md\:w-10\/12 {
+      @include r(md, width, 83.333333%);
+    }
+
+    @mixin md\:w-11\/12 {
+      @include r(md, width, 91.666667%);
+    }
+
+    @mixin md\:w-full {
+      @include r(md, width, 100%);
+    }
+
+    @mixin md\:w-screen {
+      @include r(md, width, 100vw);
+    }
+
+    @mixin md\:w-svw {
+      @include r(md, width, 100svw);
+    }
+
+    @mixin md\:w-lvw {
+      @include r(md, width, 100lvw);
+    }
+
+    @mixin md\:w-dvw {
+      @include r(md, width, 100dvw);
+    }
+
+    @mixin md\:w-min {
+      @include r(md, width, min-content);
+    }
+
+    @mixin md\:w-max {
+      @include r(md, width, max-content);
+    }
+
+    @mixin md\:w-fit {
+      @include r(md, width, fit-content);
+    }
+    @mixin w-0 {
+      width: 0px;
+    }
+
+    @mixin lg\:w-px {
+      @include r(lg, width, 1px);
+    }
+
+    // 2px
+    @mixin lg\:w-0\.5 {
+      @include r(lg, width, 0.125rem);
+    }
+
+    // 4px
+    @mixin lg\:w-1 {
+      @include r(lg, width, 0.25rem);
+    }
+
+    // 6px
+    @mixin lg\:w-1\.5 {
+      @include r(lg, width, 0.375rem);
+    }
+
+    // 8px
+    @mixin lg\:w-2 {
+      @include r(lg, width, 0.5rem);
+    }
+
+    // 10px
+    @mixin lg\:w-2\.5 {
+      @include r(lg, width, 0.625rem);
+    }
+
+    // 12px
+    @mixin lg\:w-3 {
+      @include r(lg, width, 0.75rem);
+    }
+
+    // 14px
+    @mixin lg\:w-3\.5 {
+      @include r(lg, width, 0.875rem);
+    }
+
+    // 16px
+    @mixin lg\:w-4 {
+      @include r(lg, width, 1rem);
+    }
+
+    // 20px
+    @mixin lg\:w-5 {
+      @include r(lg, width, 1.25rem);
+    }
+
+    // 24px
+    @mixin lg\:w-6 {
+      @include r(lg, width, 1.5rem);
+    }
+
+    // 28px
+    @mixin lg\:w-7 {
+      @include r(lg, width, 1.75rem);
+    }
+
+    // 32px
+    @mixin lg\:w-8 {
+      @include r(lg, width, 2rem);
+    }
+
+    // 36px
+    @mixin lg\:w-9 {
+      @include r(lg, width, 2.25rem);
+    }
+
+    // 40px
+    @mixin lg\:w-10 {
+      @include r(lg, width, 2.5rem);
+    }
+
+    // 44px
+    @mixin lg\:w-11 {
+      @include r(lg, width, 2.75rem);
+    }
+
+    // 48px
+    @mixin lg\:w-12 {
+      @include r(lg, width, 3rem);
+    }
+
+    // 56px
+    @mixin lg\:w-14 {
+      @include r(lg, width, 3.5rem);
+    }
+
+    // 64px
+    @mixin lg\:w-16 {
+      @include r(lg, width, 4rem);
+    }
+
+    // 80px
+    @mixin lg\:w-20 {
+      @include r(lg, width, 5rem);
+    }
+
+    // 96px
+    @mixin lg\:w-24 {
+      @include r(lg, width, 6rem);
+    }
+
+    // 112px
+    @mixin lg\:w-28 {
+      @include r(lg, width, 7rem);
+    }
+
+    // 128px
+    @mixin lg\:w-32 {
+      @include r(lg, width, 8rem);
+    }
+
+    // 144px
+    @mixin lg\:w-36 {
+      @include r(lg, width, 9rem);
+    }
+
+    // 160px
+    @mixin lg\:w-40 {
+      @include r(lg, width, 10rem);
+    }
+
+    // 176px
+    @mixin lg\:w-44 {
+      @include r(lg, width, 11rem);
+    }
+
+    // 192px
+    @mixin lg\:w-48 {
+      @include r(lg, width, 12rem);
+    }
+
+    // 208px
+    @mixin lg\:w-52 {
+      @include r(lg, width, 13rem);
+    }
+
+    // 224px
+    @mixin lg\:w-56 {
+      @include r(lg, width, 14rem);
+    }
+
+    // 240px
+    @mixin lg\:w-60 {
+      @include r(lg, width, 15rem);
+    }
+
+    // 256px
+    @mixin lg\:w-64 {
+      @include r(lg, width, 16rem);
+    }
+
+    // 288px
+    @mixin lg\:w-72 {
+      @include r(lg, width, 18rem);
+    }
+
+    // 320px
+    @mixin lg\:w-80 {
+      @include r(lg, width, 20rem);
+    }
+
+    // 384px
+    @mixin lg\:w-96 {
+      @include r(lg, width, 24rem);
+    }
+
+    @mixin lg\:w-auto {
+      @include r(lg, width, auto);
+    }
+
+    @mixin lg\:w-1\/2 {
+      @include r(lg, width, 50%);
+    }
+
+    @mixin lg\:w-1\/3 {
+      @include r(lg, width, 33.333333%);
+    }
+
+    @mixin lg\:w-2\/3 {
+      @include r(lg, width, 66.666667%);
+    }
+
+    @mixin lg\:w-1\/4 {
+      @include r(lg, width, 25%);
+    }
+
+    @mixin lg\:w-2\/4 {
+      @include r(lg, width, 50%);
+    }
+
+    @mixin lg\:w-3\/4 {
+      @include r(lg, width, 75%);
+    }
+
+    @mixin lg\:w-1\/5 {
+      @include r(lg, width, 20%);
+    }
+
+    @mixin lg\:w-2\/5 {
+      @include r(lg, width, 40%);
+    }
+
+    @mixin lg\:w-3\/5 {
+      @include r(lg, width, 60%);
+    }
+
+    @mixin lg\:w-4\/5 {
+      @include r(lg, width, 80%);
+    }
+
+    @mixin lg\:w-1\/6 {
+      @include r(lg, width, 16.666667%);
+    }
+
+    @mixin lg\:w-2\/6 {
+      @include r(lg, width, 33.333333%);
+    }
+
+    @mixin lg\:w-3\/6 {
+      @include r(lg, width, 50%);
+    }
+
+    @mixin lg\:w-4\/6 {
+      @include r(lg, width, 66.666667%);
+    }
+
+    @mixin lg\:w-5\/6 {
+      @include r(lg, width, 83.333333%);
+    }
+
+    @mixin lg\:w-1\/12 {
+      @include r(lg, width, 8.333333%);
+    }
+
+    @mixin lg\:w-2\/12 {
+      @include r(lg, width, 16.666667%);
+    }
+
+    @mixin lg\:w-3\/12 {
+      @include r(lg, width, 25%);
+    }
+
+    @mixin lg\:w-4\/12 {
+      @include r(lg, width, 33.333333%);
+    }
+
+    @mixin lg\:w-5\/12 {
+      @include r(lg, width, 41.666667%);
+    }
+
+    @mixin lg\:w-6\/12 {
+      @include r(lg, width, 50%);
+    }
+
+    @mixin lg\:w-7\/12 {
+      @include r(lg, width, 58.333333%);
+    }
+
+    @mixin lg\:w-8\/12 {
+      @include r(lg, width, 66.666667%);
+    }
+
+    @mixin lg\:w-9\/12 {
+      @include r(lg, width, 75%);
+    }
+
+    @mixin lg\:w-10\/12 {
+      @include r(lg, width, 83.333333%);
+    }
+
+    @mixin lg\:w-11\/12 {
+      @include r(lg, width, 91.666667%);
+    }
+
+    @mixin lg\:w-full {
+      @include r(lg, width, 100%);
+    }
+
+    @mixin lg\:w-screen {
+      @include r(lg, width, 100vw);
+    }
+
+    @mixin lg\:w-svw {
+      @include r(lg, width, 100svw);
+    }
+
+    @mixin lg\:w-lvw {
+      @include r(lg, width, 100lvw);
+    }
+
+    @mixin lg\:w-dvw {
+      @include r(lg, width, 100dvw);
+    }
+
+    @mixin lg\:w-min {
+      @include r(lg, width, min-content);
+    }
+
+    @mixin lg\:w-max {
+      @include r(lg, width, max-content);
+    }
+
+    @mixin lg\:w-fit {
+      @include r(lg, width, fit-content);
+    }
+    @mixin w-0 {
+      width: 0px;
+    }
+
+    @mixin xl\:w-px {
+      @include r(xl, width, 1px);
+    }
+
+    // 2px
+    @mixin xl\:w-0\.5 {
+      @include r(xl, width, 0.125rem);
+    }
+
+    // 4px
+    @mixin xl\:w-1 {
+      @include r(xl, width, 0.25rem);
+    }
+
+    // 6px
+    @mixin xl\:w-1\.5 {
+      @include r(xl, width, 0.375rem);
+    }
+
+    // 8px
+    @mixin xl\:w-2 {
+      @include r(xl, width, 0.5rem);
+    }
+
+    // 10px
+    @mixin xl\:w-2\.5 {
+      @include r(xl, width, 0.625rem);
+    }
+
+    // 12px
+    @mixin xl\:w-3 {
+      @include r(xl, width, 0.75rem);
+    }
+
+    // 14px
+    @mixin xl\:w-3\.5 {
+      @include r(xl, width, 0.875rem);
+    }
+
+    // 16px
+    @mixin xl\:w-4 {
+      @include r(xl, width, 1rem);
+    }
+
+    // 20px
+    @mixin xl\:w-5 {
+      @include r(xl, width, 1.25rem);
+    }
+
+    // 24px
+    @mixin xl\:w-6 {
+      @include r(xl, width, 1.5rem);
+    }
+
+    // 28px
+    @mixin xl\:w-7 {
+      @include r(xl, width, 1.75rem);
+    }
+
+    // 32px
+    @mixin xl\:w-8 {
+      @include r(xl, width, 2rem);
+    }
+
+    // 36px
+    @mixin xl\:w-9 {
+      @include r(xl, width, 2.25rem);
+    }
+
+    // 40px
+    @mixin xl\:w-10 {
+      @include r(xl, width, 2.5rem);
+    }
+
+    // 44px
+    @mixin xl\:w-11 {
+      @include r(xl, width, 2.75rem);
+    }
+
+    // 48px
+    @mixin xl\:w-12 {
+      @include r(xl, width, 3rem);
+    }
+
+    // 56px
+    @mixin xl\:w-14 {
+      @include r(xl, width, 3.5rem);
+    }
+
+    // 64px
+    @mixin xl\:w-16 {
+      @include r(xl, width, 4rem);
+    }
+
+    // 80px
+    @mixin xl\:w-20 {
+      @include r(xl, width, 5rem);
+    }
+
+    // 96px
+    @mixin xl\:w-24 {
+      @include r(xl, width, 6rem);
+    }
+
+    // 112px
+    @mixin xl\:w-28 {
+      @include r(xl, width, 7rem);
+    }
+
+    // 128px
+    @mixin xl\:w-32 {
+      @include r(xl, width, 8rem);
+    }
+
+    // 144px
+    @mixin xl\:w-36 {
+      @include r(xl, width, 9rem);
+    }
+
+    // 160px
+    @mixin xl\:w-40 {
+      @include r(xl, width, 10rem);
+    }
+
+    // 176px
+    @mixin xl\:w-44 {
+      @include r(xl, width, 11rem);
+    }
+
+    // 192px
+    @mixin xl\:w-48 {
+      @include r(xl, width, 12rem);
+    }
+
+    // 208px
+    @mixin xl\:w-52 {
+      @include r(xl, width, 13rem);
+    }
+
+    // 224px
+    @mixin xl\:w-56 {
+      @include r(xl, width, 14rem);
+    }
+
+    // 240px
+    @mixin xl\:w-60 {
+      @include r(xl, width, 15rem);
+    }
+
+    // 256px
+    @mixin xl\:w-64 {
+      @include r(xl, width, 16rem);
+    }
+
+    // 288px
+    @mixin xl\:w-72 {
+      @include r(xl, width, 18rem);
+    }
+
+    // 320px
+    @mixin xl\:w-80 {
+      @include r(xl, width, 20rem);
+    }
+
+    // 384px
+    @mixin xl\:w-96 {
+      @include r(xl, width, 24rem);
+    }
+
+    @mixin xl\:w-auto {
+      @include r(xl, width, auto);
+    }
+
+    @mixin xl\:w-1\/2 {
+      @include r(xl, width, 50%);
+    }
+
+    @mixin xl\:w-1\/3 {
+      @include r(xl, width, 33.333333%);
+    }
+
+    @mixin xl\:w-2\/3 {
+      @include r(xl, width, 66.666667%);
+    }
+
+    @mixin xl\:w-1\/4 {
+      @include r(xl, width, 25%);
+    }
+
+    @mixin xl\:w-2\/4 {
+      @include r(xl, width, 50%);
+    }
+
+    @mixin xl\:w-3\/4 {
+      @include r(xl, width, 75%);
+    }
+
+    @mixin xl\:w-1\/5 {
+      @include r(xl, width, 20%);
+    }
+
+    @mixin xl\:w-2\/5 {
+      @include r(xl, width, 40%);
+    }
+
+    @mixin xl\:w-3\/5 {
+      @include r(xl, width, 60%);
+    }
+
+    @mixin xl\:w-4\/5 {
+      @include r(xl, width, 80%);
+    }
+
+    @mixin xl\:w-1\/6 {
+      @include r(xl, width, 16.666667%);
+    }
+
+    @mixin xl\:w-2\/6 {
+      @include r(xl, width, 33.333333%);
+    }
+
+    @mixin xl\:w-3\/6 {
+      @include r(xl, width, 50%);
+    }
+
+    @mixin xl\:w-4\/6 {
+      @include r(xl, width, 66.666667%);
+    }
+
+    @mixin xl\:w-5\/6 {
+      @include r(xl, width, 83.333333%);
+    }
+
+    @mixin xl\:w-1\/12 {
+      @include r(xl, width, 8.333333%);
+    }
+
+    @mixin xl\:w-2\/12 {
+      @include r(xl, width, 16.666667%);
+    }
+
+    @mixin xl\:w-3\/12 {
+      @include r(xl, width, 25%);
+    }
+
+    @mixin xl\:w-4\/12 {
+      @include r(xl, width, 33.333333%);
+    }
+
+    @mixin xl\:w-5\/12 {
+      @include r(xl, width, 41.666667%);
+    }
+
+    @mixin xl\:w-6\/12 {
+      @include r(xl, width, 50%);
+    }
+
+    @mixin xl\:w-7\/12 {
+      @include r(xl, width, 58.333333%);
+    }
+
+    @mixin xl\:w-8\/12 {
+      @include r(xl, width, 66.666667%);
+    }
+
+    @mixin xl\:w-9\/12 {
+      @include r(xl, width, 75%);
+    }
+
+    @mixin xl\:w-10\/12 {
+      @include r(xl, width, 83.333333%);
+    }
+
+    @mixin xl\:w-11\/12 {
+      @include r(xl, width, 91.666667%);
+    }
+
+    @mixin xl\:w-full {
+      @include r(xl, width, 100%);
+    }
+
+    @mixin xl\:w-screen {
+      @include r(xl, width, 100vw);
+    }
+
+    @mixin xl\:w-svw {
+      @include r(xl, width, 100svw);
+    }
+
+    @mixin xl\:w-lvw {
+      @include r(xl, width, 100lvw);
+    }
+
+    @mixin xl\:w-dvw {
+      @include r(xl, width, 100dvw);
+    }
+
+    @mixin xl\:w-min {
+      @include r(xl, width, min-content);
+    }
+
+    @mixin xl\:w-max {
+      @include r(xl, width, max-content);
+    }
+
+    @mixin xl\:w-fit {
+      @include r(xl, width, fit-content);
+    }
+    @mixin w-0 {
+      width: 0px;
+    }
+
+    @mixin \2xl\:w-px {
+      @include r(2xl, width, 1px);
+    }
+
+    // 2px
+    @mixin \2xl\:w-0\.5 {
+      @include r(2xl, width, 0.125rem);
+    }
+
+    // 4px
+    @mixin \2xl\:w-1 {
+      @include r(2xl, width, 0.25rem);
+    }
+
+    // 6px
+    @mixin \2xl\:w-1\.5 {
+      @include r(2xl, width, 0.375rem);
+    }
+
+    // 8px
+    @mixin \2xl\:w-2 {
+      @include r(2xl, width, 0.5rem);
+    }
+
+    // 10px
+    @mixin \2xl\:w-2\.5 {
+      @include r(2xl, width, 0.625rem);
+    }
+
+    // 12px
+    @mixin \2xl\:w-3 {
+      @include r(2xl, width, 0.75rem);
+    }
+
+    // 14px
+    @mixin \2xl\:w-3\.5 {
+      @include r(2xl, width, 0.875rem);
+    }
+
+    // 16px
+    @mixin \2xl\:w-4 {
+      @include r(2xl, width, 1rem);
+    }
+
+    // 20px
+    @mixin \2xl\:w-5 {
+      @include r(2xl, width, 1.25rem);
+    }
+
+    // 24px
+    @mixin \2xl\:w-6 {
+      @include r(2xl, width, 1.5rem);
+    }
+
+    // 28px
+    @mixin \2xl\:w-7 {
+      @include r(2xl, width, 1.75rem);
+    }
+
+    // 32px
+    @mixin \2xl\:w-8 {
+      @include r(2xl, width, 2rem);
+    }
+
+    // 36px
+    @mixin \2xl\:w-9 {
+      @include r(2xl, width, 2.25rem);
+    }
+
+    // 40px
+    @mixin \2xl\:w-10 {
+      @include r(2xl, width, 2.5rem);
+    }
+
+    // 44px
+    @mixin \2xl\:w-11 {
+      @include r(2xl, width, 2.75rem);
+    }
+
+    // 48px
+    @mixin \2xl\:w-12 {
+      @include r(2xl, width, 3rem);
+    }
+
+    // 56px
+    @mixin \2xl\:w-14 {
+      @include r(2xl, width, 3.5rem);
+    }
+
+    // 64px
+    @mixin \2xl\:w-16 {
+      @include r(2xl, width, 4rem);
+    }
+
+    // 80px
+    @mixin \2xl\:w-20 {
+      @include r(2xl, width, 5rem);
+    }
+
+    // 96px
+    @mixin \2xl\:w-24 {
+      @include r(2xl, width, 6rem);
+    }
+
+    // 112px
+    @mixin \2xl\:w-28 {
+      @include r(2xl, width, 7rem);
+    }
+
+    // 128px
+    @mixin \2xl\:w-32 {
+      @include r(2xl, width, 8rem);
+    }
+
+    // 144px
+    @mixin \2xl\:w-36 {
+      @include r(2xl, width, 9rem);
+    }
+
+    // 160px
+    @mixin \2xl\:w-40 {
+      @include r(2xl, width, 10rem);
+    }
+
+    // 176px
+    @mixin \2xl\:w-44 {
+      @include r(2xl, width, 11rem);
+    }
+
+    // 192px
+    @mixin \2xl\:w-48 {
+      @include r(2xl, width, 12rem);
+    }
+
+    // 208px
+    @mixin \2xl\:w-52 {
+      @include r(2xl, width, 13rem);
+    }
+
+    // 224px
+    @mixin \2xl\:w-56 {
+      @include r(2xl, width, 14rem);
+    }
+
+    // 240px
+    @mixin \2xl\:w-60 {
+      @include r(2xl, width, 15rem);
+    }
+
+    // 256px
+    @mixin \2xl\:w-64 {
+      @include r(2xl, width, 16rem);
+    }
+
+    // 288px
+    @mixin \2xl\:w-72 {
+      @include r(2xl, width, 18rem);
+    }
+
+    // 320px
+    @mixin \2xl\:w-80 {
+      @include r(2xl, width, 20rem);
+    }
+
+    // 384px
+    @mixin \2xl\:w-96 {
+      @include r(2xl, width, 24rem);
+    }
+
+    @mixin \2xl\:w-auto {
+      @include r(2xl, width, auto);
+    }
+
+    @mixin \2xl\:w-1\/2 {
+      @include r(2xl, width, 50%);
+    }
+
+    @mixin \2xl\:w-1\/3 {
+      @include r(2xl, width, 33.333333%);
+    }
+
+    @mixin \2xl\:w-2\/3 {
+      @include r(2xl, width, 66.666667%);
+    }
+
+    @mixin \2xl\:w-1\/4 {
+      @include r(2xl, width, 25%);
+    }
+
+    @mixin \2xl\:w-2\/4 {
+      @include r(2xl, width, 50%);
+    }
+
+    @mixin \2xl\:w-3\/4 {
+      @include r(2xl, width, 75%);
+    }
+
+    @mixin \2xl\:w-1\/5 {
+      @include r(2xl, width, 20%);
+    }
+
+    @mixin \2xl\:w-2\/5 {
+      @include r(2xl, width, 40%);
+    }
+
+    @mixin \2xl\:w-3\/5 {
+      @include r(2xl, width, 60%);
+    }
+
+    @mixin \2xl\:w-4\/5 {
+      @include r(2xl, width, 80%);
+    }
+
+    @mixin \2xl\:w-1\/6 {
+      @include r(2xl, width, 16.666667%);
+    }
+
+    @mixin \2xl\:w-2\/6 {
+      @include r(2xl, width, 33.333333%);
+    }
+
+    @mixin \2xl\:w-3\/6 {
+      @include r(2xl, width, 50%);
+    }
+
+    @mixin \2xl\:w-4\/6 {
+      @include r(2xl, width, 66.666667%);
+    }
+
+    @mixin \2xl\:w-5\/6 {
+      @include r(2xl, width, 83.333333%);
+    }
+
+    @mixin \2xl\:w-1\/12 {
+      @include r(2xl, width, 8.333333%);
+    }
+
+    @mixin \2xl\:w-2\/12 {
+      @include r(2xl, width, 16.666667%);
+    }
+
+    @mixin \2xl\:w-3\/12 {
+      @include r(2xl, width, 25%);
+    }
+
+    @mixin \2xl\:w-4\/12 {
+      @include r(2xl, width, 33.333333%);
+    }
+
+    @mixin \2xl\:w-5\/12 {
+      @include r(2xl, width, 41.666667%);
+    }
+
+    @mixin \2xl\:w-6\/12 {
+      @include r(2xl, width, 50%);
+    }
+
+    @mixin \2xl\:w-7\/12 {
+      @include r(2xl, width, 58.333333%);
+    }
+
+    @mixin \2xl\:w-8\/12 {
+      @include r(2xl, width, 66.666667%);
+    }
+
+    @mixin \2xl\:w-9\/12 {
+      @include r(2xl, width, 75%);
+    }
+
+    @mixin \2xl\:w-10\/12 {
+      @include r(2xl, width, 83.333333%);
+    }
+
+    @mixin \2xl\:w-11\/12 {
+      @include r(2xl, width, 91.666667%);
+    }
+
+    @mixin \2xl\:w-full {
+      @include r(2xl, width, 100%);
+    }
+
+    @mixin \2xl\:w-screen {
+      @include r(2xl, width, 100vw);
+    }
+
+    @mixin \2xl\:w-svw {
+      @include r(2xl, width, 100svw);
+    }
+
+    @mixin \2xl\:w-lvw {
+      @include r(2xl, width, 100lvw);
+    }
+
+    @mixin \2xl\:w-dvw {
+      @include r(2xl, width, 100dvw);
+    }
+
+    @mixin \2xl\:w-min {
+      @include r(2xl, width, min-content);
+    }
+
+    @mixin \2xl\:w-max {
+      @include r(2xl, width, max-content);
+    }
+
+    @mixin \2xl\:w-fit {
+      @include r(2xl, width, fit-content);
+    }
+    // x*/
   }
-
-  @mixin sm\:w-px {
-    @include r(sm, width, 1px);
-  }
-
-  // 2px
-  @mixin sm\:w-0\.5 {
-    @include r(sm, width, 0.125rem);
-  }
-
-  // 4px
-  @mixin sm\:w-1 {
-    @include r(sm, width, 0.25rem);
-  }
-
-  // 6px
-  @mixin sm\:w-1\.5 {
-    @include r(sm, width, 0.375rem);
-  }
-
-  // 8px
-  @mixin sm\:w-2 {
-    @include r(sm, width, 0.5rem);
-  }
-
-  // 10px
-  @mixin sm\:w-2\.5 {
-    @include r(sm, width, 0.625rem);
-  }
-
-  // 12px
-  @mixin sm\:w-3 {
-    @include r(sm, width, 0.75rem);
-  }
-
-  // 14px
-  @mixin sm\:w-3\.5 {
-    @include r(sm, width, 0.875rem);
-  }
-
-  // 16px
-  @mixin sm\:w-4 {
-    @include r(sm, width, 1rem);
-  }
-
-  // 20px
-  @mixin sm\:w-5 {
-    @include r(sm, width, 1.25rem);
-  }
-
-  // 24px
-  @mixin sm\:w-6 {
-    @include r(sm, width, 1.5rem);
-  }
-
-  // 28px
-  @mixin sm\:w-7 {
-    @include r(sm, width, 1.75rem);
-  }
-
-  // 32px
-  @mixin sm\:w-8 {
-    @include r(sm, width, 2rem);
-  }
-
-  // 36px
-  @mixin sm\:w-9 {
-    @include r(sm, width, 2.25rem);
-  }
-
-  // 40px
-  @mixin sm\:w-10 {
-    @include r(sm, width, 2.5rem);
-  }
-
-  // 44px
-  @mixin sm\:w-11 {
-    @include r(sm, width, 2.75rem);
-  }
-
-  // 48px
-  @mixin sm\:w-12 {
-    @include r(sm, width, 3rem);
-  }
-
-  // 56px
-  @mixin sm\:w-14 {
-    @include r(sm, width, 3.5rem);
-  }
-
-  // 64px
-  @mixin sm\:w-16 {
-    @include r(sm, width, 4rem);
-  }
-
-  // 80px
-  @mixin sm\:w-20 {
-    @include r(sm, width, 5rem);
-  }
-
-  // 96px
-  @mixin sm\:w-24 {
-    @include r(sm, width, 6rem);
-  }
-
-  // 112px
-  @mixin sm\:w-28 {
-    @include r(sm, width, 7rem);
-  }
-
-  // 128px
-  @mixin sm\:w-32 {
-    @include r(sm, width, 8rem);
-  }
-
-  // 144px
-  @mixin sm\:w-36 {
-    @include r(sm, width, 9rem);
-  }
-
-  // 160px
-  @mixin sm\:w-40 {
-    @include r(sm, width, 10rem);
-  }
-
-  // 176px
-  @mixin sm\:w-44 {
-    @include r(sm, width, 11rem);
-  }
-
-  // 192px
-  @mixin sm\:w-48 {
-    @include r(sm, width, 12rem);
-  }
-
-  // 208px
-  @mixin sm\:w-52 {
-    @include r(sm, width, 13rem);
-  }
-
-  // 224px
-  @mixin sm\:w-56 {
-    @include r(sm, width, 14rem);
-  }
-
-  // 240px
-  @mixin sm\:w-60 {
-    @include r(sm, width, 15rem);
-  }
-
-  // 256px
-  @mixin sm\:w-64 {
-    @include r(sm, width, 16rem);
-  }
-
-  // 288px
-  @mixin sm\:w-72 {
-    @include r(sm, width, 18rem);
-  }
-
-  // 320px
-  @mixin sm\:w-80 {
-    @include r(sm, width, 20rem);
-  }
-
-  // 384px
-  @mixin sm\:w-96 {
-    @include r(sm, width, 24rem);
-  }
-
-  @mixin sm\:w-auto {
-    @include r(sm, width, auto);
-  }
-
-  @mixin sm\:w-1\/2 {
-    @include r(sm, width, 50%);
-  }
-
-  @mixin sm\:w-1\/3 {
-    @include r(sm, width, 33.333333%);
-  }
-
-  @mixin sm\:w-2\/3 {
-    @include r(sm, width, 66.666667%);
-  }
-
-  @mixin sm\:w-1\/4 {
-    @include r(sm, width, 25%);
-  }
-
-  @mixin sm\:w-2\/4 {
-    @include r(sm, width, 50%);
-  }
-
-  @mixin sm\:w-3\/4 {
-    @include r(sm, width, 75%);
-  }
-
-  @mixin sm\:w-1\/5 {
-    @include r(sm, width, 20%);
-  }
-
-  @mixin sm\:w-2\/5 {
-    @include r(sm, width, 40%);
-  }
-
-  @mixin sm\:w-3\/5 {
-    @include r(sm, width, 60%);
-  }
-
-  @mixin sm\:w-4\/5 {
-    @include r(sm, width, 80%);
-  }
-
-  @mixin sm\:w-1\/6 {
-    @include r(sm, width, 16.666667%);
-  }
-
-  @mixin sm\:w-2\/6 {
-    @include r(sm, width, 33.333333%);
-  }
-
-  @mixin sm\:w-3\/6 {
-    @include r(sm, width, 50%);
-  }
-
-  @mixin sm\:w-4\/6 {
-    @include r(sm, width, 66.666667%);
-  }
-
-  @mixin sm\:w-5\/6 {
-    @include r(sm, width, 83.333333%);
-  }
-
-  @mixin sm\:w-1\/12 {
-    @include r(sm, width, 8.333333%);
-  }
-
-  @mixin sm\:w-2\/12 {
-    @include r(sm, width, 16.666667%);
-  }
-
-  @mixin sm\:w-3\/12 {
-    @include r(sm, width, 25%);
-  }
-
-  @mixin sm\:w-4\/12 {
-    @include r(sm, width, 33.333333%);
-  }
-
-  @mixin sm\:w-5\/12 {
-    @include r(sm, width, 41.666667%);
-  }
-
-  @mixin sm\:w-6\/12 {
-    @include r(sm, width, 50%);
-  }
-
-  @mixin sm\:w-7\/12 {
-    @include r(sm, width, 58.333333%);
-  }
-
-  @mixin sm\:w-8\/12 {
-    @include r(sm, width, 66.666667%);
-  }
-
-  @mixin sm\:w-9\/12 {
-    @include r(sm, width, 75%);
-  }
-
-  @mixin sm\:w-10\/12 {
-    @include r(sm, width, 83.333333%);
-  }
-
-  @mixin sm\:w-11\/12 {
-    @include r(sm, width, 91.666667%);
-  }
-
-  @mixin sm\:w-full {
-    @include r(sm, width, 100%);
-  }
-
-  @mixin sm\:w-screen {
-    @include r(sm, width, 100vw);
-  }
-
-  @mixin sm\:w-svw {
-    @include r(sm, width, 100svw);
-  }
-
-  @mixin sm\:w-lvw {
-    @include r(sm, width, 100lvw);
-  }
-
-  @mixin sm\:w-dvw {
-    @include r(sm, width, 100dvw);
-  }
-
-  @mixin sm\:w-min {
-    @include r(sm, width, min-content);
-  }
-
-  @mixin sm\:w-max {
-    @include r(sm, width, max-content);
-  }
-
-  @mixin sm\:w-fit {
-    @include r(sm, width, fit-content);
-  }
-  @mixin w-0 {
-    width: 0px;
-  }
-
-  @mixin md\:w-px {
-    @include r(md, width, 1px);
-  }
-
-  // 2px
-  @mixin md\:w-0\.5 {
-    @include r(md, width, 0.125rem);
-  }
-
-  // 4px
-  @mixin md\:w-1 {
-    @include r(md, width, 0.25rem);
-  }
-
-  // 6px
-  @mixin md\:w-1\.5 {
-    @include r(md, width, 0.375rem);
-  }
-
-  // 8px
-  @mixin md\:w-2 {
-    @include r(md, width, 0.5rem);
-  }
-
-  // 10px
-  @mixin md\:w-2\.5 {
-    @include r(md, width, 0.625rem);
-  }
-
-  // 12px
-  @mixin md\:w-3 {
-    @include r(md, width, 0.75rem);
-  }
-
-  // 14px
-  @mixin md\:w-3\.5 {
-    @include r(md, width, 0.875rem);
-  }
-
-  // 16px
-  @mixin md\:w-4 {
-    @include r(md, width, 1rem);
-  }
-
-  // 20px
-  @mixin md\:w-5 {
-    @include r(md, width, 1.25rem);
-  }
-
-  // 24px
-  @mixin md\:w-6 {
-    @include r(md, width, 1.5rem);
-  }
-
-  // 28px
-  @mixin md\:w-7 {
-    @include r(md, width, 1.75rem);
-  }
-
-  // 32px
-  @mixin md\:w-8 {
-    @include r(md, width, 2rem);
-  }
-
-  // 36px
-  @mixin md\:w-9 {
-    @include r(md, width, 2.25rem);
-  }
-
-  // 40px
-  @mixin md\:w-10 {
-    @include r(md, width, 2.5rem);
-  }
-
-  // 44px
-  @mixin md\:w-11 {
-    @include r(md, width, 2.75rem);
-  }
-
-  // 48px
-  @mixin md\:w-12 {
-    @include r(md, width, 3rem);
-  }
-
-  // 56px
-  @mixin md\:w-14 {
-    @include r(md, width, 3.5rem);
-  }
-
-  // 64px
-  @mixin md\:w-16 {
-    @include r(md, width, 4rem);
-  }
-
-  // 80px
-  @mixin md\:w-20 {
-    @include r(md, width, 5rem);
-  }
-
-  // 96px
-  @mixin md\:w-24 {
-    @include r(md, width, 6rem);
-  }
-
-  // 112px
-  @mixin md\:w-28 {
-    @include r(md, width, 7rem);
-  }
-
-  // 128px
-  @mixin md\:w-32 {
-    @include r(md, width, 8rem);
-  }
-
-  // 144px
-  @mixin md\:w-36 {
-    @include r(md, width, 9rem);
-  }
-
-  // 160px
-  @mixin md\:w-40 {
-    @include r(md, width, 10rem);
-  }
-
-  // 176px
-  @mixin md\:w-44 {
-    @include r(md, width, 11rem);
-  }
-
-  // 192px
-  @mixin md\:w-48 {
-    @include r(md, width, 12rem);
-  }
-
-  // 208px
-  @mixin md\:w-52 {
-    @include r(md, width, 13rem);
-  }
-
-  // 224px
-  @mixin md\:w-56 {
-    @include r(md, width, 14rem);
-  }
-
-  // 240px
-  @mixin md\:w-60 {
-    @include r(md, width, 15rem);
-  }
-
-  // 256px
-  @mixin md\:w-64 {
-    @include r(md, width, 16rem);
-  }
-
-  // 288px
-  @mixin md\:w-72 {
-    @include r(md, width, 18rem);
-  }
-
-  // 320px
-  @mixin md\:w-80 {
-    @include r(md, width, 20rem);
-  }
-
-  // 384px
-  @mixin md\:w-96 {
-    @include r(md, width, 24rem);
-  }
-
-  @mixin md\:w-auto {
-    @include r(md, width, auto);
-  }
-
-  @mixin md\:w-1\/2 {
-    @include r(md, width, 50%);
-  }
-
-  @mixin md\:w-1\/3 {
-    @include r(md, width, 33.333333%);
-  }
-
-  @mixin md\:w-2\/3 {
-    @include r(md, width, 66.666667%);
-  }
-
-  @mixin md\:w-1\/4 {
-    @include r(md, width, 25%);
-  }
-
-  @mixin md\:w-2\/4 {
-    @include r(md, width, 50%);
-  }
-
-  @mixin md\:w-3\/4 {
-    @include r(md, width, 75%);
-  }
-
-  @mixin md\:w-1\/5 {
-    @include r(md, width, 20%);
-  }
-
-  @mixin md\:w-2\/5 {
-    @include r(md, width, 40%);
-  }
-
-  @mixin md\:w-3\/5 {
-    @include r(md, width, 60%);
-  }
-
-  @mixin md\:w-4\/5 {
-    @include r(md, width, 80%);
-  }
-
-  @mixin md\:w-1\/6 {
-    @include r(md, width, 16.666667%);
-  }
-
-  @mixin md\:w-2\/6 {
-    @include r(md, width, 33.333333%);
-  }
-
-  @mixin md\:w-3\/6 {
-    @include r(md, width, 50%);
-  }
-
-  @mixin md\:w-4\/6 {
-    @include r(md, width, 66.666667%);
-  }
-
-  @mixin md\:w-5\/6 {
-    @include r(md, width, 83.333333%);
-  }
-
-  @mixin md\:w-1\/12 {
-    @include r(md, width, 8.333333%);
-  }
-
-  @mixin md\:w-2\/12 {
-    @include r(md, width, 16.666667%);
-  }
-
-  @mixin md\:w-3\/12 {
-    @include r(md, width, 25%);
-  }
-
-  @mixin md\:w-4\/12 {
-    @include r(md, width, 33.333333%);
-  }
-
-  @mixin md\:w-5\/12 {
-    @include r(md, width, 41.666667%);
-  }
-
-  @mixin md\:w-6\/12 {
-    @include r(md, width, 50%);
-  }
-
-  @mixin md\:w-7\/12 {
-    @include r(md, width, 58.333333%);
-  }
-
-  @mixin md\:w-8\/12 {
-    @include r(md, width, 66.666667%);
-  }
-
-  @mixin md\:w-9\/12 {
-    @include r(md, width, 75%);
-  }
-
-  @mixin md\:w-10\/12 {
-    @include r(md, width, 83.333333%);
-  }
-
-  @mixin md\:w-11\/12 {
-    @include r(md, width, 91.666667%);
-  }
-
-  @mixin md\:w-full {
-    @include r(md, width, 100%);
-  }
-
-  @mixin md\:w-screen {
-    @include r(md, width, 100vw);
-  }
-
-  @mixin md\:w-svw {
-    @include r(md, width, 100svw);
-  }
-
-  @mixin md\:w-lvw {
-    @include r(md, width, 100lvw);
-  }
-
-  @mixin md\:w-dvw {
-    @include r(md, width, 100dvw);
-  }
-
-  @mixin md\:w-min {
-    @include r(md, width, min-content);
-  }
-
-  @mixin md\:w-max {
-    @include r(md, width, max-content);
-  }
-
-  @mixin md\:w-fit {
-    @include r(md, width, fit-content);
-  }
-  @mixin w-0 {
-    width: 0px;
-  }
-
-  @mixin lg\:w-px {
-    @include r(lg, width, 1px);
-  }
-
-  // 2px
-  @mixin lg\:w-0\.5 {
-    @include r(lg, width, 0.125rem);
-  }
-
-  // 4px
-  @mixin lg\:w-1 {
-    @include r(lg, width, 0.25rem);
-  }
-
-  // 6px
-  @mixin lg\:w-1\.5 {
-    @include r(lg, width, 0.375rem);
-  }
-
-  // 8px
-  @mixin lg\:w-2 {
-    @include r(lg, width, 0.5rem);
-  }
-
-  // 10px
-  @mixin lg\:w-2\.5 {
-    @include r(lg, width, 0.625rem);
-  }
-
-  // 12px
-  @mixin lg\:w-3 {
-    @include r(lg, width, 0.75rem);
-  }
-
-  // 14px
-  @mixin lg\:w-3\.5 {
-    @include r(lg, width, 0.875rem);
-  }
-
-  // 16px
-  @mixin lg\:w-4 {
-    @include r(lg, width, 1rem);
-  }
-
-  // 20px
-  @mixin lg\:w-5 {
-    @include r(lg, width, 1.25rem);
-  }
-
-  // 24px
-  @mixin lg\:w-6 {
-    @include r(lg, width, 1.5rem);
-  }
-
-  // 28px
-  @mixin lg\:w-7 {
-    @include r(lg, width, 1.75rem);
-  }
-
-  // 32px
-  @mixin lg\:w-8 {
-    @include r(lg, width, 2rem);
-  }
-
-  // 36px
-  @mixin lg\:w-9 {
-    @include r(lg, width, 2.25rem);
-  }
-
-  // 40px
-  @mixin lg\:w-10 {
-    @include r(lg, width, 2.5rem);
-  }
-
-  // 44px
-  @mixin lg\:w-11 {
-    @include r(lg, width, 2.75rem);
-  }
-
-  // 48px
-  @mixin lg\:w-12 {
-    @include r(lg, width, 3rem);
-  }
-
-  // 56px
-  @mixin lg\:w-14 {
-    @include r(lg, width, 3.5rem);
-  }
-
-  // 64px
-  @mixin lg\:w-16 {
-    @include r(lg, width, 4rem);
-  }
-
-  // 80px
-  @mixin lg\:w-20 {
-    @include r(lg, width, 5rem);
-  }
-
-  // 96px
-  @mixin lg\:w-24 {
-    @include r(lg, width, 6rem);
-  }
-
-  // 112px
-  @mixin lg\:w-28 {
-    @include r(lg, width, 7rem);
-  }
-
-  // 128px
-  @mixin lg\:w-32 {
-    @include r(lg, width, 8rem);
-  }
-
-  // 144px
-  @mixin lg\:w-36 {
-    @include r(lg, width, 9rem);
-  }
-
-  // 160px
-  @mixin lg\:w-40 {
-    @include r(lg, width, 10rem);
-  }
-
-  // 176px
-  @mixin lg\:w-44 {
-    @include r(lg, width, 11rem);
-  }
-
-  // 192px
-  @mixin lg\:w-48 {
-    @include r(lg, width, 12rem);
-  }
-
-  // 208px
-  @mixin lg\:w-52 {
-    @include r(lg, width, 13rem);
-  }
-
-  // 224px
-  @mixin lg\:w-56 {
-    @include r(lg, width, 14rem);
-  }
-
-  // 240px
-  @mixin lg\:w-60 {
-    @include r(lg, width, 15rem);
-  }
-
-  // 256px
-  @mixin lg\:w-64 {
-    @include r(lg, width, 16rem);
-  }
-
-  // 288px
-  @mixin lg\:w-72 {
-    @include r(lg, width, 18rem);
-  }
-
-  // 320px
-  @mixin lg\:w-80 {
-    @include r(lg, width, 20rem);
-  }
-
-  // 384px
-  @mixin lg\:w-96 {
-    @include r(lg, width, 24rem);
-  }
-
-  @mixin lg\:w-auto {
-    @include r(lg, width, auto);
-  }
-
-  @mixin lg\:w-1\/2 {
-    @include r(lg, width, 50%);
-  }
-
-  @mixin lg\:w-1\/3 {
-    @include r(lg, width, 33.333333%);
-  }
-
-  @mixin lg\:w-2\/3 {
-    @include r(lg, width, 66.666667%);
-  }
-
-  @mixin lg\:w-1\/4 {
-    @include r(lg, width, 25%);
-  }
-
-  @mixin lg\:w-2\/4 {
-    @include r(lg, width, 50%);
-  }
-
-  @mixin lg\:w-3\/4 {
-    @include r(lg, width, 75%);
-  }
-
-  @mixin lg\:w-1\/5 {
-    @include r(lg, width, 20%);
-  }
-
-  @mixin lg\:w-2\/5 {
-    @include r(lg, width, 40%);
-  }
-
-  @mixin lg\:w-3\/5 {
-    @include r(lg, width, 60%);
-  }
-
-  @mixin lg\:w-4\/5 {
-    @include r(lg, width, 80%);
-  }
-
-  @mixin lg\:w-1\/6 {
-    @include r(lg, width, 16.666667%);
-  }
-
-  @mixin lg\:w-2\/6 {
-    @include r(lg, width, 33.333333%);
-  }
-
-  @mixin lg\:w-3\/6 {
-    @include r(lg, width, 50%);
-  }
-
-  @mixin lg\:w-4\/6 {
-    @include r(lg, width, 66.666667%);
-  }
-
-  @mixin lg\:w-5\/6 {
-    @include r(lg, width, 83.333333%);
-  }
-
-  @mixin lg\:w-1\/12 {
-    @include r(lg, width, 8.333333%);
-  }
-
-  @mixin lg\:w-2\/12 {
-    @include r(lg, width, 16.666667%);
-  }
-
-  @mixin lg\:w-3\/12 {
-    @include r(lg, width, 25%);
-  }
-
-  @mixin lg\:w-4\/12 {
-    @include r(lg, width, 33.333333%);
-  }
-
-  @mixin lg\:w-5\/12 {
-    @include r(lg, width, 41.666667%);
-  }
-
-  @mixin lg\:w-6\/12 {
-    @include r(lg, width, 50%);
-  }
-
-  @mixin lg\:w-7\/12 {
-    @include r(lg, width, 58.333333%);
-  }
-
-  @mixin lg\:w-8\/12 {
-    @include r(lg, width, 66.666667%);
-  }
-
-  @mixin lg\:w-9\/12 {
-    @include r(lg, width, 75%);
-  }
-
-  @mixin lg\:w-10\/12 {
-    @include r(lg, width, 83.333333%);
-  }
-
-  @mixin lg\:w-11\/12 {
-    @include r(lg, width, 91.666667%);
-  }
-
-  @mixin lg\:w-full {
-    @include r(lg, width, 100%);
-  }
-
-  @mixin lg\:w-screen {
-    @include r(lg, width, 100vw);
-  }
-
-  @mixin lg\:w-svw {
-    @include r(lg, width, 100svw);
-  }
-
-  @mixin lg\:w-lvw {
-    @include r(lg, width, 100lvw);
-  }
-
-  @mixin lg\:w-dvw {
-    @include r(lg, width, 100dvw);
-  }
-
-  @mixin lg\:w-min {
-    @include r(lg, width, min-content);
-  }
-
-  @mixin lg\:w-max {
-    @include r(lg, width, max-content);
-  }
-
-  @mixin lg\:w-fit {
-    @include r(lg, width, fit-content);
-  }
-  @mixin w-0 {
-    width: 0px;
-  }
-
-  @mixin xl\:w-px {
-    @include r(xl, width, 1px);
-  }
-
-  // 2px
-  @mixin xl\:w-0\.5 {
-    @include r(xl, width, 0.125rem);
-  }
-
-  // 4px
-  @mixin xl\:w-1 {
-    @include r(xl, width, 0.25rem);
-  }
-
-  // 6px
-  @mixin xl\:w-1\.5 {
-    @include r(xl, width, 0.375rem);
-  }
-
-  // 8px
-  @mixin xl\:w-2 {
-    @include r(xl, width, 0.5rem);
-  }
-
-  // 10px
-  @mixin xl\:w-2\.5 {
-    @include r(xl, width, 0.625rem);
-  }
-
-  // 12px
-  @mixin xl\:w-3 {
-    @include r(xl, width, 0.75rem);
-  }
-
-  // 14px
-  @mixin xl\:w-3\.5 {
-    @include r(xl, width, 0.875rem);
-  }
-
-  // 16px
-  @mixin xl\:w-4 {
-    @include r(xl, width, 1rem);
-  }
-
-  // 20px
-  @mixin xl\:w-5 {
-    @include r(xl, width, 1.25rem);
-  }
-
-  // 24px
-  @mixin xl\:w-6 {
-    @include r(xl, width, 1.5rem);
-  }
-
-  // 28px
-  @mixin xl\:w-7 {
-    @include r(xl, width, 1.75rem);
-  }
-
-  // 32px
-  @mixin xl\:w-8 {
-    @include r(xl, width, 2rem);
-  }
-
-  // 36px
-  @mixin xl\:w-9 {
-    @include r(xl, width, 2.25rem);
-  }
-
-  // 40px
-  @mixin xl\:w-10 {
-    @include r(xl, width, 2.5rem);
-  }
-
-  // 44px
-  @mixin xl\:w-11 {
-    @include r(xl, width, 2.75rem);
-  }
-
-  // 48px
-  @mixin xl\:w-12 {
-    @include r(xl, width, 3rem);
-  }
-
-  // 56px
-  @mixin xl\:w-14 {
-    @include r(xl, width, 3.5rem);
-  }
-
-  // 64px
-  @mixin xl\:w-16 {
-    @include r(xl, width, 4rem);
-  }
-
-  // 80px
-  @mixin xl\:w-20 {
-    @include r(xl, width, 5rem);
-  }
-
-  // 96px
-  @mixin xl\:w-24 {
-    @include r(xl, width, 6rem);
-  }
-
-  // 112px
-  @mixin xl\:w-28 {
-    @include r(xl, width, 7rem);
-  }
-
-  // 128px
-  @mixin xl\:w-32 {
-    @include r(xl, width, 8rem);
-  }
-
-  // 144px
-  @mixin xl\:w-36 {
-    @include r(xl, width, 9rem);
-  }
-
-  // 160px
-  @mixin xl\:w-40 {
-    @include r(xl, width, 10rem);
-  }
-
-  // 176px
-  @mixin xl\:w-44 {
-    @include r(xl, width, 11rem);
-  }
-
-  // 192px
-  @mixin xl\:w-48 {
-    @include r(xl, width, 12rem);
-  }
-
-  // 208px
-  @mixin xl\:w-52 {
-    @include r(xl, width, 13rem);
-  }
-
-  // 224px
-  @mixin xl\:w-56 {
-    @include r(xl, width, 14rem);
-  }
-
-  // 240px
-  @mixin xl\:w-60 {
-    @include r(xl, width, 15rem);
-  }
-
-  // 256px
-  @mixin xl\:w-64 {
-    @include r(xl, width, 16rem);
-  }
-
-  // 288px
-  @mixin xl\:w-72 {
-    @include r(xl, width, 18rem);
-  }
-
-  // 320px
-  @mixin xl\:w-80 {
-    @include r(xl, width, 20rem);
-  }
-
-  // 384px
-  @mixin xl\:w-96 {
-    @include r(xl, width, 24rem);
-  }
-
-  @mixin xl\:w-auto {
-    @include r(xl, width, auto);
-  }
-
-  @mixin xl\:w-1\/2 {
-    @include r(xl, width, 50%);
-  }
-
-  @mixin xl\:w-1\/3 {
-    @include r(xl, width, 33.333333%);
-  }
-
-  @mixin xl\:w-2\/3 {
-    @include r(xl, width, 66.666667%);
-  }
-
-  @mixin xl\:w-1\/4 {
-    @include r(xl, width, 25%);
-  }
-
-  @mixin xl\:w-2\/4 {
-    @include r(xl, width, 50%);
-  }
-
-  @mixin xl\:w-3\/4 {
-    @include r(xl, width, 75%);
-  }
-
-  @mixin xl\:w-1\/5 {
-    @include r(xl, width, 20%);
-  }
-
-  @mixin xl\:w-2\/5 {
-    @include r(xl, width, 40%);
-  }
-
-  @mixin xl\:w-3\/5 {
-    @include r(xl, width, 60%);
-  }
-
-  @mixin xl\:w-4\/5 {
-    @include r(xl, width, 80%);
-  }
-
-  @mixin xl\:w-1\/6 {
-    @include r(xl, width, 16.666667%);
-  }
-
-  @mixin xl\:w-2\/6 {
-    @include r(xl, width, 33.333333%);
-  }
-
-  @mixin xl\:w-3\/6 {
-    @include r(xl, width, 50%);
-  }
-
-  @mixin xl\:w-4\/6 {
-    @include r(xl, width, 66.666667%);
-  }
-
-  @mixin xl\:w-5\/6 {
-    @include r(xl, width, 83.333333%);
-  }
-
-  @mixin xl\:w-1\/12 {
-    @include r(xl, width, 8.333333%);
-  }
-
-  @mixin xl\:w-2\/12 {
-    @include r(xl, width, 16.666667%);
-  }
-
-  @mixin xl\:w-3\/12 {
-    @include r(xl, width, 25%);
-  }
-
-  @mixin xl\:w-4\/12 {
-    @include r(xl, width, 33.333333%);
-  }
-
-  @mixin xl\:w-5\/12 {
-    @include r(xl, width, 41.666667%);
-  }
-
-  @mixin xl\:w-6\/12 {
-    @include r(xl, width, 50%);
-  }
-
-  @mixin xl\:w-7\/12 {
-    @include r(xl, width, 58.333333%);
-  }
-
-  @mixin xl\:w-8\/12 {
-    @include r(xl, width, 66.666667%);
-  }
-
-  @mixin xl\:w-9\/12 {
-    @include r(xl, width, 75%);
-  }
-
-  @mixin xl\:w-10\/12 {
-    @include r(xl, width, 83.333333%);
-  }
-
-  @mixin xl\:w-11\/12 {
-    @include r(xl, width, 91.666667%);
-  }
-
-  @mixin xl\:w-full {
-    @include r(xl, width, 100%);
-  }
-
-  @mixin xl\:w-screen {
-    @include r(xl, width, 100vw);
-  }
-
-  @mixin xl\:w-svw {
-    @include r(xl, width, 100svw);
-  }
-
-  @mixin xl\:w-lvw {
-    @include r(xl, width, 100lvw);
-  }
-
-  @mixin xl\:w-dvw {
-    @include r(xl, width, 100dvw);
-  }
-
-  @mixin xl\:w-min {
-    @include r(xl, width, min-content);
-  }
-
-  @mixin xl\:w-max {
-    @include r(xl, width, max-content);
-  }
-
-  @mixin xl\:w-fit {
-    @include r(xl, width, fit-content);
-  }
-  @mixin w-0 {
-    width: 0px;
-  }
-
-  @mixin \2xl\:w-px {
-    @include r(2xl, width, 1px);
-  }
-
-  // 2px
-  @mixin \2xl\:w-0\.5 {
-    @include r(2xl, width, 0.125rem);
-  }
-
-  // 4px
-  @mixin \2xl\:w-1 {
-    @include r(2xl, width, 0.25rem);
-  }
-
-  // 6px
-  @mixin \2xl\:w-1\.5 {
-    @include r(2xl, width, 0.375rem);
-  }
-
-  // 8px
-  @mixin \2xl\:w-2 {
-    @include r(2xl, width, 0.5rem);
-  }
-
-  // 10px
-  @mixin \2xl\:w-2\.5 {
-    @include r(2xl, width, 0.625rem);
-  }
-
-  // 12px
-  @mixin \2xl\:w-3 {
-    @include r(2xl, width, 0.75rem);
-  }
-
-  // 14px
-  @mixin \2xl\:w-3\.5 {
-    @include r(2xl, width, 0.875rem);
-  }
-
-  // 16px
-  @mixin \2xl\:w-4 {
-    @include r(2xl, width, 1rem);
-  }
-
-  // 20px
-  @mixin \2xl\:w-5 {
-    @include r(2xl, width, 1.25rem);
-  }
-
-  // 24px
-  @mixin \2xl\:w-6 {
-    @include r(2xl, width, 1.5rem);
-  }
-
-  // 28px
-  @mixin \2xl\:w-7 {
-    @include r(2xl, width, 1.75rem);
-  }
-
-  // 32px
-  @mixin \2xl\:w-8 {
-    @include r(2xl, width, 2rem);
-  }
-
-  // 36px
-  @mixin \2xl\:w-9 {
-    @include r(2xl, width, 2.25rem);
-  }
-
-  // 40px
-  @mixin \2xl\:w-10 {
-    @include r(2xl, width, 2.5rem);
-  }
-
-  // 44px
-  @mixin \2xl\:w-11 {
-    @include r(2xl, width, 2.75rem);
-  }
-
-  // 48px
-  @mixin \2xl\:w-12 {
-    @include r(2xl, width, 3rem);
-  }
-
-  // 56px
-  @mixin \2xl\:w-14 {
-    @include r(2xl, width, 3.5rem);
-  }
-
-  // 64px
-  @mixin \2xl\:w-16 {
-    @include r(2xl, width, 4rem);
-  }
-
-  // 80px
-  @mixin \2xl\:w-20 {
-    @include r(2xl, width, 5rem);
-  }
-
-  // 96px
-  @mixin \2xl\:w-24 {
-    @include r(2xl, width, 6rem);
-  }
-
-  // 112px
-  @mixin \2xl\:w-28 {
-    @include r(2xl, width, 7rem);
-  }
-
-  // 128px
-  @mixin \2xl\:w-32 {
-    @include r(2xl, width, 8rem);
-  }
-
-  // 144px
-  @mixin \2xl\:w-36 {
-    @include r(2xl, width, 9rem);
-  }
-
-  // 160px
-  @mixin \2xl\:w-40 {
-    @include r(2xl, width, 10rem);
-  }
-
-  // 176px
-  @mixin \2xl\:w-44 {
-    @include r(2xl, width, 11rem);
-  }
-
-  // 192px
-  @mixin \2xl\:w-48 {
-    @include r(2xl, width, 12rem);
-  }
-
-  // 208px
-  @mixin \2xl\:w-52 {
-    @include r(2xl, width, 13rem);
-  }
-
-  // 224px
-  @mixin \2xl\:w-56 {
-    @include r(2xl, width, 14rem);
-  }
-
-  // 240px
-  @mixin \2xl\:w-60 {
-    @include r(2xl, width, 15rem);
-  }
-
-  // 256px
-  @mixin \2xl\:w-64 {
-    @include r(2xl, width, 16rem);
-  }
-
-  // 288px
-  @mixin \2xl\:w-72 {
-    @include r(2xl, width, 18rem);
-  }
-
-  // 320px
-  @mixin \2xl\:w-80 {
-    @include r(2xl, width, 20rem);
-  }
-
-  // 384px
-  @mixin \2xl\:w-96 {
-    @include r(2xl, width, 24rem);
-  }
-
-  @mixin \2xl\:w-auto {
-    @include r(2xl, width, auto);
-  }
-
-  @mixin \2xl\:w-1\/2 {
-    @include r(2xl, width, 50%);
-  }
-
-  @mixin \2xl\:w-1\/3 {
-    @include r(2xl, width, 33.333333%);
-  }
-
-  @mixin \2xl\:w-2\/3 {
-    @include r(2xl, width, 66.666667%);
-  }
-
-  @mixin \2xl\:w-1\/4 {
-    @include r(2xl, width, 25%);
-  }
-
-  @mixin \2xl\:w-2\/4 {
-    @include r(2xl, width, 50%);
-  }
-
-  @mixin \2xl\:w-3\/4 {
-    @include r(2xl, width, 75%);
-  }
-
-  @mixin \2xl\:w-1\/5 {
-    @include r(2xl, width, 20%);
-  }
-
-  @mixin \2xl\:w-2\/5 {
-    @include r(2xl, width, 40%);
-  }
-
-  @mixin \2xl\:w-3\/5 {
-    @include r(2xl, width, 60%);
-  }
-
-  @mixin \2xl\:w-4\/5 {
-    @include r(2xl, width, 80%);
-  }
-
-  @mixin \2xl\:w-1\/6 {
-    @include r(2xl, width, 16.666667%);
-  }
-
-  @mixin \2xl\:w-2\/6 {
-    @include r(2xl, width, 33.333333%);
-  }
-
-  @mixin \2xl\:w-3\/6 {
-    @include r(2xl, width, 50%);
-  }
-
-  @mixin \2xl\:w-4\/6 {
-    @include r(2xl, width, 66.666667%);
-  }
-
-  @mixin \2xl\:w-5\/6 {
-    @include r(2xl, width, 83.333333%);
-  }
-
-  @mixin \2xl\:w-1\/12 {
-    @include r(2xl, width, 8.333333%);
-  }
-
-  @mixin \2xl\:w-2\/12 {
-    @include r(2xl, width, 16.666667%);
-  }
-
-  @mixin \2xl\:w-3\/12 {
-    @include r(2xl, width, 25%);
-  }
-
-  @mixin \2xl\:w-4\/12 {
-    @include r(2xl, width, 33.333333%);
-  }
-
-  @mixin \2xl\:w-5\/12 {
-    @include r(2xl, width, 41.666667%);
-  }
-
-  @mixin \2xl\:w-6\/12 {
-    @include r(2xl, width, 50%);
-  }
-
-  @mixin \2xl\:w-7\/12 {
-    @include r(2xl, width, 58.333333%);
-  }
-
-  @mixin \2xl\:w-8\/12 {
-    @include r(2xl, width, 66.666667%);
-  }
-
-  @mixin \2xl\:w-9\/12 {
-    @include r(2xl, width, 75%);
-  }
-
-  @mixin \2xl\:w-10\/12 {
-    @include r(2xl, width, 83.333333%);
-  }
-
-  @mixin \2xl\:w-11\/12 {
-    @include r(2xl, width, 91.666667%);
-  }
-
-  @mixin \2xl\:w-full {
-    @include r(2xl, width, 100%);
-  }
-
-  @mixin \2xl\:w-screen {
-    @include r(2xl, width, 100vw);
-  }
-
-  @mixin \2xl\:w-svw {
-    @include r(2xl, width, 100svw);
-  }
-
-  @mixin \2xl\:w-lvw {
-    @include r(2xl, width, 100lvw);
-  }
-
-  @mixin \2xl\:w-dvw {
-    @include r(2xl, width, 100dvw);
-  }
-
-  @mixin \2xl\:w-min {
-    @include r(2xl, width, min-content);
-  }
-
-  @mixin \2xl\:w-max {
-    @include r(2xl, width, max-content);
-  }
-
-  @mixin \2xl\:w-fit {
-    @include r(2xl, width, fit-content);
-  }
-  // x*/
 }
-
 @if $Custom {
   // /*x
   @mixin w-($v) {

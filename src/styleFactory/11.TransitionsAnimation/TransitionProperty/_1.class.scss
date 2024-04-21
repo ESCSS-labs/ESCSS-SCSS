@@ -48,292 +48,293 @@
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:transition-none {
-    @media (min-width: map.get($RWD, sm)) {
-      transition-property: none;
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:transition-none {
+      @media (min-width: map.get($RWD, sm)) {
+        transition-property: none;
+      }
     }
-  }
 
-  @mixin sm\:transition-all {
-    @media (min-width: map.get($RWD, sm)) {
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin sm\:transition-all {
+      @media (min-width: map.get($RWD, sm)) {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin sm\:transition {
-    @media (min-width: map.get($RWD, sm)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-        filter, backdrop-filter;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin sm\:transition {
+      @media (min-width: map.get($RWD, sm)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+          filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin sm\:transition-colors {
-    @media (min-width: map.get($RWD, sm)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin sm\:transition-colors {
+      @media (min-width: map.get($RWD, sm)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin sm\:transition-opacity {
-    @media (min-width: map.get($RWD, sm)) {
-      transition-property: opacity;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin sm\:transition-opacity {
+      @media (min-width: map.get($RWD, sm)) {
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin sm\:transition-shadow {
-    @media (min-width: map.get($RWD, sm)) {
-      transition-property: box-shadow;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin sm\:transition-shadow {
+      @media (min-width: map.get($RWD, sm)) {
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin sm\:transition-transform {
-    @media (min-width: map.get($RWD, sm)) {
-      transition-property: transform;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin sm\:transition-transform {
+      @media (min-width: map.get($RWD, sm)) {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin md\:transition-none {
-    @media (min-width: map.get($RWD, md)) {
-      transition-property: none;
+    @mixin md\:transition-none {
+      @media (min-width: map.get($RWD, md)) {
+        transition-property: none;
+      }
     }
-  }
 
-  @mixin md\:transition-all {
-    @media (min-width: map.get($RWD, md)) {
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin md\:transition-all {
+      @media (min-width: map.get($RWD, md)) {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin md\:transition {
-    @media (min-width: map.get($RWD, md)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-        filter, backdrop-filter;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin md\:transition {
+      @media (min-width: map.get($RWD, md)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+          filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin md\:transition-colors {
-    @media (min-width: map.get($RWD, md)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin md\:transition-colors {
+      @media (min-width: map.get($RWD, md)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin md\:transition-opacity {
-    @media (min-width: map.get($RWD, md)) {
-      transition-property: opacity;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin md\:transition-opacity {
+      @media (min-width: map.get($RWD, md)) {
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin md\:transition-shadow {
-    @media (min-width: map.get($RWD, md)) {
-      transition-property: box-shadow;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin md\:transition-shadow {
+      @media (min-width: map.get($RWD, md)) {
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin md\:transition-transform {
-    @media (min-width: map.get($RWD, md)) {
-      transition-property: transform;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin md\:transition-transform {
+      @media (min-width: map.get($RWD, md)) {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
-  @mixin lg\:transition-none {
-    @media (min-width: map.get($RWD, lg)) {
-      transition-property: none;
+    @mixin lg\:transition-none {
+      @media (min-width: map.get($RWD, lg)) {
+        transition-property: none;
+      }
     }
-  }
 
-  @mixin lg\:transition-all {
-    @media (min-width: map.get($RWD, lg)) {
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin lg\:transition-all {
+      @media (min-width: map.get($RWD, lg)) {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin lg\:transition {
-    @media (min-width: map.get($RWD, lg)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-        filter, backdrop-filter;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin lg\:transition {
+      @media (min-width: map.get($RWD, lg)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+          filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin lg\:transition-colors {
-    @media (min-width: map.get($RWD, lg)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin lg\:transition-colors {
+      @media (min-width: map.get($RWD, lg)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin lg\:transition-opacity {
-    @media (min-width: map.get($RWD, lg)) {
-      transition-property: opacity;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin lg\:transition-opacity {
+      @media (min-width: map.get($RWD, lg)) {
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin lg\:transition-shadow {
-    @media (min-width: map.get($RWD, lg)) {
-      transition-property: box-shadow;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin lg\:transition-shadow {
+      @media (min-width: map.get($RWD, lg)) {
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin lg\:transition-transform {
-    @media (min-width: map.get($RWD, lg)) {
-      transition-property: transform;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin lg\:transition-transform {
+      @media (min-width: map.get($RWD, lg)) {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
-  @mixin xl\:transition-none {
-    @media (min-width: map.get($RWD, xl)) {
-      transition-property: none;
+    @mixin xl\:transition-none {
+      @media (min-width: map.get($RWD, xl)) {
+        transition-property: none;
+      }
     }
-  }
 
-  @mixin xl\:transition-all {
-    @media (min-width: map.get($RWD, xl)) {
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin xl\:transition-all {
+      @media (min-width: map.get($RWD, xl)) {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin xl\:transition {
-    @media (min-width: map.get($RWD, xl)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-        filter, backdrop-filter;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin xl\:transition {
+      @media (min-width: map.get($RWD, xl)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+          filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin xl\:transition-colors {
-    @media (min-width: map.get($RWD, xl)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin xl\:transition-colors {
+      @media (min-width: map.get($RWD, xl)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin xl\:transition-opacity {
-    @media (min-width: map.get($RWD, xl)) {
-      transition-property: opacity;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin xl\:transition-opacity {
+      @media (min-width: map.get($RWD, xl)) {
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin xl\:transition-shadow {
-    @media (min-width: map.get($RWD, xl)) {
-      transition-property: box-shadow;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin xl\:transition-shadow {
+      @media (min-width: map.get($RWD, xl)) {
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin xl\:transition-transform {
-    @media (min-width: map.get($RWD, xl)) {
-      transition-property: transform;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin xl\:transition-transform {
+      @media (min-width: map.get($RWD, xl)) {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
-  @mixin \2xl\:transition-none {
-    @media (min-width: map.get($RWD, 2xl)) {
-      transition-property: none;
+    @mixin \2xl\:transition-none {
+      @media (min-width: map.get($RWD, 2xl)) {
+        transition-property: none;
+      }
     }
-  }
 
-  @mixin \2xl\:transition-all {
-    @media (min-width: map.get($RWD, 2xl)) {
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin \2xl\:transition-all {
+      @media (min-width: map.get($RWD, 2xl)) {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin \2xl\:transition {
-    @media (min-width: map.get($RWD, 2xl)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-        filter, backdrop-filter;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin \2xl\:transition {
+      @media (min-width: map.get($RWD, 2xl)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+          filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin \2xl\:transition-colors {
-    @media (min-width: map.get($RWD, 2xl)) {
-      transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin \2xl\:transition-colors {
+      @media (min-width: map.get($RWD, 2xl)) {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin \2xl\:transition-opacity {
-    @media (min-width: map.get($RWD, 2xl)) {
-      transition-property: opacity;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin \2xl\:transition-opacity {
+      @media (min-width: map.get($RWD, 2xl)) {
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin \2xl\:transition-shadow {
-    @media (min-width: map.get($RWD, 2xl)) {
-      transition-property: box-shadow;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin \2xl\:transition-shadow {
+      @media (min-width: map.get($RWD, 2xl)) {
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  @mixin \2xl\:transition-transform {
-    @media (min-width: map.get($RWD, 2xl)) {
-      transition-property: transform;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    @mixin \2xl\:transition-transform {
+      @media (min-width: map.get($RWD, 2xl)) {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
     }
-  }
 
-  // x*/
+    // x*/
+  }
 }
-
 @if $Custom {
   // /*x
   @mixin transition-($v) {
