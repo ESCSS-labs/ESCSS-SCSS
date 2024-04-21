@@ -585,4 +585,21 @@
     }
   }
 }
+
+// to help bg-gradient transition
+@mixin hover_bg-gradient {
+  &::before {
+    content: "";
+    @include absolute;
+    @include inset-0;
+    @include opacity-0;
+    @include transition-all;
+    @content; // take outside stuff to override inside property
+  }
+
+  &:hover::before {
+    @include opacity-100;
+    @include cursor-pointer;
+  }
+}
 // x*/
