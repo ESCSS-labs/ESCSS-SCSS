@@ -92,69 +92,6 @@
   @return $--tw-ring-offset-shadow, $--tw-ring-shadow, $--tw-shadow;
 }
 
-// Helper Function
-@mixin reset {
-  // Gradient Color Stops
-  $--gradient-direction: "NO-DIRECTION" !global;
-  $--tw-gradient-from: "NO-FROM-COLOR" !global;
-  $--tw-gradient-via: null !global; // detects the use of 2 or 3 gradient stops
-  $--tw-gradient-to: transparent !global;
-  $--tw-gradient-from-position: null !global;
-  $--tw-gradient-via-position: null !global;
-  $--tw-gradient-to-position: null !global;
-
-  // Space Between
-  $--space-value: 0 !global;
-  $--tw-space-x-reverse: 0 !global;
-  $--tw-space-y-reverse: 0 !global;
-
-  // Divide Width
-  $--divide-value: 0 !global;
-  $--tw-divide-x-reverse: 0 !global;
-  $--tw-divide-y-reverse: 0 !global;
-
-  // Box Shadow
-  $--tw-ring-offset-width: 0 !global;
-  $--tw-ring-offset-color: #fff !global;
-  $--tw-ring-inset: null !global;
-  $--ring-width: 0 !global;
-  $--tw-ring-color: rgb(59 130 246 / 0.5) !global;
-  $-shadow-token: null !global;
-  $--shadow-length: 0 0 0 0 !global;
-  $--tw-shadow-color: #fff !global;
-
-  // Scroll Snap Type
-  $--tw-scroll-snap-strictness: proximity !global;
-
-  // Transforms
-  $--tw-translate-x: 0 !global;
-  $--tw-translate-y: 0 !global;
-  $--tw-rotate: 0 !global;
-  $--tw-skew-x: 0 !global;
-  $--tw-skew-y: 0 !global;
-  $--tw-scale-x: 1 !global;
-  $--tw-scale-y: 1 !global;
-
-  // Filters
-  $--tw-blur: null !global;
-  $--tw-brightness: null !global;
-  $--tw-contrast: null !global;
-  $--tw-grayscale: null !global;
-  $--tw-hue-rotate: null !global;
-  $--tw-invert: null !global;
-  $--tw-saturate: null !global;
-  $--tw-sepia: null !global;
-  $--tw-drop-shadow: null !global;
-  $--tw-backdrop-blur: null !global;
-  $--tw-backdrop-brightness: null !global;
-  $--tw-backdrop-contrast: null !global;
-  $--tw-backdrop-grayscale: null !global;
-  $--tw-backdrop-hue-rotate: null !global;
-  $--tw-backdrop-invert: null !global;
-  $--tw-backdrop-opacity: null !global;
-  $--tw-backdrop-saturate: null !global;
-  $--tw-backdrop-sepia: null !global;
-}
 // 0 param 
 @mixin _max-width_container {
   width: 100%;
@@ -323,6 +260,9 @@
   } @else if $token ==ring-offset-color {
     $--tw-ring-offset-color: $value !global;
   } @else if $token ==ring-offset-width {
+    @if $--ring-width != 0 and $--tw-ring-offset-width == 0 {
+      @error("『 ring-offset-* 』 should before 『 ring-* 』 (to have same behavior as tailwind)")
+    }
     $--tw-ring-offset-width: $value !global;
   } @else if $token ==ring-width {
     $--ring-width: $value + $--tw-ring-offset-width !global;
@@ -586,20 +526,4 @@
   }
 }
 
-// to help bg-gradient transition
-@mixin hover_bg-gradient {
-  &::before {
-    content: "";
-    @include absolute;
-    @include inset-0;
-    @include opacity-0;
-    @include transition-all;
-    @content; // take outside stuff to override inside property
-  }
-
-  &:hover::before {
-    @include opacity-100;
-    @include cursor-pointer;
-  }
-}
 // x*/

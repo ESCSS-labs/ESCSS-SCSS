@@ -1,0 +1,102 @@
+// RENDER OUT
+// /*x
+
+// Help bg-gradient hover transition
+// .demo {
+//    @include bg-gradient-to-r;
+//    @include from-red-500;
+//
+//    @include hover_bg-gradient {
+//      @include from-sky-500;
+//    }
+// }
+@mixin hover_bg-gradient {
+  &::before {
+    content: "";
+    @include absolute;
+    @include inset-0;
+    @include opacity-0;
+    @include transition-all;
+    @content; // take outside stuff to override inside property
+  }
+
+  &:hover::before {
+    @include opacity-100;
+    @include cursor-pointer;
+  }
+}
+
+// Reset global variables, when use internal function, e.g, _box-shadow
+// Best Practice: used in every classes.
+// why? 1. Can bea indicator of how many css that you used, 
+//      2. for sure, just some of classes need @mixin reset, but people will be get lazy.
+
+// .demo {
+//  ...css
+//
+//  @include reset <- put it in the end to reset global variables
+// }
+@mixin reset {
+  // Gradient Color Stops
+  $--gradient-direction: null !global;
+  $--tw-gradient-from: #fff !global;
+  $--tw-gradient-via: null !global; // detects the use of 2 or 3 gradient stops
+  $--tw-gradient-to: transparent !global;
+  $--tw-gradient-from-position: null !global;
+  $--tw-gradient-via-position: null !global;
+  $--tw-gradient-to-position: null !global;
+
+  // Space Between
+  $--space-value: 0 !global;
+  $--tw-space-x-reverse: 0 !global;
+  $--tw-space-y-reverse: 0 !global;
+
+  // Divide Width
+  $--divide-value: 0 !global;
+  $--tw-divide-x-reverse: 0 !global;
+  $--tw-divide-y-reverse: 0 !global;
+
+  // Box Shadow
+  $--tw-ring-offset-width: 0 !global;
+  $--tw-ring-offset-color: #fff !global;
+  $--tw-ring-inset: null !global;
+  $--ring-width: 0 !global;
+  $--tw-ring-color: rgb(59 130 246 / 0.5) !global;
+  $-shadow-token: null !global;
+  $--shadow-length: 0 0 0 0 !global;
+  $--tw-shadow-color: #fff !global;
+
+  // Scroll Snap Type
+  $--tw-scroll-snap-strictness: proximity !global;
+
+  // Transforms
+  $--tw-translate-x: 0 !global;
+  $--tw-translate-y: 0 !global;
+  $--tw-rotate: 0 !global;
+  $--tw-skew-x: 0 !global;
+  $--tw-skew-y: 0 !global;
+  $--tw-scale-x: 1 !global;
+  $--tw-scale-y: 1 !global;
+
+  // Filters
+  $--tw-blur: null !global;
+  $--tw-brightness: null !global;
+  $--tw-contrast: null !global;
+  $--tw-grayscale: null !global;
+  $--tw-hue-rotate: null !global;
+  $--tw-invert: null !global;
+  $--tw-saturate: null !global;
+  $--tw-sepia: null !global;
+  $--tw-drop-shadow: null !global;
+  $--tw-backdrop-blur: null !global;
+  $--tw-backdrop-brightness: null !global;
+  $--tw-backdrop-contrast: null !global;
+  $--tw-backdrop-grayscale: null !global;
+  $--tw-backdrop-hue-rotate: null !global;
+  $--tw-backdrop-invert: null !global;
+  $--tw-backdrop-opacity: null !global;
+  $--tw-backdrop-saturate: null !global;
+  $--tw-backdrop-sepia: null !global;
+}
+
+// x*/
