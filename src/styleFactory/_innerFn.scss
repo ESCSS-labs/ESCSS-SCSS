@@ -90,24 +90,24 @@
 @mixin _max-width_container {
   width: 100%;
 
-  @media (min-width: map.get($RWD, sm)) {
-    max-width: map.get($RWD, sm);
+  @media (min-width: $sm) {
+    max-width: $sm;
   }
 
-  @media (min-width: map.get($RWD, md)) {
-    max-width: map.get($RWD, md);
+  @media (min-width: $md) {
+    max-width: $md;
   }
 
-  @media (min-width: map.get($RWD, lg)) {
-    max-width: map.get($RWD, lg);
+  @media (min-width: $lg) {
+    max-width: $lg;
   }
 
-  @media (min-width: map.get($RWD, xl)) {
-    max-width: map.get($RWD, xl);
+  @media (min-width: $xl) {
+    max-width: $xl;
   }
 
-  @media (min-width: map.get($RWD, 2xl)) {
-    max-width: map.get($RWD, 2xl);
+  @media (min-width: $\2xl) {
+    max-width: $\2xl;
   }
 }
 
@@ -451,7 +451,7 @@
   $key9: null,
   $value9: null
 ) {
-  @media (min-width: map.get($RWD, $rwd)) {
+  @media (min-width: $rwd) {
     #// /*x{$key}: $value;
     #// /*x{$key2}: $value2;
     #// /*x{$key3}: $value3;
@@ -466,14 +466,14 @@
 
 // encapsulation for cursor/will-change that has 2 values in one property
 @mixin r2($rwd, $key, $value, $value2: null) {
-  @media (min-width: map.get($RWD, $rwd)) {
+  @media (min-width: $rwd) {
     #// /*x{$key}: $value, $value2;
   }
 }
 
 // encapsulation for helper function to rwd(file size concern)
 @mixin _r($rwd, $token, $slot: null, $slot2: null, $slot3: null) {
-  @media (min-width: map.get($RWD, $rwd)) {
+  @media (min-width: $rwd) {
     // 0 params
     @if $token ==_max-width_container {
       @include _max-width_container;
