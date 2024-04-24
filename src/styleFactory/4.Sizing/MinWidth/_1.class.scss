@@ -4,1137 +4,945 @@
 @if $Basic {
   // /*x
   @mixin min-w-0 {
-    min-width: 0px;
+    @include min-w-($\0);
   }
 
-  // 4px
   @mixin min-w-1 {
-    min-width: 0.25rem;
+    @include min-w-($\1);
   }
 
-  // 8px
   @mixin min-w-2 {
-    min-width: 0.5rem;
+    @include min-w-($\2);
   }
 
-  // 12px
   @mixin min-w-3 {
-    min-width: 0.75rem;
+    @include min-w-($\3);
   }
 
-  // 16px
   @mixin min-w-4 {
-    min-width: 1rem;
+    @include min-w-($\4);
   }
 
-  // 20px
   @mixin min-w-5 {
-    min-width: 1.25rem;
+    @include min-w-($\5);
   }
 
-  // 24px
   @mixin min-w-6 {
-    min-width: 1.5rem;
+    @include min-w-($\6);
   }
 
-  // 28px
   @mixin min-w-7 {
-    min-width: 1.75rem;
+    @include min-w-($\7);
   }
 
-  // 32px
   @mixin min-w-8 {
-    min-width: 2rem;
+    @include min-w-($\8);
   }
 
-  // 36px
   @mixin min-w-9 {
-    min-width: 2.25rem;
+    @include min-w-($\9);
   }
 
-  // 40px
   @mixin min-w-10 {
-    min-width: 2.5rem;
+    @include min-w-($\10);
   }
 
-  // 44px
   @mixin min-w-11 {
-    min-width: 2.75rem;
+    @include min-w-($\11);
   }
 
-  // 48px
   @mixin min-w-12 {
-    min-width: 3rem;
+    @include min-w-($\12);
   }
 
-  // 56px
   @mixin min-w-14 {
-    min-width: 3.5rem;
+    @include min-w-($\14);
   }
 
-  // 64px
   @mixin min-w-16 {
-    min-width: 4rem;
+    @include min-w-($\16);
   }
 
-  // 80px
   @mixin min-w-20 {
-    min-width: 5rem;
+    @include min-w-($\20);
   }
 
-  // 96px
   @mixin min-w-24 {
-    min-width: 6rem;
+    @include min-w-($\24);
   }
 
-  // 112px
   @mixin min-w-28 {
-    min-width: 7rem;
+    @include min-w-($\28);
   }
 
-  // 128px
   @mixin min-w-32 {
-    min-width: 8rem;
+    @include min-w-($\32);
   }
 
-  // 144px
   @mixin min-w-36 {
-    min-width: 9rem;
+    @include min-w-($\36);
   }
 
-  // 160px
   @mixin min-w-40 {
-    min-width: 10rem;
+    @include min-w-($\40);
   }
 
-  // 176px
   @mixin min-w-44 {
-    min-width: 11rem;
+    @include min-w-($\44);
   }
 
-  // 192px
   @mixin min-w-48 {
-    min-width: 12rem;
+    @include min-w-($\48);
   }
 
-  // 208px
   @mixin min-w-52 {
-    min-width: 13rem;
+    @include min-w-($\52);
   }
 
-  // 224px
   @mixin min-w-56 {
-    min-width: 14rem;
+    @include min-w-($\56);
   }
 
-  // 240px
   @mixin min-w-60 {
-    min-width: 15rem;
+    @include min-w-($\60);
   }
 
-  // 256px
   @mixin min-w-64 {
-    min-width: 16rem;
+    @include min-w-($\64);
   }
 
-  // 288px
   @mixin min-w-72 {
-    min-width: 18rem;
+    @include min-w-($\72);
   }
 
-  // 320px
   @mixin min-w-80 {
-    min-width: 20rem;
+    @include min-w-($\80);
   }
 
-  // 384px
   @mixin min-w-96 {
-    min-width: 24rem;
+    @include min-w-($\96);
   }
 
   @mixin min-w-px {
-    min-width: 1px;
+    @include min-w-($\px);
   }
 
-  // 2px
   @mixin min-w-0\.5 {
-    min-width: 0.125rem;
+    @include min-w-($\0\.5);
   }
 
-  // 6px
   @mixin min-w-1\.5 {
-    min-width: 0.375rem;
+    @include min-w-($\1\.5);
   }
 
-  // 10px
   @mixin min-w-2\.5 {
-    min-width: 0.625rem;
+    @include min-w-($\2\.5);
   }
 
-  // 14px
   @mixin min-w-3\.5 {
-    min-width: 0.875rem;
+    @include min-w-($\3\.5);
   }
 
   @mixin min-w-full {
-    min-width: 100%;
+    @include min-w-(100%);
   }
 
   @mixin min-w-min {
-    min-width: min-content;
+    @include min-w-(min-content);
   }
 
   @mixin min-w-max {
-    min-width: max-content;
+    @include min-w-(max-content);
   }
 
   @mixin min-w-fit {
-    min-width: fit-content;
-  } // x*/
+    @include min-w-(fit-content);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:min-w-0 {
-      @include r($sm, min-width, 0px);
+      @include min-w-($\0, $sm);
     }
 
-    // 4px
     @mixin sm\:min-w-1 {
-      @include r($sm, min-width, 0.25rem);
+      @include min-w-($\1, $sm);
     }
 
-    // 8px
     @mixin sm\:min-w-2 {
-      @include r($sm, min-width, 0.5rem);
+      @include min-w-($\2, $sm);
     }
 
-    // 12px
     @mixin sm\:min-w-3 {
-      @include r($sm, min-width, 0.75rem);
+      @include min-w-($\3, $sm);
     }
 
-    // 16px
     @mixin sm\:min-w-4 {
-      @include r($sm, min-width, 1rem);
+      @include min-w-($\4, $sm);
     }
 
-    // 20px
     @mixin sm\:min-w-5 {
-      @include r($sm, min-width, 1.25rem);
+      @include min-w-($\5, $sm);
     }
 
-    // 24px
     @mixin sm\:min-w-6 {
-      @include r($sm, min-width, 1.5rem);
+      @include min-w-($\6, $sm);
     }
 
-    // 28px
     @mixin sm\:min-w-7 {
-      @include r($sm, min-width, 1.75rem);
+      @include min-w-($\7, $sm);
     }
 
-    // 32px
     @mixin sm\:min-w-8 {
-      @include r($sm, min-width, 2rem);
+      @include min-w-($\8, $sm);
     }
 
-    // 36px
     @mixin sm\:min-w-9 {
-      @include r($sm, min-width, 2.25rem);
+      @include min-w-($\9, $sm);
     }
 
-    // 40px
     @mixin sm\:min-w-10 {
-      @include r($sm, min-width, 2.5rem);
+      @include min-w-($\10, $sm);
     }
 
-    // 44px
     @mixin sm\:min-w-11 {
-      @include r($sm, min-width, 2.75rem);
+      @include min-w-($\11, $sm);
     }
 
-    // 48px
     @mixin sm\:min-w-12 {
-      @include r($sm, min-width, 3rem);
+      @include min-w-($\12, $sm);
     }
 
-    // 56px
     @mixin sm\:min-w-14 {
-      @include r($sm, min-width, 3.5rem);
+      @include min-w-($\14, $sm);
     }
 
-    // 64px
     @mixin sm\:min-w-16 {
-      @include r($sm, min-width, 4rem);
+      @include min-w-($\16, $sm);
     }
 
-    // 80px
     @mixin sm\:min-w-20 {
-      @include r($sm, min-width, 5rem);
+      @include min-w-($\20, $sm);
     }
 
-    // 96px
     @mixin sm\:min-w-24 {
-      @include r($sm, min-width, 6rem);
+      @include min-w-($\24, $sm);
     }
 
-    // 112px
     @mixin sm\:min-w-28 {
-      @include r($sm, min-width, 7rem);
+      @include min-w-($\28, $sm);
     }
 
-    // 128px
     @mixin sm\:min-w-32 {
-      @include r($sm, min-width, 8rem);
+      @include min-w-($\32, $sm);
     }
 
-    // 144px
     @mixin sm\:min-w-36 {
-      @include r($sm, min-width, 9rem);
+      @include min-w-($\36, $sm);
     }
 
-    // 160px
     @mixin sm\:min-w-40 {
-      @include r($sm, min-width, 10rem);
+      @include min-w-($\40, $sm);
     }
 
-    // 176px
     @mixin sm\:min-w-44 {
-      @include r($sm, min-width, 11rem);
+      @include min-w-($\44, $sm);
     }
 
-    // 192px
     @mixin sm\:min-w-48 {
-      @include r($sm, min-width, 12rem);
+      @include min-w-($\48, $sm);
     }
 
-    // 208px
     @mixin sm\:min-w-52 {
-      @include r($sm, min-width, 13rem);
+      @include min-w-($\52, $sm);
     }
 
-    // 224px
     @mixin sm\:min-w-56 {
-      @include r($sm, min-width, 14rem);
+      @include min-w-($\56, $sm);
     }
 
-    // 240px
     @mixin sm\:min-w-60 {
-      @include r($sm, min-width, 15rem);
+      @include min-w-($\60, $sm);
     }
 
-    // 256px
     @mixin sm\:min-w-64 {
-      @include r($sm, min-width, 16rem);
+      @include min-w-($\64, $sm);
     }
 
-    // 288px
     @mixin sm\:min-w-72 {
-      @include r($sm, min-width, 18rem);
+      @include min-w-($\72, $sm);
     }
 
-    // 320px
     @mixin sm\:min-w-80 {
-      @include r($sm, min-width, 20rem);
+      @include min-w-($\80, $sm);
     }
 
-    // 384px
     @mixin sm\:min-w-96 {
-      @include r($sm, min-width, 24rem);
+      @include min-w-($\96, $sm);
     }
 
     @mixin sm\:min-w-px {
-      @include r($sm, min-width, 1px);
+      @include min-w-($\px, $sm);
     }
 
-    // 2px
     @mixin sm\:min-w-0\.5 {
-      @include r($sm, min-width, 0.125rem);
+      @include min-w-($\0\.5, $sm);
     }
 
-    // 6px
     @mixin sm\:min-w-1\.5 {
-      @include r($sm, min-width, 0.375rem);
+      @include min-w-($\1\.5, $sm);
     }
 
-    // 10px
     @mixin sm\:min-w-2\.5 {
-      @include r($sm, min-width, 0.625rem);
+      @include min-w-($\2\.5, $sm);
     }
 
-    // 14px
     @mixin sm\:min-w-3\.5 {
-      @include r($sm, min-width, 0.875rem);
+      @include min-w-($\3\.5, $sm);
     }
 
     @mixin sm\:min-w-full {
-      @include r($sm, min-width, 100%);
+      @include min-w-(100%, $sm);
     }
 
     @mixin sm\:min-w-min {
-      @include r($sm, min-width, min-content);
+      @include min-w-(min-content, $sm);
     }
 
     @mixin sm\:min-w-max {
-      @include r($sm, min-width, max-content);
+      @include min-w-(max-content, $sm);
     }
 
     @mixin sm\:min-w-fit {
-      @include r($sm, min-width, fit-content);
+      @include min-w-(fit-content, $sm);
     }
+
     @mixin md\:min-w-0 {
-      @include r($md, min-width, 0px);
+      @include min-w-($\0, $md);
     }
 
-    // 4px
     @mixin md\:min-w-1 {
-      @include r($md, min-width, 0.25rem);
+      @include min-w-($\1, $md);
     }
 
-    // 8px
     @mixin md\:min-w-2 {
-      @include r($md, min-width, 0.5rem);
+      @include min-w-($\2, $md);
     }
 
-    // 12px
     @mixin md\:min-w-3 {
-      @include r($md, min-width, 0.75rem);
+      @include min-w-($\3, $md);
     }
 
-    // 16px
     @mixin md\:min-w-4 {
-      @include r($md, min-width, 1rem);
+      @include min-w-($\4, $md);
     }
 
-    // 20px
     @mixin md\:min-w-5 {
-      @include r($md, min-width, 1.25rem);
+      @include min-w-($\5, $md);
     }
 
-    // 24px
     @mixin md\:min-w-6 {
-      @include r($md, min-width, 1.5rem);
+      @include min-w-($\6, $md);
     }
 
-    // 28px
     @mixin md\:min-w-7 {
-      @include r($md, min-width, 1.75rem);
+      @include min-w-($\7, $md);
     }
 
-    // 32px
     @mixin md\:min-w-8 {
-      @include r($md, min-width, 2rem);
+      @include min-w-($\8, $md);
     }
 
-    // 36px
     @mixin md\:min-w-9 {
-      @include r($md, min-width, 2.25rem);
+      @include min-w-($\9, $md);
     }
 
-    // 40px
     @mixin md\:min-w-10 {
-      @include r($md, min-width, 2.5rem);
+      @include min-w-($\10, $md);
     }
 
-    // 44px
     @mixin md\:min-w-11 {
-      @include r($md, min-width, 2.75rem);
+      @include min-w-($\11, $md);
     }
 
-    // 48px
     @mixin md\:min-w-12 {
-      @include r($md, min-width, 3rem);
+      @include min-w-($\12, $md);
     }
 
-    // 56px
     @mixin md\:min-w-14 {
-      @include r($md, min-width, 3.5rem);
+      @include min-w-($\14, $md);
     }
 
-    // 64px
     @mixin md\:min-w-16 {
-      @include r($md, min-width, 4rem);
+      @include min-w-($\16, $md);
     }
 
-    // 80px
     @mixin md\:min-w-20 {
-      @include r($md, min-width, 5rem);
+      @include min-w-($\20, $md);
     }
 
-    // 96px
     @mixin md\:min-w-24 {
-      @include r($md, min-width, 6rem);
+      @include min-w-($\24, $md);
     }
 
-    // 112px
     @mixin md\:min-w-28 {
-      @include r($md, min-width, 7rem);
+      @include min-w-($\28, $md);
     }
 
-    // 128px
     @mixin md\:min-w-32 {
-      @include r($md, min-width, 8rem);
+      @include min-w-($\32, $md);
     }
 
-    // 144px
     @mixin md\:min-w-36 {
-      @include r($md, min-width, 9rem);
+      @include min-w-($\36, $md);
     }
 
-    // 160px
     @mixin md\:min-w-40 {
-      @include r($md, min-width, 10rem);
+      @include min-w-($\40, $md);
     }
 
-    // 176px
     @mixin md\:min-w-44 {
-      @include r($md, min-width, 11rem);
+      @include min-w-($\44, $md);
     }
 
-    // 192px
     @mixin md\:min-w-48 {
-      @include r($md, min-width, 12rem);
+      @include min-w-($\48, $md);
     }
 
-    // 208px
     @mixin md\:min-w-52 {
-      @include r($md, min-width, 13rem);
+      @include min-w-($\52, $md);
     }
 
-    // 224px
     @mixin md\:min-w-56 {
-      @include r($md, min-width, 14rem);
+      @include min-w-($\56, $md);
     }
 
-    // 240px
     @mixin md\:min-w-60 {
-      @include r($md, min-width, 15rem);
+      @include min-w-($\60, $md);
     }
 
-    // 256px
     @mixin md\:min-w-64 {
-      @include r($md, min-width, 16rem);
+      @include min-w-($\64, $md);
     }
 
-    // 288px
     @mixin md\:min-w-72 {
-      @include r($md, min-width, 18rem);
+      @include min-w-($\72, $md);
     }
 
-    // 320px
     @mixin md\:min-w-80 {
-      @include r($md, min-width, 20rem);
+      @include min-w-($\80, $md);
     }
 
-    // 384px
     @mixin md\:min-w-96 {
-      @include r($md, min-width, 24rem);
+      @include min-w-($\96, $md);
     }
 
     @mixin md\:min-w-px {
-      @include r($md, min-width, 1px);
+      @include min-w-($\px, $md);
     }
 
-    // 2px
     @mixin md\:min-w-0\.5 {
-      @include r($md, min-width, 0.125rem);
+      @include min-w-($\0\.5, $md);
     }
 
-    // 6px
     @mixin md\:min-w-1\.5 {
-      @include r($md, min-width, 0.375rem);
+      @include min-w-($\1\.5, $md);
     }
 
-    // 10px
     @mixin md\:min-w-2\.5 {
-      @include r($md, min-width, 0.625rem);
+      @include min-w-($\2\.5, $md);
     }
 
-    // 14px
     @mixin md\:min-w-3\.5 {
-      @include r($md, min-width, 0.875rem);
+      @include min-w-($\3\.5, $md);
     }
 
     @mixin md\:min-w-full {
-      @include r($md, min-width, 100%);
+      @include min-w-(100%, $md);
     }
 
     @mixin md\:min-w-min {
-      @include r($md, min-width, min-content);
+      @include min-w-(min-content, $md);
     }
 
     @mixin md\:min-w-max {
-      @include r($md, min-width, max-content);
+      @include min-w-(max-content, $md);
     }
 
     @mixin md\:min-w-fit {
-      @include r($md, min-width, fit-content);
+      @include min-w-(fit-content, $md);
     }
+
     @mixin lg\:min-w-0 {
-      @include r($lg, min-width, 0px);
+      @include min-w-($\0, $lg);
     }
 
-    // 4px
     @mixin lg\:min-w-1 {
-      @include r($lg, min-width, 0.25rem);
+      @include min-w-($\1, $lg);
     }
 
-    // 8px
     @mixin lg\:min-w-2 {
-      @include r($lg, min-width, 0.5rem);
+      @include min-w-($\2, $lg);
     }
 
-    // 12px
     @mixin lg\:min-w-3 {
-      @include r($lg, min-width, 0.75rem);
+      @include min-w-($\3, $lg);
     }
 
-    // 16px
     @mixin lg\:min-w-4 {
-      @include r($lg, min-width, 1rem);
+      @include min-w-($\4, $lg);
     }
 
-    // 20px
     @mixin lg\:min-w-5 {
-      @include r($lg, min-width, 1.25rem);
+      @include min-w-($\5, $lg);
     }
 
-    // 24px
     @mixin lg\:min-w-6 {
-      @include r($lg, min-width, 1.5rem);
+      @include min-w-($\6, $lg);
     }
 
-    // 28px
     @mixin lg\:min-w-7 {
-      @include r($lg, min-width, 1.75rem);
+      @include min-w-($\7, $lg);
     }
 
-    // 32px
     @mixin lg\:min-w-8 {
-      @include r($lg, min-width, 2rem);
+      @include min-w-($\8, $lg);
     }
 
-    // 36px
     @mixin lg\:min-w-9 {
-      @include r($lg, min-width, 2.25rem);
+      @include min-w-($\9, $lg);
     }
 
-    // 40px
     @mixin lg\:min-w-10 {
-      @include r($lg, min-width, 2.5rem);
+      @include min-w-($\10, $lg);
     }
 
-    // 44px
     @mixin lg\:min-w-11 {
-      @include r($lg, min-width, 2.75rem);
+      @include min-w-($\11, $lg);
     }
 
-    // 48px
     @mixin lg\:min-w-12 {
-      @include r($lg, min-width, 3rem);
+      @include min-w-($\12, $lg);
     }
 
-    // 56px
     @mixin lg\:min-w-14 {
-      @include r($lg, min-width, 3.5rem);
+      @include min-w-($\14, $lg);
     }
 
-    // 64px
     @mixin lg\:min-w-16 {
-      @include r($lg, min-width, 4rem);
+      @include min-w-($\16, $lg);
     }
 
-    // 80px
     @mixin lg\:min-w-20 {
-      @include r($lg, min-width, 5rem);
+      @include min-w-($\20, $lg);
     }
 
-    // 96px
     @mixin lg\:min-w-24 {
-      @include r($lg, min-width, 6rem);
+      @include min-w-($\24, $lg);
     }
 
-    // 112px
     @mixin lg\:min-w-28 {
-      @include r($lg, min-width, 7rem);
+      @include min-w-($\28, $lg);
     }
 
-    // 128px
     @mixin lg\:min-w-32 {
-      @include r($lg, min-width, 8rem);
+      @include min-w-($\32, $lg);
     }
 
-    // 144px
     @mixin lg\:min-w-36 {
-      @include r($lg, min-width, 9rem);
+      @include min-w-($\36, $lg);
     }
 
-    // 160px
     @mixin lg\:min-w-40 {
-      @include r($lg, min-width, 10rem);
+      @include min-w-($\40, $lg);
     }
 
-    // 176px
     @mixin lg\:min-w-44 {
-      @include r($lg, min-width, 11rem);
+      @include min-w-($\44, $lg);
     }
 
-    // 192px
     @mixin lg\:min-w-48 {
-      @include r($lg, min-width, 12rem);
+      @include min-w-($\48, $lg);
     }
 
-    // 208px
     @mixin lg\:min-w-52 {
-      @include r($lg, min-width, 13rem);
+      @include min-w-($\52, $lg);
     }
 
-    // 224px
     @mixin lg\:min-w-56 {
-      @include r($lg, min-width, 14rem);
+      @include min-w-($\56, $lg);
     }
 
-    // 240px
     @mixin lg\:min-w-60 {
-      @include r($lg, min-width, 15rem);
+      @include min-w-($\60, $lg);
     }
 
-    // 256px
     @mixin lg\:min-w-64 {
-      @include r($lg, min-width, 16rem);
+      @include min-w-($\64, $lg);
     }
 
-    // 288px
     @mixin lg\:min-w-72 {
-      @include r($lg, min-width, 18rem);
+      @include min-w-($\72, $lg);
     }
 
-    // 320px
     @mixin lg\:min-w-80 {
-      @include r($lg, min-width, 20rem);
+      @include min-w-($\80, $lg);
     }
 
-    // 384px
     @mixin lg\:min-w-96 {
-      @include r($lg, min-width, 24rem);
+      @include min-w-($\96, $lg);
     }
 
     @mixin lg\:min-w-px {
-      @include r($lg, min-width, 1px);
+      @include min-w-($\px, $lg);
     }
 
-    // 2px
     @mixin lg\:min-w-0\.5 {
-      @include r($lg, min-width, 0.125rem);
+      @include min-w-($\0\.5, $lg);
     }
 
-    // 6px
     @mixin lg\:min-w-1\.5 {
-      @include r($lg, min-width, 0.375rem);
+      @include min-w-($\1\.5, $lg);
     }
 
-    // 10px
     @mixin lg\:min-w-2\.5 {
-      @include r($lg, min-width, 0.625rem);
+      @include min-w-($\2\.5, $lg);
     }
 
-    // 14px
     @mixin lg\:min-w-3\.5 {
-      @include r($lg, min-width, 0.875rem);
+      @include min-w-($\3\.5, $lg);
     }
 
     @mixin lg\:min-w-full {
-      @include r($lg, min-width, 100%);
+      @include min-w-(100%, $lg);
     }
 
     @mixin lg\:min-w-min {
-      @include r($lg, min-width, min-content);
+      @include min-w-(min-content, $lg);
     }
 
     @mixin lg\:min-w-max {
-      @include r($lg, min-width, max-content);
+      @include min-w-(max-content, $lg);
     }
 
     @mixin lg\:min-w-fit {
-      @include r($lg, min-width, fit-content);
+      @include min-w-(fit-content, $lg);
     }
+
     @mixin xl\:min-w-0 {
-      @include r($xl, min-width, 0px);
+      @include min-w-($\0, $xl);
     }
 
-    // 4px
     @mixin xl\:min-w-1 {
-      @include r($xl, min-width, 0.25rem);
+      @include min-w-($\1, $xl);
     }
 
-    // 8px
     @mixin xl\:min-w-2 {
-      @include r($xl, min-width, 0.5rem);
+      @include min-w-($\2, $xl);
     }
 
-    // 12px
     @mixin xl\:min-w-3 {
-      @include r($xl, min-width, 0.75rem);
+      @include min-w-($\3, $xl);
     }
 
-    // 16px
     @mixin xl\:min-w-4 {
-      @include r($xl, min-width, 1rem);
+      @include min-w-($\4, $xl);
     }
 
-    // 20px
     @mixin xl\:min-w-5 {
-      @include r($xl, min-width, 1.25rem);
+      @include min-w-($\5, $xl);
     }
 
-    // 24px
     @mixin xl\:min-w-6 {
-      @include r($xl, min-width, 1.5rem);
+      @include min-w-($\6, $xl);
     }
 
-    // 28px
     @mixin xl\:min-w-7 {
-      @include r($xl, min-width, 1.75rem);
+      @include min-w-($\7, $xl);
     }
 
-    // 32px
     @mixin xl\:min-w-8 {
-      @include r($xl, min-width, 2rem);
+      @include min-w-($\8, $xl);
     }
 
-    // 36px
     @mixin xl\:min-w-9 {
-      @include r($xl, min-width, 2.25rem);
+      @include min-w-($\9, $xl);
     }
 
-    // 40px
     @mixin xl\:min-w-10 {
-      @include r($xl, min-width, 2.5rem);
+      @include min-w-($\10, $xl);
     }
 
-    // 44px
     @mixin xl\:min-w-11 {
-      @include r($xl, min-width, 2.75rem);
+      @include min-w-($\11, $xl);
     }
 
-    // 48px
     @mixin xl\:min-w-12 {
-      @include r($xl, min-width, 3rem);
+      @include min-w-($\12, $xl);
     }
 
-    // 56px
     @mixin xl\:min-w-14 {
-      @include r($xl, min-width, 3.5rem);
+      @include min-w-($\14, $xl);
     }
 
-    // 64px
     @mixin xl\:min-w-16 {
-      @include r($xl, min-width, 4rem);
+      @include min-w-($\16, $xl);
     }
 
-    // 80px
     @mixin xl\:min-w-20 {
-      @include r($xl, min-width, 5rem);
+      @include min-w-($\20, $xl);
     }
 
-    // 96px
     @mixin xl\:min-w-24 {
-      @include r($xl, min-width, 6rem);
+      @include min-w-($\24, $xl);
     }
 
-    // 112px
     @mixin xl\:min-w-28 {
-      @include r($xl, min-width, 7rem);
+      @include min-w-($\28, $xl);
     }
 
-    // 128px
     @mixin xl\:min-w-32 {
-      @include r($xl, min-width, 8rem);
+      @include min-w-($\32, $xl);
     }
 
-    // 144px
     @mixin xl\:min-w-36 {
-      @include r($xl, min-width, 9rem);
+      @include min-w-($\36, $xl);
     }
 
-    // 160px
     @mixin xl\:min-w-40 {
-      @include r($xl, min-width, 10rem);
+      @include min-w-($\40, $xl);
     }
 
-    // 176px
     @mixin xl\:min-w-44 {
-      @include r($xl, min-width, 11rem);
+      @include min-w-($\44, $xl);
     }
 
-    // 192px
     @mixin xl\:min-w-48 {
-      @include r($xl, min-width, 12rem);
+      @include min-w-($\48, $xl);
     }
 
-    // 208px
     @mixin xl\:min-w-52 {
-      @include r($xl, min-width, 13rem);
+      @include min-w-($\52, $xl);
     }
 
-    // 224px
     @mixin xl\:min-w-56 {
-      @include r($xl, min-width, 14rem);
+      @include min-w-($\56, $xl);
     }
 
-    // 240px
     @mixin xl\:min-w-60 {
-      @include r($xl, min-width, 15rem);
+      @include min-w-($\60, $xl);
     }
 
-    // 256px
     @mixin xl\:min-w-64 {
-      @include r($xl, min-width, 16rem);
+      @include min-w-($\64, $xl);
     }
 
-    // 288px
     @mixin xl\:min-w-72 {
-      @include r($xl, min-width, 18rem);
+      @include min-w-($\72, $xl);
     }
 
-    // 320px
     @mixin xl\:min-w-80 {
-      @include r($xl, min-width, 20rem);
+      @include min-w-($\80, $xl);
     }
 
-    // 384px
     @mixin xl\:min-w-96 {
-      @include r($xl, min-width, 24rem);
+      @include min-w-($\96, $xl);
     }
 
     @mixin xl\:min-w-px {
-      @include r($xl, min-width, 1px);
+      @include min-w-($\px, $xl);
     }
 
-    // 2px
     @mixin xl\:min-w-0\.5 {
-      @include r($xl, min-width, 0.125rem);
+      @include min-w-($\0\.5, $xl);
     }
 
-    // 6px
     @mixin xl\:min-w-1\.5 {
-      @include r($xl, min-width, 0.375rem);
+      @include min-w-($\1\.5, $xl);
     }
 
-    // 10px
     @mixin xl\:min-w-2\.5 {
-      @include r($xl, min-width, 0.625rem);
+      @include min-w-($\2\.5, $xl);
     }
 
-    // 14px
     @mixin xl\:min-w-3\.5 {
-      @include r($xl, min-width, 0.875rem);
+      @include min-w-($\3\.5, $xl);
     }
 
     @mixin xl\:min-w-full {
-      @include r($xl, min-width, 100%);
+      @include min-w-(100%, $xl);
     }
 
     @mixin xl\:min-w-min {
-      @include r($xl, min-width, min-content);
+      @include min-w-(min-content, $xl);
     }
 
     @mixin xl\:min-w-max {
-      @include r($xl, min-width, max-content);
+      @include min-w-(max-content, $xl);
     }
 
     @mixin xl\:min-w-fit {
-      @include r($xl, min-width, fit-content);
+      @include min-w-(fit-content, $xl);
     }
+
     @mixin \2xl\:min-w-0 {
-      @include r($\2xl, min-width, 0px);
+      @include min-w-($\0, $\2xl);
     }
 
-    // 4px
     @mixin \2xl\:min-w-1 {
-      @include r($\2xl, min-width, 0.25rem);
+      @include min-w-($\1, $\2xl);
     }
 
-    // 8px
     @mixin \2xl\:min-w-2 {
-      @include r($\2xl, min-width, 0.5rem);
+      @include min-w-($\2, $\2xl);
     }
 
-    // 12px
     @mixin \2xl\:min-w-3 {
-      @include r($\2xl, min-width, 0.75rem);
+      @include min-w-($\3, $\2xl);
     }
 
-    // 16px
     @mixin \2xl\:min-w-4 {
-      @include r($\2xl, min-width, 1rem);
+      @include min-w-($\4, $\2xl);
     }
 
-    // 20px
     @mixin \2xl\:min-w-5 {
-      @include r($\2xl, min-width, 1.25rem);
+      @include min-w-($\5, $\2xl);
     }
 
-    // 24px
     @mixin \2xl\:min-w-6 {
-      @include r($\2xl, min-width, 1.5rem);
+      @include min-w-($\6, $\2xl);
     }
 
-    // 28px
     @mixin \2xl\:min-w-7 {
-      @include r($\2xl, min-width, 1.75rem);
+      @include min-w-($\7, $\2xl);
     }
 
-    // 32px
     @mixin \2xl\:min-w-8 {
-      @include r($\2xl, min-width, 2rem);
+      @include min-w-($\8, $\2xl);
     }
 
-    // 36px
     @mixin \2xl\:min-w-9 {
-      @include r($\2xl, min-width, 2.25rem);
+      @include min-w-($\9, $\2xl);
     }
 
-    // 40px
     @mixin \2xl\:min-w-10 {
-      @include r($\2xl, min-width, 2.5rem);
+      @include min-w-($\10, $\2xl);
     }
 
-    // 44px
     @mixin \2xl\:min-w-11 {
-      @include r($\2xl, min-width, 2.75rem);
+      @include min-w-($\11, $\2xl);
     }
 
-    // 48px
     @mixin \2xl\:min-w-12 {
-      @include r($\2xl, min-width, 3rem);
+      @include min-w-($\12, $\2xl);
     }
 
-    // 56px
     @mixin \2xl\:min-w-14 {
-      @include r($\2xl, min-width, 3.5rem);
+      @include min-w-($\14, $\2xl);
     }
 
-    // 64px
     @mixin \2xl\:min-w-16 {
-      @include r($\2xl, min-width, 4rem);
+      @include min-w-($\16, $\2xl);
     }
 
-    // 80px
     @mixin \2xl\:min-w-20 {
-      @include r($\2xl, min-width, 5rem);
+      @include min-w-($\20, $\2xl);
     }
 
-    // 96px
     @mixin \2xl\:min-w-24 {
-      @include r($\2xl, min-width, 6rem);
+      @include min-w-($\24, $\2xl);
     }
 
-    // 112px
     @mixin \2xl\:min-w-28 {
-      @include r($\2xl, min-width, 7rem);
+      @include min-w-($\28, $\2xl);
     }
 
-    // 128px
     @mixin \2xl\:min-w-32 {
-      @include r($\2xl, min-width, 8rem);
+      @include min-w-($\32, $\2xl);
     }
 
-    // 144px
     @mixin \2xl\:min-w-36 {
-      @include r($\2xl, min-width, 9rem);
+      @include min-w-($\36, $\2xl);
     }
 
-    // 160px
     @mixin \2xl\:min-w-40 {
-      @include r($\2xl, min-width, 10rem);
+      @include min-w-($\40, $\2xl);
     }
 
-    // 176px
     @mixin \2xl\:min-w-44 {
-      @include r($\2xl, min-width, 11rem);
+      @include min-w-($\44, $\2xl);
     }
 
-    // 192px
     @mixin \2xl\:min-w-48 {
-      @include r($\2xl, min-width, 12rem);
+      @include min-w-($\48, $\2xl);
     }
 
-    // 208px
     @mixin \2xl\:min-w-52 {
-      @include r($\2xl, min-width, 13rem);
+      @include min-w-($\52, $\2xl);
     }
 
-    // 224px
     @mixin \2xl\:min-w-56 {
-      @include r($\2xl, min-width, 14rem);
+      @include min-w-($\56, $\2xl);
     }
 
-    // 240px
     @mixin \2xl\:min-w-60 {
-      @include r($\2xl, min-width, 15rem);
+      @include min-w-($\60, $\2xl);
     }
 
-    // 256px
     @mixin \2xl\:min-w-64 {
-      @include r($\2xl, min-width, 16rem);
+      @include min-w-($\64, $\2xl);
     }
 
-    // 288px
     @mixin \2xl\:min-w-72 {
-      @include r($\2xl, min-width, 18rem);
+      @include min-w-($\72, $\2xl);
     }
 
-    // 320px
     @mixin \2xl\:min-w-80 {
-      @include r($\2xl, min-width, 20rem);
+      @include min-w-($\80, $\2xl);
     }
 
-    // 384px
     @mixin \2xl\:min-w-96 {
-      @include r($\2xl, min-width, 24rem);
+      @include min-w-($\96, $\2xl);
     }
 
     @mixin \2xl\:min-w-px {
-      @include r($\2xl, min-width, 1px);
+      @include min-w-($\px, $\2xl);
     }
 
-    // 2px
     @mixin \2xl\:min-w-0\.5 {
-      @include r($\2xl, min-width, 0.125rem);
+      @include min-w-($\0\.5, $\2xl);
     }
 
-    // 6px
     @mixin \2xl\:min-w-1\.5 {
-      @include r($\2xl, min-width, 0.375rem);
+      @include min-w-($\1\.5, $\2xl);
     }
 
-    // 10px
     @mixin \2xl\:min-w-2\.5 {
-      @include r($\2xl, min-width, 0.625rem);
+      @include min-w-($\2\.5, $\2xl);
     }
 
-    // 14px
     @mixin \2xl\:min-w-3\.5 {
-      @include r($\2xl, min-width, 0.875rem);
+      @include min-w-($\3\.5, $\2xl);
     }
 
     @mixin \2xl\:min-w-full {
-      @include r($\2xl, min-width, 100%);
+      @include min-w-(100%, $\2xl);
     }
 
     @mixin \2xl\:min-w-min {
-      @include r($\2xl, min-width, min-content);
+      @include min-w-(min-content, $\2xl);
     }
 
     @mixin \2xl\:min-w-max {
-      @include r($\2xl, min-width, max-content);
+      @include min-w-(max-content, $\2xl);
     }
 
     @mixin \2xl\:min-w-fit {
-      @include r($\2xl, min-width, fit-content);
+      @include min-w-(fit-content, $\2xl);
     }
 
     // x*/
@@ -1142,27 +950,31 @@
 }
 @if $Custom {
   // /*x
-  @mixin min-w-($v) {
-    min-width: $v;
+  @mixin min-w-($vm, $rwd: null) {
+    @if $rwd ==null {
+      min-width: $v;
+    } @else {
+      min-width: $v;
+    }
   }
 
   @mixin sm\:min-w-($v) {
-    @include r($sm, min-width, $v);
+    @include min-w-($v, $sm);
   }
 
   @mixin md\:min-w-($v) {
-    @include r($md, min-width, $v);
+    @include min-w-($v, $md);
   }
 
   @mixin lg\:min-w-($v) {
-    @include r($lg, min-width, $v);
+    @include min-w-($v, $lg);
   }
 
   @mixin xl\:min-w-($v) {
-    @include r($xl, min-width, $v);
+    @include min-w-($v, $xl);
   }
 
   @mixin \2xl\:min-w-($v) {
-    @include r($\2xl, min-width, $v);
+    @include min-w-($v, $\2xl);
   } // x*/
 }
