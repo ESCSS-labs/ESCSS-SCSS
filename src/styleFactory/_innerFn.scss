@@ -145,46 +145,9 @@
 }
 
 @mixin _font-size($token, $value) {
-  @if $token==xs {
-    font-size: 0.75rem;
-    line-height: if($value, __font-size($value), 1rem); // $value? true: false;
-  } @else if $token==sm {
-    font-size: 0.875rem;
-    line-height: if($value, __font-size($value), 1.25rem);
-  } @else if $token==base {
-    font-size: 1rem;
-    line-height: if($value, __font-size($value), 1.5rem);
-  } @else if $token==lg {
-    font-size: 1.125rem;
-    line-height: if($value, __font-size($value), 1.75rem);
-  } @else if $token==xl {
-    font-size: 1.25rem;
-    line-height: if($value, __font-size($value), 1.75rem);
-  } @else if $token==2xl {
-    font-size: 1.5rem;
-    line-height: if($value, __font-size($value), 2rem);
-  } @else if $token==3xl {
-    font-size: 1.875rem;
-    line-height: if($value, __font-size($value), 2.25rem);
-  } @else if $token==4xl {
-    font-size: 2.25rem;
-    line-height: if($value, __font-size($value), 2.5rem);
-  } @else if $token==5xl {
-    font-size: 3rem;
-    line-height: if($value, __font-size($value), 1);
-  } @else if $token==6xl {
-    font-size: 3.75rem;
-    line-height: if($value, __font-size($value), 1);
-  } @else if $token==7xl {
-    font-size: 4.5rem;
-    line-height: if($value, __font-size($value), 1);
-  } @else if $token==8xl {
-    font-size: 6rem;
-    line-height: if($value, __font-size($value), 1);
-  } @else if $token==9xl {
-    font-size: 8rem;
-    line-height: if($value, __font-size($value), 1);
-  }
+  font-size: map.get($font-size, $token, font-size);
+  // $value? true: false;
+  line-height: if($value, __font-size($value), map.get($font-size, $token, light-height));
 }
 
 @mixin _box-shadow($token, $value) {
