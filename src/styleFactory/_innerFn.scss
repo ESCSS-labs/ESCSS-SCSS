@@ -11,25 +11,6 @@
   @return color.change($token, $alpha: $value);
 }
 
-// let @mixin code to be clean
-@function __background-image() {
-  @if $--tw-gradient-via==null {
-    @return linear-gradient(
-      $--gradient-direction,
-      $--tw-gradient-from $--tw-gradient-from-position,
-      $--tw-gradient-to $--tw-gradient-to-position
-    );
-  } @else {
-    @return linear-gradient(
-      $--gradient-direction,
-      $--tw-gradient-from $--tw-gradient-from-position,
-      $--tw-gradient-via $--tw-gradient-via-position,
-      $--tw-gradient-to $--tw-gradient-to-position
-    );
-  }
-}
-
-
 @function __box-shadow() {
   $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width
     $--tw-ring-offset-color;
@@ -367,7 +348,7 @@
     scaleX($--tw-scale-x) scaleY($--tw-scale-y);
 }
 
-@mixin _background-image($token, $color, $value) {
+@function _background-image($token, $color, $value) {
   @if $token ==from {
     @if $color ==color {
       $--tw-gradient-from: $value !global; // custom color
@@ -399,7 +380,20 @@
     $--gradient-direction: $value !global;
   }
 
-  background-image: __background-image();
+  @if $--tw-gradient-via==null {
+    @return linear-gradient(
+      $--gradient-direction,
+      $--tw-gradient-from $--tw-gradient-from-position,
+      $--tw-gradient-to $--tw-gradient-to-position
+    );
+  } @else {
+    @return linear-gradient(
+      $--gradient-direction,
+      $--tw-gradient-from $--tw-gradient-from-position,
+      $--tw-gradient-via $--tw-gradient-via-position,
+      $--tw-gradient-to $--tw-gradient-to-position
+    );
+  }
 }
 
 
