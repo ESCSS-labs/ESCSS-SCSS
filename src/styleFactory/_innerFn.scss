@@ -350,28 +350,25 @@
 
 @function _background-image($token, $color, $value) {
   @if $token ==from {
-    @if $color ==color {
-      $--tw-gradient-from: $value !global; // custom color
-    } @else if $color ==null {
-      // position
+    @if $color ==customColor {
+      $--tw-gradient-from: $value !global; 
+    } @else if $color ==position {
       $--tw-gradient-from-position: $value !global;
     } @else {
       $--tw-gradient-from: c($color, $value) !global;
     }
   } @else if $token ==via {
-    @if $color ==color {
-      $--tw-gradient-via: $value !global; // custom color
-    } @else if $color ==null {
-      // position
+    @if $color ==customColor {
+      $--tw-gradient-via: $value !global; 
+    } @else if $color ==position {
       $--tw-gradient-via-position: $value !global;
     } @else {
       $--tw-gradient-via: c($color, $value) !global;
     }
   } @else if $token ==to {
-    @if $color ==color {
-      $--tw-gradient-to: $value !global; // custom color
-    } @else if $color ==null {
-      // position
+    @if $color ==customColor {
+      $--tw-gradient-to: $value !global; 
+    } @else if $color ==position {
       $--tw-gradient-to-position: $value !global;
     } @else {
       $--tw-gradient-to: c($color, $value) !global;
@@ -447,9 +444,8 @@
     // 3 params
     @else if $token ==_transform {
       @include _transform($slot, $slot2, $slot3: null);
-    } @else if $token ==_background-image {
-      @include _background-image($slot, $slot2, $slot3);
-    }
+    } 
+    
   }
 }
 
