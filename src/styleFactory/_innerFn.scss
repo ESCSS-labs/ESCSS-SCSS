@@ -88,57 +88,61 @@
     $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
 }
 
-@mixin _font-size($token, $value) {
-  font-size: map.get($font-size, $token, font-size);
+@function _font-size($token, $value) {
+  $fontSize: map.get($font-size, $token, font-size);
+  $lineHeight: null;
 
   @if $value ==null {
-    line-height: map.get($font-size, $token, light-height);
+    $lineHeight: map.get($font-size, $token, light-height);
   }
   @else if $value == 3 {
-    line-height: $leading-3;
+    $lineHeight: $leading-3;
   }
   @else if $value == 4 {
-    line-height: $leading-3;
+    $lineHeight: $leading-3;
   }
   @else if $value == 5 {
-    line-height: $leading-5;
+    $lineHeight: $leading-5;
   }
   @else if $value == 6 {
-    line-height: $leading-6;
+    $lineHeight: $leading-6;
   }
   @else if $value == 7 {
-    line-height: $leading-7;
+    $lineHeight: $leading-7;
   }
   @else if $value == 8 {
-    line-height: $leading-8;
+    $lineHeight: $leading-8;
   }
   @else if $value == 9 {
-    line-height: $leading-9;
+    $lineHeight: $leading-9;
   }
   @else if $value == 10 {
-    line-height: $leading-10;
+    $lineHeight: $leading-10;
   }
   @else if $value == none {
-    line-height: $leading-none;
+    $lineHeight: $leading-none;
   }
   @else if $value == tight {
-    line-height: $leading-tight;
+    $lineHeight: $leading-tight;
   }
   @else if $value == snug {
-    line-height: $leading-snug;
+    $lineHeight: $leading-snug;
   }
   @else if $value == normal {
-    line-height: $leading-normal;
+    $lineHeight: $leading-normal;
   }
   @else if $value == relaxed {
-    line-height: $leading-relaxed;
+    $lineHeight: $leading-relaxed;
   }
   @else if $value == loose {
-    line-height: $leading-loose;
+    $lineHeight: $leading-loose;
   }
   @else {
-    line-height: $value;
+    $lineHeight: $value;
   }
+
+  // a list to provide for @mixin text-($v, $rwd: null)
+  @return ($fontSize $lineHeight); 
 }
 
 @mixin _box-shadow($token, $value) {
@@ -417,8 +421,6 @@
     // 2 params
     @else if $token ==_filter {
       @include _filter($slot, $slot2);
-    } @else if $token ==_font-size {
-      @include _font-size($slot, $slot2);
     } @else if $token ==_box-shadow {
       @include _box-shadow($slot, $slot2);
     } @else if $token ==_border-color {

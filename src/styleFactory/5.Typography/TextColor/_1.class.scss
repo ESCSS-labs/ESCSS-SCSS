@@ -5948,14 +5948,16 @@
       @if meta.type-of($v) ==color {
         color: $v;
       } @else {
-        font-size: $v;
+        font-size: list.nth($v, 1);
+        line-height: list.nth($v, 2);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color {
           color: $v;
         } @else {
-          font-size: $v;
+          font-size: list.nth($v, 1);
+          line-height: list.nth($v, 2);
         }
       }
     }
