@@ -4,175 +4,183 @@
 @if $Basic {
   // /*x
   @mixin decoration-auto {
-    text-decoration-thickness: auto;
+    @include decoration-(auto);
   }
 
   @mixin decoration-from-font {
-    text-decoration-thickness: from-font;
+    @include decoration-(from-font);
   }
 
   @mixin decoration-0 {
-    text-decoration-thickness: 0px;
+    @include decoration-(0px);
   }
 
   @mixin decoration-1 {
-    text-decoration-thickness: 1px;
+    @include decoration-(1px);
   }
 
   @mixin decoration-2 {
-    text-decoration-thickness: 2px;
+    @include decoration-(2px);
   }
 
   @mixin decoration-4 {
-    text-decoration-thickness: 4px;
+    @include decoration-(4px);
   }
 
   @mixin decoration-8 {
-    text-decoration-thickness: 8px;
-  } // x*/
+    @include decoration-(8px);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:decoration-auto {
-      @include r($sm, text-decoration-thickness, auto);
+      @include decoration-(auto, $sm);
     }
 
     @mixin sm\:decoration-from-font {
-      @include r($sm, text-decoration-thickness, from-font);
+      @include decoration-(from-font, $sm);
     }
 
     @mixin sm\:decoration-0 {
-      @include r($sm, text-decoration-thickness, 0px);
+      @include decoration-(0px, $sm);
     }
 
     @mixin sm\:decoration-1 {
-      @include r($sm, text-decoration-thickness, 1px);
+      @include decoration-(1px, $sm);
     }
 
     @mixin sm\:decoration-2 {
-      @include r($sm, text-decoration-thickness, 2px);
+      @include decoration-(2px, $sm);
     }
 
     @mixin sm\:decoration-4 {
-      @include r($sm, text-decoration-thickness, 4px);
+      @include decoration-(4px, $sm);
     }
 
     @mixin sm\:decoration-8 {
-      @include r($sm, text-decoration-thickness, 8px);
+      @include decoration-(8px, $sm);
     }
+
     @mixin md\:decoration-auto {
-      @include r($md, text-decoration-thickness, auto);
+      @include decoration-(auto, $md);
     }
 
     @mixin md\:decoration-from-font {
-      @include r($md, text-decoration-thickness, from-font);
+      @include decoration-(from-font, $md);
     }
 
     @mixin md\:decoration-0 {
-      @include r($md, text-decoration-thickness, 0px);
+      @include decoration-(0px, $md);
     }
 
     @mixin md\:decoration-1 {
-      @include r($md, text-decoration-thickness, 1px);
+      @include decoration-(1px, $md);
     }
 
     @mixin md\:decoration-2 {
-      @include r($md, text-decoration-thickness, 2px);
+      @include decoration-(2px, $md);
     }
 
     @mixin md\:decoration-4 {
-      @include r($md, text-decoration-thickness, 4px);
+      @include decoration-(4px, $md);
     }
 
     @mixin md\:decoration-8 {
-      @include r($md, text-decoration-thickness, 8px);
+      @include decoration-(8px, $md);
     }
+
     @mixin lg\:decoration-auto {
-      @include r($lg, text-decoration-thickness, auto);
+      @include decoration-(auto, $lg);
     }
 
     @mixin lg\:decoration-from-font {
-      @include r($lg, text-decoration-thickness, from-font);
+      @include decoration-(from-font, $lg);
     }
 
     @mixin lg\:decoration-0 {
-      @include r($lg, text-decoration-thickness, 0px);
+      @include decoration-(0px, $lg);
     }
 
     @mixin lg\:decoration-1 {
-      @include r($lg, text-decoration-thickness, 1px);
+      @include decoration-(1px, $lg);
     }
 
     @mixin lg\:decoration-2 {
-      @include r($lg, text-decoration-thickness, 2px);
+      @include decoration-(2px, $lg);
     }
 
     @mixin lg\:decoration-4 {
-      @include r($lg, text-decoration-thickness, 4px);
+      @include decoration-(4px, $lg);
     }
 
     @mixin lg\:decoration-8 {
-      @include r($lg, text-decoration-thickness, 8px);
+      @include decoration-(8px, $lg);
     }
+
     @mixin xl\:decoration-auto {
-      @include r($xl, text-decoration-thickness, auto);
+      @include decoration-(auto, $xl);
     }
 
     @mixin xl\:decoration-from-font {
-      @include r($xl, text-decoration-thickness, from-font);
+      @include decoration-(from-font, $xl);
     }
 
     @mixin xl\:decoration-0 {
-      @include r($xl, text-decoration-thickness, 0px);
+      @include decoration-(0px, $xl);
     }
 
     @mixin xl\:decoration-1 {
-      @include r($xl, text-decoration-thickness, 1px);
+      @include decoration-(1px, $xl);
     }
 
     @mixin xl\:decoration-2 {
-      @include r($xl, text-decoration-thickness, 2px);
+      @include decoration-(2px, $xl);
     }
 
     @mixin xl\:decoration-4 {
-      @include r($xl, text-decoration-thickness, 4px);
+      @include decoration-(4px, $xl);
     }
 
     @mixin xl\:decoration-8 {
-      @include r($xl, text-decoration-thickness, 8px);
+      @include decoration-(8px, $xl);
     }
+
     @mixin \2xl\:decoration-auto {
-      @include r($\2xl, text-decoration-thickness, auto);
+      @include decoration-(auto, $\2xl);
     }
 
     @mixin \2xl\:decoration-from-font {
-      @include r($\2xl, text-decoration-thickness, from-font);
+      @include decoration-(from-font, $\2xl);
     }
 
     @mixin \2xl\:decoration-0 {
-      @include r($\2xl, text-decoration-thickness, 0px);
+      @include decoration-(0px, $\2xl);
     }
 
     @mixin \2xl\:decoration-1 {
-      @include r($\2xl, text-decoration-thickness, 1px);
+      @include decoration-(1px, $\2xl);
     }
 
     @mixin \2xl\:decoration-2 {
-      @include r($\2xl, text-decoration-thickness, 2px);
+      @include decoration-(2px, $\2xl);
     }
 
     @mixin \2xl\:decoration-4 {
-      @include r($\2xl, text-decoration-thickness, 4px);
+      @include decoration-(4px, $\2xl);
     }
 
     @mixin \2xl\:decoration-8 {
-      @include r($\2xl, text-decoration-thickness, 8px);
+      @include decoration-(8px, $\2xl);
     }
+
     // x*/
   }
 }
+
 @if $Custom {
   // same as @mixin decoration-($v)
 }

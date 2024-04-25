@@ -3,27 +3,53 @@
 /* Container */
 @if $Basic {
   // /*x
-  @mixin container {
-    width: 100%;
+  @mixin container($rwd: null) {
+    @if $rwd==null {
+      width: 100%;
 
-    @media (min-width: $sm) {
-      max-width: $sm;
-    }
+      @media (min-width: $sm) {
+        max-width: $sm;
+      }
 
-    @media (min-width: $md) {
-      max-width: $md;
-    }
+      @media (min-width: $md) {
+        max-width: $md;
+      }
 
-    @media (min-width: $lg) {
-      max-width: $lg;
-    }
+      @media (min-width: $lg) {
+        max-width: $lg;
+      }
 
-    @media (min-width: $xl) {
-      max-width: $xl;
-    }
+      @media (min-width: $xl) {
+        max-width: $xl;
+      }
 
-    @media (min-width: $\2xl) {
-      max-width: $\2xl;
+      @media (min-width: $\2xl) {
+        max-width: $\2xl;
+      }
+    } @else {
+      @media (min-width: $rwd) {
+        width: 100%;
+
+        @media (min-width: $sm) {
+          max-width: $sm;
+        }
+
+        @media (min-width: $md) {
+          max-width: $md;
+        }
+
+        @media (min-width: $lg) {
+          max-width: $lg;
+        }
+
+        @media (min-width: $xl) {
+          max-width: $xl;
+        }
+
+        @media (min-width: $\2xl) {
+          max-width: $\2xl;
+        }
+      }
     }
   }
 
@@ -33,23 +59,23 @@
 @if $Rwd {
   // /*x
   @mixin sm\:container {
-    @include r($sm, _max-width_container);
+    @include container($sm);
   }
 
   @mixin md\:container {
-    @include r($md, _max-width_container);
+    @include container($md);
   }
 
   @mixin lg\:container {
-    @include r($lg, _max-width_container);
+    @include container($lg);
   }
 
   @mixin xl\:container {
-    @include r($xl, _max-width_container);
+    @include container($xl);
   }
 
   @mixin \2xl\:container {
-    @include r($\2xl, _max-width_container);
+    @include container($\2xl);
   }
 
   // x*/

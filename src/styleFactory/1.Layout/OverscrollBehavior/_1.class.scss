@@ -3,222 +3,280 @@
 /* Overscroll Behavior */
 @if $Basic {
   // /*x
-  @mixin overscroll-auto {
-    overscroll-behavior: auto;
+  @mixin overscroll-auto($rwd: null) {
+    @if $rwd==null {
+      overscroll-behavior: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        overscroll-behavior: auto;
+      }
+    }
   }
 
-  @mixin overscroll-contain {
-    overscroll-behavior: contain;
+  @mixin overscroll-contain($rwd: null) {
+    @if $rwd==null {
+      overscroll-behavior: contain;
+    } @else {
+      @media (min-width: $rwd) {
+        overscroll-behavior: contain;
+      }
+    }
   }
 
-  @mixin overscroll-none {
-    overscroll-behavior: none;
+  @mixin overscroll-none($rwd: null) {
+    @if $rwd==null {
+      overscroll-behavior: none;
+    } @else {
+      @media (min-width: $rwd) {
+        overscroll-behavior: none;
+      }
+    }
   }
 
-  @mixin overscroll-y-auto {
-    overscroll-behavior-y: auto;
+  @mixin overscroll-y-auto($rwd: null) {
+    @if $rwd==null {
+      overscroll-behavior-y: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        overscroll-behavior-y: auto;
+      }
+    }
   }
 
-  @mixin overscroll-y-contain {
-    overscroll-behavior-y: contain;
+  @mixin overscroll-y-contain($rwd: null) {
+    @if $rwd==null {
+      overscroll-behavior-y: contain;
+    } @else {
+      @media (min-width: $rwd) {
+        overscroll-behavior-y: contain;
+      }
+    }
   }
 
-  @mixin overscroll-y-none {
-    overscroll-behavior-y: none;
+  @mixin overscroll-y-none($rwd: null) {
+    @if $rwd==null {
+      overscroll-behavior-y: none;
+    } @else {
+      @media (min-width: $rwd) {
+        overscroll-behavior-y: none;
+      }
+    }
   }
 
-  @mixin overscroll-x-auto {
-    overscroll-behavior-x: auto;
+  @mixin overscroll-x-auto($rwd: null) {
+    @if $rwd==null {
+      overscroll-behavior-x: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        overscroll-behavior-x: auto;
+      }
+    }
   }
 
-  @mixin overscroll-x-contain {
-    overscroll-behavior-x: contain;
+  @mixin overscroll-x-contain($rwd: null) {
+    @if $rwd==null {
+      overscroll-behavior-x: contain;
+    } @else {
+      @media (min-width: $rwd) {
+        overscroll-behavior-x: contain;
+      }
+    }
   }
 
-  @mixin overscroll-x-none {
-    overscroll-behavior-x: none;
-  } // x*/
+  @mixin overscroll-x-none($rwd: null) {
+    @if $rwd==null {
+      overscroll-behavior-x: none;
+    } @else {
+      @media (min-width: $rwd) {
+        overscroll-behavior-x: none;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:overscroll-auto {
-    @include r($sm, overscroll-behavior, auto);
+    @include overscroll-auto($sm);
   }
 
   @mixin sm\:overscroll-contain {
-    @include r($sm, overscroll-behavior, contain);
+    @include overscroll-contain($sm);
   }
 
   @mixin sm\:overscroll-none {
-    @include r($sm, overscroll-behavior, none);
+    @include overscroll-none($sm);
   }
 
   @mixin sm\:overscroll-y-auto {
-    @include r($sm, overscroll-behavior-y, auto);
+    @include overscroll-y-auto($sm);
   }
 
   @mixin sm\:overscroll-y-contain {
-    @include r($sm, overscroll-behavior-y, contain);
+    @include overscroll-y-contain($sm);
   }
 
   @mixin sm\:overscroll-y-none {
-    @include r($sm, overscroll-behavior-y, none);
+    @include overscroll-y-none($sm);
   }
 
   @mixin sm\:overscroll-x-auto {
-    @include r($sm, overscroll-behavior-x, auto);
+    @include overscroll-x-auto($sm);
   }
 
   @mixin sm\:overscroll-x-contain {
-    @include r($sm, overscroll-behavior-x, contain);
+    @include overscroll-x-contain($sm);
   }
 
   @mixin sm\:overscroll-x-none {
-    @include r($sm, overscroll-behavior-x, none);
+    @include overscroll-x-none($sm);
   }
 
   @mixin md\:overscroll-auto {
-    @include r($md, overscroll-behavior, auto);
+    @include overscroll-auto($md);
   }
 
   @mixin md\:overscroll-contain {
-    @include r($md, overscroll-behavior, contain);
+    @include overscroll-contain($md);
   }
 
   @mixin md\:overscroll-none {
-    @include r($md, overscroll-behavior, none);
+    @include overscroll-none($md);
   }
 
   @mixin md\:overscroll-y-auto {
-    @include r($md, overscroll-behavior-y, auto);
+    @include overscroll-y-auto($md);
   }
 
   @mixin md\:overscroll-y-contain {
-    @include r($md, overscroll-behavior-y, contain);
+    @include overscroll-y-contain($md);
   }
 
   @mixin md\:overscroll-y-none {
-    @include r($md, overscroll-behavior-y, none);
+    @include overscroll-y-none($md);
   }
 
   @mixin md\:overscroll-x-auto {
-    @include r($md, overscroll-behavior-x, auto);
+    @include overscroll-x-auto($md);
   }
 
   @mixin md\:overscroll-x-contain {
-    @include r($md, overscroll-behavior-x, contain);
+    @include overscroll-x-contain($md);
   }
 
   @mixin md\:overscroll-x-none {
-    @include r($md, overscroll-behavior-x, none);
+    @include overscroll-x-none($md);
   }
 
   @mixin lg\:overscroll-auto {
-    @include r($lg, overscroll-behavior, auto);
+    @include overscroll-auto($lg);
   }
 
   @mixin lg\:overscroll-contain {
-    @include r($lg, overscroll-behavior, contain);
+    @include overscroll-contain($lg);
   }
 
   @mixin lg\:overscroll-none {
-    @include r($lg, overscroll-behavior, none);
+    @include overscroll-none($lg);
   }
 
   @mixin lg\:overscroll-y-auto {
-    @include r($lg, overscroll-behavior-y, auto);
+    @include overscroll-y-auto($lg);
   }
 
   @mixin lg\:overscroll-y-contain {
-    @include r($lg, overscroll-behavior-y, contain);
+    @include overscroll-y-contain($lg);
   }
 
   @mixin lg\:overscroll-y-none {
-    @include r($lg, overscroll-behavior-y, none);
+    @include overscroll-y-none($lg);
   }
 
   @mixin lg\:overscroll-x-auto {
-    @include r($lg, overscroll-behavior-x, auto);
+    @include overscroll-x-auto($lg);
   }
 
   @mixin lg\:overscroll-x-contain {
-    @include r($lg, overscroll-behavior-x, contain);
+    @include overscroll-x-contain($lg);
   }
 
   @mixin lg\:overscroll-x-none {
-    @include r($lg, overscroll-behavior-x, none);
+    @include overscroll-x-none($lg);
   }
 
   @mixin xl\:overscroll-auto {
-    @include r($xl, overscroll-behavior, auto);
+    @include overscroll-auto($xl);
   }
 
   @mixin xl\:overscroll-contain {
-    @include r($xl, overscroll-behavior, contain);
+    @include overscroll-contain($xl);
   }
 
   @mixin xl\:overscroll-none {
-    @include r($xl, overscroll-behavior, none);
+    @include overscroll-none($xl);
   }
 
   @mixin xl\:overscroll-y-auto {
-    @include r($xl, overscroll-behavior-y, auto);
+    @include overscroll-y-auto($xl);
   }
 
   @mixin xl\:overscroll-y-contain {
-    @include r($xl, overscroll-behavior-y, contain);
+    @include overscroll-y-contain($xl);
   }
 
   @mixin xl\:overscroll-y-none {
-    @include r($xl, overscroll-behavior-y, none);
+    @include overscroll-y-none($xl);
   }
 
   @mixin xl\:overscroll-x-auto {
-    @include r($xl, overscroll-behavior-x, auto);
+    @include overscroll-x-auto($xl);
   }
 
   @mixin xl\:overscroll-x-contain {
-    @include r($xl, overscroll-behavior-x, contain);
+    @include overscroll-x-contain($xl);
   }
 
   @mixin xl\:overscroll-x-none {
-    @include r($xl, overscroll-behavior-x, none);
+    @include overscroll-x-none($xl);
   }
 
   @mixin \2xl\:overscroll-auto {
-    @include r($\2xl, overscroll-behavior, auto);
+    @include overscroll-auto($\2xl);
   }
 
   @mixin \2xl\:overscroll-contain {
-    @include r($\2xl, overscroll-behavior, contain);
+    @include overscroll-contain($\2xl);
   }
 
   @mixin \2xl\:overscroll-none {
-    @include r($\2xl, overscroll-behavior, none);
+    @include overscroll-none($\2xl);
   }
 
   @mixin \2xl\:overscroll-y-auto {
-    @include r($\2xl, overscroll-behavior-y, auto);
+    @include overscroll-y-auto($\2xl);
   }
 
   @mixin \2xl\:overscroll-y-contain {
-    @include r($\2xl, overscroll-behavior-y, contain);
+    @include overscroll-y-contain($\2xl);
   }
 
   @mixin \2xl\:overscroll-y-none {
-    @include r($\2xl, overscroll-behavior-y, none);
+    @include overscroll-y-none($\2xl);
   }
 
   @mixin \2xl\:overscroll-x-auto {
-    @include r($\2xl, overscroll-behavior-x, auto);
+    @include overscroll-x-auto($\2xl);
   }
 
   @mixin \2xl\:overscroll-x-contain {
-    @include r($\2xl, overscroll-behavior-x, contain);
+    @include overscroll-x-contain($\2xl);
   }
 
   @mixin \2xl\:overscroll-x-none {
-    @include r($\2xl, overscroll-behavior-x, none);
-  } // x*/
+    @include overscroll-x-none($\2xl);
+  }
+
+  // x*/
 }

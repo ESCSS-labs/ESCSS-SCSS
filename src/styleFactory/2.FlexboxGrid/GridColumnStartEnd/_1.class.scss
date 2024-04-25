@@ -4,1086 +4,1114 @@
 @if $Basic {
   // /*x
   @mixin col-auto {
-    grid-column: auto;
+    @include col-(auto);
   }
 
   @mixin col-span-1 {
-    grid-column: span 1 / span 1;
+    @include col-(span 1 / span 1);
   }
 
   @mixin col-span-2 {
-    grid-column: span 2 / span 2;
+    @include col-(span 2 / span 2);
   }
 
   @mixin col-span-3 {
-    grid-column: span 3 / span 3;
+    @include col-(span 3 / span 3);
   }
 
   @mixin col-span-4 {
-    grid-column: span 4 / span 4;
+    @include col-(span 4 / span 4);
   }
 
   @mixin col-span-5 {
-    grid-column: span 5 / span 5;
+    @include col-(span 5 / span 5);
   }
 
   @mixin col-span-6 {
-    grid-column: span 6 / span 6;
+    @include col-(span 6 / span 6);
   }
 
   @mixin col-span-7 {
-    grid-column: span 7 / span 7;
+    @include col-(span 7 / span 7);
   }
 
   @mixin col-span-8 {
-    grid-column: span 8 / span 8;
+    @include col-(span 8 / span 8);
   }
 
   @mixin col-span-9 {
-    grid-column: span 9 / span 9;
+    @include col-(span 9 / span 9);
   }
 
   @mixin col-span-10 {
-    grid-column: span 10 / span 10;
+    @include col-(span 10 / span 10);
   }
 
   @mixin col-span-11 {
-    grid-column: span 11 / span 11;
+    @include col-(span 11 / span 11);
   }
 
   @mixin col-span-12 {
-    grid-column: span 12 / span 12;
+    @include col-(span 12 / span 12);
   }
 
   @mixin col-span-full {
-    grid-column: 1 / -1;
+    @include col-(1 / -1);
   }
 
   @mixin col-start-1 {
-    grid-column-start: 1;
+    @include col-start-(1);
   }
 
   @mixin col-start-2 {
-    grid-column-start: 2;
+    @include col-start-(2);
   }
 
   @mixin col-start-3 {
-    grid-column-start: 3;
+    @include col-start-(3);
   }
 
   @mixin col-start-4 {
-    grid-column-start: 4;
+    @include col-start-(4);
   }
 
   @mixin col-start-5 {
-    grid-column-start: 5;
+    @include col-start-(5);
   }
 
   @mixin col-start-6 {
-    grid-column-start: 6;
+    @include col-start-(6);
   }
 
   @mixin col-start-7 {
-    grid-column-start: 7;
+    @include col-start-(7);
   }
 
   @mixin col-start-8 {
-    grid-column-start: 8;
+    @include col-start-(8);
   }
 
   @mixin col-start-9 {
-    grid-column-start: 9;
+    @include col-start-(9);
   }
 
   @mixin col-start-10 {
-    grid-column-start: 10;
+    @include col-start-(10);
   }
 
   @mixin col-start-11 {
-    grid-column-start: 11;
+    @include col-start-(11);
   }
 
   @mixin col-start-12 {
-    grid-column-start: 12;
+    @include col-start-(12);
   }
 
   @mixin col-start-13 {
-    grid-column-start: 13;
+    @include col-start-(13);
   }
 
   @mixin col-start-auto {
-    grid-column-start: auto;
+    @include col-start-(auto);
   }
 
   @mixin col-end-1 {
-    grid-column-end: 1;
+    @include col-end-(1);
   }
 
   @mixin col-end-2 {
-    grid-column-end: 2;
+    @include col-end-(2);
   }
 
   @mixin col-end-3 {
-    grid-column-end: 3;
+    @include col-end-(3);
   }
 
   @mixin col-end-4 {
-    grid-column-end: 4;
+    @include col-end-(4);
   }
 
   @mixin col-end-5 {
-    grid-column-end: 5;
+    @include col-end-(5);
   }
 
   @mixin col-end-6 {
-    grid-column-end: 6;
+    @include col-end-(6);
   }
 
   @mixin col-end-7 {
-    grid-column-end: 7;
+    @include col-end-(7);
   }
 
   @mixin col-end-8 {
-    grid-column-end: 8;
+    @include col-end-(8);
   }
 
   @mixin col-end-9 {
-    grid-column-end: 9;
+    @include col-end-(9);
   }
 
   @mixin col-end-10 {
-    grid-column-end: 10;
+    @include col-end-(10);
   }
 
   @mixin col-end-11 {
-    grid-column-end: 11;
+    @include col-end-(11);
   }
 
   @mixin col-end-12 {
-    grid-column-end: 12;
+    @include col-end-(12);
   }
 
   @mixin col-end-13 {
-    grid-column-end: 13;
+    @include col-end-(13);
   }
 
   @mixin col-end-auto {
-    grid-column-end: auto;
-  } // x*/
+    @include col-end-(auto);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:col-auto {
-      @include r($sm, grid-column, auto);
+      @include col-(auto, $sm);
     }
 
     @mixin sm\:col-span-1 {
-      @include r($sm, grid-column, span 1 / span 1);
+      @include col-(span 1 / span 1, $sm);
     }
 
     @mixin sm\:col-span-2 {
-      @include r($sm, grid-column, span 2 / span 2);
+      @include col-(span 2 / span 2, $sm);
     }
 
     @mixin sm\:col-span-3 {
-      @include r($sm, grid-column, span 3 / span 3);
+      @include col-(span 3 / span 3, $sm);
     }
 
     @mixin sm\:col-span-4 {
-      @include r($sm, grid-column, span 4 / span 4);
+      @include col-(span 4 / span 4, $sm);
     }
 
     @mixin sm\:col-span-5 {
-      @include r($sm, grid-column, span 5 / span 5);
+      @include col-(span 5 / span 5, $sm);
     }
 
     @mixin sm\:col-span-6 {
-      @include r($sm, grid-column, span 6 / span 6);
+      @include col-(span 6 / span 6, $sm);
     }
 
     @mixin sm\:col-span-7 {
-      @include r($sm, grid-column, span 7 / span 7);
+      @include col-(span 7 / span 7, $sm);
     }
 
     @mixin sm\:col-span-8 {
-      @include r($sm, grid-column, span 8 / span 8);
+      @include col-(span 8 / span 8, $sm);
     }
 
     @mixin sm\:col-span-9 {
-      @include r($sm, grid-column, span 9 / span 9);
+      @include col-(span 9 / span 9, $sm);
     }
 
     @mixin sm\:col-span-10 {
-      @include r($sm, grid-column, span 10 / span 10);
+      @include col-(span 10 / span 10, $sm);
     }
 
     @mixin sm\:col-span-11 {
-      @include r($sm, grid-column, span 11 / span 11);
+      @include col-(span 11 / span 11, $sm);
     }
 
     @mixin sm\:col-span-12 {
-      @include r($sm, grid-column, span 12 / span 12);
+      @include col-(span 12 / span 12, $sm);
     }
 
     @mixin sm\:col-span-full {
-      @include r($sm, grid-column, 1 / -1);
+      @include col-(1 / -1, $sm);
     }
 
     @mixin sm\:col-start-1 {
-      @include r($sm, grid-column-start, 1);
+      @include col-start-(1, $sm);
     }
 
     @mixin sm\:col-start-2 {
-      @include r($sm, grid-column-start, 2);
+      @include col-start-(2, $sm);
     }
 
     @mixin sm\:col-start-3 {
-      @include r($sm, grid-column-start, 3);
+      @include col-start-(3, $sm);
     }
 
     @mixin sm\:col-start-4 {
-      @include r($sm, grid-column-start, 4);
+      @include col-start-(4, $sm);
     }
 
     @mixin sm\:col-start-5 {
-      @include r($sm, grid-column-start, 5);
+      @include col-start-(5, $sm);
     }
 
     @mixin sm\:col-start-6 {
-      @include r($sm, grid-column-start, 6);
+      @include col-start-(6, $sm);
     }
 
     @mixin sm\:col-start-7 {
-      @include r($sm, grid-column-start, 7);
+      @include col-start-(7, $sm);
     }
 
     @mixin sm\:col-start-8 {
-      @include r($sm, grid-column-start, 8);
+      @include col-start-(8, $sm);
     }
 
     @mixin sm\:col-start-9 {
-      @include r($sm, grid-column-start, 9);
+      @include col-start-(9, $sm);
     }
 
     @mixin sm\:col-start-10 {
-      @include r($sm, grid-column-start, 10);
+      @include col-start-(10, $sm);
     }
 
     @mixin sm\:col-start-11 {
-      @include r($sm, grid-column-start, 11);
+      @include col-start-(11, $sm);
     }
 
     @mixin sm\:col-start-12 {
-      @include r($sm, grid-column-start, 12);
+      @include col-start-(12, $sm);
     }
 
     @mixin sm\:col-start-13 {
-      @include r($sm, grid-column-start, 13);
+      @include col-start-(13, $sm);
     }
 
     @mixin sm\:col-start-auto {
-      @include r($sm, grid-column-start, auto);
+      @include col-start-(auto, $sm);
     }
 
     @mixin sm\:col-end-1 {
-      @include r($sm, grid-column-end, 1);
+      @include col-end-(1, $sm);
     }
 
     @mixin sm\:col-end-2 {
-      @include r($sm, grid-column-end, 2);
+      @include col-end-(2, $sm);
     }
 
     @mixin sm\:col-end-3 {
-      @include r($sm, grid-column-end, 3);
+      @include col-end-(3, $sm);
     }
 
     @mixin sm\:col-end-4 {
-      @include r($sm, grid-column-end, 4);
+      @include col-end-(4, $sm);
     }
 
     @mixin sm\:col-end-5 {
-      @include r($sm, grid-column-end, 5);
+      @include col-end-(5, $sm);
     }
 
     @mixin sm\:col-end-6 {
-      @include r($sm, grid-column-end, 6);
+      @include col-end-(6, $sm);
     }
 
     @mixin sm\:col-end-7 {
-      @include r($sm, grid-column-end, 7);
+      @include col-end-(7, $sm);
     }
 
     @mixin sm\:col-end-8 {
-      @include r($sm, grid-column-end, 8);
+      @include col-end-(8, $sm);
     }
 
     @mixin sm\:col-end-9 {
-      @include r($sm, grid-column-end, 9);
+      @include col-end-(9, $sm);
     }
 
     @mixin sm\:col-end-10 {
-      @include r($sm, grid-column-end, 10);
+      @include col-end-(10, $sm);
     }
 
     @mixin sm\:col-end-11 {
-      @include r($sm, grid-column-end, 11);
+      @include col-end-(11, $sm);
     }
 
     @mixin sm\:col-end-12 {
-      @include r($sm, grid-column-end, 12);
+      @include col-end-(12, $sm);
     }
 
     @mixin sm\:col-end-13 {
-      @include r($sm, grid-column-end, 13);
+      @include col-end-(13, $sm);
     }
 
     @mixin sm\:col-end-auto {
-      @include r($sm, grid-column-end, auto);
+      @include col-end-(auto, $sm);
     }
+
     @mixin md\:col-auto {
-      @include r($md, grid-column, auto);
+      @include col-(auto, $md);
     }
 
     @mixin md\:col-span-1 {
-      @include r($md, grid-column, span 1 / span 1);
+      @include col-(span 1 / span 1, $md);
     }
 
     @mixin md\:col-span-2 {
-      @include r($md, grid-column, span 2 / span 2);
+      @include col-(span 2 / span 2, $md);
     }
 
     @mixin md\:col-span-3 {
-      @include r($md, grid-column, span 3 / span 3);
+      @include col-(span 3 / span 3, $md);
     }
 
     @mixin md\:col-span-4 {
-      @include r($md, grid-column, span 4 / span 4);
+      @include col-(span 4 / span 4, $md);
     }
 
     @mixin md\:col-span-5 {
-      @include r($md, grid-column, span 5 / span 5);
+      @include col-(span 5 / span 5, $md);
     }
 
     @mixin md\:col-span-6 {
-      @include r($md, grid-column, span 6 / span 6);
+      @include col-(span 6 / span 6, $md);
     }
 
     @mixin md\:col-span-7 {
-      @include r($md, grid-column, span 7 / span 7);
+      @include col-(span 7 / span 7, $md);
     }
 
     @mixin md\:col-span-8 {
-      @include r($md, grid-column, span 8 / span 8);
+      @include col-(span 8 / span 8, $md);
     }
 
     @mixin md\:col-span-9 {
-      @include r($md, grid-column, span 9 / span 9);
+      @include col-(span 9 / span 9, $md);
     }
 
     @mixin md\:col-span-10 {
-      @include r($md, grid-column, span 10 / span 10);
+      @include col-(span 10 / span 10, $md);
     }
 
     @mixin md\:col-span-11 {
-      @include r($md, grid-column, span 11 / span 11);
+      @include col-(span 11 / span 11, $md);
     }
 
     @mixin md\:col-span-12 {
-      @include r($md, grid-column, span 12 / span 12);
+      @include col-(span 12 / span 12, $md);
     }
 
     @mixin md\:col-span-full {
-      @include r($md, grid-column, 1 / -1);
+      @include col-(1 / -1, $md);
     }
 
     @mixin md\:col-start-1 {
-      @include r($md, grid-column-start, 1);
+      @include col-start-(1, $md);
     }
 
     @mixin md\:col-start-2 {
-      @include r($md, grid-column-start, 2);
+      @include col-start-(2, $md);
     }
 
     @mixin md\:col-start-3 {
-      @include r($md, grid-column-start, 3);
+      @include col-start-(3, $md);
     }
 
     @mixin md\:col-start-4 {
-      @include r($md, grid-column-start, 4);
+      @include col-start-(4, $md);
     }
 
     @mixin md\:col-start-5 {
-      @include r($md, grid-column-start, 5);
+      @include col-start-(5, $md);
     }
 
     @mixin md\:col-start-6 {
-      @include r($md, grid-column-start, 6);
+      @include col-start-(6, $md);
     }
 
     @mixin md\:col-start-7 {
-      @include r($md, grid-column-start, 7);
+      @include col-start-(7, $md);
     }
 
     @mixin md\:col-start-8 {
-      @include r($md, grid-column-start, 8);
+      @include col-start-(8, $md);
     }
 
     @mixin md\:col-start-9 {
-      @include r($md, grid-column-start, 9);
+      @include col-start-(9, $md);
     }
 
     @mixin md\:col-start-10 {
-      @include r($md, grid-column-start, 10);
+      @include col-start-(10, $md);
     }
 
     @mixin md\:col-start-11 {
-      @include r($md, grid-column-start, 11);
+      @include col-start-(11, $md);
     }
 
     @mixin md\:col-start-12 {
-      @include r($md, grid-column-start, 12);
+      @include col-start-(12, $md);
     }
 
     @mixin md\:col-start-13 {
-      @include r($md, grid-column-start, 13);
+      @include col-start-(13, $md);
     }
 
     @mixin md\:col-start-auto {
-      @include r($md, grid-column-start, auto);
+      @include col-start-(auto, $md);
     }
 
     @mixin md\:col-end-1 {
-      @include r($md, grid-column-end, 1);
+      @include col-end-(1, $md);
     }
 
     @mixin md\:col-end-2 {
-      @include r($md, grid-column-end, 2);
+      @include col-end-(2, $md);
     }
 
     @mixin md\:col-end-3 {
-      @include r($md, grid-column-end, 3);
+      @include col-end-(3, $md);
     }
 
     @mixin md\:col-end-4 {
-      @include r($md, grid-column-end, 4);
+      @include col-end-(4, $md);
     }
 
     @mixin md\:col-end-5 {
-      @include r($md, grid-column-end, 5);
+      @include col-end-(5, $md);
     }
 
     @mixin md\:col-end-6 {
-      @include r($md, grid-column-end, 6);
+      @include col-end-(6, $md);
     }
 
     @mixin md\:col-end-7 {
-      @include r($md, grid-column-end, 7);
+      @include col-end-(7, $md);
     }
 
     @mixin md\:col-end-8 {
-      @include r($md, grid-column-end, 8);
+      @include col-end-(8, $md);
     }
 
     @mixin md\:col-end-9 {
-      @include r($md, grid-column-end, 9);
+      @include col-end-(9, $md);
     }
 
     @mixin md\:col-end-10 {
-      @include r($md, grid-column-end, 10);
+      @include col-end-(10, $md);
     }
 
     @mixin md\:col-end-11 {
-      @include r($md, grid-column-end, 11);
+      @include col-end-(11, $md);
     }
 
     @mixin md\:col-end-12 {
-      @include r($md, grid-column-end, 12);
+      @include col-end-(12, $md);
     }
 
     @mixin md\:col-end-13 {
-      @include r($md, grid-column-end, 13);
+      @include col-end-(13, $md);
     }
 
     @mixin md\:col-end-auto {
-      @include r($md, grid-column-end, auto);
+      @include col-end-(auto, $md);
     }
+
     @mixin lg\:col-auto {
-      @include r($lg, grid-column, auto);
+      @include col-(auto, $lg);
     }
 
     @mixin lg\:col-span-1 {
-      @include r($lg, grid-column, span 1 / span 1);
+      @include col-(span 1 / span 1, $lg);
     }
 
     @mixin lg\:col-span-2 {
-      @include r($lg, grid-column, span 2 / span 2);
+      @include col-(span 2 / span 2, $lg);
     }
 
     @mixin lg\:col-span-3 {
-      @include r($lg, grid-column, span 3 / span 3);
+      @include col-(span 3 / span 3, $lg);
     }
 
     @mixin lg\:col-span-4 {
-      @include r($lg, grid-column, span 4 / span 4);
+      @include col-(span 4 / span 4, $lg);
     }
 
     @mixin lg\:col-span-5 {
-      @include r($lg, grid-column, span 5 / span 5);
+      @include col-(span 5 / span 5, $lg);
     }
 
     @mixin lg\:col-span-6 {
-      @include r($lg, grid-column, span 6 / span 6);
+      @include col-(span 6 / span 6, $lg);
     }
 
     @mixin lg\:col-span-7 {
-      @include r($lg, grid-column, span 7 / span 7);
+      @include col-(span 7 / span 7, $lg);
     }
 
     @mixin lg\:col-span-8 {
-      @include r($lg, grid-column, span 8 / span 8);
+      @include col-(span 8 / span 8, $lg);
     }
 
     @mixin lg\:col-span-9 {
-      @include r($lg, grid-column, span 9 / span 9);
+      @include col-(span 9 / span 9, $lg);
     }
 
     @mixin lg\:col-span-10 {
-      @include r($lg, grid-column, span 10 / span 10);
+      @include col-(span 10 / span 10, $lg);
     }
 
     @mixin lg\:col-span-11 {
-      @include r($lg, grid-column, span 11 / span 11);
+      @include col-(span 11 / span 11, $lg);
     }
 
     @mixin lg\:col-span-12 {
-      @include r($lg, grid-column, span 12 / span 12);
+      @include col-(span 12 / span 12, $lg);
     }
 
     @mixin lg\:col-span-full {
-      @include r($lg, grid-column, 1 / -1);
+      @include col-(1 / -1, $lg);
     }
 
     @mixin lg\:col-start-1 {
-      @include r($lg, grid-column-start, 1);
+      @include col-start-(1, $lg);
     }
 
     @mixin lg\:col-start-2 {
-      @include r($lg, grid-column-start, 2);
+      @include col-start-(2, $lg);
     }
 
     @mixin lg\:col-start-3 {
-      @include r($lg, grid-column-start, 3);
+      @include col-start-(3, $lg);
     }
 
     @mixin lg\:col-start-4 {
-      @include r($lg, grid-column-start, 4);
+      @include col-start-(4, $lg);
     }
 
     @mixin lg\:col-start-5 {
-      @include r($lg, grid-column-start, 5);
+      @include col-start-(5, $lg);
     }
 
     @mixin lg\:col-start-6 {
-      @include r($lg, grid-column-start, 6);
+      @include col-start-(6, $lg);
     }
 
     @mixin lg\:col-start-7 {
-      @include r($lg, grid-column-start, 7);
+      @include col-start-(7, $lg);
     }
 
     @mixin lg\:col-start-8 {
-      @include r($lg, grid-column-start, 8);
+      @include col-start-(8, $lg);
     }
 
     @mixin lg\:col-start-9 {
-      @include r($lg, grid-column-start, 9);
+      @include col-start-(9, $lg);
     }
 
     @mixin lg\:col-start-10 {
-      @include r($lg, grid-column-start, 10);
+      @include col-start-(10, $lg);
     }
 
     @mixin lg\:col-start-11 {
-      @include r($lg, grid-column-start, 11);
+      @include col-start-(11, $lg);
     }
 
     @mixin lg\:col-start-12 {
-      @include r($lg, grid-column-start, 12);
+      @include col-start-(12, $lg);
     }
 
     @mixin lg\:col-start-13 {
-      @include r($lg, grid-column-start, 13);
+      @include col-start-(13, $lg);
     }
 
     @mixin lg\:col-start-auto {
-      @include r($lg, grid-column-start, auto);
+      @include col-start-(auto, $lg);
     }
 
     @mixin lg\:col-end-1 {
-      @include r($lg, grid-column-end, 1);
+      @include col-end-(1, $lg);
     }
 
     @mixin lg\:col-end-2 {
-      @include r($lg, grid-column-end, 2);
+      @include col-end-(2, $lg);
     }
 
     @mixin lg\:col-end-3 {
-      @include r($lg, grid-column-end, 3);
+      @include col-end-(3, $lg);
     }
 
     @mixin lg\:col-end-4 {
-      @include r($lg, grid-column-end, 4);
+      @include col-end-(4, $lg);
     }
 
     @mixin lg\:col-end-5 {
-      @include r($lg, grid-column-end, 5);
+      @include col-end-(5, $lg);
     }
 
     @mixin lg\:col-end-6 {
-      @include r($lg, grid-column-end, 6);
+      @include col-end-(6, $lg);
     }
 
     @mixin lg\:col-end-7 {
-      @include r($lg, grid-column-end, 7);
+      @include col-end-(7, $lg);
     }
 
     @mixin lg\:col-end-8 {
-      @include r($lg, grid-column-end, 8);
+      @include col-end-(8, $lg);
     }
 
     @mixin lg\:col-end-9 {
-      @include r($lg, grid-column-end, 9);
+      @include col-end-(9, $lg);
     }
 
     @mixin lg\:col-end-10 {
-      @include r($lg, grid-column-end, 10);
+      @include col-end-(10, $lg);
     }
 
     @mixin lg\:col-end-11 {
-      @include r($lg, grid-column-end, 11);
+      @include col-end-(11, $lg);
     }
 
     @mixin lg\:col-end-12 {
-      @include r($lg, grid-column-end, 12);
+      @include col-end-(12, $lg);
     }
 
     @mixin lg\:col-end-13 {
-      @include r($lg, grid-column-end, 13);
+      @include col-end-(13, $lg);
     }
 
     @mixin lg\:col-end-auto {
-      @include r($lg, grid-column-end, auto);
+      @include col-end-(auto, $lg);
     }
+
     @mixin xl\:col-auto {
-      @include r($xl, grid-column, auto);
+      @include col-(auto, $xl);
     }
 
     @mixin xl\:col-span-1 {
-      @include r($xl, grid-column, span 1 / span 1);
+      @include col-(span 1 / span 1, $xl);
     }
 
     @mixin xl\:col-span-2 {
-      @include r($xl, grid-column, span 2 / span 2);
+      @include col-(span 2 / span 2, $xl);
     }
 
     @mixin xl\:col-span-3 {
-      @include r($xl, grid-column, span 3 / span 3);
+      @include col-(span 3 / span 3, $xl);
     }
 
     @mixin xl\:col-span-4 {
-      @include r($xl, grid-column, span 4 / span 4);
+      @include col-(span 4 / span 4, $xl);
     }
 
     @mixin xl\:col-span-5 {
-      @include r($xl, grid-column, span 5 / span 5);
+      @include col-(span 5 / span 5, $xl);
     }
 
     @mixin xl\:col-span-6 {
-      @include r($xl, grid-column, span 6 / span 6);
+      @include col-(span 6 / span 6, $xl);
     }
 
     @mixin xl\:col-span-7 {
-      @include r($xl, grid-column, span 7 / span 7);
+      @include col-(span 7 / span 7, $xl);
     }
 
     @mixin xl\:col-span-8 {
-      @include r($xl, grid-column, span 8 / span 8);
+      @include col-(span 8 / span 8, $xl);
     }
 
     @mixin xl\:col-span-9 {
-      @include r($xl, grid-column, span 9 / span 9);
+      @include col-(span 9 / span 9, $xl);
     }
 
     @mixin xl\:col-span-10 {
-      @include r($xl, grid-column, span 10 / span 10);
+      @include col-(span 10 / span 10, $xl);
     }
 
     @mixin xl\:col-span-11 {
-      @include r($xl, grid-column, span 11 / span 11);
+      @include col-(span 11 / span 11, $xl);
     }
 
     @mixin xl\:col-span-12 {
-      @include r($xl, grid-column, span 12 / span 12);
+      @include col-(span 12 / span 12, $xl);
     }
 
     @mixin xl\:col-span-full {
-      @include r($xl, grid-column, 1 / -1);
+      @include col-(1 / -1, $xl);
     }
 
     @mixin xl\:col-start-1 {
-      @include r($xl, grid-column-start, 1);
+      @include col-start-(1, $xl);
     }
 
     @mixin xl\:col-start-2 {
-      @include r($xl, grid-column-start, 2);
+      @include col-start-(2, $xl);
     }
 
     @mixin xl\:col-start-3 {
-      @include r($xl, grid-column-start, 3);
+      @include col-start-(3, $xl);
     }
 
     @mixin xl\:col-start-4 {
-      @include r($xl, grid-column-start, 4);
+      @include col-start-(4, $xl);
     }
 
     @mixin xl\:col-start-5 {
-      @include r($xl, grid-column-start, 5);
+      @include col-start-(5, $xl);
     }
 
     @mixin xl\:col-start-6 {
-      @include r($xl, grid-column-start, 6);
+      @include col-start-(6, $xl);
     }
 
     @mixin xl\:col-start-7 {
-      @include r($xl, grid-column-start, 7);
+      @include col-start-(7, $xl);
     }
 
     @mixin xl\:col-start-8 {
-      @include r($xl, grid-column-start, 8);
+      @include col-start-(8, $xl);
     }
 
     @mixin xl\:col-start-9 {
-      @include r($xl, grid-column-start, 9);
+      @include col-start-(9, $xl);
     }
 
     @mixin xl\:col-start-10 {
-      @include r($xl, grid-column-start, 10);
+      @include col-start-(10, $xl);
     }
 
     @mixin xl\:col-start-11 {
-      @include r($xl, grid-column-start, 11);
+      @include col-start-(11, $xl);
     }
 
     @mixin xl\:col-start-12 {
-      @include r($xl, grid-column-start, 12);
+      @include col-start-(12, $xl);
     }
 
     @mixin xl\:col-start-13 {
-      @include r($xl, grid-column-start, 13);
+      @include col-start-(13, $xl);
     }
 
     @mixin xl\:col-start-auto {
-      @include r($xl, grid-column-start, auto);
+      @include col-start-(auto, $xl);
     }
 
     @mixin xl\:col-end-1 {
-      @include r($xl, grid-column-end, 1);
+      @include col-end-(1, $xl);
     }
 
     @mixin xl\:col-end-2 {
-      @include r($xl, grid-column-end, 2);
+      @include col-end-(2, $xl);
     }
 
     @mixin xl\:col-end-3 {
-      @include r($xl, grid-column-end, 3);
+      @include col-end-(3, $xl);
     }
 
     @mixin xl\:col-end-4 {
-      @include r($xl, grid-column-end, 4);
+      @include col-end-(4, $xl);
     }
 
     @mixin xl\:col-end-5 {
-      @include r($xl, grid-column-end, 5);
+      @include col-end-(5, $xl);
     }
 
     @mixin xl\:col-end-6 {
-      @include r($xl, grid-column-end, 6);
+      @include col-end-(6, $xl);
     }
 
     @mixin xl\:col-end-7 {
-      @include r($xl, grid-column-end, 7);
+      @include col-end-(7, $xl);
     }
 
     @mixin xl\:col-end-8 {
-      @include r($xl, grid-column-end, 8);
+      @include col-end-(8, $xl);
     }
 
     @mixin xl\:col-end-9 {
-      @include r($xl, grid-column-end, 9);
+      @include col-end-(9, $xl);
     }
 
     @mixin xl\:col-end-10 {
-      @include r($xl, grid-column-end, 10);
+      @include col-end-(10, $xl);
     }
 
     @mixin xl\:col-end-11 {
-      @include r($xl, grid-column-end, 11);
+      @include col-end-(11, $xl);
     }
 
     @mixin xl\:col-end-12 {
-      @include r($xl, grid-column-end, 12);
+      @include col-end-(12, $xl);
     }
 
     @mixin xl\:col-end-13 {
-      @include r($xl, grid-column-end, 13);
+      @include col-end-(13, $xl);
     }
 
     @mixin xl\:col-end-auto {
-      @include r($xl, grid-column-end, auto);
+      @include col-end-(auto, $xl);
     }
+
     @mixin \2xl\:col-auto {
-      @include r($\2xl, grid-column, auto);
+      @include col-(auto, $\2xl);
     }
 
     @mixin \2xl\:col-span-1 {
-      @include r($\2xl, grid-column, span 1 / span 1);
+      @include col-(span 1 / span 1, $\2xl);
     }
 
     @mixin \2xl\:col-span-2 {
-      @include r($\2xl, grid-column, span 2 / span 2);
+      @include col-(span 2 / span 2, $\2xl);
     }
 
     @mixin \2xl\:col-span-3 {
-      @include r($\2xl, grid-column, span 3 / span 3);
+      @include col-(span 3 / span 3, $\2xl);
     }
 
     @mixin \2xl\:col-span-4 {
-      @include r($\2xl, grid-column, span 4 / span 4);
+      @include col-(span 4 / span 4, $\2xl);
     }
 
     @mixin \2xl\:col-span-5 {
-      @include r($\2xl, grid-column, span 5 / span 5);
+      @include col-(span 5 / span 5, $\2xl);
     }
 
     @mixin \2xl\:col-span-6 {
-      @include r($\2xl, grid-column, span 6 / span 6);
+      @include col-(span 6 / span 6, $\2xl);
     }
 
     @mixin \2xl\:col-span-7 {
-      @include r($\2xl, grid-column, span 7 / span 7);
+      @include col-(span 7 / span 7, $\2xl);
     }
 
     @mixin \2xl\:col-span-8 {
-      @include r($\2xl, grid-column, span 8 / span 8);
+      @include col-(span 8 / span 8, $\2xl);
     }
 
     @mixin \2xl\:col-span-9 {
-      @include r($\2xl, grid-column, span 9 / span 9);
+      @include col-(span 9 / span 9, $\2xl);
     }
 
     @mixin \2xl\:col-span-10 {
-      @include r($\2xl, grid-column, span 10 / span 10);
+      @include col-(span 10 / span 10, $\2xl);
     }
 
     @mixin \2xl\:col-span-11 {
-      @include r($\2xl, grid-column, span 11 / span 11);
+      @include col-(span 11 / span 11, $\2xl);
     }
 
     @mixin \2xl\:col-span-12 {
-      @include r($\2xl, grid-column, span 12 / span 12);
+      @include col-(span 12 / span 12, $\2xl);
     }
 
     @mixin \2xl\:col-span-full {
-      @include r($\2xl, grid-column, 1 / -1);
+      @include col-(1 / -1, $\2xl);
     }
 
     @mixin \2xl\:col-start-1 {
-      @include r($\2xl, grid-column-start, 1);
+      @include col-start-(1, $\2xl);
     }
 
     @mixin \2xl\:col-start-2 {
-      @include r($\2xl, grid-column-start, 2);
+      @include col-start-(2, $\2xl);
     }
 
     @mixin \2xl\:col-start-3 {
-      @include r($\2xl, grid-column-start, 3);
+      @include col-start-(3, $\2xl);
     }
 
     @mixin \2xl\:col-start-4 {
-      @include r($\2xl, grid-column-start, 4);
+      @include col-start-(4, $\2xl);
     }
 
     @mixin \2xl\:col-start-5 {
-      @include r($\2xl, grid-column-start, 5);
+      @include col-start-(5, $\2xl);
     }
 
     @mixin \2xl\:col-start-6 {
-      @include r($\2xl, grid-column-start, 6);
+      @include col-start-(6, $\2xl);
     }
 
     @mixin \2xl\:col-start-7 {
-      @include r($\2xl, grid-column-start, 7);
+      @include col-start-(7, $\2xl);
     }
 
     @mixin \2xl\:col-start-8 {
-      @include r($\2xl, grid-column-start, 8);
+      @include col-start-(8, $\2xl);
     }
 
     @mixin \2xl\:col-start-9 {
-      @include r($\2xl, grid-column-start, 9);
+      @include col-start-(9, $\2xl);
     }
 
     @mixin \2xl\:col-start-10 {
-      @include r($\2xl, grid-column-start, 10);
+      @include col-start-(10, $\2xl);
     }
 
     @mixin \2xl\:col-start-11 {
-      @include r($\2xl, grid-column-start, 11);
+      @include col-start-(11, $\2xl);
     }
 
     @mixin \2xl\:col-start-12 {
-      @include r($\2xl, grid-column-start, 12);
+      @include col-start-(12, $\2xl);
     }
 
     @mixin \2xl\:col-start-13 {
-      @include r($\2xl, grid-column-start, 13);
+      @include col-start-(13, $\2xl);
     }
 
     @mixin \2xl\:col-start-auto {
-      @include r($\2xl, grid-column-start, auto);
+      @include col-start-(auto, $\2xl);
     }
 
     @mixin \2xl\:col-end-1 {
-      @include r($\2xl, grid-column-end, 1);
+      @include col-end-(1, $\2xl);
     }
 
     @mixin \2xl\:col-end-2 {
-      @include r($\2xl, grid-column-end, 2);
+      @include col-end-(2, $\2xl);
     }
 
     @mixin \2xl\:col-end-3 {
-      @include r($\2xl, grid-column-end, 3);
+      @include col-end-(3, $\2xl);
     }
 
     @mixin \2xl\:col-end-4 {
-      @include r($\2xl, grid-column-end, 4);
+      @include col-end-(4, $\2xl);
     }
 
     @mixin \2xl\:col-end-5 {
-      @include r($\2xl, grid-column-end, 5);
+      @include col-end-(5, $\2xl);
     }
 
     @mixin \2xl\:col-end-6 {
-      @include r($\2xl, grid-column-end, 6);
+      @include col-end-(6, $\2xl);
     }
 
     @mixin \2xl\:col-end-7 {
-      @include r($\2xl, grid-column-end, 7);
+      @include col-end-(7, $\2xl);
     }
 
     @mixin \2xl\:col-end-8 {
-      @include r($\2xl, grid-column-end, 8);
+      @include col-end-(8, $\2xl);
     }
 
     @mixin \2xl\:col-end-9 {
-      @include r($\2xl, grid-column-end, 9);
+      @include col-end-(9, $\2xl);
     }
 
     @mixin \2xl\:col-end-10 {
-      @include r($\2xl, grid-column-end, 10);
+      @include col-end-(10, $\2xl);
     }
 
     @mixin \2xl\:col-end-11 {
-      @include r($\2xl, grid-column-end, 11);
+      @include col-end-(11, $\2xl);
     }
 
     @mixin \2xl\:col-end-12 {
-      @include r($\2xl, grid-column-end, 12);
+      @include col-end-(12, $\2xl);
     }
 
     @mixin \2xl\:col-end-13 {
-      @include r($\2xl, grid-column-end, 13);
+      @include col-end-(13, $\2xl);
     }
 
     @mixin \2xl\:col-end-auto {
-      @include r($\2xl, grid-column-end, auto);
+      @include col-end-(auto, $\2xl);
     }
 
     // x*/
   }
 }
+
 @if $Custom {
   // /*x
-  @mixin col-($v) {
-    grid-column: $v;
+  @mixin col-($v, $rwd: null) {
+    @if $rwd==null {
+      grid-column: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        grid-column: $v;
+      }
+    }
   }
 
-  @mixin col-start-($v) {
-    grid-column-start: $v;
+  @mixin col-start-($v, $rwd: null) {
+    @if $rwd==null {
+      grid-column-start: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        grid-column-start: $v;
+      }
+    }
   }
 
-  @mixin col-end-($v) {
-    grid-column-end: $v;
+  @mixin col-end-($v, $rwd: null) {
+    @if $rwd==null {
+      grid-column-end: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        grid-column-end: $v;
+      }
+    }
   }
+
   @mixin sm\:col-($v) {
-    @include r($sm, grid-column, $v);
+    @include col-($v, $sm);
   }
 
   @mixin sm\:col-start-($v) {
-    @include r($sm, grid-column-start, $v);
+    @include col-($v, $sm);
   }
 
   @mixin sm\:col-end-($v) {
-    @include r($sm, grid-column-end, $v);
+    @include col-($v, $sm);
   }
 
   @mixin md\:col-($v) {
-    @include r($md, grid-column, $v);
+    @include col-($v, $md);
   }
 
   @mixin md\:col-start-($v) {
-    @include r($md, grid-column-start, $v);
+    @include col-($v, $md);
   }
 
   @mixin md\:col-end-($v) {
-    @include r($md, grid-column-end, $v);
+    @include col-($v, $md);
   }
 
   @mixin lg\:col-($v) {
-    @include r($lg, grid-column, $v);
+    @include col-($v, $lg);
   }
 
   @mixin lg\:col-start-($v) {
-    @include r($lg, grid-column-start, $v);
+    @include col-($v, $lg);
   }
 
   @mixin lg\:col-end-($v) {
-    @include r($lg, grid-column-end, $v);
+    @include col-($v, $lg);
   }
 
   @mixin xl\:col-($v) {
-    @include r($xl, grid-column, $v);
+    @include col-($v, $xl);
   }
 
   @mixin xl\:col-start-($v) {
-    @include r($xl, grid-column-start, $v);
+    @include col-($v, $xl);
   }
 
   @mixin xl\:col-end-($v) {
-    @include r($xl, grid-column-end, $v);
+    @include col-($v, $xl);
   }
 
   @mixin \2xl\:col-($v) {
-    @include r($\2xl, grid-column, $v);
+    @include col-($v, $\2xl);
   }
 
   @mixin \2xl\:col-start-($v) {
-    @include r($\2xl, grid-column-start, $v);
+    @include col-($v, $\2xl);
   }
 
   @mixin \2xl\:col-end-($v) {
-    @include r($\2xl, grid-column-end, $v);
-  } // x*/
+    @include col-($v, $\2xl);
+  }
+
+  // x*/
 }

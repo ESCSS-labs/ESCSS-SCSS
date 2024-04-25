@@ -4,370 +4,381 @@
 @if $Basic {
   // /*x
   @mixin grid-rows-1 {
-    grid-template-rows: repeat(1, minmax(0, 1fr));
+    @include grid-rows-(repeat(1, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-2 {
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    @include grid-rows-(repeat(2, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-3 {
-    grid-template-rows: repeat(3, minmax(0, 1fr));
+    @include grid-rows-(repeat(3, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-4 {
-    grid-template-rows: repeat(4, minmax(0, 1fr));
+    @include grid-rows-(repeat(4, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-5 {
-    grid-template-rows: repeat(5, minmax(0, 1fr));
+    @include grid-rows-(repeat(5, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-6 {
-    grid-template-rows: repeat(6, minmax(0, 1fr));
+    @include grid-rows-(repeat(6, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-7 {
-    grid-template-rows: repeat(7, minmax(0, 1fr));
+    @include grid-rows-(repeat(7, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-8 {
-    grid-template-rows: repeat(8, minmax(0, 1fr));
+    @include grid-rows-(repeat(8, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-9 {
-    grid-template-rows: repeat(9, minmax(0, 1fr));
+    @include grid-rows-(repeat(9, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-10 {
-    grid-template-rows: repeat(10, minmax(0, 1fr));
+    @include grid-rows-(repeat(10, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-11 {
-    grid-template-rows: repeat(11, minmax(0, 1fr));
+    @include grid-rows-(repeat(11, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-12 {
-    grid-template-rows: repeat(12, minmax(0, 1fr));
+    @include grid-rows-(repeat(12, minmax(0, 1fr)));
   }
 
   @mixin grid-rows-none {
-    grid-template-rows: none;
+    @include grid-rows-(none);
   }
 
   @mixin grid-rows-subgrid {
-    grid-template-rows: subgrid;
-  } // x*/
+    @include grid-rows-(subgrid);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:grid-rows-1 {
-      @include r($sm, grid-template-rows, repeat(1, minmax(0, 1fr)));
+      @include grid-rows-(repeat(1, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-2 {
-      @include r($sm, grid-template-rows, repeat(2, minmax(0, 1fr)));
+      @include grid-rows-(repeat(2, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-3 {
-      @include r($sm, grid-template-rows, repeat(3, minmax(0, 1fr)));
+      @include grid-rows-(repeat(3, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-4 {
-      @include r($sm, grid-template-rows, repeat(4, minmax(0, 1fr)));
+      @include grid-rows-(repeat(4, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-5 {
-      @include r($sm, grid-template-rows, repeat(5, minmax(0, 1fr)));
+      @include grid-rows-(repeat(5, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-6 {
-      @include r($sm, grid-template-rows, repeat(6, minmax(0, 1fr)));
+      @include grid-rows-(repeat(6, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-7 {
-      @include r($sm, grid-template-rows, repeat(7, minmax(0, 1fr)));
+      @include grid-rows-(repeat(7, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-8 {
-      @include r($sm, grid-template-rows, repeat(8, minmax(0, 1fr)));
+      @include grid-rows-(repeat(8, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-9 {
-      @include r($sm, grid-template-rows, repeat(9, minmax(0, 1fr)));
+      @include grid-rows-(repeat(9, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-10 {
-      @include r($sm, grid-template-rows, repeat(10, minmax(0, 1fr)));
+      @include grid-rows-(repeat(10, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-11 {
-      @include r($sm, grid-template-rows, repeat(11, minmax(0, 1fr)));
+      @include grid-rows-(repeat(11, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-12 {
-      @include r($sm, grid-template-rows, repeat(12, minmax(0, 1fr)));
+      @include grid-rows-(repeat(12, minmax(0, 1fr)), $sm);
     }
 
     @mixin sm\:grid-rows-none {
-      @include r($sm, grid-template-rows, none);
+      @include grid-rows-(none, $sm);
     }
 
     @mixin sm\:grid-rows-subgrid {
-      @include r($sm, grid-template-rows, subgrid);
+      @include grid-rows-(subgrid, $sm);
     }
 
     @mixin md\:grid-rows-1 {
-      @include r($md, grid-template-rows, repeat(1, minmax(0, 1fr)));
+      @include grid-rows-(repeat(1, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-2 {
-      @include r($md, grid-template-rows, repeat(2, minmax(0, 1fr)));
+      @include grid-rows-(repeat(2, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-3 {
-      @include r($md, grid-template-rows, repeat(3, minmax(0, 1fr)));
+      @include grid-rows-(repeat(3, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-4 {
-      @include r($md, grid-template-rows, repeat(4, minmax(0, 1fr)));
+      @include grid-rows-(repeat(4, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-5 {
-      @include r($md, grid-template-rows, repeat(5, minmax(0, 1fr)));
+      @include grid-rows-(repeat(5, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-6 {
-      @include r($md, grid-template-rows, repeat(6, minmax(0, 1fr)));
+      @include grid-rows-(repeat(6, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-7 {
-      @include r($md, grid-template-rows, repeat(7, minmax(0, 1fr)));
+      @include grid-rows-(repeat(7, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-8 {
-      @include r($md, grid-template-rows, repeat(8, minmax(0, 1fr)));
+      @include grid-rows-(repeat(8, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-9 {
-      @include r($md, grid-template-rows, repeat(9, minmax(0, 1fr)));
+      @include grid-rows-(repeat(9, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-10 {
-      @include r($md, grid-template-rows, repeat(10, minmax(0, 1fr)));
+      @include grid-rows-(repeat(10, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-11 {
-      @include r($md, grid-template-rows, repeat(11, minmax(0, 1fr)));
+      @include grid-rows-(repeat(11, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-12 {
-      @include r($md, grid-template-rows, repeat(12, minmax(0, 1fr)));
+      @include grid-rows-(repeat(12, minmax(0, 1fr)), $md);
     }
 
     @mixin md\:grid-rows-none {
-      @include r($md, grid-template-rows, none);
+      @include grid-rows-(none, $md);
     }
 
     @mixin md\:grid-rows-subgrid {
-      @include r($md, grid-template-rows, subgrid);
+      @include grid-rows-(subgrid, $md);
     }
 
     @mixin lg\:grid-rows-1 {
-      @include r($lg, grid-template-rows, repeat(1, minmax(0, 1fr)));
+      @include grid-rows-(repeat(1, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-2 {
-      @include r($lg, grid-template-rows, repeat(2, minmax(0, 1fr)));
+      @include grid-rows-(repeat(2, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-3 {
-      @include r($lg, grid-template-rows, repeat(3, minmax(0, 1fr)));
+      @include grid-rows-(repeat(3, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-4 {
-      @include r($lg, grid-template-rows, repeat(4, minmax(0, 1fr)));
+      @include grid-rows-(repeat(4, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-5 {
-      @include r($lg, grid-template-rows, repeat(5, minmax(0, 1fr)));
+      @include grid-rows-(repeat(5, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-6 {
-      @include r($lg, grid-template-rows, repeat(6, minmax(0, 1fr)));
+      @include grid-rows-(repeat(6, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-7 {
-      @include r($lg, grid-template-rows, repeat(7, minmax(0, 1fr)));
+      @include grid-rows-(repeat(7, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-8 {
-      @include r($lg, grid-template-rows, repeat(8, minmax(0, 1fr)));
+      @include grid-rows-(repeat(8, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-9 {
-      @include r($lg, grid-template-rows, repeat(9, minmax(0, 1fr)));
+      @include grid-rows-(repeat(9, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-10 {
-      @include r($lg, grid-template-rows, repeat(10, minmax(0, 1fr)));
+      @include grid-rows-(repeat(10, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-11 {
-      @include r($lg, grid-template-rows, repeat(11, minmax(0, 1fr)));
+      @include grid-rows-(repeat(11, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-12 {
-      @include r($lg, grid-template-rows, repeat(12, minmax(0, 1fr)));
+      @include grid-rows-(repeat(12, minmax(0, 1fr)), $lg);
     }
 
     @mixin lg\:grid-rows-none {
-      @include r($lg, grid-template-rows, none);
+      @include grid-rows-(none, $lg);
     }
 
     @mixin lg\:grid-rows-subgrid {
-      @include r($lg, grid-template-rows, subgrid);
+      @include grid-rows-(subgrid, $lg);
     }
 
     @mixin xl\:grid-rows-1 {
-      @include r($xl, grid-template-rows, repeat(1, minmax(0, 1fr)));
+      @include grid-rows-(repeat(1, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-2 {
-      @include r($xl, grid-template-rows, repeat(2, minmax(0, 1fr)));
+      @include grid-rows-(repeat(2, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-3 {
-      @include r($xl, grid-template-rows, repeat(3, minmax(0, 1fr)));
+      @include grid-rows-(repeat(3, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-4 {
-      @include r($xl, grid-template-rows, repeat(4, minmax(0, 1fr)));
+      @include grid-rows-(repeat(4, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-5 {
-      @include r($xl, grid-template-rows, repeat(5, minmax(0, 1fr)));
+      @include grid-rows-(repeat(5, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-6 {
-      @include r($xl, grid-template-rows, repeat(6, minmax(0, 1fr)));
+      @include grid-rows-(repeat(6, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-7 {
-      @include r($xl, grid-template-rows, repeat(7, minmax(0, 1fr)));
+      @include grid-rows-(repeat(7, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-8 {
-      @include r($xl, grid-template-rows, repeat(8, minmax(0, 1fr)));
+      @include grid-rows-(repeat(8, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-9 {
-      @include r($xl, grid-template-rows, repeat(9, minmax(0, 1fr)));
+      @include grid-rows-(repeat(9, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-10 {
-      @include r($xl, grid-template-rows, repeat(10, minmax(0, 1fr)));
+      @include grid-rows-(repeat(10, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-11 {
-      @include r($xl, grid-template-rows, repeat(11, minmax(0, 1fr)));
+      @include grid-rows-(repeat(11, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-12 {
-      @include r($xl, grid-template-rows, repeat(12, minmax(0, 1fr)));
+      @include grid-rows-(repeat(12, minmax(0, 1fr)), $xl);
     }
 
     @mixin xl\:grid-rows-none {
-      @include r($xl, grid-template-rows, none);
+      @include grid-rows-(none, $xl);
     }
 
     @mixin xl\:grid-rows-subgrid {
-      @include r($xl, grid-template-rows, subgrid);
+      @include grid-rows-(subgrid, $xl);
     }
 
     @mixin \2xl\:grid-rows-1 {
-      @include r($\2xl, grid-template-rows, repeat(1, minmax(0, 1fr)));
+      @include grid-rows-(repeat(1, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-2 {
-      @include r($\2xl, grid-template-rows, repeat(2, minmax(0, 1fr)));
+      @include grid-rows-(repeat(2, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-3 {
-      @include r($\2xl, grid-template-rows, repeat(3, minmax(0, 1fr)));
+      @include grid-rows-(repeat(3, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-4 {
-      @include r($\2xl, grid-template-rows, repeat(4, minmax(0, 1fr)));
+      @include grid-rows-(repeat(4, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-5 {
-      @include r($\2xl, grid-template-rows, repeat(5, minmax(0, 1fr)));
+      @include grid-rows-(repeat(5, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-6 {
-      @include r($\2xl, grid-template-rows, repeat(6, minmax(0, 1fr)));
+      @include grid-rows-(repeat(6, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-7 {
-      @include r($\2xl, grid-template-rows, repeat(7, minmax(0, 1fr)));
+      @include grid-rows-(repeat(7, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-8 {
-      @include r($\2xl, grid-template-rows, repeat(8, minmax(0, 1fr)));
+      @include grid-rows-(repeat(8, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-9 {
-      @include r($\2xl, grid-template-rows, repeat(9, minmax(0, 1fr)));
+      @include grid-rows-(repeat(9, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-10 {
-      @include r($\2xl, grid-template-rows, repeat(10, minmax(0, 1fr)));
+      @include grid-rows-(repeat(10, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-11 {
-      @include r($\2xl, grid-template-rows, repeat(11, minmax(0, 1fr)));
+      @include grid-rows-(repeat(11, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-12 {
-      @include r($\2xl, grid-template-rows, repeat(12, minmax(0, 1fr)));
+      @include grid-rows-(repeat(12, minmax(0, 1fr)), $\2xl);
     }
 
     @mixin \2xl\:grid-rows-none {
-      @include r($\2xl, grid-template-rows, none);
+      @include grid-rows-(none, $\2xl);
     }
 
     @mixin \2xl\:grid-rows-subgrid {
-      @include r($\2xl, grid-template-rows, subgrid);
+      @include grid-rows-(subgrid, $\2xl);
     }
-
     // x*/
   }
 }
+
 @if $Custom {
   // /*x
-  @mixin grid-rows-($v) {
-    grid-template-rows: $v;
+  @mixin grid-rows-($v, $rwd: null) {
+    @if $rwd==null {
+      grid-template-rows: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        grid-template-rows: $v;
+      }
+    }
   }
+
   @mixin sm\:grid-rows-($v) {
-    @include r($sm, grid-template-rows, $v);
+    @include grid-rows-($v, $sm);
   }
 
   @mixin md\:grid-rows-($v) {
-    @include r($md, grid-template-rows, $v);
+    @include grid-rows-($v, $md);
   }
 
   @mixin lg\:grid-rows-($v) {
-    @include r($lg, grid-template-rows, $v);
+    @include grid-rows-($v, $lg);
   }
 
   @mixin xl\:grid-rows-($v) {
-    @include r($xl, grid-template-rows, $v);
+    @include grid-rows-($v, $xl);
   }
 
   @mixin \2xl\:grid-rows-($v) {
-    @include r($\2xl, grid-template-rows, $v);
-  } // x*/
+    @include grid-rows-($v, $\2xl);
+  }
+
+  // x*/
 }

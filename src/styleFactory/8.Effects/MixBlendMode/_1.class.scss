@@ -3,414 +3,520 @@
 /* Mix Blend Mode */
 @if $Basic {
   // /*x
-  @mixin mix-blend-normal {
-    mix-blend-mode: normal;
+  @mixin mix-blend-normal($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: normal;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: normal;
+      }
+    }
   }
 
-  @mixin mix-blend-multiply {
-    mix-blend-mode: multiply;
+  @mixin mix-blend-multiply($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: multiply;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: multiply;
+      }
+    }
   }
 
-  @mixin mix-blend-screen {
-    mix-blend-mode: screen;
+  @mixin mix-blend-screen($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: screen;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: screen;
+      }
+    }
   }
 
-  @mixin mix-blend-overlay {
-    mix-blend-mode: overlay;
+  @mixin mix-blend-overlay($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: overlay;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: overlay;
+      }
+    }
   }
 
-  @mixin mix-blend-darken {
-    mix-blend-mode: darken;
+  @mixin mix-blend-darken($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: darken;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: darken;
+      }
+    }
   }
 
-  @mixin mix-blend-lighten {
-    mix-blend-mode: lighten;
+  @mixin mix-blend-lighten($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: lighten;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: lighten;
+      }
+    }
   }
 
-  @mixin mix-blend-color-dodge {
-    mix-blend-mode: color-dodge;
+  @mixin mix-blend-color-dodge($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: color-dodge;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: color-dodge;
+      }
+    }
   }
 
-  @mixin mix-blend-color-burn {
-    mix-blend-mode: color-burn;
+  @mixin mix-blend-color-burn($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: color-burn;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: color-burn;
+      }
+    }
   }
 
-  @mixin mix-blend-hard-light {
-    mix-blend-mode: hard-light;
+  @mixin mix-blend-hard-light($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: hard-light;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: hard-light;
+      }
+    }
   }
 
-  @mixin mix-blend-soft-light {
-    mix-blend-mode: soft-light;
+  @mixin mix-blend-soft-light($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: soft-light;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: soft-light;
+      }
+    }
   }
 
-  @mixin mix-blend-difference {
-    mix-blend-mode: difference;
+  @mixin mix-blend-difference($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: difference;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: difference;
+      }
+    }
   }
 
-  @mixin mix-blend-exclusion {
-    mix-blend-mode: exclusion;
+  @mixin mix-blend-exclusion($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: exclusion;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: exclusion;
+      }
+    }
   }
 
-  @mixin mix-blend-hue {
-    mix-blend-mode: hue;
+  @mixin mix-blend-hue($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: hue;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: hue;
+      }
+    }
   }
 
-  @mixin mix-blend-saturation {
-    mix-blend-mode: saturation;
+  @mixin mix-blend-saturation($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: saturation;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: saturation;
+      }
+    }
   }
 
-  @mixin mix-blend-color {
-    mix-blend-mode: color;
+  @mixin mix-blend-color($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: color;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: color;
+      }
+    }
   }
 
-  @mixin mix-blend-luminosity {
-    mix-blend-mode: luminosity;
+  @mixin mix-blend-luminosity($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: luminosity;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: luminosity;
+      }
+    }
   }
 
-  @mixin mix-blend-plus-lighter {
-    mix-blend-mode: plus-lighter;
-  } // x*/
+  @mixin mix-blend-plus-lighter($rwd: null) {
+    @if $rwd==null {
+      mix-blend-mode: plus-lighter;
+    } @else {
+      @media (min-width: $rwd) {
+        mix-blend-mode: plus-lighter;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:mix-blend-normal {
-    @include r($sm, mix-blend-mode, normal);
+    @include mix-blend-normal($sm);
   }
 
   @mixin sm\:mix-blend-multiply {
-    @include r($sm, mix-blend-mode, multiply);
+    @include mix-blend-multiply($sm);
   }
 
   @mixin sm\:mix-blend-screen {
-    @include r($sm, mix-blend-mode, screen);
+    @include mix-blend-screen($sm);
   }
 
   @mixin sm\:mix-blend-overlay {
-    @include r($sm, mix-blend-mode, overlay);
+    @include mix-blend-overlay($sm);
   }
 
   @mixin sm\:mix-blend-darken {
-    @include r($sm, mix-blend-mode, darken);
+    @include mix-blend-darken($sm);
   }
 
   @mixin sm\:mix-blend-lighten {
-    @include r($sm, mix-blend-mode, lighten);
+    @include mix-blend-lighten($sm);
   }
 
   @mixin sm\:mix-blend-color-dodge {
-    @include r($sm, mix-blend-mode, color-dodge);
+    @include mix-blend-color-dodge($sm);
   }
 
   @mixin sm\:mix-blend-color-burn {
-    @include r($sm, mix-blend-mode, color-burn);
+    @include mix-blend-color-burn($sm);
   }
 
   @mixin sm\:mix-blend-hard-light {
-    @include r($sm, mix-blend-mode, hard-light);
+    @include mix-blend-hard-light($sm);
   }
 
   @mixin sm\:mix-blend-soft-light {
-    @include r($sm, mix-blend-mode, soft-light);
+    @include mix-blend-soft-light($sm);
   }
 
   @mixin sm\:mix-blend-difference {
-    @include r($sm, mix-blend-mode, difference);
+    @include mix-blend-difference($sm);
   }
 
   @mixin sm\:mix-blend-exclusion {
-    @include r($sm, mix-blend-mode, exclusion);
+    @include mix-blend-exclusion($sm);
   }
 
   @mixin sm\:mix-blend-hue {
-    @include r($sm, mix-blend-mode, hue);
+    @include mix-blend-hue($sm);
   }
 
   @mixin sm\:mix-blend-saturation {
-    @include r($sm, mix-blend-mode, saturation);
+    @include mix-blend-saturation($sm);
   }
 
   @mixin sm\:mix-blend-color {
-    @include r($sm, mix-blend-mode, color);
+    @include mix-blend-color($sm);
   }
 
   @mixin sm\:mix-blend-luminosity {
-    @include r($sm, mix-blend-mode, luminosity);
+    @include mix-blend-luminosity($sm);
   }
 
   @mixin sm\:mix-blend-plus-lighter {
-    @include r($sm, mix-blend-mode, plus-lighter);
+    @include mix-blend-plus-lighter($sm);
   }
 
   @mixin md\:mix-blend-normal {
-    @include r($md, mix-blend-mode, normal);
+    @include mix-blend-normal($md);
   }
 
   @mixin md\:mix-blend-multiply {
-    @include r($md, mix-blend-mode, multiply);
+    @include mix-blend-multiply($md);
   }
 
   @mixin md\:mix-blend-screen {
-    @include r($md, mix-blend-mode, screen);
+    @include mix-blend-screen($md);
   }
 
   @mixin md\:mix-blend-overlay {
-    @include r($md, mix-blend-mode, overlay);
+    @include mix-blend-overlay($sm);
   }
 
-  @mixin md\:mix-blend-darken {
-    @include r($md, mix-blend-mode, darken);
+  @mixin sm\:mix-blend-darken {
+    @include mix-blend-darken($sm);
   }
 
   @mixin md\:mix-blend-lighten {
-    @include r($md, mix-blend-mode, lighten);
+    @include mix-blend-lighten($md);
   }
 
   @mixin md\:mix-blend-color-dodge {
-    @include r($md, mix-blend-mode, color-dodge);
+    @include mix-blend-color-dodge($md);
   }
 
   @mixin md\:mix-blend-color-burn {
-    @include r($md, mix-blend-mode, color-burn);
+    @include mix-blend-color-burn($md);
   }
 
   @mixin md\:mix-blend-hard-light {
-    @include r($md, mix-blend-mode, hard-light);
+    @include mix-blend-hard-light($md);
   }
 
   @mixin md\:mix-blend-soft-light {
-    @include r($md, mix-blend-mode, soft-light);
+    @include mix-blend-soft-light($md);
   }
 
   @mixin md\:mix-blend-difference {
-    @include r($md, mix-blend-mode, difference);
+    @include mix-blend-difference($md);
   }
 
   @mixin md\:mix-blend-exclusion {
-    @include r($md, mix-blend-mode, exclusion);
+    @include mix-blend-exclusion($md);
   }
 
   @mixin md\:mix-blend-hue {
-    @include r($md, mix-blend-mode, hue);
+    @include mix-blend-hue($md);
   }
 
   @mixin md\:mix-blend-saturation {
-    @include r($md, mix-blend-mode, saturation);
+    @include mix-blend-saturation($md);
   }
 
   @mixin md\:mix-blend-color {
-    @include r($md, mix-blend-mode, color);
+    @include mix-blend-color($md);
   }
 
   @mixin md\:mix-blend-luminosity {
-    @include r($md, mix-blend-mode, luminosity);
+    @include mix-blend-luminosity($md);
   }
 
   @mixin md\:mix-blend-plus-lighter {
-    @include r($md, mix-blend-mode, plus-lighter);
+    @include mix-blend-plus-lighter($md);
   }
 
   @mixin lg\:mix-blend-normal {
-    @include r($lg, mix-blend-mode, normal);
+    @include mix-blend-normal($lg);
   }
 
   @mixin lg\:mix-blend-multiply {
-    @include r($lg, mix-blend-mode, multiply);
+    @include mix-blend-multiply($lg);
   }
 
   @mixin lg\:mix-blend-screen {
-    @include r($lg, mix-blend-mode, screen);
+    @include mix-blend-screen($lg);
   }
 
   @mixin lg\:mix-blend-overlay {
-    @include r($lg, mix-blend-mode, overlay);
+    @include mix-blend-overlay($sm);
   }
 
-  @mixin lg\:mix-blend-darken {
-    @include r($lg, mix-blend-mode, darken);
+  @mixin sm\:mix-blend-darken {
+    @include mix-blend-darken($sm);
   }
 
   @mixin lg\:mix-blend-lighten {
-    @include r($lg, mix-blend-mode, lighten);
+    @include mix-blend-lighten($lg);
   }
 
   @mixin lg\:mix-blend-color-dodge {
-    @include r($lg, mix-blend-mode, color-dodge);
+    @include mix-blend-color-dodge($lg);
   }
 
   @mixin lg\:mix-blend-color-burn {
-    @include r($lg, mix-blend-mode, color-burn);
+    @include mix-blend-color-burn($lg);
   }
 
   @mixin lg\:mix-blend-hard-light {
-    @include r($lg, mix-blend-mode, hard-light);
+    @include mix-blend-hard-light($lg);
   }
 
   @mixin lg\:mix-blend-soft-light {
-    @include r($lg, mix-blend-mode, soft-light);
+    @include mix-blend-soft-light($lg);
   }
 
   @mixin lg\:mix-blend-difference {
-    @include r($lg, mix-blend-mode, difference);
+    @include mix-blend-difference($lg);
   }
 
   @mixin lg\:mix-blend-exclusion {
-    @include r($lg, mix-blend-mode, exclusion);
+    @include mix-blend-exclusion($lg);
   }
 
   @mixin lg\:mix-blend-hue {
-    @include r($lg, mix-blend-mode, hue);
+    @include mix-blend-hue($lg);
   }
 
   @mixin lg\:mix-blend-saturation {
-    @include r($lg, mix-blend-mode, saturation);
+    @include mix-blend-saturation($lg);
   }
 
   @mixin lg\:mix-blend-color {
-    @include r($lg, mix-blend-mode, color);
+    @include mix-blend-color($lg);
   }
 
   @mixin lg\:mix-blend-luminosity {
-    @include r($lg, mix-blend-mode, luminosity);
+    @include mix-blend-luminosity($lg);
   }
 
   @mixin lg\:mix-blend-plus-lighter {
-    @include r($lg, mix-blend-mode, plus-lighter);
+    @include mix-blend-plus-lighter($lg);
   }
 
   @mixin xl\:mix-blend-normal {
-    @include r($xl, mix-blend-mode, normal);
+    @include mix-blend-normal($xl);
   }
 
   @mixin xl\:mix-blend-multiply {
-    @include r($xl, mix-blend-mode, multiply);
+    @include mix-blend-multiply($xl);
   }
 
   @mixin xl\:mix-blend-screen {
-    @include r($xl, mix-blend-mode, screen);
+    @include mix-blend-screen($xl);
   }
 
   @mixin xl\:mix-blend-overlay {
-    @include r($xl, mix-blend-mode, overlay);
+    @include mix-blend-overlay($sm);
   }
 
-  @mixin xl\:mix-blend-darken {
-    @include r($xl, mix-blend-mode, darken);
+  @mixin sm\:mix-blend-darken {
+    @include mix-blend-darken($sm);
   }
 
   @mixin xl\:mix-blend-lighten {
-    @include r($xl, mix-blend-mode, lighten);
+    @include mix-blend-lighten($xl);
   }
 
   @mixin xl\:mix-blend-color-dodge {
-    @include r($xl, mix-blend-mode, color-dodge);
+    @include mix-blend-color-dodge($xl);
   }
 
   @mixin xl\:mix-blend-color-burn {
-    @include r($xl, mix-blend-mode, color-burn);
+    @include mix-blend-color-burn($xl);
   }
 
   @mixin xl\:mix-blend-hard-light {
-    @include r($xl, mix-blend-mode, hard-light);
+    @include mix-blend-hard-light($xl);
   }
 
   @mixin xl\:mix-blend-soft-light {
-    @include r($xl, mix-blend-mode, soft-light);
+    @include mix-blend-soft-light($xl);
   }
 
   @mixin xl\:mix-blend-difference {
-    @include r($xl, mix-blend-mode, difference);
+    @include mix-blend-difference($xl);
   }
 
   @mixin xl\:mix-blend-exclusion {
-    @include r($xl, mix-blend-mode, exclusion);
+    @include mix-blend-exclusion($xl);
   }
 
   @mixin xl\:mix-blend-hue {
-    @include r($xl, mix-blend-mode, hue);
+    @include mix-blend-hue($xl);
   }
 
   @mixin xl\:mix-blend-saturation {
-    @include r($xl, mix-blend-mode, saturation);
+    @include mix-blend-saturation($xl);
   }
 
   @mixin xl\:mix-blend-color {
-    @include r($xl, mix-blend-mode, color);
+    @include mix-blend-color($xl);
   }
 
   @mixin xl\:mix-blend-luminosity {
-    @include r($xl, mix-blend-mode, luminosity);
+    @include mix-blend-luminosity($xl);
   }
 
   @mixin xl\:mix-blend-plus-lighter {
-    @include r($xl, mix-blend-mode, plus-lighter);
+    @include mix-blend-plus-lighter($xl);
   }
 
   @mixin \2xl\:mix-blend-normal {
-    @include r($\2xl, mix-blend-mode, normal);
+    @include mix-blend-normal($\2xl);
   }
 
   @mixin \2xl\:mix-blend-multiply {
-    @include r($\2xl, mix-blend-mode, multiply);
+    @include mix-blend-multiply($\2xl);
   }
 
   @mixin \2xl\:mix-blend-screen {
-    @include r($\2xl, mix-blend-mode, screen);
+    @include mix-blend-screen($\2xl);
   }
 
   @mixin \2xl\:mix-blend-overlay {
-    @include r($\2xl, mix-blend-mode, overlay);
+    @include mix-blend-overlay($sm);
   }
 
-  @mixin \2xl\:mix-blend-darken {
-    @include r($\2xl, mix-blend-mode, darken);
+  @mixin sm\:mix-blend-darken {
+    @include mix-blend-darken($sm);
   }
 
   @mixin \2xl\:mix-blend-lighten {
-    @include r($\2xl, mix-blend-mode, lighten);
+    @include mix-blend-lighten($\2xl);
   }
 
   @mixin \2xl\:mix-blend-color-dodge {
-    @include r($\2xl, mix-blend-mode, color-dodge);
+    @include mix-blend-color-dodge($\2xl);
   }
 
   @mixin \2xl\:mix-blend-color-burn {
-    @include r($\2xl, mix-blend-mode, color-burn);
+    @include mix-blend-color-burn($\2xl);
   }
 
   @mixin \2xl\:mix-blend-hard-light {
-    @include r($\2xl, mix-blend-mode, hard-light);
+    @include mix-blend-hard-light($\2xl);
   }
 
   @mixin \2xl\:mix-blend-soft-light {
-    @include r($\2xl, mix-blend-mode, soft-light);
+    @include mix-blend-soft-light($\2xl);
   }
 
   @mixin \2xl\:mix-blend-difference {
-    @include r($\2xl, mix-blend-mode, difference);
+    @include mix-blend-difference($\2xl);
   }
 
   @mixin \2xl\:mix-blend-exclusion {
-    @include r($\2xl, mix-blend-mode, exclusion);
+    @include mix-blend-exclusion($\2xl);
   }
 
   @mixin \2xl\:mix-blend-hue {
-    @include r($\2xl, mix-blend-mode, hue);
+    @include mix-blend-hue($\2xl);
   }
 
   @mixin \2xl\:mix-blend-saturation {
-    @include r($\2xl, mix-blend-mode, saturation);
+    @include mix-blend-saturation($\2xl);
   }
 
   @mixin \2xl\:mix-blend-color {
-    @include r($\2xl, mix-blend-mode, color);
+    @include mix-blend-color($\2xl);
   }
 
   @mixin \2xl\:mix-blend-luminosity {
-    @include r($\2xl, mix-blend-mode, luminosity);
+    @include mix-blend-luminosity($\2xl);
   }
 
   @mixin \2xl\:mix-blend-plus-lighter {
-    @include r($\2xl, mix-blend-mode, plus-lighter);
-  } // x*/
+    @include mix-blend-plus-lighter($\2xl);
+  }
+
+  // x*/
 }

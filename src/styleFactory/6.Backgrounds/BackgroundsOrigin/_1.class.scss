@@ -3,78 +3,100 @@
 /* Backgrounds Origin */
 @if $Basic {
   // /*x
-  @mixin bg-origin-border {
-    background-origin: border-box;
+  @mixin bg-origin-border($rwd: null) {
+    @if $rwd==null {
+      background-origin: border-box;
+    } @else {
+      @media (min-width: $rwd) {
+        background-origin: border-box;
+      }
+    }
   }
 
-  @mixin bg-origin-padding {
-    background-origin: padding-box;
+  @mixin bg-origin-padding($rwd: null) {
+    @if $rwd==null {
+      background-origin: padding-box;
+    } @else {
+      @media (min-width: $rwd) {
+        background-origin: padding-box;
+      }
+    }
   }
 
-  @mixin bg-origin-content {
-    background-origin: content-box;
-  } // x*/
+  @mixin bg-origin-content($rwd: null) {
+    @if $rwd==null {
+      background-origin: content-box;
+    } @else {
+      @media (min-width: $rwd) {
+        background-origin: content-box;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:bg-origin-border {
-    @include r($sm, background-origin, border-box);
+    @include bg-origin-border($sm);
   }
 
   @mixin sm\:bg-origin-padding {
-    @include r($sm, background-origin, padding-box);
+    @include bg-origin-padding($sm);
   }
 
   @mixin sm\:bg-origin-content {
-    @include r($sm, background-origin, content-box);
+    @include bg-origin-content($sm);
   }
 
   @mixin md\:bg-origin-border {
-    @include r($md, background-origin, border-box);
+    @include bg-origin-border($md);
   }
 
   @mixin md\:bg-origin-padding {
-    @include r($md, background-origin, padding-box);
+    @include bg-origin-padding($md);
   }
 
   @mixin md\:bg-origin-content {
-    @include r($md, background-origin, content-box);
+    @include bg-origin-content($md);
   }
 
   @mixin lg\:bg-origin-border {
-    @include r($lg, background-origin, border-box);
+    @include bg-origin-border($lg);
   }
 
   @mixin lg\:bg-origin-padding {
-    @include r($lg, background-origin, padding-box);
+    @include bg-origin-padding($lg);
   }
 
   @mixin lg\:bg-origin-content {
-    @include r($lg, background-origin, content-box);
+    @include bg-origin-content($lg);
   }
 
   @mixin xl\:bg-origin-border {
-    @include r($xl, background-origin, border-box);
+    @include bg-origin-border($xl);
   }
 
   @mixin xl\:bg-origin-padding {
-    @include r($xl, background-origin, padding-box);
+    @include bg-origin-padding($xl);
   }
 
   @mixin xl\:bg-origin-content {
-    @include r($xl, background-origin, content-box);
+    @include bg-origin-content($xl);
   }
 
   @mixin \2xl\:bg-origin-border {
-    @include r($\2xl, background-origin, border-box);
+    @include bg-origin-border($\2xl);
   }
 
   @mixin \2xl\:bg-origin-padding {
-    @include r($\2xl, background-origin, padding-box);
+    @include bg-origin-padding($\2xl);
   }
 
   @mixin \2xl\:bg-origin-content {
-    @include r($\2xl, background-origin, content-box);
-  } // x*/
+    @include bg-origin-content($\2xl);
+  }
+
+  // x*/
 }

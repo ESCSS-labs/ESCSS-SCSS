@@ -3,54 +3,66 @@
 /* Border Collapse */
 @if $Basic {
   // /*x
-  @mixin border-collapse {
-    border-collapse: collapse;
+  @mixin border-collapse($rwd: null) {
+    @if $rwd==null {
+      border-collapse: collapse;
+    } @else {
+      @media (min-width: $rwd) {
+        border-collapse: collapse;
+      }
+    }
   }
 
-  @mixin border-separate {
-    border-collapse: separate;
+  @mixin border-separate($rwd: null) {
+    @if $rwd==null {
+      border-collapse: separate;
+    } @else {
+      @media (min-width: $rwd) {
+        border-collapse: separate;
+      }
+    }
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:border-collapse {
-    @include r($sm, border-collapse, collapse);
+    @include border-collapse($sm);
   }
 
   @mixin sm\:border-separate {
-    @include r($sm, border-collapse, separate);
+    @include border-separate($sm);
   }
 
   @mixin md\:border-collapse {
-    @include r($md, border-collapse, collapse);
+    @include border-collapse($md);
   }
 
   @mixin md\:border-separate {
-    @include r($md, border-collapse, separate);
+    @include border-separate($md);
   }
 
   @mixin lg\:border-collapse {
-    @include r($lg, border-collapse, collapse);
+    @include border-collapse($lg);
   }
 
   @mixin lg\:border-separate {
-    @include r($lg, border-collapse, separate);
+    @include border-separate($lg);
   }
 
   @mixin xl\:border-collapse {
-    @include r($xl, border-collapse, collapse);
+    @include border-collapse($xl);
   }
 
   @mixin xl\:border-separate {
-    @include r($xl, border-collapse, separate);
+    @include border-separate($xl);
   }
 
   @mixin \2xl\:border-collapse {
-    @include r($\2xl, border-collapse, collapse);
+    @include border-collapse($\2xl);
   }
 
   @mixin \2xl\:border-separate {
-    @include r($\2xl, border-collapse, separate);
+    @include border-separate($\2xl);
   } // x*/
 }

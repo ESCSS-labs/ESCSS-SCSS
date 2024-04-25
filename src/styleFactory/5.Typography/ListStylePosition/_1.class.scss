@@ -3,54 +3,70 @@
 /* List Style Position */
 @if $Basic {
   // /*x
-  @mixin list-inside {
-    list-style-position: inside;
+  @mixin list-inside($rwd: null) {
+    @if $rwd==null {
+      list-style-position: inside;
+    } @else {
+      @media (min-width: $rwd) {
+        list-style-position: inside;
+      }
+    }
   }
 
-  @mixin list-outside {
-    list-style-position: outside;
-  } // x*/
+  @mixin list-outside($rwd: null) {
+    @if $rwd==null {
+      list-style-position: outside;
+    } @else {
+      @media (min-width: $rwd) {
+        list-style-position: outside;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:list-inside {
-    @include r($sm, list-style-position, inside);
+    @include list-inside($sm);
   }
 
   @mixin sm\:list-outside {
-    @include r($sm, list-style-position, outside);
+    @include list-outside($sm);
   }
 
   @mixin md\:list-inside {
-    @include r($md, list-style-position, inside);
+    @include list-inside($md);
   }
 
   @mixin md\:list-outside {
-    @include r($md, list-style-position, outside);
+    @include list-outside($md);
   }
 
   @mixin lg\:list-inside {
-    @include r($lg, list-style-position, inside);
+    @include list-inside($lg);
   }
 
   @mixin lg\:list-outside {
-    @include r($lg, list-style-position, outside);
+    @include list-outside($lg);
   }
 
   @mixin xl\:list-inside {
-    @include r($xl, list-style-position, inside);
+    @include list-inside($xl);
   }
 
   @mixin xl\:list-outside {
-    @include r($xl, list-style-position, outside);
+    @include list-outside($xl);
   }
 
   @mixin \2xl\:list-inside {
-    @include r($\2xl, list-style-position, inside);
+    @include list-inside($\2xl);
   }
 
   @mixin \2xl\:list-outside {
-    @include r($\2xl, list-style-position, outside);
-  } // x*/
+    @include list-outside($\2xl);
+  }
+
+  // x*/
 }

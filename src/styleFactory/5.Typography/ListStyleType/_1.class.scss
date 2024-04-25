@@ -4,102 +4,118 @@
 @if $Basic {
   // /*x
   @mixin list-none {
-    list-style-type: none;
+    @include list-(none);
   }
 
   @mixin list-disc {
-    list-style-type: disc;
+    @include list-(disc);
   }
 
   @mixin list-decimal {
-    list-style-type: decimal;
-  } // x*/
+    @include list-(decimal);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:list-none {
-      @include r($sm, list-style-type, none);
+      @include list-(none, $sm);
     }
 
     @mixin sm\:list-disc {
-      @include r($sm, list-style-type, disc);
+      @include list-(disc, $sm);
     }
 
     @mixin sm\:list-decimal {
-      @include r($sm, list-style-type, decimal);
+      @include list-(decimal, $sm);
     }
+
     @mixin md\:list-none {
-      @include r($md, list-style-type, none);
+      @include list-(none, $md);
     }
 
     @mixin md\:list-disc {
-      @include r($md, list-style-type, disc);
+      @include list-(disc, $md);
     }
 
     @mixin md\:list-decimal {
-      @include r($md, list-style-type, decimal);
+      @include list-(decimal, $md);
     }
+
     @mixin lg\:list-none {
-      @include r($lg, list-style-type, none);
+      @include list-(none, $lg);
     }
 
     @mixin lg\:list-disc {
-      @include r($lg, list-style-type, disc);
+      @include list-(disc, $lg);
     }
 
     @mixin lg\:list-decimal {
-      @include r($lg, list-style-type, decimal);
+      @include list-(decimal, $lg);
     }
+
     @mixin xl\:list-none {
-      @include r($xl, list-style-type, none);
+      @include list-(none, $xl);
     }
 
     @mixin xl\:list-disc {
-      @include r($xl, list-style-type, disc);
+      @include list-(disc, $xl);
     }
 
     @mixin xl\:list-decimal {
-      @include r($xl, list-style-type, decimal);
+      @include list-(decimal, $xl);
     }
+
     @mixin \2xl\:list-none {
-      @include r($\2xl, list-style-type, none);
+      @include list-(none, $\2xl);
     }
 
     @mixin \2xl\:list-disc {
-      @include r($\2xl, list-style-type, disc);
+      @include list-(disc, $\2xl);
     }
 
     @mixin \2xl\:list-decimal {
-      @include r($\2xl, list-style-type, decimal);
+      @include list-(decimal, $\2xl);
     }
+
     // x*/
   }
 }
+
 @if $Custom {
   // /*x
-  @mixin list-($v) {
-    list-style-type: $v;
+  @mixin list-($v, $rwd: null) {
+    @if $rwd==null {
+      list-style-type: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        list-style-type: $v;
+      }
+    }
   }
 
   @mixin sm\:list-($v) {
-    @include r($sm, list-style-type, $v);
+    @include list-($v, $sm);
   }
 
   @mixin md\:list-($v) {
-    @include r($md, list-style-type, $v);
+    @include list-($v, $md);
   }
 
   @mixin lg\:list-($v) {
-    @include r($lg, list-style-type, $v);
+    @include list-($v, $lg);
   }
 
   @mixin xl\:list-($v) {
-    @include r($xl, list-style-type, $v);
+    @include list-($v, $xl);
   }
 
   @mixin \2xl\:list-($v) {
-    @include r($\2xl, list-style-type, $v);
-  } // x*/
+    @include list-($v, $\2xl);
+  }
+
+  // x*/
 }

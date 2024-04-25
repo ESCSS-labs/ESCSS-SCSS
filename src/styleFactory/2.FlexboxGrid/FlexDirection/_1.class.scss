@@ -3,102 +3,130 @@
 /* Flex Direction */
 @if $Basic {
   // /*x
-  @mixin flex-row {
-    flex-direction: row;
+  @mixin flex-row($rwd: null) {
+    @if $rwd==null {
+      flex-direction: row;
+    } @else {
+      @media (min-width: $rwd) {
+        flex-direction: row;
+      }
+    }
   }
 
-  @mixin flex-row-reverse {
-    flex-direction: row-reverse;
+  @mixin flex-row-reverse($rwd: null) {
+    @if $rwd==null {
+      flex-direction: row-reverse;
+    } @else {
+      @media (min-width: $rwd) {
+        flex-direction: row-reverse;
+      }
+    }
   }
 
-  @mixin flex-col {
-    flex-direction: column;
+  @mixin flex-col($rwd: null) {
+    @if $rwd==null {
+      flex-direction: column;
+    } @else {
+      @media (min-width: $rwd) {
+        flex-direction: column;
+      }
+    }
   }
 
-  @mixin flex-col-reverse {
-    flex-direction: column-reverse;
-  } // x*/
+  @mixin flex-col-reverse($rwd: null) {
+    @if $rwd==null {
+      flex-direction: column-reverse;
+    } @else {
+      @media (min-width: $rwd) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:flex-row {
-    @include r($sm, flex-direction, row);
+    @include flex-row($sm);
   }
 
   @mixin sm\:flex-row-reverse {
-    @include r($sm, flex-direction, row-reverse);
+    @include flex-row-reverse($sm);
   }
 
   @mixin sm\:flex-col {
-    @include r($sm, flex-direction, column);
+    @include flex-col($sm);
   }
 
   @mixin sm\:flex-col-reverse {
-    @include r($sm, flex-direction, column-reverse);
+    @include flex-col-reverse($sm);
   }
 
   @mixin md\:flex-row {
-    @include r($md, flex-direction, row);
+    @include flex-row($md);
   }
 
   @mixin md\:flex-row-reverse {
-    @include r($md, flex-direction, row-reverse);
+    @include flex-row-reverse($md);
   }
 
   @mixin md\:flex-col {
-    @include r($md, flex-direction, column);
+    @include flex-col($md);
   }
 
   @mixin md\:flex-col-reverse {
-    @include r($md, flex-direction, column-reverse);
+    @include flex-col-reverse($md);
   }
 
   @mixin lg\:flex-row {
-    @include r($lg, flex-direction, row);
+    @include flex-row($lg);
   }
 
   @mixin lg\:flex-row-reverse {
-    @include r($lg, flex-direction, row-reverse);
+    @include flex-row-reverse($lg);
   }
 
   @mixin lg\:flex-col {
-    @include r($lg, flex-direction, column);
+    @include flex-col($lg);
   }
 
   @mixin lg\:flex-col-reverse {
-    @include r($lg, flex-direction, column-reverse);
+    @include flex-col-reverse($lg);
   }
 
   @mixin xl\:flex-row {
-    @include r($xl, flex-direction, row);
+    @include flex-row($xl);
   }
 
   @mixin xl\:flex-row-reverse {
-    @include r($xl, flex-direction, row-reverse);
+    @include flex-row-reverse($xl);
   }
 
   @mixin xl\:flex-col {
-    @include r($xl, flex-direction, column);
+    @include flex-col($xl);
   }
 
   @mixin xl\:flex-col-reverse {
-    @include r($xl, flex-direction, column-reverse);
+    @include flex-col-reverse($xl);
   }
 
   @mixin \2xl\:flex-row {
-    @include r($\2xl, flex-direction, row);
+    @include flex-row($\2xl);
   }
 
   @mixin \2xl\:flex-row-reverse {
-    @include r($\2xl, flex-direction, row-reverse);
+    @include flex-row-reverse($\2xl);
   }
 
   @mixin \2xl\:flex-col {
-    @include r($\2xl, flex-direction, column);
+    @include flex-col($\2xl);
   }
 
   @mixin \2xl\:flex-col-reverse {
-    @include r($\2xl, flex-direction, column-reverse);
-  } // x*/
+    @include flex-col-reverse($\2xl);
+  }
+
+  // x*/
 }

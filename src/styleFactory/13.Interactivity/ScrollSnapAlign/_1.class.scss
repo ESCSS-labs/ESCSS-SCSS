@@ -3,102 +3,130 @@
 /* Scroll Snap Align */
 @if $Basic {
   // /*x
-  @mixin snap-start {
-    scroll-snap-align: start;
+  @mixin snap-start($rwd: null) {
+    @if $rwd==null {
+      scroll-snap-align: start;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-snap-align: start;
+      }
+    }
   }
 
-  @mixin snap-end {
-    scroll-snap-align: end;
+  @mixin snap-end($rwd: null) {
+    @if $rwd==null {
+      scroll-snap-align: end;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-snap-align: end;
+      }
+    }
   }
 
-  @mixin snap-center {
-    scroll-snap-align: center;
+  @mixin snap-center($rwd: null) {
+    @if $rwd==null {
+      scroll-snap-align: center;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-snap-align: center;
+      }
+    }
   }
 
-  @mixin snap-align-none {
-    scroll-snap-align: none;
-  } // x*/
+  @mixin snap-align-none($rwd: null) {
+    @if $rwd==null {
+      scroll-snap-align: none;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-snap-align: none;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:snap-start {
-    @include r($sm, scroll-snap-align, start);
+    @include snap-start($sm);
   }
 
   @mixin sm\:snap-end {
-    @include r($sm, scroll-snap-align, end);
+    @include snap-end($sm);
   }
 
   @mixin sm\:snap-center {
-    @include r($sm, scroll-snap-align, center);
+    @include snap-center($sm);
   }
 
   @mixin sm\:snap-align-none {
-    @include r($sm, scroll-snap-align, none);
+    @include snap-align-none($sm);
   }
 
   @mixin md\:snap-start {
-    @include r($md, scroll-snap-align, start);
+    @include snap-start($md);
   }
 
   @mixin md\:snap-end {
-    @include r($md, scroll-snap-align, end);
+    @include snap-end($md);
   }
 
   @mixin md\:snap-center {
-    @include r($md, scroll-snap-align, center);
+    @include snap-center($md);
   }
 
   @mixin md\:snap-align-none {
-    @include r($md, scroll-snap-align, none);
+    @include snap-align-none($md);
   }
 
   @mixin lg\:snap-start {
-    @include r($lg, scroll-snap-align, start);
+    @include snap-start($lg);
   }
 
   @mixin lg\:snap-end {
-    @include r($lg, scroll-snap-align, end);
+    @include snap-end($lg);
   }
 
   @mixin lg\:snap-center {
-    @include r($lg, scroll-snap-align, center);
+    @include snap-center($lg);
   }
 
   @mixin lg\:snap-align-none {
-    @include r($lg, scroll-snap-align, none);
+    @include snap-align-none($lg);
   }
 
   @mixin xl\:snap-start {
-    @include r($xl, scroll-snap-align, start);
+    @include snap-start($xl);
   }
 
   @mixin xl\:snap-end {
-    @include r($xl, scroll-snap-align, end);
+    @include snap-end($xl);
   }
 
   @mixin xl\:snap-center {
-    @include r($xl, scroll-snap-align, center);
+    @include snap-center($xl);
   }
 
   @mixin xl\:snap-align-none {
-    @include r($xl, scroll-snap-align, none);
+    @include snap-align-none($xl);
   }
 
   @mixin \2xl\:snap-start {
-    @include r($\2xl, scroll-snap-align, start);
+    @include snap-start($\2xl);
   }
 
   @mixin \2xl\:snap-end {
-    @include r($\2xl, scroll-snap-align, end);
+    @include snap-end($\2xl);
   }
 
   @mixin \2xl\:snap-center {
-    @include r($\2xl, scroll-snap-align, center);
+    @include snap-center($\2xl);
   }
 
   @mixin \2xl\:snap-align-none {
-    @include r($\2xl, scroll-snap-align, none);
-  } // x*/
+    @include snap-align-none($\2xl);
+  }
+
+  // x*/
 }

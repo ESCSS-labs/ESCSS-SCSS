@@ -3,126 +3,160 @@
 /* Align Items */
 @if $Basic {
   // /*x
-  @mixin items-start {
-    align-items: flex-start;
+  @mixin items-start($rwd: null) {
+    @if $rwd==null {
+      align-items: flex-start;
+    } @else {
+      @media (min-width: $rwd) {
+        align-items: flex-start;
+      }
+    }
   }
 
-  @mixin items-end {
-    align-items: flex-end;
+  @mixin items-end($rwd: null) {
+    @if $rwd==null {
+      align-items: flex-end;
+    } @else {
+      @media (min-width: $rwd) {
+        align-items: flex-end;
+      }
+    }
   }
 
-  @mixin items-center {
-    align-items: center;
+  @mixin items-center($rwd: null) {
+    @if $rwd==null {
+      align-items: center;
+    } @else {
+      @media (min-width: $rwd) {
+        align-items: center;
+      }
+    }
   }
 
-  @mixin items-baseline {
-    align-items: baseline;
+  @mixin items-baseline($rwd: null) {
+    @if $rwd==null {
+      align-items: baseline;
+    } @else {
+      @media (min-width: $rwd) {
+        align-items: baseline;
+      }
+    }
   }
 
-  @mixin items-stretch {
-    align-items: stretch;
-  } // x*/
+  @mixin items-stretch($rwd: null) {
+    @if $rwd==null {
+      align-items: stretch;
+    } @else {
+      @media (min-width: $rwd) {
+        align-items: stretch;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:items-start {
-    @include r($sm, align-items, flex-start);
+    @include items-start($sm);
   }
 
   @mixin sm\:items-end {
-    @include r($sm, align-items, flex-end);
+    @include items-end($sm);
   }
 
   @mixin sm\:items-center {
-    @include r($sm, align-items, center);
+    @include items-center($sm);
   }
 
   @mixin sm\:items-baseline {
-    @include r($sm, align-items, baseline);
+    @include items-baseline($sm);
   }
 
   @mixin sm\:items-stretch {
-    @include r($sm, align-items, stretch);
+    @include items-stretch($sm);
   }
 
   @mixin md\:items-start {
-    @include r($md, align-items, flex-start);
+    @include items-start($md);
   }
 
   @mixin md\:items-end {
-    @include r($md, align-items, flex-end);
+    @include items-end($md);
   }
 
   @mixin md\:items-center {
-    @include r($md, align-items, center);
+    @include items-center($md);
   }
 
   @mixin md\:items-baseline {
-    @include r($md, align-items, baseline);
+    @include items-baseline($md);
   }
 
   @mixin md\:items-stretch {
-    @include r($md, align-items, stretch);
+    @include items-stretch($md);
   }
 
   @mixin lg\:items-start {
-    @include r($lg, align-items, flex-start);
+    @include items-start($lg);
   }
 
   @mixin lg\:items-end {
-    @include r($lg, align-items, flex-end);
+    @include items-end($lg);
   }
 
   @mixin lg\:items-center {
-    @include r($lg, align-items, center);
+    @include items-center($lg);
   }
 
   @mixin lg\:items-baseline {
-    @include r($lg, align-items, baseline);
+    @include items-baseline($lg);
   }
 
   @mixin lg\:items-stretch {
-    @include r($lg, align-items, stretch);
+    @include items-stretch($lg);
   }
 
   @mixin xl\:items-start {
-    @include r($xl, align-items, flex-start);
+    @include items-start($xl);
   }
 
   @mixin xl\:items-end {
-    @include r($xl, align-items, flex-end);
+    @include items-end($xl);
   }
 
   @mixin xl\:items-center {
-    @include r($xl, align-items, center);
+    @include items-center($xl);
   }
 
   @mixin xl\:items-baseline {
-    @include r($xl, align-items, baseline);
+    @include items-baseline($xl);
   }
 
   @mixin xl\:items-stretch {
-    @include r($xl, align-items, stretch);
+    @include items-stretch($xl);
   }
 
   @mixin \2xl\:items-start {
-    @include r($\2xl, align-items, flex-start);
+    @include items-start($\2xl);
   }
 
   @mixin \2xl\:items-end {
-    @include r($\2xl, align-items, flex-end);
+    @include items-end($\2xl);
   }
 
   @mixin \2xl\:items-center {
-    @include r($\2xl, align-items, center);
+    @include items-center($\2xl);
   }
 
   @mixin \2xl\:items-baseline {
-    @include r($\2xl, align-items, baseline);
+    @include items-baseline($\2xl);
   }
 
   @mixin \2xl\:items-stretch {
-    @include r($\2xl, align-items, stretch);
-  } // x*/
+    @include items-stretch($\2xl);
+  }
+
+  // x*/
 }

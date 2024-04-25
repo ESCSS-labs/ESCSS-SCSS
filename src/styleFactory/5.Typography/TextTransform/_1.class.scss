@@ -3,102 +3,130 @@
 /* Text Transform */
 @if $Basic {
   // /*x
-  @mixin uppercase {
-    text-transform: uppercase;
+  @mixin uppercase($rwd: null) {
+    @if $rwd==null {
+      text-transform: uppercase;
+    } @else {
+      @media (min-width: $rwd) {
+        text-transform: uppercase;
+      }
+    }
   }
 
-  @mixin lowercase {
-    text-transform: lowercase;
+  @mixin lowercase($rwd: null) {
+    @if $rwd==null {
+      text-transform: lowercase;
+    } @else {
+      @media (min-width: $rwd) {
+        text-transform: lowercase;
+      }
+    }
   }
 
-  @mixin capitalize {
-    text-transform: capitalize;
+  @mixin capitalize($rwd: null) {
+    @if $rwd==null {
+      text-transform: capitalize;
+    } @else {
+      @media (min-width: $rwd) {
+        text-transform: capitalize;
+      }
+    }
   }
 
-  @mixin normal-case {
-    text-transform: none;
-  } // x*/
+  @mixin normal-case($rwd: null) {
+    @if $rwd==null {
+      text-transform: none;
+    } @else {
+      @media (min-width: $rwd) {
+        text-transform: none;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:uppercase {
-    @include r($sm, text-transform, uppercase);
+    @include uppercase($sm);
   }
 
   @mixin sm\:lowercase {
-    @include r($sm, text-transform, lowercase);
+    @include lowercase($sm);
   }
 
   @mixin sm\:capitalize {
-    @include r($sm, text-transform, capitalize);
+    @include capitalize($sm);
   }
 
   @mixin sm\:normal-case {
-    @include r($sm, text-transform, none);
+    @include normal-case($sm);
   }
 
   @mixin md\:uppercase {
-    @include r($md, text-transform, uppercase);
+    @include uppercase($md);
   }
 
   @mixin md\:lowercase {
-    @include r($md, text-transform, lowercase);
+    @include lowercase($md);
   }
 
   @mixin md\:capitalize {
-    @include r($md, text-transform, capitalize);
+    @include capitalize($md);
   }
 
   @mixin md\:normal-case {
-    @include r($md, text-transform, none);
+    @include normal-case($md);
   }
 
   @mixin lg\:uppercase {
-    @include r($lg, text-transform, uppercase);
+    @include uppercase($lg);
   }
 
   @mixin lg\:lowercase {
-    @include r($lg, text-transform, lowercase);
+    @include lowercase($lg);
   }
 
   @mixin lg\:capitalize {
-    @include r($lg, text-transform, capitalize);
+    @include capitalize($lg);
   }
 
   @mixin lg\:normal-case {
-    @include r($lg, text-transform, none);
+    @include normal-case($lg);
   }
 
   @mixin xl\:uppercase {
-    @include r($xl, text-transform, uppercase);
+    @include uppercase($xl);
   }
 
   @mixin xl\:lowercase {
-    @include r($xl, text-transform, lowercase);
+    @include lowercase($xl);
   }
 
   @mixin xl\:capitalize {
-    @include r($xl, text-transform, capitalize);
+    @include capitalize($xl);
   }
 
   @mixin xl\:normal-case {
-    @include r($xl, text-transform, none);
+    @include normal-case($xl);
   }
 
   @mixin \2xl\:uppercase {
-    @include r($\2xl, text-transform, uppercase);
+    @include uppercase($\2xl);
   }
 
   @mixin \2xl\:lowercase {
-    @include r($\2xl, text-transform, lowercase);
+    @include lowercase($\2xl);
   }
 
   @mixin \2xl\:capitalize {
-    @include r($\2xl, text-transform, capitalize);
+    @include capitalize($\2xl);
   }
 
   @mixin \2xl\:normal-case {
-    @include r($\2xl, text-transform, none);
-  } // x*/
+    @include normal-case($\2xl);
+  }
+
+  // x*/
 }

@@ -3,150 +3,190 @@
 /* Border Style */
 @if $Basic {
   // /*x
-  @mixin border-solid {
-    border-style: solid;
+  @mixin border-solid($rwd: null) {
+    @if $rwd==null {
+      border-style: solid;
+    } @else {
+      @media (min-width: $rwd) {
+        border-style: solid;
+      }
+    }
   }
 
-  @mixin border-dashed {
-    border-style: dashed;
+  @mixin border-dashed($rwd: null) {
+    @if $rwd==null {
+      border-style: dashed;
+    } @else {
+      @media (min-width: $rwd) {
+        border-style: dashed;
+      }
+    }
   }
 
-  @mixin border-dotted {
-    border-style: dotted;
+  @mixin border-dotted($rwd: null) {
+    @if $rwd==null {
+      border-style: dotted;
+    } @else {
+      @media (min-width: $rwd) {
+        border-style: dotted;
+      }
+    }
   }
 
-  @mixin border-double {
-    border-style: double;
+  @mixin border-double($rwd: null) {
+    @if $rwd==null {
+      border-style: double;
+    } @else {
+      @media (min-width: $rwd) {
+        border-style: double;
+      }
+    }
   }
 
-  @mixin border-hidden {
-    border-style: hidden;
+  @mixin border-hidden($rwd: null) {
+    @if $rwd==null {
+      border-style: hidden;
+    } @else {
+      @media (min-width: $rwd) {
+        border-style: hidden;
+      }
+    }
   }
 
-  @mixin border-none {
-    border-style: none;
-  } // x*/
+  @mixin border-none($rwd: null) {
+    @if $rwd==null {
+      border-style: none;
+    } @else {
+      @media (min-width: $rwd) {
+        border-style: none;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
-  @mixin sm\:border-solid {
-    @include r($sm, border-style, solid);
+  @mixin sm\:bg-repeat {
+    @include bg-repeat($sm);
   }
 
-  @mixin sm\:border-dashed {
-    @include r($sm, border-style, dashed);
+  @mixin sm\:bg-no-repeat {
+    @include bg-no-repeat($sm);
   }
 
-  @mixin sm\:border-dotted {
-    @include r($sm, border-style, dotted);
+  @mixin sm\:bg-repeat-x {
+    @include bg-repeat-x($sm);
   }
 
-  @mixin sm\:border-double {
-    @include r($sm, border-style, double);
+  @mixin sm\:bg-repeat-y {
+    @include bg-repeat-y($sm);
   }
 
-  @mixin sm\:border-hidden {
-    @include r($sm, border-style, hidden);
+  @mixin sm\:bg-repeat-round {
+    @include bg-repeat-round($sm);
   }
 
-  @mixin sm\:border-none {
-    @include r($sm, border-style, none);
+  @mixin sm\:bg-repeat-space {
+    @include bg-repeat-space($sm);
   }
 
-  @mixin md\:border-solid {
-    @include r($md, border-style, solid);
+  @mixin md\:bg-repeat {
+    @include bg-repeat($md);
   }
 
-  @mixin md\:border-dashed {
-    @include r($md, border-style, dashed);
+  @mixin md\:bg-no-repeat {
+    @include bg-no-repeat($md);
   }
 
-  @mixin md\:border-dotted {
-    @include r($md, border-style, dotted);
+  @mixin md\:bg-repeat-x {
+    @include bg-repeat-x($md);
   }
 
-  @mixin md\:border-double {
-    @include r($md, border-style, double);
+  @mixin md\:bg-repeat-y {
+    @include bg-repeat-y($md);
   }
 
-  @mixin md\:border-hidden {
-    @include r($md, border-style, hidden);
+  @mixin md\:bg-repeat-round {
+    @include bg-repeat-round($md);
   }
 
-  @mixin md\:border-none {
-    @include r($md, border-style, none);
+  @mixin md\:bg-repeat-space {
+    @include bg-repeat-space($md);
   }
 
-  @mixin lg\:border-solid {
-    @include r($lg, border-style, solid);
+  @mixin lg\:bg-repeat {
+    @include bg-repeat($lg);
   }
 
-  @mixin lg\:border-dashed {
-    @include r($lg, border-style, dashed);
+  @mixin lg\:bg-no-repeat {
+    @include bg-no-repeat($lg);
   }
 
-  @mixin lg\:border-dotted {
-    @include r($lg, border-style, dotted);
+  @mixin lg\:bg-repeat-x {
+    @include bg-repeat-x($lg);
   }
 
-  @mixin lg\:border-double {
-    @include r($lg, border-style, double);
+  @mixin lg\:bg-repeat-y {
+    @include bg-repeat-y($lg);
   }
 
-  @mixin lg\:border-hidden {
-    @include r($lg, border-style, hidden);
+  @mixin lg\:bg-repeat-round {
+    @include bg-repeat-round($lg);
   }
 
-  @mixin lg\:border-none {
-    @include r($lg, border-style, none);
+  @mixin lg\:bg-repeat-space {
+    @include bg-repeat-space($lg);
   }
 
-  @mixin xl\:border-solid {
-    @include r($xl, border-style, solid);
+  @mixin xl\:bg-repeat {
+    @include bg-repeat($xl);
   }
 
-  @mixin xl\:border-dashed {
-    @include r($xl, border-style, dashed);
+  @mixin xl\:bg-no-repeat {
+    @include bg-no-repeat($xl);
   }
 
-  @mixin xl\:border-dotted {
-    @include r($xl, border-style, dotted);
+  @mixin xl\:bg-repeat-x {
+    @include bg-repeat-x($xl);
   }
 
-  @mixin xl\:border-double {
-    @include r($xl, border-style, double);
+  @mixin xl\:bg-repeat-y {
+    @include bg-repeat-y($xl);
   }
 
-  @mixin xl\:border-hidden {
-    @include r($xl, border-style, hidden);
+  @mixin xl\:bg-repeat-round {
+    @include bg-repeat-round($xl);
   }
 
-  @mixin xl\:border-none {
-    @include r($xl, border-style, none);
+  @mixin xl\:bg-repeat-space {
+    @include bg-repeat-space($xl);
   }
 
-  @mixin \2xl\:border-solid {
-    @include r($\2xl, border-style, solid);
+  @mixin \2xl\:bg-repeat {
+    @include bg-repeat($\2xl);
   }
 
-  @mixin \2xl\:border-dashed {
-    @include r($\2xl, border-style, dashed);
+  @mixin \2xl\:bg-no-repeat {
+    @include bg-no-repeat($\2xl);
   }
 
-  @mixin \2xl\:border-dotted {
-    @include r($\2xl, border-style, dotted);
+  @mixin \2xl\:bg-repeat-x {
+    @include bg-repeat-x($\2xl);
   }
 
-  @mixin \2xl\:border-double {
-    @include r($\2xl, border-style, double);
+  @mixin \2xl\:bg-repeat-y {
+    @include bg-repeat-y($\2xl);
   }
 
-  @mixin \2xl\:border-hidden {
-    @include r($\2xl, border-style, hidden);
+  @mixin \2xl\:bg-repeat-round {
+    @include bg-repeat-round($\2xl);
   }
 
-  @mixin \2xl\:border-none {
-    @include r($\2xl, border-style, none);
-  } // x*/
+  @mixin \2xl\:bg-repeat-space {
+    @include bg-repeat-space($\2xl);
+  }
+
+  // x*/
 }

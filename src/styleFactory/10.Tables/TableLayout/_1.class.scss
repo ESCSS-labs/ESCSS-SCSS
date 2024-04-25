@@ -3,54 +3,70 @@
 /* TableLayout */
 @if $Basic {
   // /*x
-  @mixin table-auto {
-    table-layout: auto;
+  @mixin table-auto($rwd: null) {
+    @if $rwd==null {
+      table-layout: auto;
+    } @else {
+      @media (min-width) {
+        table-layout: auto;
+      }
+    }
   }
 
-  @mixin table-fixed {
-    table-layout: fixed;
-  } // x*/
+  @mixin table-fixed($rwd: null) {
+    @if $rwd==null {
+      table-layout: fixed;
+    } @else {
+      @media (min-width) {
+        table-layout: fixed;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:table-auto {
-    @include r($sm, table-layout, auto);
+    @include table-auto($sm);
   }
 
   @mixin sm\:table-fixed {
-    @include r($sm, table-layout, fixed);
+    @include table-fixed($sm);
   }
 
   @mixin md\:table-auto {
-    @include r($md, table-layout, auto);
+    @include table-auto($md);
   }
 
   @mixin md\:table-fixed {
-    @include r($md, table-layout, fixed);
+    @include table-fixed($md);
   }
 
   @mixin lg\:table-auto {
-    @include r($lg, table-layout, auto);
+    @include table-auto($lg);
   }
 
   @mixin lg\:table-fixed {
-    @include r($lg, table-layout, fixed);
+    @include table-fixed($lg);
   }
 
   @mixin xl\:table-auto {
-    @include r($xl, table-layout, auto);
+    @include table-auto($xl);
   }
 
   @mixin xl\:table-fixed {
-    @include r($xl, table-layout, fixed);
+    @include table-fixed($xl);
   }
 
   @mixin \2xl\:table-auto {
-    @include r($\2xl, table-layout, auto);
+    @include table-auto($\2xl);
   }
 
   @mixin \2xl\:table-fixed {
-    @include r($\2xl, table-layout, fixed);
-  } // x*/
+    @include table-fixed($\2xl);
+  }
+
+  // x*/
 }

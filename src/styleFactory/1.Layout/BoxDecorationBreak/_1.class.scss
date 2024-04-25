@@ -3,54 +3,66 @@
 /* Box Decoration Break */
 @if $Basic {
   // /*x
-  @mixin box-decoration-clone {
-    box-decoration-break: clone;
+  @mixin box-decoration-clone($rwd: null) {
+    @if $rwd==null {
+      box-decoration-break: clone;
+    } @else {
+      @media (min-width: $rwd) {
+        box-decoration-break: clone;
+      }
+    }
   }
 
-  @mixin box-decoration-slice {
-    box-decoration-break: slice;
+  @mixin box-decoration-slice($rwd: null) {
+    @if $rwd==null {
+      box-decoration-break: slice;
+    } @else {
+      @media (min-width: $rwd) {
+        box-decoration-break: slice;
+      }
+    }
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:box-decoration-clone {
-    @include r($sm, box-decoration-break, clone);
+    @include box-decoration-clone($sm);
   }
 
   @mixin sm\:box-decoration-slice {
-    @include r($sm, box-decoration-break, slice);
+    @include box-decoration-slice($sm);
   }
 
   @mixin md\:box-decoration-clone {
-    @include r($md, box-decoration-break, clone);
+    @include box-decoration-clone($md);
   }
 
   @mixin md\:box-decoration-slice {
-    @include r($md, box-decoration-break, slice);
+    @include box-decoration-slice($md);
   }
 
   @mixin lg\:box-decoration-clone {
-    @include r($lg, box-decoration-break, clone);
+    @include box-decoration-clone($lg);
   }
 
   @mixin lg\:box-decoration-slice {
-    @include r($lg, box-decoration-break, slice);
+    @include box-decoration-slice($lg);
   }
 
   @mixin xl\:box-decoration-clone {
-    @include r($xl, box-decoration-break, clone);
+    @include box-decoration-clone($xl);
   }
 
   @mixin xl\:box-decoration-slice {
-    @include r($xl, box-decoration-break, slice);
+    @include box-decoration-slice($xl);
   }
 
   @mixin \2xl\:box-decoration-clone {
-    @include r($\2xl, box-decoration-break, clone);
+    @include box-decoration-clone($\2xl);
   }
 
   @mixin \2xl\:box-decoration-slice {
-    @include r($\2xl, box-decoration-break, slice);
+    @include box-decoration-slice($\2xl);
   } // x*/
 }

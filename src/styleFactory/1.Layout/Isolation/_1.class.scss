@@ -3,54 +3,68 @@
 /* Isolation */
 @if $Basic {
   // /*x
-  @mixin isolate {
-    isolation: isolate;
+  @mixin isolate($rwd: null) {
+    @if $rwd==null {
+      isolation: isolate;
+    } @else {
+      @media (min-width: $rwd) {
+        isolation: isolate;
+      }
+    }
   }
 
-  @mixin isolation-auto {
-    isolation: auto;
+  @mixin isolation-auto($rwd: null) {
+    @if $rwd==null {
+      isolation: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        isolation: auto;
+      }
+    }
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:isolate {
-    @include r($sm, isolation, isolate);
+    @include isolate($sm);
   }
 
   @mixin sm\:isolation-auto {
-    @include r($sm, isolation, auto);
+    @include isolation-auto($sm);
   }
 
   @mixin md\:isolate {
-    @include r($md, isolation, isolate);
+    @include isolate($md);
   }
 
   @mixin md\:isolation-auto {
-    @include r($md, isolation, auto);
+    @include isolation-auto($md);
   }
 
   @mixin lg\:isolate {
-    @include r($lg, isolation, isolate);
+    @include isolate($lg);
   }
 
   @mixin lg\:isolation-auto {
-    @include r($lg, isolation, auto);
+    @include isolation-auto($lg);
   }
 
   @mixin xl\:isolate {
-    @include r($xl, isolation, isolate);
+    @include isolate($xl);
   }
 
   @mixin xl\:isolation-auto {
-    @include r($xl, isolation, auto);
+    @include isolation-auto($xl);
   }
 
   @mixin \2xl\:isolate {
-    @include r($\2xl, isolation, isolate);
+    @include isolate($\2xl);
   }
 
   @mixin \2xl\:isolation-auto {
-    @include r($\2xl, isolation, auto);
-  } // x*/
+    @include isolation-auto($\2xl);
+  }
+
+  // x*/
 }

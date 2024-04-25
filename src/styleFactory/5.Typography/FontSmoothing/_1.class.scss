@@ -3,116 +3,71 @@
 /* Font Smoothing */
 @if $Basic {
   // /*x
-  @mixin antialiased {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  @mixin antialiased($rwd: null) {
+    @if $rwd==null {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    } @else {
+      @media (min-width: $rwd) {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
   }
 
-  @mixin subpixel-antialiased {
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
+  @mixin subpixel-antialiased($rwd: null) {
+    @if $rwd==null {
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        -webkit-font-smoothing: auto;
+        -moz-osx-font-smoothing: auto;
+      }
+    }
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:antialiased {
-    @include r(
-      sm,
-      -webkit-font-smoothing,
-      antialiased,
-      -moz-osx-font-smoothing,
-      grayscale
-    );
+    @include antialiased($sm);
   }
 
   @mixin sm\:subpixel-antialiased {
-    @include r(
-      $sm,
-      -webkit-font-smoothing,
-      auto,
-      -moz-osx-font-smoothing,
-      auto
-    );
+    @include subpixel-antialiased($sm);
   }
 
   @mixin md\:antialiased {
-    @include r(
-      md,
-      -webkit-font-smoothing,
-      antialiased,
-      -moz-osx-font-smoothing,
-      grayscale
-    );
+    @include antialiased($md);
   }
 
   @mixin md\:subpixel-antialiased {
-    @include r(
-      $md,
-      -webkit-font-smoothing,
-      auto,
-      -moz-osx-font-smoothing,
-      auto
-    );
+    @include subpixel-antialiased($md);
   }
 
   @mixin lg\:antialiased {
-    @include r(
-      lg,
-      -webkit-font-smoothing,
-      antialiased,
-      -moz-osx-font-smoothing,
-      grayscale
-    );
+    @include antialiased($lg);
   }
 
   @mixin lg\:subpixel-antialiased {
-    @include r(
-      $lg,
-      -webkit-font-smoothing,
-      auto,
-      -moz-osx-font-smoothing,
-      auto
-    );
+    @include subpixel-antialiased($lg);
   }
 
   @mixin xl\:antialiased {
-    @include r(
-      xl,
-      -webkit-font-smoothing,
-      antialiased,
-      -moz-osx-font-smoothing,
-      grayscale
-    );
+    @include antialiased($xl);
   }
 
   @mixin xl\:subpixel-antialiased {
-    @include r(
-      $xl,
-      -webkit-font-smoothing,
-      auto,
-      -moz-osx-font-smoothing,
-      auto
-    );
+    @include subpixel-antialiased($xl);
   }
 
   @mixin \2xl\:antialiased {
-    @include r(
-      \2,
-      -webkit-font-smoothing,
-      antialiased,
-      -moz-osx-font-smoothing,
-      grayscale
-    );
+    @include antialiased($\2xl);
   }
 
   @mixin \2xl\:subpixel-antialiased {
-    @include r(
-      2xl,
-      -webkit-font-smoothing,
-      auto,
-      -moz-osx-font-smoothing,
-      auto
-    );
-  } // x*/
+    @include subpixel-antialiased($\2xl);
+  }
+  // x*/
 }

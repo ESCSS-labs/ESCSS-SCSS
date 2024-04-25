@@ -4,19 +4,19 @@
 @if $Basic {
   // /*x
   @mixin flex-1 {
-    flex: 1 1 0%;
+    @include flex-(1 1 0%);
   }
 
   @mixin flex-auto {
-    flex: 1 1 auto;
+    @include flex-(1 1 auto);
   }
 
   @mixin flex-initial {
-    flex: 0 1 auto;
+    @include flex-(0 1 auto);
   }
 
   @mixin flex-none {
-    flex: none;
+    @include flex-(none);
   } // x*/
 }
 
@@ -24,82 +24,83 @@
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:flex-1 {
-      @include r($sm, flex, 1 1 0%);
+      @include flex-(1 1 0%, $sm);
     }
 
     @mixin sm\:flex-auto {
-      @include r($sm, flex, 1 1 auto);
+      @include flex-(1 1 auto, $sm);
     }
 
     @mixin sm\:flex-initial {
-      @include r($sm, flex, 0 1 auto);
+      @include flex-(0 1 auto, $sm);
     }
 
     @mixin sm\:flex-none {
-      @include r($sm, flex, none);
+      @include flex-(none, $sm);
     }
+
     @mixin md\:flex-1 {
-      @include r($md, flex, 1 1 0%);
+      @include flex-(1 1 0%, $md);
     }
 
     @mixin md\:flex-auto {
-      @include r($md, flex, 1 1 auto);
+      @include flex-(1 1 auto, $md);
     }
 
     @mixin md\:flex-initial {
-      @include r($md, flex, 0 1 auto);
+      @include flex-(0 1 auto, $md);
     }
 
     @mixin md\:flex-none {
-      @include r($md, flex, none);
+      @include flex-(none, $md);
     }
 
     @mixin lg\:flex-1 {
-      @include r($lg, flex, 1 1 0%);
+      @include flex-(1 1 0%, $lg);
     }
 
     @mixin lg\:flex-auto {
-      @include r($lg, flex, 1 1 auto);
+      @include flex-(1 1 auto, $lg);
     }
 
     @mixin lg\:flex-initial {
-      @include r($lg, flex, 0 1 auto);
+      @include flex-(0 1 auto, $lg);
     }
 
     @mixin lg\:flex-none {
-      @include r($lg, flex, none);
+      @include flex-(none, $lg);
     }
 
     @mixin xl\:flex-1 {
-      @include r($xl, flex, 1 1 0%);
+      @include flex-(1 1 0%, $xl);
     }
 
     @mixin xl\:flex-auto {
-      @include r($xl, flex, 1 1 auto);
+      @include flex-(1 1 auto, $xl);
     }
 
     @mixin xl\:flex-initial {
-      @include r($xl, flex, 0 1 auto);
+      @include flex-(0 1 auto, $xl);
     }
 
     @mixin xl\:flex-none {
-      @include r($xl, flex, none);
+      @include flex-(none, $xl);
     }
 
     @mixin \2xl\:flex-1 {
-      @include r($\2xl, flex, 1 1 0%);
+      @include flex-(1 1 0%, $\2xl);
     }
 
     @mixin \2xl\:flex-auto {
-      @include r($\2xl, flex, 1 1 auto);
+      @include flex-(1 1 auto, $\2xl);
     }
 
     @mixin \2xl\:flex-initial {
-      @include r($\2xl, flex, 0 1 auto);
+      @include flex-(0 1 auto, $\2xl);
     }
 
     @mixin \2xl\:flex-none {
-      @include r($\2xl, flex, none);
+      @include flex-(none, $\2xl);
     }
 
     // x*/
@@ -107,26 +108,35 @@
 }
 @if $Custom {
   // /*x
-  @mixin flex-($v) {
-    flex: $v;
+  @mixin flex-($v, $rwd: null) {
+    @if $rwd == null {
+      flex: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        flex: $v;
+      }
+    }
   }
+
   @mixin sm\:flex-($v) {
-    @include r($sm, flex, $v);
+    @include flex-($v, $sm);
   }
 
   @mixin md\:flex-($v) {
-    @include r($md, flex, $v);
+    @include flex-($v, $md);
   }
 
   @mixin lg\:flex-($v) {
-    @include r($lg, flex, $v);
+    @include flex-($v, $lg);
   }
 
   @mixin xl\:flex-($v) {
-    @include r($xl, flex, $v);
+    @include flex-($v, $xl);
   }
 
   @mixin \2xl\:flex-($v) {
-    @include r($\2xl, flex, $v);
-  } // x*/
+    @include flex-($v, $\2xl);
+  }
+
+  // x*/
 }

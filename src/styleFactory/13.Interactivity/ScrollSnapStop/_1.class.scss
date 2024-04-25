@@ -3,54 +3,70 @@
 /* Scroll Snap Stop */
 @if $Basic {
   // /*x
-  @mixin snap-normal {
-    scroll-snap-stop: normal;
+  @mixin snap-normal($rwd: null) {
+    @if $rwd==null {
+      scroll-snap-stop: normal;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-snap-stop: normal;
+      }
+    }
   }
 
-  @mixin snap-always {
-    scroll-snap-stop: always;
-  } // x*/
+  @mixin snap-always($rwd: null) {
+    @if $rwd==null {
+      scroll-snap-stop: always;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-snap-stop: always;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:snap-normal {
-    @include r($sm, scroll-snap-stop, normal);
+    @include snap-normal($sm);
   }
 
   @mixin sm\:snap-always {
-    @include r($sm, scroll-snap-stop, always);
+    @include snap-always($sm);
   }
 
   @mixin md\:snap-normal {
-    @include r($md, scroll-snap-stop, normal);
+    @include snap-normal($md);
   }
 
   @mixin md\:snap-always {
-    @include r($md, scroll-snap-stop, always);
+    @include snap-always($md);
   }
 
   @mixin lg\:snap-normal {
-    @include r($lg, scroll-snap-stop, normal);
+    @include snap-normal($lg);
   }
 
   @mixin lg\:snap-always {
-    @include r($lg, scroll-snap-stop, always);
+    @include snap-always($lg);
   }
 
   @mixin xl\:snap-normal {
-    @include r($xl, scroll-snap-stop, normal);
+    @include snap-normal($xl);
   }
 
   @mixin xl\:snap-always {
-    @include r($xl, scroll-snap-stop, always);
+    @include snap-always($xl);
   }
 
   @mixin \2xl\:snap-normal {
-    @include r($\2xl, scroll-snap-stop, normal);
+    @include snap-normal($\2xl);
   }
 
   @mixin \2xl\:snap-always {
-    @include r($\2xl, scroll-snap-stop, always);
-  } // x*/
+    @include snap-always($\2xl);
+  }
+
+  // x*/
 }

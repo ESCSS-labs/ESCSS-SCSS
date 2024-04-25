@@ -3,54 +3,70 @@
 /* Scroll Behavior */
 @if $Basic {
   // /*x
-  @mixin scroll-auto {
-    scroll-behavior: auto;
+  @mixin scroll-auto($rwd: null) {
+    @if $rwd==null {
+      scroll-behavior: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-behavior: auto;
+      }
+    }
   }
 
-  @mixin scroll-smooth {
-    scroll-behavior: smooth;
-  } // x*/
+  @mixin scroll-smooth($rwd: null) {
+    @if $rwd==null {
+      scroll-behavior: smooth;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-behavior: smooth;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:scroll-auto {
-    @include r($sm, scroll-behavior, auto);
+    @include scroll-auto($sm);
   }
 
   @mixin sm\:scroll-smooth {
-    @include r($sm, scroll-behavior, smooth);
+    @include scroll-smooth($sm);
   }
 
   @mixin md\:scroll-auto {
-    @include r($md, scroll-behavior, auto);
+    @include scroll-auto($md);
   }
 
   @mixin md\:scroll-smooth {
-    @include r($md, scroll-behavior, smooth);
+    @include scroll-smooth($md);
   }
 
   @mixin lg\:scroll-auto {
-    @include r($lg, scroll-behavior, auto);
+    @include scroll-auto($lg);
   }
 
   @mixin lg\:scroll-smooth {
-    @include r($lg, scroll-behavior, smooth);
+    @include scroll-smooth($lg);
   }
 
   @mixin xl\:scroll-auto {
-    @include r($xl, scroll-behavior, auto);
+    @include scroll-auto($xl);
   }
 
   @mixin xl\:scroll-smooth {
-    @include r($xl, scroll-behavior, smooth);
+    @include scroll-smooth($xl);
   }
 
   @mixin \2xl\:scroll-auto {
-    @include r($\2xl, scroll-behavior, auto);
+    @include scroll-auto($\2xl);
   }
 
   @mixin \2xl\:scroll-smooth {
-    @include r($\2xl, scroll-behavior, smooth);
-  } // x*/
+    @include scroll-smooth($\2xl);
+  }
+
+  // x*/
 }

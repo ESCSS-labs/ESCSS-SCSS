@@ -3,198 +3,243 @@
 /* Justify Content */
 @if $Basic {
   // /*x
-  @mixin justify-normal {
-    justify-content: normal;
+  @mixin justify-normal($rwd: null) {
+    @if $rwd==null {
+      justify-content: normal;
+    } @else {
+      @media (min-width: $rwd) {
+        justify-content: normal;
+      }
+    }
   }
 
-  @mixin justify-start {
-    justify-content: flex-start;
+  @mixin justify-start($rwd: null) {
+    @if $rwd==null {
+      justify-content: flex-start;
+    } @else {
+      @media (min-width: $rwd) {
+        justify-content: flex-start;
+      }
+    }
   }
 
-  @mixin justify-end {
-    justify-content: flex-end;
+  @mixin justify-end($rwd: null) {
+    @if $rwd==null {
+      justify-content: flex-end;
+    } @else {
+      @media (min-width: $rwd) {
+        justify-content: flex-end;
+      }
+    }
   }
 
-  @mixin justify-center {
-    justify-content: center;
+  @mixin justify-center($rwd: null) {
+    @if $rwd==null {
+      justify-content: center;
+    } @else {
+      @media (min-width: $rwd) {
+        justify-content: center;
+      }
+    }
   }
 
-  @mixin justify-between {
-    justify-content: space-between;
+  @mixin justify-between($rwd: null) {
+    @if $rwd==null {
+      justify-content: space-between;
+    } @else {
+      @media (min-width: $rwd) {
+        justify-content: space-between;
+      }
+    }
   }
 
-  @mixin justify-around {
-    justify-content: space-around;
+  @mixin justify-around($rwd: null) {
+    @if $rwd==null {
+      justify-content: space-around;
+    } @else {
+      @media (min-width: $rwd) {
+        justify-content: space-around;
+      }
+    }
   }
 
-  @mixin justify-evenly {
-    justify-content: space-evenly;
+  @mixin justify-evenly($rwd: null) {
+    @if $rwd==null {
+      justify-content: space-evenly;
+    } @else {
+      @media (min-width: $rwd) {
+        justify-content: space-evenly;
+      }
+    }
   }
 
-  @mixin justify-stretch {
-    justify-content: stretch;
+  @mixin justify-stretch($rwd: null) {
+    @if $rwd==null {
+      justify-content: stretch;
+    } @else {
+      @media (min-width: $rwd) {
+        justify-content: stretch;
+      }
+    }
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:justify-normal {
-    @include r($sm, justify-content, normal);
+    @include justify-normal($sm);
   }
-
   @mixin sm\:justify-start {
-    @include r($sm, justify-content, flex-start);
+    @include justify-start($sm);
   }
 
   @mixin sm\:justify-end {
-    @include r($sm, justify-content, flex-end);
+    @include justify-end($sm);
   }
 
   @mixin sm\:justify-center {
-    @include r($sm, justify-content, center);
+    @include justify-center($sm);
   }
 
   @mixin sm\:justify-between {
-    @include r($sm, justify-content, space-between);
+    @include justify-between($sm);
   }
 
   @mixin sm\:justify-around {
-    @include r($sm, justify-content, space-around);
+    @include justify-around($sm);
   }
 
   @mixin sm\:justify-evenly {
-    @include r($sm, justify-content, space-evenly);
+    @include justify-evenly($sm);
   }
 
   @mixin sm\:justify-stretch {
-    @include r($sm, justify-content, stretch);
+    @include justify-stretch($sm);
   }
 
   @mixin md\:justify-normal {
-    @include r($md, justify-content, normal);
+    @include justify-normal($md);
   }
-
   @mixin md\:justify-start {
-    @include r($md, justify-content, flex-start);
+    @include justify-start($md);
   }
 
   @mixin md\:justify-end {
-    @include r($md, justify-content, flex-end);
+    @include justify-end($md);
   }
 
   @mixin md\:justify-center {
-    @include r($md, justify-content, center);
+    @include justify-center($md);
   }
 
   @mixin md\:justify-between {
-    @include r($md, justify-content, space-between);
+    @include justify-between($md);
   }
 
   @mixin md\:justify-around {
-    @include r($md, justify-content, space-around);
+    @include justify-around($md);
   }
 
   @mixin md\:justify-evenly {
-    @include r($md, justify-content, space-evenly);
+    @include justify-evenly($md);
   }
 
   @mixin md\:justify-stretch {
-    @include r($md, justify-content, stretch);
+    @include justify-stretch($md);
   }
 
   @mixin lg\:justify-normal {
-    @include r($lg, justify-content, normal);
+    @include justify-normal($lg);
   }
-
   @mixin lg\:justify-start {
-    @include r($lg, justify-content, flex-start);
+    @include justify-start($lg);
   }
 
   @mixin lg\:justify-end {
-    @include r($lg, justify-content, flex-end);
+    @include justify-end($lg);
   }
 
   @mixin lg\:justify-center {
-    @include r($lg, justify-content, center);
+    @include justify-center($lg);
   }
 
   @mixin lg\:justify-between {
-    @include r($lg, justify-content, space-between);
+    @include justify-between($lg);
   }
 
   @mixin lg\:justify-around {
-    @include r($lg, justify-content, space-around);
+    @include justify-around($lg);
   }
 
   @mixin lg\:justify-evenly {
-    @include r($lg, justify-content, space-evenly);
+    @include justify-evenly($lg);
   }
 
   @mixin lg\:justify-stretch {
-    @include r($lg, justify-content, stretch);
+    @include justify-stretch($lg);
   }
 
   @mixin xl\:justify-normal {
-    @include r($xl, justify-content, normal);
+    @include justify-normal($xl);
   }
-
   @mixin xl\:justify-start {
-    @include r($xl, justify-content, flex-start);
+    @include justify-start($xl);
   }
 
   @mixin xl\:justify-end {
-    @include r($xl, justify-content, flex-end);
+    @include justify-end($xl);
   }
 
   @mixin xl\:justify-center {
-    @include r($xl, justify-content, center);
+    @include justify-center($xl);
   }
 
   @mixin xl\:justify-between {
-    @include r($xl, justify-content, space-between);
+    @include justify-between($xl);
   }
 
   @mixin xl\:justify-around {
-    @include r($xl, justify-content, space-around);
+    @include justify-around($xl);
   }
 
   @mixin xl\:justify-evenly {
-    @include r($xl, justify-content, space-evenly);
+    @include justify-evenly($xl);
   }
 
   @mixin xl\:justify-stretch {
-    @include r($xl, justify-content, stretch);
+    @include justify-stretch($xl);
   }
 
   @mixin \2xl\:justify-normal {
-    @include r($\2xl, justify-content, normal);
+    @include justify-normal($\2xl);
   }
-
   @mixin \2xl\:justify-start {
-    @include r($\2xl, justify-content, flex-start);
+    @include justify-start($\2xl);
   }
 
   @mixin \2xl\:justify-end {
-    @include r($\2xl, justify-content, flex-end);
+    @include justify-end($\2xl);
   }
 
   @mixin \2xl\:justify-center {
-    @include r($\2xl, justify-content, center);
+    @include justify-center($\2xl);
   }
 
   @mixin \2xl\:justify-between {
-    @include r($\2xl, justify-content, space-between);
+    @include justify-between($\2xl);
   }
 
   @mixin \2xl\:justify-around {
-    @include r($\2xl, justify-content, space-around);
+    @include justify-around($\2xl);
   }
 
   @mixin \2xl\:justify-evenly {
-    @include r($\2xl, justify-content, space-evenly);
+    @include justify-evenly($\2xl);
   }
 
   @mixin \2xl\:justify-stretch {
-    @include r($\2xl, justify-content, stretch);
-  } // x*/
+    @include justify-stretch($\2xl);
+  }
+
+  // x*/
 }

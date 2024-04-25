@@ -3,126 +3,160 @@
 /* Position */
 @if $Basic {
   // /*x
-  @mixin static {
-    position: static;
+  @mixin static($rwd: null) {
+    @if $rwd==null {
+      position: static;
+    } @else {
+      @media (min-width: $rwd) {
+        position: static;
+      }
+    }
   }
 
-  @mixin fixed {
-    position: fixed;
+  @mixin fixed($rwd: null) {
+    @if $rwd==null {
+      position: fixed;
+    } @else {
+      @media (min-width: $rwd) {
+        position: fixed;
+      }
+    }
   }
 
-  @mixin absolute {
-    position: absolute;
+  @mixin absolute($rwd: null) {
+    @if $rwd==null {
+      position: absolute;
+    } @else {
+      @media (min-width: $rwd) {
+        position: absolute;
+      }
+    }
   }
 
-  @mixin relative {
-    position: relative;
+  @mixin relative($rwd: null) {
+    @if $rwd==null {
+      position: relative;
+    } @else {
+      @media (min-width: $rwd) {
+        position: relative;
+      }
+    }
   }
 
-  @mixin sticky {
-    position: sticky;
-  } // x*/
+  @mixin sticky($rwd: null) {
+    @if $rwd==null {
+      position: sticky;
+    } @else {
+      @media (min-width: $rwd) {
+        position: sticky;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:static {
-    @include r($sm, position, static);
+    @include static($sm);
   }
 
   @mixin sm\:fixed {
-    @include r($sm, position, fixed);
+    @include fixed($sm);
   }
 
   @mixin sm\:absolute {
-    @include r($sm, position, absolute);
+    @include absolute($sm);
   }
 
   @mixin sm\:relative {
-    @include r($sm, position, relative);
+    @include relative($sm);
   }
 
   @mixin sm\:sticky {
-    @include r($sm, position, sticky);
+    @include sticky($sm);
   }
 
   @mixin md\:static {
-    @include r($md, position, static);
+    @include static($md);
   }
 
   @mixin md\:fixed {
-    @include r($md, position, fixed);
+    @include fixed($md);
   }
 
   @mixin md\:absolute {
-    @include r($md, position, absolute);
+    @include absolute($md);
   }
 
   @mixin md\:relative {
-    @include r($md, position, relative);
+    @include relative($md);
   }
 
   @mixin md\:sticky {
-    @include r($md, position, sticky);
+    @include sticky($md);
   }
 
   @mixin lg\:static {
-    @include r($lg, position, static);
+    @include static($lg);
   }
 
   @mixin lg\:fixed {
-    @include r($lg, position, fixed);
+    @include fixed($lg);
   }
 
   @mixin lg\:absolute {
-    @include r($lg, position, absolute);
+    @include absolute($lg);
   }
 
   @mixin lg\:relative {
-    @include r($lg, position, relative);
+    @include relative($lg);
   }
 
   @mixin lg\:sticky {
-    @include r($lg, position, sticky);
+    @include sticky($lg);
   }
 
   @mixin xl\:static {
-    @include r($xl, position, static);
+    @include static($xl);
   }
 
   @mixin xl\:fixed {
-    @include r($xl, position, fixed);
+    @include fixed($xl);
   }
 
   @mixin xl\:absolute {
-    @include r($xl, position, absolute);
+    @include absolute($xl);
   }
 
   @mixin xl\:relative {
-    @include r($xl, position, relative);
+    @include relative($xl);
   }
 
   @mixin xl\:sticky {
-    @include r($xl, position, sticky);
+    @include sticky($xl);
   }
 
   @mixin \2xl\:static {
-    @include r($\2xl, position, static);
+    @include static($\2xl);
   }
 
   @mixin \2xl\:fixed {
-    @include r($\2xl, position, fixed);
+    @include fixed($\2xl);
   }
 
   @mixin \2xl\:absolute {
-    @include r($\2xl, position, absolute);
+    @include absolute($\2xl);
   }
 
   @mixin \2xl\:relative {
-    @include r($\2xl, position, relative);
+    @include relative($\2xl);
   }
 
   @mixin \2xl\:sticky {
-    @include r($\2xl, position, sticky);
-  } // x*/
+    @include sticky($\2xl);
+  }
+
+  // x*/
 }

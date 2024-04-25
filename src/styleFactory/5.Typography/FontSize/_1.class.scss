@@ -4,315 +4,321 @@
 @if $Basic {
   // /*x
   @mixin text-xs($v: null) {
-    @include _font-size(xs, $v);
+    @include font-(_font-size(xs, $v));
   }
 
   @mixin text-sm($v: null) {
-    @include _font-size(sm, $v);
+    @include font-(_font-size(sm, $v));
   }
 
   @mixin text-base($v: null) {
-    @include _font-size(base, $v);
+    @include font-(_font-size(base, $v));
   }
 
   @mixin text-lg($v: null) {
-    @include _font-size(lg, $v);
+    @include font-(_font-size(lg, $v));
   }
 
   @mixin text-xl($v: null) {
-    @include _font-size(xl, $v);
+    @include font-(_font-size(xl, $v));
   }
 
   @mixin text-2xl($v: null) {
-    @include _font-size(2xl, $v);
+    @include font-(_font-size(2xl, $v));
   }
 
   @mixin text-3xl($v: null) {
-    @include _font-size(3xl, $v);
+    @include font-(_font-size(3xl, $v));
   }
 
   @mixin text-4xl($v: null) {
-    @include _font-size(4xl, $v);
+    @include font-(_font-size(4xl, $v));
   }
 
   @mixin text-5xl($v: null) {
-    @include _font-size(5xl, $v);
+    @include font-(_font-size(5xl, $v));
   }
 
   @mixin text-6xl($v: null) {
-    @include _font-size(6xl, $v);
+    @include font-(_font-size(6xl, $v));
   }
 
   @mixin text-7xl($v: null) {
-    @include _font-size(7xl, $v);
+    @include font-(_font-size(7xl, $v));
   }
 
   @mixin text-8xl($v: null) {
-    @include _font-size(8xl, $v);
+    @include font-(_font-size(8xl, $v));
   }
 
   @mixin text-9xl($v: null) {
-    @include _font-size(9xl, $v);
-  } // x*/
+    @include font-(_font-size(9xl, $v));
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:text-xs($v: null) {
-      @include _r($sm, _font-size, xs, $v);
+      @include font-(_font-size(xs, $v), $sm);
     }
 
     @mixin sm\:text-sm($v: null) {
-      @include _r($sm, _font-size, sm, $v);
+      @include font-(_font-size(sm, $v), $sm);
     }
 
     @mixin sm\:text-base($v: null) {
-      @include _r($sm, _font-size, base, $v);
+      @include font-(_font-size(base, $v), $sm);
     }
 
     @mixin sm\:text-lg($v: null) {
-      @include _r($sm, _font-size, lg, $v);
+      @include font-(_font-size(lg, $v), $sm);
     }
 
     @mixin sm\:text-xl($v: null) {
-      @include _r($sm, _font-size, xl, $v);
+      @include font-(_font-size(xl, $v), $sm);
     }
 
     @mixin sm\:text-2xl($v: null) {
-      @include _r($sm, _font-size, 2xl, $v);
+      @include font-(_font-size(2xl, $v), $sm);
     }
 
     @mixin sm\:text-3xl($v: null) {
-      @include _r($sm, _font-size, 3xl, $v);
+      @include font-(_font-size(3xl, $v), $sm);
     }
 
     @mixin sm\:text-4xl($v: null) {
-      @include _r($sm, _font-size, 4xl, $v);
+      @include font-(_font-size(4xl, $v), $sm);
     }
 
     @mixin sm\:text-5xl($v: null) {
-      @include _r($sm, _font-size, 5xl, $v);
+      @include font-(_font-size(5xl, $v), $sm);
     }
 
     @mixin sm\:text-6xl($v: null) {
-      @include _r($sm, _font-size, 6xl, $v);
+      @include font-(_font-size(6xl, $v), $sm);
     }
 
     @mixin sm\:text-7xl($v: null) {
-      @include _r($sm, _font-size, 7xl, $v);
+      @include font-(_font-size(7xl, $v), $sm);
     }
 
     @mixin sm\:text-8xl($v: null) {
-      @include _r($sm, _font-size, 8xl, $v);
+      @include font-(_font-size(8xl, $v), $sm);
     }
 
     @mixin sm\:text-9xl($v: null) {
-      @include _r($sm, _font-size, 9xl, $v);
-    }
-    @mixin md\:text-xs($v: null) {
-      @include _r($md, _font-size, xs, $v);
+      @include font-(_font-size(9xl, $v), $sm);
     }
 
-    @mixin md\:text-md($v: null) {
-      @include _r($md, _font-size, md, $v);
+    @mixin md\:text-xs($v: null) {
+      @include font-(_font-size(xs, $v), $md);
+    }
+
+    @mixin md\:text-sm($v: null) {
+      @include font-(_font-size(sm, $v), $md);
     }
 
     @mixin md\:text-base($v: null) {
-      @include _r($md, _font-size, base, $v);
+      @include font-(_font-size(base, $v), $md);
     }
 
     @mixin md\:text-lg($v: null) {
-      @include _r($md, _font-size, lg, $v);
+      @include font-(_font-size(lg, $v), $md);
     }
 
     @mixin md\:text-xl($v: null) {
-      @include _r($md, _font-size, xl, $v);
+      @include font-(_font-size(xl, $v), $md);
     }
 
     @mixin md\:text-2xl($v: null) {
-      @include _r($md, _font-size, 2xl, $v);
+      @include font-(_font-size(2xl, $v), $md);
     }
 
     @mixin md\:text-3xl($v: null) {
-      @include _r($md, _font-size, 3xl, $v);
+      @include font-(_font-size(3xl, $v), $md);
     }
 
     @mixin md\:text-4xl($v: null) {
-      @include _r($md, _font-size, 4xl, $v);
+      @include font-(_font-size(4xl, $v), $md);
     }
 
     @mixin md\:text-5xl($v: null) {
-      @include _r($md, _font-size, 5xl, $v);
+      @include font-(_font-size(5xl, $v), $md);
     }
 
     @mixin md\:text-6xl($v: null) {
-      @include _r($md, _font-size, 6xl, $v);
+      @include font-(_font-size(6xl, $v), $md);
     }
 
     @mixin md\:text-7xl($v: null) {
-      @include _r($md, _font-size, 7xl, $v);
+      @include font-(_font-size(7xl, $v), $md);
     }
 
     @mixin md\:text-8xl($v: null) {
-      @include _r($md, _font-size, 8xl, $v);
+      @include font-(_font-size(8xl, $v), $md);
     }
 
     @mixin md\:text-9xl($v: null) {
-      @include _r($md, _font-size, 9xl, $v);
-    }
-    @mixin lg\:text-xs($v: null) {
-      @include _r($lg, _font-size, xs, $v);
+      @include font-(_font-size(9xl, $v), $md);
     }
 
-    @mixin lg\:text-lg($v: null) {
-      @include _r($lg, _font-size, lg, $v);
+    @mixin lg\:text-xs($v: null) {
+      @include font-(_font-size(xs, $v), $lg);
+    }
+
+    @mixin lg\:text-sm($v: null) {
+      @include font-(_font-size(sm, $v), $lg);
     }
 
     @mixin lg\:text-base($v: null) {
-      @include _r($lg, _font-size, base, $v);
+      @include font-(_font-size(base, $v), $lg);
     }
 
     @mixin lg\:text-lg($v: null) {
-      @include _r($lg, _font-size, lg, $v);
+      @include font-(_font-size(lg, $v), $lg);
     }
 
     @mixin lg\:text-xl($v: null) {
-      @include _r($lg, _font-size, xl, $v);
+      @include font-(_font-size(xl, $v), $lg);
     }
 
     @mixin lg\:text-2xl($v: null) {
-      @include _r($lg, _font-size, 2xl, $v);
+      @include font-(_font-size(2xl, $v), $lg);
     }
 
     @mixin lg\:text-3xl($v: null) {
-      @include _r($lg, _font-size, 3xl, $v);
+      @include font-(_font-size(3xl, $v), $lg);
     }
 
     @mixin lg\:text-4xl($v: null) {
-      @include _r($lg, _font-size, 4xl, $v);
+      @include font-(_font-size(4xl, $v), $lg);
     }
 
     @mixin lg\:text-5xl($v: null) {
-      @include _r($lg, _font-size, 5xl, $v);
+      @include font-(_font-size(5xl, $v), $lg);
     }
 
     @mixin lg\:text-6xl($v: null) {
-      @include _r($lg, _font-size, 6xl, $v);
+      @include font-(_font-size(6xl, $v), $lg);
     }
 
     @mixin lg\:text-7xl($v: null) {
-      @include _r($lg, _font-size, 7xl, $v);
+      @include font-(_font-size(7xl, $v), $lg);
     }
 
     @mixin lg\:text-8xl($v: null) {
-      @include _r($lg, _font-size, 8xl, $v);
+      @include font-(_font-size(8xl, $v), $lg);
     }
 
     @mixin lg\:text-9xl($v: null) {
-      @include _r($lg, _font-size, 9xl, $v);
-    }
-    @mixin xl\:text-xs($v: null) {
-      @include _r($xl, _font-size, xs, $v);
+      @include font-(_font-size(9xl, $v), $lg);
     }
 
-    @mixin xl\:text-xl($v: null) {
-      @include _r($xl, _font-size, xl, $v);
+    @mixin xl\:text-xs($v: null) {
+      @include font-(_font-size(xs, $v), $xl);
+    }
+
+    @mixin xl\:text-sm($v: null) {
+      @include font-(_font-size(sm, $v), $xl);
     }
 
     @mixin xl\:text-base($v: null) {
-      @include _r($xl, _font-size, base, $v);
+      @include font-(_font-size(base, $v), $xl);
     }
 
     @mixin xl\:text-lg($v: null) {
-      @include _r($xl, _font-size, lg, $v);
+      @include font-(_font-size(lg, $v), $xl);
     }
 
     @mixin xl\:text-xl($v: null) {
-      @include _r($xl, _font-size, xl, $v);
+      @include font-(_font-size(xl, $v), $xl);
     }
 
     @mixin xl\:text-2xl($v: null) {
-      @include _r($xl, _font-size, 2xl, $v);
+      @include font-(_font-size(2xl, $v), $xl);
     }
 
     @mixin xl\:text-3xl($v: null) {
-      @include _r($xl, _font-size, 3xl, $v);
+      @include font-(_font-size(3xl, $v), $xl);
     }
 
     @mixin xl\:text-4xl($v: null) {
-      @include _r($xl, _font-size, 4xl, $v);
+      @include font-(_font-size(4xl, $v), $xl);
     }
 
     @mixin xl\:text-5xl($v: null) {
-      @include _r($xl, _font-size, 5xl, $v);
+      @include font-(_font-size(5xl, $v), $xl);
     }
 
     @mixin xl\:text-6xl($v: null) {
-      @include _r($xl, _font-size, 6xl, $v);
+      @include font-(_font-size(6xl, $v), $xl);
     }
 
     @mixin xl\:text-7xl($v: null) {
-      @include _r($xl, _font-size, 7xl, $v);
+      @include font-(_font-size(7xl, $v), $xl);
     }
 
     @mixin xl\:text-8xl($v: null) {
-      @include _r($xl, _font-size, 8xl, $v);
+      @include font-(_font-size(8xl, $v), $xl);
     }
 
     @mixin xl\:text-9xl($v: null) {
-      @include _r($xl, _font-size, 9xl, $v);
-    }
-    @mixin \2xl\:text-xs($v: null) {
-      @include _r($\2xl, _font-size, xs, $v);
+      @include font-(_font-size(9xl, $v), $xl);
     }
 
-    @mixin \2xl\:text-2xl($v: null) {
-      @include _r($\2xl, _font-size, 2xl, $v);
+    @mixin \2xl\:text-xs($v: null) {
+      @include font-(_font-size(xs, $v), $\2xl);
+    }
+
+    @mixin \2xl\:text-sm($v: null) {
+      @include font-(_font-size(sm, $v), $\2xl);
     }
 
     @mixin \2xl\:text-base($v: null) {
-      @include _r($\2xl, _font-size, base, $v);
+      @include font-(_font-size(base, $v), $\2xl);
     }
 
     @mixin \2xl\:text-lg($v: null) {
-      @include _r($\2xl, _font-size, lg, $v);
+      @include font-(_font-size(lg, $v), $\2xl);
     }
 
     @mixin \2xl\:text-xl($v: null) {
-      @include _r($\2xl, _font-size, xl, $v);
+      @include font-(_font-size(xl, $v), $\2xl);
     }
 
     @mixin \2xl\:text-2xl($v: null) {
-      @include _r($\2xl, _font-size, 2xl, $v);
+      @include font-(_font-size(2xl, $v), $\2xl);
     }
 
     @mixin \2xl\:text-3xl($v: null) {
-      @include _r($\2xl, _font-size, 3xl, $v);
+      @include font-(_font-size(3xl, $v), $\2xl);
     }
 
     @mixin \2xl\:text-4xl($v: null) {
-      @include _r($\2xl, _font-size, 4xl, $v);
+      @include font-(_font-size(4xl, $v), $\2xl);
     }
 
     @mixin \2xl\:text-5xl($v: null) {
-      @include _r($\2xl, _font-size, 5xl, $v);
+      @include font-(_font-size(5xl, $v), $\2xl);
     }
 
     @mixin \2xl\:text-6xl($v: null) {
-      @include _r($\2xl, _font-size, 6xl, $v);
+      @include font-(_font-size(6xl, $v), $\2xl);
     }
 
     @mixin \2xl\:text-7xl($v: null) {
-      @include _r($\2xl, _font-size, 7xl, $v);
+      @include font-(_font-size(7xl, $v), $\2xl);
     }
 
     @mixin \2xl\:text-8xl($v: null) {
-      @include _r($\2xl, _font-size, 8xl, $v);
+      @include font-(_font-size(8xl, $v), $\2xl);
     }
 
     @mixin \2xl\:text-9xl($v: null) {
-      @include _r($\2xl, _font-size, 9xl, $v);
+      @include font-(_font-size(9xl, $v), $\2xl);
     }
     // x*/
   }

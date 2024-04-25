@@ -3,54 +3,70 @@
 /* Appearance */
 @if $Basic {
   // /*x
-  @mixin appearance-none {
-    appearance: none;
+  @mixin appearance-none($rwd: null) {
+    @if $rwd==null {
+      appearance: none;
+    } @else {
+      @media (min-width: $rwd) {
+        appearance: none;
+      }
+    }
   }
 
-  @mixin appearance-auto {
-    appearance: auto;
-  } // x*/
+  @mixin appearance-auto($rwd: null) {
+    @if $rwd==null {
+      appearance: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        appearance: auto;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:appearance-none {
-    @include r($sm, appearance, none);
+    @include appearance-none($sm);
   }
 
   @mixin sm\:appearance-auto {
-    @include r($sm, appearance, auto);
+    @include appearance-auto($sm);
   }
 
   @mixin md\:appearance-none {
-    @include r($md, appearance, none);
+    @include appearance-none($md);
   }
 
   @mixin md\:appearance-auto {
-    @include r($md, appearance, auto);
+    @include appearance-auto($md);
   }
 
   @mixin lg\:appearance-none {
-    @include r($lg, appearance, none);
+    @include appearance-none($lg);
   }
 
   @mixin lg\:appearance-auto {
-    @include r($lg, appearance, auto);
+    @include appearance-auto($lg);
   }
 
   @mixin xl\:appearance-none {
-    @include r($xl, appearance, none);
+    @include appearance-none($xl);
   }
 
   @mixin xl\:appearance-auto {
-    @include r($xl, appearance, auto);
+    @include appearance-auto($xl);
   }
 
   @mixin \2xl\:appearance-none {
-    @include r($\2xl, appearance, none);
+    @include appearance-none($\2xl);
   }
 
   @mixin \2xl\:appearance-auto {
-    @include r($\2xl, appearance, auto);
-  } // x*/
+    @include appearance-auto($\2xl);
+  }
+
+  // x*/
 }

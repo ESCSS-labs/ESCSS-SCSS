@@ -4,15 +4,15 @@
 @if $Basic {
   // /*x
   @mixin aspect-auto {
-    aspect-ratio: auto;
+    @include aspect-(auto);
   }
 
   @mixin aspect-square {
-    aspect-ratio: 1 / 1;
+    @include aspect-(1 / 1);
   }
 
   @mixin aspect-video {
-    aspect-ratio: 16 / 9;
+    @include aspect-(16 / 9);
   } // x*/
 }
 
@@ -20,90 +20,96 @@
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:aspect-auto {
-      @include r($sm, aspect-ratio, auto);
+      @include aspect-(auto, $sm);
     }
 
     @mixin sm\:aspect-square {
-      @include r($sm, aspect-ratio, 1 / 1);
+      @include aspect-(1 / 1, $sm);
     }
 
     @mixin sm\:aspect-video {
-      @include r($sm, aspect-ratio, 16 / 9);
+      @include aspect-(16 / 9, $sm);
     }
 
     @mixin md\:aspect-auto {
-      @include r($md, aspect-ratio, auto);
+      @include aspect-(auto, $md);
     }
 
     @mixin md\:aspect-square {
-      @include r($md, aspect-ratio, 1 / 1);
+      @include aspect-(1 / 1, $md);
     }
 
     @mixin md\:aspect-video {
-      @include r($md, aspect-ratio, 16 / 9);
+      @include aspect-(16 / 9, $md);
     }
 
     @mixin lg\:aspect-auto {
-      @include r($lg, aspect-ratio, auto);
+      @include aspect-(auto, $lg);
     }
 
     @mixin lg\:aspect-square {
-      @include r($lg, aspect-ratio, 1 / 1);
+      @include aspect-(1 / 1, $lg);
     }
 
     @mixin lg\:aspect-video {
-      @include r($lg, aspect-ratio, 16 / 9);
+      @include aspect-(16 / 9, $lg);
     }
 
     @mixin xl\:aspect-auto {
-      @include r($xl, aspect-ratio, auto);
+      @include aspect-(auto, $xl);
     }
 
     @mixin xl\:aspect-square {
-      @include r($xl, aspect-ratio, 1 / 1);
+      @include aspect-(1 / 1, $xl);
     }
 
     @mixin xl\:aspect-video {
-      @include r($xl, aspect-ratio, 16 / 9);
+      @include aspect-(16 / 9, $xl);
     }
 
     @mixin \2xl\:aspect-auto {
-      @include r($\2xl, aspect-ratio, auto);
+      @include aspect-(auto, $\2xl);
     }
 
     @mixin \2xl\:aspect-square {
-      @include r($\2xl, aspect-ratio, 1 / 1);
+      @include aspect-(1 / 1, $\2xl);
     }
 
     @mixin \2xl\:aspect-video {
-      @include r($\2xl, aspect-ratio, 16 / 9);
+      @include aspect-(16 / 9, $\2xl);
     }
     // x*/
   }
 }
 @if $Custom {
   // /*x
-  @mixin aspect-($v) {
-    aspect-ratio: $v;
+  @mixin aspect-($v, $rwd: null) {
+    @if $rwd ==null {
+      aspect-ratio: $v;
+    } @else {
+      @media (min-width: $sm) {
+        aspect-ratio: $v;
+      }
+    }
   }
 
   @mixin sm\:aspect-($v) {
-    @include r($sm, aspect-ratio, $v);
+    @include aspect-($v, $sm);
   }
 
   @mixin md\:aspect-($v) {
-    @include r($md, aspect-ratio, $v);
+    @include aspect-($v, $md);
   }
 
   @mixin lg\:aspect-($v) {
-    @include r($lg, aspect-ratio, $v);
+    @include aspect-($v, $lg);
   }
 
   @mixin xl\:aspect-($v) {
-    @include r($xl, aspect-ratio, $v);
+    @include aspect-($v, $xl);
   }
 
   @mixin \2xl\:aspect-($v) {
-    @include r($\2xl, aspect-ratio, $v);
+    @include aspect-($v, $\2xl);
   } // x*/
 }

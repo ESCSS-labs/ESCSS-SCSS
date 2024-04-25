@@ -3,126 +3,160 @@
 /* Place Items */
 @if $Basic {
   // /*x
-  @mixin place-items-start {
-    place-items: start;
+  @mixin place-items-start($rwd: null) {
+    @if $rwd==null {
+      place-items: start;
+    } @else {
+      @media (min-width: $rwd) {
+        place-items: start;
+      }
+    }
   }
 
-  @mixin place-items-end {
-    place-items: end;
+  @mixin place-items-end($rwd: null) {
+    @if $rwd==null {
+      place-items: end;
+    } @else {
+      @media (min-width: $rwd) {
+        place-items: end;
+      }
+    }
   }
 
-  @mixin place-items-center {
-    place-items: center;
+  @mixin place-items-center($rwd: null) {
+    @if $rwd==null {
+      place-items: center;
+    } @else {
+      @media (min-width: $rwd) {
+        place-items: center;
+      }
+    }
   }
 
-  @mixin place-items-baseline {
-    place-items: baseline;
+  @mixin place-items-baseline($rwd: null) {
+    @if $rwd==null {
+      place-items: baseline;
+    } @else {
+      @media (min-width: $rwd) {
+        place-items: baseline;
+      }
+    }
   }
 
-  @mixin place-items-stretch {
-    place-items: stretch;
-  } // x*/
+  @mixin place-items-stretch($rwd: null) {
+    @if $rwd==null {
+      place-items: stretch;
+    } @else {
+      @media (min-width: $rwd) {
+        place-items: stretch;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:place-items-start {
-    @include r($sm, place-items, start);
+    @include place-items-start($sm);
   }
 
   @mixin sm\:place-items-end {
-    @include r($sm, place-items, end);
+    @include place-items-end($sm);
   }
 
   @mixin sm\:place-items-center {
-    @include r($sm, place-items, center);
+    @include place-items-center($sm);
   }
 
   @mixin sm\:place-items-baseline {
-    @include r($sm, place-items, baseline);
+    @include place-items-baseline($sm);
   }
 
   @mixin sm\:place-items-stretch {
-    @include r($sm, place-items, stretch);
+    @include place-items-stretch($sm);
   }
 
   @mixin md\:place-items-start {
-    @include r($md, place-items, start);
+    @include place-items-start($md);
   }
 
   @mixin md\:place-items-end {
-    @include r($md, place-items, end);
+    @include place-items-end($md);
   }
 
   @mixin md\:place-items-center {
-    @include r($md, place-items, center);
+    @include place-items-center($md);
   }
 
   @mixin md\:place-items-baseline {
-    @include r($md, place-items, baseline);
+    @include place-items-baseline($md);
   }
 
   @mixin md\:place-items-stretch {
-    @include r($md, place-items, stretch);
+    @include place-items-stretch($md);
   }
 
   @mixin lg\:place-items-start {
-    @include r($lg, place-items, start);
+    @include place-items-start($lg);
   }
 
   @mixin lg\:place-items-end {
-    @include r($lg, place-items, end);
+    @include place-items-end($lg);
   }
 
   @mixin lg\:place-items-center {
-    @include r($lg, place-items, center);
+    @include place-items-center($lg);
   }
 
   @mixin lg\:place-items-baseline {
-    @include r($lg, place-items, baseline);
+    @include place-items-baseline($lg);
   }
 
   @mixin lg\:place-items-stretch {
-    @include r($lg, place-items, stretch);
+    @include place-items-stretch($lg);
   }
 
   @mixin xl\:place-items-start {
-    @include r($xl, place-items, start);
+    @include place-items-start($xl);
   }
 
   @mixin xl\:place-items-end {
-    @include r($xl, place-items, end);
+    @include place-items-end($xl);
   }
 
   @mixin xl\:place-items-center {
-    @include r($xl, place-items, center);
+    @include place-items-center($xl);
   }
 
   @mixin xl\:place-items-baseline {
-    @include r($xl, place-items, baseline);
+    @include place-items-baseline($xl);
   }
 
   @mixin xl\:place-items-stretch {
-    @include r($xl, place-items, stretch);
+    @include place-items-stretch($xl);
   }
 
   @mixin \2xl\:place-items-start {
-    @include r($\2xl, place-items, start);
+    @include place-items-start($\2xl);
   }
 
   @mixin \2xl\:place-items-end {
-    @include r($\2xl, place-items, end);
+    @include place-items-end($\2xl);
   }
 
   @mixin \2xl\:place-items-center {
-    @include r($\2xl, place-items, center);
+    @include place-items-center($\2xl);
   }
 
   @mixin \2xl\:place-items-baseline {
-    @include r($\2xl, place-items, baseline);
+    @include place-items-baseline($\2xl);
   }
 
   @mixin \2xl\:place-items-stretch {
-    @include r($\2xl, place-items, stretch);
-  } // x*/
+    @include place-items-stretch($\2xl);
+  }
+
+  // x*/
 }

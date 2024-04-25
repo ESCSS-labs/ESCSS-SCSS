@@ -4,82 +4,91 @@
 @if $Basic {
   // /*x
   @mixin grow {
-    flex-grow: 1;
+    @include grow-(1);
   }
 
   @mixin grow-0 {
-    flex-grow: 0;
-  } // x*/
+    @include grow-(0);
+  }
+  // x*/
 }
 
 @if $Rwd {
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:grow {
-      @include r($sm, flex-grow, 1);
+      @include grow-(1, $sm);
     }
 
     @mixin sm\:grow-0 {
-      @include r($sm, flex-grow, 0);
+      @include grow-(0, $sm);
     }
 
     @mixin md\:grow {
-      @include r($md, flex-grow, 1);
+      @include grow-(1, $md);
     }
 
     @mixin md\:grow-0 {
-      @include r($md, flex-grow, 0);
+      @include grow-(0, $md);
     }
 
     @mixin lg\:grow {
-      @include r($lg, flex-grow, 1);
+      @include grow-(1, $lg);
     }
 
     @mixin lg\:grow-0 {
-      @include r($lg, flex-grow, 0);
+      @include grow-(0, $lg);
     }
 
     @mixin xl\:grow {
-      @include r($xl, flex-grow, 1);
+      @include grow-(1, $xl);
     }
 
     @mixin xl\:grow-0 {
-      @include r($xl, flex-grow, 0);
+      @include grow-(0, $xl);
     }
 
     @mixin \2xl\:grow {
-      @include r($\2xl, flex-grow, 1);
+      @include grow-(1, $\2xl);
     }
 
     @mixin \2xl\:grow-0 {
-      @include r($\2xl, flex-grow, 0);
+      @include grow-(0, $\2xl);
     }
 
     // x*/
   }
 }
+
 @if $Custom {
   // /*x
-  @mixin grow-($v) {
-    flex-grow: $v;
+  @mixin grow-($v, $rwd: null) {
+    @if $rwd==null {
+      flex-grow: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        flex-grow: $v;
+      }
+    }
   }
+
   @mixin sm\:grow-($v) {
-    @include r($sm, flex-grow, $v);
+    @include grow-($v, $sm);
   }
 
   @mixin md\:grow-($v) {
-    @include r($md, flex-grow, $v);
+    @include grow-($v, $md);
   }
 
   @mixin lg\:grow-($v) {
-    @include r($lg, flex-grow, $v);
+    @include grow-($v, $lg);
   }
 
   @mixin xl\:grow-($v) {
-    @include r($xl, flex-grow, $v);
+    @include grow-($v, $xl);
   }
 
   @mixin \2xl\:grow-($v) {
-    @include r($\2xl, flex-grow, $v);
+    @include grow-($v, $\2xl);
   } // x*/
 }

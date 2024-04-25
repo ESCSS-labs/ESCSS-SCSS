@@ -3,222 +3,280 @@
 /* Font Variant Numeric */
 @if $Basic {
   // /*x
-  @mixin normal-nums {
-    font-variant-numeric: normal;
+  @mixin normal-nums($rwd: null) {
+    @if $rwd==null {
+      font-variant-numeric: normal;
+    } @else {
+      @media (min-width: $rwd) {
+        font-variant-numeric: normal;
+      }
+    }
   }
 
-  @mixin ordinal {
-    font-variant-numeric: ordinal;
+  @mixin ordinal($rwd: null) {
+    @if $rwd==null {
+      font-variant-numeric: ordinal;
+    } @else {
+      @media (min-width: $rwd) {
+        font-variant-numeric: ordinal;
+      }
+    }
   }
 
-  @mixin slashed-zero {
-    font-variant-numeric: slashed-zero;
+  @mixin slashed-zero($rwd: null) {
+    @if $rwd==null {
+      font-variant-numeric: slashed-zero;
+    } @else {
+      @media (min-width: $rwd) {
+        font-variant-numeric: slashed-zero;
+      }
+    }
   }
 
-  @mixin lining-nums {
-    font-variant-numeric: lining-nums;
+  @mixin lining-nums($rwd: null) {
+    @if $rwd==null {
+      font-variant-numeric: lining-nums;
+    } @else {
+      @media (min-width: $rwd) {
+        font-variant-numeric: lining-nums;
+      }
+    }
   }
 
-  @mixin oldstyle-nums {
-    font-variant-numeric: oldstyle-nums;
+  @mixin oldstyle-nums($rwd: null) {
+    @if $rwd==null {
+      font-variant-numeric: oldstyle-nums;
+    } @else {
+      @media (min-width: $rwd) {
+        font-variant-numeric: oldstyle-nums;
+      }
+    }
   }
 
-  @mixin proportional-nums {
-    font-variant-numeric: proportional-nums;
+  @mixin proportional-nums($rwd: null) {
+    @if $rwd==null {
+      font-variant-numeric: proportional-nums;
+    } @else {
+      @media (min-width: $rwd) {
+        font-variant-numeric: proportional-nums;
+      }
+    }
   }
 
-  @mixin tabular-nums {
-    font-variant-numeric: tabular-nums;
+  @mixin tabular-nums($rwd: null) {
+    @if $rwd==null {
+      font-variant-numeric: tabular-nums;
+    } @else {
+      @media (min-width: $rwd) {
+        font-variant-numeric: tabular-nums;
+      }
+    }
   }
 
-  @mixin diagonal-fractions {
-    font-variant-numeric: diagonal-fractions;
+  @mixin diagonal-fractions($rwd: null) {
+    @if $rwd==null {
+      font-variant-numeric: diagonal-fractions;
+    } @else {
+      @media (min-width: $rwd) {
+        font-variant-numeric: diagonal-fractions;
+      }
+    }
   }
 
-  @mixin stacked-fractions {
-    font-variant-numeric: stacked-fractions;
-  } // x*/
+  @mixin stacked-fractions($rwd: null) {
+    @if $rwd==null {
+      font-variant-numeric: stacked-fractions;
+    } @else {
+      @media (min-width: $rwd) {
+        font-variant-numeric: stacked-fractions;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:normal-nums {
-    @include r($sm, font-variant-numeric, normal);
+    @include normal-nums($sm);
   }
 
   @mixin sm\:ordinal {
-    @include r($sm, font-variant-numeric, ordinal);
+    @include ordinal($sm);
   }
 
   @mixin sm\:slashed-zero {
-    @include r($sm, font-variant-numeric, slashed-zero);
+    @include slashed-zero($sm);
   }
 
   @mixin sm\:lining-nums {
-    @include r($sm, font-variant-numeric, lining-nums);
+    @include lining-nums($sm);
   }
 
   @mixin sm\:oldstyle-nums {
-    @include r($sm, font-variant-numeric, oldstyle-nums);
+    @include oldstyle-nums($sm);
   }
 
   @mixin sm\:proportional-nums {
-    @include r($sm, font-variant-numeric, proportional-nums);
+    @include proportional-nums($sm);
   }
 
   @mixin sm\:tabular-nums {
-    @include r($sm, font-variant-numeric, tabular-nums);
+    @include tabular-nums($sm);
   }
 
   @mixin sm\:diagonal-fractions {
-    @include r($sm, font-variant-numeric, diagonal-fractions);
+    @include diagonal-fractions($sm);
   }
 
   @mixin sm\:stacked-fractions {
-    @include r($sm, font-variant-numeric, stacked-fractions);
+    @include stacked-fractions($sm);
   }
 
   @mixin md\:normal-nums {
-    @include r($md, font-variant-numeric, normal);
+    @include normal-nums($md);
   }
 
   @mixin md\:ordinal {
-    @include r($md, font-variant-numeric, ordinal);
+    @include ordinal($md);
   }
 
   @mixin md\:slashed-zero {
-    @include r($md, font-variant-numeric, slashed-zero);
+    @include slashed-zero($md);
   }
 
   @mixin md\:lining-nums {
-    @include r($md, font-variant-numeric, lining-nums);
+    @include lining-nums($md);
   }
 
   @mixin md\:oldstyle-nums {
-    @include r($md, font-variant-numeric, oldstyle-nums);
+    @include oldstyle-nums($md);
   }
 
   @mixin md\:proportional-nums {
-    @include r($md, font-variant-numeric, proportional-nums);
+    @include proportional-nums($md);
   }
 
   @mixin md\:tabular-nums {
-    @include r($md, font-variant-numeric, tabular-nums);
+    @include tabular-nums($md);
   }
 
   @mixin md\:diagonal-fractions {
-    @include r($md, font-variant-numeric, diagonal-fractions);
+    @include diagonal-fractions($md);
   }
 
   @mixin md\:stacked-fractions {
-    @include r($md, font-variant-numeric, stacked-fractions);
+    @include stacked-fractions($md);
   }
 
   @mixin lg\:normal-nums {
-    @include r($lg, font-variant-numeric, normal);
+    @include normal-nums($lg);
   }
 
   @mixin lg\:ordinal {
-    @include r($lg, font-variant-numeric, ordinal);
+    @include ordinal($lg);
   }
 
   @mixin lg\:slashed-zero {
-    @include r($lg, font-variant-numeric, slashed-zero);
+    @include slashed-zero($lg);
   }
 
   @mixin lg\:lining-nums {
-    @include r($lg, font-variant-numeric, lining-nums);
+    @include lining-nums($lg);
   }
 
   @mixin lg\:oldstyle-nums {
-    @include r($lg, font-variant-numeric, oldstyle-nums);
+    @include oldstyle-nums($lg);
   }
 
   @mixin lg\:proportional-nums {
-    @include r($lg, font-variant-numeric, proportional-nums);
+    @include proportional-nums($lg);
   }
 
   @mixin lg\:tabular-nums {
-    @include r($lg, font-variant-numeric, tabular-nums);
+    @include tabular-nums($lg);
   }
 
   @mixin lg\:diagonal-fractions {
-    @include r($lg, font-variant-numeric, diagonal-fractions);
+    @include diagonal-fractions($lg);
   }
 
   @mixin lg\:stacked-fractions {
-    @include r($lg, font-variant-numeric, stacked-fractions);
+    @include stacked-fractions($lg);
   }
 
   @mixin xl\:normal-nums {
-    @include r($xl, font-variant-numeric, normal);
+    @include normal-nums($xl);
   }
 
   @mixin xl\:ordinal {
-    @include r($xl, font-variant-numeric, ordinal);
+    @include ordinal($xl);
   }
 
   @mixin xl\:slashed-zero {
-    @include r($xl, font-variant-numeric, slashed-zero);
+    @include slashed-zero($xl);
   }
 
   @mixin xl\:lining-nums {
-    @include r($xl, font-variant-numeric, lining-nums);
+    @include lining-nums($xl);
   }
 
   @mixin xl\:oldstyle-nums {
-    @include r($xl, font-variant-numeric, oldstyle-nums);
+    @include oldstyle-nums($xl);
   }
 
   @mixin xl\:proportional-nums {
-    @include r($xl, font-variant-numeric, proportional-nums);
+    @include proportional-nums($xl);
   }
 
   @mixin xl\:tabular-nums {
-    @include r($xl, font-variant-numeric, tabular-nums);
+    @include tabular-nums($xl);
   }
 
   @mixin xl\:diagonal-fractions {
-    @include r($xl, font-variant-numeric, diagonal-fractions);
+    @include diagonal-fractions($xl);
   }
 
   @mixin xl\:stacked-fractions {
-    @include r($xl, font-variant-numeric, stacked-fractions);
+    @include stacked-fractions($xl);
   }
 
   @mixin \2xl\:normal-nums {
-    @include r($\2xl, font-variant-numeric, normal);
+    @include normal-nums($\2xl);
   }
 
   @mixin \2xl\:ordinal {
-    @include r($\2xl, font-variant-numeric, ordinal);
+    @include ordinal($\2xl);
   }
 
   @mixin \2xl\:slashed-zero {
-    @include r($\2xl, font-variant-numeric, slashed-zero);
+    @include slashed-zero($\2xl);
   }
 
   @mixin \2xl\:lining-nums {
-    @include r($\2xl, font-variant-numeric, lining-nums);
+    @include lining-nums($\2xl);
   }
 
   @mixin \2xl\:oldstyle-nums {
-    @include r($\2xl, font-variant-numeric, oldstyle-nums);
+    @include oldstyle-nums($\2xl);
   }
 
   @mixin \2xl\:proportional-nums {
-    @include r($\2xl, font-variant-numeric, proportional-nums);
+    @include proportional-nums($\2xl);
   }
 
   @mixin \2xl\:tabular-nums {
-    @include r($\2xl, font-variant-numeric, tabular-nums);
+    @include tabular-nums($\2xl);
   }
 
   @mixin \2xl\:diagonal-fractions {
-    @include r($\2xl, font-variant-numeric, diagonal-fractions);
+    @include diagonal-fractions($\2xl);
   }
 
   @mixin \2xl\:stacked-fractions {
-    @include r($\2xl, font-variant-numeric, stacked-fractions);
-  } // x*/
+    @include stacked-fractions($\2xl);
+  }
+
+  // x*/
 }

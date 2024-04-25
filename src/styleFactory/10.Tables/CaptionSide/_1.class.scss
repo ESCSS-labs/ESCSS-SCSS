@@ -3,54 +3,66 @@
 /* Caption Side */
 @if $Basic {
   // /*x
-  @mixin caption-top {
-    caption-side: top;
+  @mixin caption-top($rwd: null) {
+    @if $rwd==null {
+      caption-side: top;
+    } @else {
+      @media (min-width: $rwd) {
+        caption-side: top;
+      }
+    }
   }
 
-  @mixin caption-bottom {
-    caption-side: bottom;
+  @mixin caption-bottom($rwd: null) {
+    @if $rwd==null {
+      caption-side: bottom;
+    } @else {
+      @media (min-width: $rwd) {
+        caption-side: bottom;
+      }
+    }
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:caption-top {
-    @include r($sm, caption-side, top);
+    @include caption-top($sm);
   }
 
   @mixin sm\:caption-bottom {
-    @include r($sm, caption-side, bottom);
+    @include caption-bottom($sm);
   }
 
   @mixin md\:caption-top {
-    @include r($md, caption-side, top);
+    @include caption-top($md);
   }
 
   @mixin md\:caption-bottom {
-    @include r($md, caption-side, bottom);
+    @include caption-bottom($md);
   }
 
   @mixin lg\:caption-top {
-    @include r($lg, caption-side, top);
+    @include caption-top($lg);
   }
 
   @mixin lg\:caption-bottom {
-    @include r($lg, caption-side, bottom);
+    @include caption-bottom($lg);
   }
 
   @mixin xl\:caption-top {
-    @include r($xl, caption-side, top);
+    @include caption-top($xl);
   }
 
   @mixin xl\:caption-bottom {
-    @include r($xl, caption-side, bottom);
+    @include caption-bottom($xl);
   }
 
   @mixin \2xl\:caption-top {
-    @include r($\2xl, caption-side, top);
+    @include caption-top($\2xl);
   }
 
   @mixin \2xl\:caption-bottom {
-    @include r($\2xl, caption-side, bottom);
+    @include caption-bottom($\2xl);
   } // x*/
 }

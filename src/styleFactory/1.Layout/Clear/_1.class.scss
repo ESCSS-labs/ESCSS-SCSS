@@ -3,150 +3,188 @@
 /* Clear */
 @if $Basic {
   // /*x
-  @mixin clear-start {
-    clear: inline-start;
+  @mixin clear-start($rwd: null) {
+    @if $rwd==null {
+      clear: inline-start;
+    } @else {
+      @media (min-width: $rwd) {
+        clear: inline-start;
+      }
+    }
   }
 
-  @mixin clear-end {
-    clear: inline-end;
+  @mixin clear-end($rwd: null) {
+    @if $rwd==null {
+      clear: inline-end;
+    } @else {
+      @media (min-width: $rwd) {
+        clear: inline-end;
+      }
+    }
   }
 
-  @mixin clear-left {
-    clear: left;
+  @mixin clear-left($rwd: null) {
+    @if $rwd==null {
+      clear: left;
+    } @else {
+      @media (min-width: $rwd) {
+        clear: left;
+      }
+    }
   }
 
-  @mixin clear-right {
-    clear: right;
+  @mixin clear-right($rwd: null) {
+    @if $rwd==null {
+      clear: right;
+    } @else {
+      @media (min-width: $rwd) {
+        clear: right;
+      }
+    }
   }
 
-  @mixin clear-both {
-    clear: both;
+  @mixin clear-both($rwd: null) {
+    @if $rwd==null {
+      clear: both;
+    } @else {
+      @media (min-width: $rwd) {
+        clear: both;
+      }
+    }
   }
 
-  @mixin clear-none {
-    clear: none;
+  @mixin clear-none($rwd: null) {
+    @if $rwd==null {
+      clear: none;
+    } @else {
+      @media (min-width: $rwd) {
+        clear: none;
+      }
+    }
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:clear-start {
-    @include r($sm, clear, inline-start);
+    @include clear-start($sm);
   }
 
   @mixin sm\:clear-end {
-    @include r($sm, clear, inline-end);
+    @include clear-end($sm);
   }
 
   @mixin sm\:clear-left {
-    @include r($sm, clear, left);
+    @include clear-left($sm);
   }
 
   @mixin sm\:clear-right {
-    @include r($sm, clear, right);
+    @include clear-right($sm);
   }
 
   @mixin sm\:clear-both {
-    @include r($sm, clear, both);
+    @include clear-both($sm);
   }
 
   @mixin sm\:clear-none {
-    @include r($sm, clear, none);
+    @include clear-none($sm);
   }
 
   @mixin md\:clear-start {
-    @include r($md, clear, inline-start);
+    @include clear-start($md);
   }
 
   @mixin md\:clear-end {
-    @include r($md, clear, inline-end);
+    @include clear-end($md);
   }
 
   @mixin md\:clear-left {
-    @include r($md, clear, left);
+    @include clear-left($md);
   }
 
   @mixin md\:clear-right {
-    @include r($md, clear, right);
+    @include clear-right($md);
   }
 
   @mixin md\:clear-both {
-    @include r($md, clear, both);
+    @include clear-both($md);
   }
 
   @mixin md\:clear-none {
-    @include r($md, clear, none);
+    @include clear-none($md);
   }
 
   @mixin lg\:clear-start {
-    @include r($lg, clear, inline-start);
+    @include clear-start($lg);
   }
 
   @mixin lg\:clear-end {
-    @include r($lg, clear, inline-end);
+    @include clear-end($lg);
   }
 
   @mixin lg\:clear-left {
-    @include r($lg, clear, left);
+    @include clear-left($lg);
   }
 
   @mixin lg\:clear-right {
-    @include r($lg, clear, right);
+    @include clear-right($lg);
   }
 
   @mixin lg\:clear-both {
-    @include r($lg, clear, both);
+    @include clear-both($lg);
   }
 
   @mixin lg\:clear-none {
-    @include r($lg, clear, none);
+    @include clear-none($lg);
   }
 
   @mixin xl\:clear-start {
-    @include r($xl, clear, inline-start);
+    @include clear-start($xl);
   }
 
   @mixin xl\:clear-end {
-    @include r($xl, clear, inline-end);
+    @include clear-end($xl);
   }
 
   @mixin xl\:clear-left {
-    @include r($xl, clear, left);
+    @include clear-left($xl);
   }
 
   @mixin xl\:clear-right {
-    @include r($xl, clear, right);
+    @include clear-right($xl);
   }
 
   @mixin xl\:clear-both {
-    @include r($xl, clear, both);
+    @include clear-both($xl);
   }
 
   @mixin xl\:clear-none {
-    @include r($xl, clear, none);
+    @include clear-none($xl);
   }
 
   @mixin \2xl\:clear-start {
-    @include r($\2xl, clear, inline-start);
+    @include clear-start($\2xl);
   }
 
   @mixin \2xl\:clear-end {
-    @include r($\2xl, clear, inline-end);
+    @include clear-end($\2xl);
   }
 
   @mixin \2xl\:clear-left {
-    @include r($\2xl, clear, left);
+    @include clear-left($\2xl);
   }
 
   @mixin \2xl\:clear-right {
-    @include r($\2xl, clear, right);
+    @include clear-right($\2xl);
   }
 
   @mixin \2xl\:clear-both {
-    @include r($\2xl, clear, both);
+    @include clear-both($\2xl);
   }
 
   @mixin \2xl\:clear-none {
-    @include r($\2xl, clear, none);
-  } // x*/
+    @include clear-none($\2xl);
+  }
+
+  // x*/
 }

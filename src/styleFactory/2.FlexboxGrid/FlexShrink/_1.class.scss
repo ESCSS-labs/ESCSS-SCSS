@@ -4,51 +4,56 @@
 @if $Basic {
   // /*x
   @mixin shrink {
-    flex-shrink: 1;
+    @include shrink-(1);
   }
 
   @mixin shrink-0 {
-    flex-shrink: 0;
-  } // x*/
+    @include shrink-(0);
+  }
+  // x*/
 }
 
 @if $Rwd {
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:shrink {
-      @include r($sm, flex-shrink, 1);
+      @include shrink-(1, $sm);
     }
 
     @mixin sm\:shrink-0 {
-      @include r($sm, flex-shrink, 0);
+      @include shrink-(0, $sm);
     }
+
     @mixin md\:shrink {
-      @include r($md, flex-shrink, 1);
+      @include shrink-(1, $md);
     }
 
     @mixin md\:shrink-0 {
-      @include r($md, flex-shrink, 0);
+      @include shrink-(0, $md);
     }
+
     @mixin lg\:shrink {
-      @include r($lg, flex-shrink, 1);
+      @include shrink-(1, $lg);
     }
 
     @mixin lg\:shrink-0 {
-      @include r($lg, flex-shrink, 0);
+      @include shrink-(0, $lg);
     }
+
     @mixin xl\:shrink {
-      @include r($xl, flex-shrink, 1);
+      @include shrink-(1, $xl);
     }
 
     @mixin xl\:shrink-0 {
-      @include r($xl, flex-shrink, 0);
+      @include shrink-(0, $xl);
     }
+
     @mixin \2xl\:shrink {
-      @include r($\2xl, flex-shrink, 1);
+      @include shrink-(1, $\2xl);
     }
 
     @mixin \2xl\:shrink-0 {
-      @include r($\2xl, flex-shrink, 0);
+      @include shrink-(0, $\2xl);
     }
 
     // x*/
@@ -56,26 +61,35 @@
 }
 @if $Custom {
   // /*x
-  @mixin shrink-($v) {
-    flex-shrink: $v;
+  @mixin shrink-($v, $rwd: null) {
+    @if $rwd==null {
+      flex-shrink: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        flex-shrink: $v;
+      }
+    }
   }
+
   @mixin sm\:shrink-($v) {
-    @include r($sm, flex-shrink, $v);
+    @include shrink-($v, $sm);
   }
 
   @mixin md\:shrink-($v) {
-    @include r($md, flex-shrink, $v);
+    @include shrink-($v, $md);
   }
 
   @mixin lg\:shrink-($v) {
-    @include r($lg, flex-shrink, $v);
+    @include shrink-($v, $lg);
   }
 
   @mixin xl\:shrink-($v) {
-    @include r($xl, flex-shrink, $v);
+    @include shrink-($v, $xl);
   }
 
   @mixin \2xl\:shrink-($v) {
-    @include r($\2xl, flex-shrink, $v);
-  } // x*/
+    @include shrink-($v, $\2xl);
+  }
+
+  // x*/
 }

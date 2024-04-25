@@ -3,126 +3,156 @@
 /* Divide Style */
 @if $Basic {
   // /*x
-  @mixin divide-solid {
-    @include _border-style(solid);
+  @mixin divide-solid($rwd: null) {
+    @if $rwd==null {
+      @include _border-style(solid);
+    } @else {
+      @media (min-width: $rwd) {
+        @include _border-style(solid);
+      }
+    }
   }
 
-  @mixin divide-dashed {
-    @include _border-style(dashed);
+  @mixin divide-dashed($rwd: null) {
+    @if $rwd==null {
+      @include _border-style(dashed);
+    } @else {
+      @media (min-width: $rwd) {
+        @include _border-style(dashed);
+      }
+    }
   }
 
-  @mixin divide-dotted {
-    @include _border-style(dotted);
+  @mixin divide-dotted($rwd: null) {
+    @if $rwd==null {
+      @include _border-style(dotted);
+    } @else {
+      @media (min-width: $rwd) {
+        @include _border-style(dotted);
+      }
+    }
   }
 
-  @mixin divide-double {
-    @include _border-style(double);
+  @mixin divide-double($rwd: null) {
+    @if $rwd==null {
+      @include _border-style(double);
+    } @else {
+      @media (min-width: $rwd) {
+        @include _border-style(double);
+      }
+    }
   }
 
-  @mixin divide-none {
-    @include _border-style(none);
+  @mixin divide-none($rwd: null) {
+    @if $rwd==null {
+      @include _border-style(none);
+    } @else {
+      @media (min-width: $rwd) {
+        @include _border-style(none);
+      }
+    }
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:divide-solid {
-    @include _r($sm, _border-style, solid);
+    @include divide-solid($sm);
   }
 
   @mixin sm\:divide-dashed {
-    @include _r($sm, _border-style, dashed);
+    @include divide-dashed($sm);
   }
 
   @mixin sm\:divide-dotted {
-    @include _r($sm, _border-style, dotted);
+    @include divide-dotted($sm);
   }
 
   @mixin sm\:divide-double {
-    @include _r($sm, _border-style, double);
+    @include divide-double($sm);
   }
 
   @mixin sm\:divide-none {
-    @include _r($sm, _border-style, none);
+    @include divide-none($sm);
   }
 
   @mixin md\:divide-solid {
-    @include _r($md, _border-style, solid);
+    @include divide-solid($md);
   }
 
   @mixin md\:divide-dashed {
-    @include _r($md, _border-style, dashed);
+    @include divide-dashed($md);
   }
 
   @mixin md\:divide-dotted {
-    @include _r($md, _border-style, dotted);
+    @include divide-dotted($md);
   }
 
   @mixin md\:divide-double {
-    @include _r($md, _border-style, double);
+    @include divide-double($md);
   }
 
   @mixin md\:divide-none {
-    @include _r($md, _border-style, none);
+    @include divide-none($md);
   }
 
   @mixin lg\:divide-solid {
-    @include _r($lg, _border-style, solid);
+    @include divide-solid($lg);
   }
 
   @mixin lg\:divide-dashed {
-    @include _r($lg, _border-style, dashed);
+    @include divide-dashed($lg);
   }
 
   @mixin lg\:divide-dotted {
-    @include _r($lg, _border-style, dotted);
+    @include divide-dotted($lg);
   }
 
   @mixin lg\:divide-double {
-    @include _r($lg, _border-style, double);
+    @include divide-double($lg);
   }
 
   @mixin lg\:divide-none {
-    @include _r($lg, _border-style, none);
+    @include divide-none($lg);
   }
 
   @mixin xl\:divide-solid {
-    @include _r($xl, _border-style, solid);
+    @include divide-solid($xl);
   }
 
   @mixin xl\:divide-dashed {
-    @include _r($xl, _border-style, dashed);
+    @include divide-dashed($xl);
   }
 
   @mixin xl\:divide-dotted {
-    @include _r($xl, _border-style, dotted);
+    @include divide-dotted($xl);
   }
 
   @mixin xl\:divide-double {
-    @include _r($xl, _border-style, double);
+    @include divide-double($xl);
   }
 
   @mixin xl\:divide-none {
-    @include _r($xl, _border-style, none);
+    @include divide-none($xl);
   }
 
   @mixin \2xl\:divide-solid {
-    @include _r($\2xl, _border-style, solid);
+    @include divide-solid($\2xl);
   }
 
   @mixin \2xl\:divide-dashed {
-    @include _r($\2xl, _border-style, dashed);
+    @include divide-dashed($\2xl);
   }
 
   @mixin \2xl\:divide-dotted {
-    @include _r($\2xl, _border-style, dotted);
+    @include divide-dotted($\2xl);
   }
 
   @mixin \2xl\:divide-double {
-    @include _r($\2xl, _border-style, double);
+    @include divide-double($\2xl);
   }
 
   @mixin \2xl\:divide-none {
-    @include _r($\2xl, _border-style, none);
+    @include divide-none($\2xl);
   } // x*/
 }

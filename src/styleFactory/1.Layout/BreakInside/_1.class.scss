@@ -3,102 +3,130 @@
 /* Break Inside */
 @if $Basic {
   // /*x
-  @mixin break-inside-auto {
-    break-inside: auto;
+  @mixin break-inside-auto($rwd: null) {
+    @if $rwd==null {
+      break-inside: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        break-inside: auto;
+      }
+    }
   }
 
-  @mixin break-inside-avoid {
-    break-inside: avoid;
+  @mixin break-inside-avoid($rwd: null) {
+    @if $rwd==null {
+      break-inside: avoid;
+    } @else {
+      @media (min-width: $rwd) {
+        break-inside: avoid;
+      }
+    }
   }
 
-  @mixin break-inside-avoid-page {
-    break-inside: avoid-page;
+  @mixin break-inside-avoid-page($rwd: null) {
+    @if $rwd==null {
+      break-inside: avoid-page;
+    } @else {
+      @media (min-width: $rwd) {
+        break-inside: avoid-page;
+      }
+    }
   }
 
-  @mixin break-inside-avoid-column {
-    break-inside: avoid-column;
-  } // x*/
+  @mixin break-inside-avoid-column($rwd: null) {
+    @if $rwd==null {
+      break-inside: avoid-column;
+    } @else {
+      @media (min-width: $rwd) {
+        break-inside: avoid-column;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:break-inside-auto {
-    @include r($sm, break-inside, auto);
+    @include break-inside-auto($sm);
   }
 
   @mixin sm\:break-inside-avoid {
-    @include r($sm, break-inside, avoid);
+    @include break-inside-avoid($sm);
   }
 
   @mixin sm\:break-inside-avoid-page {
-    @include r($sm, break-inside, avoid-page);
+    @include break-inside-avoid-page($sm);
   }
 
   @mixin sm\:break-inside-avoid-column {
-    @include r($sm, break-inside, avoid-column);
+    @include break-inside-avoid-column($sm);
   }
 
   @mixin md\:break-inside-auto {
-    @include r($md, break-inside, auto);
+    @include break-inside-auto($md);
   }
 
   @mixin md\:break-inside-avoid {
-    @include r($md, break-inside, avoid);
+    @include break-inside-avoid($md);
   }
 
   @mixin md\:break-inside-avoid-page {
-    @include r($md, break-inside, avoid-page);
+    @include break-inside-avoid-page($md);
   }
 
   @mixin md\:break-inside-avoid-column {
-    @include r($md, break-inside, avoid-column);
+    @include break-inside-avoid-column($md);
   }
 
   @mixin lg\:break-inside-auto {
-    @include r($lg, break-inside, auto);
+    @include break-inside-auto($lg);
   }
 
   @mixin lg\:break-inside-avoid {
-    @include r($lg, break-inside, avoid);
+    @include break-inside-avoid($lg);
   }
 
   @mixin lg\:break-inside-avoid-page {
-    @include r($lg, break-inside, avoid-page);
+    @include break-inside-avoid-page($lg);
   }
 
   @mixin lg\:break-inside-avoid-column {
-    @include r($lg, break-inside, avoid-column);
+    @include break-inside-avoid-column($lg);
   }
 
   @mixin xl\:break-inside-auto {
-    @include r($xl, break-inside, auto);
+    @include break-inside-auto($xl);
   }
 
   @mixin xl\:break-inside-avoid {
-    @include r($xl, break-inside, avoid);
+    @include break-inside-avoid($xl);
   }
 
   @mixin xl\:break-inside-avoid-page {
-    @include r($xl, break-inside, avoid-page);
+    @include break-inside-avoid-page($xl);
   }
 
   @mixin xl\:break-inside-avoid-column {
-    @include r($xl, break-inside, avoid-column);
+    @include break-inside-avoid-column($xl);
   }
 
   @mixin \2xl\:break-inside-auto {
-    @include r($\2xl, break-inside, auto);
+    @include break-inside-auto($\2xl);
   }
 
   @mixin \2xl\:break-inside-avoid {
-    @include r($\2xl, break-inside, avoid);
+    @include break-inside-avoid($\2xl);
   }
 
   @mixin \2xl\:break-inside-avoid-page {
-    @include r($\2xl, break-inside, avoid-page);
+    @include break-inside-avoid-page($\2xl);
   }
 
   @mixin \2xl\:break-inside-avoid-column {
-    @include r($\2xl, break-inside, avoid-column);
-  } // x*/
+    @include break-inside-avoid-column($\2xl);
+  }
+
+  // x*/
 }

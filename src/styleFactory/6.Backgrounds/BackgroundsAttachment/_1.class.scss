@@ -3,78 +3,100 @@
 /* Backgrounds Attachment */
 @if $Basic {
   // /*x
-  @mixin bg-fixed {
-    background-attachment: fixed;
+  @mixin bg-fixed($rwd: null) {
+    @if $rwd==null {
+      background-attachment: fixed;
+    } @else {
+      @media (min-width: $rwd) {
+        background-attachment: fixed;
+      }
+    }
   }
 
-  @mixin bg-local {
-    background-attachment: local;
+  @mixin bg-local($rwd: null) {
+    @if $rwd==null {
+      background-attachment: local;
+    } @else {
+      @media (min-width: $rwd) {
+        background-attachment: local;
+      }
+    }
   }
 
-  @mixin bg-scroll {
-    background-attachment: scroll;
-  } // x*/
+  @mixin bg-scroll($rwd: null) {
+    @if $rwd==null {
+      background-attachment: scroll;
+    } @else {
+      @media (min-width: $rwd) {
+        background-attachment: scroll;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:bg-fixed {
-    @include r($sm, background-attachment, fixed);
+    @include bg-fixed($sm);
   }
 
   @mixin sm\:bg-local {
-    @include r($sm, background-attachment, local);
+    @include bg-local($sm);
   }
 
   @mixin sm\:bg-scroll {
-    @include r($sm, background-attachment, scroll);
+    @include bg-scroll($sm);
   }
 
   @mixin md\:bg-fixed {
-    @include r($md, background-attachment, fixed);
+    @include bg-fixed($md);
   }
 
   @mixin md\:bg-local {
-    @include r($md, background-attachment, local);
+    @include bg-local($md);
   }
 
   @mixin md\:bg-scroll {
-    @include r($md, background-attachment, scroll);
+    @include bg-scroll($md);
   }
 
   @mixin lg\:bg-fixed {
-    @include r($lg, background-attachment, fixed);
+    @include bg-fixed($lg);
   }
 
   @mixin lg\:bg-local {
-    @include r($lg, background-attachment, local);
+    @include bg-local($lg);
   }
 
   @mixin lg\:bg-scroll {
-    @include r($lg, background-attachment, scroll);
+    @include bg-scroll($lg);
   }
 
   @mixin xl\:bg-fixed {
-    @include r($xl, background-attachment, fixed);
+    @include bg-fixed($xl);
   }
 
   @mixin xl\:bg-local {
-    @include r($xl, background-attachment, local);
+    @include bg-local($xl);
   }
 
   @mixin xl\:bg-scroll {
-    @include r($xl, background-attachment, scroll);
+    @include bg-scroll($xl);
   }
 
   @mixin \2xl\:bg-fixed {
-    @include r($\2xl, background-attachment, fixed);
+    @include bg-fixed($\2xl);
   }
 
   @mixin \2xl\:bg-local {
-    @include r($\2xl, background-attachment, local);
+    @include bg-local($\2xl);
   }
 
   @mixin \2xl\:bg-scroll {
-    @include r($\2xl, background-attachment, scroll);
-  } // x*/
+    @include bg-scroll($\2xl);
+  }
+
+  // x*/
 }

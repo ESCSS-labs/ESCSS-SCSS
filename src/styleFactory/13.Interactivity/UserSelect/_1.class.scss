@@ -3,102 +3,130 @@
 /* User Select */
 @if $Basic {
   // /*x
-  @mixin select-none {
-    user-select: none;
+  @mixin select-none($rwd: null) {
+    @if $rwd==null {
+      user-select: none;
+    } @else {
+      @media (min-width: $rwd) {
+        user-select: none;
+      }
+    }
   }
 
-  @mixin select-text {
-    user-select: text;
+  @mixin select-text($rwd: null) {
+    @if $rwd==null {
+      user-select: text;
+    } @else {
+      @media (min-width: $rwd) {
+        user-select: text;
+      }
+    }
   }
 
-  @mixin select-all {
-    user-select: all;
+  @mixin select-all($rwd: null) {
+    @if $rwd==null {
+      user-select: all;
+    } @else {
+      @media (min-width: $rwd) {
+        user-select: all;
+      }
+    }
   }
 
-  @mixin select-auto {
-    user-select: auto;
-  } // x*/
+  @mixin select-auto($rwd: null) {
+    @if $rwd==null {
+      user-select: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        user-select: auto;
+      }
+    }
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:select-none {
-    @include r($sm, user-select, none);
+    @include select-none($sm);
   }
 
   @mixin sm\:select-text {
-    @include r($sm, user-select, text);
+    @include select-text($sm);
   }
 
   @mixin sm\:select-all {
-    @include r($sm, user-select, all);
+    @include select-all($sm);
   }
 
   @mixin sm\:select-auto {
-    @include r($sm, user-select, auto);
+    @include select-auto($sm);
   }
 
   @mixin md\:select-none {
-    @include r($md, user-select, none);
+    @include select-none($md);
   }
 
   @mixin md\:select-text {
-    @include r($md, user-select, text);
+    @include select-text($md);
   }
 
   @mixin md\:select-all {
-    @include r($md, user-select, all);
+    @include select-all($md);
   }
 
   @mixin md\:select-auto {
-    @include r($md, user-select, auto);
+    @include select-auto($md);
   }
 
   @mixin lg\:select-none {
-    @include r($lg, user-select, none);
+    @include select-none($lg);
   }
 
   @mixin lg\:select-text {
-    @include r($lg, user-select, text);
+    @include select-text($lg);
   }
 
   @mixin lg\:select-all {
-    @include r($lg, user-select, all);
+    @include select-all($lg);
   }
 
   @mixin lg\:select-auto {
-    @include r($lg, user-select, auto);
+    @include select-auto($lg);
   }
 
   @mixin xl\:select-none {
-    @include r($xl, user-select, none);
+    @include select-none($xl);
   }
 
   @mixin xl\:select-text {
-    @include r($xl, user-select, text);
+    @include select-text($xl);
   }
 
   @mixin xl\:select-all {
-    @include r($xl, user-select, all);
+    @include select-all($xl);
   }
 
   @mixin xl\:select-auto {
-    @include r($xl, user-select, auto);
+    @include select-auto($xl);
   }
 
   @mixin \2xl\:select-none {
-    @include r($\2xl, user-select, none);
+    @include select-none($\2xl);
   }
 
   @mixin \2xl\:select-text {
-    @include r($\2xl, user-select, text);
+    @include select-text($\2xl);
   }
 
   @mixin \2xl\:select-all {
-    @include r($\2xl, user-select, all);
+    @include select-all($\2xl);
   }
 
   @mixin \2xl\:select-auto {
-    @include r($\2xl, user-select, auto);
-  } // x*/
+    @include select-auto($\2xl);
+  }
+
+  // x*/
 }
