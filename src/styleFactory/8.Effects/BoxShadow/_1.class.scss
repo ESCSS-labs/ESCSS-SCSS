@@ -4,203 +4,207 @@
 @if $Basic {
   // /*x
   @mixin shadow-sm {
-    @include _box-shadow(shadow, sm);
+    @include shadow-(sm);
   }
 
   @mixin shadow {
-    @include _box-shadow(shadow, null);
+    @include shadow-(null);
   }
 
   @mixin shadow-md {
-    @include _box-shadow(shadow, md);
+    @include shadow-(md);
   }
 
   @mixin shadow-lg {
-    @include _box-shadow(shadow, lg);
+    @include shadow-(lg);
   }
 
   @mixin shadow-xl {
-    @include _box-shadow(shadow, xl);
+    @include shadow-(xl);
   }
 
   @mixin shadow-2xl {
-    @include _box-shadow(shadow, 2xl);
+    @include shadow-(2xl);
   }
 
   @mixin shadow-inner {
-    @include _box-shadow(shadow, inner);
+    @include shadow-(inner);
   }
 
   @mixin shadow-none {
-    @include _box-shadow(shadow, none);
-  } // x*/
+    @include shadow-(none);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:shadow-sm {
-      @include _r($sm, _box-shadow, shadow, sm);
+      @include shadow-(sm, $sm);
     }
 
     @mixin sm\:shadow {
-      @include _r($sm, _box-shadow, shadow, null);
+      @include shadow-(null, $sm);
     }
 
     @mixin sm\:shadow-md {
-      @include _r($sm, _box-shadow, shadow, md);
+      @include shadow-(md, $sm);
     }
 
     @mixin sm\:shadow-lg {
-      @include _r($sm, _box-shadow, shadow, lg);
+      @include shadow-(lg, $sm);
     }
 
     @mixin sm\:shadow-xl {
-      @include _r($sm, _box-shadow, shadow, xl);
+      @include shadow-(xl, $sm);
     }
 
     @mixin sm\:shadow-2xl {
-      @include _r($sm, _box-shadow, shadow, 2xl);
+      @include shadow-(2xl, $sm);
     }
 
     @mixin sm\:shadow-inner {
-      @include _r($sm, _box-shadow, shadow, inner);
+      @include shadow-(inner, $sm);
     }
 
     @mixin sm\:shadow-none {
-      @include _r($sm, _box-shadow, shadow, none);
+      @include shadow-(none, $sm);
     }
 
     @mixin md\:shadow-sm {
-      @include _r($md, _box-shadow, shadow, sm);
+      @include shadow-(sm, $md);
     }
 
     @mixin md\:shadow {
-      @include _r($md, _box-shadow, shadow, null);
+      @include shadow-(null, $md);
     }
 
     @mixin md\:shadow-md {
-      @include _r($md, _box-shadow, shadow, md);
+      @include shadow-(md, $md);
     }
 
     @mixin md\:shadow-lg {
-      @include _r($md, _box-shadow, shadow, lg);
+      @include shadow-(lg, $md);
     }
 
     @mixin md\:shadow-xl {
-      @include _r($md, _box-shadow, shadow, xl);
+      @include shadow-(xl, $md);
     }
 
     @mixin md\:shadow-2xl {
-      @include _r($md, _box-shadow, shadow, 2xl);
+      @include shadow-(2xl, $md);
     }
 
     @mixin md\:shadow-inner {
-      @include _r($md, _box-shadow, shadow, inner);
+      @include shadow-(inner, $md);
     }
 
     @mixin md\:shadow-none {
-      @include _r($md, _box-shadow, shadow, none);
+      @include shadow-(none, $md);
     }
 
     @mixin lg\:shadow-sm {
-      @include _r($lg, _box-shadow, shadow, sm);
+      @include shadow-(sm, $lg);
     }
 
     @mixin lg\:shadow {
-      @include _r($lg, _box-shadow, shadow, null);
+      @include shadow-(null, $lg);
     }
 
     @mixin lg\:shadow-md {
-      @include _r($lg, _box-shadow, shadow, md);
+      @include shadow-(md, $lg);
     }
 
     @mixin lg\:shadow-lg {
-      @include _r($lg, _box-shadow, shadow, lg);
+      @include shadow-(lg, $lg);
     }
 
     @mixin lg\:shadow-xl {
-      @include _r($lg, _box-shadow, shadow, xl);
+      @include shadow-(xl, $lg);
     }
 
     @mixin lg\:shadow-2xl {
-      @include _r($lg, _box-shadow, shadow, 2xl);
+      @include shadow-(2xl, $lg);
     }
 
     @mixin lg\:shadow-inner {
-      @include _r($lg, _box-shadow, shadow, inner);
+      @include shadow-(inner, $lg);
     }
 
     @mixin lg\:shadow-none {
-      @include _r($lg, _box-shadow, shadow, none);
+      @include shadow-(none, $lg);
     }
 
     @mixin xl\:shadow-sm {
-      @include _r($xl, _box-shadow, shadow, sm);
+      @include shadow-(sm, $xl);
     }
 
     @mixin xl\:shadow {
-      @include _r($xl, _box-shadow, shadow, null);
+      @include shadow-(null, $xl);
     }
 
     @mixin xl\:shadow-md {
-      @include _r($xl, _box-shadow, shadow, md);
+      @include shadow-(md, $xl);
     }
 
     @mixin xl\:shadow-lg {
-      @include _r($xl, _box-shadow, shadow, lg);
+      @include shadow-(lg, $xl);
     }
 
     @mixin xl\:shadow-xl {
-      @include _r($xl, _box-shadow, shadow, xl);
+      @include shadow-(xl, $xl);
     }
 
     @mixin xl\:shadow-2xl {
-      @include _r($xl, _box-shadow, shadow, 2xl);
+      @include shadow-(2xl, $xl);
     }
 
     @mixin xl\:shadow-inner {
-      @include _r($xl, _box-shadow, shadow, inner);
+      @include shadow-(inner, $xl);
     }
 
     @mixin xl\:shadow-none {
-      @include _r($xl, _box-shadow, shadow, none);
+      @include shadow-(none, $xl);
     }
 
     @mixin \2xl\:shadow-sm {
-      @include _r($\2xl, _box-shadow, shadow, sm);
+      @include shadow-(sm, $\2xl);
     }
 
     @mixin \2xl\:shadow {
-      @include _r($\2xl, _box-shadow, shadow, null);
+      @include shadow-(null, $\2xl);
     }
 
     @mixin \2xl\:shadow-md {
-      @include _r($\2xl, _box-shadow, shadow, md);
+      @include shadow-(md, $\2xl);
     }
 
     @mixin \2xl\:shadow-lg {
-      @include _r($\2xl, _box-shadow, shadow, lg);
+      @include shadow-(lg, $\2xl);
     }
 
     @mixin \2xl\:shadow-xl {
-      @include _r($\2xl, _box-shadow, shadow, xl);
+      @include shadow-(xl, $\2xl);
     }
 
     @mixin \2xl\:shadow-2xl {
-      @include _r($\2xl, _box-shadow, shadow, 2xl);
+      @include shadow-(2xl, $\2xl);
     }
 
     @mixin \2xl\:shadow-inner {
-      @include _r($\2xl, _box-shadow, shadow, inner);
+      @include shadow-(inner, $\2xl);
     }
 
     @mixin \2xl\:shadow-none {
-      @include _r($\2xl, _box-shadow, shadow, none);
+      @include shadow-(none, $\2xl);
     }
+
     // x*/
   }
 }
+
 @if $Custom {
-  // same as @mixin shadow-($v)
+  // same as @mixin shadow-($v, $rwd: null)
 }

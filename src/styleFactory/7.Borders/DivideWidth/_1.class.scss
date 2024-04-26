@@ -302,12 +302,12 @@
 
 @if $Custom {
   // /*x
-  @mixin divide-x-($value, $rwd: null, $isReverse: false) {
+  @mixin divide-x-($v, $rwd: null, $isReverse: false) {
     @if $rwd==null {
       @if $isReverse {
         $--tw-divide-x-reverse: 1 !global;
       } @else {
-        $--divide-x-value: $value !global; // update for using reverse
+        $--divide-x-value: $v !global; // update for using reverse
       }
 
       > * ~ * {
@@ -319,7 +319,7 @@
         @if $isReverse {
           $--tw-divide-x-reverse: 1 !global;
         } @else {
-          $--divide-x-value: $value !global; // update for using reverse
+          $--divide-x-value: $v !global; // update for using reverse
         }
 
         > * ~ * {
@@ -330,12 +330,12 @@
     }
   }
 
-  @mixin divide-y-($value, $rwd: null, $isReverse: false) {
+  @mixin divide-y-($v, $rwd: null, $isReverse: false) {
     @if $rwd==null {
       @if $isReverse {
         $--tw-divide-y-reverse: 1 !global;
       } @else {
-        $--divide-y-value: $value !global; // update for using reverse
+        $--divide-y-value: $v !global; // update for using reverse
       }
 
       > * ~ * {
@@ -347,7 +347,7 @@
         @if $isReverse {
           $--tw-divide-y-reverse: 1 !global;
         } @else {
-          $--divide-y-value: $value !global; // update for using reverse
+          $--divide-y-value: $v !global; // update for using reverse
         }
 
         > * ~ * {

@@ -3423,12 +3423,12 @@
 
 @if $Custom {
   // /*x
-  @mixin space-x-($value, $rwd: null, $isReverse: false) {
+  @mixin space-x-($v, $rwd: null, $isReverse: false) {
     @if $rwd==null {
       @if $isReverse {
         $--tw-space-x-reverse: 1 !global;
       } @else {
-        $--space-x-value: $value !global; // update for using reverse
+        $--space-x-value: $v !global; // update for using reverse
       }
 
       > * ~ * {
@@ -3440,7 +3440,7 @@
         @if $isReverse {
           $--tw-space-x-reverse: 1 !global;
         } @else {
-          $--space-x-value: $value !global; // update for using reverse
+          $--space-x-value: $v !global; // update for using reverse
         }
 
         > * ~ * {
@@ -3451,12 +3451,12 @@
     }
   }
 
-  @mixin space-y-($value, $rwd: null, $isReverse: false) {
+  @mixin space-y-($v, $rwd: null, $isReverse: false) {
     @if $rwd==null {
       @if $isReverse {
         $--tw-space-y-reverse: 1 !global;
       } @else {
-        $--space-y-value: $value !global; // update for using reverse
+        $--space-y-value: $v !global; // update for using reverse
       }
 
       > * ~ * {
@@ -3468,7 +3468,7 @@
         @if $isReverse {
           $--tw-space-y-reverse: 1 !global;
         } @else {
-          $--space-y-value: $value !global; // update for using reverse
+          $--space-y-value: $v !global; // update for using reverse
         }
 
         > * ~ * {

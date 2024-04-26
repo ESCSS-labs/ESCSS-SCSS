@@ -4,127 +4,134 @@
 @if $Basic {
   // /*x
   @mixin ring-offset-0 {
-    @include _box-shadow(ring-offset-width, 0px);
+    @include ring-offset-(0px);
   }
 
   @mixin ring-offset-1 {
-    @include _box-shadow(ring-offset-width, 1px);
+    @include ring-offset-(1px);
   }
 
   @mixin ring-offset-2 {
-    @include _box-shadow(ring-offset-width, 2px);
+    @include ring-offset-(2px);
   }
 
   @mixin ring-offset-4 {
-    @include _box-shadow(ring-offset-width, 4px);
+    @include ring-offset-(4px);
   }
 
   @mixin ring-offset-8 {
-    @include _box-shadow(ring-offset-width, 8px);
-  } // x*/
+    @include ring-offset-(8px);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:ring-offset-0 {
-      @include _r($sm, _box-shadow, ring-offset-width, 0px);
+      @include ring-offset-(0px, $sm);
     }
 
     @mixin sm\:ring-offset-1 {
-      @include _r($sm, _box-shadow, ring-offset-width, 1px);
+      @include ring-offset-(1px, $sm);
     }
 
     @mixin sm\:ring-offset-2 {
-      @include _r($sm, _box-shadow, ring-offset-width, 2px);
+      @include ring-offset-(2px, $sm);
     }
 
     @mixin sm\:ring-offset-4 {
-      @include _r($sm, _box-shadow, ring-offset-width, 4px);
+      @include ring-offset-(4px, $sm);
     }
 
     @mixin sm\:ring-offset-8 {
-      @include _r($sm, _box-shadow, ring-offset-width, 8px);
+      @include ring-offset-(8px, $sm);
     }
+
     @mixin md\:ring-offset-0 {
-      @include _r($md, _box-shadow, ring-offset-width, 0px);
+      @include ring-offset-(0px, $md);
     }
 
     @mixin md\:ring-offset-1 {
-      @include _r($md, _box-shadow, ring-offset-width, 1px);
+      @include ring-offset-(1px, $md);
     }
 
     @mixin md\:ring-offset-2 {
-      @include _r($md, _box-shadow, ring-offset-width, 2px);
+      @include ring-offset-(2px, $md);
     }
 
     @mixin md\:ring-offset-4 {
-      @include _r($md, _box-shadow, ring-offset-width, 4px);
+      @include ring-offset-(4px, $md);
     }
 
     @mixin md\:ring-offset-8 {
-      @include _r($md, _box-shadow, ring-offset-width, 8px);
+      @include ring-offset-(8px, $md);
     }
+
     @mixin lg\:ring-offset-0 {
-      @include _r($lg, _box-shadow, ring-offset-width, 0px);
+      @include ring-offset-(0px, $lg);
     }
 
     @mixin lg\:ring-offset-1 {
-      @include _r($lg, _box-shadow, ring-offset-width, 1px);
+      @include ring-offset-(1px, $lg);
     }
 
     @mixin lg\:ring-offset-2 {
-      @include _r($lg, _box-shadow, ring-offset-width, 2px);
+      @include ring-offset-(2px, $lg);
     }
 
     @mixin lg\:ring-offset-4 {
-      @include _r($lg, _box-shadow, ring-offset-width, 4px);
+      @include ring-offset-(4px, $lg);
     }
 
     @mixin lg\:ring-offset-8 {
-      @include _r($lg, _box-shadow, ring-offset-width, 8px);
+      @include ring-offset-(8px, $lg);
     }
+
     @mixin xl\:ring-offset-0 {
-      @include _r($xl, _box-shadow, ring-offset-width, 0px);
+      @include ring-offset-(0px, $xl);
     }
 
     @mixin xl\:ring-offset-1 {
-      @include _r($xl, _box-shadow, ring-offset-width, 1px);
+      @include ring-offset-(1px, $xl);
     }
 
     @mixin xl\:ring-offset-2 {
-      @include _r($xl, _box-shadow, ring-offset-width, 2px);
+      @include ring-offset-(2px, $xl);
     }
 
     @mixin xl\:ring-offset-4 {
-      @include _r($xl, _box-shadow, ring-offset-width, 4px);
+      @include ring-offset-(4px, $xl);
     }
 
     @mixin xl\:ring-offset-8 {
-      @include _r($xl, _box-shadow, ring-offset-width, 8px);
+      @include ring-offset-(8px, $xl);
     }
+
     @mixin \2xl\:ring-offset-0 {
-      @include _r($\2xl, _box-shadow, ring-offset-width, 0px);
+      @include ring-offset-(0px, $\2xl);
     }
 
     @mixin \2xl\:ring-offset-1 {
-      @include _r($\2xl, _box-shadow, ring-offset-width, 1px);
+      @include ring-offset-(1px, $\2xl);
     }
 
     @mixin \2xl\:ring-offset-2 {
-      @include _r($\2xl, _box-shadow, ring-offset-width, 2px);
+      @include ring-offset-(2px, $\2xl);
     }
 
     @mixin \2xl\:ring-offset-4 {
-      @include _r($\2xl, _box-shadow, ring-offset-width, 4px);
+      @include ring-offset-(4px, $\2xl);
     }
 
     @mixin \2xl\:ring-offset-8 {
-      @include _r($\2xl, _box-shadow, ring-offset-width, 8px);
+      @include ring-offset-(8px, $\2xl);
     }
     // x*/
   }
 }
+
 @if $Custom {
-  // same as @mixin ring-offset-($v)
+  // same as @mixin ring-offset-($v, $rwd: null)
 }
