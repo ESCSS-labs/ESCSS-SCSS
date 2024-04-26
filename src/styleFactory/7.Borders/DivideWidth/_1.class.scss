@@ -3,348 +3,400 @@
 /* Divide Width */
 @if $Basic {
   // /*x
-  @mixin divide-x-0 {
-    @include _border-left-width_border-right-width(0px);
-  }
-
-  @mixin divide-x-2 {
-    @include _border-left-width_border-right-width(2px);
-  }
-
-  @mixin divide-x-4 {
-    @include _border-left-width_border-right-width(4px);
-  }
-
-  @mixin divide-x-8 {
-    @include _border-left-width_border-right-width(8px);
-  }
-
-  @mixin divide-x {
-    @include _border-left-width_border-right-width(1px);
-  }
-
-  @mixin divide-y-0 {
-    @include _border-top-width_border-bottom-width(0px);
-  }
-
-  @mixin divide-y-2 {
-    @include _border-top-width_border-bottom-width(2px);
-  }
-
-  @mixin divide-y-4 {
-    @include _border-top-width_border-bottom-width(4px);
-  }
-
-  @mixin divide-y-8 {
-    @include _border-top-width_border-bottom-width(8px);
-  }
-
-  @mixin divide-y {
-    @include _border-top-width_border-bottom-width(1px);
-  }
-
   @mixin divide-x-reverse {
-    @include _border-left-width_border-right-width(0px, true);
+    @include divide-x-(0px, null, true);
   }
 
   @mixin divide-y-reverse {
-    @include _border-top-width_border-bottom-width(0px, true);
-  } // x*/
+    @include divide-y-(0px, null, true);
+  }
+
+  @mixin divide-x-0 {
+    @include divide-x-(0px);
+  }
+
+  @mixin divide-x {
+    @include divide-x-(1px);
+  }
+
+  @mixin divide-x-2 {
+    @include divide-x-(2px);
+  }
+
+  @mixin divide-x-4 {
+    @include divide-x-(4px);
+  }
+
+  @mixin divide-x-8 {
+    @include divide-x-(8px);
+  }
+
+  @mixin divide-y-0 {
+    @include divide-y-(0px);
+  }
+
+  @mixin divide-y {
+    @include divide-y-(1px);
+  }
+
+  @mixin divide-y-2 {
+    @include divide-y-(2px);
+  }
+
+  @mixin divide-y-4 {
+    @include divide-y-(4px);
+  }
+
+  @mixin divide-y-8 {
+    @include divide-y-(8px);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
-    @mixin sm\:divide-x-0 {
-      @include _r($sm, _border-left-width_border-right-width, 0px);
-    }
-
-    @mixin sm\:divide-x-2 {
-      @include _r($sm, _border-left-width_border-right-width, 2px);
-    }
-
-    @mixin sm\:divide-x-4 {
-      @include _r($sm, _border-left-width_border-right-width, 4px);
-    }
-
-    @mixin sm\:divide-x-8 {
-      @include _r($sm, _border-left-width_border-right-width, 8px);
-    }
-
-    @mixin sm\:divide-x {
-      @include _r($sm, _border-left-width_border-right-width, 1px);
-    }
-
-    @mixin sm\:divide-y-0 {
-      @include _r($sm, _border-top-width_border-bottom-width, 0px);
-    }
-
-    @mixin sm\:divide-y-2 {
-      @include _r($sm, _border-top-width_border-bottom-width, 2px);
-    }
-
-    @mixin sm\:divide-y-4 {
-      @include _r($sm, _border-top-width_border-bottom-width, 4px);
-    }
-
-    @mixin sm\:divide-y-8 {
-      @include _r($sm, _border-top-width_border-bottom-width, 8px);
-    }
-
-    @mixin sm\:divide-y {
-      @include _r($sm, _border-top-width_border-bottom-width, 1px);
-    }
-
     @mixin sm\:divide-x-reverse {
-      @include _r($sm, _border-left-width_border-right-width, 0px, true);
+      @include divide-x-(0px, $sm, true);
     }
 
     @mixin sm\:divide-y-reverse {
-      @include _r($sm, _border-top-width_border-bottom-width, 0px, true);
+      @include divide-y-(0px, $sm, true);
     }
 
-    @mixin md\:divide-x-0 {
-      @include _r($md, _border-left-width_border-right-width, 0px);
+    @mixin sm\:divide-x-0 {
+      @include divide-x-(0px, $sm);
     }
 
-    @mixin md\:divide-x-2 {
-      @include _r($md, _border-left-width_border-right-width, 2px);
+    @mixin sm\:divide-x {
+      @include divide-x-(1px, $sm);
     }
 
-    @mixin md\:divide-x-4 {
-      @include _r($md, _border-left-width_border-right-width, 4px);
+    @mixin sm\:divide-x-2 {
+      @include divide-x-(2px, $sm);
     }
 
-    @mixin md\:divide-x-8 {
-      @include _r($md, _border-left-width_border-right-width, 8px);
+    @mixin sm\:divide-x-4 {
+      @include divide-x-(4px, $sm);
     }
 
-    @mixin md\:divide-x {
-      @include _r($md, _border-left-width_border-right-width, 1px);
+    @mixin sm\:divide-x-8 {
+      @include divide-x-(8px, $sm);
     }
 
-    @mixin md\:divide-y-0 {
-      @include _r($md, _border-top-width_border-bottom-width, 0px);
+    @mixin sm\:divide-y-0 {
+      @include divide-y-(0px, $sm);
     }
 
-    @mixin md\:divide-y-2 {
-      @include _r($md, _border-top-width_border-bottom-width, 2px);
+    @mixin sm\:divide-y {
+      @include divide-y-(1px, $sm);
     }
 
-    @mixin md\:divide-y-4 {
-      @include _r($md, _border-top-width_border-bottom-width, 4px);
+    @mixin sm\:divide-y-2 {
+      @include divide-y-(2px, $sm);
     }
 
-    @mixin md\:divide-y-8 {
-      @include _r($md, _border-top-width_border-bottom-width, 8px);
+    @mixin sm\:divide-y-4 {
+      @include divide-y-(4px, $sm);
     }
 
-    @mixin md\:divide-y {
-      @include _r($md, _border-top-width_border-bottom-width, 1px);
+    @mixin sm\:divide-y-8 {
+      @include divide-y-(8px, $sm);
     }
 
     @mixin md\:divide-x-reverse {
-      @include _r($md, _border-left-width_border-right-width, 0px, true);
+      @include divide-x-(0px, $md, true);
     }
 
     @mixin md\:divide-y-reverse {
-      @include _r($md, _border-top-width_border-bottom-width, 0px, true);
+      @include divide-y-(0px, $md, true);
     }
 
-    @mixin lg\:divide-x-0 {
-      @include _r($lg, _border-left-width_border-right-width, 0px);
+    @mixin md\:divide-x-0 {
+      @include divide-x-(0px, $md);
     }
 
-    @mixin lg\:divide-x-2 {
-      @include _r($lg, _border-left-width_border-right-width, 2px);
+    @mixin md\:divide-x {
+      @include divide-x-(1px, $md);
     }
 
-    @mixin lg\:divide-x-4 {
-      @include _r($lg, _border-left-width_border-right-width, 4px);
+    @mixin md\:divide-x-2 {
+      @include divide-x-(2px, $md);
     }
 
-    @mixin lg\:divide-x-8 {
-      @include _r($lg, _border-left-width_border-right-width, 8px);
+    @mixin md\:divide-x-4 {
+      @include divide-x-(4px, $md);
     }
 
-    @mixin lg\:divide-x {
-      @include _r($lg, _border-left-width_border-right-width, 1px);
+    @mixin md\:divide-x-8 {
+      @include divide-x-(8px, $md);
     }
 
-    @mixin lg\:divide-y-0 {
-      @include _r($lg, _border-top-width_border-bottom-width, 0px);
+    @mixin md\:divide-y-0 {
+      @include divide-y-(0px, $md);
     }
 
-    @mixin lg\:divide-y-2 {
-      @include _r($lg, _border-top-width_border-bottom-width, 2px);
+    @mixin md\:divide-y {
+      @include divide-y-(1px, $md);
     }
 
-    @mixin lg\:divide-y-4 {
-      @include _r($lg, _border-top-width_border-bottom-width, 4px);
+    @mixin md\:divide-y-2 {
+      @include divide-y-(2px, $md);
     }
 
-    @mixin lg\:divide-y-8 {
-      @include _r($lg, _border-top-width_border-bottom-width, 8px);
+    @mixin md\:divide-y-4 {
+      @include divide-y-(4px, $md);
     }
 
-    @mixin lg\:divide-y {
-      @include _r($lg, _border-top-width_border-bottom-width, 1px);
+    @mixin md\:divide-y-8 {
+      @include divide-y-(8px, $md);
     }
 
     @mixin lg\:divide-x-reverse {
-      @include _r($lg, _border-left-width_border-right-width, 0px, true);
+      @include divide-x-(0px, $lg, true);
     }
 
     @mixin lg\:divide-y-reverse {
-      @include _r($lg, _border-top-width_border-bottom-width, 0px, true);
+      @include divide-y-(0px, $lg, true);
     }
 
-    @mixin xl\:divide-x-0 {
-      @include _r($xl, _border-left-width_border-right-width, 0px);
+    @mixin lg\:divide-x-0 {
+      @include divide-x-(0px, $lg);
     }
 
-    @mixin xl\:divide-x-2 {
-      @include _r($xl, _border-left-width_border-right-width, 2px);
+    @mixin lg\:divide-x {
+      @include divide-x-(1px, $lg);
     }
 
-    @mixin xl\:divide-x-4 {
-      @include _r($xl, _border-left-width_border-right-width, 4px);
+    @mixin lg\:divide-x-2 {
+      @include divide-x-(2px, $lg);
     }
 
-    @mixin xl\:divide-x-8 {
-      @include _r($xl, _border-left-width_border-right-width, 8px);
+    @mixin lg\:divide-x-4 {
+      @include divide-x-(4px, $lg);
     }
 
-    @mixin xl\:divide-x {
-      @include _r($xl, _border-left-width_border-right-width, 1px);
+    @mixin lg\:divide-x-8 {
+      @include divide-x-(8px, $lg);
     }
 
-    @mixin xl\:divide-y-0 {
-      @include _r($xl, _border-top-width_border-bottom-width, 0px);
+    @mixin lg\:divide-y-0 {
+      @include divide-y-(0px, $lg);
     }
 
-    @mixin xl\:divide-y-2 {
-      @include _r($xl, _border-top-width_border-bottom-width, 2px);
+    @mixin lg\:divide-y {
+      @include divide-y-(1px, $lg);
     }
 
-    @mixin xl\:divide-y-4 {
-      @include _r($xl, _border-top-width_border-bottom-width, 4px);
+    @mixin lg\:divide-y-2 {
+      @include divide-y-(2px, $lg);
     }
 
-    @mixin xl\:divide-y-8 {
-      @include _r($xl, _border-top-width_border-bottom-width, 8px);
+    @mixin lg\:divide-y-4 {
+      @include divide-y-(4px, $lg);
     }
 
-    @mixin xl\:divide-y {
-      @include _r($xl, _border-top-width_border-bottom-width, 1px);
+    @mixin lg\:divide-y-8 {
+      @include divide-y-(8px, $lg);
     }
 
     @mixin xl\:divide-x-reverse {
-      @include _r($xl, _border-left-width_border-right-width, 0px, true);
+      @include divide-x-(0px, $xl, true);
     }
 
     @mixin xl\:divide-y-reverse {
-      @include _r($xl, _border-top-width_border-bottom-width, 0px, true);
+      @include divide-y-(0px, $xl, true);
     }
 
-    @mixin \2xl\:divide-x-0 {
-      @include _r($\2xl, _border-left-width_border-right-width, 0px);
+    @mixin xl\:divide-x-0 {
+      @include divide-x-(0px, $xl);
     }
 
-    @mixin \2xl\:divide-x-2 {
-      @include _r($\2xl, _border-left-width_border-right-width, 2px);
+    @mixin xl\:divide-x {
+      @include divide-x-(1px, $xl);
     }
 
-    @mixin \2xl\:divide-x-4 {
-      @include _r($\2xl, _border-left-width_border-right-width, 4px);
+    @mixin xl\:divide-x-2 {
+      @include divide-x-(2px, $xl);
     }
 
-    @mixin \2xl\:divide-x-8 {
-      @include _r($\2xl, _border-left-width_border-right-width, 8px);
+    @mixin xl\:divide-x-4 {
+      @include divide-x-(4px, $xl);
     }
 
-    @mixin \2xl\:divide-x {
-      @include _r($\2xl, _border-left-width_border-right-width, 1px);
+    @mixin xl\:divide-x-8 {
+      @include divide-x-(8px, $xl);
     }
 
-    @mixin \2xl\:divide-y-0 {
-      @include _r($\2xl, _border-top-width_border-bottom-width, 0px);
+    @mixin xl\:divide-y-0 {
+      @include divide-y-(0px, $xl);
     }
 
-    @mixin \2xl\:divide-y-2 {
-      @include _r($\2xl, _border-top-width_border-bottom-width, 2px);
+    @mixin xl\:divide-y {
+      @include divide-y-(1px, $xl);
     }
 
-    @mixin \2xl\:divide-y-4 {
-      @include _r($\2xl, _border-top-width_border-bottom-width, 4px);
+    @mixin xl\:divide-y-2 {
+      @include divide-y-(2px, $xl);
     }
 
-    @mixin \2xl\:divide-y-8 {
-      @include _r($\2xl, _border-top-width_border-bottom-width, 8px);
+    @mixin xl\:divide-y-4 {
+      @include divide-y-(4px, $xl);
     }
 
-    @mixin \2xl\:divide-y {
-      @include _r($\2xl, _border-top-width_border-bottom-width, 1px);
+    @mixin xl\:divide-y-8 {
+      @include divide-y-(8px, $xl);
     }
 
     @mixin \2xl\:divide-x-reverse {
-      @include _r($\2xl, _border-left-width_border-right-width, 0px, true);
+      @include divide-x-(0px, $\2xl, true);
     }
 
     @mixin \2xl\:divide-y-reverse {
-      @include _r($\2xl, _border-top-width_border-bottom-width, 0px, true);
+      @include divide-y-(0px, $\2xl, true);
     }
 
+    @mixin \2xl\:divide-x-0 {
+      @include divide-x-(0px, $\2xl);
+    }
+
+    @mixin \2xl\:divide-x {
+      @include divide-x-(1px, $\2xl);
+    }
+
+    @mixin \2xl\:divide-x-2 {
+      @include divide-x-(2px, $\2xl);
+    }
+
+    @mixin \2xl\:divide-x-4 {
+      @include divide-x-(4px, $\2xl);
+    }
+
+    @mixin \2xl\:divide-x-8 {
+      @include divide-x-(8px, $\2xl);
+    }
+
+    @mixin \2xl\:divide-y-0 {
+      @include divide-y-(0px, $\2xl);
+    }
+
+    @mixin \2xl\:divide-y {
+      @include divide-y-(1px, $\2xl);
+    }
+
+    @mixin \2xl\:divide-y-2 {
+      @include divide-y-(2px, $\2xl);
+    }
+
+    @mixin \2xl\:divide-y-4 {
+      @include divide-y-(4px, $\2xl);
+    }
+
+    @mixin \2xl\:divide-y-8 {
+      @include divide-y-(8px, $\2xl);
+    }
     // x*/
   }
 }
+
 @if $Custom {
   // /*x
-  @mixin divide-x-($v) {
-    @include _border-left-width_border-right-width($v);
+  @mixin divide-x-($value, $rwd: null, $isReverse: false) {
+    @if $rwd==null {
+      @if $isReverse {
+        $--tw-divide-x-reverse: 1 !global;
+      } @else {
+        $--divide-x-value: $value !global; // update for using reverse
+      }
+
+      > * ~ * {
+        border-left-width: $--divide-x-value * (1 - $--tw-divide-x-reverse);
+        border-right-width: $--divide-x-value * $--tw-divide-x-reverse;
+      }
+    } @else {
+      @media (min-width: $rwd) {
+        @if $isReverse {
+          $--tw-divide-x-reverse: 1 !global;
+        } @else {
+          $--divide-x-value: $value !global; // update for using reverse
+        }
+
+        > * ~ * {
+          border-left-width: $--divide-x-value * (1 - $--tw-divide-x-reverse);
+          border-right-width: $--divide-x-value * $--tw-divide-x-reverse;
+        }
+      }
+    }
   }
 
-  @mixin divide-y-($v) {
-    @include _border-top-width_border-bottom-width($v);
+  @mixin divide-y-($value, $rwd: null, $isReverse: false) {
+    @if $rwd==null {
+      @if $isReverse {
+        $--tw-divide-y-reverse: 1 !global;
+      } @else {
+        $--divide-y-value: $value !global; // update for using reverse
+      }
+
+      > * ~ * {
+        border-top-width: $--divide-y-value * (1 - $--tw-divide-y-reverse);
+        border-bottom-width: $--divide-y-value * $--tw-divide-y-reverse;
+      }
+    } @else {
+      @media (min-width: $rwd) {
+        @if $isReverse {
+          $--tw-divide-y-reverse: 1 !global;
+        } @else {
+          $--divide-y-value: $value !global; // update for using reverse
+        }
+
+        > * ~ * {
+          border-top-width: $--divide-y-value * (1 - $--tw-divide-y-reverse);
+          border-bottom-width: $--divide-y-value * $--tw-divide-y-reverse;
+        }
+      }
+    }
   }
 
   @mixin sm\:divide-x-($v) {
-    @include _r($sm, _border-left-width_border-right-width, $v);
+    @include divide-x-($v, $sm);
   }
 
   @mixin sm\:divide-y-($v) {
-    @include _r($sm, _border-top-width_border-bottom-width, $v);
+    @include divide-y-($v, $sm);
   }
 
   @mixin md\:divide-x-($v) {
-    @include _r($md, _border-left-width_border-right-width, $v);
+    @include divide-x-($v, $md);
   }
 
   @mixin md\:divide-y-($v) {
-    @include _r($md, _border-top-width_border-bottom-width, $v);
+    @include divide-y-($v, $md);
   }
 
   @mixin lg\:divide-x-($v) {
-    @include _r($lg, _border-left-width_border-right-width, $v);
+    @include divide-x-($v, $lg);
   }
 
   @mixin lg\:divide-y-($v) {
-    @include _r($lg, _border-top-width_border-bottom-width, $v);
+    @include divide-y-($v, $lg);
   }
 
   @mixin xl\:divide-x-($v) {
-    @include _r($xl, _border-left-width_border-right-width, $v);
+    @include divide-x-($v, $xl);
   }
 
   @mixin xl\:divide-y-($v) {
-    @include _r($xl, _border-top-width_border-bottom-width, $v);
+    @include divide-y-($v, $xl);
   }
 
   @mixin \2xl\:divide-x-($v) {
-    @include _r($\2xl, _border-left-width_border-right-width, $v);
+    @include divide-x-($v, $\2xl);
   }
 
   @mixin \2xl\:divide-y-($v) {
-    @include _r($\2xl, _border-top-width_border-bottom-width, $v);
-  } // x*/
+    @include divide-y-($v, $\2xl);
+  }
+
+  // x*/
 }
