@@ -30,17 +30,17 @@
   }
 }
 
-// Reset global variables, when use internal function, e.g, _box-shadow
-// Best Practice: used in every classes.
-// why? 1. Can bea indicator of how many css that you used,
-//      2. for sure, just some of classes need @mixin reset, but people will be get lazy.
+// clear global variables, when use internal mixin/function, e.g, __box-shadow()
+// Best Practice: USE IN EVERY CLASSES.
+// why? 1. Can be an indicator of how many css that you've used,
+//      2. only internal mixin/function needs to do clear, but people will be lazy.
 
 // .demo {
-//  ...css
+//  ...properties
 //
-//  @include reset <- put it in the end to reset global variables
+//  @include clear;  <- put it in the end to clear global variables
 // }
-@mixin reset {
+@mixin clear {
   // Gradient Color Stops
   $--gradient-direction: null !global;
   $--tw-gradient-from: #fff !global;
