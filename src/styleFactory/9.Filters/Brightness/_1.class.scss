@@ -276,17 +276,14 @@
 }
 @if $Custom {
   // /*x
-  @mixin __brightness-($v) {
-    $--tw-brightness: brightness($v) !global;
-    filter: __filter();
-  }
-
   @mixin brightness-($v, $rwd: null) {
     @if $rwd==null {
-      @include __brightness-($v);
+      $--tw-brightness: brightness($v) !global;
+      filter: __filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __brightness-($v);
+        $--tw-brightness: brightness($v) !global;
+        filter: __filter();
       }
     }
   }

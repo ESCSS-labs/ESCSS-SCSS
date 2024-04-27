@@ -519,17 +519,14 @@
 
 @if $Custom {
   // /*x
-  @mixin __backdrop-opacity-($v) {
-    $--tw-backdrop-opacity: opacity($v) !global;
-    backdrop-filter: __backdrop-filter();
-  }
-
   @mixin backdrop-opacity-($v, $rwd: null) {
     @if $rwd==null {
-      @include __backdrop-opacity-($v);
+      $--tw-backdrop-opacity: opacity($v) !global;
+      backdrop-filter: __backdrop-filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __backdrop-opacity-($v);
+        $--tw-backdrop-opacity: opacity($v) !global;
+        backdrop-filter: __backdrop-filter();
       }
     }
   }

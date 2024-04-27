@@ -182,17 +182,14 @@
 
 @if $Custom {
   // /*x
-  @mixin __backdrop-contrast-($v) {
-    $--tw-backdrop-contrast: contrast($v) !global;
-    backdrop-filter: __backdrop-filter();
-  }
-
   @mixin backdrop-contrast-($v, $rwd: null) {
     @if $rwd==null {
-      @include __backdrop-contrast-($v);
+      $--tw-backdrop-contrast: contrast($v) !global;
+      backdrop-filter: __backdrop-filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __backdrop-contrast-($v);
+        $--tw-backdrop-contrast: contrast($v) !global;
+        backdrop-filter: __backdrop-filter();
       }
     }
   }

@@ -5943,22 +5943,22 @@
 
 @if $Custom {
   // /*x
-  @mixin __divide($token, $v: 1) {
+  @mixin divide-($token, $v, $rwd: null) {
+    @if $rwd==null {
+      @include __divide($token, $v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __divide($token, $v);
+      }
+    }
+  }
+
+  @mixin __divide($token, $v) {
     > * ~ * {
       @if $token ==null {
         border-color: $v;
       } @else {
         border-color: c($token, $v);
-      }
-    }
-  }
-
-  @mixin divide-($token, $v, $rwd: null) {
-    @if $rwd==null {
-      @include __divide($token, $v: 1);
-    } @else {
-      @media (min-width: $rwd) {
-        @include __divide($token, $v: 1);
       }
     }
   }

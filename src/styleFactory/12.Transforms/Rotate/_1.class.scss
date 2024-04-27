@@ -446,17 +446,14 @@
 
 @if $Custom {
   // /*x
-  @mixin __rotate-($v) {
-    $--tw-rotate: $v !global;
-    transform: __transform();
-  }
-
   @mixin rotate-($v, $rwd: null) {
     @if $rwd==null {
-      @include __rotate-($v);
+      $--tw-rotate: $v !global;
+      transform: __transform();
     } @else {
       @media (min-width: $rwd) {
-        @include __rotate-($v);
+        $--tw-rotate: $v !global;
+        transform: __transform();
       }
     }
   }

@@ -5943,6 +5943,16 @@
 
 @if $Custom {
   // /*x
+  @mixin shadow-($v, $rwd: null) {
+    @if $rwd==null {
+      @include __shadow-($v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __shadow-($v);
+      }
+    }
+  }
+
   @mixin __shadow-($v) {
     @if meta.type-of($v) ==string {
       // color
@@ -6024,16 +6034,6 @@
     }
 
     box-shadow: __box-shadow();
-  }
-
-  @mixin shadow-($v, $rwd: null) {
-    @if $rwd==null {
-      @include __shadow-($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include __shadow-($v);
-      }
-    }
   }
 
   @mixin sm\:shadow-($v) {

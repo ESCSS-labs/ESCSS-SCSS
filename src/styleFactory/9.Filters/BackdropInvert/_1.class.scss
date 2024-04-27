@@ -63,17 +63,14 @@
 
 @if $Custom {
   // /*x
-  @mixin __backdrop-invert-($v) {
-    $--tw-backdrop-invert: invert($v) !global;
-    backdrop-filter: __backdrop-filter();
-  }
-
   @mixin backdrop-invert-($v, $rwd: null) {
     @if $rwd==null {
-      @include __backdrop-invert-($v);
+      $--tw-backdrop-invert: invert($v) !global;
+      backdrop-filter: __backdrop-filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __backdrop-invert-($v);
+        $--tw-backdrop-invert: invert($v) !global;
+        backdrop-filter: __backdrop-filter();
       }
     }
   }

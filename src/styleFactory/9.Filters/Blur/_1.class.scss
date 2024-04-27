@@ -206,17 +206,14 @@
 
 @if $Custom {
   // /*x
-  @mixin __blur-($v) {
-    $--tw-blur: blur($v) !global;
-    filter: __filter();
-  }
-
   @mixin blur-($v, $rwd: null) {
     @if $rwd==null {
-      @include __blur-($v);
+      $--tw-blur: blur($v) !global;
+      filter: __filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __blur-($v);
+        $--tw-blur: blur($v) !global;
+        filter: __filter();
       }
     }
   }

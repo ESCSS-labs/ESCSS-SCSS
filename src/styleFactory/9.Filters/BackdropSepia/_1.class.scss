@@ -63,17 +63,14 @@
 
 @if $Custom {
   // /*x
-  @mixin __backdrop-sepia-($v) {
-    $--tw-backdrop-sepia: sepia($v) !global;
-    backdrop-filter: __backdrop-filter();
-  }
-
   @mixin backdrop-sepia-($v, $rwd: null) {
     @if $rwd==null {
-      @include __backdrop-sepia-($v);
+      $--tw-backdrop-sepia: sepia($v) !global;
+      backdrop-filter: __backdrop-filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __backdrop-sepia-($v);
+        $--tw-backdrop-sepia: sepia($v) !global;
+        backdrop-filter: __backdrop-filter();
       }
     }
   }

@@ -19311,6 +19311,16 @@
 
 @if $Custom {
   // /*x
+  @mixin from-($token, $v: 1, $rwd: null) {
+    @if $rwd==null {
+      @include __from-($token, $v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __from-($token, $v);
+      }
+    }
+  }
+
   @mixin __from-($token, $v: 1) {
     @if meta.type-of($token) ==number {
       $--tw-gradient-from-position: $token !global;
@@ -19321,6 +19331,16 @@
     }
 
     background-image: __linear-gradient();
+  }
+
+  @mixin via-($token, $v: 1, $rwd: null) {
+    @if $rwd==null {
+      @include __via-($token, $v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __via-($token, $v);
+      }
+    }
   }
 
   @mixin __via-($token, $v: 1) {
@@ -19335,6 +19355,16 @@
     background-image: __linear-gradient();
   }
 
+  @mixin to-($token, $v: 1, $rwd: null) {
+    @if $rwd==null {
+      @include __to-($token, $v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __to-($token, $v);
+      }
+    }
+  }
+
   @mixin __to-($token, $v: 1) {
     @if meta.type-of($token) ==number {
       $--tw-gradient-to-position: $token !global;
@@ -19345,36 +19375,6 @@
     }
 
     background-image: __linear-gradient();
-  }
-
-  @mixin from-($token, $v: 1, $rwd: null) {
-    @if $rwd==null {
-      @include __from-($token, $v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include __from-($token, $v);
-      }
-    }
-  }
-
-  @mixin via-($token, $v: 1, $rwd: null) {
-    @if $rwd==null {
-      @include __via-($token, $v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include __via-($token, $v);
-      }
-    }
-  }
-
-  @mixin to-($token, $v: 1, $rwd: null) {
-    @if $rwd==null {
-      @include __to-($token, $v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include __to-($token, $v);
-      }
-    }
   }
 
   @mixin sm\:from-($token, $v: 1) {

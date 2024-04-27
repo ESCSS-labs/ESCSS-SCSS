@@ -279,18 +279,14 @@
 
 @if $Custom {
   // /*x
-
-  @mixin __backdrop-brightness-($v) {
-    $--tw-backdrop-brightness: brightness($v) !global;
-    backdrop-filter: __backdrop-filter();
-  }
-
   @mixin backdrop-brightness-($v, $rwd: null) {
     @if $rwd==null {
-      @include __backdrop-brightness-($v);
+      $--tw-backdrop-brightness: brightness($v) !global;
+      backdrop-filter: __backdrop-filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __backdrop-brightness-($v);
+        $--tw-backdrop-brightness: brightness($v) !global;
+        backdrop-filter: __backdrop-filter();
       }
     }
   }

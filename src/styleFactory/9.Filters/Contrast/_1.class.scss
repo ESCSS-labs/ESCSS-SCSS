@@ -179,18 +179,14 @@
 }
 @if $Custom {
   // /*x
-
-  @mixin __contrast-($v) {
-    $--tw-contrast: contrast($v) !global;
-    filter: __filter();
-  }
-
   @mixin contrast-($v, $sm) {
     @if $rwd==null {
-      @include __contrast-($v);
+      $--tw-contrast: contrast($v) !global;
+      filter: __filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __contrast-($v);
+        $--tw-contrast: contrast($v) !global;
+        filter: __filter();
       }
     }
   }

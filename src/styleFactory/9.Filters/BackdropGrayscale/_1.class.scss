@@ -59,17 +59,14 @@
 }
 @if $Custom {
   // /*x
-  @mixin __backdrop-grayscale-($v) {
-    $--tw-backdrop-grayscale: grayscale($v) !global;
-    backdrop-filter: __backdrop-filter();
-  }
-
   @mixin backdrop-grayscale-($v, $rwd: null) {
     @if $rwd==null {
-      @include __backdrop-grayscale-($v);
+      $--tw-backdrop-grayscale: grayscale($v) !global;
+      backdrop-filter: __backdrop-filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __backdrop-grayscale-($v);
+        $--tw-backdrop-grayscale: grayscale($v) !global;
+        backdrop-filter: __backdrop-filter();
       }
     }
   }

@@ -1448,54 +1448,47 @@
     @mixin \2xl\:-scale-y-150 {
       @include scale-y-(-1.5, $\2xl);
     }
+
     // x*/
   }
 }
 
 @if $Custom {
   // /*x
-  @mixin __scale-($v) {
-    $--tw-scale-x: $v !global;
-    $--tw-scale-y: $v !global;
-    transform: __transform();
-  }
-
-  @mixin __scale-x-($v) {
-    $--tw-scale-x: $v !global;
-    transform: __transform();
-  }
-
-  @mixin __scale-y-($v) {
-    $--tw-scale-y: $v !global;
-    transform: __transform();
-  }
-
   @mixin scale-($v, $rwd: null) {
     @if $rwd==null {
-      @include __scale-($v);
+      $--tw-scale-x: $v !global;
+      $--tw-scale-y: $v !global;
+      transform: __transform();
     } @else {
       @media (min-width: $rwd) {
-        @include __scale-($v);
+        $--tw-scale-x: $v !global;
+        $--tw-scale-y: $v !global;
+        transform: __transform();
       }
     }
   }
 
   @mixin scale-x-($v, $rwd: null) {
     @if $rwd==null {
-      @include __scale-x-($v);
+      $--tw-scale-x: $v !global;
+      transform: __transform();
     } @else {
       @media (min-width: $rwd) {
-        @include __scale-x-($v);
+        $--tw-scale-x: $v !global;
+        transform: __transform();
       }
     }
   }
 
   @mixin scale-y-($v, $rwd: null) {
     @if $rwd==null {
-      @include __scale-y-($v);
+      $--tw-scale-y: $v !global;
+      transform: __transform();
     } @else {
       @media (min-width: $rwd) {
-        @include __scale-y-($v);
+        $--tw-scale-y: $v !global;
+        transform: __transform();
       }
     }
   }
@@ -1559,5 +1552,6 @@
   @mixin \2xl\:scale-y-($v) {
     @include scale-y-($v, $\2xl);
   }
+
   // x*/
 }

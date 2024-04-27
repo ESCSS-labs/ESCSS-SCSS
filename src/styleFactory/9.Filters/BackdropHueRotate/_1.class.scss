@@ -302,18 +302,14 @@
 }
 @if $Custom {
   // /*x
-
-  @mixin __backdrop-hue-rotate-($v) {
-    $--tw-backdrop-hue-rotate: hue-rotate($v) !global;
-    backdrop-filter: __backdrop-filter();
-  }
-
   @mixin backdrop-hue-rotate-($v, $rwd: null) {
     @if $rwd==null {
-      @include __backdrop-hue-rotate-($v);
+      $--tw-backdrop-hue-rotate: hue-rotate($v) !global;
+      backdrop-filter: __backdrop-filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __backdrop-hue-rotate-($v);
+        $--tw-backdrop-hue-rotate: hue-rotate($v) !global;
+        backdrop-filter: __backdrop-filter();
       }
     }
   }

@@ -5943,26 +5943,6 @@
 
 @if $Custom {
   // /*x
-  @mixin __bg-($v) {
-    @if meta.type-of($v) ==color {
-      background-color: $v;
-    } @else if string.index($v, inherit) or string.index($v, currentColor) {
-      background-color: $v;
-    } @else if
-      string.index($v, "url") or
-      string.index($v, "none") or
-      string.index($v, "linear") or
-      string.index($v, "radial") or
-      string.index($v, "conic")
-    {
-      background-image: $v;
-    } @else if list.nth($v, 1) ==length {
-      background-size: list.set-nth($v, 1, $space); // remove 'length' token
-    } @else {
-      background-position: $v;
-    }
-  }
-
   @mixin bg-($v, $rwd: null) {
     @if $rwd==null {
       @include __bg-($v);
@@ -5970,6 +5950,31 @@
       @media (min-width: $rwd) {
         @include __bg-($v);
       }
+    }
+  }
+
+  @mixin __bg-($v) {
+    @if list.index(inherit currentColor transparent, $v) or
+      meta.type-of($v)
+      ==color
+    {
+      background-color: $v;
+    } @else if list.nth($v, 1) ==length {
+      background-size: list.set-nth(
+        $v,
+        1,
+        $space
+      ); // 'length' token is used for identify background-size, remove it.
+    } @else if
+      list.index(top right bottom left center, $v) or
+      meta.type-of($v)
+      ==number or
+      meta.type-of($v)
+      ==list
+    {
+      background-position: $v;
+    } @else {
+      background-image: $v;
     }
   }
 

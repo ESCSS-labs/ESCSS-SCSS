@@ -61,17 +61,14 @@
 }
 @if $Custom {
   // /*x
-  @mixin __grayscale-($v) {
-    $--tw-grayscale: grayscale($v) !global;
-    filter: __filter();
-  }
-
   @mixin grayscale-($v, $rwd: null) {
     @if $rwd==null {
-      @include __grayscale-($v);
+      $--tw-grayscale: grayscale($v) !global;
+      filter: __filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __grayscale-($v);
+        $--tw-grayscale: grayscale($v) !global;
+        filter: __filter();
       }
     }
   }

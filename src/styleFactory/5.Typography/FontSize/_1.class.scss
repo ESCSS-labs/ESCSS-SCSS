@@ -320,6 +320,7 @@
     @mixin \2xl\:text-9xl($v: null) {
       @include text-(__font-size(9xl, $v), $\2xl);
     }
+
     // x*/
   }
 }
@@ -327,42 +328,53 @@
 // same as @mixin text-($v, $rwd: null)
 @if $Custom {
   // /*x
-  @function __font-size($token, $v) {
-    $fontSize: map.get($font-size, $token, font-size);
+  @function __font-size($token, $v: null) {
+    $fontSize: null;
     $lineHeight: null;
 
+    // text-sm、text-base
     @if $v ==null {
+      $fontSize: map.get($font-size, $token, font-size);
       $lineHeight: map.get($font-size, $token, light-height);
-    } @else if $v ==3 {
-      $lineHeight: $leading-3;
-    } @else if $v ==4 {
-      $lineHeight: $leading-3;
-    } @else if $v ==5 {
-      $lineHeight: $leading-5;
-    } @else if $v ==6 {
-      $lineHeight: $leading-6;
-    } @else if $v ==7 {
-      $lineHeight: $leading-7;
-    } @else if $v ==8 {
-      $lineHeight: $leading-8;
-    } @else if $v ==9 {
-      $lineHeight: $leading-9;
-    } @else if $v ==10 {
-      $lineHeight: $leading-10;
-    } @else if $v ==none {
-      $lineHeight: $leading-none;
-    } @else if $v ==tight {
-      $lineHeight: $leading-tight;
-    } @else if $v ==snug {
-      $lineHeight: $leading-snug;
-    } @else if $v ==normal {
-      $lineHeight: $leading-normal;
-    } @else if $v ==relaxed {
-      $lineHeight: $leading-relaxed;
-    } @else if $v ==loose {
-      $lineHeight: $leading-loose;
-    } @else {
-      $lineHeight: $v;
+    }
+
+    // NOTE: I combined those in one for file size concern.
+    // text-sm(6)、text-sm(loose)、text-(1rem) = 1 util (scss version)
+    // text-sm/6、 text-sm/loose 、text-[1rem] = 3 util (tailwind version),  https://tailwindcss.com/docs/font-size#class-reference
+    @else {
+      $fontSize: map.get($font-size, $token, font-size);
+
+      @if $v ==3 {
+        $lineHeight: $leading-3;
+      } @else if $v ==4 {
+        $lineHeight: $leading-3;
+      } @else if $v ==5 {
+        $lineHeight: $leading-5;
+      } @else if $v ==6 {
+        $lineHeight: $leading-6;
+      } @else if $v ==7 {
+        $lineHeight: $leading-7;
+      } @else if $v ==8 {
+        $lineHeight: $leading-8;
+      } @else if $v ==9 {
+        $lineHeight: $leading-9;
+      } @else if $v ==10 {
+        $lineHeight: $leading-10;
+      } @else if $v ==none {
+        $lineHeight: $leading-none;
+      } @else if $v ==tight {
+        $lineHeight: $leading-tight;
+      } @else if $v ==snug {
+        $lineHeight: $leading-snug;
+      } @else if $v ==normal {
+        $lineHeight: $leading-normal;
+      } @else if $v ==relaxed {
+        $lineHeight: $leading-relaxed;
+      } @else if $v ==loose {
+        $lineHeight: $leading-loose;
+      } @else {
+        $lineHeight: $v;
+      }
     }
 
     @return ($fontSize $lineHeight);

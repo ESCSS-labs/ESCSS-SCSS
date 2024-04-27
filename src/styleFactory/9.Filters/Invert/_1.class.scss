@@ -63,17 +63,14 @@
 
 @if $Custom {
   // /*x
-  @mixin __invert-($v) {
-    $--tw-invert: invert($v) !global;
-    filter: __filter();
-  }
-
   @mixin invert-($v, $rwd: null) {
     @if $rwd==null {
-      @include __invert-($v);
+      $--tw-invert: invert($v) !global;
+      filter: __filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __invert-($v);
+        $--tw-invert: invert($v) !global;
+        filter: __filter();
       }
     }
   }

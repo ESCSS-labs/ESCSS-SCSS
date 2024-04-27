@@ -133,17 +133,14 @@
 }
 @if $Custom {
   // /*x
-  @mixin __saturate-($v) {
-    $--tw-saturate: saturate($v) !global;
-    filter: __filter();
-  }
-
   @mixin saturate-($v, $rwd: null) {
     @if $rwd==null {
-      @include __saturate-($v);
+      $--tw-saturate: saturate($v) !global;
+      filter: __filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __saturate-($v);
+        $--tw-saturate: saturate($v) !global;
+        filter: __filter();
       }
     }
   }

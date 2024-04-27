@@ -200,23 +200,21 @@
     @mixin \2xl\:backdrop-blur-3xl {
       @include backdrop-blur-($blur-3xl, $\2xl);
     }
+
     // x*/
   }
 }
 
 @if $Custom {
   // /*x
-  @mixin __backdrop-blur-($v) {
-    $--tw-backdrop-blur: blur($v) !global;
-    backdrop-filter: __backdrop-filter();
-  }
-
   @mixin backdrop-blur-($v, $rwd: null) {
     @if $rwd==null {
-      @include __backdrop-blur-($v);
+      $--tw-backdrop-blur: blur($v) !global;
+      backdrop-filter: __backdrop-filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __backdrop-blur-($v);
+        $--tw-backdrop-blur: blur($v) !global;
+        backdrop-filter: __backdrop-filter();
       }
     }
   }

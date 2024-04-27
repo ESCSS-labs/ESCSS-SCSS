@@ -56,23 +56,21 @@
     @mixin \2xl\:sepia {
       @include sepia-(100%, $\2xl);
     }
+
     // x*/
   }
 }
 
 @if $Custom {
   // /*x
-  @mixin __sepia-($v) {
-    $--tw-sepia: sepia($v) !global;
-    filter: __filter();
-  }
-
   @mixin sepia-($v, $rwd: null) {
     @if $rwd==null {
-      @include __sepia-($v);
+      $--tw-sepia: sepia($v) !global;
+      filter: __filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __sepia-($v);
+        $--tw-sepia: sepia($v) !global;
+        filter: __filter();
       }
     }
   }

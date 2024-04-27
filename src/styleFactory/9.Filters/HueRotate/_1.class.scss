@@ -299,17 +299,14 @@
 }
 @if $Custom {
   // /*x
-  @mixin __hue-rotate-($v) {
-    $--tw-hue-rotate: hue-rotate($v) !global;
-    filter: __filter();
-  }
-
   @mixin hue-rotate-($v, $rwd: null) {
     @if $rwd==null {
-      @include __hue-rotate-($v);
+      $--tw-hue-rotate: hue-rotate($v) !global;
+      filter: __filter();
     } @else {
       @media (min-width: $rwd) {
-        @include __hue-rotate-($v);
+        $--tw-hue-rotate: hue-rotate($v) !global;
+        filter: __filter();
       }
     }
   }

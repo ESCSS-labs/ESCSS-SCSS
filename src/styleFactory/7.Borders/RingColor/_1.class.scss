@@ -5943,6 +5943,16 @@
 
 @if $Custom {
   // /*x
+  @mixin ring-($v, $rwd: null) {
+    @if $rwd==null {
+      @include __ring-($v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __ring-($v);
+      }
+    }
+  }
+
   @mixin __ring-($v) {
     // color
     @if meta.type-of($v) ==string {
@@ -5962,16 +5972,6 @@
     }
 
     box-shadow: __box-shadow();
-  }
-
-  @mixin ring-($v, $rwd: null) {
-    @if $rwd==null {
-      @include __ring-($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include __ring-($v);
-      }
-    }
   }
 
   @mixin sm\:ring-($v) {

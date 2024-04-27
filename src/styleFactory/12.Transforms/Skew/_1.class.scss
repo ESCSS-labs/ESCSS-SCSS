@@ -591,32 +591,26 @@
 
 @if $Custom {
   // /*x
-  @mixin __skew-x-($v) {
-    $--tw-skew-x: $v !global;
-    transform: __transform();
-  }
-
-  @mixin __skew-y-($v) {
-    $--tw-skew-y: $v !global;
-    transform: __transform();
-  }
-
   @mixin skew-x-($v, $rwd: null) {
     @if $rwd==null {
-      @include __skew-x-($v);
+      $--tw-skew-x: $v !global;
+      transform: __transform();
     } @else {
       @media (min-width: $rwd) {
-        @include __skew-x-($v);
+        $--tw-skew-x: $v !global;
+        transform: __transform();
       }
     }
   }
 
   @mixin skew-y-($v, $rwd: null) {
     @if $rwd==null {
-      @include __skew-y-($v);
+      $--tw-skew-y: $v !global;
+      transform: __transform();
     } @else {
       @media (min-width: $rwd) {
-        @include __skew-y-($v);
+        $--tw-skew-y: $v !global;
+        transform: __transform();
       }
     }
   }

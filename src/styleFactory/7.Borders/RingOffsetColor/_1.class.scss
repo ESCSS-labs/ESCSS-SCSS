@@ -5943,6 +5943,16 @@
 
 @if $Custom {
   // /*x
+  @mixin ring-offset-($v, $rwd: null) {
+    @if $rwd==null {
+      @include __ring-offset-($v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __ring-offset-($v);
+      }
+    }
+  }
+
   @mixin __ring-offset-($v) {
     // color
     @if meta.type-of($v) ==string {
@@ -5966,16 +5976,6 @@
     }
 
     box-shadow: __box-shadow();
-  }
-
-  @mixin ring-offset-($v, $rwd: null) {
-    @if $rwd==null {
-      @include __ring-offset-($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include __ring-offset-($v);
-      }
-    }
   }
 
   @mixin sm\:ring-offset-($v) {

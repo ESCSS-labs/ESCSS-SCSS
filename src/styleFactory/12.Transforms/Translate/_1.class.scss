@@ -4047,32 +4047,26 @@
 
 @if $Custom {
   // /*x
-  @mixin __translate-x-($v) {
-    $--tw-translate-x: $v !global;
-    transform: __transform();
-  }
-
-  @mixin __translate-y-($v) {
-    $--tw-translate-y: $v !global;
-    transform: __transform();
-  }
-
   @mixin translate-x-($v, $rwd: null) {
     @if $rwd==null {
-      @include __translate-x-($v);
+      $--tw-translate-x: $v !global;
+      transform: __transform();
     } @else {
       @media (min-width: $rwd) {
-        @include __translate-x-($v);
+        $--tw-translate-x: $v !global;
+        transform: __transform();
       }
     }
   }
 
   @mixin translate-y-($v, $rwd: null) {
     @if $rwd==null {
-      @include __translate-y-($v);
+      $--tw-translate-y: $v !global;
+      transform: __transform();
     } @else {
       @media (min-width: $rwd) {
-        @include __translate-y-($v);
+        $--tw-translate-y: $v !global;
+        transform: __transform();
       }
     }
   }
