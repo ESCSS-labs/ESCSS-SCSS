@@ -12,20 +12,18 @@
 }
 
 @function __box-shadow() {
-  $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width $--tw-ring-offset-color;
+  $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width
+    $--tw-ring-offset-color;
   $--tw-ring-shadow: $--tw-ring-inset 0 0 0 $--ring-width $--tw-ring-color;
   $--tw-shadow: null;
 
   @if list.index(shadow md lg xl, $-shadow-token) {
-    $--tw-shadow: list.nth($--shadow-width, 1) $--tw-shadow-color,
+    $--tw-shadow:
+      list.nth($--shadow-width, 1) $--tw-shadow-color,
       list.nth($--shadow-width, 2) $--tw-shadow-color;
-  }
-
-  @else if $-shadow-token ==inner {
+  } @else if $-shadow-token ==inner {
     $--tw-shadow: inset $--shadow-width $--tw-shadow-color;
-  }
-
-  @else {
+  } @else {
     $--tw-shadow: $--shadow-width $--tw-shadow-color;
   }
 
@@ -33,18 +31,14 @@
 }
 
 @function __transform() {
-  @return translate($--tw-translate-x, $--tw-translate-y) rotate($--tw-rotate) skewX($--tw-skew-x) skewY($--tw-skew-y) scaleX($--tw-scale-x) scaleY($--tw-scale-y);
-}
-
-// 1 params
-@mixin _border-style($token) {
-  >*~* {
-    border-style: $token;
-  }
+  @return translate($--tw-translate-x, $--tw-translate-y) rotate($--tw-rotate)
+    skewX($--tw-skew-x) skewY($--tw-skew-y) scaleX($--tw-scale-x)
+    scaleY($--tw-scale-y);
 }
 
 @function __filter() {
-  @return $--tw-blur $--tw-brightness $--tw-contrast $--tw-grayscale $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
+  @return $--tw-blur $--tw-brightness $--tw-contrast $--tw-grayscale
+    $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
 }
 
 @function _font-size($token, $v) {
@@ -53,65 +47,35 @@
 
   @if $v ==null {
     $lineHeight: map.get($font-size, $token, light-height);
-  }
-
-  @else if $v ==3 {
+  } @else if $v ==3 {
     $lineHeight: $leading-3;
-  }
-
-  @else if $v ==4 {
+  } @else if $v ==4 {
     $lineHeight: $leading-3;
-  }
-
-  @else if $v ==5 {
+  } @else if $v ==5 {
     $lineHeight: $leading-5;
-  }
-
-  @else if $v ==6 {
+  } @else if $v ==6 {
     $lineHeight: $leading-6;
-  }
-
-  @else if $v ==7 {
+  } @else if $v ==7 {
     $lineHeight: $leading-7;
-  }
-
-  @else if $v ==8 {
+  } @else if $v ==8 {
     $lineHeight: $leading-8;
-  }
-
-  @else if $v ==9 {
+  } @else if $v ==9 {
     $lineHeight: $leading-9;
-  }
-
-  @else if $v ==10 {
+  } @else if $v ==10 {
     $lineHeight: $leading-10;
-  }
-
-  @else if $v ==none {
+  } @else if $v ==none {
     $lineHeight: $leading-none;
-  }
-
-  @else if $v ==tight {
+  } @else if $v ==tight {
     $lineHeight: $leading-tight;
-  }
-
-  @else if $v ==snug {
+  } @else if $v ==snug {
     $lineHeight: $leading-snug;
-  }
-
-  @else if $v ==normal {
+  } @else if $v ==normal {
     $lineHeight: $leading-normal;
-  }
-
-  @else if $v ==relaxed {
+  } @else if $v ==relaxed {
     $lineHeight: $leading-relaxed;
-  }
-
-  @else if $v ==loose {
+  } @else if $v ==loose {
     $lineHeight: $leading-loose;
-  }
-
-  @else {
+  } @else {
     $lineHeight: $v;
   }
 
@@ -120,74 +84,53 @@
 }
 
 @function __backdrop-filter() {
-  @return $--tw-backdrop-blur $--tw-backdrop-brightness $--tw-backdrop-contrast $--tw-backdrop-grayscale $--tw-backdrop-hue-rotate $--tw-backdrop-invert $--tw-backdrop-opacity $--tw-backdrop-saturate $--tw-backdrop-sepia;
+  @return $--tw-backdrop-blur $--tw-backdrop-brightness $--tw-backdrop-contrast
+    $--tw-backdrop-grayscale $--tw-backdrop-hue-rotate $--tw-backdrop-invert
+    $--tw-backdrop-opacity $--tw-backdrop-saturate $--tw-backdrop-sepia;
 }
 
 @function _background-image($token, $color, $v) {
   @if $token ==from {
     @if $color ==customColor {
       $--tw-gradient-from: $v !global;
-    }
-
-    @else if $color ==position {
+    } @else if $color ==position {
       $--tw-gradient-from-position: $v !global;
-    }
-
-    @else {
+    } @else {
       $--tw-gradient-from: c($color, $v) !global;
     }
-  }
-
-  @else if $token ==via {
+  } @else if $token ==via {
     @if $color ==customColor {
       $--tw-gradient-via: $v !global;
-    }
-
-    @else if $color ==position {
+    } @else if $color ==position {
       $--tw-gradient-via-position: $v !global;
-    }
-
-    @else {
+    } @else {
       $--tw-gradient-via: c($color, $v) !global;
     }
-  }
-
-  @else if $token ==to {
+  } @else if $token ==to {
     @if $color ==customColor {
       $--tw-gradient-to: $v !global;
-    }
-
-    @else if $color ==position {
+    } @else if $color ==position {
       $--tw-gradient-to-position: $v !global;
-    }
-
-    @else {
+    } @else {
       $--tw-gradient-to: c($color, $v) !global;
     }
-  }
-
-  @else if $token ==gradient {
+  } @else if $token ==gradient {
     $--gradient-direction: $v !global;
   }
 
   @if $--tw-gradient-via==null {
-    @return linear-gradient($--gradient-direction,
+    @return linear-gradient(
+      $--gradient-direction,
       $--tw-gradient-from $--tw-gradient-from-position,
-      $--tw-gradient-to $--tw-gradient-to-position );
-  }
-
-  @else {
-    @return linear-gradient($--gradient-direction,
+      $--tw-gradient-to $--tw-gradient-to-position
+    );
+  } @else {
+    @return linear-gradient(
+      $--gradient-direction,
       $--tw-gradient-from $--tw-gradient-from-position,
       $--tw-gradient-via $--tw-gradient-via-position,
-      $--tw-gradient-to $--tw-gradient-to-position );
-  }
-}
-
-// encapsulation for cursor/will-change that has 2 values in one property
-@mixin r2($rwd, $key, $v, $v2: null) {
-  @media (min-width: $rwd) {
-    # // /*x{$key}: $v, $v2;
+      $--tw-gradient-to $--tw-gradient-to-position
+    );
   }
 }
 // x*/

@@ -5,53 +5,75 @@
   // /*x
   @mixin divide-solid($rwd: null) {
     @if $rwd==null {
-      @include _border-style(solid);
+      > * ~ * {
+        border-style: solid;
+      }
     } @else {
       @media (min-width: $rwd) {
-        @include _border-style(solid);
+        > * ~ * {
+          border-style: solid;
+        }
       }
     }
   }
 
   @mixin divide-dashed($rwd: null) {
     @if $rwd==null {
-      @include _border-style(dashed);
+      > * ~ * {
+        border-style: dashed;
+      }
     } @else {
       @media (min-width: $rwd) {
-        @include _border-style(dashed);
+        > * ~ * {
+          border-style: dashed;
+        }
       }
     }
   }
 
   @mixin divide-dotted($rwd: null) {
     @if $rwd==null {
-      @include _border-style(dotted);
+      > * ~ * {
+        border-style: dotted;
+      }
     } @else {
       @media (min-width: $rwd) {
-        @include _border-style(dotted);
+        > * ~ * {
+          border-style: dotted;
+        }
       }
     }
   }
 
   @mixin divide-double($rwd: null) {
     @if $rwd==null {
-      @include _border-style(double);
+      > * ~ * {
+        border-style: double;
+      }
     } @else {
       @media (min-width: $rwd) {
-        @include _border-style(double);
+        > * ~ * {
+          border-style: double;
+        }
       }
     }
   }
 
   @mixin divide-none($rwd: null) {
     @if $rwd==null {
-      @include _border-style(none);
+      > * ~ * {
+        border-style: none;
+      }
     } @else {
       @media (min-width: $rwd) {
-        @include _border-style(none);
+        > * ~ * {
+          border-style: none;
+        }
       }
     }
-  } // x*/
+  }
+
+  // x*/
 }
 
 @if $Rwd {
@@ -154,5 +176,7 @@
 
   @mixin \2xl\:divide-none {
     @include divide-none($\2xl);
-  } // x*/
+  }
+  
+  // x*/
 }
