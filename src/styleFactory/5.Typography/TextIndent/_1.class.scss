@@ -1697,7 +1697,9 @@
     @if $rwd==null {
       text-indent: $v;
     } @else {
-      text-indent: $v;
+      @media (min-width: $rwd) {
+        text-indent: $v;
+      }
     }
   }
 

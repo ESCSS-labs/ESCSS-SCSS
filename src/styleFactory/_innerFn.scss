@@ -36,31 +36,6 @@
   @return translate($--tw-translate-x, $--tw-translate-y) rotate($--tw-rotate) skewX($--tw-skew-x) skewY($--tw-skew-y) scaleX($--tw-scale-x) scaleY($--tw-scale-y);
 }
 
-// 0 param 
-@mixin _max-width_container {
-  width: 100%;
-
-  @media (min-width: $sm) {
-    max-width: $sm;
-  }
-
-  @media (min-width: $md) {
-    max-width: $md;
-  }
-
-  @media (min-width: $lg) {
-    max-width: $lg;
-  }
-
-  @media (min-width: $xl) {
-    max-width: $xl;
-  }
-
-  @media (min-width: $\2xl) {
-    max-width: $\2xl;
-  }
-}
-
 // 1 params
 @mixin _border-style($token) {
   >*~* {
@@ -215,17 +190,4 @@
     # // /*x{$key}: $v, $v2;
   }
 }
-
-// encapsulation for helper function to rwd(file size concern)
-@mixin _r($rwd, $token, $slot: null, $slot2: null, $slot3: null) {
-  @media (min-width: $rwd) {
-
-    // 0 params
-    @if $token ==_max-width_container {
-      @include _max-width_container;
-    }
-
-  }
-}
-
 // x*/
