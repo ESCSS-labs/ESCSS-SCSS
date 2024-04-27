@@ -4,78 +4,98 @@
 @if $Basic {
   // /*x
   @mixin sepia-0 {
-    @include _filter(sepia, 0);
+    @include sepia-(0);
   }
 
   @mixin sepia {
-    @include _filter(sepia, 100%);
-  } // x*/
+    @include sepia-(100%);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:sepia-0 {
-      @include _r($sm, _filter, sepia, 0);
+      @include sepia-(0, $sm);
     }
 
     @mixin sm\:sepia {
-      @include _r($sm, _filter, sepia, 100%);
+      @include sepia-(100%, $sm);
     }
+
     @mixin md\:sepia-0 {
-      @include _r($md, _filter, sepia, 0);
+      @include sepia-(0, $md);
     }
 
     @mixin md\:sepia {
-      @include _r($md, _filter, sepia, 100%);
+      @include sepia-(100%, $md);
     }
+
     @mixin lg\:sepia-0 {
-      @include _r($lg, _filter, sepia, 0);
+      @include sepia-(0, $lg);
     }
 
     @mixin lg\:sepia {
-      @include _r($lg, _filter, sepia, 100%);
+      @include sepia-(100%, $lg);
     }
+
     @mixin xl\:sepia-0 {
-      @include _r($xl, _filter, sepia, 0);
+      @include sepia-(0, $xl);
     }
 
     @mixin xl\:sepia {
-      @include _r($xl, _filter, sepia, 100%);
+      @include sepia-(100%, $xl);
     }
+
     @mixin \2xl\:sepia-0 {
-      @include _r($\2xl, _filter, sepia, 0);
+      @include sepia-(0, $\2xl);
     }
 
     @mixin \2xl\:sepia {
-      @include _r($\2xl, _filter, sepia, 100%);
+      @include sepia-(100%, $\2xl);
     }
     // x*/
   }
 }
+
 @if $Custom {
   // /*x
-  @mixin sepia-($v) {
-    @include _filter(sepia, $v);
+  @mixin __sepia-($v) {
+    $--tw-sepia: sepia($v) !global;
+    filter: __filter();
+  }
+
+  @mixin sepia-($v, $rwd: null) {
+    @if $rwd==null {
+      @include __sepia-($v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __sepia-($v);
+      }
+    }
   }
 
   @mixin sm\:sepia-($v) {
-    @include _r($sm, _filter, sepia, $v);
+    @include sepia-($v, $sm);
   }
 
   @mixin md\:sepia-($v) {
-    @include _r($md, _filter, sepia, $v);
+    @include sepia-($v, $md);
   }
 
   @mixin lg\:sepia-($v) {
-    @include _r($lg, _filter, sepia, $v);
+    @include sepia-($v, $lg);
   }
 
   @mixin xl\:sepia-($v) {
-    @include _r($xl, _filter, sepia, $v);
+    @include sepia-($v, $xl);
   }
 
   @mixin \2xl\:sepia-($v) {
-    @include _r($\2xl, _filter, sepia, $v);
-  } // x*/
+    @include sepia-($v, $\2xl);
+  }
+
+  // x*/
 }

@@ -4,222 +4,242 @@
 @if $Basic {
   // /*x
   @mixin blur-none {
-    @include _filter(blur, 0);
+    @include blur-(0);
   }
 
   @mixin blur-sm {
-    @include _filter(blur, 4px);
+    @include blur-($blur-sm);
   }
 
   @mixin blur {
-    @include _filter(blur, 8px);
+    @include blur-($blur-);
   }
 
   @mixin blur-md {
-    @include _filter(blur, 12px);
+    @include blur-($blur-md);
   }
 
   @mixin blur-lg {
-    @include _filter(blur, 16px);
+    @include blur-($blur-lg);
   }
 
   @mixin blur-xl {
-    @include _filter(blur, 24px);
+    @include blur-($blur-xl);
   }
 
   @mixin blur-2xl {
-    @include _filter(blur, 40px);
+    @include blur-($blur-2xl);
   }
 
   @mixin blur-3xl {
-    @include _filter(blur, 64px);
-  } // x*/
+    @include blur-($blur-3xl);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:blur-none {
-      @include _r($sm, _filter, blur, 0);
+      @include blur-(0, $sm);
     }
 
     @mixin sm\:blur-sm {
-      @include _r($sm, _filter, blur, 4px);
+      @include blur-($blur-sm, $sm);
     }
 
     @mixin sm\:blur {
-      @include _r($sm, _filter, blur, 8px);
+      @include blur-($blur-, $sm);
     }
 
     @mixin sm\:blur-md {
-      @include _r($sm, _filter, blur, 12px);
+      @include blur-($blur-md, $sm);
     }
 
     @mixin sm\:blur-lg {
-      @include _r($sm, _filter, blur, 16px);
+      @include blur-($blur-lg, $sm);
     }
 
     @mixin sm\:blur-xl {
-      @include _r($sm, _filter, blur, 24px);
+      @include blur-($blur-xl, $sm);
     }
 
     @mixin sm\:blur-2xl {
-      @include _r($sm, _filter, blur, 40px);
+      @include blur-($blur-2xl, $sm);
     }
 
     @mixin sm\:blur-3xl {
-      @include _r($sm, _filter, blur, 64px);
+      @include blur-($blur-3xl, $sm);
     }
+
     @mixin md\:blur-none {
-      @include _r($md, _filter, blur, 0);
+      @include blur-(0, $md);
     }
 
     @mixin md\:blur-sm {
-      @include _r($md, _filter, blur, 4px);
+      @include blur-($blur-sm, $md);
     }
 
     @mixin md\:blur {
-      @include _r($md, _filter, blur, 8px);
+      @include blur-($blur-, $md);
     }
 
     @mixin md\:blur-md {
-      @include _r($md, _filter, blur, 12px);
+      @include blur-($blur-md, $md);
     }
 
     @mixin md\:blur-lg {
-      @include _r($md, _filter, blur, 16px);
+      @include blur-($blur-lg, $md);
     }
 
     @mixin md\:blur-xl {
-      @include _r($md, _filter, blur, 24px);
+      @include blur-($blur-xl, $md);
     }
 
     @mixin md\:blur-2xl {
-      @include _r($md, _filter, blur, 40px);
+      @include blur-($blur-2xl, $md);
     }
 
     @mixin md\:blur-3xl {
-      @include _r($md, _filter, blur, 64px);
+      @include blur-($blur-3xl, $md);
     }
+
     @mixin lg\:blur-none {
-      @include _r($lg, _filter, blur, 0);
+      @include blur-(0, $lg);
     }
 
     @mixin lg\:blur-sm {
-      @include _r($lg, _filter, blur, 4px);
+      @include blur-($blur-sm, $lg);
     }
 
     @mixin lg\:blur {
-      @include _r($lg, _filter, blur, 8px);
+      @include blur-($blur-, $lg);
     }
 
     @mixin lg\:blur-md {
-      @include _r($lg, _filter, blur, 12px);
+      @include blur-($blur-md, $lg);
     }
 
     @mixin lg\:blur-lg {
-      @include _r($lg, _filter, blur, 16px);
+      @include blur-($blur-lg, $lg);
     }
 
     @mixin lg\:blur-xl {
-      @include _r($lg, _filter, blur, 24px);
+      @include blur-($blur-xl, $lg);
     }
 
     @mixin lg\:blur-2xl {
-      @include _r($lg, _filter, blur, 40px);
+      @include blur-($blur-2xl, $lg);
     }
 
     @mixin lg\:blur-3xl {
-      @include _r($lg, _filter, blur, 64px);
+      @include blur-($blur-3xl, $lg);
     }
+
     @mixin xl\:blur-none {
-      @include _r($xl, _filter, blur, 0);
+      @include blur-(0, $xl);
     }
 
     @mixin xl\:blur-sm {
-      @include _r($xl, _filter, blur, 4px);
+      @include blur-($blur-sm, $xl);
     }
 
     @mixin xl\:blur {
-      @include _r($xl, _filter, blur, 8px);
+      @include blur-($blur-, $xl);
     }
 
     @mixin xl\:blur-md {
-      @include _r($xl, _filter, blur, 12px);
+      @include blur-($blur-md, $xl);
     }
 
     @mixin xl\:blur-lg {
-      @include _r($xl, _filter, blur, 16px);
+      @include blur-($blur-lg, $xl);
     }
 
     @mixin xl\:blur-xl {
-      @include _r($xl, _filter, blur, 24px);
+      @include blur-($blur-xl, $xl);
     }
 
     @mixin xl\:blur-2xl {
-      @include _r($xl, _filter, blur, 40px);
+      @include blur-($blur-2xl, $xl);
     }
 
     @mixin xl\:blur-3xl {
-      @include _r($xl, _filter, blur, 64px);
+      @include blur-($blur-3xl, $xl);
     }
+
     @mixin \2xl\:blur-none {
-      @include _r($\2xl, _filter, blur, 0);
+      @include blur-(0, $\2xl);
     }
 
     @mixin \2xl\:blur-sm {
-      @include _r($\2xl, _filter, blur, 4px);
+      @include blur-($blur-sm, $\2xl);
     }
 
     @mixin \2xl\:blur {
-      @include _r($\2xl, _filter, blur, 8px);
+      @include blur-($blur-, $\2xl);
     }
 
     @mixin \2xl\:blur-md {
-      @include _r($\2xl, _filter, blur, 12px);
+      @include blur-($blur-md, $\2xl);
     }
 
     @mixin \2xl\:blur-lg {
-      @include _r($\2xl, _filter, blur, 16px);
+      @include blur-($blur-lg, $\2xl);
     }
 
     @mixin \2xl\:blur-xl {
-      @include _r($\2xl, _filter, blur, 24px);
+      @include blur-($blur-xl, $\2xl);
     }
 
     @mixin \2xl\:blur-2xl {
-      @include _r($\2xl, _filter, blur, 40px);
+      @include blur-($blur-2xl, $\2xl);
     }
 
     @mixin \2xl\:blur-3xl {
-      @include _r($\2xl, _filter, blur, 64px);
+      @include blur-($blur-3xl, $\2xl);
     }
     // x*/
   }
 }
+
 @if $Custom {
   // /*x
-  @mixin blur-($v) {
-    @include _filter(blur, $v);
+  @mixin __blur-($v) {
+    $--tw-blur: blur($v) !global;
+    filter: __filter();
+  }
+
+  @mixin blur-($v, $rwd: null) {
+    @if $rwd==null {
+      @include __blur-($v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __blur-($v);
+      }
+    }
   }
 
   @mixin sm\:blur-($v) {
-    @include _r($sm, _filter, blur, $v);
+    @include blur-($v, $sm);
   }
 
   @mixin md\:blur-($v) {
-    @include _r($md, _filter, blur, $v);
+    @include blur-($v, $md);
   }
 
   @mixin lg\:blur-($v) {
-    @include _r($lg, _filter, blur, $v);
+    @include blur-($v, $lg);
   }
 
   @mixin xl\:blur-($v) {
-    @include _r($xl, _filter, blur, $v);
+    @include blur-($v, $xl);
   }
 
   @mixin \2xl\:blur-($v) {
-    @include _r($\2xl, _filter, blur, $v);
-  } // x*/
+    @include blur-($v, $\2xl);
+  }
+
+  // x*/
 }

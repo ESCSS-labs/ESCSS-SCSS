@@ -4,79 +4,99 @@
 @if $Basic {
   // /*x
   @mixin invert-0 {
-    @include _filter(invert, 0);
+    @include invert-(0);
   }
 
   @mixin invert {
-    @include _filter(invert, 100%);
-  } // x*/
+    @include invert-(100%);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:invert-0 {
-      @include _r($sm, _filter, invert, 0);
+      @include invert-(0, $sm);
     }
 
     @mixin sm\:invert {
-      @include _r($sm, _filter, invert, 100%);
+      @include invert-(100%, $sm);
     }
+
     @mixin md\:invert-0 {
-      @include _r($md, _filter, invert, 0);
+      @include invert-(0, $md);
     }
 
     @mixin md\:invert {
-      @include _r($md, _filter, invert, 100%);
+      @include invert-(100%, $md);
     }
+
     @mixin lg\:invert-0 {
-      @include _r($lg, _filter, invert, 0);
+      @include invert-(0, $lg);
     }
 
     @mixin lg\:invert {
-      @include _r($lg, _filter, invert, 100%);
+      @include invert-(100%, $lg);
     }
+
     @mixin xl\:invert-0 {
-      @include _r($xl, _filter, invert, 0);
+      @include invert-(0, $xl);
     }
 
     @mixin xl\:invert {
-      @include _r($xl, _filter, invert, 100%);
+      @include invert-(100%, $xl);
     }
+
     @mixin \2xl\:invert-0 {
-      @include _r($\2xl, _filter, invert, 0);
+      @include invert-(0, $\2xl);
     }
 
     @mixin \2xl\:invert {
-      @include _r($\2xl, _filter, invert, 100%);
+      @include invert-(100%, $\2xl);
     }
 
     // x*/
   }
 }
+
 @if $Custom {
   // /*x
-  @mixin invert-($v) {
-    @include _filter(invert, $v);
+  @mixin __invert-($v) {
+    $--tw-invert: invert($v) !global;
+    filter: __filter();
+  }
+
+  @mixin invert-($v, $rwd: null) {
+    @if $rwd==null {
+      @include __invert-($v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __invert-($v);
+      }
+    }
   }
 
   @mixin sm\:invert-($v) {
-    @include _r($sm, _filter, invert, $v);
+    @include invert-($v, $sm);
   }
 
   @mixin md\:invert-($v) {
-    @include _r($md, _filter, invert, $v);
+    @include invert-($v, $md);
   }
 
   @mixin lg\:invert-($v) {
-    @include _r($lg, _filter, invert, $v);
+    @include invert-($v, $lg);
   }
 
   @mixin xl\:invert-($v) {
-    @include _r($xl, _filter, invert, $v);
+    @include invert-($v, $xl);
   }
 
   @mixin \2xl\:invert-($v) {
-    @include _r($\2xl, _filter, invert, $v);
-  } // x*/
+    @include invert-($v, $\2xl);
+  }
+
+  // x*/
 }

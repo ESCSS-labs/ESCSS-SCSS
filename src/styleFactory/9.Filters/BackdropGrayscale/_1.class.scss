@@ -4,11 +4,11 @@
 @if $Basic {
   // /*x
   @mixin backdrop-grayscale-0 {
-    @include _backdrop-filter(grayscale, 0);
+    @include backdrop-grayscale-(0);
   }
 
   @mixin backdrop-grayscale {
-    @include _backdrop-filter(grayscale, 100%);
+    @include backdrop-grayscale-(100%);
   } // x*/
 }
 
@@ -16,66 +16,83 @@
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:backdrop-grayscale-0 {
-      @include _r($sm, _backdrop-filter, grayscale, 0);
+      @include backdrop-grayscale-(0, $sm);
     }
 
     @mixin sm\:backdrop-grayscale {
-      @include _r($sm, _backdrop-filter, grayscale, 100%);
+      @include backdrop-grayscale-(100%, $sm);
     }
+
     @mixin md\:backdrop-grayscale-0 {
-      @include _r($md, _backdrop-filter, grayscale, 0);
+      @include backdrop-grayscale-(0, $md);
     }
 
     @mixin md\:backdrop-grayscale {
-      @include _r($md, _backdrop-filter, grayscale, 100%);
+      @include backdrop-grayscale-(100%, $md);
     }
+
     @mixin lg\:backdrop-grayscale-0 {
-      @include _r($lg, _backdrop-filter, grayscale, 0);
+      @include backdrop-grayscale-(0, $lg);
     }
 
     @mixin lg\:backdrop-grayscale {
-      @include _r($lg, _backdrop-filter, grayscale, 100%);
+      @include backdrop-grayscale-(100%, $lg);
     }
+
     @mixin xl\:backdrop-grayscale-0 {
-      @include _r($xl, _backdrop-filter, grayscale, 0);
+      @include backdrop-grayscale-(0, $xl);
     }
 
     @mixin xl\:backdrop-grayscale {
-      @include _r($xl, _backdrop-filter, grayscale, 100%);
+      @include backdrop-grayscale-(100%, $xl);
     }
+
     @mixin \2xl\:backdrop-grayscale-0 {
-      @include _r($\2xl, _backdrop-filter, grayscale, 0);
+      @include backdrop-grayscale-(0, $\2xl);
     }
 
     @mixin \2xl\:backdrop-grayscale {
-      @include _r($\2xl, _backdrop-filter, grayscale, 100%);
+      @include backdrop-grayscale-(100%, $\2xl);
     }
     // x*/
   }
 }
 @if $Custom {
   // /*x
-  @mixin backdrop-grayscale-($v) {
-    @include _backdrop-filter(grayscale, $v);
+  @mixin __backdrop-grayscale-($v) {
+    $--tw-backdrop-grayscale: grayscale($v) !global;
+    backdrop-filter: __backdrop-filter();
+  }
+
+  @mixin backdrop-grayscale-($v, $rwd: null) {
+    @if $rwd==null {
+      @include __backdrop-grayscale-($v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __backdrop-grayscale-($v);
+      }
+    }
   }
 
   @mixin sm\:backdrop-grayscale-($v) {
-    @include _r($sm, _backdrop-filter, grayscale, $v);
+    @include backdrop-grayscale-($v, $sm);
   }
 
   @mixin md\:backdrop-grayscale-($v) {
-    @include _r($md, _backdrop-filter, grayscale, $v);
+    @include backdrop-grayscale-($v, $md);
   }
 
   @mixin lg\:backdrop-grayscale-($v) {
-    @include _r($lg, _backdrop-filter, grayscale, $v);
+    @include backdrop-grayscale-($v, $lg);
   }
 
   @mixin xl\:backdrop-grayscale-($v) {
-    @include _r($xl, _backdrop-filter, grayscale, $v);
+    @include backdrop-grayscale-($v, $xl);
   }
 
   @mixin \2xl\:backdrop-grayscale-($v) {
-    @include _r($\2xl, _backdrop-filter, grayscale, $v);
-  } // x*/
+    @include backdrop-grayscale-($v, $\2xl);
+  }
+
+  // x*/
 }

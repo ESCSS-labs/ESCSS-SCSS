@@ -5957,7 +5957,9 @@
     @if $rwd==null {
       @include __divide($token, $v: 1);
     } @else {
-      @include __divide($token, $v: 1);
+      @media (min-width: $rwd) {
+        @include __divide($token, $v: 1);
+      }
     }
   }
 

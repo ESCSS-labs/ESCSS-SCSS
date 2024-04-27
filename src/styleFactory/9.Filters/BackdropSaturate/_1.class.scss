@@ -4,150 +4,169 @@
 @if $Basic {
   // /*x
   @mixin backdrop-saturate-0 {
-    @include _backdrop-filter(saturate, 0);
+    @include backdrop-saturate-(0);
   }
 
   @mixin backdrop-saturate-50 {
-    @include _backdrop-filter(saturate, 0.5);
+    @include backdrop-saturate-(0.5);
   }
 
   @mixin backdrop-saturate-100 {
-    @include _backdrop-filter(saturate, 1);
+    @include backdrop-saturate-(1);
   }
 
   @mixin backdrop-saturate-150 {
-    @include _backdrop-filter(saturate, 1.5);
+    @include backdrop-saturate-(1.5);
   }
 
   @mixin backdrop-saturate-200 {
-    @include _backdrop-filter(saturate, 2);
-  } // x*/
+    @include backdrop-saturate-(2);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:backdrop-saturate-0 {
-      @include _r($sm, _backdrop-filter, saturate, 0);
+      @include backdrop-saturate-(0, $sm);
     }
 
     @mixin sm\:backdrop-saturate-50 {
-      @include _r($sm, _backdrop-filter, saturate, 0.5);
+      @include backdrop-saturate-(0.5, $sm);
     }
 
     @mixin sm\:backdrop-saturate-100 {
-      @include _r($sm, _backdrop-filter, saturate, 1);
+      @include backdrop-saturate-(1, $sm);
     }
 
     @mixin sm\:backdrop-saturate-150 {
-      @include _r($sm, _backdrop-filter, saturate, 1.5);
+      @include backdrop-saturate-(1.5, $sm);
     }
 
     @mixin sm\:backdrop-saturate-200 {
-      @include _r($sm, _backdrop-filter, saturate, 2);
+      @include backdrop-saturate-(2, $sm);
     }
+
     @mixin md\:backdrop-saturate-0 {
-      @include _r($md, _backdrop-filter, saturate, 0);
+      @include backdrop-saturate-(0, $md);
     }
 
     @mixin md\:backdrop-saturate-50 {
-      @include _r($md, _backdrop-filter, saturate, 0.5);
+      @include backdrop-saturate-(0.5, $md);
     }
 
     @mixin md\:backdrop-saturate-100 {
-      @include _r($md, _backdrop-filter, saturate, 1);
+      @include backdrop-saturate-(1, $md);
     }
 
     @mixin md\:backdrop-saturate-150 {
-      @include _r($md, _backdrop-filter, saturate, 1.5);
+      @include backdrop-saturate-(1.5, $md);
     }
 
     @mixin md\:backdrop-saturate-200 {
-      @include _r($md, _backdrop-filter, saturate, 2);
+      @include backdrop-saturate-(2, $md);
     }
+
     @mixin lg\:backdrop-saturate-0 {
-      @include _r($lg, _backdrop-filter, saturate, 0);
+      @include backdrop-saturate-(0, $lg);
     }
 
     @mixin lg\:backdrop-saturate-50 {
-      @include _r($lg, _backdrop-filter, saturate, 0.5);
+      @include backdrop-saturate-(0.5, $lg);
     }
 
     @mixin lg\:backdrop-saturate-100 {
-      @include _r($lg, _backdrop-filter, saturate, 1);
+      @include backdrop-saturate-(1, $lg);
     }
 
     @mixin lg\:backdrop-saturate-150 {
-      @include _r($lg, _backdrop-filter, saturate, 1.5);
+      @include backdrop-saturate-(1.5, $lg);
     }
 
     @mixin lg\:backdrop-saturate-200 {
-      @include _r($lg, _backdrop-filter, saturate, 2);
+      @include backdrop-saturate-(2, $lg);
     }
+
     @mixin xl\:backdrop-saturate-0 {
-      @include _r($xl, _backdrop-filter, saturate, 0);
+      @include backdrop-saturate-(0, $xl);
     }
 
     @mixin xl\:backdrop-saturate-50 {
-      @include _r($xl, _backdrop-filter, saturate, 0.5);
+      @include backdrop-saturate-(0.5, $xl);
     }
 
     @mixin xl\:backdrop-saturate-100 {
-      @include _r($xl, _backdrop-filter, saturate, 1);
+      @include backdrop-saturate-(1, $xl);
     }
 
     @mixin xl\:backdrop-saturate-150 {
-      @include _r($xl, _backdrop-filter, saturate, 1.5);
+      @include backdrop-saturate-(1.5, $xl);
     }
 
     @mixin xl\:backdrop-saturate-200 {
-      @include _r($xl, _backdrop-filter, saturate, 2);
+      @include backdrop-saturate-(2, $xl);
     }
+
     @mixin \2xl\:backdrop-saturate-0 {
-      @include _r($\2xl, _backdrop-filter, saturate, 0);
+      @include backdrop-saturate-(0, $\2xl);
     }
 
     @mixin \2xl\:backdrop-saturate-50 {
-      @include _r($\2xl, _backdrop-filter, saturate, 0.5);
+      @include backdrop-saturate-(0.5, $\2xl);
     }
 
     @mixin \2xl\:backdrop-saturate-100 {
-      @include _r($\2xl, _backdrop-filter, saturate, 1);
+      @include backdrop-saturate-(1, $\2xl);
     }
 
     @mixin \2xl\:backdrop-saturate-150 {
-      @include _r($\2xl, _backdrop-filter, saturate, 1.5);
+      @include backdrop-saturate-(1.5, $\2xl);
     }
 
     @mixin \2xl\:backdrop-saturate-200 {
-      @include _r($\2xl, _backdrop-filter, saturate, 2);
+      @include backdrop-saturate-(2, $\2xl);
     }
     // x*/
   }
 }
 @if $Custom {
   // /*x
-  @mixin backdrop-saturate-($v) {
-    @include _backdrop-filter(saturate, $v);
+  @mixin __backdrop-saturate-($v) {
+    $--tw-backdrop-saturate: saturate($v) !global;
+    backdrop-filter: __backdrop-filter();
+  }
+
+  @mixin backdrop-saturate-($v, $rwd: null) {
+    @if $rwd==null {
+      @include __backdrop-saturate-($v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __backdrop-saturate-($v);
+      }
+    }
   }
 
   @mixin sm\:backdrop-saturate-($v) {
-    @include _r($sm, _backdrop-filter, saturate, $v);
+    @include backdrop-saturate-($v, $sm);
   }
 
   @mixin md\:backdrop-saturate-($v) {
-    @include _r($md, _backdrop-filter, saturate, $v);
+    @include backdrop-saturate-($v, $md);
   }
 
   @mixin lg\:backdrop-saturate-($v) {
-    @include _r($lg, _backdrop-filter, saturate, $v);
+    @include backdrop-saturate-($v, $lg);
   }
 
   @mixin xl\:backdrop-saturate-($v) {
-    @include _r($xl, _backdrop-filter, saturate, $v);
+    @include backdrop-saturate-($v, $xl);
   }
 
   @mixin \2xl\:backdrop-saturate-($v) {
-    @include _r($\2xl, _backdrop-filter, saturate, $v);
-  } // x*/
+    @include backdrop-saturate-($v, $\2xl);
+  }
+
+  // x*/
 }

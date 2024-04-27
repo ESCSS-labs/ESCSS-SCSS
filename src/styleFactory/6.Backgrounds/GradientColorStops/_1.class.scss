@@ -19315,7 +19315,9 @@
     @if meta.type-of($v) ==color {
       @include bg-(_background-image(from, customColor, $v), $rwd);
     } @else {
-      @include bg-(_background-image(from, position, $v), $rwd);
+      @media (min-width: $rwd) {
+        @include bg-(_background-image(from, position, $v), $rwd);
+      }
     }
   }
 
@@ -19323,7 +19325,9 @@
     @if meta.type-of($v) ==color {
       @include bg-(_background-image(via, customColor, $v), $rwd);
     } @else {
-      @include bg-(_background-image(via, position, $v), $rwd);
+      @media (min-width: $rwd) {
+        @include bg-(_background-image(via, position, $v), $rwd);
+      }
     }
   }
 
@@ -19331,7 +19335,9 @@
     @if meta.type-of($v) ==color {
       @include bg-(_background-image(to, customColor, $v), $rwd);
     } @else {
-      @include bg-(_background-image(to, position, $v), $rwd);
+      @media (min-width: $rwd) {
+        @include bg-(_background-image(to, position, $v), $rwd);
+      }
     }
   }
 
