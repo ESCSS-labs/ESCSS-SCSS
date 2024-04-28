@@ -2,7 +2,6 @@
 
 /* Gradient Color Stops */
 @if $Basic {
-
   // /*x
   @mixin from-inherit {
     @include from-(inherit, null);
@@ -3225,7 +3224,6 @@
 
 @if $Rwd {
   @if $sizeMode ==0 {
-
     // /*x
     @mixin sm\:from-inherit {
       @include from-(inherit, null, $sm);
@@ -19312,14 +19310,11 @@
 }
 
 @if $Custom {
-
   // /*x
   @mixin from-($token, $v, $rwd: null) {
     @if $rwd==null {
       @include __from-($token, $v);
-    }
-
-    @else {
+    } @else {
       @media (min-width: $rwd) {
         @include __from-($token, $v);
       }
@@ -19329,18 +19324,12 @@
   @mixin __from-($token, $v) {
     @if list.index(inherit, $token) {
       background-image: inherit !important;
-    }
-
-    @else {
+    } @else {
       @if list.index(currentColor transparent, $token) {
         $--tw-gradient-from: $token !global;
-      }
-
-      @else if meta.type-of($token)==color {
+      } @else if meta.type-of($token) ==color {
         $--tw-gradient-from: c($token, $v) !global;
-      }
-
-      @else {
+      } @else {
         $--tw-gradient-from-position: $token !global;
       }
 
@@ -19351,9 +19340,7 @@
   @mixin via-($token, $v, $rwd: null) {
     @if $rwd==null {
       @include __via-($token, $v);
-    }
-
-    @else {
+    } @else {
       @media (min-width: $rwd) {
         @include __via-($token, $v);
       }
@@ -19363,18 +19350,12 @@
   @mixin __via-($token, $v) {
     @if list.index(inherit, $token) {
       background-image: inherit !important;
-    }
-
-    @else {
+    } @else {
       @if list.index(currentColor transparent, $token) {
         $--tw-gradient-via: $token !global;
-      }
-
-      @else if meta.type-of($token)==color {
+      } @else if meta.type-of($token) ==color {
         $--tw-gradient-via: c($token, $v) !global;
-      }
-
-      @else {
+      } @else {
         $--tw-gradient-via-position: $token !global;
       }
 
@@ -19385,9 +19366,7 @@
   @mixin to-($token, $v, $rwd: null) {
     @if $rwd==null {
       @include __to-($token, $v);
-    }
-
-    @else {
+    } @else {
       @media (min-width: $rwd) {
         @include __to-($token, $v);
       }
@@ -19397,18 +19376,12 @@
   @mixin __to-($token, $v) {
     @if list.index(inherit, $token) {
       background-image: inherit !important;
-    }
-
-    @else {
+    } @else {
       @if list.index(currentColor transparent, $token) {
         $--tw-gradient-to: $token !global;
-      }
-
-      @else if meta.type-of($token)==color {
+      } @else if meta.type-of($token) ==color {
         $--tw-gradient-to: c($token, $v) !global;
-      }
-
-      @else {
+      } @else {
         $--tw-gradient-to-position: $token !global;
       }
 
