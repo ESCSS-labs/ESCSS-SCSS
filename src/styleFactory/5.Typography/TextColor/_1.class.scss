@@ -995,7 +995,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 {
+  @if $sizeMode ==0 {
     // /*x
     @mixin sm\:text-inherit {
       @include text-(inherit, $sm);
@@ -5945,20 +5945,23 @@
   // /*x
   @mixin text-($v, $rwd: null) {
     @if $rwd==null {
-      @if meta.type-of($v) ==color {
-        color: $v;
-      } @else {
-        font-size: list.nth($v, 1);
-        line-height: list.nth($v, 2);
-      }
+      @include __text-($v);
     } @else {
       @media (min-width: $rwd) {
-        @if meta.type-of($v) ==color {
-          color: $v;
-        } @else {
-          font-size: list.nth($v, 1);
-          line-height: list.nth($v, 2);
-        }
+        @include __text-($v);
+      }
+    }
+  }
+
+  @mixin __text-($v) {
+    @if meta.type-of($v) ==color {
+      color: $v;
+    } @else {
+      @if list.length($v) ==2 {
+        font-size: list.nth($v, 1);
+        line-height: list.nth($v, 2);
+      } @else {
+        font-size: $v; // custom
       }
     }
   }
