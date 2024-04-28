@@ -2,6 +2,7 @@
 
 /* Gradient Color Stops */
 @if $Basic {
+
   // /*x
   @mixin from-inherit {
     @include from-(inherit, null);
@@ -3224,6 +3225,7 @@
 
 @if $Rwd {
   @if $sizeMode ==0 {
+
     // /*x
     @mixin sm\:from-inherit {
       @include from-(inherit, null, $sm);
@@ -19310,71 +19312,108 @@
 }
 
 @if $Custom {
+
   // /*x
-  @mixin from-($token, $v: 1, $rwd: null) {
+  @mixin from-($token, $v, $rwd: null) {
     @if $rwd==null {
       @include __from-($token, $v);
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         @include __from-($token, $v);
       }
     }
   }
 
-  @mixin __from-($token, $v: 1) {
-    @if meta.type-of($token) ==number {
-      $--tw-gradient-from-position: $token !global;
-    } @else if meta.type-of($token) ==color {
-      $--tw-gradient-from: c($token, $v) !global;
-    } @else {
-      $--tw-gradient-from: $token !global; // inherit、currentColor、transparent
+  @mixin __from-($token, $v) {
+    @if list.index(inherit, $token) {
+      background-image: inherit !important;
     }
 
-    background-image: __linear-gradient();
+    @else {
+      @if list.index(currentColor transparent, $token) {
+        $--tw-gradient-from: $token !global;
+      }
+
+      @else if meta.type-of($token)==color {
+        $--tw-gradient-from: c($token, $v) !global;
+      }
+
+      @else {
+        $--tw-gradient-from-position: $token !global;
+      }
+
+      background-image: __linear-gradient();
+    }
   }
 
-  @mixin via-($token, $v: 1, $rwd: null) {
+  @mixin via-($token, $v, $rwd: null) {
     @if $rwd==null {
       @include __via-($token, $v);
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         @include __via-($token, $v);
       }
     }
   }
 
-  @mixin __via-($token, $v: 1) {
-    @if meta.type-of($token) ==number {
-      $--tw-gradient-via-position: $token !global;
-    } @else if meta.type-of($token) ==color {
-      $--tw-gradient-via: c($token, $v) !global;
-    } @else {
-      $--tw-gradient-via: $token !global; // inherit、currentColor、transparent
+  @mixin __via-($token, $v) {
+    @if list.index(inherit, $token) {
+      background-image: inherit !important;
     }
 
-    background-image: __linear-gradient();
+    @else {
+      @if list.index(currentColor transparent, $token) {
+        $--tw-gradient-via: $token !global;
+      }
+
+      @else if meta.type-of($token)==color {
+        $--tw-gradient-via: c($token, $v) !global;
+      }
+
+      @else {
+        $--tw-gradient-via-position: $token !global;
+      }
+
+      background-image: __linear-gradient();
+    }
   }
 
-  @mixin to-($token, $v: 1, $rwd: null) {
+  @mixin to-($token, $v, $rwd: null) {
     @if $rwd==null {
       @include __to-($token, $v);
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         @include __to-($token, $v);
       }
     }
   }
 
-  @mixin __to-($token, $v: 1) {
-    @if meta.type-of($token) ==number {
-      $--tw-gradient-to-position: $token !global;
-    } @else if meta.type-of($token) ==color {
-      $--tw-gradient-to: c($token, $v) !global;
-    } @else {
-      $--tw-gradient-to: $token !global; // inherit、currentColor、transparent
+  @mixin __to-($token, $v) {
+    @if list.index(inherit, $token) {
+      background-image: inherit !important;
     }
 
-    background-image: __linear-gradient();
+    @else {
+      @if list.index(currentColor transparent, $token) {
+        $--tw-gradient-to: $token !global;
+      }
+
+      @else if meta.type-of($token)==color {
+        $--tw-gradient-to: c($token, $v) !global;
+      }
+
+      @else {
+        $--tw-gradient-to-position: $token !global;
+      }
+
+      background-image: __linear-gradient();
+    }
   }
 
   @mixin sm\:from-($token, $v: 1) {
