@@ -1,0 +1,74 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Font Style */
+@if $Basic {
+  // /*x
+  @mixin italic($rwd: null) {
+    @if $rwd==null {
+      font-style: italic;
+    } @else {
+      @media (min-width: $rwd) {
+        font-style: italic;
+      }
+    }
+  }
+
+  @mixin not-italic($rwd: null) {
+    @if $rwd==null {
+      font-style: normal;
+    } @else {
+      @media (min-width: $rwd) {
+        font-style: normal;
+      }
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:italic {
+    @include italic($sm);
+  }
+
+  @mixin sm\:not-italic {
+    @include not-italic($sm);
+  }
+
+  @mixin md\:italic {
+    @include italic($md);
+  }
+
+  @mixin md\:not-italic {
+    @include not-italic($md);
+  }
+
+  @mixin lg\:italic {
+    @include italic($lg);
+  }
+
+  @mixin lg\:not-italic {
+    @include not-italic($lg);
+  }
+
+  @mixin xl\:italic {
+    @include italic($xl);
+  }
+
+  @mixin xl\:not-italic {
+    @include not-italic($xl);
+  }
+
+  @mixin \2xl\:italic {
+    @include italic($\2xl);
+  }
+
+  @mixin \2xl\:not-italic {
+    @include not-italic($\2xl);
+  }
+
+  // x*/
+}

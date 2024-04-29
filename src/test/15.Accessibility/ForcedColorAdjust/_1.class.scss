@@ -1,0 +1,72 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Forced Color Adjust */
+@if $Basic {
+  // /*x
+  @mixin forced-color-adjust-auto($rwd: null) {
+    @if $rwd==null {
+      forced-color-adjust: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        forced-color-adjust: auto;
+      }
+    }
+  }
+
+  @mixin forced-color-adjust-none($rwd: null) {
+    @if $rwd==null {
+      forced-color-adjust: none;
+    } @else {
+      @media (min-width: $rwd) {
+        forced-color-adjust: none;
+      }
+    }
+  } // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:forced-color-adjust-auto {
+    @include forced-color-adjust-auto($sm);
+  }
+
+  @mixin sm\:forced-color-adjust-none {
+    @include forced-color-adjust-none($sm);
+  }
+
+  @mixin md\:forced-color-adjust-auto {
+    @include forced-color-adjust-auto($md);
+  }
+
+  @mixin md\:forced-color-adjust-none {
+    @include forced-color-adjust-none($md);
+  }
+
+  @mixin lg\:forced-color-adjust-auto {
+    @include forced-color-adjust-auto($lg);
+  }
+
+  @mixin lg\:forced-color-adjust-none {
+    @include forced-color-adjust-none($lg);
+  }
+
+  @mixin xl\:forced-color-adjust-auto {
+    @include forced-color-adjust-auto($xl);
+  }
+
+  @mixin xl\:forced-color-adjust-none {
+    @include forced-color-adjust-none($xl);
+  }
+
+  @mixin \2xl\:forced-color-adjust-auto {
+    @include forced-color-adjust-auto($\2xl);
+  }
+
+  @mixin \2xl\:forced-color-adjust-none {
+    @include forced-color-adjust-none($\2xl);
+  }
+
+  // x*/
+}

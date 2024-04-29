@@ -1,0 +1,314 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Touch Action */
+@if $Basic {
+  // /*x
+  @mixin touch-auto($rwd: null) {
+    @if $rwd==null {
+      touch-action: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: auto;
+      }
+    }
+  }
+
+  @mixin touch-none($rwd: null) {
+    @if $rwd==null {
+      touch-action: none;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: none;
+      }
+    }
+  }
+
+  @mixin touch-pan-x($rwd: null) {
+    @if $rwd==null {
+      touch-action: pan-x;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: pan-x;
+      }
+    }
+  }
+
+  @mixin touch-pan-left($rwd: null) {
+    @if $rwd==null {
+      touch-action: pan-left;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: pan-left;
+      }
+    }
+  }
+
+  @mixin touch-pan-right($rwd: null) {
+    @if $rwd==null {
+      touch-action: pan-right;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: pan-right;
+      }
+    }
+  }
+
+  @mixin touch-pan-y($rwd: null) {
+    @if $rwd==null {
+      touch-action: pan-y;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: pan-y;
+      }
+    }
+  }
+
+  @mixin touch-pan-up($rwd: null) {
+    @if $rwd==null {
+      touch-action: pan-up;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: pan-up;
+      }
+    }
+  }
+
+  @mixin touch-pan-down($rwd: null) {
+    @if $rwd==null {
+      touch-action: pan-down;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: pan-down;
+      }
+    }
+  }
+
+  @mixin touch-pinch-zoom($rwd: null) {
+    @if $rwd==null {
+      touch-action: pinch-zoom;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: pinch-zoom;
+      }
+    }
+  }
+
+  @mixin touch-manipulation($rwd: null) {
+    @if $rwd==null {
+      touch-action: manipulation;
+    } @else {
+      @media (min-width: $rwd) {
+        touch-action: manipulation;
+      }
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:touch-auto {
+    @include touch-auto($sm);
+  }
+
+  @mixin sm\:touch-none {
+    @include touch-none($sm);
+  }
+
+  @mixin sm\:touch-pan-x {
+    @include touch-pan-x($sm);
+  }
+
+  @mixin sm\:touch-pan-left {
+    @include touch-pan-left($sm);
+  }
+
+  @mixin sm\:touch-pan-right {
+    @include touch-pan-right($sm);
+  }
+
+  @mixin sm\:touch-pan-y {
+    @include touch-pan-y($sm);
+  }
+
+  @mixin sm\:touch-pan-up {
+    @include touch-pan-up($sm);
+  }
+
+  @mixin sm\:touch-pan-down {
+    @include touch-pan-down($sm);
+  }
+
+  @mixin sm\:touch-pinch-zoom {
+    @include touch-pinch-zoom($sm);
+  }
+
+  @mixin sm\:touch-manipulation {
+    @include touch-manipulation($sm);
+  }
+
+  @mixin md\:touch-auto {
+    @include touch-auto($md);
+  }
+
+  @mixin md\:touch-none {
+    @include touch-none($md);
+  }
+
+  @mixin md\:touch-pan-x {
+    @include touch-pan-x($md);
+  }
+
+  @mixin md\:touch-pan-left {
+    @include touch-pan-left($md);
+  }
+
+  @mixin md\:touch-pan-right {
+    @include touch-pan-right($md);
+  }
+
+  @mixin md\:touch-pan-y {
+    @include touch-pan-y($md);
+  }
+
+  @mixin md\:touch-pan-up {
+    @include touch-pan-up($md);
+  }
+
+  @mixin md\:touch-pan-down {
+    @include touch-pan-down($md);
+  }
+
+  @mixin md\:touch-pinch-zoom {
+    @include touch-pinch-zoom($md);
+  }
+
+  @mixin md\:touch-manipulation {
+    @include touch-manipulation($md);
+  }
+
+  @mixin lg\:touch-auto {
+    @include touch-auto($lg);
+  }
+
+  @mixin lg\:touch-none {
+    @include touch-none($lg);
+  }
+
+  @mixin lg\:touch-pan-x {
+    @include touch-pan-x($lg);
+  }
+
+  @mixin lg\:touch-pan-left {
+    @include touch-pan-left($lg);
+  }
+
+  @mixin lg\:touch-pan-right {
+    @include touch-pan-right($lg);
+  }
+
+  @mixin lg\:touch-pan-y {
+    @include touch-pan-y($lg);
+  }
+
+  @mixin lg\:touch-pan-up {
+    @include touch-pan-up($lg);
+  }
+
+  @mixin lg\:touch-pan-down {
+    @include touch-pan-down($lg);
+  }
+
+  @mixin lg\:touch-pinch-zoom {
+    @include touch-pinch-zoom($lg);
+  }
+
+  @mixin lg\:touch-manipulation {
+    @include touch-manipulation($lg);
+  }
+
+  @mixin xl\:touch-auto {
+    @include touch-auto($xl);
+  }
+
+  @mixin xl\:touch-none {
+    @include touch-none($xl);
+  }
+
+  @mixin xl\:touch-pan-x {
+    @include touch-pan-x($xl);
+  }
+
+  @mixin xl\:touch-pan-left {
+    @include touch-pan-left($xl);
+  }
+
+  @mixin xl\:touch-pan-right {
+    @include touch-pan-right($xl);
+  }
+
+  @mixin xl\:touch-pan-y {
+    @include touch-pan-y($xl);
+  }
+
+  @mixin xl\:touch-pan-up {
+    @include touch-pan-up($xl);
+  }
+
+  @mixin xl\:touch-pan-down {
+    @include touch-pan-down($xl);
+  }
+
+  @mixin xl\:touch-pinch-zoom {
+    @include touch-pinch-zoom($xl);
+  }
+
+  @mixin xl\:touch-manipulation {
+    @include touch-manipulation($xl);
+  }
+
+  @mixin \2xl\:touch-auto {
+    @include touch-auto($\2xl);
+  }
+
+  @mixin \2xl\:touch-none {
+    @include touch-none($\2xl);
+  }
+
+  @mixin \2xl\:touch-pan-x {
+    @include touch-pan-x($\2xl);
+  }
+
+  @mixin \2xl\:touch-pan-left {
+    @include touch-pan-left($\2xl);
+  }
+
+  @mixin \2xl\:touch-pan-right {
+    @include touch-pan-right($\2xl);
+  }
+
+  @mixin \2xl\:touch-pan-y {
+    @include touch-pan-y($\2xl);
+  }
+
+  @mixin \2xl\:touch-pan-up {
+    @include touch-pan-up($\2xl);
+  }
+
+  @mixin \2xl\:touch-pan-down {
+    @include touch-pan-down($\2xl);
+  }
+
+  @mixin \2xl\:touch-pinch-zoom {
+    @include touch-pinch-zoom($\2xl);
+  }
+
+  @mixin \2xl\:touch-manipulation {
+    @include touch-manipulation($\2xl);
+  }
+
+  // x*/
+}

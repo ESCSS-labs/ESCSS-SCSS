@@ -1,0 +1,100 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Grayscale */
+@if $Basic {
+  // /*x
+  @mixin grayscale-0 {
+    @include grayscale-(0);
+  }
+
+  @mixin grayscale {
+    @include grayscale-(100%);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:grayscale-0 {
+      @include grayscale-(0, $sm);
+    }
+
+    @mixin sm\:grayscale {
+      @include grayscale-(100%, $sm);
+    }
+
+    @mixin md\:grayscale-0 {
+      @include grayscale-(0, $md);
+    }
+
+    @mixin md\:grayscale {
+      @include grayscale-(100%, $md);
+    }
+
+    @mixin lg\:grayscale-0 {
+      @include grayscale-(0, $lg);
+    }
+
+    @mixin lg\:grayscale {
+      @include grayscale-(100%, $lg);
+    }
+
+    @mixin xl\:grayscale-0 {
+      @include grayscale-(0, $xl);
+    }
+
+    @mixin xl\:grayscale {
+      @include grayscale-(100%, $xl);
+    }
+
+    @mixin \2xl\:grayscale-0 {
+      @include grayscale-(0, $\2xl);
+    }
+
+    @mixin \2xl\:grayscale {
+      @include grayscale-(100%, $\2xl);
+    }
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin grayscale-($v, $rwd: null) {
+    @if $rwd==null {
+      $--tw-grayscale: grayscale($v) !global;
+      filter: __filter();
+    } @else {
+      @media (min-width: $rwd) {
+        $--tw-grayscale: grayscale($v) !global;
+        filter: __filter();
+      }
+    }
+  }
+
+  @mixin sm\:grayscale-($v) {
+    @include grayscale-($v, $sm);
+  }
+
+  @mixin md\:grayscale-($v) {
+    @include grayscale-($v, $md);
+  }
+
+  @mixin lg\:grayscale-($v) {
+    @include grayscale-($v, $lg);
+  }
+
+  @mixin xl\:grayscale-($v) {
+    @include grayscale-($v, $xl);
+  }
+
+  @mixin \2xl\:grayscale-($v) {
+    @include grayscale-($v, $\2xl);
+  }
+
+  // x*/
+}

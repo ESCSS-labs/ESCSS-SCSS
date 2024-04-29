@@ -1,0 +1,108 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Text Overflow */
+@if $Basic {
+  // /*x
+  @mixin truncate($rwd: null) {
+    @if $rwd==null {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    } @else {
+      @media (min-width: $rwd) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  @mixin text-ellipsis($rwd: null) {
+    @if $rwd==null {
+      text-overflow: ellipsis;
+    } @else {
+      @media (min-width: $rwd) {
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  @mixin text-clip($rwd: null) {
+    @if $rwd==null {
+      text-overflow: clip;
+    } @else {
+      @media (min-width: $rwd) {
+        text-overflow: clip;
+      }
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:truncate {
+    @include truncate($sm);
+  }
+
+  @mixin sm\:text-ellipsis {
+    @include text-ellipsis($sm);
+  }
+
+  @mixin sm\:text-clip {
+    @include text-clip($sm);
+  }
+
+  @mixin md\:truncate {
+    @include truncate($md);
+  }
+
+  @mixin md\:text-ellipsis {
+    @include text-ellipsis($md);
+  }
+
+  @mixin md\:text-clip {
+    @include text-clip($md);
+  }
+
+  @mixin lg\:truncate {
+    @include truncate($lg);
+  }
+
+  @mixin lg\:text-ellipsis {
+    @include text-ellipsis($lg);
+  }
+
+  @mixin lg\:text-clip {
+    @include text-clip($lg);
+  }
+
+  @mixin xl\:truncate {
+    @include truncate($xl);
+  }
+
+  @mixin xl\:text-ellipsis {
+    @include text-ellipsis($xl);
+  }
+
+  @mixin xl\:text-clip {
+    @include text-clip($xl);
+  }
+
+  @mixin \2xl\:truncate {
+    @include truncate($\2xl);
+  }
+
+  @mixin \2xl\:text-ellipsis {
+    @include text-ellipsis($\2xl);
+  }
+
+  @mixin \2xl\:text-clip {
+    @include text-clip($\2xl);
+  }
+
+  // x*/
+}

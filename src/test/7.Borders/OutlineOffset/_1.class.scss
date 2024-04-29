@@ -1,0 +1,171 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Outline Offset */
+@if $Basic {
+  // /*x
+  @mixin outline-offset-0 {
+    @include outline-offset-(0px);
+  }
+
+  @mixin outline-offset-1 {
+    @include outline-offset-(1px);
+  }
+
+  @mixin outline-offset-2 {
+    @include outline-offset-(2px);
+  }
+
+  @mixin outline-offset-4 {
+    @include outline-offset-(4px);
+  }
+
+  @mixin outline-offset-8 {
+    @include outline-offset-(8px);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:outline-offset-0 {
+      @include outline-offset-(0px, $sm);
+    }
+
+    @mixin sm\:outline-offset-1 {
+      @include outline-offset-(1px, $sm);
+    }
+
+    @mixin sm\:outline-offset-2 {
+      @include outline-offset-(2px, $sm);
+    }
+
+    @mixin sm\:outline-offset-4 {
+      @include outline-offset-(4px, $sm);
+    }
+
+    @mixin sm\:outline-offset-8 {
+      @include outline-offset-(8px, $sm);
+    }
+
+    @mixin md\:outline-offset-0 {
+      @include outline-offset-(0px, $md);
+    }
+
+    @mixin md\:outline-offset-1 {
+      @include outline-offset-(1px, $md);
+    }
+
+    @mixin md\:outline-offset-2 {
+      @include outline-offset-(2px, $md);
+    }
+
+    @mixin md\:outline-offset-4 {
+      @include outline-offset-(4px, $md);
+    }
+
+    @mixin md\:outline-offset-8 {
+      @include outline-offset-(8px, $md);
+    }
+
+    @mixin lg\:outline-offset-0 {
+      @include outline-offset-(0px, $lg);
+    }
+
+    @mixin lg\:outline-offset-1 {
+      @include outline-offset-(1px, $lg);
+    }
+
+    @mixin lg\:outline-offset-2 {
+      @include outline-offset-(2px, $lg);
+    }
+
+    @mixin lg\:outline-offset-4 {
+      @include outline-offset-(4px, $lg);
+    }
+
+    @mixin lg\:outline-offset-8 {
+      @include outline-offset-(8px, $lg);
+    }
+
+    @mixin xl\:outline-offset-0 {
+      @include outline-offset-(0px, $xl);
+    }
+
+    @mixin xl\:outline-offset-1 {
+      @include outline-offset-(1px, $xl);
+    }
+
+    @mixin xl\:outline-offset-2 {
+      @include outline-offset-(2px, $xl);
+    }
+
+    @mixin xl\:outline-offset-4 {
+      @include outline-offset-(4px, $xl);
+    }
+
+    @mixin xl\:outline-offset-8 {
+      @include outline-offset-(8px, $xl);
+    }
+
+    @mixin \2xl\:outline-offset-0 {
+      @include outline-offset-(0px, $\2xl);
+    }
+
+    @mixin \2xl\:outline-offset-1 {
+      @include outline-offset-(1px, $\2xl);
+    }
+
+    @mixin \2xl\:outline-offset-2 {
+      @include outline-offset-(2px, $\2xl);
+    }
+
+    @mixin \2xl\:outline-offset-4 {
+      @include outline-offset-(4px, $\2xl);
+    }
+
+    @mixin \2xl\:outline-offset-8 {
+      @include outline-offset-(8px, $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin outline-offset-($v, $rwd: null) {
+    @if $rwd==null {
+      outline-offset: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        outline-offset: $v;
+      }
+    }
+  }
+
+  @mixin sm\:outline-offset-($v) {
+    @include outline-offset-($v, $sm);
+  }
+
+  @mixin md\:outline-offset-($v) {
+    @include outline-offset-($v, $md);
+  }
+
+  @mixin lg\:outline-offset-($v) {
+    @include outline-offset-($v, $lg);
+  }
+
+  @mixin xl\:outline-offset-($v) {
+    @include outline-offset-($v, $xl);
+  }
+
+  @mixin \2xl\:outline-offset-($v) {
+    @include outline-offset-($v, $\2xl);
+  }
+
+  // x*/
+}

@@ -1,0 +1,253 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Line Clamp */
+@if $Basic {
+  // /*x
+  @mixin line-clamp-1 {
+    @include line-clamp-(1);
+  }
+
+  @mixin line-clamp-2 {
+    @include line-clamp-(2);
+  }
+
+  @mixin line-clamp-3 {
+    @include line-clamp-(3);
+  }
+
+  @mixin line-clamp-4 {
+    @include line-clamp-(4);
+  }
+
+  @mixin line-clamp-5 {
+    @include line-clamp-(5);
+  }
+
+  @mixin line-clamp-6 {
+    @include line-clamp-(6);
+  }
+
+  @mixin line-clamp-none {
+    overflow: visible;
+    display: block;
+    -webkit-box-orient: horizontal;
+    -webkit-line-clamp: none;
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:line-clamp-1 {
+      @include line-clamp-(1, $sm);
+    }
+
+    @mixin sm\:line-clamp-2 {
+      @include line-clamp-(2, $sm);
+    }
+
+    @mixin sm\:line-clamp-3 {
+      @include line-clamp-(3, $sm);
+    }
+
+    @mixin sm\:line-clamp-4 {
+      @include line-clamp-(4, $sm);
+    }
+
+    @mixin sm\:line-clamp-5 {
+      @include line-clamp-(5, $sm);
+    }
+
+    @mixin sm\:line-clamp-6 {
+      @include line-clamp-(6, $sm);
+    }
+
+    @mixin sm\:line-clamp-none {
+      @media (min-width: $sm) {
+        overflow: visible;
+        display: block;
+        -webkit-box-orient: horizontal;
+        -webkit-line-clamp: none;
+      }
+    }
+
+    @mixin md\:line-clamp-1 {
+      @include line-clamp-(1, $md);
+    }
+
+    @mixin md\:line-clamp-2 {
+      @include line-clamp-(2, $md);
+    }
+
+    @mixin md\:line-clamp-3 {
+      @include line-clamp-(3, $md);
+    }
+
+    @mixin md\:line-clamp-4 {
+      @include line-clamp-(4, $md);
+    }
+
+    @mixin md\:line-clamp-5 {
+      @include line-clamp-(5, $md);
+    }
+
+    @mixin md\:line-clamp-6 {
+      @include line-clamp-(6, $md);
+    }
+
+    @mixin md\:line-clamp-none {
+      @media (min-width: $md) {
+        overflow: visible;
+        display: block;
+        -webkit-box-orient: horizontal;
+        -webkit-line-clamp: none;
+      }
+    }
+
+    @mixin lg\:line-clamp-1 {
+      @include line-clamp-(1, $lg);
+    }
+
+    @mixin lg\:line-clamp-2 {
+      @include line-clamp-(2, $lg);
+    }
+
+    @mixin lg\:line-clamp-3 {
+      @include line-clamp-(3, $lg);
+    }
+
+    @mixin lg\:line-clamp-4 {
+      @include line-clamp-(4, $lg);
+    }
+
+    @mixin lg\:line-clamp-5 {
+      @include line-clamp-(5, $lg);
+    }
+
+    @mixin lg\:line-clamp-6 {
+      @include line-clamp-(6, $lg);
+    }
+
+    @mixin lg\:line-clamp-none {
+      @media (min-width: $lg) {
+        overflow: visible;
+        display: block;
+        -webkit-box-orient: horizontal;
+        -webkit-line-clamp: none;
+      }
+    }
+
+    @mixin xl\:line-clamp-1 {
+      @include line-clamp-(1, $xl);
+    }
+
+    @mixin xl\:line-clamp-2 {
+      @include line-clamp-(2, $xl);
+    }
+
+    @mixin xl\:line-clamp-3 {
+      @include line-clamp-(3, $xl);
+    }
+
+    @mixin xl\:line-clamp-4 {
+      @include line-clamp-(4, $xl);
+    }
+
+    @mixin xl\:line-clamp-5 {
+      @include line-clamp-(5, $xl);
+    }
+
+    @mixin xl\:line-clamp-6 {
+      @include line-clamp-(6, $xl);
+    }
+
+    @mixin xl\:line-clamp-none {
+      @media (min-width: $xl) {
+        overflow: visible;
+        display: block;
+        -webkit-box-orient: horizontal;
+        -webkit-line-clamp: none;
+      }
+    }
+
+    @mixin \2xl\:line-clamp-1 {
+      @include line-clamp-(1, $\2xl);
+    }
+
+    @mixin \2xl\:line-clamp-2 {
+      @include line-clamp-(2, $\2xl);
+    }
+
+    @mixin \2xl\:line-clamp-3 {
+      @include line-clamp-(3, $\2xl);
+    }
+
+    @mixin \2xl\:line-clamp-4 {
+      @include line-clamp-(4, $\2xl);
+    }
+
+    @mixin \2xl\:line-clamp-5 {
+      @include line-clamp-(5, $\2xl);
+    }
+
+    @mixin \2xl\:line-clamp-6 {
+      @include line-clamp-(6, $\2xl);
+    }
+
+    @mixin \2xl\:line-clamp-none {
+      @media (min-width: $\2xl) {
+        overflow: visible;
+        display: block;
+        -webkit-box-orient: horizontal;
+        -webkit-line-clamp: none;
+      }
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin line-clamp-($v, $rwd: null) {
+    @if $rwd==null {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $v;
+      }
+    }
+  }
+
+  @mixin sm\:line-clamp-($v) {
+    @include line-clamp-($v, $sm);
+  }
+
+  @mixin md\:line-clamp-($v) {
+    @include line-clamp-($v, $md);
+  }
+
+  @mixin lg\:line-clamp-($v) {
+    @include line-clamp-($v, $lg);
+  }
+
+  @mixin xl\:line-clamp-($v) {
+    @include line-clamp-($v, $xl);
+  }
+
+  @mixin \2xl\:line-clamp-($v) {
+    @include line-clamp-($v, $\2xl);
+  }
+
+  // x*/
+}

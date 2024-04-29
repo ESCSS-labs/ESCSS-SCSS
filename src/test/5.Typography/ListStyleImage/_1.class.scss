@@ -1,0 +1,75 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* List Style Image */
+@if $Basic {
+  // /*x
+  @mixin list-image-none {
+    @include list-image-(none);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:list-image-none {
+      @include list-image-(none, $sm);
+    }
+
+    @mixin md\:list-image-none {
+      @include list-image-(none, $md);
+    }
+
+    @mixin lg\:list-image-none {
+      @include list-image-(none, $lg);
+    }
+
+    @mixin xl\:list-image-none {
+      @include list-image-(none, $xl);
+    }
+
+    @mixin \2xl\:list-image-none {
+      @include list-image-(none, $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin list-image-($v, $rwd: null) {
+    @if $rwd==null {
+      list-style-image: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        list-style-image: $v;
+      }
+    }
+  }
+
+  @mixin sm\:list-image-($v) {
+    @include list-image-($v, $sm);
+  }
+
+  @mixin md\:list-image-($v) {
+    @include list-image-($v, $md);
+  }
+
+  @mixin lg\:list-image-($v) {
+    @include list-image-($v, $lg);
+  }
+
+  @mixin xl\:list-image-($v) {
+    @include list-image-($v, $xl);
+  }
+
+  @mixin \2xl\:list-image-($v) {
+    @include list-image-($v, $\2xl);
+  }
+
+  // x*/
+}

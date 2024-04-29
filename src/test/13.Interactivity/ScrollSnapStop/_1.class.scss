@@ -1,0 +1,74 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Scroll Snap Stop */
+@if $Basic {
+  // /*x
+  @mixin snap-normal($rwd: null) {
+    @if $rwd==null {
+      scroll-snap-stop: normal;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-snap-stop: normal;
+      }
+    }
+  }
+
+  @mixin snap-always($rwd: null) {
+    @if $rwd==null {
+      scroll-snap-stop: always;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-snap-stop: always;
+      }
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:snap-normal {
+    @include snap-normal($sm);
+  }
+
+  @mixin sm\:snap-always {
+    @include snap-always($sm);
+  }
+
+  @mixin md\:snap-normal {
+    @include snap-normal($md);
+  }
+
+  @mixin md\:snap-always {
+    @include snap-always($md);
+  }
+
+  @mixin lg\:snap-normal {
+    @include snap-normal($lg);
+  }
+
+  @mixin lg\:snap-always {
+    @include snap-always($lg);
+  }
+
+  @mixin xl\:snap-normal {
+    @include snap-normal($xl);
+  }
+
+  @mixin xl\:snap-always {
+    @include snap-always($xl);
+  }
+
+  @mixin \2xl\:snap-normal {
+    @include snap-normal($\2xl);
+  }
+
+  @mixin \2xl\:snap-always {
+    @include snap-always($\2xl);
+  }
+
+  // x*/
+}

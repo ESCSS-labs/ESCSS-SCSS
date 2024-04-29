@@ -1,0 +1,74 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* List Style Position */
+@if $Basic {
+  // /*x
+  @mixin list-inside($rwd: null) {
+    @if $rwd==null {
+      list-style-position: inside;
+    } @else {
+      @media (min-width: $rwd) {
+        list-style-position: inside;
+      }
+    }
+  }
+
+  @mixin list-outside($rwd: null) {
+    @if $rwd==null {
+      list-style-position: outside;
+    } @else {
+      @media (min-width: $rwd) {
+        list-style-position: outside;
+      }
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:list-inside {
+    @include list-inside($sm);
+  }
+
+  @mixin sm\:list-outside {
+    @include list-outside($sm);
+  }
+
+  @mixin md\:list-inside {
+    @include list-inside($md);
+  }
+
+  @mixin md\:list-outside {
+    @include list-outside($md);
+  }
+
+  @mixin lg\:list-inside {
+    @include list-inside($lg);
+  }
+
+  @mixin lg\:list-outside {
+    @include list-outside($lg);
+  }
+
+  @mixin xl\:list-inside {
+    @include list-inside($xl);
+  }
+
+  @mixin xl\:list-outside {
+    @include list-outside($xl);
+  }
+
+  @mixin \2xl\:list-inside {
+    @include list-inside($\2xl);
+  }
+
+  @mixin \2xl\:list-outside {
+    @include list-outside($\2xl);
+  }
+
+  // x*/
+}

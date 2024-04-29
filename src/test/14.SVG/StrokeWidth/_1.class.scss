@@ -1,0 +1,91 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Stroke Width */
+@if $Basic {
+  // /*x
+  @mixin stroke-0 {
+    @include stroke-(0);
+  }
+
+  @mixin stroke-1 {
+    @include stroke-(1);
+  }
+
+  @mixin stroke-2 {
+    @include stroke-(2);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:stroke-0 {
+      @include stroke-(0, $sm);
+    }
+
+    @mixin sm\:stroke-1 {
+      @include stroke-(1, $sm);
+    }
+
+    @mixin sm\:stroke-2 {
+      @include stroke-(2, $sm);
+    }
+
+    @mixin md\:stroke-0 {
+      @include stroke-(0, $md);
+    }
+
+    @mixin md\:stroke-1 {
+      @include stroke-(1, $md);
+    }
+
+    @mixin md\:stroke-2 {
+      @include stroke-(2, $md);
+    }
+
+    @mixin lg\:stroke-0 {
+      @include stroke-(0, $lg);
+    }
+
+    @mixin lg\:stroke-1 {
+      @include stroke-(1, $lg);
+    }
+
+    @mixin lg\:stroke-2 {
+      @include stroke-(2, $lg);
+    }
+
+    @mixin xl\:stroke-0 {
+      @include stroke-(0, $xl);
+    }
+
+    @mixin xl\:stroke-1 {
+      @include stroke-(1, $xl);
+    }
+
+    @mixin xl\:stroke-2 {
+      @include stroke-(2, $xl);
+    }
+
+    @mixin \2xl\:stroke-0 {
+      @include stroke-(0, $\2xl);
+    }
+
+    @mixin \2xl\:stroke-1 {
+      @include stroke-(1, $\2xl);
+    }
+
+    @mixin \2xl\:stroke-2 {
+      @include stroke-(2, $\2xl);
+    }
+    // x*/
+  }
+}
+
+// same as stroke-($v, $rwd: null)
+@if $Custom {
+}

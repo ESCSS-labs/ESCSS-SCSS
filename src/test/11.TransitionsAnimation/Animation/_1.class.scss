@@ -1,0 +1,209 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Animation */
+@if $Basic {
+  // /*x
+  @mixin animate-none {
+    @include animation-(none);
+  }
+
+  @mixin animate-spin {
+    @include animation-(spin 1s linear infinite);
+  }
+
+  @mixin animate-ping {
+    @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite);
+  }
+
+  @mixin animate-pulse {
+    @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite);
+  }
+
+  @mixin animate-bounce {
+    @include animation-(bounce 1s infinite);
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes ping {
+    75%,
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  } // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:animate-none {
+      @include animation-(none, $sm);
+    }
+
+    @mixin sm\:animate-spin {
+      @include animation-(spin 1s linear infinite, $sm);
+    }
+
+    @mixin sm\:animate-ping {
+      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $sm);
+    }
+
+    @mixin sm\:animate-pulse {
+      @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, $sm);
+    }
+
+    @mixin sm\:animate-bounce {
+      @include animation-(bounce 1s infinite, $sm);
+    }
+
+    @mixin md\:animate-none {
+      @include animation-(none, $md);
+    }
+
+    @mixin md\:animate-spin {
+      @include animation-(spin 1s linear infinite, $md);
+    }
+
+    @mixin md\:animate-ping {
+      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $md);
+    }
+
+    @mixin md\:animate-pulse {
+      @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, $md);
+    }
+
+    @mixin md\:animate-bounce {
+      @include animation-(bounce 1s infinite, $md);
+    }
+
+    @mixin lg\:animate-none {
+      @include animation-(none, $lg);
+    }
+
+    @mixin lg\:animate-spin {
+      @include animation-(spin 1s linear infinite, $lg);
+    }
+
+    @mixin lg\:animate-ping {
+      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $lg);
+    }
+
+    @mixin lg\:animate-pulse {
+      @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, $lg);
+    }
+
+    @mixin lg\:animate-bounce {
+      @include animation-(bounce 1s infinite, $lg);
+    }
+
+    @mixin xl\:animate-none {
+      @include animation-(none, $xl);
+    }
+
+    @mixin xl\:animate-spin {
+      @include animation-(spin 1s linear infinite, $xl);
+    }
+
+    @mixin xl\:animate-ping {
+      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $xl);
+    }
+
+    @mixin xl\:animate-pulse {
+      @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, $xl);
+    }
+
+    @mixin xl\:animate-bounce {
+      @include animation-(bounce 1s infinite, $xl);
+    }
+
+    @mixin \2xl\:animate-none {
+      @include animation-(none, $\2xl);
+    }
+
+    @mixin \2xl\:animate-spin {
+      @include animation-(spin 1s linear infinite, $\2xl);
+    }
+
+    @mixin \2xl\:animate-ping {
+      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $\2xl);
+    }
+
+    @mixin \2xl\:animate-pulse {
+      @include animation-(
+        pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite,
+        $\2xl
+      );
+    }
+
+    @mixin \2xl\:animate-bounce {
+      @include animation-(bounce 1s infinite, $\2xl);
+    }
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin animate-($v, $rwd: null) {
+    @if $rwd==null {
+      animation: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        animation: $v;
+      }
+    }
+  }
+
+  @mixin sm\:animate-($v) {
+    @include animate-($v, $sm);
+  }
+
+  @mixin md\:animate-($v) {
+    @include animate-($v, $md);
+  }
+
+  @mixin lg\:animate-($v) {
+    @include animate-($v, $lg);
+  }
+
+  @mixin xl\:animate-($v) {
+    @include animate-($v, $xl);
+  }
+
+  @mixin \2xl\:animate-($v) {
+    @include animate-($v, $\2xl);
+  }
+  // x*/
+}

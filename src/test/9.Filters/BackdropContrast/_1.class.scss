@@ -1,0 +1,220 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Backdrop Contrast */
+@if $Basic {
+  // /*x
+  @mixin backdrop-contrast-0 {
+    @include backdrop-contrast-(0);
+  }
+
+  @mixin backdrop-contrast-50 {
+    @include backdrop-contrast-(0.5);
+  }
+
+  @mixin backdrop-contrast-75 {
+    @include backdrop-contrast-(0.75);
+  }
+
+  @mixin backdrop-contrast-100 {
+    @include backdrop-contrast-(1);
+  }
+
+  @mixin backdrop-contrast-125 {
+    @include backdrop-contrast-(1.25);
+  }
+
+  @mixin backdrop-contrast-150 {
+    @include backdrop-contrast-(1.5);
+  }
+
+  @mixin backdrop-contrast-200 {
+    @include backdrop-contrast-(2);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:backdrop-contrast-0 {
+      @include backdrop-contrast-(0, $sm);
+    }
+
+    @mixin sm\:backdrop-contrast-50 {
+      @include backdrop-contrast-(0.5, $sm);
+    }
+
+    @mixin sm\:backdrop-contrast-75 {
+      @include backdrop-contrast-(0.75, $sm);
+    }
+
+    @mixin sm\:backdrop-contrast-100 {
+      @include backdrop-contrast-(1, $sm);
+    }
+
+    @mixin sm\:backdrop-contrast-125 {
+      @include backdrop-contrast-(1.25, $sm);
+    }
+
+    @mixin sm\:backdrop-contrast-150 {
+      @include backdrop-contrast-(1.5, $sm);
+    }
+
+    @mixin sm\:backdrop-contrast-200 {
+      @include backdrop-contrast-(2, $sm);
+    }
+
+    @mixin md\:backdrop-contrast-0 {
+      @include backdrop-contrast-(0, $md);
+    }
+
+    @mixin md\:backdrop-contrast-50 {
+      @include backdrop-contrast-(0.5, $md);
+    }
+
+    @mixin md\:backdrop-contrast-75 {
+      @include backdrop-contrast-(0.75, $md);
+    }
+
+    @mixin md\:backdrop-contrast-100 {
+      @include backdrop-contrast-(1, $md);
+    }
+
+    @mixin md\:backdrop-contrast-125 {
+      @include backdrop-contrast-(1.25, $md);
+    }
+
+    @mixin md\:backdrop-contrast-150 {
+      @include backdrop-contrast-(1.5, $md);
+    }
+
+    @mixin md\:backdrop-contrast-200 {
+      @include backdrop-contrast-(2, $md);
+    }
+
+    @mixin lg\:backdrop-contrast-0 {
+      @include backdrop-contrast-(0, $lg);
+    }
+
+    @mixin lg\:backdrop-contrast-50 {
+      @include backdrop-contrast-(0.5, $lg);
+    }
+
+    @mixin lg\:backdrop-contrast-75 {
+      @include backdrop-contrast-(0.75, $lg);
+    }
+
+    @mixin lg\:backdrop-contrast-100 {
+      @include backdrop-contrast-(1, $lg);
+    }
+
+    @mixin lg\:backdrop-contrast-125 {
+      @include backdrop-contrast-(1.25, $lg);
+    }
+
+    @mixin lg\:backdrop-contrast-150 {
+      @include backdrop-contrast-(1.5, $lg);
+    }
+
+    @mixin lg\:backdrop-contrast-200 {
+      @include backdrop-contrast-(2, $lg);
+    }
+
+    @mixin xl\:backdrop-contrast-0 {
+      @include backdrop-contrast-(0, $xl);
+    }
+
+    @mixin xl\:backdrop-contrast-50 {
+      @include backdrop-contrast-(0.5, $xl);
+    }
+
+    @mixin xl\:backdrop-contrast-75 {
+      @include backdrop-contrast-(0.75, $xl);
+    }
+
+    @mixin xl\:backdrop-contrast-100 {
+      @include backdrop-contrast-(1, $xl);
+    }
+
+    @mixin xl\:backdrop-contrast-125 {
+      @include backdrop-contrast-(1.25, $xl);
+    }
+
+    @mixin xl\:backdrop-contrast-150 {
+      @include backdrop-contrast-(1.5, $xl);
+    }
+
+    @mixin xl\:backdrop-contrast-200 {
+      @include backdrop-contrast-(2, $xl);
+    }
+
+    @mixin \2xl\:backdrop-contrast-0 {
+      @include backdrop-contrast-(0, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-contrast-50 {
+      @include backdrop-contrast-(0.5, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-contrast-75 {
+      @include backdrop-contrast-(0.75, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-contrast-100 {
+      @include backdrop-contrast-(1, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-contrast-125 {
+      @include backdrop-contrast-(1.25, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-contrast-150 {
+      @include backdrop-contrast-(1.5, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-contrast-200 {
+      @include backdrop-contrast-(2, $\2xl);
+    }
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin backdrop-contrast-($v, $rwd: null) {
+    @if $rwd==null {
+      $--tw-backdrop-contrast: contrast($v) !global;
+      backdrop-filter: __backdrop-filter();
+    } @else {
+      @media (min-width: $rwd) {
+        $--tw-backdrop-contrast: contrast($v) !global;
+        backdrop-filter: __backdrop-filter();
+      }
+    }
+  }
+
+  @mixin sm\:backdrop-contrast-($v) {
+    @include backdrop-contrast-($v, $sm);
+  }
+
+  @mixin md\:backdrop-contrast-($v) {
+    @include backdrop-contrast-($v, $md);
+  }
+
+  @mixin lg\:backdrop-contrast-($v) {
+    @include backdrop-contrast-($v, $lg);
+  }
+
+  @mixin xl\:backdrop-contrast-($v) {
+    @include backdrop-contrast-($v, $xl);
+  }
+
+  @mixin \2xl\:backdrop-contrast-($v) {
+    @include backdrop-contrast-($v, $\2xl);
+  }
+
+  // x*/
+}

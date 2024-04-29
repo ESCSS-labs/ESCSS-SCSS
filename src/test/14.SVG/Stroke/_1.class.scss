@@ -1,0 +1,6011 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Stroke */
+@if $Basic {
+  // /*x
+  @mixin stroke-none {
+    @include stroke-(none);
+  }
+
+  @mixin stroke-inherit {
+    @include stroke-(inherit);
+  }
+
+  @mixin stroke-current {
+    @include stroke-(currentColor);
+  }
+
+  @mixin stroke-transparent {
+    @include stroke-(transparent);
+  }
+
+  @mixin stroke-black($v: 1) {
+    @include stroke-(c($bla, $v));
+  }
+
+  @mixin stroke-white($v: 1) {
+    @include stroke-(c($whi, $v));
+  }
+
+  @mixin stroke-slate-50($v: 1) {
+    @include stroke-(c($sla-50, $v));
+  }
+
+  @mixin stroke-slate-100($v: 1) {
+    @include stroke-(c($sla-100, $v));
+  }
+
+  @mixin stroke-slate-200($v: 1) {
+    @include stroke-(c($sla-200, $v));
+  }
+
+  @mixin stroke-slate-300($v: 1) {
+    @include stroke-(c($sla-300, $v));
+  }
+
+  @mixin stroke-slate-400($v: 1) {
+    @include stroke-(c($sla-400, $v));
+  }
+
+  @mixin stroke-slate-500($v: 1) {
+    @include stroke-(c($sla-500, $v));
+  }
+
+  @mixin stroke-slate-600($v: 1) {
+    @include stroke-(c($sla-600, $v));
+  }
+
+  @mixin stroke-slate-700($v: 1) {
+    @include stroke-(c($sla-700, $v));
+  }
+
+  @mixin stroke-slate-800($v: 1) {
+    @include stroke-(c($sla-800, $v));
+  }
+
+  @mixin stroke-slate-900($v: 1) {
+    @include stroke-(c($sla-900, $v));
+  }
+
+  @mixin stroke-slate-950($v: 1) {
+    @include stroke-(c($sla-950, $v));
+  }
+
+  @mixin stroke-gray-50($v: 1) {
+    @include stroke-(c($gra-50, $v));
+  }
+
+  @mixin stroke-gray-100($v: 1) {
+    @include stroke-(c($gra-100, $v));
+  }
+
+  @mixin stroke-gray-200($v: 1) {
+    @include stroke-(c($gra-200, $v));
+  }
+
+  @mixin stroke-gray-300($v: 1) {
+    @include stroke-(c($gra-300, $v));
+  }
+
+  @mixin stroke-gray-400($v: 1) {
+    @include stroke-(c($gra-400, $v));
+  }
+
+  @mixin stroke-gray-500($v: 1) {
+    @include stroke-(c($gra-500, $v));
+  }
+
+  @mixin stroke-gray-600($v: 1) {
+    @include stroke-(c($gra-600, $v));
+  }
+
+  @mixin stroke-gray-700($v: 1) {
+    @include stroke-(c($gra-700, $v));
+  }
+
+  @mixin stroke-gray-800($v: 1) {
+    @include stroke-(c($gra-800, $v));
+  }
+
+  @mixin stroke-gray-900($v: 1) {
+    @include stroke-(c($gra-900, $v));
+  }
+
+  @mixin stroke-gray-950($v: 1) {
+    @include stroke-(c($gra-950, $v));
+  }
+
+  @mixin stroke-zinc-50($v: 1) {
+    @include stroke-(c($zin-50, $v));
+  }
+
+  @mixin stroke-zinc-100($v: 1) {
+    @include stroke-(c($zin-100, $v));
+  }
+
+  @mixin stroke-zinc-200($v: 1) {
+    @include stroke-(c($zin-200, $v));
+  }
+
+  @mixin stroke-zinc-300($v: 1) {
+    @include stroke-(c($zin-300, $v));
+  }
+
+  @mixin stroke-zinc-400($v: 1) {
+    @include stroke-(c($zin-400, $v));
+  }
+
+  @mixin stroke-zinc-500($v: 1) {
+    @include stroke-(c($zin-500, $v));
+  }
+
+  @mixin stroke-zinc-600($v: 1) {
+    @include stroke-(c($zin-600, $v));
+  }
+
+  @mixin stroke-zinc-700($v: 1) {
+    @include stroke-(c($zin-700, $v));
+  }
+
+  @mixin stroke-zinc-800($v: 1) {
+    @include stroke-(c($zin-800, $v));
+  }
+
+  @mixin stroke-zinc-900($v: 1) {
+    @include stroke-(c($zin-900, $v));
+  }
+
+  @mixin stroke-zinc-950($v: 1) {
+    @include stroke-(c($zin-950, $v));
+  }
+
+  @mixin stroke-neutral-50($v: 1) {
+    @include stroke-(c($neu-50, $v));
+  }
+
+  @mixin stroke-neutral-100($v: 1) {
+    @include stroke-(c($neu-100, $v));
+  }
+
+  @mixin stroke-neutral-200($v: 1) {
+    @include stroke-(c($neu-200, $v));
+  }
+
+  @mixin stroke-neutral-300($v: 1) {
+    @include stroke-(c($neu-300, $v));
+  }
+
+  @mixin stroke-neutral-400($v: 1) {
+    @include stroke-(c($neu-400, $v));
+  }
+
+  @mixin stroke-neutral-500($v: 1) {
+    @include stroke-(c($neu-500, $v));
+  }
+
+  @mixin stroke-neutral-600($v: 1) {
+    @include stroke-(c($neu-600, $v));
+  }
+
+  @mixin stroke-neutral-700($v: 1) {
+    @include stroke-(c($neu-700, $v));
+  }
+
+  @mixin stroke-neutral-800($v: 1) {
+    @include stroke-(c($neu-800, $v));
+  }
+
+  @mixin stroke-neutral-900($v: 1) {
+    @include stroke-(c($neu-900, $v));
+  }
+
+  @mixin stroke-neutral-950($v: 1) {
+    @include stroke-(c($neu-950, $v));
+  }
+
+  @mixin stroke-stone-50($v: 1) {
+    @include stroke-(c($sto-50, $v));
+  }
+
+  @mixin stroke-stone-100($v: 1) {
+    @include stroke-(c($sto-100, $v));
+  }
+
+  @mixin stroke-stone-200($v: 1) {
+    @include stroke-(c($sto-200, $v));
+  }
+
+  @mixin stroke-stone-300($v: 1) {
+    @include stroke-(c($sto-300, $v));
+  }
+
+  @mixin stroke-stone-400($v: 1) {
+    @include stroke-(c($sto-400, $v));
+  }
+
+  @mixin stroke-stone-500($v: 1) {
+    @include stroke-(c($sto-500, $v));
+  }
+
+  @mixin stroke-stone-600($v: 1) {
+    @include stroke-(c($sto-600, $v));
+  }
+
+  @mixin stroke-stone-700($v: 1) {
+    @include stroke-(c($sto-700, $v));
+  }
+
+  @mixin stroke-stone-800($v: 1) {
+    @include stroke-(c($sto-800, $v));
+  }
+
+  @mixin stroke-stone-900($v: 1) {
+    @include stroke-(c($sto-900, $v));
+  }
+
+  @mixin stroke-stone-950($v: 1) {
+    @include stroke-(c($sto-950, $v));
+  }
+
+  @mixin stroke-red-50($v: 1) {
+    @include stroke-(c($red-50, $v));
+  }
+
+  @mixin stroke-red-100($v: 1) {
+    @include stroke-(c($red-100, $v));
+  }
+
+  @mixin stroke-red-200($v: 1) {
+    @include stroke-(c($red-200, $v));
+  }
+
+  @mixin stroke-red-300($v: 1) {
+    @include stroke-(c($red-300, $v));
+  }
+
+  @mixin stroke-red-400($v: 1) {
+    @include stroke-(c($red-400, $v));
+  }
+
+  @mixin stroke-red-500($v: 1) {
+    @include stroke-(c($red-500, $v));
+  }
+
+  @mixin stroke-red-600($v: 1) {
+    @include stroke-(c($red-600, $v));
+  }
+
+  @mixin stroke-red-700($v: 1) {
+    @include stroke-(c($red-700, $v));
+  }
+
+  @mixin stroke-red-800($v: 1) {
+    @include stroke-(c($red-800, $v));
+  }
+
+  @mixin stroke-red-900($v: 1) {
+    @include stroke-(c($red-900, $v));
+  }
+
+  @mixin stroke-red-950($v: 1) {
+    @include stroke-(c($red-950, $v));
+  }
+
+  @mixin stroke-orange-50($v: 1) {
+    @include stroke-(c($ora-50, $v));
+  }
+
+  @mixin stroke-orange-100($v: 1) {
+    @include stroke-(c($ora-100, $v));
+  }
+
+  @mixin stroke-orange-200($v: 1) {
+    @include stroke-(c($ora-200, $v));
+  }
+
+  @mixin stroke-orange-300($v: 1) {
+    @include stroke-(c($ora-300, $v));
+  }
+
+  @mixin stroke-orange-400($v: 1) {
+    @include stroke-(c($ora-400, $v));
+  }
+
+  @mixin stroke-orange-500($v: 1) {
+    @include stroke-(c($ora-500, $v));
+  }
+
+  @mixin stroke-orange-600($v: 1) {
+    @include stroke-(c($ora-600, $v));
+  }
+
+  @mixin stroke-orange-700($v: 1) {
+    @include stroke-(c($ora-700, $v));
+  }
+
+  @mixin stroke-orange-800($v: 1) {
+    @include stroke-(c($ora-800, $v));
+  }
+
+  @mixin stroke-orange-900($v: 1) {
+    @include stroke-(c($ora-900, $v));
+  }
+
+  @mixin stroke-orange-950($v: 1) {
+    @include stroke-(c($ora-950, $v));
+  }
+
+  @mixin stroke-amber-50($v: 1) {
+    @include stroke-(c($amb-50, $v));
+  }
+
+  @mixin stroke-amber-100($v: 1) {
+    @include stroke-(c($amb-100, $v));
+  }
+
+  @mixin stroke-amber-200($v: 1) {
+    @include stroke-(c($amb-200, $v));
+  }
+
+  @mixin stroke-amber-300($v: 1) {
+    @include stroke-(c($amb-300, $v));
+  }
+
+  @mixin stroke-amber-400($v: 1) {
+    @include stroke-(c($amb-400, $v));
+  }
+
+  @mixin stroke-amber-500($v: 1) {
+    @include stroke-(c($amb-500, $v));
+  }
+
+  @mixin stroke-amber-600($v: 1) {
+    @include stroke-(c($amb-600, $v));
+  }
+
+  @mixin stroke-amber-700($v: 1) {
+    @include stroke-(c($amb-700, $v));
+  }
+
+  @mixin stroke-amber-800($v: 1) {
+    @include stroke-(c($amb-800, $v));
+  }
+
+  @mixin stroke-amber-900($v: 1) {
+    @include stroke-(c($amb-900, $v));
+  }
+
+  @mixin stroke-amber-950($v: 1) {
+    @include stroke-(c($amb-950, $v));
+  }
+
+  @mixin stroke-yellow-50($v: 1) {
+    @include stroke-(c($yel-50, $v));
+  }
+
+  @mixin stroke-yellow-100($v: 1) {
+    @include stroke-(c($yel-100, $v));
+  }
+
+  @mixin stroke-yellow-200($v: 1) {
+    @include stroke-(c($yel-200, $v));
+  }
+
+  @mixin stroke-yellow-300($v: 1) {
+    @include stroke-(c($yel-300, $v));
+  }
+
+  @mixin stroke-yellow-400($v: 1) {
+    @include stroke-(c($yel-400, $v));
+  }
+
+  @mixin stroke-yellow-500($v: 1) {
+    @include stroke-(c($yel-500, $v));
+  }
+
+  @mixin stroke-yellow-600($v: 1) {
+    @include stroke-(c($yel-600, $v));
+  }
+
+  @mixin stroke-yellow-700($v: 1) {
+    @include stroke-(c($yel-700, $v));
+  }
+
+  @mixin stroke-yellow-800($v: 1) {
+    @include stroke-(c($yel-800, $v));
+  }
+
+  @mixin stroke-yellow-900($v: 1) {
+    @include stroke-(c($yel-900, $v));
+  }
+
+  @mixin stroke-yellow-950($v: 1) {
+    @include stroke-(c($yel-950, $v));
+  }
+
+  @mixin stroke-lime-50($v: 1) {
+    @include stroke-(c($lim-50, $v));
+  }
+
+  @mixin stroke-lime-100($v: 1) {
+    @include stroke-(c($lim-100, $v));
+  }
+
+  @mixin stroke-lime-200($v: 1) {
+    @include stroke-(c($lim-200, $v));
+  }
+
+  @mixin stroke-lime-300($v: 1) {
+    @include stroke-(c($lim-300, $v));
+  }
+
+  @mixin stroke-lime-400($v: 1) {
+    @include stroke-(c($lim-400, $v));
+  }
+
+  @mixin stroke-lime-500($v: 1) {
+    @include stroke-(c($lim-500, $v));
+  }
+
+  @mixin stroke-lime-600($v: 1) {
+    @include stroke-(c($lim-600, $v));
+  }
+
+  @mixin stroke-lime-700($v: 1) {
+    @include stroke-(c($lim-700, $v));
+  }
+
+  @mixin stroke-lime-800($v: 1) {
+    @include stroke-(c($lim-800, $v));
+  }
+
+  @mixin stroke-lime-900($v: 1) {
+    @include stroke-(c($lim-900, $v));
+  }
+
+  @mixin stroke-lime-950($v: 1) {
+    @include stroke-(c($lim-950, $v));
+  }
+
+  @mixin stroke-green-50($v: 1) {
+    @include stroke-(c($gre-50, $v));
+  }
+
+  @mixin stroke-green-100($v: 1) {
+    @include stroke-(c($gre-100, $v));
+  }
+
+  @mixin stroke-green-200($v: 1) {
+    @include stroke-(c($gre-200, $v));
+  }
+
+  @mixin stroke-green-300($v: 1) {
+    @include stroke-(c($gre-300, $v));
+  }
+
+  @mixin stroke-green-400($v: 1) {
+    @include stroke-(c($gre-400, $v));
+  }
+
+  @mixin stroke-green-500($v: 1) {
+    @include stroke-(c($gre-500, $v));
+  }
+
+  @mixin stroke-green-600($v: 1) {
+    @include stroke-(c($gre-600, $v));
+  }
+
+  @mixin stroke-green-700($v: 1) {
+    @include stroke-(c($gre-700, $v));
+  }
+
+  @mixin stroke-green-800($v: 1) {
+    @include stroke-(c($gre-800, $v));
+  }
+
+  @mixin stroke-green-900($v: 1) {
+    @include stroke-(c($gre-900, $v));
+  }
+
+  @mixin stroke-green-950($v: 1) {
+    @include stroke-(c($gre-950, $v));
+  }
+
+  @mixin stroke-emerald-50($v: 1) {
+    @include stroke-(c($eme-50, $v));
+  }
+
+  @mixin stroke-emerald-100($v: 1) {
+    @include stroke-(c($eme-100, $v));
+  }
+
+  @mixin stroke-emerald-200($v: 1) {
+    @include stroke-(c($eme-200, $v));
+  }
+
+  @mixin stroke-emerald-300($v: 1) {
+    @include stroke-(c($eme-300, $v));
+  }
+
+  @mixin stroke-emerald-400($v: 1) {
+    @include stroke-(c($eme-400, $v));
+  }
+
+  @mixin stroke-emerald-500($v: 1) {
+    @include stroke-(c($eme-500, $v));
+  }
+
+  @mixin stroke-emerald-600($v: 1) {
+    @include stroke-(c($eme-600, $v));
+  }
+
+  @mixin stroke-emerald-700($v: 1) {
+    @include stroke-(c($eme-700, $v));
+  }
+
+  @mixin stroke-emerald-800($v: 1) {
+    @include stroke-(c($eme-800, $v));
+  }
+
+  @mixin stroke-emerald-900($v: 1) {
+    @include stroke-(c($eme-900, $v));
+  }
+
+  @mixin stroke-emerald-950($v: 1) {
+    @include stroke-(c($eme-950, $v));
+  }
+
+  @mixin stroke-teal-50($v: 1) {
+    @include stroke-(c($tea-50, $v));
+  }
+
+  @mixin stroke-teal-100($v: 1) {
+    @include stroke-(c($tea-100, $v));
+  }
+
+  @mixin stroke-teal-200($v: 1) {
+    @include stroke-(c($tea-200, $v));
+  }
+
+  @mixin stroke-teal-300($v: 1) {
+    @include stroke-(c($tea-300, $v));
+  }
+
+  @mixin stroke-teal-400($v: 1) {
+    @include stroke-(c($tea-400, $v));
+  }
+
+  @mixin stroke-teal-500($v: 1) {
+    @include stroke-(c($tea-500, $v));
+  }
+
+  @mixin stroke-teal-600($v: 1) {
+    @include stroke-(c($tea-600, $v));
+  }
+
+  @mixin stroke-teal-700($v: 1) {
+    @include stroke-(c($tea-700, $v));
+  }
+
+  @mixin stroke-teal-800($v: 1) {
+    @include stroke-(c($tea-800, $v));
+  }
+
+  @mixin stroke-teal-900($v: 1) {
+    @include stroke-(c($tea-900, $v));
+  }
+
+  @mixin stroke-teal-950($v: 1) {
+    @include stroke-(c($tea-950, $v));
+  }
+
+  @mixin stroke-cyan-50($v: 1) {
+    @include stroke-(c($cya-50, $v));
+  }
+
+  @mixin stroke-cyan-100($v: 1) {
+    @include stroke-(c($cya-100, $v));
+  }
+
+  @mixin stroke-cyan-200($v: 1) {
+    @include stroke-(c($cya-200, $v));
+  }
+
+  @mixin stroke-cyan-300($v: 1) {
+    @include stroke-(c($cya-300, $v));
+  }
+
+  @mixin stroke-cyan-400($v: 1) {
+    @include stroke-(c($cya-400, $v));
+  }
+
+  @mixin stroke-cyan-500($v: 1) {
+    @include stroke-(c($cya-500, $v));
+  }
+
+  @mixin stroke-cyan-600($v: 1) {
+    @include stroke-(c($cya-600, $v));
+  }
+
+  @mixin stroke-cyan-700($v: 1) {
+    @include stroke-(c($cya-700, $v));
+  }
+
+  @mixin stroke-cyan-800($v: 1) {
+    @include stroke-(c($cya-800, $v));
+  }
+
+  @mixin stroke-cyan-900($v: 1) {
+    @include stroke-(c($cya-900, $v));
+  }
+
+  @mixin stroke-cyan-950($v: 1) {
+    @include stroke-(c($cya-950, $v));
+  }
+
+  @mixin stroke-sky-50($v: 1) {
+    @include stroke-(c($sky-50, $v));
+  }
+
+  @mixin stroke-sky-100($v: 1) {
+    @include stroke-(c($sky-100, $v));
+  }
+
+  @mixin stroke-sky-200($v: 1) {
+    @include stroke-(c($sky-200, $v));
+  }
+
+  @mixin stroke-sky-300($v: 1) {
+    @include stroke-(c($sky-300, $v));
+  }
+
+  @mixin stroke-sky-400($v: 1) {
+    @include stroke-(c($sky-400, $v));
+  }
+
+  @mixin stroke-sky-500($v: 1) {
+    @include stroke-(c($sky-500, $v));
+  }
+
+  @mixin stroke-sky-600($v: 1) {
+    @include stroke-(c($sky-600, $v));
+  }
+
+  @mixin stroke-sky-700($v: 1) {
+    @include stroke-(c($sky-700, $v));
+  }
+
+  @mixin stroke-sky-800($v: 1) {
+    @include stroke-(c($sky-800, $v));
+  }
+
+  @mixin stroke-sky-900($v: 1) {
+    @include stroke-(c($sky-900, $v));
+  }
+
+  @mixin stroke-sky-950($v: 1) {
+    @include stroke-(c($sky-950, $v));
+  }
+
+  @mixin stroke-blue-50($v: 1) {
+    @include stroke-(c($blu-50, $v));
+  }
+
+  @mixin stroke-blue-100($v: 1) {
+    @include stroke-(c($blu-100, $v));
+  }
+
+  @mixin stroke-blue-200($v: 1) {
+    @include stroke-(c($blu-200, $v));
+  }
+
+  @mixin stroke-blue-300($v: 1) {
+    @include stroke-(c($blu-300, $v));
+  }
+
+  @mixin stroke-blue-400($v: 1) {
+    @include stroke-(c($blu-400, $v));
+  }
+
+  @mixin stroke-blue-500($v: 1) {
+    @include stroke-(c($blu-500, $v));
+  }
+
+  @mixin stroke-blue-600($v: 1) {
+    @include stroke-(c($blu-600, $v));
+  }
+
+  @mixin stroke-blue-700($v: 1) {
+    @include stroke-(c($blu-700, $v));
+  }
+
+  @mixin stroke-blue-800($v: 1) {
+    @include stroke-(c($blu-800, $v));
+  }
+
+  @mixin stroke-blue-900($v: 1) {
+    @include stroke-(c($blu-900, $v));
+  }
+
+  @mixin stroke-blue-950($v: 1) {
+    @include stroke-(c($blu-950, $v));
+  }
+
+  @mixin stroke-indigo-50($v: 1) {
+    @include stroke-(c($ind-50, $v));
+  }
+
+  @mixin stroke-indigo-100($v: 1) {
+    @include stroke-(c($ind-100, $v));
+  }
+
+  @mixin stroke-indigo-200($v: 1) {
+    @include stroke-(c($ind-200, $v));
+  }
+
+  @mixin stroke-indigo-300($v: 1) {
+    @include stroke-(c($ind-300, $v));
+  }
+
+  @mixin stroke-indigo-400($v: 1) {
+    @include stroke-(c($ind-400, $v));
+  }
+
+  @mixin stroke-indigo-500($v: 1) {
+    @include stroke-(c($ind-500, $v));
+  }
+
+  @mixin stroke-indigo-600($v: 1) {
+    @include stroke-(c($ind-600, $v));
+  }
+
+  @mixin stroke-indigo-700($v: 1) {
+    @include stroke-(c($ind-700, $v));
+  }
+
+  @mixin stroke-indigo-800($v: 1) {
+    @include stroke-(c($ind-800, $v));
+  }
+
+  @mixin stroke-indigo-900($v: 1) {
+    @include stroke-(c($ind-900, $v));
+  }
+
+  @mixin stroke-indigo-950($v: 1) {
+    @include stroke-(c($ind-950, $v));
+  }
+
+  @mixin stroke-violet-50($v: 1) {
+    @include stroke-(c($vio-50, $v));
+  }
+
+  @mixin stroke-violet-100($v: 1) {
+    @include stroke-(c($vio-100, $v));
+  }
+
+  @mixin stroke-violet-200($v: 1) {
+    @include stroke-(c($vio-200, $v));
+  }
+
+  @mixin stroke-violet-300($v: 1) {
+    @include stroke-(c($vio-300, $v));
+  }
+
+  @mixin stroke-violet-400($v: 1) {
+    @include stroke-(c($vio-400, $v));
+  }
+
+  @mixin stroke-violet-500($v: 1) {
+    @include stroke-(c($vio-500, $v));
+  }
+
+  @mixin stroke-violet-600($v: 1) {
+    @include stroke-(c($vio-600, $v));
+  }
+
+  @mixin stroke-violet-700($v: 1) {
+    @include stroke-(c($vio-700, $v));
+  }
+
+  @mixin stroke-violet-800($v: 1) {
+    @include stroke-(c($vio-800, $v));
+  }
+
+  @mixin stroke-violet-900($v: 1) {
+    @include stroke-(c($vio-900, $v));
+  }
+
+  @mixin stroke-violet-950($v: 1) {
+    @include stroke-(c($vio-950, $v));
+  }
+
+  @mixin stroke-purple-50($v: 1) {
+    @include stroke-(c($pur-50, $v));
+  }
+
+  @mixin stroke-purple-100($v: 1) {
+    @include stroke-(c($pur-100, $v));
+  }
+
+  @mixin stroke-purple-200($v: 1) {
+    @include stroke-(c($pur-200, $v));
+  }
+
+  @mixin stroke-purple-300($v: 1) {
+    @include stroke-(c($pur-300, $v));
+  }
+
+  @mixin stroke-purple-400($v: 1) {
+    @include stroke-(c($pur-400, $v));
+  }
+
+  @mixin stroke-purple-500($v: 1) {
+    @include stroke-(c($pur-500, $v));
+  }
+
+  @mixin stroke-purple-600($v: 1) {
+    @include stroke-(c($pur-600, $v));
+  }
+
+  @mixin stroke-purple-700($v: 1) {
+    @include stroke-(c($pur-700, $v));
+  }
+
+  @mixin stroke-purple-800($v: 1) {
+    @include stroke-(c($pur-800, $v));
+  }
+
+  @mixin stroke-purple-900($v: 1) {
+    @include stroke-(c($pur-900, $v));
+  }
+
+  @mixin stroke-purple-950($v: 1) {
+    @include stroke-(c($pur-950, $v));
+  }
+
+  @mixin stroke-fuchsia-50($v: 1) {
+    @include stroke-(c($fuc-50, $v));
+  }
+
+  @mixin stroke-fuchsia-100($v: 1) {
+    @include stroke-(c($fuc-100, $v));
+  }
+
+  @mixin stroke-fuchsia-200($v: 1) {
+    @include stroke-(c($fuc-200, $v));
+  }
+
+  @mixin stroke-fuchsia-300($v: 1) {
+    @include stroke-(c($fuc-300, $v));
+  }
+
+  @mixin stroke-fuchsia-400($v: 1) {
+    @include stroke-(c($fuc-400, $v));
+  }
+
+  @mixin stroke-fuchsia-500($v: 1) {
+    @include stroke-(c($fuc-500, $v));
+  }
+
+  @mixin stroke-fuchsia-600($v: 1) {
+    @include stroke-(c($fuc-600, $v));
+  }
+
+  @mixin stroke-fuchsia-700($v: 1) {
+    @include stroke-(c($fuc-700, $v));
+  }
+
+  @mixin stroke-fuchsia-800($v: 1) {
+    @include stroke-(c($fuc-800, $v));
+  }
+
+  @mixin stroke-fuchsia-900($v: 1) {
+    @include stroke-(c($fuc-900, $v));
+  }
+
+  @mixin stroke-fuchsia-950($v: 1) {
+    @include stroke-(c($fuc-950, $v));
+  }
+
+  @mixin stroke-pink-50($v: 1) {
+    @include stroke-(c($pin-50, $v));
+  }
+
+  @mixin stroke-pink-100($v: 1) {
+    @include stroke-(c($pin-100, $v));
+  }
+
+  @mixin stroke-pink-200($v: 1) {
+    @include stroke-(c($pin-200, $v));
+  }
+
+  @mixin stroke-pink-300($v: 1) {
+    @include stroke-(c($pin-300, $v));
+  }
+
+  @mixin stroke-pink-400($v: 1) {
+    @include stroke-(c($pin-400, $v));
+  }
+
+  @mixin stroke-pink-500($v: 1) {
+    @include stroke-(c($pin-500, $v));
+  }
+
+  @mixin stroke-pink-600($v: 1) {
+    @include stroke-(c($pin-600, $v));
+  }
+
+  @mixin stroke-pink-700($v: 1) {
+    @include stroke-(c($pin-700, $v));
+  }
+
+  @mixin stroke-pink-800($v: 1) {
+    @include stroke-(c($pin-800, $v));
+  }
+
+  @mixin stroke-pink-900($v: 1) {
+    @include stroke-(c($pin-900, $v));
+  }
+
+  @mixin stroke-pink-950($v: 1) {
+    @include stroke-(c($pin-950, $v));
+  }
+
+  @mixin stroke-rose-50($v: 1) {
+    @include stroke-(c($ros-50, $v));
+  }
+
+  @mixin stroke-rose-100($v: 1) {
+    @include stroke-(c($ros-100, $v));
+  }
+
+  @mixin stroke-rose-200($v: 1) {
+    @include stroke-(c($ros-200, $v));
+  }
+
+  @mixin stroke-rose-300($v: 1) {
+    @include stroke-(c($ros-300, $v));
+  }
+
+  @mixin stroke-rose-400($v: 1) {
+    @include stroke-(c($ros-400, $v));
+  }
+
+  @mixin stroke-rose-500($v: 1) {
+    @include stroke-(c($ros-500, $v));
+  }
+
+  @mixin stroke-rose-600($v: 1) {
+    @include stroke-(c($ros-600, $v));
+  }
+
+  @mixin stroke-rose-700($v: 1) {
+    @include stroke-(c($ros-700, $v));
+  }
+
+  @mixin stroke-rose-800($v: 1) {
+    @include stroke-(c($ros-800, $v));
+  }
+
+  @mixin stroke-rose-900($v: 1) {
+    @include stroke-(c($ros-900, $v));
+  }
+
+  @mixin stroke-rose-950($v: 1) {
+    @include stroke-(c($ros-950, $v));
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 {
+    // /*x
+    @mixin sm\:stroke-none {
+      @include stroke-(none, $sm);
+    }
+
+    @mixin sm\:stroke-inherit {
+      @include stroke-(inherit, $sm);
+    }
+
+    @mixin sm\:stroke-current {
+      @include stroke-(currentColor, $sm);
+    }
+
+    @mixin sm\:stroke-transparent {
+      @include stroke-(transparent, $sm);
+    }
+
+    @mixin sm\:stroke-black($v: 1) {
+      @include stroke-(c($bla, $v), $sm);
+    }
+
+    @mixin sm\:stroke-white($v: 1) {
+      @include stroke-(c($whi, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-50($v: 1) {
+      @include stroke-(c($sla-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-100($v: 1) {
+      @include stroke-(c($sla-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-200($v: 1) {
+      @include stroke-(c($sla-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-300($v: 1) {
+      @include stroke-(c($sla-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-400($v: 1) {
+      @include stroke-(c($sla-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-500($v: 1) {
+      @include stroke-(c($sla-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-600($v: 1) {
+      @include stroke-(c($sla-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-700($v: 1) {
+      @include stroke-(c($sla-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-800($v: 1) {
+      @include stroke-(c($sla-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-900($v: 1) {
+      @include stroke-(c($sla-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-slate-950($v: 1) {
+      @include stroke-(c($sla-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-50($v: 1) {
+      @include stroke-(c($gra-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-100($v: 1) {
+      @include stroke-(c($gra-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-200($v: 1) {
+      @include stroke-(c($gra-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-300($v: 1) {
+      @include stroke-(c($gra-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-400($v: 1) {
+      @include stroke-(c($gra-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-500($v: 1) {
+      @include stroke-(c($gra-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-600($v: 1) {
+      @include stroke-(c($gra-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-700($v: 1) {
+      @include stroke-(c($gra-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-800($v: 1) {
+      @include stroke-(c($gra-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-900($v: 1) {
+      @include stroke-(c($gra-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-gray-950($v: 1) {
+      @include stroke-(c($gra-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-50($v: 1) {
+      @include stroke-(c($zin-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-100($v: 1) {
+      @include stroke-(c($zin-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-200($v: 1) {
+      @include stroke-(c($zin-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-300($v: 1) {
+      @include stroke-(c($zin-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-400($v: 1) {
+      @include stroke-(c($zin-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-500($v: 1) {
+      @include stroke-(c($zin-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-600($v: 1) {
+      @include stroke-(c($zin-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-700($v: 1) {
+      @include stroke-(c($zin-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-800($v: 1) {
+      @include stroke-(c($zin-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-900($v: 1) {
+      @include stroke-(c($zin-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-zinc-950($v: 1) {
+      @include stroke-(c($zin-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-50($v: 1) {
+      @include stroke-(c($neu-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-100($v: 1) {
+      @include stroke-(c($neu-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-200($v: 1) {
+      @include stroke-(c($neu-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-300($v: 1) {
+      @include stroke-(c($neu-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-400($v: 1) {
+      @include stroke-(c($neu-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-500($v: 1) {
+      @include stroke-(c($neu-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-600($v: 1) {
+      @include stroke-(c($neu-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-700($v: 1) {
+      @include stroke-(c($neu-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-800($v: 1) {
+      @include stroke-(c($neu-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-900($v: 1) {
+      @include stroke-(c($neu-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-neutral-950($v: 1) {
+      @include stroke-(c($neu-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-50($v: 1) {
+      @include stroke-(c($sto-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-100($v: 1) {
+      @include stroke-(c($sto-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-200($v: 1) {
+      @include stroke-(c($sto-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-300($v: 1) {
+      @include stroke-(c($sto-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-400($v: 1) {
+      @include stroke-(c($sto-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-500($v: 1) {
+      @include stroke-(c($sto-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-600($v: 1) {
+      @include stroke-(c($sto-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-700($v: 1) {
+      @include stroke-(c($sto-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-800($v: 1) {
+      @include stroke-(c($sto-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-900($v: 1) {
+      @include stroke-(c($sto-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-stone-950($v: 1) {
+      @include stroke-(c($sto-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-50($v: 1) {
+      @include stroke-(c($red-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-100($v: 1) {
+      @include stroke-(c($red-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-200($v: 1) {
+      @include stroke-(c($red-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-300($v: 1) {
+      @include stroke-(c($red-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-400($v: 1) {
+      @include stroke-(c($red-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-500($v: 1) {
+      @include stroke-(c($red-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-600($v: 1) {
+      @include stroke-(c($red-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-700($v: 1) {
+      @include stroke-(c($red-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-800($v: 1) {
+      @include stroke-(c($red-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-900($v: 1) {
+      @include stroke-(c($red-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-red-950($v: 1) {
+      @include stroke-(c($red-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-50($v: 1) {
+      @include stroke-(c($ora-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-100($v: 1) {
+      @include stroke-(c($ora-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-200($v: 1) {
+      @include stroke-(c($ora-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-300($v: 1) {
+      @include stroke-(c($ora-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-400($v: 1) {
+      @include stroke-(c($ora-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-500($v: 1) {
+      @include stroke-(c($ora-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-600($v: 1) {
+      @include stroke-(c($ora-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-700($v: 1) {
+      @include stroke-(c($ora-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-800($v: 1) {
+      @include stroke-(c($ora-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-900($v: 1) {
+      @include stroke-(c($ora-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-orange-950($v: 1) {
+      @include stroke-(c($ora-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-50($v: 1) {
+      @include stroke-(c($amb-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-100($v: 1) {
+      @include stroke-(c($amb-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-200($v: 1) {
+      @include stroke-(c($amb-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-300($v: 1) {
+      @include stroke-(c($amb-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-400($v: 1) {
+      @include stroke-(c($amb-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-500($v: 1) {
+      @include stroke-(c($amb-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-600($v: 1) {
+      @include stroke-(c($amb-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-700($v: 1) {
+      @include stroke-(c($amb-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-800($v: 1) {
+      @include stroke-(c($amb-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-900($v: 1) {
+      @include stroke-(c($amb-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-amber-950($v: 1) {
+      @include stroke-(c($amb-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-50($v: 1) {
+      @include stroke-(c($yel-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-100($v: 1) {
+      @include stroke-(c($yel-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-200($v: 1) {
+      @include stroke-(c($yel-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-300($v: 1) {
+      @include stroke-(c($yel-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-400($v: 1) {
+      @include stroke-(c($yel-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-500($v: 1) {
+      @include stroke-(c($yel-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-600($v: 1) {
+      @include stroke-(c($yel-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-700($v: 1) {
+      @include stroke-(c($yel-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-800($v: 1) {
+      @include stroke-(c($yel-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-900($v: 1) {
+      @include stroke-(c($yel-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-yellow-950($v: 1) {
+      @include stroke-(c($yel-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-50($v: 1) {
+      @include stroke-(c($lim-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-100($v: 1) {
+      @include stroke-(c($lim-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-200($v: 1) {
+      @include stroke-(c($lim-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-300($v: 1) {
+      @include stroke-(c($lim-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-400($v: 1) {
+      @include stroke-(c($lim-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-500($v: 1) {
+      @include stroke-(c($lim-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-600($v: 1) {
+      @include stroke-(c($lim-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-700($v: 1) {
+      @include stroke-(c($lim-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-800($v: 1) {
+      @include stroke-(c($lim-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-900($v: 1) {
+      @include stroke-(c($lim-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-lime-950($v: 1) {
+      @include stroke-(c($lim-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-50($v: 1) {
+      @include stroke-(c($gre-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-100($v: 1) {
+      @include stroke-(c($gre-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-200($v: 1) {
+      @include stroke-(c($gre-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-300($v: 1) {
+      @include stroke-(c($gre-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-400($v: 1) {
+      @include stroke-(c($gre-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-500($v: 1) {
+      @include stroke-(c($gre-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-600($v: 1) {
+      @include stroke-(c($gre-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-700($v: 1) {
+      @include stroke-(c($gre-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-800($v: 1) {
+      @include stroke-(c($gre-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-900($v: 1) {
+      @include stroke-(c($gre-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-green-950($v: 1) {
+      @include stroke-(c($gre-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-50($v: 1) {
+      @include stroke-(c($eme-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-100($v: 1) {
+      @include stroke-(c($eme-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-200($v: 1) {
+      @include stroke-(c($eme-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-300($v: 1) {
+      @include stroke-(c($eme-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-400($v: 1) {
+      @include stroke-(c($eme-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-500($v: 1) {
+      @include stroke-(c($eme-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-600($v: 1) {
+      @include stroke-(c($eme-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-700($v: 1) {
+      @include stroke-(c($eme-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-800($v: 1) {
+      @include stroke-(c($eme-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-900($v: 1) {
+      @include stroke-(c($eme-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-emerald-950($v: 1) {
+      @include stroke-(c($eme-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-50($v: 1) {
+      @include stroke-(c($tea-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-100($v: 1) {
+      @include stroke-(c($tea-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-200($v: 1) {
+      @include stroke-(c($tea-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-300($v: 1) {
+      @include stroke-(c($tea-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-400($v: 1) {
+      @include stroke-(c($tea-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-500($v: 1) {
+      @include stroke-(c($tea-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-600($v: 1) {
+      @include stroke-(c($tea-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-700($v: 1) {
+      @include stroke-(c($tea-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-800($v: 1) {
+      @include stroke-(c($tea-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-900($v: 1) {
+      @include stroke-(c($tea-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-teal-950($v: 1) {
+      @include stroke-(c($tea-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-50($v: 1) {
+      @include stroke-(c($cya-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-100($v: 1) {
+      @include stroke-(c($cya-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-200($v: 1) {
+      @include stroke-(c($cya-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-300($v: 1) {
+      @include stroke-(c($cya-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-400($v: 1) {
+      @include stroke-(c($cya-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-500($v: 1) {
+      @include stroke-(c($cya-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-600($v: 1) {
+      @include stroke-(c($cya-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-700($v: 1) {
+      @include stroke-(c($cya-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-800($v: 1) {
+      @include stroke-(c($cya-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-900($v: 1) {
+      @include stroke-(c($cya-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-cyan-950($v: 1) {
+      @include stroke-(c($cya-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-50($v: 1) {
+      @include stroke-(c($sky-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-100($v: 1) {
+      @include stroke-(c($sky-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-200($v: 1) {
+      @include stroke-(c($sky-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-300($v: 1) {
+      @include stroke-(c($sky-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-400($v: 1) {
+      @include stroke-(c($sky-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-500($v: 1) {
+      @include stroke-(c($sky-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-600($v: 1) {
+      @include stroke-(c($sky-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-700($v: 1) {
+      @include stroke-(c($sky-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-800($v: 1) {
+      @include stroke-(c($sky-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-900($v: 1) {
+      @include stroke-(c($sky-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-sky-950($v: 1) {
+      @include stroke-(c($sky-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-50($v: 1) {
+      @include stroke-(c($blu-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-100($v: 1) {
+      @include stroke-(c($blu-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-200($v: 1) {
+      @include stroke-(c($blu-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-300($v: 1) {
+      @include stroke-(c($blu-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-400($v: 1) {
+      @include stroke-(c($blu-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-500($v: 1) {
+      @include stroke-(c($blu-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-600($v: 1) {
+      @include stroke-(c($blu-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-700($v: 1) {
+      @include stroke-(c($blu-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-800($v: 1) {
+      @include stroke-(c($blu-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-900($v: 1) {
+      @include stroke-(c($blu-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-blue-950($v: 1) {
+      @include stroke-(c($blu-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-50($v: 1) {
+      @include stroke-(c($ind-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-100($v: 1) {
+      @include stroke-(c($ind-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-200($v: 1) {
+      @include stroke-(c($ind-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-300($v: 1) {
+      @include stroke-(c($ind-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-400($v: 1) {
+      @include stroke-(c($ind-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-500($v: 1) {
+      @include stroke-(c($ind-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-600($v: 1) {
+      @include stroke-(c($ind-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-700($v: 1) {
+      @include stroke-(c($ind-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-800($v: 1) {
+      @include stroke-(c($ind-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-900($v: 1) {
+      @include stroke-(c($ind-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-indigo-950($v: 1) {
+      @include stroke-(c($ind-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-50($v: 1) {
+      @include stroke-(c($vio-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-100($v: 1) {
+      @include stroke-(c($vio-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-200($v: 1) {
+      @include stroke-(c($vio-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-300($v: 1) {
+      @include stroke-(c($vio-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-400($v: 1) {
+      @include stroke-(c($vio-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-500($v: 1) {
+      @include stroke-(c($vio-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-600($v: 1) {
+      @include stroke-(c($vio-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-700($v: 1) {
+      @include stroke-(c($vio-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-800($v: 1) {
+      @include stroke-(c($vio-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-900($v: 1) {
+      @include stroke-(c($vio-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-violet-950($v: 1) {
+      @include stroke-(c($vio-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-50($v: 1) {
+      @include stroke-(c($pur-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-100($v: 1) {
+      @include stroke-(c($pur-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-200($v: 1) {
+      @include stroke-(c($pur-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-300($v: 1) {
+      @include stroke-(c($pur-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-400($v: 1) {
+      @include stroke-(c($pur-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-500($v: 1) {
+      @include stroke-(c($pur-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-600($v: 1) {
+      @include stroke-(c($pur-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-700($v: 1) {
+      @include stroke-(c($pur-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-800($v: 1) {
+      @include stroke-(c($pur-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-900($v: 1) {
+      @include stroke-(c($pur-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-purple-950($v: 1) {
+      @include stroke-(c($pur-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-50($v: 1) {
+      @include stroke-(c($fuc-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-100($v: 1) {
+      @include stroke-(c($fuc-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-200($v: 1) {
+      @include stroke-(c($fuc-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-300($v: 1) {
+      @include stroke-(c($fuc-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-400($v: 1) {
+      @include stroke-(c($fuc-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-500($v: 1) {
+      @include stroke-(c($fuc-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-600($v: 1) {
+      @include stroke-(c($fuc-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-700($v: 1) {
+      @include stroke-(c($fuc-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-800($v: 1) {
+      @include stroke-(c($fuc-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-900($v: 1) {
+      @include stroke-(c($fuc-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-fuchsia-950($v: 1) {
+      @include stroke-(c($fuc-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-50($v: 1) {
+      @include stroke-(c($pin-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-100($v: 1) {
+      @include stroke-(c($pin-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-200($v: 1) {
+      @include stroke-(c($pin-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-300($v: 1) {
+      @include stroke-(c($pin-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-400($v: 1) {
+      @include stroke-(c($pin-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-500($v: 1) {
+      @include stroke-(c($pin-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-600($v: 1) {
+      @include stroke-(c($pin-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-700($v: 1) {
+      @include stroke-(c($pin-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-800($v: 1) {
+      @include stroke-(c($pin-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-900($v: 1) {
+      @include stroke-(c($pin-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-pink-950($v: 1) {
+      @include stroke-(c($pin-950, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-50($v: 1) {
+      @include stroke-(c($ros-50, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-100($v: 1) {
+      @include stroke-(c($ros-100, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-200($v: 1) {
+      @include stroke-(c($ros-200, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-300($v: 1) {
+      @include stroke-(c($ros-300, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-400($v: 1) {
+      @include stroke-(c($ros-400, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-500($v: 1) {
+      @include stroke-(c($ros-500, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-600($v: 1) {
+      @include stroke-(c($ros-600, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-700($v: 1) {
+      @include stroke-(c($ros-700, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-800($v: 1) {
+      @include stroke-(c($ros-800, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-900($v: 1) {
+      @include stroke-(c($ros-900, $v), $sm);
+    }
+
+    @mixin sm\:stroke-rose-950($v: 1) {
+      @include stroke-(c($ros-950, $v), $sm);
+    }
+
+    @mixin md\:stroke-none {
+      @include stroke-(none, $md);
+    }
+
+    @mixin md\:stroke-inherit {
+      @include stroke-(inherit, $md);
+    }
+
+    @mixin md\:stroke-current {
+      @include stroke-(currentColor, $md);
+    }
+
+    @mixin md\:stroke-transparent {
+      @include stroke-(transparent, $md);
+    }
+
+    @mixin md\:stroke-black($v: 1) {
+      @include stroke-(c($bla, $v), $md);
+    }
+
+    @mixin md\:stroke-white($v: 1) {
+      @include stroke-(c($whi, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-50($v: 1) {
+      @include stroke-(c($sla-50, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-100($v: 1) {
+      @include stroke-(c($sla-100, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-200($v: 1) {
+      @include stroke-(c($sla-200, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-300($v: 1) {
+      @include stroke-(c($sla-300, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-400($v: 1) {
+      @include stroke-(c($sla-400, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-500($v: 1) {
+      @include stroke-(c($sla-500, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-600($v: 1) {
+      @include stroke-(c($sla-600, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-700($v: 1) {
+      @include stroke-(c($sla-700, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-800($v: 1) {
+      @include stroke-(c($sla-800, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-900($v: 1) {
+      @include stroke-(c($sla-900, $v), $md);
+    }
+
+    @mixin md\:stroke-slate-950($v: 1) {
+      @include stroke-(c($sla-950, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-50($v: 1) {
+      @include stroke-(c($gra-50, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-100($v: 1) {
+      @include stroke-(c($gra-100, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-200($v: 1) {
+      @include stroke-(c($gra-200, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-300($v: 1) {
+      @include stroke-(c($gra-300, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-400($v: 1) {
+      @include stroke-(c($gra-400, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-500($v: 1) {
+      @include stroke-(c($gra-500, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-600($v: 1) {
+      @include stroke-(c($gra-600, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-700($v: 1) {
+      @include stroke-(c($gra-700, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-800($v: 1) {
+      @include stroke-(c($gra-800, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-900($v: 1) {
+      @include stroke-(c($gra-900, $v), $md);
+    }
+
+    @mixin md\:stroke-gray-950($v: 1) {
+      @include stroke-(c($gra-950, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-50($v: 1) {
+      @include stroke-(c($zin-50, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-100($v: 1) {
+      @include stroke-(c($zin-100, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-200($v: 1) {
+      @include stroke-(c($zin-200, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-300($v: 1) {
+      @include stroke-(c($zin-300, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-400($v: 1) {
+      @include stroke-(c($zin-400, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-500($v: 1) {
+      @include stroke-(c($zin-500, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-600($v: 1) {
+      @include stroke-(c($zin-600, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-700($v: 1) {
+      @include stroke-(c($zin-700, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-800($v: 1) {
+      @include stroke-(c($zin-800, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-900($v: 1) {
+      @include stroke-(c($zin-900, $v), $md);
+    }
+
+    @mixin md\:stroke-zinc-950($v: 1) {
+      @include stroke-(c($zin-950, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-50($v: 1) {
+      @include stroke-(c($neu-50, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-100($v: 1) {
+      @include stroke-(c($neu-100, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-200($v: 1) {
+      @include stroke-(c($neu-200, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-300($v: 1) {
+      @include stroke-(c($neu-300, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-400($v: 1) {
+      @include stroke-(c($neu-400, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-500($v: 1) {
+      @include stroke-(c($neu-500, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-600($v: 1) {
+      @include stroke-(c($neu-600, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-700($v: 1) {
+      @include stroke-(c($neu-700, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-800($v: 1) {
+      @include stroke-(c($neu-800, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-900($v: 1) {
+      @include stroke-(c($neu-900, $v), $md);
+    }
+
+    @mixin md\:stroke-neutral-950($v: 1) {
+      @include stroke-(c($neu-950, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-50($v: 1) {
+      @include stroke-(c($sto-50, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-100($v: 1) {
+      @include stroke-(c($sto-100, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-200($v: 1) {
+      @include stroke-(c($sto-200, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-300($v: 1) {
+      @include stroke-(c($sto-300, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-400($v: 1) {
+      @include stroke-(c($sto-400, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-500($v: 1) {
+      @include stroke-(c($sto-500, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-600($v: 1) {
+      @include stroke-(c($sto-600, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-700($v: 1) {
+      @include stroke-(c($sto-700, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-800($v: 1) {
+      @include stroke-(c($sto-800, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-900($v: 1) {
+      @include stroke-(c($sto-900, $v), $md);
+    }
+
+    @mixin md\:stroke-stone-950($v: 1) {
+      @include stroke-(c($sto-950, $v), $md);
+    }
+
+    @mixin md\:stroke-red-50($v: 1) {
+      @include stroke-(c($red-50, $v), $md);
+    }
+
+    @mixin md\:stroke-red-100($v: 1) {
+      @include stroke-(c($red-100, $v), $md);
+    }
+
+    @mixin md\:stroke-red-200($v: 1) {
+      @include stroke-(c($red-200, $v), $md);
+    }
+
+    @mixin md\:stroke-red-300($v: 1) {
+      @include stroke-(c($red-300, $v), $md);
+    }
+
+    @mixin md\:stroke-red-400($v: 1) {
+      @include stroke-(c($red-400, $v), $md);
+    }
+
+    @mixin md\:stroke-red-500($v: 1) {
+      @include stroke-(c($red-500, $v), $md);
+    }
+
+    @mixin md\:stroke-red-600($v: 1) {
+      @include stroke-(c($red-600, $v), $md);
+    }
+
+    @mixin md\:stroke-red-700($v: 1) {
+      @include stroke-(c($red-700, $v), $md);
+    }
+
+    @mixin md\:stroke-red-800($v: 1) {
+      @include stroke-(c($red-800, $v), $md);
+    }
+
+    @mixin md\:stroke-red-900($v: 1) {
+      @include stroke-(c($red-900, $v), $md);
+    }
+
+    @mixin md\:stroke-red-950($v: 1) {
+      @include stroke-(c($red-950, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-50($v: 1) {
+      @include stroke-(c($ora-50, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-100($v: 1) {
+      @include stroke-(c($ora-100, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-200($v: 1) {
+      @include stroke-(c($ora-200, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-300($v: 1) {
+      @include stroke-(c($ora-300, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-400($v: 1) {
+      @include stroke-(c($ora-400, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-500($v: 1) {
+      @include stroke-(c($ora-500, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-600($v: 1) {
+      @include stroke-(c($ora-600, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-700($v: 1) {
+      @include stroke-(c($ora-700, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-800($v: 1) {
+      @include stroke-(c($ora-800, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-900($v: 1) {
+      @include stroke-(c($ora-900, $v), $md);
+    }
+
+    @mixin md\:stroke-orange-950($v: 1) {
+      @include stroke-(c($ora-950, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-50($v: 1) {
+      @include stroke-(c($amb-50, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-100($v: 1) {
+      @include stroke-(c($amb-100, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-200($v: 1) {
+      @include stroke-(c($amb-200, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-300($v: 1) {
+      @include stroke-(c($amb-300, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-400($v: 1) {
+      @include stroke-(c($amb-400, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-500($v: 1) {
+      @include stroke-(c($amb-500, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-600($v: 1) {
+      @include stroke-(c($amb-600, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-700($v: 1) {
+      @include stroke-(c($amb-700, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-800($v: 1) {
+      @include stroke-(c($amb-800, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-900($v: 1) {
+      @include stroke-(c($amb-900, $v), $md);
+    }
+
+    @mixin md\:stroke-amber-950($v: 1) {
+      @include stroke-(c($amb-950, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-50($v: 1) {
+      @include stroke-(c($yel-50, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-100($v: 1) {
+      @include stroke-(c($yel-100, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-200($v: 1) {
+      @include stroke-(c($yel-200, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-300($v: 1) {
+      @include stroke-(c($yel-300, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-400($v: 1) {
+      @include stroke-(c($yel-400, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-500($v: 1) {
+      @include stroke-(c($yel-500, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-600($v: 1) {
+      @include stroke-(c($yel-600, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-700($v: 1) {
+      @include stroke-(c($yel-700, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-800($v: 1) {
+      @include stroke-(c($yel-800, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-900($v: 1) {
+      @include stroke-(c($yel-900, $v), $md);
+    }
+
+    @mixin md\:stroke-yellow-950($v: 1) {
+      @include stroke-(c($yel-950, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-50($v: 1) {
+      @include stroke-(c($lim-50, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-100($v: 1) {
+      @include stroke-(c($lim-100, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-200($v: 1) {
+      @include stroke-(c($lim-200, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-300($v: 1) {
+      @include stroke-(c($lim-300, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-400($v: 1) {
+      @include stroke-(c($lim-400, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-500($v: 1) {
+      @include stroke-(c($lim-500, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-600($v: 1) {
+      @include stroke-(c($lim-600, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-700($v: 1) {
+      @include stroke-(c($lim-700, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-800($v: 1) {
+      @include stroke-(c($lim-800, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-900($v: 1) {
+      @include stroke-(c($lim-900, $v), $md);
+    }
+
+    @mixin md\:stroke-lime-950($v: 1) {
+      @include stroke-(c($lim-950, $v), $md);
+    }
+
+    @mixin md\:stroke-green-50($v: 1) {
+      @include stroke-(c($gre-50, $v), $md);
+    }
+
+    @mixin md\:stroke-green-100($v: 1) {
+      @include stroke-(c($gre-100, $v), $md);
+    }
+
+    @mixin md\:stroke-green-200($v: 1) {
+      @include stroke-(c($gre-200, $v), $md);
+    }
+
+    @mixin md\:stroke-green-300($v: 1) {
+      @include stroke-(c($gre-300, $v), $md);
+    }
+
+    @mixin md\:stroke-green-400($v: 1) {
+      @include stroke-(c($gre-400, $v), $md);
+    }
+
+    @mixin md\:stroke-green-500($v: 1) {
+      @include stroke-(c($gre-500, $v), $md);
+    }
+
+    @mixin md\:stroke-green-600($v: 1) {
+      @include stroke-(c($gre-600, $v), $md);
+    }
+
+    @mixin md\:stroke-green-700($v: 1) {
+      @include stroke-(c($gre-700, $v), $md);
+    }
+
+    @mixin md\:stroke-green-800($v: 1) {
+      @include stroke-(c($gre-800, $v), $md);
+    }
+
+    @mixin md\:stroke-green-900($v: 1) {
+      @include stroke-(c($gre-900, $v), $md);
+    }
+
+    @mixin md\:stroke-green-950($v: 1) {
+      @include stroke-(c($gre-950, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-50($v: 1) {
+      @include stroke-(c($eme-50, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-100($v: 1) {
+      @include stroke-(c($eme-100, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-200($v: 1) {
+      @include stroke-(c($eme-200, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-300($v: 1) {
+      @include stroke-(c($eme-300, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-400($v: 1) {
+      @include stroke-(c($eme-400, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-500($v: 1) {
+      @include stroke-(c($eme-500, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-600($v: 1) {
+      @include stroke-(c($eme-600, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-700($v: 1) {
+      @include stroke-(c($eme-700, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-800($v: 1) {
+      @include stroke-(c($eme-800, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-900($v: 1) {
+      @include stroke-(c($eme-900, $v), $md);
+    }
+
+    @mixin md\:stroke-emerald-950($v: 1) {
+      @include stroke-(c($eme-950, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-50($v: 1) {
+      @include stroke-(c($tea-50, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-100($v: 1) {
+      @include stroke-(c($tea-100, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-200($v: 1) {
+      @include stroke-(c($tea-200, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-300($v: 1) {
+      @include stroke-(c($tea-300, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-400($v: 1) {
+      @include stroke-(c($tea-400, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-500($v: 1) {
+      @include stroke-(c($tea-500, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-600($v: 1) {
+      @include stroke-(c($tea-600, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-700($v: 1) {
+      @include stroke-(c($tea-700, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-800($v: 1) {
+      @include stroke-(c($tea-800, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-900($v: 1) {
+      @include stroke-(c($tea-900, $v), $md);
+    }
+
+    @mixin md\:stroke-teal-950($v: 1) {
+      @include stroke-(c($tea-950, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-50($v: 1) {
+      @include stroke-(c($cya-50, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-100($v: 1) {
+      @include stroke-(c($cya-100, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-200($v: 1) {
+      @include stroke-(c($cya-200, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-300($v: 1) {
+      @include stroke-(c($cya-300, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-400($v: 1) {
+      @include stroke-(c($cya-400, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-500($v: 1) {
+      @include stroke-(c($cya-500, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-600($v: 1) {
+      @include stroke-(c($cya-600, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-700($v: 1) {
+      @include stroke-(c($cya-700, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-800($v: 1) {
+      @include stroke-(c($cya-800, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-900($v: 1) {
+      @include stroke-(c($cya-900, $v), $md);
+    }
+
+    @mixin md\:stroke-cyan-950($v: 1) {
+      @include stroke-(c($cya-950, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-50($v: 1) {
+      @include stroke-(c($sky-50, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-100($v: 1) {
+      @include stroke-(c($sky-100, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-200($v: 1) {
+      @include stroke-(c($sky-200, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-300($v: 1) {
+      @include stroke-(c($sky-300, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-400($v: 1) {
+      @include stroke-(c($sky-400, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-500($v: 1) {
+      @include stroke-(c($sky-500, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-600($v: 1) {
+      @include stroke-(c($sky-600, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-700($v: 1) {
+      @include stroke-(c($sky-700, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-800($v: 1) {
+      @include stroke-(c($sky-800, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-900($v: 1) {
+      @include stroke-(c($sky-900, $v), $md);
+    }
+
+    @mixin md\:stroke-sky-950($v: 1) {
+      @include stroke-(c($sky-950, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-50($v: 1) {
+      @include stroke-(c($blu-50, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-100($v: 1) {
+      @include stroke-(c($blu-100, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-200($v: 1) {
+      @include stroke-(c($blu-200, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-300($v: 1) {
+      @include stroke-(c($blu-300, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-400($v: 1) {
+      @include stroke-(c($blu-400, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-500($v: 1) {
+      @include stroke-(c($blu-500, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-600($v: 1) {
+      @include stroke-(c($blu-600, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-700($v: 1) {
+      @include stroke-(c($blu-700, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-800($v: 1) {
+      @include stroke-(c($blu-800, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-900($v: 1) {
+      @include stroke-(c($blu-900, $v), $md);
+    }
+
+    @mixin md\:stroke-blue-950($v: 1) {
+      @include stroke-(c($blu-950, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-50($v: 1) {
+      @include stroke-(c($ind-50, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-100($v: 1) {
+      @include stroke-(c($ind-100, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-200($v: 1) {
+      @include stroke-(c($ind-200, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-300($v: 1) {
+      @include stroke-(c($ind-300, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-400($v: 1) {
+      @include stroke-(c($ind-400, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-500($v: 1) {
+      @include stroke-(c($ind-500, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-600($v: 1) {
+      @include stroke-(c($ind-600, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-700($v: 1) {
+      @include stroke-(c($ind-700, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-800($v: 1) {
+      @include stroke-(c($ind-800, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-900($v: 1) {
+      @include stroke-(c($ind-900, $v), $md);
+    }
+
+    @mixin md\:stroke-indigo-950($v: 1) {
+      @include stroke-(c($ind-950, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-50($v: 1) {
+      @include stroke-(c($vio-50, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-100($v: 1) {
+      @include stroke-(c($vio-100, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-200($v: 1) {
+      @include stroke-(c($vio-200, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-300($v: 1) {
+      @include stroke-(c($vio-300, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-400($v: 1) {
+      @include stroke-(c($vio-400, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-500($v: 1) {
+      @include stroke-(c($vio-500, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-600($v: 1) {
+      @include stroke-(c($vio-600, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-700($v: 1) {
+      @include stroke-(c($vio-700, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-800($v: 1) {
+      @include stroke-(c($vio-800, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-900($v: 1) {
+      @include stroke-(c($vio-900, $v), $md);
+    }
+
+    @mixin md\:stroke-violet-950($v: 1) {
+      @include stroke-(c($vio-950, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-50($v: 1) {
+      @include stroke-(c($pur-50, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-100($v: 1) {
+      @include stroke-(c($pur-100, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-200($v: 1) {
+      @include stroke-(c($pur-200, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-300($v: 1) {
+      @include stroke-(c($pur-300, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-400($v: 1) {
+      @include stroke-(c($pur-400, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-500($v: 1) {
+      @include stroke-(c($pur-500, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-600($v: 1) {
+      @include stroke-(c($pur-600, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-700($v: 1) {
+      @include stroke-(c($pur-700, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-800($v: 1) {
+      @include stroke-(c($pur-800, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-900($v: 1) {
+      @include stroke-(c($pur-900, $v), $md);
+    }
+
+    @mixin md\:stroke-purple-950($v: 1) {
+      @include stroke-(c($pur-950, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-50($v: 1) {
+      @include stroke-(c($fuc-50, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-100($v: 1) {
+      @include stroke-(c($fuc-100, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-200($v: 1) {
+      @include stroke-(c($fuc-200, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-300($v: 1) {
+      @include stroke-(c($fuc-300, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-400($v: 1) {
+      @include stroke-(c($fuc-400, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-500($v: 1) {
+      @include stroke-(c($fuc-500, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-600($v: 1) {
+      @include stroke-(c($fuc-600, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-700($v: 1) {
+      @include stroke-(c($fuc-700, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-800($v: 1) {
+      @include stroke-(c($fuc-800, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-900($v: 1) {
+      @include stroke-(c($fuc-900, $v), $md);
+    }
+
+    @mixin md\:stroke-fuchsia-950($v: 1) {
+      @include stroke-(c($fuc-950, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-50($v: 1) {
+      @include stroke-(c($pin-50, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-100($v: 1) {
+      @include stroke-(c($pin-100, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-200($v: 1) {
+      @include stroke-(c($pin-200, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-300($v: 1) {
+      @include stroke-(c($pin-300, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-400($v: 1) {
+      @include stroke-(c($pin-400, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-500($v: 1) {
+      @include stroke-(c($pin-500, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-600($v: 1) {
+      @include stroke-(c($pin-600, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-700($v: 1) {
+      @include stroke-(c($pin-700, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-800($v: 1) {
+      @include stroke-(c($pin-800, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-900($v: 1) {
+      @include stroke-(c($pin-900, $v), $md);
+    }
+
+    @mixin md\:stroke-pink-950($v: 1) {
+      @include stroke-(c($pin-950, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-50($v: 1) {
+      @include stroke-(c($ros-50, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-100($v: 1) {
+      @include stroke-(c($ros-100, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-200($v: 1) {
+      @include stroke-(c($ros-200, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-300($v: 1) {
+      @include stroke-(c($ros-300, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-400($v: 1) {
+      @include stroke-(c($ros-400, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-500($v: 1) {
+      @include stroke-(c($ros-500, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-600($v: 1) {
+      @include stroke-(c($ros-600, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-700($v: 1) {
+      @include stroke-(c($ros-700, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-800($v: 1) {
+      @include stroke-(c($ros-800, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-900($v: 1) {
+      @include stroke-(c($ros-900, $v), $md);
+    }
+
+    @mixin md\:stroke-rose-950($v: 1) {
+      @include stroke-(c($ros-950, $v), $md);
+    }
+
+    @mixin lg\:stroke-none {
+      @include stroke-(none, $lg);
+    }
+
+    @mixin lg\:stroke-inherit {
+      @include stroke-(inherit, $lg);
+    }
+
+    @mixin lg\:stroke-current {
+      @include stroke-(currentColor, $lg);
+    }
+
+    @mixin lg\:stroke-transparent {
+      @include stroke-(transparent, $lg);
+    }
+
+    @mixin lg\:stroke-black($v: 1) {
+      @include stroke-(c($bla, $v), $lg);
+    }
+
+    @mixin lg\:stroke-white($v: 1) {
+      @include stroke-(c($whi, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-50($v: 1) {
+      @include stroke-(c($sla-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-100($v: 1) {
+      @include stroke-(c($sla-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-200($v: 1) {
+      @include stroke-(c($sla-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-300($v: 1) {
+      @include stroke-(c($sla-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-400($v: 1) {
+      @include stroke-(c($sla-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-500($v: 1) {
+      @include stroke-(c($sla-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-600($v: 1) {
+      @include stroke-(c($sla-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-700($v: 1) {
+      @include stroke-(c($sla-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-800($v: 1) {
+      @include stroke-(c($sla-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-900($v: 1) {
+      @include stroke-(c($sla-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-slate-950($v: 1) {
+      @include stroke-(c($sla-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-50($v: 1) {
+      @include stroke-(c($gra-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-100($v: 1) {
+      @include stroke-(c($gra-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-200($v: 1) {
+      @include stroke-(c($gra-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-300($v: 1) {
+      @include stroke-(c($gra-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-400($v: 1) {
+      @include stroke-(c($gra-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-500($v: 1) {
+      @include stroke-(c($gra-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-600($v: 1) {
+      @include stroke-(c($gra-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-700($v: 1) {
+      @include stroke-(c($gra-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-800($v: 1) {
+      @include stroke-(c($gra-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-900($v: 1) {
+      @include stroke-(c($gra-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-gray-950($v: 1) {
+      @include stroke-(c($gra-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-50($v: 1) {
+      @include stroke-(c($zin-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-100($v: 1) {
+      @include stroke-(c($zin-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-200($v: 1) {
+      @include stroke-(c($zin-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-300($v: 1) {
+      @include stroke-(c($zin-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-400($v: 1) {
+      @include stroke-(c($zin-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-500($v: 1) {
+      @include stroke-(c($zin-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-600($v: 1) {
+      @include stroke-(c($zin-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-700($v: 1) {
+      @include stroke-(c($zin-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-800($v: 1) {
+      @include stroke-(c($zin-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-900($v: 1) {
+      @include stroke-(c($zin-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-zinc-950($v: 1) {
+      @include stroke-(c($zin-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-50($v: 1) {
+      @include stroke-(c($neu-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-100($v: 1) {
+      @include stroke-(c($neu-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-200($v: 1) {
+      @include stroke-(c($neu-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-300($v: 1) {
+      @include stroke-(c($neu-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-400($v: 1) {
+      @include stroke-(c($neu-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-500($v: 1) {
+      @include stroke-(c($neu-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-600($v: 1) {
+      @include stroke-(c($neu-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-700($v: 1) {
+      @include stroke-(c($neu-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-800($v: 1) {
+      @include stroke-(c($neu-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-900($v: 1) {
+      @include stroke-(c($neu-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-neutral-950($v: 1) {
+      @include stroke-(c($neu-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-50($v: 1) {
+      @include stroke-(c($sto-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-100($v: 1) {
+      @include stroke-(c($sto-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-200($v: 1) {
+      @include stroke-(c($sto-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-300($v: 1) {
+      @include stroke-(c($sto-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-400($v: 1) {
+      @include stroke-(c($sto-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-500($v: 1) {
+      @include stroke-(c($sto-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-600($v: 1) {
+      @include stroke-(c($sto-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-700($v: 1) {
+      @include stroke-(c($sto-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-800($v: 1) {
+      @include stroke-(c($sto-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-900($v: 1) {
+      @include stroke-(c($sto-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-stone-950($v: 1) {
+      @include stroke-(c($sto-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-50($v: 1) {
+      @include stroke-(c($red-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-100($v: 1) {
+      @include stroke-(c($red-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-200($v: 1) {
+      @include stroke-(c($red-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-300($v: 1) {
+      @include stroke-(c($red-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-400($v: 1) {
+      @include stroke-(c($red-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-500($v: 1) {
+      @include stroke-(c($red-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-600($v: 1) {
+      @include stroke-(c($red-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-700($v: 1) {
+      @include stroke-(c($red-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-800($v: 1) {
+      @include stroke-(c($red-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-900($v: 1) {
+      @include stroke-(c($red-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-red-950($v: 1) {
+      @include stroke-(c($red-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-50($v: 1) {
+      @include stroke-(c($ora-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-100($v: 1) {
+      @include stroke-(c($ora-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-200($v: 1) {
+      @include stroke-(c($ora-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-300($v: 1) {
+      @include stroke-(c($ora-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-400($v: 1) {
+      @include stroke-(c($ora-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-500($v: 1) {
+      @include stroke-(c($ora-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-600($v: 1) {
+      @include stroke-(c($ora-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-700($v: 1) {
+      @include stroke-(c($ora-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-800($v: 1) {
+      @include stroke-(c($ora-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-900($v: 1) {
+      @include stroke-(c($ora-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-orange-950($v: 1) {
+      @include stroke-(c($ora-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-50($v: 1) {
+      @include stroke-(c($amb-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-100($v: 1) {
+      @include stroke-(c($amb-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-200($v: 1) {
+      @include stroke-(c($amb-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-300($v: 1) {
+      @include stroke-(c($amb-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-400($v: 1) {
+      @include stroke-(c($amb-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-500($v: 1) {
+      @include stroke-(c($amb-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-600($v: 1) {
+      @include stroke-(c($amb-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-700($v: 1) {
+      @include stroke-(c($amb-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-800($v: 1) {
+      @include stroke-(c($amb-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-900($v: 1) {
+      @include stroke-(c($amb-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-amber-950($v: 1) {
+      @include stroke-(c($amb-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-50($v: 1) {
+      @include stroke-(c($yel-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-100($v: 1) {
+      @include stroke-(c($yel-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-200($v: 1) {
+      @include stroke-(c($yel-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-300($v: 1) {
+      @include stroke-(c($yel-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-400($v: 1) {
+      @include stroke-(c($yel-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-500($v: 1) {
+      @include stroke-(c($yel-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-600($v: 1) {
+      @include stroke-(c($yel-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-700($v: 1) {
+      @include stroke-(c($yel-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-800($v: 1) {
+      @include stroke-(c($yel-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-900($v: 1) {
+      @include stroke-(c($yel-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-yellow-950($v: 1) {
+      @include stroke-(c($yel-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-50($v: 1) {
+      @include stroke-(c($lim-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-100($v: 1) {
+      @include stroke-(c($lim-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-200($v: 1) {
+      @include stroke-(c($lim-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-300($v: 1) {
+      @include stroke-(c($lim-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-400($v: 1) {
+      @include stroke-(c($lim-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-500($v: 1) {
+      @include stroke-(c($lim-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-600($v: 1) {
+      @include stroke-(c($lim-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-700($v: 1) {
+      @include stroke-(c($lim-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-800($v: 1) {
+      @include stroke-(c($lim-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-900($v: 1) {
+      @include stroke-(c($lim-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-lime-950($v: 1) {
+      @include stroke-(c($lim-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-50($v: 1) {
+      @include stroke-(c($gre-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-100($v: 1) {
+      @include stroke-(c($gre-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-200($v: 1) {
+      @include stroke-(c($gre-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-300($v: 1) {
+      @include stroke-(c($gre-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-400($v: 1) {
+      @include stroke-(c($gre-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-500($v: 1) {
+      @include stroke-(c($gre-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-600($v: 1) {
+      @include stroke-(c($gre-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-700($v: 1) {
+      @include stroke-(c($gre-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-800($v: 1) {
+      @include stroke-(c($gre-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-900($v: 1) {
+      @include stroke-(c($gre-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-green-950($v: 1) {
+      @include stroke-(c($gre-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-50($v: 1) {
+      @include stroke-(c($eme-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-100($v: 1) {
+      @include stroke-(c($eme-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-200($v: 1) {
+      @include stroke-(c($eme-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-300($v: 1) {
+      @include stroke-(c($eme-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-400($v: 1) {
+      @include stroke-(c($eme-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-500($v: 1) {
+      @include stroke-(c($eme-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-600($v: 1) {
+      @include stroke-(c($eme-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-700($v: 1) {
+      @include stroke-(c($eme-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-800($v: 1) {
+      @include stroke-(c($eme-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-900($v: 1) {
+      @include stroke-(c($eme-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-emerald-950($v: 1) {
+      @include stroke-(c($eme-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-50($v: 1) {
+      @include stroke-(c($tea-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-100($v: 1) {
+      @include stroke-(c($tea-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-200($v: 1) {
+      @include stroke-(c($tea-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-300($v: 1) {
+      @include stroke-(c($tea-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-400($v: 1) {
+      @include stroke-(c($tea-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-500($v: 1) {
+      @include stroke-(c($tea-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-600($v: 1) {
+      @include stroke-(c($tea-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-700($v: 1) {
+      @include stroke-(c($tea-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-800($v: 1) {
+      @include stroke-(c($tea-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-900($v: 1) {
+      @include stroke-(c($tea-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-teal-950($v: 1) {
+      @include stroke-(c($tea-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-50($v: 1) {
+      @include stroke-(c($cya-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-100($v: 1) {
+      @include stroke-(c($cya-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-200($v: 1) {
+      @include stroke-(c($cya-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-300($v: 1) {
+      @include stroke-(c($cya-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-400($v: 1) {
+      @include stroke-(c($cya-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-500($v: 1) {
+      @include stroke-(c($cya-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-600($v: 1) {
+      @include stroke-(c($cya-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-700($v: 1) {
+      @include stroke-(c($cya-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-800($v: 1) {
+      @include stroke-(c($cya-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-900($v: 1) {
+      @include stroke-(c($cya-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-cyan-950($v: 1) {
+      @include stroke-(c($cya-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-50($v: 1) {
+      @include stroke-(c($sky-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-100($v: 1) {
+      @include stroke-(c($sky-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-200($v: 1) {
+      @include stroke-(c($sky-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-300($v: 1) {
+      @include stroke-(c($sky-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-400($v: 1) {
+      @include stroke-(c($sky-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-500($v: 1) {
+      @include stroke-(c($sky-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-600($v: 1) {
+      @include stroke-(c($sky-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-700($v: 1) {
+      @include stroke-(c($sky-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-800($v: 1) {
+      @include stroke-(c($sky-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-900($v: 1) {
+      @include stroke-(c($sky-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-sky-950($v: 1) {
+      @include stroke-(c($sky-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-50($v: 1) {
+      @include stroke-(c($blu-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-100($v: 1) {
+      @include stroke-(c($blu-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-200($v: 1) {
+      @include stroke-(c($blu-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-300($v: 1) {
+      @include stroke-(c($blu-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-400($v: 1) {
+      @include stroke-(c($blu-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-500($v: 1) {
+      @include stroke-(c($blu-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-600($v: 1) {
+      @include stroke-(c($blu-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-700($v: 1) {
+      @include stroke-(c($blu-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-800($v: 1) {
+      @include stroke-(c($blu-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-900($v: 1) {
+      @include stroke-(c($blu-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-blue-950($v: 1) {
+      @include stroke-(c($blu-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-50($v: 1) {
+      @include stroke-(c($ind-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-100($v: 1) {
+      @include stroke-(c($ind-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-200($v: 1) {
+      @include stroke-(c($ind-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-300($v: 1) {
+      @include stroke-(c($ind-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-400($v: 1) {
+      @include stroke-(c($ind-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-500($v: 1) {
+      @include stroke-(c($ind-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-600($v: 1) {
+      @include stroke-(c($ind-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-700($v: 1) {
+      @include stroke-(c($ind-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-800($v: 1) {
+      @include stroke-(c($ind-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-900($v: 1) {
+      @include stroke-(c($ind-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-indigo-950($v: 1) {
+      @include stroke-(c($ind-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-50($v: 1) {
+      @include stroke-(c($vio-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-100($v: 1) {
+      @include stroke-(c($vio-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-200($v: 1) {
+      @include stroke-(c($vio-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-300($v: 1) {
+      @include stroke-(c($vio-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-400($v: 1) {
+      @include stroke-(c($vio-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-500($v: 1) {
+      @include stroke-(c($vio-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-600($v: 1) {
+      @include stroke-(c($vio-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-700($v: 1) {
+      @include stroke-(c($vio-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-800($v: 1) {
+      @include stroke-(c($vio-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-900($v: 1) {
+      @include stroke-(c($vio-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-violet-950($v: 1) {
+      @include stroke-(c($vio-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-50($v: 1) {
+      @include stroke-(c($pur-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-100($v: 1) {
+      @include stroke-(c($pur-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-200($v: 1) {
+      @include stroke-(c($pur-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-300($v: 1) {
+      @include stroke-(c($pur-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-400($v: 1) {
+      @include stroke-(c($pur-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-500($v: 1) {
+      @include stroke-(c($pur-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-600($v: 1) {
+      @include stroke-(c($pur-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-700($v: 1) {
+      @include stroke-(c($pur-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-800($v: 1) {
+      @include stroke-(c($pur-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-900($v: 1) {
+      @include stroke-(c($pur-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-purple-950($v: 1) {
+      @include stroke-(c($pur-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-50($v: 1) {
+      @include stroke-(c($fuc-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-100($v: 1) {
+      @include stroke-(c($fuc-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-200($v: 1) {
+      @include stroke-(c($fuc-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-300($v: 1) {
+      @include stroke-(c($fuc-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-400($v: 1) {
+      @include stroke-(c($fuc-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-500($v: 1) {
+      @include stroke-(c($fuc-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-600($v: 1) {
+      @include stroke-(c($fuc-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-700($v: 1) {
+      @include stroke-(c($fuc-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-800($v: 1) {
+      @include stroke-(c($fuc-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-900($v: 1) {
+      @include stroke-(c($fuc-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-fuchsia-950($v: 1) {
+      @include stroke-(c($fuc-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-50($v: 1) {
+      @include stroke-(c($pin-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-100($v: 1) {
+      @include stroke-(c($pin-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-200($v: 1) {
+      @include stroke-(c($pin-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-300($v: 1) {
+      @include stroke-(c($pin-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-400($v: 1) {
+      @include stroke-(c($pin-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-500($v: 1) {
+      @include stroke-(c($pin-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-600($v: 1) {
+      @include stroke-(c($pin-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-700($v: 1) {
+      @include stroke-(c($pin-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-800($v: 1) {
+      @include stroke-(c($pin-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-900($v: 1) {
+      @include stroke-(c($pin-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-pink-950($v: 1) {
+      @include stroke-(c($pin-950, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-50($v: 1) {
+      @include stroke-(c($ros-50, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-100($v: 1) {
+      @include stroke-(c($ros-100, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-200($v: 1) {
+      @include stroke-(c($ros-200, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-300($v: 1) {
+      @include stroke-(c($ros-300, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-400($v: 1) {
+      @include stroke-(c($ros-400, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-500($v: 1) {
+      @include stroke-(c($ros-500, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-600($v: 1) {
+      @include stroke-(c($ros-600, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-700($v: 1) {
+      @include stroke-(c($ros-700, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-800($v: 1) {
+      @include stroke-(c($ros-800, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-900($v: 1) {
+      @include stroke-(c($ros-900, $v), $lg);
+    }
+
+    @mixin lg\:stroke-rose-950($v: 1) {
+      @include stroke-(c($ros-950, $v), $lg);
+    }
+
+    @mixin xl\:stroke-none {
+      @include stroke-(none, $xl);
+    }
+
+    @mixin xl\:stroke-inherit {
+      @include stroke-(inherit, $xl);
+    }
+
+    @mixin xl\:stroke-current {
+      @include stroke-(currentColor, $xl);
+    }
+
+    @mixin xl\:stroke-transparent {
+      @include stroke-(transparent, $xl);
+    }
+
+    @mixin xl\:stroke-black($v: 1) {
+      @include stroke-(c($bla, $v), $xl);
+    }
+
+    @mixin xl\:stroke-white($v: 1) {
+      @include stroke-(c($whi, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-50($v: 1) {
+      @include stroke-(c($sla-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-100($v: 1) {
+      @include stroke-(c($sla-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-200($v: 1) {
+      @include stroke-(c($sla-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-300($v: 1) {
+      @include stroke-(c($sla-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-400($v: 1) {
+      @include stroke-(c($sla-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-500($v: 1) {
+      @include stroke-(c($sla-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-600($v: 1) {
+      @include stroke-(c($sla-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-700($v: 1) {
+      @include stroke-(c($sla-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-800($v: 1) {
+      @include stroke-(c($sla-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-900($v: 1) {
+      @include stroke-(c($sla-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-slate-950($v: 1) {
+      @include stroke-(c($sla-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-50($v: 1) {
+      @include stroke-(c($gra-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-100($v: 1) {
+      @include stroke-(c($gra-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-200($v: 1) {
+      @include stroke-(c($gra-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-300($v: 1) {
+      @include stroke-(c($gra-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-400($v: 1) {
+      @include stroke-(c($gra-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-500($v: 1) {
+      @include stroke-(c($gra-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-600($v: 1) {
+      @include stroke-(c($gra-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-700($v: 1) {
+      @include stroke-(c($gra-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-800($v: 1) {
+      @include stroke-(c($gra-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-900($v: 1) {
+      @include stroke-(c($gra-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-gray-950($v: 1) {
+      @include stroke-(c($gra-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-50($v: 1) {
+      @include stroke-(c($zin-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-100($v: 1) {
+      @include stroke-(c($zin-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-200($v: 1) {
+      @include stroke-(c($zin-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-300($v: 1) {
+      @include stroke-(c($zin-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-400($v: 1) {
+      @include stroke-(c($zin-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-500($v: 1) {
+      @include stroke-(c($zin-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-600($v: 1) {
+      @include stroke-(c($zin-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-700($v: 1) {
+      @include stroke-(c($zin-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-800($v: 1) {
+      @include stroke-(c($zin-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-900($v: 1) {
+      @include stroke-(c($zin-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-zinc-950($v: 1) {
+      @include stroke-(c($zin-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-50($v: 1) {
+      @include stroke-(c($neu-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-100($v: 1) {
+      @include stroke-(c($neu-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-200($v: 1) {
+      @include stroke-(c($neu-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-300($v: 1) {
+      @include stroke-(c($neu-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-400($v: 1) {
+      @include stroke-(c($neu-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-500($v: 1) {
+      @include stroke-(c($neu-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-600($v: 1) {
+      @include stroke-(c($neu-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-700($v: 1) {
+      @include stroke-(c($neu-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-800($v: 1) {
+      @include stroke-(c($neu-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-900($v: 1) {
+      @include stroke-(c($neu-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-neutral-950($v: 1) {
+      @include stroke-(c($neu-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-50($v: 1) {
+      @include stroke-(c($sto-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-100($v: 1) {
+      @include stroke-(c($sto-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-200($v: 1) {
+      @include stroke-(c($sto-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-300($v: 1) {
+      @include stroke-(c($sto-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-400($v: 1) {
+      @include stroke-(c($sto-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-500($v: 1) {
+      @include stroke-(c($sto-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-600($v: 1) {
+      @include stroke-(c($sto-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-700($v: 1) {
+      @include stroke-(c($sto-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-800($v: 1) {
+      @include stroke-(c($sto-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-900($v: 1) {
+      @include stroke-(c($sto-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-stone-950($v: 1) {
+      @include stroke-(c($sto-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-50($v: 1) {
+      @include stroke-(c($red-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-100($v: 1) {
+      @include stroke-(c($red-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-200($v: 1) {
+      @include stroke-(c($red-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-300($v: 1) {
+      @include stroke-(c($red-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-400($v: 1) {
+      @include stroke-(c($red-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-500($v: 1) {
+      @include stroke-(c($red-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-600($v: 1) {
+      @include stroke-(c($red-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-700($v: 1) {
+      @include stroke-(c($red-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-800($v: 1) {
+      @include stroke-(c($red-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-900($v: 1) {
+      @include stroke-(c($red-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-red-950($v: 1) {
+      @include stroke-(c($red-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-50($v: 1) {
+      @include stroke-(c($ora-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-100($v: 1) {
+      @include stroke-(c($ora-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-200($v: 1) {
+      @include stroke-(c($ora-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-300($v: 1) {
+      @include stroke-(c($ora-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-400($v: 1) {
+      @include stroke-(c($ora-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-500($v: 1) {
+      @include stroke-(c($ora-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-600($v: 1) {
+      @include stroke-(c($ora-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-700($v: 1) {
+      @include stroke-(c($ora-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-800($v: 1) {
+      @include stroke-(c($ora-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-900($v: 1) {
+      @include stroke-(c($ora-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-orange-950($v: 1) {
+      @include stroke-(c($ora-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-50($v: 1) {
+      @include stroke-(c($amb-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-100($v: 1) {
+      @include stroke-(c($amb-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-200($v: 1) {
+      @include stroke-(c($amb-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-300($v: 1) {
+      @include stroke-(c($amb-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-400($v: 1) {
+      @include stroke-(c($amb-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-500($v: 1) {
+      @include stroke-(c($amb-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-600($v: 1) {
+      @include stroke-(c($amb-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-700($v: 1) {
+      @include stroke-(c($amb-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-800($v: 1) {
+      @include stroke-(c($amb-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-900($v: 1) {
+      @include stroke-(c($amb-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-amber-950($v: 1) {
+      @include stroke-(c($amb-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-50($v: 1) {
+      @include stroke-(c($yel-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-100($v: 1) {
+      @include stroke-(c($yel-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-200($v: 1) {
+      @include stroke-(c($yel-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-300($v: 1) {
+      @include stroke-(c($yel-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-400($v: 1) {
+      @include stroke-(c($yel-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-500($v: 1) {
+      @include stroke-(c($yel-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-600($v: 1) {
+      @include stroke-(c($yel-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-700($v: 1) {
+      @include stroke-(c($yel-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-800($v: 1) {
+      @include stroke-(c($yel-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-900($v: 1) {
+      @include stroke-(c($yel-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-yellow-950($v: 1) {
+      @include stroke-(c($yel-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-50($v: 1) {
+      @include stroke-(c($lim-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-100($v: 1) {
+      @include stroke-(c($lim-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-200($v: 1) {
+      @include stroke-(c($lim-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-300($v: 1) {
+      @include stroke-(c($lim-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-400($v: 1) {
+      @include stroke-(c($lim-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-500($v: 1) {
+      @include stroke-(c($lim-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-600($v: 1) {
+      @include stroke-(c($lim-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-700($v: 1) {
+      @include stroke-(c($lim-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-800($v: 1) {
+      @include stroke-(c($lim-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-900($v: 1) {
+      @include stroke-(c($lim-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-lime-950($v: 1) {
+      @include stroke-(c($lim-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-50($v: 1) {
+      @include stroke-(c($gre-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-100($v: 1) {
+      @include stroke-(c($gre-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-200($v: 1) {
+      @include stroke-(c($gre-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-300($v: 1) {
+      @include stroke-(c($gre-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-400($v: 1) {
+      @include stroke-(c($gre-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-500($v: 1) {
+      @include stroke-(c($gre-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-600($v: 1) {
+      @include stroke-(c($gre-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-700($v: 1) {
+      @include stroke-(c($gre-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-800($v: 1) {
+      @include stroke-(c($gre-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-900($v: 1) {
+      @include stroke-(c($gre-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-green-950($v: 1) {
+      @include stroke-(c($gre-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-50($v: 1) {
+      @include stroke-(c($eme-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-100($v: 1) {
+      @include stroke-(c($eme-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-200($v: 1) {
+      @include stroke-(c($eme-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-300($v: 1) {
+      @include stroke-(c($eme-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-400($v: 1) {
+      @include stroke-(c($eme-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-500($v: 1) {
+      @include stroke-(c($eme-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-600($v: 1) {
+      @include stroke-(c($eme-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-700($v: 1) {
+      @include stroke-(c($eme-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-800($v: 1) {
+      @include stroke-(c($eme-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-900($v: 1) {
+      @include stroke-(c($eme-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-emerald-950($v: 1) {
+      @include stroke-(c($eme-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-50($v: 1) {
+      @include stroke-(c($tea-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-100($v: 1) {
+      @include stroke-(c($tea-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-200($v: 1) {
+      @include stroke-(c($tea-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-300($v: 1) {
+      @include stroke-(c($tea-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-400($v: 1) {
+      @include stroke-(c($tea-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-500($v: 1) {
+      @include stroke-(c($tea-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-600($v: 1) {
+      @include stroke-(c($tea-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-700($v: 1) {
+      @include stroke-(c($tea-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-800($v: 1) {
+      @include stroke-(c($tea-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-900($v: 1) {
+      @include stroke-(c($tea-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-teal-950($v: 1) {
+      @include stroke-(c($tea-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-50($v: 1) {
+      @include stroke-(c($cya-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-100($v: 1) {
+      @include stroke-(c($cya-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-200($v: 1) {
+      @include stroke-(c($cya-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-300($v: 1) {
+      @include stroke-(c($cya-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-400($v: 1) {
+      @include stroke-(c($cya-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-500($v: 1) {
+      @include stroke-(c($cya-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-600($v: 1) {
+      @include stroke-(c($cya-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-700($v: 1) {
+      @include stroke-(c($cya-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-800($v: 1) {
+      @include stroke-(c($cya-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-900($v: 1) {
+      @include stroke-(c($cya-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-cyan-950($v: 1) {
+      @include stroke-(c($cya-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-50($v: 1) {
+      @include stroke-(c($sky-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-100($v: 1) {
+      @include stroke-(c($sky-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-200($v: 1) {
+      @include stroke-(c($sky-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-300($v: 1) {
+      @include stroke-(c($sky-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-400($v: 1) {
+      @include stroke-(c($sky-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-500($v: 1) {
+      @include stroke-(c($sky-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-600($v: 1) {
+      @include stroke-(c($sky-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-700($v: 1) {
+      @include stroke-(c($sky-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-800($v: 1) {
+      @include stroke-(c($sky-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-900($v: 1) {
+      @include stroke-(c($sky-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-sky-950($v: 1) {
+      @include stroke-(c($sky-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-50($v: 1) {
+      @include stroke-(c($blu-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-100($v: 1) {
+      @include stroke-(c($blu-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-200($v: 1) {
+      @include stroke-(c($blu-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-300($v: 1) {
+      @include stroke-(c($blu-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-400($v: 1) {
+      @include stroke-(c($blu-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-500($v: 1) {
+      @include stroke-(c($blu-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-600($v: 1) {
+      @include stroke-(c($blu-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-700($v: 1) {
+      @include stroke-(c($blu-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-800($v: 1) {
+      @include stroke-(c($blu-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-900($v: 1) {
+      @include stroke-(c($blu-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-blue-950($v: 1) {
+      @include stroke-(c($blu-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-50($v: 1) {
+      @include stroke-(c($ind-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-100($v: 1) {
+      @include stroke-(c($ind-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-200($v: 1) {
+      @include stroke-(c($ind-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-300($v: 1) {
+      @include stroke-(c($ind-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-400($v: 1) {
+      @include stroke-(c($ind-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-500($v: 1) {
+      @include stroke-(c($ind-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-600($v: 1) {
+      @include stroke-(c($ind-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-700($v: 1) {
+      @include stroke-(c($ind-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-800($v: 1) {
+      @include stroke-(c($ind-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-900($v: 1) {
+      @include stroke-(c($ind-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-indigo-950($v: 1) {
+      @include stroke-(c($ind-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-50($v: 1) {
+      @include stroke-(c($vio-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-100($v: 1) {
+      @include stroke-(c($vio-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-200($v: 1) {
+      @include stroke-(c($vio-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-300($v: 1) {
+      @include stroke-(c($vio-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-400($v: 1) {
+      @include stroke-(c($vio-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-500($v: 1) {
+      @include stroke-(c($vio-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-600($v: 1) {
+      @include stroke-(c($vio-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-700($v: 1) {
+      @include stroke-(c($vio-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-800($v: 1) {
+      @include stroke-(c($vio-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-900($v: 1) {
+      @include stroke-(c($vio-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-violet-950($v: 1) {
+      @include stroke-(c($vio-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-50($v: 1) {
+      @include stroke-(c($pur-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-100($v: 1) {
+      @include stroke-(c($pur-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-200($v: 1) {
+      @include stroke-(c($pur-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-300($v: 1) {
+      @include stroke-(c($pur-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-400($v: 1) {
+      @include stroke-(c($pur-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-500($v: 1) {
+      @include stroke-(c($pur-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-600($v: 1) {
+      @include stroke-(c($pur-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-700($v: 1) {
+      @include stroke-(c($pur-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-800($v: 1) {
+      @include stroke-(c($pur-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-900($v: 1) {
+      @include stroke-(c($pur-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-purple-950($v: 1) {
+      @include stroke-(c($pur-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-50($v: 1) {
+      @include stroke-(c($fuc-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-100($v: 1) {
+      @include stroke-(c($fuc-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-200($v: 1) {
+      @include stroke-(c($fuc-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-300($v: 1) {
+      @include stroke-(c($fuc-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-400($v: 1) {
+      @include stroke-(c($fuc-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-500($v: 1) {
+      @include stroke-(c($fuc-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-600($v: 1) {
+      @include stroke-(c($fuc-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-700($v: 1) {
+      @include stroke-(c($fuc-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-800($v: 1) {
+      @include stroke-(c($fuc-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-900($v: 1) {
+      @include stroke-(c($fuc-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-fuchsia-950($v: 1) {
+      @include stroke-(c($fuc-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-50($v: 1) {
+      @include stroke-(c($pin-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-100($v: 1) {
+      @include stroke-(c($pin-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-200($v: 1) {
+      @include stroke-(c($pin-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-300($v: 1) {
+      @include stroke-(c($pin-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-400($v: 1) {
+      @include stroke-(c($pin-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-500($v: 1) {
+      @include stroke-(c($pin-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-600($v: 1) {
+      @include stroke-(c($pin-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-700($v: 1) {
+      @include stroke-(c($pin-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-800($v: 1) {
+      @include stroke-(c($pin-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-900($v: 1) {
+      @include stroke-(c($pin-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-pink-950($v: 1) {
+      @include stroke-(c($pin-950, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-50($v: 1) {
+      @include stroke-(c($ros-50, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-100($v: 1) {
+      @include stroke-(c($ros-100, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-200($v: 1) {
+      @include stroke-(c($ros-200, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-300($v: 1) {
+      @include stroke-(c($ros-300, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-400($v: 1) {
+      @include stroke-(c($ros-400, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-500($v: 1) {
+      @include stroke-(c($ros-500, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-600($v: 1) {
+      @include stroke-(c($ros-600, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-700($v: 1) {
+      @include stroke-(c($ros-700, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-800($v: 1) {
+      @include stroke-(c($ros-800, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-900($v: 1) {
+      @include stroke-(c($ros-900, $v), $xl);
+    }
+
+    @mixin xl\:stroke-rose-950($v: 1) {
+      @include stroke-(c($ros-950, $v), $xl);
+    }
+
+    @mixin \2xl\:stroke-none {
+      @include stroke-(none, $\2xl);
+    }
+
+    @mixin \2xl\:stroke-inherit {
+      @include stroke-(inherit, $\2xl);
+    }
+
+    @mixin \2xl\:stroke-current {
+      @include stroke-(currentColor, $\2xl);
+    }
+
+    @mixin \2xl\:stroke-transparent {
+      @include stroke-(transparent, $\2xl);
+    }
+
+    @mixin \2xl\:stroke-black($v: 1) {
+      @include stroke-(c($bla, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-white($v: 1) {
+      @include stroke-(c($whi, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-50($v: 1) {
+      @include stroke-(c($sla-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-100($v: 1) {
+      @include stroke-(c($sla-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-200($v: 1) {
+      @include stroke-(c($sla-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-300($v: 1) {
+      @include stroke-(c($sla-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-400($v: 1) {
+      @include stroke-(c($sla-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-500($v: 1) {
+      @include stroke-(c($sla-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-600($v: 1) {
+      @include stroke-(c($sla-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-700($v: 1) {
+      @include stroke-(c($sla-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-800($v: 1) {
+      @include stroke-(c($sla-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-900($v: 1) {
+      @include stroke-(c($sla-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-slate-950($v: 1) {
+      @include stroke-(c($sla-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-50($v: 1) {
+      @include stroke-(c($gra-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-100($v: 1) {
+      @include stroke-(c($gra-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-200($v: 1) {
+      @include stroke-(c($gra-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-300($v: 1) {
+      @include stroke-(c($gra-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-400($v: 1) {
+      @include stroke-(c($gra-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-500($v: 1) {
+      @include stroke-(c($gra-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-600($v: 1) {
+      @include stroke-(c($gra-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-700($v: 1) {
+      @include stroke-(c($gra-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-800($v: 1) {
+      @include stroke-(c($gra-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-900($v: 1) {
+      @include stroke-(c($gra-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-gray-950($v: 1) {
+      @include stroke-(c($gra-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-50($v: 1) {
+      @include stroke-(c($zin-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-100($v: 1) {
+      @include stroke-(c($zin-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-200($v: 1) {
+      @include stroke-(c($zin-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-300($v: 1) {
+      @include stroke-(c($zin-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-400($v: 1) {
+      @include stroke-(c($zin-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-500($v: 1) {
+      @include stroke-(c($zin-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-600($v: 1) {
+      @include stroke-(c($zin-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-700($v: 1) {
+      @include stroke-(c($zin-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-800($v: 1) {
+      @include stroke-(c($zin-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-900($v: 1) {
+      @include stroke-(c($zin-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-zinc-950($v: 1) {
+      @include stroke-(c($zin-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-50($v: 1) {
+      @include stroke-(c($neu-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-100($v: 1) {
+      @include stroke-(c($neu-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-200($v: 1) {
+      @include stroke-(c($neu-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-300($v: 1) {
+      @include stroke-(c($neu-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-400($v: 1) {
+      @include stroke-(c($neu-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-500($v: 1) {
+      @include stroke-(c($neu-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-600($v: 1) {
+      @include stroke-(c($neu-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-700($v: 1) {
+      @include stroke-(c($neu-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-800($v: 1) {
+      @include stroke-(c($neu-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-900($v: 1) {
+      @include stroke-(c($neu-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-neutral-950($v: 1) {
+      @include stroke-(c($neu-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-50($v: 1) {
+      @include stroke-(c($sto-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-100($v: 1) {
+      @include stroke-(c($sto-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-200($v: 1) {
+      @include stroke-(c($sto-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-300($v: 1) {
+      @include stroke-(c($sto-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-400($v: 1) {
+      @include stroke-(c($sto-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-500($v: 1) {
+      @include stroke-(c($sto-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-600($v: 1) {
+      @include stroke-(c($sto-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-700($v: 1) {
+      @include stroke-(c($sto-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-800($v: 1) {
+      @include stroke-(c($sto-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-900($v: 1) {
+      @include stroke-(c($sto-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-stone-950($v: 1) {
+      @include stroke-(c($sto-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-50($v: 1) {
+      @include stroke-(c($red-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-100($v: 1) {
+      @include stroke-(c($red-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-200($v: 1) {
+      @include stroke-(c($red-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-300($v: 1) {
+      @include stroke-(c($red-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-400($v: 1) {
+      @include stroke-(c($red-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-500($v: 1) {
+      @include stroke-(c($red-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-600($v: 1) {
+      @include stroke-(c($red-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-700($v: 1) {
+      @include stroke-(c($red-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-800($v: 1) {
+      @include stroke-(c($red-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-900($v: 1) {
+      @include stroke-(c($red-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-red-950($v: 1) {
+      @include stroke-(c($red-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-50($v: 1) {
+      @include stroke-(c($ora-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-100($v: 1) {
+      @include stroke-(c($ora-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-200($v: 1) {
+      @include stroke-(c($ora-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-300($v: 1) {
+      @include stroke-(c($ora-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-400($v: 1) {
+      @include stroke-(c($ora-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-500($v: 1) {
+      @include stroke-(c($ora-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-600($v: 1) {
+      @include stroke-(c($ora-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-700($v: 1) {
+      @include stroke-(c($ora-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-800($v: 1) {
+      @include stroke-(c($ora-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-900($v: 1) {
+      @include stroke-(c($ora-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-orange-950($v: 1) {
+      @include stroke-(c($ora-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-50($v: 1) {
+      @include stroke-(c($amb-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-100($v: 1) {
+      @include stroke-(c($amb-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-200($v: 1) {
+      @include stroke-(c($amb-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-300($v: 1) {
+      @include stroke-(c($amb-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-400($v: 1) {
+      @include stroke-(c($amb-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-500($v: 1) {
+      @include stroke-(c($amb-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-600($v: 1) {
+      @include stroke-(c($amb-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-700($v: 1) {
+      @include stroke-(c($amb-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-800($v: 1) {
+      @include stroke-(c($amb-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-900($v: 1) {
+      @include stroke-(c($amb-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-amber-950($v: 1) {
+      @include stroke-(c($amb-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-50($v: 1) {
+      @include stroke-(c($yel-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-100($v: 1) {
+      @include stroke-(c($yel-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-200($v: 1) {
+      @include stroke-(c($yel-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-300($v: 1) {
+      @include stroke-(c($yel-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-400($v: 1) {
+      @include stroke-(c($yel-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-500($v: 1) {
+      @include stroke-(c($yel-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-600($v: 1) {
+      @include stroke-(c($yel-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-700($v: 1) {
+      @include stroke-(c($yel-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-800($v: 1) {
+      @include stroke-(c($yel-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-900($v: 1) {
+      @include stroke-(c($yel-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-yellow-950($v: 1) {
+      @include stroke-(c($yel-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-50($v: 1) {
+      @include stroke-(c($lim-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-100($v: 1) {
+      @include stroke-(c($lim-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-200($v: 1) {
+      @include stroke-(c($lim-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-300($v: 1) {
+      @include stroke-(c($lim-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-400($v: 1) {
+      @include stroke-(c($lim-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-500($v: 1) {
+      @include stroke-(c($lim-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-600($v: 1) {
+      @include stroke-(c($lim-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-700($v: 1) {
+      @include stroke-(c($lim-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-800($v: 1) {
+      @include stroke-(c($lim-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-900($v: 1) {
+      @include stroke-(c($lim-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-lime-950($v: 1) {
+      @include stroke-(c($lim-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-50($v: 1) {
+      @include stroke-(c($gre-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-100($v: 1) {
+      @include stroke-(c($gre-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-200($v: 1) {
+      @include stroke-(c($gre-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-300($v: 1) {
+      @include stroke-(c($gre-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-400($v: 1) {
+      @include stroke-(c($gre-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-500($v: 1) {
+      @include stroke-(c($gre-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-600($v: 1) {
+      @include stroke-(c($gre-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-700($v: 1) {
+      @include stroke-(c($gre-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-800($v: 1) {
+      @include stroke-(c($gre-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-900($v: 1) {
+      @include stroke-(c($gre-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-green-950($v: 1) {
+      @include stroke-(c($gre-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-50($v: 1) {
+      @include stroke-(c($eme-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-100($v: 1) {
+      @include stroke-(c($eme-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-200($v: 1) {
+      @include stroke-(c($eme-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-300($v: 1) {
+      @include stroke-(c($eme-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-400($v: 1) {
+      @include stroke-(c($eme-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-500($v: 1) {
+      @include stroke-(c($eme-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-600($v: 1) {
+      @include stroke-(c($eme-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-700($v: 1) {
+      @include stroke-(c($eme-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-800($v: 1) {
+      @include stroke-(c($eme-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-900($v: 1) {
+      @include stroke-(c($eme-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-emerald-950($v: 1) {
+      @include stroke-(c($eme-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-50($v: 1) {
+      @include stroke-(c($tea-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-100($v: 1) {
+      @include stroke-(c($tea-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-200($v: 1) {
+      @include stroke-(c($tea-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-300($v: 1) {
+      @include stroke-(c($tea-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-400($v: 1) {
+      @include stroke-(c($tea-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-500($v: 1) {
+      @include stroke-(c($tea-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-600($v: 1) {
+      @include stroke-(c($tea-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-700($v: 1) {
+      @include stroke-(c($tea-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-800($v: 1) {
+      @include stroke-(c($tea-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-900($v: 1) {
+      @include stroke-(c($tea-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-teal-950($v: 1) {
+      @include stroke-(c($tea-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-50($v: 1) {
+      @include stroke-(c($cya-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-100($v: 1) {
+      @include stroke-(c($cya-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-200($v: 1) {
+      @include stroke-(c($cya-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-300($v: 1) {
+      @include stroke-(c($cya-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-400($v: 1) {
+      @include stroke-(c($cya-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-500($v: 1) {
+      @include stroke-(c($cya-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-600($v: 1) {
+      @include stroke-(c($cya-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-700($v: 1) {
+      @include stroke-(c($cya-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-800($v: 1) {
+      @include stroke-(c($cya-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-900($v: 1) {
+      @include stroke-(c($cya-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-cyan-950($v: 1) {
+      @include stroke-(c($cya-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-50($v: 1) {
+      @include stroke-(c($sky-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-100($v: 1) {
+      @include stroke-(c($sky-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-200($v: 1) {
+      @include stroke-(c($sky-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-300($v: 1) {
+      @include stroke-(c($sky-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-400($v: 1) {
+      @include stroke-(c($sky-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-500($v: 1) {
+      @include stroke-(c($sky-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-600($v: 1) {
+      @include stroke-(c($sky-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-700($v: 1) {
+      @include stroke-(c($sky-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-800($v: 1) {
+      @include stroke-(c($sky-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-900($v: 1) {
+      @include stroke-(c($sky-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-sky-950($v: 1) {
+      @include stroke-(c($sky-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-50($v: 1) {
+      @include stroke-(c($blu-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-100($v: 1) {
+      @include stroke-(c($blu-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-200($v: 1) {
+      @include stroke-(c($blu-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-300($v: 1) {
+      @include stroke-(c($blu-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-400($v: 1) {
+      @include stroke-(c($blu-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-500($v: 1) {
+      @include stroke-(c($blu-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-600($v: 1) {
+      @include stroke-(c($blu-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-700($v: 1) {
+      @include stroke-(c($blu-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-800($v: 1) {
+      @include stroke-(c($blu-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-900($v: 1) {
+      @include stroke-(c($blu-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-blue-950($v: 1) {
+      @include stroke-(c($blu-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-50($v: 1) {
+      @include stroke-(c($ind-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-100($v: 1) {
+      @include stroke-(c($ind-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-200($v: 1) {
+      @include stroke-(c($ind-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-300($v: 1) {
+      @include stroke-(c($ind-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-400($v: 1) {
+      @include stroke-(c($ind-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-500($v: 1) {
+      @include stroke-(c($ind-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-600($v: 1) {
+      @include stroke-(c($ind-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-700($v: 1) {
+      @include stroke-(c($ind-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-800($v: 1) {
+      @include stroke-(c($ind-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-900($v: 1) {
+      @include stroke-(c($ind-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-indigo-950($v: 1) {
+      @include stroke-(c($ind-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-50($v: 1) {
+      @include stroke-(c($vio-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-100($v: 1) {
+      @include stroke-(c($vio-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-200($v: 1) {
+      @include stroke-(c($vio-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-300($v: 1) {
+      @include stroke-(c($vio-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-400($v: 1) {
+      @include stroke-(c($vio-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-500($v: 1) {
+      @include stroke-(c($vio-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-600($v: 1) {
+      @include stroke-(c($vio-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-700($v: 1) {
+      @include stroke-(c($vio-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-800($v: 1) {
+      @include stroke-(c($vio-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-900($v: 1) {
+      @include stroke-(c($vio-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-violet-950($v: 1) {
+      @include stroke-(c($vio-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-50($v: 1) {
+      @include stroke-(c($pur-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-100($v: 1) {
+      @include stroke-(c($pur-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-200($v: 1) {
+      @include stroke-(c($pur-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-300($v: 1) {
+      @include stroke-(c($pur-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-400($v: 1) {
+      @include stroke-(c($pur-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-500($v: 1) {
+      @include stroke-(c($pur-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-600($v: 1) {
+      @include stroke-(c($pur-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-700($v: 1) {
+      @include stroke-(c($pur-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-800($v: 1) {
+      @include stroke-(c($pur-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-900($v: 1) {
+      @include stroke-(c($pur-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-purple-950($v: 1) {
+      @include stroke-(c($pur-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-50($v: 1) {
+      @include stroke-(c($fuc-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-100($v: 1) {
+      @include stroke-(c($fuc-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-200($v: 1) {
+      @include stroke-(c($fuc-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-300($v: 1) {
+      @include stroke-(c($fuc-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-400($v: 1) {
+      @include stroke-(c($fuc-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-500($v: 1) {
+      @include stroke-(c($fuc-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-600($v: 1) {
+      @include stroke-(c($fuc-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-700($v: 1) {
+      @include stroke-(c($fuc-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-800($v: 1) {
+      @include stroke-(c($fuc-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-900($v: 1) {
+      @include stroke-(c($fuc-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-fuchsia-950($v: 1) {
+      @include stroke-(c($fuc-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-50($v: 1) {
+      @include stroke-(c($pin-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-100($v: 1) {
+      @include stroke-(c($pin-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-200($v: 1) {
+      @include stroke-(c($pin-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-300($v: 1) {
+      @include stroke-(c($pin-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-400($v: 1) {
+      @include stroke-(c($pin-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-500($v: 1) {
+      @include stroke-(c($pin-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-600($v: 1) {
+      @include stroke-(c($pin-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-700($v: 1) {
+      @include stroke-(c($pin-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-800($v: 1) {
+      @include stroke-(c($pin-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-900($v: 1) {
+      @include stroke-(c($pin-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-pink-950($v: 1) {
+      @include stroke-(c($pin-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-50($v: 1) {
+      @include stroke-(c($ros-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-100($v: 1) {
+      @include stroke-(c($ros-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-200($v: 1) {
+      @include stroke-(c($ros-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-300($v: 1) {
+      @include stroke-(c($ros-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-400($v: 1) {
+      @include stroke-(c($ros-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-500($v: 1) {
+      @include stroke-(c($ros-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-600($v: 1) {
+      @include stroke-(c($ros-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-700($v: 1) {
+      @include stroke-(c($ros-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-800($v: 1) {
+      @include stroke-(c($ros-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-900($v: 1) {
+      @include stroke-(c($ros-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:stroke-rose-950($v: 1) {
+      @include stroke-(c($ros-950, $v), $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin stroke-($v, $rwd: null) {
+    @if $rwd==null {
+      @if meta.type-of($v) ==color {
+        stroke: $v;
+      } @else {
+        stroke-width: $v;
+      }
+    } @else {
+      @media (min-width: $rwd) {
+        @if meta.type-of($v) ==color {
+          stroke: $v;
+        } @else {
+          stroke-width: $v;
+        }
+      }
+    }
+  }
+
+  @mixin sm\:stroke-($v) {
+    @include stroke-($v, $sm);
+  }
+
+  @mixin md\:stroke-($v) {
+    @include stroke-($v, $md);
+  }
+
+  @mixin lg\:stroke-($v) {
+    @include stroke-($v, $lg);
+  }
+
+  @mixin xl\:stroke-($v) {
+    @include stroke-($v, $xl);
+  }
+
+  @mixin \2xl\:stroke-($v) {
+    @include stroke-($v, $\2xl);
+  }
+
+  // x*/
+}

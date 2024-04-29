@@ -1,0 +1,74 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* TableLayout */
+@if $Basic {
+  // /*x
+  @mixin table-auto($rwd: null) {
+    @if $rwd==null {
+      table-layout: auto;
+    } @else {
+      @media (min-width) {
+        table-layout: auto;
+      }
+    }
+  }
+
+  @mixin table-fixed($rwd: null) {
+    @if $rwd==null {
+      table-layout: fixed;
+    } @else {
+      @media (min-width) {
+        table-layout: fixed;
+      }
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:table-auto {
+    @include table-auto($sm);
+  }
+
+  @mixin sm\:table-fixed {
+    @include table-fixed($sm);
+  }
+
+  @mixin md\:table-auto {
+    @include table-auto($md);
+  }
+
+  @mixin md\:table-fixed {
+    @include table-fixed($md);
+  }
+
+  @mixin lg\:table-auto {
+    @include table-auto($lg);
+  }
+
+  @mixin lg\:table-fixed {
+    @include table-fixed($lg);
+  }
+
+  @mixin xl\:table-auto {
+    @include table-auto($xl);
+  }
+
+  @mixin xl\:table-fixed {
+    @include table-fixed($xl);
+  }
+
+  @mixin \2xl\:table-auto {
+    @include table-auto($\2xl);
+  }
+
+  @mixin \2xl\:table-fixed {
+    @include table-fixed($\2xl);
+  }
+
+  // x*/
+}

@@ -1,0 +1,123 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* List Style Type */
+@if $Basic {
+  // /*x
+  @mixin list-none {
+    @include list-(none);
+  }
+
+  @mixin list-disc {
+    @include list-(disc);
+  }
+
+  @mixin list-decimal {
+    @include list-(decimal);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:list-none {
+      @include list-(none, $sm);
+    }
+
+    @mixin sm\:list-disc {
+      @include list-(disc, $sm);
+    }
+
+    @mixin sm\:list-decimal {
+      @include list-(decimal, $sm);
+    }
+
+    @mixin md\:list-none {
+      @include list-(none, $md);
+    }
+
+    @mixin md\:list-disc {
+      @include list-(disc, $md);
+    }
+
+    @mixin md\:list-decimal {
+      @include list-(decimal, $md);
+    }
+
+    @mixin lg\:list-none {
+      @include list-(none, $lg);
+    }
+
+    @mixin lg\:list-disc {
+      @include list-(disc, $lg);
+    }
+
+    @mixin lg\:list-decimal {
+      @include list-(decimal, $lg);
+    }
+
+    @mixin xl\:list-none {
+      @include list-(none, $xl);
+    }
+
+    @mixin xl\:list-disc {
+      @include list-(disc, $xl);
+    }
+
+    @mixin xl\:list-decimal {
+      @include list-(decimal, $xl);
+    }
+
+    @mixin \2xl\:list-none {
+      @include list-(none, $\2xl);
+    }
+
+    @mixin \2xl\:list-disc {
+      @include list-(disc, $\2xl);
+    }
+
+    @mixin \2xl\:list-decimal {
+      @include list-(decimal, $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin list-($v, $rwd: null) {
+    @if $rwd==null {
+      list-style-type: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        list-style-type: $v;
+      }
+    }
+  }
+
+  @mixin sm\:list-($v) {
+    @include list-($v, $sm);
+  }
+
+  @mixin md\:list-($v) {
+    @include list-($v, $md);
+  }
+
+  @mixin lg\:list-($v) {
+    @include list-($v, $lg);
+  }
+
+  @mixin xl\:list-($v) {
+    @include list-($v, $xl);
+  }
+
+  @mixin \2xl\:list-($v) {
+    @include list-($v, $\2xl);
+  }
+
+  // x*/
+}

@@ -1,0 +1,172 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Saturate */
+@if $Basic {
+  // /*x
+  @mixin saturate-0 {
+    @include saturate-(0);
+  }
+
+  @mixin saturate-50 {
+    @include saturate-(0.5);
+  }
+
+  @mixin saturate-100 {
+    @include saturate-(1);
+  }
+
+  @mixin saturate-150 {
+    @include saturate-(1.5);
+  }
+
+  @mixin saturate-200 {
+    @include saturate-(2);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:saturate-0 {
+      @include saturate-(0, $sm);
+    }
+
+    @mixin sm\:saturate-50 {
+      @include saturate-(0.5, $sm);
+    }
+
+    @mixin sm\:saturate-100 {
+      @include saturate-(1, $sm);
+    }
+
+    @mixin sm\:saturate-150 {
+      @include saturate-(1.5, $sm);
+    }
+
+    @mixin sm\:saturate-200 {
+      @include saturate-(2, $sm);
+    }
+
+    @mixin md\:saturate-0 {
+      @include saturate-(0, $md);
+    }
+
+    @mixin md\:saturate-50 {
+      @include saturate-(0.5, $md);
+    }
+
+    @mixin md\:saturate-100 {
+      @include saturate-(1, $md);
+    }
+
+    @mixin md\:saturate-150 {
+      @include saturate-(1.5, $md);
+    }
+
+    @mixin md\:saturate-200 {
+      @include saturate-(2, $md);
+    }
+
+    @mixin lg\:saturate-0 {
+      @include saturate-(0, $lg);
+    }
+
+    @mixin lg\:saturate-50 {
+      @include saturate-(0.5, $lg);
+    }
+
+    @mixin lg\:saturate-100 {
+      @include saturate-(1, $lg);
+    }
+
+    @mixin lg\:saturate-150 {
+      @include saturate-(1.5, $lg);
+    }
+
+    @mixin lg\:saturate-200 {
+      @include saturate-(2, $lg);
+    }
+
+    @mixin xl\:saturate-0 {
+      @include saturate-(0, $xl);
+    }
+
+    @mixin xl\:saturate-50 {
+      @include saturate-(0.5, $xl);
+    }
+
+    @mixin xl\:saturate-100 {
+      @include saturate-(1, $xl);
+    }
+
+    @mixin xl\:saturate-150 {
+      @include saturate-(1.5, $xl);
+    }
+
+    @mixin xl\:saturate-200 {
+      @include saturate-(2, $xl);
+    }
+
+    @mixin \2xl\:saturate-0 {
+      @include saturate-(0, $\2xl);
+    }
+
+    @mixin \2xl\:saturate-50 {
+      @include saturate-(0.5, $\2xl);
+    }
+
+    @mixin \2xl\:saturate-100 {
+      @include saturate-(1, $\2xl);
+    }
+
+    @mixin \2xl\:saturate-150 {
+      @include saturate-(1.5, $\2xl);
+    }
+
+    @mixin \2xl\:saturate-200 {
+      @include saturate-(2, $\2xl);
+    }
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin saturate-($v, $rwd: null) {
+    @if $rwd==null {
+      $--tw-saturate: saturate($v) !global;
+      filter: __filter();
+    } @else {
+      @media (min-width: $rwd) {
+        $--tw-saturate: saturate($v) !global;
+        filter: __filter();
+      }
+    }
+  }
+
+  @mixin sm\:saturate-($v) {
+    @include saturate-($v, $sm);
+  }
+
+  @mixin md\:saturate-($v) {
+    @include saturate-($v, $md);
+  }
+
+  @mixin lg\:saturate-($v) {
+    @include saturate-($v, $lg);
+  }
+
+  @mixin xl\:saturate-($v) {
+    @include saturate-($v, $xl);
+  }
+
+  @mixin \2xl\:saturate-($v) {
+    @include saturate-($v, $\2xl);
+  }
+
+  // x*/
+}

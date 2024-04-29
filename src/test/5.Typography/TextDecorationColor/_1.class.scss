@@ -1,0 +1,5987 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Text Decoration Color */
+@if $Basic {
+  // /*x
+  @mixin decoration-inherit {
+    @include decoration-(inherit);
+  }
+
+  @mixin decoration-current {
+    @include decoration-(currentColor);
+  }
+
+  @mixin decoration-transparent {
+    @include decoration-(transparent);
+  }
+
+  @mixin decoration-black($v: 1) {
+    @include decoration-(c($bla, $v));
+  }
+
+  @mixin decoration-white($v: 1) {
+    @include decoration-(c($whi, $v));
+  }
+
+  @mixin decoration-slate-50($v: 1) {
+    @include decoration-(c($sla-50, $v));
+  }
+
+  @mixin decoration-slate-100($v: 1) {
+    @include decoration-(c($sla-100, $v));
+  }
+
+  @mixin decoration-slate-200($v: 1) {
+    @include decoration-(c($sla-200, $v));
+  }
+
+  @mixin decoration-slate-300($v: 1) {
+    @include decoration-(c($sla-300, $v));
+  }
+
+  @mixin decoration-slate-400($v: 1) {
+    @include decoration-(c($sla-400, $v));
+  }
+
+  @mixin decoration-slate-500($v: 1) {
+    @include decoration-(c($sla-500, $v));
+  }
+
+  @mixin decoration-slate-600($v: 1) {
+    @include decoration-(c($sla-600, $v));
+  }
+
+  @mixin decoration-slate-700($v: 1) {
+    @include decoration-(c($sla-700, $v));
+  }
+
+  @mixin decoration-slate-800($v: 1) {
+    @include decoration-(c($sla-800, $v));
+  }
+
+  @mixin decoration-slate-900($v: 1) {
+    @include decoration-(c($sla-900, $v));
+  }
+
+  @mixin decoration-slate-950($v: 1) {
+    @include decoration-(c($sla-950, $v));
+  }
+
+  @mixin decoration-gray-50($v: 1) {
+    @include decoration-(c($gra-50, $v));
+  }
+
+  @mixin decoration-gray-100($v: 1) {
+    @include decoration-(c($gra-100, $v));
+  }
+
+  @mixin decoration-gray-200($v: 1) {
+    @include decoration-(c($gra-200, $v));
+  }
+
+  @mixin decoration-gray-300($v: 1) {
+    @include decoration-(c($gra-300, $v));
+  }
+
+  @mixin decoration-gray-400($v: 1) {
+    @include decoration-(c($gra-400, $v));
+  }
+
+  @mixin decoration-gray-500($v: 1) {
+    @include decoration-(c($gra-500, $v));
+  }
+
+  @mixin decoration-gray-600($v: 1) {
+    @include decoration-(c($gra-600, $v));
+  }
+
+  @mixin decoration-gray-700($v: 1) {
+    @include decoration-(c($gra-700, $v));
+  }
+
+  @mixin decoration-gray-800($v: 1) {
+    @include decoration-(c($gra-800, $v));
+  }
+
+  @mixin decoration-gray-900($v: 1) {
+    @include decoration-(c($gra-900, $v));
+  }
+
+  @mixin decoration-gray-950($v: 1) {
+    @include decoration-(c($gra-950, $v));
+  }
+
+  @mixin decoration-zinc-50($v: 1) {
+    @include decoration-(c($zin-50, $v));
+  }
+
+  @mixin decoration-zinc-100($v: 1) {
+    @include decoration-(c($zin-100, $v));
+  }
+
+  @mixin decoration-zinc-200($v: 1) {
+    @include decoration-(c($zin-200, $v));
+  }
+
+  @mixin decoration-zinc-300($v: 1) {
+    @include decoration-(c($zin-300, $v));
+  }
+
+  @mixin decoration-zinc-400($v: 1) {
+    @include decoration-(c($zin-400, $v));
+  }
+
+  @mixin decoration-zinc-500($v: 1) {
+    @include decoration-(c($zin-500, $v));
+  }
+
+  @mixin decoration-zinc-600($v: 1) {
+    @include decoration-(c($zin-600, $v));
+  }
+
+  @mixin decoration-zinc-700($v: 1) {
+    @include decoration-(c($zin-700, $v));
+  }
+
+  @mixin decoration-zinc-800($v: 1) {
+    @include decoration-(c($zin-800, $v));
+  }
+
+  @mixin decoration-zinc-900($v: 1) {
+    @include decoration-(c($zin-900, $v));
+  }
+
+  @mixin decoration-zinc-950($v: 1) {
+    @include decoration-(c($zin-950, $v));
+  }
+
+  @mixin decoration-neutral-50($v: 1) {
+    @include decoration-(c($neu-50, $v));
+  }
+
+  @mixin decoration-neutral-100($v: 1) {
+    @include decoration-(c($neu-100, $v));
+  }
+
+  @mixin decoration-neutral-200($v: 1) {
+    @include decoration-(c($neu-200, $v));
+  }
+
+  @mixin decoration-neutral-300($v: 1) {
+    @include decoration-(c($neu-300, $v));
+  }
+
+  @mixin decoration-neutral-400($v: 1) {
+    @include decoration-(c($neu-400, $v));
+  }
+
+  @mixin decoration-neutral-500($v: 1) {
+    @include decoration-(c($neu-500, $v));
+  }
+
+  @mixin decoration-neutral-600($v: 1) {
+    @include decoration-(c($neu-600, $v));
+  }
+
+  @mixin decoration-neutral-700($v: 1) {
+    @include decoration-(c($neu-700, $v));
+  }
+
+  @mixin decoration-neutral-800($v: 1) {
+    @include decoration-(c($neu-800, $v));
+  }
+
+  @mixin decoration-neutral-900($v: 1) {
+    @include decoration-(c($neu-900, $v));
+  }
+
+  @mixin decoration-neutral-950($v: 1) {
+    @include decoration-(c($neu-950, $v));
+  }
+
+  @mixin decoration-stone-50($v: 1) {
+    @include decoration-(c($sto-50, $v));
+  }
+
+  @mixin decoration-stone-100($v: 1) {
+    @include decoration-(c($sto-100, $v));
+  }
+
+  @mixin decoration-stone-200($v: 1) {
+    @include decoration-(c($sto-200, $v));
+  }
+
+  @mixin decoration-stone-300($v: 1) {
+    @include decoration-(c($sto-300, $v));
+  }
+
+  @mixin decoration-stone-400($v: 1) {
+    @include decoration-(c($sto-400, $v));
+  }
+
+  @mixin decoration-stone-500($v: 1) {
+    @include decoration-(c($sto-500, $v));
+  }
+
+  @mixin decoration-stone-600($v: 1) {
+    @include decoration-(c($sto-600, $v));
+  }
+
+  @mixin decoration-stone-700($v: 1) {
+    @include decoration-(c($sto-700, $v));
+  }
+
+  @mixin decoration-stone-800($v: 1) {
+    @include decoration-(c($sto-800, $v));
+  }
+
+  @mixin decoration-stone-900($v: 1) {
+    @include decoration-(c($sto-900, $v));
+  }
+
+  @mixin decoration-stone-950($v: 1) {
+    @include decoration-(c($sto-950, $v));
+  }
+
+  @mixin decoration-red-50($v: 1) {
+    @include decoration-(c($red-50, $v));
+  }
+
+  @mixin decoration-red-100($v: 1) {
+    @include decoration-(c($red-100, $v));
+  }
+
+  @mixin decoration-red-200($v: 1) {
+    @include decoration-(c($red-200, $v));
+  }
+
+  @mixin decoration-red-300($v: 1) {
+    @include decoration-(c($red-300, $v));
+  }
+
+  @mixin decoration-red-400($v: 1) {
+    @include decoration-(c($red-400, $v));
+  }
+
+  @mixin decoration-red-500($v: 1) {
+    @include decoration-(c($red-500, $v));
+  }
+
+  @mixin decoration-red-600($v: 1) {
+    @include decoration-(c($red-600, $v));
+  }
+
+  @mixin decoration-red-700($v: 1) {
+    @include decoration-(c($red-700, $v));
+  }
+
+  @mixin decoration-red-800($v: 1) {
+    @include decoration-(c($red-800, $v));
+  }
+
+  @mixin decoration-red-900($v: 1) {
+    @include decoration-(c($red-900, $v));
+  }
+
+  @mixin decoration-red-950($v: 1) {
+    @include decoration-(c($red-950, $v));
+  }
+
+  @mixin decoration-orange-50($v: 1) {
+    @include decoration-(c($ora-50, $v));
+  }
+
+  @mixin decoration-orange-100($v: 1) {
+    @include decoration-(c($ora-100, $v));
+  }
+
+  @mixin decoration-orange-200($v: 1) {
+    @include decoration-(c($ora-200, $v));
+  }
+
+  @mixin decoration-orange-300($v: 1) {
+    @include decoration-(c($ora-300, $v));
+  }
+
+  @mixin decoration-orange-400($v: 1) {
+    @include decoration-(c($ora-400, $v));
+  }
+
+  @mixin decoration-orange-500($v: 1) {
+    @include decoration-(c($ora-500, $v));
+  }
+
+  @mixin decoration-orange-600($v: 1) {
+    @include decoration-(c($ora-600, $v));
+  }
+
+  @mixin decoration-orange-700($v: 1) {
+    @include decoration-(c($ora-700, $v));
+  }
+
+  @mixin decoration-orange-800($v: 1) {
+    @include decoration-(c($ora-800, $v));
+  }
+
+  @mixin decoration-orange-900($v: 1) {
+    @include decoration-(c($ora-900, $v));
+  }
+
+  @mixin decoration-orange-950($v: 1) {
+    @include decoration-(c($ora-950, $v));
+  }
+
+  @mixin decoration-amber-50($v: 1) {
+    @include decoration-(c($amb-50, $v));
+  }
+
+  @mixin decoration-amber-100($v: 1) {
+    @include decoration-(c($amb-100, $v));
+  }
+
+  @mixin decoration-amber-200($v: 1) {
+    @include decoration-(c($amb-200, $v));
+  }
+
+  @mixin decoration-amber-300($v: 1) {
+    @include decoration-(c($amb-300, $v));
+  }
+
+  @mixin decoration-amber-400($v: 1) {
+    @include decoration-(c($amb-400, $v));
+  }
+
+  @mixin decoration-amber-500($v: 1) {
+    @include decoration-(c($amb-500, $v));
+  }
+
+  @mixin decoration-amber-600($v: 1) {
+    @include decoration-(c($amb-600, $v));
+  }
+
+  @mixin decoration-amber-700($v: 1) {
+    @include decoration-(c($amb-700, $v));
+  }
+
+  @mixin decoration-amber-800($v: 1) {
+    @include decoration-(c($amb-800, $v));
+  }
+
+  @mixin decoration-amber-900($v: 1) {
+    @include decoration-(c($amb-900, $v));
+  }
+
+  @mixin decoration-amber-950($v: 1) {
+    @include decoration-(c($amb-950, $v));
+  }
+
+  @mixin decoration-yellow-50($v: 1) {
+    @include decoration-(c($yel-50, $v));
+  }
+
+  @mixin decoration-yellow-100($v: 1) {
+    @include decoration-(c($yel-100, $v));
+  }
+
+  @mixin decoration-yellow-200($v: 1) {
+    @include decoration-(c($yel-200, $v));
+  }
+
+  @mixin decoration-yellow-300($v: 1) {
+    @include decoration-(c($yel-300, $v));
+  }
+
+  @mixin decoration-yellow-400($v: 1) {
+    @include decoration-(c($yel-400, $v));
+  }
+
+  @mixin decoration-yellow-500($v: 1) {
+    @include decoration-(c($yel-500, $v));
+  }
+
+  @mixin decoration-yellow-600($v: 1) {
+    @include decoration-(c($yel-600, $v));
+  }
+
+  @mixin decoration-yellow-700($v: 1) {
+    @include decoration-(c($yel-700, $v));
+  }
+
+  @mixin decoration-yellow-800($v: 1) {
+    @include decoration-(c($yel-800, $v));
+  }
+
+  @mixin decoration-yellow-900($v: 1) {
+    @include decoration-(c($yel-900, $v));
+  }
+
+  @mixin decoration-yellow-950($v: 1) {
+    @include decoration-(c($yel-950, $v));
+  }
+
+  @mixin decoration-lime-50($v: 1) {
+    @include decoration-(c($lim-50, $v));
+  }
+
+  @mixin decoration-lime-100($v: 1) {
+    @include decoration-(c($lim-100, $v));
+  }
+
+  @mixin decoration-lime-200($v: 1) {
+    @include decoration-(c($lim-200, $v));
+  }
+
+  @mixin decoration-lime-300($v: 1) {
+    @include decoration-(c($lim-300, $v));
+  }
+
+  @mixin decoration-lime-400($v: 1) {
+    @include decoration-(c($lim-400, $v));
+  }
+
+  @mixin decoration-lime-500($v: 1) {
+    @include decoration-(c($lim-500, $v));
+  }
+
+  @mixin decoration-lime-600($v: 1) {
+    @include decoration-(c($lim-600, $v));
+  }
+
+  @mixin decoration-lime-700($v: 1) {
+    @include decoration-(c($lim-700, $v));
+  }
+
+  @mixin decoration-lime-800($v: 1) {
+    @include decoration-(c($lim-800, $v));
+  }
+
+  @mixin decoration-lime-900($v: 1) {
+    @include decoration-(c($lim-900, $v));
+  }
+
+  @mixin decoration-lime-950($v: 1) {
+    @include decoration-(c($lim-950, $v));
+  }
+
+  @mixin decoration-green-50($v: 1) {
+    @include decoration-(c($gre-50, $v));
+  }
+
+  @mixin decoration-green-100($v: 1) {
+    @include decoration-(c($gre-100, $v));
+  }
+
+  @mixin decoration-green-200($v: 1) {
+    @include decoration-(c($gre-200, $v));
+  }
+
+  @mixin decoration-green-300($v: 1) {
+    @include decoration-(c($gre-300, $v));
+  }
+
+  @mixin decoration-green-400($v: 1) {
+    @include decoration-(c($gre-400, $v));
+  }
+
+  @mixin decoration-green-500($v: 1) {
+    @include decoration-(c($gre-500, $v));
+  }
+
+  @mixin decoration-green-600($v: 1) {
+    @include decoration-(c($gre-600, $v));
+  }
+
+  @mixin decoration-green-700($v: 1) {
+    @include decoration-(c($gre-700, $v));
+  }
+
+  @mixin decoration-green-800($v: 1) {
+    @include decoration-(c($gre-800, $v));
+  }
+
+  @mixin decoration-green-900($v: 1) {
+    @include decoration-(c($gre-900, $v));
+  }
+
+  @mixin decoration-green-950($v: 1) {
+    @include decoration-(c($gre-950, $v));
+  }
+
+  @mixin decoration-emerald-50($v: 1) {
+    @include decoration-(c($eme-50, $v));
+  }
+
+  @mixin decoration-emerald-100($v: 1) {
+    @include decoration-(c($eme-100, $v));
+  }
+
+  @mixin decoration-emerald-200($v: 1) {
+    @include decoration-(c($eme-200, $v));
+  }
+
+  @mixin decoration-emerald-300($v: 1) {
+    @include decoration-(c($eme-300, $v));
+  }
+
+  @mixin decoration-emerald-400($v: 1) {
+    @include decoration-(c($eme-400, $v));
+  }
+
+  @mixin decoration-emerald-500($v: 1) {
+    @include decoration-(c($eme-500, $v));
+  }
+
+  @mixin decoration-emerald-600($v: 1) {
+    @include decoration-(c($eme-600, $v));
+  }
+
+  @mixin decoration-emerald-700($v: 1) {
+    @include decoration-(c($eme-700, $v));
+  }
+
+  @mixin decoration-emerald-800($v: 1) {
+    @include decoration-(c($eme-800, $v));
+  }
+
+  @mixin decoration-emerald-900($v: 1) {
+    @include decoration-(c($eme-900, $v));
+  }
+
+  @mixin decoration-emerald-950($v: 1) {
+    @include decoration-(c($eme-950, $v));
+  }
+
+  @mixin decoration-teal-50($v: 1) {
+    @include decoration-(c($tea-50, $v));
+  }
+
+  @mixin decoration-teal-100($v: 1) {
+    @include decoration-(c($tea-100, $v));
+  }
+
+  @mixin decoration-teal-200($v: 1) {
+    @include decoration-(c($tea-200, $v));
+  }
+
+  @mixin decoration-teal-300($v: 1) {
+    @include decoration-(c($tea-300, $v));
+  }
+
+  @mixin decoration-teal-400($v: 1) {
+    @include decoration-(c($tea-400, $v));
+  }
+
+  @mixin decoration-teal-500($v: 1) {
+    @include decoration-(c($tea-500, $v));
+  }
+
+  @mixin decoration-teal-600($v: 1) {
+    @include decoration-(c($tea-600, $v));
+  }
+
+  @mixin decoration-teal-700($v: 1) {
+    @include decoration-(c($tea-700, $v));
+  }
+
+  @mixin decoration-teal-800($v: 1) {
+    @include decoration-(c($tea-800, $v));
+  }
+
+  @mixin decoration-teal-900($v: 1) {
+    @include decoration-(c($tea-900, $v));
+  }
+
+  @mixin decoration-teal-950($v: 1) {
+    @include decoration-(c($tea-950, $v));
+  }
+
+  @mixin decoration-cyan-50($v: 1) {
+    @include decoration-(c($cya-50, $v));
+  }
+
+  @mixin decoration-cyan-100($v: 1) {
+    @include decoration-(c($cya-100, $v));
+  }
+
+  @mixin decoration-cyan-200($v: 1) {
+    @include decoration-(c($cya-200, $v));
+  }
+
+  @mixin decoration-cyan-300($v: 1) {
+    @include decoration-(c($cya-300, $v));
+  }
+
+  @mixin decoration-cyan-400($v: 1) {
+    @include decoration-(c($cya-400, $v));
+  }
+
+  @mixin decoration-cyan-500($v: 1) {
+    @include decoration-(c($cya-500, $v));
+  }
+
+  @mixin decoration-cyan-600($v: 1) {
+    @include decoration-(c($cya-600, $v));
+  }
+
+  @mixin decoration-cyan-700($v: 1) {
+    @include decoration-(c($cya-700, $v));
+  }
+
+  @mixin decoration-cyan-800($v: 1) {
+    @include decoration-(c($cya-800, $v));
+  }
+
+  @mixin decoration-cyan-900($v: 1) {
+    @include decoration-(c($cya-900, $v));
+  }
+
+  @mixin decoration-cyan-950($v: 1) {
+    @include decoration-(c($cya-950, $v));
+  }
+
+  @mixin decoration-sky-50($v: 1) {
+    @include decoration-(c($sky-50, $v));
+  }
+
+  @mixin decoration-sky-100($v: 1) {
+    @include decoration-(c($sky-100, $v));
+  }
+
+  @mixin decoration-sky-200($v: 1) {
+    @include decoration-(c($sky-200, $v));
+  }
+
+  @mixin decoration-sky-300($v: 1) {
+    @include decoration-(c($sky-300, $v));
+  }
+
+  @mixin decoration-sky-400($v: 1) {
+    @include decoration-(c($sky-400, $v));
+  }
+
+  @mixin decoration-sky-500($v: 1) {
+    @include decoration-(c($sky-500, $v));
+  }
+
+  @mixin decoration-sky-600($v: 1) {
+    @include decoration-(c($sky-600, $v));
+  }
+
+  @mixin decoration-sky-700($v: 1) {
+    @include decoration-(c($sky-700, $v));
+  }
+
+  @mixin decoration-sky-800($v: 1) {
+    @include decoration-(c($sky-800, $v));
+  }
+
+  @mixin decoration-sky-900($v: 1) {
+    @include decoration-(c($sky-900, $v));
+  }
+
+  @mixin decoration-sky-950($v: 1) {
+    @include decoration-(c($sky-950, $v));
+  }
+
+  @mixin decoration-blue-50($v: 1) {
+    @include decoration-(c($blu-50, $v));
+  }
+
+  @mixin decoration-blue-100($v: 1) {
+    @include decoration-(c($blu-100, $v));
+  }
+
+  @mixin decoration-blue-200($v: 1) {
+    @include decoration-(c($blu-200, $v));
+  }
+
+  @mixin decoration-blue-300($v: 1) {
+    @include decoration-(c($blu-300, $v));
+  }
+
+  @mixin decoration-blue-400($v: 1) {
+    @include decoration-(c($blu-400, $v));
+  }
+
+  @mixin decoration-blue-500($v: 1) {
+    @include decoration-(c($blu-500, $v));
+  }
+
+  @mixin decoration-blue-600($v: 1) {
+    @include decoration-(c($blu-600, $v));
+  }
+
+  @mixin decoration-blue-700($v: 1) {
+    @include decoration-(c($blu-700, $v));
+  }
+
+  @mixin decoration-blue-800($v: 1) {
+    @include decoration-(c($blu-800, $v));
+  }
+
+  @mixin decoration-blue-900($v: 1) {
+    @include decoration-(c($blu-900, $v));
+  }
+
+  @mixin decoration-blue-950($v: 1) {
+    @include decoration-(c($blu-950, $v));
+  }
+
+  @mixin decoration-indigo-50($v: 1) {
+    @include decoration-(c($ind-50, $v));
+  }
+
+  @mixin decoration-indigo-100($v: 1) {
+    @include decoration-(c($ind-100, $v));
+  }
+
+  @mixin decoration-indigo-200($v: 1) {
+    @include decoration-(c($ind-200, $v));
+  }
+
+  @mixin decoration-indigo-300($v: 1) {
+    @include decoration-(c($ind-300, $v));
+  }
+
+  @mixin decoration-indigo-400($v: 1) {
+    @include decoration-(c($ind-400, $v));
+  }
+
+  @mixin decoration-indigo-500($v: 1) {
+    @include decoration-(c($ind-500, $v));
+  }
+
+  @mixin decoration-indigo-600($v: 1) {
+    @include decoration-(c($ind-600, $v));
+  }
+
+  @mixin decoration-indigo-700($v: 1) {
+    @include decoration-(c($ind-700, $v));
+  }
+
+  @mixin decoration-indigo-800($v: 1) {
+    @include decoration-(c($ind-800, $v));
+  }
+
+  @mixin decoration-indigo-900($v: 1) {
+    @include decoration-(c($ind-900, $v));
+  }
+
+  @mixin decoration-indigo-950($v: 1) {
+    @include decoration-(c($ind-950, $v));
+  }
+
+  @mixin decoration-violet-50($v: 1) {
+    @include decoration-(c($vio-50, $v));
+  }
+
+  @mixin decoration-violet-100($v: 1) {
+    @include decoration-(c($vio-100, $v));
+  }
+
+  @mixin decoration-violet-200($v: 1) {
+    @include decoration-(c($vio-200, $v));
+  }
+
+  @mixin decoration-violet-300($v: 1) {
+    @include decoration-(c($vio-300, $v));
+  }
+
+  @mixin decoration-violet-400($v: 1) {
+    @include decoration-(c($vio-400, $v));
+  }
+
+  @mixin decoration-violet-500($v: 1) {
+    @include decoration-(c($vio-500, $v));
+  }
+
+  @mixin decoration-violet-600($v: 1) {
+    @include decoration-(c($vio-600, $v));
+  }
+
+  @mixin decoration-violet-700($v: 1) {
+    @include decoration-(c($vio-700, $v));
+  }
+
+  @mixin decoration-violet-800($v: 1) {
+    @include decoration-(c($vio-800, $v));
+  }
+
+  @mixin decoration-violet-900($v: 1) {
+    @include decoration-(c($vio-900, $v));
+  }
+
+  @mixin decoration-violet-950($v: 1) {
+    @include decoration-(c($vio-950, $v));
+  }
+
+  @mixin decoration-purple-50($v: 1) {
+    @include decoration-(c($pur-50, $v));
+  }
+
+  @mixin decoration-purple-100($v: 1) {
+    @include decoration-(c($pur-100, $v));
+  }
+
+  @mixin decoration-purple-200($v: 1) {
+    @include decoration-(c($pur-200, $v));
+  }
+
+  @mixin decoration-purple-300($v: 1) {
+    @include decoration-(c($pur-300, $v));
+  }
+
+  @mixin decoration-purple-400($v: 1) {
+    @include decoration-(c($pur-400, $v));
+  }
+
+  @mixin decoration-purple-500($v: 1) {
+    @include decoration-(c($pur-500, $v));
+  }
+
+  @mixin decoration-purple-600($v: 1) {
+    @include decoration-(c($pur-600, $v));
+  }
+
+  @mixin decoration-purple-700($v: 1) {
+    @include decoration-(c($pur-700, $v));
+  }
+
+  @mixin decoration-purple-800($v: 1) {
+    @include decoration-(c($pur-800, $v));
+  }
+
+  @mixin decoration-purple-900($v: 1) {
+    @include decoration-(c($pur-900, $v));
+  }
+
+  @mixin decoration-purple-950($v: 1) {
+    @include decoration-(c($pur-950, $v));
+  }
+
+  @mixin decoration-fuchsia-50($v: 1) {
+    @include decoration-(c($fuc-50, $v));
+  }
+
+  @mixin decoration-fuchsia-100($v: 1) {
+    @include decoration-(c($fuc-100, $v));
+  }
+
+  @mixin decoration-fuchsia-200($v: 1) {
+    @include decoration-(c($fuc-200, $v));
+  }
+
+  @mixin decoration-fuchsia-300($v: 1) {
+    @include decoration-(c($fuc-300, $v));
+  }
+
+  @mixin decoration-fuchsia-400($v: 1) {
+    @include decoration-(c($fuc-400, $v));
+  }
+
+  @mixin decoration-fuchsia-500($v: 1) {
+    @include decoration-(c($fuc-500, $v));
+  }
+
+  @mixin decoration-fuchsia-600($v: 1) {
+    @include decoration-(c($fuc-600, $v));
+  }
+
+  @mixin decoration-fuchsia-700($v: 1) {
+    @include decoration-(c($fuc-700, $v));
+  }
+
+  @mixin decoration-fuchsia-800($v: 1) {
+    @include decoration-(c($fuc-800, $v));
+  }
+
+  @mixin decoration-fuchsia-900($v: 1) {
+    @include decoration-(c($fuc-900, $v));
+  }
+
+  @mixin decoration-fuchsia-950($v: 1) {
+    @include decoration-(c($fuc-950, $v));
+  }
+
+  @mixin decoration-pink-50($v: 1) {
+    @include decoration-(c($pin-50, $v));
+  }
+
+  @mixin decoration-pink-100($v: 1) {
+    @include decoration-(c($pin-100, $v));
+  }
+
+  @mixin decoration-pink-200($v: 1) {
+    @include decoration-(c($pin-200, $v));
+  }
+
+  @mixin decoration-pink-300($v: 1) {
+    @include decoration-(c($pin-300, $v));
+  }
+
+  @mixin decoration-pink-400($v: 1) {
+    @include decoration-(c($pin-400, $v));
+  }
+
+  @mixin decoration-pink-500($v: 1) {
+    @include decoration-(c($pin-500, $v));
+  }
+
+  @mixin decoration-pink-600($v: 1) {
+    @include decoration-(c($pin-600, $v));
+  }
+
+  @mixin decoration-pink-700($v: 1) {
+    @include decoration-(c($pin-700, $v));
+  }
+
+  @mixin decoration-pink-800($v: 1) {
+    @include decoration-(c($pin-800, $v));
+  }
+
+  @mixin decoration-pink-900($v: 1) {
+    @include decoration-(c($pin-900, $v));
+  }
+
+  @mixin decoration-pink-950($v: 1) {
+    @include decoration-(c($pin-950, $v));
+  }
+
+  @mixin decoration-rose-50($v: 1) {
+    @include decoration-(c($ros-50, $v));
+  }
+
+  @mixin decoration-rose-100($v: 1) {
+    @include decoration-(c($ros-100, $v));
+  }
+
+  @mixin decoration-rose-200($v: 1) {
+    @include decoration-(c($ros-200, $v));
+  }
+
+  @mixin decoration-rose-300($v: 1) {
+    @include decoration-(c($ros-300, $v));
+  }
+
+  @mixin decoration-rose-400($v: 1) {
+    @include decoration-(c($ros-400, $v));
+  }
+
+  @mixin decoration-rose-500($v: 1) {
+    @include decoration-(c($ros-500, $v));
+  }
+
+  @mixin decoration-rose-600($v: 1) {
+    @include decoration-(c($ros-600, $v));
+  }
+
+  @mixin decoration-rose-700($v: 1) {
+    @include decoration-(c($ros-700, $v));
+  }
+
+  @mixin decoration-rose-800($v: 1) {
+    @include decoration-(c($ros-800, $v));
+  }
+
+  @mixin decoration-rose-900($v: 1) {
+    @include decoration-(c($ros-900, $v));
+  }
+
+  @mixin decoration-rose-950($v: 1) {
+    @include decoration-(c($ros-950, $v));
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 {
+    // /*x
+    @mixin sm\:decoration-inherit {
+      @include decoration-(inherit, $sm);
+    }
+
+    @mixin sm\:decoration-current {
+      @include decoration-(currentColor, $sm);
+    }
+
+    @mixin sm\:decoration-transparent {
+      @include decoration-(transparent, $sm);
+    }
+
+    @mixin sm\:decoration-black($v: 1) {
+      @include decoration-(c($bla, $v), $sm);
+    }
+
+    @mixin sm\:decoration-white($v: 1) {
+      @include decoration-(c($whi, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-50($v: 1) {
+      @include decoration-(c($sla-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-100($v: 1) {
+      @include decoration-(c($sla-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-200($v: 1) {
+      @include decoration-(c($sla-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-300($v: 1) {
+      @include decoration-(c($sla-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-400($v: 1) {
+      @include decoration-(c($sla-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-500($v: 1) {
+      @include decoration-(c($sla-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-600($v: 1) {
+      @include decoration-(c($sla-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-700($v: 1) {
+      @include decoration-(c($sla-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-800($v: 1) {
+      @include decoration-(c($sla-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-900($v: 1) {
+      @include decoration-(c($sla-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-slate-950($v: 1) {
+      @include decoration-(c($sla-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-50($v: 1) {
+      @include decoration-(c($gra-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-100($v: 1) {
+      @include decoration-(c($gra-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-200($v: 1) {
+      @include decoration-(c($gra-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-300($v: 1) {
+      @include decoration-(c($gra-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-400($v: 1) {
+      @include decoration-(c($gra-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-500($v: 1) {
+      @include decoration-(c($gra-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-600($v: 1) {
+      @include decoration-(c($gra-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-700($v: 1) {
+      @include decoration-(c($gra-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-800($v: 1) {
+      @include decoration-(c($gra-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-900($v: 1) {
+      @include decoration-(c($gra-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-gray-950($v: 1) {
+      @include decoration-(c($gra-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-50($v: 1) {
+      @include decoration-(c($zin-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-100($v: 1) {
+      @include decoration-(c($zin-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-200($v: 1) {
+      @include decoration-(c($zin-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-300($v: 1) {
+      @include decoration-(c($zin-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-400($v: 1) {
+      @include decoration-(c($zin-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-500($v: 1) {
+      @include decoration-(c($zin-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-600($v: 1) {
+      @include decoration-(c($zin-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-700($v: 1) {
+      @include decoration-(c($zin-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-800($v: 1) {
+      @include decoration-(c($zin-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-900($v: 1) {
+      @include decoration-(c($zin-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-zinc-950($v: 1) {
+      @include decoration-(c($zin-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-50($v: 1) {
+      @include decoration-(c($neu-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-100($v: 1) {
+      @include decoration-(c($neu-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-200($v: 1) {
+      @include decoration-(c($neu-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-300($v: 1) {
+      @include decoration-(c($neu-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-400($v: 1) {
+      @include decoration-(c($neu-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-500($v: 1) {
+      @include decoration-(c($neu-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-600($v: 1) {
+      @include decoration-(c($neu-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-700($v: 1) {
+      @include decoration-(c($neu-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-800($v: 1) {
+      @include decoration-(c($neu-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-900($v: 1) {
+      @include decoration-(c($neu-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-neutral-950($v: 1) {
+      @include decoration-(c($neu-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-50($v: 1) {
+      @include decoration-(c($sto-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-100($v: 1) {
+      @include decoration-(c($sto-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-200($v: 1) {
+      @include decoration-(c($sto-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-300($v: 1) {
+      @include decoration-(c($sto-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-400($v: 1) {
+      @include decoration-(c($sto-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-500($v: 1) {
+      @include decoration-(c($sto-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-600($v: 1) {
+      @include decoration-(c($sto-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-700($v: 1) {
+      @include decoration-(c($sto-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-800($v: 1) {
+      @include decoration-(c($sto-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-900($v: 1) {
+      @include decoration-(c($sto-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-stone-950($v: 1) {
+      @include decoration-(c($sto-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-50($v: 1) {
+      @include decoration-(c($red-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-100($v: 1) {
+      @include decoration-(c($red-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-200($v: 1) {
+      @include decoration-(c($red-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-300($v: 1) {
+      @include decoration-(c($red-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-400($v: 1) {
+      @include decoration-(c($red-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-500($v: 1) {
+      @include decoration-(c($red-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-600($v: 1) {
+      @include decoration-(c($red-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-700($v: 1) {
+      @include decoration-(c($red-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-800($v: 1) {
+      @include decoration-(c($red-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-900($v: 1) {
+      @include decoration-(c($red-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-red-950($v: 1) {
+      @include decoration-(c($red-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-50($v: 1) {
+      @include decoration-(c($ora-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-100($v: 1) {
+      @include decoration-(c($ora-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-200($v: 1) {
+      @include decoration-(c($ora-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-300($v: 1) {
+      @include decoration-(c($ora-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-400($v: 1) {
+      @include decoration-(c($ora-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-500($v: 1) {
+      @include decoration-(c($ora-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-600($v: 1) {
+      @include decoration-(c($ora-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-700($v: 1) {
+      @include decoration-(c($ora-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-800($v: 1) {
+      @include decoration-(c($ora-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-900($v: 1) {
+      @include decoration-(c($ora-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-orange-950($v: 1) {
+      @include decoration-(c($ora-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-50($v: 1) {
+      @include decoration-(c($amb-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-100($v: 1) {
+      @include decoration-(c($amb-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-200($v: 1) {
+      @include decoration-(c($amb-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-300($v: 1) {
+      @include decoration-(c($amb-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-400($v: 1) {
+      @include decoration-(c($amb-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-500($v: 1) {
+      @include decoration-(c($amb-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-600($v: 1) {
+      @include decoration-(c($amb-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-700($v: 1) {
+      @include decoration-(c($amb-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-800($v: 1) {
+      @include decoration-(c($amb-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-900($v: 1) {
+      @include decoration-(c($amb-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-amber-950($v: 1) {
+      @include decoration-(c($amb-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-50($v: 1) {
+      @include decoration-(c($yel-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-100($v: 1) {
+      @include decoration-(c($yel-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-200($v: 1) {
+      @include decoration-(c($yel-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-300($v: 1) {
+      @include decoration-(c($yel-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-400($v: 1) {
+      @include decoration-(c($yel-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-500($v: 1) {
+      @include decoration-(c($yel-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-600($v: 1) {
+      @include decoration-(c($yel-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-700($v: 1) {
+      @include decoration-(c($yel-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-800($v: 1) {
+      @include decoration-(c($yel-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-900($v: 1) {
+      @include decoration-(c($yel-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-yellow-950($v: 1) {
+      @include decoration-(c($yel-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-50($v: 1) {
+      @include decoration-(c($lim-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-100($v: 1) {
+      @include decoration-(c($lim-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-200($v: 1) {
+      @include decoration-(c($lim-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-300($v: 1) {
+      @include decoration-(c($lim-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-400($v: 1) {
+      @include decoration-(c($lim-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-500($v: 1) {
+      @include decoration-(c($lim-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-600($v: 1) {
+      @include decoration-(c($lim-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-700($v: 1) {
+      @include decoration-(c($lim-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-800($v: 1) {
+      @include decoration-(c($lim-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-900($v: 1) {
+      @include decoration-(c($lim-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-lime-950($v: 1) {
+      @include decoration-(c($lim-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-50($v: 1) {
+      @include decoration-(c($gre-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-100($v: 1) {
+      @include decoration-(c($gre-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-200($v: 1) {
+      @include decoration-(c($gre-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-300($v: 1) {
+      @include decoration-(c($gre-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-400($v: 1) {
+      @include decoration-(c($gre-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-500($v: 1) {
+      @include decoration-(c($gre-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-600($v: 1) {
+      @include decoration-(c($gre-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-700($v: 1) {
+      @include decoration-(c($gre-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-800($v: 1) {
+      @include decoration-(c($gre-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-900($v: 1) {
+      @include decoration-(c($gre-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-green-950($v: 1) {
+      @include decoration-(c($gre-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-50($v: 1) {
+      @include decoration-(c($eme-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-100($v: 1) {
+      @include decoration-(c($eme-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-200($v: 1) {
+      @include decoration-(c($eme-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-300($v: 1) {
+      @include decoration-(c($eme-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-400($v: 1) {
+      @include decoration-(c($eme-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-500($v: 1) {
+      @include decoration-(c($eme-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-600($v: 1) {
+      @include decoration-(c($eme-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-700($v: 1) {
+      @include decoration-(c($eme-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-800($v: 1) {
+      @include decoration-(c($eme-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-900($v: 1) {
+      @include decoration-(c($eme-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-emerald-950($v: 1) {
+      @include decoration-(c($eme-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-50($v: 1) {
+      @include decoration-(c($tea-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-100($v: 1) {
+      @include decoration-(c($tea-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-200($v: 1) {
+      @include decoration-(c($tea-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-300($v: 1) {
+      @include decoration-(c($tea-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-400($v: 1) {
+      @include decoration-(c($tea-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-500($v: 1) {
+      @include decoration-(c($tea-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-600($v: 1) {
+      @include decoration-(c($tea-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-700($v: 1) {
+      @include decoration-(c($tea-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-800($v: 1) {
+      @include decoration-(c($tea-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-900($v: 1) {
+      @include decoration-(c($tea-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-teal-950($v: 1) {
+      @include decoration-(c($tea-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-50($v: 1) {
+      @include decoration-(c($cya-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-100($v: 1) {
+      @include decoration-(c($cya-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-200($v: 1) {
+      @include decoration-(c($cya-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-300($v: 1) {
+      @include decoration-(c($cya-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-400($v: 1) {
+      @include decoration-(c($cya-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-500($v: 1) {
+      @include decoration-(c($cya-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-600($v: 1) {
+      @include decoration-(c($cya-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-700($v: 1) {
+      @include decoration-(c($cya-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-800($v: 1) {
+      @include decoration-(c($cya-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-900($v: 1) {
+      @include decoration-(c($cya-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-cyan-950($v: 1) {
+      @include decoration-(c($cya-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-50($v: 1) {
+      @include decoration-(c($sky-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-100($v: 1) {
+      @include decoration-(c($sky-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-200($v: 1) {
+      @include decoration-(c($sky-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-300($v: 1) {
+      @include decoration-(c($sky-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-400($v: 1) {
+      @include decoration-(c($sky-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-500($v: 1) {
+      @include decoration-(c($sky-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-600($v: 1) {
+      @include decoration-(c($sky-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-700($v: 1) {
+      @include decoration-(c($sky-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-800($v: 1) {
+      @include decoration-(c($sky-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-900($v: 1) {
+      @include decoration-(c($sky-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-sky-950($v: 1) {
+      @include decoration-(c($sky-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-50($v: 1) {
+      @include decoration-(c($blu-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-100($v: 1) {
+      @include decoration-(c($blu-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-200($v: 1) {
+      @include decoration-(c($blu-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-300($v: 1) {
+      @include decoration-(c($blu-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-400($v: 1) {
+      @include decoration-(c($blu-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-500($v: 1) {
+      @include decoration-(c($blu-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-600($v: 1) {
+      @include decoration-(c($blu-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-700($v: 1) {
+      @include decoration-(c($blu-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-800($v: 1) {
+      @include decoration-(c($blu-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-900($v: 1) {
+      @include decoration-(c($blu-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-blue-950($v: 1) {
+      @include decoration-(c($blu-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-50($v: 1) {
+      @include decoration-(c($ind-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-100($v: 1) {
+      @include decoration-(c($ind-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-200($v: 1) {
+      @include decoration-(c($ind-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-300($v: 1) {
+      @include decoration-(c($ind-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-400($v: 1) {
+      @include decoration-(c($ind-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-500($v: 1) {
+      @include decoration-(c($ind-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-600($v: 1) {
+      @include decoration-(c($ind-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-700($v: 1) {
+      @include decoration-(c($ind-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-800($v: 1) {
+      @include decoration-(c($ind-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-900($v: 1) {
+      @include decoration-(c($ind-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-indigo-950($v: 1) {
+      @include decoration-(c($ind-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-50($v: 1) {
+      @include decoration-(c($vio-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-100($v: 1) {
+      @include decoration-(c($vio-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-200($v: 1) {
+      @include decoration-(c($vio-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-300($v: 1) {
+      @include decoration-(c($vio-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-400($v: 1) {
+      @include decoration-(c($vio-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-500($v: 1) {
+      @include decoration-(c($vio-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-600($v: 1) {
+      @include decoration-(c($vio-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-700($v: 1) {
+      @include decoration-(c($vio-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-800($v: 1) {
+      @include decoration-(c($vio-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-900($v: 1) {
+      @include decoration-(c($vio-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-violet-950($v: 1) {
+      @include decoration-(c($vio-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-50($v: 1) {
+      @include decoration-(c($pur-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-100($v: 1) {
+      @include decoration-(c($pur-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-200($v: 1) {
+      @include decoration-(c($pur-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-300($v: 1) {
+      @include decoration-(c($pur-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-400($v: 1) {
+      @include decoration-(c($pur-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-500($v: 1) {
+      @include decoration-(c($pur-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-600($v: 1) {
+      @include decoration-(c($pur-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-700($v: 1) {
+      @include decoration-(c($pur-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-800($v: 1) {
+      @include decoration-(c($pur-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-900($v: 1) {
+      @include decoration-(c($pur-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-purple-950($v: 1) {
+      @include decoration-(c($pur-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-50($v: 1) {
+      @include decoration-(c($fuc-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-100($v: 1) {
+      @include decoration-(c($fuc-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-200($v: 1) {
+      @include decoration-(c($fuc-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-300($v: 1) {
+      @include decoration-(c($fuc-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-400($v: 1) {
+      @include decoration-(c($fuc-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-500($v: 1) {
+      @include decoration-(c($fuc-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-600($v: 1) {
+      @include decoration-(c($fuc-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-700($v: 1) {
+      @include decoration-(c($fuc-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-800($v: 1) {
+      @include decoration-(c($fuc-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-900($v: 1) {
+      @include decoration-(c($fuc-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-fuchsia-950($v: 1) {
+      @include decoration-(c($fuc-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-50($v: 1) {
+      @include decoration-(c($pin-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-100($v: 1) {
+      @include decoration-(c($pin-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-200($v: 1) {
+      @include decoration-(c($pin-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-300($v: 1) {
+      @include decoration-(c($pin-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-400($v: 1) {
+      @include decoration-(c($pin-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-500($v: 1) {
+      @include decoration-(c($pin-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-600($v: 1) {
+      @include decoration-(c($pin-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-700($v: 1) {
+      @include decoration-(c($pin-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-800($v: 1) {
+      @include decoration-(c($pin-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-900($v: 1) {
+      @include decoration-(c($pin-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-pink-950($v: 1) {
+      @include decoration-(c($pin-950, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-50($v: 1) {
+      @include decoration-(c($ros-50, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-100($v: 1) {
+      @include decoration-(c($ros-100, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-200($v: 1) {
+      @include decoration-(c($ros-200, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-300($v: 1) {
+      @include decoration-(c($ros-300, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-400($v: 1) {
+      @include decoration-(c($ros-400, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-500($v: 1) {
+      @include decoration-(c($ros-500, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-600($v: 1) {
+      @include decoration-(c($ros-600, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-700($v: 1) {
+      @include decoration-(c($ros-700, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-800($v: 1) {
+      @include decoration-(c($ros-800, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-900($v: 1) {
+      @include decoration-(c($ros-900, $v), $sm);
+    }
+
+    @mixin sm\:decoration-rose-950($v: 1) {
+      @include decoration-(c($ros-950, $v), $sm);
+    }
+
+    @mixin md\:decoration-inherit {
+      @include decoration-(inherit, $md);
+    }
+
+    @mixin md\:decoration-current {
+      @include decoration-(currentColor, $md);
+    }
+
+    @mixin md\:decoration-transparent {
+      @include decoration-(transparent, $md);
+    }
+
+    @mixin md\:decoration-black($v: 1) {
+      @include decoration-(c($bla, $v), $md);
+    }
+
+    @mixin md\:decoration-white($v: 1) {
+      @include decoration-(c($whi, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-50($v: 1) {
+      @include decoration-(c($sla-50, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-100($v: 1) {
+      @include decoration-(c($sla-100, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-200($v: 1) {
+      @include decoration-(c($sla-200, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-300($v: 1) {
+      @include decoration-(c($sla-300, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-400($v: 1) {
+      @include decoration-(c($sla-400, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-500($v: 1) {
+      @include decoration-(c($sla-500, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-600($v: 1) {
+      @include decoration-(c($sla-600, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-700($v: 1) {
+      @include decoration-(c($sla-700, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-800($v: 1) {
+      @include decoration-(c($sla-800, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-900($v: 1) {
+      @include decoration-(c($sla-900, $v), $md);
+    }
+
+    @mixin md\:decoration-slate-950($v: 1) {
+      @include decoration-(c($sla-950, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-50($v: 1) {
+      @include decoration-(c($gra-50, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-100($v: 1) {
+      @include decoration-(c($gra-100, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-200($v: 1) {
+      @include decoration-(c($gra-200, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-300($v: 1) {
+      @include decoration-(c($gra-300, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-400($v: 1) {
+      @include decoration-(c($gra-400, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-500($v: 1) {
+      @include decoration-(c($gra-500, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-600($v: 1) {
+      @include decoration-(c($gra-600, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-700($v: 1) {
+      @include decoration-(c($gra-700, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-800($v: 1) {
+      @include decoration-(c($gra-800, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-900($v: 1) {
+      @include decoration-(c($gra-900, $v), $md);
+    }
+
+    @mixin md\:decoration-gray-950($v: 1) {
+      @include decoration-(c($gra-950, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-50($v: 1) {
+      @include decoration-(c($zin-50, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-100($v: 1) {
+      @include decoration-(c($zin-100, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-200($v: 1) {
+      @include decoration-(c($zin-200, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-300($v: 1) {
+      @include decoration-(c($zin-300, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-400($v: 1) {
+      @include decoration-(c($zin-400, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-500($v: 1) {
+      @include decoration-(c($zin-500, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-600($v: 1) {
+      @include decoration-(c($zin-600, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-700($v: 1) {
+      @include decoration-(c($zin-700, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-800($v: 1) {
+      @include decoration-(c($zin-800, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-900($v: 1) {
+      @include decoration-(c($zin-900, $v), $md);
+    }
+
+    @mixin md\:decoration-zinc-950($v: 1) {
+      @include decoration-(c($zin-950, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-50($v: 1) {
+      @include decoration-(c($neu-50, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-100($v: 1) {
+      @include decoration-(c($neu-100, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-200($v: 1) {
+      @include decoration-(c($neu-200, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-300($v: 1) {
+      @include decoration-(c($neu-300, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-400($v: 1) {
+      @include decoration-(c($neu-400, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-500($v: 1) {
+      @include decoration-(c($neu-500, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-600($v: 1) {
+      @include decoration-(c($neu-600, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-700($v: 1) {
+      @include decoration-(c($neu-700, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-800($v: 1) {
+      @include decoration-(c($neu-800, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-900($v: 1) {
+      @include decoration-(c($neu-900, $v), $md);
+    }
+
+    @mixin md\:decoration-neutral-950($v: 1) {
+      @include decoration-(c($neu-950, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-50($v: 1) {
+      @include decoration-(c($sto-50, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-100($v: 1) {
+      @include decoration-(c($sto-100, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-200($v: 1) {
+      @include decoration-(c($sto-200, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-300($v: 1) {
+      @include decoration-(c($sto-300, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-400($v: 1) {
+      @include decoration-(c($sto-400, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-500($v: 1) {
+      @include decoration-(c($sto-500, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-600($v: 1) {
+      @include decoration-(c($sto-600, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-700($v: 1) {
+      @include decoration-(c($sto-700, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-800($v: 1) {
+      @include decoration-(c($sto-800, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-900($v: 1) {
+      @include decoration-(c($sto-900, $v), $md);
+    }
+
+    @mixin md\:decoration-stone-950($v: 1) {
+      @include decoration-(c($sto-950, $v), $md);
+    }
+
+    @mixin md\:decoration-red-50($v: 1) {
+      @include decoration-(c($red-50, $v), $md);
+    }
+
+    @mixin md\:decoration-red-100($v: 1) {
+      @include decoration-(c($red-100, $v), $md);
+    }
+
+    @mixin md\:decoration-red-200($v: 1) {
+      @include decoration-(c($red-200, $v), $md);
+    }
+
+    @mixin md\:decoration-red-300($v: 1) {
+      @include decoration-(c($red-300, $v), $md);
+    }
+
+    @mixin md\:decoration-red-400($v: 1) {
+      @include decoration-(c($red-400, $v), $md);
+    }
+
+    @mixin md\:decoration-red-500($v: 1) {
+      @include decoration-(c($red-500, $v), $md);
+    }
+
+    @mixin md\:decoration-red-600($v: 1) {
+      @include decoration-(c($red-600, $v), $md);
+    }
+
+    @mixin md\:decoration-red-700($v: 1) {
+      @include decoration-(c($red-700, $v), $md);
+    }
+
+    @mixin md\:decoration-red-800($v: 1) {
+      @include decoration-(c($red-800, $v), $md);
+    }
+
+    @mixin md\:decoration-red-900($v: 1) {
+      @include decoration-(c($red-900, $v), $md);
+    }
+
+    @mixin md\:decoration-red-950($v: 1) {
+      @include decoration-(c($red-950, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-50($v: 1) {
+      @include decoration-(c($ora-50, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-100($v: 1) {
+      @include decoration-(c($ora-100, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-200($v: 1) {
+      @include decoration-(c($ora-200, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-300($v: 1) {
+      @include decoration-(c($ora-300, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-400($v: 1) {
+      @include decoration-(c($ora-400, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-500($v: 1) {
+      @include decoration-(c($ora-500, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-600($v: 1) {
+      @include decoration-(c($ora-600, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-700($v: 1) {
+      @include decoration-(c($ora-700, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-800($v: 1) {
+      @include decoration-(c($ora-800, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-900($v: 1) {
+      @include decoration-(c($ora-900, $v), $md);
+    }
+
+    @mixin md\:decoration-orange-950($v: 1) {
+      @include decoration-(c($ora-950, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-50($v: 1) {
+      @include decoration-(c($amb-50, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-100($v: 1) {
+      @include decoration-(c($amb-100, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-200($v: 1) {
+      @include decoration-(c($amb-200, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-300($v: 1) {
+      @include decoration-(c($amb-300, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-400($v: 1) {
+      @include decoration-(c($amb-400, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-500($v: 1) {
+      @include decoration-(c($amb-500, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-600($v: 1) {
+      @include decoration-(c($amb-600, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-700($v: 1) {
+      @include decoration-(c($amb-700, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-800($v: 1) {
+      @include decoration-(c($amb-800, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-900($v: 1) {
+      @include decoration-(c($amb-900, $v), $md);
+    }
+
+    @mixin md\:decoration-amber-950($v: 1) {
+      @include decoration-(c($amb-950, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-50($v: 1) {
+      @include decoration-(c($yel-50, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-100($v: 1) {
+      @include decoration-(c($yel-100, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-200($v: 1) {
+      @include decoration-(c($yel-200, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-300($v: 1) {
+      @include decoration-(c($yel-300, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-400($v: 1) {
+      @include decoration-(c($yel-400, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-500($v: 1) {
+      @include decoration-(c($yel-500, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-600($v: 1) {
+      @include decoration-(c($yel-600, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-700($v: 1) {
+      @include decoration-(c($yel-700, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-800($v: 1) {
+      @include decoration-(c($yel-800, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-900($v: 1) {
+      @include decoration-(c($yel-900, $v), $md);
+    }
+
+    @mixin md\:decoration-yellow-950($v: 1) {
+      @include decoration-(c($yel-950, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-50($v: 1) {
+      @include decoration-(c($lim-50, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-100($v: 1) {
+      @include decoration-(c($lim-100, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-200($v: 1) {
+      @include decoration-(c($lim-200, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-300($v: 1) {
+      @include decoration-(c($lim-300, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-400($v: 1) {
+      @include decoration-(c($lim-400, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-500($v: 1) {
+      @include decoration-(c($lim-500, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-600($v: 1) {
+      @include decoration-(c($lim-600, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-700($v: 1) {
+      @include decoration-(c($lim-700, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-800($v: 1) {
+      @include decoration-(c($lim-800, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-900($v: 1) {
+      @include decoration-(c($lim-900, $v), $md);
+    }
+
+    @mixin md\:decoration-lime-950($v: 1) {
+      @include decoration-(c($lim-950, $v), $md);
+    }
+
+    @mixin md\:decoration-green-50($v: 1) {
+      @include decoration-(c($gre-50, $v), $md);
+    }
+
+    @mixin md\:decoration-green-100($v: 1) {
+      @include decoration-(c($gre-100, $v), $md);
+    }
+
+    @mixin md\:decoration-green-200($v: 1) {
+      @include decoration-(c($gre-200, $v), $md);
+    }
+
+    @mixin md\:decoration-green-300($v: 1) {
+      @include decoration-(c($gre-300, $v), $md);
+    }
+
+    @mixin md\:decoration-green-400($v: 1) {
+      @include decoration-(c($gre-400, $v), $md);
+    }
+
+    @mixin md\:decoration-green-500($v: 1) {
+      @include decoration-(c($gre-500, $v), $md);
+    }
+
+    @mixin md\:decoration-green-600($v: 1) {
+      @include decoration-(c($gre-600, $v), $md);
+    }
+
+    @mixin md\:decoration-green-700($v: 1) {
+      @include decoration-(c($gre-700, $v), $md);
+    }
+
+    @mixin md\:decoration-green-800($v: 1) {
+      @include decoration-(c($gre-800, $v), $md);
+    }
+
+    @mixin md\:decoration-green-900($v: 1) {
+      @include decoration-(c($gre-900, $v), $md);
+    }
+
+    @mixin md\:decoration-green-950($v: 1) {
+      @include decoration-(c($gre-950, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-50($v: 1) {
+      @include decoration-(c($eme-50, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-100($v: 1) {
+      @include decoration-(c($eme-100, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-200($v: 1) {
+      @include decoration-(c($eme-200, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-300($v: 1) {
+      @include decoration-(c($eme-300, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-400($v: 1) {
+      @include decoration-(c($eme-400, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-500($v: 1) {
+      @include decoration-(c($eme-500, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-600($v: 1) {
+      @include decoration-(c($eme-600, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-700($v: 1) {
+      @include decoration-(c($eme-700, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-800($v: 1) {
+      @include decoration-(c($eme-800, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-900($v: 1) {
+      @include decoration-(c($eme-900, $v), $md);
+    }
+
+    @mixin md\:decoration-emerald-950($v: 1) {
+      @include decoration-(c($eme-950, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-50($v: 1) {
+      @include decoration-(c($tea-50, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-100($v: 1) {
+      @include decoration-(c($tea-100, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-200($v: 1) {
+      @include decoration-(c($tea-200, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-300($v: 1) {
+      @include decoration-(c($tea-300, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-400($v: 1) {
+      @include decoration-(c($tea-400, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-500($v: 1) {
+      @include decoration-(c($tea-500, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-600($v: 1) {
+      @include decoration-(c($tea-600, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-700($v: 1) {
+      @include decoration-(c($tea-700, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-800($v: 1) {
+      @include decoration-(c($tea-800, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-900($v: 1) {
+      @include decoration-(c($tea-900, $v), $md);
+    }
+
+    @mixin md\:decoration-teal-950($v: 1) {
+      @include decoration-(c($tea-950, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-50($v: 1) {
+      @include decoration-(c($cya-50, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-100($v: 1) {
+      @include decoration-(c($cya-100, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-200($v: 1) {
+      @include decoration-(c($cya-200, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-300($v: 1) {
+      @include decoration-(c($cya-300, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-400($v: 1) {
+      @include decoration-(c($cya-400, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-500($v: 1) {
+      @include decoration-(c($cya-500, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-600($v: 1) {
+      @include decoration-(c($cya-600, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-700($v: 1) {
+      @include decoration-(c($cya-700, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-800($v: 1) {
+      @include decoration-(c($cya-800, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-900($v: 1) {
+      @include decoration-(c($cya-900, $v), $md);
+    }
+
+    @mixin md\:decoration-cyan-950($v: 1) {
+      @include decoration-(c($cya-950, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-50($v: 1) {
+      @include decoration-(c($sky-50, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-100($v: 1) {
+      @include decoration-(c($sky-100, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-200($v: 1) {
+      @include decoration-(c($sky-200, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-300($v: 1) {
+      @include decoration-(c($sky-300, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-400($v: 1) {
+      @include decoration-(c($sky-400, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-500($v: 1) {
+      @include decoration-(c($sky-500, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-600($v: 1) {
+      @include decoration-(c($sky-600, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-700($v: 1) {
+      @include decoration-(c($sky-700, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-800($v: 1) {
+      @include decoration-(c($sky-800, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-900($v: 1) {
+      @include decoration-(c($sky-900, $v), $md);
+    }
+
+    @mixin md\:decoration-sky-950($v: 1) {
+      @include decoration-(c($sky-950, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-50($v: 1) {
+      @include decoration-(c($blu-50, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-100($v: 1) {
+      @include decoration-(c($blu-100, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-200($v: 1) {
+      @include decoration-(c($blu-200, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-300($v: 1) {
+      @include decoration-(c($blu-300, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-400($v: 1) {
+      @include decoration-(c($blu-400, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-500($v: 1) {
+      @include decoration-(c($blu-500, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-600($v: 1) {
+      @include decoration-(c($blu-600, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-700($v: 1) {
+      @include decoration-(c($blu-700, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-800($v: 1) {
+      @include decoration-(c($blu-800, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-900($v: 1) {
+      @include decoration-(c($blu-900, $v), $md);
+    }
+
+    @mixin md\:decoration-blue-950($v: 1) {
+      @include decoration-(c($blu-950, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-50($v: 1) {
+      @include decoration-(c($ind-50, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-100($v: 1) {
+      @include decoration-(c($ind-100, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-200($v: 1) {
+      @include decoration-(c($ind-200, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-300($v: 1) {
+      @include decoration-(c($ind-300, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-400($v: 1) {
+      @include decoration-(c($ind-400, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-500($v: 1) {
+      @include decoration-(c($ind-500, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-600($v: 1) {
+      @include decoration-(c($ind-600, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-700($v: 1) {
+      @include decoration-(c($ind-700, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-800($v: 1) {
+      @include decoration-(c($ind-800, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-900($v: 1) {
+      @include decoration-(c($ind-900, $v), $md);
+    }
+
+    @mixin md\:decoration-indigo-950($v: 1) {
+      @include decoration-(c($ind-950, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-50($v: 1) {
+      @include decoration-(c($vio-50, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-100($v: 1) {
+      @include decoration-(c($vio-100, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-200($v: 1) {
+      @include decoration-(c($vio-200, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-300($v: 1) {
+      @include decoration-(c($vio-300, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-400($v: 1) {
+      @include decoration-(c($vio-400, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-500($v: 1) {
+      @include decoration-(c($vio-500, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-600($v: 1) {
+      @include decoration-(c($vio-600, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-700($v: 1) {
+      @include decoration-(c($vio-700, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-800($v: 1) {
+      @include decoration-(c($vio-800, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-900($v: 1) {
+      @include decoration-(c($vio-900, $v), $md);
+    }
+
+    @mixin md\:decoration-violet-950($v: 1) {
+      @include decoration-(c($vio-950, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-50($v: 1) {
+      @include decoration-(c($pur-50, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-100($v: 1) {
+      @include decoration-(c($pur-100, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-200($v: 1) {
+      @include decoration-(c($pur-200, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-300($v: 1) {
+      @include decoration-(c($pur-300, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-400($v: 1) {
+      @include decoration-(c($pur-400, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-500($v: 1) {
+      @include decoration-(c($pur-500, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-600($v: 1) {
+      @include decoration-(c($pur-600, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-700($v: 1) {
+      @include decoration-(c($pur-700, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-800($v: 1) {
+      @include decoration-(c($pur-800, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-900($v: 1) {
+      @include decoration-(c($pur-900, $v), $md);
+    }
+
+    @mixin md\:decoration-purple-950($v: 1) {
+      @include decoration-(c($pur-950, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-50($v: 1) {
+      @include decoration-(c($fuc-50, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-100($v: 1) {
+      @include decoration-(c($fuc-100, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-200($v: 1) {
+      @include decoration-(c($fuc-200, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-300($v: 1) {
+      @include decoration-(c($fuc-300, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-400($v: 1) {
+      @include decoration-(c($fuc-400, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-500($v: 1) {
+      @include decoration-(c($fuc-500, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-600($v: 1) {
+      @include decoration-(c($fuc-600, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-700($v: 1) {
+      @include decoration-(c($fuc-700, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-800($v: 1) {
+      @include decoration-(c($fuc-800, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-900($v: 1) {
+      @include decoration-(c($fuc-900, $v), $md);
+    }
+
+    @mixin md\:decoration-fuchsia-950($v: 1) {
+      @include decoration-(c($fuc-950, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-50($v: 1) {
+      @include decoration-(c($pin-50, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-100($v: 1) {
+      @include decoration-(c($pin-100, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-200($v: 1) {
+      @include decoration-(c($pin-200, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-300($v: 1) {
+      @include decoration-(c($pin-300, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-400($v: 1) {
+      @include decoration-(c($pin-400, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-500($v: 1) {
+      @include decoration-(c($pin-500, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-600($v: 1) {
+      @include decoration-(c($pin-600, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-700($v: 1) {
+      @include decoration-(c($pin-700, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-800($v: 1) {
+      @include decoration-(c($pin-800, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-900($v: 1) {
+      @include decoration-(c($pin-900, $v), $md);
+    }
+
+    @mixin md\:decoration-pink-950($v: 1) {
+      @include decoration-(c($pin-950, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-50($v: 1) {
+      @include decoration-(c($ros-50, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-100($v: 1) {
+      @include decoration-(c($ros-100, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-200($v: 1) {
+      @include decoration-(c($ros-200, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-300($v: 1) {
+      @include decoration-(c($ros-300, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-400($v: 1) {
+      @include decoration-(c($ros-400, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-500($v: 1) {
+      @include decoration-(c($ros-500, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-600($v: 1) {
+      @include decoration-(c($ros-600, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-700($v: 1) {
+      @include decoration-(c($ros-700, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-800($v: 1) {
+      @include decoration-(c($ros-800, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-900($v: 1) {
+      @include decoration-(c($ros-900, $v), $md);
+    }
+
+    @mixin md\:decoration-rose-950($v: 1) {
+      @include decoration-(c($ros-950, $v), $md);
+    }
+
+    @mixin lg\:decoration-inherit {
+      @include decoration-(inherit, $lg);
+    }
+
+    @mixin lg\:decoration-current {
+      @include decoration-(currentColor, $lg);
+    }
+
+    @mixin lg\:decoration-transparent {
+      @include decoration-(transparent, $lg);
+    }
+
+    @mixin lg\:decoration-black($v: 1) {
+      @include decoration-(c($bla, $v), $lg);
+    }
+
+    @mixin lg\:decoration-white($v: 1) {
+      @include decoration-(c($whi, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-50($v: 1) {
+      @include decoration-(c($sla-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-100($v: 1) {
+      @include decoration-(c($sla-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-200($v: 1) {
+      @include decoration-(c($sla-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-300($v: 1) {
+      @include decoration-(c($sla-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-400($v: 1) {
+      @include decoration-(c($sla-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-500($v: 1) {
+      @include decoration-(c($sla-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-600($v: 1) {
+      @include decoration-(c($sla-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-700($v: 1) {
+      @include decoration-(c($sla-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-800($v: 1) {
+      @include decoration-(c($sla-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-900($v: 1) {
+      @include decoration-(c($sla-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-slate-950($v: 1) {
+      @include decoration-(c($sla-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-50($v: 1) {
+      @include decoration-(c($gra-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-100($v: 1) {
+      @include decoration-(c($gra-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-200($v: 1) {
+      @include decoration-(c($gra-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-300($v: 1) {
+      @include decoration-(c($gra-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-400($v: 1) {
+      @include decoration-(c($gra-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-500($v: 1) {
+      @include decoration-(c($gra-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-600($v: 1) {
+      @include decoration-(c($gra-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-700($v: 1) {
+      @include decoration-(c($gra-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-800($v: 1) {
+      @include decoration-(c($gra-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-900($v: 1) {
+      @include decoration-(c($gra-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-gray-950($v: 1) {
+      @include decoration-(c($gra-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-50($v: 1) {
+      @include decoration-(c($zin-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-100($v: 1) {
+      @include decoration-(c($zin-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-200($v: 1) {
+      @include decoration-(c($zin-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-300($v: 1) {
+      @include decoration-(c($zin-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-400($v: 1) {
+      @include decoration-(c($zin-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-500($v: 1) {
+      @include decoration-(c($zin-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-600($v: 1) {
+      @include decoration-(c($zin-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-700($v: 1) {
+      @include decoration-(c($zin-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-800($v: 1) {
+      @include decoration-(c($zin-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-900($v: 1) {
+      @include decoration-(c($zin-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-zinc-950($v: 1) {
+      @include decoration-(c($zin-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-50($v: 1) {
+      @include decoration-(c($neu-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-100($v: 1) {
+      @include decoration-(c($neu-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-200($v: 1) {
+      @include decoration-(c($neu-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-300($v: 1) {
+      @include decoration-(c($neu-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-400($v: 1) {
+      @include decoration-(c($neu-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-500($v: 1) {
+      @include decoration-(c($neu-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-600($v: 1) {
+      @include decoration-(c($neu-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-700($v: 1) {
+      @include decoration-(c($neu-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-800($v: 1) {
+      @include decoration-(c($neu-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-900($v: 1) {
+      @include decoration-(c($neu-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-neutral-950($v: 1) {
+      @include decoration-(c($neu-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-50($v: 1) {
+      @include decoration-(c($sto-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-100($v: 1) {
+      @include decoration-(c($sto-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-200($v: 1) {
+      @include decoration-(c($sto-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-300($v: 1) {
+      @include decoration-(c($sto-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-400($v: 1) {
+      @include decoration-(c($sto-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-500($v: 1) {
+      @include decoration-(c($sto-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-600($v: 1) {
+      @include decoration-(c($sto-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-700($v: 1) {
+      @include decoration-(c($sto-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-800($v: 1) {
+      @include decoration-(c($sto-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-900($v: 1) {
+      @include decoration-(c($sto-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-stone-950($v: 1) {
+      @include decoration-(c($sto-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-50($v: 1) {
+      @include decoration-(c($red-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-100($v: 1) {
+      @include decoration-(c($red-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-200($v: 1) {
+      @include decoration-(c($red-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-300($v: 1) {
+      @include decoration-(c($red-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-400($v: 1) {
+      @include decoration-(c($red-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-500($v: 1) {
+      @include decoration-(c($red-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-600($v: 1) {
+      @include decoration-(c($red-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-700($v: 1) {
+      @include decoration-(c($red-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-800($v: 1) {
+      @include decoration-(c($red-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-900($v: 1) {
+      @include decoration-(c($red-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-red-950($v: 1) {
+      @include decoration-(c($red-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-50($v: 1) {
+      @include decoration-(c($ora-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-100($v: 1) {
+      @include decoration-(c($ora-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-200($v: 1) {
+      @include decoration-(c($ora-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-300($v: 1) {
+      @include decoration-(c($ora-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-400($v: 1) {
+      @include decoration-(c($ora-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-500($v: 1) {
+      @include decoration-(c($ora-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-600($v: 1) {
+      @include decoration-(c($ora-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-700($v: 1) {
+      @include decoration-(c($ora-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-800($v: 1) {
+      @include decoration-(c($ora-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-900($v: 1) {
+      @include decoration-(c($ora-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-orange-950($v: 1) {
+      @include decoration-(c($ora-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-50($v: 1) {
+      @include decoration-(c($amb-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-100($v: 1) {
+      @include decoration-(c($amb-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-200($v: 1) {
+      @include decoration-(c($amb-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-300($v: 1) {
+      @include decoration-(c($amb-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-400($v: 1) {
+      @include decoration-(c($amb-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-500($v: 1) {
+      @include decoration-(c($amb-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-600($v: 1) {
+      @include decoration-(c($amb-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-700($v: 1) {
+      @include decoration-(c($amb-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-800($v: 1) {
+      @include decoration-(c($amb-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-900($v: 1) {
+      @include decoration-(c($amb-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-amber-950($v: 1) {
+      @include decoration-(c($amb-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-50($v: 1) {
+      @include decoration-(c($yel-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-100($v: 1) {
+      @include decoration-(c($yel-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-200($v: 1) {
+      @include decoration-(c($yel-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-300($v: 1) {
+      @include decoration-(c($yel-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-400($v: 1) {
+      @include decoration-(c($yel-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-500($v: 1) {
+      @include decoration-(c($yel-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-600($v: 1) {
+      @include decoration-(c($yel-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-700($v: 1) {
+      @include decoration-(c($yel-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-800($v: 1) {
+      @include decoration-(c($yel-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-900($v: 1) {
+      @include decoration-(c($yel-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-yellow-950($v: 1) {
+      @include decoration-(c($yel-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-50($v: 1) {
+      @include decoration-(c($lim-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-100($v: 1) {
+      @include decoration-(c($lim-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-200($v: 1) {
+      @include decoration-(c($lim-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-300($v: 1) {
+      @include decoration-(c($lim-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-400($v: 1) {
+      @include decoration-(c($lim-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-500($v: 1) {
+      @include decoration-(c($lim-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-600($v: 1) {
+      @include decoration-(c($lim-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-700($v: 1) {
+      @include decoration-(c($lim-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-800($v: 1) {
+      @include decoration-(c($lim-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-900($v: 1) {
+      @include decoration-(c($lim-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-lime-950($v: 1) {
+      @include decoration-(c($lim-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-50($v: 1) {
+      @include decoration-(c($gre-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-100($v: 1) {
+      @include decoration-(c($gre-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-200($v: 1) {
+      @include decoration-(c($gre-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-300($v: 1) {
+      @include decoration-(c($gre-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-400($v: 1) {
+      @include decoration-(c($gre-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-500($v: 1) {
+      @include decoration-(c($gre-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-600($v: 1) {
+      @include decoration-(c($gre-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-700($v: 1) {
+      @include decoration-(c($gre-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-800($v: 1) {
+      @include decoration-(c($gre-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-900($v: 1) {
+      @include decoration-(c($gre-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-green-950($v: 1) {
+      @include decoration-(c($gre-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-50($v: 1) {
+      @include decoration-(c($eme-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-100($v: 1) {
+      @include decoration-(c($eme-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-200($v: 1) {
+      @include decoration-(c($eme-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-300($v: 1) {
+      @include decoration-(c($eme-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-400($v: 1) {
+      @include decoration-(c($eme-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-500($v: 1) {
+      @include decoration-(c($eme-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-600($v: 1) {
+      @include decoration-(c($eme-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-700($v: 1) {
+      @include decoration-(c($eme-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-800($v: 1) {
+      @include decoration-(c($eme-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-900($v: 1) {
+      @include decoration-(c($eme-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-emerald-950($v: 1) {
+      @include decoration-(c($eme-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-50($v: 1) {
+      @include decoration-(c($tea-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-100($v: 1) {
+      @include decoration-(c($tea-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-200($v: 1) {
+      @include decoration-(c($tea-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-300($v: 1) {
+      @include decoration-(c($tea-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-400($v: 1) {
+      @include decoration-(c($tea-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-500($v: 1) {
+      @include decoration-(c($tea-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-600($v: 1) {
+      @include decoration-(c($tea-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-700($v: 1) {
+      @include decoration-(c($tea-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-800($v: 1) {
+      @include decoration-(c($tea-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-900($v: 1) {
+      @include decoration-(c($tea-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-teal-950($v: 1) {
+      @include decoration-(c($tea-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-50($v: 1) {
+      @include decoration-(c($cya-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-100($v: 1) {
+      @include decoration-(c($cya-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-200($v: 1) {
+      @include decoration-(c($cya-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-300($v: 1) {
+      @include decoration-(c($cya-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-400($v: 1) {
+      @include decoration-(c($cya-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-500($v: 1) {
+      @include decoration-(c($cya-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-600($v: 1) {
+      @include decoration-(c($cya-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-700($v: 1) {
+      @include decoration-(c($cya-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-800($v: 1) {
+      @include decoration-(c($cya-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-900($v: 1) {
+      @include decoration-(c($cya-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-cyan-950($v: 1) {
+      @include decoration-(c($cya-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-50($v: 1) {
+      @include decoration-(c($sky-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-100($v: 1) {
+      @include decoration-(c($sky-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-200($v: 1) {
+      @include decoration-(c($sky-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-300($v: 1) {
+      @include decoration-(c($sky-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-400($v: 1) {
+      @include decoration-(c($sky-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-500($v: 1) {
+      @include decoration-(c($sky-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-600($v: 1) {
+      @include decoration-(c($sky-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-700($v: 1) {
+      @include decoration-(c($sky-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-800($v: 1) {
+      @include decoration-(c($sky-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-900($v: 1) {
+      @include decoration-(c($sky-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-sky-950($v: 1) {
+      @include decoration-(c($sky-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-50($v: 1) {
+      @include decoration-(c($blu-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-100($v: 1) {
+      @include decoration-(c($blu-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-200($v: 1) {
+      @include decoration-(c($blu-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-300($v: 1) {
+      @include decoration-(c($blu-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-400($v: 1) {
+      @include decoration-(c($blu-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-500($v: 1) {
+      @include decoration-(c($blu-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-600($v: 1) {
+      @include decoration-(c($blu-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-700($v: 1) {
+      @include decoration-(c($blu-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-800($v: 1) {
+      @include decoration-(c($blu-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-900($v: 1) {
+      @include decoration-(c($blu-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-blue-950($v: 1) {
+      @include decoration-(c($blu-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-50($v: 1) {
+      @include decoration-(c($ind-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-100($v: 1) {
+      @include decoration-(c($ind-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-200($v: 1) {
+      @include decoration-(c($ind-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-300($v: 1) {
+      @include decoration-(c($ind-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-400($v: 1) {
+      @include decoration-(c($ind-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-500($v: 1) {
+      @include decoration-(c($ind-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-600($v: 1) {
+      @include decoration-(c($ind-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-700($v: 1) {
+      @include decoration-(c($ind-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-800($v: 1) {
+      @include decoration-(c($ind-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-900($v: 1) {
+      @include decoration-(c($ind-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-indigo-950($v: 1) {
+      @include decoration-(c($ind-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-50($v: 1) {
+      @include decoration-(c($vio-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-100($v: 1) {
+      @include decoration-(c($vio-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-200($v: 1) {
+      @include decoration-(c($vio-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-300($v: 1) {
+      @include decoration-(c($vio-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-400($v: 1) {
+      @include decoration-(c($vio-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-500($v: 1) {
+      @include decoration-(c($vio-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-600($v: 1) {
+      @include decoration-(c($vio-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-700($v: 1) {
+      @include decoration-(c($vio-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-800($v: 1) {
+      @include decoration-(c($vio-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-900($v: 1) {
+      @include decoration-(c($vio-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-violet-950($v: 1) {
+      @include decoration-(c($vio-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-50($v: 1) {
+      @include decoration-(c($pur-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-100($v: 1) {
+      @include decoration-(c($pur-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-200($v: 1) {
+      @include decoration-(c($pur-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-300($v: 1) {
+      @include decoration-(c($pur-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-400($v: 1) {
+      @include decoration-(c($pur-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-500($v: 1) {
+      @include decoration-(c($pur-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-600($v: 1) {
+      @include decoration-(c($pur-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-700($v: 1) {
+      @include decoration-(c($pur-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-800($v: 1) {
+      @include decoration-(c($pur-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-900($v: 1) {
+      @include decoration-(c($pur-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-purple-950($v: 1) {
+      @include decoration-(c($pur-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-50($v: 1) {
+      @include decoration-(c($fuc-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-100($v: 1) {
+      @include decoration-(c($fuc-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-200($v: 1) {
+      @include decoration-(c($fuc-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-300($v: 1) {
+      @include decoration-(c($fuc-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-400($v: 1) {
+      @include decoration-(c($fuc-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-500($v: 1) {
+      @include decoration-(c($fuc-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-600($v: 1) {
+      @include decoration-(c($fuc-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-700($v: 1) {
+      @include decoration-(c($fuc-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-800($v: 1) {
+      @include decoration-(c($fuc-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-900($v: 1) {
+      @include decoration-(c($fuc-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-fuchsia-950($v: 1) {
+      @include decoration-(c($fuc-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-50($v: 1) {
+      @include decoration-(c($pin-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-100($v: 1) {
+      @include decoration-(c($pin-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-200($v: 1) {
+      @include decoration-(c($pin-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-300($v: 1) {
+      @include decoration-(c($pin-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-400($v: 1) {
+      @include decoration-(c($pin-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-500($v: 1) {
+      @include decoration-(c($pin-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-600($v: 1) {
+      @include decoration-(c($pin-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-700($v: 1) {
+      @include decoration-(c($pin-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-800($v: 1) {
+      @include decoration-(c($pin-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-900($v: 1) {
+      @include decoration-(c($pin-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-pink-950($v: 1) {
+      @include decoration-(c($pin-950, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-50($v: 1) {
+      @include decoration-(c($ros-50, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-100($v: 1) {
+      @include decoration-(c($ros-100, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-200($v: 1) {
+      @include decoration-(c($ros-200, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-300($v: 1) {
+      @include decoration-(c($ros-300, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-400($v: 1) {
+      @include decoration-(c($ros-400, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-500($v: 1) {
+      @include decoration-(c($ros-500, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-600($v: 1) {
+      @include decoration-(c($ros-600, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-700($v: 1) {
+      @include decoration-(c($ros-700, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-800($v: 1) {
+      @include decoration-(c($ros-800, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-900($v: 1) {
+      @include decoration-(c($ros-900, $v), $lg);
+    }
+
+    @mixin lg\:decoration-rose-950($v: 1) {
+      @include decoration-(c($ros-950, $v), $lg);
+    }
+
+    @mixin xl\:decoration-inherit {
+      @include decoration-(inherit, $xl);
+    }
+
+    @mixin xl\:decoration-current {
+      @include decoration-(currentColor, $xl);
+    }
+
+    @mixin xl\:decoration-transparent {
+      @include decoration-(transparent, $xl);
+    }
+
+    @mixin xl\:decoration-black($v: 1) {
+      @include decoration-(c($bla, $v), $xl);
+    }
+
+    @mixin xl\:decoration-white($v: 1) {
+      @include decoration-(c($whi, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-50($v: 1) {
+      @include decoration-(c($sla-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-100($v: 1) {
+      @include decoration-(c($sla-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-200($v: 1) {
+      @include decoration-(c($sla-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-300($v: 1) {
+      @include decoration-(c($sla-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-400($v: 1) {
+      @include decoration-(c($sla-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-500($v: 1) {
+      @include decoration-(c($sla-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-600($v: 1) {
+      @include decoration-(c($sla-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-700($v: 1) {
+      @include decoration-(c($sla-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-800($v: 1) {
+      @include decoration-(c($sla-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-900($v: 1) {
+      @include decoration-(c($sla-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-slate-950($v: 1) {
+      @include decoration-(c($sla-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-50($v: 1) {
+      @include decoration-(c($gra-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-100($v: 1) {
+      @include decoration-(c($gra-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-200($v: 1) {
+      @include decoration-(c($gra-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-300($v: 1) {
+      @include decoration-(c($gra-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-400($v: 1) {
+      @include decoration-(c($gra-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-500($v: 1) {
+      @include decoration-(c($gra-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-600($v: 1) {
+      @include decoration-(c($gra-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-700($v: 1) {
+      @include decoration-(c($gra-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-800($v: 1) {
+      @include decoration-(c($gra-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-900($v: 1) {
+      @include decoration-(c($gra-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-gray-950($v: 1) {
+      @include decoration-(c($gra-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-50($v: 1) {
+      @include decoration-(c($zin-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-100($v: 1) {
+      @include decoration-(c($zin-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-200($v: 1) {
+      @include decoration-(c($zin-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-300($v: 1) {
+      @include decoration-(c($zin-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-400($v: 1) {
+      @include decoration-(c($zin-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-500($v: 1) {
+      @include decoration-(c($zin-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-600($v: 1) {
+      @include decoration-(c($zin-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-700($v: 1) {
+      @include decoration-(c($zin-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-800($v: 1) {
+      @include decoration-(c($zin-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-900($v: 1) {
+      @include decoration-(c($zin-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-zinc-950($v: 1) {
+      @include decoration-(c($zin-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-50($v: 1) {
+      @include decoration-(c($neu-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-100($v: 1) {
+      @include decoration-(c($neu-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-200($v: 1) {
+      @include decoration-(c($neu-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-300($v: 1) {
+      @include decoration-(c($neu-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-400($v: 1) {
+      @include decoration-(c($neu-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-500($v: 1) {
+      @include decoration-(c($neu-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-600($v: 1) {
+      @include decoration-(c($neu-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-700($v: 1) {
+      @include decoration-(c($neu-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-800($v: 1) {
+      @include decoration-(c($neu-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-900($v: 1) {
+      @include decoration-(c($neu-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-neutral-950($v: 1) {
+      @include decoration-(c($neu-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-50($v: 1) {
+      @include decoration-(c($sto-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-100($v: 1) {
+      @include decoration-(c($sto-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-200($v: 1) {
+      @include decoration-(c($sto-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-300($v: 1) {
+      @include decoration-(c($sto-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-400($v: 1) {
+      @include decoration-(c($sto-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-500($v: 1) {
+      @include decoration-(c($sto-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-600($v: 1) {
+      @include decoration-(c($sto-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-700($v: 1) {
+      @include decoration-(c($sto-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-800($v: 1) {
+      @include decoration-(c($sto-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-900($v: 1) {
+      @include decoration-(c($sto-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-stone-950($v: 1) {
+      @include decoration-(c($sto-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-50($v: 1) {
+      @include decoration-(c($red-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-100($v: 1) {
+      @include decoration-(c($red-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-200($v: 1) {
+      @include decoration-(c($red-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-300($v: 1) {
+      @include decoration-(c($red-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-400($v: 1) {
+      @include decoration-(c($red-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-500($v: 1) {
+      @include decoration-(c($red-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-600($v: 1) {
+      @include decoration-(c($red-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-700($v: 1) {
+      @include decoration-(c($red-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-800($v: 1) {
+      @include decoration-(c($red-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-900($v: 1) {
+      @include decoration-(c($red-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-red-950($v: 1) {
+      @include decoration-(c($red-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-50($v: 1) {
+      @include decoration-(c($ora-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-100($v: 1) {
+      @include decoration-(c($ora-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-200($v: 1) {
+      @include decoration-(c($ora-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-300($v: 1) {
+      @include decoration-(c($ora-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-400($v: 1) {
+      @include decoration-(c($ora-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-500($v: 1) {
+      @include decoration-(c($ora-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-600($v: 1) {
+      @include decoration-(c($ora-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-700($v: 1) {
+      @include decoration-(c($ora-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-800($v: 1) {
+      @include decoration-(c($ora-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-900($v: 1) {
+      @include decoration-(c($ora-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-orange-950($v: 1) {
+      @include decoration-(c($ora-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-50($v: 1) {
+      @include decoration-(c($amb-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-100($v: 1) {
+      @include decoration-(c($amb-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-200($v: 1) {
+      @include decoration-(c($amb-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-300($v: 1) {
+      @include decoration-(c($amb-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-400($v: 1) {
+      @include decoration-(c($amb-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-500($v: 1) {
+      @include decoration-(c($amb-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-600($v: 1) {
+      @include decoration-(c($amb-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-700($v: 1) {
+      @include decoration-(c($amb-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-800($v: 1) {
+      @include decoration-(c($amb-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-900($v: 1) {
+      @include decoration-(c($amb-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-amber-950($v: 1) {
+      @include decoration-(c($amb-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-50($v: 1) {
+      @include decoration-(c($yel-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-100($v: 1) {
+      @include decoration-(c($yel-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-200($v: 1) {
+      @include decoration-(c($yel-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-300($v: 1) {
+      @include decoration-(c($yel-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-400($v: 1) {
+      @include decoration-(c($yel-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-500($v: 1) {
+      @include decoration-(c($yel-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-600($v: 1) {
+      @include decoration-(c($yel-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-700($v: 1) {
+      @include decoration-(c($yel-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-800($v: 1) {
+      @include decoration-(c($yel-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-900($v: 1) {
+      @include decoration-(c($yel-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-yellow-950($v: 1) {
+      @include decoration-(c($yel-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-50($v: 1) {
+      @include decoration-(c($lim-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-100($v: 1) {
+      @include decoration-(c($lim-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-200($v: 1) {
+      @include decoration-(c($lim-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-300($v: 1) {
+      @include decoration-(c($lim-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-400($v: 1) {
+      @include decoration-(c($lim-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-500($v: 1) {
+      @include decoration-(c($lim-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-600($v: 1) {
+      @include decoration-(c($lim-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-700($v: 1) {
+      @include decoration-(c($lim-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-800($v: 1) {
+      @include decoration-(c($lim-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-900($v: 1) {
+      @include decoration-(c($lim-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-lime-950($v: 1) {
+      @include decoration-(c($lim-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-50($v: 1) {
+      @include decoration-(c($gre-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-100($v: 1) {
+      @include decoration-(c($gre-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-200($v: 1) {
+      @include decoration-(c($gre-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-300($v: 1) {
+      @include decoration-(c($gre-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-400($v: 1) {
+      @include decoration-(c($gre-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-500($v: 1) {
+      @include decoration-(c($gre-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-600($v: 1) {
+      @include decoration-(c($gre-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-700($v: 1) {
+      @include decoration-(c($gre-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-800($v: 1) {
+      @include decoration-(c($gre-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-900($v: 1) {
+      @include decoration-(c($gre-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-green-950($v: 1) {
+      @include decoration-(c($gre-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-50($v: 1) {
+      @include decoration-(c($eme-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-100($v: 1) {
+      @include decoration-(c($eme-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-200($v: 1) {
+      @include decoration-(c($eme-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-300($v: 1) {
+      @include decoration-(c($eme-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-400($v: 1) {
+      @include decoration-(c($eme-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-500($v: 1) {
+      @include decoration-(c($eme-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-600($v: 1) {
+      @include decoration-(c($eme-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-700($v: 1) {
+      @include decoration-(c($eme-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-800($v: 1) {
+      @include decoration-(c($eme-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-900($v: 1) {
+      @include decoration-(c($eme-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-emerald-950($v: 1) {
+      @include decoration-(c($eme-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-50($v: 1) {
+      @include decoration-(c($tea-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-100($v: 1) {
+      @include decoration-(c($tea-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-200($v: 1) {
+      @include decoration-(c($tea-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-300($v: 1) {
+      @include decoration-(c($tea-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-400($v: 1) {
+      @include decoration-(c($tea-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-500($v: 1) {
+      @include decoration-(c($tea-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-600($v: 1) {
+      @include decoration-(c($tea-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-700($v: 1) {
+      @include decoration-(c($tea-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-800($v: 1) {
+      @include decoration-(c($tea-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-900($v: 1) {
+      @include decoration-(c($tea-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-teal-950($v: 1) {
+      @include decoration-(c($tea-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-50($v: 1) {
+      @include decoration-(c($cya-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-100($v: 1) {
+      @include decoration-(c($cya-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-200($v: 1) {
+      @include decoration-(c($cya-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-300($v: 1) {
+      @include decoration-(c($cya-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-400($v: 1) {
+      @include decoration-(c($cya-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-500($v: 1) {
+      @include decoration-(c($cya-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-600($v: 1) {
+      @include decoration-(c($cya-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-700($v: 1) {
+      @include decoration-(c($cya-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-800($v: 1) {
+      @include decoration-(c($cya-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-900($v: 1) {
+      @include decoration-(c($cya-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-cyan-950($v: 1) {
+      @include decoration-(c($cya-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-50($v: 1) {
+      @include decoration-(c($sky-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-100($v: 1) {
+      @include decoration-(c($sky-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-200($v: 1) {
+      @include decoration-(c($sky-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-300($v: 1) {
+      @include decoration-(c($sky-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-400($v: 1) {
+      @include decoration-(c($sky-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-500($v: 1) {
+      @include decoration-(c($sky-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-600($v: 1) {
+      @include decoration-(c($sky-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-700($v: 1) {
+      @include decoration-(c($sky-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-800($v: 1) {
+      @include decoration-(c($sky-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-900($v: 1) {
+      @include decoration-(c($sky-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-sky-950($v: 1) {
+      @include decoration-(c($sky-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-50($v: 1) {
+      @include decoration-(c($blu-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-100($v: 1) {
+      @include decoration-(c($blu-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-200($v: 1) {
+      @include decoration-(c($blu-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-300($v: 1) {
+      @include decoration-(c($blu-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-400($v: 1) {
+      @include decoration-(c($blu-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-500($v: 1) {
+      @include decoration-(c($blu-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-600($v: 1) {
+      @include decoration-(c($blu-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-700($v: 1) {
+      @include decoration-(c($blu-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-800($v: 1) {
+      @include decoration-(c($blu-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-900($v: 1) {
+      @include decoration-(c($blu-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-blue-950($v: 1) {
+      @include decoration-(c($blu-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-50($v: 1) {
+      @include decoration-(c($ind-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-100($v: 1) {
+      @include decoration-(c($ind-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-200($v: 1) {
+      @include decoration-(c($ind-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-300($v: 1) {
+      @include decoration-(c($ind-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-400($v: 1) {
+      @include decoration-(c($ind-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-500($v: 1) {
+      @include decoration-(c($ind-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-600($v: 1) {
+      @include decoration-(c($ind-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-700($v: 1) {
+      @include decoration-(c($ind-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-800($v: 1) {
+      @include decoration-(c($ind-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-900($v: 1) {
+      @include decoration-(c($ind-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-indigo-950($v: 1) {
+      @include decoration-(c($ind-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-50($v: 1) {
+      @include decoration-(c($vio-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-100($v: 1) {
+      @include decoration-(c($vio-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-200($v: 1) {
+      @include decoration-(c($vio-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-300($v: 1) {
+      @include decoration-(c($vio-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-400($v: 1) {
+      @include decoration-(c($vio-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-500($v: 1) {
+      @include decoration-(c($vio-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-600($v: 1) {
+      @include decoration-(c($vio-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-700($v: 1) {
+      @include decoration-(c($vio-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-800($v: 1) {
+      @include decoration-(c($vio-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-900($v: 1) {
+      @include decoration-(c($vio-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-violet-950($v: 1) {
+      @include decoration-(c($vio-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-50($v: 1) {
+      @include decoration-(c($pur-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-100($v: 1) {
+      @include decoration-(c($pur-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-200($v: 1) {
+      @include decoration-(c($pur-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-300($v: 1) {
+      @include decoration-(c($pur-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-400($v: 1) {
+      @include decoration-(c($pur-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-500($v: 1) {
+      @include decoration-(c($pur-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-600($v: 1) {
+      @include decoration-(c($pur-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-700($v: 1) {
+      @include decoration-(c($pur-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-800($v: 1) {
+      @include decoration-(c($pur-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-900($v: 1) {
+      @include decoration-(c($pur-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-purple-950($v: 1) {
+      @include decoration-(c($pur-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-50($v: 1) {
+      @include decoration-(c($fuc-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-100($v: 1) {
+      @include decoration-(c($fuc-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-200($v: 1) {
+      @include decoration-(c($fuc-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-300($v: 1) {
+      @include decoration-(c($fuc-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-400($v: 1) {
+      @include decoration-(c($fuc-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-500($v: 1) {
+      @include decoration-(c($fuc-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-600($v: 1) {
+      @include decoration-(c($fuc-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-700($v: 1) {
+      @include decoration-(c($fuc-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-800($v: 1) {
+      @include decoration-(c($fuc-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-900($v: 1) {
+      @include decoration-(c($fuc-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-fuchsia-950($v: 1) {
+      @include decoration-(c($fuc-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-50($v: 1) {
+      @include decoration-(c($pin-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-100($v: 1) {
+      @include decoration-(c($pin-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-200($v: 1) {
+      @include decoration-(c($pin-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-300($v: 1) {
+      @include decoration-(c($pin-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-400($v: 1) {
+      @include decoration-(c($pin-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-500($v: 1) {
+      @include decoration-(c($pin-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-600($v: 1) {
+      @include decoration-(c($pin-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-700($v: 1) {
+      @include decoration-(c($pin-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-800($v: 1) {
+      @include decoration-(c($pin-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-900($v: 1) {
+      @include decoration-(c($pin-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-pink-950($v: 1) {
+      @include decoration-(c($pin-950, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-50($v: 1) {
+      @include decoration-(c($ros-50, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-100($v: 1) {
+      @include decoration-(c($ros-100, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-200($v: 1) {
+      @include decoration-(c($ros-200, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-300($v: 1) {
+      @include decoration-(c($ros-300, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-400($v: 1) {
+      @include decoration-(c($ros-400, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-500($v: 1) {
+      @include decoration-(c($ros-500, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-600($v: 1) {
+      @include decoration-(c($ros-600, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-700($v: 1) {
+      @include decoration-(c($ros-700, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-800($v: 1) {
+      @include decoration-(c($ros-800, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-900($v: 1) {
+      @include decoration-(c($ros-900, $v), $xl);
+    }
+
+    @mixin xl\:decoration-rose-950($v: 1) {
+      @include decoration-(c($ros-950, $v), $xl);
+    }
+
+    @mixin \2xl\:decoration-inherit {
+      @include decoration-(inherit, $\2xl);
+    }
+
+    @mixin \2xl\:decoration-current {
+      @include decoration-(currentColor, $\2xl);
+    }
+
+    @mixin \2xl\:decoration-transparent {
+      @include decoration-(transparent, $\2xl);
+    }
+
+    @mixin \2xl\:decoration-black($v: 1) {
+      @include decoration-(c($bla, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-white($v: 1) {
+      @include decoration-(c($whi, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-50($v: 1) {
+      @include decoration-(c($sla-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-100($v: 1) {
+      @include decoration-(c($sla-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-200($v: 1) {
+      @include decoration-(c($sla-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-300($v: 1) {
+      @include decoration-(c($sla-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-400($v: 1) {
+      @include decoration-(c($sla-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-500($v: 1) {
+      @include decoration-(c($sla-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-600($v: 1) {
+      @include decoration-(c($sla-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-700($v: 1) {
+      @include decoration-(c($sla-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-800($v: 1) {
+      @include decoration-(c($sla-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-900($v: 1) {
+      @include decoration-(c($sla-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-slate-950($v: 1) {
+      @include decoration-(c($sla-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-50($v: 1) {
+      @include decoration-(c($gra-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-100($v: 1) {
+      @include decoration-(c($gra-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-200($v: 1) {
+      @include decoration-(c($gra-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-300($v: 1) {
+      @include decoration-(c($gra-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-400($v: 1) {
+      @include decoration-(c($gra-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-500($v: 1) {
+      @include decoration-(c($gra-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-600($v: 1) {
+      @include decoration-(c($gra-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-700($v: 1) {
+      @include decoration-(c($gra-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-800($v: 1) {
+      @include decoration-(c($gra-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-900($v: 1) {
+      @include decoration-(c($gra-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-gray-950($v: 1) {
+      @include decoration-(c($gra-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-50($v: 1) {
+      @include decoration-(c($zin-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-100($v: 1) {
+      @include decoration-(c($zin-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-200($v: 1) {
+      @include decoration-(c($zin-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-300($v: 1) {
+      @include decoration-(c($zin-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-400($v: 1) {
+      @include decoration-(c($zin-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-500($v: 1) {
+      @include decoration-(c($zin-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-600($v: 1) {
+      @include decoration-(c($zin-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-700($v: 1) {
+      @include decoration-(c($zin-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-800($v: 1) {
+      @include decoration-(c($zin-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-900($v: 1) {
+      @include decoration-(c($zin-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-zinc-950($v: 1) {
+      @include decoration-(c($zin-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-50($v: 1) {
+      @include decoration-(c($neu-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-100($v: 1) {
+      @include decoration-(c($neu-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-200($v: 1) {
+      @include decoration-(c($neu-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-300($v: 1) {
+      @include decoration-(c($neu-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-400($v: 1) {
+      @include decoration-(c($neu-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-500($v: 1) {
+      @include decoration-(c($neu-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-600($v: 1) {
+      @include decoration-(c($neu-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-700($v: 1) {
+      @include decoration-(c($neu-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-800($v: 1) {
+      @include decoration-(c($neu-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-900($v: 1) {
+      @include decoration-(c($neu-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-neutral-950($v: 1) {
+      @include decoration-(c($neu-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-50($v: 1) {
+      @include decoration-(c($sto-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-100($v: 1) {
+      @include decoration-(c($sto-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-200($v: 1) {
+      @include decoration-(c($sto-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-300($v: 1) {
+      @include decoration-(c($sto-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-400($v: 1) {
+      @include decoration-(c($sto-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-500($v: 1) {
+      @include decoration-(c($sto-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-600($v: 1) {
+      @include decoration-(c($sto-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-700($v: 1) {
+      @include decoration-(c($sto-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-800($v: 1) {
+      @include decoration-(c($sto-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-900($v: 1) {
+      @include decoration-(c($sto-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-stone-950($v: 1) {
+      @include decoration-(c($sto-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-50($v: 1) {
+      @include decoration-(c($red-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-100($v: 1) {
+      @include decoration-(c($red-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-200($v: 1) {
+      @include decoration-(c($red-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-300($v: 1) {
+      @include decoration-(c($red-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-400($v: 1) {
+      @include decoration-(c($red-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-500($v: 1) {
+      @include decoration-(c($red-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-600($v: 1) {
+      @include decoration-(c($red-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-700($v: 1) {
+      @include decoration-(c($red-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-800($v: 1) {
+      @include decoration-(c($red-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-900($v: 1) {
+      @include decoration-(c($red-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-red-950($v: 1) {
+      @include decoration-(c($red-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-50($v: 1) {
+      @include decoration-(c($ora-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-100($v: 1) {
+      @include decoration-(c($ora-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-200($v: 1) {
+      @include decoration-(c($ora-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-300($v: 1) {
+      @include decoration-(c($ora-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-400($v: 1) {
+      @include decoration-(c($ora-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-500($v: 1) {
+      @include decoration-(c($ora-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-600($v: 1) {
+      @include decoration-(c($ora-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-700($v: 1) {
+      @include decoration-(c($ora-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-800($v: 1) {
+      @include decoration-(c($ora-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-900($v: 1) {
+      @include decoration-(c($ora-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-orange-950($v: 1) {
+      @include decoration-(c($ora-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-50($v: 1) {
+      @include decoration-(c($amb-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-100($v: 1) {
+      @include decoration-(c($amb-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-200($v: 1) {
+      @include decoration-(c($amb-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-300($v: 1) {
+      @include decoration-(c($amb-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-400($v: 1) {
+      @include decoration-(c($amb-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-500($v: 1) {
+      @include decoration-(c($amb-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-600($v: 1) {
+      @include decoration-(c($amb-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-700($v: 1) {
+      @include decoration-(c($amb-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-800($v: 1) {
+      @include decoration-(c($amb-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-900($v: 1) {
+      @include decoration-(c($amb-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-amber-950($v: 1) {
+      @include decoration-(c($amb-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-50($v: 1) {
+      @include decoration-(c($yel-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-100($v: 1) {
+      @include decoration-(c($yel-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-200($v: 1) {
+      @include decoration-(c($yel-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-300($v: 1) {
+      @include decoration-(c($yel-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-400($v: 1) {
+      @include decoration-(c($yel-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-500($v: 1) {
+      @include decoration-(c($yel-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-600($v: 1) {
+      @include decoration-(c($yel-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-700($v: 1) {
+      @include decoration-(c($yel-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-800($v: 1) {
+      @include decoration-(c($yel-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-900($v: 1) {
+      @include decoration-(c($yel-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-yellow-950($v: 1) {
+      @include decoration-(c($yel-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-50($v: 1) {
+      @include decoration-(c($lim-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-100($v: 1) {
+      @include decoration-(c($lim-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-200($v: 1) {
+      @include decoration-(c($lim-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-300($v: 1) {
+      @include decoration-(c($lim-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-400($v: 1) {
+      @include decoration-(c($lim-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-500($v: 1) {
+      @include decoration-(c($lim-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-600($v: 1) {
+      @include decoration-(c($lim-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-700($v: 1) {
+      @include decoration-(c($lim-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-800($v: 1) {
+      @include decoration-(c($lim-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-900($v: 1) {
+      @include decoration-(c($lim-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-lime-950($v: 1) {
+      @include decoration-(c($lim-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-50($v: 1) {
+      @include decoration-(c($gre-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-100($v: 1) {
+      @include decoration-(c($gre-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-200($v: 1) {
+      @include decoration-(c($gre-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-300($v: 1) {
+      @include decoration-(c($gre-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-400($v: 1) {
+      @include decoration-(c($gre-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-500($v: 1) {
+      @include decoration-(c($gre-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-600($v: 1) {
+      @include decoration-(c($gre-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-700($v: 1) {
+      @include decoration-(c($gre-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-800($v: 1) {
+      @include decoration-(c($gre-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-900($v: 1) {
+      @include decoration-(c($gre-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-green-950($v: 1) {
+      @include decoration-(c($gre-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-50($v: 1) {
+      @include decoration-(c($eme-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-100($v: 1) {
+      @include decoration-(c($eme-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-200($v: 1) {
+      @include decoration-(c($eme-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-300($v: 1) {
+      @include decoration-(c($eme-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-400($v: 1) {
+      @include decoration-(c($eme-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-500($v: 1) {
+      @include decoration-(c($eme-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-600($v: 1) {
+      @include decoration-(c($eme-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-700($v: 1) {
+      @include decoration-(c($eme-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-800($v: 1) {
+      @include decoration-(c($eme-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-900($v: 1) {
+      @include decoration-(c($eme-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-emerald-950($v: 1) {
+      @include decoration-(c($eme-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-50($v: 1) {
+      @include decoration-(c($tea-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-100($v: 1) {
+      @include decoration-(c($tea-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-200($v: 1) {
+      @include decoration-(c($tea-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-300($v: 1) {
+      @include decoration-(c($tea-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-400($v: 1) {
+      @include decoration-(c($tea-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-500($v: 1) {
+      @include decoration-(c($tea-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-600($v: 1) {
+      @include decoration-(c($tea-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-700($v: 1) {
+      @include decoration-(c($tea-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-800($v: 1) {
+      @include decoration-(c($tea-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-900($v: 1) {
+      @include decoration-(c($tea-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-teal-950($v: 1) {
+      @include decoration-(c($tea-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-50($v: 1) {
+      @include decoration-(c($cya-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-100($v: 1) {
+      @include decoration-(c($cya-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-200($v: 1) {
+      @include decoration-(c($cya-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-300($v: 1) {
+      @include decoration-(c($cya-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-400($v: 1) {
+      @include decoration-(c($cya-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-500($v: 1) {
+      @include decoration-(c($cya-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-600($v: 1) {
+      @include decoration-(c($cya-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-700($v: 1) {
+      @include decoration-(c($cya-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-800($v: 1) {
+      @include decoration-(c($cya-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-900($v: 1) {
+      @include decoration-(c($cya-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-cyan-950($v: 1) {
+      @include decoration-(c($cya-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-50($v: 1) {
+      @include decoration-(c($sky-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-100($v: 1) {
+      @include decoration-(c($sky-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-200($v: 1) {
+      @include decoration-(c($sky-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-300($v: 1) {
+      @include decoration-(c($sky-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-400($v: 1) {
+      @include decoration-(c($sky-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-500($v: 1) {
+      @include decoration-(c($sky-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-600($v: 1) {
+      @include decoration-(c($sky-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-700($v: 1) {
+      @include decoration-(c($sky-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-800($v: 1) {
+      @include decoration-(c($sky-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-900($v: 1) {
+      @include decoration-(c($sky-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-sky-950($v: 1) {
+      @include decoration-(c($sky-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-50($v: 1) {
+      @include decoration-(c($blu-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-100($v: 1) {
+      @include decoration-(c($blu-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-200($v: 1) {
+      @include decoration-(c($blu-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-300($v: 1) {
+      @include decoration-(c($blu-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-400($v: 1) {
+      @include decoration-(c($blu-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-500($v: 1) {
+      @include decoration-(c($blu-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-600($v: 1) {
+      @include decoration-(c($blu-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-700($v: 1) {
+      @include decoration-(c($blu-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-800($v: 1) {
+      @include decoration-(c($blu-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-900($v: 1) {
+      @include decoration-(c($blu-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-blue-950($v: 1) {
+      @include decoration-(c($blu-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-50($v: 1) {
+      @include decoration-(c($ind-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-100($v: 1) {
+      @include decoration-(c($ind-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-200($v: 1) {
+      @include decoration-(c($ind-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-300($v: 1) {
+      @include decoration-(c($ind-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-400($v: 1) {
+      @include decoration-(c($ind-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-500($v: 1) {
+      @include decoration-(c($ind-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-600($v: 1) {
+      @include decoration-(c($ind-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-700($v: 1) {
+      @include decoration-(c($ind-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-800($v: 1) {
+      @include decoration-(c($ind-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-900($v: 1) {
+      @include decoration-(c($ind-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-indigo-950($v: 1) {
+      @include decoration-(c($ind-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-50($v: 1) {
+      @include decoration-(c($vio-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-100($v: 1) {
+      @include decoration-(c($vio-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-200($v: 1) {
+      @include decoration-(c($vio-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-300($v: 1) {
+      @include decoration-(c($vio-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-400($v: 1) {
+      @include decoration-(c($vio-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-500($v: 1) {
+      @include decoration-(c($vio-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-600($v: 1) {
+      @include decoration-(c($vio-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-700($v: 1) {
+      @include decoration-(c($vio-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-800($v: 1) {
+      @include decoration-(c($vio-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-900($v: 1) {
+      @include decoration-(c($vio-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-violet-950($v: 1) {
+      @include decoration-(c($vio-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-50($v: 1) {
+      @include decoration-(c($pur-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-100($v: 1) {
+      @include decoration-(c($pur-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-200($v: 1) {
+      @include decoration-(c($pur-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-300($v: 1) {
+      @include decoration-(c($pur-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-400($v: 1) {
+      @include decoration-(c($pur-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-500($v: 1) {
+      @include decoration-(c($pur-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-600($v: 1) {
+      @include decoration-(c($pur-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-700($v: 1) {
+      @include decoration-(c($pur-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-800($v: 1) {
+      @include decoration-(c($pur-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-900($v: 1) {
+      @include decoration-(c($pur-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-purple-950($v: 1) {
+      @include decoration-(c($pur-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-50($v: 1) {
+      @include decoration-(c($fuc-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-100($v: 1) {
+      @include decoration-(c($fuc-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-200($v: 1) {
+      @include decoration-(c($fuc-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-300($v: 1) {
+      @include decoration-(c($fuc-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-400($v: 1) {
+      @include decoration-(c($fuc-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-500($v: 1) {
+      @include decoration-(c($fuc-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-600($v: 1) {
+      @include decoration-(c($fuc-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-700($v: 1) {
+      @include decoration-(c($fuc-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-800($v: 1) {
+      @include decoration-(c($fuc-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-900($v: 1) {
+      @include decoration-(c($fuc-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-fuchsia-950($v: 1) {
+      @include decoration-(c($fuc-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-50($v: 1) {
+      @include decoration-(c($pin-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-100($v: 1) {
+      @include decoration-(c($pin-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-200($v: 1) {
+      @include decoration-(c($pin-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-300($v: 1) {
+      @include decoration-(c($pin-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-400($v: 1) {
+      @include decoration-(c($pin-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-500($v: 1) {
+      @include decoration-(c($pin-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-600($v: 1) {
+      @include decoration-(c($pin-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-700($v: 1) {
+      @include decoration-(c($pin-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-800($v: 1) {
+      @include decoration-(c($pin-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-900($v: 1) {
+      @include decoration-(c($pin-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-pink-950($v: 1) {
+      @include decoration-(c($pin-950, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-50($v: 1) {
+      @include decoration-(c($ros-50, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-100($v: 1) {
+      @include decoration-(c($ros-100, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-200($v: 1) {
+      @include decoration-(c($ros-200, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-300($v: 1) {
+      @include decoration-(c($ros-300, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-400($v: 1) {
+      @include decoration-(c($ros-400, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-500($v: 1) {
+      @include decoration-(c($ros-500, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-600($v: 1) {
+      @include decoration-(c($ros-600, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-700($v: 1) {
+      @include decoration-(c($ros-700, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-800($v: 1) {
+      @include decoration-(c($ros-800, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-900($v: 1) {
+      @include decoration-(c($ros-900, $v), $\2xl);
+    }
+
+    @mixin \2xl\:decoration-rose-950($v: 1) {
+      @include decoration-(c($ros-950, $v), $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin decoration-($v, $rwd: null) {
+    @if $rwd==null {
+      @if meta.type-of($v) ==color {
+        text-decoration-color: $v;
+      } @else {
+        text-decoration-thickness: $v;
+      }
+    } @else {
+      @media (min-width: $rwd) {
+        @if meta.type-of($v) ==color {
+          text-decoration-color: $v;
+        } @else {
+          text-decoration-thickness: $v;
+        }
+      }
+    }
+  }
+
+  @mixin sm\:decoration-($v) {
+    @include decoration-($v, $sm);
+  }
+
+  @mixin md\:decoration-($v) {
+    @include decoration-($v, $md);
+  }
+
+  @mixin lg\:decoration-($v) {
+    @include decoration-($v, $lg);
+  }
+
+  @mixin xl\:decoration-($v) {
+    @include decoration-($v, $xl);
+  }
+
+  @mixin \2xl\:decoration-($v) {
+    @include decoration-($v, $\2xl);
+  }
+
+  // x*/
+}

@@ -1,0 +1,195 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Text Underline Offset */
+@if $Basic {
+  // /*x
+  @mixin underline-offset-auto {
+    @include underline-offset-(auto);
+  }
+
+  @mixin underline-offset-0 {
+    @include underline-offset-(0px);
+  }
+
+  @mixin underline-offset-1 {
+    @include underline-offset-(1px);
+  }
+
+  @mixin underline-offset-2 {
+    @include underline-offset-(2px);
+  }
+
+  @mixin underline-offset-4 {
+    @include underline-offset-(4px);
+  }
+
+  @mixin underline-offset-8 {
+    @include underline-offset-(8px);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:underline-offset-auto {
+      @include underline-offset-(auto, $sm);
+    }
+
+    @mixin sm\:underline-offset-0 {
+      @include underline-offset-(0px, $sm);
+    }
+
+    @mixin sm\:underline-offset-1 {
+      @include underline-offset-(1px, $sm);
+    }
+
+    @mixin sm\:underline-offset-2 {
+      @include underline-offset-(2px, $sm);
+    }
+
+    @mixin sm\:underline-offset-4 {
+      @include underline-offset-(4px, $sm);
+    }
+
+    @mixin sm\:underline-offset-8 {
+      @include underline-offset-(8px, $sm);
+    }
+
+    @mixin md\:underline-offset-auto {
+      @include underline-offset-(auto, $md);
+    }
+
+    @mixin md\:underline-offset-0 {
+      @include underline-offset-(0px, $md);
+    }
+
+    @mixin md\:underline-offset-1 {
+      @include underline-offset-(1px, $md);
+    }
+
+    @mixin md\:underline-offset-2 {
+      @include underline-offset-(2px, $md);
+    }
+
+    @mixin md\:underline-offset-4 {
+      @include underline-offset-(4px, $md);
+    }
+
+    @mixin md\:underline-offset-8 {
+      @include underline-offset-(8px, $md);
+    }
+
+    @mixin lg\:underline-offset-auto {
+      @include underline-offset-(auto, $lg);
+    }
+
+    @mixin lg\:underline-offset-0 {
+      @include underline-offset-(0px, $lg);
+    }
+
+    @mixin lg\:underline-offset-1 {
+      @include underline-offset-(1px, $lg);
+    }
+
+    @mixin lg\:underline-offset-2 {
+      @include underline-offset-(2px, $lg);
+    }
+
+    @mixin lg\:underline-offset-4 {
+      @include underline-offset-(4px, $lg);
+    }
+
+    @mixin lg\:underline-offset-8 {
+      @include underline-offset-(8px, $lg);
+    }
+
+    @mixin xl\:underline-offset-auto {
+      @include underline-offset-(auto, $xl);
+    }
+
+    @mixin xl\:underline-offset-0 {
+      @include underline-offset-(0px, $xl);
+    }
+
+    @mixin xl\:underline-offset-1 {
+      @include underline-offset-(1px, $xl);
+    }
+
+    @mixin xl\:underline-offset-2 {
+      @include underline-offset-(2px, $xl);
+    }
+
+    @mixin xl\:underline-offset-4 {
+      @include underline-offset-(4px, $xl);
+    }
+
+    @mixin xl\:underline-offset-8 {
+      @include underline-offset-(8px, $xl);
+    }
+
+    @mixin \2xl\:underline-offset-auto {
+      @include underline-offset-(auto, $\2xl);
+    }
+
+    @mixin \2xl\:underline-offset-0 {
+      @include underline-offset-(0px, $\2xl);
+    }
+
+    @mixin \2xl\:underline-offset-1 {
+      @include underline-offset-(1px, $\2xl);
+    }
+
+    @mixin \2xl\:underline-offset-2 {
+      @include underline-offset-(2px, $\2xl);
+    }
+
+    @mixin \2xl\:underline-offset-4 {
+      @include underline-offset-(4px, $\2xl);
+    }
+
+    @mixin \2xl\:underline-offset-8 {
+      @include underline-offset-(8px, $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin underline-offset-($v, $rwd: null) {
+    @if $rwd==null {
+      text-underline-offset: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        text-underline-offset: $v;
+      }
+    }
+  }
+
+  @mixin sm\:underline-offset-($v) {
+    @include underline-offset-($v, $sm);
+  }
+
+  @mixin md\:underline-offset-($v) {
+    @include underline-offset-($v, $md);
+  }
+
+  @mixin lg\:underline-offset-($v) {
+    @include underline-offset-($v, $lg);
+  }
+
+  @mixin xl\:underline-offset-($v) {
+    @include underline-offset-($v, $xl);
+  }
+
+  @mixin \2xl\:underline-offset-($v) {
+    @include underline-offset-($v, $\2xl);
+  }
+
+  // x*/
+}

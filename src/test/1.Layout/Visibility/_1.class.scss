@@ -1,0 +1,100 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Visibility */
+@if $Basic {
+  // /*x
+  @mixin visible($rwd: null) {
+    @if $rwd==null {
+      visibility: visible;
+    } @else {
+      @media (min-width: $rwd) {
+        visibility: visible;
+      }
+    }
+  }
+
+  @mixin invisible($rwd: null) {
+    @if $rwd==null {
+      visibility: hidden;
+    } @else {
+      @media (min-width: $rwd) {
+        visibility: hidden;
+      }
+    }
+  }
+
+  @mixin collapse($rwd: null) {
+    @if $rwd==null {
+      visibility: collapse;
+    } @else {
+      @media (min-width: $rwd) {
+        visibility: collapse;
+      }
+    }
+  } // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:visible {
+    @include visible($sm);
+  }
+
+  @mixin sm\:invisible {
+    @include invisible($sm);
+  }
+
+  @mixin sm\:collapse {
+    @include collapse($sm);
+  }
+
+  @mixin md\:visible {
+    @include visible($md);
+  }
+
+  @mixin md\:invisible {
+    @include invisible($md);
+  }
+
+  @mixin md\:collapse {
+    @include collapse($md);
+  }
+
+  @mixin lg\:visible {
+    @include visible($lg);
+  }
+
+  @mixin lg\:invisible {
+    @include invisible($lg);
+  }
+
+  @mixin lg\:collapse {
+    @include collapse($lg);
+  }
+
+  @mixin xl\:visible {
+    @include visible($xl);
+  }
+
+  @mixin xl\:invisible {
+    @include invisible($xl);
+  }
+
+  @mixin xl\:collapse {
+    @include collapse($xl);
+  }
+
+  @mixin \2xl\:visible {
+    @include visible($\2xl);
+  }
+
+  @mixin \2xl\:invisible {
+    @include invisible($\2xl);
+  }
+
+  @mixin \2xl\:collapse {
+    @include collapse($\2xl);
+  } // x*/
+}

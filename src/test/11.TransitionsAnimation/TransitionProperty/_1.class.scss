@@ -1,0 +1,367 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Transition Property */
+@if $Basic {
+  // /*x
+  @mixin transition-none {
+    @include transition-(none);
+  }
+
+  @mixin transition-all {
+    @include transition-(all);
+  }
+
+  @mixin transition {
+    @include transition-(
+      (
+        color,
+        background-color,
+        border-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        opacity,
+        box-shadow,
+        transform,
+        filter,
+        backdrop-filter
+      )
+    );
+  }
+
+  @mixin transition-colors {
+    @include transition-(
+      (
+        color,
+        background-color,
+        border-color,
+        text-decoration-color,
+        fill,
+        stroke
+      )
+    );
+  }
+
+  @mixin transition-opacity {
+    @include transition-(opacity);
+  }
+
+  @mixin transition-shadow {
+    @include transition-(box-shadow);
+  }
+
+  @mixin transition-transform {
+    @include transition-(transform);
+  } // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:transition-none {
+      @include transition-(none, $sm);
+    }
+
+    @mixin sm\:transition-all {
+      @include transition-(all, $sm);
+    }
+
+    @mixin sm\:transition {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        ),
+        $sm
+      );
+    }
+
+    @mixin sm\:transition-colors {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        ),
+        $sm
+      );
+    }
+
+    @mixin sm\:transition-opacity {
+      @include transition-(opacity, $sm);
+    }
+
+    @mixin sm\:transition-shadow {
+      @include transition-(box-shadow, $sm);
+    }
+
+    @mixin sm\:transition-transform {
+      @include transition-(transform, $sm);
+    }
+
+    @mixin md\:transition-none {
+      @include transition-(none, $md);
+    }
+
+    @mixin md\:transition-all {
+      @include transition-(all, $md);
+    }
+
+    @mixin md\:transition {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        ),
+        $md
+      );
+    }
+
+    @mixin md\:transition-colors {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        ),
+        $md
+      );
+    }
+
+    @mixin md\:transition-opacity {
+      @include transition-(opacity, $md);
+    }
+
+    @mixin md\:transition-shadow {
+      @include transition-(box-shadow, $md);
+    }
+
+    @mixin md\:transition-transform {
+      @include transition-(transform, $md);
+    }
+
+    @mixin lg\:transition-none {
+      @include transition-(none, $lg);
+    }
+
+    @mixin lg\:transition-all {
+      @include transition-(all, $lg);
+    }
+
+    @mixin lg\:transition {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        ),
+        $lg
+      );
+    }
+
+    @mixin lg\:transition-colors {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        ),
+        $lg
+      );
+    }
+
+    @mixin lg\:transition-opacity {
+      @include transition-(opacity, $lg);
+    }
+
+    @mixin lg\:transition-shadow {
+      @include transition-(box-shadow, $lg);
+    }
+
+    @mixin lg\:transition-transform {
+      @include transition-(transform, $lg);
+    }
+
+    @mixin xl\:transition-none {
+      @include transition-(none, $xl);
+    }
+
+    @mixin xl\:transition-all {
+      @include transition-(all, $xl);
+    }
+
+    @mixin xl\:transition {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        ),
+        $xl
+      );
+    }
+
+    @mixin xl\:transition-colors {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        ),
+        $xl
+      );
+    }
+
+    @mixin xl\:transition-opacity {
+      @include transition-(opacity, $xl);
+    }
+
+    @mixin xl\:transition-shadow {
+      @include transition-(box-shadow, $xl);
+    }
+
+    @mixin xl\:transition-transform {
+      @include transition-(transform, $xl);
+    }
+
+    @mixin \2xl\:transition-none {
+      @include transition-(none, $\2xl);
+    }
+
+    @mixin \2xl\:transition-all {
+      @include transition-(all, $\2xl);
+    }
+
+    @mixin \2xl\:transition {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        ),
+        $\2xl
+      );
+    }
+
+    @mixin \2xl\:transition-colors {
+      @include transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        ),
+        $\2xl
+      );
+    }
+
+    @mixin \2xl\:transition-opacity {
+      @include transition-(opacity, $\2xl);
+    }
+
+    @mixin \2xl\:transition-shadow {
+      @include transition-(box-shadow, $\2xl);
+    }
+
+    @mixin \2xl\:transition-transform {
+      @include transition-(transform, $\2xl);
+    }
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin transition-($v, $rwd: null) {
+    @if $rwd==null {
+      transition-property: $v;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    } @else {
+      @media (min-width: $rwd) {
+        transition-property: $v;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+    }
+  }
+
+  @mixin sm\:transition-($v) {
+    @include transition-($v, $sm);
+  }
+
+  @mixin md\:transition-($v) {
+    @include transition-($v, $md);
+  }
+
+  @mixin lg\:transition-($v) {
+    @include transition-($v, $lg);
+  }
+
+  @mixin xl\:transition-($v) {
+    @include transition-($v, $xl);
+  }
+
+  @mixin \2xl\:transition-($v) {
+    @include transition-($v, $\2xl);
+  }
+  // x*/
+}

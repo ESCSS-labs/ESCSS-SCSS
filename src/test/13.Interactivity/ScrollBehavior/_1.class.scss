@@ -1,0 +1,74 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Scroll Behavior */
+@if $Basic {
+  // /*x
+  @mixin scroll-auto($rwd: null) {
+    @if $rwd==null {
+      scroll-behavior: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-behavior: auto;
+      }
+    }
+  }
+
+  @mixin scroll-smooth($rwd: null) {
+    @if $rwd==null {
+      scroll-behavior: smooth;
+    } @else {
+      @media (min-width: $rwd) {
+        scroll-behavior: smooth;
+      }
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:scroll-auto {
+    @include scroll-auto($sm);
+  }
+
+  @mixin sm\:scroll-smooth {
+    @include scroll-smooth($sm);
+  }
+
+  @mixin md\:scroll-auto {
+    @include scroll-auto($md);
+  }
+
+  @mixin md\:scroll-smooth {
+    @include scroll-smooth($md);
+  }
+
+  @mixin lg\:scroll-auto {
+    @include scroll-auto($lg);
+  }
+
+  @mixin lg\:scroll-smooth {
+    @include scroll-smooth($lg);
+  }
+
+  @mixin xl\:scroll-auto {
+    @include scroll-auto($xl);
+  }
+
+  @mixin xl\:scroll-smooth {
+    @include scroll-smooth($xl);
+  }
+
+  @mixin \2xl\:scroll-auto {
+    @include scroll-auto($\2xl);
+  }
+
+  @mixin \2xl\:scroll-smooth {
+    @include scroll-smooth($\2xl);
+  }
+
+  // x*/
+}

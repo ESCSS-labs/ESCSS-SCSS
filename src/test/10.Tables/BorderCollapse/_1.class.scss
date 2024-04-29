@@ -1,0 +1,70 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Border Collapse */
+@if $Basic {
+  // /*x
+  @mixin border-collapse($rwd: null) {
+    @if $rwd==null {
+      border-collapse: collapse;
+    } @else {
+      @media (min-width: $rwd) {
+        border-collapse: collapse;
+      }
+    }
+  }
+
+  @mixin border-separate($rwd: null) {
+    @if $rwd==null {
+      border-collapse: separate;
+    } @else {
+      @media (min-width: $rwd) {
+        border-collapse: separate;
+      }
+    }
+  } // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:border-collapse {
+    @include border-collapse($sm);
+  }
+
+  @mixin sm\:border-separate {
+    @include border-separate($sm);
+  }
+
+  @mixin md\:border-collapse {
+    @include border-collapse($md);
+  }
+
+  @mixin md\:border-separate {
+    @include border-separate($md);
+  }
+
+  @mixin lg\:border-collapse {
+    @include border-collapse($lg);
+  }
+
+  @mixin lg\:border-separate {
+    @include border-separate($lg);
+  }
+
+  @mixin xl\:border-collapse {
+    @include border-collapse($xl);
+  }
+
+  @mixin xl\:border-separate {
+    @include border-separate($xl);
+  }
+
+  @mixin \2xl\:border-collapse {
+    @include border-collapse($\2xl);
+  }
+
+  @mixin \2xl\:border-separate {
+    @include border-separate($\2xl);
+  } // x*/
+}

@@ -1,0 +1,72 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Isolation */
+@if $Basic {
+  // /*x
+  @mixin isolate($rwd: null) {
+    @if $rwd==null {
+      isolation: isolate;
+    } @else {
+      @media (min-width: $rwd) {
+        isolation: isolate;
+      }
+    }
+  }
+
+  @mixin isolation-auto($rwd: null) {
+    @if $rwd==null {
+      isolation: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        isolation: auto;
+      }
+    }
+  } // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:isolate {
+    @include isolate($sm);
+  }
+
+  @mixin sm\:isolation-auto {
+    @include isolation-auto($sm);
+  }
+
+  @mixin md\:isolate {
+    @include isolate($md);
+  }
+
+  @mixin md\:isolation-auto {
+    @include isolation-auto($md);
+  }
+
+  @mixin lg\:isolate {
+    @include isolate($lg);
+  }
+
+  @mixin lg\:isolation-auto {
+    @include isolation-auto($lg);
+  }
+
+  @mixin xl\:isolate {
+    @include isolate($xl);
+  }
+
+  @mixin xl\:isolation-auto {
+    @include isolation-auto($xl);
+  }
+
+  @mixin \2xl\:isolate {
+    @include isolate($\2xl);
+  }
+
+  @mixin \2xl\:isolation-auto {
+    @include isolation-auto($\2xl);
+  }
+
+  // x*/
+}

@@ -1,0 +1,74 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Pointer Events */
+@if $Basic {
+  // /*x
+  @mixin pointer-events-none($rwd: null) {
+    @if $rwd==null {
+      pointer-events: none;
+    } @else {
+      @media (min-width: $rwd) {
+        pointer-events: none;
+      }
+    }
+  }
+
+  @mixin pointer-events-auto($rwd: null) {
+    @if $rwd==null {
+      pointer-events: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        pointer-events: auto;
+      }
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:pointer-events-none {
+    @include pointer-events-none($sm);
+  }
+
+  @mixin sm\:pointer-events-auto {
+    @include pointer-events-auto($sm);
+  }
+
+  @mixin md\:pointer-events-none {
+    @include pointer-events-none($md);
+  }
+
+  @mixin md\:pointer-events-auto {
+    @include pointer-events-auto($md);
+  }
+
+  @mixin lg\:pointer-events-none {
+    @include pointer-events-none($lg);
+  }
+
+  @mixin lg\:pointer-events-auto {
+    @include pointer-events-auto($lg);
+  }
+
+  @mixin xl\:pointer-events-none {
+    @include pointer-events-none($xl);
+  }
+
+  @mixin xl\:pointer-events-auto {
+    @include pointer-events-auto($xl);
+  }
+
+  @mixin \2xl\:pointer-events-none {
+    @include pointer-events-none($\2xl);
+  }
+
+  @mixin \2xl\:pointer-events-auto {
+    @include pointer-events-auto($\2xl);
+  }
+
+  // x*/
+}

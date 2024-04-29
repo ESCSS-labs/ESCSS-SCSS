@@ -1,0 +1,147 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Grid Auto Columns */
+@if $Basic {
+  // /*x
+  @mixin auto-cols-auto {
+    @include auto-cols-(auto);
+  }
+
+  @mixin auto-cols-min {
+    @include auto-cols-(min-content);
+  }
+
+  @mixin auto-cols-max {
+    @include auto-cols-(max-content);
+  }
+
+  @mixin auto-cols-fr {
+    @include auto-cols-(minmax(0, 1fr));
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:auto-cols-auto {
+      @include auto-cols-(auto, $sm);
+    }
+
+    @mixin sm\:auto-cols-min {
+      @include auto-cols-(min-content, $sm);
+    }
+
+    @mixin sm\:auto-cols-max {
+      @include auto-cols-(max-content, $sm);
+    }
+
+    @mixin sm\:auto-cols-fr {
+      @include auto-cols-(minmax(0, 1fr), $sm);
+    }
+
+    @mixin md\:auto-cols-auto {
+      @include auto-cols-(auto, $md);
+    }
+
+    @mixin md\:auto-cols-min {
+      @include auto-cols-(min-content, $md);
+    }
+
+    @mixin md\:auto-cols-max {
+      @include auto-cols-(max-content, $md);
+    }
+
+    @mixin md\:auto-cols-fr {
+      @include auto-cols-(minmax(0, 1fr), $md);
+    }
+
+    @mixin lg\:auto-cols-auto {
+      @include auto-cols-(auto, $lg);
+    }
+
+    @mixin lg\:auto-cols-min {
+      @include auto-cols-(min-content, $lg);
+    }
+
+    @mixin lg\:auto-cols-max {
+      @include auto-cols-(max-content, $lg);
+    }
+
+    @mixin lg\:auto-cols-fr {
+      @include auto-cols-(minmax(0, 1fr), $lg);
+    }
+
+    @mixin xl\:auto-cols-auto {
+      @include auto-cols-(auto, $xl);
+    }
+
+    @mixin xl\:auto-cols-min {
+      @include auto-cols-(min-content, $xl);
+    }
+
+    @mixin xl\:auto-cols-max {
+      @include auto-cols-(max-content, $xl);
+    }
+
+    @mixin xl\:auto-cols-fr {
+      @include auto-cols-(minmax(0, 1fr), $xl);
+    }
+
+    @mixin \2xl\:auto-cols-auto {
+      @include auto-cols-(auto, $\2xl);
+    }
+
+    @mixin \2xl\:auto-cols-min {
+      @include auto-cols-(min-content, $\2xl);
+    }
+
+    @mixin \2xl\:auto-cols-max {
+      @include auto-cols-(max-content, $\2xl);
+    }
+
+    @mixin \2xl\:auto-cols-fr {
+      @include auto-cols-(minmax(0, 1fr), $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin auto-cols-($v, $rwd: null) {
+    @if $rwd==null {
+      grid-auto-columns: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        grid-auto-columns: $v;
+      }
+    }
+  }
+
+  @mixin sm\:auto-cols-($v) {
+    @include auto-cols-($v, $sm);
+  }
+
+  @mixin md\:auto-cols-($v) {
+    @include auto-cols-($v, $md);
+  }
+
+  @mixin lg\:auto-cols-($v) {
+    @include auto-cols-($v, $lg);
+  }
+
+  @mixin xl\:auto-cols-($v) {
+    @include auto-cols-($v, $xl);
+  }
+
+  @mixin \2xl\:auto-cols-($v) {
+    @include auto-cols-($v, $\2xl);
+  }
+
+  // x*/
+}

@@ -1,0 +1,269 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+@include describe("Aspect Ratio") {
+  @include describe("Basic") {
+    @include it("aspect-auto") {
+      @include custom-expect-(aspect-ratio, auto) {
+        @include aspect-auto;
+      }
+    }
+
+    @include it("aspect-square") {
+      @include custom-expect-(aspect-ratio, 1 / 1) {
+        @include aspect-square;
+      }
+    }
+
+    @include it("aspect-video") {
+      @include custom-expect-(aspect-ratio, 16 / 9) {
+        @include aspect-video;
+      }
+    }
+  }
+
+  @include describe("Rwd") {
+    @include it("sm\:aspect-auto") {
+      @include custom-expect-(aspect-ratio, auto, $sm) {
+        @include sm\:aspect-auto;
+      }
+    }
+
+    @include it("sm\:aspect-square") {
+      @include custom-expect-(aspect-ratio, 1 / 1, $sm) {
+        @include sm\:aspect-square;
+      }
+    }
+
+    @include it("sm\:aspect-video") {
+      @include custom-expect-(aspect-ratio, 16 / 9, $sm) {
+        @include sm\:aspect-video;
+      }
+    }
+
+    @include it("md\:aspect-auto") {
+      @include custom-expect-(aspect-ratio, auto, $md) {
+        @include md\:aspect-auto;
+      }
+    }
+
+    @include it("md\:aspect-square") {
+      @include custom-expect-(aspect-ratio, 1 / 1, $md) {
+        @include md\:aspect-square;
+      }
+    }
+
+    @include it("md\:aspect-video") {
+      @include custom-expect-(aspect-ratio, 16 / 9, $md) {
+        @include md\:aspect-video;
+      }
+    }
+
+    @include it("lg\:aspect-auto") {
+      @include custom-expect-(aspect-ratio, auto, $lg) {
+        @include lg\:aspect-auto;
+      }
+    }
+
+    @include it("lg\:aspect-square") {
+      @include custom-expect-(aspect-ratio, 1 / 1, $lg) {
+        @include lg\:aspect-square;
+      }
+    }
+
+    @include it("lg\:aspect-video") {
+      @include custom-expect-(aspect-ratio, 16 / 9, $lg) {
+        @include lg\:aspect-video;
+      }
+    }
+
+    @include it("xl\:aspect-auto") {
+      @include custom-expect-(aspect-ratio, auto, $xl) {
+        @include xl\:aspect-auto;
+      }
+    }
+
+    @include it("xl\:aspect-square") {
+      @include custom-expect-(aspect-ratio, 1 / 1, $xl) {
+        @include xl\:aspect-square;
+      }
+    }
+
+    @include it("xl\:aspect-video") {
+      @include custom-expect-(aspect-ratio, 16 / 9, $xl) {
+        @include xl\:aspect-video;
+      }
+    }
+
+    @include it("\2xl\:aspect-auto") {
+      @include custom-expect-(aspect-ratio, auto, $\2xl) {
+        @include \2xl\:aspect-auto;
+      }
+    }
+
+    @include it("\2xl\:aspect-square") {
+      @include custom-expect-(aspect-ratio, 1 / 1, $\2xl) {
+        @include \2xl\:aspect-square;
+      }
+    }
+
+    @include it("\2xl\:aspect-video") {
+      @include custom-expect-(aspect-ratio, 16 / 9, $\2xl) {
+        @include \2xl\:aspect-video;
+      }
+    }
+  }
+
+  @include describe("Custom") {
+    @include it("aspect-(4/3)") {
+      @include custom-expect-(aspect-ratio, 4/3) {
+        @include aspect-(4/3);
+      }
+    }
+
+    @include it("sm\:aspect-(4/3)") {
+      @include custom-expect-(aspect-ratio, 4/3, $sm) {
+        @include sm\:aspect-(4/3);
+      }
+    }
+
+    @include it("md\:aspect-(4/3)") {
+      @include custom-expect-(aspect-ratio, 4/3, $md) {
+        @include md\:aspect-(4/3);
+      }
+    }
+
+    @include it("lg\:aspect-(4/3)") {
+      @include custom-expect-(aspect-ratio, 4/3, $lg) {
+        @include lg\:aspect-(4/3);
+      }
+    }
+
+    @include it("xl\:aspect-(4/3)") {
+      @include custom-expect-(aspect-ratio, 4/3, $xl) {
+        @include xl\:aspect-(4/3);
+      }
+    }
+
+    @include it("\2xl\:aspect-(4/3)") {
+      @include custom-expect-(aspect-ratio, 4/3, $\2xl) {
+        @include \2xl\:aspect-(4/3);
+      }
+    }
+  }
+}
+
+// @if $Basic {
+//   // /*x
+//   @mixin aspect-auto {
+//     @include aspect-(auto);
+//   }
+
+//   @mixin aspect-square {
+//     @include aspect-(1 / 1);
+//   }
+
+//   @mixin aspect-video {
+//     @include aspect-(16 / 9);
+//   } // x*/
+// }
+
+// @if $Rwd {
+//   @if $sizeMode == 0 or $sizeMode == 1 {
+//     // /*x
+//     @mixin sm\:aspect-auto {
+//       @include aspect-(auto, $sm);
+//     }
+
+//     @mixin sm\:aspect-square {
+//       @include aspect-(1 / 1, $sm);
+//     }
+
+//     @mixin sm\:aspect-video {
+//       @include aspect-(16 / 9, $sm);
+//     }
+
+//     @mixin md\:aspect-auto {
+//       @include aspect-(auto, $md);
+//     }
+
+//     @mixin md\:aspect-square {
+//       @include aspect-(1 / 1, $md);
+//     }
+
+//     @mixin md\:aspect-video {
+//       @include aspect-(16 / 9, $md);
+//     }
+
+//     @mixin lg\:aspect-auto {
+//       @include aspect-(auto, $lg);
+//     }
+
+//     @mixin lg\:aspect-square {
+//       @include aspect-(1 / 1, $lg);
+//     }
+
+//     @mixin lg\:aspect-video {
+//       @include aspect-(16 / 9, $lg);
+//     }
+
+//     @mixin xl\:aspect-auto {
+//       @include aspect-(auto, $xl);
+//     }
+
+//     @mixin xl\:aspect-square {
+//       @include aspect-(1 / 1, $xl);
+//     }
+
+//     @mixin xl\:aspect-video {
+//       @include aspect-(16 / 9, $xl);
+//     }
+
+//     @mixin \2xl\:aspect-auto {
+//       @include aspect-(auto, $\2xl);
+//     }
+
+//     @mixin \2xl\:aspect-square {
+//       @include aspect-(1 / 1, $\2xl);
+//     }
+
+//     @mixin \2xl\:aspect-video {
+//       @include aspect-(16 / 9, $\2xl);
+//     }
+//     // x*/
+//   }
+// }
+
+// @if $Custom {
+//   // /*x
+//   @mixin aspect-($v, $rwd: null) {
+//     @if $rwd ==null {
+//       aspect-ratio: $v;
+//     } @else {
+//       @media (min-width: $sm) {
+//         aspect-ratio: $v;
+//       }
+//     }
+//   }
+
+//   @mixin sm\:aspect-($v) {
+//     @include aspect-($v, $sm);
+//   }
+
+//   @mixin md\:aspect-($v) {
+//     @include aspect-($v, $md);
+//   }
+
+//   @mixin lg\:aspect-($v) {
+//     @include aspect-($v, $lg);
+//   }
+
+//   @mixin xl\:aspect-($v) {
+//     @include aspect-($v, $xl);
+//   }
+
+//   @mixin \2xl\:aspect-($v) {
+//     @include aspect-($v, $\2xl);
+//   } // x*/
+// }

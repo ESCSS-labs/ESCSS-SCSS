@@ -1,0 +1,74 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Appearance */
+@if $Basic {
+  // /*x
+  @mixin appearance-none($rwd: null) {
+    @if $rwd==null {
+      appearance: none;
+    } @else {
+      @media (min-width: $rwd) {
+        appearance: none;
+      }
+    }
+  }
+
+  @mixin appearance-auto($rwd: null) {
+    @if $rwd==null {
+      appearance: auto;
+    } @else {
+      @media (min-width: $rwd) {
+        appearance: auto;
+      }
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:appearance-none {
+    @include appearance-none($sm);
+  }
+
+  @mixin sm\:appearance-auto {
+    @include appearance-auto($sm);
+  }
+
+  @mixin md\:appearance-none {
+    @include appearance-none($md);
+  }
+
+  @mixin md\:appearance-auto {
+    @include appearance-auto($md);
+  }
+
+  @mixin lg\:appearance-none {
+    @include appearance-none($lg);
+  }
+
+  @mixin lg\:appearance-auto {
+    @include appearance-auto($lg);
+  }
+
+  @mixin xl\:appearance-none {
+    @include appearance-none($xl);
+  }
+
+  @mixin xl\:appearance-auto {
+    @include appearance-auto($xl);
+  }
+
+  @mixin \2xl\:appearance-none {
+    @include appearance-none($\2xl);
+  }
+
+  @mixin \2xl\:appearance-auto {
+    @include appearance-auto($\2xl);
+  }
+
+  // x*/
+}

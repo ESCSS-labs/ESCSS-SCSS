@@ -1,0 +1,55 @@
+@use "true" as *;
+
+@mixin custom-expect-(
+  $property1,
+  $value1,
+  $rwd: null,
+  $property2: null,
+  $value2: null,
+  $property3: null,
+  $value3: null,
+  $property4: null,
+  $value4: null,
+  $property5: null,
+  $value5: null,
+  $property6: null,
+  $value6: null,
+  $property7: null,
+  $value7: null,
+  $property8: null,
+  $value8: null,
+  $property9: null,
+  $value9: null
+) {
+  @include assert {
+    @include output {
+      @content;
+    }
+
+    @include expect {
+      @if $rwd==null {
+        #{$property1}: $value1;
+        #{$property2}: $value2;
+        #{$property3}: $value3;
+        #{$property4}: $value4;
+        #{$property5}: $value5;
+        #{$property6}: $value6;
+        #{$property7}: $value7;
+        #{$property8}: $value8;
+        #{$property9}: $value9;
+      } @else {
+        @media (min-width: $rwd) {
+          #{$property1}: $value1;
+          #{$property2}: $value2;
+          #{$property3}: $value3;
+          #{$property4}: $value4;
+          #{$property5}: $value5;
+          #{$property6}: $value6;
+          #{$property7}: $value7;
+          #{$property8}: $value8;
+          #{$property9}: $value9;
+        }
+      }
+    }
+  }
+}

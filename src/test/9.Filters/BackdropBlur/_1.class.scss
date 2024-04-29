@@ -1,0 +1,245 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Backdrop Blur */
+@if $Basic {
+  // /*x
+  @mixin backdrop-blur-none {
+    @include backdrop-blur-(0);
+  }
+
+  @mixin backdrop-blur-sm {
+    @include backdrop-blur-($blur-sm);
+  }
+
+  @mixin backdrop-blur {
+    @include backdrop-blur-($blur-);
+  }
+
+  @mixin backdrop-blur-md {
+    @include backdrop-blur-($blur-md);
+  }
+
+  @mixin backdrop-blur-lg {
+    @include backdrop-blur-($blur-lg);
+  }
+
+  @mixin backdrop-blur-xl {
+    @include backdrop-blur-($blur-xl);
+  }
+
+  @mixin backdrop-blur-2xl {
+    @include backdrop-blur-($blur-2xl);
+  }
+
+  @mixin backdrop-blur-3xl {
+    @include backdrop-blur-($blur-3xl);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:backdrop-blur-none {
+      @include backdrop-blur-(0, $sm);
+    }
+
+    @mixin sm\:backdrop-blur-sm {
+      @include backdrop-blur-($blur-sm, $sm);
+    }
+
+    @mixin sm\:backdrop-blur {
+      @include backdrop-blur-($blur-, $sm);
+    }
+
+    @mixin sm\:backdrop-blur-md {
+      @include backdrop-blur-($blur-md, $sm);
+    }
+
+    @mixin sm\:backdrop-blur-lg {
+      @include backdrop-blur-($blur-lg, $sm);
+    }
+
+    @mixin sm\:backdrop-blur-xl {
+      @include backdrop-blur-($blur-xl, $sm);
+    }
+
+    @mixin sm\:backdrop-blur-2xl {
+      @include backdrop-blur-($blur-2xl, $sm);
+    }
+
+    @mixin sm\:backdrop-blur-3xl {
+      @include backdrop-blur-($blur-3xl, $sm);
+    }
+
+    @mixin md\:backdrop-blur-none {
+      @include backdrop-blur-(0, $md);
+    }
+
+    @mixin md\:backdrop-blur-sm {
+      @include backdrop-blur-($blur-sm, $md);
+    }
+
+    @mixin md\:backdrop-blur {
+      @include backdrop-blur-($blur-, $md);
+    }
+
+    @mixin md\:backdrop-blur-md {
+      @include backdrop-blur-($blur-md, $md);
+    }
+
+    @mixin md\:backdrop-blur-lg {
+      @include backdrop-blur-($blur-lg, $md);
+    }
+
+    @mixin md\:backdrop-blur-xl {
+      @include backdrop-blur-($blur-xl, $md);
+    }
+
+    @mixin md\:backdrop-blur-2xl {
+      @include backdrop-blur-($blur-2xl, $md);
+    }
+
+    @mixin md\:backdrop-blur-3xl {
+      @include backdrop-blur-($blur-3xl, $md);
+    }
+
+    @mixin lg\:backdrop-blur-none {
+      @include backdrop-blur-(0, $lg);
+    }
+
+    @mixin lg\:backdrop-blur-sm {
+      @include backdrop-blur-($blur-sm, $lg);
+    }
+
+    @mixin lg\:backdrop-blur {
+      @include backdrop-blur-($blur-, $lg);
+    }
+
+    @mixin lg\:backdrop-blur-md {
+      @include backdrop-blur-($blur-md, $lg);
+    }
+
+    @mixin lg\:backdrop-blur-lg {
+      @include backdrop-blur-($blur-lg, $lg);
+    }
+
+    @mixin lg\:backdrop-blur-xl {
+      @include backdrop-blur-($blur-xl, $lg);
+    }
+
+    @mixin lg\:backdrop-blur-2xl {
+      @include backdrop-blur-($blur-2xl, $lg);
+    }
+
+    @mixin lg\:backdrop-blur-3xl {
+      @include backdrop-blur-($blur-3xl, $lg);
+    }
+
+    @mixin xl\:backdrop-blur-none {
+      @include backdrop-blur-(0, $xl);
+    }
+
+    @mixin xl\:backdrop-blur-sm {
+      @include backdrop-blur-($blur-sm, $xl);
+    }
+
+    @mixin xl\:backdrop-blur {
+      @include backdrop-blur-($blur-, $xl);
+    }
+
+    @mixin xl\:backdrop-blur-md {
+      @include backdrop-blur-($blur-md, $xl);
+    }
+
+    @mixin xl\:backdrop-blur-lg {
+      @include backdrop-blur-($blur-lg, $xl);
+    }
+
+    @mixin xl\:backdrop-blur-xl {
+      @include backdrop-blur-($blur-xl, $xl);
+    }
+
+    @mixin xl\:backdrop-blur-2xl {
+      @include backdrop-blur-($blur-2xl, $xl);
+    }
+
+    @mixin xl\:backdrop-blur-3xl {
+      @include backdrop-blur-($blur-3xl, $xl);
+    }
+
+    @mixin \2xl\:backdrop-blur-none {
+      @include backdrop-blur-(0, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-blur-sm {
+      @include backdrop-blur-($blur-sm, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-blur {
+      @include backdrop-blur-($blur-, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-blur-md {
+      @include backdrop-blur-($blur-md, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-blur-lg {
+      @include backdrop-blur-($blur-lg, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-blur-xl {
+      @include backdrop-blur-($blur-xl, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-blur-2xl {
+      @include backdrop-blur-($blur-2xl, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-blur-3xl {
+      @include backdrop-blur-($blur-3xl, $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin backdrop-blur-($v, $rwd: null) {
+    @if $rwd==null {
+      $--tw-backdrop-blur: blur($v) !global;
+      backdrop-filter: __backdrop-filter();
+    } @else {
+      @media (min-width: $rwd) {
+        $--tw-backdrop-blur: blur($v) !global;
+        backdrop-filter: __backdrop-filter();
+      }
+    }
+  }
+
+  @mixin sm\:backdrop-blur-($v) {
+    @include backdrop-blur-($v, $sm);
+  }
+
+  @mixin md\:backdrop-blur-($v) {
+    @include backdrop-blur-($v, $md);
+  }
+
+  @mixin lg\:backdrop-blur-($v) {
+    @include backdrop-blur-($v, $lg);
+  }
+
+  @mixin xl\:backdrop-blur-($v) {
+    @include backdrop-blur-($v, $xl);
+  }
+
+  @mixin \2xl\:backdrop-blur-($v) {
+    @include backdrop-blur-($v, $\2xl);
+  }
+
+  // x*/
+}

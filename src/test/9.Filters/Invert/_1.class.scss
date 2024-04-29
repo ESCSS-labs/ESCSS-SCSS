@@ -1,0 +1,101 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Invert */
+@if $Basic {
+  // /*x
+  @mixin invert-0 {
+    @include invert-(0);
+  }
+
+  @mixin invert {
+    @include invert-(100%);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:invert-0 {
+      @include invert-(0, $sm);
+    }
+
+    @mixin sm\:invert {
+      @include invert-(100%, $sm);
+    }
+
+    @mixin md\:invert-0 {
+      @include invert-(0, $md);
+    }
+
+    @mixin md\:invert {
+      @include invert-(100%, $md);
+    }
+
+    @mixin lg\:invert-0 {
+      @include invert-(0, $lg);
+    }
+
+    @mixin lg\:invert {
+      @include invert-(100%, $lg);
+    }
+
+    @mixin xl\:invert-0 {
+      @include invert-(0, $xl);
+    }
+
+    @mixin xl\:invert {
+      @include invert-(100%, $xl);
+    }
+
+    @mixin \2xl\:invert-0 {
+      @include invert-(0, $\2xl);
+    }
+
+    @mixin \2xl\:invert {
+      @include invert-(100%, $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin invert-($v, $rwd: null) {
+    @if $rwd==null {
+      $--tw-invert: invert($v) !global;
+      filter: __filter();
+    } @else {
+      @media (min-width: $rwd) {
+        $--tw-invert: invert($v) !global;
+        filter: __filter();
+      }
+    }
+  }
+
+  @mixin sm\:invert-($v) {
+    @include invert-($v, $sm);
+  }
+
+  @mixin md\:invert-($v) {
+    @include invert-($v, $md);
+  }
+
+  @mixin lg\:invert-($v) {
+    @include invert-($v, $lg);
+  }
+
+  @mixin xl\:invert-($v) {
+    @include invert-($v, $xl);
+  }
+
+  @mixin \2xl\:invert-($v) {
+    @include invert-($v, $\2xl);
+  }
+
+  // x*/
+}

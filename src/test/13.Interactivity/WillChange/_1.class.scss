@@ -1,0 +1,146 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Will Change */
+@if $Basic {
+  // /*x
+  @mixin will-change-auto {
+    @include will-change-(auto);
+  }
+
+  @mixin will-change-scroll {
+    @include will-change-(scroll-position);
+  }
+
+  @mixin will-change-contents {
+    @include will-change-(contents);
+  }
+
+  @mixin will-change-transform {
+    @include will-change-(transform);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:will-change-auto {
+      @include will-change-(auto, null, $sm);
+    }
+
+    @mixin sm\:will-change-scroll {
+      @include will-change-(scroll-position, null, $sm);
+    }
+
+    @mixin sm\:will-change-contents {
+      @include will-change-(contents, null, $sm);
+    }
+
+    @mixin sm\:will-change-transform {
+      @include will-change-(transform, null, $sm);
+    }
+
+    @mixin md\:will-change-auto {
+      @include will-change-(auto, null, $md);
+    }
+
+    @mixin md\:will-change-scroll {
+      @include will-change-(scroll-position, null, $md);
+    }
+
+    @mixin md\:will-change-contents {
+      @include will-change-(contents, null, $md);
+    }
+
+    @mixin md\:will-change-transform {
+      @include will-change-(transform, null, $md);
+    }
+
+    @mixin lg\:will-change-auto {
+      @include will-change-(auto, null, $lg);
+    }
+
+    @mixin lg\:will-change-scroll {
+      @include will-change-(scroll-position, null, $lg);
+    }
+
+    @mixin lg\:will-change-contents {
+      @include will-change-(contents, null, $lg);
+    }
+
+    @mixin lg\:will-change-transform {
+      @include will-change-(transform, null, $lg);
+    }
+
+    @mixin xl\:will-change-auto {
+      @include will-change-(auto, null, $xl);
+    }
+
+    @mixin xl\:will-change-scroll {
+      @include will-change-(scroll-position, null, $xl);
+    }
+
+    @mixin xl\:will-change-contents {
+      @include will-change-(contents, null, $xl);
+    }
+
+    @mixin xl\:will-change-transform {
+      @include will-change-(transform, null, $xl);
+    }
+
+    @mixin \2xl\:will-change-auto {
+      @include will-change-(auto, null, $\2xl);
+    }
+
+    @mixin \2xl\:will-change-scroll {
+      @include will-change-(scroll-position, null, $\2xl);
+    }
+
+    @mixin \2xl\:will-change-contents {
+      @include will-change-(contents, null, $\2xl);
+    }
+
+    @mixin \2xl\:will-change-transform {
+      @include will-change-(transform, null, $\2xl);
+    }
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin will-change-($v, $v2: null, $rwd: null) {
+    @if $rwd==null {
+      will-change: $v, $v2;
+    } @else {
+      @media (min-width: $rwd) {
+        will-change: $v, $v2;
+      }
+    }
+  }
+
+  @mixin sm\:will-change-($v, $v2: null) {
+    @include will-change-($v, $v2, $sm);
+  }
+
+  @mixin md\:will-change-($v, $v2: null) {
+    @include will-change-($v, $v2, $md);
+  }
+
+  @mixin lg\:will-change-($v, $v2: null) {
+    @include will-change-($v, $v2, $lg);
+  }
+
+  @mixin xl\:will-change-($v, $v2: null) {
+    @include will-change-($v, $v2, $xl);
+  }
+
+  @mixin \2xl\:will-change-($v, $v2: null) {
+    @include will-change-($v, $v2, $\2xl);
+  }
+
+  // x*/
+}

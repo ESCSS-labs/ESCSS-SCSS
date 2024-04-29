@@ -1,0 +1,101 @@
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+/* Backdrop Invert */
+@if $Basic {
+  // /*x
+  @mixin backdrop-invert-0 {
+    @include backdrop-invert-(0);
+  }
+
+  @mixin backdrop-invert {
+    @include backdrop-invert-(100%);
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  @if $sizeMode == 0 or $sizeMode == 1 {
+    // /*x
+    @mixin sm\:backdrop-invert-0 {
+      @include backdrop-invert-(0, $sm);
+    }
+
+    @mixin sm\:backdrop-invert {
+      @include backdrop-invert-(100%, $sm);
+    }
+
+    @mixin md\:backdrop-invert-0 {
+      @include backdrop-invert-(0, $md);
+    }
+
+    @mixin md\:backdrop-invert {
+      @include backdrop-invert-(100%, $md);
+    }
+
+    @mixin lg\:backdrop-invert-0 {
+      @include backdrop-invert-(0, $lg);
+    }
+
+    @mixin lg\:backdrop-invert {
+      @include backdrop-invert-(100%, $lg);
+    }
+
+    @mixin xl\:backdrop-invert-0 {
+      @include backdrop-invert-(0, $xl);
+    }
+
+    @mixin xl\:backdrop-invert {
+      @include backdrop-invert-(100%, $xl);
+    }
+
+    @mixin \2xl\:backdrop-invert-0 {
+      @include backdrop-invert-(0, $\2xl);
+    }
+
+    @mixin \2xl\:backdrop-invert {
+      @include backdrop-invert-(100%, $\2xl);
+    }
+
+    // x*/
+  }
+}
+
+@if $Custom {
+  // /*x
+  @mixin backdrop-invert-($v, $rwd: null) {
+    @if $rwd==null {
+      $--tw-backdrop-invert: invert($v) !global;
+      backdrop-filter: __backdrop-filter();
+    } @else {
+      @media (min-width: $rwd) {
+        $--tw-backdrop-invert: invert($v) !global;
+        backdrop-filter: __backdrop-filter();
+      }
+    }
+  }
+
+  @mixin sm\:backdrop-invert-($v) {
+    @include backdrop-invert-($v, $sm);
+  }
+
+  @mixin md\:backdrop-invert-($v) {
+    @include backdrop-invert-($v, $md);
+  }
+
+  @mixin lg\:backdrop-invert-($v) {
+    @include backdrop-invert-($v, $lg);
+  }
+
+  @mixin xl\:backdrop-invert-($v) {
+    @include backdrop-invert-($v, $xl);
+  }
+
+  @mixin \2xl\:backdrop-invert-($v) {
+    @include backdrop-invert-($v, $\2xl);
+  }
+
+  // x*/
+}
