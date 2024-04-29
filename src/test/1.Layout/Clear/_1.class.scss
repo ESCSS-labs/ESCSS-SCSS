@@ -2,191 +2,226 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Clear */
-@if $Basic {
-  // /*x
-  @mixin clear-start($rwd: null) {
-    @if $rwd==null {
-      clear: inline-start;
-    } @else {
-      @media (min-width: $rwd) {
-        clear: inline-start;
+@include describe("1.Layout") {
+  @include describe("Clear") {
+    @include describe("Basic") {
+      @include it("clear-start") {
+        @include custom-expect-(clear, inline-start) {
+          @include clear-start;
+        }
+      }
+
+      @include it("clear-end") {
+        @include custom-expect-(clear, inline-end) {
+          @include clear-end;
+        }
+      }
+
+      @include it("clear-left") {
+        @include custom-expect-(clear, left) {
+          @include clear-left;
+        }
+      }
+
+      @include it("clear-right") {
+        @include custom-expect-(clear, right) {
+          @include clear-right;
+        }
+      }
+
+      @include it("clear-both") {
+        @include custom-expect-(clear, both) {
+          @include clear-both;
+        }
+      }
+
+      @include it("clear-none") {
+        @include custom-expect-(clear, none) {
+          @include clear-none;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:clear-start") {
+        @include custom-expect-(clear, inline-start, $sm) {
+          @include sm\:clear-start;
+        }
+      }
+
+      @include it("sm\:clear-end") {
+        @include custom-expect-(clear, inline-end, $sm) {
+          @include sm\:clear-end;
+        }
+      }
+
+      @include it("sm\:clear-left") {
+        @include custom-expect-(clear, left, $sm) {
+          @include sm\:clear-left;
+        }
+      }
+
+      @include it("sm\:clear-right") {
+        @include custom-expect-(clear, right, $sm) {
+          @include sm\:clear-right;
+        }
+      }
+
+      @include it("sm\:clear-both") {
+        @include custom-expect-(clear, both, $sm) {
+          @include sm\:clear-both;
+        }
+      }
+
+      @include it("sm\:clear-none") {
+        @include custom-expect-(clear, none, $sm) {
+          @include sm\:clear-none;
+        }
+      }
+
+      @include it("md\:clear-start") {
+        @include custom-expect-(clear, inline-start, $md) {
+          @include md\:clear-start;
+        }
+      }
+
+      @include it("md\:clear-end") {
+        @include custom-expect-(clear, inline-end, $md) {
+          @include md\:clear-end;
+        }
+      }
+
+      @include it("md\:clear-left") {
+        @include custom-expect-(clear, left, $md) {
+          @include md\:clear-left;
+        }
+      }
+
+      @include it("md\:clear-right") {
+        @include custom-expect-(clear, right, $md) {
+          @include md\:clear-right;
+        }
+      }
+
+      @include it("md\:clear-both") {
+        @include custom-expect-(clear, both, $md) {
+          @include md\:clear-both;
+        }
+      }
+
+      @include it("md\:clear-none") {
+        @include custom-expect-(clear, none, $md) {
+          @include md\:clear-none;
+        }
+      }
+
+      @include it("lg\:clear-start") {
+        @include custom-expect-(clear, inline-start, $lg) {
+          @include lg\:clear-start;
+        }
+      }
+
+      @include it("lg\:clear-end") {
+        @include custom-expect-(clear, inline-end, $lg) {
+          @include lg\:clear-end;
+        }
+      }
+
+      @include it("lg\:clear-left") {
+        @include custom-expect-(clear, left, $lg) {
+          @include lg\:clear-left;
+        }
+      }
+
+      @include it("lg\:clear-right") {
+        @include custom-expect-(clear, right, $lg) {
+          @include lg\:clear-right;
+        }
+      }
+
+      @include it("lg\:clear-both") {
+        @include custom-expect-(clear, both, $lg) {
+          @include lg\:clear-both;
+        }
+      }
+
+      @include it("lg\:clear-none") {
+        @include custom-expect-(clear, none, $lg) {
+          @include lg\:clear-none;
+        }
+      }
+
+      @include it("xl\:clear-start") {
+        @include custom-expect-(clear, inline-start, $xl) {
+          @include xl\:clear-start;
+        }
+      }
+
+      @include it("xl\:clear-end") {
+        @include custom-expect-(clear, inline-end, $xl) {
+          @include xl\:clear-end;
+        }
+      }
+
+      @include it("xl\:clear-left") {
+        @include custom-expect-(clear, left, $xl) {
+          @include xl\:clear-left;
+        }
+      }
+
+      @include it("xl\:clear-right") {
+        @include custom-expect-(clear, right, $xl) {
+          @include xl\:clear-right;
+        }
+      }
+
+      @include it("xl\:clear-both") {
+        @include custom-expect-(clear, both, $xl) {
+          @include xl\:clear-both;
+        }
+      }
+
+      @include it("xl\:clear-none") {
+        @include custom-expect-(clear, none, $xl) {
+          @include xl\:clear-none;
+        }
+      }
+
+      @include it("\2xl\:clear-start") {
+        @include custom-expect-(clear, inline-start, $\2xl) {
+          @include \2xl\:clear-start;
+        }
+      }
+
+      @include it("\2xl\:clear-end") {
+        @include custom-expect-(clear, inline-end, $\2xl) {
+          @include \2xl\:clear-end;
+        }
+      }
+
+      @include it("\2xl\:clear-left") {
+        @include custom-expect-(clear, left, $\2xl) {
+          @include \2xl\:clear-left;
+        }
+      }
+
+      @include it("\2xl\:clear-right") {
+        @include custom-expect-(clear, right, $\2xl) {
+          @include \2xl\:clear-right;
+        }
+      }
+
+      @include it("\2xl\:clear-both") {
+        @include custom-expect-(clear, both, $\2xl) {
+          @include \2xl\:clear-both;
+        }
+      }
+
+      @include it("\2xl\:clear-none") {
+        @include custom-expect-(clear, none, $\2xl) {
+          @include \2xl\:clear-none;
+        }
       }
     }
   }
-
-  @mixin clear-end($rwd: null) {
-    @if $rwd==null {
-      clear: inline-end;
-    } @else {
-      @media (min-width: $rwd) {
-        clear: inline-end;
-      }
-    }
-  }
-
-  @mixin clear-left($rwd: null) {
-    @if $rwd==null {
-      clear: left;
-    } @else {
-      @media (min-width: $rwd) {
-        clear: left;
-      }
-    }
-  }
-
-  @mixin clear-right($rwd: null) {
-    @if $rwd==null {
-      clear: right;
-    } @else {
-      @media (min-width: $rwd) {
-        clear: right;
-      }
-    }
-  }
-
-  @mixin clear-both($rwd: null) {
-    @if $rwd==null {
-      clear: both;
-    } @else {
-      @media (min-width: $rwd) {
-        clear: both;
-      }
-    }
-  }
-
-  @mixin clear-none($rwd: null) {
-    @if $rwd==null {
-      clear: none;
-    } @else {
-      @media (min-width: $rwd) {
-        clear: none;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:clear-start {
-    @include clear-start($sm);
-  }
-
-  @mixin sm\:clear-end {
-    @include clear-end($sm);
-  }
-
-  @mixin sm\:clear-left {
-    @include clear-left($sm);
-  }
-
-  @mixin sm\:clear-right {
-    @include clear-right($sm);
-  }
-
-  @mixin sm\:clear-both {
-    @include clear-both($sm);
-  }
-
-  @mixin sm\:clear-none {
-    @include clear-none($sm);
-  }
-
-  @mixin md\:clear-start {
-    @include clear-start($md);
-  }
-
-  @mixin md\:clear-end {
-    @include clear-end($md);
-  }
-
-  @mixin md\:clear-left {
-    @include clear-left($md);
-  }
-
-  @mixin md\:clear-right {
-    @include clear-right($md);
-  }
-
-  @mixin md\:clear-both {
-    @include clear-both($md);
-  }
-
-  @mixin md\:clear-none {
-    @include clear-none($md);
-  }
-
-  @mixin lg\:clear-start {
-    @include clear-start($lg);
-  }
-
-  @mixin lg\:clear-end {
-    @include clear-end($lg);
-  }
-
-  @mixin lg\:clear-left {
-    @include clear-left($lg);
-  }
-
-  @mixin lg\:clear-right {
-    @include clear-right($lg);
-  }
-
-  @mixin lg\:clear-both {
-    @include clear-both($lg);
-  }
-
-  @mixin lg\:clear-none {
-    @include clear-none($lg);
-  }
-
-  @mixin xl\:clear-start {
-    @include clear-start($xl);
-  }
-
-  @mixin xl\:clear-end {
-    @include clear-end($xl);
-  }
-
-  @mixin xl\:clear-left {
-    @include clear-left($xl);
-  }
-
-  @mixin xl\:clear-right {
-    @include clear-right($xl);
-  }
-
-  @mixin xl\:clear-both {
-    @include clear-both($xl);
-  }
-
-  @mixin xl\:clear-none {
-    @include clear-none($xl);
-  }
-
-  @mixin \2xl\:clear-start {
-    @include clear-start($\2xl);
-  }
-
-  @mixin \2xl\:clear-end {
-    @include clear-end($\2xl);
-  }
-
-  @mixin \2xl\:clear-left {
-    @include clear-left($\2xl);
-  }
-
-  @mixin \2xl\:clear-right {
-    @include clear-right($\2xl);
-  }
-
-  @mixin \2xl\:clear-both {
-    @include clear-both($\2xl);
-  }
-
-  @mixin \2xl\:clear-none {
-    @include clear-none($\2xl);
-  }
-
-  // x*/
 }

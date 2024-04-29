@@ -2,163 +2,190 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Floats */
-@if $Basic {
-  // /*x
-  @mixin float-start($rwd: null) {
-    @if $rwd==null {
-      float: inline-start;
-    } @else {
-      @media (min-width: $rwd) {
-        float: inline-start;
+@include describe("1.Layout") {
+  @include describe("TITLE") {
+    @include describe("Basic") {
+      @include it("float-start") {
+        @include custom-expect-(float, inline-start) {
+          @include float-start;
+        }
+      }
+
+      @include it("float-end") {
+        @include custom-expect-(float, inline-end) {
+          @include float-end;
+        }
+      }
+
+      @include it("float-right") {
+        @include custom-expect-(float, right) {
+          @include float-right;
+        }
+      }
+
+      @include it("float-left") {
+        @include custom-expect-(float, left) {
+          @include float-left;
+        }
+      }
+
+      @include it("float-none") {
+        @include custom-expect-(float, none) {
+          @include float-none;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:float-start") {
+        @include custom-expect-(float, inline-start, $sm) {
+          @include sm\:float-start;
+        }
+      }
+
+      @include it("sm\:float-end") {
+        @include custom-expect-(float, inline-end, $sm) {
+          @include sm\:float-end;
+        }
+      }
+
+      @include it("sm\:float-right") {
+        @include custom-expect-(float, right, $sm) {
+          @include sm\:float-right;
+        }
+      }
+
+      @include it("sm\:float-left") {
+        @include custom-expect-(float, left, $sm) {
+          @include sm\:float-left;
+        }
+      }
+
+      @include it("sm\:float-none") {
+        @include custom-expect-(float, none, $sm) {
+          @include sm\:float-none;
+        }
+      }
+
+      @include it("md\:float-start") {
+        @include custom-expect-(float, inline-start, $md) {
+          @include md\:float-start;
+        }
+      }
+
+      @include it("md\:float-end") {
+        @include custom-expect-(float, inline-end, $md) {
+          @include md\:float-end;
+        }
+      }
+
+      @include it("md\:float-right") {
+        @include custom-expect-(float, right, $md) {
+          @include md\:float-right;
+        }
+      }
+
+      @include it("md\:float-left") {
+        @include custom-expect-(float, left, $md) {
+          @include md\:float-left;
+        }
+      }
+
+      @include it("md\:float-none") {
+        @include custom-expect-(float, none, $md) {
+          @include md\:float-none;
+        }
+      }
+
+      @include it("lg\:float-start") {
+        @include custom-expect-(float, inline-start, $lg) {
+          @include lg\:float-start;
+        }
+      }
+
+      @include it("lg\:float-end") {
+        @include custom-expect-(float, inline-end, $lg) {
+          @include lg\:float-end;
+        }
+      }
+
+      @include it("lg\:float-right") {
+        @include custom-expect-(float, right, $lg) {
+          @include lg\:float-right;
+        }
+      }
+
+      @include it("lg\:float-left") {
+        @include custom-expect-(float, left, $lg) {
+          @include lg\:float-left;
+        }
+      }
+
+      @include it("lg\:float-none") {
+        @include custom-expect-(float, none, $lg) {
+          @include lg\:float-none;
+        }
+      }
+
+      @include it("xl\:float-start") {
+        @include custom-expect-(float, inline-start, $xl) {
+          @include xl\:float-start;
+        }
+      }
+
+      @include it("xl\:float-end") {
+        @include custom-expect-(float, inline-end, $xl) {
+          @include xl\:float-end;
+        }
+      }
+
+      @include it("xl\:float-right") {
+        @include custom-expect-(float, right, $xl) {
+          @include xl\:float-right;
+        }
+      }
+
+      @include it("xl\:float-left") {
+        @include custom-expect-(float, left, $xl) {
+          @include xl\:float-left;
+        }
+      }
+
+      @include it("xl\:float-none") {
+        @include custom-expect-(float, none, $xl) {
+          @include xl\:float-none;
+        }
+      }
+
+      @include it("\2xl\:float-start") {
+        @include custom-expect-(float, inline-start, $\2xl) {
+          @include \2xl\:float-start;
+        }
+      }
+
+      @include it("\2xl\:float-end") {
+        @include custom-expect-(float, inline-end, $\2xl) {
+          @include \2xl\:float-end;
+        }
+      }
+
+      @include it("\2xl\:float-right") {
+        @include custom-expect-(float, right, $\2xl) {
+          @include \2xl\:float-right;
+        }
+      }
+
+      @include it("\2xl\:float-left") {
+        @include custom-expect-(float, left, $\2xl) {
+          @include \2xl\:float-left;
+        }
+      }
+
+      @include it("\2xl\:float-none") {
+        @include custom-expect-(float, none, $\2xl) {
+          @include \2xl\:float-none;
+        }
       }
     }
   }
-
-  @mixin float-end($rwd: null) {
-    @if $rwd==null {
-      float: inline-end;
-    } @else {
-      @media (min-width: $rwd) {
-        float: inline-end;
-      }
-    }
-  }
-
-  @mixin float-right($rwd: null) {
-    @if $rwd==null {
-      float: right;
-    } @else {
-      @media (min-width: $rwd) {
-        float: right;
-      }
-    }
-  }
-
-  @mixin float-left($rwd: null) {
-    @if $rwd==null {
-      float: left;
-    } @else {
-      @media (min-width: $rwd) {
-        float: left;
-      }
-    }
-  }
-
-  @mixin float-none($rwd: null) {
-    @if $rwd==null {
-      float: none;
-    } @else {
-      @media (min-width: $rwd) {
-        float: none;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:float-start {
-    @include float-start($sm);
-  }
-
-  @mixin sm\:float-end {
-    @include float-end($sm);
-  }
-
-  @mixin sm\:float-right {
-    @include float-right($sm);
-  }
-
-  @mixin sm\:float-left {
-    @include float-left($sm);
-  }
-
-  @mixin sm\:float-none {
-    @include float-none($sm);
-  }
-
-  @mixin md\:float-start {
-    @include float-start($md);
-  }
-
-  @mixin md\:float-end {
-    @include float-end($md);
-  }
-
-  @mixin md\:float-right {
-    @include float-right($md);
-  }
-
-  @mixin md\:float-left {
-    @include float-left($md);
-  }
-
-  @mixin md\:float-none {
-    @include float-none($md);
-  }
-
-  @mixin lg\:float-start {
-    @include float-start($lg);
-  }
-
-  @mixin lg\:float-end {
-    @include float-end($lg);
-  }
-
-  @mixin lg\:float-right {
-    @include float-right($lg);
-  }
-
-  @mixin lg\:float-left {
-    @include float-left($lg);
-  }
-
-  @mixin lg\:float-none {
-    @include float-none($lg);
-  }
-
-  @mixin xl\:float-start {
-    @include float-start($xl);
-  }
-
-  @mixin xl\:float-end {
-    @include float-end($xl);
-  }
-
-  @mixin xl\:float-right {
-    @include float-right($xl);
-  }
-
-  @mixin xl\:float-left {
-    @include float-left($xl);
-  }
-
-  @mixin xl\:float-none {
-    @include float-none($xl);
-  }
-
-  @mixin \2xl\:float-start {
-    @include float-start($\2xl);
-  }
-
-  @mixin \2xl\:float-end {
-    @include float-end($\2xl);
-  }
-
-  @mixin \2xl\:float-right {
-    @include float-right($\2xl);
-  }
-
-  @mixin \2xl\:float-left {
-    @include float-left($\2xl);
-  }
-
-  @mixin \2xl\:float-none {
-    @include float-none($\2xl);
-  }
-
-  // x*/
 }

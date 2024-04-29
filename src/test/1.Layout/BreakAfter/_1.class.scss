@@ -2,250 +2,298 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Break After */
-@if $Basic {
-  // /*x
-  @mixin break-after-auto($rwd: null) {
-    @if $rwd==nul {
-      break-after: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        break-after: auto;
+@include describe("1.Layout") {
+  @include describe("Break After") {
+    @include describe("Basic") {
+      @include it("break-after-auto") {
+        @include custom-expect-(break-after, auto) {
+          @include break-after-auto;
+        }
+      }
+
+      @include it("break-after-avoid") {
+        @include custom-expect-(break-after, avoid) {
+          @include break-after-avoid;
+        }
+      }
+
+      @include it("break-after-all") {
+        @include custom-expect-(break-after, all) {
+          @include break-after-all;
+        }
+      }
+
+      @include it("break-after-avoid-page") {
+        @include custom-expect-(break-after, avoid-page) {
+          @include break-after-avoid-page;
+        }
+      }
+
+      @include it("break-after-page") {
+        @include custom-expect-(break-after, page) {
+          @include break-after-page;
+        }
+      }
+
+      @include it("break-after-left") {
+        @include custom-expect-(break-after, left) {
+          @include break-after-left;
+        }
+      }
+
+      @include it("break-after-right") {
+        @include custom-expect-(break-after, right) {
+          @include break-after-right;
+        }
+      }
+
+      @include it("break-after-column") {
+        @include custom-expect-(break-after, column) {
+          @include break-after-column;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:break-after-auto") {
+        @include custom-expect-(break-after, auto, $sm) {
+          @include sm\:break-after-auto;
+        }
+      }
+
+      @include it("sm\:break-after-avoid") {
+        @include custom-expect-(break-after, avoid, $sm) {
+          @include sm\:break-after-avoid;
+        }
+      }
+
+      @include it("sm\:break-after-all") {
+        @include custom-expect-(break-after, all, $sm) {
+          @include sm\:break-after-all;
+        }
+      }
+
+      @include it("sm\:break-after-avoid-page") {
+        @include custom-expect-(break-after, avoid-page, $sm) {
+          @include sm\:break-after-avoid-page;
+        }
+      }
+
+      @include it("sm\:break-after-page") {
+        @include custom-expect-(break-after, page, $sm) {
+          @include sm\:break-after-page;
+        }
+      }
+
+      @include it("sm\:break-after-left") {
+        @include custom-expect-(break-after, left, $sm) {
+          @include sm\:break-after-left;
+        }
+      }
+
+      @include it("sm\:break-after-right") {
+        @include custom-expect-(break-after, right, $sm) {
+          @include sm\:break-after-right;
+        }
+      }
+
+      @include it("sm\:break-after-column") {
+        @include custom-expect-(break-after, column, $sm) {
+          @include sm\:break-after-column;
+        }
+      }
+
+      @include it("md\:break-after-auto") {
+        @include custom-expect-(break-after, auto, $md) {
+          @include md\:break-after-auto;
+        }
+      }
+
+      @include it("md\:break-after-avoid") {
+        @include custom-expect-(break-after, avoid, $md) {
+          @include md\:break-after-avoid;
+        }
+      }
+
+      @include it("md\:break-after-all") {
+        @include custom-expect-(break-after, all, $md) {
+          @include md\:break-after-all;
+        }
+      }
+
+      @include it("md\:break-after-avoid-page") {
+        @include custom-expect-(break-after, avoid-page, $md) {
+          @include md\:break-after-avoid-page;
+        }
+      }
+
+      @include it("md\:break-after-page") {
+        @include custom-expect-(break-after, page, $md) {
+          @include md\:break-after-page;
+        }
+      }
+
+      @include it("md\:break-after-left") {
+        @include custom-expect-(break-after, left, $md) {
+          @include md\:break-after-left;
+        }
+      }
+
+      @include it("md\:break-after-right") {
+        @include custom-expect-(break-after, right, $md) {
+          @include md\:break-after-right;
+        }
+      }
+
+      @include it("md\:break-after-column") {
+        @include custom-expect-(break-after, column, $md) {
+          @include md\:break-after-column;
+        }
+      }
+
+      @include it("lg\:break-after-auto") {
+        @include custom-expect-(break-after, auto, $lg) {
+          @include lg\:break-after-auto;
+        }
+      }
+
+      @include it("lg\:break-after-avoid") {
+        @include custom-expect-(break-after, avoid, $lg) {
+          @include lg\:break-after-avoid;
+        }
+      }
+
+      @include it("lg\:break-after-all") {
+        @include custom-expect-(break-after, all, $lg) {
+          @include lg\:break-after-all;
+        }
+      }
+
+      @include it("lg\:break-after-avoid-page") {
+        @include custom-expect-(break-after, avoid-page, $lg) {
+          @include lg\:break-after-avoid-page;
+        }
+      }
+
+      @include it("lg\:break-after-page") {
+        @include custom-expect-(break-after, page, $lg) {
+          @include lg\:break-after-page;
+        }
+      }
+
+      @include it("lg\:break-after-left") {
+        @include custom-expect-(break-after, left, $lg) {
+          @include lg\:break-after-left;
+        }
+      }
+
+      @include it("lg\:break-after-right") {
+        @include custom-expect-(break-after, right, $lg) {
+          @include lg\:break-after-right;
+        }
+      }
+
+      @include it("lg\:break-after-column") {
+        @include custom-expect-(break-after, column, $lg) {
+          @include lg\:break-after-column;
+        }
+      }
+
+      @include it("xl\:break-after-auto") {
+        @include custom-expect-(break-after, auto, $xl) {
+          @include xl\:break-after-auto;
+        }
+      }
+
+      @include it("xl\:break-after-avoid") {
+        @include custom-expect-(break-after, avoid, $xl) {
+          @include xl\:break-after-avoid;
+        }
+      }
+
+      @include it("xl\:break-after-all") {
+        @include custom-expect-(break-after, all, $xl) {
+          @include xl\:break-after-all;
+        }
+      }
+
+      @include it("xl\:break-after-avoid-page") {
+        @include custom-expect-(break-after, avoid-page, $xl) {
+          @include xl\:break-after-avoid-page;
+        }
+      }
+
+      @include it("xl\:break-after-page") {
+        @include custom-expect-(break-after, page, $xl) {
+          @include xl\:break-after-page;
+        }
+      }
+
+      @include it("xl\:break-after-left") {
+        @include custom-expect-(break-after, left, $xl) {
+          @include xl\:break-after-left;
+        }
+      }
+
+      @include it("xl\:break-after-right") {
+        @include custom-expect-(break-after, right, $xl) {
+          @include xl\:break-after-right;
+        }
+      }
+
+      @include it("xl\:break-after-column") {
+        @include custom-expect-(break-after, column, $xl) {
+          @include xl\:break-after-column;
+        }
+      }
+
+      @include it("\2xl\:break-after-auto") {
+        @include custom-expect-(break-after, auto, $\2xl) {
+          @include \2xl\:break-after-auto;
+        }
+      }
+
+      @include it("\2xl\:break-after-avoid") {
+        @include custom-expect-(break-after, avoid, $\2xl) {
+          @include \2xl\:break-after-avoid;
+        }
+      }
+
+      @include it("\2xl\:break-after-all") {
+        @include custom-expect-(break-after, all, $\2xl) {
+          @include \2xl\:break-after-all;
+        }
+      }
+
+      @include it("\2xl\:break-after-avoid-page") {
+        @include custom-expect-(break-after, avoid-page, $\2xl) {
+          @include \2xl\:break-after-avoid-page;
+        }
+      }
+
+      @include it("\2xl\:break-after-page") {
+        @include custom-expect-(break-after, page, $\2xl) {
+          @include \2xl\:break-after-page;
+        }
+      }
+
+      @include it("\2xl\:break-after-left") {
+        @include custom-expect-(break-after, left, $\2xl) {
+          @include \2xl\:break-after-left;
+        }
+      }
+
+      @include it("\2xl\:break-after-right") {
+        @include custom-expect-(break-after, right, $\2xl) {
+          @include \2xl\:break-after-right;
+        }
+      }
+
+      @include it("\2xl\:break-after-column") {
+        @include custom-expect-(break-after, column, $\2xl) {
+          @include \2xl\:break-after-column;
+        }
       }
     }
   }
-
-  @mixin break-after-avoid($rwd: null) {
-    @if $rwd==nul {
-      break-after: avoid;
-    } @else {
-      @media (min-width: $rwd) {
-        break-after: avoid;
-      }
-    }
-  }
-
-  @mixin break-after-all($rwd: null) {
-    @if $rwd==nul {
-      break-after: all;
-    } @else {
-      @media (min-width: $rwd) {
-        break-after: all;
-      }
-    }
-  }
-
-  @mixin break-after-avoid-page($rwd: null) {
-    @if $rwd==nul {
-      break-after: avoid-page;
-    } @else {
-      @media (min-width: $rwd) {
-        break-after: avoid-page;
-      }
-    }
-  }
-
-  @mixin break-after-page($rwd: null) {
-    @if $rwd==nul {
-      break-after: page;
-    } @else {
-      @media (min-width: $rwd) {
-        break-after: page;
-      }
-    }
-  }
-
-  @mixin break-after-left($rwd: null) {
-    @if $rwd==nul {
-      break-after: left;
-    } @else {
-      @media (min-width: $rwd) {
-        break-after: left;
-      }
-    }
-  }
-
-  @mixin break-after-right($rwd: null) {
-    @if $rwd==nul {
-      break-after: right;
-    } @else {
-      @media (min-width: $rwd) {
-        break-after: right;
-      }
-    }
-  }
-
-  @mixin break-after-column($rwd: null) {
-    @if $rwd==nul {
-      break-after: column;
-    } @else {
-      @media (min-width: $rwd) {
-        break-after: column;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:break-after-auto {
-    @include break-after-auto($sm);
-  }
-
-  @mixin sm\:break-after-avoid {
-    @include break-after-avoid($sm);
-  }
-
-  @mixin sm\:break-after-all {
-    @include break-after-all($sm);
-  }
-
-  @mixin sm\:break-after-avoid-page {
-    @include break-after-avoid-page($sm);
-  }
-
-  @mixin sm\:break-after-page {
-    @include break-after-page($sm);
-  }
-
-  @mixin sm\:break-after-left {
-    @include break-after-left($sm);
-  }
-
-  @mixin sm\:break-after-right {
-    @include break-after-right($sm);
-  }
-
-  @mixin sm\:break-after-column {
-    @include break-after-column($sm);
-  }
-
-  @mixin md\:break-after-auto {
-    @include break-after-auto($md);
-  }
-
-  @mixin md\:break-after-avoid {
-    @include break-after-avoid($md);
-  }
-
-  @mixin md\:break-after-all {
-    @include break-after-all($md);
-  }
-
-  @mixin md\:break-after-avoid-page {
-    @include break-after-avoid-page($md);
-  }
-
-  @mixin md\:break-after-page {
-    @include break-after-page($md);
-  }
-
-  @mixin md\:break-after-left {
-    @include break-after-left($md);
-  }
-
-  @mixin md\:break-after-right {
-    @include break-after-right($md);
-  }
-
-  @mixin md\:break-after-column {
-    @include break-after-column($md);
-  }
-
-  @mixin lg\:break-after-auto {
-    @include break-after-auto($lg);
-  }
-
-  @mixin lg\:break-after-avoid {
-    @include break-after-avoid($lg);
-  }
-
-  @mixin lg\:break-after-all {
-    @include break-after-all($lg);
-  }
-
-  @mixin lg\:break-after-avoid-page {
-    @include break-after-avoid-page($lg);
-  }
-
-  @mixin lg\:break-after-page {
-    @include break-after-page($lg);
-  }
-
-  @mixin lg\:break-after-left {
-    @include break-after-left($lg);
-  }
-
-  @mixin lg\:break-after-right {
-    @include break-after-right($lg);
-  }
-
-  @mixin lg\:break-after-column {
-    @include break-after-column($lg);
-  }
-
-  @mixin xl\:break-after-auto {
-    @include break-after-auto($xl);
-  }
-
-  @mixin xl\:break-after-avoid {
-    @include break-after-avoid($xl);
-  }
-
-  @mixin xl\:break-after-all {
-    @include break-after-all($xl);
-  }
-
-  @mixin xl\:break-after-avoid-page {
-    @include break-after-avoid-page($xl);
-  }
-
-  @mixin xl\:break-after-page {
-    @include break-after-page($xl);
-  }
-
-  @mixin xl\:break-after-left {
-    @include break-after-left($xl);
-  }
-
-  @mixin xl\:break-after-right {
-    @include break-after-right($xl);
-  }
-
-  @mixin xl\:break-after-column {
-    @include break-after-column($xl);
-  }
-
-  @mixin \2xl\:break-after-auto {
-    @include break-after-auto($\2xl);
-  }
-
-  @mixin \2xl\:break-after-avoid {
-    @include break-after-avoid($\2xl);
-  }
-
-  @mixin \2xl\:break-after-all {
-    @include break-after-all($\2xl);
-  }
-
-  @mixin \2xl\:break-after-avoid-page {
-    @include break-after-avoid-page($\2xl);
-  }
-
-  @mixin \2xl\:break-after-page {
-    @include break-after-page($\2xl);
-  }
-
-  @mixin \2xl\:break-after-left {
-    @include break-after-left($\2xl);
-  }
-
-  @mixin \2xl\:break-after-right {
-    @include break-after-right($\2xl);
-  }
-
-  @mixin \2xl\:break-after-column {
-    @include break-after-column($\2xl);
-  }
-  // x*/
 }

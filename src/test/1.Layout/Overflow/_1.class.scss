@@ -2,461 +2,550 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Overflow */
-@if $Basic {
-  // /*x
-  @mixin overflow-auto($rwd: null) {
-    @if $rwd==null {
-      overflow: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow: auto;
+@include describe("1.Layout") {
+  @include describe("TITLE") {
+    @include describe("Basic") {
+      @include it("overflow-auto") {
+        @include custom-expect-(overflow, auto) {
+          @include overflow-auto;
+        }
+      }
+
+      @include it("overflow-hidden") {
+        @include custom-expect-(overflow, hidden) {
+          @include overflow-hidden;
+        }
+      }
+
+      @include it("overflow-clip") {
+        @include custom-expect-(overflow, clip) {
+          @include overflow-clip;
+        }
+      }
+
+      @include it("overflow-visible") {
+        @include custom-expect-(overflow, visible) {
+          @include overflow-visible;
+        }
+      }
+
+      @include it("overflow-scroll") {
+        @include custom-expect-(overflow, scroll) {
+          @include overflow-scroll;
+        }
+      }
+
+      @include it("overflow-x-auto") {
+        @include custom-expect-(overflow-x, auto) {
+          @include overflow-x-auto;
+        }
+      }
+
+      @include it("overflow-y-auto") {
+        @include custom-expect-(overflow-y, auto) {
+          @include overflow-y-auto;
+        }
+      }
+
+      @include it("overflow-x-hidden") {
+        @include custom-expect-(overflow-x, hidden) {
+          @include overflow-x-hidden;
+        }
+      }
+
+      @include it("overflow-y-hidden") {
+        @include custom-expect-(overflow-y, hidden) {
+          @include overflow-y-hidden;
+        }
+      }
+
+      @include it("overflow-x-clip") {
+        @include custom-expect-(overflow-x, clip) {
+          @include overflow-x-clip;
+        }
+      }
+
+      @include it("overflow-y-clip") {
+        @include custom-expect-(overflow-y, clip) {
+          @include overflow-y-clip;
+        }
+      }
+
+      @include it("overflow-x-visible") {
+        @include custom-expect-(overflow-x, visible) {
+          @include overflow-x-visible;
+        }
+      }
+
+      @include it("overflow-y-visible") {
+        @include custom-expect-(overflow-y, visible) {
+          @include overflow-y-visible;
+        }
+      }
+
+      @include it("overflow-x-scroll") {
+        @include custom-expect-(overflow-x, scroll) {
+          @include overflow-x-scroll;
+        }
+      }
+
+      @include it("overflow-y-scroll") {
+        @include custom-expect-(overflow-y, scroll) {
+          @include overflow-y-scroll;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:overflow-auto") {
+        @include custom-expect-(overflow, auto, $sm) {
+          @include sm\:overflow-auto;
+        }
+      }
+
+      @include it("sm\:overflow-hidden") {
+        @include custom-expect-(overflow, hidden, $sm) {
+          @include sm\:overflow-hidden;
+        }
+      }
+
+      @include it("sm\:overflow-clip") {
+        @include custom-expect-(overflow, clip, $sm) {
+          @include sm\:overflow-clip;
+        }
+      }
+
+      @include it("sm\:overflow-visible") {
+        @include custom-expect-(overflow, visible, $sm) {
+          @include sm\:overflow-visible;
+        }
+      }
+
+      @include it("sm\:overflow-scroll") {
+        @include custom-expect-(overflow, scroll, $sm) {
+          @include sm\:overflow-scroll;
+        }
+      }
+
+      @include it("sm\:overflow-x-auto") {
+        @include custom-expect-(overflow-x, auto, $sm) {
+          @include sm\:overflow-x-auto;
+        }
+      }
+
+      @include it("sm\:overflow-y-auto") {
+        @include custom-expect-(overflow-y, auto, $sm) {
+          @include sm\:overflow-y-auto;
+        }
+      }
+
+      @include it("sm\:overflow-x-hidden") {
+        @include custom-expect-(overflow-x, hidden, $sm) {
+          @include sm\:overflow-x-hidden;
+        }
+      }
+
+      @include it("sm\:overflow-y-hidden") {
+        @include custom-expect-(overflow-y, hidden, $sm) {
+          @include sm\:overflow-y-hidden;
+        }
+      }
+
+      @include it("sm\:overflow-x-clip") {
+        @include custom-expect-(overflow-x, clip, $sm) {
+          @include sm\:overflow-x-clip;
+        }
+      }
+
+      @include it("sm\:overflow-y-clip") {
+        @include custom-expect-(overflow-y, clip, $sm) {
+          @include sm\:overflow-y-clip;
+        }
+      }
+
+      @include it("sm\:overflow-x-visible") {
+        @include custom-expect-(overflow-x, visible, $sm) {
+          @include sm\:overflow-x-visible;
+        }
+      }
+
+      @include it("sm\:overflow-y-visible") {
+        @include custom-expect-(overflow-y, visible, $sm) {
+          @include sm\:overflow-y-visible;
+        }
+      }
+
+      @include it("sm\:overflow-x-scroll") {
+        @include custom-expect-(overflow-x, scroll, $sm) {
+          @include sm\:overflow-x-scroll;
+        }
+      }
+
+      @include it("sm\:overflow-y-scroll") {
+        @include custom-expect-(overflow-y, scroll, $sm) {
+          @include sm\:overflow-y-scroll;
+        }
+      }
+
+      @include it("md\:overflow-auto") {
+        @include custom-expect-(overflow, auto, $md) {
+          @include md\:overflow-auto;
+        }
+      }
+
+      @include it("md\:overflow-hidden") {
+        @include custom-expect-(overflow, hidden, $md) {
+          @include md\:overflow-hidden;
+        }
+      }
+
+      @include it("md\:overflow-clip") {
+        @include custom-expect-(overflow, clip, $md) {
+          @include md\:overflow-clip;
+        }
+      }
+
+      @include it("md\:overflow-visible") {
+        @include custom-expect-(overflow, visible, $md) {
+          @include md\:overflow-visible;
+        }
+      }
+
+      @include it("md\:overflow-scroll") {
+        @include custom-expect-(overflow, scroll, $md) {
+          @include md\:overflow-scroll;
+        }
+      }
+
+      @include it("md\:overflow-x-auto") {
+        @include custom-expect-(overflow-x, auto, $md) {
+          @include md\:overflow-x-auto;
+        }
+      }
+
+      @include it("md\:overflow-y-auto") {
+        @include custom-expect-(overflow-y, auto, $md) {
+          @include md\:overflow-y-auto;
+        }
+      }
+
+      @include it("md\:overflow-x-hidden") {
+        @include custom-expect-(overflow-x, hidden, $md) {
+          @include md\:overflow-x-hidden;
+        }
+      }
+
+      @include it("md\:overflow-y-hidden") {
+        @include custom-expect-(overflow-y, hidden, $md) {
+          @include md\:overflow-y-hidden;
+        }
+      }
+
+      @include it("md\:overflow-x-clip") {
+        @include custom-expect-(overflow-x, clip, $md) {
+          @include md\:overflow-x-clip;
+        }
+      }
+
+      @include it("md\:overflow-y-clip") {
+        @include custom-expect-(overflow-y, clip, $md) {
+          @include md\:overflow-y-clip;
+        }
+      }
+
+      @include it("md\:overflow-x-visible") {
+        @include custom-expect-(overflow-x, visible, $md) {
+          @include md\:overflow-x-visible;
+        }
+      }
+
+      @include it("md\:overflow-y-visible") {
+        @include custom-expect-(overflow-y, visible, $md) {
+          @include md\:overflow-y-visible;
+        }
+      }
+
+      @include it("md\:overflow-x-scroll") {
+        @include custom-expect-(overflow-x, scroll, $md) {
+          @include md\:overflow-x-scroll;
+        }
+      }
+
+      @include it("md\:overflow-y-scroll") {
+        @include custom-expect-(overflow-y, scroll, $md) {
+          @include md\:overflow-y-scroll;
+        }
+      }
+
+      @include it("lg\:overflow-auto") {
+        @include custom-expect-(overflow, auto, $lg) {
+          @include lg\:overflow-auto;
+        }
+      }
+
+      @include it("lg\:overflow-hidden") {
+        @include custom-expect-(overflow, hidden, $lg) {
+          @include lg\:overflow-hidden;
+        }
+      }
+
+      @include it("lg\:overflow-clip") {
+        @include custom-expect-(overflow, clip, $lg) {
+          @include lg\:overflow-clip;
+        }
+      }
+
+      @include it("lg\:overflow-visible") {
+        @include custom-expect-(overflow, visible, $lg) {
+          @include lg\:overflow-visible;
+        }
+      }
+
+      @include it("lg\:overflow-scroll") {
+        @include custom-expect-(overflow, scroll, $lg) {
+          @include lg\:overflow-scroll;
+        }
+      }
+
+      @include it("lg\:overflow-x-auto") {
+        @include custom-expect-(overflow-x, auto, $lg) {
+          @include lg\:overflow-x-auto;
+        }
+      }
+
+      @include it("lg\:overflow-y-auto") {
+        @include custom-expect-(overflow-y, auto, $lg) {
+          @include lg\:overflow-y-auto;
+        }
+      }
+
+      @include it("lg\:overflow-x-hidden") {
+        @include custom-expect-(overflow-x, hidden, $lg) {
+          @include lg\:overflow-x-hidden;
+        }
+      }
+
+      @include it("lg\:overflow-y-hidden") {
+        @include custom-expect-(overflow-y, hidden, $lg) {
+          @include lg\:overflow-y-hidden;
+        }
+      }
+
+      @include it("lg\:overflow-x-clip") {
+        @include custom-expect-(overflow-x, clip, $lg) {
+          @include lg\:overflow-x-clip;
+        }
+      }
+
+      @include it("lg\:overflow-y-clip") {
+        @include custom-expect-(overflow-y, clip, $lg) {
+          @include lg\:overflow-y-clip;
+        }
+      }
+
+      @include it("lg\:overflow-x-visible") {
+        @include custom-expect-(overflow-x, visible, $lg) {
+          @include lg\:overflow-x-visible;
+        }
+      }
+
+      @include it("lg\:overflow-y-visible") {
+        @include custom-expect-(overflow-y, visible, $lg) {
+          @include lg\:overflow-y-visible;
+        }
+      }
+
+      @include it("lg\:overflow-x-scroll") {
+        @include custom-expect-(overflow-x, scroll, $lg) {
+          @include lg\:overflow-x-scroll;
+        }
+      }
+
+      @include it("lg\:overflow-y-scroll") {
+        @include custom-expect-(overflow-y, scroll, $lg) {
+          @include lg\:overflow-y-scroll;
+        }
+      }
+
+      @include it("xl\:overflow-auto") {
+        @include custom-expect-(overflow, auto, $xl) {
+          @include xl\:overflow-auto;
+        }
+      }
+
+      @include it("xl\:overflow-hidden") {
+        @include custom-expect-(overflow, hidden, $xl) {
+          @include xl\:overflow-hidden;
+        }
+      }
+
+      @include it("xl\:overflow-clip") {
+        @include custom-expect-(overflow, clip, $xl) {
+          @include xl\:overflow-clip;
+        }
+      }
+
+      @include it("xl\:overflow-visible") {
+        @include custom-expect-(overflow, visible, $xl) {
+          @include xl\:overflow-visible;
+        }
+      }
+
+      @include it("xl\:overflow-scroll") {
+        @include custom-expect-(overflow, scroll, $xl) {
+          @include xl\:overflow-scroll;
+        }
+      }
+
+      @include it("xl\:overflow-x-auto") {
+        @include custom-expect-(overflow-x, auto, $xl) {
+          @include xl\:overflow-x-auto;
+        }
+      }
+
+      @include it("xl\:overflow-y-auto") {
+        @include custom-expect-(overflow-y, auto, $xl) {
+          @include xl\:overflow-y-auto;
+        }
+      }
+
+      @include it("xl\:overflow-x-hidden") {
+        @include custom-expect-(overflow-x, hidden, $xl) {
+          @include xl\:overflow-x-hidden;
+        }
+      }
+
+      @include it("xl\:overflow-y-hidden") {
+        @include custom-expect-(overflow-y, hidden, $xl) {
+          @include xl\:overflow-y-hidden;
+        }
+      }
+
+      @include it("xl\:overflow-x-clip") {
+        @include custom-expect-(overflow-x, clip, $xl) {
+          @include xl\:overflow-x-clip;
+        }
+      }
+
+      @include it("xl\:overflow-y-clip") {
+        @include custom-expect-(overflow-y, clip, $xl) {
+          @include xl\:overflow-y-clip;
+        }
+      }
+
+      @include it("xl\:overflow-x-visible") {
+        @include custom-expect-(overflow-x, visible, $xl) {
+          @include xl\:overflow-x-visible;
+        }
+      }
+
+      @include it("xl\:overflow-y-visible") {
+        @include custom-expect-(overflow-y, visible, $xl) {
+          @include xl\:overflow-y-visible;
+        }
+      }
+
+      @include it("xl\:overflow-x-scroll") {
+        @include custom-expect-(overflow-x, scroll, $xl) {
+          @include xl\:overflow-x-scroll;
+        }
+      }
+
+      @include it("xl\:overflow-y-scroll") {
+        @include custom-expect-(overflow-y, scroll, $xl) {
+          @include xl\:overflow-y-scroll;
+        }
+      }
+
+      @include it("\2xl\:overflow-auto") {
+        @include custom-expect-(overflow, auto, $\2xl) {
+          @include \2xl\:overflow-auto;
+        }
+      }
+
+      @include it("\2xl\:overflow-hidden") {
+        @include custom-expect-(overflow, hidden, $\2xl) {
+          @include \2xl\:overflow-hidden;
+        }
+      }
+
+      @include it("\2xl\:overflow-clip") {
+        @include custom-expect-(overflow, clip, $\2xl) {
+          @include \2xl\:overflow-clip;
+        }
+      }
+
+      @include it("\2xl\:overflow-visible") {
+        @include custom-expect-(overflow, visible, $\2xl) {
+          @include \2xl\:overflow-visible;
+        }
+      }
+
+      @include it("\2xl\:overflow-scroll") {
+        @include custom-expect-(overflow, scroll, $\2xl) {
+          @include \2xl\:overflow-scroll;
+        }
+      }
+
+      @include it("\2xl\:overflow-x-auto") {
+        @include custom-expect-(overflow-x, auto, $\2xl) {
+          @include \2xl\:overflow-x-auto;
+        }
+      }
+
+      @include it("\2xl\:overflow-y-auto") {
+        @include custom-expect-(overflow-y, auto, $\2xl) {
+          @include \2xl\:overflow-y-auto;
+        }
+      }
+
+      @include it("\2xl\:overflow-x-hidden") {
+        @include custom-expect-(overflow-x, hidden, $\2xl) {
+          @include \2xl\:overflow-x-hidden;
+        }
+      }
+
+      @include it("\2xl\:overflow-y-hidden") {
+        @include custom-expect-(overflow-y, hidden, $\2xl) {
+          @include \2xl\:overflow-y-hidden;
+        }
+      }
+
+      @include it("\2xl\:overflow-x-clip") {
+        @include custom-expect-(overflow-x, clip, $\2xl) {
+          @include \2xl\:overflow-x-clip;
+        }
+      }
+
+      @include it("\2xl\:overflow-y-clip") {
+        @include custom-expect-(overflow-y, clip, $\2xl) {
+          @include \2xl\:overflow-y-clip;
+        }
+      }
+
+      @include it("\2xl\:overflow-x-visible") {
+        @include custom-expect-(overflow-x, visible, $\2xl) {
+          @include \2xl\:overflow-x-visible;
+        }
+      }
+
+      @include it("\2xl\:overflow-y-visible") {
+        @include custom-expect-(overflow-y, visible, $\2xl) {
+          @include \2xl\:overflow-y-visible;
+        }
+      }
+
+      @include it("\2xl\:overflow-x-scroll") {
+        @include custom-expect-(overflow-x, scroll, $\2xl) {
+          @include \2xl\:overflow-x-scroll;
+        }
+      }
+
+      @include it("\2xl\:overflow-y-scroll") {
+        @include custom-expect-(overflow-y, scroll, $\2xl) {
+          @include \2xl\:overflow-y-scroll;
+        }
       }
     }
   }
-
-  @mixin overflow-hidden($rwd: null) {
-    @if $rwd==null {
-      overflow: hidden;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow: hidden;
-      }
-    }
-  }
-
-  @mixin overflow-clip($rwd: null) {
-    @if $rwd==null {
-      overflow: clip;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow: clip;
-      }
-    }
-  }
-
-  @mixin overflow-visible($rwd: null) {
-    @if $rwd==null {
-      overflow: visible;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow: visible;
-      }
-    }
-  }
-
-  @mixin overflow-scroll($rwd: null) {
-    @if $rwd==null {
-      overflow: scroll;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow: scroll;
-      }
-    }
-  }
-
-  @mixin overflow-x-auto($rwd: null) {
-    @if $rwd==null {
-      overflow-x: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: auto;
-      }
-    }
-  }
-
-  @mixin overflow-y-auto($rwd: null) {
-    @if $rwd==null {
-      overflow-y: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: auto;
-      }
-    }
-  }
-
-  @mixin overflow-x-hidden($rwd: null) {
-    @if $rwd==null {
-      overflow-x: hidden;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: hidden;
-      }
-    }
-  }
-
-  @mixin overflow-y-hidden($rwd: null) {
-    @if $rwd==null {
-      overflow-y: hidden;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: hidden;
-      }
-    }
-  }
-
-  @mixin overflow-x-clip($rwd: null) {
-    @if $rwd==null {
-      overflow-x: clip;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: clip;
-      }
-    }
-  }
-
-  @mixin overflow-y-clip($rwd: null) {
-    @if $rwd==null {
-      overflow-y: clip;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: clip;
-      }
-    }
-  }
-
-  @mixin overflow-x-visible($rwd: null) {
-    @if $rwd==null {
-      overflow-x: visible;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: visible;
-      }
-    }
-  }
-
-  @mixin overflow-y-visible($rwd: null) {
-    @if $rwd==null {
-      overflow-y: visible;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: visible;
-      }
-    }
-  }
-
-  @mixin overflow-x-scroll($rwd: null) {
-    @if $rwd==null {
-      overflow-x: scroll;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: scroll;
-      }
-    }
-  }
-
-  @mixin overflow-y-scroll($rwd: null) {
-    @if $rwd==null {
-      overflow-y: scroll;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: scroll;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:overflow-auto {
-    @include overflow-auto($sm);
-  }
-
-  @mixin sm\:overflow-hidden {
-    @include overflow-hidden($sm);
-  }
-
-  @mixin sm\:overflow-clip {
-    @include overflow-clip($sm);
-  }
-
-  @mixin sm\:overflow-visible {
-    @include overflow-visible($sm);
-  }
-
-  @mixin sm\:overflow-scroll {
-    @include overflow-scroll($sm);
-  }
-
-  @mixin sm\:overflow-x-auto {
-    @include overflow-x-auto($sm);
-  }
-
-  @mixin sm\:overflow-y-auto {
-    @include overflow-y-auto($sm);
-  }
-
-  @mixin sm\:overflow-x-hidden {
-    @include overflow-x-hidden($sm);
-  }
-
-  @mixin sm\:overflow-y-hidden {
-    @include overflow-y-hidden($sm);
-  }
-
-  @mixin sm\:overflow-x-clip {
-    @include overflow-x-clip($sm);
-  }
-
-  @mixin sm\:overflow-y-clip {
-    @include overflow-y-clip($sm);
-  }
-
-  @mixin sm\:overflow-x-visible {
-    @include overflow-x-visible($sm);
-  }
-
-  @mixin sm\:overflow-y-visible {
-    @include overflow-y-visible($sm);
-  }
-
-  @mixin sm\:overflow-x-scroll {
-    @include overflow-x-scroll($sm);
-  }
-
-  @mixin sm\:overflow-y-scroll {
-    @include overflow-y-scroll($sm);
-  }
-
-  @mixin md\:overflow-auto {
-    @include overflow-auto($md);
-  }
-
-  @mixin md\:overflow-hidden {
-    @include overflow-hidden($md);
-  }
-
-  @mixin md\:overflow-clip {
-    @include overflow-clip($md);
-  }
-
-  @mixin md\:overflow-visible {
-    @include overflow-visible($md);
-  }
-
-  @mixin md\:overflow-scroll {
-    @include overflow-scroll($md);
-  }
-
-  @mixin md\:overflow-x-auto {
-    @include overflow-x-auto($md);
-  }
-
-  @mixin md\:overflow-y-auto {
-    @include overflow-y-auto($md);
-  }
-
-  @mixin md\:overflow-x-hidden {
-    @include overflow-x-hidden($md);
-  }
-
-  @mixin md\:overflow-y-hidden {
-    @include overflow-y-hidden($md);
-  }
-
-  @mixin md\:overflow-x-clip {
-    @include overflow-x-clip($md);
-  }
-
-  @mixin md\:overflow-y-clip {
-    @include overflow-y-clip($md);
-  }
-
-  @mixin md\:overflow-x-visible {
-    @include overflow-x-visible($md);
-  }
-
-  @mixin md\:overflow-y-visible {
-    @include overflow-y-visible($md);
-  }
-
-  @mixin md\:overflow-x-scroll {
-    @include overflow-x-scroll($md);
-  }
-
-  @mixin md\:overflow-y-scroll {
-    @include overflow-y-scroll($md);
-  }
-
-  @mixin lg\:overflow-auto {
-    @include overflow-auto($lg);
-  }
-
-  @mixin lg\:overflow-hidden {
-    @include overflow-hidden($lg);
-  }
-
-  @mixin lg\:overflow-clip {
-    @include overflow-clip($lg);
-  }
-
-  @mixin lg\:overflow-visible {
-    @include overflow-visible($lg);
-  }
-
-  @mixin lg\:overflow-scroll {
-    @include overflow-scroll($lg);
-  }
-
-  @mixin lg\:overflow-x-auto {
-    @include overflow-x-auto($lg);
-  }
-
-  @mixin lg\:overflow-y-auto {
-    @include overflow-y-auto($lg);
-  }
-
-  @mixin lg\:overflow-x-hidden {
-    @include overflow-x-hidden($lg);
-  }
-
-  @mixin lg\:overflow-y-hidden {
-    @include overflow-y-hidden($lg);
-  }
-
-  @mixin lg\:overflow-x-clip {
-    @include overflow-x-clip($lg);
-  }
-
-  @mixin lg\:overflow-y-clip {
-    @include overflow-y-clip($lg);
-  }
-
-  @mixin lg\:overflow-x-visible {
-    @include overflow-x-visible($lg);
-  }
-
-  @mixin lg\:overflow-y-visible {
-    @include overflow-y-visible($lg);
-  }
-
-  @mixin lg\:overflow-x-scroll {
-    @include overflow-x-scroll($lg);
-  }
-
-  @mixin lg\:overflow-y-scroll {
-    @include overflow-y-scroll($lg);
-  }
-
-  @mixin xl\:overflow-auto {
-    @include overflow-auto($xl);
-  }
-
-  @mixin xl\:overflow-hidden {
-    @include overflow-hidden($xl);
-  }
-
-  @mixin xl\:overflow-clip {
-    @include overflow-clip($xl);
-  }
-
-  @mixin xl\:overflow-visible {
-    @include overflow-visible($xl);
-  }
-
-  @mixin xl\:overflow-scroll {
-    @include overflow-scroll($xl);
-  }
-
-  @mixin xl\:overflow-x-auto {
-    @include overflow-x-auto($xl);
-  }
-
-  @mixin xl\:overflow-y-auto {
-    @include overflow-y-auto($xl);
-  }
-
-  @mixin xl\:overflow-x-hidden {
-    @include overflow-x-hidden($xl);
-  }
-
-  @mixin xl\:overflow-y-hidden {
-    @include overflow-y-hidden($xl);
-  }
-
-  @mixin xl\:overflow-x-clip {
-    @include overflow-x-clip($xl);
-  }
-
-  @mixin xl\:overflow-y-clip {
-    @include overflow-y-clip($xl);
-  }
-
-  @mixin xl\:overflow-x-visible {
-    @include overflow-x-visible($xl);
-  }
-
-  @mixin xl\:overflow-y-visible {
-    @include overflow-y-visible($xl);
-  }
-
-  @mixin xl\:overflow-x-scroll {
-    @include overflow-x-scroll($xl);
-  }
-
-  @mixin xl\:overflow-y-scroll {
-    @include overflow-y-scroll($xl);
-  }
-
-  @mixin \2xl\:overflow-auto {
-    @include overflow-auto($\2xl);
-  }
-
-  @mixin \2xl\:overflow-hidden {
-    @include overflow-hidden($\2xl);
-  }
-
-  @mixin \2xl\:overflow-clip {
-    @include overflow-clip($\2xl);
-  }
-
-  @mixin \2xl\:overflow-visible {
-    @include overflow-visible($\2xl);
-  }
-
-  @mixin \2xl\:overflow-scroll {
-    @include overflow-scroll($\2xl);
-  }
-
-  @mixin \2xl\:overflow-x-auto {
-    @include overflow-x-auto($\2xl);
-  }
-
-  @mixin \2xl\:overflow-y-auto {
-    @include overflow-y-auto($\2xl);
-  }
-
-  @mixin \2xl\:overflow-x-hidden {
-    @include overflow-x-hidden($\2xl);
-  }
-
-  @mixin \2xl\:overflow-y-hidden {
-    @include overflow-y-hidden($\2xl);
-  }
-
-  @mixin \2xl\:overflow-x-clip {
-    @include overflow-x-clip($\2xl);
-  }
-
-  @mixin \2xl\:overflow-y-clip {
-    @include overflow-y-clip($\2xl);
-  }
-
-  @mixin \2xl\:overflow-x-visible {
-    @include overflow-x-visible($\2xl);
-  }
-
-  @mixin \2xl\:overflow-y-visible {
-    @include overflow-y-visible($\2xl);
-  }
-
-  @mixin \2xl\:overflow-x-scroll {
-    @include overflow-x-scroll($\2xl);
-  }
-
-  @mixin \2xl\:overflow-y-scroll {
-    @include overflow-y-scroll($\2xl);
-  }
-
-  // x*/
 }

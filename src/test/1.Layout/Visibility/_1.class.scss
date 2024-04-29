@@ -2,99 +2,122 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Visibility */
-@if $Basic {
-  // /*x
-  @mixin visible($rwd: null) {
-    @if $rwd==null {
-      visibility: visible;
-    } @else {
-      @media (min-width: $rwd) {
-        visibility: visible;
+@use "../../setting" as *;
+@use "../../mode0" as *;
+@use "true" as *;
+
+@include describe("1.Layout") {
+  @include describe("TITLE") {
+    @include describe("Basic") {
+      @include it("visible") {
+        @include custom-expect-(visibility, visible) {
+          @include visible;
+        }
+      }
+
+      @include it("invisible") {
+        @include custom-expect-(visibility, hidden) {
+          @include invisible;
+        }
+      }
+
+      @include it("collapse") {
+        @include custom-expect-(visibility, collapse) {
+          @include collapse;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:visible") {
+        @include custom-expect-(visibility, visible, $sm) {
+          @include sm\:visible;
+        }
+      }
+
+      @include it("sm\:invisible") {
+        @include custom-expect-(visibility, hidden, $sm) {
+          @include sm\:invisible;
+        }
+      }
+
+      @include it("sm\:collapse") {
+        @include custom-expect-(visibility, collapse, $sm) {
+          @include sm\:collapse;
+        }
+      }
+
+      @include it("md\:visible") {
+        @include custom-expect-(visibility, visible, $md) {
+          @include md\:visible;
+        }
+      }
+
+      @include it("md\:invisible") {
+        @include custom-expect-(visibility, hidden, $md) {
+          @include md\:invisible;
+        }
+      }
+
+      @include it("md\:collapse") {
+        @include custom-expect-(visibility, collapse, $md) {
+          @include md\:collapse;
+        }
+      }
+
+      @include it("lg\:visible") {
+        @include custom-expect-(visibility, visible, $lg) {
+          @include lg\:visible;
+        }
+      }
+
+      @include it("lg\:invisible") {
+        @include custom-expect-(visibility, hidden, $lg) {
+          @include lg\:invisible;
+        }
+      }
+
+      @include it("lg\:collapse") {
+        @include custom-expect-(visibility, collapse, $lg) {
+          @include lg\:collapse;
+        }
+      }
+
+      @include it("xl\:visible") {
+        @include custom-expect-(visibility, visible, $xl) {
+          @include xl\:visible;
+        }
+      }
+
+      @include it("xl\:invisible") {
+        @include custom-expect-(visibility, hidden, $xl) {
+          @include xl\:invisible;
+        }
+      }
+
+      @include it("xl\:collapse") {
+        @include custom-expect-(visibility, collapse, $xl) {
+          @include xl\:collapse;
+        }
+      }
+
+      @include it("\2xl\:visible") {
+        @include custom-expect-(visibility, visible, $\2xl) {
+          @include \2xl\:visible;
+        }
+      }
+
+      @include it("\2xl\:invisible") {
+        @include custom-expect-(visibility, hidden, $\2xl) {
+          @include \2xl\:invisible;
+        }
+      }
+
+      @include it("\2xl\:collapse") {
+        @include custom-expect-(visibility, collapse, $\2xl) {
+          @include \2xl\:collapse;
+        }
       }
     }
   }
-
-  @mixin invisible($rwd: null) {
-    @if $rwd==null {
-      visibility: hidden;
-    } @else {
-      @media (min-width: $rwd) {
-        visibility: hidden;
-      }
-    }
-  }
-
-  @mixin collapse($rwd: null) {
-    @if $rwd==null {
-      visibility: collapse;
-    } @else {
-      @media (min-width: $rwd) {
-        visibility: collapse;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:visible {
-    @include visible($sm);
-  }
-
-  @mixin sm\:invisible {
-    @include invisible($sm);
-  }
-
-  @mixin sm\:collapse {
-    @include collapse($sm);
-  }
-
-  @mixin md\:visible {
-    @include visible($md);
-  }
-
-  @mixin md\:invisible {
-    @include invisible($md);
-  }
-
-  @mixin md\:collapse {
-    @include collapse($md);
-  }
-
-  @mixin lg\:visible {
-    @include visible($lg);
-  }
-
-  @mixin lg\:invisible {
-    @include invisible($lg);
-  }
-
-  @mixin lg\:collapse {
-    @include collapse($lg);
-  }
-
-  @mixin xl\:visible {
-    @include visible($xl);
-  }
-
-  @mixin xl\:invisible {
-    @include invisible($xl);
-  }
-
-  @mixin xl\:collapse {
-    @include collapse($xl);
-  }
-
-  @mixin \2xl\:visible {
-    @include visible($\2xl);
-  }
-
-  @mixin \2xl\:invisible {
-    @include invisible($\2xl);
-  }
-
-  @mixin \2xl\:collapse {
-    @include collapse($\2xl);
-  } // x*/
 }

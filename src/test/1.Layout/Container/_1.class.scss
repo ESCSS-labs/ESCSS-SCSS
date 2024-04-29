@@ -2,83 +2,82 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Container */
-@if $Basic {
-  // /*x
-  @mixin container($rwd: null) {
-    @if $rwd==null {
-      width: 100%;
+@include describe("1.Layout") {
+  @include describe("Container") {
+    @include describe("Basic") {
+      @include it("container") {
+        @include assert {
+          @include output {
+            @include container;
+          }
 
-      @media (min-width: $sm) {
-        max-width: $sm;
-      }
-
-      @media (min-width: $md) {
-        max-width: $md;
-      }
-
-      @media (min-width: $lg) {
-        max-width: $lg;
-      }
-
-      @media (min-width: $xl) {
-        max-width: $xl;
-      }
-
-      @media (min-width: $\2xl) {
-        max-width: $\2xl;
-      }
-    } @else {
-      @media (min-width: $rwd) {
-        width: 100%;
-
-        @media (min-width: $sm) {
-          max-width: $sm;
+          @include expect {
+            @include container;
+          }
         }
+      }
+    }
 
-        @media (min-width: $md) {
-          max-width: $md;
+    @include describe("Rwd") {
+      @include it("sm\:container") {
+        @include assert {
+          @include output {
+            @include sm\:container;
+          }
+
+          @include expect {
+            @include sm\:container;
+          }
         }
+      }
 
-        @media (min-width: $lg) {
-          max-width: $lg;
+      @include it("md\:container") {
+        @include assert {
+          @include output {
+            @include md\:container;
+          }
+
+          @include expect {
+            @include md\:container;
+          }
         }
+      }
 
-        @media (min-width: $xl) {
-          max-width: $xl;
+      @include it("lg\:container") {
+        @include assert {
+          @include output {
+            @include lg\:container;
+          }
+
+          @include expect {
+            @include lg\:container;
+          }
         }
+      }
 
-        @media (min-width: $\2xl) {
-          max-width: $\2xl;
+      @include it("xl\:container") {
+        @include assert {
+          @include output {
+            @include xl\:container;
+          }
+
+          @include expect {
+            @include xl\:container;
+          }
+        }
+      }
+
+      @include it("\2xl\:container") {
+        @include assert {
+          @include output {
+            @include \2xl\:container;
+          }
+
+          @include expect {
+            @include \2xl\:container;
+          }
         }
       }
     }
   }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:container {
-    @include container($sm);
-  }
-
-  @mixin md\:container {
-    @include container($md);
-  }
-
-  @mixin lg\:container {
-    @include container($lg);
-  }
-
-  @mixin xl\:container {
-    @include container($xl);
-  }
-
-  @mixin \2xl\:container {
-    @include container($\2xl);
-  }
-
-  // x*/
 }

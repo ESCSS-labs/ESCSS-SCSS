@@ -2,640 +2,766 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Display */
-@if $Basic {
-  // /*x
-  @mixin block($rwd: null) {
-    @if $rwd==null {
-      display: block;
-    } @else {
-      @media (min-width: $rwd) {
-        display: block;
+@include describe("1.Layout") {
+  @include describe("Display") {
+    @include describe("Basic") {
+      @include it("block") {
+        @include custom-expect-(display, block) {
+          @include block;
+        }
+      }
+
+      @include it("inline-block") {
+        @include custom-expect-(display, inline-block) {
+          @include inline-block;
+        }
+      }
+
+      @include it("inline") {
+        @include custom-expect-(display, inline) {
+          @include inline;
+        }
+      }
+
+      @include it("flex") {
+        @include custom-expect-(display, flex) {
+          @include flex;
+        }
+      }
+
+      @include it("inline-flex") {
+        @include custom-expect-(display, inline-flex) {
+          @include inline-flex;
+        }
+      }
+
+      @include it("table") {
+        @include custom-expect-(display, table) {
+          @include table;
+        }
+      }
+
+      @include it("inline-table") {
+        @include custom-expect-(display, inline-table) {
+          @include inline-table;
+        }
+      }
+
+      @include it("table-caption") {
+        @include custom-expect-(display, table-caption) {
+          @include table-caption;
+        }
+      }
+
+      @include it("table-cell") {
+        @include custom-expect-(display, table-cell) {
+          @include table-cell;
+        }
+      }
+
+      @include it("table-column") {
+        @include custom-expect-(display, table-column) {
+          @include table-column;
+        }
+      }
+
+      @include it("table-column-group") {
+        @include custom-expect-(display, table-column-group) {
+          @include table-column-group;
+        }
+      }
+
+      @include it("table-footer-group") {
+        @include custom-expect-(display, table-footer-group) {
+          @include table-footer-group;
+        }
+      }
+
+      @include it("table-header-group") {
+        @include custom-expect-(display, table-header-group) {
+          @include table-header-group;
+        }
+      }
+
+      @include it("table-row-group") {
+        @include custom-expect-(display, table-row-group) {
+          @include table-row-group;
+        }
+      }
+
+      @include it("table-row") {
+        @include custom-expect-(display, table-row) {
+          @include table-row;
+        }
+      }
+
+      @include it("flow-root") {
+        @include custom-expect-(display, flow-root) {
+          @include flow-root;
+        }
+      }
+
+      @include it("grid") {
+        @include custom-expect-(display, grid) {
+          @include grid;
+        }
+      }
+
+      @include it("inline-grid") {
+        @include custom-expect-(display, inline-grid) {
+          @include inline-grid;
+        }
+      }
+
+      @include it("contents") {
+        @include custom-expect-(display, contents) {
+          @include contents;
+        }
+      }
+
+      @include it("list-item") {
+        @include custom-expect-(display, list-item) {
+          @include list-item;
+        }
+      }
+
+      @include it("hidden") {
+        @include custom-expect-(display, none) {
+          @include hidden;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:block") {
+        @include custom-expect-(display, block, $sm) {
+          @include sm\:block;
+        }
+      }
+
+      @include it("sm\:inline-block") {
+        @include custom-expect-(display, inline-block, $sm) {
+          @include sm\:inline-block;
+        }
+      }
+
+      @include it("sm\:inline") {
+        @include custom-expect-(display, inline, $sm) {
+          @include sm\:inline;
+        }
+      }
+
+      @include it("sm\:flex") {
+        @include custom-expect-(display, flex, $sm) {
+          @include sm\:flex;
+        }
+      }
+
+      @include it("sm\:inline-flex") {
+        @include custom-expect-(display, inline-flex, $sm) {
+          @include sm\:inline-flex;
+        }
+      }
+
+      @include it("sm\:table") {
+        @include custom-expect-(display, table, $sm) {
+          @include sm\:table;
+        }
+      }
+
+      @include it("sm\:inline-table") {
+        @include custom-expect-(display, inline-table, $sm) {
+          @include sm\:inline-table;
+        }
+      }
+
+      @include it("sm\:table-caption") {
+        @include custom-expect-(display, table-caption, $sm) {
+          @include sm\:table-caption;
+        }
+      }
+
+      @include it("sm\:table-cell") {
+        @include custom-expect-(display, table-cell, $sm) {
+          @include sm\:table-cell;
+        }
+      }
+
+      @include it("sm\:table-column") {
+        @include custom-expect-(display, table-column, $sm) {
+          @include sm\:table-column;
+        }
+      }
+
+      @include it("sm\:table-column-group") {
+        @include custom-expect-(display, table-column-group, $sm) {
+          @include sm\:table-column-group;
+        }
+      }
+
+      @include it("sm\:table-footer-group") {
+        @include custom-expect-(display, table-footer-group, $sm) {
+          @include sm\:table-footer-group;
+        }
+      }
+
+      @include it("sm\:table-header-group") {
+        @include custom-expect-(display, table-header-group, $sm) {
+          @include sm\:table-header-group;
+        }
+      }
+
+      @include it("sm\:table-row-group") {
+        @include custom-expect-(display, table-row-group, $sm) {
+          @include sm\:table-row-group;
+        }
+      }
+
+      @include it("sm\:table-row") {
+        @include custom-expect-(display, table-row, $sm) {
+          @include sm\:table-row;
+        }
+      }
+
+      @include it("sm\:flow-root") {
+        @include custom-expect-(display, flow-root, $sm) {
+          @include sm\:flow-root;
+        }
+      }
+
+      @include it("sm\:grid") {
+        @include custom-expect-(display, grid, $sm) {
+          @include sm\:grid;
+        }
+      }
+
+      @include it("sm\:inline-grid") {
+        @include custom-expect-(display, inline-grid, $sm) {
+          @include sm\:inline-grid;
+        }
+      }
+
+      @include it("sm\:contents") {
+        @include custom-expect-(display, contents, $sm) {
+          @include sm\:contents;
+        }
+      }
+
+      @include it("sm\:list-item") {
+        @include custom-expect-(display, list-item, $sm) {
+          @include sm\:list-item;
+        }
+      }
+
+      @include it("sm\:hidden") {
+        @include custom-expect-(display, none, $sm) {
+          @include sm\:hidden;
+        }
+      }
+
+      @include it("md\:block") {
+        @include custom-expect-(display, block, $md) {
+          @include md\:block;
+        }
+      }
+
+      @include it("md\:inline-block") {
+        @include custom-expect-(display, inline-block, $md) {
+          @include md\:inline-block;
+        }
+      }
+
+      @include it("md\:inline") {
+        @include custom-expect-(display, inline, $md) {
+          @include md\:inline;
+        }
+      }
+
+      @include it("md\:flex") {
+        @include custom-expect-(display, flex, $md) {
+          @include md\:flex;
+        }
+      }
+
+      @include it("md\:inline-flex") {
+        @include custom-expect-(display, inline-flex, $md) {
+          @include md\:inline-flex;
+        }
+      }
+
+      @include it("md\:table") {
+        @include custom-expect-(display, table, $md) {
+          @include md\:table;
+        }
+      }
+
+      @include it("md\:inline-table") {
+        @include custom-expect-(display, inline-table, $md) {
+          @include md\:inline-table;
+        }
+      }
+
+      @include it("md\:table-caption") {
+        @include custom-expect-(display, table-caption, $md) {
+          @include md\:table-caption;
+        }
+      }
+
+      @include it("md\:table-cell") {
+        @include custom-expect-(display, table-cell, $md) {
+          @include md\:table-cell;
+        }
+      }
+
+      @include it("md\:table-column") {
+        @include custom-expect-(display, table-column, $md) {
+          @include md\:table-column;
+        }
+      }
+
+      @include it("md\:table-column-group") {
+        @include custom-expect-(display, table-column-group, $md) {
+          @include md\:table-column-group;
+        }
+      }
+
+      @include it("md\:table-footer-group") {
+        @include custom-expect-(display, table-footer-group, $md) {
+          @include md\:table-footer-group;
+        }
+      }
+
+      @include it("md\:table-header-group") {
+        @include custom-expect-(display, table-header-group, $md) {
+          @include md\:table-header-group;
+        }
+      }
+
+      @include it("md\:table-row-group") {
+        @include custom-expect-(display, table-row-group, $md) {
+          @include md\:table-row-group;
+        }
+      }
+
+      @include it("md\:table-row") {
+        @include custom-expect-(display, table-row, $md) {
+          @include md\:table-row;
+        }
+      }
+
+      @include it("md\:flow-root") {
+        @include custom-expect-(display, flow-root, $md) {
+          @include md\:flow-root;
+        }
+      }
+
+      @include it("md\:grid") {
+        @include custom-expect-(display, grid, $md) {
+          @include md\:grid;
+        }
+      }
+
+      @include it("md\:inline-grid") {
+        @include custom-expect-(display, inline-grid, $md) {
+          @include md\:inline-grid;
+        }
+      }
+
+      @include it("md\:contents") {
+        @include custom-expect-(display, contents, $md) {
+          @include md\:contents;
+        }
+      }
+
+      @include it("md\:list-item") {
+        @include custom-expect-(display, list-item, $md) {
+          @include md\:list-item;
+        }
+      }
+
+      @include it("md\:hidden") {
+        @include custom-expect-(display, none, $md) {
+          @include md\:hidden;
+        }
+      }
+
+      @include it("lg\:block") {
+        @include custom-expect-(display, block, $lg) {
+          @include lg\:block;
+        }
+      }
+
+      @include it("lg\:inline-block") {
+        @include custom-expect-(display, inline-block, $lg) {
+          @include lg\:inline-block;
+        }
+      }
+
+      @include it("lg\:inline") {
+        @include custom-expect-(display, inline, $lg) {
+          @include lg\:inline;
+        }
+      }
+
+      @include it("lg\:flex") {
+        @include custom-expect-(display, flex, $lg) {
+          @include lg\:flex;
+        }
+      }
+
+      @include it("lg\:inline-flex") {
+        @include custom-expect-(display, inline-flex, $lg) {
+          @include lg\:inline-flex;
+        }
+      }
+
+      @include it("lg\:table") {
+        @include custom-expect-(display, table, $lg) {
+          @include lg\:table;
+        }
+      }
+
+      @include it("lg\:inline-table") {
+        @include custom-expect-(display, inline-table, $lg) {
+          @include lg\:inline-table;
+        }
+      }
+
+      @include it("lg\:table-caption") {
+        @include custom-expect-(display, table-caption, $lg) {
+          @include lg\:table-caption;
+        }
+      }
+
+      @include it("lg\:table-cell") {
+        @include custom-expect-(display, table-cell, $lg) {
+          @include lg\:table-cell;
+        }
+      }
+
+      @include it("lg\:table-column") {
+        @include custom-expect-(display, table-column, $lg) {
+          @include lg\:table-column;
+        }
+      }
+
+      @include it("lg\:table-column-group") {
+        @include custom-expect-(display, table-column-group, $lg) {
+          @include lg\:table-column-group;
+        }
+      }
+
+      @include it("lg\:table-footer-group") {
+        @include custom-expect-(display, table-footer-group, $lg) {
+          @include lg\:table-footer-group;
+        }
+      }
+
+      @include it("lg\:table-header-group") {
+        @include custom-expect-(display, table-header-group, $lg) {
+          @include lg\:table-header-group;
+        }
+      }
+
+      @include it("lg\:table-row-group") {
+        @include custom-expect-(display, table-row-group, $lg) {
+          @include lg\:table-row-group;
+        }
+      }
+
+      @include it("lg\:table-row") {
+        @include custom-expect-(display, table-row, $lg) {
+          @include lg\:table-row;
+        }
+      }
+
+      @include it("lg\:flow-root") {
+        @include custom-expect-(display, flow-root, $lg) {
+          @include lg\:flow-root;
+        }
+      }
+
+      @include it("lg\:grid") {
+        @include custom-expect-(display, grid, $lg) {
+          @include lg\:grid;
+        }
+      }
+
+      @include it("lg\:inline-grid") {
+        @include custom-expect-(display, inline-grid, $lg) {
+          @include lg\:inline-grid;
+        }
+      }
+
+      @include it("lg\:contents") {
+        @include custom-expect-(display, contents, $lg) {
+          @include lg\:contents;
+        }
+      }
+
+      @include it("lg\:list-item") {
+        @include custom-expect-(display, list-item, $lg) {
+          @include lg\:list-item;
+        }
+      }
+
+      @include it("lg\:hidden") {
+        @include custom-expect-(display, none, $lg) {
+          @include lg\:hidden;
+        }
+      }
+
+      @include it("xl\:block") {
+        @include custom-expect-(display, block, $xl) {
+          @include xl\:block;
+        }
+      }
+
+      @include it("xl\:inline-block") {
+        @include custom-expect-(display, inline-block, $xl) {
+          @include xl\:inline-block;
+        }
+      }
+
+      @include it("xl\:inline") {
+        @include custom-expect-(display, inline, $xl) {
+          @include xl\:inline;
+        }
+      }
+
+      @include it("xl\:flex") {
+        @include custom-expect-(display, flex, $xl) {
+          @include xl\:flex;
+        }
+      }
+
+      @include it("xl\:inline-flex") {
+        @include custom-expect-(display, inline-flex, $xl) {
+          @include xl\:inline-flex;
+        }
+      }
+
+      @include it("xl\:table") {
+        @include custom-expect-(display, table, $xl) {
+          @include xl\:table;
+        }
+      }
+
+      @include it("xl\:inline-table") {
+        @include custom-expect-(display, inline-table, $xl) {
+          @include xl\:inline-table;
+        }
+      }
+
+      @include it("xl\:table-caption") {
+        @include custom-expect-(display, table-caption, $xl) {
+          @include xl\:table-caption;
+        }
+      }
+
+      @include it("xl\:table-cell") {
+        @include custom-expect-(display, table-cell, $xl) {
+          @include xl\:table-cell;
+        }
+      }
+
+      @include it("xl\:table-column") {
+        @include custom-expect-(display, table-column, $xl) {
+          @include xl\:table-column;
+        }
+      }
+
+      @include it("xl\:table-column-group") {
+        @include custom-expect-(display, table-column-group, $xl) {
+          @include xl\:table-column-group;
+        }
+      }
+
+      @include it("xl\:table-footer-group") {
+        @include custom-expect-(display, table-footer-group, $xl) {
+          @include xl\:table-footer-group;
+        }
+      }
+
+      @include it("xl\:table-header-group") {
+        @include custom-expect-(display, table-header-group, $xl) {
+          @include xl\:table-header-group;
+        }
+      }
+
+      @include it("xl\:table-row-group") {
+        @include custom-expect-(display, table-row-group, $xl) {
+          @include xl\:table-row-group;
+        }
+      }
+
+      @include it("xl\:table-row") {
+        @include custom-expect-(display, table-row, $xl) {
+          @include xl\:table-row;
+        }
+      }
+
+      @include it("xl\:flow-root") {
+        @include custom-expect-(display, flow-root, $xl) {
+          @include xl\:flow-root;
+        }
+      }
+
+      @include it("xl\:grid") {
+        @include custom-expect-(display, grid, $xl) {
+          @include xl\:grid;
+        }
+      }
+
+      @include it("xl\:inline-grid") {
+        @include custom-expect-(display, inline-grid, $xl) {
+          @include xl\:inline-grid;
+        }
+      }
+
+      @include it("xl\:contents") {
+        @include custom-expect-(display, contents, $xl) {
+          @include xl\:contents;
+        }
+      }
+
+      @include it("xl\:list-item") {
+        @include custom-expect-(display, list-item, $xl) {
+          @include xl\:list-item;
+        }
+      }
+
+      @include it("xl\:hidden") {
+        @include custom-expect-(display, none, $xl) {
+          @include xl\:hidden;
+        }
+      }
+
+      @include it("\2xl\:block") {
+        @include custom-expect-(display, block, $\2xl) {
+          @include \2xl\:block;
+        }
+      }
+
+      @include it("\2xl\:inline-block") {
+        @include custom-expect-(display, inline-block, $\2xl) {
+          @include \2xl\:inline-block;
+        }
+      }
+
+      @include it("\2xl\:inline") {
+        @include custom-expect-(display, inline, $\2xl) {
+          @include \2xl\:inline;
+        }
+      }
+
+      @include it("\2xl\:flex") {
+        @include custom-expect-(display, flex, $\2xl) {
+          @include \2xl\:flex;
+        }
+      }
+
+      @include it("\2xl\:inline-flex") {
+        @include custom-expect-(display, inline-flex, $\2xl) {
+          @include \2xl\:inline-flex;
+        }
+      }
+
+      @include it("\2xl\:table") {
+        @include custom-expect-(display, table, $\2xl) {
+          @include \2xl\:table;
+        }
+      }
+
+      @include it("\2xl\:inline-table") {
+        @include custom-expect-(display, inline-table, $\2xl) {
+          @include \2xl\:inline-table;
+        }
+      }
+
+      @include it("\2xl\:table-caption") {
+        @include custom-expect-(display, table-caption, $\2xl) {
+          @include \2xl\:table-caption;
+        }
+      }
+
+      @include it("\2xl\:table-cell") {
+        @include custom-expect-(display, table-cell, $\2xl) {
+          @include \2xl\:table-cell;
+        }
+      }
+
+      @include it("\2xl\:table-column") {
+        @include custom-expect-(display, table-column, $\2xl) {
+          @include \2xl\:table-column;
+        }
+      }
+
+      @include it("\2xl\:table-column-group") {
+        @include custom-expect-(display, table-column-group, $\2xl) {
+          @include \2xl\:table-column-group;
+        }
+      }
+
+      @include it("\2xl\:table-footer-group") {
+        @include custom-expect-(display, table-footer-group, $\2xl) {
+          @include \2xl\:table-footer-group;
+        }
+      }
+
+      @include it("\2xl\:table-header-group") {
+        @include custom-expect-(display, table-header-group, $\2xl) {
+          @include \2xl\:table-header-group;
+        }
+      }
+
+      @include it("\2xl\:table-row-group") {
+        @include custom-expect-(display, table-row-group, $\2xl) {
+          @include \2xl\:table-row-group;
+        }
+      }
+
+      @include it("\2xl\:table-row") {
+        @include custom-expect-(display, table-row, $\2xl) {
+          @include \2xl\:table-row;
+        }
+      }
+
+      @include it("\2xl\:flow-root") {
+        @include custom-expect-(display, flow-root, $\2xl) {
+          @include \2xl\:flow-root;
+        }
+      }
+
+      @include it("\2xl\:grid") {
+        @include custom-expect-(display, grid, $\2xl) {
+          @include \2xl\:grid;
+        }
+      }
+
+      @include it("\2xl\:inline-grid") {
+        @include custom-expect-(display, inline-grid, $\2xl) {
+          @include \2xl\:inline-grid;
+        }
+      }
+
+      @include it("\2xl\:contents") {
+        @include custom-expect-(display, contents, $\2xl) {
+          @include \2xl\:contents;
+        }
+      }
+
+      @include it("\2xl\:list-item") {
+        @include custom-expect-(display, list-item, $\2xl) {
+          @include \2xl\:list-item;
+        }
+      }
+
+      @include it("\2xl\:hidden") {
+        @include custom-expect-(display, none, $\2xl) {
+          @include \2xl\:hidden;
+        }
       }
     }
   }
-
-  @mixin inline-block($rwd: null) {
-    @if $rwd==null {
-      display: inline-block;
-    } @else {
-      @media (min-width: $rwd) {
-        display: inline-block;
-      }
-    }
-  }
-
-  @mixin inline($rwd: null) {
-    @if $rwd==null {
-      display: inline;
-    } @else {
-      @media (min-width: $rwd) {
-        display: inline;
-      }
-    }
-  }
-
-  @mixin flex($rwd: null) {
-    @if $rwd==null {
-      display: flex;
-    } @else {
-      @media (min-width: $rwd) {
-        display: flex;
-      }
-    }
-  }
-
-  @mixin inline-flex($rwd: null) {
-    @if $rwd==null {
-      display: inline-flex;
-    } @else {
-      @media (min-width: $rwd) {
-        display: inline-flex;
-      }
-    }
-  }
-
-  @mixin table($rwd: null) {
-    @if $rwd==null {
-      display: table;
-    } @else {
-      @media (min-width: $rwd) {
-        display: table;
-      }
-    }
-  }
-
-  @mixin inline-table($rwd: null) {
-    @if $rwd==null {
-      display: inline-table;
-    } @else {
-      @media (min-width: $rwd) {
-        display: inline-table;
-      }
-    }
-  }
-
-  @mixin table-caption($rwd: null) {
-    @if $rwd==null {
-      display: table-caption;
-    } @else {
-      @media (min-width: $rwd) {
-        display: table-caption;
-      }
-    }
-  }
-
-  @mixin table-cell($rwd: null) {
-    @if $rwd==null {
-      display: table-cell;
-    } @else {
-      @media (min-width: $rwd) {
-        display: table-cell;
-      }
-    }
-  }
-
-  @mixin table-column($rwd: null) {
-    @if $rwd==null {
-      display: table-column;
-    } @else {
-      @media (min-width: $rwd) {
-        display: table-column;
-      }
-    }
-  }
-
-  @mixin table-column-group($rwd: null) {
-    @if $rwd==null {
-      display: table-column-group;
-    } @else {
-      @media (min-width: $rwd) {
-        display: table-column-group;
-      }
-    }
-  }
-
-  @mixin table-footer-group($rwd: null) {
-    @if $rwd==null {
-      display: table-footer-group;
-    } @else {
-      @media (min-width: $rwd) {
-        display: table-footer-group;
-      }
-    }
-  }
-
-  @mixin table-header-group($rwd: null) {
-    @if $rwd==null {
-      display: table-header-group;
-    } @else {
-      @media (min-width: $rwd) {
-        display: table-header-group;
-      }
-    }
-  }
-
-  @mixin table-row-group($rwd: null) {
-    @if $rwd==null {
-      display: table-row-group;
-    } @else {
-      @media (min-width: $rwd) {
-        display: table-row-group;
-      }
-    }
-  }
-
-  @mixin table-row($rwd: null) {
-    @if $rwd==null {
-      display: table-row;
-    } @else {
-      @media (min-width: $rwd) {
-        display: table-row;
-      }
-    }
-  }
-
-  @mixin flow-root($rwd: null) {
-    @if $rwd==null {
-      display: flow-root;
-    } @else {
-      @media (min-width: $rwd) {
-        display: flow-root;
-      }
-    }
-  }
-
-  @mixin grid($rwd: null) {
-    @if $rwd==null {
-      display: grid;
-    } @else {
-      @media (min-width: $rwd) {
-        display: grid;
-      }
-    }
-  }
-
-  @mixin inline-grid($rwd: null) {
-    @if $rwd==null {
-      display: inline-grid;
-    } @else {
-      @media (min-width: $rwd) {
-        display: inline-grid;
-      }
-    }
-  }
-
-  @mixin contents($rwd: null) {
-    @if $rwd==null {
-      display: contents;
-    } @else {
-      @media (min-width: $rwd) {
-        display: contents;
-      }
-    }
-  }
-
-  @mixin list-item($rwd: null) {
-    @if $rwd==null {
-      display: list-item;
-    } @else {
-      @media (min-width: $rwd) {
-        display: list-item;
-      }
-    }
-  }
-
-  @mixin hidden($rwd: null) {
-    @if $rwd==null {
-      display: none;
-    } @else {
-      @media (min-width: $rwd) {
-        display: none;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:block {
-    @include block($sm);
-  }
-
-  @mixin sm\:inline-block {
-    @include inline-block($sm);
-  }
-
-  @mixin sm\:inline {
-    @include inline($sm);
-  }
-
-  @mixin sm\:flex {
-    @include flex($sm);
-  }
-
-  @mixin sm\:inline-flex {
-    @include inline-flex($sm);
-  }
-
-  @mixin sm\:table {
-    @include table($sm);
-  }
-
-  @mixin sm\:inline-table {
-    @include inline-table($sm);
-  }
-
-  @mixin sm\:table-caption {
-    @include table-caption($sm);
-  }
-
-  @mixin sm\:table-cell {
-    @include table-cell($sm);
-  }
-
-  @mixin sm\:table-column {
-    @include table-column($sm);
-  }
-
-  @mixin sm\:table-column-group {
-    @include table-column-group($sm);
-  }
-
-  @mixin sm\:table-footer-group {
-    @include table-footer-group($sm);
-  }
-
-  @mixin sm\:table-header-group {
-    @include table-header-group($sm);
-  }
-
-  @mixin sm\:table-row-group {
-    @include table-row-group($sm);
-  }
-
-  @mixin sm\:table-row {
-    @include table-row($sm);
-  }
-
-  @mixin sm\:flow-root {
-    @include flow-root($sm);
-  }
-
-  @mixin sm\:grid {
-    @include grid($sm);
-  }
-
-  @mixin sm\:inline-grid {
-    @include inline-grid($sm);
-  }
-
-  @mixin sm\:contents {
-    @include contents($sm);
-  }
-
-  @mixin sm\:list-item {
-    @include list-item($sm);
-  }
-
-  @mixin sm\:hidden {
-    @include hidden($sm);
-  }
-
-  @mixin md\:block {
-    @include block($md);
-  }
-
-  @mixin md\:inline-block {
-    @include inline-block($md);
-  }
-
-  @mixin md\:inline {
-    @include inline($md);
-  }
-
-  @mixin md\:flex {
-    @include flex($md);
-  }
-
-  @mixin md\:inline-flex {
-    @include inline-flex($md);
-  }
-
-  @mixin md\:table {
-    @include table($md);
-  }
-
-  @mixin md\:inline-table {
-    @include inline-table($md);
-  }
-
-  @mixin md\:table-caption {
-    @include table-caption($md);
-  }
-
-  @mixin md\:table-cell {
-    @include table-cell($md);
-  }
-
-  @mixin md\:table-column {
-    @include table-column($md);
-  }
-
-  @mixin md\:table-column-group {
-    @include table-column-group($md);
-  }
-
-  @mixin md\:table-footer-group {
-    @include table-footer-group($md);
-  }
-
-  @mixin md\:table-header-group {
-    @include table-header-group($md);
-  }
-
-  @mixin md\:table-row-group {
-    @include table-row-group($md);
-  }
-
-  @mixin md\:table-row {
-    @include table-row($md);
-  }
-
-  @mixin md\:flow-root {
-    @include flow-root($md);
-  }
-
-  @mixin md\:grid {
-    @include grid($md);
-  }
-
-  @mixin md\:inline-grid {
-    @include inline-grid($md);
-  }
-
-  @mixin md\:contents {
-    @include contents($md);
-  }
-
-  @mixin md\:list-item {
-    @include list-item($md);
-  }
-
-  @mixin md\:hidden {
-    @include hidden($md);
-  }
-
-  @mixin lg\:block {
-    @include block($lg);
-  }
-
-  @mixin lg\:inline-block {
-    @include inline-block($lg);
-  }
-
-  @mixin lg\:inline {
-    @include inline($lg);
-  }
-
-  @mixin lg\:flex {
-    @include flex($lg);
-  }
-
-  @mixin lg\:inline-flex {
-    @include inline-flex($lg);
-  }
-
-  @mixin lg\:table {
-    @include table($lg);
-  }
-
-  @mixin lg\:inline-table {
-    @include inline-table($lg);
-  }
-
-  @mixin lg\:table-caption {
-    @include table-caption($lg);
-  }
-
-  @mixin lg\:table-cell {
-    @include table-cell($lg);
-  }
-
-  @mixin lg\:table-column {
-    @include table-column($lg);
-  }
-
-  @mixin lg\:table-column-group {
-    @include table-column-group($lg);
-  }
-
-  @mixin lg\:table-footer-group {
-    @include table-footer-group($lg);
-  }
-
-  @mixin lg\:table-header-group {
-    @include table-header-group($lg);
-  }
-
-  @mixin lg\:table-row-group {
-    @include table-row-group($lg);
-  }
-
-  @mixin lg\:table-row {
-    @include table-row($lg);
-  }
-
-  @mixin lg\:flow-root {
-    @include flow-root($lg);
-  }
-
-  @mixin lg\:grid {
-    @include grid($lg);
-  }
-
-  @mixin lg\:inline-grid {
-    @include inline-grid($lg);
-  }
-
-  @mixin lg\:contents {
-    @include contents($lg);
-  }
-
-  @mixin lg\:list-item {
-    @include list-item($lg);
-  }
-
-  @mixin lg\:hidden {
-    @include hidden($lg);
-  }
-
-  @mixin xl\:block {
-    @include block($xl);
-  }
-
-  @mixin xl\:inline-block {
-    @include inline-block($xl);
-  }
-
-  @mixin xl\:inline {
-    @include inline($xl);
-  }
-
-  @mixin xl\:flex {
-    @include flex($xl);
-  }
-
-  @mixin xl\:inline-flex {
-    @include inline-flex($xl);
-  }
-
-  @mixin xl\:table {
-    @include table($xl);
-  }
-
-  @mixin xl\:inline-table {
-    @include inline-table($xl);
-  }
-
-  @mixin xl\:table-caption {
-    @include table-caption($xl);
-  }
-
-  @mixin xl\:table-cell {
-    @include table-cell($xl);
-  }
-
-  @mixin xl\:table-column {
-    @include table-column($xl);
-  }
-
-  @mixin xl\:table-column-group {
-    @include table-column-group($xl);
-  }
-
-  @mixin xl\:table-footer-group {
-    @include table-footer-group($xl);
-  }
-
-  @mixin xl\:table-header-group {
-    @include table-header-group($xl);
-  }
-
-  @mixin xl\:table-row-group {
-    @include table-row-group($xl);
-  }
-
-  @mixin xl\:table-row {
-    @include table-row($xl);
-  }
-
-  @mixin xl\:flow-root {
-    @include flow-root($xl);
-  }
-
-  @mixin xl\:grid {
-    @include grid($xl);
-  }
-
-  @mixin xl\:inline-grid {
-    @include inline-grid($xl);
-  }
-
-  @mixin xl\:contents {
-    @include contents($xl);
-  }
-
-  @mixin xl\:list-item {
-    @include list-item($xl);
-  }
-
-  @mixin xl\:hidden {
-    @include hidden($xl);
-  }
-
-  @mixin \2xl\:block {
-    @include block($\2xl);
-  }
-
-  @mixin \2xl\:inline-block {
-    @include inline-block($\2xl);
-  }
-
-  @mixin \2xl\:inline {
-    @include inline($\2xl);
-  }
-
-  @mixin \2xl\:flex {
-    @include flex($\2xl);
-  }
-
-  @mixin \2xl\:inline-flex {
-    @include inline-flex($\2xl);
-  }
-
-  @mixin \2xl\:table {
-    @include table($\2xl);
-  }
-
-  @mixin \2xl\:inline-table {
-    @include inline-table($\2xl);
-  }
-
-  @mixin \2xl\:table-caption {
-    @include table-caption($\2xl);
-  }
-
-  @mixin \2xl\:table-cell {
-    @include table-cell($\2xl);
-  }
-
-  @mixin \2xl\:table-column {
-    @include table-column($\2xl);
-  }
-
-  @mixin \2xl\:table-column-group {
-    @include table-column-group($\2xl);
-  }
-
-  @mixin \2xl\:table-footer-group {
-    @include table-footer-group($\2xl);
-  }
-
-  @mixin \2xl\:table-header-group {
-    @include table-header-group($\2xl);
-  }
-
-  @mixin \2xl\:table-row-group {
-    @include table-row-group($\2xl);
-  }
-
-  @mixin \2xl\:table-row {
-    @include table-row($\2xl);
-  }
-
-  @mixin \2xl\:flow-root {
-    @include flow-root($\2xl);
-  }
-
-  @mixin \2xl\:grid {
-    @include grid($\2xl);
-  }
-
-  @mixin \2xl\:inline-grid {
-    @include inline-grid($\2xl);
-  }
-
-  @mixin \2xl\:contents {
-    @include contents($\2xl);
-  }
-
-  @mixin \2xl\:list-item {
-    @include list-item($\2xl);
-  }
-
-  @mixin \2xl\:hidden {
-    @include hidden($\2xl);
-  }
-  // x*/
 }
