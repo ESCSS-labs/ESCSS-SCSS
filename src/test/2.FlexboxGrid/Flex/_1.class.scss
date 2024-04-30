@@ -2,144 +2,192 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Flex */
-@if $Basic {
-  // /*x
-  @mixin flex-1 {
-    @include flex-(1 1 0%);
-  }
+@include describe("2.Flexbox & Grid") {
+  @include describe("Flex") {
+    @include describe("Basic") {
+      @include it("flex-1") {
+        @include custom-expect-(flex, 1 1 0%) {
+          @include flex-1;
+        }
+      }
 
-  @mixin flex-auto {
-    @include flex-(1 1 auto);
-  }
+      @include it("flex-auto") {
+        @include custom-expect-(flex, 1 1 auto) {
+          @include flex-auto;
+        }
+      }
 
-  @mixin flex-initial {
-    @include flex-(0 1 auto);
-  }
+      @include it("flex-initial") {
+        @include custom-expect-(flex, 0 1 auto) {
+          @include flex-initial;
+        }
+      }
 
-  @mixin flex-none {
-    @include flex-(none);
-  } // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:flex-1 {
-      @include flex-(1 1 0%, $sm);
+      @include it("flex-none") {
+        @include custom-expect-(flex, none) {
+          @include flex-none;
+        }
+      }
     }
 
-    @mixin sm\:flex-auto {
-      @include flex-(1 1 auto, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:flex-1") {
+        @include custom-expect-(flex, 1 1 0%, $sm) {
+          @include sm\:flex-1;
+        }
+      }
+
+      @include it("sm\:flex-auto") {
+        @include custom-expect-(flex, 1 1 auto, $sm) {
+          @include sm\:flex-auto;
+        }
+      }
+
+      @include it("sm\:flex-initial") {
+        @include custom-expect-(flex, 0 1 auto, $sm) {
+          @include sm\:flex-initial;
+        }
+      }
+
+      @include it("sm\:flex-none") {
+        @include custom-expect-(flex, none, $sm) {
+          @include sm\:flex-none;
+        }
+      }
+
+      @include it("md\:flex-1") {
+        @include custom-expect-(flex, 1 1 0%, $md) {
+          @include md\:flex-1;
+        }
+      }
+
+      @include it("md\:flex-auto") {
+        @include custom-expect-(flex, 1 1 auto, $md) {
+          @include md\:flex-auto;
+        }
+      }
+
+      @include it("md\:flex-initial") {
+        @include custom-expect-(flex, 0 1 auto, $md) {
+          @include md\:flex-initial;
+        }
+      }
+
+      @include it("md\:flex-none") {
+        @include custom-expect-(flex, none, $md) {
+          @include md\:flex-none;
+        }
+      }
+
+      @include it("lg\:flex-1") {
+        @include custom-expect-(flex, 1 1 0%, $lg) {
+          @include lg\:flex-1;
+        }
+      }
+
+      @include it("lg\:flex-auto") {
+        @include custom-expect-(flex, 1 1 auto, $lg) {
+          @include lg\:flex-auto;
+        }
+      }
+
+      @include it("lg\:flex-initial") {
+        @include custom-expect-(flex, 0 1 auto, $lg) {
+          @include lg\:flex-initial;
+        }
+      }
+
+      @include it("lg\:flex-none") {
+        @include custom-expect-(flex, none, $lg) {
+          @include lg\:flex-none;
+        }
+      }
+
+      @include it("xl\:flex-1") {
+        @include custom-expect-(flex, 1 1 0%, $xl) {
+          @include xl\:flex-1;
+        }
+      }
+
+      @include it("xl\:flex-auto") {
+        @include custom-expect-(flex, 1 1 auto, $xl) {
+          @include xl\:flex-auto;
+        }
+      }
+
+      @include it("xl\:flex-initial") {
+        @include custom-expect-(flex, 0 1 auto, $xl) {
+          @include xl\:flex-initial;
+        }
+      }
+
+      @include it("xl\:flex-none") {
+        @include custom-expect-(flex, none, $xl) {
+          @include xl\:flex-none;
+        }
+      }
+
+      @include it("\2xl\:flex-1") {
+        @include custom-expect-(flex, 1 1 0%, $\2xl) {
+          @include \2xl\:flex-1;
+        }
+      }
+
+      @include it("\2xl\:flex-auto") {
+        @include custom-expect-(flex, 1 1 auto, $\2xl) {
+          @include \2xl\:flex-auto;
+        }
+      }
+
+      @include it("\2xl\:flex-initial") {
+        @include custom-expect-(flex, 0 1 auto, $\2xl) {
+          @include \2xl\:flex-initial;
+        }
+      }
+
+      @include it("\2xl\:flex-none") {
+        @include custom-expect-(flex, none, $\2xl) {
+          @include \2xl\:flex-none;
+        }
+      }
     }
 
-    @mixin sm\:flex-initial {
-      @include flex-(0 1 auto, $sm);
-    }
+    @include describe("Custom") {
+      @include it("flex-(2 2 0%)") {
+        @include custom-expect-(flex, 2 2 0%) {
+          @include flex-(2 2 0%);
+        }
+      }
 
-    @mixin sm\:flex-none {
-      @include flex-(none, $sm);
-    }
+      @include it("sm\:flex-(2 2 0%)") {
+        @include custom-expect-(flex, 2 2 0%, $sm) {
+          @include sm\:flex-(2 2 0%);
+        }
+      }
 
-    @mixin md\:flex-1 {
-      @include flex-(1 1 0%, $md);
-    }
+      @include it("md\:flex-(2 2 0%)") {
+        @include custom-expect-(flex, 2 2 0%, $md) {
+          @include md\:flex-(2 2 0%);
+        }
+      }
 
-    @mixin md\:flex-auto {
-      @include flex-(1 1 auto, $md);
-    }
+      @include it("lg\:flex-(2 2 0%)") {
+        @include custom-expect-(flex, 2 2 0%, $lg) {
+          @include lg\:flex-(2 2 0%);
+        }
+      }
 
-    @mixin md\:flex-initial {
-      @include flex-(0 1 auto, $md);
-    }
+      @include it("xl\:flex-(2 2 0%)") {
+        @include custom-expect-(flex, 2 2 0%, $xl) {
+          @include xl\:flex-(2 2 0%);
+        }
+      }
 
-    @mixin md\:flex-none {
-      @include flex-(none, $md);
-    }
-
-    @mixin lg\:flex-1 {
-      @include flex-(1 1 0%, $lg);
-    }
-
-    @mixin lg\:flex-auto {
-      @include flex-(1 1 auto, $lg);
-    }
-
-    @mixin lg\:flex-initial {
-      @include flex-(0 1 auto, $lg);
-    }
-
-    @mixin lg\:flex-none {
-      @include flex-(none, $lg);
-    }
-
-    @mixin xl\:flex-1 {
-      @include flex-(1 1 0%, $xl);
-    }
-
-    @mixin xl\:flex-auto {
-      @include flex-(1 1 auto, $xl);
-    }
-
-    @mixin xl\:flex-initial {
-      @include flex-(0 1 auto, $xl);
-    }
-
-    @mixin xl\:flex-none {
-      @include flex-(none, $xl);
-    }
-
-    @mixin \2xl\:flex-1 {
-      @include flex-(1 1 0%, $\2xl);
-    }
-
-    @mixin \2xl\:flex-auto {
-      @include flex-(1 1 auto, $\2xl);
-    }
-
-    @mixin \2xl\:flex-initial {
-      @include flex-(0 1 auto, $\2xl);
-    }
-
-    @mixin \2xl\:flex-none {
-      @include flex-(none, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin flex-($v, $rwd: null) {
-    @if $rwd == null {
-      flex: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        flex: $v;
+      @include it("\2xl\:flex-(2 2 0%)") {
+        @include custom-expect-(flex, 2 2 0%, $\2xl) {
+          @include \2xl\:flex-(2 2 0%);
+        }
       }
     }
   }
-
-  @mixin sm\:flex-($v) {
-    @include flex-($v, $sm);
-  }
-
-  @mixin md\:flex-($v) {
-    @include flex-($v, $md);
-  }
-
-  @mixin lg\:flex-($v) {
-    @include flex-($v, $lg);
-  }
-
-  @mixin xl\:flex-($v) {
-    @include flex-($v, $xl);
-  }
-
-  @mixin \2xl\:flex-($v) {
-    @include flex-($v, $\2xl);
-  }
-
-  // x*/
 }

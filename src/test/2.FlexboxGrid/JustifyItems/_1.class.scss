@@ -2,133 +2,177 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Justify Items */
-@if $Basic {
-  // /*x
-  @mixin justify-items-start($rwd: null) {
-    @if $rwd==null {
-      justify-items: start;
-    } @else {
-      @media (min-width: $rwd) {
-        justify-items: start;
+@include describe("2.Flexbox & Grid") {
+  @include describe("Justify Items") {
+    @include describe("Basic") {
+      @include it("justify-items-start") {
+        @include custom-expect-(justify-items, start) {
+          @include justify-items-start;
+        }
+      }
+
+      @include it("justify-items-end") {
+        @include custom-expect-(justify-items, end) {
+          @include justify-items-end;
+        }
+      }
+
+      @include it("justify-items-center") {
+        @include custom-expect-(justify-items, center) {
+          @include justify-items-center;
+        }
+      }
+
+      @include it("justify-items-stretch") {
+        @include custom-expect-(justify-items, stretch) {
+          @include justify-items-stretch;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("justify-items-start") {
+        @include custom-expect-(justify-items, start) {
+          @include justify-items-start;
+        }
+      }
+
+      @include it("justify-items-end") {
+        @include custom-expect-(justify-items, end) {
+          @include justify-items-end;
+        }
+      }
+
+      @include it("justify-items-center") {
+        @include custom-expect-(justify-items, center) {
+          @include justify-items-center;
+        }
+      }
+
+      @include it("justify-items-stretch") {
+        @include custom-expect-(justify-items, stretch) {
+          @include justify-items-stretch;
+        }
+      }
+      @include it("sm\:justify-items-start") {
+        @include custom-expect-(justify-items, start, $sm) {
+          @include sm\:justify-items-start;
+        }
+      }
+
+      @include it("sm\:justify-items-end") {
+        @include custom-expect-(justify-items, end, $sm) {
+          @include sm\:justify-items-end;
+        }
+      }
+
+      @include it("sm\:justify-items-center") {
+        @include custom-expect-(justify-items, center, $sm) {
+          @include sm\:justify-items-center;
+        }
+      }
+
+      @include it("sm\:justify-items-stretch") {
+        @include custom-expect-(justify-items, stretch, $sm) {
+          @include sm\:justify-items-stretch;
+        }
+      }
+
+      @include it("md\:justify-items-start") {
+        @include custom-expect-(justify-items, start, $md) {
+          @include md\:justify-items-start;
+        }
+      }
+
+      @include it("md\:justify-items-end") {
+        @include custom-expect-(justify-items, end, $md) {
+          @include md\:justify-items-end;
+        }
+      }
+
+      @include it("md\:justify-items-center") {
+        @include custom-expect-(justify-items, center, $md) {
+          @include md\:justify-items-center;
+        }
+      }
+
+      @include it("md\:justify-items-stretch") {
+        @include custom-expect-(justify-items, stretch, $md) {
+          @include md\:justify-items-stretch;
+        }
+      }
+
+      @include it("lg\:justify-items-start") {
+        @include custom-expect-(justify-items, start, $lg) {
+          @include lg\:justify-items-start;
+        }
+      }
+
+      @include it("lg\:justify-items-end") {
+        @include custom-expect-(justify-items, end, $lg) {
+          @include lg\:justify-items-end;
+        }
+      }
+
+      @include it("lg\:justify-items-center") {
+        @include custom-expect-(justify-items, center, $lg) {
+          @include lg\:justify-items-center;
+        }
+      }
+
+      @include it("lg\:justify-items-stretch") {
+        @include custom-expect-(justify-items, stretch, $lg) {
+          @include lg\:justify-items-stretch;
+        }
+      }
+
+      @include it("xl\:justify-items-start") {
+        @include custom-expect-(justify-items, start, $xl) {
+          @include xl\:justify-items-start;
+        }
+      }
+
+      @include it("xl\:justify-items-end") {
+        @include custom-expect-(justify-items, end, $xl) {
+          @include xl\:justify-items-end;
+        }
+      }
+
+      @include it("xl\:justify-items-center") {
+        @include custom-expect-(justify-items, center, $xl) {
+          @include xl\:justify-items-center;
+        }
+      }
+
+      @include it("xl\:justify-items-stretch") {
+        @include custom-expect-(justify-items, stretch, $xl) {
+          @include xl\:justify-items-stretch;
+        }
+      }
+
+      @include it("\2xl\:justify-items-start") {
+        @include custom-expect-(justify-items, start, $\2xl) {
+          @include \2xl\:justify-items-start;
+        }
+      }
+
+      @include it("\2xl\:justify-items-end") {
+        @include custom-expect-(justify-items, end, $\2xl) {
+          @include \2xl\:justify-items-end;
+        }
+      }
+
+      @include it("\2xl\:justify-items-center") {
+        @include custom-expect-(justify-items, center, $\2xl) {
+          @include \2xl\:justify-items-center;
+        }
+      }
+
+      @include it("\2xl\:justify-items-stretch") {
+        @include custom-expect-(justify-items, stretch, $\2xl) {
+          @include \2xl\:justify-items-stretch;
+        }
       }
     }
   }
-
-  @mixin justify-items-end($rwd: null) {
-    @if $rwd==null {
-      justify-items: end;
-    } @else {
-      @media (min-width: $rwd) {
-        justify-items: end;
-      }
-    }
-  }
-
-  @mixin justify-items-center($rwd: null) {
-    @if $rwd==null {
-      justify-items: center;
-    } @else {
-      @media (min-width: $rwd) {
-        justify-items: center;
-      }
-    }
-  }
-
-  @mixin justify-items-stretch($rwd: null) {
-    @if $rwd==null {
-      justify-items: stretch;
-    } @else {
-      @media (min-width: $rwd) {
-        justify-items: stretch;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:justify-items-start {
-    @include justify-items-start($sm);
-  }
-
-  @mixin sm\:justify-items-end {
-    @include justify-items-end($sm);
-  }
-
-  @mixin sm\:justify-items-center {
-    @include justify-items-center($sm);
-  }
-
-  @mixin sm\:justify-items-stretch {
-    @include justify-items-stretch($sm);
-  }
-
-  @mixin md\:justify-items-start {
-    @include justify-items-start($md);
-  }
-
-  @mixin md\:justify-items-end {
-    @include justify-items-end($md);
-  }
-
-  @mixin md\:justify-items-center {
-    @include justify-items-center($md);
-  }
-
-  @mixin md\:justify-items-stretch {
-    @include justify-items-stretch($md);
-  }
-
-  @mixin lg\:justify-items-start {
-    @include justify-items-start($lg);
-  }
-
-  @mixin lg\:justify-items-end {
-    @include justify-items-end($lg);
-  }
-
-  @mixin lg\:justify-items-center {
-    @include justify-items-center($lg);
-  }
-
-  @mixin lg\:justify-items-stretch {
-    @include justify-items-stretch($lg);
-  }
-
-  @mixin xl\:justify-items-start {
-    @include justify-items-start($xl);
-  }
-
-  @mixin xl\:justify-items-end {
-    @include justify-items-end($xl);
-  }
-
-  @mixin xl\:justify-items-center {
-    @include justify-items-center($xl);
-  }
-
-  @mixin xl\:justify-items-stretch {
-    @include justify-items-stretch($xl);
-  }
-
-  @mixin \2xl\:justify-items-start {
-    @include justify-items-start($\2xl);
-  }
-
-  @mixin \2xl\:justify-items-end {
-    @include justify-items-end($\2xl);
-  }
-
-  @mixin \2xl\:justify-items-center {
-    @include justify-items-center($\2xl);
-  }
-
-  @mixin \2xl\:justify-items-stretch {
-    @include justify-items-stretch($\2xl);
-  }
-
-  // x*/
 }

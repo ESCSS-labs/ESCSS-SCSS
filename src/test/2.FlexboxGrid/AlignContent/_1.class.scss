@@ -2,280 +2,388 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Align Content */
-@if $Basic {
-  // /*x
-  @mixin content-normal($rwd: null) {
-    @if $rwd==nul {
-      align-content: normal;
-    } @else {
-      @media (min-width: $rwd) {
-        align-content: normal;
+@include describe("2.Flexbox & Grid") {
+  @include describe("Align Content") {
+    @include describe("Basic") {
+      @include it("content-normal") {
+        @include custom-expect-(align-content, normal) {
+          @include content-normal;
+        }
+      }
+
+      @include it("content-center") {
+        @include custom-expect-(align-content, center) {
+          @include content-center;
+        }
+      }
+
+      @include it("content-start") {
+        @include custom-expect-(align-content, flex-start) {
+          @include content-start;
+        }
+      }
+
+      @include it("content-end") {
+        @include custom-expect-(align-content, flex-end) {
+          @include content-end;
+        }
+      }
+
+      @include it("content-between") {
+        @include custom-expect-(align-content, space-between) {
+          @include content-between;
+        }
+      }
+
+      @include it("content-around") {
+        @include custom-expect-(align-content, space-around) {
+          @include content-around;
+        }
+      }
+
+      @include it("content-evenly") {
+        @include custom-expect-(align-content, space-evenly) {
+          @include content-evenly;
+        }
+      }
+
+      @include it("content-baseline") {
+        @include custom-expect-(align-content, baseline) {
+          @include content-baseline;
+        }
+      }
+
+      @include it("content-stretch") {
+        @include custom-expect-(align-content, stretch) {
+          @include content-stretch;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:content-normal") {
+        @include custom-expect-(align-content, normal, $sm) {
+          @include sm\:content-normal;
+        }
+      }
+
+      @include it("sm\:content-center") {
+        @include custom-expect-(align-content, center, $sm) {
+          @include sm\:content-center;
+        }
+      }
+
+      @include it("sm\:content-start") {
+        @include custom-expect-(align-content, flex-start, $sm) {
+          @include sm\:content-start;
+        }
+      }
+
+      @include it("sm\:content-end") {
+        @include custom-expect-(align-content, flex-end, $sm) {
+          @include sm\:content-end;
+        }
+      }
+
+      @include it("sm\:content-between") {
+        @include custom-expect-(align-content, space-between, $sm) {
+          @include sm\:content-between;
+        }
+      }
+
+      @include it("sm\:content-around") {
+        @include custom-expect-(align-content, space-around, $sm) {
+          @include sm\:content-around;
+        }
+      }
+
+      @include it("sm\:content-evenly") {
+        @include custom-expect-(align-content, space-evenly, $sm) {
+          @include sm\:content-evenly;
+        }
+      }
+
+      @include it("sm\:content-baseline") {
+        @include custom-expect-(align-content, baseline, $sm) {
+          @include sm\:content-baseline;
+        }
+      }
+
+      @include it("sm\:content-stretch") {
+        @include custom-expect-(align-content, stretch, $sm) {
+          @include sm\:content-stretch;
+        }
+      }
+
+      @include it("sm\:content-normal") {
+        @include custom-expect-(align-content, normal, $sm) {
+          @include sm\:content-normal;
+        }
+      }
+
+      @include it("sm\:content-center") {
+        @include custom-expect-(align-content, center, $sm) {
+          @include sm\:content-center;
+        }
+      }
+
+      @include it("sm\:content-start") {
+        @include custom-expect-(align-content, flex-start, $sm) {
+          @include sm\:content-start;
+        }
+      }
+
+      @include it("sm\:content-end") {
+        @include custom-expect-(align-content, flex-end, $sm) {
+          @include sm\:content-end;
+        }
+      }
+
+      @include it("sm\:content-between") {
+        @include custom-expect-(align-content, space-between, $sm) {
+          @include sm\:content-between;
+        }
+      }
+
+      @include it("sm\:content-around") {
+        @include custom-expect-(align-content, space-around, $sm) {
+          @include sm\:content-around;
+        }
+      }
+
+      @include it("sm\:content-evenly") {
+        @include custom-expect-(align-content, space-evenly, $sm) {
+          @include sm\:content-evenly;
+        }
+      }
+
+      @include it("sm\:content-baseline") {
+        @include custom-expect-(align-content, baseline, $sm) {
+          @include sm\:content-baseline;
+        }
+      }
+
+      @include it("sm\:content-stretch") {
+        @include custom-expect-(align-content, stretch, $sm) {
+          @include sm\:content-stretch;
+        }
+      }
+
+      @include it("md\:content-normal") {
+        @include custom-expect-(align-content, normal, $md) {
+          @include md\:content-normal;
+        }
+      }
+
+      @include it("md\:content-center") {
+        @include custom-expect-(align-content, center, $md) {
+          @include md\:content-center;
+        }
+      }
+
+      @include it("md\:content-start") {
+        @include custom-expect-(align-content, flex-start, $md) {
+          @include md\:content-start;
+        }
+      }
+
+      @include it("md\:content-end") {
+        @include custom-expect-(align-content, flex-end, $md) {
+          @include md\:content-end;
+        }
+      }
+
+      @include it("md\:content-between") {
+        @include custom-expect-(align-content, space-between, $md) {
+          @include md\:content-between;
+        }
+      }
+
+      @include it("md\:content-around") {
+        @include custom-expect-(align-content, space-around, $md) {
+          @include md\:content-around;
+        }
+      }
+
+      @include it("md\:content-evenly") {
+        @include custom-expect-(align-content, space-evenly, $md) {
+          @include md\:content-evenly;
+        }
+      }
+
+      @include it("md\:content-baseline") {
+        @include custom-expect-(align-content, baseline, $md) {
+          @include md\:content-baseline;
+        }
+      }
+
+      @include it("md\:content-stretch") {
+        @include custom-expect-(align-content, stretch, $md) {
+          @include md\:content-stretch;
+        }
+      }
+
+      @include it("lg\:content-normal") {
+        @include custom-expect-(align-content, normal, $lg) {
+          @include lg\:content-normal;
+        }
+      }
+
+      @include it("lg\:content-center") {
+        @include custom-expect-(align-content, center, $lg) {
+          @include lg\:content-center;
+        }
+      }
+
+      @include it("lg\:content-start") {
+        @include custom-expect-(align-content, flex-start, $lg) {
+          @include lg\:content-start;
+        }
+      }
+
+      @include it("lg\:content-end") {
+        @include custom-expect-(align-content, flex-end, $lg) {
+          @include lg\:content-end;
+        }
+      }
+
+      @include it("lg\:content-between") {
+        @include custom-expect-(align-content, space-between, $lg) {
+          @include lg\:content-between;
+        }
+      }
+
+      @include it("lg\:content-around") {
+        @include custom-expect-(align-content, space-around, $lg) {
+          @include lg\:content-around;
+        }
+      }
+
+      @include it("lg\:content-evenly") {
+        @include custom-expect-(align-content, space-evenly, $lg) {
+          @include lg\:content-evenly;
+        }
+      }
+
+      @include it("lg\:content-baseline") {
+        @include custom-expect-(align-content, baseline, $lg) {
+          @include lg\:content-baseline;
+        }
+      }
+
+      @include it("lg\:content-stretch") {
+        @include custom-expect-(align-content, stretch, $lg) {
+          @include lg\:content-stretch;
+        }
+      }
+
+      @include it("xl\:content-normal") {
+        @include custom-expect-(align-content, normal, $xl) {
+          @include xl\:content-normal;
+        }
+      }
+
+      @include it("xl\:content-center") {
+        @include custom-expect-(align-content, center, $xl) {
+          @include xl\:content-center;
+        }
+      }
+
+      @include it("xl\:content-start") {
+        @include custom-expect-(align-content, flex-start, $xl) {
+          @include xl\:content-start;
+        }
+      }
+
+      @include it("xl\:content-end") {
+        @include custom-expect-(align-content, flex-end, $xl) {
+          @include xl\:content-end;
+        }
+      }
+
+      @include it("xl\:content-between") {
+        @include custom-expect-(align-content, space-between, $xl) {
+          @include xl\:content-between;
+        }
+      }
+
+      @include it("xl\:content-around") {
+        @include custom-expect-(align-content, space-around, $xl) {
+          @include xl\:content-around;
+        }
+      }
+
+      @include it("xl\:content-evenly") {
+        @include custom-expect-(align-content, space-evenly, $xl) {
+          @include xl\:content-evenly;
+        }
+      }
+
+      @include it("xl\:content-baseline") {
+        @include custom-expect-(align-content, baseline, $xl) {
+          @include xl\:content-baseline;
+        }
+      }
+
+      @include it("xl\:content-stretch") {
+        @include custom-expect-(align-content, stretch, $xl) {
+          @include xl\:content-stretch;
+        }
+      }
+
+      @include it("\2xl\:content-normal") {
+        @include custom-expect-(align-content, normal, $\2xl) {
+          @include \2xl\:content-normal;
+        }
+      }
+
+      @include it("\2xl\:content-center") {
+        @include custom-expect-(align-content, center, $\2xl) {
+          @include \2xl\:content-center;
+        }
+      }
+
+      @include it("\2xl\:content-start") {
+        @include custom-expect-(align-content, flex-start, $\2xl) {
+          @include \2xl\:content-start;
+        }
+      }
+
+      @include it("\2xl\:content-end") {
+        @include custom-expect-(align-content, flex-end, $\2xl) {
+          @include \2xl\:content-end;
+        }
+      }
+
+      @include it("\2xl\:content-between") {
+        @include custom-expect-(align-content, space-between, $\2xl) {
+          @include \2xl\:content-between;
+        }
+      }
+
+      @include it("\2xl\:content-around") {
+        @include custom-expect-(align-content, space-around, $\2xl) {
+          @include \2xl\:content-around;
+        }
+      }
+
+      @include it("\2xl\:content-evenly") {
+        @include custom-expect-(align-content, space-evenly, $\2xl) {
+          @include \2xl\:content-evenly;
+        }
+      }
+
+      @include it("\2xl\:content-baseline") {
+        @include custom-expect-(align-content, baseline, $\2xl) {
+          @include \2xl\:content-baseline;
+        }
+      }
+
+      @include it("\2xl\:content-stretch") {
+        @include custom-expect-(align-content, stretch, $\2xl) {
+          @include \2xl\:content-stretch;
+        }
       }
     }
   }
-
-  @mixin content-center($rwd: null) {
-    @if $rwd==nul {
-      align-content: center;
-    } @else {
-      @media (min-width: $rwd) {
-        align-content: center;
-      }
-    }
-  }
-
-  @mixin content-start($rwd: null) {
-    @if $rwd==nul {
-      align-content: flex-start;
-    } @else {
-      @media (min-width: $rwd) {
-        align-content: flex-start;
-      }
-    }
-  }
-
-  @mixin content-end($rwd: null) {
-    @if $rwd==nul {
-      align-content: flex-end;
-    } @else {
-      @media (min-width: $rwd) {
-        align-content: flex-end;
-      }
-    }
-  }
-
-  @mixin content-between($rwd: null) {
-    @if $rwd==nul {
-      align-content: space-between;
-    } @else {
-      @media (min-width: $rwd) {
-        align-content: space-between;
-      }
-    }
-  }
-
-  @mixin content-around($rwd: null) {
-    @if $rwd==nul {
-      align-content: space-around;
-    } @else {
-      @media (min-width: $rwd) {
-        align-content: space-around;
-      }
-    }
-  }
-
-  @mixin content-evenly($rwd: null) {
-    @if $rwd==nul {
-      align-content: space-evenly;
-    } @else {
-      @media (min-width: $rwd) {
-        align-content: space-evenly;
-      }
-    }
-  }
-
-  @mixin content-baseline($rwd: null) {
-    @if $rwd==nul {
-      align-content: baseline;
-    } @else {
-      @media (min-width: $rwd) {
-        align-content: baseline;
-      }
-    }
-  }
-
-  @mixin content-stretch($rwd: null) {
-    @if $rwd==nul {
-      align-content: stretch;
-    } @else {
-      @media (min-width: $rwd) {
-        align-content: stretch;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:content-normal {
-    @include content-normal($sm);
-  }
-
-  @mixin sm\:content-center {
-    @include content-center($sm);
-  }
-
-  @mixin sm\:content-start {
-    @include content-start($sm);
-  }
-
-  @mixin sm\:content-end {
-    @include content-end($sm);
-  }
-
-  @mixin sm\:content-between {
-    @include content-between($sm);
-  }
-
-  @mixin sm\:content-around {
-    @include content-around($sm);
-  }
-
-  @mixin sm\:content-evenly {
-    @include content-evenly($sm);
-  }
-
-  @mixin sm\:content-baseline {
-    @include content-baseline($sm);
-  }
-
-  @mixin sm\:content-stretch {
-    @include content-stretch($sm);
-  }
-
-  @mixin md\:content-normal {
-    @include content-normal($md);
-  }
-
-  @mixin md\:content-center {
-    @include content-center($md);
-  }
-
-  @mixin md\:content-start {
-    @include content-start($md);
-  }
-
-  @mixin md\:content-end {
-    @include content-end($md);
-  }
-
-  @mixin md\:content-between {
-    @include content-between($md);
-  }
-
-  @mixin md\:content-around {
-    @include content-around($md);
-  }
-
-  @mixin md\:content-evenly {
-    @include content-evenly($md);
-  }
-
-  @mixin md\:content-baseline {
-    @include content-baseline($md);
-  }
-
-  @mixin md\:content-stretch {
-    @include content-stretch($md);
-  }
-
-  @mixin lg\:content-normal {
-    @include content-normal($lg);
-  }
-
-  @mixin lg\:content-center {
-    @include content-center($lg);
-  }
-
-  @mixin lg\:content-start {
-    @include content-start($lg);
-  }
-
-  @mixin lg\:content-end {
-    @include content-end($lg);
-  }
-
-  @mixin lg\:content-between {
-    @include content-between($lg);
-  }
-
-  @mixin lg\:content-around {
-    @include content-around($lg);
-  }
-
-  @mixin lg\:content-evenly {
-    @include content-evenly($lg);
-  }
-
-  @mixin lg\:content-baseline {
-    @include content-baseline($lg);
-  }
-
-  @mixin lg\:content-stretch {
-    @include content-stretch($lg);
-  }
-
-  @mixin xl\:content-normal {
-    @include content-normal($xl);
-  }
-
-  @mixin xl\:content-center {
-    @include content-center($xl);
-  }
-
-  @mixin xl\:content-start {
-    @include content-start($xl);
-  }
-
-  @mixin xl\:content-end {
-    @include content-end($xl);
-  }
-
-  @mixin xl\:content-between {
-    @include content-between($xl);
-  }
-
-  @mixin xl\:content-around {
-    @include content-around($xl);
-  }
-
-  @mixin xl\:content-evenly {
-    @include content-evenly($xl);
-  }
-
-  @mixin xl\:content-baseline {
-    @include content-baseline($xl);
-  }
-
-  @mixin xl\:content-stretch {
-    @include content-stretch($xl);
-  }
-
-  @mixin \2xl\:content-normal {
-    @include content-normal($\2xl);
-  }
-
-  @mixin \2xl\:content-center {
-    @include content-center($\2xl);
-  }
-
-  @mixin \2xl\:content-start {
-    @include content-start($\2xl);
-  }
-
-  @mixin \2xl\:content-end {
-    @include content-end($\2xl);
-  }
-
-  @mixin \2xl\:content-between {
-    @include content-between($\2xl);
-  }
-
-  @mixin \2xl\:content-around {
-    @include content-around($\2xl);
-  }
-
-  @mixin \2xl\:content-evenly {
-    @include content-evenly($\2xl);
-  }
-
-  @mixin \2xl\:content-baseline {
-    @include content-baseline($\2xl);
-  }
-
-  @mixin \2xl\:content-stretch {
-    @include content-stretch($\2xl);
-  }
-  // x*/
 }

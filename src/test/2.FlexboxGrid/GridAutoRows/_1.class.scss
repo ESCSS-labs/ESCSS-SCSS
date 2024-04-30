@@ -2,146 +2,192 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Grid Auto Rows */
-@if $Basic {
-  // /*x
-  @mixin auto-rows-auto {
-    @include auto-row-(auto);
-  }
+@include describe("2.Flexbox & Grid") {
+  @include describe("Grid Auto Rows") {
+    @include describe("Basic") {
+      @include it("auto-rows-auto") {
+        @include custom-expect-(grid-auto-rows, auto) {
+          @include auto-rows-auto;
+        }
+      }
 
-  @mixin auto-rows-min {
-    @include auto-row-(min-content);
-  }
+      @include it("auto-rows-min") {
+        @include custom-expect-(grid-auto-rows, min-content) {
+          @include auto-rows-min;
+        }
+      }
 
-  @mixin auto-rows-max {
-    @include auto-row-(max-content);
-  }
+      @include it("auto-rows-max") {
+        @include custom-expect-(grid-auto-rows, max-content) {
+          @include auto-rows-max;
+        }
+      }
 
-  @mixin auto-rows-fr {
-    @include auto-row-(minmax(0, 1fr));
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:auto-rows-auto {
-      @include auto-row-(auto, $sm);
+      @include it("auto-rows-fr") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 1fr)) {
+          @include auto-rows-fr;
+        }
+      }
     }
 
-    @mixin sm\:auto-rows-min {
-      @include auto-row-(min-content, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:auto-rows-auto") {
+        @include custom-expect-(grid-auto-rows, auto, $sm) {
+          @include sm\:auto-rows-auto;
+        }
+      }
+
+      @include it("sm\:auto-rows-min") {
+        @include custom-expect-(grid-auto-rows, min-content, $sm) {
+          @include sm\:auto-rows-min;
+        }
+      }
+
+      @include it("sm\:auto-rows-max") {
+        @include custom-expect-(grid-auto-rows, max-content, $sm) {
+          @include sm\:auto-rows-max;
+        }
+      }
+
+      @include it("sm\:auto-rows-fr") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 1fr), $sm) {
+          @include sm\:auto-rows-fr;
+        }
+      }
+
+      @include it("md\:auto-rows-auto") {
+        @include custom-expect-(grid-auto-rows, auto, $md) {
+          @include md\:auto-rows-auto;
+        }
+      }
+
+      @include it("md\:auto-rows-min") {
+        @include custom-expect-(grid-auto-rows, min-content, $md) {
+          @include md\:auto-rows-min;
+        }
+      }
+
+      @include it("md\:auto-rows-max") {
+        @include custom-expect-(grid-auto-rows, max-content, $md) {
+          @include md\:auto-rows-max;
+        }
+      }
+
+      @include it("md\:auto-rows-fr") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 1fr), $md) {
+          @include md\:auto-rows-fr;
+        }
+      }
+
+      @include it("lg\:auto-rows-auto") {
+        @include custom-expect-(grid-auto-rows, auto, $lg) {
+          @include lg\:auto-rows-auto;
+        }
+      }
+
+      @include it("lg\:auto-rows-min") {
+        @include custom-expect-(grid-auto-rows, min-content, $lg) {
+          @include lg\:auto-rows-min;
+        }
+      }
+
+      @include it("lg\:auto-rows-max") {
+        @include custom-expect-(grid-auto-rows, max-content, $lg) {
+          @include lg\:auto-rows-max;
+        }
+      }
+
+      @include it("lg\:auto-rows-fr") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 1fr), $lg) {
+          @include lg\:auto-rows-fr;
+        }
+      }
+
+      @include it("xl\:auto-rows-auto") {
+        @include custom-expect-(grid-auto-rows, auto, $xl) {
+          @include xl\:auto-rows-auto;
+        }
+      }
+
+      @include it("xl\:auto-rows-min") {
+        @include custom-expect-(grid-auto-rows, min-content, $xl) {
+          @include xl\:auto-rows-min;
+        }
+      }
+
+      @include it("xl\:auto-rows-max") {
+        @include custom-expect-(grid-auto-rows, max-content, $xl) {
+          @include xl\:auto-rows-max;
+        }
+      }
+
+      @include it("xl\:auto-rows-fr") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 1fr), $xl) {
+          @include xl\:auto-rows-fr;
+        }
+      }
+
+      @include it("\2xl\:auto-rows-auto") {
+        @include custom-expect-(grid-auto-rows, auto, $\2xl) {
+          @include \2xl\:auto-rows-auto;
+        }
+      }
+
+      @include it("\2xl\:auto-rows-min") {
+        @include custom-expect-(grid-auto-rows, min-content, $\2xl) {
+          @include \2xl\:auto-rows-min;
+        }
+      }
+
+      @include it("\2xl\:auto-rows-max") {
+        @include custom-expect-(grid-auto-rows, max-content, $\2xl) {
+          @include \2xl\:auto-rows-max;
+        }
+      }
+
+      @include it("\2xl\:auto-rows-fr") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 1fr), $\2xl) {
+          @include \2xl\:auto-rows-fr;
+        }
+      }
     }
 
-    @mixin sm\:auto-rows-max {
-      @include auto-row-(max-content, $sm);
-    }
+    @include describe("Custom") {
+      @include it("auto-rows-(minmax(0, 2fr))") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 2fr)) {
+          @include auto-rows-(minmax(0, 2fr));
+        }
+      }
 
-    @mixin sm\:auto-rows-fr {
-      @include auto-row-(minmax(0, 1fr), $sm);
-    }
+      @include it("sm\:auto-rows-(minmax(0, 2fr))") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 2fr), $sm) {
+          @include sm\:auto-rows-(minmax(0, 2fr));
+        }
+      }
 
-    @mixin md\:auto-rows-auto {
-      @include auto-row-(auto, $md);
-    }
+      @include it("md\:auto-rows-(minmax(0, 2fr))") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 2fr), $md) {
+          @include md\:auto-rows-(minmax(0, 2fr));
+        }
+      }
 
-    @mixin md\:auto-rows-min {
-      @include auto-row-(min-content, $md);
-    }
+      @include it("lg\:auto-rows-(minmax(0, 2fr))") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 2fr), $lg) {
+          @include lg\:auto-rows-(minmax(0, 2fr));
+        }
+      }
 
-    @mixin md\:auto-rows-max {
-      @include auto-row-(max-content, $md);
-    }
+      @include it("xl\:auto-rows-(minmax(0, 2fr))") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 2fr), $xl) {
+          @include xl\:auto-rows-(minmax(0, 2fr));
+        }
+      }
 
-    @mixin md\:auto-rows-fr {
-      @include auto-row-(minmax(0, 1fr), $md);
-    }
-
-    @mixin lg\:auto-rows-auto {
-      @include auto-row-(auto, $lg);
-    }
-
-    @mixin lg\:auto-rows-min {
-      @include auto-row-(min-content, $lg);
-    }
-
-    @mixin lg\:auto-rows-max {
-      @include auto-row-(max-content, $lg);
-    }
-
-    @mixin lg\:auto-rows-fr {
-      @include auto-row-(minmax(0, 1fr), $lg);
-    }
-
-    @mixin xl\:auto-rows-auto {
-      @include auto-row-(auto, $xl);
-    }
-
-    @mixin xl\:auto-rows-min {
-      @include auto-row-(min-content, $xl);
-    }
-
-    @mixin xl\:auto-rows-max {
-      @include auto-row-(max-content, $xl);
-    }
-
-    @mixin xl\:auto-rows-fr {
-      @include auto-row-(minmax(0, 1fr), $xl);
-    }
-
-    @mixin \2xl\:auto-rows-auto {
-      @include auto-row-(auto, $\2xl);
-    }
-
-    @mixin \2xl\:auto-rows-min {
-      @include auto-row-(min-content, $\2xl);
-    }
-
-    @mixin \2xl\:auto-rows-max {
-      @include auto-row-(max-content, $\2xl);
-    }
-
-    @mixin \2xl\:auto-rows-fr {
-      @include auto-row-(minmax(0, 1fr), $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin auto-rows-($v, $rwd: null) {
-    @if $rwd==null {
-      grid-auto-rows: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        grid-auto-rows: $v;
+      @include it("\2xl\:auto-rows-(minmax(0, 2fr))") {
+        @include custom-expect-(grid-auto-rows, minmax(0, 2fr), $\2xl) {
+          @include \2xl\:auto-rows-(minmax(0, 2fr));
+        }
       }
     }
   }
-
-  @mixin sm\:auto-rows-($v) {
-    @include auto-rows-($v, $sm);
-  }
-
-  @mixin md\:auto-rows-($v) {
-    @include auto-rows-($v, $md);
-  }
-
-  @mixin lg\:auto-rows-($v) {
-    @include auto-rows-($v, $lg);
-  }
-
-  @mixin xl\:auto-rows-($v) {
-    @include auto-rows-($v, $xl);
-  }
-
-  @mixin \2xl\:auto-rows-($v) {
-    @include auto-rows-($v, $\2xl);
-  }
-
-  // x*/
 }

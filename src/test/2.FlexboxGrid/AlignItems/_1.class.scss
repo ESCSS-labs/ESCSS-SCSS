@@ -2,163 +2,190 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Align Items */
-@if $Basic {
-  // /*x
-  @mixin items-start($rwd: null) {
-    @if $rwd==null {
-      align-items: flex-start;
-    } @else {
-      @media (min-width: $rwd) {
-        align-items: flex-start;
+@include describe("2.Flexbox & Grid") {
+  @include describe("Align Items") {
+    @include describe("Basic") {
+      @include it("items-start") {
+        @include custom-expect-(align-items, flex-start) {
+          @include items-start;
+        }
+      }
+
+      @include it("items-end") {
+        @include custom-expect-(align-items, flex-end) {
+          @include items-end;
+        }
+      }
+
+      @include it("items-center") {
+        @include custom-expect-(align-items, center) {
+          @include items-center;
+        }
+      }
+
+      @include it("items-baseline") {
+        @include custom-expect-(align-items, baseline) {
+          @include items-baseline;
+        }
+      }
+
+      @include it("items-stretch") {
+        @include custom-expect-(align-items, stretch) {
+          @include items-stretch;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:items-start") {
+        @include custom-expect-(align-items, flex-start, $sm) {
+          @include sm\:items-start;
+        }
+      }
+
+      @include it("sm\:items-end") {
+        @include custom-expect-(align-items, flex-end, $sm) {
+          @include sm\:items-end;
+        }
+      }
+
+      @include it("sm\:items-center") {
+        @include custom-expect-(align-items, center, $sm) {
+          @include sm\:items-center;
+        }
+      }
+
+      @include it("sm\:items-baseline") {
+        @include custom-expect-(align-items, baseline, $sm) {
+          @include sm\:items-baseline;
+        }
+      }
+
+      @include it("sm\:items-stretch") {
+        @include custom-expect-(align-items, stretch, $sm) {
+          @include sm\:items-stretch;
+        }
+      }
+
+      @include it("md\:items-start") {
+        @include custom-expect-(align-items, flex-start, $md) {
+          @include md\:items-start;
+        }
+      }
+
+      @include it("md\:items-end") {
+        @include custom-expect-(align-items, flex-end, $md) {
+          @include md\:items-end;
+        }
+      }
+
+      @include it("md\:items-center") {
+        @include custom-expect-(align-items, center, $md) {
+          @include md\:items-center;
+        }
+      }
+
+      @include it("md\:items-baseline") {
+        @include custom-expect-(align-items, baseline, $md) {
+          @include md\:items-baseline;
+        }
+      }
+
+      @include it("md\:items-stretch") {
+        @include custom-expect-(align-items, stretch, $md) {
+          @include md\:items-stretch;
+        }
+      }
+
+      @include it("lg\:items-start") {
+        @include custom-expect-(align-items, flex-start, $lg) {
+          @include lg\:items-start;
+        }
+      }
+
+      @include it("lg\:items-end") {
+        @include custom-expect-(align-items, flex-end, $lg) {
+          @include lg\:items-end;
+        }
+      }
+
+      @include it("lg\:items-center") {
+        @include custom-expect-(align-items, center, $lg) {
+          @include lg\:items-center;
+        }
+      }
+
+      @include it("lg\:items-baseline") {
+        @include custom-expect-(align-items, baseline, $lg) {
+          @include lg\:items-baseline;
+        }
+      }
+
+      @include it("lg\:items-stretch") {
+        @include custom-expect-(align-items, stretch, $lg) {
+          @include lg\:items-stretch;
+        }
+      }
+
+      @include it("xl\:items-start") {
+        @include custom-expect-(align-items, flex-start, $xl) {
+          @include xl\:items-start;
+        }
+      }
+
+      @include it("xl\:items-end") {
+        @include custom-expect-(align-items, flex-end, $xl) {
+          @include xl\:items-end;
+        }
+      }
+
+      @include it("xl\:items-center") {
+        @include custom-expect-(align-items, center, $xl) {
+          @include xl\:items-center;
+        }
+      }
+
+      @include it("xl\:items-baseline") {
+        @include custom-expect-(align-items, baseline, $xl) {
+          @include xl\:items-baseline;
+        }
+      }
+
+      @include it("xl\:items-stretch") {
+        @include custom-expect-(align-items, stretch, $xl) {
+          @include xl\:items-stretch;
+        }
+      }
+
+      @include it("\2xl\:items-start") {
+        @include custom-expect-(align-items, flex-start, $\2xl) {
+          @include \2xl\:items-start;
+        }
+      }
+
+      @include it("\2xl\:items-end") {
+        @include custom-expect-(align-items, flex-end, $\2xl) {
+          @include \2xl\:items-end;
+        }
+      }
+
+      @include it("\2xl\:items-center") {
+        @include custom-expect-(align-items, center, $\2xl) {
+          @include \2xl\:items-center;
+        }
+      }
+
+      @include it("\2xl\:items-baseline") {
+        @include custom-expect-(align-items, baseline, $\2xl) {
+          @include \2xl\:items-baseline;
+        }
+      }
+
+      @include it("\2xl\:items-stretch") {
+        @include custom-expect-(align-items, stretch, $\2xl) {
+          @include \2xl\:items-stretch;
+        }
       }
     }
   }
-
-  @mixin items-end($rwd: null) {
-    @if $rwd==null {
-      align-items: flex-end;
-    } @else {
-      @media (min-width: $rwd) {
-        align-items: flex-end;
-      }
-    }
-  }
-
-  @mixin items-center($rwd: null) {
-    @if $rwd==null {
-      align-items: center;
-    } @else {
-      @media (min-width: $rwd) {
-        align-items: center;
-      }
-    }
-  }
-
-  @mixin items-baseline($rwd: null) {
-    @if $rwd==null {
-      align-items: baseline;
-    } @else {
-      @media (min-width: $rwd) {
-        align-items: baseline;
-      }
-    }
-  }
-
-  @mixin items-stretch($rwd: null) {
-    @if $rwd==null {
-      align-items: stretch;
-    } @else {
-      @media (min-width: $rwd) {
-        align-items: stretch;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:items-start {
-    @include items-start($sm);
-  }
-
-  @mixin sm\:items-end {
-    @include items-end($sm);
-  }
-
-  @mixin sm\:items-center {
-    @include items-center($sm);
-  }
-
-  @mixin sm\:items-baseline {
-    @include items-baseline($sm);
-  }
-
-  @mixin sm\:items-stretch {
-    @include items-stretch($sm);
-  }
-
-  @mixin md\:items-start {
-    @include items-start($md);
-  }
-
-  @mixin md\:items-end {
-    @include items-end($md);
-  }
-
-  @mixin md\:items-center {
-    @include items-center($md);
-  }
-
-  @mixin md\:items-baseline {
-    @include items-baseline($md);
-  }
-
-  @mixin md\:items-stretch {
-    @include items-stretch($md);
-  }
-
-  @mixin lg\:items-start {
-    @include items-start($lg);
-  }
-
-  @mixin lg\:items-end {
-    @include items-end($lg);
-  }
-
-  @mixin lg\:items-center {
-    @include items-center($lg);
-  }
-
-  @mixin lg\:items-baseline {
-    @include items-baseline($lg);
-  }
-
-  @mixin lg\:items-stretch {
-    @include items-stretch($lg);
-  }
-
-  @mixin xl\:items-start {
-    @include items-start($xl);
-  }
-
-  @mixin xl\:items-end {
-    @include items-end($xl);
-  }
-
-  @mixin xl\:items-center {
-    @include items-center($xl);
-  }
-
-  @mixin xl\:items-baseline {
-    @include items-baseline($xl);
-  }
-
-  @mixin xl\:items-stretch {
-    @include items-stretch($xl);
-  }
-
-  @mixin \2xl\:items-start {
-    @include items-start($\2xl);
-  }
-
-  @mixin \2xl\:items-end {
-    @include items-end($\2xl);
-  }
-
-  @mixin \2xl\:items-center {
-    @include items-center($\2xl);
-  }
-
-  @mixin \2xl\:items-baseline {
-    @include items-baseline($\2xl);
-  }
-
-  @mixin \2xl\:items-stretch {
-    @include items-stretch($\2xl);
-  }
-
-  // x*/
 }

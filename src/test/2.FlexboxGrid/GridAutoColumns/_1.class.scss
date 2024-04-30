@@ -2,146 +2,192 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Grid Auto Columns */
-@if $Basic {
-  // /*x
-  @mixin auto-cols-auto {
-    @include auto-cols-(auto);
-  }
+@include describe("2.Flexbox & Grid") {
+  @include describe("Grid Auto Columns") {
+    @include describe("Basic") {
+      @include it("auto-cols-auto") {
+        @include custom-expect-(grid-auto-columns, auto) {
+          @include auto-cols-auto;
+        }
+      }
 
-  @mixin auto-cols-min {
-    @include auto-cols-(min-content);
-  }
+      @include it("auto-cols-min") {
+        @include custom-expect-(grid-auto-columns, min-content) {
+          @include auto-cols-min;
+        }
+      }
 
-  @mixin auto-cols-max {
-    @include auto-cols-(max-content);
-  }
+      @include it("auto-cols-max") {
+        @include custom-expect-(grid-auto-columns, max-content) {
+          @include auto-cols-max;
+        }
+      }
 
-  @mixin auto-cols-fr {
-    @include auto-cols-(minmax(0, 1fr));
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:auto-cols-auto {
-      @include auto-cols-(auto, $sm);
+      @include it("auto-cols-fr") {
+        @include custom-expect-(grid-auto-columns, minmax(0, 1fr)) {
+          @include auto-cols-fr;
+        }
+      }
     }
 
-    @mixin sm\:auto-cols-min {
-      @include auto-cols-(min-content, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:auto-cols-auto") {
+        @include custom-expect-(grid-auto-columns, auto, $sm) {
+          @include sm\:auto-cols-auto;
+        }
+      }
+
+      @include it("sm\:auto-cols-min") {
+        @include custom-expect-(grid-auto-columns, min-content, $sm) {
+          @include sm\:auto-cols-min;
+        }
+      }
+
+      @include it("sm\:auto-cols-max") {
+        @include custom-expect-(grid-auto-columns, max-content, $sm) {
+          @include sm\:auto-cols-max;
+        }
+      }
+
+      @include it("sm\:auto-cols-fr") {
+        @include custom-expect-(grid-auto-columns, minmax(0, 1fr), $sm) {
+          @include sm\:auto-cols-fr;
+        }
+      }
+
+      @include it("md\:auto-cols-auto") {
+        @include custom-expect-(grid-auto-columns, auto, $md) {
+          @include md\:auto-cols-auto;
+        }
+      }
+
+      @include it("md\:auto-cols-min") {
+        @include custom-expect-(grid-auto-columns, min-content, $md) {
+          @include md\:auto-cols-min;
+        }
+      }
+
+      @include it("md\:auto-cols-max") {
+        @include custom-expect-(grid-auto-columns, max-content, $md) {
+          @include md\:auto-cols-max;
+        }
+      }
+
+      @include it("md\:auto-cols-fr") {
+        @include custom-expect-(grid-auto-columns, minmax(0, 1fr), $md) {
+          @include md\:auto-cols-fr;
+        }
+      }
+
+      @include it("lg\:auto-cols-auto") {
+        @include custom-expect-(grid-auto-columns, auto, $lg) {
+          @include lg\:auto-cols-auto;
+        }
+      }
+
+      @include it("lg\:auto-cols-min") {
+        @include custom-expect-(grid-auto-columns, min-content, $lg) {
+          @include lg\:auto-cols-min;
+        }
+      }
+
+      @include it("lg\:auto-cols-max") {
+        @include custom-expect-(grid-auto-columns, max-content, $lg) {
+          @include lg\:auto-cols-max;
+        }
+      }
+
+      @include it("lg\:auto-cols-fr") {
+        @include custom-expect-(grid-auto-columns, minmax(0, 1fr), $lg) {
+          @include lg\:auto-cols-fr;
+        }
+      }
+
+      @include it("xl\:auto-cols-auto") {
+        @include custom-expect-(grid-auto-columns, auto, $xl) {
+          @include xl\:auto-cols-auto;
+        }
+      }
+
+      @include it("xl\:auto-cols-min") {
+        @include custom-expect-(grid-auto-columns, min-content, $xl) {
+          @include xl\:auto-cols-min;
+        }
+      }
+
+      @include it("xl\:auto-cols-max") {
+        @include custom-expect-(grid-auto-columns, max-content, $xl) {
+          @include xl\:auto-cols-max;
+        }
+      }
+
+      @include it("xl\:auto-cols-fr") {
+        @include custom-expect-(grid-auto-columns, minmax(0, 1fr), $xl) {
+          @include xl\:auto-cols-fr;
+        }
+      }
+
+      @include it("\2xl\:auto-cols-auto") {
+        @include custom-expect-(grid-auto-columns, auto, $\2xl) {
+          @include \2xl\:auto-cols-auto;
+        }
+      }
+
+      @include it("\2xl\:auto-cols-min") {
+        @include custom-expect-(grid-auto-columns, min-content, $\2xl) {
+          @include \2xl\:auto-cols-min;
+        }
+      }
+
+      @include it("\2xl\:auto-cols-max") {
+        @include custom-expect-(grid-auto-columns, max-content, $\2xl) {
+          @include \2xl\:auto-cols-max;
+        }
+      }
+
+      @include it("\2xl\:auto-cols-fr") {
+        @include custom-expect-(grid-auto-columns, minmax(0, 1fr), $\2xl) {
+          @include \2xl\:auto-cols-fr;
+        }
+      }
     }
 
-    @mixin sm\:auto-cols-max {
-      @include auto-cols-(max-content, $sm);
-    }
+    @include describe("Custom") {
+      @include it("auto-cols-(minmax(0,_2fr))") {
+        @include custom-expect-(grid-auto-columns, minmax(0, _2fr)) {
+          @include auto-cols-(minmax(0, _2fr));
+        }
+      }
 
-    @mixin sm\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $sm);
-    }
+      @include it("sm\:auto-cols-(minmax(0,_2fr))") {
+        @include custom-expect-(grid-auto-columns, minmax(0, _2fr), $sm) {
+          @include sm\:auto-cols-(minmax(0, _2fr));
+        }
+      }
 
-    @mixin md\:auto-cols-auto {
-      @include auto-cols-(auto, $md);
-    }
+      @include it("md\:auto-cols-(minmax(0,_2fr))") {
+        @include custom-expect-(grid-auto-columns, minmax(0, _2fr), $md) {
+          @include md\:auto-cols-(minmax(0, _2fr));
+        }
+      }
 
-    @mixin md\:auto-cols-min {
-      @include auto-cols-(min-content, $md);
-    }
+      @include it("lg\:auto-cols-(minmax(0,_2fr))") {
+        @include custom-expect-(grid-auto-columns, minmax(0, _2fr), $lg) {
+          @include lg\:auto-cols-(minmax(0, _2fr));
+        }
+      }
 
-    @mixin md\:auto-cols-max {
-      @include auto-cols-(max-content, $md);
-    }
+      @include it("xl\:auto-cols-(minmax(0,_2fr))") {
+        @include custom-expect-(grid-auto-columns, minmax(0, _2fr), $xl) {
+          @include xl\:auto-cols-(minmax(0, _2fr));
+        }
+      }
 
-    @mixin md\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $md);
-    }
-
-    @mixin lg\:auto-cols-auto {
-      @include auto-cols-(auto, $lg);
-    }
-
-    @mixin lg\:auto-cols-min {
-      @include auto-cols-(min-content, $lg);
-    }
-
-    @mixin lg\:auto-cols-max {
-      @include auto-cols-(max-content, $lg);
-    }
-
-    @mixin lg\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $lg);
-    }
-
-    @mixin xl\:auto-cols-auto {
-      @include auto-cols-(auto, $xl);
-    }
-
-    @mixin xl\:auto-cols-min {
-      @include auto-cols-(min-content, $xl);
-    }
-
-    @mixin xl\:auto-cols-max {
-      @include auto-cols-(max-content, $xl);
-    }
-
-    @mixin xl\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $xl);
-    }
-
-    @mixin \2xl\:auto-cols-auto {
-      @include auto-cols-(auto, $\2xl);
-    }
-
-    @mixin \2xl\:auto-cols-min {
-      @include auto-cols-(min-content, $\2xl);
-    }
-
-    @mixin \2xl\:auto-cols-max {
-      @include auto-cols-(max-content, $\2xl);
-    }
-
-    @mixin \2xl\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin auto-cols-($v, $rwd: null) {
-    @if $rwd==null {
-      grid-auto-columns: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        grid-auto-columns: $v;
+      @include it("\2xl\:auto-cols-(minmax(0,_2fr))") {
+        @include custom-expect-(grid-auto-columns, minmax(0, _2fr), $\2xl) {
+          @include \2xl\:auto-cols-(minmax(0, _2fr));
+        }
       }
     }
   }
-
-  @mixin sm\:auto-cols-($v) {
-    @include auto-cols-($v, $sm);
-  }
-
-  @mixin md\:auto-cols-($v) {
-    @include auto-cols-($v, $md);
-  }
-
-  @mixin lg\:auto-cols-($v) {
-    @include auto-cols-($v, $lg);
-  }
-
-  @mixin xl\:auto-cols-($v) {
-    @include auto-cols-($v, $xl);
-  }
-
-  @mixin \2xl\:auto-cols-($v) {
-    @include auto-cols-($v, $\2xl);
-  }
-
-  // x*/
 }

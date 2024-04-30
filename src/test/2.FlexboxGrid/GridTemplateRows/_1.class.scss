@@ -2,385 +2,824 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Grid Template Rows */
-@if $Basic {
-  // /*x
-  @mixin grid-rows-1 {
-    @include grid-rows-(repeat(1, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-2 {
-    @include grid-rows-(repeat(2, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-3 {
-    @include grid-rows-(repeat(3, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-4 {
-    @include grid-rows-(repeat(4, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-5 {
-    @include grid-rows-(repeat(5, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-6 {
-    @include grid-rows-(repeat(6, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-7 {
-    @include grid-rows-(repeat(7, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-8 {
-    @include grid-rows-(repeat(8, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-9 {
-    @include grid-rows-(repeat(9, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-10 {
-    @include grid-rows-(repeat(10, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-11 {
-    @include grid-rows-(repeat(11, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-12 {
-    @include grid-rows-(repeat(12, minmax(0, 1fr)));
-  }
-
-  @mixin grid-rows-none {
-    @include grid-rows-(none);
-  }
-
-  @mixin grid-rows-subgrid {
-    @include grid-rows-(subgrid);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:grid-rows-1 {
-      @include grid-rows-(repeat(1, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-2 {
-      @include grid-rows-(repeat(2, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-3 {
-      @include grid-rows-(repeat(3, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-4 {
-      @include grid-rows-(repeat(4, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-5 {
-      @include grid-rows-(repeat(5, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-6 {
-      @include grid-rows-(repeat(6, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-7 {
-      @include grid-rows-(repeat(7, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-8 {
-      @include grid-rows-(repeat(8, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-9 {
-      @include grid-rows-(repeat(9, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-10 {
-      @include grid-rows-(repeat(10, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-11 {
-      @include grid-rows-(repeat(11, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-12 {
-      @include grid-rows-(repeat(12, minmax(0, 1fr)), $sm);
-    }
-
-    @mixin sm\:grid-rows-none {
-      @include grid-rows-(none, $sm);
-    }
-
-    @mixin sm\:grid-rows-subgrid {
-      @include grid-rows-(subgrid, $sm);
-    }
-
-    @mixin md\:grid-rows-1 {
-      @include grid-rows-(repeat(1, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-2 {
-      @include grid-rows-(repeat(2, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-3 {
-      @include grid-rows-(repeat(3, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-4 {
-      @include grid-rows-(repeat(4, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-5 {
-      @include grid-rows-(repeat(5, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-6 {
-      @include grid-rows-(repeat(6, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-7 {
-      @include grid-rows-(repeat(7, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-8 {
-      @include grid-rows-(repeat(8, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-9 {
-      @include grid-rows-(repeat(9, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-10 {
-      @include grid-rows-(repeat(10, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-11 {
-      @include grid-rows-(repeat(11, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-12 {
-      @include grid-rows-(repeat(12, minmax(0, 1fr)), $md);
-    }
-
-    @mixin md\:grid-rows-none {
-      @include grid-rows-(none, $md);
-    }
-
-    @mixin md\:grid-rows-subgrid {
-      @include grid-rows-(subgrid, $md);
-    }
-
-    @mixin lg\:grid-rows-1 {
-      @include grid-rows-(repeat(1, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-2 {
-      @include grid-rows-(repeat(2, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-3 {
-      @include grid-rows-(repeat(3, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-4 {
-      @include grid-rows-(repeat(4, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-5 {
-      @include grid-rows-(repeat(5, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-6 {
-      @include grid-rows-(repeat(6, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-7 {
-      @include grid-rows-(repeat(7, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-8 {
-      @include grid-rows-(repeat(8, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-9 {
-      @include grid-rows-(repeat(9, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-10 {
-      @include grid-rows-(repeat(10, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-11 {
-      @include grid-rows-(repeat(11, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-12 {
-      @include grid-rows-(repeat(12, minmax(0, 1fr)), $lg);
-    }
-
-    @mixin lg\:grid-rows-none {
-      @include grid-rows-(none, $lg);
-    }
-
-    @mixin lg\:grid-rows-subgrid {
-      @include grid-rows-(subgrid, $lg);
-    }
-
-    @mixin xl\:grid-rows-1 {
-      @include grid-rows-(repeat(1, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-2 {
-      @include grid-rows-(repeat(2, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-3 {
-      @include grid-rows-(repeat(3, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-4 {
-      @include grid-rows-(repeat(4, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-5 {
-      @include grid-rows-(repeat(5, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-6 {
-      @include grid-rows-(repeat(6, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-7 {
-      @include grid-rows-(repeat(7, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-8 {
-      @include grid-rows-(repeat(8, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-9 {
-      @include grid-rows-(repeat(9, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-10 {
-      @include grid-rows-(repeat(10, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-11 {
-      @include grid-rows-(repeat(11, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-12 {
-      @include grid-rows-(repeat(12, minmax(0, 1fr)), $xl);
-    }
-
-    @mixin xl\:grid-rows-none {
-      @include grid-rows-(none, $xl);
-    }
-
-    @mixin xl\:grid-rows-subgrid {
-      @include grid-rows-(subgrid, $xl);
-    }
-
-    @mixin \2xl\:grid-rows-1 {
-      @include grid-rows-(repeat(1, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-2 {
-      @include grid-rows-(repeat(2, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-3 {
-      @include grid-rows-(repeat(3, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-4 {
-      @include grid-rows-(repeat(4, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-5 {
-      @include grid-rows-(repeat(5, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-6 {
-      @include grid-rows-(repeat(6, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-7 {
-      @include grid-rows-(repeat(7, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-8 {
-      @include grid-rows-(repeat(8, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-9 {
-      @include grid-rows-(repeat(9, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-10 {
-      @include grid-rows-(repeat(10, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-11 {
-      @include grid-rows-(repeat(11, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-12 {
-      @include grid-rows-(repeat(12, minmax(0, 1fr)), $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-none {
-      @include grid-rows-(none, $\2xl);
-    }
-
-    @mixin \2xl\:grid-rows-subgrid {
-      @include grid-rows-(subgrid, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin grid-rows-($v, $rwd: null) {
-    @if $rwd==null {
-      grid-template-rows: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        grid-template-rows: $v;
+@include describe("2.Flexbox & Grid") {
+  @include describe("Grid Template Rows") {
+    @include describe("Basic") {
+      @include it("grid-rows-1") {
+        @include custom-expect-(grid-template-rows, repeat(1, minmax(0, 1fr))) {
+          @include grid-rows-1;
+        }
+      }
+
+      @include it("grid-rows-2") {
+        @include custom-expect-(grid-template-rows, repeat(2, minmax(0, 1fr))) {
+          @include grid-rows-2;
+        }
+      }
+
+      @include it("grid-rows-3") {
+        @include custom-expect-(grid-template-rows, repeat(3, minmax(0, 1fr))) {
+          @include grid-rows-3;
+        }
+      }
+
+      @include it("grid-rows-4") {
+        @include custom-expect-(grid-template-rows, repeat(4, minmax(0, 1fr))) {
+          @include grid-rows-4;
+        }
+      }
+
+      @include it("grid-rows-5") {
+        @include custom-expect-(grid-template-rows, repeat(5, minmax(0, 1fr))) {
+          @include grid-rows-5;
+        }
+      }
+
+      @include it("grid-rows-6") {
+        @include custom-expect-(grid-template-rows, repeat(6, minmax(0, 1fr))) {
+          @include grid-rows-6;
+        }
+      }
+
+      @include it("grid-rows-7") {
+        @include custom-expect-(grid-template-rows, repeat(7, minmax(0, 1fr))) {
+          @include grid-rows-7;
+        }
+      }
+
+      @include it("grid-rows-8") {
+        @include custom-expect-(grid-template-rows, repeat(8, minmax(0, 1fr))) {
+          @include grid-rows-8;
+        }
+      }
+
+      @include it("grid-rows-9") {
+        @include custom-expect-(grid-template-rows, repeat(9, minmax(0, 1fr))) {
+          @include grid-rows-9;
+        }
+      }
+
+      @include it("grid-rows-10") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(10, minmax(0, 1fr))
+        ) {
+          @include grid-rows-10;
+        }
+      }
+
+      @include it("grid-rows-11") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(11, minmax(0, 1fr))
+        ) {
+          @include grid-rows-11;
+        }
+      }
+
+      @include it("grid-rows-12") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(12, minmax(0, 1fr))
+        ) {
+          @include grid-rows-12;
+        }
+      }
+
+      @include it("grid-rows-none") {
+        @include custom-expect-(grid-template-rows, none) {
+          @include grid-rows-none;
+        }
+      }
+
+      @include it("grid-rows-subgrid") {
+        @include custom-expect-(grid-template-rows, subgrid) {
+          @include grid-rows-subgrid;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:grid-rows-1") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(1, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-1;
+        }
+      }
+
+      @include it("sm\:grid-rows-2") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(2, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-2;
+        }
+      }
+
+      @include it("sm\:grid-rows-3") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(3, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-3;
+        }
+      }
+
+      @include it("sm\:grid-rows-4") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(4, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-4;
+        }
+      }
+
+      @include it("sm\:grid-rows-5") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(5, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-5;
+        }
+      }
+
+      @include it("sm\:grid-rows-6") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(6, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-6;
+        }
+      }
+
+      @include it("sm\:grid-rows-7") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(7, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-7;
+        }
+      }
+
+      @include it("sm\:grid-rows-8") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(8, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-8;
+        }
+      }
+
+      @include it("sm\:grid-rows-9") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(9, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-9;
+        }
+      }
+
+      @include it("sm\:grid-rows-10") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(10, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-10;
+        }
+      }
+
+      @include it("sm\:grid-rows-11") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(11, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-11;
+        }
+      }
+
+      @include it("sm\:grid-rows-12") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(12, minmax(0, 1fr)),
+          $sm
+        ) {
+          @include sm\:grid-rows-12;
+        }
+      }
+
+      @include it("sm\:grid-rows-none") {
+        @include custom-expect-(grid-template-rows, none, $sm) {
+          @include sm\:grid-rows-none;
+        }
+      }
+
+      @include it("sm\:grid-rows-subgrid") {
+        @include custom-expect-(grid-template-rows, subgrid, $sm) {
+          @include sm\:grid-rows-subgrid;
+        }
+      }
+
+      @include it("md\:grid-rows-1") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(1, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-1;
+        }
+      }
+
+      @include it("md\:grid-rows-2") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(2, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-2;
+        }
+      }
+
+      @include it("md\:grid-rows-3") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(3, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-3;
+        }
+      }
+
+      @include it("md\:grid-rows-4") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(4, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-4;
+        }
+      }
+
+      @include it("md\:grid-rows-5") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(5, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-5;
+        }
+      }
+
+      @include it("md\:grid-rows-6") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(6, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-6;
+        }
+      }
+
+      @include it("md\:grid-rows-7") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(7, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-7;
+        }
+      }
+
+      @include it("md\:grid-rows-8") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(8, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-8;
+        }
+      }
+
+      @include it("md\:grid-rows-9") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(9, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-9;
+        }
+      }
+
+      @include it("md\:grid-rows-10") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(10, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-10;
+        }
+      }
+
+      @include it("md\:grid-rows-11") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(11, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-11;
+        }
+      }
+
+      @include it("md\:grid-rows-12") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(12, minmax(0, 1fr)),
+          $md
+        ) {
+          @include md\:grid-rows-12;
+        }
+      }
+
+      @include it("md\:grid-rows-none") {
+        @include custom-expect-(grid-template-rows, none, $md) {
+          @include md\:grid-rows-none;
+        }
+      }
+
+      @include it("md\:grid-rows-subgrid") {
+        @include custom-expect-(grid-template-rows, subgrid, $md) {
+          @include md\:grid-rows-subgrid;
+        }
+      }
+
+      @include it("lg\:grid-rows-1") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(1, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-1;
+        }
+      }
+
+      @include it("lg\:grid-rows-2") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(2, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-2;
+        }
+      }
+
+      @include it("lg\:grid-rows-3") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(3, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-3;
+        }
+      }
+
+      @include it("lg\:grid-rows-4") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(4, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-4;
+        }
+      }
+
+      @include it("lg\:grid-rows-5") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(5, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-5;
+        }
+      }
+
+      @include it("lg\:grid-rows-6") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(6, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-6;
+        }
+      }
+
+      @include it("lg\:grid-rows-7") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(7, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-7;
+        }
+      }
+
+      @include it("lg\:grid-rows-8") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(8, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-8;
+        }
+      }
+
+      @include it("lg\:grid-rows-9") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(9, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-9;
+        }
+      }
+
+      @include it("lg\:grid-rows-10") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(10, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-10;
+        }
+      }
+
+      @include it("lg\:grid-rows-11") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(11, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-11;
+        }
+      }
+
+      @include it("lg\:grid-rows-12") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(12, minmax(0, 1fr)),
+          $lg
+        ) {
+          @include lg\:grid-rows-12;
+        }
+      }
+
+      @include it("lg\:grid-rows-none") {
+        @include custom-expect-(grid-template-rows, none, $lg) {
+          @include lg\:grid-rows-none;
+        }
+      }
+
+      @include it("lg\:grid-rows-subgrid") {
+        @include custom-expect-(grid-template-rows, subgrid, $lg) {
+          @include lg\:grid-rows-subgrid;
+        }
+      }
+
+      @include it("xl\:grid-rows-1") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(1, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-1;
+        }
+      }
+
+      @include it("xl\:grid-rows-2") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(2, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-2;
+        }
+      }
+
+      @include it("xl\:grid-rows-3") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(3, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-3;
+        }
+      }
+
+      @include it("xl\:grid-rows-4") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(4, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-4;
+        }
+      }
+
+      @include it("xl\:grid-rows-5") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(5, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-5;
+        }
+      }
+
+      @include it("xl\:grid-rows-6") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(6, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-6;
+        }
+      }
+
+      @include it("xl\:grid-rows-7") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(7, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-7;
+        }
+      }
+
+      @include it("xl\:grid-rows-8") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(8, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-8;
+        }
+      }
+
+      @include it("xl\:grid-rows-9") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(9, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-9;
+        }
+      }
+
+      @include it("xl\:grid-rows-10") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(10, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-10;
+        }
+      }
+
+      @include it("xl\:grid-rows-11") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(11, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-11;
+        }
+      }
+
+      @include it("xl\:grid-rows-12") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(12, minmax(0, 1fr)),
+          $xl
+        ) {
+          @include xl\:grid-rows-12;
+        }
+      }
+
+      @include it("xl\:grid-rows-none") {
+        @include custom-expect-(grid-template-rows, none, $xl) {
+          @include xl\:grid-rows-none;
+        }
+      }
+
+      @include it("xl\:grid-rows-subgrid") {
+        @include custom-expect-(grid-template-rows, subgrid, $xl) {
+          @include xl\:grid-rows-subgrid;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-1") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(1, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-1;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-2") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(2, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-2;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-3") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(3, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-3;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-4") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(4, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-4;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-5") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(5, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-5;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-6") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(6, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-6;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-7") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(7, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-7;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-8") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(8, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-8;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-9") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(9, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-9;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-10") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(10, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-10;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-11") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(11, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-11;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-12") {
+        @include custom-expect-(
+          grid-template-rows,
+          repeat(12, minmax(0, 1fr)),
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-12;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-none") {
+        @include custom-expect-(grid-template-rows, none, $\2xl) {
+          @include \2xl\:grid-rows-none;
+        }
+      }
+
+      @include it("\2xl\:grid-rows-subgrid") {
+        @include custom-expect-(grid-template-rows, subgrid, $\2xl) {
+          @include \2xl\:grid-rows-subgrid;
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("grid-rows-(200px minmax(900px, 1fr) 100px)") {
+        @include custom-expect-(
+          grid-template-rows,
+          200px minmax(900px, 1fr) 100px
+        ) {
+          @include grid-rows-(200px minmax(900px, 1fr) 100px);
+        }
+      }
+
+      @include it("sm\:grid-rows-(200px minmax(900px, 1fr) 100px)") {
+        @include custom-expect-(
+          grid-template-rows,
+          200px minmax(900px, 1fr) 100px,
+          $sm
+        ) {
+          @include sm\:grid-rows-(200px minmax(900px, 1fr) 100px);
+        }
+      }
+
+      @include it("md\:grid-rows-(200px minmax(900px, 1fr) 100px)") {
+        @include custom-expect-(
+          grid-template-rows,
+          200px minmax(900px, 1fr) 100px,
+          $md
+        ) {
+          @include md\:grid-rows-(200px minmax(900px, 1fr) 100px);
+        }
+      }
+
+      @include it("lg\:grid-rows-(200px minmax(900px, 1fr) 100px)") {
+        @include custom-expect-(
+          grid-template-rows,
+          200px minmax(900px, 1fr) 100px,
+          $lg
+        ) {
+          @include lg\:grid-rows-(200px minmax(900px, 1fr) 100px);
+        }
+      }
+
+      @include it("xl\:grid-rows-(200px minmax(900px, 1fr) 100px)") {
+        @include custom-expect-(
+          grid-template-rows,
+          200px minmax(900px, 1fr) 100px,
+          $xl
+        ) {
+          @include xl\:grid-rows-(200px minmax(900px, 1fr) 100px);
+        }
+      }
+
+      @include it("\2xl\:grid-rows-(200px minmax(900px, 1fr) 100px)") {
+        @include custom-expect-(
+          grid-template-rows,
+          200px minmax(900px, 1fr) 100px,
+          $\2xl
+        ) {
+          @include \2xl\:grid-rows-(200px minmax(900px, 1fr) 100px);
+        }
       }
     }
   }
-
-  @mixin sm\:grid-rows-($v) {
-    @include grid-rows-($v, $sm);
-  }
-
-  @mixin md\:grid-rows-($v) {
-    @include grid-rows-($v, $md);
-  }
-
-  @mixin lg\:grid-rows-($v) {
-    @include grid-rows-($v, $lg);
-  }
-
-  @mixin xl\:grid-rows-($v) {
-    @include grid-rows-($v, $xl);
-  }
-
-  @mixin \2xl\:grid-rows-($v) {
-    @include grid-rows-($v, $\2xl);
-  }
-
-  // x*/
 }

@@ -2,103 +2,118 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Flex Wrap */
-@if $Basic {
-  // /*x
-  @mixin flex-wrap($rwd: null) {
-    @if $rwd==null {
-      flex-wrap: wrap;
-    } @else {
-      @media (min-width: $rwd) {
-        flex-wrap: wrap;
+@include describe("2.Flexbox & Grid") {
+  @include describe("Flex Wrap") {
+    @include describe("Basic") {
+      @include it("flex-wrap") {
+        @include custom-expect-(flex-wrap, wrap) {
+          @include flex-wrap;
+        }
+      }
+
+      @include it("flex-wrap-reverse") {
+        @include custom-expect-(flex-wrap, wrap-reverse) {
+          @include flex-wrap-reverse;
+        }
+      }
+
+      @include it("flex-nowrap") {
+        @include custom-expect-(flex-wrap, nowrap) {
+          @include flex-nowrap;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:flex-wrap") {
+        @include custom-expect-(flex-wrap, wrap, $sm) {
+          @include sm\:flex-wrap;
+        }
+      }
+
+      @include it("sm\:flex-wrap-reverse") {
+        @include custom-expect-(flex-wrap, wrap-reverse, $sm) {
+          @include sm\:flex-wrap-reverse;
+        }
+      }
+
+      @include it("sm\:flex-nowrap") {
+        @include custom-expect-(flex-wrap, nowrap, $sm) {
+          @include sm\:flex-nowrap;
+        }
+      }
+
+      @include it("md\:flex-wrap") {
+        @include custom-expect-(flex-wrap, wrap, $md) {
+          @include md\:flex-wrap;
+        }
+      }
+
+      @include it("md\:flex-wrap-reverse") {
+        @include custom-expect-(flex-wrap, wrap-reverse, $md) {
+          @include md\:flex-wrap-reverse;
+        }
+      }
+
+      @include it("md\:flex-nowrap") {
+        @include custom-expect-(flex-wrap, nowrap, $md) {
+          @include md\:flex-nowrap;
+        }
+      }
+
+      @include it("lg\:flex-wrap") {
+        @include custom-expect-(flex-wrap, wrap, $lg) {
+          @include lg\:flex-wrap;
+        }
+      }
+
+      @include it("lg\:flex-wrap-reverse") {
+        @include custom-expect-(flex-wrap, wrap-reverse, $lg) {
+          @include lg\:flex-wrap-reverse;
+        }
+      }
+
+      @include it("lg\:flex-nowrap") {
+        @include custom-expect-(flex-wrap, nowrap, $lg) {
+          @include lg\:flex-nowrap;
+        }
+      }
+
+      @include it("xl\:flex-wrap") {
+        @include custom-expect-(flex-wrap, wrap, $xl) {
+          @include xl\:flex-wrap;
+        }
+      }
+
+      @include it("xl\:flex-wrap-reverse") {
+        @include custom-expect-(flex-wrap, wrap-reverse, $xl) {
+          @include xl\:flex-wrap-reverse;
+        }
+      }
+
+      @include it("xl\:flex-nowrap") {
+        @include custom-expect-(flex-wrap, nowrap, $xl) {
+          @include xl\:flex-nowrap;
+        }
+      }
+
+      @include it("\2xl\:flex-wrap") {
+        @include custom-expect-(flex-wrap, wrap, $\2xl) {
+          @include \2xl\:flex-wrap;
+        }
+      }
+
+      @include it("\2xl\:flex-wrap-reverse") {
+        @include custom-expect-(flex-wrap, wrap-reverse, $\2xl) {
+          @include \2xl\:flex-wrap-reverse;
+        }
+      }
+
+      @include it("\2xl\:flex-nowrap") {
+        @include custom-expect-(flex-wrap, nowrap, $\2xl) {
+          @include \2xl\:flex-nowrap;
+        }
       }
     }
   }
-
-  @mixin flex-wrap-reverse($rwd: null) {
-    @if $rwd==null {
-      flex-wrap: wrap-reverse;
-    } @else {
-      @media (min-width: $rwd) {
-        flex-wrap: wrap-reverse;
-      }
-    }
-  }
-
-  @mixin flex-nowrap($rwd: null) {
-    @if $rwd==null {
-      flex-wrap: nowrap;
-    } @else {
-      @media (min-width: $rwd) {
-        flex-wrap: nowrap;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:flex-wrap {
-    @include flex-wrap($sm);
-  }
-
-  @mixin sm\:flex-wrap-reverse {
-    @include flex-wrap-reverse($sm);
-  }
-
-  @mixin sm\:flex-nowrap {
-    @include flex-nowrap($sm);
-  }
-
-  @mixin md\:flex-wrap {
-    @include flex-wrap($md);
-  }
-
-  @mixin md\:flex-wrap-reverse {
-    @include flex-wrap-reverse($md);
-  }
-
-  @mixin md\:flex-nowrap {
-    @include flex-nowrap($md);
-  }
-
-  @mixin lg\:flex-wrap {
-    @include flex-wrap($lg);
-  }
-
-  @mixin lg\:flex-wrap-reverse {
-    @include flex-wrap-reverse($lg);
-  }
-
-  @mixin lg\:flex-nowrap {
-    @include flex-nowrap($lg);
-  }
-
-  @mixin xl\:flex-wrap {
-    @include flex-wrap($xl);
-  }
-
-  @mixin xl\:flex-wrap-reverse {
-    @include flex-wrap-reverse($xl);
-  }
-
-  @mixin xl\:flex-nowrap {
-    @include flex-nowrap($xl);
-  }
-
-  @mixin \2xl\:flex-wrap {
-    @include flex-wrap($\2xl);
-  }
-
-  @mixin \2xl\:flex-wrap-reverse {
-    @include flex-wrap-reverse($\2xl);
-  }
-
-  @mixin \2xl\:flex-nowrap {
-    @include flex-nowrap($\2xl);
-  }
-
-  // x*/
 }

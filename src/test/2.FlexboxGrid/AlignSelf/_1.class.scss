@@ -2,191 +2,226 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Align Self */
-@if $Basic {
-  // /*x
-  @mixin self-auto($rwd: null) {
-    @if $rwd==null {
-      align-self: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        align-self: auto;
+@include describe("2.Flexbox & Grid") {
+  @include describe("Align Self") {
+    @include describe("Basic") {
+      @include it("self-auto") {
+        @include custom-expect-(align-self, auto) {
+          @include self-auto;
+        }
+      }
+
+      @include it("self-start") {
+        @include custom-expect-(align-self, flex-start) {
+          @include self-start;
+        }
+      }
+
+      @include it("self-end") {
+        @include custom-expect-(align-self, flex-end) {
+          @include self-end;
+        }
+      }
+
+      @include it("self-center") {
+        @include custom-expect-(align-self, center) {
+          @include self-center;
+        }
+      }
+
+      @include it("self-stretch") {
+        @include custom-expect-(align-self, stretch) {
+          @include self-stretch;
+        }
+      }
+
+      @include it("self-baseline") {
+        @include custom-expect-(align-self, baseline) {
+          @include self-baseline;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:self-auto") {
+        @include custom-expect-(align-self, auto, $sm) {
+          @include sm\:self-auto;
+        }
+      }
+
+      @include it("sm\:self-start") {
+        @include custom-expect-(align-self, flex-start, $sm) {
+          @include sm\:self-start;
+        }
+      }
+
+      @include it("sm\:self-end") {
+        @include custom-expect-(align-self, flex-end, $sm) {
+          @include sm\:self-end;
+        }
+      }
+
+      @include it("sm\:self-center") {
+        @include custom-expect-(align-self, center, $sm) {
+          @include sm\:self-center;
+        }
+      }
+
+      @include it("sm\:self-stretch") {
+        @include custom-expect-(align-self, stretch, $sm) {
+          @include sm\:self-stretch;
+        }
+      }
+
+      @include it("sm\:self-baseline") {
+        @include custom-expect-(align-self, baseline, $sm) {
+          @include sm\:self-baseline;
+        }
+      }
+
+      @include it("md\:self-auto") {
+        @include custom-expect-(align-self, auto, $md) {
+          @include md\:self-auto;
+        }
+      }
+
+      @include it("md\:self-start") {
+        @include custom-expect-(align-self, flex-start, $md) {
+          @include md\:self-start;
+        }
+      }
+
+      @include it("md\:self-end") {
+        @include custom-expect-(align-self, flex-end, $md) {
+          @include md\:self-end;
+        }
+      }
+
+      @include it("md\:self-center") {
+        @include custom-expect-(align-self, center, $md) {
+          @include md\:self-center;
+        }
+      }
+
+      @include it("md\:self-stretch") {
+        @include custom-expect-(align-self, stretch, $md) {
+          @include md\:self-stretch;
+        }
+      }
+
+      @include it("md\:self-baseline") {
+        @include custom-expect-(align-self, baseline, $md) {
+          @include md\:self-baseline;
+        }
+      }
+
+      @include it("lg\:self-auto") {
+        @include custom-expect-(align-self, auto, $lg) {
+          @include lg\:self-auto;
+        }
+      }
+
+      @include it("lg\:self-start") {
+        @include custom-expect-(align-self, flex-start, $lg) {
+          @include lg\:self-start;
+        }
+      }
+
+      @include it("lg\:self-end") {
+        @include custom-expect-(align-self, flex-end, $lg) {
+          @include lg\:self-end;
+        }
+      }
+
+      @include it("lg\:self-center") {
+        @include custom-expect-(align-self, center, $lg) {
+          @include lg\:self-center;
+        }
+      }
+
+      @include it("lg\:self-stretch") {
+        @include custom-expect-(align-self, stretch, $lg) {
+          @include lg\:self-stretch;
+        }
+      }
+
+      @include it("lg\:self-baseline") {
+        @include custom-expect-(align-self, baseline, $lg) {
+          @include lg\:self-baseline;
+        }
+      }
+
+      @include it("xl\:self-auto") {
+        @include custom-expect-(align-self, auto, $xl) {
+          @include xl\:self-auto;
+        }
+      }
+
+      @include it("xl\:self-start") {
+        @include custom-expect-(align-self, flex-start, $xl) {
+          @include xl\:self-start;
+        }
+      }
+
+      @include it("xl\:self-end") {
+        @include custom-expect-(align-self, flex-end, $xl) {
+          @include xl\:self-end;
+        }
+      }
+
+      @include it("xl\:self-center") {
+        @include custom-expect-(align-self, center, $xl) {
+          @include xl\:self-center;
+        }
+      }
+
+      @include it("xl\:self-stretch") {
+        @include custom-expect-(align-self, stretch, $xl) {
+          @include xl\:self-stretch;
+        }
+      }
+
+      @include it("xl\:self-baseline") {
+        @include custom-expect-(align-self, baseline, $xl) {
+          @include xl\:self-baseline;
+        }
+      }
+
+      @include it("\2xl\:self-auto") {
+        @include custom-expect-(align-self, auto, $\2xl) {
+          @include \2xl\:self-auto;
+        }
+      }
+
+      @include it("\2xl\:self-start") {
+        @include custom-expect-(align-self, flex-start, $\2xl) {
+          @include \2xl\:self-start;
+        }
+      }
+
+      @include it("\2xl\:self-end") {
+        @include custom-expect-(align-self, flex-end, $\2xl) {
+          @include \2xl\:self-end;
+        }
+      }
+
+      @include it("\2xl\:self-center") {
+        @include custom-expect-(align-self, center, $\2xl) {
+          @include \2xl\:self-center;
+        }
+      }
+
+      @include it("\2xl\:self-stretch") {
+        @include custom-expect-(align-self, stretch, $\2xl) {
+          @include \2xl\:self-stretch;
+        }
+      }
+
+      @include it("\2xl\:self-baseline") {
+        @include custom-expect-(align-self, baseline, $\2xl) {
+          @include \2xl\:self-baseline;
+        }
       }
     }
   }
-
-  @mixin self-start($rwd: null) {
-    @if $rwd==null {
-      align-self: flex-start;
-    } @else {
-      @media (min-width: $rwd) {
-        align-self: flex-start;
-      }
-    }
-  }
-
-  @mixin self-end($rwd: null) {
-    @if $rwd==null {
-      align-self: flex-end;
-    } @else {
-      @media (min-width: $rwd) {
-        align-self: flex-end;
-      }
-    }
-  }
-
-  @mixin self-center($rwd: null) {
-    @if $rwd==null {
-      align-self: center;
-    } @else {
-      @media (min-width: $rwd) {
-        align-self: center;
-      }
-    }
-  }
-
-  @mixin self-stretch($rwd: null) {
-    @if $rwd==null {
-      align-self: stretch;
-    } @else {
-      @media (min-width: $rwd) {
-        align-self: stretch;
-      }
-    }
-  }
-
-  @mixin self-baseline($rwd: null) {
-    @if $rwd==null {
-      align-self: baseline;
-    } @else {
-      @media (min-width: $rwd) {
-        align-self: baseline;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:self-auto {
-    @include self-auto($sm);
-  }
-
-  @mixin sm\:self-start {
-    @include self-start($sm);
-  }
-
-  @mixin sm\:self-end {
-    @include self-end($sm);
-  }
-
-  @mixin sm\:self-center {
-    @include self-center($sm);
-  }
-
-  @mixin sm\:self-stretch {
-    @include self-stretch($sm);
-  }
-
-  @mixin sm\:self-baseline {
-    @include self-baseline($sm);
-  }
-
-  @mixin md\:self-auto {
-    @include self-auto($md);
-  }
-
-  @mixin md\:self-start {
-    @include self-start($md);
-  }
-
-  @mixin md\:self-end {
-    @include self-end($md);
-  }
-
-  @mixin md\:self-center {
-    @include self-center($md);
-  }
-
-  @mixin md\:self-stretch {
-    @include self-stretch($md);
-  }
-
-  @mixin md\:self-baseline {
-    @include self-baseline($md);
-  }
-
-  @mixin lg\:self-auto {
-    @include self-auto($lg);
-  }
-
-  @mixin lg\:self-start {
-    @include self-start($lg);
-  }
-
-  @mixin lg\:self-end {
-    @include self-end($lg);
-  }
-
-  @mixin lg\:self-center {
-    @include self-center($lg);
-  }
-
-  @mixin lg\:self-stretch {
-    @include self-stretch($lg);
-  }
-
-  @mixin lg\:self-baseline {
-    @include self-baseline($lg);
-  }
-
-  @mixin xl\:self-auto {
-    @include self-auto($xl);
-  }
-
-  @mixin xl\:self-start {
-    @include self-start($xl);
-  }
-
-  @mixin xl\:self-end {
-    @include self-end($xl);
-  }
-
-  @mixin xl\:self-center {
-    @include self-center($xl);
-  }
-
-  @mixin xl\:self-stretch {
-    @include self-stretch($xl);
-  }
-
-  @mixin xl\:self-baseline {
-    @include self-baseline($xl);
-  }
-
-  @mixin \2xl\:self-auto {
-    @include self-auto($\2xl);
-  }
-
-  @mixin \2xl\:self-start {
-    @include self-start($\2xl);
-  }
-
-  @mixin \2xl\:self-end {
-    @include self-end($\2xl);
-  }
-
-  @mixin \2xl\:self-center {
-    @include self-center($\2xl);
-  }
-
-  @mixin \2xl\:self-stretch {
-    @include self-stretch($\2xl);
-  }
-
-  @mixin \2xl\:self-baseline {
-    @include self-baseline($\2xl);
-  }
-
-  // x*/
 }

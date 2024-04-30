@@ -2,163 +2,190 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Justify Self */
-@if $Basic {
-  // /*x
-  @mixin justify-self-auto($rwd: null) {
-    @if $rwd==null {
-      justify-self: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        justify-self: auto;
+@include describe("2.Flexbox & Grid") {
+  @include describe("Justify Self") {
+    @include describe("Basic") {
+      @include it("justify-self-auto") {
+        @include custom-expect-(justify-self, auto) {
+          @include justify-self-auto;
+        }
+      }
+
+      @include it("justify-self-start") {
+        @include custom-expect-(justify-self, start) {
+          @include justify-self-start;
+        }
+      }
+
+      @include it("justify-self-end") {
+        @include custom-expect-(justify-self, end) {
+          @include justify-self-end;
+        }
+      }
+
+      @include it("justify-self-center") {
+        @include custom-expect-(justify-self, center) {
+          @include justify-self-center;
+        }
+      }
+
+      @include it("justify-self-stretch") {
+        @include custom-expect-(justify-self, stretch) {
+          @include justify-self-stretch;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:justify-self-auto") {
+        @include custom-expect-(justify-self, auto, $sm) {
+          @include sm\:justify-self-auto;
+        }
+      }
+
+      @include it("sm\:justify-self-start") {
+        @include custom-expect-(justify-self, start, $sm) {
+          @include sm\:justify-self-start;
+        }
+      }
+
+      @include it("sm\:justify-self-end") {
+        @include custom-expect-(justify-self, end, $sm) {
+          @include sm\:justify-self-end;
+        }
+      }
+
+      @include it("sm\:justify-self-center") {
+        @include custom-expect-(justify-self, center, $sm) {
+          @include sm\:justify-self-center;
+        }
+      }
+
+      @include it("sm\:justify-self-stretch") {
+        @include custom-expect-(justify-self, stretch, $sm) {
+          @include sm\:justify-self-stretch;
+        }
+      }
+
+      @include it("md\:justify-self-auto") {
+        @include custom-expect-(justify-self, auto, $md) {
+          @include md\:justify-self-auto;
+        }
+      }
+
+      @include it("md\:justify-self-start") {
+        @include custom-expect-(justify-self, start, $md) {
+          @include md\:justify-self-start;
+        }
+      }
+
+      @include it("md\:justify-self-end") {
+        @include custom-expect-(justify-self, end, $md) {
+          @include md\:justify-self-end;
+        }
+      }
+
+      @include it("md\:justify-self-center") {
+        @include custom-expect-(justify-self, center, $md) {
+          @include md\:justify-self-center;
+        }
+      }
+
+      @include it("md\:justify-self-stretch") {
+        @include custom-expect-(justify-self, stretch, $md) {
+          @include md\:justify-self-stretch;
+        }
+      }
+
+      @include it("lg\:justify-self-auto") {
+        @include custom-expect-(justify-self, auto, $lg) {
+          @include lg\:justify-self-auto;
+        }
+      }
+
+      @include it("lg\:justify-self-start") {
+        @include custom-expect-(justify-self, start, $lg) {
+          @include lg\:justify-self-start;
+        }
+      }
+
+      @include it("lg\:justify-self-end") {
+        @include custom-expect-(justify-self, end, $lg) {
+          @include lg\:justify-self-end;
+        }
+      }
+
+      @include it("lg\:justify-self-center") {
+        @include custom-expect-(justify-self, center, $lg) {
+          @include lg\:justify-self-center;
+        }
+      }
+
+      @include it("lg\:justify-self-stretch") {
+        @include custom-expect-(justify-self, stretch, $lg) {
+          @include lg\:justify-self-stretch;
+        }
+      }
+
+      @include it("xl\:justify-self-auto") {
+        @include custom-expect-(justify-self, auto, $xl) {
+          @include xl\:justify-self-auto;
+        }
+      }
+
+      @include it("xl\:justify-self-start") {
+        @include custom-expect-(justify-self, start, $xl) {
+          @include xl\:justify-self-start;
+        }
+      }
+
+      @include it("xl\:justify-self-end") {
+        @include custom-expect-(justify-self, end, $xl) {
+          @include xl\:justify-self-end;
+        }
+      }
+
+      @include it("xl\:justify-self-center") {
+        @include custom-expect-(justify-self, center, $xl) {
+          @include xl\:justify-self-center;
+        }
+      }
+
+      @include it("xl\:justify-self-stretch") {
+        @include custom-expect-(justify-self, stretch, $xl) {
+          @include xl\:justify-self-stretch;
+        }
+      }
+
+      @include it("\2xl\:justify-self-auto") {
+        @include custom-expect-(justify-self, auto, $\2xl) {
+          @include \2xl\:justify-self-auto;
+        }
+      }
+
+      @include it("\2xl\:justify-self-start") {
+        @include custom-expect-(justify-self, start, $\2xl) {
+          @include \2xl\:justify-self-start;
+        }
+      }
+
+      @include it("\2xl\:justify-self-end") {
+        @include custom-expect-(justify-self, end, $\2xl) {
+          @include \2xl\:justify-self-end;
+        }
+      }
+
+      @include it("\2xl\:justify-self-center") {
+        @include custom-expect-(justify-self, center, $\2xl) {
+          @include \2xl\:justify-self-center;
+        }
+      }
+
+      @include it("\2xl\:justify-self-stretch") {
+        @include custom-expect-(justify-self, stretch, $\2xl) {
+          @include \2xl\:justify-self-stretch;
+        }
       }
     }
   }
-
-  @mixin justify-self-start($rwd: null) {
-    @if $rwd==null {
-      justify-self: start;
-    } @else {
-      @media (min-width: $rwd) {
-        justify-self: start;
-      }
-    }
-  }
-
-  @mixin justify-self-end($rwd: null) {
-    @if $rwd==null {
-      justify-self: end;
-    } @else {
-      @media (min-width: $rwd) {
-        justify-self: end;
-      }
-    }
-  }
-
-  @mixin justify-self-center($rwd: null) {
-    @if $rwd==null {
-      justify-self: center;
-    } @else {
-      @media (min-width: $rwd) {
-        justify-self: center;
-      }
-    }
-  }
-
-  @mixin justify-self-stretch($rwd: null) {
-    @if $rwd==null {
-      justify-self: stretch;
-    } @else {
-      @media (min-width: $rwd) {
-        justify-self: stretch;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:justify-self-auto {
-    @include justify-self-auto($sm);
-  }
-
-  @mixin sm\:justify-self-start {
-    @include justify-self-start($sm);
-  }
-
-  @mixin sm\:justify-self-end {
-    @include justify-self-end($sm);
-  }
-
-  @mixin sm\:justify-self-center {
-    @include justify-self-center($sm);
-  }
-
-  @mixin sm\:justify-self-stretch {
-    @include justify-self-stretch($sm);
-  }
-
-  @mixin md\:justify-self-auto {
-    @include justify-self-auto($md);
-  }
-
-  @mixin md\:justify-self-start {
-    @include justify-self-start($md);
-  }
-
-  @mixin md\:justify-self-end {
-    @include justify-self-end($md);
-  }
-
-  @mixin md\:justify-self-center {
-    @include justify-self-center($md);
-  }
-
-  @mixin md\:justify-self-stretch {
-    @include justify-self-stretch($md);
-  }
-
-  @mixin lg\:justify-self-auto {
-    @include justify-self-auto($lg);
-  }
-
-  @mixin lg\:justify-self-start {
-    @include justify-self-start($lg);
-  }
-
-  @mixin lg\:justify-self-end {
-    @include justify-self-end($lg);
-  }
-
-  @mixin lg\:justify-self-center {
-    @include justify-self-center($lg);
-  }
-
-  @mixin lg\:justify-self-stretch {
-    @include justify-self-stretch($lg);
-  }
-
-  @mixin xl\:justify-self-auto {
-    @include justify-self-auto($xl);
-  }
-
-  @mixin xl\:justify-self-start {
-    @include justify-self-start($xl);
-  }
-
-  @mixin xl\:justify-self-end {
-    @include justify-self-end($xl);
-  }
-
-  @mixin xl\:justify-self-center {
-    @include justify-self-center($xl);
-  }
-
-  @mixin xl\:justify-self-stretch {
-    @include justify-self-stretch($xl);
-  }
-
-  @mixin \2xl\:justify-self-auto {
-    @include justify-self-auto($\2xl);
-  }
-
-  @mixin \2xl\:justify-self-start {
-    @include justify-self-start($\2xl);
-  }
-
-  @mixin \2xl\:justify-self-end {
-    @include justify-self-end($\2xl);
-  }
-
-  @mixin \2xl\:justify-self-center {
-    @include justify-self-center($\2xl);
-  }
-
-  @mixin \2xl\:justify-self-stretch {
-    @include justify-self-stretch($\2xl);
-  }
-
-  // x*/
 }

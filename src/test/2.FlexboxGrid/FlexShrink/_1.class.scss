@@ -2,97 +2,120 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Flex Shrink */
-@if $Basic {
-  // /*x
-  @mixin shrink {
-    @include shrink-(1);
-  }
+@include describe("2.Flexbox & Grid") {
+  @include describe("Flex Shrink") {
+    @include describe("Basic") {
+      @include it("shrink") {
+        @include custom-expect-(flex-shrink, 1) {
+          @include shrink;
+        }
+      }
 
-  @mixin shrink-0 {
-    @include shrink-(0);
-  }
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:shrink {
-      @include shrink-(1, $sm);
+      @include it("shrink-0") {
+        @include custom-expect-(flex-shrink, 0) {
+          @include shrink-0;
+        }
+      }
     }
 
-    @mixin sm\:shrink-0 {
-      @include shrink-(0, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:shrink") {
+        @include custom-expect-(flex-shrink, 1, $sm) {
+          @include sm\:shrink;
+        }
+      }
+
+      @include it("sm\:shrink-0") {
+        @include custom-expect-(flex-shrink, 0, $sm) {
+          @include sm\:shrink-0;
+        }
+      }
+
+      @include it("md\:shrink") {
+        @include custom-expect-(flex-shrink, 1, $md) {
+          @include md\:shrink;
+        }
+      }
+
+      @include it("md\:shrink-0") {
+        @include custom-expect-(flex-shrink, 0, $md) {
+          @include md\:shrink-0;
+        }
+      }
+
+      @include it("lg\:shrink") {
+        @include custom-expect-(flex-shrink, 1, $lg) {
+          @include lg\:shrink;
+        }
+      }
+
+      @include it("lg\:shrink-0") {
+        @include custom-expect-(flex-shrink, 0, $lg) {
+          @include lg\:shrink-0;
+        }
+      }
+
+      @include it("xl\:shrink") {
+        @include custom-expect-(flex-shrink, 1, $xl) {
+          @include xl\:shrink;
+        }
+      }
+
+      @include it("xl\:shrink-0") {
+        @include custom-expect-(flex-shrink, 0, $xl) {
+          @include xl\:shrink-0;
+        }
+      }
+
+      @include it("\2xl\:shrink") {
+        @include custom-expect-(flex-shrink, 1, $\2xl) {
+          @include \2xl\:shrink;
+        }
+      }
+
+      @include it("\2xl\:shrink-0") {
+        @include custom-expect-(flex-shrink, 0, $\2xl) {
+          @include \2xl\:shrink-0;
+        }
+      }
     }
 
-    @mixin md\:shrink {
-      @include shrink-(1, $md);
-    }
+    @include describe("Custom") {
+      @include it("shrink-(2)") {
+        @include custom-expect-(flex-shrink, 2) {
+          @include shrink-(2);
+        }
+      }
 
-    @mixin md\:shrink-0 {
-      @include shrink-(0, $md);
-    }
+      @include it("sm\:shrink-(2)") {
+        @include custom-expect-(flex-shrink, 2, $sm) {
+          @include sm\:shrink-(2);
+        }
+      }
 
-    @mixin lg\:shrink {
-      @include shrink-(1, $lg);
-    }
+      @include it("md\:shrink-(2)") {
+        @include custom-expect-(flex-shrink, 2, $md) {
+          @include md\:shrink-(2);
+        }
+      }
 
-    @mixin lg\:shrink-0 {
-      @include shrink-(0, $lg);
-    }
+      @include it("lg\:shrink-(2)") {
+        @include custom-expect-(flex-shrink, 2, $lg) {
+          @include lg\:shrink-(2);
+        }
+      }
 
-    @mixin xl\:shrink {
-      @include shrink-(1, $xl);
-    }
+      @include it("xl\:shrink-(2)") {
+        @include custom-expect-(flex-shrink, 2, $xl) {
+          @include xl\:shrink-(2);
+        }
+      }
 
-    @mixin xl\:shrink-0 {
-      @include shrink-(0, $xl);
-    }
-
-    @mixin \2xl\:shrink {
-      @include shrink-(1, $\2xl);
-    }
-
-    @mixin \2xl\:shrink-0 {
-      @include shrink-(0, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin shrink-($v, $rwd: null) {
-    @if $rwd==null {
-      flex-shrink: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        flex-shrink: $v;
+      @include it("\2xl\:shrink-(2)") {
+        @include custom-expect-(flex-shrink, 2, $\2xl) {
+          @include \2xl\:shrink-(2);
+        }
       }
     }
   }
-
-  @mixin sm\:shrink-($v) {
-    @include shrink-($v, $sm);
-  }
-
-  @mixin md\:shrink-($v) {
-    @include shrink-($v, $md);
-  }
-
-  @mixin lg\:shrink-($v) {
-    @include shrink-($v, $lg);
-  }
-
-  @mixin xl\:shrink-($v) {
-    @include shrink-($v, $xl);
-  }
-
-  @mixin \2xl\:shrink-($v) {
-    @include shrink-($v, $\2xl);
-  }
-
-  // x*/
 }

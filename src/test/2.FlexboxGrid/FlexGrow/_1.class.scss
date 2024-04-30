@@ -2,95 +2,120 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Flex Grow */
-@if $Basic {
-  // /*x
-  @mixin grow {
-    @include grow-(1);
-  }
+@include describe("2.Flexbox & Grid") {
+  @include describe("Flex Grow") {
+    @include describe("Basic") {
+      @include it("grow") {
+        @include custom-expect-(flex-grow, 1) {
+          @include grow;
+        }
+      }
 
-  @mixin grow-0 {
-    @include grow-(0);
-  }
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:grow {
-      @include grow-(1, $sm);
+      @include it("grow-0") {
+        @include custom-expect-(flex-grow, 0) {
+          @include grow-0;
+        }
+      }
     }
 
-    @mixin sm\:grow-0 {
-      @include grow-(0, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:grow") {
+        @include custom-expect-(flex-grow, 1, $sm) {
+          @include sm\:grow;
+        }
+      }
+
+      @include it("sm\:grow-0") {
+        @include custom-expect-(flex-grow, 0, $sm) {
+          @include sm\:grow-0;
+        }
+      }
+
+      @include it("md\:grow") {
+        @include custom-expect-(flex-grow, 1, $md) {
+          @include md\:grow;
+        }
+      }
+
+      @include it("md\:grow-0") {
+        @include custom-expect-(flex-grow, 0, $md) {
+          @include md\:grow-0;
+        }
+      }
+
+      @include it("lg\:grow") {
+        @include custom-expect-(flex-grow, 1, $lg) {
+          @include lg\:grow;
+        }
+      }
+
+      @include it("lg\:grow-0") {
+        @include custom-expect-(flex-grow, 0, $lg) {
+          @include lg\:grow-0;
+        }
+      }
+
+      @include it("xl\:grow") {
+        @include custom-expect-(flex-grow, 1, $xl) {
+          @include xl\:grow;
+        }
+      }
+
+      @include it("xl\:grow-0") {
+        @include custom-expect-(flex-grow, 0, $xl) {
+          @include xl\:grow-0;
+        }
+      }
+
+      @include it("\2xl\:grow") {
+        @include custom-expect-(flex-grow, 1, $\2xl) {
+          @include \2xl\:grow;
+        }
+      }
+
+      @include it("\2xl\:grow-0") {
+        @include custom-expect-(flex-grow, 0, $\2xl) {
+          @include \2xl\:grow-0;
+        }
+      }
     }
 
-    @mixin md\:grow {
-      @include grow-(1, $md);
-    }
+    @include describe("Custom") {
+      @include it("grow-(2)") {
+        @include custom-expect-(flex-grow, 2) {
+          @include grow-(2);
+        }
+      }
 
-    @mixin md\:grow-0 {
-      @include grow-(0, $md);
-    }
+      @include it("sm\:grow-(2)") {
+        @include custom-expect-(flex-grow, 2, $sm) {
+          @include sm\:grow-(2);
+        }
+      }
 
-    @mixin lg\:grow {
-      @include grow-(1, $lg);
-    }
+      @include it("md\:grow-(2)") {
+        @include custom-expect-(flex-grow, 2, $md) {
+          @include md\:grow-(2);
+        }
+      }
 
-    @mixin lg\:grow-0 {
-      @include grow-(0, $lg);
-    }
+      @include it("lg\:grow-(2)") {
+        @include custom-expect-(flex-grow, 2, $lg) {
+          @include lg\:grow-(2);
+        }
+      }
 
-    @mixin xl\:grow {
-      @include grow-(1, $xl);
-    }
+      @include it("xl\:grow-(2)") {
+        @include custom-expect-(flex-grow, 2, $xl) {
+          @include xl\:grow-(2);
+        }
+      }
 
-    @mixin xl\:grow-0 {
-      @include grow-(0, $xl);
-    }
-
-    @mixin \2xl\:grow {
-      @include grow-(1, $\2xl);
-    }
-
-    @mixin \2xl\:grow-0 {
-      @include grow-(0, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin grow-($v, $rwd: null) {
-    @if $rwd==null {
-      flex-grow: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        flex-grow: $v;
+      @include it("\2xl\:grow-(2)") {
+        @include custom-expect-(flex-grow, 2, $\2xl) {
+          @include \2xl\:grow-(2);
+        }
       }
     }
   }
-
-  @mixin sm\:grow-($v) {
-    @include grow-($v, $sm);
-  }
-
-  @mixin md\:grow-($v) {
-    @include grow-($v, $md);
-  }
-
-  @mixin lg\:grow-($v) {
-    @include grow-($v, $lg);
-  }
-
-  @mixin xl\:grow-($v) {
-    @include grow-($v, $xl);
-  }
-
-  @mixin \2xl\:grow-($v) {
-    @include grow-($v, $\2xl);
-  } // x*/
 }

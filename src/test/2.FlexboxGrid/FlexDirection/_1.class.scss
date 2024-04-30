@@ -2,133 +2,154 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Flex Direction */
-@if $Basic {
-  // /*x
-  @mixin flex-row($rwd: null) {
-    @if $rwd==null {
-      flex-direction: row;
-    } @else {
-      @media (min-width: $rwd) {
-        flex-direction: row;
+@include describe("2.Flexbox & Grid") {
+  @include describe("Flex Direction") {
+    @include describe("Basic") {
+      @include it("flex-row") {
+        @include custom-expect-(flex-direction, row) {
+          @include flex-row;
+        }
+      }
+
+      @include it("flex-row-reverse") {
+        @include custom-expect-(flex-direction, row-reverse) {
+          @include flex-row-reverse;
+        }
+      }
+
+      @include it("flex-col") {
+        @include custom-expect-(flex-direction, column) {
+          @include flex-col;
+        }
+      }
+
+      @include it("flex-col-reverse") {
+        @include custom-expect-(flex-direction, column-reverse) {
+          @include flex-col-reverse;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:flex-row") {
+        @include custom-expect-(flex-direction, row, $sm) {
+          @include sm\:flex-row;
+        }
+      }
+
+      @include it("sm\:flex-row-reverse") {
+        @include custom-expect-(flex-direction, row-reverse, $sm) {
+          @include sm\:flex-row-reverse;
+        }
+      }
+
+      @include it("sm\:flex-col") {
+        @include custom-expect-(flex-direction, column, $sm) {
+          @include sm\:flex-col;
+        }
+      }
+
+      @include it("sm\:flex-col-reverse") {
+        @include custom-expect-(flex-direction, column-reverse, $sm) {
+          @include sm\:flex-col-reverse;
+        }
+      }
+
+      @include it("md\:flex-row") {
+        @include custom-expect-(flex-direction, row, $md) {
+          @include md\:flex-row;
+        }
+      }
+
+      @include it("md\:flex-row-reverse") {
+        @include custom-expect-(flex-direction, row-reverse, $md) {
+          @include md\:flex-row-reverse;
+        }
+      }
+
+      @include it("md\:flex-col") {
+        @include custom-expect-(flex-direction, column, $md) {
+          @include md\:flex-col;
+        }
+      }
+
+      @include it("md\:flex-col-reverse") {
+        @include custom-expect-(flex-direction, column-reverse, $md) {
+          @include md\:flex-col-reverse;
+        }
+      }
+
+      @include it("lg\:flex-row") {
+        @include custom-expect-(flex-direction, row, $lg) {
+          @include lg\:flex-row;
+        }
+      }
+
+      @include it("lg\:flex-row-reverse") {
+        @include custom-expect-(flex-direction, row-reverse, $lg) {
+          @include lg\:flex-row-reverse;
+        }
+      }
+
+      @include it("lg\:flex-col") {
+        @include custom-expect-(flex-direction, column, $lg) {
+          @include lg\:flex-col;
+        }
+      }
+
+      @include it("lg\:flex-col-reverse") {
+        @include custom-expect-(flex-direction, column-reverse, $lg) {
+          @include lg\:flex-col-reverse;
+        }
+      }
+
+      @include it("xl\:flex-row") {
+        @include custom-expect-(flex-direction, row, $xl) {
+          @include xl\:flex-row;
+        }
+      }
+
+      @include it("xl\:flex-row-reverse") {
+        @include custom-expect-(flex-direction, row-reverse, $xl) {
+          @include xl\:flex-row-reverse;
+        }
+      }
+
+      @include it("xl\:flex-col") {
+        @include custom-expect-(flex-direction, column, $xl) {
+          @include xl\:flex-col;
+        }
+      }
+
+      @include it("xl\:flex-col-reverse") {
+        @include custom-expect-(flex-direction, column-reverse, $xl) {
+          @include xl\:flex-col-reverse;
+        }
+      }
+
+      @include it("\2xl\:flex-row") {
+        @include custom-expect-(flex-direction, row, $\2xl) {
+          @include \2xl\:flex-row;
+        }
+      }
+
+      @include it("\2xl\:flex-row-reverse") {
+        @include custom-expect-(flex-direction, row-reverse, $\2xl) {
+          @include \2xl\:flex-row-reverse;
+        }
+      }
+
+      @include it("\2xl\:flex-col") {
+        @include custom-expect-(flex-direction, column, $\2xl) {
+          @include \2xl\:flex-col;
+        }
+      }
+
+      @include it("\2xl\:flex-col-reverse") {
+        @include custom-expect-(flex-direction, column-reverse, $\2xl) {
+          @include \2xl\:flex-col-reverse;
+        }
       }
     }
   }
-
-  @mixin flex-row-reverse($rwd: null) {
-    @if $rwd==null {
-      flex-direction: row-reverse;
-    } @else {
-      @media (min-width: $rwd) {
-        flex-direction: row-reverse;
-      }
-    }
-  }
-
-  @mixin flex-col($rwd: null) {
-    @if $rwd==null {
-      flex-direction: column;
-    } @else {
-      @media (min-width: $rwd) {
-        flex-direction: column;
-      }
-    }
-  }
-
-  @mixin flex-col-reverse($rwd: null) {
-    @if $rwd==null {
-      flex-direction: column-reverse;
-    } @else {
-      @media (min-width: $rwd) {
-        flex-direction: column-reverse;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:flex-row {
-    @include flex-row($sm);
-  }
-
-  @mixin sm\:flex-row-reverse {
-    @include flex-row-reverse($sm);
-  }
-
-  @mixin sm\:flex-col {
-    @include flex-col($sm);
-  }
-
-  @mixin sm\:flex-col-reverse {
-    @include flex-col-reverse($sm);
-  }
-
-  @mixin md\:flex-row {
-    @include flex-row($md);
-  }
-
-  @mixin md\:flex-row-reverse {
-    @include flex-row-reverse($md);
-  }
-
-  @mixin md\:flex-col {
-    @include flex-col($md);
-  }
-
-  @mixin md\:flex-col-reverse {
-    @include flex-col-reverse($md);
-  }
-
-  @mixin lg\:flex-row {
-    @include flex-row($lg);
-  }
-
-  @mixin lg\:flex-row-reverse {
-    @include flex-row-reverse($lg);
-  }
-
-  @mixin lg\:flex-col {
-    @include flex-col($lg);
-  }
-
-  @mixin lg\:flex-col-reverse {
-    @include flex-col-reverse($lg);
-  }
-
-  @mixin xl\:flex-row {
-    @include flex-row($xl);
-  }
-
-  @mixin xl\:flex-row-reverse {
-    @include flex-row-reverse($xl);
-  }
-
-  @mixin xl\:flex-col {
-    @include flex-col($xl);
-  }
-
-  @mixin xl\:flex-col-reverse {
-    @include flex-col-reverse($xl);
-  }
-
-  @mixin \2xl\:flex-row {
-    @include flex-row($\2xl);
-  }
-
-  @mixin \2xl\:flex-row-reverse {
-    @include flex-row-reverse($\2xl);
-  }
-
-  @mixin \2xl\:flex-col {
-    @include flex-col($\2xl);
-  }
-
-  @mixin \2xl\:flex-col-reverse {
-    @include flex-col-reverse($\2xl);
-  }
-
-  // x*/
 }

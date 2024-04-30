@@ -2,163 +2,190 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Grid Auto Flow */
-@if $Basic {
-  // /*x
-  @mixin grid-flow-row($rwd: null) {
-    @if $rwd==null {
-      grid-auto-flow: row;
-    } @else {
-      @media (min-width: $rwd) {
-        grid-auto-flow: row;
+@include describe("2.Flexbox & Grid") {
+  @include describe("Grid Auto Flow") {
+    @include describe("Basic") {
+      @include it("grid-flow-row") {
+        @include custom-expect-(grid-auto-flow, row) {
+          @include grid-flow-row;
+        }
+      }
+
+      @include it("grid-flow-col") {
+        @include custom-expect-(grid-auto-flow, column) {
+          @include grid-flow-col;
+        }
+      }
+
+      @include it("grid-flow-dense") {
+        @include custom-expect-(grid-auto-flow, dense) {
+          @include grid-flow-dense;
+        }
+      }
+
+      @include it("grid-flow-row-dense") {
+        @include custom-expect-(grid-auto-flow, row dense) {
+          @include grid-flow-row-dense;
+        }
+      }
+
+      @include it("grid-flow-col-dense") {
+        @include custom-expect-(grid-auto-flow, column dense) {
+          @include grid-flow-col-dense;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:grid-flow-row") {
+        @include custom-expect-(grid-auto-flow, row, $sm) {
+          @include sm\:grid-flow-row;
+        }
+      }
+
+      @include it("sm\:grid-flow-col") {
+        @include custom-expect-(grid-auto-flow, column, $sm) {
+          @include sm\:grid-flow-col;
+        }
+      }
+
+      @include it("sm\:grid-flow-dense") {
+        @include custom-expect-(grid-auto-flow, dense, $sm) {
+          @include sm\:grid-flow-dense;
+        }
+      }
+
+      @include it("sm\:grid-flow-row-dense") {
+        @include custom-expect-(grid-auto-flow, row dense, $sm) {
+          @include sm\:grid-flow-row-dense;
+        }
+      }
+
+      @include it("sm\:grid-flow-col-dense") {
+        @include custom-expect-(grid-auto-flow, column dense, $sm) {
+          @include sm\:grid-flow-col-dense;
+        }
+      }
+
+      @include it("md\:grid-flow-row") {
+        @include custom-expect-(grid-auto-flow, row, $md) {
+          @include md\:grid-flow-row;
+        }
+      }
+
+      @include it("md\:grid-flow-col") {
+        @include custom-expect-(grid-auto-flow, column, $md) {
+          @include md\:grid-flow-col;
+        }
+      }
+
+      @include it("md\:grid-flow-dense") {
+        @include custom-expect-(grid-auto-flow, dense, $md) {
+          @include md\:grid-flow-dense;
+        }
+      }
+
+      @include it("md\:grid-flow-row-dense") {
+        @include custom-expect-(grid-auto-flow, row dense, $md) {
+          @include md\:grid-flow-row-dense;
+        }
+      }
+
+      @include it("md\:grid-flow-col-dense") {
+        @include custom-expect-(grid-auto-flow, column dense, $md) {
+          @include md\:grid-flow-col-dense;
+        }
+      }
+
+      @include it("lg\:grid-flow-row") {
+        @include custom-expect-(grid-auto-flow, row, $lg) {
+          @include lg\:grid-flow-row;
+        }
+      }
+
+      @include it("lg\:grid-flow-col") {
+        @include custom-expect-(grid-auto-flow, column, $lg) {
+          @include lg\:grid-flow-col;
+        }
+      }
+
+      @include it("lg\:grid-flow-dense") {
+        @include custom-expect-(grid-auto-flow, dense, $lg) {
+          @include lg\:grid-flow-dense;
+        }
+      }
+
+      @include it("lg\:grid-flow-row-dense") {
+        @include custom-expect-(grid-auto-flow, row dense, $lg) {
+          @include lg\:grid-flow-row-dense;
+        }
+      }
+
+      @include it("lg\:grid-flow-col-dense") {
+        @include custom-expect-(grid-auto-flow, column dense, $lg) {
+          @include lg\:grid-flow-col-dense;
+        }
+      }
+
+      @include it("xl\:grid-flow-row") {
+        @include custom-expect-(grid-auto-flow, row, $xl) {
+          @include xl\:grid-flow-row;
+        }
+      }
+
+      @include it("xl\:grid-flow-col") {
+        @include custom-expect-(grid-auto-flow, column, $xl) {
+          @include xl\:grid-flow-col;
+        }
+      }
+
+      @include it("xl\:grid-flow-dense") {
+        @include custom-expect-(grid-auto-flow, dense, $xl) {
+          @include xl\:grid-flow-dense;
+        }
+      }
+
+      @include it("xl\:grid-flow-row-dense") {
+        @include custom-expect-(grid-auto-flow, row dense, $xl) {
+          @include xl\:grid-flow-row-dense;
+        }
+      }
+
+      @include it("xl\:grid-flow-col-dense") {
+        @include custom-expect-(grid-auto-flow, column dense, $xl) {
+          @include xl\:grid-flow-col-dense;
+        }
+      }
+
+      @include it("\2xl\:grid-flow-row") {
+        @include custom-expect-(grid-auto-flow, row, $\2xl) {
+          @include \2xl\:grid-flow-row;
+        }
+      }
+
+      @include it("\2xl\:grid-flow-col") {
+        @include custom-expect-(grid-auto-flow, column, $\2xl) {
+          @include \2xl\:grid-flow-col;
+        }
+      }
+
+      @include it("\2xl\:grid-flow-dense") {
+        @include custom-expect-(grid-auto-flow, dense, $\2xl) {
+          @include \2xl\:grid-flow-dense;
+        }
+      }
+
+      @include it("\2xl\:grid-flow-row-dense") {
+        @include custom-expect-(grid-auto-flow, row dense, $\2xl) {
+          @include \2xl\:grid-flow-row-dense;
+        }
+      }
+
+      @include it("\2xl\:grid-flow-col-dense") {
+        @include custom-expect-(grid-auto-flow, column dense, $\2xl) {
+          @include \2xl\:grid-flow-col-dense;
+        }
       }
     }
   }
-
-  @mixin grid-flow-col($rwd: null) {
-    @if $rwd==null {
-      grid-auto-flow: column;
-    } @else {
-      @media (min-width: $rwd) {
-        grid-auto-flow: column;
-      }
-    }
-  }
-
-  @mixin grid-flow-dense($rwd: null) {
-    @if $rwd==null {
-      grid-auto-flow: dense;
-    } @else {
-      @media (min-width: $rwd) {
-        grid-auto-flow: dense;
-      }
-    }
-  }
-
-  @mixin grid-flow-row-dense($rwd: null) {
-    @if $rwd==null {
-      grid-auto-flow: row dense;
-    } @else {
-      @media (min-width: $rwd) {
-        grid-auto-flow: row dense;
-      }
-    }
-  }
-
-  @mixin grid-flow-col-dense($rwd: null) {
-    @if $rwd==null {
-      grid-auto-flow: column dense;
-    } @else {
-      @media (min-width: $rwd) {
-        grid-auto-flow: column dense;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:grid-flow-row {
-    @include grid-flow-row($sm);
-  }
-
-  @mixin sm\:grid-flow-col {
-    @include grid-flow-col($sm);
-  }
-
-  @mixin sm\:grid-flow-dense {
-    @include grid-flow-dense($sm);
-  }
-
-  @mixin sm\:grid-flow-row-dense {
-    @include grid-flow-row-dense($sm);
-  }
-
-  @mixin sm\:grid-flow-col-dense {
-    @include grid-flow-col-dense($sm);
-  }
-
-  @mixin md\:grid-flow-row {
-    @include grid-flow-row($md);
-  }
-
-  @mixin md\:grid-flow-col {
-    @include grid-flow-col($md);
-  }
-
-  @mixin md\:grid-flow-dense {
-    @include grid-flow-dense($md);
-  }
-
-  @mixin md\:grid-flow-row-dense {
-    @include grid-flow-row-dense($md);
-  }
-
-  @mixin md\:grid-flow-col-dense {
-    @include grid-flow-col-dense($md);
-  }
-
-  @mixin lg\:grid-flow-row {
-    @include grid-flow-row($lg);
-  }
-
-  @mixin lg\:grid-flow-col {
-    @include grid-flow-col($lg);
-  }
-
-  @mixin lg\:grid-flow-dense {
-    @include grid-flow-dense($lg);
-  }
-
-  @mixin lg\:grid-flow-row-dense {
-    @include grid-flow-row-dense($lg);
-  }
-
-  @mixin lg\:grid-flow-col-dense {
-    @include grid-flow-col-dense($lg);
-  }
-
-  @mixin xl\:grid-flow-row {
-    @include grid-flow-row($xl);
-  }
-
-  @mixin xl\:grid-flow-col {
-    @include grid-flow-col($xl);
-  }
-
-  @mixin xl\:grid-flow-dense {
-    @include grid-flow-dense($xl);
-  }
-
-  @mixin xl\:grid-flow-row-dense {
-    @include grid-flow-row-dense($xl);
-  }
-
-  @mixin xl\:grid-flow-col-dense {
-    @include grid-flow-col-dense($xl);
-  }
-
-  @mixin \2xl\:grid-flow-row {
-    @include grid-flow-row($\2xl);
-  }
-
-  @mixin \2xl\:grid-flow-col {
-    @include grid-flow-col($\2xl);
-  }
-
-  @mixin \2xl\:grid-flow-dense {
-    @include grid-flow-dense($\2xl);
-  }
-
-  @mixin \2xl\:grid-flow-row-dense {
-    @include grid-flow-row-dense($\2xl);
-  }
-
-  @mixin \2xl\:grid-flow-col-dense {
-    @include grid-flow-col-dense($\2xl);
-  }
-
-  // x*/
 }
