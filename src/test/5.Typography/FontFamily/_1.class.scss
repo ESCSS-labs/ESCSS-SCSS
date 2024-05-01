@@ -6,7 +6,7 @@
   @include describe("Font Family") {
     @include describe("Basic") {
       @include it("font-sans") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-sans-serif,
@@ -23,7 +23,7 @@
       }
 
       @include it("font-serif") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif)
         ) {
@@ -32,7 +32,7 @@
       }
 
       @include it("font-mono") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-monospace,
@@ -52,7 +52,7 @@
 
     @include describe("Rwd") {
       @include it("sm\:font-sans") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-sans-serif,
@@ -70,7 +70,7 @@
       }
 
       @include it("sm\:font-serif") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
           $sm
@@ -80,7 +80,7 @@
       }
 
       @include it("sm\:font-mono") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-monospace,
@@ -99,7 +99,7 @@
       }
 
       @include it("md\:font-sans") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-sans-serif,
@@ -117,7 +117,7 @@
       }
 
       @include it("md\:font-serif") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
           $md
@@ -127,7 +127,7 @@
       }
 
       @include it("md\:font-mono") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-monospace,
@@ -146,7 +146,7 @@
       }
 
       @include it("lg\:font-sans") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-sans-serif,
@@ -164,7 +164,7 @@
       }
 
       @include it("lg\:font-serif") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
           $lg
@@ -174,7 +174,7 @@
       }
 
       @include it("lg\:font-mono") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-monospace,
@@ -193,7 +193,7 @@
       }
 
       @include it("xl\:font-sans") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-sans-serif,
@@ -211,7 +211,7 @@
       }
 
       @include it("xl\:font-serif") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
           $xl
@@ -221,7 +221,7 @@
       }
 
       @include it("xl\:font-mono") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-monospace,
@@ -240,7 +240,7 @@
       }
 
       @include it("\2xl\:font-sans") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-sans-serif,
@@ -258,7 +258,7 @@
       }
 
       @include it("\2xl\:font-serif") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
           $\2xl
@@ -268,7 +268,7 @@
       }
 
       @include it("\2xl\:font-mono") {
-        @include custom-expect-(
+        @include expect{
           font-family,
           (
             ui-monospace,
@@ -289,37 +289,37 @@
 
     @include describe("Custom") {
       @include it("font-('Open Sans')") {
-        @include custom-expect-(font-family, "Open Sans") {
+        @include expect{font-family, "Open Sans") {
           @include font-("Open Sans");
         }
       }
 
       @include it("sm\:font-('Open Sans')") {
-        @include custom-expect-(font-family, "Open Sans", $sm) {
+        @include expect{font-family, "Open Sans", $sm) {
           @include sm\:font-("Open Sans");
         }
       }
 
       @include it("md\:font-('Open Sans')") {
-        @include custom-expect-(font-family, "Open Sans", $md) {
+        @include expect{font-family, "Open Sans", $md) {
           @include md\:font-("Open Sans");
         }
       }
 
       @include it("lg\:font-('Open Sans')") {
-        @include custom-expect-(font-family, "Open Sans", $lg) {
+        @include expect{font-family, "Open Sans", $lg) {
           @include lg\:font-("Open Sans");
         }
       }
 
       @include it("xl\:font-('Open Sans')") {
-        @include custom-expect-(font-family, "Open Sans", $xl) {
+        @include expect{font-family, "Open Sans", $xl) {
           @include xl\:font-("Open Sans");
         }
       }
 
       @include it("\2xl\:font-('Open Sans')") {
-        @include custom-expect-(font-family, "Open Sans", $\2xl) {
+        @include expect{font-family, "Open Sans", $\2xl) {
           @include \2xl\:font-("Open Sans");
         }
       }

@@ -6,294 +6,714 @@
   @include describe("Break After") {
     @include describe("Basic") {
       @include it("break-after-auto") {
-        @include custom-expect-(break-after, auto) {
-          @include break-after-auto;
+        @include assert {
+          @include output {
+            @include break-after-auto;
+            @include clear;
+          }
+    
+          @include expect {
+            break-after: auto;
+          }
         }
       }
-
+    
       @include it("break-after-avoid") {
-        @include custom-expect-(break-after, avoid) {
-          @include break-after-avoid;
+        @include assert {
+          @include output {
+            @include break-after-avoid;
+            @include clear;
+          }
+    
+          @include expect {
+            break-after: avoid;
+          }
         }
       }
-
+    
       @include it("break-after-all") {
-        @include custom-expect-(break-after, all) {
-          @include break-after-all;
+        @include assert {
+          @include output {
+            @include break-after-all;
+            @include clear;
+          }
+    
+          @include expect {
+            break-after: all;
+          }
         }
       }
-
+    
       @include it("break-after-avoid-page") {
-        @include custom-expect-(break-after, avoid-page) {
-          @include break-after-avoid-page;
+        @include assert {
+          @include output {
+            @include break-after-avoid-page;
+            @include clear;
+          }
+    
+          @include expect {
+            break-after: avoid-page;
+          }
         }
       }
-
+    
       @include it("break-after-page") {
-        @include custom-expect-(break-after, page) {
-          @include break-after-page;
+        @include assert {
+          @include output {
+            @include break-after-page;
+            @include clear;
+          }
+    
+          @include expect {
+            break-after: page;
+          }
         }
       }
-
+    
       @include it("break-after-left") {
-        @include custom-expect-(break-after, left) {
-          @include break-after-left;
+        @include assert {
+          @include output {
+            @include break-after-left;
+            @include clear;
+          }
+    
+          @include expect {
+            break-after: left;
+          }
         }
       }
-
+    
       @include it("break-after-right") {
-        @include custom-expect-(break-after, right) {
-          @include break-after-right;
+        @include assert {
+          @include output {
+            @include break-after-right;
+            @include clear;
+          }
+    
+          @include expect {
+            break-after: right;
+          }
         }
       }
-
+    
       @include it("break-after-column") {
-        @include custom-expect-(break-after, column) {
-          @include break-after-column;
+        @include assert {
+          @include output {
+            @include break-after-column;
+            @include clear;
+          }
+    
+          @include expect {
+            break-after: column;
+          }
         }
       }
     }
+    
 
     @include describe("Rwd") {
       @include it("sm\:break-after-auto") {
-        @include custom-expect-(break-after, auto, $sm) {
-          @include sm\:break-after-auto;
+        @include assert {
+          @include output {
+            @include sm\:break-after-auto;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $sm) {
+              break-after: auto;
+            }
+          }
         }
       }
-
+    
       @include it("sm\:break-after-avoid") {
-        @include custom-expect-(break-after, avoid, $sm) {
-          @include sm\:break-after-avoid;
+        @include assert {
+          @include output {
+            @include sm\:break-after-avoid;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $sm) {
+              break-after: avoid;
+            }
+          }
         }
       }
-
+    
       @include it("sm\:break-after-all") {
-        @include custom-expect-(break-after, all, $sm) {
-          @include sm\:break-after-all;
+        @include assert {
+          @include output {
+            @include sm\:break-after-all;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $sm) {
+              break-after: all;
+            }
+          }
         }
       }
-
+    
       @include it("sm\:break-after-avoid-page") {
-        @include custom-expect-(break-after, avoid-page, $sm) {
-          @include sm\:break-after-avoid-page;
+        @include assert {
+          @include output {
+            @include sm\:break-after-avoid-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $sm) {
+              break-after: avoid-page;
+            }
+          }
         }
       }
-
+    
       @include it("sm\:break-after-page") {
-        @include custom-expect-(break-after, page, $sm) {
-          @include sm\:break-after-page;
+        @include assert {
+          @include output {
+            @include sm\:break-after-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $sm) {
+              break-after: page;
+            }
+          }
         }
       }
-
+    
       @include it("sm\:break-after-left") {
-        @include custom-expect-(break-after, left, $sm) {
-          @include sm\:break-after-left;
+        @include assert {
+          @include output {
+            @include sm\:break-after-left;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $sm) {
+              break-after: left;
+            }
+          }
         }
       }
-
+    
       @include it("sm\:break-after-right") {
-        @include custom-expect-(break-after, right, $sm) {
-          @include sm\:break-after-right;
+        @include assert {
+          @include output {
+            @include sm\:break-after-right;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $sm) {
+              break-after: right;
+            }
+          }
         }
       }
-
+    
       @include it("sm\:break-after-column") {
-        @include custom-expect-(break-after, column, $sm) {
-          @include sm\:break-after-column;
+        @include assert {
+          @include output {
+            @include sm\:break-after-column;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $sm) {
+              break-after: column;
+            }
+          }
         }
       }
-
+    
       @include it("md\:break-after-auto") {
-        @include custom-expect-(break-after, auto, $md) {
-          @include md\:break-after-auto;
+        @include assert {
+          @include output {
+            @include md\:break-after-auto;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $md) {
+              break-after: auto;
+            }
+          }
         }
       }
-
+    
       @include it("md\:break-after-avoid") {
-        @include custom-expect-(break-after, avoid, $md) {
-          @include md\:break-after-avoid;
+        @include assert {
+          @include output {
+            @include md\:break-after-avoid;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $md) {
+              break-after: avoid;
+            }
+          }
         }
       }
-
+    
       @include it("md\:break-after-all") {
-        @include custom-expect-(break-after, all, $md) {
-          @include md\:break-after-all;
+        @include assert {
+          @include output {
+            @include md\:break-after-all;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $md) {
+              break-after: all;
+            }
+          }
         }
       }
-
+    
       @include it("md\:break-after-avoid-page") {
-        @include custom-expect-(break-after, avoid-page, $md) {
-          @include md\:break-after-avoid-page;
+        @include assert {
+          @include output {
+            @include md\:break-after-avoid-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $md) {
+              break-after: avoid-page;
+            }
+          }
         }
       }
-
+    
       @include it("md\:break-after-page") {
-        @include custom-expect-(break-after, page, $md) {
-          @include md\:break-after-page;
+        @include assert {
+          @include output {
+            @include md\:break-after-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $md) {
+              break-after: page;
+            }
+          }
         }
       }
-
+    
       @include it("md\:break-after-left") {
-        @include custom-expect-(break-after, left, $md) {
-          @include md\:break-after-left;
+        @include assert {
+          @include output {
+            @include md\:break-after-left;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $md) {
+              break-after: left;
+            }
+          }
         }
       }
-
+    
       @include it("md\:break-after-right") {
-        @include custom-expect-(break-after, right, $md) {
-          @include md\:break-after-right;
+        @include assert {
+          @include output {
+            @include md\:break-after-right;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $md) {
+              break-after: right;
+            }
+          }
         }
       }
-
+    
       @include it("md\:break-after-column") {
-        @include custom-expect-(break-after, column, $md) {
-          @include md\:break-after-column;
+        @include assert {
+          @include output {
+            @include md\:break-after-column;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $md) {
+              break-after: column;
+            }
+          }
         }
       }
-
+    
       @include it("lg\:break-after-auto") {
-        @include custom-expect-(break-after, auto, $lg) {
-          @include lg\:break-after-auto;
+        @include assert {
+          @include output {
+            @include lg\:break-after-auto;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $lg) {
+              break-after: auto;
+            }
+          }
         }
       }
-
+    
       @include it("lg\:break-after-avoid") {
-        @include custom-expect-(break-after, avoid, $lg) {
-          @include lg\:break-after-avoid;
+        @include assert {
+          @include output {
+            @include lg\:break-after-avoid;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $lg) {
+              break-after: avoid;
+            }
+          }
         }
       }
-
+    
       @include it("lg\:break-after-all") {
-        @include custom-expect-(break-after, all, $lg) {
-          @include lg\:break-after-all;
+        @include assert {
+          @include output {
+            @include lg\:break-after-all;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $lg) {
+              break-after: all;
+            }
+          }
         }
       }
-
+    
       @include it("lg\:break-after-avoid-page") {
-        @include custom-expect-(break-after, avoid-page, $lg) {
-          @include lg\:break-after-avoid-page;
+        @include assert {
+          @include output {
+            @include lg\:break-after-avoid-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $lg) {
+              break-after: avoid-page;
+            }
+          }
         }
       }
-
+    
       @include it("lg\:break-after-page") {
-        @include custom-expect-(break-after, page, $lg) {
-          @include lg\:break-after-page;
+        @include assert {
+          @include output {
+            @include lg\:break-after-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $lg) {
+              break-after: page;
+            }
+          }
         }
       }
-
+    
       @include it("lg\:break-after-left") {
-        @include custom-expect-(break-after, left, $lg) {
-          @include lg\:break-after-left;
+        @include assert {
+          @include output {
+            @include lg\:break-after-left;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $lg) {
+              break-after: left;
+            }
+          }
         }
       }
-
+    
       @include it("lg\:break-after-right") {
-        @include custom-expect-(break-after, right, $lg) {
-          @include lg\:break-after-right;
+        @include assert {
+          @include output {
+            @include lg\:break-after-right;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $lg) {
+              break-after: right;
+            }
+          }
         }
       }
-
+    
       @include it("lg\:break-after-column") {
-        @include custom-expect-(break-after, column, $lg) {
-          @include lg\:break-after-column;
+        @include assert {
+          @include output {
+            @include lg\:break-after-column;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $lg) {
+              break-after: column;
+            }
+          }
         }
       }
-
+    
       @include it("xl\:break-after-auto") {
-        @include custom-expect-(break-after, auto, $xl) {
-          @include xl\:break-after-auto;
+        @include assert {
+          @include output {
+            @include xl\:break-after-auto;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $xl) {
+              break-after: auto;
+            }
+          }
         }
       }
-
+    
       @include it("xl\:break-after-avoid") {
-        @include custom-expect-(break-after, avoid, $xl) {
-          @include xl\:break-after-avoid;
+        @include assert {
+          @include output {
+            @include xl\:break-after-avoid;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $xl) {
+              break-after: avoid;
+            }
+          }
         }
       }
-
+    
       @include it("xl\:break-after-all") {
-        @include custom-expect-(break-after, all, $xl) {
-          @include xl\:break-after-all;
+        @include assert {
+          @include output {
+            @include xl\:break-after-all;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $xl) {
+              break-after: all;
+            }
+          }
         }
       }
-
+    
       @include it("xl\:break-after-avoid-page") {
-        @include custom-expect-(break-after, avoid-page, $xl) {
-          @include xl\:break-after-avoid-page;
+        @include assert {
+          @include output {
+            @include xl\:break-after-avoid-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $xl) {
+              break-after: avoid-page;
+            }
+          }
         }
       }
-
+    
       @include it("xl\:break-after-page") {
-        @include custom-expect-(break-after, page, $xl) {
-          @include xl\:break-after-page;
+        @include assert {
+          @include output {
+            @include xl\:break-after-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $xl) {
+              break-after: page;
+            }
+          }
         }
       }
-
+    
       @include it("xl\:break-after-left") {
-        @include custom-expect-(break-after, left, $xl) {
-          @include xl\:break-after-left;
+        @include assert {
+          @include output {
+            @include xl\:break-after-left;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $xl) {
+              break-after: left;
+            }
+          }
         }
       }
-
+    
       @include it("xl\:break-after-right") {
-        @include custom-expect-(break-after, right, $xl) {
-          @include xl\:break-after-right;
+        @include assert {
+          @include output {
+            @include xl\:break-after-right;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $xl) {
+              break-after: right;
+            }
+          }
         }
       }
-
+    
       @include it("xl\:break-after-column") {
-        @include custom-expect-(break-after, column, $xl) {
-          @include xl\:break-after-column;
+        @include assert {
+          @include output {
+            @include xl\:break-after-column;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $xl) {
+              break-after: column;
+            }
+          }
         }
       }
-
+    
       @include it("\2xl\:break-after-auto") {
-        @include custom-expect-(break-after, auto, $\2xl) {
-          @include \2xl\:break-after-auto;
+        @include assert {
+          @include output {
+            @include \2xl\:break-after-auto;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $\2xl) {
+              break-after: auto;
+            }
+          }
         }
       }
-
+    
       @include it("\2xl\:break-after-avoid") {
-        @include custom-expect-(break-after, avoid, $\2xl) {
-          @include \2xl\:break-after-avoid;
+        @include assert {
+          @include output {
+            @include \2xl\:break-after-avoid;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $\2xl) {
+              break-after: avoid;
+            }
+          }
         }
       }
-
+    
       @include it("\2xl\:break-after-all") {
-        @include custom-expect-(break-after, all, $\2xl) {
-          @include \2xl\:break-after-all;
+        @include assert {
+          @include output {
+            @include \2xl\:break-after-all;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $\2xl) {
+              break-after: all;
+            }
+          }
         }
       }
-
+    
       @include it("\2xl\:break-after-avoid-page") {
-        @include custom-expect-(break-after, avoid-page, $\2xl) {
-          @include \2xl\:break-after-avoid-page;
+        @include assert {
+          @include output {
+            @include \2xl\:break-after-avoid-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $\2xl) {
+              break-after: avoid-page;
+            }
+          }
         }
       }
-
+    
       @include it("\2xl\:break-after-page") {
-        @include custom-expect-(break-after, page, $\2xl) {
-          @include \2xl\:break-after-page;
+        @include assert {
+          @include output {
+            @include \2xl\:break-after-page;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $\2xl) {
+              break-after: page;
+            }
+          }
         }
       }
-
+    
       @include it("\2xl\:break-after-left") {
-        @include custom-expect-(break-after, left, $\2xl) {
-          @include \2xl\:break-after-left;
+        @include assert {
+          @include output {
+            @include \2xl\:break-after-left;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $\2xl) {
+              break-after: left;
+            }
+          }
         }
       }
-
+    
       @include it("\2xl\:break-after-right") {
-        @include custom-expect-(break-after, right, $\2xl) {
-          @include \2xl\:break-after-right;
+        @include assert {
+          @include output {
+            @include \2xl\:break-after-right;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $\2xl) {
+              break-after: right;
+            }
+          }
         }
       }
-
+    
       @include it("\2xl\:break-after-column") {
-        @include custom-expect-(break-after, column, $\2xl) {
-          @include \2xl\:break-after-column;
+        @include assert {
+          @include output {
+            @include \2xl\:break-after-column;
+            @include clear;
+          }
+    
+          @include expect {
+            @media(min-width: $\2xl) {
+              break-after: column;
+            }
+          }
         }
       }
+    
+    
     }
+    
   }
 }

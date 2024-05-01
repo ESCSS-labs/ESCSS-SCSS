@@ -6,150 +6,362 @@
   @include describe("Break Inside") {
     @include describe("Basic") {
       @include it("break-inside-auto") {
-        @include custom-expect-(break-inside, auto) {
-          @include break-inside-auto;
+        @include assert {
+          @include output {
+            @include break-inside-auto;
+            @include clear;
+          }
+    
+          @include expect {
+            break-inside: auto;
+          }
         }
       }
-
+    
       @include it("break-inside-avoid") {
-        @include custom-expect-(break-inside, avoid) {
-          @include break-inside-avoid;
+        @include assert {
+          @include output {
+            @include break-inside-avoid;
+            @include clear;
+          }
+    
+          @include expect {
+            break-inside: avoid;
+          }
         }
       }
-
+    
       @include it("break-inside-avoid-page") {
-        @include custom-expect-(break-inside, avoid-page) {
-          @include break-inside-avoid-page;
+        @include assert {
+          @include output {
+            @include break-inside-avoid-page;
+            @include clear;
+          }
+    
+          @include expect {
+            break-inside: avoid-page;
+          }
         }
       }
-
+    
       @include it("break-inside-avoid-column") {
-        @include custom-expect-(break-inside, avoid-column) {
-          @include break-inside-avoid-column;
+        @include assert {
+          @include output {
+            @include break-inside-avoid-column;
+            @include clear;
+          }
+    
+          @include expect {
+            break-inside: avoid-column;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:break-inside-auto") {
-        @include custom-expect-(break-inside, auto, $sm) {
-          @include sm\:break-inside-auto;
+        @include assert {
+          @include output {
+            @include sm\:break-inside-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              break-inside: auto;
+            }
+          }
         }
       }
-
+      
       @include it("sm\:break-inside-avoid") {
-        @include custom-expect-(break-inside, avoid, $sm) {
-          @include sm\:break-inside-avoid;
+        @include assert {
+          @include output {
+            @include sm\:break-inside-avoid;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              break-inside: avoid;
+            }
+          }
         }
       }
-
+      
       @include it("sm\:break-inside-avoid-page") {
-        @include custom-expect-(break-inside, avoid-page, $sm) {
-          @include sm\:break-inside-avoid-page;
+        @include assert {
+          @include output {
+            @include sm\:break-inside-avoid-page;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              break-inside: avoid-page;
+            }
+          }
         }
       }
-
+      
       @include it("sm\:break-inside-avoid-column") {
-        @include custom-expect-(break-inside, avoid-column, $sm) {
-          @include sm\:break-inside-avoid-column;
+        @include assert {
+          @include output {
+            @include sm\:break-inside-avoid-column;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              break-inside: avoid-column;
+            }
+          }
         }
       }
-
+      
       @include it("md\:break-inside-auto") {
-        @include custom-expect-(break-inside, auto, $md) {
-          @include md\:break-inside-auto;
+        @include assert {
+          @include output {
+            @include md\:break-inside-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              break-inside: auto;
+            }
+          }
         }
       }
-
+      
       @include it("md\:break-inside-avoid") {
-        @include custom-expect-(break-inside, avoid, $md) {
-          @include md\:break-inside-avoid;
+        @include assert {
+          @include output {
+            @include md\:break-inside-avoid;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              break-inside: avoid;
+            }
+          }
         }
       }
-
+      
       @include it("md\:break-inside-avoid-page") {
-        @include custom-expect-(break-inside, avoid-page, $md) {
-          @include md\:break-inside-avoid-page;
+        @include assert {
+          @include output {
+            @include md\:break-inside-avoid-page;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              break-inside: avoid-page;
+            }
+          }
         }
       }
-
+      
       @include it("md\:break-inside-avoid-column") {
-        @include custom-expect-(break-inside, avoid-column, $md) {
-          @include md\:break-inside-avoid-column;
+        @include assert {
+          @include output {
+            @include md\:break-inside-avoid-column;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              break-inside: avoid-column;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:break-inside-auto") {
-        @include custom-expect-(break-inside, auto, $lg) {
-          @include lg\:break-inside-auto;
+        @include assert {
+          @include output {
+            @include lg\:break-inside-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              break-inside: auto;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:break-inside-avoid") {
-        @include custom-expect-(break-inside, avoid, $lg) {
-          @include lg\:break-inside-avoid;
+        @include assert {
+          @include output {
+            @include lg\:break-inside-avoid;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              break-inside: avoid;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:break-inside-avoid-page") {
-        @include custom-expect-(break-inside, avoid-page, $lg) {
-          @include lg\:break-inside-avoid-page;
+        @include assert {
+          @include output {
+            @include lg\:break-inside-avoid-page;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              break-inside: avoid-page;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:break-inside-avoid-column") {
-        @include custom-expect-(break-inside, avoid-column, $lg) {
-          @include lg\:break-inside-avoid-column;
+        @include assert {
+          @include output {
+            @include lg\:break-inside-avoid-column;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              break-inside: avoid-column;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:break-inside-auto") {
-        @include custom-expect-(break-inside, auto, $xl) {
-          @include xl\:break-inside-auto;
+        @include assert {
+          @include output {
+            @include xl\:break-inside-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              break-inside: auto;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:break-inside-avoid") {
-        @include custom-expect-(break-inside, avoid, $xl) {
-          @include xl\:break-inside-avoid;
+        @include assert {
+          @include output {
+            @include xl\:break-inside-avoid;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              break-inside: avoid;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:break-inside-avoid-page") {
-        @include custom-expect-(break-inside, avoid-page, $xl) {
-          @include xl\:break-inside-avoid-page;
+        @include assert {
+          @include output {
+            @include xl\:break-inside-avoid-page;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              break-inside: avoid-page;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:break-inside-avoid-column") {
-        @include custom-expect-(break-inside, avoid-column, $xl) {
-          @include xl\:break-inside-avoid-column;
+        @include assert {
+          @include output {
+            @include xl\:break-inside-avoid-column;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              break-inside: avoid-column;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:break-inside-auto") {
-        @include custom-expect-(break-inside, auto, $\2xl) {
-          @include \2xl\:break-inside-auto;
+        @include assert {
+          @include output {
+            @include \2xl\:break-inside-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              break-inside: auto;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:break-inside-avoid") {
-        @include custom-expect-(break-inside, avoid, $\2xl) {
-          @include \2xl\:break-inside-avoid;
+        @include assert {
+          @include output {
+            @include \2xl\:break-inside-avoid;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              break-inside: avoid;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:break-inside-avoid-page") {
-        @include custom-expect-(break-inside, avoid-page, $\2xl) {
-          @include \2xl\:break-inside-avoid-page;
+        @include assert {
+          @include output {
+            @include \2xl\:break-inside-avoid-page;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              break-inside: avoid-page;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:break-inside-avoid-column") {
-        @include custom-expect-(break-inside, avoid-column, $\2xl) {
-          @include \2xl\:break-inside-avoid-column;
+        @include assert {
+          @include output {
+            @include \2xl\:break-inside-avoid-column;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              break-inside: avoid-column;
+            }
+          }
         }
       }
+      
+              
     }
+    
+    
   }
 }
