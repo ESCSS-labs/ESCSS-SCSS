@@ -4,15 +4,15 @@
 @if $Basic {
   // /*x
   @mixin divide-inherit {
-    @include divide-(null, inherit);
+    @include divide-(inherit);
   }
 
   @mixin divide-current {
-    @include divide-(null, currentColor);
+    @include divide-(currentColor);
   }
 
   @mixin divide-transparent {
-    @include divide-(null, transparent);
+    @include divide-(transparent);
   }
 
   @mixin divide-black($v: 1) {
@@ -998,15 +998,15 @@
   @if $sizeMode == 0 {
     // /*x
     @mixin sm\:divide-inherit {
-      @include divide-(null, inherit, $sm);
+      @include divide-(inherit, null, $sm);
     }
 
     @mixin sm\:divide-current {
-      @include divide-(null, currentColor, $sm);
+      @include divide-(currentColor, null, $sm);
     }
 
     @mixin sm\:divide-transparent {
-      @include divide-(null, transparent, $sm);
+      @include divide-(transparent, null, $sm);
     }
 
     @mixin sm\:divide-black($v: 1) {
@@ -1986,15 +1986,15 @@
     }
 
     @mixin md\:divide-inherit {
-      @include divide-(null, inherit, $md);
+      @include divide-(inherit, null, $md);
     }
 
     @mixin md\:divide-current {
-      @include divide-(null, currentColor, $md);
+      @include divide-(currentColor, null, $md);
     }
 
     @mixin md\:divide-transparent {
-      @include divide-(null, transparent, $md);
+      @include divide-(transparent, $md);
     }
 
     @mixin md\:divide-black($v: 1) {
@@ -2974,15 +2974,15 @@
     }
 
     @mixin lg\:divide-inherit {
-      @include divide-(null, inherit, $lg);
+      @include divide-(inherit, null, $lg);
     }
 
     @mixin lg\:divide-current {
-      @include divide-(null, currentColor, $lg);
+      @include divide-(currentColor, null, $lg);
     }
 
     @mixin lg\:divide-transparent {
-      @include divide-(null, transparent, $lg);
+      @include divide-(transparent, $lg);
     }
 
     @mixin lg\:divide-black($v: 1) {
@@ -3962,15 +3962,15 @@
     }
 
     @mixin xl\:divide-inherit {
-      @include divide-(null, inherit, $xl);
+      @include divide-(inherit, null, $xl);
     }
 
     @mixin xl\:divide-current {
-      @include divide-(null, currentColor, $xl);
+      @include divide-(currentColor, null, $xl);
     }
 
     @mixin xl\:divide-transparent {
-      @include divide-(null, transparent, $xl);
+      @include divide-(transparent, $xl);
     }
 
     @mixin xl\:divide-black($v: 1) {
@@ -4950,15 +4950,15 @@
     }
 
     @mixin \2xl\:divide-inherit {
-      @include divide-(null, inherit, $\2xl);
+      @include divide-(inherit, null, $\2xl);
     }
 
     @mixin \2xl\:divide-current {
-      @include divide-(null, currentColor, $\2xl);
+      @include divide-(currentColor, null, $\2xl);
     }
 
     @mixin \2xl\:divide-transparent {
-      @include divide-(null, transparent, $\2xl);
+      @include divide-(transparent, $\2xl);
     }
 
     @mixin \2xl\:divide-black($v: 1) {
@@ -5943,7 +5943,7 @@
 
 @if $Custom {
   // /*x
-  @mixin divide-($token, $v, $rwd: null) {
+  @mixin divide-($token, $v: 1, $rwd: null) {
     @if $rwd==null {
       @include __divide($token, $v);
     } @else {
@@ -5955,31 +5955,32 @@
 
   @mixin __divide($token, $v) {
     > * ~ * {
-      @if $token ==null {
-        border-color: $v;
-      } @else {
+      @if list.index(inherit currentColor transparent, $token) {
+        border-color: $token;
+      }
+      @else {
         border-color: c($token, $v);
       }
     }
   }
 
-  @mixin sm\:divide-($v) {
+  @mixin sm\:divide-($token, $v: 1) {
     @include divide-($token, $v, $sm);
   }
-
-  @mixin md\:divide-($v) {
+  
+  @mixin md\:divide-($token, $v: 1) {
     @include divide-($token, $v, $md);
   }
-
-  @mixin lg\:divide-($v) {
+  
+  @mixin lg\:divide-($token, $v: 1) {
     @include divide-($token, $v, $lg);
   }
-
-  @mixin xl\:divide-($v) {
+  
+  @mixin xl\:divide-($token, $v: 1) {
     @include divide-($token, $v, $xl);
   }
-
-  @mixin \2xl\:divide-($v) {
+  
+  @mixin \2xl\:divide-($token, $v: 1) {
     @include divide-($token, $v, $\2xl);
   }
 
