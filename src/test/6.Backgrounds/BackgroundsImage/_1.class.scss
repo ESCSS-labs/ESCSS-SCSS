@@ -2,243 +2,579 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backgrounds Image */
-@if $Basic {
-  // /*x
-  @mixin bg-none {
-    @include bg-(__bg-image-(none));
+@include describe("6.Backgrounds") {
+  @include describe("Background Image") {
+    @include describe("Basic") {
+      @include it("bg-none") {
+        @include custom-expect-(background-image, none) {
+          @include bg-none;
+        }
+      }
+
+      @include it("bg-gradient-to-t") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top, #fff, transparent)
+        ) {
+          @include bg-gradient-to-t;
+        }
+      }
+
+      @include it("bg-gradient-to-tr") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top right, #fff, transparent)
+        ) {
+          @include bg-gradient-to-tr;
+        }
+      }
+
+      @include it("bg-gradient-to-r") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to right, #fff, transparent)
+        ) {
+          @include bg-gradient-to-r;
+        }
+      }
+
+      @include it("bg-gradient-to-br") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom right, #fff, transparent)
+        ) {
+          @include bg-gradient-to-br;
+        }
+      }
+
+      @include it("bg-gradient-to-b") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom, #fff, transparent)
+        ) {
+          @include bg-gradient-to-b;
+        }
+      }
+
+      @include it("bg-gradient-to-bl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom left, #fff, transparent)
+        ) {
+          @include bg-gradient-to-bl;
+        }
+      }
+
+      @include it("bg-gradient-to-l") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to left, #fff, transparent)
+        ) {
+          @include bg-gradient-to-l;
+        }
+      }
+
+      @include it("bg-gradient-to-tl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top left, #fff, transparent)
+        ) {
+          @include bg-gradient-to-tl;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:bg-none") {
+        @include custom-expect-(background-image, none, $sm) {
+          @include sm\:bg-none;
+        }
+      }
+
+      @include it("sm\:bg-gradient-to-t") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top, #fff, transparent),
+          $sm
+        ) {
+          @include sm\:bg-gradient-to-t;
+        }
+      }
+
+      @include it("sm\:bg-gradient-to-tr") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top right, #fff, transparent),
+          $sm
+        ) {
+          @include sm\:bg-gradient-to-tr;
+        }
+      }
+
+      @include it("sm\:bg-gradient-to-r") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to right, #fff, transparent),
+          $sm
+        ) {
+          @include sm\:bg-gradient-to-r;
+        }
+      }
+
+      @include it("sm\:bg-gradient-to-br") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom right, #fff, transparent),
+          $sm
+        ) {
+          @include sm\:bg-gradient-to-br;
+        }
+      }
+
+      @include it("sm\:bg-gradient-to-b") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom, #fff, transparent),
+          $sm
+        ) {
+          @include sm\:bg-gradient-to-b;
+        }
+      }
+
+      @include it("sm\:bg-gradient-to-bl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom left, #fff, transparent),
+          $sm
+        ) {
+          @include sm\:bg-gradient-to-bl;
+        }
+      }
+
+      @include it("sm\:bg-gradient-to-l") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to left, #fff, transparent),
+          $sm
+        ) {
+          @include sm\:bg-gradient-to-l;
+        }
+      }
+
+      @include it("sm\:bg-gradient-to-tl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top left, #fff, transparent),
+          $sm
+        ) {
+          @include sm\:bg-gradient-to-tl;
+        }
+      }
+
+      @include it("md\:bg-none") {
+        @include custom-expect-(background-image, none, $md) {
+          @include md\:bg-none;
+        }
+      }
+
+      @include it("md\:bg-gradient-to-t") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top, #fff, transparent),
+          $md
+        ) {
+          @include md\:bg-gradient-to-t;
+        }
+      }
+
+      @include it("md\:bg-gradient-to-tr") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top right, #fff, transparent),
+          $md
+        ) {
+          @include md\:bg-gradient-to-tr;
+        }
+      }
+
+      @include it("md\:bg-gradient-to-r") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to right, #fff, transparent),
+          $md
+        ) {
+          @include md\:bg-gradient-to-r;
+        }
+      }
+
+      @include it("md\:bg-gradient-to-br") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom right, #fff, transparent),
+          $md
+        ) {
+          @include md\:bg-gradient-to-br;
+        }
+      }
+
+      @include it("md\:bg-gradient-to-b") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom, #fff, transparent),
+          $md
+        ) {
+          @include md\:bg-gradient-to-b;
+        }
+      }
+
+      @include it("md\:bg-gradient-to-bl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom left, #fff, transparent),
+          $md
+        ) {
+          @include md\:bg-gradient-to-bl;
+        }
+      }
+
+      @include it("md\:bg-gradient-to-l") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to left, #fff, transparent),
+          $md
+        ) {
+          @include md\:bg-gradient-to-l;
+        }
+      }
+
+      @include it("md\:bg-gradient-to-tl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top left, #fff, transparent),
+          $md
+        ) {
+          @include md\:bg-gradient-to-tl;
+        }
+      }
+
+      @include it("lg\:bg-none") {
+        @include custom-expect-(background-image, none, $lg) {
+          @include lg\:bg-none;
+        }
+      }
+
+      @include it("lg\:bg-gradient-to-t") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top, #fff, transparent),
+          $lg
+        ) {
+          @include lg\:bg-gradient-to-t;
+        }
+      }
+
+      @include it("lg\:bg-gradient-to-tr") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top right, #fff, transparent),
+          $lg
+        ) {
+          @include lg\:bg-gradient-to-tr;
+        }
+      }
+
+      @include it("lg\:bg-gradient-to-r") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to right, #fff, transparent),
+          $lg
+        ) {
+          @include lg\:bg-gradient-to-r;
+        }
+      }
+
+      @include it("lg\:bg-gradient-to-br") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom right, #fff, transparent),
+          $lg
+        ) {
+          @include lg\:bg-gradient-to-br;
+        }
+      }
+
+      @include it("lg\:bg-gradient-to-b") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom, #fff, transparent),
+          $lg
+        ) {
+          @include lg\:bg-gradient-to-b;
+        }
+      }
+
+      @include it("lg\:bg-gradient-to-bl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom left, #fff, transparent),
+          $lg
+        ) {
+          @include lg\:bg-gradient-to-bl;
+        }
+      }
+
+      @include it("lg\:bg-gradient-to-l") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to left, #fff, transparent),
+          $lg
+        ) {
+          @include lg\:bg-gradient-to-l;
+        }
+      }
+
+      @include it("lg\:bg-gradient-to-tl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top left, #fff, transparent),
+          $lg
+        ) {
+          @include lg\:bg-gradient-to-tl;
+        }
+      }
+
+      @include it("xl\:bg-none") {
+        @include custom-expect-(background-image, none, $xl) {
+          @include xl\:bg-none;
+        }
+      }
+
+      @include it("xl\:bg-gradient-to-t") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top, #fff, transparent),
+          $xl
+        ) {
+          @include xl\:bg-gradient-to-t;
+        }
+      }
+
+      @include it("xl\:bg-gradient-to-tr") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top right, #fff, transparent),
+          $xl
+        ) {
+          @include xl\:bg-gradient-to-tr;
+        }
+      }
+
+      @include it("xl\:bg-gradient-to-r") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to right, #fff, transparent),
+          $xl
+        ) {
+          @include xl\:bg-gradient-to-r;
+        }
+      }
+
+      @include it("xl\:bg-gradient-to-br") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom right, #fff, transparent),
+          $xl
+        ) {
+          @include xl\:bg-gradient-to-br;
+        }
+      }
+
+      @include it("xl\:bg-gradient-to-b") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom, #fff, transparent),
+          $xl
+        ) {
+          @include xl\:bg-gradient-to-b;
+        }
+      }
+
+      @include it("xl\:bg-gradient-to-bl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom left, #fff, transparent),
+          $xl
+        ) {
+          @include xl\:bg-gradient-to-bl;
+        }
+      }
+
+      @include it("xl\:bg-gradient-to-l") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to left, #fff, transparent),
+          $xl
+        ) {
+          @include xl\:bg-gradient-to-l;
+        }
+      }
+
+      @include it("xl\:bg-gradient-to-tl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top left, #fff, transparent),
+          $xl
+        ) {
+          @include xl\:bg-gradient-to-tl;
+        }
+      }
+
+      @include it("\2xl\:bg-none") {
+        @include custom-expect-(background-image, none, $\2xl) {
+          @include \2xl\:bg-none;
+        }
+      }
+
+      @include it("\2xl\:bg-gradient-to-t") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top, #fff, transparent),
+          $\2xl
+        ) {
+          @include \2xl\:bg-gradient-to-t;
+        }
+      }
+
+      @include it("\2xl\:bg-gradient-to-tr") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top right, #fff, transparent),
+          $\2xl
+        ) {
+          @include \2xl\:bg-gradient-to-tr;
+        }
+      }
+
+      @include it("\2xl\:bg-gradient-to-r") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to right, #fff, transparent),
+          $\2xl
+        ) {
+          @include \2xl\:bg-gradient-to-r;
+        }
+      }
+
+      @include it("\2xl\:bg-gradient-to-br") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom right, #fff, transparent),
+          $\2xl
+        ) {
+          @include \2xl\:bg-gradient-to-br;
+        }
+      }
+
+      @include it("\2xl\:bg-gradient-to-b") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom, #fff, transparent),
+          $\2xl
+        ) {
+          @include \2xl\:bg-gradient-to-b;
+        }
+      }
+
+      @include it("\2xl\:bg-gradient-to-bl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to bottom left, #fff, transparent),
+          $\2xl
+        ) {
+          @include \2xl\:bg-gradient-to-bl;
+        }
+      }
+
+      @include it("\2xl\:bg-gradient-to-l") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to left, #fff, transparent),
+          $\2xl
+        ) {
+          @include \2xl\:bg-gradient-to-l;
+        }
+      }
+
+      @include it("\2xl\:bg-gradient-to-tl") {
+        @include custom-expect-(
+          background-image,
+          linear-gradient(to top left, #fff, transparent),
+          $\2xl
+        ) {
+          @include \2xl\:bg-gradient-to-tl;
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("bg-(url('/img/hero-pattern.svg'))") {
+        @include custom-expect-(
+          background-image,
+          url("/img/hero-pattern.svg")
+        ) {
+          @include bg-(url("/img/hero-pattern.svg"));
+        }
+      }
+
+      @include it("sm\:bg-(url('/img/hero-pattern.svg'))") {
+        @include custom-expect-(
+          background-image,
+          url("/img/hero-pattern.svg"),
+          $sm
+        ) {
+          @include sm\:bg-(url("/img/hero-pattern.svg"));
+        }
+      }
+
+      @include it("md\:bg-(url('/img/hero-pattern.svg'))") {
+        @include custom-expect-(
+          background-image,
+          url("/img/hero-pattern.svg"),
+          $md
+        ) {
+          @include md\:bg-(url("/img/hero-pattern.svg"));
+        }
+      }
+
+      @include it("lg\:bg-(url('/img/hero-pattern.svg'))") {
+        @include custom-expect-(
+          background-image,
+          url("/img/hero-pattern.svg"),
+          $lg
+        ) {
+          @include lg\:bg-(url("/img/hero-pattern.svg"));
+        }
+      }
+
+      @include it("xl\:bg-(url('/img/hero-pattern.svg'))") {
+        @include custom-expect-(
+          background-image,
+          url("/img/hero-pattern.svg"),
+          $xl
+        ) {
+          @include xl\:bg-(url("/img/hero-pattern.svg"));
+        }
+      }
+
+      @include it("\2xl\:bg-(url('/img/hero-pattern.svg'))") {
+        @include custom-expect-(
+          background-image,
+          url("/img/hero-pattern.svg"),
+          $\2xl
+        ) {
+          @include \2xl\:bg-(url("/img/hero-pattern.svg"));
+        }
+      }
+    }
   }
-
-  @mixin bg-gradient-to-t {
-    @include bg-(__bg-image-(to top));
-  }
-
-  @mixin bg-gradient-to-tr {
-    @include bg-(__bg-image-(to top right));
-  }
-
-  @mixin bg-gradient-to-r {
-    @include bg-(__bg-image-(to right));
-  }
-
-  @mixin bg-gradient-to-br {
-    @include bg-(__bg-image-(to bottom right));
-  }
-
-  @mixin bg-gradient-to-b {
-    @include bg-(__bg-image-(to bottom));
-  }
-
-  @mixin bg-gradient-to-bl {
-    @include bg-(__bg-image-(to bottom left));
-  }
-
-  @mixin bg-gradient-to-l {
-    @include bg-(__bg-image-(to left));
-  }
-
-  @mixin bg-gradient-to-tl {
-    @include bg-(__bg-image-(to top right));
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:bg-none {
-      @include bg-(__bg-image-(none), $sm);
-    }
-
-    @mixin sm\:bg-gradient-to-t {
-      @include bg-(__bg-image-(to top), $sm);
-    }
-
-    @mixin sm\:bg-gradient-to-tr {
-      @include bg-(__bg-image-(to top right), $sm);
-    }
-
-    @mixin sm\:bg-gradient-to-r {
-      @include bg-(__bg-image-(to right), $sm);
-    }
-
-    @mixin sm\:bg-gradient-to-br {
-      @include bg-(__bg-image-(to bottom right), $sm);
-    }
-
-    @mixin sm\:bg-gradient-to-b {
-      @include bg-(__bg-image-(to bottom), $sm);
-    }
-
-    @mixin sm\:bg-gradient-to-bl {
-      @include bg-(__bg-image-(to bottom left), $sm);
-    }
-
-    @mixin sm\:bg-gradient-to-l {
-      @include bg-(__bg-image-(to left), $sm);
-    }
-
-    @mixin sm\:bg-gradient-to-tl {
-      @include bg-(__bg-image-(to top right), $sm);
-    }
-
-    @mixin md\:bg-none {
-      @include bg-(__bg-image-(none), $md);
-    }
-
-    @mixin md\:bg-gradient-to-t {
-      @include bg-(__bg-image-(to top), $md);
-    }
-
-    @mixin md\:bg-gradient-to-tr {
-      @include bg-(__bg-image-(to top right), $md);
-    }
-
-    @mixin md\:bg-gradient-to-r {
-      @include bg-(__bg-image-(to right), $md);
-    }
-
-    @mixin md\:bg-gradient-to-br {
-      @include bg-(__bg-image-(to bottom right), $md);
-    }
-
-    @mixin md\:bg-gradient-to-b {
-      @include bg-(__bg-image-(to bottom), $md);
-    }
-
-    @mixin md\:bg-gradient-to-bl {
-      @include bg-(__bg-image-(to bottom left), $md);
-    }
-
-    @mixin md\:bg-gradient-to-l {
-      @include bg-(__bg-image-(to left), $md);
-    }
-
-    @mixin md\:bg-gradient-to-tl {
-      @include bg-(__bg-image-(to top right), $md);
-    }
-
-    @mixin lg\:bg-none {
-      @include bg-(__bg-image-(none), $lg);
-    }
-
-    @mixin lg\:bg-gradient-to-t {
-      @include bg-(__bg-image-(to top), $lg);
-    }
-
-    @mixin lg\:bg-gradient-to-tr {
-      @include bg-(__bg-image-(to top right), $lg);
-    }
-
-    @mixin lg\:bg-gradient-to-r {
-      @include bg-(__bg-image-(to right), $lg);
-    }
-
-    @mixin lg\:bg-gradient-to-br {
-      @include bg-(__bg-image-(to bottom right), $lg);
-    }
-
-    @mixin lg\:bg-gradient-to-b {
-      @include bg-(__bg-image-(to bottom), $lg);
-    }
-
-    @mixin lg\:bg-gradient-to-bl {
-      @include bg-(__bg-image-(to bottom left), $lg);
-    }
-
-    @mixin lg\:bg-gradient-to-l {
-      @include bg-(__bg-image-(to left), $lg);
-    }
-
-    @mixin lg\:bg-gradient-to-tl {
-      @include bg-(__bg-image-(to top right), $lg);
-    }
-
-    @mixin xl\:bg-none {
-      @include bg-(__bg-image-(none), $xl);
-    }
-
-    @mixin xl\:bg-gradient-to-t {
-      @include bg-(__bg-image-(to top), $xl);
-    }
-
-    @mixin xl\:bg-gradient-to-tr {
-      @include bg-(__bg-image-(to top right), $xl);
-    }
-
-    @mixin xl\:bg-gradient-to-r {
-      @include bg-(__bg-image-(to right), $xl);
-    }
-
-    @mixin xl\:bg-gradient-to-br {
-      @include bg-(__bg-image-(to bottom right), $xl);
-    }
-
-    @mixin xl\:bg-gradient-to-b {
-      @include bg-(__bg-image-(to bottom), $xl);
-    }
-
-    @mixin xl\:bg-gradient-to-bl {
-      @include bg-(__bg-image-(to bottom left), $xl);
-    }
-
-    @mixin xl\:bg-gradient-to-l {
-      @include bg-(__bg-image-(to left), $xl);
-    }
-
-    @mixin xl\:bg-gradient-to-tl {
-      @include bg-(__bg-image-(to top right), $xl);
-    }
-
-    @mixin \2xl\:bg-none {
-      @include bg-(__bg-image-(none), $\2xl);
-    }
-
-    @mixin \2xl\:bg-gradient-to-t {
-      @include bg-(__bg-image-(to top), $\2xl);
-    }
-
-    @mixin \2xl\:bg-gradient-to-tr {
-      @include bg-(__bg-image-(to top right), $\2xl);
-    }
-
-    @mixin \2xl\:bg-gradient-to-r {
-      @include bg-(__bg-image-(to right), $\2xl);
-    }
-
-    @mixin \2xl\:bg-gradient-to-br {
-      @include bg-(__bg-image-(to bottom right), $\2xl);
-    }
-
-    @mixin \2xl\:bg-gradient-to-b {
-      @include bg-(__bg-image-(to bottom), $\2xl);
-    }
-
-    @mixin \2xl\:bg-gradient-to-bl {
-      @include bg-(__bg-image-(to bottom left), $\2xl);
-    }
-
-    @mixin \2xl\:bg-gradient-to-l {
-      @include bg-(__bg-image-(to left), $\2xl);
-    }
-
-    @mixin \2xl\:bg-gradient-to-tl {
-      @include bg-(__bg-image-(to top right), $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-// same as  @mixin bg-($v, $rwd: null)
-@if $Custom {
-  // /*x
-  @function __bg-image-($v) {
-    $--gradient-direction: $v !global;
-
-    @return __linear-gradient();
-  }
-
-  // x*/
 }

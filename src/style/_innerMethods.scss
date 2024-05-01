@@ -48,7 +48,9 @@
 }
 
 @function __linear-gradient() {
-  @if $--tw-gradient-via==null {
+  @if $--gradient-direction==none {
+    @return none;
+  } @else if $--tw-gradient-via==null {
     @return linear-gradient(
       $--gradient-direction,
       $--tw-gradient-from $--tw-gradient-from-position,

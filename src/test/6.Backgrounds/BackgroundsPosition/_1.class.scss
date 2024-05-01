@@ -2,235 +2,372 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backgrounds Position */
-@if $Basic {
-  // /*x
-  @mixin bg-bottom {
-    @include bg-(bottom);
+@include describe("6.Backgrounds") {
+  @include describe("Background Position") {
+    @include describe("Basic") {
+      @include it("bg-bottom") {
+        @include custom-expect-(background-position, bottom) {
+          @include bg-bottom;
+        }
+      }
+
+      @include it("bg-center") {
+        @include custom-expect-(background-position, center) {
+          @include bg-center;
+        }
+      }
+
+      @include it("bg-left") {
+        @include custom-expect-(background-position, left) {
+          @include bg-left;
+        }
+      }
+
+      @include it("bg-left-bottom") {
+        @include custom-expect-(background-position, left bottom) {
+          @include bg-left-bottom;
+        }
+      }
+
+      @include it("bg-left-top") {
+        @include custom-expect-(background-position, left top) {
+          @include bg-left-top;
+        }
+      }
+
+      @include it("bg-right") {
+        @include custom-expect-(background-position, right) {
+          @include bg-right;
+        }
+      }
+
+      @include it("bg-right-bottom") {
+        @include custom-expect-(background-position, right bottom) {
+          @include bg-right-bottom;
+        }
+      }
+
+      @include it("bg-right-top") {
+        @include custom-expect-(background-position, right top) {
+          @include bg-right-top;
+        }
+      }
+
+      @include it("bg-top") {
+        @include custom-expect-(background-position, top) {
+          @include bg-top;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:bg-bottom") {
+        @include custom-expect-(background-position, bottom, $sm) {
+          @include sm\:bg-bottom;
+        }
+      }
+
+      @include it("sm\:bg-center") {
+        @include custom-expect-(background-position, center, $sm) {
+          @include sm\:bg-center;
+        }
+      }
+
+      @include it("sm\:bg-left") {
+        @include custom-expect-(background-position, left, $sm) {
+          @include sm\:bg-left;
+        }
+      }
+
+      @include it("sm\:bg-left-bottom") {
+        @include custom-expect-(background-position, left bottom, $sm) {
+          @include sm\:bg-left-bottom;
+        }
+      }
+
+      @include it("sm\:bg-left-top") {
+        @include custom-expect-(background-position, left top, $sm) {
+          @include sm\:bg-left-top;
+        }
+      }
+
+      @include it("sm\:bg-right") {
+        @include custom-expect-(background-position, right, $sm) {
+          @include sm\:bg-right;
+        }
+      }
+
+      @include it("sm\:bg-right-bottom") {
+        @include custom-expect-(background-position, right bottom, $sm) {
+          @include sm\:bg-right-bottom;
+        }
+      }
+
+      @include it("sm\:bg-right-top") {
+        @include custom-expect-(background-position, right top, $sm) {
+          @include sm\:bg-right-top;
+        }
+      }
+
+      @include it("sm\:bg-top") {
+        @include custom-expect-(background-position, top, $sm) {
+          @include sm\:bg-top;
+        }
+      }
+
+      @include it("md\:bg-bottom") {
+        @include custom-expect-(background-position, bottom, $md) {
+          @include md\:bg-bottom;
+        }
+      }
+
+      @include it("md\:bg-center") {
+        @include custom-expect-(background-position, center, $md) {
+          @include md\:bg-center;
+        }
+      }
+
+      @include it("md\:bg-left") {
+        @include custom-expect-(background-position, left, $md) {
+          @include md\:bg-left;
+        }
+      }
+
+      @include it("md\:bg-left-bottom") {
+        @include custom-expect-(background-position, left bottom, $md) {
+          @include md\:bg-left-bottom;
+        }
+      }
+
+      @include it("md\:bg-left-top") {
+        @include custom-expect-(background-position, left top, $md) {
+          @include md\:bg-left-top;
+        }
+      }
+
+      @include it("md\:bg-right") {
+        @include custom-expect-(background-position, right, $md) {
+          @include md\:bg-right;
+        }
+      }
+
+      @include it("md\:bg-right-bottom") {
+        @include custom-expect-(background-position, right bottom, $md) {
+          @include md\:bg-right-bottom;
+        }
+      }
+
+      @include it("md\:bg-right-top") {
+        @include custom-expect-(background-position, right top, $md) {
+          @include md\:bg-right-top;
+        }
+      }
+
+      @include it("md\:bg-top") {
+        @include custom-expect-(background-position, top, $md) {
+          @include md\:bg-top;
+        }
+      }
+
+      @include it("lg\:bg-bottom") {
+        @include custom-expect-(background-position, bottom, $lg) {
+          @include lg\:bg-bottom;
+        }
+      }
+
+      @include it("lg\:bg-center") {
+        @include custom-expect-(background-position, center, $lg) {
+          @include lg\:bg-center;
+        }
+      }
+
+      @include it("lg\:bg-left") {
+        @include custom-expect-(background-position, left, $lg) {
+          @include lg\:bg-left;
+        }
+      }
+
+      @include it("lg\:bg-left-bottom") {
+        @include custom-expect-(background-position, left bottom, $lg) {
+          @include lg\:bg-left-bottom;
+        }
+      }
+
+      @include it("lg\:bg-left-top") {
+        @include custom-expect-(background-position, left top, $lg) {
+          @include lg\:bg-left-top;
+        }
+      }
+
+      @include it("lg\:bg-right") {
+        @include custom-expect-(background-position, right, $lg) {
+          @include lg\:bg-right;
+        }
+      }
+
+      @include it("lg\:bg-right-bottom") {
+        @include custom-expect-(background-position, right bottom, $lg) {
+          @include lg\:bg-right-bottom;
+        }
+      }
+
+      @include it("lg\:bg-right-top") {
+        @include custom-expect-(background-position, right top, $lg) {
+          @include lg\:bg-right-top;
+        }
+      }
+
+      @include it("lg\:bg-top") {
+        @include custom-expect-(background-position, top, $lg) {
+          @include lg\:bg-top;
+        }
+      }
+
+      @include it("xl\:bg-bottom") {
+        @include custom-expect-(background-position, bottom, $xl) {
+          @include xl\:bg-bottom;
+        }
+      }
+
+      @include it("xl\:bg-center") {
+        @include custom-expect-(background-position, center, $xl) {
+          @include xl\:bg-center;
+        }
+      }
+
+      @include it("xl\:bg-left") {
+        @include custom-expect-(background-position, left, $xl) {
+          @include xl\:bg-left;
+        }
+      }
+
+      @include it("xl\:bg-left-bottom") {
+        @include custom-expect-(background-position, left bottom, $xl) {
+          @include xl\:bg-left-bottom;
+        }
+      }
+
+      @include it("xl\:bg-left-top") {
+        @include custom-expect-(background-position, left top, $xl) {
+          @include xl\:bg-left-top;
+        }
+      }
+
+      @include it("xl\:bg-right") {
+        @include custom-expect-(background-position, right, $xl) {
+          @include xl\:bg-right;
+        }
+      }
+
+      @include it("xl\:bg-right-bottom") {
+        @include custom-expect-(background-position, right bottom, $xl) {
+          @include xl\:bg-right-bottom;
+        }
+      }
+
+      @include it("xl\:bg-right-top") {
+        @include custom-expect-(background-position, right top, $xl) {
+          @include xl\:bg-right-top;
+        }
+      }
+
+      @include it("xl\:bg-top") {
+        @include custom-expect-(background-position, top, $xl) {
+          @include xl\:bg-top;
+        }
+      }
+
+      @include it("\2xl\:bg-bottom") {
+        @include custom-expect-(background-position, bottom, $\2xl) {
+          @include \2xl\:bg-bottom;
+        }
+      }
+
+      @include it("\2xl\:bg-center") {
+        @include custom-expect-(background-position, center, $\2xl) {
+          @include \2xl\:bg-center;
+        }
+      }
+
+      @include it("\2xl\:bg-left") {
+        @include custom-expect-(background-position, left, $\2xl) {
+          @include \2xl\:bg-left;
+        }
+      }
+
+      @include it("\2xl\:bg-left-bottom") {
+        @include custom-expect-(background-position, left bottom, $\2xl) {
+          @include \2xl\:bg-left-bottom;
+        }
+      }
+
+      @include it("\2xl\:bg-left-top") {
+        @include custom-expect-(background-position, left top, $\2xl) {
+          @include \2xl\:bg-left-top;
+        }
+      }
+
+      @include it("\2xl\:bg-right") {
+        @include custom-expect-(background-position, right, $\2xl) {
+          @include \2xl\:bg-right;
+        }
+      }
+
+      @include it("\2xl\:bg-right-bottom") {
+        @include custom-expect-(background-position, right bottom, $\2xl) {
+          @include \2xl\:bg-right-bottom;
+        }
+      }
+
+      @include it("\2xl\:bg-right-top") {
+        @include custom-expect-(background-position, right top, $\2xl) {
+          @include \2xl\:bg-right-top;
+        }
+      }
+
+      @include it("\2xl\:bg-top") {
+        @include custom-expect-(background-position, top, $\2xl) {
+          @include \2xl\:bg-top;
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("bg-(center top 1rem)") {
+        @include custom-expect-(background-position, center top 1rem) {
+          @include bg-(center top 1rem);
+        }
+      }
+
+      @include it("sm\:bg-(center top 1rem)") {
+        @include custom-expect-(background-position, center top 1rem, $sm) {
+          @include sm\:bg-(center top 1rem);
+        }
+      }
+
+      @include it("md\:bg-(center top 1rem)") {
+        @include custom-expect-(background-position, center top 1rem, $md) {
+          @include md\:bg-(center top 1rem);
+        }
+      }
+
+      @include it("lg\:bg-(center top 1rem)") {
+        @include custom-expect-(background-position, center top 1rem, $lg) {
+          @include lg\:bg-(center top 1rem);
+        }
+      }
+
+      @include it("xl\:bg-(center top 1rem)") {
+        @include custom-expect-(background-position, center top 1rem, $xl) {
+          @include xl\:bg-(center top 1rem);
+        }
+      }
+
+      @include it("\2xl\:bg-(center top 1rem)") {
+        @include custom-expect-(background-position, center top 1rem, $\2xl) {
+          @include \2xl\:bg-(center top 1rem);
+        }
+      }
+    }
   }
-
-  @mixin bg-center {
-    @include bg-(center);
-  }
-
-  @mixin bg-left {
-    @include bg-(left);
-  }
-
-  @mixin bg-left-bottom {
-    @include bg-(left bottom);
-  }
-
-  @mixin bg-left-top {
-    @include bg-(left top);
-  }
-
-  @mixin bg-right {
-    @include bg-(right);
-  }
-
-  @mixin bg-right-bottom {
-    @include bg-(right bottom);
-  }
-
-  @mixin bg-right-top {
-    @include bg-(right top);
-  }
-
-  @mixin bg-top {
-    @include bg-(top);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:bg-bottom {
-      @include bg-(bottom, $sm);
-    }
-
-    @mixin sm\:bg-center {
-      @include bg-(center, $sm);
-    }
-
-    @mixin sm\:bg-left {
-      @include bg-(left, $sm);
-    }
-
-    @mixin sm\:bg-left-bottom {
-      @include bg-(left bottom, $sm);
-    }
-
-    @mixin sm\:bg-left-top {
-      @include bg-(left top, $sm);
-    }
-
-    @mixin sm\:bg-right {
-      @include bg-(right, $sm);
-    }
-
-    @mixin sm\:bg-right-bottom {
-      @include bg-(right bottom, $sm);
-    }
-
-    @mixin sm\:bg-right-top {
-      @include bg-(right top, $sm);
-    }
-
-    @mixin sm\:bg-top {
-      @include bg-(top, $sm);
-    }
-
-    @mixin md\:bg-bottom {
-      @include bg-(bottom, $md);
-    }
-
-    @mixin md\:bg-center {
-      @include bg-(center, $md);
-    }
-
-    @mixin md\:bg-left {
-      @include bg-(left, $md);
-    }
-
-    @mixin md\:bg-left-bottom {
-      @include bg-(left bottom, $md);
-    }
-
-    @mixin md\:bg-left-top {
-      @include bg-(left top, $md);
-    }
-
-    @mixin md\:bg-right {
-      @include bg-(right, $md);
-    }
-
-    @mixin md\:bg-right-bottom {
-      @include bg-(right bottom, $md);
-    }
-
-    @mixin md\:bg-right-top {
-      @include bg-(right top, $md);
-    }
-
-    @mixin md\:bg-top {
-      @include bg-(top, $md);
-    }
-
-    @mixin lg\:bg-bottom {
-      @include bg-(bottom, $lg);
-    }
-
-    @mixin lg\:bg-center {
-      @include bg-(center, $lg);
-    }
-
-    @mixin lg\:bg-left {
-      @include bg-(left, $lg);
-    }
-
-    @mixin lg\:bg-left-bottom {
-      @include bg-(left bottom, $lg);
-    }
-
-    @mixin lg\:bg-left-top {
-      @include bg-(left top, $lg);
-    }
-
-    @mixin lg\:bg-right {
-      @include bg-(right, $lg);
-    }
-
-    @mixin lg\:bg-right-bottom {
-      @include bg-(right bottom, $lg);
-    }
-
-    @mixin lg\:bg-right-top {
-      @include bg-(right top, $lg);
-    }
-
-    @mixin lg\:bg-top {
-      @include bg-(top, $lg);
-    }
-
-    @mixin xl\:bg-bottom {
-      @include bg-(bottom, $xl);
-    }
-
-    @mixin xl\:bg-center {
-      @include bg-(center, $xl);
-    }
-
-    @mixin xl\:bg-left {
-      @include bg-(left, $xl);
-    }
-
-    @mixin xl\:bg-left-bottom {
-      @include bg-(left bottom, $xl);
-    }
-
-    @mixin xl\:bg-left-top {
-      @include bg-(left top, $xl);
-    }
-
-    @mixin xl\:bg-right {
-      @include bg-(right, $xl);
-    }
-
-    @mixin xl\:bg-right-bottom {
-      @include bg-(right bottom, $xl);
-    }
-
-    @mixin xl\:bg-right-top {
-      @include bg-(right top, $xl);
-    }
-
-    @mixin xl\:bg-top {
-      @include bg-(top, $xl);
-    }
-
-    @mixin \2xl\:bg-bottom {
-      @include bg-(bottom, $\2xl);
-    }
-
-    @mixin \2xl\:bg-center {
-      @include bg-(center, $\2xl);
-    }
-
-    @mixin \2xl\:bg-left {
-      @include bg-(left, $\2xl);
-    }
-
-    @mixin \2xl\:bg-left-bottom {
-      @include bg-(left bottom, $\2xl);
-    }
-
-    @mixin \2xl\:bg-left-top {
-      @include bg-(left top, $\2xl);
-    }
-
-    @mixin \2xl\:bg-right {
-      @include bg-(right, $\2xl);
-    }
-
-    @mixin \2xl\:bg-right-bottom {
-      @include bg-(right bottom, $\2xl);
-    }
-
-    @mixin \2xl\:bg-right-top {
-      @include bg-(right top, $\2xl);
-    }
-
-    @mixin \2xl\:bg-top {
-      @include bg-(top, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-// same as   @mixin bg-($v, $rwd: null)
-@if $Custom {
 }

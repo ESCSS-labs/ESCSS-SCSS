@@ -2,103 +2,118 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backgrounds Attachment */
-@if $Basic {
-  // /*x
-  @mixin bg-fixed($rwd: null) {
-    @if $rwd==null {
-      background-attachment: fixed;
-    } @else {
-      @media (min-width: $rwd) {
-        background-attachment: fixed;
+@include describe("6.Backgrounds") {
+  @include describe("Background Attachment") {
+    @include describe("Basic") {
+      @include it("bg-fixed") {
+        @include custom-expect-(background-attachment, fixed) {
+          @include bg-fixed;
+        }
+      }
+
+      @include it("bg-local") {
+        @include custom-expect-(background-attachment, local) {
+          @include bg-local;
+        }
+      }
+
+      @include it("bg-scroll") {
+        @include custom-expect-(background-attachment, scroll) {
+          @include bg-scroll;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:bg-fixed") {
+        @include custom-expect-(background-attachment, fixed, $sm) {
+          @include sm\:bg-fixed;
+        }
+      }
+
+      @include it("sm\:bg-local") {
+        @include custom-expect-(background-attachment, local, $sm) {
+          @include sm\:bg-local;
+        }
+      }
+
+      @include it("sm\:bg-scroll") {
+        @include custom-expect-(background-attachment, scroll, $sm) {
+          @include sm\:bg-scroll;
+        }
+      }
+
+      @include it("md\:bg-fixed") {
+        @include custom-expect-(background-attachment, fixed, $md) {
+          @include md\:bg-fixed;
+        }
+      }
+
+      @include it("md\:bg-local") {
+        @include custom-expect-(background-attachment, local, $md) {
+          @include md\:bg-local;
+        }
+      }
+
+      @include it("md\:bg-scroll") {
+        @include custom-expect-(background-attachment, scroll, $md) {
+          @include md\:bg-scroll;
+        }
+      }
+
+      @include it("lg\:bg-fixed") {
+        @include custom-expect-(background-attachment, fixed, $lg) {
+          @include lg\:bg-fixed;
+        }
+      }
+
+      @include it("lg\:bg-local") {
+        @include custom-expect-(background-attachment, local, $lg) {
+          @include lg\:bg-local;
+        }
+      }
+
+      @include it("lg\:bg-scroll") {
+        @include custom-expect-(background-attachment, scroll, $lg) {
+          @include lg\:bg-scroll;
+        }
+      }
+
+      @include it("xl\:bg-fixed") {
+        @include custom-expect-(background-attachment, fixed, $xl) {
+          @include xl\:bg-fixed;
+        }
+      }
+
+      @include it("xl\:bg-local") {
+        @include custom-expect-(background-attachment, local, $xl) {
+          @include xl\:bg-local;
+        }
+      }
+
+      @include it("xl\:bg-scroll") {
+        @include custom-expect-(background-attachment, scroll, $xl) {
+          @include xl\:bg-scroll;
+        }
+      }
+
+      @include it("\2xl\:bg-fixed") {
+        @include custom-expect-(background-attachment, fixed, $\2xl) {
+          @include \2xl\:bg-fixed;
+        }
+      }
+
+      @include it("\2xl\:bg-local") {
+        @include custom-expect-(background-attachment, local, $\2xl) {
+          @include \2xl\:bg-local;
+        }
+      }
+
+      @include it("\2xl\:bg-scroll") {
+        @include custom-expect-(background-attachment, scroll, $\2xl) {
+          @include \2xl\:bg-scroll;
+        }
       }
     }
   }
-
-  @mixin bg-local($rwd: null) {
-    @if $rwd==null {
-      background-attachment: local;
-    } @else {
-      @media (min-width: $rwd) {
-        background-attachment: local;
-      }
-    }
-  }
-
-  @mixin bg-scroll($rwd: null) {
-    @if $rwd==null {
-      background-attachment: scroll;
-    } @else {
-      @media (min-width: $rwd) {
-        background-attachment: scroll;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:bg-fixed {
-    @include bg-fixed($sm);
-  }
-
-  @mixin sm\:bg-local {
-    @include bg-local($sm);
-  }
-
-  @mixin sm\:bg-scroll {
-    @include bg-scroll($sm);
-  }
-
-  @mixin md\:bg-fixed {
-    @include bg-fixed($md);
-  }
-
-  @mixin md\:bg-local {
-    @include bg-local($md);
-  }
-
-  @mixin md\:bg-scroll {
-    @include bg-scroll($md);
-  }
-
-  @mixin lg\:bg-fixed {
-    @include bg-fixed($lg);
-  }
-
-  @mixin lg\:bg-local {
-    @include bg-local($lg);
-  }
-
-  @mixin lg\:bg-scroll {
-    @include bg-scroll($lg);
-  }
-
-  @mixin xl\:bg-fixed {
-    @include bg-fixed($xl);
-  }
-
-  @mixin xl\:bg-local {
-    @include bg-local($xl);
-  }
-
-  @mixin xl\:bg-scroll {
-    @include bg-scroll($xl);
-  }
-
-  @mixin \2xl\:bg-fixed {
-    @include bg-fixed($\2xl);
-  }
-
-  @mixin \2xl\:bg-local {
-    @include bg-local($\2xl);
-  }
-
-  @mixin \2xl\:bg-scroll {
-    @include bg-scroll($\2xl);
-  }
-
-  // x*/
 }

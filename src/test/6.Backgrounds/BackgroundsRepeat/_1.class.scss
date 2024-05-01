@@ -2,193 +2,226 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backgrounds Repeat */
-@if $Basic {
-  // /*x
-  @mixin bg-repeat($rwd: null) {
-    @if $rwd==null {
-      background-repeat: repeat;
-    } @else {
-      @media (min-width: $rwd) {
-        background-repeat: repeat;
+@include describe("6.Backgrounds") {
+  @include describe("Background Repeat") {
+    @include describe("Basic") {
+      @include it("bg-repeat") {
+        @include custom-expect-(background-repeat, repeat) {
+          @include bg-repeat;
+        }
+      }
+
+      @include it("bg-no-repeat") {
+        @include custom-expect-(background-repeat, no-repeat) {
+          @include bg-no-repeat;
+        }
+      }
+
+      @include it("bg-repeat-x") {
+        @include custom-expect-(background-repeat, repeat-x) {
+          @include bg-repeat-x;
+        }
+      }
+
+      @include it("bg-repeat-y") {
+        @include custom-expect-(background-repeat, repeat-y) {
+          @include bg-repeat-y;
+        }
+      }
+
+      @include it("bg-repeat-round") {
+        @include custom-expect-(background-repeat, round) {
+          @include bg-repeat-round;
+        }
+      }
+
+      @include it("bg-repeat-space") {
+        @include custom-expect-(background-repeat, space) {
+          @include bg-repeat-space;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:bg-repeat") {
+        @include custom-expect-(background-repeat, repeat, $sm) {
+          @include sm\:bg-repeat;
+        }
+      }
+
+      @include it("sm\:bg-no-repeat") {
+        @include custom-expect-(background-repeat, no-repeat, $sm) {
+          @include sm\:bg-no-repeat;
+        }
+      }
+
+      @include it("sm\:bg-repeat-x") {
+        @include custom-expect-(background-repeat, repeat-x, $sm) {
+          @include sm\:bg-repeat-x;
+        }
+      }
+
+      @include it("sm\:bg-repeat-y") {
+        @include custom-expect-(background-repeat, repeat-y, $sm) {
+          @include sm\:bg-repeat-y;
+        }
+      }
+
+      @include it("sm\:bg-repeat-round") {
+        @include custom-expect-(background-repeat, round, $sm) {
+          @include sm\:bg-repeat-round;
+        }
+      }
+
+      @include it("sm\:bg-repeat-space") {
+        @include custom-expect-(background-repeat, space, $sm) {
+          @include sm\:bg-repeat-space;
+        }
+      }
+
+      @include it("md\:bg-repeat") {
+        @include custom-expect-(background-repeat, repeat, $md) {
+          @include md\:bg-repeat;
+        }
+      }
+
+      @include it("md\:bg-no-repeat") {
+        @include custom-expect-(background-repeat, no-repeat, $md) {
+          @include md\:bg-no-repeat;
+        }
+      }
+
+      @include it("md\:bg-repeat-x") {
+        @include custom-expect-(background-repeat, repeat-x, $md) {
+          @include md\:bg-repeat-x;
+        }
+      }
+
+      @include it("md\:bg-repeat-y") {
+        @include custom-expect-(background-repeat, repeat-y, $md) {
+          @include md\:bg-repeat-y;
+        }
+      }
+
+      @include it("md\:bg-repeat-round") {
+        @include custom-expect-(background-repeat, round, $md) {
+          @include md\:bg-repeat-round;
+        }
+      }
+
+      @include it("md\:bg-repeat-space") {
+        @include custom-expect-(background-repeat, space, $md) {
+          @include md\:bg-repeat-space;
+        }
+      }
+
+      @include it("lg\:bg-repeat") {
+        @include custom-expect-(background-repeat, repeat, $lg) {
+          @include lg\:bg-repeat;
+        }
+      }
+
+      @include it("lg\:bg-no-repeat") {
+        @include custom-expect-(background-repeat, no-repeat, $lg) {
+          @include lg\:bg-no-repeat;
+        }
+      }
+
+      @include it("lg\:bg-repeat-x") {
+        @include custom-expect-(background-repeat, repeat-x, $lg) {
+          @include lg\:bg-repeat-x;
+        }
+      }
+
+      @include it("lg\:bg-repeat-y") {
+        @include custom-expect-(background-repeat, repeat-y, $lg) {
+          @include lg\:bg-repeat-y;
+        }
+      }
+
+      @include it("lg\:bg-repeat-round") {
+        @include custom-expect-(background-repeat, round, $lg) {
+          @include lg\:bg-repeat-round;
+        }
+      }
+
+      @include it("lg\:bg-repeat-space") {
+        @include custom-expect-(background-repeat, space, $lg) {
+          @include lg\:bg-repeat-space;
+        }
+      }
+
+      @include it("xl\:bg-repeat") {
+        @include custom-expect-(background-repeat, repeat, $xl) {
+          @include xl\:bg-repeat;
+        }
+      }
+
+      @include it("xl\:bg-no-repeat") {
+        @include custom-expect-(background-repeat, no-repeat, $xl) {
+          @include xl\:bg-no-repeat;
+        }
+      }
+
+      @include it("xl\:bg-repeat-x") {
+        @include custom-expect-(background-repeat, repeat-x, $xl) {
+          @include xl\:bg-repeat-x;
+        }
+      }
+
+      @include it("xl\:bg-repeat-y") {
+        @include custom-expect-(background-repeat, repeat-y, $xl) {
+          @include xl\:bg-repeat-y;
+        }
+      }
+
+      @include it("xl\:bg-repeat-round") {
+        @include custom-expect-(background-repeat, round, $xl) {
+          @include xl\:bg-repeat-round;
+        }
+      }
+
+      @include it("xl\:bg-repeat-space") {
+        @include custom-expect-(background-repeat, space, $xl) {
+          @include xl\:bg-repeat-space;
+        }
+      }
+
+      @include it("\2xl\:bg-repeat") {
+        @include custom-expect-(background-repeat, repeat, $\2xl) {
+          @include \2xl\:bg-repeat;
+        }
+      }
+
+      @include it("\2xl\:bg-no-repeat") {
+        @include custom-expect-(background-repeat, no-repeat, $\2xl) {
+          @include \2xl\:bg-no-repeat;
+        }
+      }
+
+      @include it("\2xl\:bg-repeat-x") {
+        @include custom-expect-(background-repeat, repeat-x, $\2xl) {
+          @include \2xl\:bg-repeat-x;
+        }
+      }
+
+      @include it("\2xl\:bg-repeat-y") {
+        @include custom-expect-(background-repeat, repeat-y, $\2xl) {
+          @include \2xl\:bg-repeat-y;
+        }
+      }
+
+      @include it("\2xl\:bg-repeat-round") {
+        @include custom-expect-(background-repeat, round, $\2xl) {
+          @include \2xl\:bg-repeat-round;
+        }
+      }
+
+      @include it("\2xl\:bg-repeat-space") {
+        @include custom-expect-(background-repeat, space, $\2xl) {
+          @include \2xl\:bg-repeat-space;
+        }
       }
     }
   }
-
-  @mixin bg-no-repeat($rwd: null) {
-    @if $rwd==null {
-      background-repeat: no-repeat;
-    } @else {
-      @media (min-width: $rwd) {
-        background-repeat: no-repeat;
-      }
-    }
-  }
-
-  @mixin bg-repeat-x($rwd: null) {
-    @if $rwd==null {
-      background-repeat: repeat-x;
-    } @else {
-      @media (min-width: $rwd) {
-        background-repeat: repeat-x;
-      }
-    }
-  }
-
-  @mixin bg-repeat-y($rwd: null) {
-    @if $rwd==null {
-      background-repeat: repeat-y;
-    } @else {
-      @media (min-width: $rwd) {
-        background-repeat: repeat-y;
-      }
-    }
-  }
-
-  @mixin bg-repeat-round($rwd: null) {
-    @if $rwd==null {
-      background-repeat: round;
-    } @else {
-      @media (min-width: $rwd) {
-        background-repeat: round;
-      }
-    }
-  }
-
-  @mixin bg-repeat-space($rwd: null) {
-    @if $rwd==null {
-      background-repeat: space;
-    } @else {
-      @media (min-width: $rwd) {
-        background-repeat: space;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:bg-repeat {
-    @include bg-repeat($sm);
-  }
-
-  @mixin sm\:bg-no-repeat {
-    @include bg-no-repeat($sm);
-  }
-
-  @mixin sm\:bg-repeat-x {
-    @include bg-repeat-x($sm);
-  }
-
-  @mixin sm\:bg-repeat-y {
-    @include bg-repeat-y($sm);
-  }
-
-  @mixin sm\:bg-repeat-round {
-    @include bg-repeat-round($sm);
-  }
-
-  @mixin sm\:bg-repeat-space {
-    @include bg-repeat-space($sm);
-  }
-
-  @mixin md\:bg-repeat {
-    @include bg-repeat($md);
-  }
-
-  @mixin md\:bg-no-repeat {
-    @include bg-no-repeat($md);
-  }
-
-  @mixin md\:bg-repeat-x {
-    @include bg-repeat-x($md);
-  }
-
-  @mixin md\:bg-repeat-y {
-    @include bg-repeat-y($md);
-  }
-
-  @mixin md\:bg-repeat-round {
-    @include bg-repeat-round($md);
-  }
-
-  @mixin md\:bg-repeat-space {
-    @include bg-repeat-space($md);
-  }
-
-  @mixin lg\:bg-repeat {
-    @include bg-repeat($lg);
-  }
-
-  @mixin lg\:bg-no-repeat {
-    @include bg-no-repeat($lg);
-  }
-
-  @mixin lg\:bg-repeat-x {
-    @include bg-repeat-x($lg);
-  }
-
-  @mixin lg\:bg-repeat-y {
-    @include bg-repeat-y($lg);
-  }
-
-  @mixin lg\:bg-repeat-round {
-    @include bg-repeat-round($lg);
-  }
-
-  @mixin lg\:bg-repeat-space {
-    @include bg-repeat-space($lg);
-  }
-
-  @mixin xl\:bg-repeat {
-    @include bg-repeat($xl);
-  }
-
-  @mixin xl\:bg-no-repeat {
-    @include bg-no-repeat($xl);
-  }
-
-  @mixin xl\:bg-repeat-x {
-    @include bg-repeat-x($xl);
-  }
-
-  @mixin xl\:bg-repeat-y {
-    @include bg-repeat-y($xl);
-  }
-
-  @mixin xl\:bg-repeat-round {
-    @include bg-repeat-round($xl);
-  }
-
-  @mixin xl\:bg-repeat-space {
-    @include bg-repeat-space($xl);
-  }
-
-  @mixin \2xl\:bg-repeat {
-    @include bg-repeat($\2xl);
-  }
-
-  @mixin \2xl\:bg-no-repeat {
-    @include bg-no-repeat($\2xl);
-  }
-
-  @mixin \2xl\:bg-repeat-x {
-    @include bg-repeat-x($\2xl);
-  }
-
-  @mixin \2xl\:bg-repeat-y {
-    @include bg-repeat-y($\2xl);
-  }
-
-  @mixin \2xl\:bg-repeat-round {
-    @include bg-repeat-round($\2xl);
-  }
-
-  @mixin \2xl\:bg-repeat-space {
-    @include bg-repeat-space($\2xl);
-  }
-
-  // x*/
 }

@@ -2,103 +2,118 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backgrounds Origin */
-@if $Basic {
-  // /*x
-  @mixin bg-origin-border($rwd: null) {
-    @if $rwd==null {
-      background-origin: border-box;
-    } @else {
-      @media (min-width: $rwd) {
-        background-origin: border-box;
+@include describe("6.Backgrounds") {
+  @include describe("Background Origin") {
+    @include describe("Basic") {
+      @include it("bg-origin-border") {
+        @include custom-expect-(background-origin, border-box) {
+          @include bg-origin-border;
+        }
+      }
+
+      @include it("bg-origin-padding") {
+        @include custom-expect-(background-origin, padding-box) {
+          @include bg-origin-padding;
+        }
+      }
+
+      @include it("bg-origin-content") {
+        @include custom-expect-(background-origin, content-box) {
+          @include bg-origin-content;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:bg-origin-border") {
+        @include custom-expect-(background-origin, border-box, $sm) {
+          @include sm\:bg-origin-border;
+        }
+      }
+
+      @include it("sm\:bg-origin-padding") {
+        @include custom-expect-(background-origin, padding-box, $sm) {
+          @include sm\:bg-origin-padding;
+        }
+      }
+
+      @include it("sm\:bg-origin-content") {
+        @include custom-expect-(background-origin, content-box, $sm) {
+          @include sm\:bg-origin-content;
+        }
+      }
+
+      @include it("md\:bg-origin-border") {
+        @include custom-expect-(background-origin, border-box, $md) {
+          @include md\:bg-origin-border;
+        }
+      }
+
+      @include it("md\:bg-origin-padding") {
+        @include custom-expect-(background-origin, padding-box, $md) {
+          @include md\:bg-origin-padding;
+        }
+      }
+
+      @include it("md\:bg-origin-content") {
+        @include custom-expect-(background-origin, content-box, $md) {
+          @include md\:bg-origin-content;
+        }
+      }
+
+      @include it("lg\:bg-origin-border") {
+        @include custom-expect-(background-origin, border-box, $lg) {
+          @include lg\:bg-origin-border;
+        }
+      }
+
+      @include it("lg\:bg-origin-padding") {
+        @include custom-expect-(background-origin, padding-box, $lg) {
+          @include lg\:bg-origin-padding;
+        }
+      }
+
+      @include it("lg\:bg-origin-content") {
+        @include custom-expect-(background-origin, content-box, $lg) {
+          @include lg\:bg-origin-content;
+        }
+      }
+
+      @include it("xl\:bg-origin-border") {
+        @include custom-expect-(background-origin, border-box, $xl) {
+          @include xl\:bg-origin-border;
+        }
+      }
+
+      @include it("xl\:bg-origin-padding") {
+        @include custom-expect-(background-origin, padding-box, $xl) {
+          @include xl\:bg-origin-padding;
+        }
+      }
+
+      @include it("xl\:bg-origin-content") {
+        @include custom-expect-(background-origin, content-box, $xl) {
+          @include xl\:bg-origin-content;
+        }
+      }
+
+      @include it("\2xl\:bg-origin-border") {
+        @include custom-expect-(background-origin, border-box, $\2xl) {
+          @include \2xl\:bg-origin-border;
+        }
+      }
+
+      @include it("\2xl\:bg-origin-padding") {
+        @include custom-expect-(background-origin, padding-box, $\2xl) {
+          @include \2xl\:bg-origin-padding;
+        }
+      }
+
+      @include it("\2xl\:bg-origin-content") {
+        @include custom-expect-(background-origin, content-box, $\2xl) {
+          @include \2xl\:bg-origin-content;
+        }
       }
     }
   }
-
-  @mixin bg-origin-padding($rwd: null) {
-    @if $rwd==null {
-      background-origin: padding-box;
-    } @else {
-      @media (min-width: $rwd) {
-        background-origin: padding-box;
-      }
-    }
-  }
-
-  @mixin bg-origin-content($rwd: null) {
-    @if $rwd==null {
-      background-origin: content-box;
-    } @else {
-      @media (min-width: $rwd) {
-        background-origin: content-box;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:bg-origin-border {
-    @include bg-origin-border($sm);
-  }
-
-  @mixin sm\:bg-origin-padding {
-    @include bg-origin-padding($sm);
-  }
-
-  @mixin sm\:bg-origin-content {
-    @include bg-origin-content($sm);
-  }
-
-  @mixin md\:bg-origin-border {
-    @include bg-origin-border($md);
-  }
-
-  @mixin md\:bg-origin-padding {
-    @include bg-origin-padding($md);
-  }
-
-  @mixin md\:bg-origin-content {
-    @include bg-origin-content($md);
-  }
-
-  @mixin lg\:bg-origin-border {
-    @include bg-origin-border($lg);
-  }
-
-  @mixin lg\:bg-origin-padding {
-    @include bg-origin-padding($lg);
-  }
-
-  @mixin lg\:bg-origin-content {
-    @include bg-origin-content($lg);
-  }
-
-  @mixin xl\:bg-origin-border {
-    @include bg-origin-border($xl);
-  }
-
-  @mixin xl\:bg-origin-padding {
-    @include bg-origin-padding($xl);
-  }
-
-  @mixin xl\:bg-origin-content {
-    @include bg-origin-content($xl);
-  }
-
-  @mixin \2xl\:bg-origin-border {
-    @include bg-origin-border($\2xl);
-  }
-
-  @mixin \2xl\:bg-origin-padding {
-    @include bg-origin-padding($\2xl);
-  }
-
-  @mixin \2xl\:bg-origin-content {
-    @include bg-origin-content($\2xl);
-  }
-
-  // x*/
 }

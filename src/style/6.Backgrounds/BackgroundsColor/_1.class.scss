@@ -5954,18 +5954,19 @@
   }
 
   @mixin __bg-($v) {
-    @if list.index(inherit currentColor transparent, $v) or
-      meta.type-of($v)
-      ==color
+    // bg-color
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
     {
       background-color: $v;
-    } @else if list.nth($v, 1) ==length {
-      background-size: list.set-nth(
-        $v,
-        1,
-        $space
-      ); // 'length' token is used for identify background-size, remove it.
-    } @else if
+    }
+    // bg-size
+    @else if list.nth($v, 1) ==length {
+      background-size: list.set-nth($v, 1, $space);
+    }
+    // bg-position
+    @else if
       list.index(top right bottom left center, $v) or
       meta.type-of($v)
       ==number or
@@ -5973,7 +5974,9 @@
       ==list
     {
       background-position: $v;
-    } @else {
+    }
+    // bg-image
+    @else {
       background-image: $v;
     }
   }
