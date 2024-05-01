@@ -6,152 +6,365 @@
   @include describe("Aspect Ratio") {
     @include describe("Basic") {
       @include it("aspect-auto") {
-        @include custom-expect-(aspect-ratio, auto) {
-          @include aspect-auto;
+        @include assert {
+          @include output {
+            @include aspect-auto;
+            @include clear;
+          }
+
+          @include expect {
+            aspect-ratio: auto;
+          }
         }
       }
 
       @include it("aspect-square") {
-        @include custom-expect-(aspect-ratio, #{1 / 1}) {
-          @include aspect-square;
+        @include assert {
+          @include output {
+            @include aspect-square;
+            @include clear;
+          }
+
+          @include expect {
+            aspect-ratio:#{1 / 1};
+          }
         }
       }
 
       @include it("aspect-video") {
-        @include custom-expect-(aspect-ratio, #{16 / 9}) {
-          @include aspect-video;
+        @include assert {
+          @include output {
+            @include aspect-video;
+            @include clear;
+          }
+
+          @include expect {
+            aspect-ratio:#{16 / 9};
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:aspect-auto") {
-        @include custom-expect-(aspect-ratio, auto, $sm) {
-          @include sm\:aspect-auto;
+        @include assert {
+          @include output {
+            @include sm\:aspect-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $sm) {
+              aspect-ratio: auto;
+            }
+          }
         }
       }
 
       @include it("sm\:aspect-square") {
-        @include custom-expect-(aspect-ratio, #{1 / 1}, $sm) {
-          @include sm\:aspect-square;
+        @include assert {
+          @include output {
+            @include sm\:aspect-square;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $sm) {
+              aspect-ratio:#{1 / 1};
+            }
+          }
         }
       }
 
       @include it("sm\:aspect-video") {
-        @include custom-expect-(aspect-ratio, #{16 / 9}, $sm) {
-          @include sm\:aspect-video;
+        @include assert {
+          @include output {
+            @include sm\:aspect-video;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $sm) {
+              aspect-ratio:#{16 / 9};
+            }
+          }
         }
       }
 
       @include it("md\:aspect-auto") {
-        @include custom-expect-(aspect-ratio, auto, $md) {
-          @include md\:aspect-auto;
+        @include assert {
+          @include output {
+            @include md\:aspect-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $md) {
+              aspect-ratio: auto;
+            }
+          }
         }
       }
 
       @include it("md\:aspect-square") {
-        @include custom-expect-(aspect-ratio, #{1 / 1}, $md) {
-          @include md\:aspect-square;
+        @include assert {
+          @include output {
+            @include md\:aspect-square;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $md) {
+              aspect-ratio:#{1 / 1};
+            }
+          }
         }
       }
 
       @include it("md\:aspect-video") {
-        @include custom-expect-(aspect-ratio, #{16 / 9}, $md) {
-          @include md\:aspect-video;
+        @include assert {
+          @include output {
+            @include md\:aspect-video;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $md) {
+              aspect-ratio:#{16 / 9};
+            }
+          }
         }
       }
 
       @include it("lg\:aspect-auto") {
-        @include custom-expect-(aspect-ratio, auto, $lg) {
-          @include lg\:aspect-auto;
+        @include assert {
+          @include output {
+            @include lg\:aspect-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $lg) {
+              aspect-ratio: auto;
+            }
+          }
         }
       }
 
       @include it("lg\:aspect-square") {
-        @include custom-expect-(aspect-ratio, #{1 / 1}, $lg) {
-          @include lg\:aspect-square;
+        @include assert {
+          @include output {
+            @include lg\:aspect-square;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $lg) {
+              aspect-ratio:#{1 / 1};
+            }
+          }
         }
       }
 
       @include it("lg\:aspect-video") {
-        @include custom-expect-(aspect-ratio, #{16 / 9}, $lg) {
-          @include lg\:aspect-video;
+        @include assert {
+          @include output {
+            @include lg\:aspect-video;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $lg) {
+              aspect-ratio:#{16 / 9};
+            }
+          }
         }
       }
 
       @include it("xl\:aspect-auto") {
-        @include custom-expect-(aspect-ratio, auto, $xl) {
-          @include xl\:aspect-auto;
+        @include assert {
+          @include output {
+            @include xl\:aspect-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $xl) {
+              aspect-ratio: auto;
+            }
+          }
         }
       }
 
       @include it("xl\:aspect-square") {
-        @include custom-expect-(aspect-ratio, #{1 / 1}, $xl) {
-          @include xl\:aspect-square;
+        @include assert {
+          @include output {
+            @include xl\:aspect-square;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $xl) {
+              aspect-ratio:#{1 / 1};
+            }
+          }
         }
       }
 
       @include it("xl\:aspect-video") {
-        @include custom-expect-(aspect-ratio, #{16 / 9}, $xl) {
-          @include xl\:aspect-video;
+        @include assert {
+          @include output {
+            @include xl\:aspect-video;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $xl) {
+              aspect-ratio:#{16 / 9};
+            }
+          }
         }
       }
 
       @include it("\2xl\:aspect-auto") {
-        @include custom-expect-(aspect-ratio, auto, $\2xl) {
-          @include \2xl\:aspect-auto;
+        @include assert {
+          @include output {
+            @include \2xl\:aspect-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $\2xl) {
+              aspect-ratio: auto;
+            }
+          }
         }
       }
 
       @include it("\2xl\:aspect-square") {
-        @include custom-expect-(aspect-ratio, #{1 / 1}, $\2xl) {
-          @include \2xl\:aspect-square;
+        @include assert {
+          @include output {
+            @include \2xl\:aspect-square;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $\2xl) {
+              aspect-ratio:#{1 / 1};
+            }
+          }
         }
       }
 
       @include it("\2xl\:aspect-video") {
-        @include custom-expect-(aspect-ratio, #{16 / 9}, $\2xl) {
-          @include \2xl\:aspect-video;
+        @include assert {
+          @include output {
+            @include \2xl\:aspect-video;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $\2xl) {
+              aspect-ratio:#{16 / 9};
+            }
+          }
         }
       }
+
+
     }
 
     @include describe("Custom") {
       @include it("aspect-(4/3)") {
-        @include custom-expect-(aspect-ratio, #{4/3}) {
-          @include aspect-(#{4/3});
+        @include assert {
+          @include output {
+            @include aspect-(#{4/3});
+            @include clear;
+          }
+
+          @include expect {
+            aspect-ratio:#{4/3};
+          }
         }
       }
 
       @include it("sm\:aspect-(4/3)") {
-        @include custom-expect-(aspect-ratio, #{4/3}, $sm) {
-          @include sm\:aspect-(#{4/3});
+        @include assert {
+          @include output {
+            @include sm\:aspect-(#{4/3});
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $sm) {
+              aspect-ratio:#{4/3};
+            }
+          }
         }
       }
 
       @include it("md\:aspect-(4/3)") {
-        @include custom-expect-(aspect-ratio, #{4/3}, $md) {
-          @include md\:aspect-(#{4/3});
+        @include assert {
+          @include output {
+            @include md\:aspect-(#{4/3});
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $md) {
+              aspect-ratio:#{4/3};
+            }
+          }
         }
       }
 
       @include it("lg\:aspect-(4/3)") {
-        @include custom-expect-(aspect-ratio, #{4/3}, $lg) {
-          @include lg\:aspect-(#{4/3});
+        @include assert {
+          @include output {
+            @include lg\:aspect-(#{4/3});
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $lg) {
+              aspect-ratio:#{4/3};
+            }
+          }
         }
       }
 
       @include it("xl\:aspect-(4/3)") {
-        @include custom-expect-(aspect-ratio, #{4/3}, $xl) {
-          @include xl\:aspect-(#{4/3});
+        @include assert {
+          @include output {
+            @include xl\:aspect-(#{4/3});
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $xl) {
+              aspect-ratio:#{4/3};
+            }
+          }
         }
       }
 
       @include it("\2xl\:aspect-(4/3)") {
-        @include custom-expect-(aspect-ratio, #{4/3}, $\2xl) {
-          @include \2xl\:aspect-(#{4/3});
+        @include assert {
+          @include output {
+            @include \2xl\:aspect-(#{4/3});
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width: $\2xl) {
+              aspect-ratio:#{4/3};
+            }
+          }
         }
       }
+
+
+
     }
   }
 }

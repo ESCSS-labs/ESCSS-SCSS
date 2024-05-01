@@ -6,78 +6,184 @@
   @include describe("Box Decoration Break") {
     @include describe("Basic") {
       @include it("box-decoration-clone") {
-        @include custom-expect-(box-decoration-break, clone) {
-          @include box-decoration-clone;
+        @include assert {
+          @include output {
+            @include box-decoration-clone;
+            @include clear;
+          }
+    
+          @include expect {
+            box-decoration-break: clone;
+          }
         }
       }
-
+    
       @include it("box-decoration-slice") {
-        @include custom-expect-(box-decoration-break, slice) {
-          @include box-decoration-slice;
+        @include assert {
+          @include output {
+            @include box-decoration-slice;
+            @include clear;
+          }
+    
+          @include expect {
+            box-decoration-break: slice;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:box-decoration-clone") {
-        @include custom-expect-(box-decoration-break, clone, $sm) {
-          @include sm\:box-decoration-clone;
+        @include assert {
+          @include output {
+            @include sm\:box-decoration-clone;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              box-decoration-break: clone;
+            }
+          }
         }
       }
-
+      
       @include it("sm\:box-decoration-slice") {
-        @include custom-expect-(box-decoration-break, slice, $sm) {
-          @include sm\:box-decoration-slice;
+        @include assert {
+          @include output {
+            @include sm\:box-decoration-slice;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              box-decoration-break: slice;
+            }
+          }
         }
       }
-
+      
       @include it("md\:box-decoration-clone") {
-        @include custom-expect-(box-decoration-break, clone, $md) {
-          @include md\:box-decoration-clone;
+        @include assert {
+          @include output {
+            @include md\:box-decoration-clone;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              box-decoration-break: clone;
+            }
+          }
         }
       }
-
+      
       @include it("md\:box-decoration-slice") {
-        @include custom-expect-(box-decoration-break, slice, $md) {
-          @include md\:box-decoration-slice;
+        @include assert {
+          @include output {
+            @include md\:box-decoration-slice;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              box-decoration-break: slice;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:box-decoration-clone") {
-        @include custom-expect-(box-decoration-break, clone, $lg) {
-          @include lg\:box-decoration-clone;
+        @include assert {
+          @include output {
+            @include lg\:box-decoration-clone;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              box-decoration-break: clone;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:box-decoration-slice") {
-        @include custom-expect-(box-decoration-break, slice, $lg) {
-          @include lg\:box-decoration-slice;
+        @include assert {
+          @include output {
+            @include lg\:box-decoration-slice;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              box-decoration-break: slice;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:box-decoration-clone") {
-        @include custom-expect-(box-decoration-break, clone, $xl) {
-          @include xl\:box-decoration-clone;
+        @include assert {
+          @include output {
+            @include xl\:box-decoration-clone;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              box-decoration-break: clone;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:box-decoration-slice") {
-        @include custom-expect-(box-decoration-break, slice, $xl) {
-          @include xl\:box-decoration-slice;
+        @include assert {
+          @include output {
+            @include xl\:box-decoration-slice;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              box-decoration-break: slice;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:box-decoration-clone") {
-        @include custom-expect-(box-decoration-break, clone, $\2xl) {
-          @include \2xl\:box-decoration-clone;
+        @include assert {
+          @include output {
+            @include \2xl\:box-decoration-clone;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              box-decoration-break: clone;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:box-decoration-slice") {
-        @include custom-expect-(box-decoration-break, slice, $\2xl) {
-          @include \2xl\:box-decoration-slice;
+        @include assert {
+          @include output {
+            @include \2xl\:box-decoration-slice;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              box-decoration-break: slice;
+            }
+          }
         }
       }
+      
+      
     }
   }
 }
