@@ -2,131 +2,154 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Text Decoration */
-@if $Basic {
-  // /*x
-  @mixin underline($rwd: null) {
-    @if $rwd==null {
-      text-decoration-line: underline;
-    } @else {
-      @media (min-width: $rwd) {
-        text-decoration-line: underline;
+@include describe("5.Typography") {
+  @include describe("Text Decoration") {
+    @include describe("Basic") {
+      @include it("underline") {
+        @include custom-expect-(text-decoration-line, underline) {
+          @include underline;
+        }
+      }
+
+      @include it("overline") {
+        @include custom-expect-(text-decoration-line, overline) {
+          @include overline;
+        }
+      }
+
+      @include it("line-through") {
+        @include custom-expect-(text-decoration-line, line-through) {
+          @include line-through;
+        }
+      }
+
+      @include it("no-underline") {
+        @include custom-expect-(text-decoration-line, none) {
+          @include no-underline;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:underline") {
+        @include custom-expect-(text-decoration-line, underline, $sm) {
+          @include sm\:underline;
+        }
+      }
+
+      @include it("sm\:overline") {
+        @include custom-expect-(text-decoration-line, overline, $sm) {
+          @include sm\:overline;
+        }
+      }
+
+      @include it("sm\:line-through") {
+        @include custom-expect-(text-decoration-line, line-through, $sm) {
+          @include sm\:line-through;
+        }
+      }
+
+      @include it("sm\:no-underline") {
+        @include custom-expect-(text-decoration-line, none, $sm) {
+          @include sm\:no-underline;
+        }
+      }
+
+      @include it("md\:underline") {
+        @include custom-expect-(text-decoration-line, underline, $md) {
+          @include md\:underline;
+        }
+      }
+
+      @include it("md\:overline") {
+        @include custom-expect-(text-decoration-line, overline, $md) {
+          @include md\:overline;
+        }
+      }
+
+      @include it("md\:line-through") {
+        @include custom-expect-(text-decoration-line, line-through, $md) {
+          @include md\:line-through;
+        }
+      }
+
+      @include it("md\:no-underline") {
+        @include custom-expect-(text-decoration-line, none, $md) {
+          @include md\:no-underline;
+        }
+      }
+
+      @include it("lg\:underline") {
+        @include custom-expect-(text-decoration-line, underline, $lg) {
+          @include lg\:underline;
+        }
+      }
+
+      @include it("lg\:overline") {
+        @include custom-expect-(text-decoration-line, overline, $lg) {
+          @include lg\:overline;
+        }
+      }
+
+      @include it("lg\:line-through") {
+        @include custom-expect-(text-decoration-line, line-through, $lg) {
+          @include lg\:line-through;
+        }
+      }
+
+      @include it("lg\:no-underline") {
+        @include custom-expect-(text-decoration-line, none, $lg) {
+          @include lg\:no-underline;
+        }
+      }
+
+      @include it("xl\:underline") {
+        @include custom-expect-(text-decoration-line, underline, $xl) {
+          @include xl\:underline;
+        }
+      }
+
+      @include it("xl\:overline") {
+        @include custom-expect-(text-decoration-line, overline, $xl) {
+          @include xl\:overline;
+        }
+      }
+
+      @include it("xl\:line-through") {
+        @include custom-expect-(text-decoration-line, line-through, $xl) {
+          @include xl\:line-through;
+        }
+      }
+
+      @include it("xl\:no-underline") {
+        @include custom-expect-(text-decoration-line, none, $xl) {
+          @include xl\:no-underline;
+        }
+      }
+
+      @include it("\2xl\:underline") {
+        @include custom-expect-(text-decoration-line, underline, $\2xl) {
+          @include \2xl\:underline;
+        }
+      }
+
+      @include it("\2xl\:overline") {
+        @include custom-expect-(text-decoration-line, overline, $\2xl) {
+          @include \2xl\:overline;
+        }
+      }
+
+      @include it("\2xl\:line-through") {
+        @include custom-expect-(text-decoration-line, line-through, $\2xl) {
+          @include \2xl\:line-through;
+        }
+      }
+
+      @include it("\2xl\:no-underline") {
+        @include custom-expect-(text-decoration-line, none, $\2xl) {
+          @include \2xl\:no-underline;
+        }
       }
     }
   }
-
-  @mixin overline($rwd: null) {
-    @if $rwd==null {
-      text-decoration-line: overline;
-    } @else {
-      @media (min-width: $rwd) {
-        text-decoration-line: overline;
-      }
-    }
-  }
-
-  @mixin line-through($rwd: null) {
-    @if $rwd==null {
-      text-decoration-line: line-through;
-    } @else {
-      @media (min-width: $rwd) {
-        text-decoration-line: line-through;
-      }
-    }
-  }
-
-  @mixin no-underline($rwd: null) {
-    @if $rwd==null {
-      text-decoration-line: none;
-    } @else {
-      @media (min-width: $rwd) {
-        text-decoration-line: none;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:underline {
-    @include underline($sm);
-  }
-
-  @mixin sm\:overline {
-    @include overline($sm);
-  }
-
-  @mixin sm\:line-through {
-    @include line-through($sm);
-  }
-
-  @mixin sm\:no-underline {
-    @include no-underline($sm);
-  }
-
-  @mixin md\:underline {
-    @include underline($md);
-  }
-
-  @mixin md\:overline {
-    @include overline($md);
-  }
-
-  @mixin md\:line-through {
-    @include line-through($md);
-  }
-
-  @mixin md\:no-underline {
-    @include no-underline($md);
-  }
-
-  @mixin lg\:underline {
-    @include underline($lg);
-  }
-
-  @mixin lg\:overline {
-    @include overline($lg);
-  }
-
-  @mixin lg\:line-through {
-    @include line-through($lg);
-  }
-
-  @mixin lg\:no-underline {
-    @include no-underline($lg);
-  }
-
-  @mixin xl\:underline {
-    @include underline($xl);
-  }
-
-  @mixin xl\:overline {
-    @include overline($xl);
-  }
-
-  @mixin xl\:line-through {
-    @include line-through($xl);
-  }
-
-  @mixin xl\:no-underline {
-    @include no-underline($xl);
-  }
-
-  @mixin \2xl\:underline {
-    @include underline($\2xl);
-  }
-
-  @mixin \2xl\:overline {
-    @include overline($\2xl);
-  }
-
-  @mixin \2xl\:line-through {
-    @include line-through($\2xl);
-  }
-
-  @mixin \2xl\:no-underline {
-    @include no-underline($\2xl);
-  }
-
-  // x*/
 }

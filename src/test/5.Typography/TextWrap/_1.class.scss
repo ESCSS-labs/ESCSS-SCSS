@@ -2,131 +2,154 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Text Wrap */
-@if $Basic {
-  // /*x
-  @mixin text-wrap($rwd: null) {
-    @if $rwd==null {
-      text-wrap: wrap;
-    } @else {
-      @media (min-width: $rwd) {
-        text-wrap: wrap;
+@include describe("5.Typography") {
+  @include describe("Text Wrap") {
+    @include describe("Basic") {
+      @include it("text-wrap") {
+        @include custom-expect-(text-wrap, wrap) {
+          @include text-wrap;
+        }
+      }
+
+      @include it("text-nowrap") {
+        @include custom-expect-(text-wrap, nowrap) {
+          @include text-nowrap;
+        }
+      }
+
+      @include it("text-balance") {
+        @include custom-expect-(text-wrap, balance) {
+          @include text-balance;
+        }
+      }
+
+      @include it("text-pretty") {
+        @include custom-expect-(text-wrap, pretty) {
+          @include text-pretty;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:text-wrap") {
+        @include custom-expect-(text-wrap, wrap, $sm) {
+          @include sm\:text-wrap;
+        }
+      }
+
+      @include it("sm\:text-nowrap") {
+        @include custom-expect-(text-wrap, nowrap, $sm) {
+          @include sm\:text-nowrap;
+        }
+      }
+
+      @include it("sm\:text-balance") {
+        @include custom-expect-(text-wrap, balance, $sm) {
+          @include sm\:text-balance;
+        }
+      }
+
+      @include it("sm\:text-pretty") {
+        @include custom-expect-(text-wrap, pretty, $sm) {
+          @include sm\:text-pretty;
+        }
+      }
+
+      @include it("md\:text-wrap") {
+        @include custom-expect-(text-wrap, wrap, $md) {
+          @include md\:text-wrap;
+        }
+      }
+
+      @include it("md\:text-nowrap") {
+        @include custom-expect-(text-wrap, nowrap, $md) {
+          @include md\:text-nowrap;
+        }
+      }
+
+      @include it("md\:text-balance") {
+        @include custom-expect-(text-wrap, balance, $md) {
+          @include md\:text-balance;
+        }
+      }
+
+      @include it("md\:text-pretty") {
+        @include custom-expect-(text-wrap, pretty, $md) {
+          @include md\:text-pretty;
+        }
+      }
+
+      @include it("lg\:text-wrap") {
+        @include custom-expect-(text-wrap, wrap, $lg) {
+          @include lg\:text-wrap;
+        }
+      }
+
+      @include it("lg\:text-nowrap") {
+        @include custom-expect-(text-wrap, nowrap, $lg) {
+          @include lg\:text-nowrap;
+        }
+      }
+
+      @include it("lg\:text-balance") {
+        @include custom-expect-(text-wrap, balance, $lg) {
+          @include lg\:text-balance;
+        }
+      }
+
+      @include it("lg\:text-pretty") {
+        @include custom-expect-(text-wrap, pretty, $lg) {
+          @include lg\:text-pretty;
+        }
+      }
+
+      @include it("xl\:text-wrap") {
+        @include custom-expect-(text-wrap, wrap, $xl) {
+          @include xl\:text-wrap;
+        }
+      }
+
+      @include it("xl\:text-nowrap") {
+        @include custom-expect-(text-wrap, nowrap, $xl) {
+          @include xl\:text-nowrap;
+        }
+      }
+
+      @include it("xl\:text-balance") {
+        @include custom-expect-(text-wrap, balance, $xl) {
+          @include xl\:text-balance;
+        }
+      }
+
+      @include it("xl\:text-pretty") {
+        @include custom-expect-(text-wrap, pretty, $xl) {
+          @include xl\:text-pretty;
+        }
+      }
+
+      @include it("\2xl\:text-wrap") {
+        @include custom-expect-(text-wrap, wrap, $\2xl) {
+          @include \2xl\:text-wrap;
+        }
+      }
+
+      @include it("\2xl\:text-nowrap") {
+        @include custom-expect-(text-wrap, nowrap, $\2xl) {
+          @include \2xl\:text-nowrap;
+        }
+      }
+
+      @include it("\2xl\:text-balance") {
+        @include custom-expect-(text-wrap, balance, $\2xl) {
+          @include \2xl\:text-balance;
+        }
+      }
+
+      @include it("\2xl\:text-pretty") {
+        @include custom-expect-(text-wrap, pretty, $\2xl) {
+          @include \2xl\:text-pretty;
+        }
       }
     }
   }
-
-  @mixin text-nowrap($rwd: null) {
-    @if $rwd==null {
-      text-wrap: nowrap;
-    } @else {
-      @media (min-width: $rwd) {
-        text-wrap: nowrap;
-      }
-    }
-  }
-
-  @mixin text-balance($rwd: null) {
-    @if $rwd==null {
-      text-wrap: balance;
-    } @else {
-      @media (min-width: $rwd) {
-        text-wrap: balance;
-      }
-    }
-  }
-
-  @mixin text-pretty($rwd: null) {
-    @if $rwd==null {
-      text-wrap: pretty;
-    } @else {
-      @media (min-width: $rwd) {
-        text-wrap: pretty;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:text-wrap {
-    @include text-wrap($sm);
-  }
-
-  @mixin sm\:text-nowrap {
-    @include text-nowrap($sm);
-  }
-
-  @mixin sm\:text-balance {
-    @include text-balance($sm);
-  }
-
-  @mixin sm\:text-pretty {
-    @include text-pretty($sm);
-  }
-
-  @mixin md\:text-wrap {
-    @include text-wrap($md);
-  }
-
-  @mixin md\:text-nowrap {
-    @include text-nowrap($md);
-  }
-
-  @mixin md\:text-balance {
-    @include text-balance($md);
-  }
-
-  @mixin md\:text-pretty {
-    @include text-pretty($md);
-  }
-
-  @mixin lg\:text-wrap {
-    @include text-wrap($lg);
-  }
-
-  @mixin lg\:text-nowrap {
-    @include text-nowrap($lg);
-  }
-
-  @mixin lg\:text-balance {
-    @include text-balance($lg);
-  }
-
-  @mixin lg\:text-pretty {
-    @include text-pretty($lg);
-  }
-
-  @mixin xl\:text-wrap {
-    @include text-wrap($xl);
-  }
-
-  @mixin xl\:text-nowrap {
-    @include text-nowrap($xl);
-  }
-
-  @mixin xl\:text-balance {
-    @include text-balance($xl);
-  }
-
-  @mixin xl\:text-pretty {
-    @include text-pretty($xl);
-  }
-
-  @mixin \2xl\:text-wrap {
-    @include text-wrap($\2xl);
-  }
-
-  @mixin \2xl\:text-nowrap {
-    @include text-nowrap($\2xl);
-  }
-
-  @mixin \2xl\:text-balance {
-    @include text-balance($\2xl);
-  }
-
-  @mixin \2xl\:text-pretty {
-    @include text-pretty($\2xl);
-  }
-
-  // x*/
 }

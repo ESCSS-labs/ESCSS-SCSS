@@ -2,193 +2,226 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Text Align */
-@if $Basic {
-  // /*x
-  @mixin text-left($rwd: null) {
-    @if $rwd==null {
-      text-align: left;
-    } @else {
-      @media (min-width: $rwd) {
-        text-align: left;
+@include describe("5.Typography") {
+  @include describe("Text Align") {
+    @include describe("Basic") {
+      @include it("text-left") {
+        @include custom-expect-(text-align, left) {
+          @include text-left;
+        }
+      }
+
+      @include it("text-center") {
+        @include custom-expect-(text-align, center) {
+          @include text-center;
+        }
+      }
+
+      @include it("text-right") {
+        @include custom-expect-(text-align, right) {
+          @include text-right;
+        }
+      }
+
+      @include it("text-justify") {
+        @include custom-expect-(text-align, justify) {
+          @include text-justify;
+        }
+      }
+
+      @include it("text-start") {
+        @include custom-expect-(text-align, start) {
+          @include text-start;
+        }
+      }
+
+      @include it("text-end") {
+        @include custom-expect-(text-align, end) {
+          @include text-end;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:text-left") {
+        @include custom-expect-(text-align, left, $sm) {
+          @include sm\:text-left;
+        }
+      }
+
+      @include it("sm\:text-center") {
+        @include custom-expect-(text-align, center, $sm) {
+          @include sm\:text-center;
+        }
+      }
+
+      @include it("sm\:text-right") {
+        @include custom-expect-(text-align, right, $sm) {
+          @include sm\:text-right;
+        }
+      }
+
+      @include it("sm\:text-justify") {
+        @include custom-expect-(text-align, justify, $sm) {
+          @include sm\:text-justify;
+        }
+      }
+
+      @include it("sm\:text-start") {
+        @include custom-expect-(text-align, start, $sm) {
+          @include sm\:text-start;
+        }
+      }
+
+      @include it("sm\:text-end") {
+        @include custom-expect-(text-align, end, $sm) {
+          @include sm\:text-end;
+        }
+      }
+
+      @include it("md\:text-left") {
+        @include custom-expect-(text-align, left, $md) {
+          @include md\:text-left;
+        }
+      }
+
+      @include it("md\:text-center") {
+        @include custom-expect-(text-align, center, $md) {
+          @include md\:text-center;
+        }
+      }
+
+      @include it("md\:text-right") {
+        @include custom-expect-(text-align, right, $md) {
+          @include md\:text-right;
+        }
+      }
+
+      @include it("md\:text-justify") {
+        @include custom-expect-(text-align, justify, $md) {
+          @include md\:text-justify;
+        }
+      }
+
+      @include it("md\:text-start") {
+        @include custom-expect-(text-align, start, $md) {
+          @include md\:text-start;
+        }
+      }
+
+      @include it("md\:text-end") {
+        @include custom-expect-(text-align, end, $md) {
+          @include md\:text-end;
+        }
+      }
+
+      @include it("lg\:text-left") {
+        @include custom-expect-(text-align, left, $lg) {
+          @include lg\:text-left;
+        }
+      }
+
+      @include it("lg\:text-center") {
+        @include custom-expect-(text-align, center, $lg) {
+          @include lg\:text-center;
+        }
+      }
+
+      @include it("lg\:text-right") {
+        @include custom-expect-(text-align, right, $lg) {
+          @include lg\:text-right;
+        }
+      }
+
+      @include it("lg\:text-justify") {
+        @include custom-expect-(text-align, justify, $lg) {
+          @include lg\:text-justify;
+        }
+      }
+
+      @include it("lg\:text-start") {
+        @include custom-expect-(text-align, start, $lg) {
+          @include lg\:text-start;
+        }
+      }
+
+      @include it("lg\:text-end") {
+        @include custom-expect-(text-align, end, $lg) {
+          @include lg\:text-end;
+        }
+      }
+
+      @include it("xl\:text-left") {
+        @include custom-expect-(text-align, left, $xl) {
+          @include xl\:text-left;
+        }
+      }
+
+      @include it("xl\:text-center") {
+        @include custom-expect-(text-align, center, $xl) {
+          @include xl\:text-center;
+        }
+      }
+
+      @include it("xl\:text-right") {
+        @include custom-expect-(text-align, right, $xl) {
+          @include xl\:text-right;
+        }
+      }
+
+      @include it("xl\:text-justify") {
+        @include custom-expect-(text-align, justify, $xl) {
+          @include xl\:text-justify;
+        }
+      }
+
+      @include it("xl\:text-start") {
+        @include custom-expect-(text-align, start, $xl) {
+          @include xl\:text-start;
+        }
+      }
+
+      @include it("xl\:text-end") {
+        @include custom-expect-(text-align, end, $xl) {
+          @include xl\:text-end;
+        }
+      }
+
+      @include it("\2xl\:text-left") {
+        @include custom-expect-(text-align, left, $\2xl) {
+          @include \2xl\:text-left;
+        }
+      }
+
+      @include it("\2xl\:text-center") {
+        @include custom-expect-(text-align, center, $\2xl) {
+          @include \2xl\:text-center;
+        }
+      }
+
+      @include it("\2xl\:text-right") {
+        @include custom-expect-(text-align, right, $\2xl) {
+          @include \2xl\:text-right;
+        }
+      }
+
+      @include it("\2xl\:text-justify") {
+        @include custom-expect-(text-align, justify, $\2xl) {
+          @include \2xl\:text-justify;
+        }
+      }
+
+      @include it("\2xl\:text-start") {
+        @include custom-expect-(text-align, start, $\2xl) {
+          @include \2xl\:text-start;
+        }
+      }
+
+      @include it("\2xl\:text-end") {
+        @include custom-expect-(text-align, end, $\2xl) {
+          @include \2xl\:text-end;
+        }
       }
     }
   }
-
-  @mixin text-center($rwd: null) {
-    @if $rwd==null {
-      text-align: center;
-    } @else {
-      @media (min-width: $rwd) {
-        text-align: center;
-      }
-    }
-  }
-
-  @mixin text-right($rwd: null) {
-    @if $rwd==null {
-      text-align: right;
-    } @else {
-      @media (min-width: $rwd) {
-        text-align: right;
-      }
-    }
-  }
-
-  @mixin text-justify($rwd: null) {
-    @if $rwd==null {
-      text-align: justify;
-    } @else {
-      @media (min-width: $rwd) {
-        text-align: justify;
-      }
-    }
-  }
-
-  @mixin text-start($rwd: null) {
-    @if $rwd==null {
-      text-align: start;
-    } @else {
-      @media (min-width: $rwd) {
-        text-align: start;
-      }
-    }
-  }
-
-  @mixin text-end($rwd: null) {
-    @if $rwd==null {
-      text-align: end;
-    } @else {
-      @media (min-width: $rwd) {
-        text-align: end;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:text-left {
-    @include text-left($sm);
-  }
-
-  @mixin sm\:text-center {
-    @include text-center($sm);
-  }
-
-  @mixin sm\:text-right {
-    @include text-right($sm);
-  }
-
-  @mixin sm\:text-justify {
-    @include text-justify($sm);
-  }
-
-  @mixin sm\:text-start {
-    @include text-start($sm);
-  }
-
-  @mixin sm\:text-end {
-    @include text-end($sm);
-  }
-
-  @mixin md\:text-left {
-    @include text-left($md);
-  }
-
-  @mixin md\:text-center {
-    @include text-center($md);
-  }
-
-  @mixin md\:text-right {
-    @include text-right($md);
-  }
-
-  @mixin md\:text-justify {
-    @include text-justify($md);
-  }
-
-  @mixin md\:text-start {
-    @include text-start($md);
-  }
-
-  @mixin md\:text-end {
-    @include text-end($md);
-  }
-
-  @mixin lg\:text-left {
-    @include text-left($lg);
-  }
-
-  @mixin lg\:text-center {
-    @include text-center($lg);
-  }
-
-  @mixin lg\:text-right {
-    @include text-right($lg);
-  }
-
-  @mixin lg\:text-justify {
-    @include text-justify($lg);
-  }
-
-  @mixin lg\:text-start {
-    @include text-start($lg);
-  }
-
-  @mixin lg\:text-end {
-    @include text-end($lg);
-  }
-
-  @mixin xl\:text-left {
-    @include text-left($xl);
-  }
-
-  @mixin xl\:text-center {
-    @include text-center($xl);
-  }
-
-  @mixin xl\:text-right {
-    @include text-right($xl);
-  }
-
-  @mixin xl\:text-justify {
-    @include text-justify($xl);
-  }
-
-  @mixin xl\:text-start {
-    @include text-start($xl);
-  }
-
-  @mixin xl\:text-end {
-    @include text-end($xl);
-  }
-
-  @mixin \2xl\:text-left {
-    @include text-left($\2xl);
-  }
-
-  @mixin \2xl\:text-center {
-    @include text-center($\2xl);
-  }
-
-  @mixin \2xl\:text-right {
-    @include text-right($\2xl);
-  }
-
-  @mixin \2xl\:text-justify {
-    @include text-justify($\2xl);
-  }
-
-  @mixin \2xl\:text-start {
-    @include text-start($\2xl);
-  }
-
-  @mixin \2xl\:text-end {
-    @include text-end($\2xl);
-  }
-
-  // x*/
 }

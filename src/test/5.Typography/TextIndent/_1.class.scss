@@ -2,1727 +2,1308 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Text Indent */
-@if $Basic {
-  // /*x
-  @mixin indent-0 {
-    @include indent-($\0);
-  }
-
-  @mixin indent-px {
-    @include indent-($\px);
-  }
-
-  @mixin indent-0\.5 {
-    @include indent-($\0\.5);
-  }
-
-  @mixin indent-1 {
-    @include indent-($\1);
-  }
-
-  @mixin indent-1\.5 {
-    @include indent-($\1\.5);
-  }
-
-  @mixin indent-2 {
-    @include indent-($\2);
-  }
-
-  @mixin indent-2\.5 {
-    @include indent-($\2\.5);
-  }
-
-  @mixin indent-3 {
-    @include indent-($\3);
-  }
-
-  @mixin indent-3\.5 {
-    @include indent-($\3\.5);
-  }
-
-  @mixin indent-4 {
-    @include indent-($\4);
-  }
-
-  @mixin indent-5 {
-    @include indent-($\5);
-  }
-
-  @mixin indent-6 {
-    @include indent-($\6);
-  }
-
-  @mixin indent-7 {
-    @include indent-($\7);
-  }
-
-  @mixin indent-8 {
-    @include indent-($\8);
-  }
-
-  @mixin indent-9 {
-    @include indent-($\9);
-  }
-
-  @mixin indent-10 {
-    @include indent-($\10);
-  }
-
-  @mixin indent-11 {
-    @include indent-($\11);
-  }
-
-  @mixin indent-12 {
-    @include indent-($\12);
-  }
-
-  @mixin indent-14 {
-    @include indent-($\14);
-  }
-
-  @mixin indent-16 {
-    @include indent-($\16);
-  }
-
-  @mixin indent-20 {
-    @include indent-($\20);
-  }
-
-  @mixin indent-24 {
-    @include indent-($\24);
-  }
-
-  @mixin indent-28 {
-    @include indent-($\28);
-  }
-
-  @mixin indent-32 {
-    @include indent-($\32);
-  }
-
-  @mixin indent-36 {
-    @include indent-($\36);
-  }
-
-  @mixin indent-40 {
-    @include indent-($\40);
-  }
-
-  @mixin indent-44 {
-    @include indent-($\44);
-  }
-
-  @mixin indent-48 {
-    @include indent-($\48);
-  }
-
-  @mixin indent-52 {
-    @include indent-($\52);
-  }
-
-  @mixin indent-56 {
-    @include indent-($\56);
-  }
-
-  @mixin indent-60 {
-    @include indent-($\60);
-  }
-
-  @mixin indent-64 {
-    @include indent-($\64);
-  }
-
-  @mixin indent-72 {
-    @include indent-($\72);
-  }
-
-  @mixin indent-80 {
-    @include indent-($\80);
-  }
-
-  @mixin indent-96 {
-    @include indent-($\96);
-  }
-
-  @mixin -indent-0 {
-    @include indent-($\0);
-  }
-
-  @mixin -indent-px {
-    @include indent-($\px);
-  }
-
-  @mixin -indent-0\.5 {
-    @include indent-($\0\.5);
-  }
-
-  @mixin -indent-1 {
-    @include indent-($\1);
-  }
-
-  @mixin -indent-1\.5 {
-    @include indent-($\1\.5);
-  }
-
-  @mixin -indent-2 {
-    @include indent-($\2);
-  }
-
-  @mixin -indent-2\.5 {
-    @include indent-($\2\.5);
-  }
-
-  @mixin -indent-3 {
-    @include indent-($\3);
-  }
-
-  @mixin -indent-3\.5 {
-    @include indent-($\3\.5);
-  }
-
-  @mixin -indent-4 {
-    @include indent-($\4);
-  }
-
-  @mixin -indent-5 {
-    @include indent-($\5);
-  }
-
-  @mixin -indent-6 {
-    @include indent-($\6);
-  }
-
-  @mixin -indent-7 {
-    @include indent-($\7);
-  }
-
-  @mixin -indent-8 {
-    @include indent-($\8);
-  }
-
-  @mixin -indent-9 {
-    @include indent-($\9);
-  }
-
-  @mixin -indent-10 {
-    @include indent-($\10);
-  }
-
-  @mixin -indent-11 {
-    @include indent-($\11);
-  }
-
-  @mixin -indent-12 {
-    @include indent-($\12);
-  }
-
-  @mixin -indent-14 {
-    @include indent-($\14);
-  }
-
-  @mixin -indent-16 {
-    @include indent-($\16);
-  }
-
-  @mixin -indent-20 {
-    @include indent-($\20);
-  }
-
-  @mixin -indent-24 {
-    @include indent-($\24);
-  }
-
-  @mixin -indent-28 {
-    @include indent-($\28);
-  }
-
-  @mixin -indent-32 {
-    @include indent-($\32);
-  }
-
-  @mixin -indent-36 {
-    @include indent-($\36);
-  }
-
-  @mixin -indent-40 {
-    @include indent-($\40);
-  }
-
-  @mixin -indent-44 {
-    @include indent-($\44);
-  }
-
-  @mixin -indent-48 {
-    @include indent-($\48);
-  }
-
-  @mixin -indent-52 {
-    @include indent-($\52);
-  }
-
-  @mixin -indent-56 {
-    @include indent-($\56);
-  }
-
-  @mixin -indent-60 {
-    @include indent-($\60);
-  }
-
-  @mixin -indent-64 {
-    @include indent-($\64);
-  }
-
-  @mixin -indent-72 {
-    @include indent-($\72);
-  }
-
-  @mixin -indent-80 {
-    @include indent-($\80);
-  }
-
-  @mixin -indent-96 {
-    @include indent-($\96);
-  }
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:indent-0 {
-      @include indent-($\0, $sm);
-    }
-
-    @mixin sm\:indent-px {
-      @include indent-($\px, $sm);
-    }
-
-    @mixin sm\:indent-0\.5 {
-      @include indent-($\0\.5, $sm);
-    }
-
-    @mixin sm\:indent-1 {
-      @include indent-($\1, $sm);
-    }
-
-    @mixin sm\:indent-1\.5 {
-      @include indent-($\1\.5, $sm);
-    }
-
-    @mixin sm\:indent-2 {
-      @include indent-($\2, $sm);
-    }
-
-    @mixin sm\:indent-2\.5 {
-      @include indent-($\2\.5, $sm);
-    }
-
-    @mixin sm\:indent-3 {
-      @include indent-($\3, $sm);
-    }
-
-    @mixin sm\:indent-3\.5 {
-      @include indent-($\3\.5, $sm);
-    }
-
-    @mixin sm\:indent-4 {
-      @include indent-($\4, $sm);
-    }
-
-    @mixin sm\:indent-5 {
-      @include indent-($\5, $sm);
-    }
-
-    @mixin sm\:indent-6 {
-      @include indent-($\6, $sm);
-    }
-
-    @mixin sm\:indent-7 {
-      @include indent-($\7, $sm);
-    }
-
-    @mixin sm\:indent-8 {
-      @include indent-($\8, $sm);
-    }
-
-    @mixin sm\:indent-9 {
-      @include indent-($\9, $sm);
-    }
-
-    @mixin sm\:indent-10 {
-      @include indent-($\10, $sm);
-    }
-
-    @mixin sm\:indent-11 {
-      @include indent-($\11, $sm);
-    }
-
-    @mixin sm\:indent-12 {
-      @include indent-($\12, $sm);
-    }
-
-    @mixin sm\:indent-14 {
-      @include indent-($\14, $sm);
-    }
-
-    @mixin sm\:indent-16 {
-      @include indent-($\16, $sm);
-    }
-
-    @mixin sm\:indent-20 {
-      @include indent-($\20, $sm);
-    }
-
-    @mixin sm\:indent-24 {
-      @include indent-($\24, $sm);
-    }
-
-    @mixin sm\:indent-28 {
-      @include indent-($\28, $sm);
-    }
-
-    @mixin sm\:indent-32 {
-      @include indent-($\32, $sm);
-    }
-
-    @mixin sm\:indent-36 {
-      @include indent-($\36, $sm);
-    }
-
-    @mixin sm\:indent-40 {
-      @include indent-($\40, $sm);
-    }
-
-    @mixin sm\:indent-44 {
-      @include indent-($\44, $sm);
-    }
-
-    @mixin sm\:indent-48 {
-      @include indent-($\48, $sm);
-    }
-
-    @mixin sm\:indent-52 {
-      @include indent-($\52, $sm);
-    }
-
-    @mixin sm\:indent-56 {
-      @include indent-($\56, $sm);
-    }
-
-    @mixin sm\:indent-60 {
-      @include indent-($\60, $sm);
-    }
-
-    @mixin sm\:indent-64 {
-      @include indent-($\64, $sm);
-    }
-
-    @mixin sm\:indent-72 {
-      @include indent-($\72, $sm);
-    }
-
-    @mixin sm\:indent-80 {
-      @include indent-($\80, $sm);
-    }
-
-    @mixin sm\:indent-96 {
-      @include indent-($\96, $sm);
-    }
-
-    @mixin sm\:-indent-0 {
-      @include indent-($\0, $sm);
-    }
-
-    @mixin sm\:-indent-px {
-      @include indent-($\px, $sm);
-    }
-
-    @mixin sm\:-indent-0\.5 {
-      @include indent-($\0\.5, $sm);
-    }
-
-    @mixin sm\:-indent-1 {
-      @include indent-($\1, $sm);
-    }
-
-    @mixin sm\:-indent-1\.5 {
-      @include indent-($\1\.5, $sm);
-    }
-
-    @mixin sm\:-indent-2 {
-      @include indent-($\2, $sm);
-    }
-
-    @mixin sm\:-indent-2\.5 {
-      @include indent-($\2\.5, $sm);
-    }
-
-    @mixin sm\:-indent-3 {
-      @include indent-($\3, $sm);
-    }
-
-    @mixin sm\:-indent-3\.5 {
-      @include indent-($\3\.5, $sm);
-    }
-
-    @mixin sm\:-indent-4 {
-      @include indent-($\4, $sm);
-    }
-
-    @mixin sm\:-indent-5 {
-      @include indent-($\5, $sm);
-    }
-
-    @mixin sm\:-indent-6 {
-      @include indent-($\6, $sm);
-    }
-
-    @mixin sm\:-indent-7 {
-      @include indent-($\7, $sm);
-    }
-
-    @mixin sm\:-indent-8 {
-      @include indent-($\8, $sm);
-    }
-
-    @mixin sm\:-indent-9 {
-      @include indent-($\9, $sm);
-    }
-
-    @mixin sm\:-indent-10 {
-      @include indent-($\10, $sm);
-    }
-
-    @mixin sm\:-indent-11 {
-      @include indent-($\11, $sm);
-    }
-
-    @mixin sm\:-indent-12 {
-      @include indent-($\12, $sm);
-    }
-
-    @mixin sm\:-indent-14 {
-      @include indent-($\14, $sm);
-    }
-
-    @mixin sm\:-indent-16 {
-      @include indent-($\16, $sm);
-    }
-
-    @mixin sm\:-indent-20 {
-      @include indent-($\20, $sm);
-    }
-
-    @mixin sm\:-indent-24 {
-      @include indent-($\24, $sm);
-    }
-
-    @mixin sm\:-indent-28 {
-      @include indent-($\28, $sm);
-    }
-
-    @mixin sm\:-indent-32 {
-      @include indent-($\32, $sm);
-    }
-
-    @mixin sm\:-indent-36 {
-      @include indent-($\36, $sm);
-    }
-
-    @mixin sm\:-indent-40 {
-      @include indent-($\40, $sm);
-    }
-
-    @mixin sm\:-indent-44 {
-      @include indent-($\44, $sm);
-    }
-
-    @mixin sm\:-indent-48 {
-      @include indent-($\48, $sm);
-    }
-
-    @mixin sm\:-indent-52 {
-      @include indent-($\52, $sm);
-    }
-
-    @mixin sm\:-indent-56 {
-      @include indent-($\56, $sm);
-    }
-
-    @mixin sm\:-indent-60 {
-      @include indent-($\60, $sm);
-    }
-
-    @mixin sm\:-indent-64 {
-      @include indent-($\64, $sm);
-    }
-
-    @mixin sm\:-indent-72 {
-      @include indent-($\72, $sm);
-    }
-
-    @mixin sm\:-indent-80 {
-      @include indent-($\80, $sm);
-    }
-
-    @mixin sm\:-indent-96 {
-      @include indent-($\96, $sm);
-    }
-
-    @mixin md\:indent-0 {
-      @include indent-($\0, $md);
-    }
-
-    @mixin md\:indent-px {
-      @include indent-($\px, $md);
-    }
-
-    @mixin md\:indent-0\.5 {
-      @include indent-($\0\.5, $md);
-    }
-
-    @mixin md\:indent-1 {
-      @include indent-($\1, $md);
-    }
-
-    @mixin md\:indent-1\.5 {
-      @include indent-($\1\.5, $md);
-    }
-
-    @mixin md\:indent-2 {
-      @include indent-($\2, $md);
-    }
-
-    @mixin md\:indent-2\.5 {
-      @include indent-($\2\.5, $md);
-    }
-
-    @mixin md\:indent-3 {
-      @include indent-($\3, $md);
-    }
-
-    @mixin md\:indent-3\.5 {
-      @include indent-($\3\.5, $md);
-    }
-
-    @mixin md\:indent-4 {
-      @include indent-($\4, $md);
-    }
-
-    @mixin md\:indent-5 {
-      @include indent-($\5, $md);
-    }
-
-    @mixin md\:indent-6 {
-      @include indent-($\6, $md);
-    }
-
-    @mixin md\:indent-7 {
-      @include indent-($\7, $md);
-    }
-
-    @mixin md\:indent-8 {
-      @include indent-($\8, $md);
-    }
-
-    @mixin md\:indent-9 {
-      @include indent-($\9, $md);
-    }
-
-    @mixin md\:indent-10 {
-      @include indent-($\10, $md);
-    }
-
-    @mixin md\:indent-11 {
-      @include indent-($\11, $md);
-    }
-
-    @mixin md\:indent-12 {
-      @include indent-($\12, $md);
-    }
-
-    @mixin md\:indent-14 {
-      @include indent-($\14, $md);
-    }
-
-    @mixin md\:indent-16 {
-      @include indent-($\16, $md);
-    }
-
-    @mixin md\:indent-20 {
-      @include indent-($\20, $md);
-    }
-
-    @mixin md\:indent-24 {
-      @include indent-($\24, $md);
-    }
-
-    @mixin md\:indent-28 {
-      @include indent-($\28, $md);
-    }
-
-    @mixin md\:indent-32 {
-      @include indent-($\32, $md);
-    }
-
-    @mixin md\:indent-36 {
-      @include indent-($\36, $md);
-    }
-
-    @mixin md\:indent-40 {
-      @include indent-($\40, $md);
-    }
-
-    @mixin md\:indent-44 {
-      @include indent-($\44, $md);
-    }
-
-    @mixin md\:indent-48 {
-      @include indent-($\48, $md);
-    }
-
-    @mixin md\:indent-52 {
-      @include indent-($\52, $md);
-    }
-
-    @mixin md\:indent-56 {
-      @include indent-($\56, $md);
-    }
-
-    @mixin md\:indent-60 {
-      @include indent-($\60, $md);
-    }
-
-    @mixin md\:indent-64 {
-      @include indent-($\64, $md);
-    }
-
-    @mixin md\:indent-72 {
-      @include indent-($\72, $md);
-    }
-
-    @mixin md\:indent-80 {
-      @include indent-($\80, $md);
-    }
-
-    @mixin md\:indent-96 {
-      @include indent-($\96, $md);
-    }
-
-    @mixin md\:-indent-0 {
-      @include indent-($\0, $md);
-    }
-
-    @mixin md\:-indent-px {
-      @include indent-($\px, $md);
-    }
-
-    @mixin md\:-indent-0\.5 {
-      @include indent-($\0\.5, $md);
-    }
-
-    @mixin md\:-indent-1 {
-      @include indent-($\1, $md);
-    }
-
-    @mixin md\:-indent-1\.5 {
-      @include indent-($\1\.5, $md);
-    }
-
-    @mixin md\:-indent-2 {
-      @include indent-($\2, $md);
-    }
-
-    @mixin md\:-indent-2\.5 {
-      @include indent-($\2\.5, $md);
-    }
-
-    @mixin md\:-indent-3 {
-      @include indent-($\3, $md);
-    }
-
-    @mixin md\:-indent-3\.5 {
-      @include indent-($\3\.5, $md);
-    }
-
-    @mixin md\:-indent-4 {
-      @include indent-($\4, $md);
-    }
-
-    @mixin md\:-indent-5 {
-      @include indent-($\5, $md);
-    }
-
-    @mixin md\:-indent-6 {
-      @include indent-($\6, $md);
-    }
-
-    @mixin md\:-indent-7 {
-      @include indent-($\7, $md);
-    }
-
-    @mixin md\:-indent-8 {
-      @include indent-($\8, $md);
-    }
-
-    @mixin md\:-indent-9 {
-      @include indent-($\9, $md);
-    }
-
-    @mixin md\:-indent-10 {
-      @include indent-($\10, $md);
-    }
-
-    @mixin md\:-indent-11 {
-      @include indent-($\11, $md);
-    }
-
-    @mixin md\:-indent-12 {
-      @include indent-($\12, $md);
-    }
-
-    @mixin md\:-indent-14 {
-      @include indent-($\14, $md);
-    }
-
-    @mixin md\:-indent-16 {
-      @include indent-($\16, $md);
-    }
-
-    @mixin md\:-indent-20 {
-      @include indent-($\20, $md);
-    }
-
-    @mixin md\:-indent-24 {
-      @include indent-($\24, $md);
-    }
-
-    @mixin md\:-indent-28 {
-      @include indent-($\28, $md);
-    }
-
-    @mixin md\:-indent-32 {
-      @include indent-($\32, $md);
-    }
-
-    @mixin md\:-indent-36 {
-      @include indent-($\36, $md);
-    }
-
-    @mixin md\:-indent-40 {
-      @include indent-($\40, $md);
-    }
-
-    @mixin md\:-indent-44 {
-      @include indent-($\44, $md);
-    }
-
-    @mixin md\:-indent-48 {
-      @include indent-($\48, $md);
-    }
-
-    @mixin md\:-indent-52 {
-      @include indent-($\52, $md);
-    }
-
-    @mixin md\:-indent-56 {
-      @include indent-($\56, $md);
-    }
-
-    @mixin md\:-indent-60 {
-      @include indent-($\60, $md);
-    }
-
-    @mixin md\:-indent-64 {
-      @include indent-($\64, $md);
-    }
-
-    @mixin md\:-indent-72 {
-      @include indent-($\72, $md);
-    }
-
-    @mixin md\:-indent-80 {
-      @include indent-($\80, $md);
-    }
-
-    @mixin md\:-indent-96 {
-      @include indent-($\96, $md);
-    }
-
-    @mixin lg\:indent-0 {
-      @include indent-($\0, $lg);
-    }
-
-    @mixin lg\:indent-px {
-      @include indent-($\px, $lg);
-    }
-
-    @mixin lg\:indent-0\.5 {
-      @include indent-($\0\.5, $lg);
-    }
-
-    @mixin lg\:indent-1 {
-      @include indent-($\1, $lg);
-    }
-
-    @mixin lg\:indent-1\.5 {
-      @include indent-($\1\.5, $lg);
-    }
-
-    @mixin lg\:indent-2 {
-      @include indent-($\2, $lg);
-    }
-
-    @mixin lg\:indent-2\.5 {
-      @include indent-($\2\.5, $lg);
-    }
-
-    @mixin lg\:indent-3 {
-      @include indent-($\3, $lg);
-    }
-
-    @mixin lg\:indent-3\.5 {
-      @include indent-($\3\.5, $lg);
-    }
-
-    @mixin lg\:indent-4 {
-      @include indent-($\4, $lg);
-    }
-
-    @mixin lg\:indent-5 {
-      @include indent-($\5, $lg);
-    }
-
-    @mixin lg\:indent-6 {
-      @include indent-($\6, $lg);
-    }
-
-    @mixin lg\:indent-7 {
-      @include indent-($\7, $lg);
-    }
-
-    @mixin lg\:indent-8 {
-      @include indent-($\8, $lg);
-    }
-
-    @mixin lg\:indent-9 {
-      @include indent-($\9, $lg);
-    }
-
-    @mixin lg\:indent-10 {
-      @include indent-($\10, $lg);
-    }
-
-    @mixin lg\:indent-11 {
-      @include indent-($\11, $lg);
-    }
-
-    @mixin lg\:indent-12 {
-      @include indent-($\12, $lg);
-    }
-
-    @mixin lg\:indent-14 {
-      @include indent-($\14, $lg);
-    }
-
-    @mixin lg\:indent-16 {
-      @include indent-($\16, $lg);
-    }
-
-    @mixin lg\:indent-20 {
-      @include indent-($\20, $lg);
-    }
-
-    @mixin lg\:indent-24 {
-      @include indent-($\24, $lg);
-    }
-
-    @mixin lg\:indent-28 {
-      @include indent-($\28, $lg);
-    }
-
-    @mixin lg\:indent-32 {
-      @include indent-($\32, $lg);
-    }
-
-    @mixin lg\:indent-36 {
-      @include indent-($\36, $lg);
-    }
-
-    @mixin lg\:indent-40 {
-      @include indent-($\40, $lg);
-    }
-
-    @mixin lg\:indent-44 {
-      @include indent-($\44, $lg);
-    }
-
-    @mixin lg\:indent-48 {
-      @include indent-($\48, $lg);
-    }
-
-    @mixin lg\:indent-52 {
-      @include indent-($\52, $lg);
-    }
-
-    @mixin lg\:indent-56 {
-      @include indent-($\56, $lg);
-    }
-
-    @mixin lg\:indent-60 {
-      @include indent-($\60, $lg);
-    }
-
-    @mixin lg\:indent-64 {
-      @include indent-($\64, $lg);
-    }
-
-    @mixin lg\:indent-72 {
-      @include indent-($\72, $lg);
-    }
-
-    @mixin lg\:indent-80 {
-      @include indent-($\80, $lg);
-    }
-
-    @mixin lg\:indent-96 {
-      @include indent-($\96, $lg);
-    }
-
-    @mixin lg\:-indent-0 {
-      @include indent-($\0, $lg);
-    }
-
-    @mixin lg\:-indent-px {
-      @include indent-($\px, $lg);
-    }
-
-    @mixin lg\:-indent-0\.5 {
-      @include indent-($\0\.5, $lg);
-    }
-
-    @mixin lg\:-indent-1 {
-      @include indent-($\1, $lg);
-    }
-
-    @mixin lg\:-indent-1\.5 {
-      @include indent-($\1\.5, $lg);
-    }
-
-    @mixin lg\:-indent-2 {
-      @include indent-($\2, $lg);
-    }
-
-    @mixin lg\:-indent-2\.5 {
-      @include indent-($\2\.5, $lg);
-    }
-
-    @mixin lg\:-indent-3 {
-      @include indent-($\3, $lg);
-    }
-
-    @mixin lg\:-indent-3\.5 {
-      @include indent-($\3\.5, $lg);
-    }
-
-    @mixin lg\:-indent-4 {
-      @include indent-($\4, $lg);
-    }
-
-    @mixin lg\:-indent-5 {
-      @include indent-($\5, $lg);
-    }
-
-    @mixin lg\:-indent-6 {
-      @include indent-($\6, $lg);
-    }
-
-    @mixin lg\:-indent-7 {
-      @include indent-($\7, $lg);
-    }
-
-    @mixin lg\:-indent-8 {
-      @include indent-($\8, $lg);
-    }
-
-    @mixin lg\:-indent-9 {
-      @include indent-($\9, $lg);
-    }
-
-    @mixin lg\:-indent-10 {
-      @include indent-($\10, $lg);
-    }
-
-    @mixin lg\:-indent-11 {
-      @include indent-($\11, $lg);
-    }
-
-    @mixin lg\:-indent-12 {
-      @include indent-($\12, $lg);
-    }
-
-    @mixin lg\:-indent-14 {
-      @include indent-($\14, $lg);
-    }
-
-    @mixin lg\:-indent-16 {
-      @include indent-($\16, $lg);
-    }
-
-    @mixin lg\:-indent-20 {
-      @include indent-($\20, $lg);
-    }
-
-    @mixin lg\:-indent-24 {
-      @include indent-($\24, $lg);
-    }
-
-    @mixin lg\:-indent-28 {
-      @include indent-($\28, $lg);
-    }
-
-    @mixin lg\:-indent-32 {
-      @include indent-($\32, $lg);
-    }
-
-    @mixin lg\:-indent-36 {
-      @include indent-($\36, $lg);
-    }
-
-    @mixin lg\:-indent-40 {
-      @include indent-($\40, $lg);
-    }
-
-    @mixin lg\:-indent-44 {
-      @include indent-($\44, $lg);
-    }
-
-    @mixin lg\:-indent-48 {
-      @include indent-($\48, $lg);
-    }
-
-    @mixin lg\:-indent-52 {
-      @include indent-($\52, $lg);
-    }
-
-    @mixin lg\:-indent-56 {
-      @include indent-($\56, $lg);
-    }
-
-    @mixin lg\:-indent-60 {
-      @include indent-($\60, $lg);
-    }
-
-    @mixin lg\:-indent-64 {
-      @include indent-($\64, $lg);
-    }
-
-    @mixin lg\:-indent-72 {
-      @include indent-($\72, $lg);
-    }
-
-    @mixin lg\:-indent-80 {
-      @include indent-($\80, $lg);
-    }
-
-    @mixin lg\:-indent-96 {
-      @include indent-($\96, $lg);
-    }
-
-    @mixin xl\:indent-0 {
-      @include indent-($\0, $xl);
-    }
-
-    @mixin xl\:indent-px {
-      @include indent-($\px, $xl);
-    }
-
-    @mixin xl\:indent-0\.5 {
-      @include indent-($\0\.5, $xl);
-    }
-
-    @mixin xl\:indent-1 {
-      @include indent-($\1, $xl);
-    }
-
-    @mixin xl\:indent-1\.5 {
-      @include indent-($\1\.5, $xl);
-    }
-
-    @mixin xl\:indent-2 {
-      @include indent-($\2, $xl);
-    }
-
-    @mixin xl\:indent-2\.5 {
-      @include indent-($\2\.5, $xl);
-    }
-
-    @mixin xl\:indent-3 {
-      @include indent-($\3, $xl);
-    }
-
-    @mixin xl\:indent-3\.5 {
-      @include indent-($\3\.5, $xl);
-    }
-
-    @mixin xl\:indent-4 {
-      @include indent-($\4, $xl);
-    }
-
-    @mixin xl\:indent-5 {
-      @include indent-($\5, $xl);
-    }
-
-    @mixin xl\:indent-6 {
-      @include indent-($\6, $xl);
-    }
-
-    @mixin xl\:indent-7 {
-      @include indent-($\7, $xl);
-    }
-
-    @mixin xl\:indent-8 {
-      @include indent-($\8, $xl);
-    }
-
-    @mixin xl\:indent-9 {
-      @include indent-($\9, $xl);
-    }
-
-    @mixin xl\:indent-10 {
-      @include indent-($\10, $xl);
-    }
-
-    @mixin xl\:indent-11 {
-      @include indent-($\11, $xl);
-    }
-
-    @mixin xl\:indent-12 {
-      @include indent-($\12, $xl);
-    }
-
-    @mixin xl\:indent-14 {
-      @include indent-($\14, $xl);
-    }
-
-    @mixin xl\:indent-16 {
-      @include indent-($\16, $xl);
-    }
-
-    @mixin xl\:indent-20 {
-      @include indent-($\20, $xl);
-    }
-
-    @mixin xl\:indent-24 {
-      @include indent-($\24, $xl);
-    }
-
-    @mixin xl\:indent-28 {
-      @include indent-($\28, $xl);
-    }
-
-    @mixin xl\:indent-32 {
-      @include indent-($\32, $xl);
-    }
-
-    @mixin xl\:indent-36 {
-      @include indent-($\36, $xl);
-    }
-
-    @mixin xl\:indent-40 {
-      @include indent-($\40, $xl);
-    }
-
-    @mixin xl\:indent-44 {
-      @include indent-($\44, $xl);
-    }
-
-    @mixin xl\:indent-48 {
-      @include indent-($\48, $xl);
-    }
-
-    @mixin xl\:indent-52 {
-      @include indent-($\52, $xl);
-    }
-
-    @mixin xl\:indent-56 {
-      @include indent-($\56, $xl);
-    }
-
-    @mixin xl\:indent-60 {
-      @include indent-($\60, $xl);
-    }
-
-    @mixin xl\:indent-64 {
-      @include indent-($\64, $xl);
-    }
-
-    @mixin xl\:indent-72 {
-      @include indent-($\72, $xl);
-    }
-
-    @mixin xl\:indent-80 {
-      @include indent-($\80, $xl);
-    }
-
-    @mixin xl\:indent-96 {
-      @include indent-($\96, $xl);
-    }
-
-    @mixin xl\:-indent-0 {
-      @include indent-($\0, $xl);
-    }
-
-    @mixin xl\:-indent-px {
-      @include indent-($\px, $xl);
-    }
-
-    @mixin xl\:-indent-0\.5 {
-      @include indent-($\0\.5, $xl);
-    }
-
-    @mixin xl\:-indent-1 {
-      @include indent-($\1, $xl);
-    }
-
-    @mixin xl\:-indent-1\.5 {
-      @include indent-($\1\.5, $xl);
-    }
-
-    @mixin xl\:-indent-2 {
-      @include indent-($\2, $xl);
-    }
-
-    @mixin xl\:-indent-2\.5 {
-      @include indent-($\2\.5, $xl);
-    }
-
-    @mixin xl\:-indent-3 {
-      @include indent-($\3, $xl);
-    }
-
-    @mixin xl\:-indent-3\.5 {
-      @include indent-($\3\.5, $xl);
-    }
-
-    @mixin xl\:-indent-4 {
-      @include indent-($\4, $xl);
-    }
-
-    @mixin xl\:-indent-5 {
-      @include indent-($\5, $xl);
-    }
-
-    @mixin xl\:-indent-6 {
-      @include indent-($\6, $xl);
-    }
-
-    @mixin xl\:-indent-7 {
-      @include indent-($\7, $xl);
-    }
-
-    @mixin xl\:-indent-8 {
-      @include indent-($\8, $xl);
-    }
-
-    @mixin xl\:-indent-9 {
-      @include indent-($\9, $xl);
-    }
-
-    @mixin xl\:-indent-10 {
-      @include indent-($\10, $xl);
-    }
-
-    @mixin xl\:-indent-11 {
-      @include indent-($\11, $xl);
-    }
-
-    @mixin xl\:-indent-12 {
-      @include indent-($\12, $xl);
-    }
-
-    @mixin xl\:-indent-14 {
-      @include indent-($\14, $xl);
-    }
-
-    @mixin xl\:-indent-16 {
-      @include indent-($\16, $xl);
-    }
-
-    @mixin xl\:-indent-20 {
-      @include indent-($\20, $xl);
-    }
-
-    @mixin xl\:-indent-24 {
-      @include indent-($\24, $xl);
-    }
-
-    @mixin xl\:-indent-28 {
-      @include indent-($\28, $xl);
-    }
-
-    @mixin xl\:-indent-32 {
-      @include indent-($\32, $xl);
-    }
-
-    @mixin xl\:-indent-36 {
-      @include indent-($\36, $xl);
-    }
-
-    @mixin xl\:-indent-40 {
-      @include indent-($\40, $xl);
-    }
-
-    @mixin xl\:-indent-44 {
-      @include indent-($\44, $xl);
-    }
-
-    @mixin xl\:-indent-48 {
-      @include indent-($\48, $xl);
-    }
-
-    @mixin xl\:-indent-52 {
-      @include indent-($\52, $xl);
-    }
-
-    @mixin xl\:-indent-56 {
-      @include indent-($\56, $xl);
-    }
-
-    @mixin xl\:-indent-60 {
-      @include indent-($\60, $xl);
-    }
-
-    @mixin xl\:-indent-64 {
-      @include indent-($\64, $xl);
-    }
-
-    @mixin xl\:-indent-72 {
-      @include indent-($\72, $xl);
-    }
-
-    @mixin xl\:-indent-80 {
-      @include indent-($\80, $xl);
-    }
-
-    @mixin xl\:-indent-96 {
-      @include indent-($\96, $xl);
-    }
-
-    @mixin \2xl\:indent-0 {
-      @include indent-($\0, $\2xl);
-    }
-
-    @mixin \2xl\:indent-px {
-      @include indent-($\px, $\2xl);
-    }
-
-    @mixin \2xl\:indent-0\.5 {
-      @include indent-($\0\.5, $\2xl);
-    }
-
-    @mixin \2xl\:indent-1 {
-      @include indent-($\1, $\2xl);
-    }
-
-    @mixin \2xl\:indent-1\.5 {
-      @include indent-($\1\.5, $\2xl);
-    }
-
-    @mixin \2xl\:indent-2 {
-      @include indent-($\2, $\2xl);
-    }
-
-    @mixin \2xl\:indent-2\.5 {
-      @include indent-($\2\.5, $\2xl);
-    }
-
-    @mixin \2xl\:indent-3 {
-      @include indent-($\3, $\2xl);
-    }
-
-    @mixin \2xl\:indent-3\.5 {
-      @include indent-($\3\.5, $\2xl);
-    }
-
-    @mixin \2xl\:indent-4 {
-      @include indent-($\4, $\2xl);
-    }
-
-    @mixin \2xl\:indent-5 {
-      @include indent-($\5, $\2xl);
-    }
-
-    @mixin \2xl\:indent-6 {
-      @include indent-($\6, $\2xl);
-    }
-
-    @mixin \2xl\:indent-7 {
-      @include indent-($\7, $\2xl);
-    }
-
-    @mixin \2xl\:indent-8 {
-      @include indent-($\8, $\2xl);
-    }
-
-    @mixin \2xl\:indent-9 {
-      @include indent-($\9, $\2xl);
-    }
-
-    @mixin \2xl\:indent-10 {
-      @include indent-($\10, $\2xl);
-    }
-
-    @mixin \2xl\:indent-11 {
-      @include indent-($\11, $\2xl);
-    }
-
-    @mixin \2xl\:indent-12 {
-      @include indent-($\12, $\2xl);
-    }
-
-    @mixin \2xl\:indent-14 {
-      @include indent-($\14, $\2xl);
-    }
-
-    @mixin \2xl\:indent-16 {
-      @include indent-($\16, $\2xl);
-    }
-
-    @mixin \2xl\:indent-20 {
-      @include indent-($\20, $\2xl);
-    }
-
-    @mixin \2xl\:indent-24 {
-      @include indent-($\24, $\2xl);
-    }
-
-    @mixin \2xl\:indent-28 {
-      @include indent-($\28, $\2xl);
-    }
-
-    @mixin \2xl\:indent-32 {
-      @include indent-($\32, $\2xl);
-    }
-
-    @mixin \2xl\:indent-36 {
-      @include indent-($\36, $\2xl);
-    }
-
-    @mixin \2xl\:indent-40 {
-      @include indent-($\40, $\2xl);
-    }
-
-    @mixin \2xl\:indent-44 {
-      @include indent-($\44, $\2xl);
-    }
-
-    @mixin \2xl\:indent-48 {
-      @include indent-($\48, $\2xl);
-    }
-
-    @mixin \2xl\:indent-52 {
-      @include indent-($\52, $\2xl);
-    }
-
-    @mixin \2xl\:indent-56 {
-      @include indent-($\56, $\2xl);
-    }
-
-    @mixin \2xl\:indent-60 {
-      @include indent-($\60, $\2xl);
-    }
-
-    @mixin \2xl\:indent-64 {
-      @include indent-($\64, $\2xl);
-    }
-
-    @mixin \2xl\:indent-72 {
-      @include indent-($\72, $\2xl);
-    }
-
-    @mixin \2xl\:indent-80 {
-      @include indent-($\80, $\2xl);
-    }
-
-    @mixin \2xl\:indent-96 {
-      @include indent-($\96, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-0 {
-      @include indent-($\0, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-px {
-      @include indent-($\px, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-0\.5 {
-      @include indent-($\0\.5, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-1 {
-      @include indent-($\1, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-1\.5 {
-      @include indent-($\1\.5, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-2 {
-      @include indent-($\2, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-2\.5 {
-      @include indent-($\2\.5, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-3 {
-      @include indent-($\3, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-3\.5 {
-      @include indent-($\3\.5, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-4 {
-      @include indent-($\4, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-5 {
-      @include indent-($\5, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-6 {
-      @include indent-($\6, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-7 {
-      @include indent-($\7, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-8 {
-      @include indent-($\8, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-9 {
-      @include indent-($\9, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-10 {
-      @include indent-($\10, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-11 {
-      @include indent-($\11, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-12 {
-      @include indent-($\12, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-14 {
-      @include indent-($\14, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-16 {
-      @include indent-($\16, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-20 {
-      @include indent-($\20, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-24 {
-      @include indent-($\24, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-28 {
-      @include indent-($\28, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-32 {
-      @include indent-($\32, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-36 {
-      @include indent-($\36, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-40 {
-      @include indent-($\40, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-44 {
-      @include indent-($\44, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-48 {
-      @include indent-($\48, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-52 {
-      @include indent-($\52, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-56 {
-      @include indent-($\56, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-60 {
-      @include indent-($\60, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-64 {
-      @include indent-($\64, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-72 {
-      @include indent-($\72, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-80 {
-      @include indent-($\80, $\2xl);
-    }
-
-    @mixin \2xl\:-indent-96 {
-      @include indent-($\96, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin indent-($v, $rwd: null) {
-    @if $rwd==null {
-      text-indent: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        text-indent: $v;
+@include describe("5.Typography") {
+  @include describe("Text Indent") {
+    @include describe("Basic") {
+      @include it("indent-0") {
+        @include custom-expect-(text-indent, 0px) {
+          @include indent-0;
+        }
+      }
+
+      @include it("indent-px") {
+        @include custom-expect-(text-indent, 1px) {
+          @include indent-px;
+        }
+      }
+
+      @include it("indent-0\.5") {
+        @include custom-expect-(text-indent, 0.125rem) {
+          @include indent-0\.5;
+        }
+      }
+
+      @include it("indent-1") {
+        @include custom-expect-(text-indent, 0.25rem) {
+          @include indent-1;
+        }
+      }
+
+      @include it("indent-1\.5") {
+        @include custom-expect-(text-indent, 0.375rem) {
+          @include indent-1\.5;
+        }
+      }
+
+      @include it("indent-2") {
+        @include custom-expect-(text-indent, 0.5rem) {
+          @include indent-2;
+        }
+      }
+
+      @include it("indent-2\.5") {
+        @include custom-expect-(text-indent, 0.625rem) {
+          @include indent-2\.5;
+        }
+      }
+
+      @include it("indent-3") {
+        @include custom-expect-(text-indent, 0.75rem) {
+          @include indent-3;
+        }
+      }
+
+      @include it("indent-3\.5") {
+        @include custom-expect-(text-indent, 0.875rem) {
+          @include indent-3\.5;
+        }
+      }
+
+      @include it("indent-4") {
+        @include custom-expect-(text-indent, 1rem) {
+          @include indent-4;
+        }
+      }
+
+      @include it("indent-5") {
+        @include custom-expect-(text-indent, 1.25rem) {
+          @include indent-5;
+        }
+      }
+
+      @include it("indent-6") {
+        @include custom-expect-(text-indent, 1.5rem) {
+          @include indent-6;
+        }
+      }
+
+      @include it("indent-7") {
+        @include custom-expect-(text-indent, 1.75rem) {
+          @include indent-7;
+        }
+      }
+
+      @include it("indent-8") {
+        @include custom-expect-(text-indent, 2rem) {
+          @include indent-8;
+        }
+      }
+
+      @include it("indent-9") {
+        @include custom-expect-(text-indent, 2.25rem) {
+          @include indent-9;
+        }
+      }
+
+      @include it("indent-10") {
+        @include custom-expect-(text-indent, 2.5rem) {
+          @include indent-10;
+        }
+      }
+
+      @include it("indent-11") {
+        @include custom-expect-(text-indent, 2.75rem) {
+          @include indent-11;
+        }
+      }
+
+      @include it("indent-12") {
+        @include custom-expect-(text-indent, 3rem) {
+          @include indent-12;
+        }
+      }
+
+      @include it("indent-14") {
+        @include custom-expect-(text-indent, 3.5rem) {
+          @include indent-14;
+        }
+      }
+
+      @include it("indent-16") {
+        @include custom-expect-(text-indent, 4rem) {
+          @include indent-16;
+        }
+      }
+
+      @include it("indent-20") {
+        @include custom-expect-(text-indent, 5rem) {
+          @include indent-20;
+        }
+      }
+
+      @include it("indent-24") {
+        @include custom-expect-(text-indent, 6rem) {
+          @include indent-24;
+        }
+      }
+
+      @include it("indent-28") {
+        @include custom-expect-(text-indent, 7rem) {
+          @include indent-28;
+        }
+      }
+
+      @include it("indent-32") {
+        @include custom-expect-(text-indent, 8rem) {
+          @include indent-32;
+        }
+      }
+
+      @include it("indent-36") {
+        @include custom-expect-(text-indent, 9rem) {
+          @include indent-36;
+        }
+      }
+
+      @include it("indent-40") {
+        @include custom-expect-(text-indent, 10rem) {
+          @include indent-40;
+        }
+      }
+
+      @include it("indent-44") {
+        @include custom-expect-(text-indent, 11rem) {
+          @include indent-44;
+        }
+      }
+
+      @include it("indent-48") {
+        @include custom-expect-(text-indent, 12rem) {
+          @include indent-48;
+        }
+      }
+
+      @include it("indent-52") {
+        @include custom-expect-(text-indent, 13rem) {
+          @include indent-52;
+        }
+      }
+
+      @include it("indent-56") {
+        @include custom-expect-(text-indent, 14rem) {
+          @include indent-56;
+        }
+      }
+
+      @include it("indent-60") {
+        @include custom-expect-(text-indent, 15rem) {
+          @include indent-60;
+        }
+      }
+
+      @include it("indent-64") {
+        @include custom-expect-(text-indent, 16rem) {
+          @include indent-64;
+        }
+      }
+
+      @include it("indent-72") {
+        @include custom-expect-(text-indent, 18rem) {
+          @include indent-72;
+        }
+      }
+
+      @include it("indent-80") {
+        @include custom-expect-(text-indent, 20rem) {
+          @include indent-80;
+        }
+      }
+
+      @include it("indent-96") {
+        @include custom-expect-(text-indent, 24rem) {
+          @include indent-96;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:indent-0") {
+        @include custom-expect-(text-indent, 0px, $sm) {
+          @include sm\:indent-0;
+        }
+      }
+
+      @include it("sm\:indent-px") {
+        @include custom-expect-(text-indent, 1px, $sm) {
+          @include sm\:indent-px;
+        }
+      }
+
+      @include it("sm\:indent-0\.5") {
+        @include custom-expect-(text-indent, 0.125rem, $sm) {
+          @include sm\:indent-0\.5;
+        }
+      }
+
+      @include it("sm\:indent-1") {
+        @include custom-expect-(text-indent, 0.25rem, $sm) {
+          @include sm\:indent-1;
+        }
+      }
+
+      @include it("sm\:indent-1\.5") {
+        @include custom-expect-(text-indent, 0.375rem, $sm) {
+          @include sm\:indent-1\.5;
+        }
+      }
+
+      @include it("sm\:indent-2") {
+        @include custom-expect-(text-indent, 0.5rem, $sm) {
+          @include sm\:indent-2;
+        }
+      }
+
+      @include it("sm\:indent-2\.5") {
+        @include custom-expect-(text-indent, 0.625rem, $sm) {
+          @include sm\:indent-2\.5;
+        }
+      }
+
+      @include it("sm\:indent-3") {
+        @include custom-expect-(text-indent, 0.75rem, $sm) {
+          @include sm\:indent-3;
+        }
+      }
+
+      @include it("sm\:indent-3\.5") {
+        @include custom-expect-(text-indent, 0.875rem, $sm) {
+          @include sm\:indent-3\.5;
+        }
+      }
+
+      @include it("sm\:indent-4") {
+        @include custom-expect-(text-indent, 1rem, $sm) {
+          @include sm\:indent-4;
+        }
+      }
+
+      @include it("sm\:indent-5") {
+        @include custom-expect-(text-indent, 1.25rem, $sm) {
+          @include sm\:indent-5;
+        }
+      }
+
+      @include it("sm\:indent-6") {
+        @include custom-expect-(text-indent, 1.5rem, $sm) {
+          @include sm\:indent-6;
+        }
+      }
+
+      @include it("sm\:indent-7") {
+        @include custom-expect-(text-indent, 1.75rem, $sm) {
+          @include sm\:indent-7;
+        }
+      }
+
+      @include it("sm\:indent-8") {
+        @include custom-expect-(text-indent, 2rem, $sm) {
+          @include sm\:indent-8;
+        }
+      }
+
+      @include it("sm\:indent-9") {
+        @include custom-expect-(text-indent, 2.25rem, $sm) {
+          @include sm\:indent-9;
+        }
+      }
+
+      @include it("sm\:indent-10") {
+        @include custom-expect-(text-indent, 2.5rem, $sm) {
+          @include sm\:indent-10;
+        }
+      }
+
+      @include it("sm\:indent-11") {
+        @include custom-expect-(text-indent, 2.75rem, $sm) {
+          @include sm\:indent-11;
+        }
+      }
+
+      @include it("sm\:indent-12") {
+        @include custom-expect-(text-indent, 3rem, $sm) {
+          @include sm\:indent-12;
+        }
+      }
+
+      @include it("sm\:indent-14") {
+        @include custom-expect-(text-indent, 3.5rem, $sm) {
+          @include sm\:indent-14;
+        }
+      }
+
+      @include it("sm\:indent-16") {
+        @include custom-expect-(text-indent, 4rem, $sm) {
+          @include sm\:indent-16;
+        }
+      }
+
+      @include it("sm\:indent-20") {
+        @include custom-expect-(text-indent, 5rem, $sm) {
+          @include sm\:indent-20;
+        }
+      }
+
+      @include it("sm\:indent-24") {
+        @include custom-expect-(text-indent, 6rem, $sm) {
+          @include sm\:indent-24;
+        }
+      }
+
+      @include it("sm\:indent-28") {
+        @include custom-expect-(text-indent, 7rem, $sm) {
+          @include sm\:indent-28;
+        }
+      }
+
+      @include it("sm\:indent-32") {
+        @include custom-expect-(text-indent, 8rem, $sm) {
+          @include sm\:indent-32;
+        }
+      }
+
+      @include it("sm\:indent-36") {
+        @include custom-expect-(text-indent, 9rem, $sm) {
+          @include sm\:indent-36;
+        }
+      }
+
+      @include it("sm\:indent-40") {
+        @include custom-expect-(text-indent, 10rem, $sm) {
+          @include sm\:indent-40;
+        }
+      }
+
+      @include it("sm\:indent-44") {
+        @include custom-expect-(text-indent, 11rem, $sm) {
+          @include sm\:indent-44;
+        }
+      }
+
+      @include it("sm\:indent-48") {
+        @include custom-expect-(text-indent, 12rem, $sm) {
+          @include sm\:indent-48;
+        }
+      }
+
+      @include it("sm\:indent-52") {
+        @include custom-expect-(text-indent, 13rem, $sm) {
+          @include sm\:indent-52;
+        }
+      }
+
+      @include it("sm\:indent-56") {
+        @include custom-expect-(text-indent, 14rem, $sm) {
+          @include sm\:indent-56;
+        }
+      }
+
+      @include it("sm\:indent-60") {
+        @include custom-expect-(text-indent, 15rem, $sm) {
+          @include sm\:indent-60;
+        }
+      }
+
+      @include it("sm\:indent-64") {
+        @include custom-expect-(text-indent, 16rem, $sm) {
+          @include sm\:indent-64;
+        }
+      }
+
+      @include it("sm\:indent-72") {
+        @include custom-expect-(text-indent, 18rem, $sm) {
+          @include sm\:indent-72;
+        }
+      }
+
+      @include it("sm\:indent-80") {
+        @include custom-expect-(text-indent, 20rem, $sm) {
+          @include sm\:indent-80;
+        }
+      }
+
+      @include it("sm\:indent-96") {
+        @include custom-expect-(text-indent, 24rem, $sm) {
+          @include sm\:indent-96;
+        }
+      }
+
+      @include it("md\:indent-0") {
+        @include custom-expect-(text-indent, 0px, $md) {
+          @include md\:indent-0;
+        }
+      }
+
+      @include it("md\:indent-px") {
+        @include custom-expect-(text-indent, 1px, $md) {
+          @include md\:indent-px;
+        }
+      }
+
+      @include it("md\:indent-0\.5") {
+        @include custom-expect-(text-indent, 0.125rem, $md) {
+          @include md\:indent-0\.5;
+        }
+      }
+
+      @include it("md\:indent-1") {
+        @include custom-expect-(text-indent, 0.25rem, $md) {
+          @include md\:indent-1;
+        }
+      }
+
+      @include it("md\:indent-1\.5") {
+        @include custom-expect-(text-indent, 0.375rem, $md) {
+          @include md\:indent-1\.5;
+        }
+      }
+
+      @include it("md\:indent-2") {
+        @include custom-expect-(text-indent, 0.5rem, $md) {
+          @include md\:indent-2;
+        }
+      }
+
+      @include it("md\:indent-2\.5") {
+        @include custom-expect-(text-indent, 0.625rem, $md) {
+          @include md\:indent-2\.5;
+        }
+      }
+
+      @include it("md\:indent-3") {
+        @include custom-expect-(text-indent, 0.75rem, $md) {
+          @include md\:indent-3;
+        }
+      }
+
+      @include it("md\:indent-3\.5") {
+        @include custom-expect-(text-indent, 0.875rem, $md) {
+          @include md\:indent-3\.5;
+        }
+      }
+
+      @include it("md\:indent-4") {
+        @include custom-expect-(text-indent, 1rem, $md) {
+          @include md\:indent-4;
+        }
+      }
+
+      @include it("md\:indent-5") {
+        @include custom-expect-(text-indent, 1.25rem, $md) {
+          @include md\:indent-5;
+        }
+      }
+
+      @include it("md\:indent-6") {
+        @include custom-expect-(text-indent, 1.5rem, $md) {
+          @include md\:indent-6;
+        }
+      }
+
+      @include it("md\:indent-7") {
+        @include custom-expect-(text-indent, 1.75rem, $md) {
+          @include md\:indent-7;
+        }
+      }
+
+      @include it("md\:indent-8") {
+        @include custom-expect-(text-indent, 2rem, $md) {
+          @include md\:indent-8;
+        }
+      }
+
+      @include it("md\:indent-9") {
+        @include custom-expect-(text-indent, 2.25rem, $md) {
+          @include md\:indent-9;
+        }
+      }
+
+      @include it("md\:indent-10") {
+        @include custom-expect-(text-indent, 2.5rem, $md) {
+          @include md\:indent-10;
+        }
+      }
+
+      @include it("md\:indent-11") {
+        @include custom-expect-(text-indent, 2.75rem, $md) {
+          @include md\:indent-11;
+        }
+      }
+
+      @include it("md\:indent-12") {
+        @include custom-expect-(text-indent, 3rem, $md) {
+          @include md\:indent-12;
+        }
+      }
+
+      @include it("md\:indent-14") {
+        @include custom-expect-(text-indent, 3.5rem, $md) {
+          @include md\:indent-14;
+        }
+      }
+
+      @include it("md\:indent-16") {
+        @include custom-expect-(text-indent, 4rem, $md) {
+          @include md\:indent-16;
+        }
+      }
+
+      @include it("md\:indent-20") {
+        @include custom-expect-(text-indent, 5rem, $md) {
+          @include md\:indent-20;
+        }
+      }
+
+      @include it("md\:indent-24") {
+        @include custom-expect-(text-indent, 6rem, $md) {
+          @include md\:indent-24;
+        }
+      }
+
+      @include it("md\:indent-28") {
+        @include custom-expect-(text-indent, 7rem, $md) {
+          @include md\:indent-28;
+        }
+      }
+
+      @include it("md\:indent-32") {
+        @include custom-expect-(text-indent, 8rem, $md) {
+          @include md\:indent-32;
+        }
+      }
+
+      @include it("md\:indent-36") {
+        @include custom-expect-(text-indent, 9rem, $md) {
+          @include md\:indent-36;
+        }
+      }
+
+      @include it("md\:indent-40") {
+        @include custom-expect-(text-indent, 10rem, $md) {
+          @include md\:indent-40;
+        }
+      }
+
+      @include it("md\:indent-44") {
+        @include custom-expect-(text-indent, 11rem, $md) {
+          @include md\:indent-44;
+        }
+      }
+
+      @include it("md\:indent-48") {
+        @include custom-expect-(text-indent, 12rem, $md) {
+          @include md\:indent-48;
+        }
+      }
+
+      @include it("md\:indent-52") {
+        @include custom-expect-(text-indent, 13rem, $md) {
+          @include md\:indent-52;
+        }
+      }
+
+      @include it("md\:indent-56") {
+        @include custom-expect-(text-indent, 14rem, $md) {
+          @include md\:indent-56;
+        }
+      }
+
+      @include it("md\:indent-60") {
+        @include custom-expect-(text-indent, 15rem, $md) {
+          @include md\:indent-60;
+        }
+      }
+
+      @include it("md\:indent-64") {
+        @include custom-expect-(text-indent, 16rem, $md) {
+          @include md\:indent-64;
+        }
+      }
+
+      @include it("md\:indent-72") {
+        @include custom-expect-(text-indent, 18rem, $md) {
+          @include md\:indent-72;
+        }
+      }
+
+      @include it("md\:indent-80") {
+        @include custom-expect-(text-indent, 20rem, $md) {
+          @include md\:indent-80;
+        }
+      }
+
+      @include it("md\:indent-96") {
+        @include custom-expect-(text-indent, 24rem, $md) {
+          @include md\:indent-96;
+        }
+      }
+
+      @include it("lg\:indent-0") {
+        @include custom-expect-(text-indent, 0px, $lg) {
+          @include lg\:indent-0;
+        }
+      }
+
+      @include it("lg\:indent-px") {
+        @include custom-expect-(text-indent, 1px, $lg) {
+          @include lg\:indent-px;
+        }
+      }
+
+      @include it("lg\:indent-0\.5") {
+        @include custom-expect-(text-indent, 0.125rem, $lg) {
+          @include lg\:indent-0\.5;
+        }
+      }
+
+      @include it("lg\:indent-1") {
+        @include custom-expect-(text-indent, 0.25rem, $lg) {
+          @include lg\:indent-1;
+        }
+      }
+
+      @include it("lg\:indent-1\.5") {
+        @include custom-expect-(text-indent, 0.375rem, $lg) {
+          @include lg\:indent-1\.5;
+        }
+      }
+
+      @include it("lg\:indent-2") {
+        @include custom-expect-(text-indent, 0.5rem, $lg) {
+          @include lg\:indent-2;
+        }
+      }
+
+      @include it("lg\:indent-2\.5") {
+        @include custom-expect-(text-indent, 0.625rem, $lg) {
+          @include lg\:indent-2\.5;
+        }
+      }
+
+      @include it("lg\:indent-3") {
+        @include custom-expect-(text-indent, 0.75rem, $lg) {
+          @include lg\:indent-3;
+        }
+      }
+
+      @include it("lg\:indent-3\.5") {
+        @include custom-expect-(text-indent, 0.875rem, $lg) {
+          @include lg\:indent-3\.5;
+        }
+      }
+
+      @include it("lg\:indent-4") {
+        @include custom-expect-(text-indent, 1rem, $lg) {
+          @include lg\:indent-4;
+        }
+      }
+
+      @include it("lg\:indent-5") {
+        @include custom-expect-(text-indent, 1.25rem, $lg) {
+          @include lg\:indent-5;
+        }
+      }
+
+      @include it("lg\:indent-6") {
+        @include custom-expect-(text-indent, 1.5rem, $lg) {
+          @include lg\:indent-6;
+        }
+      }
+
+      @include it("lg\:indent-7") {
+        @include custom-expect-(text-indent, 1.75rem, $lg) {
+          @include lg\:indent-7;
+        }
+      }
+
+      @include it("lg\:indent-8") {
+        @include custom-expect-(text-indent, 2rem, $lg) {
+          @include lg\:indent-8;
+        }
+      }
+
+      @include it("lg\:indent-9") {
+        @include custom-expect-(text-indent, 2.25rem, $lg) {
+          @include lg\:indent-9;
+        }
+      }
+
+      @include it("lg\:indent-10") {
+        @include custom-expect-(text-indent, 2.5rem, $lg) {
+          @include lg\:indent-10;
+        }
+      }
+
+      @include it("lg\:indent-11") {
+        @include custom-expect-(text-indent, 2.75rem, $lg) {
+          @include lg\:indent-11;
+        }
+      }
+
+      @include it("lg\:indent-12") {
+        @include custom-expect-(text-indent, 3rem, $lg) {
+          @include lg\:indent-12;
+        }
+      }
+
+      @include it("lg\:indent-14") {
+        @include custom-expect-(text-indent, 3.5rem, $lg) {
+          @include lg\:indent-14;
+        }
+      }
+
+      @include it("lg\:indent-16") {
+        @include custom-expect-(text-indent, 4rem, $lg) {
+          @include lg\:indent-16;
+        }
+      }
+
+      @include it("lg\:indent-20") {
+        @include custom-expect-(text-indent, 5rem, $lg) {
+          @include lg\:indent-20;
+        }
+      }
+
+      @include it("lg\:indent-24") {
+        @include custom-expect-(text-indent, 6rem, $lg) {
+          @include lg\:indent-24;
+        }
+      }
+
+      @include it("lg\:indent-28") {
+        @include custom-expect-(text-indent, 7rem, $lg) {
+          @include lg\:indent-28;
+        }
+      }
+
+      @include it("lg\:indent-32") {
+        @include custom-expect-(text-indent, 8rem, $lg) {
+          @include lg\:indent-32;
+        }
+      }
+
+      @include it("lg\:indent-36") {
+        @include custom-expect-(text-indent, 9rem, $lg) {
+          @include lg\:indent-36;
+        }
+      }
+
+      @include it("lg\:indent-40") {
+        @include custom-expect-(text-indent, 10rem, $lg) {
+          @include lg\:indent-40;
+        }
+      }
+
+      @include it("lg\:indent-44") {
+        @include custom-expect-(text-indent, 11rem, $lg) {
+          @include lg\:indent-44;
+        }
+      }
+
+      @include it("lg\:indent-48") {
+        @include custom-expect-(text-indent, 12rem, $lg) {
+          @include lg\:indent-48;
+        }
+      }
+
+      @include it("lg\:indent-52") {
+        @include custom-expect-(text-indent, 13rem, $lg) {
+          @include lg\:indent-52;
+        }
+      }
+
+      @include it("lg\:indent-56") {
+        @include custom-expect-(text-indent, 14rem, $lg) {
+          @include lg\:indent-56;
+        }
+      }
+
+      @include it("lg\:indent-60") {
+        @include custom-expect-(text-indent, 15rem, $lg) {
+          @include lg\:indent-60;
+        }
+      }
+
+      @include it("lg\:indent-64") {
+        @include custom-expect-(text-indent, 16rem, $lg) {
+          @include lg\:indent-64;
+        }
+      }
+
+      @include it("lg\:indent-72") {
+        @include custom-expect-(text-indent, 18rem, $lg) {
+          @include lg\:indent-72;
+        }
+      }
+
+      @include it("lg\:indent-80") {
+        @include custom-expect-(text-indent, 20rem, $lg) {
+          @include lg\:indent-80;
+        }
+      }
+
+      @include it("lg\:indent-96") {
+        @include custom-expect-(text-indent, 24rem, $lg) {
+          @include lg\:indent-96;
+        }
+      }
+
+      @include it("xl\:indent-0") {
+        @include custom-expect-(text-indent, 0px, $xl) {
+          @include xl\:indent-0;
+        }
+      }
+
+      @include it("xl\:indent-px") {
+        @include custom-expect-(text-indent, 1px, $xl) {
+          @include xl\:indent-px;
+        }
+      }
+
+      @include it("xl\:indent-0\.5") {
+        @include custom-expect-(text-indent, 0.125rem, $xl) {
+          @include xl\:indent-0\.5;
+        }
+      }
+
+      @include it("xl\:indent-1") {
+        @include custom-expect-(text-indent, 0.25rem, $xl) {
+          @include xl\:indent-1;
+        }
+      }
+
+      @include it("xl\:indent-1\.5") {
+        @include custom-expect-(text-indent, 0.375rem, $xl) {
+          @include xl\:indent-1\.5;
+        }
+      }
+
+      @include it("xl\:indent-2") {
+        @include custom-expect-(text-indent, 0.5rem, $xl) {
+          @include xl\:indent-2;
+        }
+      }
+
+      @include it("xl\:indent-2\.5") {
+        @include custom-expect-(text-indent, 0.625rem, $xl) {
+          @include xl\:indent-2\.5;
+        }
+      }
+
+      @include it("xl\:indent-3") {
+        @include custom-expect-(text-indent, 0.75rem, $xl) {
+          @include xl\:indent-3;
+        }
+      }
+
+      @include it("xl\:indent-3\.5") {
+        @include custom-expect-(text-indent, 0.875rem, $xl) {
+          @include xl\:indent-3\.5;
+        }
+      }
+
+      @include it("xl\:indent-4") {
+        @include custom-expect-(text-indent, 1rem, $xl) {
+          @include xl\:indent-4;
+        }
+      }
+
+      @include it("xl\:indent-5") {
+        @include custom-expect-(text-indent, 1.25rem, $xl) {
+          @include xl\:indent-5;
+        }
+      }
+
+      @include it("xl\:indent-6") {
+        @include custom-expect-(text-indent, 1.5rem, $xl) {
+          @include xl\:indent-6;
+        }
+      }
+
+      @include it("xl\:indent-7") {
+        @include custom-expect-(text-indent, 1.75rem, $xl) {
+          @include xl\:indent-7;
+        }
+      }
+
+      @include it("xl\:indent-8") {
+        @include custom-expect-(text-indent, 2rem, $xl) {
+          @include xl\:indent-8;
+        }
+      }
+
+      @include it("xl\:indent-9") {
+        @include custom-expect-(text-indent, 2.25rem, $xl) {
+          @include xl\:indent-9;
+        }
+      }
+
+      @include it("xl\:indent-10") {
+        @include custom-expect-(text-indent, 2.5rem, $xl) {
+          @include xl\:indent-10;
+        }
+      }
+
+      @include it("xl\:indent-11") {
+        @include custom-expect-(text-indent, 2.75rem, $xl) {
+          @include xl\:indent-11;
+        }
+      }
+
+      @include it("xl\:indent-12") {
+        @include custom-expect-(text-indent, 3rem, $xl) {
+          @include xl\:indent-12;
+        }
+      }
+
+      @include it("xl\:indent-14") {
+        @include custom-expect-(text-indent, 3.5rem, $xl) {
+          @include xl\:indent-14;
+        }
+      }
+
+      @include it("xl\:indent-16") {
+        @include custom-expect-(text-indent, 4rem, $xl) {
+          @include xl\:indent-16;
+        }
+      }
+
+      @include it("xl\:indent-20") {
+        @include custom-expect-(text-indent, 5rem, $xl) {
+          @include xl\:indent-20;
+        }
+      }
+
+      @include it("xl\:indent-24") {
+        @include custom-expect-(text-indent, 6rem, $xl) {
+          @include xl\:indent-24;
+        }
+      }
+
+      @include it("xl\:indent-28") {
+        @include custom-expect-(text-indent, 7rem, $xl) {
+          @include xl\:indent-28;
+        }
+      }
+
+      @include it("xl\:indent-32") {
+        @include custom-expect-(text-indent, 8rem, $xl) {
+          @include xl\:indent-32;
+        }
+      }
+
+      @include it("xl\:indent-36") {
+        @include custom-expect-(text-indent, 9rem, $xl) {
+          @include xl\:indent-36;
+        }
+      }
+
+      @include it("xl\:indent-40") {
+        @include custom-expect-(text-indent, 10rem, $xl) {
+          @include xl\:indent-40;
+        }
+      }
+
+      @include it("xl\:indent-44") {
+        @include custom-expect-(text-indent, 11rem, $xl) {
+          @include xl\:indent-44;
+        }
+      }
+
+      @include it("xl\:indent-48") {
+        @include custom-expect-(text-indent, 12rem, $xl) {
+          @include xl\:indent-48;
+        }
+      }
+
+      @include it("xl\:indent-52") {
+        @include custom-expect-(text-indent, 13rem, $xl) {
+          @include xl\:indent-52;
+        }
+      }
+
+      @include it("xl\:indent-56") {
+        @include custom-expect-(text-indent, 14rem, $xl) {
+          @include xl\:indent-56;
+        }
+      }
+
+      @include it("xl\:indent-60") {
+        @include custom-expect-(text-indent, 15rem, $xl) {
+          @include xl\:indent-60;
+        }
+      }
+
+      @include it("xl\:indent-64") {
+        @include custom-expect-(text-indent, 16rem, $xl) {
+          @include xl\:indent-64;
+        }
+      }
+
+      @include it("xl\:indent-72") {
+        @include custom-expect-(text-indent, 18rem, $xl) {
+          @include xl\:indent-72;
+        }
+      }
+
+      @include it("xl\:indent-80") {
+        @include custom-expect-(text-indent, 20rem, $xl) {
+          @include xl\:indent-80;
+        }
+      }
+
+      @include it("xl\:indent-96") {
+        @include custom-expect-(text-indent, 24rem, $xl) {
+          @include xl\:indent-96;
+        }
+      }
+
+      @include it("\2xl\:indent-0") {
+        @include custom-expect-(text-indent, 0px, $\2xl) {
+          @include \2xl\:indent-0;
+        }
+      }
+
+      @include it("\2xl\:indent-px") {
+        @include custom-expect-(text-indent, 1px, $\2xl) {
+          @include \2xl\:indent-px;
+        }
+      }
+
+      @include it("\2xl\:indent-0\.5") {
+        @include custom-expect-(text-indent, 0.125rem, $\2xl) {
+          @include \2xl\:indent-0\.5;
+        }
+      }
+
+      @include it("\2xl\:indent-1") {
+        @include custom-expect-(text-indent, 0.25rem, $\2xl) {
+          @include \2xl\:indent-1;
+        }
+      }
+
+      @include it("\2xl\:indent-1\.5") {
+        @include custom-expect-(text-indent, 0.375rem, $\2xl) {
+          @include \2xl\:indent-1\.5;
+        }
+      }
+
+      @include it("\2xl\:indent-2") {
+        @include custom-expect-(text-indent, 0.5rem, $\2xl) {
+          @include \2xl\:indent-2;
+        }
+      }
+
+      @include it("\2xl\:indent-2\.5") {
+        @include custom-expect-(text-indent, 0.625rem, $\2xl) {
+          @include \2xl\:indent-2\.5;
+        }
+      }
+
+      @include it("\2xl\:indent-3") {
+        @include custom-expect-(text-indent, 0.75rem, $\2xl) {
+          @include \2xl\:indent-3;
+        }
+      }
+
+      @include it("\2xl\:indent-3\.5") {
+        @include custom-expect-(text-indent, 0.875rem, $\2xl) {
+          @include \2xl\:indent-3\.5;
+        }
+      }
+
+      @include it("\2xl\:indent-4") {
+        @include custom-expect-(text-indent, 1rem, $\2xl) {
+          @include \2xl\:indent-4;
+        }
+      }
+
+      @include it("\2xl\:indent-5") {
+        @include custom-expect-(text-indent, 1.25rem, $\2xl) {
+          @include \2xl\:indent-5;
+        }
+      }
+
+      @include it("\2xl\:indent-6") {
+        @include custom-expect-(text-indent, 1.5rem, $\2xl) {
+          @include \2xl\:indent-6;
+        }
+      }
+
+      @include it("\2xl\:indent-7") {
+        @include custom-expect-(text-indent, 1.75rem, $\2xl) {
+          @include \2xl\:indent-7;
+        }
+      }
+
+      @include it("\2xl\:indent-8") {
+        @include custom-expect-(text-indent, 2rem, $\2xl) {
+          @include \2xl\:indent-8;
+        }
+      }
+
+      @include it("\2xl\:indent-9") {
+        @include custom-expect-(text-indent, 2.25rem, $\2xl) {
+          @include \2xl\:indent-9;
+        }
+      }
+
+      @include it("\2xl\:indent-10") {
+        @include custom-expect-(text-indent, 2.5rem, $\2xl) {
+          @include \2xl\:indent-10;
+        }
+      }
+
+      @include it("\2xl\:indent-11") {
+        @include custom-expect-(text-indent, 2.75rem, $\2xl) {
+          @include \2xl\:indent-11;
+        }
+      }
+
+      @include it("\2xl\:indent-12") {
+        @include custom-expect-(text-indent, 3rem, $\2xl) {
+          @include \2xl\:indent-12;
+        }
+      }
+
+      @include it("\2xl\:indent-14") {
+        @include custom-expect-(text-indent, 3.5rem, $\2xl) {
+          @include \2xl\:indent-14;
+        }
+      }
+
+      @include it("\2xl\:indent-16") {
+        @include custom-expect-(text-indent, 4rem, $\2xl) {
+          @include \2xl\:indent-16;
+        }
+      }
+
+      @include it("\2xl\:indent-20") {
+        @include custom-expect-(text-indent, 5rem, $\2xl) {
+          @include \2xl\:indent-20;
+        }
+      }
+
+      @include it("\2xl\:indent-24") {
+        @include custom-expect-(text-indent, 6rem, $\2xl) {
+          @include \2xl\:indent-24;
+        }
+      }
+
+      @include it("\2xl\:indent-28") {
+        @include custom-expect-(text-indent, 7rem, $\2xl) {
+          @include \2xl\:indent-28;
+        }
+      }
+
+      @include it("\2xl\:indent-32") {
+        @include custom-expect-(text-indent, 8rem, $\2xl) {
+          @include \2xl\:indent-32;
+        }
+      }
+
+      @include it("\2xl\:indent-36") {
+        @include custom-expect-(text-indent, 9rem, $\2xl) {
+          @include \2xl\:indent-36;
+        }
+      }
+
+      @include it("\2xl\:indent-40") {
+        @include custom-expect-(text-indent, 10rem, $\2xl) {
+          @include \2xl\:indent-40;
+        }
+      }
+
+      @include it("\2xl\:indent-44") {
+        @include custom-expect-(text-indent, 11rem, $\2xl) {
+          @include \2xl\:indent-44;
+        }
+      }
+
+      @include it("\2xl\:indent-48") {
+        @include custom-expect-(text-indent, 12rem, $\2xl) {
+          @include \2xl\:indent-48;
+        }
+      }
+
+      @include it("\2xl\:indent-52") {
+        @include custom-expect-(text-indent, 13rem, $\2xl) {
+          @include \2xl\:indent-52;
+        }
+      }
+
+      @include it("\2xl\:indent-56") {
+        @include custom-expect-(text-indent, 14rem, $\2xl) {
+          @include \2xl\:indent-56;
+        }
+      }
+
+      @include it("\2xl\:indent-60") {
+        @include custom-expect-(text-indent, 15rem, $\2xl) {
+          @include \2xl\:indent-60;
+        }
+      }
+
+      @include it("\2xl\:indent-64") {
+        @include custom-expect-(text-indent, 16rem, $\2xl) {
+          @include \2xl\:indent-64;
+        }
+      }
+
+      @include it("\2xl\:indent-72") {
+        @include custom-expect-(text-indent, 18rem, $\2xl) {
+          @include \2xl\:indent-72;
+        }
+      }
+
+      @include it("\2xl\:indent-80") {
+        @include custom-expect-(text-indent, 20rem, $\2xl) {
+          @include \2xl\:indent-80;
+        }
+      }
+
+      @include it("\2xl\:indent-96") {
+        @include custom-expect-(text-indent, 24rem, $\2xl) {
+          @include \2xl\:indent-96;
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("indent-(50%)") {
+        @include custom-expect-(text-indent, 50%) {
+          @include indent-(50%);
+        }
+      }
+
+      @include it("sm\:indent-(50%)") {
+        @include custom-expect-(text-indent, 50%, $sm) {
+          @include sm\:indent-(50%);
+        }
+      }
+
+      @include it("md\:indent-(50%)") {
+        @include custom-expect-(text-indent, 50%, $md) {
+          @include md\:indent-(50%);
+        }
+      }
+
+      @include it("lg\:indent-(50%)") {
+        @include custom-expect-(text-indent, 50%, $lg) {
+          @include lg\:indent-(50%);
+        }
+      }
+
+      @include it("xl\:indent-(50%)") {
+        @include custom-expect-(text-indent, 50%, $xl) {
+          @include xl\:indent-(50%);
+        }
+      }
+
+      @include it("\2xl\:indent-(50%)") {
+        @include custom-expect-(text-indent, 50%, $\2xl) {
+          @include \2xl\:indent-(50%);
+        }
       }
     }
   }
-
-  @mixin sm\:indent-($v) {
-    @include indent-($v, $sm);
-  }
-
-  @mixin md\:indent-($v) {
-    @include indent-($v, $md);
-  }
-
-  @mixin lg\:indent-($v) {
-    @include indent-($v, $lg);
-  }
-
-  @mixin xl\:indent-($v) {
-    @include indent-($v, $xl);
-  }
-
-  @mixin \2xl\:indent-($v) {
-    @include indent-($v, $\2xl);
-  } // x*/
 }

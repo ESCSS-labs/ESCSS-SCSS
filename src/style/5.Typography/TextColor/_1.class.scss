@@ -5954,15 +5954,13 @@
   }
 
   @mixin __text-($v) {
-    @if meta.type-of($v) ==color {
+    @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
       color: $v;
+    } @else if list.length($v) ==2 {
+      font-size: list.nth($v, 1);
+      line-height: list.nth($v, 2);
     } @else {
-      @if list.length($v) ==2 {
-        font-size: list.nth($v, 1);
-        line-height: list.nth($v, 2);
-      } @else {
-        font-size: $v; // custom
-      }
+      font-size: $v; // custom
     }
   }
 

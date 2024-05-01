@@ -2,74 +2,154 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Font Smoothing */
-@if $Basic {
-  // /*x
-  @mixin antialiased($rwd: null) {
-    @if $rwd==null {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    } @else {
-      @media (min-width: $rwd) {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+@include describe("5.Typography") {
+  @include describe("Font Smoothing") {
+    @include describe("Basic") {
+      @include it("antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          antialiased,
+          null,
+          -moz-osx-font-smoothing,
+          grayscale
+        ) {
+          @include antialiased;
+        }
+      }
+
+      @include it("subpixel-antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          auto,
+          null,
+          -moz-osx-font-smoothing,
+          auto
+        ) {
+          @include subpixel-antialiased;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          antialiased,
+          $sm,
+          -moz-osx-font-smoothing,
+          grayscale
+        ) {
+          @include sm\:antialiased;
+        }
+      }
+
+      @include it("sm\:subpixel-antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          auto,
+          $sm,
+          -moz-osx-font-smoothing,
+          auto
+        ) {
+          @include sm\:subpixel-antialiased;
+        }
+      }
+
+      @include it("md\:antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          antialiased,
+          $md,
+          -moz-osx-font-smoothing,
+          grayscale
+        ) {
+          @include md\:antialiased;
+        }
+      }
+
+      @include it("md\:subpixel-antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          auto,
+          $md,
+          -moz-osx-font-smoothing,
+          auto
+        ) {
+          @include md\:subpixel-antialiased;
+        }
+      }
+
+      @include it("lg\:antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          antialiased,
+          $lg,
+          -moz-osx-font-smoothing,
+          grayscale
+        ) {
+          @include lg\:antialiased;
+        }
+      }
+
+      @include it("lg\:subpixel-antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          auto,
+          $lg,
+          -moz-osx-font-smoothing,
+          auto
+        ) {
+          @include lg\:subpixel-antialiased;
+        }
+      }
+
+      @include it("xl\:antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          antialiased,
+          $xl,
+          -moz-osx-font-smoothing,
+          grayscale
+        ) {
+          @include xl\:antialiased;
+        }
+      }
+
+      @include it("xl\:subpixel-antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          auto,
+          $xl,
+          -moz-osx-font-smoothing,
+          auto
+        ) {
+          @include xl\:subpixel-antialiased;
+        }
+      }
+
+      @include it("\2xl\:antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          antialiased,
+          $\2xl,
+          -moz-osx-font-smoothing,
+          grayscale
+        ) {
+          @include \2xl\:antialiased;
+        }
+      }
+
+      @include it("\2xl\:subpixel-antialiased") {
+        @include custom-expect-(
+          -webkit-font-smoothing,
+          auto,
+          $\2xl,
+          -moz-osx-font-smoothing,
+          auto
+        ) {
+          @include \2xl\:subpixel-antialiased;
+        }
       }
     }
   }
-
-  @mixin subpixel-antialiased($rwd: null) {
-    @if $rwd==null {
-      -webkit-font-smoothing: auto;
-      -moz-osx-font-smoothing: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        -webkit-font-smoothing: auto;
-        -moz-osx-font-smoothing: auto;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:antialiased {
-    @include antialiased($sm);
-  }
-
-  @mixin sm\:subpixel-antialiased {
-    @include subpixel-antialiased($sm);
-  }
-
-  @mixin md\:antialiased {
-    @include antialiased($md);
-  }
-
-  @mixin md\:subpixel-antialiased {
-    @include subpixel-antialiased($md);
-  }
-
-  @mixin lg\:antialiased {
-    @include antialiased($lg);
-  }
-
-  @mixin lg\:subpixel-antialiased {
-    @include subpixel-antialiased($lg);
-  }
-
-  @mixin xl\:antialiased {
-    @include antialiased($xl);
-  }
-
-  @mixin xl\:subpixel-antialiased {
-    @include subpixel-antialiased($xl);
-  }
-
-  @mixin \2xl\:antialiased {
-    @include antialiased($\2xl);
-  }
-
-  @mixin \2xl\:subpixel-antialiased {
-    @include subpixel-antialiased($\2xl);
-  }
-  // x*/
 }

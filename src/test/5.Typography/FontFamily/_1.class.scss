@@ -2,283 +2,327 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Font Family */
-@if $Basic {
-  // /*x
-  @mixin font-sans {
-    @include font-(
-      (
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        "Noto Color Emoji"
-      )
-    );
-  }
-
-  @mixin font-serif {
-    @include font-(
-      (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif)
-    );
-  }
-
-  @mixin font-mono {
-    @include font-(
-      (
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        "Liberation Mono",
-        "Courier New",
-        monospace
-      )
-    );
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:font-sans {
-      @include font-(
-        (
-          ui-sans-serif,
-          system-ui,
-          sans-serif,
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji"
-        ),
-        $sm
-      );
-    }
-
-    @mixin sm\:font-serif {
-      @include font-(
-        (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
-        $sm
-      );
-    }
-
-    @mixin sm\:font-mono {
-      @include font-(
-        (
-          ui-monospace,
-          SFMono-Regular,
-          Menlo,
-          Monaco,
-          Consolas,
-          "Liberation Mono",
-          "Courier New",
-          monospace
-        ),
-        $sm
-      );
-    }
-
-    @mixin md\:font-sans {
-      @include font-(
-        (
-          ui-sans-serif,
-          system-ui,
-          sans-serif,
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji"
-        ),
-        $md
-      );
-    }
-
-    @mixin md\:font-serif {
-      @include font-(
-        (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
-        $md
-      );
-    }
-
-    @mixin md\:font-mono {
-      @include font-(
-        (
-          ui-monospace,
-          SFMono-Regular,
-          Menlo,
-          Monaco,
-          Consolas,
-          "Liberation Mono",
-          "Courier New",
-          monospace
-        ),
-        $md
-      );
-    }
-
-    @mixin lg\:font-sans {
-      @include font-(
-        (
-          ui-sans-serif,
-          system-ui,
-          sans-serif,
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji"
-        ),
-        $lg
-      );
-    }
-
-    @mixin lg\:font-serif {
-      @include font-(
-        (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
-        $lg
-      );
-    }
-
-    @mixin lg\:font-mono {
-      @include font-(
-        (
-          ui-monospace,
-          SFMono-Regular,
-          Menlo,
-          Monaco,
-          Consolas,
-          "Liberation Mono",
-          "Courier New",
-          monospace
-        ),
-        $lg
-      );
-    }
-
-    @mixin xl\:font-sans {
-      @include font-(
-        (
-          ui-sans-serif,
-          system-ui,
-          sans-serif,
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji"
-        ),
-        $xl
-      );
-    }
-
-    @mixin xl\:font-serif {
-      @include font-(
-        (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
-        $xl
-      );
-    }
-
-    @mixin xl\:font-mono {
-      @include font-(
-        (
-          ui-monospace,
-          SFMono-Regular,
-          Menlo,
-          Monaco,
-          Consolas,
-          "Liberation Mono",
-          "Courier New",
-          monospace
-        ),
-        $xl
-      );
-    }
-
-    @mixin \2xl\:font-sans {
-      @include font-(
-        (
-          ui-sans-serif,
-          system-ui,
-          sans-serif,
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji"
-        ),
-        $\2xl
-      );
-    }
-
-    @mixin \2xl\:font-serif {
-      @include font-(
-        (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
-        $\2xl
-      );
-    }
-
-    @mixin \2xl\:font-mono {
-      @include font-(
-        (
-          ui-monospace,
-          SFMono-Regular,
-          Menlo,
-          Monaco,
-          Consolas,
-          "Liberation Mono",
-          "Courier New",
-          monospace
-        ),
-        $\2xl
-      );
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin font-($v, $rwd: null) {
-    @if $rwd==null {
-      @if meta.type-of($v) ==string {
-        font-family: $v;
-      } @else {
-        font-weight: $v;
+@include describe("5.Typography") {
+  @include describe("Font Family") {
+    @include describe("Basic") {
+      @include it("font-sans") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-sans-serif,
+            system-ui,
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji"
+          )
+        ) {
+          @include font-sans;
+        }
       }
-    } @else {
-      @media (min-width: $rwd) {
-        @if meta.type-of($v) ==string {
-          font-family: $v;
-        } @else {
-          font-weight: $v;
+
+      @include it("font-serif") {
+        @include custom-expect-(
+          font-family,
+          (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif)
+        ) {
+          @include font-serif;
+        }
+      }
+
+      @include it("font-mono") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-monospace,
+            SFMono-Regular,
+            Menlo,
+            Monaco,
+            Consolas,
+            "Liberation Mono",
+            "Courier New",
+            monospace
+          )
+        ) {
+          @include font-mono;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:font-sans") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-sans-serif,
+            system-ui,
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji"
+          ),
+          $sm
+        ) {
+          @include sm\:font-sans;
+        }
+      }
+
+      @include it("sm\:font-serif") {
+        @include custom-expect-(
+          font-family,
+          (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
+          $sm
+        ) {
+          @include sm\:font-serif;
+        }
+      }
+
+      @include it("sm\:font-mono") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-monospace,
+            SFMono-Regular,
+            Menlo,
+            Monaco,
+            Consolas,
+            "Liberation Mono",
+            "Courier New",
+            monospace
+          ),
+          $sm
+        ) {
+          @include sm\:font-mono;
+        }
+      }
+
+      @include it("md\:font-sans") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-sans-serif,
+            system-ui,
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji"
+          ),
+          $md
+        ) {
+          @include md\:font-sans;
+        }
+      }
+
+      @include it("md\:font-serif") {
+        @include custom-expect-(
+          font-family,
+          (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
+          $md
+        ) {
+          @include md\:font-serif;
+        }
+      }
+
+      @include it("md\:font-mono") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-monospace,
+            SFMono-Regular,
+            Menlo,
+            Monaco,
+            Consolas,
+            "Liberation Mono",
+            "Courier New",
+            monospace
+          ),
+          $md
+        ) {
+          @include md\:font-mono;
+        }
+      }
+
+      @include it("lg\:font-sans") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-sans-serif,
+            system-ui,
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji"
+          ),
+          $lg
+        ) {
+          @include lg\:font-sans;
+        }
+      }
+
+      @include it("lg\:font-serif") {
+        @include custom-expect-(
+          font-family,
+          (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
+          $lg
+        ) {
+          @include lg\:font-serif;
+        }
+      }
+
+      @include it("lg\:font-mono") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-monospace,
+            SFMono-Regular,
+            Menlo,
+            Monaco,
+            Consolas,
+            "Liberation Mono",
+            "Courier New",
+            monospace
+          ),
+          $lg
+        ) {
+          @include lg\:font-mono;
+        }
+      }
+
+      @include it("xl\:font-sans") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-sans-serif,
+            system-ui,
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji"
+          ),
+          $xl
+        ) {
+          @include xl\:font-sans;
+        }
+      }
+
+      @include it("xl\:font-serif") {
+        @include custom-expect-(
+          font-family,
+          (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
+          $xl
+        ) {
+          @include xl\:font-serif;
+        }
+      }
+
+      @include it("xl\:font-mono") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-monospace,
+            SFMono-Regular,
+            Menlo,
+            Monaco,
+            Consolas,
+            "Liberation Mono",
+            "Courier New",
+            monospace
+          ),
+          $xl
+        ) {
+          @include xl\:font-mono;
+        }
+      }
+
+      @include it("\2xl\:font-sans") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-sans-serif,
+            system-ui,
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji"
+          ),
+          $\2xl
+        ) {
+          @include \2xl\:font-sans;
+        }
+      }
+
+      @include it("\2xl\:font-serif") {
+        @include custom-expect-(
+          font-family,
+          (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
+          $\2xl
+        ) {
+          @include \2xl\:font-serif;
+        }
+      }
+
+      @include it("\2xl\:font-mono") {
+        @include custom-expect-(
+          font-family,
+          (
+            ui-monospace,
+            SFMono-Regular,
+            Menlo,
+            Monaco,
+            Consolas,
+            "Liberation Mono",
+            "Courier New",
+            monospace
+          ),
+          $\2xl
+        ) {
+          @include \2xl\:font-mono;
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("font-('Open Sans')") {
+        @include custom-expect-(font-family, "Open Sans") {
+          @include font-("Open Sans");
+        }
+      }
+
+      @include it("sm\:font-('Open Sans')") {
+        @include custom-expect-(font-family, "Open Sans", $sm) {
+          @include sm\:font-("Open Sans");
+        }
+      }
+
+      @include it("md\:font-('Open Sans')") {
+        @include custom-expect-(font-family, "Open Sans", $md) {
+          @include md\:font-("Open Sans");
+        }
+      }
+
+      @include it("lg\:font-('Open Sans')") {
+        @include custom-expect-(font-family, "Open Sans", $lg) {
+          @include lg\:font-("Open Sans");
+        }
+      }
+
+      @include it("xl\:font-('Open Sans')") {
+        @include custom-expect-(font-family, "Open Sans", $xl) {
+          @include xl\:font-("Open Sans");
+        }
+      }
+
+      @include it("\2xl\:font-('Open Sans')") {
+        @include custom-expect-(font-family, "Open Sans", $\2xl) {
+          @include \2xl\:font-("Open Sans");
         }
       }
     }
   }
-
-  @mixin sm\:font-($v) {
-    @include font-($v, $sm);
-  }
-
-  @mixin md\:font-($v) {
-    @include font-($v, $md);
-  }
-
-  @mixin lg\:font-($v) {
-    @include font-($v, $lg);
-  }
-
-  @mixin xl\:font-($v) {
-    @include font-($v, $xl);
-  }
-
-  @mixin \2xl\:font-($v) {
-    @include font-($v, $\2xl);
-  }
-
-  // x*/
 }

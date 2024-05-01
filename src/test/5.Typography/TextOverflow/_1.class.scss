@@ -2,107 +2,166 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Text Overflow */
-@if $Basic {
-  // /*x
-  @mixin truncate($rwd: null) {
-    @if $rwd==null {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+@include describe("5.Typography") {
+  @include describe("Text Overflow") {
+    @include describe("Basic") {
+      @include it("truncate") {
+        @include custom-expect-(
+          overflow,
+          hidden,
+          null,
+          text-overflow,
+          ellipsis,
+          white-space,
+          nowrap
+        ) {
+          @include truncate;
+        }
+      }
+
+      @include it("text-ellipsis") {
+        @include custom-expect-(text-overflow, ellipsis) {
+          @include text-ellipsis;
+        }
+      }
+
+      @include it("text-clip") {
+        @include custom-expect-(text-overflow, clip) {
+          @include text-clip;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:truncate") {
+        @include custom-expect-(
+          overflow,
+          hidden,
+          $sm,
+          text-overflow,
+          ellipsis,
+          white-space,
+          nowrap
+        ) {
+          @include sm\:truncate;
+        }
+      }
+
+      @include it("sm\:text-ellipsis") {
+        @include custom-expect-(text-overflow, ellipsis, $sm) {
+          @include sm\:text-ellipsis;
+        }
+      }
+
+      @include it("sm\:text-clip") {
+        @include custom-expect-(text-overflow, clip, $sm) {
+          @include sm\:text-clip;
+        }
+      }
+
+      @include it("md\:truncate") {
+        @include custom-expect-(
+          overflow,
+          hidden,
+          $md,
+          text-overflow,
+          ellipsis,
+          white-space,
+          nowrap
+        ) {
+          @include md\:truncate;
+        }
+      }
+
+      @include it("md\:text-ellipsis") {
+        @include custom-expect-(text-overflow, ellipsis, $md) {
+          @include md\:text-ellipsis;
+        }
+      }
+
+      @include it("md\:text-clip") {
+        @include custom-expect-(text-overflow, clip, $md) {
+          @include md\:text-clip;
+        }
+      }
+
+      @include it("lg\:truncate") {
+        @include custom-expect-(
+          overflow,
+          hidden,
+          $lg,
+          text-overflow,
+          ellipsis,
+          white-space,
+          nowrap
+        ) {
+          @include lg\:truncate;
+        }
+      }
+
+      @include it("lg\:text-ellipsis") {
+        @include custom-expect-(text-overflow, ellipsis, $lg) {
+          @include lg\:text-ellipsis;
+        }
+      }
+
+      @include it("lg\:text-clip") {
+        @include custom-expect-(text-overflow, clip, $lg) {
+          @include lg\:text-clip;
+        }
+      }
+
+      @include it("xl\:truncate") {
+        @include custom-expect-(
+          overflow,
+          hidden,
+          $xl,
+          text-overflow,
+          ellipsis,
+          white-space,
+          nowrap
+        ) {
+          @include xl\:truncate;
+        }
+      }
+
+      @include it("xl\:text-ellipsis") {
+        @include custom-expect-(text-overflow, ellipsis, $xl) {
+          @include xl\:text-ellipsis;
+        }
+      }
+
+      @include it("xl\:text-clip") {
+        @include custom-expect-(text-overflow, clip, $xl) {
+          @include xl\:text-clip;
+        }
+      }
+
+      @include it("\2xl\:truncate") {
+        @include custom-expect-(
+          overflow,
+          hidden,
+          $\2xl,
+          text-overflow,
+          ellipsis,
+          white-space,
+          nowrap
+        ) {
+          @include \2xl\:truncate;
+        }
+      }
+
+      @include it("\2xl\:text-ellipsis") {
+        @include custom-expect-(text-overflow, ellipsis, $\2xl) {
+          @include \2xl\:text-ellipsis;
+        }
+      }
+
+      @include it("\2xl\:text-clip") {
+        @include custom-expect-(text-overflow, clip, $\2xl) {
+          @include \2xl\:text-clip;
+        }
       }
     }
   }
-
-  @mixin text-ellipsis($rwd: null) {
-    @if $rwd==null {
-      text-overflow: ellipsis;
-    } @else {
-      @media (min-width: $rwd) {
-        text-overflow: ellipsis;
-      }
-    }
-  }
-
-  @mixin text-clip($rwd: null) {
-    @if $rwd==null {
-      text-overflow: clip;
-    } @else {
-      @media (min-width: $rwd) {
-        text-overflow: clip;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:truncate {
-    @include truncate($sm);
-  }
-
-  @mixin sm\:text-ellipsis {
-    @include text-ellipsis($sm);
-  }
-
-  @mixin sm\:text-clip {
-    @include text-clip($sm);
-  }
-
-  @mixin md\:truncate {
-    @include truncate($md);
-  }
-
-  @mixin md\:text-ellipsis {
-    @include text-ellipsis($md);
-  }
-
-  @mixin md\:text-clip {
-    @include text-clip($md);
-  }
-
-  @mixin lg\:truncate {
-    @include truncate($lg);
-  }
-
-  @mixin lg\:text-ellipsis {
-    @include text-ellipsis($lg);
-  }
-
-  @mixin lg\:text-clip {
-    @include text-clip($lg);
-  }
-
-  @mixin xl\:truncate {
-    @include truncate($xl);
-  }
-
-  @mixin xl\:text-ellipsis {
-    @include text-ellipsis($xl);
-  }
-
-  @mixin xl\:text-clip {
-    @include text-clip($xl);
-  }
-
-  @mixin \2xl\:truncate {
-    @include truncate($\2xl);
-  }
-
-  @mixin \2xl\:text-ellipsis {
-    @include text-ellipsis($\2xl);
-  }
-
-  @mixin \2xl\:text-clip {
-    @include text-clip($\2xl);
-  }
-
-  // x*/
 }

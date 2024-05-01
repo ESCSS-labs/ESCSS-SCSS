@@ -2,161 +2,190 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Text Decoration Style */
-@if $Basic {
-  // /*x
-  @mixin decoration-solid($rwd: null) {
-    @if $rwd==null {
-      text-decoration-style: solid;
-    } @else {
-      @media (min-width: $rwd) {
-        text-decoration-style: solid;
+@include describe("5.Typography") {
+  @include describe("Text Decoration Style") {
+    @include describe("Basic") {
+      @include it("decoration-solid") {
+        @include custom-expect-(text-decoration-style, solid) {
+          @include decoration-solid;
+        }
+      }
+
+      @include it("decoration-double") {
+        @include custom-expect-(text-decoration-style, double) {
+          @include decoration-double;
+        }
+      }
+
+      @include it("decoration-dotted") {
+        @include custom-expect-(text-decoration-style, dotted) {
+          @include decoration-dotted;
+        }
+      }
+
+      @include it("decoration-dashed") {
+        @include custom-expect-(text-decoration-style, dashed) {
+          @include decoration-dashed;
+        }
+      }
+
+      @include it("decoration-wavy") {
+        @include custom-expect-(text-decoration-style, wavy) {
+          @include decoration-wavy;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:decoration-solid") {
+        @include custom-expect-(text-decoration-style, solid, $sm) {
+          @include sm\:decoration-solid;
+        }
+      }
+
+      @include it("sm\:decoration-double") {
+        @include custom-expect-(text-decoration-style, double, $sm) {
+          @include sm\:decoration-double;
+        }
+      }
+
+      @include it("sm\:decoration-dotted") {
+        @include custom-expect-(text-decoration-style, dotted, $sm) {
+          @include sm\:decoration-dotted;
+        }
+      }
+
+      @include it("sm\:decoration-dashed") {
+        @include custom-expect-(text-decoration-style, dashed, $sm) {
+          @include sm\:decoration-dashed;
+        }
+      }
+
+      @include it("sm\:decoration-wavy") {
+        @include custom-expect-(text-decoration-style, wavy, $sm) {
+          @include sm\:decoration-wavy;
+        }
+      }
+
+      @include it("md\:decoration-solid") {
+        @include custom-expect-(text-decoration-style, solid, $md) {
+          @include md\:decoration-solid;
+        }
+      }
+
+      @include it("md\:decoration-double") {
+        @include custom-expect-(text-decoration-style, double, $md) {
+          @include md\:decoration-double;
+        }
+      }
+
+      @include it("md\:decoration-dotted") {
+        @include custom-expect-(text-decoration-style, dotted, $md) {
+          @include md\:decoration-dotted;
+        }
+      }
+
+      @include it("md\:decoration-dashed") {
+        @include custom-expect-(text-decoration-style, dashed, $md) {
+          @include md\:decoration-dashed;
+        }
+      }
+
+      @include it("md\:decoration-wavy") {
+        @include custom-expect-(text-decoration-style, wavy, $md) {
+          @include md\:decoration-wavy;
+        }
+      }
+
+      @include it("lg\:decoration-solid") {
+        @include custom-expect-(text-decoration-style, solid, $lg) {
+          @include lg\:decoration-solid;
+        }
+      }
+
+      @include it("lg\:decoration-double") {
+        @include custom-expect-(text-decoration-style, double, $lg) {
+          @include lg\:decoration-double;
+        }
+      }
+
+      @include it("lg\:decoration-dotted") {
+        @include custom-expect-(text-decoration-style, dotted, $lg) {
+          @include lg\:decoration-dotted;
+        }
+      }
+
+      @include it("lg\:decoration-dashed") {
+        @include custom-expect-(text-decoration-style, dashed, $lg) {
+          @include lg\:decoration-dashed;
+        }
+      }
+
+      @include it("lg\:decoration-wavy") {
+        @include custom-expect-(text-decoration-style, wavy, $lg) {
+          @include lg\:decoration-wavy;
+        }
+      }
+
+      @include it("xl\:decoration-solid") {
+        @include custom-expect-(text-decoration-style, solid, $xl) {
+          @include xl\:decoration-solid;
+        }
+      }
+
+      @include it("xl\:decoration-double") {
+        @include custom-expect-(text-decoration-style, double, $xl) {
+          @include xl\:decoration-double;
+        }
+      }
+
+      @include it("xl\:decoration-dotted") {
+        @include custom-expect-(text-decoration-style, dotted, $xl) {
+          @include xl\:decoration-dotted;
+        }
+      }
+
+      @include it("xl\:decoration-dashed") {
+        @include custom-expect-(text-decoration-style, dashed, $xl) {
+          @include xl\:decoration-dashed;
+        }
+      }
+
+      @include it("xl\:decoration-wavy") {
+        @include custom-expect-(text-decoration-style, wavy, $xl) {
+          @include xl\:decoration-wavy;
+        }
+      }
+
+      @include it("\2xl\:decoration-solid") {
+        @include custom-expect-(text-decoration-style, solid, $\2xl) {
+          @include \2xl\:decoration-solid;
+        }
+      }
+
+      @include it("\2xl\:decoration-double") {
+        @include custom-expect-(text-decoration-style, double, $\2xl) {
+          @include \2xl\:decoration-double;
+        }
+      }
+
+      @include it("\2xl\:decoration-dotted") {
+        @include custom-expect-(text-decoration-style, dotted, $\2xl) {
+          @include \2xl\:decoration-dotted;
+        }
+      }
+
+      @include it("\2xl\:decoration-dashed") {
+        @include custom-expect-(text-decoration-style, dashed, $\2xl) {
+          @include \2xl\:decoration-dashed;
+        }
+      }
+
+      @include it("\2xl\:decoration-wavy") {
+        @include custom-expect-(text-decoration-style, wavy, $\2xl) {
+          @include \2xl\:decoration-wavy;
+        }
       }
     }
   }
-
-  @mixin decoration-double($rwd: null) {
-    @if $rwd==null {
-      text-decoration-style: double;
-    } @else {
-      @media (min-width: $rwd) {
-        text-decoration-style: double;
-      }
-    }
-  }
-
-  @mixin decoration-dotted($rwd: null) {
-    @if $rwd==null {
-      text-decoration-style: dotted;
-    } @else {
-      @media (min-width: $rwd) {
-        text-decoration-style: dotted;
-      }
-    }
-  }
-
-  @mixin decoration-dashed($rwd: null) {
-    @if $rwd==null {
-      text-decoration-style: dashed;
-    } @else {
-      @media (min-width: $rwd) {
-        text-decoration-style: dashed;
-      }
-    }
-  }
-
-  @mixin decoration-wavy($rwd: null) {
-    @if $rwd==null {
-      text-decoration-style: wavy;
-    } @else {
-      @media (min-width: $rwd) {
-        text-decoration-style: wavy;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:decoration-solid {
-    @include decoration-solid($sm);
-  }
-
-  @mixin sm\:decoration-double {
-    @include decoration-double($sm);
-  }
-
-  @mixin sm\:decoration-dotted {
-    @include decoration-dotted($sm);
-  }
-
-  @mixin sm\:decoration-dashed {
-    @include decoration-dashed($sm);
-  }
-
-  @mixin sm\:decoration-wavy {
-    @include decoration-wavy($sm);
-  }
-
-  @mixin md\:decoration-solid {
-    @include decoration-solid($md);
-  }
-
-  @mixin md\:decoration-double {
-    @include decoration-double($md);
-  }
-
-  @mixin md\:decoration-dotted {
-    @include decoration-dotted($md);
-  }
-
-  @mixin md\:decoration-dashed {
-    @include decoration-dashed($md);
-  }
-
-  @mixin md\:decoration-wavy {
-    @include decoration-wavy($md);
-  }
-
-  @mixin lg\:decoration-solid {
-    @include decoration-solid($lg);
-  }
-
-  @mixin lg\:decoration-double {
-    @include decoration-double($lg);
-  }
-
-  @mixin lg\:decoration-dotted {
-    @include decoration-dotted($lg);
-  }
-
-  @mixin lg\:decoration-dashed {
-    @include decoration-dashed($lg);
-  }
-
-  @mixin lg\:decoration-wavy {
-    @include decoration-wavy($lg);
-  }
-
-  @mixin xl\:decoration-solid {
-    @include decoration-solid($xl);
-  }
-
-  @mixin xl\:decoration-double {
-    @include decoration-double($xl);
-  }
-
-  @mixin xl\:decoration-dotted {
-    @include decoration-dotted($xl);
-  }
-
-  @mixin xl\:decoration-dashed {
-    @include decoration-dashed($xl);
-  }
-
-  @mixin xl\:decoration-wavy {
-    @include decoration-wavy($xl);
-  }
-
-  @mixin \2xl\:decoration-solid {
-    @include decoration-solid($\2xl);
-  }
-
-  @mixin \2xl\:decoration-double {
-    @include decoration-double($\2xl);
-  }
-
-  @mixin \2xl\:decoration-dotted {
-    @include decoration-dotted($\2xl);
-  }
-
-  @mixin \2xl\:decoration-dashed {
-    @include decoration-dashed($\2xl);
-  }
-
-  @mixin \2xl\:decoration-wavy {
-    @include decoration-wavy($\2xl);
-  }
-
-  // x*/
 }

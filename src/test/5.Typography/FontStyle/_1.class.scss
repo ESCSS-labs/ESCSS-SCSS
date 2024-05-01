@@ -2,73 +2,78 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Font Style */
-@if $Basic {
-  // /*x
-  @mixin italic($rwd: null) {
-    @if $rwd==null {
-      font-style: italic;
-    } @else {
-      @media (min-width: $rwd) {
-        font-style: italic;
+@include describe("5.Typography") {
+  @include describe("Font Style") {
+    @include describe("Basic") {
+      @include it("italic") {
+        @include custom-expect-(font-style, italic) {
+          @include italic;
+        }
+      }
+
+      @include it("not-italic") {
+        @include custom-expect-(font-style, normal) {
+          @include not-italic;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:italic") {
+        @include custom-expect-(font-style, italic, $sm) {
+          @include sm\:italic;
+        }
+      }
+
+      @include it("sm\:not-italic") {
+        @include custom-expect-(font-style, normal, $sm) {
+          @include sm\:not-italic;
+        }
+      }
+      @include it("md\:italic") {
+        @include custom-expect-(font-style, italic, $md) {
+          @include md\:italic;
+        }
+      }
+
+      @include it("md\:not-italic") {
+        @include custom-expect-(font-style, normal, $md) {
+          @include md\:not-italic;
+        }
+      }
+      @include it("lg\:italic") {
+        @include custom-expect-(font-style, italic, $lg) {
+          @include lg\:italic;
+        }
+      }
+
+      @include it("lg\:not-italic") {
+        @include custom-expect-(font-style, normal, $lg) {
+          @include lg\:not-italic;
+        }
+      }
+      @include it("xl\:italic") {
+        @include custom-expect-(font-style, italic, $xl) {
+          @include xl\:italic;
+        }
+      }
+
+      @include it("xl\:not-italic") {
+        @include custom-expect-(font-style, normal, $xl) {
+          @include xl\:not-italic;
+        }
+      }
+      @include it("\2xl\:italic") {
+        @include custom-expect-(font-style, italic, $\2xl) {
+          @include \2xl\:italic;
+        }
+      }
+
+      @include it("\2xl\:not-italic") {
+        @include custom-expect-(font-style, normal, $\2xl) {
+          @include \2xl\:not-italic;
+        }
       }
     }
   }
-
-  @mixin not-italic($rwd: null) {
-    @if $rwd==null {
-      font-style: normal;
-    } @else {
-      @media (min-width: $rwd) {
-        font-style: normal;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:italic {
-    @include italic($sm);
-  }
-
-  @mixin sm\:not-italic {
-    @include not-italic($sm);
-  }
-
-  @mixin md\:italic {
-    @include italic($md);
-  }
-
-  @mixin md\:not-italic {
-    @include not-italic($md);
-  }
-
-  @mixin lg\:italic {
-    @include italic($lg);
-  }
-
-  @mixin lg\:not-italic {
-    @include not-italic($lg);
-  }
-
-  @mixin xl\:italic {
-    @include italic($xl);
-  }
-
-  @mixin xl\:not-italic {
-    @include not-italic($xl);
-  }
-
-  @mixin \2xl\:italic {
-    @include italic($\2xl);
-  }
-
-  @mixin \2xl\:not-italic {
-    @include not-italic($\2xl);
-  }
-
-  // x*/
 }

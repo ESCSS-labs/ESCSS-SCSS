@@ -5945,19 +5945,19 @@
   // /*x
   @mixin decoration-($v, $rwd: null) {
     @if $rwd==null {
-      @if meta.type-of($v) ==color {
-        text-decoration-color: $v;
-      } @else {
-        text-decoration-thickness: $v;
-      }
+      @include __decoration-($v);
     } @else {
       @media (min-width: $rwd) {
-        @if meta.type-of($v) ==color {
-          text-decoration-color: $v;
-        } @else {
-          text-decoration-thickness: $v;
-        }
+        @include __decoration-($v);
       }
+    }
+  }
+
+  @mixin __decoration-($v) {
+    @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
+      text-decoration-color: $v;
+    } @else {
+      text-decoration-thickness: $v;
     }
   }
 

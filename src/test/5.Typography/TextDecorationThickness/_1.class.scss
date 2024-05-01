@@ -2,187 +2,258 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Text Decoration Thickness */
-@if $Basic {
-  // /*x
-  @mixin decoration-auto {
-    @include decoration-(auto);
+@include describe("5.Typography") {
+  @include describe("Text Decoration Thickness") {
+    @include describe("Basic") {
+      @include it("decoration-auto") {
+        @include custom-expect-(text-decoration-thickness, auto) {
+          @include decoration-auto;
+        }
+      }
+
+      @include it("decoration-from-font") {
+        @include custom-expect-(text-decoration-thickness, from-font) {
+          @include decoration-from-font;
+        }
+      }
+
+      @include it("decoration-0") {
+        @include custom-expect-(text-decoration-thickness, 0px) {
+          @include decoration-0;
+        }
+      }
+
+      @include it("decoration-1") {
+        @include custom-expect-(text-decoration-thickness, 1px) {
+          @include decoration-1;
+        }
+      }
+
+      @include it("decoration-2") {
+        @include custom-expect-(text-decoration-thickness, 2px) {
+          @include decoration-2;
+        }
+      }
+
+      @include it("decoration-4") {
+        @include custom-expect-(text-decoration-thickness, 4px) {
+          @include decoration-4;
+        }
+      }
+
+      @include it("decoration-8") {
+        @include custom-expect-(text-decoration-thickness, 8px) {
+          @include decoration-8;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:decoration-auto") {
+        @include custom-expect-(text-decoration-thickness, auto, $sm) {
+          @include sm\:decoration-auto;
+        }
+      }
+
+      @include it("sm\:decoration-from-font") {
+        @include custom-expect-(text-decoration-thickness, from-font, $sm) {
+          @include sm\:decoration-from-font;
+        }
+      }
+
+      @include it("sm\:decoration-0") {
+        @include custom-expect-(text-decoration-thickness, 0px, $sm) {
+          @include sm\:decoration-0;
+        }
+      }
+
+      @include it("sm\:decoration-1") {
+        @include custom-expect-(text-decoration-thickness, 1px, $sm) {
+          @include sm\:decoration-1;
+        }
+      }
+
+      @include it("sm\:decoration-2") {
+        @include custom-expect-(text-decoration-thickness, 2px, $sm) {
+          @include sm\:decoration-2;
+        }
+      }
+
+      @include it("sm\:decoration-4") {
+        @include custom-expect-(text-decoration-thickness, 4px, $sm) {
+          @include sm\:decoration-4;
+        }
+      }
+
+      @include it("sm\:decoration-8") {
+        @include custom-expect-(text-decoration-thickness, 8px, $sm) {
+          @include sm\:decoration-8;
+        }
+      }
+
+      @include it("md\:decoration-auto") {
+        @include custom-expect-(text-decoration-thickness, auto, $md) {
+          @include md\:decoration-auto;
+        }
+      }
+
+      @include it("md\:decoration-from-font") {
+        @include custom-expect-(text-decoration-thickness, from-font, $md) {
+          @include md\:decoration-from-font;
+        }
+      }
+
+      @include it("md\:decoration-0") {
+        @include custom-expect-(text-decoration-thickness, 0px, $md) {
+          @include md\:decoration-0;
+        }
+      }
+
+      @include it("md\:decoration-1") {
+        @include custom-expect-(text-decoration-thickness, 1px, $md) {
+          @include md\:decoration-1;
+        }
+      }
+
+      @include it("md\:decoration-2") {
+        @include custom-expect-(text-decoration-thickness, 2px, $md) {
+          @include md\:decoration-2;
+        }
+      }
+
+      @include it("md\:decoration-4") {
+        @include custom-expect-(text-decoration-thickness, 4px, $md) {
+          @include md\:decoration-4;
+        }
+      }
+
+      @include it("md\:decoration-8") {
+        @include custom-expect-(text-decoration-thickness, 8px, $md) {
+          @include md\:decoration-8;
+        }
+      }
+
+      @include it("lg\:decoration-auto") {
+        @include custom-expect-(text-decoration-thickness, auto, $lg) {
+          @include lg\:decoration-auto;
+        }
+      }
+
+      @include it("lg\:decoration-from-font") {
+        @include custom-expect-(text-decoration-thickness, from-font, $lg) {
+          @include lg\:decoration-from-font;
+        }
+      }
+
+      @include it("lg\:decoration-0") {
+        @include custom-expect-(text-decoration-thickness, 0px, $lg) {
+          @include lg\:decoration-0;
+        }
+      }
+
+      @include it("lg\:decoration-1") {
+        @include custom-expect-(text-decoration-thickness, 1px, $lg) {
+          @include lg\:decoration-1;
+        }
+      }
+
+      @include it("lg\:decoration-2") {
+        @include custom-expect-(text-decoration-thickness, 2px, $lg) {
+          @include lg\:decoration-2;
+        }
+      }
+
+      @include it("lg\:decoration-4") {
+        @include custom-expect-(text-decoration-thickness, 4px, $lg) {
+          @include lg\:decoration-4;
+        }
+      }
+
+      @include it("lg\:decoration-8") {
+        @include custom-expect-(text-decoration-thickness, 8px, $lg) {
+          @include lg\:decoration-8;
+        }
+      }
+
+      @include it("\2xl\:decoration-auto") {
+        @include custom-expect-(text-decoration-thickness, auto, $\2xl) {
+          @include \2xl\:decoration-auto;
+        }
+      }
+
+      @include it("\2xl\:decoration-from-font") {
+        @include custom-expect-(text-decoration-thickness, from-font, $\2xl) {
+          @include \2xl\:decoration-from-font;
+        }
+      }
+
+      @include it("\2xl\:decoration-0") {
+        @include custom-expect-(text-decoration-thickness, 0px, $\2xl) {
+          @include \2xl\:decoration-0;
+        }
+      }
+
+      @include it("\2xl\:decoration-1") {
+        @include custom-expect-(text-decoration-thickness, 1px, $\2xl) {
+          @include \2xl\:decoration-1;
+        }
+      }
+
+      @include it("\2xl\:decoration-2") {
+        @include custom-expect-(text-decoration-thickness, 2px, $\2xl) {
+          @include \2xl\:decoration-2;
+        }
+      }
+
+      @include it("\2xl\:decoration-4") {
+        @include custom-expect-(text-decoration-thickness, 4px, $\2xl) {
+          @include \2xl\:decoration-4;
+        }
+      }
+
+      @include it("\2xl\:decoration-8") {
+        @include custom-expect-(text-decoration-thickness, 8px, $\2xl) {
+          @include \2xl\:decoration-8;
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("decoration-(3px)") {
+        @include custom-expect-(text-decoration-thickness, 3px) {
+          @include decoration-(3px);
+        }
+      }
+
+      @include it("sm\:decoration-(3px)") {
+        @include custom-expect-(text-decoration-thickness, 3px, $sm) {
+          @include sm\:decoration-(3px);
+        }
+      }
+
+      @include it("md\:decoration-(3px)") {
+        @include custom-expect-(text-decoration-thickness, 3px, $md) {
+          @include md\:decoration-(3px);
+        }
+      }
+
+      @include it("lg\:decoration-(3px)") {
+        @include custom-expect-(text-decoration-thickness, 3px, $lg) {
+          @include lg\:decoration-(3px);
+        }
+      }
+
+      @include it("xl\:decoration-(3px)") {
+        @include custom-expect-(text-decoration-thickness, 3px, $xl) {
+          @include xl\:decoration-(3px);
+        }
+      }
+
+      @include it("\2xl\:decoration-(3px)") {
+        @include custom-expect-(text-decoration-thickness, 3px, $\2xl) {
+          @include \2xl\:decoration-(3px);
+        }
+      }
+    }
   }
-
-  @mixin decoration-from-font {
-    @include decoration-(from-font);
-  }
-
-  @mixin decoration-0 {
-    @include decoration-(0px);
-  }
-
-  @mixin decoration-1 {
-    @include decoration-(1px);
-  }
-
-  @mixin decoration-2 {
-    @include decoration-(2px);
-  }
-
-  @mixin decoration-4 {
-    @include decoration-(4px);
-  }
-
-  @mixin decoration-8 {
-    @include decoration-(8px);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:decoration-auto {
-      @include decoration-(auto, $sm);
-    }
-
-    @mixin sm\:decoration-from-font {
-      @include decoration-(from-font, $sm);
-    }
-
-    @mixin sm\:decoration-0 {
-      @include decoration-(0px, $sm);
-    }
-
-    @mixin sm\:decoration-1 {
-      @include decoration-(1px, $sm);
-    }
-
-    @mixin sm\:decoration-2 {
-      @include decoration-(2px, $sm);
-    }
-
-    @mixin sm\:decoration-4 {
-      @include decoration-(4px, $sm);
-    }
-
-    @mixin sm\:decoration-8 {
-      @include decoration-(8px, $sm);
-    }
-
-    @mixin md\:decoration-auto {
-      @include decoration-(auto, $md);
-    }
-
-    @mixin md\:decoration-from-font {
-      @include decoration-(from-font, $md);
-    }
-
-    @mixin md\:decoration-0 {
-      @include decoration-(0px, $md);
-    }
-
-    @mixin md\:decoration-1 {
-      @include decoration-(1px, $md);
-    }
-
-    @mixin md\:decoration-2 {
-      @include decoration-(2px, $md);
-    }
-
-    @mixin md\:decoration-4 {
-      @include decoration-(4px, $md);
-    }
-
-    @mixin md\:decoration-8 {
-      @include decoration-(8px, $md);
-    }
-
-    @mixin lg\:decoration-auto {
-      @include decoration-(auto, $lg);
-    }
-
-    @mixin lg\:decoration-from-font {
-      @include decoration-(from-font, $lg);
-    }
-
-    @mixin lg\:decoration-0 {
-      @include decoration-(0px, $lg);
-    }
-
-    @mixin lg\:decoration-1 {
-      @include decoration-(1px, $lg);
-    }
-
-    @mixin lg\:decoration-2 {
-      @include decoration-(2px, $lg);
-    }
-
-    @mixin lg\:decoration-4 {
-      @include decoration-(4px, $lg);
-    }
-
-    @mixin lg\:decoration-8 {
-      @include decoration-(8px, $lg);
-    }
-
-    @mixin xl\:decoration-auto {
-      @include decoration-(auto, $xl);
-    }
-
-    @mixin xl\:decoration-from-font {
-      @include decoration-(from-font, $xl);
-    }
-
-    @mixin xl\:decoration-0 {
-      @include decoration-(0px, $xl);
-    }
-
-    @mixin xl\:decoration-1 {
-      @include decoration-(1px, $xl);
-    }
-
-    @mixin xl\:decoration-2 {
-      @include decoration-(2px, $xl);
-    }
-
-    @mixin xl\:decoration-4 {
-      @include decoration-(4px, $xl);
-    }
-
-    @mixin xl\:decoration-8 {
-      @include decoration-(8px, $xl);
-    }
-
-    @mixin \2xl\:decoration-auto {
-      @include decoration-(auto, $\2xl);
-    }
-
-    @mixin \2xl\:decoration-from-font {
-      @include decoration-(from-font, $\2xl);
-    }
-
-    @mixin \2xl\:decoration-0 {
-      @include decoration-(0px, $\2xl);
-    }
-
-    @mixin \2xl\:decoration-1 {
-      @include decoration-(1px, $\2xl);
-    }
-
-    @mixin \2xl\:decoration-2 {
-      @include decoration-(2px, $\2xl);
-    }
-
-    @mixin \2xl\:decoration-4 {
-      @include decoration-(4px, $\2xl);
-    }
-
-    @mixin \2xl\:decoration-8 {
-      @include decoration-(8px, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-// same as @mixin decoration-($v, $rwd: null)
-@if $Custom {
 }

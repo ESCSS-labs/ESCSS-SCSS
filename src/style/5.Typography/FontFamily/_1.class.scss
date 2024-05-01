@@ -242,14 +242,14 @@
   // /*x
   @mixin font-($v, $rwd: null) {
     @if $rwd==null {
-      @if meta.type-of($v) ==string {
+      @if meta.type-of($v) ==string or meta.type-of($v) ==list {
         font-family: $v;
       } @else {
         font-weight: $v;
       }
     } @else {
       @media (min-width: $rwd) {
-        @if meta.type-of($v) ==string {
+        @if meta.type-of($v) ==string or meta.type-of($v) ==list {
           font-family: $v;
         } @else {
           font-weight: $v;

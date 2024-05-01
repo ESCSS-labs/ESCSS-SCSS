@@ -2,235 +2,372 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Font Weight */
-@if $Basic {
-  // /*x
-  @mixin font-thin {
-    @include font-(100);
+@include describe("5.Typography") {
+  @include describe("Font Weight") {
+    @include describe("Basic") {
+      @include it("font-thin") {
+        @include custom-expect-(font-weight, 100) {
+          @include font-thin;
+        }
+      }
+
+      @include it("font-extralight") {
+        @include custom-expect-(font-weight, 200) {
+          @include font-extralight;
+        }
+      }
+
+      @include it("font-light") {
+        @include custom-expect-(font-weight, 300) {
+          @include font-light;
+        }
+      }
+
+      @include it("font-normal") {
+        @include custom-expect-(font-weight, 400) {
+          @include font-normal;
+        }
+      }
+
+      @include it("font-medium") {
+        @include custom-expect-(font-weight, 500) {
+          @include font-medium;
+        }
+      }
+
+      @include it("font-semibold") {
+        @include custom-expect-(font-weight, 600) {
+          @include font-semibold;
+        }
+      }
+
+      @include it("font-bold") {
+        @include custom-expect-(font-weight, 700) {
+          @include font-bold;
+        }
+      }
+
+      @include it("font-extrabold") {
+        @include custom-expect-(font-weight, 800) {
+          @include font-extrabold;
+        }
+      }
+
+      @include it("font-black") {
+        @include custom-expect-(font-weight, 900) {
+          @include font-black;
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:font-thin") {
+        @include custom-expect-(font-weight, 100, $sm) {
+          @include sm\:font-thin;
+        }
+      }
+
+      @include it("sm\:font-extralight") {
+        @include custom-expect-(font-weight, 200, $sm) {
+          @include sm\:font-extralight;
+        }
+      }
+
+      @include it("sm\:font-light") {
+        @include custom-expect-(font-weight, 300, $sm) {
+          @include sm\:font-light;
+        }
+      }
+
+      @include it("sm\:font-normal") {
+        @include custom-expect-(font-weight, 400, $sm) {
+          @include sm\:font-normal;
+        }
+      }
+
+      @include it("sm\:font-medium") {
+        @include custom-expect-(font-weight, 500, $sm) {
+          @include sm\:font-medium;
+        }
+      }
+
+      @include it("sm\:font-semibold") {
+        @include custom-expect-(font-weight, 600, $sm) {
+          @include sm\:font-semibold;
+        }
+      }
+
+      @include it("sm\:font-bold") {
+        @include custom-expect-(font-weight, 700, $sm) {
+          @include sm\:font-bold;
+        }
+      }
+
+      @include it("sm\:font-extrabold") {
+        @include custom-expect-(font-weight, 800, $sm) {
+          @include sm\:font-extrabold;
+        }
+      }
+
+      @include it("sm\:font-black") {
+        @include custom-expect-(font-weight, 900, $sm) {
+          @include sm\:font-black;
+        }
+      }
+
+      @include it("md\:font-thin") {
+        @include custom-expect-(font-weight, 100, $md) {
+          @include md\:font-thin;
+        }
+      }
+
+      @include it("md\:font-extralight") {
+        @include custom-expect-(font-weight, 200, $md) {
+          @include md\:font-extralight;
+        }
+      }
+
+      @include it("md\:font-light") {
+        @include custom-expect-(font-weight, 300, $md) {
+          @include md\:font-light;
+        }
+      }
+
+      @include it("md\:font-normal") {
+        @include custom-expect-(font-weight, 400, $md) {
+          @include md\:font-normal;
+        }
+      }
+
+      @include it("md\:font-medium") {
+        @include custom-expect-(font-weight, 500, $md) {
+          @include md\:font-medium;
+        }
+      }
+
+      @include it("md\:font-semibold") {
+        @include custom-expect-(font-weight, 600, $md) {
+          @include md\:font-semibold;
+        }
+      }
+
+      @include it("md\:font-bold") {
+        @include custom-expect-(font-weight, 700, $md) {
+          @include md\:font-bold;
+        }
+      }
+
+      @include it("md\:font-extrabold") {
+        @include custom-expect-(font-weight, 800, $md) {
+          @include md\:font-extrabold;
+        }
+      }
+
+      @include it("md\:font-black") {
+        @include custom-expect-(font-weight, 900, $md) {
+          @include md\:font-black;
+        }
+      }
+
+      @include it("lg\:font-thin") {
+        @include custom-expect-(font-weight, 100, $lg) {
+          @include lg\:font-thin;
+        }
+      }
+
+      @include it("lg\:font-extralight") {
+        @include custom-expect-(font-weight, 200, $lg) {
+          @include lg\:font-extralight;
+        }
+      }
+
+      @include it("lg\:font-light") {
+        @include custom-expect-(font-weight, 300, $lg) {
+          @include lg\:font-light;
+        }
+      }
+
+      @include it("lg\:font-normal") {
+        @include custom-expect-(font-weight, 400, $lg) {
+          @include lg\:font-normal;
+        }
+      }
+
+      @include it("lg\:font-medium") {
+        @include custom-expect-(font-weight, 500, $lg) {
+          @include lg\:font-medium;
+        }
+      }
+
+      @include it("lg\:font-semibold") {
+        @include custom-expect-(font-weight, 600, $lg) {
+          @include lg\:font-semibold;
+        }
+      }
+
+      @include it("lg\:font-bold") {
+        @include custom-expect-(font-weight, 700, $lg) {
+          @include lg\:font-bold;
+        }
+      }
+
+      @include it("lg\:font-extrabold") {
+        @include custom-expect-(font-weight, 800, $lg) {
+          @include lg\:font-extrabold;
+        }
+      }
+
+      @include it("lg\:font-black") {
+        @include custom-expect-(font-weight, 900, $lg) {
+          @include lg\:font-black;
+        }
+      }
+
+      @include it("xl\:font-thin") {
+        @include custom-expect-(font-weight, 100, $xl) {
+          @include xl\:font-thin;
+        }
+      }
+
+      @include it("xl\:font-extralight") {
+        @include custom-expect-(font-weight, 200, $xl) {
+          @include xl\:font-extralight;
+        }
+      }
+
+      @include it("xl\:font-light") {
+        @include custom-expect-(font-weight, 300, $xl) {
+          @include xl\:font-light;
+        }
+      }
+
+      @include it("xl\:font-normal") {
+        @include custom-expect-(font-weight, 400, $xl) {
+          @include xl\:font-normal;
+        }
+      }
+
+      @include it("xl\:font-medium") {
+        @include custom-expect-(font-weight, 500, $xl) {
+          @include xl\:font-medium;
+        }
+      }
+
+      @include it("xl\:font-semibold") {
+        @include custom-expect-(font-weight, 600, $xl) {
+          @include xl\:font-semibold;
+        }
+      }
+
+      @include it("xl\:font-bold") {
+        @include custom-expect-(font-weight, 700, $xl) {
+          @include xl\:font-bold;
+        }
+      }
+
+      @include it("xl\:font-extrabold") {
+        @include custom-expect-(font-weight, 800, $xl) {
+          @include xl\:font-extrabold;
+        }
+      }
+
+      @include it("xl\:font-black") {
+        @include custom-expect-(font-weight, 900, $xl) {
+          @include xl\:font-black;
+        }
+      }
+
+      @include it("\2xl\:font-thin") {
+        @include custom-expect-(font-weight, 100, $\2xl) {
+          @include \2xl\:font-thin;
+        }
+      }
+
+      @include it("\2xl\:font-extralight") {
+        @include custom-expect-(font-weight, 200, $\2xl) {
+          @include \2xl\:font-extralight;
+        }
+      }
+
+      @include it("\2xl\:font-light") {
+        @include custom-expect-(font-weight, 300, $\2xl) {
+          @include \2xl\:font-light;
+        }
+      }
+
+      @include it("\2xl\:font-normal") {
+        @include custom-expect-(font-weight, 400, $\2xl) {
+          @include \2xl\:font-normal;
+        }
+      }
+
+      @include it("\2xl\:font-medium") {
+        @include custom-expect-(font-weight, 500, $\2xl) {
+          @include \2xl\:font-medium;
+        }
+      }
+
+      @include it("\2xl\:font-semibold") {
+        @include custom-expect-(font-weight, 600, $\2xl) {
+          @include \2xl\:font-semibold;
+        }
+      }
+
+      @include it("\2xl\:font-bold") {
+        @include custom-expect-(font-weight, 700, $\2xl) {
+          @include \2xl\:font-bold;
+        }
+      }
+
+      @include it("\2xl\:font-extrabold") {
+        @include custom-expect-(font-weight, 800, $\2xl) {
+          @include \2xl\:font-extrabold;
+        }
+      }
+
+      @include it("\2xl\:font-black") {
+        @include custom-expect-(font-weight, 900, $\2xl) {
+          @include \2xl\:font-black;
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("font-(1100)") {
+        @include custom-expect-(font-weight, 1100) {
+          @include font-(1100);
+        }
+      }
+
+      @include it("sm\:font-(1100)") {
+        @include custom-expect-(font-weight, 1100, $sm) {
+          @include sm\:font-(1100);
+        }
+      }
+
+      @include it("md\:font-(1100)") {
+        @include custom-expect-(font-weight, 1100, $md) {
+          @include md\:font-(1100);
+        }
+      }
+
+      @include it("lg\:font-(1100)") {
+        @include custom-expect-(font-weight, 1100, $lg) {
+          @include lg\:font-(1100);
+        }
+      }
+
+      @include it("xl\:font-(1100)") {
+        @include custom-expect-(font-weight, 1100, $xl) {
+          @include xl\:font-(1100);
+        }
+      }
+
+      @include it("\2xl\:font-(1100)") {
+        @include custom-expect-(font-weight, 1100, $\2xl) {
+          @include \2xl\:font-(1100);
+        }
+      }
+    }
   }
-
-  @mixin font-extralight {
-    @include font-(200);
-  }
-
-  @mixin font-light {
-    @include font-(300);
-  }
-
-  @mixin font-normal {
-    @include font-(400);
-  }
-
-  @mixin font-medium {
-    @include font-(500);
-  }
-
-  @mixin font-semibold {
-    @include font-(600);
-  }
-
-  @mixin font-bold {
-    @include font-(700);
-  }
-
-  @mixin font-extrabold {
-    @include font-(800);
-  }
-
-  @mixin font-black {
-    @include font-(900);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:font-thin {
-      @include font-(100, $sm);
-    }
-
-    @mixin sm\:font-extralight {
-      @include font-(200, $sm);
-    }
-
-    @mixin sm\:font-light {
-      @include font-(300, $sm);
-    }
-
-    @mixin sm\:font-normal {
-      @include font-(400, $sm);
-    }
-
-    @mixin sm\:font-medium {
-      @include font-(500, $sm);
-    }
-
-    @mixin sm\:font-semibold {
-      @include font-(600, $sm);
-    }
-
-    @mixin sm\:font-bold {
-      @include font-(700, $sm);
-    }
-
-    @mixin sm\:font-extrabold {
-      @include font-(800, $sm);
-    }
-
-    @mixin sm\:font-black {
-      @include font-(900, $sm);
-    }
-
-    @mixin md\:font-thin {
-      @include font-(100, $md);
-    }
-
-    @mixin md\:font-extralight {
-      @include font-(200, $md);
-    }
-
-    @mixin md\:font-light {
-      @include font-(300, $md);
-    }
-
-    @mixin md\:font-normal {
-      @include font-(400, $md);
-    }
-
-    @mixin md\:font-medium {
-      @include font-(500, $md);
-    }
-
-    @mixin md\:font-semibold {
-      @include font-(600, $md);
-    }
-
-    @mixin md\:font-bold {
-      @include font-(700, $md);
-    }
-
-    @mixin md\:font-extrabold {
-      @include font-(800, $md);
-    }
-
-    @mixin md\:font-black {
-      @include font-(900, $md);
-    }
-
-    @mixin lg\:font-thin {
-      @include font-(100, $lg);
-    }
-
-    @mixin lg\:font-extralight {
-      @include font-(200, $lg);
-    }
-
-    @mixin lg\:font-light {
-      @include font-(300, $lg);
-    }
-
-    @mixin lg\:font-normal {
-      @include font-(400, $lg);
-    }
-
-    @mixin lg\:font-medium {
-      @include font-(500, $lg);
-    }
-
-    @mixin lg\:font-semibold {
-      @include font-(600, $lg);
-    }
-
-    @mixin lg\:font-bold {
-      @include font-(700, $lg);
-    }
-
-    @mixin lg\:font-extrabold {
-      @include font-(800, $lg);
-    }
-
-    @mixin lg\:font-black {
-      @include font-(900, $lg);
-    }
-
-    @mixin xl\:font-thin {
-      @include font-(100, $xl);
-    }
-
-    @mixin xl\:font-extralight {
-      @include font-(200, $xl);
-    }
-
-    @mixin xl\:font-light {
-      @include font-(300, $xl);
-    }
-
-    @mixin xl\:font-normal {
-      @include font-(400, $xl);
-    }
-
-    @mixin xl\:font-medium {
-      @include font-(500, $xl);
-    }
-
-    @mixin xl\:font-semibold {
-      @include font-(600, $xl);
-    }
-
-    @mixin xl\:font-bold {
-      @include font-(700, $xl);
-    }
-
-    @mixin xl\:font-extrabold {
-      @include font-(800, $xl);
-    }
-
-    @mixin xl\:font-black {
-      @include font-(900, $xl);
-    }
-
-    @mixin \2xl\:font-thin {
-      @include font-(100, $\2xl);
-    }
-
-    @mixin \2xl\:font-extralight {
-      @include font-(200, $\2xl);
-    }
-
-    @mixin \2xl\:font-light {
-      @include font-(300, $\2xl);
-    }
-
-    @mixin \2xl\:font-normal {
-      @include font-(400, $\2xl);
-    }
-
-    @mixin \2xl\:font-medium {
-      @include font-(500, $\2xl);
-    }
-
-    @mixin \2xl\:font-semibold {
-      @include font-(600, $\2xl);
-    }
-
-    @mixin \2xl\:font-bold {
-      @include font-(700, $\2xl);
-    }
-
-    @mixin \2xl\:font-extrabold {
-      @include font-(800, $\2xl);
-    }
-
-    @mixin \2xl\:font-black {
-      @include font-(900, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-// same as @mixin font-($v, $rwd: null)
-@if $Custom {
 }

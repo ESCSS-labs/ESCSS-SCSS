@@ -2,242 +2,336 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Vertical Align */
-@if $Basic {
-  // /*x
-  @mixin align-baseline {
-    @include align-(baseline);
-  }
+@include describe("5.Typography") {
+  @include describe("Vertical Align") {
+    @include describe("Basic") {
+      @include it("align-baseline") {
+        @include custom-expect-(vertical-align, baseline) {
+          @include align-baseline;
+        }
+      }
 
-  @mixin align-top {
-    @include align-(top);
-  }
+      @include it("align-top") {
+        @include custom-expect-(vertical-align, top) {
+          @include align-top;
+        }
+      }
 
-  @mixin align-middle {
-    @include align-(middle);
-  }
+      @include it("align-middle") {
+        @include custom-expect-(vertical-align, middle) {
+          @include align-middle;
+        }
+      }
 
-  @mixin align-bottom {
-    @include align-(bottom);
-  }
+      @include it("align-bottom") {
+        @include custom-expect-(vertical-align, bottom) {
+          @include align-bottom;
+        }
+      }
 
-  @mixin align-text-top {
-    @include align-(text-top);
-  }
+      @include it("align-text-top") {
+        @include custom-expect-(vertical-align, text-top) {
+          @include align-text-top;
+        }
+      }
 
-  @mixin align-text-bottom {
-    @include align-(text-bottom);
-  }
+      @include it("align-text-bottom") {
+        @include custom-expect-(vertical-align, text-bottom) {
+          @include align-text-bottom;
+        }
+      }
 
-  @mixin align-sub {
-    @include align-(sub);
-  }
+      @include it("align-sub") {
+        @include custom-expect-(vertical-align, sub) {
+          @include align-sub;
+        }
+      }
 
-  @mixin align-super {
-    @include align-(super);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:align-baseline {
-      @include align-(baseline, $sm);
+      @include it("align-super") {
+        @include custom-expect-(vertical-align, super) {
+          @include align-super;
+        }
+      }
     }
 
-    @mixin sm\:align-top {
-      @include align-(top, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:align-baseline") {
+        @include custom-expect-(vertical-align, baseline, $sm) {
+          @include sm\:align-baseline;
+        }
+      }
+
+      @include it("sm\:align-top") {
+        @include custom-expect-(vertical-align, top, $sm) {
+          @include sm\:align-top;
+        }
+      }
+
+      @include it("sm\:align-middle") {
+        @include custom-expect-(vertical-align, middle, $sm) {
+          @include sm\:align-middle;
+        }
+      }
+
+      @include it("sm\:align-bottom") {
+        @include custom-expect-(vertical-align, bottom, $sm) {
+          @include sm\:align-bottom;
+        }
+      }
+
+      @include it("sm\:align-text-top") {
+        @include custom-expect-(vertical-align, text-top, $sm) {
+          @include sm\:align-text-top;
+        }
+      }
+
+      @include it("sm\:align-text-bottom") {
+        @include custom-expect-(vertical-align, text-bottom, $sm) {
+          @include sm\:align-text-bottom;
+        }
+      }
+
+      @include it("sm\:align-sub") {
+        @include custom-expect-(vertical-align, sub, $sm) {
+          @include sm\:align-sub;
+        }
+      }
+
+      @include it("sm\:align-super") {
+        @include custom-expect-(vertical-align, super, $sm) {
+          @include sm\:align-super;
+        }
+      }
+
+      @include it("md\:align-baseline") {
+        @include custom-expect-(vertical-align, baseline, $md) {
+          @include md\:align-baseline;
+        }
+      }
+
+      @include it("md\:align-top") {
+        @include custom-expect-(vertical-align, top, $md) {
+          @include md\:align-top;
+        }
+      }
+
+      @include it("md\:align-middle") {
+        @include custom-expect-(vertical-align, middle, $md) {
+          @include md\:align-middle;
+        }
+      }
+
+      @include it("md\:align-bottom") {
+        @include custom-expect-(vertical-align, bottom, $md) {
+          @include md\:align-bottom;
+        }
+      }
+
+      @include it("md\:align-text-top") {
+        @include custom-expect-(vertical-align, text-top, $md) {
+          @include md\:align-text-top;
+        }
+      }
+
+      @include it("md\:align-text-bottom") {
+        @include custom-expect-(vertical-align, text-bottom, $md) {
+          @include md\:align-text-bottom;
+        }
+      }
+
+      @include it("md\:align-sub") {
+        @include custom-expect-(vertical-align, sub, $md) {
+          @include md\:align-sub;
+        }
+      }
+
+      @include it("md\:align-super") {
+        @include custom-expect-(vertical-align, super, $md) {
+          @include md\:align-super;
+        }
+      }
+
+      @include it("lg\:align-baseline") {
+        @include custom-expect-(vertical-align, baseline, $lg) {
+          @include lg\:align-baseline;
+        }
+      }
+
+      @include it("lg\:align-top") {
+        @include custom-expect-(vertical-align, top, $lg) {
+          @include lg\:align-top;
+        }
+      }
+
+      @include it("lg\:align-middle") {
+        @include custom-expect-(vertical-align, middle, $lg) {
+          @include lg\:align-middle;
+        }
+      }
+
+      @include it("lg\:align-bottom") {
+        @include custom-expect-(vertical-align, bottom, $lg) {
+          @include lg\:align-bottom;
+        }
+      }
+
+      @include it("lg\:align-text-top") {
+        @include custom-expect-(vertical-align, text-top, $lg) {
+          @include lg\:align-text-top;
+        }
+      }
+
+      @include it("lg\:align-text-bottom") {
+        @include custom-expect-(vertical-align, text-bottom, $lg) {
+          @include lg\:align-text-bottom;
+        }
+      }
+
+      @include it("lg\:align-sub") {
+        @include custom-expect-(vertical-align, sub, $lg) {
+          @include lg\:align-sub;
+        }
+      }
+
+      @include it("lg\:align-super") {
+        @include custom-expect-(vertical-align, super, $lg) {
+          @include lg\:align-super;
+        }
+      }
+
+      @include it("xl\:align-baseline") {
+        @include custom-expect-(vertical-align, baseline, $xl) {
+          @include xl\:align-baseline;
+        }
+      }
+
+      @include it("xl\:align-top") {
+        @include custom-expect-(vertical-align, top, $xl) {
+          @include xl\:align-top;
+        }
+      }
+
+      @include it("xl\:align-middle") {
+        @include custom-expect-(vertical-align, middle, $xl) {
+          @include xl\:align-middle;
+        }
+      }
+
+      @include it("xl\:align-bottom") {
+        @include custom-expect-(vertical-align, bottom, $xl) {
+          @include xl\:align-bottom;
+        }
+      }
+
+      @include it("xl\:align-text-top") {
+        @include custom-expect-(vertical-align, text-top, $xl) {
+          @include xl\:align-text-top;
+        }
+      }
+
+      @include it("xl\:align-text-bottom") {
+        @include custom-expect-(vertical-align, text-bottom, $xl) {
+          @include xl\:align-text-bottom;
+        }
+      }
+
+      @include it("xl\:align-sub") {
+        @include custom-expect-(vertical-align, sub, $xl) {
+          @include xl\:align-sub;
+        }
+      }
+
+      @include it("xl\:align-super") {
+        @include custom-expect-(vertical-align, super, $xl) {
+          @include xl\:align-super;
+        }
+      }
+
+      @include it("\2xl\:align-baseline") {
+        @include custom-expect-(vertical-align, baseline, $\2xl) {
+          @include \2xl\:align-baseline;
+        }
+      }
+
+      @include it("\2xl\:align-top") {
+        @include custom-expect-(vertical-align, top, $\2xl) {
+          @include \2xl\:align-top;
+        }
+      }
+
+      @include it("\2xl\:align-middle") {
+        @include custom-expect-(vertical-align, middle, $\2xl) {
+          @include \2xl\:align-middle;
+        }
+      }
+
+      @include it("\2xl\:align-bottom") {
+        @include custom-expect-(vertical-align, bottom, $\2xl) {
+          @include \2xl\:align-bottom;
+        }
+      }
+
+      @include it("\2xl\:align-text-top") {
+        @include custom-expect-(vertical-align, text-top, $\2xl) {
+          @include \2xl\:align-text-top;
+        }
+      }
+
+      @include it("\2xl\:align-text-bottom") {
+        @include custom-expect-(vertical-align, text-bottom, $\2xl) {
+          @include \2xl\:align-text-bottom;
+        }
+      }
+
+      @include it("\2xl\:align-sub") {
+        @include custom-expect-(vertical-align, sub, $\2xl) {
+          @include \2xl\:align-sub;
+        }
+      }
+
+      @include it("\2xl\:align-super") {
+        @include custom-expect-(vertical-align, super, $\2xl) {
+          @include \2xl\:align-super;
+        }
+      }
     }
 
-    @mixin sm\:align-middle {
-      @include align-(middle, $sm);
-    }
+    @include describe("Custom") {
+      @include it("align-(4px)") {
+        @include custom-expect-(vertical-align, 4px) {
+          @include align-(4px);
+        }
+      }
 
-    @mixin sm\:align-bottom {
-      @include align-(bottom, $sm);
-    }
+      @include it("sm\:align-(4px)") {
+        @include custom-expect-(vertical-align, 4px, $sm) {
+          @include sm\:align-(4px);
+        }
+      }
 
-    @mixin sm\:align-text-top {
-      @include align-(text-top, $sm);
-    }
+      @include it("md\:align-(4px)") {
+        @include custom-expect-(vertical-align, 4px, $md) {
+          @include md\:align-(4px);
+        }
+      }
 
-    @mixin sm\:align-text-bottom {
-      @include align-(text-bottom, $sm);
-    }
+      @include it("lg\:align-(4px)") {
+        @include custom-expect-(vertical-align, 4px, $lg) {
+          @include lg\:align-(4px);
+        }
+      }
 
-    @mixin sm\:align-sub {
-      @include align-(sub, $sm);
-    }
+      @include it("xl\:align-(4px)") {
+        @include custom-expect-(vertical-align, 4px, $xl) {
+          @include xl\:align-(4px);
+        }
+      }
 
-    @mixin sm\:align-super {
-      @include align-(super, $sm);
-    }
-
-    @mixin md\:align-baseline {
-      @include align-(baseline, $md);
-    }
-
-    @mixin md\:align-top {
-      @include align-(top, $md);
-    }
-
-    @mixin md\:align-middle {
-      @include align-(middle, $md);
-    }
-
-    @mixin md\:align-bottom {
-      @include align-(bottom, $md);
-    }
-
-    @mixin md\:align-text-top {
-      @include align-(text-top, $md);
-    }
-
-    @mixin md\:align-text-bottom {
-      @include align-(text-bottom, $md);
-    }
-
-    @mixin md\:align-sub {
-      @include align-(sub, $md);
-    }
-
-    @mixin md\:align-super {
-      @include align-(super, $md);
-    }
-
-    @mixin lg\:align-baseline {
-      @include align-(baseline, $lg);
-    }
-
-    @mixin lg\:align-top {
-      @include align-(top, $lg);
-    }
-
-    @mixin lg\:align-middle {
-      @include align-(middle, $lg);
-    }
-
-    @mixin lg\:align-bottom {
-      @include align-(bottom, $lg);
-    }
-
-    @mixin lg\:align-text-top {
-      @include align-(text-top, $lg);
-    }
-
-    @mixin lg\:align-text-bottom {
-      @include align-(text-bottom, $lg);
-    }
-
-    @mixin lg\:align-sub {
-      @include align-(sub, $lg);
-    }
-
-    @mixin lg\:align-super {
-      @include align-(super, $lg);
-    }
-
-    @mixin xl\:align-baseline {
-      @include align-(baseline, $xl);
-    }
-
-    @mixin xl\:align-top {
-      @include align-(top, $xl);
-    }
-
-    @mixin xl\:align-middle {
-      @include align-(middle, $xl);
-    }
-
-    @mixin xl\:align-bottom {
-      @include align-(bottom, $xl);
-    }
-
-    @mixin xl\:align-text-top {
-      @include align-(text-top, $xl);
-    }
-
-    @mixin xl\:align-text-bottom {
-      @include align-(text-bottom, $xl);
-    }
-
-    @mixin xl\:align-sub {
-      @include align-(sub, $xl);
-    }
-
-    @mixin xl\:align-super {
-      @include align-(super, $xl);
-    }
-
-    @mixin \2xl\:align-baseline {
-      @include align-(baseline, $\2xl);
-    }
-
-    @mixin \2xl\:align-top {
-      @include align-(top, $\2xl);
-    }
-
-    @mixin \2xl\:align-middle {
-      @include align-(middle, $\2xl);
-    }
-
-    @mixin \2xl\:align-bottom {
-      @include align-(bottom, $\2xl);
-    }
-
-    @mixin \2xl\:align-text-top {
-      @include align-(text-top, $\2xl);
-    }
-
-    @mixin \2xl\:align-text-bottom {
-      @include align-(text-bottom, $\2xl);
-    }
-
-    @mixin \2xl\:align-sub {
-      @include align-(sub, $\2xl);
-    }
-
-    @mixin \2xl\:align-super {
-      @include align-(super, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin align-($v, $rwd: null) {
-    @if $rwd==null {
-      vertical-align: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        vertical-align: $v;
+      @include it("\2xl\:align-(4px)") {
+        @include custom-expect-(vertical-align, 4px, $\2xl) {
+          @include \2xl\:align-(4px);
+        }
       }
     }
   }
-
-  @mixin sm\:align-($v) {
-    @include align-($v, $sm);
-  }
-
-  @mixin md\:align-($v) {
-    @include align-($v, $md);
-  }
-
-  @mixin lg\:align-($v) {
-    @include align-($v, $lg);
-  }
-
-  @mixin xl\:align-($v) {
-    @include align-($v, $xl);
-  }
-
-  @mixin \2xl\:align-($v) {
-    @include align-($v, $\2xl);
-  }
-
-  // x*/
 }
