@@ -9,6 +9,7 @@
         @include assert {
           @include output {
             @include divide-solid;
+            @include clear;
           }
 
           @include expect {
@@ -23,6 +24,7 @@
         @include assert {
           @include output {
             @include divide-dashed;
+            @include clear;
           }
 
           @include expect {
@@ -37,6 +39,7 @@
         @include assert {
           @include output {
             @include divide-dotted;
+            @include clear;
           }
 
           @include expect {
@@ -51,6 +54,7 @@
         @include assert {
           @include output {
             @include divide-double;
+            @include clear;
           }
 
           @include expect {
@@ -65,6 +69,7 @@
         @include assert {
           @include output {
             @include divide-none;
+            @include clear;
           }
 
           @include expect {
@@ -77,400 +82,435 @@
     }
 
     @include describe("Rwd") {
-      @include it("sm\:divide-solid") {
-        @include assert {
-          @include output {
-            @include sm\:divide-solid;
-          }
+      @include describe("Basic") {
+        @include it("sm\:divide-solid") {
+          @include assert {
+            @include output {
+              @include sm\:divide-solid;
+              @include clear;
+            }
 
-          @include expect {
-            @media (min-width: $sm) {
-              > * ~ * {
-                border-style: solid;
+            @include expect {
+              @media (min-width: $sm) {
+                > * ~ * {
+                  border-style: solid;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("sm\:divide-dashed") {
+          @include assert {
+            @include output {
+              @include sm\:divide-dashed;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $sm) {
+                > * ~ * {
+                  border-style: dashed;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("sm\:divide-dotted") {
+          @include assert {
+            @include output {
+              @include sm\:divide-dotted;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $sm) {
+                > * ~ * {
+                  border-style: dotted;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("sm\:divide-double") {
+          @include assert {
+            @include output {
+              @include sm\:divide-double;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $sm) {
+                > * ~ * {
+                  border-style: double;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("sm\:divide-none") {
+          @include assert {
+            @include output {
+              @include sm\:divide-none;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $sm) {
+                > * ~ * {
+                  border-style: none;
+                }
               }
             }
           }
         }
       }
 
-      @include it("sm\:divide-dashed") {
-        @include assert {
-          @include output {
-            @include sm\:divide-dashed;
-          }
+      @include describe("Basic") {
+        @include it("md\:divide-solid") {
+          @include assert {
+            @include output {
+              @include md\:divide-solid;
+              @include clear;
+            }
 
-          @include expect {
-            @media (min-width: $sm) {
-              > * ~ * {
-                border-style: dashed;
+            @include expect {
+              @media (min-width: $md) {
+                > * ~ * {
+                  border-style: solid;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("md\:divide-dashed") {
+          @include assert {
+            @include output {
+              @include md\:divide-dashed;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $md) {
+                > * ~ * {
+                  border-style: dashed;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("md\:divide-dotted") {
+          @include assert {
+            @include output {
+              @include md\:divide-dotted;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $md) {
+                > * ~ * {
+                  border-style: dotted;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("md\:divide-double") {
+          @include assert {
+            @include output {
+              @include md\:divide-double;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $md) {
+                > * ~ * {
+                  border-style: double;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("md\:divide-none") {
+          @include assert {
+            @include output {
+              @include md\:divide-none;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $md) {
+                > * ~ * {
+                  border-style: none;
+                }
               }
             }
           }
         }
       }
 
-      @include it("sm\:divide-dotted") {
-        @include assert {
-          @include output {
-            @include sm\:divide-dotted;
-          }
+      @include describe("Basic") {
+        @include it("lg\:divide-solid") {
+          @include assert {
+            @include output {
+              @include lg\:divide-solid;
+              @include clear;
+            }
 
-          @include expect {
-            @media (min-width: $sm) {
-              > * ~ * {
-                border-style: dotted;
+            @include expect {
+              @media (min-width: $lg) {
+                > * ~ * {
+                  border-style: solid;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("lg\:divide-dashed") {
+          @include assert {
+            @include output {
+              @include lg\:divide-dashed;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $lg) {
+                > * ~ * {
+                  border-style: dashed;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("lg\:divide-dotted") {
+          @include assert {
+            @include output {
+              @include lg\:divide-dotted;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $lg) {
+                > * ~ * {
+                  border-style: dotted;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("lg\:divide-double") {
+          @include assert {
+            @include output {
+              @include lg\:divide-double;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $lg) {
+                > * ~ * {
+                  border-style: double;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("lg\:divide-none") {
+          @include assert {
+            @include output {
+              @include lg\:divide-none;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $lg) {
+                > * ~ * {
+                  border-style: none;
+                }
               }
             }
           }
         }
       }
 
-      @include it("sm\:divide-double") {
-        @include assert {
-          @include output {
-            @include sm\:divide-double;
-          }
+      @include describe("Basic") {
+        @include it("xl\:divide-solid") {
+          @include assert {
+            @include output {
+              @include xl\:divide-solid;
+              @include clear;
+            }
 
-          @include expect {
-            @media (min-width: $sm) {
-              > * ~ * {
-                border-style: double;
+            @include expect {
+              @media (min-width: $xl) {
+                > * ~ * {
+                  border-style: solid;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("xl\:divide-dashed") {
+          @include assert {
+            @include output {
+              @include xl\:divide-dashed;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $xl) {
+                > * ~ * {
+                  border-style: dashed;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("xl\:divide-dotted") {
+          @include assert {
+            @include output {
+              @include xl\:divide-dotted;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $xl) {
+                > * ~ * {
+                  border-style: dotted;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("xl\:divide-double") {
+          @include assert {
+            @include output {
+              @include xl\:divide-double;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $xl) {
+                > * ~ * {
+                  border-style: double;
+                }
+              }
+            }
+          }
+        }
+
+        @include it("xl\:divide-none") {
+          @include assert {
+            @include output {
+              @include xl\:divide-none;
+              @include clear;
+            }
+
+            @include expect {
+              @media (min-width: $xl) {
+                > * ~ * {
+                  border-style: none;
+                }
               }
             }
           }
         }
       }
 
-      @include it("sm\:divide-none") {
-        @include assert {
-          @include output {
-            @include sm\:divide-none;
-          }
+      @include describe("Basic") {
+        @include it("\2xl\:divide-solid") {
+          @include assert {
+            @include output {
+              @include \2xl\:divide-solid;
+              @include clear;
+            }
 
-          @include expect {
-            @media (min-width: $sm) {
-              > * ~ * {
-                border-style: none;
+            @include expect {
+              @media (min-width: $\2xl) {
+                > * ~ * {
+                  border-style: solid;
+                }
               }
             }
           }
         }
-      }
 
-      @include it("md\:divide-solid") {
-        @include assert {
-          @include output {
-            @include md\:divide-solid;
-          }
+        @include it("\2xl\:divide-dashed") {
+          @include assert {
+            @include output {
+              @include \2xl\:divide-dashed;
+              @include clear;
+            }
 
-          @include expect {
-            @media (min-width: $md) {
-              > * ~ * {
-                border-style: solid;
+            @include expect {
+              @media (min-width: $\2xl) {
+                > * ~ * {
+                  border-style: dashed;
+                }
               }
             }
           }
         }
-      }
 
-      @include it("md\:divide-dashed") {
-        @include assert {
-          @include output {
-            @include md\:divide-dashed;
-          }
+        @include it("\2xl\:divide-dotted") {
+          @include assert {
+            @include output {
+              @include \2xl\:divide-dotted;
+              @include clear;
+            }
 
-          @include expect {
-            @media (min-width: $md) {
-              > * ~ * {
-                border-style: dashed;
+            @include expect {
+              @media (min-width: $\2xl) {
+                > * ~ * {
+                  border-style: dotted;
+                }
               }
             }
           }
         }
-      }
 
-      @include it("md\:divide-dotted") {
-        @include assert {
-          @include output {
-            @include md\:divide-dotted;
-          }
+        @include it("\2xl\:divide-double") {
+          @include assert {
+            @include output {
+              @include \2xl\:divide-double;
+              @include clear;
+            }
 
-          @include expect {
-            @media (min-width: $md) {
-              > * ~ * {
-                border-style: dotted;
+            @include expect {
+              @media (min-width: $\2xl) {
+                > * ~ * {
+                  border-style: double;
+                }
               }
             }
           }
         }
-      }
 
-      @include it("md\:divide-double") {
-        @include assert {
-          @include output {
-            @include md\:divide-double;
-          }
-
-          @include expect {
-            @media (min-width: $md) {
-              > * ~ * {
-                border-style: double;
-              }
+        @include it("\2xl\:divide-none") {
+          @include assert {
+            @include output {
+              @include \2xl\:divide-none;
+              @include clear;
             }
-          }
-        }
-      }
 
-      @include it("md\:divide-none") {
-        @include assert {
-          @include output {
-            @include md\:divide-none;
-          }
-
-          @include expect {
-            @media (min-width: $md) {
-              > * ~ * {
-                border-style: none;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("lg\:divide-solid") {
-        @include assert {
-          @include output {
-            @include lg\:divide-solid;
-          }
-
-          @include expect {
-            @media (min-width: $lg) {
-              > * ~ * {
-                border-style: solid;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("lg\:divide-dashed") {
-        @include assert {
-          @include output {
-            @include lg\:divide-dashed;
-          }
-
-          @include expect {
-            @media (min-width: $lg) {
-              > * ~ * {
-                border-style: dashed;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("lg\:divide-dotted") {
-        @include assert {
-          @include output {
-            @include lg\:divide-dotted;
-          }
-
-          @include expect {
-            @media (min-width: $lg) {
-              > * ~ * {
-                border-style: dotted;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("lg\:divide-double") {
-        @include assert {
-          @include output {
-            @include lg\:divide-double;
-          }
-
-          @include expect {
-            @media (min-width: $lg) {
-              > * ~ * {
-                border-style: double;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("lg\:divide-none") {
-        @include assert {
-          @include output {
-            @include lg\:divide-none;
-          }
-
-          @include expect {
-            @media (min-width: $lg) {
-              > * ~ * {
-                border-style: none;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("xl\:divide-solid") {
-        @include assert {
-          @include output {
-            @include xl\:divide-solid;
-          }
-
-          @include expect {
-            @media (min-width: $xl) {
-              > * ~ * {
-                border-style: solid;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("xl\:divide-dashed") {
-        @include assert {
-          @include output {
-            @include xl\:divide-dashed;
-          }
-
-          @include expect {
-            @media (min-width: $xl) {
-              > * ~ * {
-                border-style: dashed;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("xl\:divide-dotted") {
-        @include assert {
-          @include output {
-            @include xl\:divide-dotted;
-          }
-
-          @include expect {
-            @media (min-width: $xl) {
-              > * ~ * {
-                border-style: dotted;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("xl\:divide-double") {
-        @include assert {
-          @include output {
-            @include xl\:divide-double;
-          }
-
-          @include expect {
-            @media (min-width: $xl) {
-              > * ~ * {
-                border-style: double;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("xl\:divide-none") {
-        @include assert {
-          @include output {
-            @include xl\:divide-none;
-          }
-
-          @include expect {
-            @media (min-width: $xl) {
-              > * ~ * {
-                border-style: none;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("\2xl\:divide-solid") {
-        @include assert {
-          @include output {
-            @include \2xl\:divide-solid;
-          }
-
-          @include expect {
-            @media (min-width: $\2xl) {
-              > * ~ * {
-                border-style: solid;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("\2xl\:divide-dashed") {
-        @include assert {
-          @include output {
-            @include \2xl\:divide-dashed;
-          }
-
-          @include expect {
-            @media (min-width: $\2xl) {
-              > * ~ * {
-                border-style: dashed;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("\2xl\:divide-dotted") {
-        @include assert {
-          @include output {
-            @include \2xl\:divide-dotted;
-          }
-
-          @include expect {
-            @media (min-width: $\2xl) {
-              > * ~ * {
-                border-style: dotted;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("\2xl\:divide-double") {
-        @include assert {
-          @include output {
-            @include \2xl\:divide-double;
-          }
-
-          @include expect {
-            @media (min-width: $\2xl) {
-              > * ~ * {
-                border-style: double;
-              }
-            }
-          }
-        }
-      }
-
-      @include it("\2xl\:divide-none") {
-        @include assert {
-          @include output {
-            @include \2xl\:divide-none;
-          }
-
-          @include expect {
-            @media (min-width: $\2xl) {
-              > * ~ * {
-                border-style: none;
+            @include expect {
+              @media (min-width: $\2xl) {
+                > * ~ * {
+                  border-style: none;
+                }
               }
             }
           }
