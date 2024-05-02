@@ -6,222 +6,523 @@
   @include describe("Align Self") {
     @include describe("Basic") {
       @include it("self-auto") {
-        @include expect{align-self, auto) {
-          @include self-auto;
+        @include assert {
+          @include output {
+            @include self-auto;
+            @include clear;
+          }
+    
+          @include expect {
+            align-self: auto;
+          }
         }
       }
-
+    
       @include it("self-start") {
-        @include expect{align-self, flex-start) {
-          @include self-start;
+        @include assert {
+          @include output {
+            @include self-start;
+            @include clear;
+          }
+    
+          @include expect {
+            align-self: flex-start;
+          }
         }
       }
-
+    
       @include it("self-end") {
-        @include expect{align-self, flex-end) {
-          @include self-end;
+        @include assert {
+          @include output {
+            @include self-end;
+            @include clear;
+          }
+    
+          @include expect {
+            align-self: flex-end;
+          }
         }
       }
-
+    
       @include it("self-center") {
-        @include expect{align-self, center) {
-          @include self-center;
+        @include assert {
+          @include output {
+            @include self-center;
+            @include clear;
+          }
+    
+          @include expect {
+            align-self: center;
+          }
         }
       }
-
+    
       @include it("self-stretch") {
-        @include expect{align-self, stretch) {
-          @include self-stretch;
+        @include assert {
+          @include output {
+            @include self-stretch;
+            @include clear;
+          }
+    
+          @include expect {
+            align-self: stretch;
+          }
         }
       }
-
+    
       @include it("self-baseline") {
-        @include expect{align-self, baseline) {
-          @include self-baseline;
+        @include assert {
+          @include output {
+            @include self-baseline;
+            @include clear;
+          }
+    
+          @include expect {
+            align-self: baseline;
+          }
         }
       }
-    }
-
-    @include describe("Rwd") {
+    }@include describe("Basic") {
       @include it("sm\:self-auto") {
-        @include expect{align-self, auto, $sm) {
-          @include sm\:self-auto;
+        @include assert {
+          @include output {
+            @include sm\:self-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              align-self: auto;
+            }
+          }
         }
       }
-
+      
       @include it("sm\:self-start") {
-        @include expect{align-self, flex-start, $sm) {
-          @include sm\:self-start;
+        @include assert {
+          @include output {
+            @include sm\:self-start;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              align-self: flex-start;
+            }
+          }
         }
       }
-
+      
       @include it("sm\:self-end") {
-        @include expect{align-self, flex-end, $sm) {
-          @include sm\:self-end;
+        @include assert {
+          @include output {
+            @include sm\:self-end;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              align-self: flex-end;
+            }
+          }
         }
       }
-
+      
       @include it("sm\:self-center") {
-        @include expect{align-self, center, $sm) {
-          @include sm\:self-center;
+        @include assert {
+          @include output {
+            @include sm\:self-center;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              align-self: center;
+            }
+          }
         }
       }
-
+      
       @include it("sm\:self-stretch") {
-        @include expect{align-self, stretch, $sm) {
-          @include sm\:self-stretch;
+        @include assert {
+          @include output {
+            @include sm\:self-stretch;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              align-self: stretch;
+            }
+          }
         }
       }
-
+      
       @include it("sm\:self-baseline") {
-        @include expect{align-self, baseline, $sm) {
-          @include sm\:self-baseline;
+        @include assert {
+          @include output {
+            @include sm\:self-baseline;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              align-self: baseline;
+            }
+          }
+        }
+      }@include it("md\:self-auto") {
+        @include assert {
+          @include output {
+            @include md\:self-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              align-self: auto;
+            }
+          }
         }
       }
-
-      @include it("md\:self-auto") {
-        @include expect{align-self, auto, $md) {
-          @include md\:self-auto;
-        }
-      }
-
+      
       @include it("md\:self-start") {
-        @include expect{align-self, flex-start, $md) {
-          @include md\:self-start;
+        @include assert {
+          @include output {
+            @include md\:self-start;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              align-self: flex-start;
+            }
+          }
         }
       }
-
+      
       @include it("md\:self-end") {
-        @include expect{align-self, flex-end, $md) {
-          @include md\:self-end;
+        @include assert {
+          @include output {
+            @include md\:self-end;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              align-self: flex-end;
+            }
+          }
         }
       }
-
+      
       @include it("md\:self-center") {
-        @include expect{align-self, center, $md) {
-          @include md\:self-center;
+        @include assert {
+          @include output {
+            @include md\:self-center;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              align-self: center;
+            }
+          }
         }
       }
-
+      
       @include it("md\:self-stretch") {
-        @include expect{align-self, stretch, $md) {
-          @include md\:self-stretch;
+        @include assert {
+          @include output {
+            @include md\:self-stretch;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              align-self: stretch;
+            }
+          }
         }
       }
-
+      
       @include it("md\:self-baseline") {
-        @include expect{align-self, baseline, $md) {
-          @include md\:self-baseline;
+        @include assert {
+          @include output {
+            @include md\:self-baseline;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              align-self: baseline;
+            }
+          }
+        }
+      }@include it("lg\:self-auto") {
+        @include assert {
+          @include output {
+            @include lg\:self-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              align-self: auto;
+            }
+          }
         }
       }
-
-      @include it("lg\:self-auto") {
-        @include expect{align-self, auto, $lg) {
-          @include lg\:self-auto;
-        }
-      }
-
+      
       @include it("lg\:self-start") {
-        @include expect{align-self, flex-start, $lg) {
-          @include lg\:self-start;
+        @include assert {
+          @include output {
+            @include lg\:self-start;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              align-self: flex-start;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:self-end") {
-        @include expect{align-self, flex-end, $lg) {
-          @include lg\:self-end;
+        @include assert {
+          @include output {
+            @include lg\:self-end;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              align-self: flex-end;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:self-center") {
-        @include expect{align-self, center, $lg) {
-          @include lg\:self-center;
+        @include assert {
+          @include output {
+            @include lg\:self-center;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              align-self: center;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:self-stretch") {
-        @include expect{align-self, stretch, $lg) {
-          @include lg\:self-stretch;
+        @include assert {
+          @include output {
+            @include lg\:self-stretch;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              align-self: stretch;
+            }
+          }
         }
       }
-
+      
       @include it("lg\:self-baseline") {
-        @include expect{align-self, baseline, $lg) {
-          @include lg\:self-baseline;
+        @include assert {
+          @include output {
+            @include lg\:self-baseline;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              align-self: baseline;
+            }
+          }
+        }
+      }@include it("xl\:self-auto") {
+        @include assert {
+          @include output {
+            @include xl\:self-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              align-self: auto;
+            }
+          }
         }
       }
-
-      @include it("xl\:self-auto") {
-        @include expect{align-self, auto, $xl) {
-          @include xl\:self-auto;
-        }
-      }
-
+      
       @include it("xl\:self-start") {
-        @include expect{align-self, flex-start, $xl) {
-          @include xl\:self-start;
+        @include assert {
+          @include output {
+            @include xl\:self-start;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              align-self: flex-start;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:self-end") {
-        @include expect{align-self, flex-end, $xl) {
-          @include xl\:self-end;
+        @include assert {
+          @include output {
+            @include xl\:self-end;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              align-self: flex-end;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:self-center") {
-        @include expect{align-self, center, $xl) {
-          @include xl\:self-center;
+        @include assert {
+          @include output {
+            @include xl\:self-center;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              align-self: center;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:self-stretch") {
-        @include expect{align-self, stretch, $xl) {
-          @include xl\:self-stretch;
+        @include assert {
+          @include output {
+            @include xl\:self-stretch;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              align-self: stretch;
+            }
+          }
         }
       }
-
+      
       @include it("xl\:self-baseline") {
-        @include expect{align-self, baseline, $xl) {
-          @include xl\:self-baseline;
+        @include assert {
+          @include output {
+            @include xl\:self-baseline;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              align-self: baseline;
+            }
+          }
+        }
+      }@include it("\2xl\:self-auto") {
+        @include assert {
+          @include output {
+            @include \2xl\:self-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              align-self: auto;
+            }
+          }
         }
       }
-
-      @include it("\2xl\:self-auto") {
-        @include expect{align-self, auto, $\2xl) {
-          @include \2xl\:self-auto;
-        }
-      }
-
+      
       @include it("\2xl\:self-start") {
-        @include expect{align-self, flex-start, $\2xl) {
-          @include \2xl\:self-start;
+        @include assert {
+          @include output {
+            @include \2xl\:self-start;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              align-self: flex-start;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:self-end") {
-        @include expect{align-self, flex-end, $\2xl) {
-          @include \2xl\:self-end;
+        @include assert {
+          @include output {
+            @include \2xl\:self-end;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              align-self: flex-end;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:self-center") {
-        @include expect{align-self, center, $\2xl) {
-          @include \2xl\:self-center;
+        @include assert {
+          @include output {
+            @include \2xl\:self-center;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              align-self: center;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:self-stretch") {
-        @include expect{align-self, stretch, $\2xl) {
-          @include \2xl\:self-stretch;
+        @include assert {
+          @include output {
+            @include \2xl\:self-stretch;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              align-self: stretch;
+            }
+          }
         }
       }
-
+      
       @include it("\2xl\:self-baseline") {
-        @include expect{align-self, baseline, $\2xl) {
-          @include \2xl\:self-baseline;
+        @include assert {
+          @include output {
+            @include \2xl\:self-baseline;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              align-self: baseline;
+            }
+          }
         }
       }
-    }
-  }
+    }  }
 }

@@ -6,114 +6,270 @@
   @include describe("Flex Shrink") {
     @include describe("Basic") {
       @include it("shrink") {
-        @include expect{flex-shrink, 1) {
-          @include shrink;
+        @include assert {
+          @include output {
+            @include shrink;
+            @include clear;
+          }
+
+          @include expect {
+            flex-shrink: 1;
+          }
         }
       }
 
       @include it("shrink-0") {
-        @include expect{flex-shrink, 0) {
-          @include shrink-0;
+        @include assert {
+          @include output {
+            @include shrink-0;
+            @include clear;
+          }
+
+          @include expect {
+            flex-shrink: 0;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:shrink") {
-        @include expect{flex-shrink, 1, $sm) {
-          @include sm\:shrink;
+        @include assert {
+          @include output {
+            @include sm\:shrink;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              flex-shrink: 1;
+            }
+          }
         }
       }
 
       @include it("sm\:shrink-0") {
-        @include expect{flex-shrink, 0, $sm) {
-          @include sm\:shrink-0;
+        @include assert {
+          @include output {
+            @include sm\:shrink-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              flex-shrink: 0;
+            }
+          }
         }
       }
 
       @include it("md\:shrink") {
-        @include expect{flex-shrink, 1, $md) {
-          @include md\:shrink;
+        @include assert {
+          @include output {
+            @include md\:shrink;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              flex-shrink: 1;
+            }
+          }
         }
       }
 
       @include it("md\:shrink-0") {
-        @include expect{flex-shrink, 0, $md) {
-          @include md\:shrink-0;
+        @include assert {
+          @include output {
+            @include md\:shrink-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              flex-shrink: 0;
+            }
+          }
         }
       }
 
       @include it("lg\:shrink") {
-        @include expect{flex-shrink, 1, $lg) {
-          @include lg\:shrink;
+        @include assert {
+          @include output {
+            @include lg\:shrink;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              flex-shrink: 1;
+            }
+          }
         }
       }
 
       @include it("lg\:shrink-0") {
-        @include expect{flex-shrink, 0, $lg) {
-          @include lg\:shrink-0;
+        @include assert {
+          @include output {
+            @include lg\:shrink-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              flex-shrink: 0;
+            }
+          }
         }
       }
 
       @include it("xl\:shrink") {
-        @include expect{flex-shrink, 1, $xl) {
-          @include xl\:shrink;
+        @include assert {
+          @include output {
+            @include xl\:shrink;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              flex-shrink: 1;
+            }
+          }
         }
       }
 
       @include it("xl\:shrink-0") {
-        @include expect{flex-shrink, 0, $xl) {
-          @include xl\:shrink-0;
+        @include assert {
+          @include output {
+            @include xl\:shrink-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              flex-shrink: 0;
+            }
+          }
         }
       }
 
       @include it("\2xl\:shrink") {
-        @include expect{flex-shrink, 1, $\2xl) {
-          @include \2xl\:shrink;
+        @include assert {
+          @include output {
+            @include \2xl\:shrink;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              flex-shrink: 1;
+            }
+          }
         }
       }
 
       @include it("\2xl\:shrink-0") {
-        @include expect{flex-shrink, 0, $\2xl) {
-          @include \2xl\:shrink-0;
+        @include assert {
+          @include output {
+            @include \2xl\:shrink-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              flex-shrink: 0;
+            }
+          }
         }
       }
     }
 
     @include describe("Custom") {
       @include it("shrink-(2)") {
-        @include expect{flex-shrink, 2) {
-          @include shrink-(2);
+        @include assert {
+          @include output {
+            @include shrink-(2);
+            @include clear;
+          }
+
+          @include expect {
+            flex-shrink: 2;
+          }
         }
       }
 
       @include it("sm\:shrink-(2)") {
-        @include expect{flex-shrink, 2, $sm) {
-          @include sm\:shrink-(2);
+        @include assert {
+          @include output {
+            @include sm\:shrink-(2);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              flex-shrink: 2;
+            }
+          }
         }
       }
 
       @include it("md\:shrink-(2)") {
-        @include expect{flex-shrink, 2, $md) {
-          @include md\:shrink-(2);
+        @include assert {
+          @include output {
+            @include md\:shrink-(2);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              flex-shrink: 2;
+            }
+          }
         }
       }
 
       @include it("lg\:shrink-(2)") {
-        @include expect{flex-shrink, 2, $lg) {
-          @include lg\:shrink-(2);
+        @include assert {
+          @include output {
+            @include lg\:shrink-(2);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              flex-shrink: 2;
+            }
+          }
         }
       }
 
       @include it("xl\:shrink-(2)") {
-        @include expect{flex-shrink, 2, $xl) {
-          @include xl\:shrink-(2);
+        @include assert {
+          @include output {
+            @include xl\:shrink-(2);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              flex-shrink: 2;
+            }
+          }
         }
       }
 
       @include it("\2xl\:shrink-(2)") {
-        @include expect{flex-shrink, 2, $\2xl) {
-          @include \2xl\:shrink-(2);
+        @include assert {
+          @include output {
+            @include \2xl\:shrink-(2);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              flex-shrink: 2;
+            }
+          }
         }
       }
     }
