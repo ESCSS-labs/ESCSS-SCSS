@@ -6,76 +6,180 @@
   @include describe("Isolation") {
     @include describe("Basic") {
       @include it("isolate") {
-        @include expect{isolation, isolate) {
-          @include isolate;
+        @include assert {
+          @include output {
+            @include isolate;
+            @include clear;
+          }
+
+          @include expect {
+            isolation: isolate;
+          }
         }
       }
 
       @include it("isolation-auto") {
-        @include expect{isolation, auto) {
-          @include isolation-auto;
+        @include assert {
+          @include output {
+            @include isolation-auto;
+            @include clear;
+          }
+
+          @include expect {
+            isolation: auto;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:isolate") {
-        @include expect{isolation, isolate, $sm) {
-          @include sm\:isolate;
+        @include assert {
+          @include output {
+            @include sm\:isolate;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              isolation: isolate;
+            }
+          }
         }
       }
 
       @include it("sm\:isolation-auto") {
-        @include expect{isolation, auto, $sm) {
-          @include sm\:isolation-auto;
+        @include assert {
+          @include output {
+            @include sm\:isolation-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              isolation: auto;
+            }
+          }
         }
       }
 
       @include it("md\:isolate") {
-        @include expect{isolation, isolate, $md) {
-          @include md\:isolate;
+        @include assert {
+          @include output {
+            @include md\:isolate;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              isolation: isolate;
+            }
+          }
         }
       }
 
       @include it("md\:isolation-auto") {
-        @include expect{isolation, auto, $md) {
-          @include md\:isolation-auto;
+        @include assert {
+          @include output {
+            @include md\:isolation-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              isolation: auto;
+            }
+          }
         }
       }
 
       @include it("lg\:isolate") {
-        @include expect{isolation, isolate, $lg) {
-          @include lg\:isolate;
+        @include assert {
+          @include output {
+            @include lg\:isolate;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              isolation: isolate;
+            }
+          }
         }
       }
 
       @include it("lg\:isolation-auto") {
-        @include expect{isolation, auto, $lg) {
-          @include lg\:isolation-auto;
+        @include assert {
+          @include output {
+            @include lg\:isolation-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              isolation: auto;
+            }
+          }
         }
       }
 
       @include it("xl\:isolate") {
-        @include expect{isolation, isolate, $xl) {
-          @include xl\:isolate;
+        @include assert {
+          @include output {
+            @include xl\:isolate;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              isolation: isolate;
+            }
+          }
         }
       }
 
       @include it("xl\:isolation-auto") {
-        @include expect{isolation, auto, $xl) {
-          @include xl\:isolation-auto;
+        @include assert {
+          @include output {
+            @include xl\:isolation-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              isolation: auto;
+            }
+          }
         }
       }
 
       @include it("\2xl\:isolate") {
-        @include expect{isolation, isolate, $\2xl) {
-          @include \2xl\:isolate;
+        @include assert {
+          @include output {
+            @include \2xl\:isolate;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              isolation: isolate;
+            }
+          }
         }
       }
 
       @include it("\2xl\:isolation-auto") {
-        @include expect{isolation, auto, $\2xl) {
-          @include \2xl\:isolation-auto;
+        @include assert {
+          @include output {
+            @include \2xl\:isolation-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              isolation: auto;
+            }
+          }
         }
       }
     }
