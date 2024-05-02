@@ -6,160 +6,280 @@
   @include describe("Text Overflow") {
     @include describe("Basic") {
       @include it("truncate") {
-        @include expect{
-          overflow,
-          hidden,
-          null,
-          text-overflow,
-          ellipsis,
-          white-space,
-          nowrap
-        ) {
-          @include truncate;
+        @include assert {
+          @include output {
+            @include truncate;
+            @include clear;
+          }
+
+          @include expect {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
         }
       }
 
       @include it("text-ellipsis") {
-        @include expect{text-overflow, ellipsis) {
-          @include text-ellipsis;
+        @include assert {
+          @include output {
+            @include text-ellipsis;
+            @include clear;
+          }
+
+          @include expect {
+            text-overflow: ellipsis;
+          }
         }
       }
 
       @include it("text-clip") {
-        @include expect{text-overflow, clip) {
-          @include text-clip;
+        @include assert {
+          @include output {
+            @include text-clip;
+            @include clear;
+          }
+
+          @include expect {
+            text-overflow: clip;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:truncate") {
-        @include expect{
-          overflow,
-          hidden,
-          $sm,
-          text-overflow,
-          ellipsis,
-          white-space,
-          nowrap
-        ) {
-          @include sm\:truncate;
+        @include assert {
+          @include output {
+            @include sm\:truncate;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
         }
       }
 
       @include it("sm\:text-ellipsis") {
-        @include expect{text-overflow, ellipsis, $sm) {
-          @include sm\:text-ellipsis;
+        @include assert {
+          @include output {
+            @include sm\:text-ellipsis;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              text-overflow: ellipsis;
+            }
+          }
         }
       }
 
       @include it("sm\:text-clip") {
-        @include expect{text-overflow, clip, $sm) {
-          @include sm\:text-clip;
+        @include assert {
+          @include output {
+            @include sm\:text-clip;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              text-overflow: clip;
+            }
+          }
         }
       }
 
       @include it("md\:truncate") {
-        @include expect{
-          overflow,
-          hidden,
-          $md,
-          text-overflow,
-          ellipsis,
-          white-space,
-          nowrap
-        ) {
-          @include md\:truncate;
+        @include assert {
+          @include output {
+            @include md\:truncate;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
         }
       }
 
       @include it("md\:text-ellipsis") {
-        @include expect{text-overflow, ellipsis, $md) {
-          @include md\:text-ellipsis;
+        @include assert {
+          @include output {
+            @include md\:text-ellipsis;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              text-overflow: ellipsis;
+            }
+          }
         }
       }
 
       @include it("md\:text-clip") {
-        @include expect{text-overflow, clip, $md) {
-          @include md\:text-clip;
+        @include assert {
+          @include output {
+            @include md\:text-clip;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              text-overflow: clip;
+            }
+          }
         }
       }
 
       @include it("lg\:truncate") {
-        @include expect{
-          overflow,
-          hidden,
-          $lg,
-          text-overflow,
-          ellipsis,
-          white-space,
-          nowrap
-        ) {
-          @include lg\:truncate;
+        @include assert {
+          @include output {
+            @include lg\:truncate;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
         }
       }
 
       @include it("lg\:text-ellipsis") {
-        @include expect{text-overflow, ellipsis, $lg) {
-          @include lg\:text-ellipsis;
+        @include assert {
+          @include output {
+            @include lg\:text-ellipsis;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              text-overflow: ellipsis;
+            }
+          }
         }
       }
 
       @include it("lg\:text-clip") {
-        @include expect{text-overflow, clip, $lg) {
-          @include lg\:text-clip;
+        @include assert {
+          @include output {
+            @include lg\:text-clip;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              text-overflow: clip;
+            }
+          }
         }
       }
 
       @include it("xl\:truncate") {
-        @include expect{
-          overflow,
-          hidden,
-          $xl,
-          text-overflow,
-          ellipsis,
-          white-space,
-          nowrap
-        ) {
-          @include xl\:truncate;
+        @include assert {
+          @include output {
+            @include xl\:truncate;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
         }
       }
 
       @include it("xl\:text-ellipsis") {
-        @include expect{text-overflow, ellipsis, $xl) {
-          @include xl\:text-ellipsis;
+        @include assert {
+          @include output {
+            @include xl\:text-ellipsis;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              text-overflow: ellipsis;
+            }
+          }
         }
       }
 
       @include it("xl\:text-clip") {
-        @include expect{text-overflow, clip, $xl) {
-          @include xl\:text-clip;
+        @include assert {
+          @include output {
+            @include xl\:text-clip;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              text-overflow: clip;
+            }
+          }
         }
       }
 
       @include it("\2xl\:truncate") {
-        @include expect{
-          overflow,
-          hidden,
-          $\2xl,
-          text-overflow,
-          ellipsis,
-          white-space,
-          nowrap
-        ) {
-          @include \2xl\:truncate;
+        @include assert {
+          @include output {
+            @include \2xl\:truncate;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
         }
       }
 
       @include it("\2xl\:text-ellipsis") {
-        @include expect{text-overflow, ellipsis, $\2xl) {
-          @include \2xl\:text-ellipsis;
+        @include assert {
+          @include output {
+            @include \2xl\:text-ellipsis;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              text-overflow: ellipsis;
+            }
+          }
         }
       }
 
       @include it("\2xl\:text-clip") {
-        @include expect{text-overflow, clip, $\2xl) {
-          @include \2xl\:text-clip;
+        @include assert {
+          @include output {
+            @include \2xl\:text-clip;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              text-overflow: clip;
+            }
+          }
         }
       }
     }

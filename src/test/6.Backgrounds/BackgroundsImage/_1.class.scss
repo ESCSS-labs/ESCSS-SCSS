@@ -6,573 +6,954 @@
   @include describe("Background Image") {
     @include describe("Basic") {
       @include it("bg-none") {
-        @include expect{background-image, none) {
-          @include bg-none;
+        @include assert {
+          @include output {
+            @include bg-none;
+            @include clear;
+          }
+
+          @include expect {
+            background-image: none;
+          }
         }
       }
 
       @include it("bg-gradient-to-t") {
-        @include expect{
-          background-image,
-          linear-gradient(to top, #fff, transparent)
-        ) {
-          @include bg-gradient-to-t;
+        @include assert {
+          @include output {
+            @include bg-gradient-to-t;
+            @include clear;
+          }
+
+          @include expect {
+            background-image: linear-gradient(to top, #fff, transparent);
+          }
         }
       }
 
       @include it("bg-gradient-to-tr") {
-        @include expect{
-          background-image,
-          linear-gradient(to top right, #fff, transparent)
-        ) {
-          @include bg-gradient-to-tr;
+        @include assert {
+          @include output {
+            @include bg-gradient-to-tr;
+            @include clear;
+          }
+
+          @include expect {
+            background-image: linear-gradient(to top right, #fff, transparent);
+          }
         }
       }
 
       @include it("bg-gradient-to-r") {
-        @include expect{
-          background-image,
-          linear-gradient(to right, #fff, transparent)
-        ) {
-          @include bg-gradient-to-r;
+        @include assert {
+          @include output {
+            @include bg-gradient-to-r;
+            @include clear;
+          }
+
+          @include expect {
+            background-image: linear-gradient(to right, #fff, transparent);
+          }
         }
       }
 
       @include it("bg-gradient-to-br") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom right, #fff, transparent)
-        ) {
-          @include bg-gradient-to-br;
+        @include assert {
+          @include output {
+            @include bg-gradient-to-br;
+            @include clear;
+          }
+
+          @include expect {
+            background-image: linear-gradient(
+              to bottom right,
+              #fff,
+              transparent
+            );
+          }
         }
       }
 
       @include it("bg-gradient-to-b") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom, #fff, transparent)
-        ) {
-          @include bg-gradient-to-b;
+        @include assert {
+          @include output {
+            @include bg-gradient-to-b;
+            @include clear;
+          }
+
+          @include expect {
+            background-image: linear-gradient(to bottom, #fff, transparent);
+          }
         }
       }
 
       @include it("bg-gradient-to-bl") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom left, #fff, transparent)
-        ) {
-          @include bg-gradient-to-bl;
+        @include assert {
+          @include output {
+            @include bg-gradient-to-bl;
+            @include clear;
+          }
+
+          @include expect {
+            background-image: linear-gradient(
+              to bottom left,
+              #fff,
+              transparent
+            );
+          }
         }
       }
 
       @include it("bg-gradient-to-l") {
-        @include expect{
-          background-image,
-          linear-gradient(to left, #fff, transparent)
-        ) {
-          @include bg-gradient-to-l;
+        @include assert {
+          @include output {
+            @include bg-gradient-to-l;
+            @include clear;
+          }
+
+          @include expect {
+            background-image: linear-gradient(to left, #fff, transparent);
+          }
         }
       }
 
       @include it("bg-gradient-to-tl") {
-        @include expect{
-          background-image,
-          linear-gradient(to top left, #fff, transparent)
-        ) {
-          @include bg-gradient-to-tl;
+        @include assert {
+          @include output {
+            @include bg-gradient-to-tl;
+            @include clear;
+          }
+
+          @include expect {
+            background-image: linear-gradient(to top left, #fff, transparent);
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:bg-none") {
-        @include expect{background-image, none, $sm) {
-          @include sm\:bg-none;
+        @include assert {
+          @include output {
+            @include sm\:bg-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: none;
+            }
+          }
         }
       }
 
       @include it("sm\:bg-gradient-to-t") {
-        @include expect{
-          background-image,
-          linear-gradient(to top, #fff, transparent),
-          $sm
-        ) {
-          @include sm\:bg-gradient-to-t;
+        @include assert {
+          @include output {
+            @include sm\:bg-gradient-to-t;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: linear-gradient(to top, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("sm\:bg-gradient-to-tr") {
-        @include expect{
-          background-image,
-          linear-gradient(to top right, #fff, transparent),
-          $sm
-        ) {
-          @include sm\:bg-gradient-to-tr;
+        @include assert {
+          @include output {
+            @include sm\:bg-gradient-to-tr;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: linear-gradient(
+                to top right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("sm\:bg-gradient-to-r") {
-        @include expect{
-          background-image,
-          linear-gradient(to right, #fff, transparent),
-          $sm
-        ) {
-          @include sm\:bg-gradient-to-r;
+        @include assert {
+          @include output {
+            @include sm\:bg-gradient-to-r;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: linear-gradient(to right, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("sm\:bg-gradient-to-br") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom right, #fff, transparent),
-          $sm
-        ) {
-          @include sm\:bg-gradient-to-br;
+        @include assert {
+          @include output {
+            @include sm\:bg-gradient-to-br;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: linear-gradient(
+                to bottom right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("sm\:bg-gradient-to-b") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom, #fff, transparent),
-          $sm
-        ) {
-          @include sm\:bg-gradient-to-b;
+        @include assert {
+          @include output {
+            @include sm\:bg-gradient-to-b;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: linear-gradient(to bottom, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("sm\:bg-gradient-to-bl") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom left, #fff, transparent),
-          $sm
-        ) {
-          @include sm\:bg-gradient-to-bl;
+        @include assert {
+          @include output {
+            @include sm\:bg-gradient-to-bl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: linear-gradient(
+                to bottom left,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("sm\:bg-gradient-to-l") {
-        @include expect{
-          background-image,
-          linear-gradient(to left, #fff, transparent),
-          $sm
-        ) {
-          @include sm\:bg-gradient-to-l;
+        @include assert {
+          @include output {
+            @include sm\:bg-gradient-to-l;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: linear-gradient(to left, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("sm\:bg-gradient-to-tl") {
-        @include expect{
-          background-image,
-          linear-gradient(to top left, #fff, transparent),
-          $sm
-        ) {
-          @include sm\:bg-gradient-to-tl;
+        @include assert {
+          @include output {
+            @include sm\:bg-gradient-to-tl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: linear-gradient(to top left, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("md\:bg-none") {
-        @include expect{background-image, none, $md) {
-          @include md\:bg-none;
+        @include assert {
+          @include output {
+            @include md\:bg-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: none;
+            }
+          }
         }
       }
 
       @include it("md\:bg-gradient-to-t") {
-        @include expect{
-          background-image,
-          linear-gradient(to top, #fff, transparent),
-          $md
-        ) {
-          @include md\:bg-gradient-to-t;
+        @include assert {
+          @include output {
+            @include md\:bg-gradient-to-t;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: linear-gradient(to top, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("md\:bg-gradient-to-tr") {
-        @include expect{
-          background-image,
-          linear-gradient(to top right, #fff, transparent),
-          $md
-        ) {
-          @include md\:bg-gradient-to-tr;
+        @include assert {
+          @include output {
+            @include md\:bg-gradient-to-tr;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: linear-gradient(
+                to top right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("md\:bg-gradient-to-r") {
-        @include expect{
-          background-image,
-          linear-gradient(to right, #fff, transparent),
-          $md
-        ) {
-          @include md\:bg-gradient-to-r;
+        @include assert {
+          @include output {
+            @include md\:bg-gradient-to-r;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: linear-gradient(to right, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("md\:bg-gradient-to-br") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom right, #fff, transparent),
-          $md
-        ) {
-          @include md\:bg-gradient-to-br;
+        @include assert {
+          @include output {
+            @include md\:bg-gradient-to-br;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: linear-gradient(
+                to bottom right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("md\:bg-gradient-to-b") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom, #fff, transparent),
-          $md
-        ) {
-          @include md\:bg-gradient-to-b;
+        @include assert {
+          @include output {
+            @include md\:bg-gradient-to-b;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: linear-gradient(to bottom, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("md\:bg-gradient-to-bl") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom left, #fff, transparent),
-          $md
-        ) {
-          @include md\:bg-gradient-to-bl;
+        @include assert {
+          @include output {
+            @include md\:bg-gradient-to-bl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: linear-gradient(
+                to bottom left,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("md\:bg-gradient-to-l") {
-        @include expect{
-          background-image,
-          linear-gradient(to left, #fff, transparent),
-          $md
-        ) {
-          @include md\:bg-gradient-to-l;
+        @include assert {
+          @include output {
+            @include md\:bg-gradient-to-l;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: linear-gradient(to left, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("md\:bg-gradient-to-tl") {
-        @include expect{
-          background-image,
-          linear-gradient(to top left, #fff, transparent),
-          $md
-        ) {
-          @include md\:bg-gradient-to-tl;
+        @include assert {
+          @include output {
+            @include md\:bg-gradient-to-tl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: linear-gradient(to top left, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("lg\:bg-none") {
-        @include expect{background-image, none, $lg) {
-          @include lg\:bg-none;
+        @include assert {
+          @include output {
+            @include lg\:bg-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: none;
+            }
+          }
         }
       }
 
       @include it("lg\:bg-gradient-to-t") {
-        @include expect{
-          background-image,
-          linear-gradient(to top, #fff, transparent),
-          $lg
-        ) {
-          @include lg\:bg-gradient-to-t;
+        @include assert {
+          @include output {
+            @include lg\:bg-gradient-to-t;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: linear-gradient(to top, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("lg\:bg-gradient-to-tr") {
-        @include expect{
-          background-image,
-          linear-gradient(to top right, #fff, transparent),
-          $lg
-        ) {
-          @include lg\:bg-gradient-to-tr;
+        @include assert {
+          @include output {
+            @include lg\:bg-gradient-to-tr;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: linear-gradient(
+                to top right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("lg\:bg-gradient-to-r") {
-        @include expect{
-          background-image,
-          linear-gradient(to right, #fff, transparent),
-          $lg
-        ) {
-          @include lg\:bg-gradient-to-r;
+        @include assert {
+          @include output {
+            @include lg\:bg-gradient-to-r;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: linear-gradient(to right, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("lg\:bg-gradient-to-br") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom right, #fff, transparent),
-          $lg
-        ) {
-          @include lg\:bg-gradient-to-br;
+        @include assert {
+          @include output {
+            @include lg\:bg-gradient-to-br;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: linear-gradient(
+                to bottom right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("lg\:bg-gradient-to-b") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom, #fff, transparent),
-          $lg
-        ) {
-          @include lg\:bg-gradient-to-b;
+        @include assert {
+          @include output {
+            @include lg\:bg-gradient-to-b;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: linear-gradient(to bottom, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("lg\:bg-gradient-to-bl") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom left, #fff, transparent),
-          $lg
-        ) {
-          @include lg\:bg-gradient-to-bl;
+        @include assert {
+          @include output {
+            @include lg\:bg-gradient-to-bl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: linear-gradient(
+                to bottom left,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("lg\:bg-gradient-to-l") {
-        @include expect{
-          background-image,
-          linear-gradient(to left, #fff, transparent),
-          $lg
-        ) {
-          @include lg\:bg-gradient-to-l;
+        @include assert {
+          @include output {
+            @include lg\:bg-gradient-to-l;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: linear-gradient(to left, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("lg\:bg-gradient-to-tl") {
-        @include expect{
-          background-image,
-          linear-gradient(to top left, #fff, transparent),
-          $lg
-        ) {
-          @include lg\:bg-gradient-to-tl;
+        @include assert {
+          @include output {
+            @include lg\:bg-gradient-to-tl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: linear-gradient(to top left, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("xl\:bg-none") {
-        @include expect{background-image, none, $xl) {
-          @include xl\:bg-none;
+        @include assert {
+          @include output {
+            @include xl\:bg-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: none;
+            }
+          }
         }
       }
 
       @include it("xl\:bg-gradient-to-t") {
-        @include expect{
-          background-image,
-          linear-gradient(to top, #fff, transparent),
-          $xl
-        ) {
-          @include xl\:bg-gradient-to-t;
+        @include assert {
+          @include output {
+            @include xl\:bg-gradient-to-t;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: linear-gradient(to top, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("xl\:bg-gradient-to-tr") {
-        @include expect{
-          background-image,
-          linear-gradient(to top right, #fff, transparent),
-          $xl
-        ) {
-          @include xl\:bg-gradient-to-tr;
+        @include assert {
+          @include output {
+            @include xl\:bg-gradient-to-tr;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: linear-gradient(
+                to top right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("xl\:bg-gradient-to-r") {
-        @include expect{
-          background-image,
-          linear-gradient(to right, #fff, transparent),
-          $xl
-        ) {
-          @include xl\:bg-gradient-to-r;
+        @include assert {
+          @include output {
+            @include xl\:bg-gradient-to-r;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: linear-gradient(to right, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("xl\:bg-gradient-to-br") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom right, #fff, transparent),
-          $xl
-        ) {
-          @include xl\:bg-gradient-to-br;
+        @include assert {
+          @include output {
+            @include xl\:bg-gradient-to-br;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: linear-gradient(
+                to bottom right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("xl\:bg-gradient-to-b") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom, #fff, transparent),
-          $xl
-        ) {
-          @include xl\:bg-gradient-to-b;
+        @include assert {
+          @include output {
+            @include xl\:bg-gradient-to-b;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: linear-gradient(to bottom, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("xl\:bg-gradient-to-bl") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom left, #fff, transparent),
-          $xl
-        ) {
-          @include xl\:bg-gradient-to-bl;
+        @include assert {
+          @include output {
+            @include xl\:bg-gradient-to-bl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: linear-gradient(
+                to bottom left,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("xl\:bg-gradient-to-l") {
-        @include expect{
-          background-image,
-          linear-gradient(to left, #fff, transparent),
-          $xl
-        ) {
-          @include xl\:bg-gradient-to-l;
+        @include assert {
+          @include output {
+            @include xl\:bg-gradient-to-l;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: linear-gradient(to left, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("xl\:bg-gradient-to-tl") {
-        @include expect{
-          background-image,
-          linear-gradient(to top left, #fff, transparent),
-          $xl
-        ) {
-          @include xl\:bg-gradient-to-tl;
+        @include assert {
+          @include output {
+            @include xl\:bg-gradient-to-tl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: linear-gradient(to top left, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-none") {
-        @include expect{background-image, none, $\2xl) {
-          @include \2xl\:bg-none;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: none;
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-gradient-to-t") {
-        @include expect{
-          background-image,
-          linear-gradient(to top, #fff, transparent),
-          $\2xl
-        ) {
-          @include \2xl\:bg-gradient-to-t;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-gradient-to-t;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: linear-gradient(to top, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-gradient-to-tr") {
-        @include expect{
-          background-image,
-          linear-gradient(to top right, #fff, transparent),
-          $\2xl
-        ) {
-          @include \2xl\:bg-gradient-to-tr;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-gradient-to-tr;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: linear-gradient(
+                to top right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-gradient-to-r") {
-        @include expect{
-          background-image,
-          linear-gradient(to right, #fff, transparent),
-          $\2xl
-        ) {
-          @include \2xl\:bg-gradient-to-r;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-gradient-to-r;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: linear-gradient(to right, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-gradient-to-br") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom right, #fff, transparent),
-          $\2xl
-        ) {
-          @include \2xl\:bg-gradient-to-br;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-gradient-to-br;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: linear-gradient(
+                to bottom right,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-gradient-to-b") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom, #fff, transparent),
-          $\2xl
-        ) {
-          @include \2xl\:bg-gradient-to-b;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-gradient-to-b;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: linear-gradient(to bottom, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-gradient-to-bl") {
-        @include expect{
-          background-image,
-          linear-gradient(to bottom left, #fff, transparent),
-          $\2xl
-        ) {
-          @include \2xl\:bg-gradient-to-bl;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-gradient-to-bl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: linear-gradient(
+                to bottom left,
+                #fff,
+                transparent
+              );
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-gradient-to-l") {
-        @include expect{
-          background-image,
-          linear-gradient(to left, #fff, transparent),
-          $\2xl
-        ) {
-          @include \2xl\:bg-gradient-to-l;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-gradient-to-l;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: linear-gradient(to left, #fff, transparent);
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-gradient-to-tl") {
-        @include expect{
-          background-image,
-          linear-gradient(to top left, #fff, transparent),
-          $\2xl
-        ) {
-          @include \2xl\:bg-gradient-to-tl;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-gradient-to-tl;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: linear-gradient(to top left, #fff, transparent);
+            }
+          }
         }
       }
     }
 
     @include describe("Custom") {
       @include it("bg-(url('/img/hero-pattern.svg'))") {
-        @include expect{
-          background-image,
-          url("/img/hero-pattern.svg")
-        ) {
-          @include bg-(url("/img/hero-pattern.svg"));
+        @include assert {
+          @include output {
+            @include bg-(url("/img/hero-pattern.svg"));
+            @include clear;
+          }
+
+          @include expect {
+            background-image: url("/img/hero-pattern.svg");
+          }
         }
       }
 
       @include it("sm\:bg-(url('/img/hero-pattern.svg'))") {
-        @include expect{
-          background-image,
-          url("/img/hero-pattern.svg"),
-          $sm
-        ) {
-          @include sm\:bg-(url("/img/hero-pattern.svg"));
+        @include assert {
+          @include output {
+            @include sm\:bg-(url("/img/hero-pattern.svg"));
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-image: url("/img/hero-pattern.svg");
+            }
+          }
         }
       }
 
       @include it("md\:bg-(url('/img/hero-pattern.svg'))") {
-        @include expect{
-          background-image,
-          url("/img/hero-pattern.svg"),
-          $md
-        ) {
-          @include md\:bg-(url("/img/hero-pattern.svg"));
+        @include assert {
+          @include output {
+            @include md\:bg-(url("/img/hero-pattern.svg"));
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-image: url("/img/hero-pattern.svg");
+            }
+          }
         }
       }
 
       @include it("lg\:bg-(url('/img/hero-pattern.svg'))") {
-        @include expect{
-          background-image,
-          url("/img/hero-pattern.svg"),
-          $lg
-        ) {
-          @include lg\:bg-(url("/img/hero-pattern.svg"));
+        @include assert {
+          @include output {
+            @include lg\:bg-(url("/img/hero-pattern.svg"));
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-image: url("/img/hero-pattern.svg");
+            }
+          }
         }
       }
 
       @include it("xl\:bg-(url('/img/hero-pattern.svg'))") {
-        @include expect{
-          background-image,
-          url("/img/hero-pattern.svg"),
-          $xl
-        ) {
-          @include xl\:bg-(url("/img/hero-pattern.svg"));
+        @include assert {
+          @include output {
+            @include xl\:bg-(url("/img/hero-pattern.svg"));
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-image: url("/img/hero-pattern.svg");
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-(url('/img/hero-pattern.svg'))") {
-        @include expect{
-          background-image,
-          url("/img/hero-pattern.svg"),
-          $\2xl
-        ) {
-          @include \2xl\:bg-(url("/img/hero-pattern.svg"));
+        @include assert {
+          @include output {
+            @include \2xl\:bg-(url("/img/hero-pattern.svg"));
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-image: url("/img/hero-pattern.svg");
+            }
+          }
         }
       }
     }

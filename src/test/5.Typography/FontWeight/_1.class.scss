@@ -6,366 +6,886 @@
   @include describe("Font Weight") {
     @include describe("Basic") {
       @include it("font-thin") {
-        @include expect{font-weight, 100) {
-          @include font-thin;
+        @include assert {
+          @include output {
+            @include font-thin;
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 100;
+          }
         }
       }
 
       @include it("font-extralight") {
-        @include expect{font-weight, 200) {
-          @include font-extralight;
+        @include assert {
+          @include output {
+            @include font-extralight;
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 200;
+          }
         }
       }
 
       @include it("font-light") {
-        @include expect{font-weight, 300) {
-          @include font-light;
+        @include assert {
+          @include output {
+            @include font-light;
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 300;
+          }
         }
       }
 
       @include it("font-normal") {
-        @include expect{font-weight, 400) {
-          @include font-normal;
+        @include assert {
+          @include output {
+            @include font-normal;
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 400;
+          }
         }
       }
 
       @include it("font-medium") {
-        @include expect{font-weight, 500) {
-          @include font-medium;
+        @include assert {
+          @include output {
+            @include font-medium;
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 500;
+          }
         }
       }
 
       @include it("font-semibold") {
-        @include expect{font-weight, 600) {
-          @include font-semibold;
+        @include assert {
+          @include output {
+            @include font-semibold;
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 600;
+          }
         }
       }
 
       @include it("font-bold") {
-        @include expect{font-weight, 700) {
-          @include font-bold;
+        @include assert {
+          @include output {
+            @include font-bold;
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 700;
+          }
         }
       }
 
       @include it("font-extrabold") {
-        @include expect{font-weight, 800) {
-          @include font-extrabold;
+        @include assert {
+          @include output {
+            @include font-extrabold;
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 800;
+          }
         }
       }
 
       @include it("font-black") {
-        @include expect{font-weight, 900) {
-          @include font-black;
+        @include assert {
+          @include output {
+            @include font-black;
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 900;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:font-thin") {
-        @include expect{font-weight, 100, $sm) {
-          @include sm\:font-thin;
+        @include assert {
+          @include output {
+            @include sm\:font-thin;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 100;
+            }
+          }
         }
       }
 
       @include it("sm\:font-extralight") {
-        @include expect{font-weight, 200, $sm) {
-          @include sm\:font-extralight;
+        @include assert {
+          @include output {
+            @include sm\:font-extralight;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 200;
+            }
+          }
         }
       }
 
       @include it("sm\:font-light") {
-        @include expect{font-weight, 300, $sm) {
-          @include sm\:font-light;
+        @include assert {
+          @include output {
+            @include sm\:font-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 300;
+            }
+          }
         }
       }
 
       @include it("sm\:font-normal") {
-        @include expect{font-weight, 400, $sm) {
-          @include sm\:font-normal;
+        @include assert {
+          @include output {
+            @include sm\:font-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 400;
+            }
+          }
         }
       }
 
       @include it("sm\:font-medium") {
-        @include expect{font-weight, 500, $sm) {
-          @include sm\:font-medium;
+        @include assert {
+          @include output {
+            @include sm\:font-medium;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 500;
+            }
+          }
         }
       }
 
       @include it("sm\:font-semibold") {
-        @include expect{font-weight, 600, $sm) {
-          @include sm\:font-semibold;
+        @include assert {
+          @include output {
+            @include sm\:font-semibold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 600;
+            }
+          }
         }
       }
 
       @include it("sm\:font-bold") {
-        @include expect{font-weight, 700, $sm) {
-          @include sm\:font-bold;
+        @include assert {
+          @include output {
+            @include sm\:font-bold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 700;
+            }
+          }
         }
       }
 
       @include it("sm\:font-extrabold") {
-        @include expect{font-weight, 800, $sm) {
-          @include sm\:font-extrabold;
+        @include assert {
+          @include output {
+            @include sm\:font-extrabold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 800;
+            }
+          }
         }
       }
 
       @include it("sm\:font-black") {
-        @include expect{font-weight, 900, $sm) {
-          @include sm\:font-black;
+        @include assert {
+          @include output {
+            @include sm\:font-black;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 900;
+            }
+          }
         }
       }
 
       @include it("md\:font-thin") {
-        @include expect{font-weight, 100, $md) {
-          @include md\:font-thin;
+        @include assert {
+          @include output {
+            @include md\:font-thin;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 100;
+            }
+          }
         }
       }
 
       @include it("md\:font-extralight") {
-        @include expect{font-weight, 200, $md) {
-          @include md\:font-extralight;
+        @include assert {
+          @include output {
+            @include md\:font-extralight;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 200;
+            }
+          }
         }
       }
 
       @include it("md\:font-light") {
-        @include expect{font-weight, 300, $md) {
-          @include md\:font-light;
+        @include assert {
+          @include output {
+            @include md\:font-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 300;
+            }
+          }
         }
       }
 
       @include it("md\:font-normal") {
-        @include expect{font-weight, 400, $md) {
-          @include md\:font-normal;
+        @include assert {
+          @include output {
+            @include md\:font-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 400;
+            }
+          }
         }
       }
 
       @include it("md\:font-medium") {
-        @include expect{font-weight, 500, $md) {
-          @include md\:font-medium;
+        @include assert {
+          @include output {
+            @include md\:font-medium;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 500;
+            }
+          }
         }
       }
 
       @include it("md\:font-semibold") {
-        @include expect{font-weight, 600, $md) {
-          @include md\:font-semibold;
+        @include assert {
+          @include output {
+            @include md\:font-semibold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 600;
+            }
+          }
         }
       }
 
       @include it("md\:font-bold") {
-        @include expect{font-weight, 700, $md) {
-          @include md\:font-bold;
+        @include assert {
+          @include output {
+            @include md\:font-bold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 700;
+            }
+          }
         }
       }
 
       @include it("md\:font-extrabold") {
-        @include expect{font-weight, 800, $md) {
-          @include md\:font-extrabold;
+        @include assert {
+          @include output {
+            @include md\:font-extrabold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 800;
+            }
+          }
         }
       }
 
       @include it("md\:font-black") {
-        @include expect{font-weight, 900, $md) {
-          @include md\:font-black;
+        @include assert {
+          @include output {
+            @include md\:font-black;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 900;
+            }
+          }
         }
       }
 
       @include it("lg\:font-thin") {
-        @include expect{font-weight, 100, $lg) {
-          @include lg\:font-thin;
+        @include assert {
+          @include output {
+            @include lg\:font-thin;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 100;
+            }
+          }
         }
       }
 
       @include it("lg\:font-extralight") {
-        @include expect{font-weight, 200, $lg) {
-          @include lg\:font-extralight;
+        @include assert {
+          @include output {
+            @include lg\:font-extralight;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 200;
+            }
+          }
         }
       }
 
       @include it("lg\:font-light") {
-        @include expect{font-weight, 300, $lg) {
-          @include lg\:font-light;
+        @include assert {
+          @include output {
+            @include lg\:font-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 300;
+            }
+          }
         }
       }
 
       @include it("lg\:font-normal") {
-        @include expect{font-weight, 400, $lg) {
-          @include lg\:font-normal;
+        @include assert {
+          @include output {
+            @include lg\:font-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 400;
+            }
+          }
         }
       }
 
       @include it("lg\:font-medium") {
-        @include expect{font-weight, 500, $lg) {
-          @include lg\:font-medium;
+        @include assert {
+          @include output {
+            @include lg\:font-medium;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 500;
+            }
+          }
         }
       }
 
       @include it("lg\:font-semibold") {
-        @include expect{font-weight, 600, $lg) {
-          @include lg\:font-semibold;
+        @include assert {
+          @include output {
+            @include lg\:font-semibold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 600;
+            }
+          }
         }
       }
 
       @include it("lg\:font-bold") {
-        @include expect{font-weight, 700, $lg) {
-          @include lg\:font-bold;
+        @include assert {
+          @include output {
+            @include lg\:font-bold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 700;
+            }
+          }
         }
       }
 
       @include it("lg\:font-extrabold") {
-        @include expect{font-weight, 800, $lg) {
-          @include lg\:font-extrabold;
+        @include assert {
+          @include output {
+            @include lg\:font-extrabold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 800;
+            }
+          }
         }
       }
 
       @include it("lg\:font-black") {
-        @include expect{font-weight, 900, $lg) {
-          @include lg\:font-black;
+        @include assert {
+          @include output {
+            @include lg\:font-black;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 900;
+            }
+          }
         }
       }
 
       @include it("xl\:font-thin") {
-        @include expect{font-weight, 100, $xl) {
-          @include xl\:font-thin;
+        @include assert {
+          @include output {
+            @include xl\:font-thin;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 100;
+            }
+          }
         }
       }
 
       @include it("xl\:font-extralight") {
-        @include expect{font-weight, 200, $xl) {
-          @include xl\:font-extralight;
+        @include assert {
+          @include output {
+            @include xl\:font-extralight;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 200;
+            }
+          }
         }
       }
 
       @include it("xl\:font-light") {
-        @include expect{font-weight, 300, $xl) {
-          @include xl\:font-light;
+        @include assert {
+          @include output {
+            @include xl\:font-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 300;
+            }
+          }
         }
       }
 
       @include it("xl\:font-normal") {
-        @include expect{font-weight, 400, $xl) {
-          @include xl\:font-normal;
+        @include assert {
+          @include output {
+            @include xl\:font-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 400;
+            }
+          }
         }
       }
 
       @include it("xl\:font-medium") {
-        @include expect{font-weight, 500, $xl) {
-          @include xl\:font-medium;
+        @include assert {
+          @include output {
+            @include xl\:font-medium;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 500;
+            }
+          }
         }
       }
 
       @include it("xl\:font-semibold") {
-        @include expect{font-weight, 600, $xl) {
-          @include xl\:font-semibold;
+        @include assert {
+          @include output {
+            @include xl\:font-semibold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 600;
+            }
+          }
         }
       }
 
       @include it("xl\:font-bold") {
-        @include expect{font-weight, 700, $xl) {
-          @include xl\:font-bold;
+        @include assert {
+          @include output {
+            @include xl\:font-bold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 700;
+            }
+          }
         }
       }
 
       @include it("xl\:font-extrabold") {
-        @include expect{font-weight, 800, $xl) {
-          @include xl\:font-extrabold;
+        @include assert {
+          @include output {
+            @include xl\:font-extrabold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 800;
+            }
+          }
         }
       }
 
       @include it("xl\:font-black") {
-        @include expect{font-weight, 900, $xl) {
-          @include xl\:font-black;
+        @include assert {
+          @include output {
+            @include xl\:font-black;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 900;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-thin") {
-        @include expect{font-weight, 100, $\2xl) {
-          @include \2xl\:font-thin;
+        @include assert {
+          @include output {
+            @include \2xl\:font-thin;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 100;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-extralight") {
-        @include expect{font-weight, 200, $\2xl) {
-          @include \2xl\:font-extralight;
+        @include assert {
+          @include output {
+            @include \2xl\:font-extralight;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 200;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-light") {
-        @include expect{font-weight, 300, $\2xl) {
-          @include \2xl\:font-light;
+        @include assert {
+          @include output {
+            @include \2xl\:font-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 300;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-normal") {
-        @include expect{font-weight, 400, $\2xl) {
-          @include \2xl\:font-normal;
+        @include assert {
+          @include output {
+            @include \2xl\:font-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 400;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-medium") {
-        @include expect{font-weight, 500, $\2xl) {
-          @include \2xl\:font-medium;
+        @include assert {
+          @include output {
+            @include \2xl\:font-medium;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 500;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-semibold") {
-        @include expect{font-weight, 600, $\2xl) {
-          @include \2xl\:font-semibold;
+        @include assert {
+          @include output {
+            @include \2xl\:font-semibold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 600;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-bold") {
-        @include expect{font-weight, 700, $\2xl) {
-          @include \2xl\:font-bold;
+        @include assert {
+          @include output {
+            @include \2xl\:font-bold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 700;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-extrabold") {
-        @include expect{font-weight, 800, $\2xl) {
-          @include \2xl\:font-extrabold;
+        @include assert {
+          @include output {
+            @include \2xl\:font-extrabold;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 800;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-black") {
-        @include expect{font-weight, 900, $\2xl) {
-          @include \2xl\:font-black;
+        @include assert {
+          @include output {
+            @include \2xl\:font-black;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 900;
+            }
+          }
         }
       }
     }
 
     @include describe("Custom") {
       @include it("font-(1100)") {
-        @include expect{font-weight, 1100) {
-          @include font-(1100);
+        @include assert {
+          @include output {
+            @include font-(1100);
+            @include clear;
+          }
+
+          @include expect {
+            font-weight: 1100;
+          }
         }
       }
 
       @include it("sm\:font-(1100)") {
-        @include expect{font-weight, 1100, $sm) {
-          @include sm\:font-(1100);
+        @include assert {
+          @include output {
+            @include sm\:font-(1100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-weight: 1100;
+            }
+          }
         }
       }
 
       @include it("md\:font-(1100)") {
-        @include expect{font-weight, 1100, $md) {
-          @include md\:font-(1100);
+        @include assert {
+          @include output {
+            @include md\:font-(1100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-weight: 1100;
+            }
+          }
         }
       }
 
       @include it("lg\:font-(1100)") {
-        @include expect{font-weight, 1100, $lg) {
-          @include lg\:font-(1100);
+        @include assert {
+          @include output {
+            @include lg\:font-(1100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-weight: 1100;
+            }
+          }
         }
       }
 
       @include it("xl\:font-(1100)") {
-        @include expect{font-weight, 1100, $xl) {
-          @include xl\:font-(1100);
+        @include assert {
+          @include output {
+            @include xl\:font-(1100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-weight: 1100;
+            }
+          }
         }
       }
 
       @include it("\2xl\:font-(1100)") {
-        @include expect{font-weight, 1100, $\2xl) {
-          @include \2xl\:font-(1100);
+        @include assert {
+          @include output {
+            @include \2xl\:font-(1100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-weight: 1100;
+            }
+          }
         }
       }
     }

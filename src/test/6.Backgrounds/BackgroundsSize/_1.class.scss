@@ -6,132 +6,358 @@
   @include describe("Background Size") {
     @include describe("Basic") {
       @include it("bg-auto") {
-        @include expect{background-size, auto) {
-          @include bg-auto;
+        @include assert {
+          @include output {
+            @include bg-auto;
+            @include clear;
+          }
+
+          @include expect {
+            background-size: auto;
+          }
         }
       }
 
       @include it("bg-cover") {
-        @include expect{background-size, cover) {
-          @include bg-cover;
+        @include assert {
+          @include output {
+            @include bg-cover;
+            @include clear;
+          }
+
+          @include expect {
+            background-size: cover;
+          }
         }
       }
 
       @include it("bg-contain") {
-        @include expect{background-size, contain) {
-          @include bg-contain;
+        @include assert {
+          @include output {
+            @include bg-contain;
+            @include clear;
+          }
+
+          @include expect {
+            background-size: contain;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:bg-auto") {
-        @include expect{background-size, auto, $sm) {
-          @include sm\:bg-auto;
+        @include assert {
+          @include output {
+            @include sm\:bg-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-size: auto;
+            }
+          }
         }
       }
 
       @include it("sm\:bg-cover") {
-        @include expect{background-size, cover, $sm) {
-          @include sm\:bg-cover;
+        @include assert {
+          @include output {
+            @include sm\:bg-cover;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-size: cover;
+            }
+          }
         }
       }
 
       @include it("sm\:bg-contain") {
-        @include expect{background-size, contain, $sm) {
-          @include sm\:bg-contain;
+        @include assert {
+          @include output {
+            @include sm\:bg-contain;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-size: contain;
+            }
+          }
         }
       }
 
       @include it("md\:bg-auto") {
-        @include expect{background-size, auto, $md) {
-          @include md\:bg-auto;
+        @include assert {
+          @include output {
+            @include md\:bg-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-size: auto;
+            }
+          }
         }
       }
 
       @include it("md\:bg-cover") {
-        @include expect{background-size, cover, $md) {
-          @include md\:bg-cover;
+        @include assert {
+          @include output {
+            @include md\:bg-cover;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-size: cover;
+            }
+          }
         }
       }
 
       @include it("md\:bg-contain") {
-        @include expect{background-size, contain, $md) {
-          @include md\:bg-contain;
+        @include assert {
+          @include output {
+            @include md\:bg-contain;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-size: contain;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:bg-auto") {
+        @include assert {
+          @include output {
+            @include lg\:bg-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-size: auto;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:bg-cover") {
+        @include assert {
+          @include output {
+            @include lg\:bg-cover;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-size: cover;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:bg-contain") {
+        @include assert {
+          @include output {
+            @include lg\:bg-contain;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-size: contain;
+            }
+          }
         }
       }
 
       @include it("xl\:bg-auto") {
-        @include expect{background-size, auto, $xl) {
-          @include xl\:bg-auto;
+        @include assert {
+          @include output {
+            @include xl\:bg-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-size: auto;
+            }
+          }
         }
       }
 
       @include it("xl\:bg-cover") {
-        @include expect{background-size, cover, $xl) {
-          @include xl\:bg-cover;
+        @include assert {
+          @include output {
+            @include xl\:bg-cover;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-size: cover;
+            }
+          }
         }
       }
 
       @include it("xl\:bg-contain") {
-        @include expect{background-size, contain, $xl) {
-          @include xl\:bg-contain;
+        @include assert {
+          @include output {
+            @include xl\:bg-contain;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-size: contain;
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-auto") {
-        @include expect{background-size, auto, $\2xl) {
-          @include \2xl\:bg-auto;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-size: auto;
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-cover") {
-        @include expect{background-size, cover, $\2xl) {
-          @include \2xl\:bg-cover;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-cover;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-size: cover;
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-contain") {
-        @include expect{background-size, contain, $\2xl) {
-          @include \2xl\:bg-contain;
+        @include assert {
+          @include output {
+            @include \2xl\:bg-contain;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-size: contain;
+            }
+          }
         }
       }
     }
 
     @include describe("Custom") {
       @include it("bg-(length: 200px 100px)") {
-        @include expect{background-size, 200px 100px) {
-          @include bg-(length 200px 100px);
+        @include assert {
+          @include output {
+            @include bg-(length 200px 100px);
+            @include clear;
+          }
+
+          @include expect {
+            background-size: 200px 100px;
+          }
         }
       }
 
       @include it("sm\:bg-(length: 200px 100px)") {
-        @include expect{background-size, 200px 100px, $sm) {
-          @include sm\:bg-(length 200px 100px);
+        @include assert {
+          @include output {
+            @include sm\:bg-(length 200px 100px);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              background-size: 200px 100px;
+            }
+          }
         }
       }
 
       @include it("md\:bg-(length: 200px 100px)") {
-        @include expect{background-size, 200px 100px, $md) {
-          @include md\:bg-(length 200px 100px);
+        @include assert {
+          @include output {
+            @include md\:bg-(length 200px 100px);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              background-size: 200px 100px;
+            }
+          }
         }
       }
 
       @include it("lg\:bg-(length: 200px 100px)") {
-        @include expect{background-size, 200px 100px, $lg) {
-          @include lg\:bg-(length 200px 100px);
+        @include assert {
+          @include output {
+            @include lg\:bg-(length 200px 100px);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              background-size: 200px 100px;
+            }
+          }
         }
       }
 
       @include it("xl\:bg-(length: 200px 100px)") {
-        @include expect{background-size, 200px 100px, $xl) {
-          @include xl\:bg-(length 200px 100px);
+        @include assert {
+          @include output {
+            @include xl\:bg-(length 200px 100px);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              background-size: 200px 100px;
+            }
+          }
         }
       }
 
       @include it("\2xl\:bg-(length: 200px 100px)") {
-        @include expect{background-size, 200px 100px, $\2xl) {
-          @include \2xl\:bg-(length 200px 100px);
+        @include assert {
+          @include output {
+            @include \2xl\:bg-(length 200px 100px);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              background-size: 200px 100px;
+            }
+          }
         }
       }
     }

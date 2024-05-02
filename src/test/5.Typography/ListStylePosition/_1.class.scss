@@ -6,76 +6,180 @@
   @include describe("List Style Position") {
     @include describe("Basic") {
       @include it("list-inside") {
-        @include expect{list-style-position, inside) {
-          @include list-inside;
+        @include assert {
+          @include output {
+            @include list-inside;
+            @include clear;
+          }
+
+          @include expect {
+            list-style-position: inside;
+          }
         }
       }
 
       @include it("list-outside") {
-        @include expect{list-style-position, outside) {
-          @include list-outside;
+        @include assert {
+          @include output {
+            @include list-outside;
+            @include clear;
+          }
+
+          @include expect {
+            list-style-position: outside;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:list-inside") {
-        @include expect{list-style-position, inside, $sm) {
-          @include sm\:list-inside;
+        @include assert {
+          @include output {
+            @include sm\:list-inside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              list-style-position: inside;
+            }
+          }
         }
       }
 
       @include it("sm\:list-outside") {
-        @include expect{list-style-position, outside, $sm) {
-          @include sm\:list-outside;
+        @include assert {
+          @include output {
+            @include sm\:list-outside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              list-style-position: outside;
+            }
+          }
         }
       }
 
       @include it("md\:list-inside") {
-        @include expect{list-style-position, inside, $md) {
-          @include md\:list-inside;
+        @include assert {
+          @include output {
+            @include md\:list-inside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              list-style-position: inside;
+            }
+          }
         }
       }
 
       @include it("md\:list-outside") {
-        @include expect{list-style-position, outside, $md) {
-          @include md\:list-outside;
+        @include assert {
+          @include output {
+            @include md\:list-outside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              list-style-position: outside;
+            }
+          }
         }
       }
 
       @include it("lg\:list-inside") {
-        @include expect{list-style-position, inside, $lg) {
-          @include lg\:list-inside;
+        @include assert {
+          @include output {
+            @include lg\:list-inside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              list-style-position: inside;
+            }
+          }
         }
       }
 
       @include it("lg\:list-outside") {
-        @include expect{list-style-position, outside, $lg) {
-          @include lg\:list-outside;
+        @include assert {
+          @include output {
+            @include lg\:list-outside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              list-style-position: outside;
+            }
+          }
         }
       }
 
       @include it("xl\:list-inside") {
-        @include expect{list-style-position, inside, $xl) {
-          @include xl\:list-inside;
+        @include assert {
+          @include output {
+            @include xl\:list-inside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              list-style-position: inside;
+            }
+          }
         }
       }
 
       @include it("xl\:list-outside") {
-        @include expect{list-style-position, outside, $xl) {
-          @include xl\:list-outside;
+        @include assert {
+          @include output {
+            @include xl\:list-outside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              list-style-position: outside;
+            }
+          }
         }
       }
 
       @include it("\2xl\:list-inside") {
-        @include expect{list-style-position, inside, $\2xl) {
-          @include \2xl\:list-inside;
+        @include assert {
+          @include output {
+            @include \2xl\:list-inside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              list-style-position: inside;
+            }
+          }
         }
       }
 
       @include it("\2xl\:list-outside") {
-        @include expect{list-style-position, outside, $\2xl) {
-          @include \2xl\:list-outside;
+        @include assert {
+          @include output {
+            @include \2xl\:list-outside;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              list-style-position: outside;
+            }
+          }
         }
       }
     }

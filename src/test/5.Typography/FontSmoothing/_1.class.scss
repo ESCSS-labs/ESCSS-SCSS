@@ -6,148 +6,188 @@
   @include describe("Font Smoothing") {
     @include describe("Basic") {
       @include it("antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          antialiased,
-          null,
-          -moz-osx-font-smoothing,
-          grayscale
-        ) {
-          @include antialiased;
+        @include assert {
+          @include output {
+            @include antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
         }
       }
 
       @include it("subpixel-antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          auto,
-          null,
-          -moz-osx-font-smoothing,
-          auto
-        ) {
-          @include subpixel-antialiased;
+        @include assert {
+          @include output {
+            @include subpixel-antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            -webkit-font-smoothing: auto;
+            -moz-osx-font-smoothing: auto;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          antialiased,
-          $sm,
-          -moz-osx-font-smoothing,
-          grayscale
-        ) {
-          @include sm\:antialiased;
+        @include assert {
+          @include output {
+            @include sm\:antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+            }
+          }
         }
       }
 
       @include it("sm\:subpixel-antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          auto,
-          $sm,
-          -moz-osx-font-smoothing,
-          auto
-        ) {
-          @include sm\:subpixel-antialiased;
+        @include assert {
+          @include output {
+            @include sm\:subpixel-antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              -webkit-font-smoothing: auto;
+              -moz-osx-font-smoothing: auto;
+            }
+          }
         }
       }
-
       @include it("md\:antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          antialiased,
-          $md,
-          -moz-osx-font-smoothing,
-          grayscale
-        ) {
-          @include md\:antialiased;
+        @include assert {
+          @include output {
+            @include md\:antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+            }
+          }
         }
       }
 
       @include it("md\:subpixel-antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          auto,
-          $md,
-          -moz-osx-font-smoothing,
-          auto
-        ) {
-          @include md\:subpixel-antialiased;
+        @include assert {
+          @include output {
+            @include md\:subpixel-antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              -webkit-font-smoothing: auto;
+              -moz-osx-font-smoothing: auto;
+            }
+          }
         }
       }
-
       @include it("lg\:antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          antialiased,
-          $lg,
-          -moz-osx-font-smoothing,
-          grayscale
-        ) {
-          @include lg\:antialiased;
+        @include assert {
+          @include output {
+            @include lg\:antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+            }
+          }
         }
       }
 
       @include it("lg\:subpixel-antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          auto,
-          $lg,
-          -moz-osx-font-smoothing,
-          auto
-        ) {
-          @include lg\:subpixel-antialiased;
+        @include assert {
+          @include output {
+            @include lg\:subpixel-antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              -webkit-font-smoothing: auto;
+              -moz-osx-font-smoothing: auto;
+            }
+          }
         }
       }
-
       @include it("xl\:antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          antialiased,
-          $xl,
-          -moz-osx-font-smoothing,
-          grayscale
-        ) {
-          @include xl\:antialiased;
+        @include assert {
+          @include output {
+            @include xl\:antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+            }
+          }
         }
       }
 
       @include it("xl\:subpixel-antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          auto,
-          $xl,
-          -moz-osx-font-smoothing,
-          auto
-        ) {
-          @include xl\:subpixel-antialiased;
+        @include assert {
+          @include output {
+            @include xl\:subpixel-antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              -webkit-font-smoothing: auto;
+              -moz-osx-font-smoothing: auto;
+            }
+          }
         }
       }
-
       @include it("\2xl\:antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          antialiased,
-          $\2xl,
-          -moz-osx-font-smoothing,
-          grayscale
-        ) {
-          @include \2xl\:antialiased;
+        @include assert {
+          @include output {
+            @include \2xl\:antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+            }
+          }
         }
       }
 
       @include it("\2xl\:subpixel-antialiased") {
-        @include expect{
-          -webkit-font-smoothing,
-          auto,
-          $\2xl,
-          -moz-osx-font-smoothing,
-          auto
-        ) {
-          @include \2xl\:subpixel-antialiased;
+        @include assert {
+          @include output {
+            @include \2xl\:subpixel-antialiased;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              -webkit-font-smoothing: auto;
+              -moz-osx-font-smoothing: auto;
+            }
+          }
         }
       }
     }

@@ -6,148 +6,355 @@
   @include describe("Text Decoration") {
     @include describe("Basic") {
       @include it("underline") {
-        @include expect{text-decoration-line, underline) {
-          @include underline;
+        @include assert {
+          @include output {
+            @include underline;
+            @include clear;
+          }
+
+          @include expect {
+            text-decoration-line: underline;
+          }
         }
       }
 
       @include it("overline") {
-        @include expect{text-decoration-line, overline) {
-          @include overline;
+        @include assert {
+          @include output {
+            @include overline;
+            @include clear;
+          }
+
+          @include expect {
+            text-decoration-line: overline;
+          }
         }
       }
 
       @include it("line-through") {
-        @include expect{text-decoration-line, line-through) {
-          @include line-through;
+        @include assert {
+          @include output {
+            @include line-through;
+            @include clear;
+          }
+
+          @include expect {
+            text-decoration-line: line-through;
+          }
         }
       }
 
       @include it("no-underline") {
-        @include expect{text-decoration-line, none) {
-          @include no-underline;
+        @include assert {
+          @include output {
+            @include no-underline;
+            @include clear;
+          }
+
+          @include expect {
+            text-decoration-line: none;
+          }
         }
       }
     }
-
     @include describe("Rwd") {
       @include it("sm\:underline") {
-        @include expect{text-decoration-line, underline, $sm) {
-          @include sm\:underline;
+        @include assert {
+          @include output {
+            @include sm\:underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              text-decoration-line: underline;
+            }
+          }
         }
       }
 
       @include it("sm\:overline") {
-        @include expect{text-decoration-line, overline, $sm) {
-          @include sm\:overline;
+        @include assert {
+          @include output {
+            @include sm\:overline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              text-decoration-line: overline;
+            }
+          }
         }
       }
 
       @include it("sm\:line-through") {
-        @include expect{text-decoration-line, line-through, $sm) {
-          @include sm\:line-through;
+        @include assert {
+          @include output {
+            @include sm\:line-through;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              text-decoration-line: line-through;
+            }
+          }
         }
       }
 
       @include it("sm\:no-underline") {
-        @include expect{text-decoration-line, none, $sm) {
-          @include sm\:no-underline;
+        @include assert {
+          @include output {
+            @include sm\:no-underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              text-decoration-line: none;
+            }
+          }
         }
       }
 
       @include it("md\:underline") {
-        @include expect{text-decoration-line, underline, $md) {
-          @include md\:underline;
+        @include assert {
+          @include output {
+            @include md\:underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              text-decoration-line: underline;
+            }
+          }
         }
       }
 
       @include it("md\:overline") {
-        @include expect{text-decoration-line, overline, $md) {
-          @include md\:overline;
+        @include assert {
+          @include output {
+            @include md\:overline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              text-decoration-line: overline;
+            }
+          }
         }
       }
 
       @include it("md\:line-through") {
-        @include expect{text-decoration-line, line-through, $md) {
-          @include md\:line-through;
+        @include assert {
+          @include output {
+            @include md\:line-through;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              text-decoration-line: line-through;
+            }
+          }
         }
       }
 
       @include it("md\:no-underline") {
-        @include expect{text-decoration-line, none, $md) {
-          @include md\:no-underline;
+        @include assert {
+          @include output {
+            @include md\:no-underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              text-decoration-line: none;
+            }
+          }
         }
       }
 
       @include it("lg\:underline") {
-        @include expect{text-decoration-line, underline, $lg) {
-          @include lg\:underline;
+        @include assert {
+          @include output {
+            @include lg\:underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              text-decoration-line: underline;
+            }
+          }
         }
       }
 
       @include it("lg\:overline") {
-        @include expect{text-decoration-line, overline, $lg) {
-          @include lg\:overline;
+        @include assert {
+          @include output {
+            @include lg\:overline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              text-decoration-line: overline;
+            }
+          }
         }
       }
 
       @include it("lg\:line-through") {
-        @include expect{text-decoration-line, line-through, $lg) {
-          @include lg\:line-through;
+        @include assert {
+          @include output {
+            @include lg\:line-through;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              text-decoration-line: line-through;
+            }
+          }
         }
       }
 
       @include it("lg\:no-underline") {
-        @include expect{text-decoration-line, none, $lg) {
-          @include lg\:no-underline;
+        @include assert {
+          @include output {
+            @include lg\:no-underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              text-decoration-line: none;
+            }
+          }
         }
       }
 
       @include it("xl\:underline") {
-        @include expect{text-decoration-line, underline, $xl) {
-          @include xl\:underline;
+        @include assert {
+          @include output {
+            @include xl\:underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              text-decoration-line: underline;
+            }
+          }
         }
       }
 
       @include it("xl\:overline") {
-        @include expect{text-decoration-line, overline, $xl) {
-          @include xl\:overline;
+        @include assert {
+          @include output {
+            @include xl\:overline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              text-decoration-line: overline;
+            }
+          }
         }
       }
 
       @include it("xl\:line-through") {
-        @include expect{text-decoration-line, line-through, $xl) {
-          @include xl\:line-through;
+        @include assert {
+          @include output {
+            @include xl\:line-through;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              text-decoration-line: line-through;
+            }
+          }
         }
       }
 
       @include it("xl\:no-underline") {
-        @include expect{text-decoration-line, none, $xl) {
-          @include xl\:no-underline;
+        @include assert {
+          @include output {
+            @include xl\:no-underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              text-decoration-line: none;
+            }
+          }
         }
       }
 
       @include it("\2xl\:underline") {
-        @include expect{text-decoration-line, underline, $\2xl) {
-          @include \2xl\:underline;
+        @include assert {
+          @include output {
+            @include \2xl\:underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              text-decoration-line: underline;
+            }
+          }
         }
       }
 
       @include it("\2xl\:overline") {
-        @include expect{text-decoration-line, overline, $\2xl) {
-          @include \2xl\:overline;
+        @include assert {
+          @include output {
+            @include \2xl\:overline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              text-decoration-line: overline;
+            }
+          }
         }
       }
 
       @include it("\2xl\:line-through") {
-        @include expect{text-decoration-line, line-through, $\2xl) {
-          @include \2xl\:line-through;
+        @include assert {
+          @include output {
+            @include \2xl\:line-through;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              text-decoration-line: line-through;
+            }
+          }
         }
       }
 
       @include it("\2xl\:no-underline") {
-        @include expect{text-decoration-line, none, $\2xl) {
-          @include \2xl\:no-underline;
+        @include assert {
+          @include output {
+            @include \2xl\:no-underline;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              text-decoration-line: none;
+            }
+          }
         }
       }
     }

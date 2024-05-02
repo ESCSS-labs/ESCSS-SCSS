@@ -6,72 +6,180 @@
   @include describe("Font Style") {
     @include describe("Basic") {
       @include it("italic") {
-        @include expect{font-style, italic) {
-          @include italic;
+        @include assert {
+          @include output {
+            @include italic;
+            @include clear;
+          }
+
+          @include expect {
+            font-style: italic;
+          }
         }
       }
 
       @include it("not-italic") {
-        @include expect{font-style, normal) {
-          @include not-italic;
+        @include assert {
+          @include output {
+            @include not-italic;
+            @include clear;
+          }
+
+          @include expect {
+            font-style: normal;
+          }
         }
       }
     }
 
     @include describe("Rwd") {
       @include it("sm\:italic") {
-        @include expect{font-style, italic, $sm) {
-          @include sm\:italic;
+        @include assert {
+          @include output {
+            @include sm\:italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-style: italic;
+            }
+          }
         }
       }
 
       @include it("sm\:not-italic") {
-        @include expect{font-style, normal, $sm) {
-          @include sm\:not-italic;
+        @include assert {
+          @include output {
+            @include sm\:not-italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              font-style: normal;
+            }
+          }
         }
       }
+
       @include it("md\:italic") {
-        @include expect{font-style, italic, $md) {
-          @include md\:italic;
+        @include assert {
+          @include output {
+            @include md\:italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-style: italic;
+            }
+          }
         }
       }
 
       @include it("md\:not-italic") {
-        @include expect{font-style, normal, $md) {
-          @include md\:not-italic;
+        @include assert {
+          @include output {
+            @include md\:not-italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              font-style: normal;
+            }
+          }
         }
       }
+
       @include it("lg\:italic") {
-        @include expect{font-style, italic, $lg) {
-          @include lg\:italic;
+        @include assert {
+          @include output {
+            @include lg\:italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-style: italic;
+            }
+          }
         }
       }
 
       @include it("lg\:not-italic") {
-        @include expect{font-style, normal, $lg) {
-          @include lg\:not-italic;
+        @include assert {
+          @include output {
+            @include lg\:not-italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              font-style: normal;
+            }
+          }
         }
       }
+
       @include it("xl\:italic") {
-        @include expect{font-style, italic, $xl) {
-          @include xl\:italic;
+        @include assert {
+          @include output {
+            @include xl\:italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-style: italic;
+            }
+          }
         }
       }
 
       @include it("xl\:not-italic") {
-        @include expect{font-style, normal, $xl) {
-          @include xl\:not-italic;
+        @include assert {
+          @include output {
+            @include xl\:not-italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              font-style: normal;
+            }
+          }
         }
       }
+
       @include it("\2xl\:italic") {
-        @include expect{font-style, italic, $\2xl) {
-          @include \2xl\:italic;
+        @include assert {
+          @include output {
+            @include \2xl\:italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-style: italic;
+            }
+          }
         }
       }
 
       @include it("\2xl\:not-italic") {
-        @include expect{font-style, normal, $\2xl) {
-          @include \2xl\:not-italic;
+        @include assert {
+          @include output {
+            @include \2xl\:not-italic;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              font-style: normal;
+            }
+          }
         }
       }
     }
