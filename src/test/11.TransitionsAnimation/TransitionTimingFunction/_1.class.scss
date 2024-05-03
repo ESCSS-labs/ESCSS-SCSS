@@ -2,146 +2,453 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Transition Timing Function */
-@if $Basic {
-  // /*x
-  @mixin ease-linear {
-    @include ease-(linear);
-  }
+@include describe("11.Transitions & Animation") {
+  @include describe("Transition Timing Function") {
+    @include describe("Basic") {
+      @include it("ease-linear") {
+        @include assert {
+          @include output {
+            @include ease-linear;
+            @include clear;
+          }
 
-  @mixin ease-in {
-    @include ease-(cubic-bezier(0.4, 0, 1, 1));
-  }
+          @include expect {
+            transition-timing-function: linear;
+          }
+        }
+      }
 
-  @mixin ease-out {
-    @include ease-(cubic-bezier(0, 0, 0.2, 1));
-  }
+      @include it("ease-in") {
+        @include assert {
+          @include output {
+            @include ease-in;
+            @include clear;
+          }
 
-  @mixin ease-in-out {
-    @include ease-(cubic-bezier(0.4, 0, 0.2, 1));
-  }
+          @include expect {
+            transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+          }
+        }
+      }
 
-  // x*/
-}
+      @include it("ease-out") {
+        @include assert {
+          @include output {
+            @include ease-out;
+            @include clear;
+          }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:ease-linear {
-      @include ease-(linear, $sm);
-    }
+          @include expect {
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          }
+        }
+      }
 
-    @mixin sm\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $sm);
-    }
+      @include it("ease-in-out") {
+        @include assert {
+          @include output {
+            @include ease-in-out;
+            @include clear;
+          }
 
-    @mixin sm\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $sm);
-    }
-
-    @mixin sm\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $sm);
-    }
-
-    @mixin md\:ease-linear {
-      @include ease-(linear, $md);
-    }
-
-    @mixin md\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $md);
-    }
-
-    @mixin md\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $md);
-    }
-
-    @mixin md\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $md);
-    }
-
-    @mixin lg\:ease-linear {
-      @include ease-(linear, $lg);
-    }
-
-    @mixin lg\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $lg);
-    }
-
-    @mixin lg\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $lg);
-    }
-
-    @mixin lg\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $lg);
-    }
-
-    @mixin xl\:ease-linear {
-      @include ease-(linear, $xl);
-    }
-
-    @mixin xl\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $xl);
-    }
-
-    @mixin xl\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $xl);
-    }
-
-    @mixin xl\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $xl);
-    }
-
-    @mixin \2xl\:ease-linear {
-      @include ease-(linear, $\2xl);
-    }
-
-    @mixin \2xl\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $\2xl);
-    }
-
-    @mixin \2xl\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $\2xl);
-    }
-
-    @mixin \2xl\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin ease-($v, $rwd: null) {
-    @if $rwd==null {
-      transition-timing-function: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        transition-timing-function: $v;
+          @include expect {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          }
+        }
       }
     }
-  }
 
-  @mixin sm\:ease-($v) {
-    @include ease-($v, $sm);
-  }
+    @include describe("Rwd") {
+      @include it("sm\:ease-linear") {
+        @include assert {
+          @include output {
+            @include sm\:ease-linear;
+            @include clear;
+          }
 
-  @mixin md\:ease-($v) {
-    @include ease-($v, $md);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
 
-  @mixin lg\:ease-($v) {
-    @include ease-($v, $lg);
-  }
+      @include it("sm\:ease-in") {
+        @include assert {
+          @include output {
+            @include sm\:ease-in;
+            @include clear;
+          }
 
-  @mixin xl\:ease-($v) {
-    @include ease-($v, $xl);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
 
-  @mixin \2xl\:ease-($v) {
-    @include ease-($v, $\2xl);
-  }
+      @include it("sm\:ease-out") {
+        @include assert {
+          @include output {
+            @include sm\:ease-out;
+            @include clear;
+          }
 
-  // x*/
+          @include expect {
+            @media(min-width:$sm) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:ease-in-out") {
+        @include assert {
+          @include output {
+            @include sm\:ease-in-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:ease-linear") {
+        @include assert {
+          @include output {
+            @include md\:ease-linear;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+
+      @include it("md\:ease-in") {
+        @include assert {
+          @include output {
+            @include md\:ease-in;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:ease-out") {
+        @include assert {
+          @include output {
+            @include md\:ease-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:ease-in-out") {
+        @include assert {
+          @include output {
+            @include md\:ease-in-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ease-linear") {
+        @include assert {
+          @include output {
+            @include lg\:ease-linear;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ease-in") {
+        @include assert {
+          @include output {
+            @include lg\:ease-in;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ease-out") {
+        @include assert {
+          @include output {
+            @include lg\:ease-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ease-in-out") {
+        @include assert {
+          @include output {
+            @include lg\:ease-in-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ease-linear") {
+        @include assert {
+          @include output {
+            @include xl\:ease-linear;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ease-in") {
+        @include assert {
+          @include output {
+            @include xl\:ease-in;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ease-out") {
+        @include assert {
+          @include output {
+            @include xl\:ease-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ease-in-out") {
+        @include assert {
+          @include output {
+            @include xl\:ease-in-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ease-linear") {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-linear;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ease-in") {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-in;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ease-out") {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ease-in-out") {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-in-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("ease-(cubic-bezier(0.95,0.05,0.795,0.035))") {
+        @include assert {
+          @include output {
+            @include ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include clear;
+          }
+
+          @include expect {
+            transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+          }
+        }
+      }
+
+      @include it("sm\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))") {
+        @include assert {
+          @include output {
+            @include sm\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+            }
+          }
+        }
+      }
+
+      @include it("md\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))") {
+        @include assert {
+          @include output {
+            @include md\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))") {
+        @include assert {
+          @include output {
+            @include lg\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))") {
+        @include assert {
+          @include output {
+            @include xl\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))") {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+            }
+          }
+        }
+      }
+
+    }
+  }
 }

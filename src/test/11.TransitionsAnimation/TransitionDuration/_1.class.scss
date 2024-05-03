@@ -2,266 +2,892 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Transition Duration */
-@if $Basic {
-  // /*x
-  @mixin duration-0 {
-    @include duration-(0s);
-  }
+@include describe("11.Transitions & Animation") {
+  @include describe("Transition Duration") {
+    @include describe("Basic") {
+      @include it("duration-0") {
+        @include assert {
+          @include output {
+            @include duration-0;
+            @include clear;
+          }
 
-  @mixin duration-75 {
-    @include duration-(75ms);
-  }
+          @include expect {
+            transition-duration: 0s;
+          }
+        }
+      }
 
-  @mixin duration-100 {
-    @include duration-(100ms);
-  }
+      @include it("duration-75") {
+        @include assert {
+          @include output {
+            @include duration-75;
+            @include clear;
+          }
 
-  @mixin duration-150 {
-    @include duration-(150ms);
-  }
+          @include expect {
+            transition-duration: 75ms;
+          }
+        }
+      }
 
-  @mixin duration-200 {
-    @include duration-(200ms);
-  }
+      @include it("duration-100") {
+        @include assert {
+          @include output {
+            @include duration-100;
+            @include clear;
+          }
 
-  @mixin duration-300 {
-    @include duration-(300ms);
-  }
+          @include expect {
+            transition-duration: 100ms;
+          }
+        }
+      }
 
-  @mixin duration-500 {
-    @include duration-(500ms);
-  }
+      @include it("duration-150") {
+        @include assert {
+          @include output {
+            @include duration-150;
+            @include clear;
+          }
 
-  @mixin duration-700 {
-    @include duration-(700ms);
-  }
+          @include expect {
+            transition-duration: 150ms;
+          }
+        }
+      }
 
-  @mixin duration-1000 {
-    @include duration-(1000ms);
-  }
+      @include it("duration-200") {
+        @include assert {
+          @include output {
+            @include duration-200;
+            @include clear;
+          }
 
-  // x*/
-}
+          @include expect {
+            transition-duration: 200ms;
+          }
+        }
+      }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:duration-0 {
-      @include duration-(0s, $sm);
+      @include it("duration-300") {
+        @include assert {
+          @include output {
+            @include duration-300;
+            @include clear;
+          }
+
+          @include expect {
+            transition-duration: 300ms;
+          }
+        }
+      }
+
+      @include it("duration-500") {
+        @include assert {
+          @include output {
+            @include duration-500;
+            @include clear;
+          }
+
+          @include expect {
+            transition-duration: 500ms;
+          }
+        }
+      }
+
+      @include it("duration-700") {
+        @include assert {
+          @include output {
+            @include duration-700;
+            @include clear;
+          }
+
+          @include expect {
+            transition-duration: 700ms;
+          }
+        }
+      }
+
+      @include it("duration-1000") {
+        @include assert {
+          @include output {
+            @include duration-1000;
+            @include clear;
+          }
+
+          @include expect {
+            transition-duration: 1000ms;
+          }
+        }
+      }
     }
 
-    @mixin sm\:duration-75 {
-      @include duration-(75ms, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:duration-0") {
+        @include assert {
+          @include output {
+            @include sm\:duration-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 0s;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:duration-75") {
+        @include assert {
+          @include output {
+            @include sm\:duration-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 75ms;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:duration-100") {
+        @include assert {
+          @include output {
+            @include sm\:duration-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 100ms;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:duration-150") {
+        @include assert {
+          @include output {
+            @include sm\:duration-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:duration-200") {
+        @include assert {
+          @include output {
+            @include sm\:duration-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 200ms;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:duration-300") {
+        @include assert {
+          @include output {
+            @include sm\:duration-300;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 300ms;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:duration-500") {
+        @include assert {
+          @include output {
+            @include sm\:duration-500;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 500ms;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:duration-700") {
+        @include assert {
+          @include output {
+            @include sm\:duration-700;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 700ms;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:duration-1000") {
+        @include assert {
+          @include output {
+            @include sm\:duration-1000;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 1000ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:duration-0") {
+        @include assert {
+          @include output {
+            @include md\:duration-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 0s;
+            }
+          }
+        }
+      }
+
+      @include it("md\:duration-75") {
+        @include assert {
+          @include output {
+            @include md\:duration-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 75ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:duration-100") {
+        @include assert {
+          @include output {
+            @include md\:duration-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 100ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:duration-150") {
+        @include assert {
+          @include output {
+            @include md\:duration-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:duration-200") {
+        @include assert {
+          @include output {
+            @include md\:duration-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 200ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:duration-300") {
+        @include assert {
+          @include output {
+            @include md\:duration-300;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 300ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:duration-500") {
+        @include assert {
+          @include output {
+            @include md\:duration-500;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 500ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:duration-700") {
+        @include assert {
+          @include output {
+            @include md\:duration-700;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 700ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:duration-1000") {
+        @include assert {
+          @include output {
+            @include md\:duration-1000;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 1000ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:duration-0") {
+        @include assert {
+          @include output {
+            @include lg\:duration-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 0s;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:duration-75") {
+        @include assert {
+          @include output {
+            @include lg\:duration-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 75ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:duration-100") {
+        @include assert {
+          @include output {
+            @include lg\:duration-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 100ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:duration-150") {
+        @include assert {
+          @include output {
+            @include lg\:duration-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:duration-200") {
+        @include assert {
+          @include output {
+            @include lg\:duration-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 200ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:duration-300") {
+        @include assert {
+          @include output {
+            @include lg\:duration-300;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 300ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:duration-500") {
+        @include assert {
+          @include output {
+            @include lg\:duration-500;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 500ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:duration-700") {
+        @include assert {
+          @include output {
+            @include lg\:duration-700;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 700ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:duration-1000") {
+        @include assert {
+          @include output {
+            @include lg\:duration-1000;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 1000ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:duration-0") {
+        @include assert {
+          @include output {
+            @include xl\:duration-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 0s;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:duration-75") {
+        @include assert {
+          @include output {
+            @include xl\:duration-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 75ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:duration-100") {
+        @include assert {
+          @include output {
+            @include xl\:duration-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 100ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:duration-150") {
+        @include assert {
+          @include output {
+            @include xl\:duration-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:duration-200") {
+        @include assert {
+          @include output {
+            @include xl\:duration-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 200ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:duration-300") {
+        @include assert {
+          @include output {
+            @include xl\:duration-300;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 300ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:duration-500") {
+        @include assert {
+          @include output {
+            @include xl\:duration-500;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 500ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:duration-700") {
+        @include assert {
+          @include output {
+            @include xl\:duration-700;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 700ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:duration-1000") {
+        @include assert {
+          @include output {
+            @include xl\:duration-1000;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 1000ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:duration-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 0s;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:duration-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 75ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:duration-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 100ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:duration-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:duration-200") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 200ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:duration-300") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-300;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 300ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:duration-500") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-500;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 500ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:duration-700") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-700;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 700ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:duration-1000") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-1000;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 1000ms;
+            }
+          }
+        }
+      }
     }
 
-    @mixin sm\:duration-100 {
-      @include duration-(100ms, $sm);
-    }
+    @include describe("Custom") {
+      @include it("duration-(2000ms)") {
+        @include assert {
+          @include output {
+            @include duration-(2000ms);
+            @include clear;
+          }
 
-    @mixin sm\:duration-150 {
-      @include duration-(150ms, $sm);
-    }
+          @include expect {
+            transition-duration: 2000ms;
+          }
+        }
+      }
 
-    @mixin sm\:duration-200 {
-      @include duration-(200ms, $sm);
-    }
+      @include it("sm\:duration-(2000ms)") {
+        @include assert {
+          @include output {
+            @include sm\:duration-(2000ms);
+            @include clear;
+          }
 
-    @mixin sm\:duration-300 {
-      @include duration-(300ms, $sm);
-    }
+          @include expect {
+            @media(min-width:$sm) {
+              transition-duration: 2000ms;
+            }
+          }
+        }
+      }
 
-    @mixin sm\:duration-500 {
-      @include duration-(500ms, $sm);
-    }
+      @include it("md\:duration-(2000ms)") {
+        @include assert {
+          @include output {
+            @include md\:duration-(2000ms);
+            @include clear;
+          }
 
-    @mixin sm\:duration-700 {
-      @include duration-(700ms, $sm);
-    }
+          @include expect {
+            @media(min-width:$md) {
+              transition-duration: 2000ms;
+            }
+          }
+        }
+      }
 
-    @mixin sm\:duration-1000 {
-      @include duration-(1000ms, $sm);
-    }
+      @include it("lg\:duration-(2000ms)") {
+        @include assert {
+          @include output {
+            @include lg\:duration-(2000ms);
+            @include clear;
+          }
 
-    @mixin md\:duration-0 {
-      @include duration-(0s, $md);
-    }
+          @include expect {
+            @media(min-width:$lg) {
+              transition-duration: 2000ms;
+            }
+          }
+        }
+      }
 
-    @mixin md\:duration-75 {
-      @include duration-(75ms, $md);
-    }
+      @include it("xl\:duration-(2000ms)") {
+        @include assert {
+          @include output {
+            @include xl\:duration-(2000ms);
+            @include clear;
+          }
 
-    @mixin md\:duration-100 {
-      @include duration-(100ms, $md);
-    }
+          @include expect {
+            @media(min-width:$xl) {
+              transition-duration: 2000ms;
+            }
+          }
+        }
+      }
 
-    @mixin md\:duration-150 {
-      @include duration-(150ms, $md);
-    }
+      @include it("\2xl\:duration-(2000ms)") {
+        @include assert {
+          @include output {
+            @include \2xl\:duration-(2000ms);
+            @include clear;
+          }
 
-    @mixin md\:duration-200 {
-      @include duration-(200ms, $md);
-    }
-
-    @mixin md\:duration-300 {
-      @include duration-(300ms, $md);
-    }
-
-    @mixin md\:duration-500 {
-      @include duration-(500ms, $md);
-    }
-
-    @mixin md\:duration-700 {
-      @include duration-(700ms, $md);
-    }
-
-    @mixin md\:duration-1000 {
-      @include duration-(1000ms, $md);
-    }
-
-    @mixin lg\:duration-0 {
-      @include duration-(0s, $lg);
-    }
-
-    @mixin lg\:duration-75 {
-      @include duration-(75ms, $lg);
-    }
-
-    @mixin lg\:duration-100 {
-      @include duration-(100ms, $lg);
-    }
-
-    @mixin lg\:duration-150 {
-      @include duration-(150ms, $lg);
-    }
-
-    @mixin lg\:duration-200 {
-      @include duration-(200ms, $lg);
-    }
-
-    @mixin lg\:duration-300 {
-      @include duration-(300ms, $lg);
-    }
-
-    @mixin lg\:duration-500 {
-      @include duration-(500ms, $lg);
-    }
-
-    @mixin lg\:duration-700 {
-      @include duration-(700ms, $lg);
-    }
-
-    @mixin lg\:duration-1000 {
-      @include duration-(1000ms, $lg);
-    }
-
-    @mixin xl\:duration-0 {
-      @include duration-(0s, $xl);
-    }
-
-    @mixin xl\:duration-75 {
-      @include duration-(75ms, $xl);
-    }
-
-    @mixin xl\:duration-100 {
-      @include duration-(100ms, $xl);
-    }
-
-    @mixin xl\:duration-150 {
-      @include duration-(150ms, $xl);
-    }
-
-    @mixin xl\:duration-200 {
-      @include duration-(200ms, $xl);
-    }
-
-    @mixin xl\:duration-300 {
-      @include duration-(300ms, $xl);
-    }
-
-    @mixin xl\:duration-500 {
-      @include duration-(500ms, $xl);
-    }
-
-    @mixin xl\:duration-700 {
-      @include duration-(700ms, $xl);
-    }
-
-    @mixin xl\:duration-1000 {
-      @include duration-(1000ms, $xl);
-    }
-
-    @mixin \2xl\:duration-0 {
-      @include duration-(0s, $\2xl);
-    }
-
-    @mixin \2xl\:duration-75 {
-      @include duration-(75ms, $\2xl);
-    }
-
-    @mixin \2xl\:duration-100 {
-      @include duration-(100ms, $\2xl);
-    }
-
-    @mixin \2xl\:duration-150 {
-      @include duration-(150ms, $\2xl);
-    }
-
-    @mixin \2xl\:duration-200 {
-      @include duration-(200ms, $\2xl);
-    }
-
-    @mixin \2xl\:duration-300 {
-      @include duration-(300ms, $\2xl);
-    }
-
-    @mixin \2xl\:duration-500 {
-      @include duration-(500ms, $\2xl);
-    }
-
-    @mixin \2xl\:duration-700 {
-      @include duration-(700ms, $\2xl);
-    }
-
-    @mixin \2xl\:duration-1000 {
-      @include duration-(1000ms, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin duration-($v, $rwd: null) {
-    @if $rwd==null {
-      transition-duration: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        transition-duration: $v;
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-duration: 2000ms;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:duration-($v) {
-    @include duration-($v, $sm);
-  }
-
-  @mixin md\:duration-($v) {
-    @include duration-($v, $md);
-  }
-
-  @mixin lg\:duration-($v) {
-    @include duration-($v, $lg);
-  }
-
-  @mixin xl\:duration-($v) {
-    @include duration-($v, $xl);
-  }
-
-  @mixin \2xl\:duration-($v) {
-    @include duration-($v, $\2xl);
-  }
-
-  // x*/
 }

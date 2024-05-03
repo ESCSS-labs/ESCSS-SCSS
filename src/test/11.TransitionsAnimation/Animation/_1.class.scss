@@ -2,208 +2,547 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Animation */
-@if $Basic {
-  // /*x
-  @mixin animate-none {
-    @include animation-(none);
-  }
+@include describe("11.Transitions & Animation") {
+  @include describe("Animation") {
+    @include describe("Basic") {
+      @include it("animate-none") {
+        @include assert {
+          @include output {
+            @include animate-none;
+            @include clear;
+          }
 
-  @mixin animate-spin {
-    @include animation-(spin 1s linear infinite);
-  }
+          @include expect {
+            animation: none;
+          }
+        }
+      }
 
-  @mixin animate-ping {
-    @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite);
-  }
+      @include it("animate-spin") {
+        @include assert {
+          @include output {
+            @include animate-spin;
+            @include clear;
+          }
 
-  @mixin animate-pulse {
-    @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite);
-  }
+          @include expect {
+            animation: spin 1s linear infinite;
+          }
+        }
+      }
 
-  @mixin animate-bounce {
-    @include animation-(bounce 1s infinite);
-  }
 
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
+      @include it("animate-ping") {
+        @include assert {
+          @include output {
+            @include animate-ping;
+            @include clear;
+          }
 
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes ping {
-    75%,
-    100% {
-      transform: scale(2);
-      opacity: 0;
-    }
-  }
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
+          @include expect {
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          }
+        }
+      }
 
-    50% {
-      opacity: 0.5;
-    }
-  }
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
+      @include it("animate-pulse") {
+        @include assert {
+          @include output {
+            @include animate-pulse;
+            @include clear;
+          }
 
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-  } // x*/
-}
+          @include expect {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          }
+        }
+      }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:animate-none {
-      @include animation-(none, $sm);
-    }
+      @include it("animate-bounce") {
+        @include assert {
+          @include output {
+            @include animate-bounce;
+            @include clear;
+          }
 
-    @mixin sm\:animate-spin {
-      @include animation-(spin 1s linear infinite, $sm);
-    }
-
-    @mixin sm\:animate-ping {
-      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $sm);
-    }
-
-    @mixin sm\:animate-pulse {
-      @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, $sm);
-    }
-
-    @mixin sm\:animate-bounce {
-      @include animation-(bounce 1s infinite, $sm);
-    }
-
-    @mixin md\:animate-none {
-      @include animation-(none, $md);
-    }
-
-    @mixin md\:animate-spin {
-      @include animation-(spin 1s linear infinite, $md);
-    }
-
-    @mixin md\:animate-ping {
-      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $md);
-    }
-
-    @mixin md\:animate-pulse {
-      @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, $md);
-    }
-
-    @mixin md\:animate-bounce {
-      @include animation-(bounce 1s infinite, $md);
-    }
-
-    @mixin lg\:animate-none {
-      @include animation-(none, $lg);
-    }
-
-    @mixin lg\:animate-spin {
-      @include animation-(spin 1s linear infinite, $lg);
-    }
-
-    @mixin lg\:animate-ping {
-      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $lg);
-    }
-
-    @mixin lg\:animate-pulse {
-      @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, $lg);
-    }
-
-    @mixin lg\:animate-bounce {
-      @include animation-(bounce 1s infinite, $lg);
-    }
-
-    @mixin xl\:animate-none {
-      @include animation-(none, $xl);
-    }
-
-    @mixin xl\:animate-spin {
-      @include animation-(spin 1s linear infinite, $xl);
-    }
-
-    @mixin xl\:animate-ping {
-      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $xl);
-    }
-
-    @mixin xl\:animate-pulse {
-      @include animation-(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, $xl);
-    }
-
-    @mixin xl\:animate-bounce {
-      @include animation-(bounce 1s infinite, $xl);
-    }
-
-    @mixin \2xl\:animate-none {
-      @include animation-(none, $\2xl);
-    }
-
-    @mixin \2xl\:animate-spin {
-      @include animation-(spin 1s linear infinite, $\2xl);
-    }
-
-    @mixin \2xl\:animate-ping {
-      @include animation-(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite, $\2xl);
-    }
-
-    @mixin \2xl\:animate-pulse {
-      @include animation-(
-        pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite,
-        $\2xl
-      );
-    }
-
-    @mixin \2xl\:animate-bounce {
-      @include animation-(bounce 1s infinite, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin animate-($v, $rwd: null) {
-    @if $rwd==null {
-      animation: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        animation: $v;
+          @include expect {
+            animation: bounce 1s infinite;
+          }
+        }
       }
     }
-  }
 
-  @mixin sm\:animate-($v) {
-    @include animate-($v, $sm);
-  }
+    @include describe("Rwd") {
+      @include it("sm\:animate-none") {
+        @include assert {
+          @include output {
+            @include sm\:animate-none;
+            @include clear;
+          }
 
-  @mixin md\:animate-($v) {
-    @include animate-($v, $md);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              animation: none;
+            }
+          }
+        }
+      }
 
-  @mixin lg\:animate-($v) {
-    @include animate-($v, $lg);
-  }
+      @include it("sm\:animate-spin") {
+        @include assert {
+          @include output {
+            @include sm\:animate-spin;
+            @include clear;
+          }
 
-  @mixin xl\:animate-($v) {
-    @include animate-($v, $xl);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
 
-  @mixin \2xl\:animate-($v) {
-    @include animate-($v, $\2xl);
+
+      @include it("sm\:animate-ping") {
+        @include assert {
+          @include output {
+            @include sm\:animate-ping;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:animate-pulse") {
+        @include assert {
+          @include output {
+            @include sm\:animate-pulse;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:animate-bounce") {
+        @include assert {
+          @include output {
+            @include sm\:animate-bounce;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+
+      @include it("md\:animate-none") {
+        @include assert {
+          @include output {
+            @include md\:animate-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              animation: none;
+            }
+          }
+        }
+      }
+
+      @include it("md\:animate-spin") {
+        @include assert {
+          @include output {
+            @include md\:animate-spin;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+
+
+      @include it("md\:animate-ping") {
+        @include assert {
+          @include output {
+            @include md\:animate-ping;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("md\:animate-pulse") {
+        @include assert {
+          @include output {
+            @include md\:animate-pulse;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("md\:animate-bounce") {
+        @include assert {
+          @include output {
+            @include md\:animate-bounce;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:animate-none") {
+        @include assert {
+          @include output {
+            @include lg\:animate-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              animation: none;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:animate-spin") {
+        @include assert {
+          @include output {
+            @include lg\:animate-spin;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+
+
+      @include it("lg\:animate-ping") {
+        @include assert {
+          @include output {
+            @include lg\:animate-ping;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:animate-pulse") {
+        @include assert {
+          @include output {
+            @include lg\:animate-pulse;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:animate-bounce") {
+        @include assert {
+          @include output {
+            @include lg\:animate-bounce;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:animate-none") {
+        @include assert {
+          @include output {
+            @include xl\:animate-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              animation: none;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:animate-spin") {
+        @include assert {
+          @include output {
+            @include xl\:animate-spin;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+
+
+      @include it("xl\:animate-ping") {
+        @include assert {
+          @include output {
+            @include xl\:animate-ping;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:animate-pulse") {
+        @include assert {
+          @include output {
+            @include xl\:animate-pulse;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:animate-bounce") {
+        @include assert {
+          @include output {
+            @include xl\:animate-bounce;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:animate-none") {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              animation: none;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:animate-spin") {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-spin;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+
+
+      @include it("\2xl\:animate-ping") {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-ping;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:animate-pulse") {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-pulse;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:animate-bounce") {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-bounce;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("animate-(wiggle 1s ease-in-out infinite)") {
+        @include assert {
+          @include output {
+            @include animate-(wiggle 1s ease-in-out infinite);
+            @include clear;
+          }
+
+          @include expect {
+            animation: wiggle 1s ease-in-out infinite;
+          }
+        }
+      }
+
+      @include it("sm\:animate-(wiggle 1s ease-in-out infinite)") {
+        @include assert {
+          @include output {
+            @include sm\:animate-(wiggle 1s ease-in-out infinite);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+      @include it("md\:animate-(wiggle 1s ease-in-out infinite)") {
+        @include assert {
+          @include output {
+            @include md\:animate-(wiggle 1s ease-in-out infinite);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:animate-(wiggle 1s ease-in-out infinite)") {
+        @include assert {
+          @include output {
+            @include lg\:animate-(wiggle 1s ease-in-out infinite);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:animate-(wiggle 1s ease-in-out infinite)") {
+        @include assert {
+          @include output {
+            @include xl\:animate-(wiggle 1s ease-in-out infinite);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:animate-(wiggle 1s ease-in-out infinite)") {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-(wiggle 1s ease-in-out infinite);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+    }
   }
-  // x*/
 }

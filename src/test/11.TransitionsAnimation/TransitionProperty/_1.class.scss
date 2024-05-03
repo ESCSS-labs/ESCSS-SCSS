@@ -2,366 +2,831 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Transition Property */
-@if $Basic {
-  // /*x
-  @mixin transition-none {
-    @include transition-(none);
-  }
+@include describe("11.Transitions & Animation") {
+  @include describe("Transition Property") {
+    @include describe("Basic") {
+      @include it("transition-none") {
+        @include assert {
+          @include output {
+            @include transition-none;
+            @include clear;
+          }
 
-  @mixin transition-all {
-    @include transition-(all);
-  }
+          @include expect {
+            transition-property: none;
+          }
+        }
+      }
 
-  @mixin transition {
-    @include transition-(
-      (
-        color,
-        background-color,
-        border-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        opacity,
-        box-shadow,
-        transform,
-        filter,
-        backdrop-filter
-      )
-    );
-  }
+      @include it("transition-all") {
+        @include assert {
+          @include output {
+            @include transition-all;
+            @include clear;
+          }
 
-  @mixin transition-colors {
-    @include transition-(
-      (
-        color,
-        background-color,
-        border-color,
-        text-decoration-color,
-        fill,
-        stroke
-      )
-    );
-  }
+          @include expect {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+          }
+        }
+      }
 
-  @mixin transition-opacity {
-    @include transition-(opacity);
-  }
 
-  @mixin transition-shadow {
-    @include transition-(box-shadow);
-  }
+      @include it("transition") {
+        @include assert {
+          @include output {
+            @include transition;
+            @include clear;
+          }
 
-  @mixin transition-transform {
-    @include transition-(transform);
-  } // x*/
-}
+          @include expect {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+          }
+        }
+      }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:transition-none {
-      @include transition-(none, $sm);
-    }
 
-    @mixin sm\:transition-all {
-      @include transition-(all, $sm);
-    }
+      @include it("transition-colors") {
+        @include assert {
+          @include output {
+            @include transition-colors;
+            @include clear;
+          }
 
-    @mixin sm\:transition {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke,
-          opacity,
-          box-shadow,
-          transform,
-          filter,
-          backdrop-filter
-        ),
-        $sm
-      );
-    }
+          @include expect {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+          }
+        }
+      }
 
-    @mixin sm\:transition-colors {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke
-        ),
-        $sm
-      );
-    }
 
-    @mixin sm\:transition-opacity {
-      @include transition-(opacity, $sm);
-    }
+      @include it("transition-opacity") {
+        @include assert {
+          @include output {
+            @include transition-opacity;
+            @include clear;
+          }
 
-    @mixin sm\:transition-shadow {
-      @include transition-(box-shadow, $sm);
-    }
+          @include expect {
+            transition-property: opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+          }
+        }
+      }
 
-    @mixin sm\:transition-transform {
-      @include transition-(transform, $sm);
-    }
 
-    @mixin md\:transition-none {
-      @include transition-(none, $md);
-    }
+      @include it("transition-shadow") {
+        @include assert {
+          @include output {
+            @include transition-shadow;
+            @include clear;
+          }
 
-    @mixin md\:transition-all {
-      @include transition-(all, $md);
-    }
+          @include expect {
+            transition-property: box-shadow;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+          }
+        }
+      }
 
-    @mixin md\:transition {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke,
-          opacity,
-          box-shadow,
-          transform,
-          filter,
-          backdrop-filter
-        ),
-        $md
-      );
-    }
 
-    @mixin md\:transition-colors {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke
-        ),
-        $md
-      );
-    }
+      @include it("transition-transform") {
+        @include assert {
+          @include output {
+            @include transition-transform;
+            @include clear;
+          }
 
-    @mixin md\:transition-opacity {
-      @include transition-(opacity, $md);
-    }
-
-    @mixin md\:transition-shadow {
-      @include transition-(box-shadow, $md);
-    }
-
-    @mixin md\:transition-transform {
-      @include transition-(transform, $md);
-    }
-
-    @mixin lg\:transition-none {
-      @include transition-(none, $lg);
-    }
-
-    @mixin lg\:transition-all {
-      @include transition-(all, $lg);
-    }
-
-    @mixin lg\:transition {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke,
-          opacity,
-          box-shadow,
-          transform,
-          filter,
-          backdrop-filter
-        ),
-        $lg
-      );
-    }
-
-    @mixin lg\:transition-colors {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke
-        ),
-        $lg
-      );
-    }
-
-    @mixin lg\:transition-opacity {
-      @include transition-(opacity, $lg);
-    }
-
-    @mixin lg\:transition-shadow {
-      @include transition-(box-shadow, $lg);
-    }
-
-    @mixin lg\:transition-transform {
-      @include transition-(transform, $lg);
-    }
-
-    @mixin xl\:transition-none {
-      @include transition-(none, $xl);
-    }
-
-    @mixin xl\:transition-all {
-      @include transition-(all, $xl);
-    }
-
-    @mixin xl\:transition {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke,
-          opacity,
-          box-shadow,
-          transform,
-          filter,
-          backdrop-filter
-        ),
-        $xl
-      );
-    }
-
-    @mixin xl\:transition-colors {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke
-        ),
-        $xl
-      );
-    }
-
-    @mixin xl\:transition-opacity {
-      @include transition-(opacity, $xl);
-    }
-
-    @mixin xl\:transition-shadow {
-      @include transition-(box-shadow, $xl);
-    }
-
-    @mixin xl\:transition-transform {
-      @include transition-(transform, $xl);
-    }
-
-    @mixin \2xl\:transition-none {
-      @include transition-(none, $\2xl);
-    }
-
-    @mixin \2xl\:transition-all {
-      @include transition-(all, $\2xl);
-    }
-
-    @mixin \2xl\:transition {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke,
-          opacity,
-          box-shadow,
-          transform,
-          filter,
-          backdrop-filter
-        ),
-        $\2xl
-      );
-    }
-
-    @mixin \2xl\:transition-colors {
-      @include transition-(
-        (
-          color,
-          background-color,
-          border-color,
-          text-decoration-color,
-          fill,
-          stroke
-        ),
-        $\2xl
-      );
-    }
-
-    @mixin \2xl\:transition-opacity {
-      @include transition-(opacity, $\2xl);
-    }
-
-    @mixin \2xl\:transition-shadow {
-      @include transition-(box-shadow, $\2xl);
-    }
-
-    @mixin \2xl\:transition-transform {
-      @include transition-(transform, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin transition-($v, $rwd: null) {
-    @if $rwd==null {
-      transition-property: $v;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
-    } @else {
-      @media (min-width: $rwd) {
-        transition-property: $v;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
+          @include expect {
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+          }
+        }
       }
     }
-  }
 
-  @mixin sm\:transition-($v) {
-    @include transition-($v, $sm);
-  }
+    @include describe("Rwd") {
+      @include it("sm\:transition-none") {
+        @include assert {
+          @include output {
+            @include sm\:transition-none;
+            @include clear;
+          }
 
-  @mixin md\:transition-($v) {
-    @include transition-($v, $md);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              transition-property: none;
+            }
+          }
+        }
+      }
 
-  @mixin lg\:transition-($v) {
-    @include transition-($v, $lg);
-  }
+      @include it("sm\:transition-all") {
+        @include assert {
+          @include output {
+            @include sm\:transition-all;
+            @include clear;
+          }
 
-  @mixin xl\:transition-($v) {
-    @include transition-($v, $xl);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              transition-property: all;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
 
-  @mixin \2xl\:transition-($v) {
-    @include transition-($v, $\2xl);
+
+      @include it("sm\:transition") {
+        @include assert {
+          @include output {
+            @include sm\:transition;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("sm\:transition-colors") {
+        @include assert {
+          @include output {
+            @include sm\:transition-colors;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("sm\:transition-opacity") {
+        @include assert {
+          @include output {
+            @include sm\:transition-opacity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-property: opacity;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("sm\:transition-shadow") {
+        @include assert {
+          @include output {
+            @include sm\:transition-shadow;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-property: box-shadow;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("sm\:transition-transform") {
+        @include assert {
+          @include output {
+            @include sm\:transition-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-property: transform;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:transition-none") {
+        @include assert {
+          @include output {
+            @include md\:transition-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-property: none;
+            }
+          }
+        }
+      }
+
+      @include it("md\:transition-all") {
+        @include assert {
+          @include output {
+            @include md\:transition-all;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-property: all;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("md\:transition") {
+        @include assert {
+          @include output {
+            @include md\:transition;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("md\:transition-colors") {
+        @include assert {
+          @include output {
+            @include md\:transition-colors;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("md\:transition-opacity") {
+        @include assert {
+          @include output {
+            @include md\:transition-opacity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-property: opacity;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("md\:transition-shadow") {
+        @include assert {
+          @include output {
+            @include md\:transition-shadow;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-property: box-shadow;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("md\:transition-transform") {
+        @include assert {
+          @include output {
+            @include md\:transition-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-property: transform;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:transition-none") {
+        @include assert {
+          @include output {
+            @include lg\:transition-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-property: none;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:transition-all") {
+        @include assert {
+          @include output {
+            @include lg\:transition-all;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-property: all;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("lg\:transition") {
+        @include assert {
+          @include output {
+            @include lg\:transition;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("lg\:transition-colors") {
+        @include assert {
+          @include output {
+            @include lg\:transition-colors;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("lg\:transition-opacity") {
+        @include assert {
+          @include output {
+            @include lg\:transition-opacity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-property: opacity;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("lg\:transition-shadow") {
+        @include assert {
+          @include output {
+            @include lg\:transition-shadow;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-property: box-shadow;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("lg\:transition-transform") {
+        @include assert {
+          @include output {
+            @include lg\:transition-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-property: transform;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:transition-none") {
+        @include assert {
+          @include output {
+            @include xl\:transition-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-property: none;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:transition-all") {
+        @include assert {
+          @include output {
+            @include xl\:transition-all;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-property: all;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("xl\:transition") {
+        @include assert {
+          @include output {
+            @include xl\:transition;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("xl\:transition-colors") {
+        @include assert {
+          @include output {
+            @include xl\:transition-colors;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("xl\:transition-opacity") {
+        @include assert {
+          @include output {
+            @include xl\:transition-opacity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-property: opacity;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("xl\:transition-shadow") {
+        @include assert {
+          @include output {
+            @include xl\:transition-shadow;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-property: box-shadow;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("xl\:transition-transform") {
+        @include assert {
+          @include output {
+            @include xl\:transition-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-property: transform;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:transition-none") {
+        @include assert {
+          @include output {
+            @include \2xl\:transition-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-property: none;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:transition-all") {
+        @include assert {
+          @include output {
+            @include \2xl\:transition-all;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-property: all;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("\2xl\:transition") {
+        @include assert {
+          @include output {
+            @include \2xl\:transition;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("\2xl\:transition-colors") {
+        @include assert {
+          @include output {
+            @include \2xl\:transition-colors;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("\2xl\:transition-opacity") {
+        @include assert {
+          @include output {
+            @include \2xl\:transition-opacity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-property: opacity;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("\2xl\:transition-shadow") {
+        @include assert {
+          @include output {
+            @include \2xl\:transition-shadow;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-property: box-shadow;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+
+      @include it("\2xl\:transition-transform") {
+        @include assert {
+          @include output {
+            @include \2xl\:transition-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-property: transform;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("transition-(height)") {
+        @include assert {
+          @include output {
+            @include transition-(height);
+            @include clear;
+          }
+
+          @include expect {
+            transition-property: height;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+          }
+        }
+      }
+
+      @include it("sm\:transition-(height)") {
+        @include assert {
+          @include output {
+            @include sm\:transition-(height);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transition-property: height;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("md\:transition-(height)") {
+        @include assert {
+          @include output {
+            @include md\:transition-(height);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transition-property: height;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:transition-(height)") {
+        @include assert {
+          @include output {
+            @include lg\:transition-(height);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transition-property: height;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:transition-(height)") {
+        @include assert {
+          @include output {
+            @include xl\:transition-(height);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transition-property: height;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:transition-(height)") {
+        @include assert {
+          @include output {
+            @include \2xl\:transition-(height);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transition-property: height;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 150ms;
+            }
+          }
+        }
+      }
+
+    }
   }
-  // x*/
 }
