@@ -2,493 +2,1418 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Background Blend Mode */
-@if $Basic {
-  // /*x
-  @mixin bg-blend-normal($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: normal;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: normal;
+@include describe("8.Effects") {
+  @include describe("Background Blend Mode") {
+    @include describe("Basic") {
+      @include it("bg-blend-normal") {
+        @include assert {
+          @include output {
+            @include bg-blend-normal;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: normal;
+          }
+        }
+      }
+      
+      @include it("bg-blend-multiply") {
+        @include assert {
+          @include output {
+            @include bg-blend-multiply;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: multiply;
+          }
+        }
+      }
+      
+      @include it("bg-blend-screen") {
+        @include assert {
+          @include output {
+            @include bg-blend-screen;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: screen;
+          }
+        }
+      }
+      
+      @include it("bg-blend-overlay") {
+        @include assert {
+          @include output {
+            @include bg-blend-overlay;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: overlay;
+          }
+        }
+      }
+      
+      @include it("bg-blend-darken") {
+        @include assert {
+          @include output {
+            @include bg-blend-darken;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: darken;
+          }
+        }
+      }
+      
+      @include it("bg-blend-lighten") {
+        @include assert {
+          @include output {
+            @include bg-blend-lighten;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: lighten;
+          }
+        }
+      }
+      
+      @include it("bg-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include bg-blend-color-dodge;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: color-dodge;
+          }
+        }
+      }
+      
+      @include it("bg-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include bg-blend-color-burn;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: color-burn;
+          }
+        }
+      }
+      
+      @include it("bg-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include bg-blend-hard-light;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: hard-light;
+          }
+        }
+      }
+      
+      @include it("bg-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include bg-blend-soft-light;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: soft-light;
+          }
+        }
+      }
+      
+      @include it("bg-blend-difference") {
+        @include assert {
+          @include output {
+            @include bg-blend-difference;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: difference;
+          }
+        }
+      }
+      
+      @include it("bg-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include bg-blend-exclusion;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: exclusion;
+          }
+        }
+      }
+      
+      @include it("bg-blend-hue") {
+        @include assert {
+          @include output {
+            @include bg-blend-hue;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: hue;
+          }
+        }
+      }
+      
+      @include it("bg-blend-saturation") {
+        @include assert {
+          @include output {
+            @include bg-blend-saturation;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: saturation;
+          }
+        }
+      }
+      
+      @include it("bg-blend-color") {
+        @include assert {
+          @include output {
+            @include bg-blend-color;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: color;
+          }
+        }
+      }
+      
+      @include it("bg-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include bg-blend-luminosity;
+            @include clear;
+          }
+      
+          @include expect {
+            background-blend-mode: luminosity;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:bg-blend-normal") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-normal;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: normal;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-multiply") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-multiply;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: multiply;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-screen") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-screen;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: screen;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-overlay") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-overlay;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: overlay;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-darken") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-darken;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: darken;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-lighten") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-lighten;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: lighten;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-color-dodge;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-color-burn;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-hard-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-soft-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-difference") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-difference;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: difference;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-exclusion;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-hue") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-hue;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: hue;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-saturation") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-saturation;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: saturation;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-color") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-color;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: color;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:bg-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include sm\:bg-blend-luminosity;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              background-blend-mode: luminosity;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-normal") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-normal;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: normal;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-multiply") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-multiply;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: multiply;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-screen") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-screen;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: screen;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-overlay") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-overlay;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: overlay;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-darken") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-darken;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: darken;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-lighten") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-lighten;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: lighten;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-color-dodge;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-color-burn;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-hard-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-soft-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-difference") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-difference;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: difference;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-exclusion;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-hue") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-hue;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: hue;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-saturation") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-saturation;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: saturation;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-color") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-color;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: color;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:bg-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include md\:bg-blend-luminosity;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              background-blend-mode: luminosity;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-normal") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-normal;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: normal;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-multiply") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-multiply;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: multiply;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-screen") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-screen;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: screen;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-overlay") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-overlay;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: overlay;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-darken") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-darken;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: darken;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-lighten") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-lighten;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: lighten;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-color-dodge;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-color-burn;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-hard-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-soft-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-difference") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-difference;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: difference;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-exclusion;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-hue") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-hue;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: hue;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-saturation") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-saturation;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: saturation;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-color") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-color;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: color;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:bg-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include lg\:bg-blend-luminosity;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              background-blend-mode: luminosity;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-normal") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-normal;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: normal;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-multiply") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-multiply;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: multiply;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-screen") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-screen;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: screen;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-overlay") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-overlay;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: overlay;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-darken") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-darken;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: darken;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-lighten") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-lighten;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: lighten;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-color-dodge;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-color-burn;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-hard-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-soft-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-difference") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-difference;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: difference;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-exclusion;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-hue") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-hue;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: hue;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-saturation") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-saturation;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: saturation;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-color") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-color;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: color;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:bg-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include xl\:bg-blend-luminosity;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              background-blend-mode: luminosity;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-normal") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-normal;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: normal;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-multiply") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-multiply;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: multiply;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-screen") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-screen;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: screen;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-overlay") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-overlay;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: overlay;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-darken") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-darken;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: darken;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-lighten") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-lighten;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: lighten;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-color-dodge;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-color-burn;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-hard-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-soft-light;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-difference") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-difference;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: difference;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-exclusion;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-hue") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-hue;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: hue;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-saturation") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-saturation;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: saturation;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-color") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-color;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: color;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:bg-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-blend-luminosity;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              background-blend-mode: luminosity;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin bg-blend-multiply($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: multiply;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: multiply;
-      }
-    }
-  }
-
-  @mixin bg-blend-screen($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: screen;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: screen;
-      }
-    }
-  }
-
-  @mixin bg-blend-overlay($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: overlay;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: overlay;
-      }
-    }
-  }
-
-  @mixin bg-blend-darken($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: darken;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: darken;
-      }
-    }
-  }
-
-  @mixin bg-blend-lighten($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: lighten;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: lighten;
-      }
-    }
-  }
-
-  @mixin bg-blend-color-dodge($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: color-dodge;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: color-dodge;
-      }
-    }
-  }
-
-  @mixin bg-blend-color-burn($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: color-burn;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: color-burn;
-      }
-    }
-  }
-
-  @mixin bg-blend-hard-light($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: hard-light;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: hard-light;
-      }
-    }
-  }
-
-  @mixin bg-blend-soft-light($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: soft-light;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: soft-light;
-      }
-    }
-  }
-
-  @mixin bg-blend-difference($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: difference;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: difference;
-      }
-    }
-  }
-
-  @mixin bg-blend-exclusion($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: exclusion;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: exclusion;
-      }
-    }
-  }
-
-  @mixin bg-blend-hue($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: hue;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: hue;
-      }
-    }
-  }
-
-  @mixin bg-blend-saturation($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: saturation;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: saturation;
-      }
-    }
-  }
-
-  @mixin bg-blend-color($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: color;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: color;
-      }
-    }
-  }
-
-  @mixin bg-blend-luminosity($rwd: null) {
-    @if $rwd==null {
-      background-blend-mode: luminosity;
-    } @else {
-      @media (min-width: $rwd) {
-        background-blend-mode: luminosity;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:bg-blend-normal {
-    @include bg-blend-normal($sm);
-  }
-
-  @mixin sm\:bg-blend-multiply {
-    @include bg-blend-multiply($sm);
-  }
-
-  @mixin sm\:bg-blend-screen {
-    @include bg-blend-screen($sm);
-  }
-
-  @mixin sm\:bg-blend-overlay {
-    @include bg-blend-overlay($sm);
-  }
-
-  @mixin sm\:bg-blend-darken {
-    @include bg-blend-darken($sm);
-  }
-
-  @mixin sm\:bg-blend-lighten {
-    @include bg-blend-lighten($sm);
-  }
-
-  @mixin sm\:bg-blend-color-dodge {
-    @include bg-blend-color-dodge($sm);
-  }
-
-  @mixin sm\:bg-blend-color-burn {
-    @include bg-blend-color-burn($sm);
-  }
-
-  @mixin sm\:bg-blend-hard-light {
-    @include bg-blend-hard-light($sm);
-  }
-
-  @mixin sm\:bg-blend-soft-light {
-    @include bg-blend-soft-light($sm);
-  }
-
-  @mixin sm\:bg-blend-difference {
-    @include bg-blend-difference($sm);
-  }
-
-  @mixin sm\:bg-blend-exclusion {
-    @include bg-blend-exclusion($sm);
-  }
-
-  @mixin sm\:bg-blend-hue {
-    @include bg-blend-hue($sm);
-  }
-
-  @mixin sm\:bg-blend-saturation {
-    @include bg-blend-saturation($sm);
-  }
-
-  @mixin sm\:bg-blend-color {
-    @include bg-blend-color($sm);
-  }
-
-  @mixin sm\:bg-blend-luminosity {
-    @include bg-blend-luminosity($sm);
-  }
-
-  @mixin md\:bg-blend-normal {
-    @include bg-blend-normal($md);
-  }
-
-  @mixin md\:bg-blend-multiply {
-    @include bg-blend-multiply($md);
-  }
-
-  @mixin md\:bg-blend-screen {
-    @include bg-blend-screen($md);
-  }
-
-  @mixin md\:bg-blend-overlay {
-    @include bg-blend-overlay($md);
-  }
-
-  @mixin md\:bg-blend-darken {
-    @include bg-blend-darken($md);
-  }
-
-  @mixin md\:bg-blend-lighten {
-    @include bg-blend-lighten($md);
-  }
-
-  @mixin md\:bg-blend-color-dodge {
-    @include bg-blend-color-dodge($md);
-  }
-
-  @mixin md\:bg-blend-color-burn {
-    @include bg-blend-color-burn($md);
-  }
-
-  @mixin md\:bg-blend-hard-light {
-    @include bg-blend-hard-light($md);
-  }
-
-  @mixin md\:bg-blend-soft-light {
-    @include bg-blend-soft-light($md);
-  }
-
-  @mixin md\:bg-blend-difference {
-    @include bg-blend-difference($md);
-  }
-
-  @mixin md\:bg-blend-exclusion {
-    @include bg-blend-exclusion($md);
-  }
-
-  @mixin md\:bg-blend-hue {
-    @include bg-blend-hue($md);
-  }
-
-  @mixin md\:bg-blend-saturation {
-    @include bg-blend-saturation($md);
-  }
-
-  @mixin md\:bg-blend-color {
-    @include bg-blend-color($md);
-  }
-
-  @mixin md\:bg-blend-luminosity {
-    @include bg-blend-luminosity($md);
-  }
-
-  @mixin lg\:bg-blend-normal {
-    @include bg-blend-normal($lg);
-  }
-
-  @mixin lg\:bg-blend-multiply {
-    @include bg-blend-multiply($lg);
-  }
-
-  @mixin lg\:bg-blend-screen {
-    @include bg-blend-screen($lg);
-  }
-
-  @mixin lg\:bg-blend-overlay {
-    @include bg-blend-overlay($lg);
-  }
-
-  @mixin lg\:bg-blend-darken {
-    @include bg-blend-darken($lg);
-  }
-
-  @mixin lg\:bg-blend-lighten {
-    @include bg-blend-lighten($lg);
-  }
-
-  @mixin lg\:bg-blend-color-dodge {
-    @include bg-blend-color-dodge($lg);
-  }
-
-  @mixin lg\:bg-blend-color-burn {
-    @include bg-blend-color-burn($lg);
-  }
-
-  @mixin lg\:bg-blend-hard-light {
-    @include bg-blend-hard-light($lg);
-  }
-
-  @mixin lg\:bg-blend-soft-light {
-    @include bg-blend-soft-light($lg);
-  }
-
-  @mixin lg\:bg-blend-difference {
-    @include bg-blend-difference($lg);
-  }
-
-  @mixin lg\:bg-blend-exclusion {
-    @include bg-blend-exclusion($lg);
-  }
-
-  @mixin lg\:bg-blend-hue {
-    @include bg-blend-hue($lg);
-  }
-
-  @mixin lg\:bg-blend-saturation {
-    @include bg-blend-saturation($lg);
-  }
-
-  @mixin lg\:bg-blend-color {
-    @include bg-blend-color($lg);
-  }
-
-  @mixin lg\:bg-blend-luminosity {
-    @include bg-blend-luminosity($lg);
-  }
-
-  @mixin xl\:bg-blend-normal {
-    @include bg-blend-normal($xl);
-  }
-
-  @mixin xl\:bg-blend-multiply {
-    @include bg-blend-multiply($xl);
-  }
-
-  @mixin xl\:bg-blend-screen {
-    @include bg-blend-screen($xl);
-  }
-
-  @mixin xl\:bg-blend-overlay {
-    @include bg-blend-overlay($xl);
-  }
-
-  @mixin xl\:bg-blend-darken {
-    @include bg-blend-darken($xl);
-  }
-
-  @mixin xl\:bg-blend-lighten {
-    @include bg-blend-lighten($xl);
-  }
-
-  @mixin xl\:bg-blend-color-dodge {
-    @include bg-blend-color-dodge($xl);
-  }
-
-  @mixin xl\:bg-blend-color-burn {
-    @include bg-blend-color-burn($xl);
-  }
-
-  @mixin xl\:bg-blend-hard-light {
-    @include bg-blend-hard-light($xl);
-  }
-
-  @mixin xl\:bg-blend-soft-light {
-    @include bg-blend-soft-light($xl);
-  }
-
-  @mixin xl\:bg-blend-difference {
-    @include bg-blend-difference($xl);
-  }
-
-  @mixin xl\:bg-blend-exclusion {
-    @include bg-blend-exclusion($xl);
-  }
-
-  @mixin xl\:bg-blend-hue {
-    @include bg-blend-hue($xl);
-  }
-
-  @mixin xl\:bg-blend-saturation {
-    @include bg-blend-saturation($xl);
-  }
-
-  @mixin xl\:bg-blend-color {
-    @include bg-blend-color($xl);
-  }
-
-  @mixin xl\:bg-blend-luminosity {
-    @include bg-blend-luminosity($xl);
-  }
-
-  @mixin \2xl\:bg-blend-normal {
-    @include bg-blend-normal($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-multiply {
-    @include bg-blend-multiply($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-screen {
-    @include bg-blend-screen($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-overlay {
-    @include bg-blend-overlay($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-darken {
-    @include bg-blend-darken($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-lighten {
-    @include bg-blend-lighten($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-color-dodge {
-    @include bg-blend-color-dodge($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-color-burn {
-    @include bg-blend-color-burn($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-hard-light {
-    @include bg-blend-hard-light($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-soft-light {
-    @include bg-blend-soft-light($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-difference {
-    @include bg-blend-difference($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-exclusion {
-    @include bg-blend-exclusion($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-hue {
-    @include bg-blend-hue($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-saturation {
-    @include bg-blend-saturation($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-color {
-    @include bg-blend-color($\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-luminosity {
-    @include bg-blend-luminosity($\2xl);
-  }
-
-  // x*/
 }

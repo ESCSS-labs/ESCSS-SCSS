@@ -2,523 +2,1594 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Mix Blend Mode */
-@if $Basic {
-  // /*x
-  @mixin mix-blend-normal($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: normal;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: normal;
+@include describe("8.Effects") {
+  @include describe("Mix Blend Mode") {
+    @include describe("Basic") {
+      @include it("mix-blend-normal") {
+        @include assert {
+          @include output {
+            @include mix-blend-normal;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: normal;
+          }
+        }
+      }
+
+      @include it("mix-blend-multiply") {
+        @include assert {
+          @include output {
+            @include mix-blend-multiply;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: multiply;
+          }
+        }
+      }
+
+      @include it("mix-blend-screen") {
+        @include assert {
+          @include output {
+            @include mix-blend-screen;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: screen;
+          }
+        }
+      }
+
+      @include it("mix-blend-overlay") {
+        @include assert {
+          @include output {
+            @include mix-blend-overlay;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: overlay;
+          }
+        }
+      }
+
+      @include it("mix-blend-darken") {
+        @include assert {
+          @include output {
+            @include mix-blend-darken;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: darken;
+          }
+        }
+      }
+
+      @include it("mix-blend-lighten") {
+        @include assert {
+          @include output {
+            @include mix-blend-lighten;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: lighten;
+          }
+        }
+      }
+
+      @include it("mix-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include mix-blend-color-dodge;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: color-dodge;
+          }
+        }
+      }
+
+      @include it("mix-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include mix-blend-color-burn;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: color-burn;
+          }
+        }
+      }
+
+      @include it("mix-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include mix-blend-hard-light;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: hard-light;
+          }
+        }
+      }
+
+      @include it("mix-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include mix-blend-soft-light;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: soft-light;
+          }
+        }
+      }
+
+      @include it("mix-blend-difference") {
+        @include assert {
+          @include output {
+            @include mix-blend-difference;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: difference;
+          }
+        }
+      }
+
+      @include it("mix-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include mix-blend-exclusion;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: exclusion;
+          }
+        }
+      }
+
+      @include it("mix-blend-hue") {
+        @include assert {
+          @include output {
+            @include mix-blend-hue;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: hue;
+          }
+        }
+      }
+
+      @include it("mix-blend-saturation") {
+        @include assert {
+          @include output {
+            @include mix-blend-saturation;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: saturation;
+          }
+        }
+      }
+
+      @include it("mix-blend-color") {
+        @include assert {
+          @include output {
+            @include mix-blend-color;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: color;
+          }
+        }
+      }
+
+      @include it("mix-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include mix-blend-luminosity;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: luminosity;
+          }
+        }
+      }
+
+      @include it("mix-blend-plus-darker") {
+        @include assert {
+          @include output {
+            @include mix-blend-plus-darker;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: plus-darker;
+          }
+        }
+      }
+
+      @include it("mix-blend-plus-lighter") {
+        @include assert {
+          @include output {
+            @include mix-blend-plus-lighter;
+            @include clear;
+          }
+
+          @include expect {
+            mix-blend-mode: plus-lighter;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:mix-blend-normal") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: normal;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-multiply") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-multiply;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: multiply;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-screen") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-screen;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: screen;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-overlay") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-overlay;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: overlay;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-darken") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-darken;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: darken;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-lighten") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-lighten;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: lighten;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-color-dodge;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-color-burn;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-hard-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-soft-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-difference") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-difference;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: difference;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-exclusion;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-hue") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-hue;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: hue;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-saturation") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-saturation;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: saturation;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-color") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-color;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: color;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-luminosity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: luminosity;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-plus-darker") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-plus-darker;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: plus-darker;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:mix-blend-plus-lighter") {
+        @include assert {
+          @include output {
+            @include sm\:mix-blend-plus-lighter;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              mix-blend-mode: plus-lighter;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-normal") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: normal;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-multiply") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-multiply;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: multiply;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-screen") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-screen;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: screen;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-overlay") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-overlay;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: overlay;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-darken") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-darken;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: darken;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-lighten") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-lighten;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: lighten;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-color-dodge;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-color-burn;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-hard-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-soft-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-difference") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-difference;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: difference;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-exclusion;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-hue") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-hue;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: hue;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-saturation") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-saturation;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: saturation;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-color") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-color;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: color;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-luminosity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: luminosity;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-plus-darker") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-plus-darker;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: plus-darker;
+            }
+          }
+        }
+      }
+
+      @include it("md\:mix-blend-plus-lighter") {
+        @include assert {
+          @include output {
+            @include md\:mix-blend-plus-lighter;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              mix-blend-mode: plus-lighter;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-normal") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: normal;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-multiply") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-multiply;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: multiply;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-screen") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-screen;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: screen;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-overlay") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-overlay;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: overlay;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-darken") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-darken;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: darken;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-lighten") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-lighten;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: lighten;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-color-dodge;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-color-burn;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-hard-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-soft-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-difference") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-difference;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: difference;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-exclusion;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-hue") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-hue;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: hue;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-saturation") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-saturation;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: saturation;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-color") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-color;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: color;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-luminosity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: luminosity;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-plus-darker") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-plus-darker;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: plus-darker;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:mix-blend-plus-lighter") {
+        @include assert {
+          @include output {
+            @include lg\:mix-blend-plus-lighter;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              mix-blend-mode: plus-lighter;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-normal") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: normal;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-multiply") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-multiply;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: multiply;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-screen") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-screen;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: screen;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-overlay") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-overlay;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: overlay;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-darken") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-darken;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: darken;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-lighten") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-lighten;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: lighten;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-color-dodge;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-color-burn;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-hard-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-soft-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-difference") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-difference;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: difference;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-exclusion;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-hue") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-hue;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: hue;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-saturation") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-saturation;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: saturation;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-color") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-color;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: color;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-luminosity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: luminosity;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-plus-darker") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-plus-darker;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: plus-darker;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:mix-blend-plus-lighter") {
+        @include assert {
+          @include output {
+            @include xl\:mix-blend-plus-lighter;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              mix-blend-mode: plus-lighter;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-normal") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-normal;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: normal;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-multiply") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-multiply;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: multiply;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-screen") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-screen;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: screen;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-overlay") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-overlay;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: overlay;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-darken") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-darken;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: darken;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-lighten") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-lighten;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: lighten;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-color-dodge") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-color-dodge;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: color-dodge;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-color-burn") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-color-burn;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: color-burn;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-hard-light") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-hard-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: hard-light;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-soft-light") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-soft-light;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: soft-light;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-difference") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-difference;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: difference;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-exclusion") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-exclusion;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: exclusion;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-hue") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-hue;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: hue;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-saturation") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-saturation;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: saturation;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-color") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-color;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: color;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-luminosity") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-luminosity;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: luminosity;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-plus-darker") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-plus-darker;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: plus-darker;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:mix-blend-plus-lighter") {
+        @include assert {
+          @include output {
+            @include \2xl\:mix-blend-plus-lighter;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              mix-blend-mode: plus-lighter;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin mix-blend-multiply($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: multiply;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: multiply;
-      }
-    }
-  }
-
-  @mixin mix-blend-screen($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: screen;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: screen;
-      }
-    }
-  }
-
-  @mixin mix-blend-overlay($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: overlay;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: overlay;
-      }
-    }
-  }
-
-  @mixin mix-blend-darken($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: darken;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: darken;
-      }
-    }
-  }
-
-  @mixin mix-blend-lighten($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: lighten;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: lighten;
-      }
-    }
-  }
-
-  @mixin mix-blend-color-dodge($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: color-dodge;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: color-dodge;
-      }
-    }
-  }
-
-  @mixin mix-blend-color-burn($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: color-burn;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: color-burn;
-      }
-    }
-  }
-
-  @mixin mix-blend-hard-light($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: hard-light;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: hard-light;
-      }
-    }
-  }
-
-  @mixin mix-blend-soft-light($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: soft-light;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: soft-light;
-      }
-    }
-  }
-
-  @mixin mix-blend-difference($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: difference;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: difference;
-      }
-    }
-  }
-
-  @mixin mix-blend-exclusion($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: exclusion;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: exclusion;
-      }
-    }
-  }
-
-  @mixin mix-blend-hue($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: hue;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: hue;
-      }
-    }
-  }
-
-  @mixin mix-blend-saturation($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: saturation;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: saturation;
-      }
-    }
-  }
-
-  @mixin mix-blend-color($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: color;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: color;
-      }
-    }
-  }
-
-  @mixin mix-blend-luminosity($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: luminosity;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: luminosity;
-      }
-    }
-  }
-
-  @mixin mix-blend-plus-lighter($rwd: null) {
-    @if $rwd==null {
-      mix-blend-mode: plus-lighter;
-    } @else {
-      @media (min-width: $rwd) {
-        mix-blend-mode: plus-lighter;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:mix-blend-normal {
-    @include mix-blend-normal($sm);
-  }
-
-  @mixin sm\:mix-blend-multiply {
-    @include mix-blend-multiply($sm);
-  }
-
-  @mixin sm\:mix-blend-screen {
-    @include mix-blend-screen($sm);
-  }
-
-  @mixin sm\:mix-blend-overlay {
-    @include mix-blend-overlay($sm);
-  }
-
-  @mixin sm\:mix-blend-darken {
-    @include mix-blend-darken($sm);
-  }
-
-  @mixin sm\:mix-blend-lighten {
-    @include mix-blend-lighten($sm);
-  }
-
-  @mixin sm\:mix-blend-color-dodge {
-    @include mix-blend-color-dodge($sm);
-  }
-
-  @mixin sm\:mix-blend-color-burn {
-    @include mix-blend-color-burn($sm);
-  }
-
-  @mixin sm\:mix-blend-hard-light {
-    @include mix-blend-hard-light($sm);
-  }
-
-  @mixin sm\:mix-blend-soft-light {
-    @include mix-blend-soft-light($sm);
-  }
-
-  @mixin sm\:mix-blend-difference {
-    @include mix-blend-difference($sm);
-  }
-
-  @mixin sm\:mix-blend-exclusion {
-    @include mix-blend-exclusion($sm);
-  }
-
-  @mixin sm\:mix-blend-hue {
-    @include mix-blend-hue($sm);
-  }
-
-  @mixin sm\:mix-blend-saturation {
-    @include mix-blend-saturation($sm);
-  }
-
-  @mixin sm\:mix-blend-color {
-    @include mix-blend-color($sm);
-  }
-
-  @mixin sm\:mix-blend-luminosity {
-    @include mix-blend-luminosity($sm);
-  }
-
-  @mixin sm\:mix-blend-plus-lighter {
-    @include mix-blend-plus-lighter($sm);
-  }
-
-  @mixin md\:mix-blend-normal {
-    @include mix-blend-normal($md);
-  }
-
-  @mixin md\:mix-blend-multiply {
-    @include mix-blend-multiply($md);
-  }
-
-  @mixin md\:mix-blend-screen {
-    @include mix-blend-screen($md);
-  }
-
-  @mixin md\:mix-blend-overlay {
-    @include mix-blend-overlay($sm);
-  }
-
-  @mixin sm\:mix-blend-darken {
-    @include mix-blend-darken($sm);
-  }
-
-  @mixin md\:mix-blend-lighten {
-    @include mix-blend-lighten($md);
-  }
-
-  @mixin md\:mix-blend-color-dodge {
-    @include mix-blend-color-dodge($md);
-  }
-
-  @mixin md\:mix-blend-color-burn {
-    @include mix-blend-color-burn($md);
-  }
-
-  @mixin md\:mix-blend-hard-light {
-    @include mix-blend-hard-light($md);
-  }
-
-  @mixin md\:mix-blend-soft-light {
-    @include mix-blend-soft-light($md);
-  }
-
-  @mixin md\:mix-blend-difference {
-    @include mix-blend-difference($md);
-  }
-
-  @mixin md\:mix-blend-exclusion {
-    @include mix-blend-exclusion($md);
-  }
-
-  @mixin md\:mix-blend-hue {
-    @include mix-blend-hue($md);
-  }
-
-  @mixin md\:mix-blend-saturation {
-    @include mix-blend-saturation($md);
-  }
-
-  @mixin md\:mix-blend-color {
-    @include mix-blend-color($md);
-  }
-
-  @mixin md\:mix-blend-luminosity {
-    @include mix-blend-luminosity($md);
-  }
-
-  @mixin md\:mix-blend-plus-lighter {
-    @include mix-blend-plus-lighter($md);
-  }
-
-  @mixin lg\:mix-blend-normal {
-    @include mix-blend-normal($lg);
-  }
-
-  @mixin lg\:mix-blend-multiply {
-    @include mix-blend-multiply($lg);
-  }
-
-  @mixin lg\:mix-blend-screen {
-    @include mix-blend-screen($lg);
-  }
-
-  @mixin lg\:mix-blend-overlay {
-    @include mix-blend-overlay($sm);
-  }
-
-  @mixin sm\:mix-blend-darken {
-    @include mix-blend-darken($sm);
-  }
-
-  @mixin lg\:mix-blend-lighten {
-    @include mix-blend-lighten($lg);
-  }
-
-  @mixin lg\:mix-blend-color-dodge {
-    @include mix-blend-color-dodge($lg);
-  }
-
-  @mixin lg\:mix-blend-color-burn {
-    @include mix-blend-color-burn($lg);
-  }
-
-  @mixin lg\:mix-blend-hard-light {
-    @include mix-blend-hard-light($lg);
-  }
-
-  @mixin lg\:mix-blend-soft-light {
-    @include mix-blend-soft-light($lg);
-  }
-
-  @mixin lg\:mix-blend-difference {
-    @include mix-blend-difference($lg);
-  }
-
-  @mixin lg\:mix-blend-exclusion {
-    @include mix-blend-exclusion($lg);
-  }
-
-  @mixin lg\:mix-blend-hue {
-    @include mix-blend-hue($lg);
-  }
-
-  @mixin lg\:mix-blend-saturation {
-    @include mix-blend-saturation($lg);
-  }
-
-  @mixin lg\:mix-blend-color {
-    @include mix-blend-color($lg);
-  }
-
-  @mixin lg\:mix-blend-luminosity {
-    @include mix-blend-luminosity($lg);
-  }
-
-  @mixin lg\:mix-blend-plus-lighter {
-    @include mix-blend-plus-lighter($lg);
-  }
-
-  @mixin xl\:mix-blend-normal {
-    @include mix-blend-normal($xl);
-  }
-
-  @mixin xl\:mix-blend-multiply {
-    @include mix-blend-multiply($xl);
-  }
-
-  @mixin xl\:mix-blend-screen {
-    @include mix-blend-screen($xl);
-  }
-
-  @mixin xl\:mix-blend-overlay {
-    @include mix-blend-overlay($sm);
-  }
-
-  @mixin sm\:mix-blend-darken {
-    @include mix-blend-darken($sm);
-  }
-
-  @mixin xl\:mix-blend-lighten {
-    @include mix-blend-lighten($xl);
-  }
-
-  @mixin xl\:mix-blend-color-dodge {
-    @include mix-blend-color-dodge($xl);
-  }
-
-  @mixin xl\:mix-blend-color-burn {
-    @include mix-blend-color-burn($xl);
-  }
-
-  @mixin xl\:mix-blend-hard-light {
-    @include mix-blend-hard-light($xl);
-  }
-
-  @mixin xl\:mix-blend-soft-light {
-    @include mix-blend-soft-light($xl);
-  }
-
-  @mixin xl\:mix-blend-difference {
-    @include mix-blend-difference($xl);
-  }
-
-  @mixin xl\:mix-blend-exclusion {
-    @include mix-blend-exclusion($xl);
-  }
-
-  @mixin xl\:mix-blend-hue {
-    @include mix-blend-hue($xl);
-  }
-
-  @mixin xl\:mix-blend-saturation {
-    @include mix-blend-saturation($xl);
-  }
-
-  @mixin xl\:mix-blend-color {
-    @include mix-blend-color($xl);
-  }
-
-  @mixin xl\:mix-blend-luminosity {
-    @include mix-blend-luminosity($xl);
-  }
-
-  @mixin xl\:mix-blend-plus-lighter {
-    @include mix-blend-plus-lighter($xl);
-  }
-
-  @mixin \2xl\:mix-blend-normal {
-    @include mix-blend-normal($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-multiply {
-    @include mix-blend-multiply($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-screen {
-    @include mix-blend-screen($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-overlay {
-    @include mix-blend-overlay($sm);
-  }
-
-  @mixin sm\:mix-blend-darken {
-    @include mix-blend-darken($sm);
-  }
-
-  @mixin \2xl\:mix-blend-lighten {
-    @include mix-blend-lighten($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-color-dodge {
-    @include mix-blend-color-dodge($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-color-burn {
-    @include mix-blend-color-burn($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-hard-light {
-    @include mix-blend-hard-light($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-soft-light {
-    @include mix-blend-soft-light($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-difference {
-    @include mix-blend-difference($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-exclusion {
-    @include mix-blend-exclusion($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-hue {
-    @include mix-blend-hue($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-saturation {
-    @include mix-blend-saturation($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-color {
-    @include mix-blend-color($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-luminosity {
-    @include mix-blend-luminosity($\2xl);
-  }
-
-  @mixin \2xl\:mix-blend-plus-lighter {
-    @include mix-blend-plus-lighter($\2xl);
-  }
-
-  // x*/
 }
