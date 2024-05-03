@@ -2,165 +2,458 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Outline Style */
-@if $Basic {
-  // /*x
-  @mixin outline-none($rwd: null) {
-    @if $rwd==null {
-      outline: 2px solid transparent;
-      outline-offset: 2px;
-    } @else {
-      @media (min-width: $rwd) {
-        outline: 2px solid transparent;
-        outline-offset: 2px;
+@include describe("7.Borders") {
+  @include describe("Outline Style") {
+    @include describe("Basic") {
+      @include it("outline-none") {
+        @include assert {
+          @include output {
+            @include outline-none;
+            @include clear;
+          }
+
+          @include expect {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+
+          }
+        }
+      }
+
+      @include it("outline") {
+        @include assert {
+          @include output {
+            @include outline;
+            @include clear;
+          }
+
+          @include expect {
+            outline-style: solid;
+          }
+        }
+      }
+
+      @include it("outline-dashed") {
+        @include assert {
+          @include output {
+            @include outline-dashed;
+            @include clear;
+          }
+
+          @include expect {
+            outline-style: dashed;
+          }
+        }
+      }
+
+      @include it("outline-dotted") {
+        @include assert {
+          @include output {
+            @include outline-dotted;
+            @include clear;
+          }
+
+          @include expect {
+            outline-style: dotted;
+          }
+        }
+      }
+
+      @include it("outline-double") {
+        @include assert {
+          @include output {
+            @include outline-double;
+            @include clear;
+          }
+
+          @include expect {
+            outline-style: double;
+          }
+        }
       }
     }
-  }
 
-  @mixin outline($rwd: null) {
-    @if $rwd==null {
-      outline-style: solid;
-    } @else {
-      @media (min-width: $rwd) {
-        outline-style: solid;
+    @include describe("Rwd") {
+      @include it("sm\:outline-none") {
+        @include assert {
+          @include output {
+            @include sm\:outline-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline: 2px solid transparent;
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:outline") {
+        @include assert {
+          @include output {
+            @include sm\:outline;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline-style: solid;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:outline-dashed") {
+        @include assert {
+          @include output {
+            @include sm\:outline-dashed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline-style: dashed;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:outline-dotted") {
+        @include assert {
+          @include output {
+            @include sm\:outline-dotted;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline-style: dotted;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:outline-double") {
+        @include assert {
+          @include output {
+            @include sm\:outline-double;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline-style: double;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline-none") {
+        @include assert {
+          @include output {
+            @include md\:outline-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline: 2px solid transparent;
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline") {
+        @include assert {
+          @include output {
+            @include md\:outline;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline-style: solid;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline-dashed") {
+        @include assert {
+          @include output {
+            @include md\:outline-dashed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline-style: dashed;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline-dotted") {
+        @include assert {
+          @include output {
+            @include md\:outline-dotted;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline-style: dotted;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline-double") {
+        @include assert {
+          @include output {
+            @include md\:outline-double;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline-style: double;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline-none") {
+        @include assert {
+          @include output {
+            @include lg\:outline-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline: 2px solid transparent;
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline") {
+        @include assert {
+          @include output {
+            @include lg\:outline;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline-style: solid;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline-dashed") {
+        @include assert {
+          @include output {
+            @include lg\:outline-dashed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline-style: dashed;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline-dotted") {
+        @include assert {
+          @include output {
+            @include lg\:outline-dotted;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline-style: dotted;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline-double") {
+        @include assert {
+          @include output {
+            @include lg\:outline-double;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline-style: double;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline-none") {
+        @include assert {
+          @include output {
+            @include xl\:outline-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline: 2px solid transparent;
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline") {
+        @include assert {
+          @include output {
+            @include xl\:outline;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline-style: solid;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline-dashed") {
+        @include assert {
+          @include output {
+            @include xl\:outline-dashed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline-style: dashed;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline-dotted") {
+        @include assert {
+          @include output {
+            @include xl\:outline-dotted;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline-style: dotted;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline-double") {
+        @include assert {
+          @include output {
+            @include xl\:outline-double;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline-style: double;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline-none") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline: 2px solid transparent;
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-style: solid;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline-dashed") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-dashed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-style: dashed;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline-dotted") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-dotted;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-style: dotted;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline-double") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-double;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-style: double;
+            }
+          }
+        }
       }
     }
+
   }
-
-  @mixin outline-dashed($rwd: null) {
-    @if $rwd==null {
-      outline-style: dashed;
-    } @else {
-      @media (min-width: $rwd) {
-        outline-style: dashed;
-      }
-    }
-  }
-
-  @mixin outline-dotted($rwd: null) {
-    @if $rwd==null {
-      outline-style: dotted;
-    } @else {
-      @media (min-width: $rwd) {
-        outline-style: dotted;
-      }
-    }
-  }
-
-  @mixin outline-double($rwd: null) {
-    @if $rwd==null {
-      outline-style: double;
-    } @else {
-      @media (min-width: $rwd) {
-        outline-style: double;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:outline-none {
-    @include outline-none($sm);
-  }
-
-  @mixin sm\:outline {
-    @include outline($sm);
-  }
-
-  @mixin sm\:outline-dashed {
-    @include outline-dashed($sm);
-  }
-
-  @mixin sm\:outline-dotted {
-    @include outline-dotted($sm);
-  }
-
-  @mixin sm\:outline-double {
-    @include outline-double($sm);
-  }
-
-  @mixin md\:outline-none {
-    @include outline-none($md);
-  }
-
-  @mixin md\:outline {
-    @include outline($md);
-  }
-
-  @mixin md\:outline-dashed {
-    @include outline-dashed($md);
-  }
-
-  @mixin md\:outline-dotted {
-    @include outline-dotted($md);
-  }
-
-  @mixin md\:outline-double {
-    @include outline-double($md);
-  }
-
-  @mixin lg\:outline-none {
-    @include outline-none($lg);
-  }
-
-  @mixin lg\:outline {
-    @include outline($lg);
-  }
-
-  @mixin lg\:outline-dashed {
-    @include outline-dashed($lg);
-  }
-
-  @mixin lg\:outline-dotted {
-    @include outline-dotted($lg);
-  }
-
-  @mixin lg\:outline-double {
-    @include outline-double($lg);
-  }
-
-  @mixin xl\:outline-none {
-    @include outline-none($xl);
-  }
-
-  @mixin xl\:outline {
-    @include outline($xl);
-  }
-
-  @mixin xl\:outline-dashed {
-    @include outline-dashed($xl);
-  }
-
-  @mixin xl\:outline-dotted {
-    @include outline-dotted($xl);
-  }
-
-  @mixin xl\:outline-double {
-    @include outline-double($xl);
-  }
-
-  @mixin \2xl\:outline-none {
-    @include outline-none($\2xl);
-  }
-
-  @mixin \2xl\:outline {
-    @include outline($\2xl);
-  }
-
-  @mixin \2xl\:outline-dashed {
-    @include outline-dashed($\2xl);
-  }
-
-  @mixin \2xl\:outline-dotted {
-    @include outline-dotted($\2xl);
-  }
-
-  @mixin \2xl\:outline-double {
-    @include outline-double($\2xl);
-  }
-
-  // x*/
 }

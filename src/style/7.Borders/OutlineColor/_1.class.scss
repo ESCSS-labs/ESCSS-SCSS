@@ -5945,20 +5945,20 @@
   // /*x
   @mixin outline-($v, $rwd: null) {
     @if $rwd==null {
-      @if meta.type-of($v) ==color {
+      @include __outline-($v);
+    } @else {
+      @media (min-width: $rwd) {
+        @include __outline-($v);
+      }
+    }
+  }
+
+  @mixin __outline-($v, $rwd: null) {
+      @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
         outline-color: $v;
       } @else {
         outline-width: $v;
       }
-    } @else {
-      @media (min-width: $rwd) {
-        @if meta.type-of($v) ==color {
-          outline-color: $v;
-        } @else {
-          outline-width: $v;
-        }
-      }
-    }
   }
 
   @mixin sm\:outline-($v) {

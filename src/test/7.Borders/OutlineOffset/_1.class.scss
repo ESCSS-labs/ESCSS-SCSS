@@ -2,170 +2,540 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Outline Offset */
-@if $Basic {
-  // /*x
-  @mixin outline-offset-0 {
-    @include outline-offset-(0px);
-  }
+@include describe("7.Borders") {
+  @include describe("Outline Offset") {
+    @include describe("Basic") {
+      @include it("outline-offset-0") {
+        @include assert {
+          @include output {
+            @include outline-offset-0;
+            @include clear;
+          }
 
-  @mixin outline-offset-1 {
-    @include outline-offset-(1px);
-  }
+          @include expect {
+            outline-offset: 0px;
+          }
+        }
+      }
 
-  @mixin outline-offset-2 {
-    @include outline-offset-(2px);
-  }
+      @include it("outline-offset-1") {
+        @include assert {
+          @include output {
+            @include outline-offset-1;
+            @include clear;
+          }
 
-  @mixin outline-offset-4 {
-    @include outline-offset-(4px);
-  }
+          @include expect {
+            outline-offset: 1px;
+          }
+        }
+      }
 
-  @mixin outline-offset-8 {
-    @include outline-offset-(8px);
-  }
+      @include it("outline-offset-2") {
+        @include assert {
+          @include output {
+            @include outline-offset-2;
+            @include clear;
+          }
 
-  // x*/
-}
+          @include expect {
+            outline-offset: 2px;
+          }
+        }
+      }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:outline-offset-0 {
-      @include outline-offset-(0px, $sm);
+      @include it("outline-offset-4") {
+        @include assert {
+          @include output {
+            @include outline-offset-4;
+            @include clear;
+          }
+
+          @include expect {
+            outline-offset: 4px;
+          }
+        }
+      }
+
+      @include it("outline-offset-8") {
+        @include assert {
+          @include output {
+            @include outline-offset-8;
+            @include clear;
+          }
+
+          @include expect {
+            outline-offset: 8px;
+          }
+        }
+      }
     }
 
-    @mixin sm\:outline-offset-1 {
-      @include outline-offset-(1px, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:outline-offset-0") {
+        @include assert {
+          @include output {
+            @include sm\:outline-offset-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline-offset: 0px;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:outline-offset-1") {
+        @include assert {
+          @include output {
+            @include sm\:outline-offset-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline-offset: 1px;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:outline-offset-2") {
+        @include assert {
+          @include output {
+            @include sm\:outline-offset-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:outline-offset-4") {
+        @include assert {
+          @include output {
+            @include sm\:outline-offset-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline-offset: 4px;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:outline-offset-8") {
+        @include assert {
+          @include output {
+            @include sm\:outline-offset-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              outline-offset: 8px;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline-offset-0") {
+        @include assert {
+          @include output {
+            @include md\:outline-offset-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline-offset: 0px;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline-offset-1") {
+        @include assert {
+          @include output {
+            @include md\:outline-offset-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline-offset: 1px;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline-offset-2") {
+        @include assert {
+          @include output {
+            @include md\:outline-offset-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline-offset-4") {
+        @include assert {
+          @include output {
+            @include md\:outline-offset-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline-offset: 4px;
+            }
+          }
+        }
+      }
+
+      @include it("md\:outline-offset-8") {
+        @include assert {
+          @include output {
+            @include md\:outline-offset-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              outline-offset: 8px;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline-offset-0") {
+        @include assert {
+          @include output {
+            @include lg\:outline-offset-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline-offset: 0px;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline-offset-1") {
+        @include assert {
+          @include output {
+            @include lg\:outline-offset-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline-offset: 1px;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline-offset-2") {
+        @include assert {
+          @include output {
+            @include lg\:outline-offset-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline-offset-4") {
+        @include assert {
+          @include output {
+            @include lg\:outline-offset-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline-offset: 4px;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:outline-offset-8") {
+        @include assert {
+          @include output {
+            @include lg\:outline-offset-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              outline-offset: 8px;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline-offset-0") {
+        @include assert {
+          @include output {
+            @include xl\:outline-offset-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline-offset: 0px;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline-offset-1") {
+        @include assert {
+          @include output {
+            @include xl\:outline-offset-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline-offset: 1px;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline-offset-2") {
+        @include assert {
+          @include output {
+            @include xl\:outline-offset-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline-offset-4") {
+        @include assert {
+          @include output {
+            @include xl\:outline-offset-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline-offset: 4px;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:outline-offset-8") {
+        @include assert {
+          @include output {
+            @include xl\:outline-offset-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              outline-offset: 8px;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline-offset-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-offset-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-offset: 0px;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline-offset-1") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-offset-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-offset: 1px;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline-offset-2") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-offset-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline-offset-4") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-offset-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-offset: 4px;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:outline-offset-8") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-offset-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-offset: 8px;
+            }
+          }
+        }
+      }
     }
 
-    @mixin sm\:outline-offset-2 {
-      @include outline-offset-(2px, $sm);
-    }
+    @include describe("Custom") {
+      @include it("outline-offset-(3px)") {
+        @include assert {
+          @include output {
+            @include outline-offset-(3px);
+            @include clear;
+          }
 
-    @mixin sm\:outline-offset-4 {
-      @include outline-offset-(4px, $sm);
-    }
+          @include expect {
+            outline-offset: 3px;
+          }
+        }
+      }
 
-    @mixin sm\:outline-offset-8 {
-      @include outline-offset-(8px, $sm);
-    }
+      @include it("sm\:outline-offset-(3px)") {
+        @include assert {
+          @include output {
+            @include sm\:outline-offset-(3px);
+            @include clear;
+          }
 
-    @mixin md\:outline-offset-0 {
-      @include outline-offset-(0px, $md);
-    }
+          @include expect {
+            @media(min-width:$sm) {
+              outline-offset: 3px;
+            }
+          }
+        }
+      }
 
-    @mixin md\:outline-offset-1 {
-      @include outline-offset-(1px, $md);
-    }
+      @include it("md\:outline-offset-(3px)") {
+        @include assert {
+          @include output {
+            @include md\:outline-offset-(3px);
+            @include clear;
+          }
 
-    @mixin md\:outline-offset-2 {
-      @include outline-offset-(2px, $md);
-    }
+          @include expect {
+            @media(min-width:$md) {
+              outline-offset: 3px;
+            }
+          }
+        }
+      }
 
-    @mixin md\:outline-offset-4 {
-      @include outline-offset-(4px, $md);
-    }
+      @include it("lg\:outline-offset-(3px)") {
+        @include assert {
+          @include output {
+            @include lg\:outline-offset-(3px);
+            @include clear;
+          }
 
-    @mixin md\:outline-offset-8 {
-      @include outline-offset-(8px, $md);
-    }
+          @include expect {
+            @media(min-width:$lg) {
+              outline-offset: 3px;
+            }
+          }
+        }
+      }
 
-    @mixin lg\:outline-offset-0 {
-      @include outline-offset-(0px, $lg);
-    }
+      @include it("xl\:outline-offset-(3px)") {
+        @include assert {
+          @include output {
+            @include xl\:outline-offset-(3px);
+            @include clear;
+          }
 
-    @mixin lg\:outline-offset-1 {
-      @include outline-offset-(1px, $lg);
-    }
+          @include expect {
+            @media(min-width:$xl) {
+              outline-offset: 3px;
+            }
+          }
+        }
+      }
 
-    @mixin lg\:outline-offset-2 {
-      @include outline-offset-(2px, $lg);
-    }
+      @include it("\2xl\:outline-offset-(3px)") {
+        @include assert {
+          @include output {
+            @include \2xl\:outline-offset-(3px);
+            @include clear;
+          }
 
-    @mixin lg\:outline-offset-4 {
-      @include outline-offset-(4px, $lg);
-    }
-
-    @mixin lg\:outline-offset-8 {
-      @include outline-offset-(8px, $lg);
-    }
-
-    @mixin xl\:outline-offset-0 {
-      @include outline-offset-(0px, $xl);
-    }
-
-    @mixin xl\:outline-offset-1 {
-      @include outline-offset-(1px, $xl);
-    }
-
-    @mixin xl\:outline-offset-2 {
-      @include outline-offset-(2px, $xl);
-    }
-
-    @mixin xl\:outline-offset-4 {
-      @include outline-offset-(4px, $xl);
-    }
-
-    @mixin xl\:outline-offset-8 {
-      @include outline-offset-(8px, $xl);
-    }
-
-    @mixin \2xl\:outline-offset-0 {
-      @include outline-offset-(0px, $\2xl);
-    }
-
-    @mixin \2xl\:outline-offset-1 {
-      @include outline-offset-(1px, $\2xl);
-    }
-
-    @mixin \2xl\:outline-offset-2 {
-      @include outline-offset-(2px, $\2xl);
-    }
-
-    @mixin \2xl\:outline-offset-4 {
-      @include outline-offset-(4px, $\2xl);
-    }
-
-    @mixin \2xl\:outline-offset-8 {
-      @include outline-offset-(8px, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin outline-offset-($v, $rwd: null) {
-    @if $rwd==null {
-      outline-offset: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        outline-offset: $v;
+          @include expect {
+            @media(min-width:$\2xl) {
+              outline-offset: 3px;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:outline-offset-($v) {
-    @include outline-offset-($v, $sm);
-  }
-
-  @mixin md\:outline-offset-($v) {
-    @include outline-offset-($v, $md);
-  }
-
-  @mixin lg\:outline-offset-($v) {
-    @include outline-offset-($v, $lg);
-  }
-
-  @mixin xl\:outline-offset-($v) {
-    @include outline-offset-($v, $xl);
-  }
-
-  @mixin \2xl\:outline-offset-($v) {
-    @include outline-offset-($v, $\2xl);
-  }
-
-  // x*/
 }

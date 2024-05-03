@@ -2,187 +2,541 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Ring Width */
-@if $Basic {
-  // /*x
-  @mixin ring-0 {
-    @include ring-(0px);
+@include describe("7.Borders") {
+  @include describe("Ring Width") {
+    @include describe("Basic") {
+      @include it("ring-0") {
+        @include assert {
+          @include output {
+            @include ring-0;
+            @include clear;
+          }
+
+          @include expect {
+            box-shadow: 0 0 0 0 #fff, 0 0 0 0px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it("ring-1") {
+        @include assert {
+          @include output {
+            @include ring-1;
+            @include clear;
+          }
+
+          @include expect {
+            box-shadow: 0 0 0 0 #fff, 0 0 0 1px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it("ring-2") {
+        @include assert {
+          @include output {
+            @include ring-2;
+            @include clear;
+          }
+
+          @include expect {
+            box-shadow: 0 0 0 0 #fff, 0 0 0 2px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it("ring-4") {
+        @include assert {
+          @include output {
+            @include ring-4;
+            @include clear;
+          }
+
+          @include expect {
+            box-shadow: 0 0 0 0 #fff, 0 0 0 4px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it("ring-8") {
+        @include assert {
+          @include output {
+            @include ring-8;
+            @include clear;
+          }
+
+          @include expect {
+            box-shadow: 0 0 0 0 #fff, 0 0 0 8px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:ring-0") {
+        @include assert {
+          @include output {
+            @include sm\:ring-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 0px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:ring-1") {
+        @include assert {
+          @include output {
+            @include sm\:ring-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 1px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:ring-2") {
+        @include assert {
+          @include output {
+            @include sm\:ring-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 2px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:ring-4") {
+        @include assert {
+          @include output {
+            @include sm\:ring-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 4px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:ring-8") {
+        @include assert {
+          @include output {
+            @include sm\:ring-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 8px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("md\:ring-0") {
+        @include assert {
+          @include output {
+            @include md\:ring-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 0px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("md\:ring-1") {
+        @include assert {
+          @include output {
+            @include md\:ring-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 1px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("md\:ring-2") {
+        @include assert {
+          @include output {
+            @include md\:ring-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 2px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("md\:ring-4") {
+        @include assert {
+          @include output {
+            @include md\:ring-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 4px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("md\:ring-8") {
+        @include assert {
+          @include output {
+            @include md\:ring-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 8px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ring-0") {
+        @include assert {
+          @include output {
+            @include lg\:ring-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 0px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ring-1") {
+        @include assert {
+          @include output {
+            @include lg\:ring-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 1px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ring-2") {
+        @include assert {
+          @include output {
+            @include lg\:ring-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 2px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ring-4") {
+        @include assert {
+          @include output {
+            @include lg\:ring-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 4px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ring-8") {
+        @include assert {
+          @include output {
+            @include lg\:ring-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 8px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ring-0") {
+        @include assert {
+          @include output {
+            @include xl\:ring-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 0px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ring-1") {
+        @include assert {
+          @include output {
+            @include xl\:ring-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 1px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ring-2") {
+        @include assert {
+          @include output {
+            @include xl\:ring-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 2px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ring-4") {
+        @include assert {
+          @include output {
+            @include xl\:ring-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 4px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ring-8") {
+        @include assert {
+          @include output {
+            @include xl\:ring-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 8px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ring-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 0px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ring-1") {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-1;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 1px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ring-2") {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-2;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 2px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ring-4") {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-4;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 4px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ring-8") {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-8;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 8px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("ring-(3px)") {
+        @include assert {
+          @include output {
+            @include ring-(3px);
+            @include clear;
+          }
+
+          @include expect {
+            box-shadow: 0 0 0 0 #fff, 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it("sm\:ring-(3px)") {
+        @include assert {
+          @include output {
+            @include sm\:ring-(3px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("md\:ring-(3px)") {
+        @include assert {
+          @include output {
+            @include md\:ring-(3px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:ring-(3px)") {
+        @include assert {
+          @include output {
+            @include lg\:ring-(3px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:ring-(3px)") {
+        @include assert {
+          @include output {
+            @include xl\:ring-(3px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:ring-(3px)") {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-(3px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              box-shadow: 0 0 0 0 #fff, 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+    }
   }
-
-  @mixin ring-1 {
-    @include ring-(1px);
-  }
-
-  @mixin ring-2 {
-    @include ring-(2px);
-  }
-
-  @mixin ring {
-    @include ring-(3px);
-  }
-
-  @mixin ring-4 {
-    @include ring-(4px);
-  }
-
-  @mixin ring-8 {
-    @include ring-(8px);
-  }
-
-  @mixin ring-inset {
-    @include ring-(inset);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:ring-0 {
-      @include ring-(0px, $sm);
-    }
-
-    @mixin sm\:ring-1 {
-      @include ring-(1px, $sm);
-    }
-
-    @mixin sm\:ring-2 {
-      @include ring-(2px, $sm);
-    }
-
-    @mixin sm\:ring {
-      @include ring-(3px, $sm);
-    }
-
-    @mixin sm\:ring-4 {
-      @include ring-(4px, $sm);
-    }
-
-    @mixin sm\:ring-8 {
-      @include ring-(8px, $sm);
-    }
-
-    @mixin sm\:ring-inset {
-      @include ring-(inset, $sm);
-    }
-
-    @mixin md\:ring-0 {
-      @include ring-(0px, $md);
-    }
-
-    @mixin md\:ring-1 {
-      @include ring-(1px, $md);
-    }
-
-    @mixin md\:ring-2 {
-      @include ring-(2px, $md);
-    }
-
-    @mixin md\:ring {
-      @include ring-(3px, $md);
-    }
-
-    @mixin md\:ring-4 {
-      @include ring-(4px, $md);
-    }
-
-    @mixin md\:ring-8 {
-      @include ring-(8px, $md);
-    }
-
-    @mixin md\:ring-inset {
-      @include ring-(inset, $md);
-    }
-
-    @mixin lg\:ring-0 {
-      @include ring-(0px, $lg);
-    }
-
-    @mixin lg\:ring-1 {
-      @include ring-(1px, $lg);
-    }
-
-    @mixin lg\:ring-2 {
-      @include ring-(2px, $lg);
-    }
-
-    @mixin lg\:ring {
-      @include ring-(3px, $lg);
-    }
-
-    @mixin lg\:ring-4 {
-      @include ring-(4px, $lg);
-    }
-
-    @mixin lg\:ring-8 {
-      @include ring-(8px, $lg);
-    }
-
-    @mixin lg\:ring-inset {
-      @include ring-(inset, $lg);
-    }
-
-    @mixin xl\:ring-0 {
-      @include ring-(0px, $xl);
-    }
-
-    @mixin xl\:ring-1 {
-      @include ring-(1px, $xl);
-    }
-
-    @mixin xl\:ring-2 {
-      @include ring-(2px, $xl);
-    }
-
-    @mixin xl\:ring {
-      @include ring-(3px, $xl);
-    }
-
-    @mixin xl\:ring-4 {
-      @include ring-(4px, $xl);
-    }
-
-    @mixin xl\:ring-8 {
-      @include ring-(8px, $xl);
-    }
-
-    @mixin xl\:ring-inset {
-      @include ring-(inset, $xl);
-    }
-
-    @mixin \2xl\:ring-0 {
-      @include ring-(0px, $\2xl);
-    }
-
-    @mixin \2xl\:ring-1 {
-      @include ring-(1px, $\2xl);
-    }
-
-    @mixin \2xl\:ring-2 {
-      @include ring-(2px, $\2xl);
-    }
-
-    @mixin \2xl\:ring {
-      @include ring-(3px, $\2xl);
-    }
-
-    @mixin \2xl\:ring-4 {
-      @include ring-(4px, $\2xl);
-    }
-
-    @mixin \2xl\:ring-8 {
-      @include ring-(8px, $\2xl);
-    }
-
-    @mixin \2xl\:ring-inset {
-      @include ring-(inset, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-// same as  @mixin ring-($v, $rwd: null)
-@if $Custom {
 }
