@@ -2,1558 +2,6284 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Scale */
-@if $Basic {
-  // /*x
-  @mixin scale-0 {
-    @include scale-(0);
-  }
+// negative testing
 
-  @mixin scale-x-0 {
-    @include scale-x-(0);
-  }
-
-  @mixin scale-y-0 {
-    @include scale-y-(0);
-  }
-
-  @mixin scale-50 {
-    @include scale-(0.5);
-  }
-
-  @mixin scale-x-50 {
-    @include scale-x-(0.5);
-  }
-
-  @mixin scale-y-50 {
-    @include scale-y-(0.5);
-  }
-
-  @mixin scale-75 {
-    @include scale-(0.75);
-  }
-
-  @mixin scale-x-75 {
-    @include scale-x-(0.75);
-  }
-
-  @mixin scale-y-75 {
-    @include scale-y-(0.75);
-  }
-
-  @mixin scale-90 {
-    @include scale-(0.9);
-  }
-
-  @mixin scale-x-90 {
-    @include scale-x-(0.9);
-  }
-
-  @mixin scale-y-90 {
-    @include scale-y-(0.9);
-  }
-
-  @mixin scale-95 {
-    @include scale-(0.95);
-  }
-
-  @mixin scale-x-95 {
-    @include scale-x-(0.95);
-  }
-
-  @mixin scale-y-95 {
-    @include scale-y-(0.95);
-  }
-
-  @mixin scale-100 {
-    @include scale-(1);
-  }
-
-  @mixin scale-x-100 {
-    @include scale-x-(1);
-  }
-
-  @mixin scale-y-100 {
-    @include scale-y-(1);
-  }
-
-  @mixin scale-105 {
-    @include scale-(1.05);
-  }
-
-  @mixin scale-x-105 {
-    @include scale-x-(1.05);
-  }
-
-  @mixin scale-y-105 {
-    @include scale-y-(1.05);
-  }
-
-  @mixin scale-110 {
-    @include scale-(1.1);
-  }
-
-  @mixin scale-x-110 {
-    @include scale-x-(1.1);
-  }
-
-  @mixin scale-y-110 {
-    @include scale-y-(1.1);
-  }
-
-  @mixin scale-125 {
-    @include scale-(1.25);
-  }
-
-  @mixin scale-x-125 {
-    @include scale-x-(1.25);
-  }
-
-  @mixin scale-y-125 {
-    @include scale-y-(1.25);
-  }
-
-  @mixin scale-150 {
-    @include scale-(1.5);
-  }
-
-  @mixin scale-x-150 {
-    @include scale-x-(1.5);
-  }
-
-  @mixin scale-y-150 {
-    @include scale-y-(1.5);
-  }
-
-  @mixin -scale-0 {
-    @include scale-(-0);
-  }
-
-  @mixin -scale-x-0 {
-    @include scale-x-(-0);
-  }
-
-  @mixin -scale-y-0 {
-    @include scale-y-(-0);
-  }
-
-  @mixin -scale-50 {
-    @include scale-(-0.5);
-  }
-
-  @mixin -scale-x-50 {
-    @include scale-x-(-0.5);
-  }
-
-  @mixin -scale-y-50 {
-    @include scale-y-(-0.5);
-  }
-
-  @mixin -scale-75 {
-    @include scale-(-0.75);
-  }
-
-  @mixin -scale-x-75 {
-    @include scale-x-(-0.75);
-  }
-
-  @mixin -scale-y-75 {
-    @include scale-y-(-0.75);
-  }
-
-  @mixin -scale-90 {
-    @include scale-(-0.9);
-  }
-
-  @mixin -scale-x-90 {
-    @include scale-x-(-0.9);
-  }
-
-  @mixin -scale-y-90 {
-    @include scale-y-(-0.9);
-  }
-
-  @mixin -scale-95 {
-    @include scale-(-0.95);
-  }
-
-  @mixin -scale-x-95 {
-    @include scale-x-(-0.95);
-  }
-
-  @mixin -scale-y-95 {
-    @include scale-y-(-0.95);
-  }
-
-  @mixin -scale-100 {
-    @include scale-(-1);
-  }
-
-  @mixin -scale-x-100 {
-    @include scale-x-(-1);
-  }
-
-  @mixin -scale-y-100 {
-    @include scale-y-(-1);
-  }
-
-  @mixin -scale-105 {
-    @include scale-(-1.05);
-  }
-
-  @mixin -scale-x-105 {
-    @include scale-x-(-1.05);
-  }
-
-  @mixin -scale-y-105 {
-    @include scale-y-(-1.05);
-  }
-
-  @mixin -scale-110 {
-    @include scale-(-1.1);
-  }
-
-  @mixin -scale-x-110 {
-    @include scale-x-(-1.1);
-  }
-
-  @mixin -scale-y-110 {
-    @include scale-y-(-1.1);
-  }
-
-  @mixin -scale-125 {
-    @include scale-(-1.25);
-  }
-
-  @mixin -scale-x-125 {
-    @include scale-x-(-1.25);
-  }
-
-  @mixin -scale-y-125 {
-    @include scale-y-(-1.25);
-  }
-
-  @mixin -scale-150 {
-    @include scale-(-1.5);
-  }
-
-  @mixin -scale-x-150 {
-    @include scale-x-(-1.5);
-  }
-
-  @mixin -scale-y-150 {
-    @include scale-y-(-1.5);
-  }
-
-  // x*/
+@mixin -scale-0 {
+  @include scale-(-0);
 }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:scale-0 {
-      @include scale-(0, $sm);
-    }
-
-    @mixin sm\:scale-x-0 {
-      @include scale-x-(0, $sm);
-    }
-
-    @mixin sm\:scale-y-0 {
-      @include scale-y-(0, $sm);
-    }
-
-    @mixin sm\:scale-50 {
-      @include scale-(0.5, $sm);
-    }
-
-    @mixin sm\:scale-x-50 {
-      @include scale-x-(0.5, $sm);
-    }
-
-    @mixin sm\:scale-y-50 {
-      @include scale-y-(0.5, $sm);
-    }
-
-    @mixin sm\:scale-75 {
-      @include scale-(0.75, $sm);
-    }
-
-    @mixin sm\:scale-x-75 {
-      @include scale-x-(0.75, $sm);
-    }
-
-    @mixin sm\:scale-y-75 {
-      @include scale-y-(0.75, $sm);
-    }
-
-    @mixin sm\:scale-90 {
-      @include scale-(0.9, $sm);
-    }
-
-    @mixin sm\:scale-x-90 {
-      @include scale-x-(0.9, $sm);
-    }
-
-    @mixin sm\:scale-y-90 {
-      @include scale-y-(0.9, $sm);
-    }
-
-    @mixin sm\:scale-95 {
-      @include scale-(0.95, $sm);
-    }
-
-    @mixin sm\:scale-x-95 {
-      @include scale-x-(0.95, $sm);
-    }
-
-    @mixin sm\:scale-y-95 {
-      @include scale-y-(0.95, $sm);
-    }
-
-    @mixin sm\:scale-100 {
-      @include scale-(1, $sm);
-    }
-
-    @mixin sm\:scale-x-100 {
-      @include scale-x-(1, $sm);
-    }
-
-    @mixin sm\:scale-y-100 {
-      @include scale-y-(1, $sm);
-    }
-
-    @mixin sm\:scale-105 {
-      @include scale-(1.05, $sm);
-    }
-
-    @mixin sm\:scale-x-105 {
-      @include scale-x-(1.05, $sm);
-    }
-
-    @mixin sm\:scale-y-105 {
-      @include scale-y-(1.05, $sm);
-    }
-
-    @mixin sm\:scale-110 {
-      @include scale-(1.1, $sm);
-    }
-
-    @mixin sm\:scale-x-110 {
-      @include scale-x-(1.1, $sm);
-    }
-
-    @mixin sm\:scale-y-110 {
-      @include scale-y-(1.1, $sm);
-    }
-
-    @mixin sm\:scale-125 {
-      @include scale-(1.25, $sm);
-    }
-
-    @mixin sm\:scale-x-125 {
-      @include scale-x-(1.25, $sm);
-    }
-
-    @mixin sm\:scale-y-125 {
-      @include scale-y-(1.25, $sm);
-    }
-
-    @mixin sm\:scale-150 {
-      @include scale-(1.5, $sm);
-    }
-
-    @mixin sm\:scale-x-150 {
-      @include scale-x-(1.5, $sm);
-    }
-
-    @mixin sm\:scale-y-150 {
-      @include scale-y-(1.5, $sm);
-    }
-
-    @mixin sm\:-scale-0 {
-      @include scale-(-0, $sm);
-    }
-
-    @mixin sm\:-scale-x-0 {
-      @include scale-x-(-0, $sm);
-    }
-
-    @mixin sm\:-scale-y-0 {
-      @include scale-y-(-0, $sm);
-    }
-
-    @mixin sm\:-scale-50 {
-      @include scale-(-0.5, $sm);
-    }
-
-    @mixin sm\:-scale-x-50 {
-      @include scale-x-(-0.5, $sm);
-    }
-
-    @mixin sm\:-scale-y-50 {
-      @include scale-y-(-0.5, $sm);
-    }
-
-    @mixin sm\:-scale-75 {
-      @include scale-(-0.75, $sm);
-    }
-
-    @mixin sm\:-scale-x-75 {
-      @include scale-x-(-0.75, $sm);
-    }
-
-    @mixin sm\:-scale-y-75 {
-      @include scale-y-(-0.75, $sm);
-    }
-
-    @mixin sm\:-scale-90 {
-      @include scale-(-0.9, $sm);
-    }
-
-    @mixin sm\:-scale-x-90 {
-      @include scale-x-(-0.9, $sm);
-    }
-
-    @mixin sm\:-scale-y-90 {
-      @include scale-y-(-0.9, $sm);
-    }
-
-    @mixin sm\:-scale-95 {
-      @include scale-(-0.95, $sm);
-    }
-
-    @mixin sm\:-scale-x-95 {
-      @include scale-x-(-0.95, $sm);
-    }
-
-    @mixin sm\:-scale-y-95 {
-      @include scale-y-(-0.95, $sm);
-    }
-
-    @mixin sm\:-scale-100 {
-      @include scale-(-1, $sm);
-    }
-
-    @mixin sm\:-scale-x-100 {
-      @include scale-x-(-1, $sm);
-    }
-
-    @mixin sm\:-scale-y-100 {
-      @include scale-y-(-1, $sm);
-    }
-
-    @mixin sm\:-scale-105 {
-      @include scale-(-1.05, $sm);
-    }
-
-    @mixin sm\:-scale-x-105 {
-      @include scale-x-(-1.05, $sm);
-    }
-
-    @mixin sm\:-scale-y-105 {
-      @include scale-y-(-1.05, $sm);
-    }
-
-    @mixin sm\:-scale-110 {
-      @include scale-(-1.1, $sm);
-    }
-
-    @mixin sm\:-scale-x-110 {
-      @include scale-x-(-1.1, $sm);
-    }
-
-    @mixin sm\:-scale-y-110 {
-      @include scale-y-(-1.1, $sm);
-    }
-
-    @mixin sm\:-scale-125 {
-      @include scale-(-1.25, $sm);
-    }
-
-    @mixin sm\:-scale-x-125 {
-      @include scale-x-(-1.25, $sm);
-    }
-
-    @mixin sm\:-scale-y-125 {
-      @include scale-y-(-1.25, $sm);
-    }
-
-    @mixin sm\:-scale-150 {
-      @include scale-(-1.5, $sm);
-    }
-
-    @mixin sm\:-scale-x-150 {
-      @include scale-x-(-1.5, $sm);
-    }
-
-    @mixin sm\:-scale-y-150 {
-      @include scale-y-(-1.5, $sm);
-    }
-
-    @mixin md\:scale-0 {
-      @include scale-(0, $md);
-    }
-
-    @mixin md\:scale-x-0 {
-      @include scale-x-(0, $md);
-    }
-
-    @mixin md\:scale-y-0 {
-      @include scale-y-(0, $md);
-    }
-
-    @mixin md\:scale-50 {
-      @include scale-(0.5, $md);
-    }
-
-    @mixin md\:scale-x-50 {
-      @include scale-x-(0.5, $md);
-    }
-
-    @mixin md\:scale-y-50 {
-      @include scale-y-(0.5, $md);
-    }
-
-    @mixin md\:scale-75 {
-      @include scale-(0.75, $md);
-    }
-
-    @mixin md\:scale-x-75 {
-      @include scale-x-(0.75, $md);
-    }
-
-    @mixin md\:scale-y-75 {
-      @include scale-y-(0.75, $md);
-    }
-
-    @mixin md\:scale-90 {
-      @include scale-(0.9, $md);
-    }
-
-    @mixin md\:scale-x-90 {
-      @include scale-x-(0.9, $md);
-    }
-
-    @mixin md\:scale-y-90 {
-      @include scale-y-(0.9, $md);
-    }
-
-    @mixin md\:scale-95 {
-      @include scale-(0.95, $md);
-    }
-
-    @mixin md\:scale-x-95 {
-      @include scale-x-(0.95, $md);
-    }
-
-    @mixin md\:scale-y-95 {
-      @include scale-y-(0.95, $md);
-    }
-
-    @mixin md\:scale-100 {
-      @include scale-(1, $md);
-    }
-
-    @mixin md\:scale-x-100 {
-      @include scale-x-(1, $md);
-    }
-
-    @mixin md\:scale-y-100 {
-      @include scale-y-(1, $md);
-    }
-
-    @mixin md\:scale-105 {
-      @include scale-(1.05, $md);
-    }
-
-    @mixin md\:scale-x-105 {
-      @include scale-x-(1.05, $md);
-    }
-
-    @mixin md\:scale-y-105 {
-      @include scale-y-(1.05, $md);
-    }
-
-    @mixin md\:scale-110 {
-      @include scale-(1.1, $md);
-    }
-
-    @mixin md\:scale-x-110 {
-      @include scale-x-(1.1, $md);
-    }
-
-    @mixin md\:scale-y-110 {
-      @include scale-y-(1.1, $md);
-    }
-
-    @mixin md\:scale-125 {
-      @include scale-(1.25, $md);
-    }
-
-    @mixin md\:scale-x-125 {
-      @include scale-x-(1.25, $md);
-    }
-
-    @mixin md\:scale-y-125 {
-      @include scale-y-(1.25, $md);
-    }
-
-    @mixin md\:scale-150 {
-      @include scale-(1.5, $md);
-    }
-
-    @mixin md\:scale-x-150 {
-      @include scale-x-(1.5, $md);
-    }
-
-    @mixin md\:scale-y-150 {
-      @include scale-y-(1.5, $md);
-    }
-
-    @mixin md\:-scale-0 {
-      @include scale-(-0, $md);
-    }
-
-    @mixin md\:-scale-x-0 {
-      @include scale-x-(-0, $md);
-    }
-
-    @mixin md\:-scale-y-0 {
-      @include scale-y-(-0, $md);
-    }
-
-    @mixin md\:-scale-50 {
-      @include scale-(-0.5, $md);
-    }
-
-    @mixin md\:-scale-x-50 {
-      @include scale-x-(-0.5, $md);
-    }
-
-    @mixin md\:-scale-y-50 {
-      @include scale-y-(-0.5, $md);
-    }
-
-    @mixin md\:-scale-75 {
-      @include scale-(-0.75, $md);
-    }
-
-    @mixin md\:-scale-x-75 {
-      @include scale-x-(-0.75, $md);
-    }
-
-    @mixin md\:-scale-y-75 {
-      @include scale-y-(-0.75, $md);
-    }
-
-    @mixin md\:-scale-90 {
-      @include scale-(-0.9, $md);
-    }
-
-    @mixin md\:-scale-x-90 {
-      @include scale-x-(-0.9, $md);
-    }
-
-    @mixin md\:-scale-y-90 {
-      @include scale-y-(-0.9, $md);
-    }
-
-    @mixin md\:-scale-95 {
-      @include scale-(-0.95, $md);
-    }
-
-    @mixin md\:-scale-x-95 {
-      @include scale-x-(-0.95, $md);
-    }
-
-    @mixin md\:-scale-y-95 {
-      @include scale-y-(-0.95, $md);
-    }
-
-    @mixin md\:-scale-100 {
-      @include scale-(-1, $md);
-    }
-
-    @mixin md\:-scale-x-100 {
-      @include scale-x-(-1, $md);
-    }
-
-    @mixin md\:-scale-y-100 {
-      @include scale-y-(-1, $md);
-    }
-
-    @mixin md\:-scale-105 {
-      @include scale-(-1.05, $md);
-    }
-
-    @mixin md\:-scale-x-105 {
-      @include scale-x-(-1.05, $md);
-    }
-
-    @mixin md\:-scale-y-105 {
-      @include scale-y-(-1.05, $md);
-    }
-
-    @mixin md\:-scale-110 {
-      @include scale-(-1.1, $md);
-    }
-
-    @mixin md\:-scale-x-110 {
-      @include scale-x-(-1.1, $md);
-    }
-
-    @mixin md\:-scale-y-110 {
-      @include scale-y-(-1.1, $md);
-    }
-
-    @mixin md\:-scale-125 {
-      @include scale-(-1.25, $md);
-    }
-
-    @mixin md\:-scale-x-125 {
-      @include scale-x-(-1.25, $md);
-    }
-
-    @mixin md\:-scale-y-125 {
-      @include scale-y-(-1.25, $md);
-    }
-
-    @mixin md\:-scale-150 {
-      @include scale-(-1.5, $md);
-    }
-
-    @mixin md\:-scale-x-150 {
-      @include scale-x-(-1.5, $md);
-    }
-
-    @mixin md\:-scale-y-150 {
-      @include scale-y-(-1.5, $md);
-    }
-
-    @mixin lg\:scale-0 {
-      @include scale-(0, $lg);
-    }
-
-    @mixin lg\:scale-x-0 {
-      @include scale-x-(0, $lg);
-    }
-
-    @mixin lg\:scale-y-0 {
-      @include scale-y-(0, $lg);
-    }
-
-    @mixin lg\:scale-50 {
-      @include scale-(0.5, $lg);
-    }
-
-    @mixin lg\:scale-x-50 {
-      @include scale-x-(0.5, $lg);
-    }
-
-    @mixin lg\:scale-y-50 {
-      @include scale-y-(0.5, $lg);
-    }
-
-    @mixin lg\:scale-75 {
-      @include scale-(0.75, $lg);
-    }
-
-    @mixin lg\:scale-x-75 {
-      @include scale-x-(0.75, $lg);
-    }
-
-    @mixin lg\:scale-y-75 {
-      @include scale-y-(0.75, $lg);
-    }
-
-    @mixin lg\:scale-90 {
-      @include scale-(0.9, $lg);
-    }
-
-    @mixin lg\:scale-x-90 {
-      @include scale-x-(0.9, $lg);
-    }
-
-    @mixin lg\:scale-y-90 {
-      @include scale-y-(0.9, $lg);
-    }
-
-    @mixin lg\:scale-95 {
-      @include scale-(0.95, $lg);
-    }
-
-    @mixin lg\:scale-x-95 {
-      @include scale-x-(0.95, $lg);
-    }
-
-    @mixin lg\:scale-y-95 {
-      @include scale-y-(0.95, $lg);
-    }
-
-    @mixin lg\:scale-100 {
-      @include scale-(1, $lg);
-    }
-
-    @mixin lg\:scale-x-100 {
-      @include scale-x-(1, $lg);
-    }
-
-    @mixin lg\:scale-y-100 {
-      @include scale-y-(1, $lg);
-    }
-
-    @mixin lg\:scale-105 {
-      @include scale-(1.05, $lg);
-    }
-
-    @mixin lg\:scale-x-105 {
-      @include scale-x-(1.05, $lg);
-    }
-
-    @mixin lg\:scale-y-105 {
-      @include scale-y-(1.05, $lg);
-    }
-
-    @mixin lg\:scale-110 {
-      @include scale-(1.1, $lg);
-    }
-
-    @mixin lg\:scale-x-110 {
-      @include scale-x-(1.1, $lg);
-    }
-
-    @mixin lg\:scale-y-110 {
-      @include scale-y-(1.1, $lg);
-    }
-
-    @mixin lg\:scale-125 {
-      @include scale-(1.25, $lg);
-    }
-
-    @mixin lg\:scale-x-125 {
-      @include scale-x-(1.25, $lg);
-    }
-
-    @mixin lg\:scale-y-125 {
-      @include scale-y-(1.25, $lg);
-    }
-
-    @mixin lg\:scale-150 {
-      @include scale-(1.5, $lg);
-    }
-
-    @mixin lg\:scale-x-150 {
-      @include scale-x-(1.5, $lg);
-    }
-
-    @mixin lg\:scale-y-150 {
-      @include scale-y-(1.5, $lg);
-    }
-
-    @mixin lg\:-scale-0 {
-      @include scale-(-0, $lg);
-    }
-
-    @mixin lg\:-scale-x-0 {
-      @include scale-x-(-0, $lg);
-    }
-
-    @mixin lg\:-scale-y-0 {
-      @include scale-y-(-0, $lg);
-    }
-
-    @mixin lg\:-scale-50 {
-      @include scale-(-0.5, $lg);
-    }
-
-    @mixin lg\:-scale-x-50 {
-      @include scale-x-(-0.5, $lg);
-    }
-
-    @mixin lg\:-scale-y-50 {
-      @include scale-y-(-0.5, $lg);
-    }
-
-    @mixin lg\:-scale-75 {
-      @include scale-(-0.75, $lg);
-    }
-
-    @mixin lg\:-scale-x-75 {
-      @include scale-x-(-0.75, $lg);
-    }
-
-    @mixin lg\:-scale-y-75 {
-      @include scale-y-(-0.75, $lg);
-    }
-
-    @mixin lg\:-scale-90 {
-      @include scale-(-0.9, $lg);
-    }
-
-    @mixin lg\:-scale-x-90 {
-      @include scale-x-(-0.9, $lg);
-    }
-
-    @mixin lg\:-scale-y-90 {
-      @include scale-y-(-0.9, $lg);
-    }
-
-    @mixin lg\:-scale-95 {
-      @include scale-(-0.95, $lg);
-    }
-
-    @mixin lg\:-scale-x-95 {
-      @include scale-x-(-0.95, $lg);
-    }
-
-    @mixin lg\:-scale-y-95 {
-      @include scale-y-(-0.95, $lg);
-    }
-
-    @mixin lg\:-scale-100 {
-      @include scale-(-1, $lg);
-    }
-
-    @mixin lg\:-scale-x-100 {
-      @include scale-x-(-1, $lg);
-    }
-
-    @mixin lg\:-scale-y-100 {
-      @include scale-y-(-1, $lg);
-    }
-
-    @mixin lg\:-scale-105 {
-      @include scale-(-1.05, $lg);
-    }
-
-    @mixin lg\:-scale-x-105 {
-      @include scale-x-(-1.05, $lg);
-    }
-
-    @mixin lg\:-scale-y-105 {
-      @include scale-y-(-1.05, $lg);
-    }
-
-    @mixin lg\:-scale-110 {
-      @include scale-(-1.1, $lg);
-    }
-
-    @mixin lg\:-scale-x-110 {
-      @include scale-x-(-1.1, $lg);
-    }
-
-    @mixin lg\:-scale-y-110 {
-      @include scale-y-(-1.1, $lg);
-    }
-
-    @mixin lg\:-scale-125 {
-      @include scale-(-1.25, $lg);
-    }
-
-    @mixin lg\:-scale-x-125 {
-      @include scale-x-(-1.25, $lg);
-    }
-
-    @mixin lg\:-scale-y-125 {
-      @include scale-y-(-1.25, $lg);
-    }
-
-    @mixin lg\:-scale-150 {
-      @include scale-(-1.5, $lg);
-    }
-
-    @mixin lg\:-scale-x-150 {
-      @include scale-x-(-1.5, $lg);
-    }
-
-    @mixin lg\:-scale-y-150 {
-      @include scale-y-(-1.5, $lg);
-    }
-
-    @mixin xl\:scale-0 {
-      @include scale-(0, $xl);
-    }
-
-    @mixin xl\:scale-x-0 {
-      @include scale-x-(0, $xl);
-    }
-
-    @mixin xl\:scale-y-0 {
-      @include scale-y-(0, $xl);
-    }
-
-    @mixin xl\:scale-50 {
-      @include scale-(0.5, $xl);
-    }
-
-    @mixin xl\:scale-x-50 {
-      @include scale-x-(0.5, $xl);
-    }
-
-    @mixin xl\:scale-y-50 {
-      @include scale-y-(0.5, $xl);
-    }
-
-    @mixin xl\:scale-75 {
-      @include scale-(0.75, $xl);
-    }
-
-    @mixin xl\:scale-x-75 {
-      @include scale-x-(0.75, $xl);
-    }
-
-    @mixin xl\:scale-y-75 {
-      @include scale-y-(0.75, $xl);
-    }
-
-    @mixin xl\:scale-90 {
-      @include scale-(0.9, $xl);
-    }
-
-    @mixin xl\:scale-x-90 {
-      @include scale-x-(0.9, $xl);
-    }
-
-    @mixin xl\:scale-y-90 {
-      @include scale-y-(0.9, $xl);
-    }
-
-    @mixin xl\:scale-95 {
-      @include scale-(0.95, $xl);
-    }
-
-    @mixin xl\:scale-x-95 {
-      @include scale-x-(0.95, $xl);
-    }
-
-    @mixin xl\:scale-y-95 {
-      @include scale-y-(0.95, $xl);
-    }
-
-    @mixin xl\:scale-100 {
-      @include scale-(1, $xl);
-    }
-
-    @mixin xl\:scale-x-100 {
-      @include scale-x-(1, $xl);
-    }
-
-    @mixin xl\:scale-y-100 {
-      @include scale-y-(1, $xl);
-    }
-
-    @mixin xl\:scale-105 {
-      @include scale-(1.05, $xl);
-    }
-
-    @mixin xl\:scale-x-105 {
-      @include scale-x-(1.05, $xl);
-    }
-
-    @mixin xl\:scale-y-105 {
-      @include scale-y-(1.05, $xl);
-    }
-
-    @mixin xl\:scale-110 {
-      @include scale-(1.1, $xl);
-    }
-
-    @mixin xl\:scale-x-110 {
-      @include scale-x-(1.1, $xl);
-    }
-
-    @mixin xl\:scale-y-110 {
-      @include scale-y-(1.1, $xl);
-    }
-
-    @mixin xl\:scale-125 {
-      @include scale-(1.25, $xl);
-    }
-
-    @mixin xl\:scale-x-125 {
-      @include scale-x-(1.25, $xl);
-    }
-
-    @mixin xl\:scale-y-125 {
-      @include scale-y-(1.25, $xl);
-    }
-
-    @mixin xl\:scale-150 {
-      @include scale-(1.5, $xl);
-    }
-
-    @mixin xl\:scale-x-150 {
-      @include scale-x-(1.5, $xl);
-    }
-
-    @mixin xl\:scale-y-150 {
-      @include scale-y-(1.5, $xl);
-    }
-
-    @mixin xl\:-scale-0 {
-      @include scale-(-0, $xl);
-    }
-
-    @mixin xl\:-scale-x-0 {
-      @include scale-x-(-0, $xl);
-    }
-
-    @mixin xl\:-scale-y-0 {
-      @include scale-y-(-0, $xl);
-    }
-
-    @mixin xl\:-scale-50 {
-      @include scale-(-0.5, $xl);
-    }
-
-    @mixin xl\:-scale-x-50 {
-      @include scale-x-(-0.5, $xl);
-    }
-
-    @mixin xl\:-scale-y-50 {
-      @include scale-y-(-0.5, $xl);
-    }
-
-    @mixin xl\:-scale-75 {
-      @include scale-(-0.75, $xl);
-    }
-
-    @mixin xl\:-scale-x-75 {
-      @include scale-x-(-0.75, $xl);
-    }
-
-    @mixin xl\:-scale-y-75 {
-      @include scale-y-(-0.75, $xl);
-    }
-
-    @mixin xl\:-scale-90 {
-      @include scale-(-0.9, $xl);
-    }
-
-    @mixin xl\:-scale-x-90 {
-      @include scale-x-(-0.9, $xl);
-    }
-
-    @mixin xl\:-scale-y-90 {
-      @include scale-y-(-0.9, $xl);
-    }
-
-    @mixin xl\:-scale-95 {
-      @include scale-(-0.95, $xl);
-    }
-
-    @mixin xl\:-scale-x-95 {
-      @include scale-x-(-0.95, $xl);
-    }
-
-    @mixin xl\:-scale-y-95 {
-      @include scale-y-(-0.95, $xl);
-    }
-
-    @mixin xl\:-scale-100 {
-      @include scale-(-1, $xl);
-    }
-
-    @mixin xl\:-scale-x-100 {
-      @include scale-x-(-1, $xl);
-    }
-
-    @mixin xl\:-scale-y-100 {
-      @include scale-y-(-1, $xl);
-    }
-
-    @mixin xl\:-scale-105 {
-      @include scale-(-1.05, $xl);
-    }
-
-    @mixin xl\:-scale-x-105 {
-      @include scale-x-(-1.05, $xl);
-    }
-
-    @mixin xl\:-scale-y-105 {
-      @include scale-y-(-1.05, $xl);
-    }
-
-    @mixin xl\:-scale-110 {
-      @include scale-(-1.1, $xl);
-    }
-
-    @mixin xl\:-scale-x-110 {
-      @include scale-x-(-1.1, $xl);
-    }
-
-    @mixin xl\:-scale-y-110 {
-      @include scale-y-(-1.1, $xl);
-    }
-
-    @mixin xl\:-scale-125 {
-      @include scale-(-1.25, $xl);
-    }
-
-    @mixin xl\:-scale-x-125 {
-      @include scale-x-(-1.25, $xl);
-    }
-
-    @mixin xl\:-scale-y-125 {
-      @include scale-y-(-1.25, $xl);
-    }
-
-    @mixin xl\:-scale-150 {
-      @include scale-(-1.5, $xl);
-    }
-
-    @mixin xl\:-scale-x-150 {
-      @include scale-x-(-1.5, $xl);
-    }
-
-    @mixin xl\:-scale-y-150 {
-      @include scale-y-(-1.5, $xl);
-    }
-
-    @mixin \2xl\:scale-0 {
-      @include scale-(0, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-0 {
-      @include scale-x-(0, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-0 {
-      @include scale-y-(0, $\2xl);
-    }
-
-    @mixin \2xl\:scale-50 {
-      @include scale-(0.5, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-50 {
-      @include scale-x-(0.5, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-50 {
-      @include scale-y-(0.5, $\2xl);
-    }
-
-    @mixin \2xl\:scale-75 {
-      @include scale-(0.75, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-75 {
-      @include scale-x-(0.75, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-75 {
-      @include scale-y-(0.75, $\2xl);
-    }
-
-    @mixin \2xl\:scale-90 {
-      @include scale-(0.9, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-90 {
-      @include scale-x-(0.9, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-90 {
-      @include scale-y-(0.9, $\2xl);
-    }
-
-    @mixin \2xl\:scale-95 {
-      @include scale-(0.95, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-95 {
-      @include scale-x-(0.95, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-95 {
-      @include scale-y-(0.95, $\2xl);
-    }
-
-    @mixin \2xl\:scale-100 {
-      @include scale-(1, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-100 {
-      @include scale-x-(1, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-100 {
-      @include scale-y-(1, $\2xl);
-    }
-
-    @mixin \2xl\:scale-105 {
-      @include scale-(1.05, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-105 {
-      @include scale-x-(1.05, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-105 {
-      @include scale-y-(1.05, $\2xl);
-    }
-
-    @mixin \2xl\:scale-110 {
-      @include scale-(1.1, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-110 {
-      @include scale-x-(1.1, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-110 {
-      @include scale-y-(1.1, $\2xl);
-    }
-
-    @mixin \2xl\:scale-125 {
-      @include scale-(1.25, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-125 {
-      @include scale-x-(1.25, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-125 {
-      @include scale-y-(1.25, $\2xl);
-    }
-
-    @mixin \2xl\:scale-150 {
-      @include scale-(1.5, $\2xl);
-    }
-
-    @mixin \2xl\:scale-x-150 {
-      @include scale-x-(1.5, $\2xl);
-    }
-
-    @mixin \2xl\:scale-y-150 {
-      @include scale-y-(1.5, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-0 {
-      @include scale-(-0, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-0 {
-      @include scale-x-(-0, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-0 {
-      @include scale-y-(-0, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-50 {
-      @include scale-(-0.5, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-50 {
-      @include scale-x-(-0.5, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-50 {
-      @include scale-y-(-0.5, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-75 {
-      @include scale-(-0.75, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-75 {
-      @include scale-x-(-0.75, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-75 {
-      @include scale-y-(-0.75, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-90 {
-      @include scale-(-0.9, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-90 {
-      @include scale-x-(-0.9, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-90 {
-      @include scale-y-(-0.9, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-95 {
-      @include scale-(-0.95, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-95 {
-      @include scale-x-(-0.95, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-95 {
-      @include scale-y-(-0.95, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-100 {
-      @include scale-(-1, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-100 {
-      @include scale-x-(-1, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-100 {
-      @include scale-y-(-1, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-105 {
-      @include scale-(-1.05, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-105 {
-      @include scale-x-(-1.05, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-105 {
-      @include scale-y-(-1.05, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-110 {
-      @include scale-(-1.1, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-110 {
-      @include scale-x-(-1.1, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-110 {
-      @include scale-y-(-1.1, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-125 {
-      @include scale-(-1.25, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-125 {
-      @include scale-x-(-1.25, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-125 {
-      @include scale-y-(-1.25, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-150 {
-      @include scale-(-1.5, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-x-150 {
-      @include scale-x-(-1.5, $\2xl);
-    }
-
-    @mixin \2xl\:-scale-y-150 {
-      @include scale-y-(-1.5, $\2xl);
-    }
-
-    // x*/
-  }
+@mixin -scale-x-0 {
+  @include scale-x-(-0);
 }
 
-@if $Custom {
-  // /*x
-  @mixin scale-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-scale-x: $v !global;
-      $--tw-scale-y: $v !global;
-      transform: __transform();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-scale-x: $v !global;
-        $--tw-scale-y: $v !global;
-        transform: __transform();
+@mixin -scale-y-0 {
+  @include scale-y-(-0);
+}
+
+@mixin -scale-50 {
+  @include scale-(-0.5);
+}
+
+@mixin -scale-x-50 {
+  @include scale-x-(-0.5);
+}
+
+@mixin -scale-y-50 {
+  @include scale-y-(-0.5);
+}
+
+@mixin -scale-75 {
+  @include scale-(-0.75);
+}
+
+@mixin -scale-x-75 {
+  @include scale-x-(-0.75);
+}
+
+@mixin -scale-y-75 {
+  @include scale-y-(-0.75);
+}
+
+@mixin -scale-90 {
+  @include scale-(-0.9);
+}
+
+@mixin -scale-x-90 {
+  @include scale-x-(-0.9);
+}
+
+@mixin -scale-y-90 {
+  @include scale-y-(-0.9);
+}
+
+@mixin -scale-95 {
+  @include scale-(-0.95);
+}
+
+@mixin -scale-x-95 {
+  @include scale-x-(-0.95);
+}
+
+@mixin -scale-y-95 {
+  @include scale-y-(-0.95);
+}
+
+@mixin -scale-100 {
+  @include scale-(-1);
+}
+
+@mixin -scale-x-100 {
+  @include scale-x-(-1);
+}
+
+@mixin -scale-y-100 {
+  @include scale-y-(-1);
+}
+
+@mixin -scale-105 {
+  @include scale-(-1.05);
+}
+
+@mixin -scale-x-105 {
+  @include scale-x-(-1.05);
+}
+
+@mixin -scale-y-105 {
+  @include scale-y-(-1.05);
+}
+
+@mixin -scale-110 {
+  @include scale-(-1.1);
+}
+
+@mixin -scale-x-110 {
+  @include scale-x-(-1.1);
+}
+
+@mixin -scale-y-110 {
+  @include scale-y-(-1.1);
+}
+
+@mixin -scale-125 {
+  @include scale-(-1.25);
+}
+
+@mixin -scale-x-125 {
+  @include scale-x-(-1.25);
+}
+
+@mixin -scale-y-125 {
+  @include scale-y-(-1.25);
+}
+
+@mixin -scale-150 {
+  @include scale-(-1.5);
+}
+
+@mixin -scale-x-150 {
+  @include scale-x-(-1.5);
+}
+
+@mixin -scale-y-150 {
+  @include scale-y-(-1.5);
+}
+
+
+@mixin sm\:-scale-0 {
+  @include scale-(-0, $sm);
+}
+
+@mixin sm\:-scale-x-0 {
+  @include scale-x-(-0, $sm);
+}
+
+@mixin sm\:-scale-y-0 {
+  @include scale-y-(-0, $sm);
+}
+
+@mixin sm\:-scale-50 {
+  @include scale-(-0.5, $sm);
+}
+
+@mixin sm\:-scale-x-50 {
+  @include scale-x-(-0.5, $sm);
+}
+
+@mixin sm\:-scale-y-50 {
+  @include scale-y-(-0.5, $sm);
+}
+
+@mixin sm\:-scale-75 {
+  @include scale-(-0.75, $sm);
+}
+
+@mixin sm\:-scale-x-75 {
+  @include scale-x-(-0.75, $sm);
+}
+
+@mixin sm\:-scale-y-75 {
+  @include scale-y-(-0.75, $sm);
+}
+
+@mixin sm\:-scale-90 {
+  @include scale-(-0.9, $sm);
+}
+
+@mixin sm\:-scale-x-90 {
+  @include scale-x-(-0.9, $sm);
+}
+
+@mixin sm\:-scale-y-90 {
+  @include scale-y-(-0.9, $sm);
+}
+
+@mixin sm\:-scale-95 {
+  @include scale-(-0.95, $sm);
+}
+
+@mixin sm\:-scale-x-95 {
+  @include scale-x-(-0.95, $sm);
+}
+
+@mixin sm\:-scale-y-95 {
+  @include scale-y-(-0.95, $sm);
+}
+
+@mixin sm\:-scale-100 {
+  @include scale-(-1, $sm);
+}
+
+@mixin sm\:-scale-x-100 {
+  @include scale-x-(-1, $sm);
+}
+
+@mixin sm\:-scale-y-100 {
+  @include scale-y-(-1, $sm);
+}
+
+@mixin sm\:-scale-105 {
+  @include scale-(-1.05, $sm);
+}
+
+@mixin sm\:-scale-x-105 {
+  @include scale-x-(-1.05, $sm);
+}
+
+@mixin sm\:-scale-y-105 {
+  @include scale-y-(-1.05, $sm);
+}
+
+@mixin sm\:-scale-110 {
+  @include scale-(-1.1, $sm);
+}
+
+@mixin sm\:-scale-x-110 {
+  @include scale-x-(-1.1, $sm);
+}
+
+@mixin sm\:-scale-y-110 {
+  @include scale-y-(-1.1, $sm);
+}
+
+@mixin sm\:-scale-125 {
+  @include scale-(-1.25, $sm);
+}
+
+@mixin sm\:-scale-x-125 {
+  @include scale-x-(-1.25, $sm);
+}
+
+@mixin sm\:-scale-y-125 {
+  @include scale-y-(-1.25, $sm);
+}
+
+@mixin sm\:-scale-150 {
+  @include scale-(-1.5, $sm);
+}
+
+@mixin sm\:-scale-x-150 {
+  @include scale-x-(-1.5, $sm);
+}
+
+@mixin sm\:-scale-y-150 {
+  @include scale-y-(-1.5, $sm);
+}
+
+
+@mixin md\:-scale-0 {
+  @include scale-(-0, $md);
+}
+
+@mixin md\:-scale-x-0 {
+  @include scale-x-(-0, $md);
+}
+
+@mixin md\:-scale-y-0 {
+  @include scale-y-(-0, $md);
+}
+
+@mixin md\:-scale-50 {
+  @include scale-(-0.5, $md);
+}
+
+@mixin md\:-scale-x-50 {
+  @include scale-x-(-0.5, $md);
+}
+
+@mixin md\:-scale-y-50 {
+  @include scale-y-(-0.5, $md);
+}
+
+@mixin md\:-scale-75 {
+  @include scale-(-0.75, $md);
+}
+
+@mixin md\:-scale-x-75 {
+  @include scale-x-(-0.75, $md);
+}
+
+@mixin md\:-scale-y-75 {
+  @include scale-y-(-0.75, $md);
+}
+
+@mixin md\:-scale-90 {
+  @include scale-(-0.9, $md);
+}
+
+@mixin md\:-scale-x-90 {
+  @include scale-x-(-0.9, $md);
+}
+
+@mixin md\:-scale-y-90 {
+  @include scale-y-(-0.9, $md);
+}
+
+@mixin md\:-scale-95 {
+  @include scale-(-0.95, $md);
+}
+
+@mixin md\:-scale-x-95 {
+  @include scale-x-(-0.95, $md);
+}
+
+@mixin md\:-scale-y-95 {
+  @include scale-y-(-0.95, $md);
+}
+
+@mixin md\:-scale-100 {
+  @include scale-(-1, $md);
+}
+
+@mixin md\:-scale-x-100 {
+  @include scale-x-(-1, $md);
+}
+
+@mixin md\:-scale-y-100 {
+  @include scale-y-(-1, $md);
+}
+
+@mixin md\:-scale-105 {
+  @include scale-(-1.05, $md);
+}
+
+@mixin md\:-scale-x-105 {
+  @include scale-x-(-1.05, $md);
+}
+
+@mixin md\:-scale-y-105 {
+  @include scale-y-(-1.05, $md);
+}
+
+@mixin md\:-scale-110 {
+  @include scale-(-1.1, $md);
+}
+
+@mixin md\:-scale-x-110 {
+  @include scale-x-(-1.1, $md);
+}
+
+@mixin md\:-scale-y-110 {
+  @include scale-y-(-1.1, $md);
+}
+
+@mixin md\:-scale-125 {
+  @include scale-(-1.25, $md);
+}
+
+@mixin md\:-scale-x-125 {
+  @include scale-x-(-1.25, $md);
+}
+
+@mixin md\:-scale-y-125 {
+  @include scale-y-(-1.25, $md);
+}
+
+@mixin md\:-scale-150 {
+  @include scale-(-1.5, $md);
+}
+
+@mixin md\:-scale-x-150 {
+  @include scale-x-(-1.5, $md);
+}
+
+@mixin md\:-scale-y-150 {
+  @include scale-y-(-1.5, $md);
+}
+
+
+@mixin lg\:-scale-0 {
+  @include scale-(-0, $lg);
+}
+
+@mixin lg\:-scale-x-0 {
+  @include scale-x-(-0, $lg);
+}
+
+@mixin lg\:-scale-y-0 {
+  @include scale-y-(-0, $lg);
+}
+
+@mixin lg\:-scale-50 {
+  @include scale-(-0.5, $lg);
+}
+
+@mixin lg\:-scale-x-50 {
+  @include scale-x-(-0.5, $lg);
+}
+
+@mixin lg\:-scale-y-50 {
+  @include scale-y-(-0.5, $lg);
+}
+
+@mixin lg\:-scale-75 {
+  @include scale-(-0.75, $lg);
+}
+
+@mixin lg\:-scale-x-75 {
+  @include scale-x-(-0.75, $lg);
+}
+
+@mixin lg\:-scale-y-75 {
+  @include scale-y-(-0.75, $lg);
+}
+
+@mixin lg\:-scale-90 {
+  @include scale-(-0.9, $lg);
+}
+
+@mixin lg\:-scale-x-90 {
+  @include scale-x-(-0.9, $lg);
+}
+
+@mixin lg\:-scale-y-90 {
+  @include scale-y-(-0.9, $lg);
+}
+
+@mixin lg\:-scale-95 {
+  @include scale-(-0.95, $lg);
+}
+
+@mixin lg\:-scale-x-95 {
+  @include scale-x-(-0.95, $lg);
+}
+
+@mixin lg\:-scale-y-95 {
+  @include scale-y-(-0.95, $lg);
+}
+
+@mixin lg\:-scale-100 {
+  @include scale-(-1, $lg);
+}
+
+@mixin lg\:-scale-x-100 {
+  @include scale-x-(-1, $lg);
+}
+
+@mixin lg\:-scale-y-100 {
+  @include scale-y-(-1, $lg);
+}
+
+@mixin lg\:-scale-105 {
+  @include scale-(-1.05, $lg);
+}
+
+@mixin lg\:-scale-x-105 {
+  @include scale-x-(-1.05, $lg);
+}
+
+@mixin lg\:-scale-y-105 {
+  @include scale-y-(-1.05, $lg);
+}
+
+@mixin lg\:-scale-110 {
+  @include scale-(-1.1, $lg);
+}
+
+@mixin lg\:-scale-x-110 {
+  @include scale-x-(-1.1, $lg);
+}
+
+@mixin lg\:-scale-y-110 {
+  @include scale-y-(-1.1, $lg);
+}
+
+@mixin lg\:-scale-125 {
+  @include scale-(-1.25, $lg);
+}
+
+@mixin lg\:-scale-x-125 {
+  @include scale-x-(-1.25, $lg);
+}
+
+@mixin lg\:-scale-y-125 {
+  @include scale-y-(-1.25, $lg);
+}
+
+@mixin lg\:-scale-150 {
+  @include scale-(-1.5, $lg);
+}
+
+@mixin lg\:-scale-x-150 {
+  @include scale-x-(-1.5, $lg);
+}
+
+@mixin lg\:-scale-y-150 {
+  @include scale-y-(-1.5, $lg);
+}
+
+
+@mixin xl\:-scale-0 {
+  @include scale-(-0, $xl);
+}
+
+@mixin xl\:-scale-x-0 {
+  @include scale-x-(-0, $xl);
+}
+
+@mixin xl\:-scale-y-0 {
+  @include scale-y-(-0, $xl);
+}
+
+@mixin xl\:-scale-50 {
+  @include scale-(-0.5, $xl);
+}
+
+@mixin xl\:-scale-x-50 {
+  @include scale-x-(-0.5, $xl);
+}
+
+@mixin xl\:-scale-y-50 {
+  @include scale-y-(-0.5, $xl);
+}
+
+@mixin xl\:-scale-75 {
+  @include scale-(-0.75, $xl);
+}
+
+@mixin xl\:-scale-x-75 {
+  @include scale-x-(-0.75, $xl);
+}
+
+@mixin xl\:-scale-y-75 {
+  @include scale-y-(-0.75, $xl);
+}
+
+@mixin xl\:-scale-90 {
+  @include scale-(-0.9, $xl);
+}
+
+@mixin xl\:-scale-x-90 {
+  @include scale-x-(-0.9, $xl);
+}
+
+@mixin xl\:-scale-y-90 {
+  @include scale-y-(-0.9, $xl);
+}
+
+@mixin xl\:-scale-95 {
+  @include scale-(-0.95, $xl);
+}
+
+@mixin xl\:-scale-x-95 {
+  @include scale-x-(-0.95, $xl);
+}
+
+@mixin xl\:-scale-y-95 {
+  @include scale-y-(-0.95, $xl);
+}
+
+@mixin xl\:-scale-100 {
+  @include scale-(-1, $xl);
+}
+
+@mixin xl\:-scale-x-100 {
+  @include scale-x-(-1, $xl);
+}
+
+@mixin xl\:-scale-y-100 {
+  @include scale-y-(-1, $xl);
+}
+
+@mixin xl\:-scale-105 {
+  @include scale-(-1.05, $xl);
+}
+
+@mixin xl\:-scale-x-105 {
+  @include scale-x-(-1.05, $xl);
+}
+
+@mixin xl\:-scale-y-105 {
+  @include scale-y-(-1.05, $xl);
+}
+
+@mixin xl\:-scale-110 {
+  @include scale-(-1.1, $xl);
+}
+
+@mixin xl\:-scale-x-110 {
+  @include scale-x-(-1.1, $xl);
+}
+
+@mixin xl\:-scale-y-110 {
+  @include scale-y-(-1.1, $xl);
+}
+
+@mixin xl\:-scale-125 {
+  @include scale-(-1.25, $xl);
+}
+
+@mixin xl\:-scale-x-125 {
+  @include scale-x-(-1.25, $xl);
+}
+
+@mixin xl\:-scale-y-125 {
+  @include scale-y-(-1.25, $xl);
+}
+
+@mixin xl\:-scale-150 {
+  @include scale-(-1.5, $xl);
+}
+
+@mixin xl\:-scale-x-150 {
+  @include scale-x-(-1.5, $xl);
+}
+
+@mixin xl\:-scale-y-150 {
+  @include scale-y-(-1.5, $xl);
+}
+
+
+@mixin \2xl\:-scale-0 {
+  @include scale-(-0, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-0 {
+  @include scale-x-(-0, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-0 {
+  @include scale-y-(-0, $\2xl);
+}
+
+@mixin \2xl\:-scale-50 {
+  @include scale-(-0.5, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-50 {
+  @include scale-x-(-0.5, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-50 {
+  @include scale-y-(-0.5, $\2xl);
+}
+
+@mixin \2xl\:-scale-75 {
+  @include scale-(-0.75, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-75 {
+  @include scale-x-(-0.75, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-75 {
+  @include scale-y-(-0.75, $\2xl);
+}
+
+@mixin \2xl\:-scale-90 {
+  @include scale-(-0.9, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-90 {
+  @include scale-x-(-0.9, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-90 {
+  @include scale-y-(-0.9, $\2xl);
+}
+
+@mixin \2xl\:-scale-95 {
+  @include scale-(-0.95, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-95 {
+  @include scale-x-(-0.95, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-95 {
+  @include scale-y-(-0.95, $\2xl);
+}
+
+@mixin \2xl\:-scale-100 {
+  @include scale-(-1, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-100 {
+  @include scale-x-(-1, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-100 {
+  @include scale-y-(-1, $\2xl);
+}
+
+@mixin \2xl\:-scale-105 {
+  @include scale-(-1.05, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-105 {
+  @include scale-x-(-1.05, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-105 {
+  @include scale-y-(-1.05, $\2xl);
+}
+
+@mixin \2xl\:-scale-110 {
+  @include scale-(-1.1, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-110 {
+  @include scale-x-(-1.1, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-110 {
+  @include scale-y-(-1.1, $\2xl);
+}
+
+@mixin \2xl\:-scale-125 {
+  @include scale-(-1.25, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-125 {
+  @include scale-x-(-1.25, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-125 {
+  @include scale-y-(-1.25, $\2xl);
+}
+
+@mixin \2xl\:-scale-150 {
+  @include scale-(-1.5, $\2xl);
+}
+
+@mixin \2xl\:-scale-x-150 {
+  @include scale-x-(-1.5, $\2xl);
+}
+
+@mixin \2xl\:-scale-y-150 {
+  @include scale-y-(-1.5, $\2xl);
+}
+
+@include describe("12.Transforms") {
+  @include describe("Scale") {
+    @include describe("Basic") {
+      @include it("scale-0") {
+        @include assert {
+          @include output {
+            @include scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+          }
+        }
+      }
+
+      @include it("scale-x-0") {
+        @include assert {
+          @include output {
+            @include scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-0") {
+        @include assert {
+          @include output {
+            @include scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+          }
+        }
+      }
+
+      @include it("scale-50") {
+        @include assert {
+          @include output {
+            @include scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(.5);
+          }
+        }
+      }
+
+      @include it("scale-x-50") {
+        @include assert {
+          @include output {
+            @include scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-50") {
+        @include assert {
+          @include output {
+            @include scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.5);
+          }
+        }
+      }
+
+      @include it("scale-75") {
+        @include assert {
+          @include output {
+            @include scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(.75);
+          }
+        }
+      }
+
+      @include it("scale-x-75") {
+        @include assert {
+          @include output {
+            @include scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-75") {
+        @include assert {
+          @include output {
+            @include scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.75);
+          }
+        }
+      }
+
+      @include it("scale-90") {
+        @include assert {
+          @include output {
+            @include scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(.9);
+          }
+        }
+      }
+
+      @include it("scale-x-90") {
+        @include assert {
+          @include output {
+            @include scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-90") {
+        @include assert {
+          @include output {
+            @include scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.9);
+          }
+        }
+      }
+
+      @include it("scale-95") {
+        @include assert {
+          @include output {
+            @include scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(.95);
+          }
+        }
+      }
+
+      @include it("scale-x-95") {
+        @include assert {
+          @include output {
+            @include scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-95") {
+        @include assert {
+          @include output {
+            @include scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.95);
+          }
+        }
+      }
+
+      @include it("scale-100") {
+        @include assert {
+          @include output {
+            @include scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-x-100") {
+        @include assert {
+          @include output {
+            @include scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-100") {
+        @include assert {
+          @include output {
+            @include scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-105") {
+        @include assert {
+          @include output {
+            @include scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1.05);
+          }
+        }
+      }
+
+      @include it("scale-x-105") {
+        @include assert {
+          @include output {
+            @include scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-105") {
+        @include assert {
+          @include output {
+            @include scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.05);
+          }
+        }
+      }
+
+      @include it("scale-110") {
+        @include assert {
+          @include output {
+            @include scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1.1);
+          }
+        }
+      }
+
+      @include it("scale-x-110") {
+        @include assert {
+          @include output {
+            @include scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-110") {
+        @include assert {
+          @include output {
+            @include scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.1);
+          }
+        }
+      }
+
+      @include it("scale-125") {
+        @include assert {
+          @include output {
+            @include scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1.25);
+          }
+        }
+      }
+
+      @include it("scale-x-125") {
+        @include assert {
+          @include output {
+            @include scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-125") {
+        @include assert {
+          @include output {
+            @include scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.25);
+          }
+        }
+      }
+
+      @include it("scale-150") {
+        @include assert {
+          @include output {
+            @include scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1.5);
+          }
+        }
+      }
+
+      @include it("scale-x-150") {
+        @include assert {
+          @include output {
+            @include scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-150") {
+        @include assert {
+          @include output {
+            @include scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.5);
+          }
+        }
+      }
+
+      @include it("-scale-0") {
+        @include assert {
+          @include output {
+            @include -scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+          }
+        }
+      }
+
+      @include it("-scale-x-0") {
+        @include assert {
+          @include output {
+            @include -scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-0") {
+        @include assert {
+          @include output {
+            @include -scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+          }
+        }
+      }
+
+      @include it("-scale-50") {
+        @include assert {
+          @include output {
+            @include -scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(-.5);
+          }
+        }
+      }
+
+      @include it("-scale-x-50") {
+        @include assert {
+          @include output {
+            @include -scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-50") {
+        @include assert {
+          @include output {
+            @include -scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.5);
+          }
+        }
+      }
+
+      @include it("-scale-75") {
+        @include assert {
+          @include output {
+            @include -scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(-.75);
+          }
+        }
+      }
+
+      @include it("-scale-x-75") {
+        @include assert {
+          @include output {
+            @include -scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-75") {
+        @include assert {
+          @include output {
+            @include -scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.75);
+          }
+        }
+      }
+
+      @include it("-scale-90") {
+        @include assert {
+          @include output {
+            @include -scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(-.9);
+          }
+        }
+      }
+
+      @include it("-scale-x-90") {
+        @include assert {
+          @include output {
+            @include -scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-90") {
+        @include assert {
+          @include output {
+            @include -scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.9);
+          }
+        }
+      }
+
+      @include it("-scale-95") {
+        @include assert {
+          @include output {
+            @include -scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(-.95);
+          }
+        }
+      }
+
+      @include it("-scale-x-95") {
+        @include assert {
+          @include output {
+            @include -scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-95") {
+        @include assert {
+          @include output {
+            @include -scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.95);
+          }
+        }
+      }
+
+      @include it("-scale-100") {
+        @include assert {
+          @include output {
+            @include -scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(-1);
+          }
+        }
+      }
+
+      @include it("-scale-x-100") {
+        @include assert {
+          @include output {
+            @include -scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-100") {
+        @include assert {
+          @include output {
+            @include -scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1);
+          }
+        }
+      }
+
+      @include it("-scale-105") {
+        @include assert {
+          @include output {
+            @include -scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(-1.05);
+          }
+        }
+      }
+
+      @include it("-scale-x-105") {
+        @include assert {
+          @include output {
+            @include -scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-105") {
+        @include assert {
+          @include output {
+            @include -scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.05);
+          }
+        }
+      }
+
+      @include it("-scale-110") {
+        @include assert {
+          @include output {
+            @include -scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(-1.1);
+          }
+        }
+      }
+
+      @include it("-scale-x-110") {
+        @include assert {
+          @include output {
+            @include -scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-110") {
+        @include assert {
+          @include output {
+            @include -scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.1);
+          }
+        }
+      }
+
+      @include it("-scale-125") {
+        @include assert {
+          @include output {
+            @include -scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(-1.25);
+          }
+        }
+      }
+
+      @include it("-scale-x-125") {
+        @include assert {
+          @include output {
+            @include -scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-125") {
+        @include assert {
+          @include output {
+            @include -scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.25);
+          }
+        }
+      }
+
+      @include it("-scale-150") {
+        @include assert {
+          @include output {
+            @include -scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(-1.5);
+          }
+        }
+      }
+
+      @include it("-scale-x-150") {
+        @include assert {
+          @include output {
+            @include -scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-scale-y-150") {
+        @include assert {
+          @include output {
+            @include -scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.5);
+          }
+        }
       }
     }
-  }
 
-  @mixin scale-x-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-scale-x: $v !global;
-      transform: __transform();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-scale-x: $v !global;
-        transform: __transform();
+    @include describe("Rwd") {
+      @include it("sm\:scale-0") {
+        @include assert {
+          @include output {
+            @include sm\:scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-0") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-0") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-50") {
+        @include assert {
+          @include output {
+            @include sm\:scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-50") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-50") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-75") {
+        @include assert {
+          @include output {
+            @include sm\:scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-75") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-75") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-90") {
+        @include assert {
+          @include output {
+            @include sm\:scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-90") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-90") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-95") {
+        @include assert {
+          @include output {
+            @include sm\:scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-95") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-95") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-100") {
+        @include assert {
+          @include output {
+            @include sm\:scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-100") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-100") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-105") {
+        @include assert {
+          @include output {
+            @include sm\:scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-105") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-105") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-110") {
+        @include assert {
+          @include output {
+            @include sm\:scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-110") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-110") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-125") {
+        @include assert {
+          @include output {
+            @include sm\:scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-125") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-125") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-150") {
+        @include assert {
+          @include output {
+            @include sm\:scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-150") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-150") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-0") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-0") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-0") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-50") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-50") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-50") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-75") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-75") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-75") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-90") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-90") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-90") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-95") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-95") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-95") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-100") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-100") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-100") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-105") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-105") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-105") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-110") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-110") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-110") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-125") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-125") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-125") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-150") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(-1.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-x-150") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-scale-y-150") {
+        @include assert {
+          @include output {
+            @include sm\:-scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-0") {
+        @include assert {
+          @include output {
+            @include md\:scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-0") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-0") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-50") {
+        @include assert {
+          @include output {
+            @include md\:scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-50") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-50") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-75") {
+        @include assert {
+          @include output {
+            @include md\:scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-75") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-75") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-90") {
+        @include assert {
+          @include output {
+            @include md\:scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-90") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-90") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-95") {
+        @include assert {
+          @include output {
+            @include md\:scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-95") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-95") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-100") {
+        @include assert {
+          @include output {
+            @include md\:scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-100") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-100") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-105") {
+        @include assert {
+          @include output {
+            @include md\:scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-105") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-105") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-110") {
+        @include assert {
+          @include output {
+            @include md\:scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-110") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-110") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-125") {
+        @include assert {
+          @include output {
+            @include md\:scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-125") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-125") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-150") {
+        @include assert {
+          @include output {
+            @include md\:scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-150") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-150") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-0") {
+        @include assert {
+          @include output {
+            @include md\:-scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-0") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-0") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-50") {
+        @include assert {
+          @include output {
+            @include md\:-scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-50") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-50") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-75") {
+        @include assert {
+          @include output {
+            @include md\:-scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-75") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-75") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-90") {
+        @include assert {
+          @include output {
+            @include md\:-scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-90") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-90") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-95") {
+        @include assert {
+          @include output {
+            @include md\:-scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-95") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-95") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-100") {
+        @include assert {
+          @include output {
+            @include md\:-scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-100") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-100") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-105") {
+        @include assert {
+          @include output {
+            @include md\:-scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-105") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-105") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-110") {
+        @include assert {
+          @include output {
+            @include md\:-scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-110") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-110") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-125") {
+        @include assert {
+          @include output {
+            @include md\:-scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-125") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-125") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-150") {
+        @include assert {
+          @include output {
+            @include md\:-scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(-1.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-x-150") {
+        @include assert {
+          @include output {
+            @include md\:-scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-scale-y-150") {
+        @include assert {
+          @include output {
+            @include md\:-scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-0") {
+        @include assert {
+          @include output {
+            @include lg\:scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-0") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-0") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-50") {
+        @include assert {
+          @include output {
+            @include lg\:scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-50") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-50") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-75") {
+        @include assert {
+          @include output {
+            @include lg\:scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-75") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-75") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-90") {
+        @include assert {
+          @include output {
+            @include lg\:scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-90") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-90") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-95") {
+        @include assert {
+          @include output {
+            @include lg\:scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-95") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-95") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-100") {
+        @include assert {
+          @include output {
+            @include lg\:scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-100") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-100") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-105") {
+        @include assert {
+          @include output {
+            @include lg\:scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-105") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-105") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-110") {
+        @include assert {
+          @include output {
+            @include lg\:scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-110") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-110") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-125") {
+        @include assert {
+          @include output {
+            @include lg\:scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-125") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-125") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-150") {
+        @include assert {
+          @include output {
+            @include lg\:scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-150") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-150") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-0") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-0") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-0") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-50") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-50") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-50") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-75") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-75") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-75") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-90") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-90") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-90") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-95") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-95") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-95") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-100") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-100") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-100") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-105") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-105") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-105") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-110") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-110") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-110") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-125") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-125") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-125") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-150") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(-1.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-x-150") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-scale-y-150") {
+        @include assert {
+          @include output {
+            @include lg\:-scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-0") {
+        @include assert {
+          @include output {
+            @include xl\:scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-0") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-0") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-50") {
+        @include assert {
+          @include output {
+            @include xl\:scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-50") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-50") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-75") {
+        @include assert {
+          @include output {
+            @include xl\:scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-75") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-75") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-90") {
+        @include assert {
+          @include output {
+            @include xl\:scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-90") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-90") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-95") {
+        @include assert {
+          @include output {
+            @include xl\:scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-95") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-95") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-100") {
+        @include assert {
+          @include output {
+            @include xl\:scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-100") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-100") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-105") {
+        @include assert {
+          @include output {
+            @include xl\:scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-105") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-105") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-110") {
+        @include assert {
+          @include output {
+            @include xl\:scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-110") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-110") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-125") {
+        @include assert {
+          @include output {
+            @include xl\:scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-125") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-125") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-150") {
+        @include assert {
+          @include output {
+            @include xl\:scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-150") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-150") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-0") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-0") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-0") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-50") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-50") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-50") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-75") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-75") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-75") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-90") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-90") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-90") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-95") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-95") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-95") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-100") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-100") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-100") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-105") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-105") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-105") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-110") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-110") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-110") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-125") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-125") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-125") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-150") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(-1.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-x-150") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-scale-y-150") {
+        @include assert {
+          @include output {
+            @include xl\:-scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.75);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-90") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-90") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-90") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.9);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-95") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-95") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-95") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(.95);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-105") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-105") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-105") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.05);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-110") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-110") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-110") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-125") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-125") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-125") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(0) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.75) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.75);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-90") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-90") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.9) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-90") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.9);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-95") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-95") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-.95) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-95") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-95;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-.95);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-105") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-105") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.05) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-105") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-105;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.05);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-110") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-110") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-110") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-110;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-125") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-125") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.25) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-125") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.25);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(-1.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-x-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-x-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(-1.5) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-scale-y-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:-scale-y-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(-1.5);
+            }
+          }
+        }
       }
     }
-  }
 
-  @mixin scale-y-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-scale-y: $v !global;
-      transform: __transform();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-scale-y: $v !global;
-        transform: __transform();
+    @include describe("Custom") {
+      @include it("scale-(1.7)") {
+        @include assert {
+          @include output {
+            @include scale-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1.7);
+          }
+        }
       }
+
+      @include it("scale-x-(1.7)") {
+        @include assert {
+          @include output {
+            @include scale-x-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1);
+          }
+        }
+      }
+
+      @include it("scale-y-(1.7)") {
+        @include assert {
+          @include output {
+            @include scale-y-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.7);
+          }
+        }
+      }
+
+      @include it("sm\:scale-(1.7)") {
+        @include assert {
+          @include output {
+            @include sm\:scale-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1.7);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-x-(1.7)") {
+        @include assert {
+          @include output {
+            @include sm\:scale-x-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:scale-y-(1.7)") {
+        @include assert {
+          @include output {
+            @include sm\:scale-y-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.7);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-(1.7)") {
+        @include assert {
+          @include output {
+            @include md\:scale-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1.7);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-x-(1.7)") {
+        @include assert {
+          @include output {
+            @include md\:scale-x-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:scale-y-(1.7)") {
+        @include assert {
+          @include output {
+            @include md\:scale-y-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.7);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-(1.7)") {
+        @include assert {
+          @include output {
+            @include lg\:scale-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1.7);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-x-(1.7)") {
+        @include assert {
+          @include output {
+            @include lg\:scale-x-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:scale-y-(1.7)") {
+        @include assert {
+          @include output {
+            @include lg\:scale-y-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.7);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-(1.7)") {
+        @include assert {
+          @include output {
+            @include xl\:scale-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1.7);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-x-(1.7)") {
+        @include assert {
+          @include output {
+            @include xl\:scale-x-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:scale-y-(1.7)") {
+        @include assert {
+          @include output {
+            @include xl\:scale-y-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.7);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-(1.7)") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1.7);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-x-(1.7)") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-x-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1.7) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:scale-y-(1.7)") {
+        @include assert {
+          @include output {
+            @include \2xl\:scale-y-(1.7);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1.7);
+            }
+          }
+        }
+      }
+
     }
   }
-
-  @mixin sm\:scale-($v) {
-    @include scale-($v, $sm);
-  }
-
-  @mixin sm\:scale-x-($v) {
-    @include scale-x-($v, $sm);
-  }
-
-  @mixin sm\:scale-y-($v) {
-    @include scale-y-($v, $sm);
-  }
-
-  @mixin md\:scale-($v) {
-    @include scale-($v, $md);
-  }
-
-  @mixin md\:scale-x-($v) {
-    @include scale-x-($v, $md);
-  }
-
-  @mixin md\:scale-y-($v) {
-    @include scale-y-($v, $md);
-  }
-
-  @mixin lg\:scale-($v) {
-    @include scale-($v, $lg);
-  }
-
-  @mixin lg\:scale-x-($v) {
-    @include scale-x-($v, $lg);
-  }
-
-  @mixin lg\:scale-y-($v) {
-    @include scale-y-($v, $lg);
-  }
-
-  @mixin xl\:scale-($v) {
-    @include scale-($v, $xl);
-  }
-
-  @mixin xl\:scale-x-($v) {
-    @include scale-x-($v, $xl);
-  }
-
-  @mixin xl\:scale-y-($v) {
-    @include scale-y-($v, $xl);
-  }
-
-  @mixin \2xl\:scale-($v) {
-    @include scale-($v, $\2xl);
-  }
-
-  @mixin \2xl\:scale-x-($v) {
-    @include scale-x-($v, $\2xl);
-  }
-
-  @mixin \2xl\:scale-y-($v) {
-    @include scale-y-($v, $\2xl);
-  }
-
-  // x*/
 }

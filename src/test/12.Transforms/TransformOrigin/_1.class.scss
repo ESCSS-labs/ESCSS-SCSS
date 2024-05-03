@@ -2,266 +2,892 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Transform Origin */
-@if $Basic {
-  // /*x
-  @mixin origin-center {
-    @include origin-(center);
-  }
+@include describe("12.Transforms") {
+  @include describe("Transform Origin") {
+    @include describe("Basic") {
+      @include it("origin-center") {
+        @include assert {
+          @include output {
+            @include origin-center;
+            @include clear;
+          }
 
-  @mixin origin-top {
-    @include origin-(top);
-  }
+          @include expect {
+            transform-origin: center;
+          }
+        }
+      }
 
-  @mixin origin-top-right {
-    @include origin-(top right);
-  }
+      @include it("origin-top") {
+        @include assert {
+          @include output {
+            @include origin-top;
+            @include clear;
+          }
 
-  @mixin origin-right {
-    @include origin-(right);
-  }
+          @include expect {
+            transform-origin: top;
+          }
+        }
+      }
 
-  @mixin origin-bottom-right {
-    @include origin-(bottom right);
-  }
+      @include it("origin-top-right") {
+        @include assert {
+          @include output {
+            @include origin-top-right;
+            @include clear;
+          }
 
-  @mixin origin-bottom {
-    @include origin-(bottom);
-  }
+          @include expect {
+            transform-origin: top right;
+          }
+        }
+      }
 
-  @mixin origin-bottom-left {
-    @include origin-(bottom left);
-  }
+      @include it("origin-right") {
+        @include assert {
+          @include output {
+            @include origin-right;
+            @include clear;
+          }
 
-  @mixin origin-left {
-    @include origin-(left);
-  }
+          @include expect {
+            transform-origin: right;
+          }
+        }
+      }
 
-  @mixin origin-top-left {
-    @include origin-(top left);
-  }
+      @include it("origin-bottom-right") {
+        @include assert {
+          @include output {
+            @include origin-bottom-right;
+            @include clear;
+          }
 
-  // x*/
-}
+          @include expect {
+            transform-origin: bottom right;
+          }
+        }
+      }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:origin-center {
-      @include origin-(center, $sm);
+      @include it("origin-bottom") {
+        @include assert {
+          @include output {
+            @include origin-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            transform-origin: bottom;
+          }
+        }
+      }
+
+      @include it("origin-bottom-left") {
+        @include assert {
+          @include output {
+            @include origin-bottom-left;
+            @include clear;
+          }
+
+          @include expect {
+            transform-origin: bottom left;
+          }
+        }
+      }
+
+      @include it("origin-left") {
+        @include assert {
+          @include output {
+            @include origin-left;
+            @include clear;
+          }
+
+          @include expect {
+            transform-origin: left;
+          }
+        }
+      }
+
+      @include it("origin-top-left") {
+        @include assert {
+          @include output {
+            @include origin-top-left;
+            @include clear;
+          }
+
+          @include expect {
+            transform-origin: top left;
+          }
+        }
+      }
     }
 
-    @mixin sm\:origin-top {
-      @include origin-(top, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:origin-center") {
+        @include assert {
+          @include output {
+            @include sm\:origin-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: center;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:origin-top") {
+        @include assert {
+          @include output {
+            @include sm\:origin-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: top;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:origin-top-right") {
+        @include assert {
+          @include output {
+            @include sm\:origin-top-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: top right;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:origin-right") {
+        @include assert {
+          @include output {
+            @include sm\:origin-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: right;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:origin-bottom-right") {
+        @include assert {
+          @include output {
+            @include sm\:origin-bottom-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: bottom right;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:origin-bottom") {
+        @include assert {
+          @include output {
+            @include sm\:origin-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: bottom;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:origin-bottom-left") {
+        @include assert {
+          @include output {
+            @include sm\:origin-bottom-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: bottom left;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:origin-left") {
+        @include assert {
+          @include output {
+            @include sm\:origin-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: left;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:origin-top-left") {
+        @include assert {
+          @include output {
+            @include sm\:origin-top-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: top left;
+            }
+          }
+        }
+      }
+
+      @include it("md\:origin-center") {
+        @include assert {
+          @include output {
+            @include md\:origin-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: center;
+            }
+          }
+        }
+      }
+
+      @include it("md\:origin-top") {
+        @include assert {
+          @include output {
+            @include md\:origin-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: top;
+            }
+          }
+        }
+      }
+
+      @include it("md\:origin-top-right") {
+        @include assert {
+          @include output {
+            @include md\:origin-top-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: top right;
+            }
+          }
+        }
+      }
+
+      @include it("md\:origin-right") {
+        @include assert {
+          @include output {
+            @include md\:origin-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: right;
+            }
+          }
+        }
+      }
+
+      @include it("md\:origin-bottom-right") {
+        @include assert {
+          @include output {
+            @include md\:origin-bottom-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: bottom right;
+            }
+          }
+        }
+      }
+
+      @include it("md\:origin-bottom") {
+        @include assert {
+          @include output {
+            @include md\:origin-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: bottom;
+            }
+          }
+        }
+      }
+
+      @include it("md\:origin-bottom-left") {
+        @include assert {
+          @include output {
+            @include md\:origin-bottom-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: bottom left;
+            }
+          }
+        }
+      }
+
+      @include it("md\:origin-left") {
+        @include assert {
+          @include output {
+            @include md\:origin-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: left;
+            }
+          }
+        }
+      }
+
+      @include it("md\:origin-top-left") {
+        @include assert {
+          @include output {
+            @include md\:origin-top-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: top left;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:origin-center") {
+        @include assert {
+          @include output {
+            @include lg\:origin-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: center;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:origin-top") {
+        @include assert {
+          @include output {
+            @include lg\:origin-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: top;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:origin-top-right") {
+        @include assert {
+          @include output {
+            @include lg\:origin-top-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: top right;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:origin-right") {
+        @include assert {
+          @include output {
+            @include lg\:origin-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: right;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:origin-bottom-right") {
+        @include assert {
+          @include output {
+            @include lg\:origin-bottom-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: bottom right;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:origin-bottom") {
+        @include assert {
+          @include output {
+            @include lg\:origin-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: bottom;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:origin-bottom-left") {
+        @include assert {
+          @include output {
+            @include lg\:origin-bottom-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: bottom left;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:origin-left") {
+        @include assert {
+          @include output {
+            @include lg\:origin-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: left;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:origin-top-left") {
+        @include assert {
+          @include output {
+            @include lg\:origin-top-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: top left;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:origin-center") {
+        @include assert {
+          @include output {
+            @include xl\:origin-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: center;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:origin-top") {
+        @include assert {
+          @include output {
+            @include xl\:origin-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: top;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:origin-top-right") {
+        @include assert {
+          @include output {
+            @include xl\:origin-top-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: top right;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:origin-right") {
+        @include assert {
+          @include output {
+            @include xl\:origin-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: right;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:origin-bottom-right") {
+        @include assert {
+          @include output {
+            @include xl\:origin-bottom-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: bottom right;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:origin-bottom") {
+        @include assert {
+          @include output {
+            @include xl\:origin-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: bottom;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:origin-bottom-left") {
+        @include assert {
+          @include output {
+            @include xl\:origin-bottom-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: bottom left;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:origin-left") {
+        @include assert {
+          @include output {
+            @include xl\:origin-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: left;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:origin-top-left") {
+        @include assert {
+          @include output {
+            @include xl\:origin-top-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: top left;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:origin-center") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: center;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:origin-top") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: top;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:origin-top-right") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-top-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: top right;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:origin-right") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: right;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:origin-bottom-right") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-bottom-right;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: bottom right;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:origin-bottom") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: bottom;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:origin-bottom-left") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-bottom-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: bottom left;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:origin-left") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: left;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:origin-top-left") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-top-left;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: top left;
+            }
+          }
+        }
+      }
     }
 
-    @mixin sm\:origin-top-right {
-      @include origin-(top right, $sm);
-    }
+    @include describe("Custom") {
+      @include it("origin-(33% 75%)") {
+        @include assert {
+          @include output {
+            @include origin-(33% 75%);
+            @include clear;
+          }
 
-    @mixin sm\:origin-right {
-      @include origin-(right, $sm);
-    }
+          @include expect {
+            transform-origin: 33% 75%;
+          }
+        }
+      }
 
-    @mixin sm\:origin-bottom-right {
-      @include origin-(bottom right, $sm);
-    }
+      @include it("sm\:origin-(33% 75%)") {
+        @include assert {
+          @include output {
+            @include sm\:origin-(33% 75%);
+            @include clear;
+          }
 
-    @mixin sm\:origin-bottom {
-      @include origin-(bottom, $sm);
-    }
+          @include expect {
+            @media(min-width:$sm) {
+              transform-origin: 33% 75%;
+            }
+          }
+        }
+      }
 
-    @mixin sm\:origin-bottom-left {
-      @include origin-(bottom left, $sm);
-    }
+      @include it("md\:origin-(33% 75%)") {
+        @include assert {
+          @include output {
+            @include md\:origin-(33% 75%);
+            @include clear;
+          }
 
-    @mixin sm\:origin-left {
-      @include origin-(left, $sm);
-    }
+          @include expect {
+            @media(min-width:$md) {
+              transform-origin: 33% 75%;
+            }
+          }
+        }
+      }
 
-    @mixin sm\:origin-top-left {
-      @include origin-(top left, $sm);
-    }
+      @include it("lg\:origin-(33% 75%)") {
+        @include assert {
+          @include output {
+            @include lg\:origin-(33% 75%);
+            @include clear;
+          }
 
-    @mixin md\:origin-center {
-      @include origin-(center, $md);
-    }
+          @include expect {
+            @media(min-width:$lg) {
+              transform-origin: 33% 75%;
+            }
+          }
+        }
+      }
 
-    @mixin md\:origin-top {
-      @include origin-(top, $md);
-    }
+      @include it("xl\:origin-(33% 75%)") {
+        @include assert {
+          @include output {
+            @include xl\:origin-(33% 75%);
+            @include clear;
+          }
 
-    @mixin md\:origin-top-right {
-      @include origin-(top right, $md);
-    }
+          @include expect {
+            @media(min-width:$xl) {
+              transform-origin: 33% 75%;
+            }
+          }
+        }
+      }
 
-    @mixin md\:origin-right {
-      @include origin-(right, $md);
-    }
+      @include it("\2xl\:origin-(33% 75%)") {
+        @include assert {
+          @include output {
+            @include \2xl\:origin-(33% 75%);
+            @include clear;
+          }
 
-    @mixin md\:origin-bottom-right {
-      @include origin-(bottom right, $md);
-    }
-
-    @mixin md\:origin-bottom {
-      @include origin-(bottom, $md);
-    }
-
-    @mixin md\:origin-bottom-left {
-      @include origin-(bottom left, $md);
-    }
-
-    @mixin md\:origin-left {
-      @include origin-(left, $md);
-    }
-
-    @mixin md\:origin-top-left {
-      @include origin-(top left, $md);
-    }
-
-    @mixin lg\:origin-center {
-      @include origin-(center, $lg);
-    }
-
-    @mixin lg\:origin-top {
-      @include origin-(top, $lg);
-    }
-
-    @mixin lg\:origin-top-right {
-      @include origin-(top right, $lg);
-    }
-
-    @mixin lg\:origin-right {
-      @include origin-(right, $lg);
-    }
-
-    @mixin lg\:origin-bottom-right {
-      @include origin-(bottom right, $lg);
-    }
-
-    @mixin lg\:origin-bottom {
-      @include origin-(bottom, $lg);
-    }
-
-    @mixin lg\:origin-bottom-left {
-      @include origin-(bottom left, $lg);
-    }
-
-    @mixin lg\:origin-left {
-      @include origin-(left, $lg);
-    }
-
-    @mixin lg\:origin-top-left {
-      @include origin-(top left, $lg);
-    }
-
-    @mixin xl\:origin-center {
-      @include origin-(center, $xl);
-    }
-
-    @mixin xl\:origin-top {
-      @include origin-(top, $xl);
-    }
-
-    @mixin xl\:origin-top-right {
-      @include origin-(top right, $xl);
-    }
-
-    @mixin xl\:origin-right {
-      @include origin-(right, $xl);
-    }
-
-    @mixin xl\:origin-bottom-right {
-      @include origin-(bottom right, $xl);
-    }
-
-    @mixin xl\:origin-bottom {
-      @include origin-(bottom, $xl);
-    }
-
-    @mixin xl\:origin-bottom-left {
-      @include origin-(bottom left, $xl);
-    }
-
-    @mixin xl\:origin-left {
-      @include origin-(left, $xl);
-    }
-
-    @mixin xl\:origin-top-left {
-      @include origin-(top left, $xl);
-    }
-
-    @mixin \2xl\:origin-center {
-      @include origin-(center, $\2xl);
-    }
-
-    @mixin \2xl\:origin-top {
-      @include origin-(top, $\2xl);
-    }
-
-    @mixin \2xl\:origin-top-right {
-      @include origin-(top right, $\2xl);
-    }
-
-    @mixin \2xl\:origin-right {
-      @include origin-(right, $\2xl);
-    }
-
-    @mixin \2xl\:origin-bottom-right {
-      @include origin-(bottom right, $\2xl);
-    }
-
-    @mixin \2xl\:origin-bottom {
-      @include origin-(bottom, $\2xl);
-    }
-
-    @mixin \2xl\:origin-bottom-left {
-      @include origin-(bottom left, $\2xl);
-    }
-
-    @mixin \2xl\:origin-left {
-      @include origin-(left, $\2xl);
-    }
-
-    @mixin \2xl\:origin-top-left {
-      @include origin-(top left, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin origin-($v, $rwd: null) {
-    @if $rwd==null {
-      transform-origin: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        transform-origin: $v;
+          @include expect {
+            @media(min-width:$\2xl) {
+              transform-origin: 33% 75%;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:origin-($v) {
-    @include origin-($v, $sm);
-  }
-
-  @mixin md\:origin-($v) {
-    @include origin-($v, $md);
-  }
-
-  @mixin lg\:origin-($v) {
-    @include origin-($v, $lg);
-  }
-
-  @mixin xl\:origin-($v) {
-    @include origin-($v, $xl);
-  }
-
-  @mixin \2xl\:origin-($v) {
-    @include origin-($v, $\2xl);
-  }
-
-  // x*/
 }
