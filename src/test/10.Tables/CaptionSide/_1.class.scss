@@ -2,69 +2,186 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Caption Side */
-@if $Basic {
-  // /*x
-  @mixin caption-top($rwd: null) {
-    @if $rwd==null {
-      caption-side: top;
-    } @else {
-      @media (min-width: $rwd) {
-        caption-side: top;
+@include describe("10.Tables") {
+  @include describe("Caption Side") {
+    @include describe("Basic") {
+      @include it("caption-top") {
+        @include assert {
+          @include output {
+            @include caption-top;
+            @include clear;
+          }
+
+          @include expect {
+            caption-side: top;
+          }
+        }
+      }
+
+      @include it("caption-bottom") {
+        @include assert {
+          @include output {
+            @include caption-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            caption-side: bottom;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:caption-top") {
+        @include assert {
+          @include output {
+            @include sm\:caption-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:caption-bottom") {
+        @include assert {
+          @include output {
+            @include sm\:caption-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              caption-side: bottom;
+            }
+          }
+        }
+      }
+
+      @include it("md\:caption-top") {
+        @include assert {
+          @include output {
+            @include md\:caption-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it("md\:caption-bottom") {
+        @include assert {
+          @include output {
+            @include md\:caption-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              caption-side: bottom;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:caption-top") {
+        @include assert {
+          @include output {
+            @include lg\:caption-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:caption-bottom") {
+        @include assert {
+          @include output {
+            @include lg\:caption-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              caption-side: bottom;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:caption-top") {
+        @include assert {
+          @include output {
+            @include xl\:caption-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:caption-bottom") {
+        @include assert {
+          @include output {
+            @include xl\:caption-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              caption-side: bottom;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:caption-top") {
+        @include assert {
+          @include output {
+            @include \2xl\:caption-top;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:caption-bottom") {
+        @include assert {
+          @include output {
+            @include \2xl\:caption-bottom;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              caption-side: bottom;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin caption-bottom($rwd: null) {
-    @if $rwd==null {
-      caption-side: bottom;
-    } @else {
-      @media (min-width: $rwd) {
-        caption-side: bottom;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:caption-top {
-    @include caption-top($sm);
-  }
-
-  @mixin sm\:caption-bottom {
-    @include caption-bottom($sm);
-  }
-
-  @mixin md\:caption-top {
-    @include caption-top($md);
-  }
-
-  @mixin md\:caption-bottom {
-    @include caption-bottom($md);
-  }
-
-  @mixin lg\:caption-top {
-    @include caption-top($lg);
-  }
-
-  @mixin lg\:caption-bottom {
-    @include caption-bottom($lg);
-  }
-
-  @mixin xl\:caption-top {
-    @include caption-top($xl);
-  }
-
-  @mixin xl\:caption-bottom {
-    @include caption-bottom($xl);
-  }
-
-  @mixin \2xl\:caption-top {
-    @include caption-top($\2xl);
-  }
-
-  @mixin \2xl\:caption-bottom {
-    @include caption-bottom($\2xl);
-  } // x*/
 }
