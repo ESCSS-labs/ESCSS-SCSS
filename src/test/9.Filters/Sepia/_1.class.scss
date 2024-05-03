@@ -2,100 +2,277 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Sepia */
-@if $Basic {
-  // /*x
-  @mixin sepia-0 {
-    @include sepia-(0);
-  }
+@include describe("9.Filters") {
+  @include describe("Sepia") {
+    @include describe("Basic") {
+      @include it("sepia-0") {
+        @include assert {
+          @include output {
+            @include sepia-0;
+            @include clear;
+          }
 
-  @mixin sepia {
-    @include sepia-(100%);
-  }
+          @include expect {
+            filter: sepia(0);
+          }
+        }
+      }
 
-  // x*/
-}
+      @include it("sepia") {
+        @include assert {
+          @include output {
+            @include sepia;
+            @include clear;
+          }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:sepia-0 {
-      @include sepia-(0, $sm);
-    }
-
-    @mixin sm\:sepia {
-      @include sepia-(100%, $sm);
-    }
-
-    @mixin md\:sepia-0 {
-      @include sepia-(0, $md);
-    }
-
-    @mixin md\:sepia {
-      @include sepia-(100%, $md);
-    }
-
-    @mixin lg\:sepia-0 {
-      @include sepia-(0, $lg);
-    }
-
-    @mixin lg\:sepia {
-      @include sepia-(100%, $lg);
-    }
-
-    @mixin xl\:sepia-0 {
-      @include sepia-(0, $xl);
-    }
-
-    @mixin xl\:sepia {
-      @include sepia-(100%, $xl);
-    }
-
-    @mixin \2xl\:sepia-0 {
-      @include sepia-(0, $\2xl);
-    }
-
-    @mixin \2xl\:sepia {
-      @include sepia-(100%, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin sepia-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-sepia: sepia($v) !global;
-      filter: __filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-sepia: sepia($v) !global;
-        filter: __filter();
+          @include expect {
+            filter: sepia(100%);
+          }
+        }
       }
     }
-  }
 
-  @mixin sm\:sepia-($v) {
-    @include sepia-($v, $sm);
-  }
+    @include describe("Rwd") {
+      @include it("sm\:sepia-0") {
+        @include assert {
+          @include output {
+            @include sm\:sepia-0;
+            @include clear;
+          }
 
-  @mixin md\:sepia-($v) {
-    @include sepia-($v, $md);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              filter: sepia(0);
+            }
+          }
+        }
+      }
 
-  @mixin lg\:sepia-($v) {
-    @include sepia-($v, $lg);
-  }
+      @include it("sm\:sepia") {
+        @include assert {
+          @include output {
+            @include sm\:sepia;
+            @include clear;
+          }
 
-  @mixin xl\:sepia-($v) {
-    @include sepia-($v, $xl);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              filter: sepia(100%);
+            }
+          }
+        }
+      }
 
-  @mixin \2xl\:sepia-($v) {
-    @include sepia-($v, $\2xl);
-  }
+      @include it("md\:sepia-0") {
+        @include assert {
+          @include output {
+            @include md\:sepia-0;
+            @include clear;
+          }
 
-  // x*/
+          @include expect {
+            @media(min-width:$md) {
+              filter: sepia(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:sepia") {
+        @include assert {
+          @include output {
+            @include md\:sepia;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: sepia(100%);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:sepia-0") {
+        @include assert {
+          @include output {
+            @include lg\:sepia-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: sepia(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:sepia") {
+        @include assert {
+          @include output {
+            @include lg\:sepia;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: sepia(100%);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:sepia-0") {
+        @include assert {
+          @include output {
+            @include xl\:sepia-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: sepia(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:sepia") {
+        @include assert {
+          @include output {
+            @include xl\:sepia;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: sepia(100%);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:sepia-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:sepia-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: sepia(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:sepia") {
+        @include assert {
+          @include output {
+            @include \2xl\:sepia;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: sepia(100%);
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include sepia-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            filter: sepia(.25);
+          }
+        }
+      }
+
+      @include it("sm\:sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include sm\:sepia-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: sepia(.25);
+            }
+          }
+        }
+      }
+
+      @include it("md\:sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include md\:sepia-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: sepia(.25);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include lg\:sepia-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: sepia(.25);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include xl\:sepia-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: sepia(.25);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include \2xl\:sepia-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: sepia(.25);
+            }
+          }
+        }
+      }
+
+    }
+  }
 }

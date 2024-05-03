@@ -2,100 +2,303 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backdrop Invert */
-@if $Basic {
-  // /*x
-  @mixin backdrop-invert-0 {
-    @include backdrop-invert-(0);
-  }
-
-  @mixin backdrop-invert {
-    @include backdrop-invert-(100%);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:backdrop-invert-0 {
-      @include backdrop-invert-(0, $sm);
-    }
-
-    @mixin sm\:backdrop-invert {
-      @include backdrop-invert-(100%, $sm);
-    }
-
-    @mixin md\:backdrop-invert-0 {
-      @include backdrop-invert-(0, $md);
-    }
-
-    @mixin md\:backdrop-invert {
-      @include backdrop-invert-(100%, $md);
-    }
-
-    @mixin lg\:backdrop-invert-0 {
-      @include backdrop-invert-(0, $lg);
-    }
-
-    @mixin lg\:backdrop-invert {
-      @include backdrop-invert-(100%, $lg);
-    }
-
-    @mixin xl\:backdrop-invert-0 {
-      @include backdrop-invert-(0, $xl);
-    }
-
-    @mixin xl\:backdrop-invert {
-      @include backdrop-invert-(100%, $xl);
-    }
-
-    @mixin \2xl\:backdrop-invert-0 {
-      @include backdrop-invert-(0, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-invert {
-      @include backdrop-invert-(100%, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-invert-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-backdrop-invert: invert($v) !global;
-      backdrop-filter: __backdrop-filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-backdrop-invert: invert($v) !global;
-        backdrop-filter: __backdrop-filter();
+@include describe("9.Filters") {
+  @include describe("Backdrop Invert") {
+    @include describe("Basic") {
+      @include it("backdrop-invert-0") {
+        @include assert {
+          @include output {
+            @include backdrop-invert-0;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: invert(0);
+          }
+        }
+      }
+      
+      @include it("backdrop-invert") {
+        @include assert {
+          @include output {
+            @include backdrop-invert;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: invert(100%);
+          }
+        }
       }
     }
-  }
 
-  @mixin sm\:backdrop-invert-($v) {
-    @include backdrop-invert-($v, $sm);
-  }
+    @include describe("Rwd") {
+      @include it("backdrop-invert-0") {
+        @include assert {
+          @include output {
+            @include backdrop-invert-0;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: invert(0);
+          }
+        }
+      }
+      
+      @include it("backdrop-invert") {
+        @include assert {
+          @include output {
+            @include backdrop-invert;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: invert(100%);
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-invert-0") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-invert-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: invert(0);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-invert") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-invert;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: invert(100%);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-invert-0") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-invert-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: invert(0);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-invert") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-invert;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: invert(100%);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-invert-0") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-invert-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: invert(0);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-invert") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-invert;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: invert(100%);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-invert-0") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-invert-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: invert(0);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-invert") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-invert;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: invert(100%);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-invert-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-invert-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: invert(0);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-invert") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-invert;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: invert(100%);
+            }
+          }
+        }
+      }
+    }
 
-  @mixin md\:backdrop-invert-($v) {
-    @include backdrop-invert-($v, $md);
-  }
+    @include describe("Custom") {
+      @include it("backdrop-invert-(.25)") {
+        @include assert {
+          @include output {
+            @include backdrop-invert-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: invert(.25);
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-invert-(.25)") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-invert-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: invert(.25);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-invert-(.25)") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-invert-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: invert(.25);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-invert-(.25)") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-invert-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: invert(.25);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-invert-(.25)") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-invert-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: invert(.25);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-invert-(.25)") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-invert-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: invert(.25);
+            }
+          }
+        }
+      }
 
-  @mixin lg\:backdrop-invert-($v) {
-    @include backdrop-invert-($v, $lg);
+    }
   }
-
-  @mixin xl\:backdrop-invert-($v) {
-    @include backdrop-invert-($v, $xl);
-  }
-
-  @mixin \2xl\:backdrop-invert-($v) {
-    @include backdrop-invert-($v, $\2xl);
-  }
-
-  // x*/
 }

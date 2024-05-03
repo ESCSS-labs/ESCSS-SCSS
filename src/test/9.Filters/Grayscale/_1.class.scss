@@ -2,99 +2,276 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Grayscale */
-@if $Basic {
-  // /*x
-  @mixin grayscale-0 {
-    @include grayscale-(0);
-  }
+@include describe("9.Filters") {
+  @include describe("Grayscale") {
+    @include describe("Basic") {
+      @include it("grayscale-0") {
+        @include assert {
+          @include output {
+            @include grayscale-0;
+            @include clear;
+          }
 
-  @mixin grayscale {
-    @include grayscale-(100%);
-  }
+          @include expect {
+            filter: grayscale(0);
+          }
+        }
+      }
 
-  // x*/
-}
+      @include it("grayscale") {
+        @include assert {
+          @include output {
+            @include grayscale;
+            @include clear;
+          }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:grayscale-0 {
-      @include grayscale-(0, $sm);
+          @include expect {
+            filter: grayscale(100%);
+          }
+        }
+      }
     }
 
-    @mixin sm\:grayscale {
-      @include grayscale-(100%, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:grayscale-0") {
+        @include assert {
+          @include output {
+            @include sm\:grayscale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:grayscale") {
+        @include assert {
+          @include output {
+            @include sm\:grayscale;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: grayscale(100%);
+            }
+          }
+        }
+      }
+
+      @include it("md\:grayscale-0") {
+        @include assert {
+          @include output {
+            @include md\:grayscale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:grayscale") {
+        @include assert {
+          @include output {
+            @include md\:grayscale;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: grayscale(100%);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:grayscale-0") {
+        @include assert {
+          @include output {
+            @include lg\:grayscale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:grayscale") {
+        @include assert {
+          @include output {
+            @include lg\:grayscale;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: grayscale(100%);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:grayscale-0") {
+        @include assert {
+          @include output {
+            @include xl\:grayscale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:grayscale") {
+        @include assert {
+          @include output {
+            @include xl\:grayscale;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: grayscale(100%);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:grayscale-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:grayscale-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:grayscale") {
+        @include assert {
+          @include output {
+            @include \2xl\:grayscale;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: grayscale(100%);
+            }
+          }
+        }
+      }
     }
 
-    @mixin md\:grayscale-0 {
-      @include grayscale-(0, $md);
-    }
+    @include describe("Custom") {
+      @include it("grayscale-(50%)") {
+        @include assert {
+          @include output {
+            @include grayscale-(50%);
+            @include clear;
+          }
 
-    @mixin md\:grayscale {
-      @include grayscale-(100%, $md);
-    }
+          @include expect {
+            filter: grayscale(50%);
+          }
+        }
+      }
 
-    @mixin lg\:grayscale-0 {
-      @include grayscale-(0, $lg);
-    }
+      @include it("sm\:grayscale-(50%)") {
+        @include assert {
+          @include output {
+            @include sm\:grayscale-(50%);
+            @include clear;
+          }
 
-    @mixin lg\:grayscale {
-      @include grayscale-(100%, $lg);
-    }
+          @include expect {
+            @media(min-width:$sm) {
+              filter: grayscale(50%);
+            }
+          }
+        }
+      }
 
-    @mixin xl\:grayscale-0 {
-      @include grayscale-(0, $xl);
-    }
+      @include it("md\:grayscale-(50%)") {
+        @include assert {
+          @include output {
+            @include md\:grayscale-(50%);
+            @include clear;
+          }
 
-    @mixin xl\:grayscale {
-      @include grayscale-(100%, $xl);
-    }
+          @include expect {
+            @media(min-width:$md) {
+              filter: grayscale(50%);
+            }
+          }
+        }
+      }
 
-    @mixin \2xl\:grayscale-0 {
-      @include grayscale-(0, $\2xl);
-    }
+      @include it("lg\:grayscale-(50%)") {
+        @include assert {
+          @include output {
+            @include lg\:grayscale-(50%);
+            @include clear;
+          }
 
-    @mixin \2xl\:grayscale {
-      @include grayscale-(100%, $\2xl);
-    }
-    // x*/
-  }
-}
+          @include expect {
+            @media(min-width:$lg) {
+              filter: grayscale(50%);
+            }
+          }
+        }
+      }
 
-@if $Custom {
-  // /*x
-  @mixin grayscale-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-grayscale: grayscale($v) !global;
-      filter: __filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-grayscale: grayscale($v) !global;
-        filter: __filter();
+      @include it("xl\:grayscale-(50%)") {
+        @include assert {
+          @include output {
+            @include xl\:grayscale-(50%);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: grayscale(50%);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:grayscale-(50%)") {
+        @include assert {
+          @include output {
+            @include \2xl\:grayscale-(50%);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: grayscale(50%);
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:grayscale-($v) {
-    @include grayscale-($v, $sm);
-  }
-
-  @mixin md\:grayscale-($v) {
-    @include grayscale-($v, $md);
-  }
-
-  @mixin lg\:grayscale-($v) {
-    @include grayscale-($v, $lg);
-  }
-
-  @mixin xl\:grayscale-($v) {
-    @include grayscale-($v, $xl);
-  }
-
-  @mixin \2xl\:grayscale-($v) {
-    @include grayscale-($v, $\2xl);
-  }
-
-  // x*/
 }

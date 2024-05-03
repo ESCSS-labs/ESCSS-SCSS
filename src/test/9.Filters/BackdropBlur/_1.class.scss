@@ -2,244 +2,805 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backdrop Blur */
-@if $Basic {
-  // /*x
-  @mixin backdrop-blur-none {
-    @include backdrop-blur-(0);
-  }
+@include describe("9.Filters") {
+  @include describe("Backdrop Blur") {
+    @include describe("Basic") {
+      @include it("backdrop-blur-none") {
+        @include assert {
+          @include output {
+            @include backdrop-blur-none;
+            @include clear;
+          }
 
-  @mixin backdrop-blur-sm {
-    @include backdrop-blur-($blur-sm);
-  }
+          @include expect {
+            backdrop-filter: blur(0);
+          }
+        }
+      }
 
-  @mixin backdrop-blur {
-    @include backdrop-blur-($blur-);
-  }
+      @include it("backdrop-blur-sm") {
+        @include assert {
+          @include output {
+            @include backdrop-blur-sm;
+            @include clear;
+          }
 
-  @mixin backdrop-blur-md {
-    @include backdrop-blur-($blur-md);
-  }
+          @include expect {
+            backdrop-filter: blur(4px);
+          }
+        }
+      }
 
-  @mixin backdrop-blur-lg {
-    @include backdrop-blur-($blur-lg);
-  }
+      @include it("backdrop-blur") {
+        @include assert {
+          @include output {
+            @include backdrop-blur;
+            @include clear;
+          }
 
-  @mixin backdrop-blur-xl {
-    @include backdrop-blur-($blur-xl);
-  }
+          @include expect {
+            backdrop-filter: blur(8px);
+          }
+        }
+      }
 
-  @mixin backdrop-blur-2xl {
-    @include backdrop-blur-($blur-2xl);
-  }
+      @include it("backdrop-blur-md") {
+        @include assert {
+          @include output {
+            @include backdrop-blur-md;
+            @include clear;
+          }
 
-  @mixin backdrop-blur-3xl {
-    @include backdrop-blur-($blur-3xl);
-  }
+          @include expect {
+            backdrop-filter: blur(12px);
+          }
+        }
+      }
 
-  // x*/
-}
+      @include it("backdrop-blur-lg") {
+        @include assert {
+          @include output {
+            @include backdrop-blur-lg;
+            @include clear;
+          }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:backdrop-blur-none {
-      @include backdrop-blur-(0, $sm);
-    }
+          @include expect {
+            backdrop-filter: blur(16px);
+          }
+        }
+      }
 
-    @mixin sm\:backdrop-blur-sm {
-      @include backdrop-blur-($blur-sm, $sm);
-    }
+      @include it("backdrop-blur-xl") {
+        @include assert {
+          @include output {
+            @include backdrop-blur-xl;
+            @include clear;
+          }
 
-    @mixin sm\:backdrop-blur {
-      @include backdrop-blur-($blur-, $sm);
-    }
+          @include expect {
+            backdrop-filter: blur(24px);
+          }
+        }
+      }
 
-    @mixin sm\:backdrop-blur-md {
-      @include backdrop-blur-($blur-md, $sm);
-    }
+      @include it("backdrop-blur-2xl") {
+        @include assert {
+          @include output {
+            @include backdrop-blur-2xl;
+            @include clear;
+          }
 
-    @mixin sm\:backdrop-blur-lg {
-      @include backdrop-blur-($blur-lg, $sm);
-    }
+          @include expect {
+            backdrop-filter: blur(40px);
+          }
+        }
+      }
 
-    @mixin sm\:backdrop-blur-xl {
-      @include backdrop-blur-($blur-xl, $sm);
-    }
+      @include it("backdrop-blur-3xl") {
+        @include assert {
+          @include output {
+            @include backdrop-blur-3xl;
+            @include clear;
+          }
 
-    @mixin sm\:backdrop-blur-2xl {
-      @include backdrop-blur-($blur-2xl, $sm);
-    }
-
-    @mixin sm\:backdrop-blur-3xl {
-      @include backdrop-blur-($blur-3xl, $sm);
-    }
-
-    @mixin md\:backdrop-blur-none {
-      @include backdrop-blur-(0, $md);
-    }
-
-    @mixin md\:backdrop-blur-sm {
-      @include backdrop-blur-($blur-sm, $md);
-    }
-
-    @mixin md\:backdrop-blur {
-      @include backdrop-blur-($blur-, $md);
-    }
-
-    @mixin md\:backdrop-blur-md {
-      @include backdrop-blur-($blur-md, $md);
-    }
-
-    @mixin md\:backdrop-blur-lg {
-      @include backdrop-blur-($blur-lg, $md);
-    }
-
-    @mixin md\:backdrop-blur-xl {
-      @include backdrop-blur-($blur-xl, $md);
-    }
-
-    @mixin md\:backdrop-blur-2xl {
-      @include backdrop-blur-($blur-2xl, $md);
-    }
-
-    @mixin md\:backdrop-blur-3xl {
-      @include backdrop-blur-($blur-3xl, $md);
-    }
-
-    @mixin lg\:backdrop-blur-none {
-      @include backdrop-blur-(0, $lg);
-    }
-
-    @mixin lg\:backdrop-blur-sm {
-      @include backdrop-blur-($blur-sm, $lg);
-    }
-
-    @mixin lg\:backdrop-blur {
-      @include backdrop-blur-($blur-, $lg);
-    }
-
-    @mixin lg\:backdrop-blur-md {
-      @include backdrop-blur-($blur-md, $lg);
-    }
-
-    @mixin lg\:backdrop-blur-lg {
-      @include backdrop-blur-($blur-lg, $lg);
-    }
-
-    @mixin lg\:backdrop-blur-xl {
-      @include backdrop-blur-($blur-xl, $lg);
-    }
-
-    @mixin lg\:backdrop-blur-2xl {
-      @include backdrop-blur-($blur-2xl, $lg);
-    }
-
-    @mixin lg\:backdrop-blur-3xl {
-      @include backdrop-blur-($blur-3xl, $lg);
-    }
-
-    @mixin xl\:backdrop-blur-none {
-      @include backdrop-blur-(0, $xl);
-    }
-
-    @mixin xl\:backdrop-blur-sm {
-      @include backdrop-blur-($blur-sm, $xl);
-    }
-
-    @mixin xl\:backdrop-blur {
-      @include backdrop-blur-($blur-, $xl);
-    }
-
-    @mixin xl\:backdrop-blur-md {
-      @include backdrop-blur-($blur-md, $xl);
-    }
-
-    @mixin xl\:backdrop-blur-lg {
-      @include backdrop-blur-($blur-lg, $xl);
-    }
-
-    @mixin xl\:backdrop-blur-xl {
-      @include backdrop-blur-($blur-xl, $xl);
-    }
-
-    @mixin xl\:backdrop-blur-2xl {
-      @include backdrop-blur-($blur-2xl, $xl);
-    }
-
-    @mixin xl\:backdrop-blur-3xl {
-      @include backdrop-blur-($blur-3xl, $xl);
-    }
-
-    @mixin \2xl\:backdrop-blur-none {
-      @include backdrop-blur-(0, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-blur-sm {
-      @include backdrop-blur-($blur-sm, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-blur {
-      @include backdrop-blur-($blur-, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-blur-md {
-      @include backdrop-blur-($blur-md, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-blur-lg {
-      @include backdrop-blur-($blur-lg, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-blur-xl {
-      @include backdrop-blur-($blur-xl, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-blur-2xl {
-      @include backdrop-blur-($blur-2xl, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-blur-3xl {
-      @include backdrop-blur-($blur-3xl, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-blur-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-backdrop-blur: blur($v) !global;
-      backdrop-filter: __backdrop-filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-backdrop-blur: blur($v) !global;
-        backdrop-filter: __backdrop-filter();
+          @include expect {
+            backdrop-filter: blur(64px);
+          }
+        }
       }
     }
-  }
 
-  @mixin sm\:backdrop-blur-($v) {
-    @include backdrop-blur-($v, $sm);
-  }
+    @include describe("Rwd") {
+      @include it("sm\:backdrop-blur-none") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-blur-none;
+            @include clear;
+          }
 
-  @mixin md\:backdrop-blur-($v) {
-    @include backdrop-blur-($v, $md);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: blur(0);
+            }
+          }
+        }
+      }
 
-  @mixin lg\:backdrop-blur-($v) {
-    @include backdrop-blur-($v, $lg);
-  }
+      @include it("sm\:backdrop-blur-sm") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-blur-sm;
+            @include clear;
+          }
 
-  @mixin xl\:backdrop-blur-($v) {
-    @include backdrop-blur-($v, $xl);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: blur(4px);
+            }
+          }
+        }
+      }
 
-  @mixin \2xl\:backdrop-blur-($v) {
-    @include backdrop-blur-($v, $\2xl);
-  }
+      @include it("sm\:backdrop-blur") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-blur;
+            @include clear;
+          }
 
-  // x*/
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-blur-md") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-blur-lg") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-blur-xl") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-blur-2xl") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-blur-3xl") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: blur(64px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-blur-none") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-blur-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: blur(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-blur-sm") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-blur-sm;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: blur(4px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-blur") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-blur;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-blur-md") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-blur-lg") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-blur-xl") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-blur-2xl") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-blur-3xl") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: blur(64px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-blur-none") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-blur-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: blur(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-blur-sm") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-blur-sm;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: blur(4px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-blur") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-blur;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-blur-md") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-blur-lg") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-blur-xl") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-blur-2xl") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-blur-3xl") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: blur(64px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-blur-none") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-blur-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: blur(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-blur-sm") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-blur-sm;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: blur(4px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-blur") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-blur;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-blur-md") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-blur-lg") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-blur-xl") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-blur-2xl") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-blur-3xl") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: blur(64px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-blur-none") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-blur-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: blur(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-blur-sm") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-blur-sm;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: blur(4px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-blur") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-blur;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-blur-md") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-blur-lg") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-blur-xl") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-blur-2xl") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-blur-3xl") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: blur(64px);
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("backdrop-blur-(2px)") {
+        @include assert {
+          @include output {
+            @include backdrop-blur-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: blur(2px);
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-blur-(2px)") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-blur-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: blur(2px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-blur-(2px)") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-blur-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: blur(2px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-blur-(2px)") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-blur-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: blur(2px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-blur-(2px)") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-blur-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: blur(2px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-blur-(2px)") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-blur-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: blur(2px);
+            }
+          }
+        }
+      }
+
+    }
+  }
 }

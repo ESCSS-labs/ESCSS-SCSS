@@ -2,217 +2,717 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Contrast */
-@if $Basic {
-  // /*x
-  @mixin contrast-0 {
-    @include contrast-(0);
-  }
+@include describe("9.Filters") {
+  @include describe("Contrast") {
+    @include describe("Basic") {
+      @include it("contrast-0") {
+        @include assert {
+          @include output {
+            @include contrast-0;
+            @include clear;
+          }
 
-  @mixin contrast-50 {
-    @include contrast-(0.5);
-  }
+          @include expect {
+            filter: contrast(0);
+          }
+        }
+      }
 
-  @mixin contrast-75 {
-    @include contrast-(0.75);
-  }
+      @include it("contrast-50") {
+        @include assert {
+          @include output {
+            @include contrast-50;
+            @include clear;
+          }
 
-  @mixin contrast-100 {
-    @include contrast-(1);
-  }
+          @include expect {
+            filter: contrast(.5);
+          }
+        }
+      }
 
-  @mixin contrast-125 {
-    @include contrast-(1.25);
-  }
+      @include it("contrast-75") {
+        @include assert {
+          @include output {
+            @include contrast-75;
+            @include clear;
+          }
 
-  @mixin contrast-150 {
-    @include contrast-(1.5);
-  }
+          @include expect {
+            filter: contrast(.75);
+          }
+        }
+      }
 
-  @mixin contrast-200 {
-    @include contrast-(2);
-  } // x*/
-}
+      @include it("contrast-100") {
+        @include assert {
+          @include output {
+            @include contrast-100;
+            @include clear;
+          }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:contrast-0 {
-      @include contrast-(0, $sm);
-    }
+          @include expect {
+            filter: contrast(1);
+          }
+        }
+      }
 
-    @mixin sm\:contrast-50 {
-      @include contrast-(0.5, $sm);
-    }
+      @include it("contrast-125") {
+        @include assert {
+          @include output {
+            @include contrast-125;
+            @include clear;
+          }
 
-    @mixin sm\:contrast-75 {
-      @include contrast-(0.75, $sm);
-    }
+          @include expect {
+            filter: contrast(1.25);
+          }
+        }
+      }
 
-    @mixin sm\:contrast-100 {
-      @include contrast-(1, $sm);
-    }
+      @include it("contrast-150") {
+        @include assert {
+          @include output {
+            @include contrast-150;
+            @include clear;
+          }
 
-    @mixin sm\:contrast-125 {
-      @include contrast-(1.25, $sm);
-    }
+          @include expect {
+            filter: contrast(1.5);
+          }
+        }
+      }
 
-    @mixin sm\:contrast-150 {
-      @include contrast-(1.5, $sm);
-    }
+      @include it("contrast-200") {
+        @include assert {
+          @include output {
+            @include contrast-200;
+            @include clear;
+          }
 
-    @mixin sm\:contrast-200 {
-      @include contrast-(2, $sm);
-    }
-
-    @mixin md\:contrast-0 {
-      @include contrast-(0, $md);
-    }
-
-    @mixin md\:contrast-50 {
-      @include contrast-(0.5, $md);
-    }
-
-    @mixin md\:contrast-75 {
-      @include contrast-(0.75, $md);
-    }
-
-    @mixin md\:contrast-100 {
-      @include contrast-(1, $md);
-    }
-
-    @mixin md\:contrast-125 {
-      @include contrast-(1.25, $md);
-    }
-
-    @mixin md\:contrast-150 {
-      @include contrast-(1.5, $md);
-    }
-
-    @mixin md\:contrast-200 {
-      @include contrast-(2, $md);
-    }
-
-    @mixin lg\:contrast-0 {
-      @include contrast-(0, $lg);
-    }
-
-    @mixin lg\:contrast-50 {
-      @include contrast-(0.5, $lg);
-    }
-
-    @mixin lg\:contrast-75 {
-      @include contrast-(0.75, $lg);
-    }
-
-    @mixin lg\:contrast-100 {
-      @include contrast-(1, $lg);
-    }
-
-    @mixin lg\:contrast-125 {
-      @include contrast-(1.25, $lg);
-    }
-
-    @mixin lg\:contrast-150 {
-      @include contrast-(1.5, $lg);
-    }
-
-    @mixin lg\:contrast-200 {
-      @include contrast-(2, $lg);
-    }
-
-    @mixin xl\:contrast-0 {
-      @include contrast-(0, $xl);
-    }
-
-    @mixin xl\:contrast-50 {
-      @include contrast-(0.5, $xl);
-    }
-
-    @mixin xl\:contrast-75 {
-      @include contrast-(0.75, $xl);
-    }
-
-    @mixin xl\:contrast-100 {
-      @include contrast-(1, $xl);
-    }
-
-    @mixin xl\:contrast-125 {
-      @include contrast-(1.25, $xl);
-    }
-
-    @mixin xl\:contrast-150 {
-      @include contrast-(1.5, $xl);
-    }
-
-    @mixin xl\:contrast-200 {
-      @include contrast-(2, $xl);
-    }
-
-    @mixin \2xl\:contrast-0 {
-      @include contrast-(0, $\2xl);
-    }
-
-    @mixin \2xl\:contrast-50 {
-      @include contrast-(0.5, $\2xl);
-    }
-
-    @mixin \2xl\:contrast-75 {
-      @include contrast-(0.75, $\2xl);
-    }
-
-    @mixin \2xl\:contrast-100 {
-      @include contrast-(1, $\2xl);
-    }
-
-    @mixin \2xl\:contrast-125 {
-      @include contrast-(1.25, $\2xl);
-    }
-
-    @mixin \2xl\:contrast-150 {
-      @include contrast-(1.5, $\2xl);
-    }
-
-    @mixin \2xl\:contrast-200 {
-      @include contrast-(2, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin contrast-($v, $sm) {
-    @if $rwd==null {
-      $--tw-contrast: contrast($v) !global;
-      filter: __filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-contrast: contrast($v) !global;
-        filter: __filter();
+          @include expect {
+            filter: contrast(2);
+          }
+        }
       }
     }
-  }
 
-  @mixin sm\:contrast-($v) {
-    @include contrast-($v, $sm);
-  }
+    @include describe("Rwd") {
+      @include it("sm\:contrast-0") {
+        @include assert {
+          @include output {
+            @include sm\:contrast-0;
+            @include clear;
+          }
 
-  @mixin md\:contrast-($v) {
-    @include contrast-($v, $md);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              filter: contrast(0);
+            }
+          }
+        }
+      }
 
-  @mixin lg\:contrast-($v) {
-    @include contrast-($v, $lg);
-  }
+      @include it("sm\:contrast-50") {
+        @include assert {
+          @include output {
+            @include sm\:contrast-50;
+            @include clear;
+          }
 
-  @mixin xl\:contrast-($v) {
-    @include contrast-($v, $xl);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              filter: contrast(.5);
+            }
+          }
+        }
+      }
 
-  @mixin \2xl\:contrast-($v) {
-    @include contrast-($v, $\2xl);
-  }
+      @include it("sm\:contrast-75") {
+        @include assert {
+          @include output {
+            @include sm\:contrast-75;
+            @include clear;
+          }
 
-  // x*/
+          @include expect {
+            @media(min-width:$sm) {
+              filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:contrast-100") {
+        @include assert {
+          @include output {
+            @include sm\:contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:contrast-125") {
+        @include assert {
+          @include output {
+            @include sm\:contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:contrast-150") {
+        @include assert {
+          @include output {
+            @include sm\:contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:contrast-200") {
+        @include assert {
+          @include output {
+            @include sm\:contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: contrast(2);
+            }
+          }
+        }
+      }
+
+      @include it("md\:contrast-0") {
+        @include assert {
+          @include output {
+            @include md\:contrast-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: contrast(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:contrast-50") {
+        @include assert {
+          @include output {
+            @include md\:contrast-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: contrast(.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:contrast-75") {
+        @include assert {
+          @include output {
+            @include md\:contrast-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("md\:contrast-100") {
+        @include assert {
+          @include output {
+            @include md\:contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:contrast-125") {
+        @include assert {
+          @include output {
+            @include md\:contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("md\:contrast-150") {
+        @include assert {
+          @include output {
+            @include md\:contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:contrast-200") {
+        @include assert {
+          @include output {
+            @include md\:contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: contrast(2);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:contrast-0") {
+        @include assert {
+          @include output {
+            @include lg\:contrast-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: contrast(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:contrast-50") {
+        @include assert {
+          @include output {
+            @include lg\:contrast-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: contrast(.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:contrast-75") {
+        @include assert {
+          @include output {
+            @include lg\:contrast-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:contrast-100") {
+        @include assert {
+          @include output {
+            @include lg\:contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:contrast-125") {
+        @include assert {
+          @include output {
+            @include lg\:contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:contrast-150") {
+        @include assert {
+          @include output {
+            @include lg\:contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:contrast-200") {
+        @include assert {
+          @include output {
+            @include lg\:contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: contrast(2);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:contrast-0") {
+        @include assert {
+          @include output {
+            @include xl\:contrast-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: contrast(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:contrast-50") {
+        @include assert {
+          @include output {
+            @include xl\:contrast-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: contrast(.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:contrast-75") {
+        @include assert {
+          @include output {
+            @include xl\:contrast-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:contrast-100") {
+        @include assert {
+          @include output {
+            @include xl\:contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:contrast-125") {
+        @include assert {
+          @include output {
+            @include xl\:contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:contrast-150") {
+        @include assert {
+          @include output {
+            @include xl\:contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:contrast-200") {
+        @include assert {
+          @include output {
+            @include xl\:contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: contrast(2);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:contrast-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:contrast-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: contrast(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:contrast-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:contrast-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: contrast(.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:contrast-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:contrast-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:contrast-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:contrast-125") {
+        @include assert {
+          @include output {
+            @include \2xl\:contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:contrast-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:contrast-200") {
+        @include assert {
+          @include output {
+            @include \2xl\:contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: contrast(2);
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include contrast-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            filter: contrast(.25);
+          }
+        }
+      }
+
+      @include it("sm\:contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include sm\:contrast-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: contrast(.25);
+            }
+          }
+        }
+      }
+
+      @include it("md\:contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include md\:contrast-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: contrast(.25);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include lg\:contrast-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: contrast(.25);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include xl\:contrast-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: contrast(.25);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include \2xl\:contrast-(.25);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: contrast(.25);
+            }
+          }
+        }
+      }
+
+    }
+  }
 }

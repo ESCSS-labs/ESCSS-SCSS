@@ -2,171 +2,532 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backdrop Saturate */
-@if $Basic {
-  // /*x
-  @mixin backdrop-saturate-0 {
-    @include backdrop-saturate-(0);
-  }
-
-  @mixin backdrop-saturate-50 {
-    @include backdrop-saturate-(0.5);
-  }
-
-  @mixin backdrop-saturate-100 {
-    @include backdrop-saturate-(1);
-  }
-
-  @mixin backdrop-saturate-150 {
-    @include backdrop-saturate-(1.5);
-  }
-
-  @mixin backdrop-saturate-200 {
-    @include backdrop-saturate-(2);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:backdrop-saturate-0 {
-      @include backdrop-saturate-(0, $sm);
+@include describe("9.Filters") {
+  @include describe("Backdrop Saturate") {
+    @include describe("Basic") {
+      @include it("backdrop-saturate-0") {
+        @include assert {
+          @include output {
+            @include backdrop-saturate-0;
+            @include clear;
+          }
+    
+          @include expect {
+            backdrop-filter: saturate(0);
+          }
+        }
+      }
+    
+      @include it("backdrop-saturate-50") {
+        @include assert {
+          @include output {
+            @include backdrop-saturate-50;
+            @include clear;
+          }
+    
+          @include expect {
+            backdrop-filter: saturate(.5);
+          }
+        }
+      }
+    
+      @include it("backdrop-saturate-100") {
+        @include assert {
+          @include output {
+            @include backdrop-saturate-100;
+            @include clear;
+          }
+    
+          @include expect {
+            backdrop-filter: saturate(1);
+          }
+        }
+      }
+    
+      @include it("backdrop-saturate-150") {
+        @include assert {
+          @include output {
+            @include backdrop-saturate-150;
+            @include clear;
+          }
+    
+          @include expect {
+            backdrop-filter: saturate(1.5);
+          }
+        }
+      }
+    
+      @include it("backdrop-saturate-200") {
+        @include assert {
+          @include output {
+            @include backdrop-saturate-200;
+            @include clear;
+          }
+    
+          @include expect {
+            backdrop-filter: saturate(2);
+          }
+        }
+      }
     }
 
-    @mixin sm\:backdrop-saturate-50 {
-      @include backdrop-saturate-(0.5, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:backdrop-saturate-0") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-saturate-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: saturate(0);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-saturate-50") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-saturate-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: saturate(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-saturate-100") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-saturate-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: saturate(1);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-saturate-150") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-saturate-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: saturate(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-saturate-200") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-saturate-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: saturate(2);
+            }
+          }
+        }
+      }@include it("md\:backdrop-saturate-0") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-saturate-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: saturate(0);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-saturate-50") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-saturate-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: saturate(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-saturate-100") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-saturate-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: saturate(1);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-saturate-150") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-saturate-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: saturate(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-saturate-200") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-saturate-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: saturate(2);
+            }
+          }
+        }
+      }@include it("lg\:backdrop-saturate-0") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-saturate-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: saturate(0);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-saturate-50") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-saturate-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: saturate(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-saturate-100") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-saturate-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: saturate(1);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-saturate-150") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-saturate-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: saturate(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-saturate-200") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-saturate-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: saturate(2);
+            }
+          }
+        }
+      }@include it("xl\:backdrop-saturate-0") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-saturate-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: saturate(0);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-saturate-50") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-saturate-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: saturate(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-saturate-100") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-saturate-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: saturate(1);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-saturate-150") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-saturate-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: saturate(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-saturate-200") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-saturate-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: saturate(2);
+            }
+          }
+        }
+      }@include it("\2xl\:backdrop-saturate-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-saturate-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: saturate(0);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-saturate-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-saturate-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: saturate(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-saturate-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-saturate-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: saturate(1);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-saturate-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-saturate-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: saturate(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-saturate-200") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-saturate-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: saturate(2);
+            }
+          }
+        }
+      }
     }
 
-    @mixin sm\:backdrop-saturate-100 {
-      @include backdrop-saturate-(1, $sm);
-    }
+    @include describe("Custom") {
+      @include it("backdrop-saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include backdrop-saturate-(.25);
+            @include clear;
+          }
 
-    @mixin sm\:backdrop-saturate-150 {
-      @include backdrop-saturate-(1.5, $sm);
-    }
+          @include expect {
+            backdrop-filter: saturate(.25);
+          }
+        }
+      }
 
-    @mixin sm\:backdrop-saturate-200 {
-      @include backdrop-saturate-(2, $sm);
-    }
+      @include it("sm\:backdrop-saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-saturate-(.25);
+            @include clear;
+          }
 
-    @mixin md\:backdrop-saturate-0 {
-      @include backdrop-saturate-(0, $md);
-    }
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: saturate(.25);
+            }
+          }
+        }
+      }
 
-    @mixin md\:backdrop-saturate-50 {
-      @include backdrop-saturate-(0.5, $md);
-    }
+      @include it("md\:backdrop-saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-saturate-(.25);
+            @include clear;
+          }
 
-    @mixin md\:backdrop-saturate-100 {
-      @include backdrop-saturate-(1, $md);
-    }
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: saturate(.25);
+            }
+          }
+        }
+      }
 
-    @mixin md\:backdrop-saturate-150 {
-      @include backdrop-saturate-(1.5, $md);
-    }
+      @include it("lg\:backdrop-saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-saturate-(.25);
+            @include clear;
+          }
 
-    @mixin md\:backdrop-saturate-200 {
-      @include backdrop-saturate-(2, $md);
-    }
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: saturate(.25);
+            }
+          }
+        }
+      }
 
-    @mixin lg\:backdrop-saturate-0 {
-      @include backdrop-saturate-(0, $lg);
-    }
+      @include it("xl\:backdrop-saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-saturate-(.25);
+            @include clear;
+          }
 
-    @mixin lg\:backdrop-saturate-50 {
-      @include backdrop-saturate-(0.5, $lg);
-    }
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: saturate(.25);
+            }
+          }
+        }
+      }
 
-    @mixin lg\:backdrop-saturate-100 {
-      @include backdrop-saturate-(1, $lg);
-    }
+      @include it("\2xl\:backdrop-saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-saturate-(.25);
+            @include clear;
+          }
 
-    @mixin lg\:backdrop-saturate-150 {
-      @include backdrop-saturate-(1.5, $lg);
-    }
-
-    @mixin lg\:backdrop-saturate-200 {
-      @include backdrop-saturate-(2, $lg);
-    }
-
-    @mixin xl\:backdrop-saturate-0 {
-      @include backdrop-saturate-(0, $xl);
-    }
-
-    @mixin xl\:backdrop-saturate-50 {
-      @include backdrop-saturate-(0.5, $xl);
-    }
-
-    @mixin xl\:backdrop-saturate-100 {
-      @include backdrop-saturate-(1, $xl);
-    }
-
-    @mixin xl\:backdrop-saturate-150 {
-      @include backdrop-saturate-(1.5, $xl);
-    }
-
-    @mixin xl\:backdrop-saturate-200 {
-      @include backdrop-saturate-(2, $xl);
-    }
-
-    @mixin \2xl\:backdrop-saturate-0 {
-      @include backdrop-saturate-(0, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-saturate-50 {
-      @include backdrop-saturate-(0.5, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-saturate-100 {
-      @include backdrop-saturate-(1, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-saturate-150 {
-      @include backdrop-saturate-(1.5, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-saturate-200 {
-      @include backdrop-saturate-(2, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-saturate-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-backdrop-saturate: saturate($v) !global;
-      backdrop-filter: __backdrop-filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-backdrop-saturate: saturate($v) !global;
-        backdrop-filter: __backdrop-filter();
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: saturate(.25);
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:backdrop-saturate-($v) {
-    @include backdrop-saturate-($v, $sm);
-  }
-
-  @mixin md\:backdrop-saturate-($v) {
-    @include backdrop-saturate-($v, $md);
-  }
-
-  @mixin lg\:backdrop-saturate-($v) {
-    @include backdrop-saturate-($v, $lg);
-  }
-
-  @mixin xl\:backdrop-saturate-($v) {
-    @include backdrop-saturate-($v, $xl);
-  }
-
-  @mixin \2xl\:backdrop-saturate-($v) {
-    @include backdrop-saturate-($v, $\2xl);
-  }
-
-  // x*/
 }

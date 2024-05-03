@@ -2,171 +2,540 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Saturate */
-@if $Basic {
-  // /*x
-  @mixin saturate-0 {
-    @include saturate-(0);
-  }
+@include describe("9.Filters") {
+  @include describe("Saturate") {
+    @include describe("Basic") {
+      @include it("saturate-0") {
+        @include assert {
+          @include output {
+            @include saturate-0;
+            @include clear;
+          }
 
-  @mixin saturate-50 {
-    @include saturate-(0.5);
-  }
+          @include expect {
+            filter: saturate(0);
+          }
+        }
+      }
 
-  @mixin saturate-100 {
-    @include saturate-(1);
-  }
+      @include it("saturate-50") {
+        @include assert {
+          @include output {
+            @include saturate-50;
+            @include clear;
+          }
 
-  @mixin saturate-150 {
-    @include saturate-(1.5);
-  }
+          @include expect {
+            filter: saturate(.5);
+          }
+        }
+      }
 
-  @mixin saturate-200 {
-    @include saturate-(2);
-  }
+      @include it("saturate-100") {
+        @include assert {
+          @include output {
+            @include saturate-100;
+            @include clear;
+          }
 
-  // x*/
-}
+          @include expect {
+            filter: saturate(1);
+          }
+        }
+      }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:saturate-0 {
-      @include saturate-(0, $sm);
+      @include it("saturate-150") {
+        @include assert {
+          @include output {
+            @include saturate-150;
+            @include clear;
+          }
+
+          @include expect {
+            filter: saturate(1.5);
+          }
+        }
+      }
+
+      @include it("saturate-200") {
+        @include assert {
+          @include output {
+            @include saturate-200;
+            @include clear;
+          }
+
+          @include expect {
+            filter: saturate(2);
+          }
+        }
+      }
     }
 
-    @mixin sm\:saturate-50 {
-      @include saturate-(0.5, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:saturate-0") {
+        @include assert {
+          @include output {
+            @include sm\:saturate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: saturate(0);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:saturate-50") {
+        @include assert {
+          @include output {
+            @include sm\:saturate-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: saturate(.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:saturate-100") {
+        @include assert {
+          @include output {
+            @include sm\:saturate-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: saturate(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:saturate-150") {
+        @include assert {
+          @include output {
+            @include sm\:saturate-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: saturate(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:saturate-200") {
+        @include assert {
+          @include output {
+            @include sm\:saturate-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: saturate(2);
+            }
+          }
+        }
+      }
+
+      @include it("md\:saturate-0") {
+        @include assert {
+          @include output {
+            @include md\:saturate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: saturate(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:saturate-50") {
+        @include assert {
+          @include output {
+            @include md\:saturate-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: saturate(.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:saturate-100") {
+        @include assert {
+          @include output {
+            @include md\:saturate-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: saturate(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:saturate-150") {
+        @include assert {
+          @include output {
+            @include md\:saturate-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: saturate(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:saturate-200") {
+        @include assert {
+          @include output {
+            @include md\:saturate-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: saturate(2);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:saturate-0") {
+        @include assert {
+          @include output {
+            @include lg\:saturate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: saturate(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:saturate-50") {
+        @include assert {
+          @include output {
+            @include lg\:saturate-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: saturate(.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:saturate-100") {
+        @include assert {
+          @include output {
+            @include lg\:saturate-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: saturate(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:saturate-150") {
+        @include assert {
+          @include output {
+            @include lg\:saturate-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: saturate(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:saturate-200") {
+        @include assert {
+          @include output {
+            @include lg\:saturate-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: saturate(2);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:saturate-0") {
+        @include assert {
+          @include output {
+            @include xl\:saturate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: saturate(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:saturate-50") {
+        @include assert {
+          @include output {
+            @include xl\:saturate-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: saturate(.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:saturate-100") {
+        @include assert {
+          @include output {
+            @include xl\:saturate-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: saturate(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:saturate-150") {
+        @include assert {
+          @include output {
+            @include xl\:saturate-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: saturate(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:saturate-200") {
+        @include assert {
+          @include output {
+            @include xl\:saturate-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: saturate(2);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:saturate-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:saturate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: saturate(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:saturate-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:saturate-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: saturate(.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:saturate-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:saturate-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: saturate(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:saturate-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:saturate-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: saturate(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:saturate-200") {
+        @include assert {
+          @include output {
+            @include \2xl\:saturate-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: saturate(2);
+            }
+          }
+        }
+      }
     }
 
-    @mixin sm\:saturate-100 {
-      @include saturate-(1, $sm);
-    }
+    @include describe("Custom") {
+      @include it("saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include saturate-(.25);
+            @include clear;
+          }
 
-    @mixin sm\:saturate-150 {
-      @include saturate-(1.5, $sm);
-    }
+          @include expect {
+            filter: saturate(.25);
+          }
+        }
+      }
 
-    @mixin sm\:saturate-200 {
-      @include saturate-(2, $sm);
-    }
+      @include it("sm\:saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include sm\:saturate-(.25);
+            @include clear;
+          }
 
-    @mixin md\:saturate-0 {
-      @include saturate-(0, $md);
-    }
+          @include expect {
+            @media(min-width:$sm) {
+              filter: saturate(.25);
+            }
+          }
+        }
+      }
 
-    @mixin md\:saturate-50 {
-      @include saturate-(0.5, $md);
-    }
+      @include it("md\:saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include md\:saturate-(.25);
+            @include clear;
+          }
 
-    @mixin md\:saturate-100 {
-      @include saturate-(1, $md);
-    }
+          @include expect {
+            @media(min-width:$md) {
+              filter: saturate(.25);
+            }
+          }
+        }
+      }
 
-    @mixin md\:saturate-150 {
-      @include saturate-(1.5, $md);
-    }
+      @include it("lg\:saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include lg\:saturate-(.25);
+            @include clear;
+          }
 
-    @mixin md\:saturate-200 {
-      @include saturate-(2, $md);
-    }
+          @include expect {
+            @media(min-width:$lg) {
+              filter: saturate(.25);
+            }
+          }
+        }
+      }
 
-    @mixin lg\:saturate-0 {
-      @include saturate-(0, $lg);
-    }
+      @include it("xl\:saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include xl\:saturate-(.25);
+            @include clear;
+          }
 
-    @mixin lg\:saturate-50 {
-      @include saturate-(0.5, $lg);
-    }
+          @include expect {
+            @media(min-width:$xl) {
+              filter: saturate(.25);
+            }
+          }
+        }
+      }
 
-    @mixin lg\:saturate-100 {
-      @include saturate-(1, $lg);
-    }
+      @include it("\2xl\:saturate-(.25)") {
+        @include assert {
+          @include output {
+            @include \2xl\:saturate-(.25);
+            @include clear;
+          }
 
-    @mixin lg\:saturate-150 {
-      @include saturate-(1.5, $lg);
-    }
-
-    @mixin lg\:saturate-200 {
-      @include saturate-(2, $lg);
-    }
-
-    @mixin xl\:saturate-0 {
-      @include saturate-(0, $xl);
-    }
-
-    @mixin xl\:saturate-50 {
-      @include saturate-(0.5, $xl);
-    }
-
-    @mixin xl\:saturate-100 {
-      @include saturate-(1, $xl);
-    }
-
-    @mixin xl\:saturate-150 {
-      @include saturate-(1.5, $xl);
-    }
-
-    @mixin xl\:saturate-200 {
-      @include saturate-(2, $xl);
-    }
-
-    @mixin \2xl\:saturate-0 {
-      @include saturate-(0, $\2xl);
-    }
-
-    @mixin \2xl\:saturate-50 {
-      @include saturate-(0.5, $\2xl);
-    }
-
-    @mixin \2xl\:saturate-100 {
-      @include saturate-(1, $\2xl);
-    }
-
-    @mixin \2xl\:saturate-150 {
-      @include saturate-(1.5, $\2xl);
-    }
-
-    @mixin \2xl\:saturate-200 {
-      @include saturate-(2, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin saturate-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-saturate: saturate($v) !global;
-      filter: __filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-saturate: saturate($v) !global;
-        filter: __filter();
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: saturate(.25);
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:saturate-($v) {
-    @include saturate-($v, $sm);
-  }
-
-  @mixin md\:saturate-($v) {
-    @include saturate-($v, $md);
-  }
-
-  @mixin lg\:saturate-($v) {
-    @include saturate-($v, $lg);
-  }
-
-  @mixin xl\:saturate-($v) {
-    @include saturate-($v, $xl);
-  }
-
-  @mixin \2xl\:saturate-($v) {
-    @include saturate-($v, $\2xl);
-  }
-
-  // x*/
 }

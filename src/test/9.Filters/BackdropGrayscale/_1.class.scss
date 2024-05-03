@@ -2,97 +2,276 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backdrop Grayscale */
-@if $Basic {
-  // /*x
-  @mixin backdrop-grayscale-0 {
-    @include backdrop-grayscale-(0);
-  }
-
-  @mixin backdrop-grayscale {
-    @include backdrop-grayscale-(100%);
-  } // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:backdrop-grayscale-0 {
-      @include backdrop-grayscale-(0, $sm);
+@include describe("9.Filters") {
+  @include describe("Backdrop Grayscale") {
+    @include describe("Basic") {
+      @include it("backdrop-grayscale-0") {
+        @include assert {
+          @include output {
+            @include backdrop-grayscale-0;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: grayscale(0);
+          }
+        }
+      }
+      
+      @include it("backdrop-grayscale") {
+        @include assert {
+          @include output {
+            @include backdrop-grayscale;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: grayscale(100%);
+          }
+        }
+      }
     }
 
-    @mixin sm\:backdrop-grayscale {
-      @include backdrop-grayscale-(100%, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:backdrop-grayscale-0") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-grayscale-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: grayscale(0);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-grayscale") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-grayscale;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: grayscale(100%);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-grayscale-0") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-grayscale-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: grayscale(0);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-grayscale") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-grayscale;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: grayscale(100%);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-grayscale-0") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-grayscale-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: grayscale(0);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-grayscale") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-grayscale;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: grayscale(100%);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-grayscale-0") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-grayscale-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: grayscale(0);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-grayscale") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-grayscale;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: grayscale(100%);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-grayscale-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-grayscale-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: grayscale(0);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-grayscale") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-grayscale;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: grayscale(100%);
+            }
+          }
+        }
+      }
     }
 
-    @mixin md\:backdrop-grayscale-0 {
-      @include backdrop-grayscale-(0, $md);
-    }
-
-    @mixin md\:backdrop-grayscale {
-      @include backdrop-grayscale-(100%, $md);
-    }
-
-    @mixin lg\:backdrop-grayscale-0 {
-      @include backdrop-grayscale-(0, $lg);
-    }
-
-    @mixin lg\:backdrop-grayscale {
-      @include backdrop-grayscale-(100%, $lg);
-    }
-
-    @mixin xl\:backdrop-grayscale-0 {
-      @include backdrop-grayscale-(0, $xl);
-    }
-
-    @mixin xl\:backdrop-grayscale {
-      @include backdrop-grayscale-(100%, $xl);
-    }
-
-    @mixin \2xl\:backdrop-grayscale-0 {
-      @include backdrop-grayscale-(0, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-grayscale {
-      @include backdrop-grayscale-(100%, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-grayscale-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-backdrop-grayscale: grayscale($v) !global;
-      backdrop-filter: __backdrop-filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-backdrop-grayscale: grayscale($v) !global;
-        backdrop-filter: __backdrop-filter();
+    @include describe("Custom") {
+      @include it("backdrop-grayscale-(.5)") {
+        @include assert {
+          @include output {
+            @include backdrop-grayscale-(.5);
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: grayscale(.5);
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-grayscale-(.5)") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-grayscale-(.5);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: grayscale(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-grayscale-(.5)") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-grayscale-(.5);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: grayscale(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-grayscale-(.5)") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-grayscale-(.5);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: grayscale(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-grayscale-(.5)") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-grayscale-(.5);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: grayscale(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-grayscale-(.5)") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-grayscale-(.5);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: grayscale(.5);
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:backdrop-grayscale-($v) {
-    @include backdrop-grayscale-($v, $sm);
-  }
-
-  @mixin md\:backdrop-grayscale-($v) {
-    @include backdrop-grayscale-($v, $md);
-  }
-
-  @mixin lg\:backdrop-grayscale-($v) {
-    @include backdrop-grayscale-($v, $lg);
-  }
-
-  @mixin xl\:backdrop-grayscale-($v) {
-    @include backdrop-grayscale-($v, $xl);
-  }
-
-  @mixin \2xl\:backdrop-grayscale-($v) {
-    @include backdrop-grayscale-($v, $\2xl);
-  }
-
-  // x*/
 }

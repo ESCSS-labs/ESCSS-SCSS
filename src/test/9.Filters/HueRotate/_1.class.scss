@@ -2,335 +2,628 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Hue Rotate */
-@if $Basic {
-  // /*x
-  @mixin hue-rotate-0 {
-    @include filter-(0deg);
-  }
+@include describe("9.Filters") {
+  @include describe("Hue Rotate") {
+    @include describe("Basic") {
+      @include it("hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include hue-rotate-0;
+            @include clear;
+          }
 
-  @mixin hue-rotate-15 {
-    @include filter-(15deg);
-  }
+          @include expect {
+            filter: hue-rotate(0deg);
+          }
+        }
+      }
 
-  @mixin hue-rotate-30 {
-    @include filter-(30deg);
-  }
+      @include it("hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include hue-rotate-15;
+            @include clear;
+          }
 
-  @mixin hue-rotate-60 {
-    @include filter-(60deg);
-  }
+          @include expect {
+            filter: hue-rotate(15deg);
+          }
+        }
+      }
 
-  @mixin hue-rotate-90 {
-    @include filter-(90deg);
-  }
+      @include it("hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include hue-rotate-30;
+            @include clear;
+          }
 
-  @mixin hue-rotate-180 {
-    @include filter-(180deg);
-  }
+          @include expect {
+            filter: hue-rotate(30deg);
+          }
+        }
+      }
 
-  @mixin -hue-rotate-0 {
-    @include filter-(-0deg);
-  }
+      @include it("hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include hue-rotate-60;
+            @include clear;
+          }
 
-  @mixin -hue-rotate-15 {
-    @include filter-(-15deg);
-  }
+          @include expect {
+            filter: hue-rotate(60deg);
+          }
+        }
+      }
 
-  @mixin -hue-rotate-30 {
-    @include filter-(-30deg);
-  }
+      @include it("hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include hue-rotate-90;
+            @include clear;
+          }
 
-  @mixin -hue-rotate-60 {
-    @include filter-(-60deg);
-  }
+          @include expect {
+            filter: hue-rotate(90deg);
+          }
+        }
+      }
 
-  @mixin -hue-rotate-90 {
-    @include filter-(-90deg);
-  }
+      @include it("hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include hue-rotate-180;
+            @include clear;
+          }
 
-  @mixin -hue-rotate-180 {
-    @include filter-(-180deg);
-  } // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:hue-rotate-0 {
-      @include filter-(0deg, $sm);
+          @include expect {
+            filter: hue-rotate(180deg);
+          }
+        }
+      }
     }
 
-    @mixin sm\:hue-rotate-15 {
-      @include filter-(15deg, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include sm\:hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: hue-rotate(0deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include sm\:hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: hue-rotate(15deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include sm\:hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: hue-rotate(30deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include sm\:hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: hue-rotate(60deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include sm\:hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: hue-rotate(90deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include sm\:hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: hue-rotate(180deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include md\:hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: hue-rotate(0deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include md\:hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: hue-rotate(15deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include md\:hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: hue-rotate(30deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include md\:hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: hue-rotate(60deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include md\:hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: hue-rotate(90deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include md\:hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: hue-rotate(180deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include lg\:hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: hue-rotate(0deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include lg\:hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: hue-rotate(15deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include lg\:hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: hue-rotate(30deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include lg\:hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: hue-rotate(60deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include lg\:hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: hue-rotate(90deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include lg\:hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: hue-rotate(180deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include xl\:hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: hue-rotate(0deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include xl\:hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: hue-rotate(15deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include xl\:hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: hue-rotate(30deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include xl\:hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: hue-rotate(60deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include xl\:hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: hue-rotate(90deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include xl\:hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: hue-rotate(180deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: hue-rotate(0deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include \2xl\:hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: hue-rotate(15deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include \2xl\:hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: hue-rotate(30deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include \2xl\:hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: hue-rotate(60deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include \2xl\:hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: hue-rotate(90deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include \2xl\:hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: hue-rotate(180deg);
+            }
+          }
+        }
+      }
     }
 
-    @mixin sm\:hue-rotate-30 {
-      @include filter-(30deg, $sm);
-    }
+    @include describe("Custom") {
+      @include it("hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include hue-rotate-(270deg);
+            @include clear;
+          }
 
-    @mixin sm\:hue-rotate-60 {
-      @include filter-(60deg, $sm);
-    }
+          @include expect {
+            filter: hue-rotate(270deg);
+          }
+        }
+      }
 
-    @mixin sm\:hue-rotate-90 {
-      @include filter-(90deg, $sm);
-    }
+      @include it("sm\:hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include sm\:hue-rotate-(270deg);
+            @include clear;
+          }
 
-    @mixin sm\:hue-rotate-180 {
-      @include filter-(180deg, $sm);
-    }
+          @include expect {
+            @media(min-width:$sm) {
+              filter: hue-rotate(270deg);
+            }
+          }
+        }
+      }
 
-    @mixin sm\:-hue-rotate-0 {
-      @include filter-(-0deg, $sm);
-    }
+      @include it("md\:hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include md\:hue-rotate-(270deg);
+            @include clear;
+          }
 
-    @mixin sm\:-hue-rotate-15 {
-      @include filter-(-15deg, $sm);
-    }
+          @include expect {
+            @media(min-width:$md) {
+              filter: hue-rotate(270deg);
+            }
+          }
+        }
+      }
 
-    @mixin sm\:-hue-rotate-30 {
-      @include filter-(-30deg, $sm);
-    }
+      @include it("lg\:hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include lg\:hue-rotate-(270deg);
+            @include clear;
+          }
 
-    @mixin sm\:-hue-rotate-60 {
-      @include filter-(-60deg, $sm);
-    }
+          @include expect {
+            @media(min-width:$lg) {
+              filter: hue-rotate(270deg);
+            }
+          }
+        }
+      }
 
-    @mixin sm\:-hue-rotate-90 {
-      @include filter-(-90deg, $sm);
-    }
+      @include it("xl\:hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include xl\:hue-rotate-(270deg);
+            @include clear;
+          }
 
-    @mixin sm\:-hue-rotate-180 {
-      @include filter-(-180deg, $sm);
-    }
+          @include expect {
+            @media(min-width:$xl) {
+              filter: hue-rotate(270deg);
+            }
+          }
+        }
+      }
 
-    @mixin md\:hue-rotate-0 {
-      @include filter-(0deg, $md);
-    }
+      @include it("\2xl\:hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include \2xl\:hue-rotate-(270deg);
+            @include clear;
+          }
 
-    @mixin md\:hue-rotate-15 {
-      @include filter-(15deg, $md);
-    }
-
-    @mixin md\:hue-rotate-30 {
-      @include filter-(30deg, $md);
-    }
-
-    @mixin md\:hue-rotate-60 {
-      @include filter-(60deg, $md);
-    }
-
-    @mixin md\:hue-rotate-90 {
-      @include filter-(90deg, $md);
-    }
-
-    @mixin md\:hue-rotate-180 {
-      @include filter-(180deg, $md);
-    }
-
-    @mixin md\:-hue-rotate-0 {
-      @include filter-(-0deg, $md);
-    }
-
-    @mixin md\:-hue-rotate-15 {
-      @include filter-(-15deg, $md);
-    }
-
-    @mixin md\:-hue-rotate-30 {
-      @include filter-(-30deg, $md);
-    }
-
-    @mixin md\:-hue-rotate-60 {
-      @include filter-(-60deg, $md);
-    }
-
-    @mixin md\:-hue-rotate-90 {
-      @include filter-(-90deg, $md);
-    }
-
-    @mixin md\:-hue-rotate-180 {
-      @include filter-(-180deg, $md);
-    }
-
-    @mixin lg\:hue-rotate-0 {
-      @include filter-(0deg, $lg);
-    }
-
-    @mixin lg\:hue-rotate-15 {
-      @include filter-(15deg, $lg);
-    }
-
-    @mixin lg\:hue-rotate-30 {
-      @include filter-(30deg, $lg);
-    }
-
-    @mixin lg\:hue-rotate-60 {
-      @include filter-(60deg, $lg);
-    }
-
-    @mixin lg\:hue-rotate-90 {
-      @include filter-(90deg, $lg);
-    }
-
-    @mixin lg\:hue-rotate-180 {
-      @include filter-(180deg, $lg);
-    }
-
-    @mixin lg\:-hue-rotate-0 {
-      @include filter-(-0deg, $lg);
-    }
-
-    @mixin lg\:-hue-rotate-15 {
-      @include filter-(-15deg, $lg);
-    }
-
-    @mixin lg\:-hue-rotate-30 {
-      @include filter-(-30deg, $lg);
-    }
-
-    @mixin lg\:-hue-rotate-60 {
-      @include filter-(-60deg, $lg);
-    }
-
-    @mixin lg\:-hue-rotate-90 {
-      @include filter-(-90deg, $lg);
-    }
-
-    @mixin lg\:-hue-rotate-180 {
-      @include filter-(-180deg, $lg);
-    }
-
-    @mixin xl\:hue-rotate-0 {
-      @include filter-(0deg, $xl);
-    }
-
-    @mixin xl\:hue-rotate-15 {
-      @include filter-(15deg, $xl);
-    }
-
-    @mixin xl\:hue-rotate-30 {
-      @include filter-(30deg, $xl);
-    }
-
-    @mixin xl\:hue-rotate-60 {
-      @include filter-(60deg, $xl);
-    }
-
-    @mixin xl\:hue-rotate-90 {
-      @include filter-(90deg, $xl);
-    }
-
-    @mixin xl\:hue-rotate-180 {
-      @include filter-(180deg, $xl);
-    }
-
-    @mixin xl\:-hue-rotate-0 {
-      @include filter-(-0deg, $xl);
-    }
-
-    @mixin xl\:-hue-rotate-15 {
-      @include filter-(-15deg, $xl);
-    }
-
-    @mixin xl\:-hue-rotate-30 {
-      @include filter-(-30deg, $xl);
-    }
-
-    @mixin xl\:-hue-rotate-60 {
-      @include filter-(-60deg, $xl);
-    }
-
-    @mixin xl\:-hue-rotate-90 {
-      @include filter-(-90deg, $xl);
-    }
-
-    @mixin xl\:-hue-rotate-180 {
-      @include filter-(-180deg, $xl);
-    }
-
-    @mixin \2xl\:hue-rotate-0 {
-      @include filter-(0deg, $\2xl);
-    }
-
-    @mixin \2xl\:hue-rotate-15 {
-      @include filter-(15deg, $\2xl);
-    }
-
-    @mixin \2xl\:hue-rotate-30 {
-      @include filter-(30deg, $\2xl);
-    }
-
-    @mixin \2xl\:hue-rotate-60 {
-      @include filter-(60deg, $\2xl);
-    }
-
-    @mixin \2xl\:hue-rotate-90 {
-      @include filter-(90deg, $\2xl);
-    }
-
-    @mixin \2xl\:hue-rotate-180 {
-      @include filter-(180deg, $\2xl);
-    }
-
-    @mixin \2xl\:-hue-rotate-0 {
-      @include filter-(-0deg, $\2xl);
-    }
-
-    @mixin \2xl\:-hue-rotate-15 {
-      @include filter-(-15deg, $\2xl);
-    }
-
-    @mixin \2xl\:-hue-rotate-30 {
-      @include filter-(-30deg, $\2xl);
-    }
-
-    @mixin \2xl\:-hue-rotate-60 {
-      @include filter-(-60deg, $\2xl);
-    }
-
-    @mixin \2xl\:-hue-rotate-90 {
-      @include filter-(-90deg, $\2xl);
-    }
-
-    @mixin \2xl\:-hue-rotate-180 {
-      @include filter-(-180deg, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin hue-rotate-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-hue-rotate: hue-rotate($v) !global;
-      filter: __filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-hue-rotate: hue-rotate($v) !global;
-        filter: __filter();
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: hue-rotate(270deg);
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:hue-rotate-($v) {
-    @include hue-rotate-($v, $sm);
-  }
-
-  @mixin md\:hue-rotate-($v) {
-    @include hue-rotate-($v, $md);
-  }
-
-  @mixin lg\:hue-rotate-($v) {
-    @include hue-rotate-($v, $lg);
-  }
-
-  @mixin xl\:hue-rotate-($v) {
-    @include hue-rotate-($v, $xl);
-  }
-
-  @mixin \2xl\:hue-rotate-($v) {
-    @include hue-rotate-($v, $\2xl);
-  } // x*/
 }

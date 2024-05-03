@@ -2,316 +2,1074 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backdrop Brightness */
-@if $Basic {
-  // /*x
-  @mixin backdrop-brightness-0 {
-    @include backdrop-brightness-(0);
-  }
-
-  @mixin backdrop-brightness-50 {
-    @include backdrop-brightness-(0.5);
-  }
-
-  @mixin backdrop-brightness-75 {
-    @include backdrop-brightness-(0.75);
-  }
-
-  @mixin backdrop-brightness-90 {
-    @include backdrop-brightness-(0.9);
-  }
-
-  @mixin backdrop-brightness-95 {
-    @include backdrop-brightness-(0.95);
-  }
-
-  @mixin backdrop-brightness-100 {
-    @include backdrop-brightness-(1);
-  }
-
-  @mixin backdrop-brightness-105 {
-    @include backdrop-brightness-(1.05);
-  }
-
-  @mixin backdrop-brightness-110 {
-    @include backdrop-brightness-(1.1);
-  }
-
-  @mixin backdrop-brightness-125 {
-    @include backdrop-brightness-(1.25);
-  }
-
-  @mixin backdrop-brightness-150 {
-    @include backdrop-brightness-(1.5);
-  }
-
-  @mixin backdrop-brightness-200 {
-    @include backdrop-brightness-(2);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:backdrop-brightness-0 {
-      @include backdrop-brightness-(0, $sm);
+@include describe("9.Filters") {
+  @include describe("Backdrop Brightness") {
+    @include describe("Basic") {
+      @include it("backdrop-brightness-0") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-0;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(0);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-50") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-50;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(.5);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-75") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-75;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(.75);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-90") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-90;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(.9);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-95") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-95;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(.95);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-100") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-100;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(1);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-105") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-105;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(1.05);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-110") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-110;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(1.1);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-125") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-125;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(1.25);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-150") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-150;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(1.5);
+          }
+        }
+      }
+      
+      @include it("backdrop-brightness-200") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-200;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(2);
+          }
+        }
+      }
     }
 
-    @mixin sm\:backdrop-brightness-50 {
-      @include backdrop-brightness-(0.5, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:backdrop-brightness-0") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(0);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-50") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-75") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-75;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(.75);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-90") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-90;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(.9);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-95") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-95;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(.95);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-100") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(1);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-105") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-105;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(1.05);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-110") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-110;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(1.1);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-125") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-125;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(1.25);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-150") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-200") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(2);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-0") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(0);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-50") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-75") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-75;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(.75);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-90") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-90;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(.9);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-95") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-95;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(.95);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-100") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(1);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-105") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-105;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(1.05);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-110") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-110;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(1.1);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-125") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-125;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(1.25);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-150") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-200") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(2);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-0") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(0);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-50") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-75") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-75;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(.75);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-90") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-90;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(.9);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-95") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-95;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(.95);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-100") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(1);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-105") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-105;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(1.05);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-110") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-110;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(1.1);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-125") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-125;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(1.25);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-150") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-200") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(2);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-0") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(0);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-50") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-75") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-75;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(.75);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-90") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-90;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(.9);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-95") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-95;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(.95);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-100") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(1);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-105") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-105;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(1.05);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-110") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-110;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(1.1);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-125") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-125;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(1.25);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-150") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-200") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(2);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(0);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-50;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(.5);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-75;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(.75);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-90") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-90;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(.9);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-95") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-95;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(.95);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-100;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(1);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-105") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-105;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(1.05);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-110") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-110;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(1.1);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-125") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-125;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(1.25);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-150;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(1.5);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-200") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-200;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(2);
+            }
+          }
+        }
+      }
     }
 
-    @mixin sm\:backdrop-brightness-75 {
-      @include backdrop-brightness-(0.75, $sm);
-    }
-
-    @mixin sm\:backdrop-brightness-90 {
-      @include backdrop-brightness-(0.9, $sm);
-    }
-
-    @mixin sm\:backdrop-brightness-95 {
-      @include backdrop-brightness-(0.95, $sm);
-    }
-
-    @mixin sm\:backdrop-brightness-100 {
-      @include backdrop-brightness-(1, $sm);
-    }
-
-    @mixin sm\:backdrop-brightness-105 {
-      @include backdrop-brightness-(1.05, $sm);
-    }
-
-    @mixin sm\:backdrop-brightness-110 {
-      @include backdrop-brightness-(1.1, $sm);
-    }
-
-    @mixin sm\:backdrop-brightness-125 {
-      @include backdrop-brightness-(1.25, $sm);
-    }
-
-    @mixin sm\:backdrop-brightness-150 {
-      @include backdrop-brightness-(1.5, $sm);
-    }
-
-    @mixin sm\:backdrop-brightness-200 {
-      @include backdrop-brightness-(2, $sm);
-    }
-
-    @mixin md\:backdrop-brightness-0 {
-      @include backdrop-brightness-(0, $md);
-    }
-
-    @mixin md\:backdrop-brightness-50 {
-      @include backdrop-brightness-(0.5, $md);
-    }
-
-    @mixin md\:backdrop-brightness-75 {
-      @include backdrop-brightness-(0.75, $md);
-    }
-
-    @mixin md\:backdrop-brightness-90 {
-      @include backdrop-brightness-(0.9, $md);
-    }
-
-    @mixin md\:backdrop-brightness-95 {
-      @include backdrop-brightness-(0.95, $md);
-    }
-
-    @mixin md\:backdrop-brightness-100 {
-      @include backdrop-brightness-(1, $md);
-    }
-
-    @mixin md\:backdrop-brightness-105 {
-      @include backdrop-brightness-(1.05, $md);
-    }
-
-    @mixin md\:backdrop-brightness-110 {
-      @include backdrop-brightness-(1.1, $md);
-    }
-
-    @mixin md\:backdrop-brightness-125 {
-      @include backdrop-brightness-(1.25, $md);
-    }
-
-    @mixin md\:backdrop-brightness-150 {
-      @include backdrop-brightness-(1.5, $md);
-    }
-
-    @mixin md\:backdrop-brightness-200 {
-      @include backdrop-brightness-(2, $md);
-    }
-
-    @mixin lg\:backdrop-brightness-0 {
-      @include backdrop-brightness-(0, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-50 {
-      @include backdrop-brightness-(0.5, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-75 {
-      @include backdrop-brightness-(0.75, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-90 {
-      @include backdrop-brightness-(0.9, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-95 {
-      @include backdrop-brightness-(0.95, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-100 {
-      @include backdrop-brightness-(1, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-105 {
-      @include backdrop-brightness-(1.05, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-110 {
-      @include backdrop-brightness-(1.1, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-125 {
-      @include backdrop-brightness-(1.25, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-150 {
-      @include backdrop-brightness-(1.5, $lg);
-    }
-
-    @mixin lg\:backdrop-brightness-200 {
-      @include backdrop-brightness-(2, $lg);
-    }
-
-    @mixin xl\:backdrop-brightness-0 {
-      @include backdrop-brightness-(0, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-50 {
-      @include backdrop-brightness-(0.5, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-75 {
-      @include backdrop-brightness-(0.75, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-90 {
-      @include backdrop-brightness-(0.9, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-95 {
-      @include backdrop-brightness-(0.95, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-100 {
-      @include backdrop-brightness-(1, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-105 {
-      @include backdrop-brightness-(1.05, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-110 {
-      @include backdrop-brightness-(1.1, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-125 {
-      @include backdrop-brightness-(1.25, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-150 {
-      @include backdrop-brightness-(1.5, $xl);
-    }
-
-    @mixin xl\:backdrop-brightness-200 {
-      @include backdrop-brightness-(2, $xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-0 {
-      @include backdrop-brightness-(0, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-50 {
-      @include backdrop-brightness-(0.5, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-75 {
-      @include backdrop-brightness-(0.75, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-90 {
-      @include backdrop-brightness-(0.9, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-95 {
-      @include backdrop-brightness-(0.95, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-100 {
-      @include backdrop-brightness-(1, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-105 {
-      @include backdrop-brightness-(1.05, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-110 {
-      @include backdrop-brightness-(1.1, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-125 {
-      @include backdrop-brightness-(1.25, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-150 {
-      @include backdrop-brightness-(1.5, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-brightness-200 {
-      @include backdrop-brightness-(2, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-brightness-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-backdrop-brightness: brightness($v) !global;
-      backdrop-filter: __backdrop-filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-backdrop-brightness: brightness($v) !global;
-        backdrop-filter: __backdrop-filter();
+    @include describe("Custom") {
+      @include it("backdrop-brightness-(1.75)") {
+        @include assert {
+          @include output {
+            @include backdrop-brightness-(1.75);
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: brightness(1.75);
+            ;
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-brightness-(1.75)") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-brightness-(1.75);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: brightness(1.75);
+              ;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-brightness-(1.75)") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-brightness-(1.75);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: brightness(1.75);
+              ;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-brightness-(1.75)") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-brightness-(1.75);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: brightness(1.75);
+              ;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-brightness-(1.75)") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-brightness-(1.75);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: brightness(1.75);
+              ;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-brightness-(1.75)") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-brightness-(1.75);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: brightness(1.75);
+              ;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:backdrop-brightness-($v) {
-    @include backdrop-brightness-($v, $sm);
-  }
-
-  @mixin md\:backdrop-brightness-($v) {
-    @include backdrop-brightness-($v, $md);
-  }
-
-  @mixin lg\:backdrop-brightness-($v) {
-    @include backdrop-brightness-($v, $lg);
-  }
-
-  @mixin xl\:backdrop-brightness-($v) {
-    @include backdrop-brightness-($v, $xl);
-  }
-
-  @mixin \2xl\:backdrop-brightness-($v) {
-    @include backdrop-brightness-($v, $\2xl);
-  }
-
-  // x*/
 }

@@ -2,100 +2,268 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backdrop Sepia */
-@if $Basic {
-  // /*x
-  @mixin backdrop-sepia-0 {
-    @include backdrop-sepia-(0);
-  }
-
-  @mixin backdrop-sepia {
-    @include backdrop-sepia-(100%);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $sm);
+@include describe("9.Filters") {
+  @include describe("Backdrop Sepia") {
+    @include describe("Basic") {
+      @include it("backdrop-sepia-0") {
+        @include assert {
+          @include output {
+            @include backdrop-sepia-0;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: sepia(0);
+          }
+        }
+      }
+      
+      @include it("backdrop-sepia") {
+        @include assert {
+          @include output {
+            @include backdrop-sepia;
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: sepia(100%);
+          }
+        }
+      }
     }
 
-    @mixin sm\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:backdrop-sepia-0") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-sepia-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: sepia(0);
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-sepia") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-sepia;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: sepia(100%);
+            }
+          }
+        }
+      }@include it("md\:backdrop-sepia-0") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-sepia-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: sepia(0);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-sepia") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-sepia;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: sepia(100%);
+            }
+          }
+        }
+      }@include it("lg\:backdrop-sepia-0") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-sepia-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: sepia(0);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-sepia") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-sepia;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: sepia(100%);
+            }
+          }
+        }
+      }@include it("xl\:backdrop-sepia-0") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-sepia-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: sepia(0);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-sepia") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-sepia;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: sepia(100%);
+            }
+          }
+        }
+      }@include it("\2xl\:backdrop-sepia-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-sepia-0;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: sepia(0);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-sepia") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-sepia;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: sepia(100%);
+            }
+          }
+        }
+      }
     }
 
-    @mixin md\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $md);
-    }
-
-    @mixin md\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $md);
-    }
-
-    @mixin lg\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $lg);
-    }
-
-    @mixin lg\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $lg);
-    }
-
-    @mixin xl\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $xl);
-    }
-
-    @mixin xl\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $xl);
-    }
-
-    @mixin \2xl\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $\2xl);
-    }
-
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-sepia-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-backdrop-sepia: sepia($v) !global;
-      backdrop-filter: __backdrop-filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-backdrop-sepia: sepia($v) !global;
-        backdrop-filter: __backdrop-filter();
+    @include describe("Custom") {
+      @include it("backdrop-sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include backdrop-sepia-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            backdrop-filter: sepia(.25);
+          }
+        }
+      }
+      
+      @include it("sm\:backdrop-sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-sepia-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: sepia(.25);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:backdrop-sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-sepia-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: sepia(.25);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:backdrop-sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-sepia-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: sepia(.25);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:backdrop-sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-sepia-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: sepia(.25);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:backdrop-sepia-(.25)") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-sepia-(.25);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: sepia(.25);
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $sm);
-  }
-
-  @mixin md\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $md);
-  }
-
-  @mixin lg\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $lg);
-  }
-
-  @mixin xl\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $xl);
-  }
-
-  @mixin \2xl\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $\2xl);
-  }
-
-  // x*/
 }

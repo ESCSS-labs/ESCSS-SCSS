@@ -2,219 +2,716 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Backdrop Contrast */
-@if $Basic {
-  // /*x
-  @mixin backdrop-contrast-0 {
-    @include backdrop-contrast-(0);
-  }
+@include describe("9.Filters") {
+  @include describe("Backdrop Contrast") {
+    @include describe("Basic") {
+      @include it("backdrop-contrast-0") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-0;
+            @include clear;
+          }
 
-  @mixin backdrop-contrast-50 {
-    @include backdrop-contrast-(0.5);
-  }
+          @include expect {
+            backdrop-filter: contrast(0);
+          }
+        }
+      }
 
-  @mixin backdrop-contrast-75 {
-    @include backdrop-contrast-(0.75);
-  }
+      @include it("backdrop-contrast-50") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-50;
+            @include clear;
+          }
 
-  @mixin backdrop-contrast-100 {
-    @include backdrop-contrast-(1);
-  }
+          @include expect {
+            backdrop-filter: contrast(.5);
+          }
+        }
+      }
 
-  @mixin backdrop-contrast-125 {
-    @include backdrop-contrast-(1.25);
-  }
+      @include it("backdrop-contrast-75") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-75;
+            @include clear;
+          }
 
-  @mixin backdrop-contrast-150 {
-    @include backdrop-contrast-(1.5);
-  }
+          @include expect {
+            backdrop-filter: contrast(.75);
+          }
+        }
+      }
 
-  @mixin backdrop-contrast-200 {
-    @include backdrop-contrast-(2);
-  }
+      @include it("backdrop-contrast-100") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-100;
+            @include clear;
+          }
 
-  // x*/
-}
+          @include expect {
+            backdrop-filter: contrast(1);
+          }
+        }
+      }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:backdrop-contrast-0 {
-      @include backdrop-contrast-(0, $sm);
+      @include it("backdrop-contrast-125") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(1.25);
+          }
+        }
+      }
+
+      @include it("backdrop-contrast-150") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(1.5);
+          }
+        }
+      }
+
+      @include it("backdrop-contrast-200") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(2);
+          }
+        }
+      }
     }
 
-    @mixin sm\:backdrop-contrast-50 {
-      @include backdrop-contrast-(0.5, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:backdrop-contrast-0") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-contrast-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: contrast(0);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-contrast-50") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-contrast-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: contrast(.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-contrast-75") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-contrast-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-contrast-100") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-contrast-125") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-contrast-150") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:backdrop-contrast-200") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: contrast(2);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-contrast-0") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-contrast-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: contrast(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-contrast-50") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-contrast-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: contrast(.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-contrast-75") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-contrast-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-contrast-100") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-contrast-125") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-contrast-150") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("md\:backdrop-contrast-200") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: contrast(2);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-contrast-0") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-contrast-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: contrast(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-contrast-50") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-contrast-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: contrast(.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-contrast-75") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-contrast-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-contrast-100") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-contrast-125") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-contrast-150") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:backdrop-contrast-200") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: contrast(2);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-contrast-0") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-contrast-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: contrast(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-contrast-50") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-contrast-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: contrast(.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-contrast-75") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-contrast-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-contrast-100") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-contrast-125") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-contrast-150") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:backdrop-contrast-200") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: contrast(2);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-contrast-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-contrast-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: contrast(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-contrast-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-contrast-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: contrast(.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-contrast-75") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-contrast-75;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: contrast(.75);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-contrast-100") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-contrast-100;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: contrast(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-contrast-125") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-contrast-125;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: contrast(1.25);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-contrast-150") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-contrast-150;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: contrast(1.5);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:backdrop-contrast-200") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-contrast-200;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: contrast(2);
+            }
+          }
+        }
+      }
     }
 
-    @mixin sm\:backdrop-contrast-75 {
-      @include backdrop-contrast-(0.75, $sm);
-    }
+    @include describe("Custom") {
+      @include it("backdrop-contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-(.25);
+            @include clear;
+          }
 
-    @mixin sm\:backdrop-contrast-100 {
-      @include backdrop-contrast-(1, $sm);
-    }
+          @include expect {
+            backdrop-filter: contrast(.25);
+          }
+        }
+      }
 
-    @mixin sm\:backdrop-contrast-125 {
-      @include backdrop-contrast-(1.25, $sm);
-    }
+      @include it("sm\:backdrop-contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include sm\:backdrop-contrast-(.25);
+            @include clear;
+          }
 
-    @mixin sm\:backdrop-contrast-150 {
-      @include backdrop-contrast-(1.5, $sm);
-    }
+          @include expect {
+            @media(min-width:$sm) {
+              backdrop-filter: contrast(.25);
+            }
+          }
+        }
+      }
 
-    @mixin sm\:backdrop-contrast-200 {
-      @include backdrop-contrast-(2, $sm);
-    }
+      @include it("md\:backdrop-contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include md\:backdrop-contrast-(.25);
+            @include clear;
+          }
 
-    @mixin md\:backdrop-contrast-0 {
-      @include backdrop-contrast-(0, $md);
-    }
+          @include expect {
+            @media(min-width:$md) {
+              backdrop-filter: contrast(.25);
+            }
+          }
+        }
+      }
 
-    @mixin md\:backdrop-contrast-50 {
-      @include backdrop-contrast-(0.5, $md);
-    }
+      @include it("lg\:backdrop-contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include lg\:backdrop-contrast-(.25);
+            @include clear;
+          }
 
-    @mixin md\:backdrop-contrast-75 {
-      @include backdrop-contrast-(0.75, $md);
-    }
+          @include expect {
+            @media(min-width:$lg) {
+              backdrop-filter: contrast(.25);
+            }
+          }
+        }
+      }
 
-    @mixin md\:backdrop-contrast-100 {
-      @include backdrop-contrast-(1, $md);
-    }
+      @include it("xl\:backdrop-contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include xl\:backdrop-contrast-(.25);
+            @include clear;
+          }
 
-    @mixin md\:backdrop-contrast-125 {
-      @include backdrop-contrast-(1.25, $md);
-    }
+          @include expect {
+            @media(min-width:$xl) {
+              backdrop-filter: contrast(.25);
+            }
+          }
+        }
+      }
 
-    @mixin md\:backdrop-contrast-150 {
-      @include backdrop-contrast-(1.5, $md);
-    }
+      @include it("\2xl\:backdrop-contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include \2xl\:backdrop-contrast-(.25);
+            @include clear;
+          }
 
-    @mixin md\:backdrop-contrast-200 {
-      @include backdrop-contrast-(2, $md);
-    }
-
-    @mixin lg\:backdrop-contrast-0 {
-      @include backdrop-contrast-(0, $lg);
-    }
-
-    @mixin lg\:backdrop-contrast-50 {
-      @include backdrop-contrast-(0.5, $lg);
-    }
-
-    @mixin lg\:backdrop-contrast-75 {
-      @include backdrop-contrast-(0.75, $lg);
-    }
-
-    @mixin lg\:backdrop-contrast-100 {
-      @include backdrop-contrast-(1, $lg);
-    }
-
-    @mixin lg\:backdrop-contrast-125 {
-      @include backdrop-contrast-(1.25, $lg);
-    }
-
-    @mixin lg\:backdrop-contrast-150 {
-      @include backdrop-contrast-(1.5, $lg);
-    }
-
-    @mixin lg\:backdrop-contrast-200 {
-      @include backdrop-contrast-(2, $lg);
-    }
-
-    @mixin xl\:backdrop-contrast-0 {
-      @include backdrop-contrast-(0, $xl);
-    }
-
-    @mixin xl\:backdrop-contrast-50 {
-      @include backdrop-contrast-(0.5, $xl);
-    }
-
-    @mixin xl\:backdrop-contrast-75 {
-      @include backdrop-contrast-(0.75, $xl);
-    }
-
-    @mixin xl\:backdrop-contrast-100 {
-      @include backdrop-contrast-(1, $xl);
-    }
-
-    @mixin xl\:backdrop-contrast-125 {
-      @include backdrop-contrast-(1.25, $xl);
-    }
-
-    @mixin xl\:backdrop-contrast-150 {
-      @include backdrop-contrast-(1.5, $xl);
-    }
-
-    @mixin xl\:backdrop-contrast-200 {
-      @include backdrop-contrast-(2, $xl);
-    }
-
-    @mixin \2xl\:backdrop-contrast-0 {
-      @include backdrop-contrast-(0, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-contrast-50 {
-      @include backdrop-contrast-(0.5, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-contrast-75 {
-      @include backdrop-contrast-(0.75, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-contrast-100 {
-      @include backdrop-contrast-(1, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-contrast-125 {
-      @include backdrop-contrast-(1.25, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-contrast-150 {
-      @include backdrop-contrast-(1.5, $\2xl);
-    }
-
-    @mixin \2xl\:backdrop-contrast-200 {
-      @include backdrop-contrast-(2, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin backdrop-contrast-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-backdrop-contrast: contrast($v) !global;
-      backdrop-filter: __backdrop-filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-backdrop-contrast: contrast($v) !global;
-        backdrop-filter: __backdrop-filter();
+          @include expect {
+            @media(min-width:$\2xl) {
+              backdrop-filter: contrast(.25);
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:backdrop-contrast-($v) {
-    @include backdrop-contrast-($v, $sm);
-  }
-
-  @mixin md\:backdrop-contrast-($v) {
-    @include backdrop-contrast-($v, $md);
-  }
-
-  @mixin lg\:backdrop-contrast-($v) {
-    @include backdrop-contrast-($v, $lg);
-  }
-
-  @mixin xl\:backdrop-contrast-($v) {
-    @include backdrop-contrast-($v, $xl);
-  }
-
-  @mixin \2xl\:backdrop-contrast-($v) {
-    @include backdrop-contrast-($v, $\2xl);
-  }
-
-  // x*/
 }

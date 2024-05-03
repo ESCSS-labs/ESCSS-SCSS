@@ -2,243 +2,804 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Blur */
-@if $Basic {
-  // /*x
-  @mixin blur-none {
-    @include blur-(0);
-  }
+@include describe("9.Filters") {
+  @include describe("Blur") {
+    @include describe("Basic") {
+      @include it("blur-none") {
+        @include assert {
+          @include output {
+            @include blur-none;
+            @include clear;
+          }
 
-  @mixin blur-sm {
-    @include blur-($blur-sm);
-  }
+          @include expect {
+            filter: blur(0);
+          }
+        }
+      }
 
-  @mixin blur {
-    @include blur-($blur-);
-  }
+      @include it("blur-sm") {
+        @include assert {
+          @include output {
+            @include blur-sm;
+            @include clear;
+          }
 
-  @mixin blur-md {
-    @include blur-($blur-md);
-  }
+          @include expect {
+            filter: blur(4px);
+          }
+        }
+      }
 
-  @mixin blur-lg {
-    @include blur-($blur-lg);
-  }
+      @include it("blur") {
+        @include assert {
+          @include output {
+            @include blur;
+            @include clear;
+          }
 
-  @mixin blur-xl {
-    @include blur-($blur-xl);
-  }
+          @include expect {
+            filter: blur(8px);
+          }
+        }
+      }
 
-  @mixin blur-2xl {
-    @include blur-($blur-2xl);
-  }
+      @include it("blur-md") {
+        @include assert {
+          @include output {
+            @include blur-md;
+            @include clear;
+          }
 
-  @mixin blur-3xl {
-    @include blur-($blur-3xl);
-  }
+          @include expect {
+            filter: blur(12px);
+          }
+        }
+      }
 
-  // x*/
-}
+      @include it("blur-lg") {
+        @include assert {
+          @include output {
+            @include blur-lg;
+            @include clear;
+          }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:blur-none {
-      @include blur-(0, $sm);
+          @include expect {
+            filter: blur(16px);
+          }
+        }
+      }
+
+      @include it("blur-xl") {
+        @include assert {
+          @include output {
+            @include blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            filter: blur(24px);
+          }
+        }
+      }
+
+      @include it("blur-2xl") {
+        @include assert {
+          @include output {
+            @include blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            filter: blur(40px);
+          }
+        }
+      }
+
+      @include it("blur-3xl") {
+        @include assert {
+          @include output {
+            @include blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            filter: blur(64px);
+          }
+        }
+      }
     }
 
-    @mixin sm\:blur-sm {
-      @include blur-($blur-sm, $sm);
+    @include describe("Rwd") {
+      @include it("sm\:blur-none") {
+        @include assert {
+          @include output {
+            @include sm\:blur-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: blur(0);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:blur-sm") {
+        @include assert {
+          @include output {
+            @include sm\:blur-sm;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: blur(4px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:blur") {
+        @include assert {
+          @include output {
+            @include sm\:blur;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:blur-md") {
+        @include assert {
+          @include output {
+            @include sm\:blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:blur-lg") {
+        @include assert {
+          @include output {
+            @include sm\:blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:blur-xl") {
+        @include assert {
+          @include output {
+            @include sm\:blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:blur-2xl") {
+        @include assert {
+          @include output {
+            @include sm\:blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:blur-3xl") {
+        @include assert {
+          @include output {
+            @include sm\:blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              filter: blur(64px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:blur-none") {
+        @include assert {
+          @include output {
+            @include md\:blur-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: blur(0);
+            }
+          }
+        }
+      }
+
+      @include it("md\:blur-sm") {
+        @include assert {
+          @include output {
+            @include md\:blur-sm;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: blur(4px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:blur") {
+        @include assert {
+          @include output {
+            @include md\:blur;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:blur-md") {
+        @include assert {
+          @include output {
+            @include md\:blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:blur-lg") {
+        @include assert {
+          @include output {
+            @include md\:blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:blur-xl") {
+        @include assert {
+          @include output {
+            @include md\:blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:blur-2xl") {
+        @include assert {
+          @include output {
+            @include md\:blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("md\:blur-3xl") {
+        @include assert {
+          @include output {
+            @include md\:blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              filter: blur(64px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:blur-none") {
+        @include assert {
+          @include output {
+            @include lg\:blur-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: blur(0);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:blur-sm") {
+        @include assert {
+          @include output {
+            @include lg\:blur-sm;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: blur(4px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:blur") {
+        @include assert {
+          @include output {
+            @include lg\:blur;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:blur-md") {
+        @include assert {
+          @include output {
+            @include lg\:blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:blur-lg") {
+        @include assert {
+          @include output {
+            @include lg\:blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:blur-xl") {
+        @include assert {
+          @include output {
+            @include lg\:blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:blur-2xl") {
+        @include assert {
+          @include output {
+            @include lg\:blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:blur-3xl") {
+        @include assert {
+          @include output {
+            @include lg\:blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              filter: blur(64px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:blur-none") {
+        @include assert {
+          @include output {
+            @include xl\:blur-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: blur(0);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:blur-sm") {
+        @include assert {
+          @include output {
+            @include xl\:blur-sm;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: blur(4px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:blur") {
+        @include assert {
+          @include output {
+            @include xl\:blur;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:blur-md") {
+        @include assert {
+          @include output {
+            @include xl\:blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:blur-lg") {
+        @include assert {
+          @include output {
+            @include xl\:blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:blur-xl") {
+        @include assert {
+          @include output {
+            @include xl\:blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:blur-2xl") {
+        @include assert {
+          @include output {
+            @include xl\:blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:blur-3xl") {
+        @include assert {
+          @include output {
+            @include xl\:blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              filter: blur(64px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:blur-none") {
+        @include assert {
+          @include output {
+            @include \2xl\:blur-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: blur(0);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:blur-sm") {
+        @include assert {
+          @include output {
+            @include \2xl\:blur-sm;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: blur(4px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:blur") {
+        @include assert {
+          @include output {
+            @include \2xl\:blur;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: blur(8px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:blur-md") {
+        @include assert {
+          @include output {
+            @include \2xl\:blur-md;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: blur(12px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:blur-lg") {
+        @include assert {
+          @include output {
+            @include \2xl\:blur-lg;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: blur(16px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:blur-xl") {
+        @include assert {
+          @include output {
+            @include \2xl\:blur-xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: blur(24px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:blur-2xl") {
+        @include assert {
+          @include output {
+            @include \2xl\:blur-2xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: blur(40px);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:blur-3xl") {
+        @include assert {
+          @include output {
+            @include \2xl\:blur-3xl;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: blur(64px);
+            }
+          }
+        }
+      }
     }
 
-    @mixin sm\:blur {
-      @include blur-($blur-, $sm);
-    }
-
-    @mixin sm\:blur-md {
-      @include blur-($blur-md, $sm);
-    }
-
-    @mixin sm\:blur-lg {
-      @include blur-($blur-lg, $sm);
-    }
-
-    @mixin sm\:blur-xl {
-      @include blur-($blur-xl, $sm);
-    }
-
-    @mixin sm\:blur-2xl {
-      @include blur-($blur-2xl, $sm);
-    }
-
-    @mixin sm\:blur-3xl {
-      @include blur-($blur-3xl, $sm);
-    }
-
-    @mixin md\:blur-none {
-      @include blur-(0, $md);
-    }
-
-    @mixin md\:blur-sm {
-      @include blur-($blur-sm, $md);
-    }
-
-    @mixin md\:blur {
-      @include blur-($blur-, $md);
-    }
-
-    @mixin md\:blur-md {
-      @include blur-($blur-md, $md);
-    }
-
-    @mixin md\:blur-lg {
-      @include blur-($blur-lg, $md);
-    }
-
-    @mixin md\:blur-xl {
-      @include blur-($blur-xl, $md);
-    }
-
-    @mixin md\:blur-2xl {
-      @include blur-($blur-2xl, $md);
-    }
-
-    @mixin md\:blur-3xl {
-      @include blur-($blur-3xl, $md);
-    }
-
-    @mixin lg\:blur-none {
-      @include blur-(0, $lg);
-    }
-
-    @mixin lg\:blur-sm {
-      @include blur-($blur-sm, $lg);
-    }
-
-    @mixin lg\:blur {
-      @include blur-($blur-, $lg);
-    }
-
-    @mixin lg\:blur-md {
-      @include blur-($blur-md, $lg);
-    }
-
-    @mixin lg\:blur-lg {
-      @include blur-($blur-lg, $lg);
-    }
-
-    @mixin lg\:blur-xl {
-      @include blur-($blur-xl, $lg);
-    }
-
-    @mixin lg\:blur-2xl {
-      @include blur-($blur-2xl, $lg);
-    }
-
-    @mixin lg\:blur-3xl {
-      @include blur-($blur-3xl, $lg);
-    }
-
-    @mixin xl\:blur-none {
-      @include blur-(0, $xl);
-    }
-
-    @mixin xl\:blur-sm {
-      @include blur-($blur-sm, $xl);
-    }
-
-    @mixin xl\:blur {
-      @include blur-($blur-, $xl);
-    }
-
-    @mixin xl\:blur-md {
-      @include blur-($blur-md, $xl);
-    }
-
-    @mixin xl\:blur-lg {
-      @include blur-($blur-lg, $xl);
-    }
-
-    @mixin xl\:blur-xl {
-      @include blur-($blur-xl, $xl);
-    }
-
-    @mixin xl\:blur-2xl {
-      @include blur-($blur-2xl, $xl);
-    }
-
-    @mixin xl\:blur-3xl {
-      @include blur-($blur-3xl, $xl);
-    }
-
-    @mixin \2xl\:blur-none {
-      @include blur-(0, $\2xl);
-    }
-
-    @mixin \2xl\:blur-sm {
-      @include blur-($blur-sm, $\2xl);
-    }
-
-    @mixin \2xl\:blur {
-      @include blur-($blur-, $\2xl);
-    }
-
-    @mixin \2xl\:blur-md {
-      @include blur-($blur-md, $\2xl);
-    }
-
-    @mixin \2xl\:blur-lg {
-      @include blur-($blur-lg, $\2xl);
-    }
-
-    @mixin \2xl\:blur-xl {
-      @include blur-($blur-xl, $\2xl);
-    }
-
-    @mixin \2xl\:blur-2xl {
-      @include blur-($blur-2xl, $\2xl);
-    }
-
-    @mixin \2xl\:blur-3xl {
-      @include blur-($blur-3xl, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin blur-($v, $rwd: null) {
-    @if $rwd==null {
-      $--tw-blur: blur($v) !global;
-      filter: __filter();
-    } @else {
-      @media (min-width: $rwd) {
-        $--tw-blur: blur($v) !global;
-        filter: __filter();
+    @include describe("Custom") {
+      @include it("blur-(2px)") {
+        @include assert {
+          @include output {
+            @include blur-(2px);
+            @include clear;
+          }
+      
+          @include expect {
+            filter: blur(2px);
+          }
+        }
+      }
+      
+      @include it("sm\:blur-(2px)") {
+        @include assert {
+          @include output {
+            @include sm\:blur-(2px);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              filter: blur(2px);
+            }
+          }
+        }
+      }
+      
+      @include it("md\:blur-(2px)") {
+        @include assert {
+          @include output {
+            @include md\:blur-(2px);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              filter: blur(2px);
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:blur-(2px)") {
+        @include assert {
+          @include output {
+            @include lg\:blur-(2px);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              filter: blur(2px);
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:blur-(2px)") {
+        @include assert {
+          @include output {
+            @include xl\:blur-(2px);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              filter: blur(2px);
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:blur-(2px)") {
+        @include assert {
+          @include output {
+            @include \2xl\:blur-(2px);
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              filter: blur(2px);
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:blur-($v) {
-    @include blur-($v, $sm);
-  }
-
-  @mixin md\:blur-($v) {
-    @include blur-($v, $md);
-  }
-
-  @mixin lg\:blur-($v) {
-    @include blur-($v, $lg);
-  }
-
-  @mixin xl\:blur-($v) {
-    @include blur-($v, $xl);
-  }
-
-  @mixin \2xl\:blur-($v) {
-    @include blur-($v, $\2xl);
-  }
-
-  // x*/
 }
