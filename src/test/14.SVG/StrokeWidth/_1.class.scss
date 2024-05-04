@@ -2,90 +2,335 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Stroke Width */
-@if $Basic {
-  // /*x
-  @mixin stroke-0 {
-    @include stroke-(0);
+@include describe("14.SVG") {
+  @include describe("Stroke Width") {
+    @include describe("Basic") {
+      @include it("stroke-0") {
+        @include assert {
+          @include output {
+            @include stroke-0;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 0;
+          }
+        }
+      }
+
+      @include it("stroke-1") {
+        @include assert {
+          @include output {
+            @include stroke-1;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 1;
+          }
+        }
+      }
+
+      @include it("stroke-2") {
+        @include assert {
+          @include output {
+            @include stroke-2;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 2;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:stroke-0") {
+        @include assert {
+          @include output {
+            @include stroke-0;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 0;
+          }
+        }
+      }
+
+      @include it("sm\:stroke-1") {
+        @include assert {
+          @include output {
+            @include stroke-1;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 1;
+          }
+        }
+      }
+
+      @include it("sm\:stroke-2") {
+        @include assert {
+          @include output {
+            @include stroke-2;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 2;
+          }
+        }
+      }
+
+      @include it("md\:stroke-0") {
+        @include assert {
+          @include output {
+            @include stroke-0;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 0;
+          }
+        }
+      }
+
+      @include it("md\:stroke-1") {
+        @include assert {
+          @include output {
+            @include stroke-1;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 1;
+          }
+        }
+      }
+
+      @include it("md\:stroke-2") {
+        @include assert {
+          @include output {
+            @include stroke-2;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 2;
+          }
+        }
+      }
+
+      @include it("lg\:stroke-0") {
+        @include assert {
+          @include output {
+            @include stroke-0;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 0;
+          }
+        }
+      }
+
+      @include it("lg\:stroke-1") {
+        @include assert {
+          @include output {
+            @include stroke-1;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 1;
+          }
+        }
+      }
+
+      @include it("lg\:stroke-2") {
+        @include assert {
+          @include output {
+            @include stroke-2;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 2;
+          }
+        }
+      }
+
+      @include it("xl\:stroke-0") {
+        @include assert {
+          @include output {
+            @include stroke-0;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 0;
+          }
+        }
+      }
+
+      @include it("xl\:stroke-1") {
+        @include assert {
+          @include output {
+            @include stroke-1;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 1;
+          }
+        }
+      }
+
+      @include it("xl\:stroke-2") {
+        @include assert {
+          @include output {
+            @include stroke-2;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 2;
+          }
+        }
+      }
+
+      @include it("\2xl\:stroke-0") {
+        @include assert {
+          @include output {
+            @include stroke-0;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 0;
+          }
+        }
+      }
+
+      @include it("\2xl\:stroke-1") {
+        @include assert {
+          @include output {
+            @include stroke-1;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 1;
+          }
+        }
+      }
+
+      @include it("\2xl\:stroke-2") {
+        @include assert {
+          @include output {
+            @include stroke-2;
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 2;
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("stroke-(2px)") {
+        @include assert {
+          @include output {
+            @include stroke-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            stroke-width: 2px;
+          }
+        }
+      }
+
+      @include it("sm\:stroke-(2px)") {
+        @include assert {
+          @include output {
+            @include sm\:stroke-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              stroke-width: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("md\:stroke-(2px)") {
+        @include assert {
+          @include output {
+            @include md\:stroke-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              stroke-width: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:stroke-(2px)") {
+        @include assert {
+          @include output {
+            @include lg\:stroke-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              stroke-width: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:stroke-(2px)") {
+        @include assert {
+          @include output {
+            @include xl\:stroke-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              stroke-width: 2px;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:stroke-(2px)") {
+        @include assert {
+          @include output {
+            @include \2xl\:stroke-(2px);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              stroke-width: 2px;
+            }
+          }
+        }
+      }
+
+    }
   }
-
-  @mixin stroke-1 {
-    @include stroke-(1);
-  }
-
-  @mixin stroke-2 {
-    @include stroke-(2);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:stroke-0 {
-      @include stroke-(0, $sm);
-    }
-
-    @mixin sm\:stroke-1 {
-      @include stroke-(1, $sm);
-    }
-
-    @mixin sm\:stroke-2 {
-      @include stroke-(2, $sm);
-    }
-
-    @mixin md\:stroke-0 {
-      @include stroke-(0, $md);
-    }
-
-    @mixin md\:stroke-1 {
-      @include stroke-(1, $md);
-    }
-
-    @mixin md\:stroke-2 {
-      @include stroke-(2, $md);
-    }
-
-    @mixin lg\:stroke-0 {
-      @include stroke-(0, $lg);
-    }
-
-    @mixin lg\:stroke-1 {
-      @include stroke-(1, $lg);
-    }
-
-    @mixin lg\:stroke-2 {
-      @include stroke-(2, $lg);
-    }
-
-    @mixin xl\:stroke-0 {
-      @include stroke-(0, $xl);
-    }
-
-    @mixin xl\:stroke-1 {
-      @include stroke-(1, $xl);
-    }
-
-    @mixin xl\:stroke-2 {
-      @include stroke-(2, $xl);
-    }
-
-    @mixin \2xl\:stroke-0 {
-      @include stroke-(0, $\2xl);
-    }
-
-    @mixin \2xl\:stroke-1 {
-      @include stroke-(1, $\2xl);
-    }
-
-    @mixin \2xl\:stroke-2 {
-      @include stroke-(2, $\2xl);
-    }
-    // x*/
-  }
-}
-
-// same as stroke-($v, $rwd: null)
-@if $Custom {
 }

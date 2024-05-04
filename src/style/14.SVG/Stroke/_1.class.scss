@@ -5969,19 +5969,19 @@
   // /*x
   @mixin stroke-($v, $rwd: null) {
     @if $rwd==null {
-      @if meta.type-of($v) ==color {
-        stroke: $v;
-      } @else {
-        stroke-width: $v;
-      }
+      @include __stroke-($v);
     } @else {
       @media (min-width: $rwd) {
-        @if meta.type-of($v) ==color {
-          stroke: $v;
-        } @else {
-          stroke-width: $v;
-        }
+        @include __stroke-($v);
       }
+    }
+  }
+  
+  @mixin __stroke-($v) {
+    @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+      stroke: $v;
+    } @else {
+      stroke-width: $v;
     }
   }
 
