@@ -5954,11 +5954,14 @@
   }
 
   @mixin __outline-($v, $rwd: null) {
-      @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
-        outline-color: $v;
-      } @else {
-        outline-width: $v;
-      }
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      outline-color: $v;
+    } @else {
+      outline-width: $v;
+    }
   }
 
   @mixin sm\:outline-($v) {

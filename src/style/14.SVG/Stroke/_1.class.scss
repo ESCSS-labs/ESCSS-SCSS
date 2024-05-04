@@ -5976,9 +5976,12 @@
       }
     }
   }
-  
+
   @mixin __stroke-($v) {
-    @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
       stroke: $v;
     } @else {
       stroke-width: $v;
