@@ -2,100 +2,276 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Screen Readers */
-@if $Basic {
-  // /*x
-  @mixin sr-only($rwd: null) {
-    @if $rwd==null {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    } @else {
-      @media (min-width: $rwd) {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
+@include describe("15.Accessibility") {
+  @include describe("Screen Readers") {
+    @include describe("Basic") {
+      @include it("sr-only") {
+        @include assert {
+          @include output {
+            @include sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+          }
+        }
+      }
+
+      @include it("not-sr-only") {
+        @include assert {
+          @include output {
+            @include not-sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:sr-only") {
+        @include assert {
+          @include output {
+            @include sm\:sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              white-space: nowrap;
+              border-width: 0;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:not-sr-only") {
+        @include assert {
+          @include output {
+            @include sm\:not-sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              position: static;
+              width: auto;
+              height: auto;
+              padding: 0;
+              margin: 0;
+              overflow: visible;
+              clip: auto;
+              white-space: normal;
+            }
+          }
+        }
+      }
+
+      @include it("md\:sr-only") {
+        @include assert {
+          @include output {
+            @include md\:sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              white-space: nowrap;
+              border-width: 0;
+            }
+          }
+        }
+      }
+
+      @include it("md\:not-sr-only") {
+        @include assert {
+          @include output {
+            @include md\:not-sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              position: static;
+              width: auto;
+              height: auto;
+              padding: 0;
+              margin: 0;
+              overflow: visible;
+              clip: auto;
+              white-space: normal;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:sr-only") {
+        @include assert {
+          @include output {
+            @include lg\:sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              white-space: nowrap;
+              border-width: 0;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:not-sr-only") {
+        @include assert {
+          @include output {
+            @include lg\:not-sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              position: static;
+              width: auto;
+              height: auto;
+              padding: 0;
+              margin: 0;
+              overflow: visible;
+              clip: auto;
+              white-space: normal;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:sr-only") {
+        @include assert {
+          @include output {
+            @include xl\:sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              white-space: nowrap;
+              border-width: 0;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:not-sr-only") {
+        @include assert {
+          @include output {
+            @include xl\:not-sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              position: static;
+              width: auto;
+              height: auto;
+              padding: 0;
+              margin: 0;
+              overflow: visible;
+              clip: auto;
+              white-space: normal;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:sr-only") {
+        @include assert {
+          @include output {
+            @include \2xl\:sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              white-space: nowrap;
+              border-width: 0;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:not-sr-only") {
+        @include assert {
+          @include output {
+            @include \2xl\:not-sr-only;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              position: static;
+              width: auto;
+              height: auto;
+              padding: 0;
+              margin: 0;
+              overflow: visible;
+              clip: auto;
+              white-space: normal;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin not-sr-only($rwd: null) {
-    @if $rwd==null {
-      position: static;
-      width: auto;
-      height: auto;
-      padding: 0;
-      margin: 0;
-      overflow: visible;
-      clip: auto;
-      white-space: normal;
-    } @else {
-      @media (min-width: $rwd) {
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        overflow: visible;
-        clip: auto;
-        white-space: normal;
-      }
-    }
-  } // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:sr-only {
-    @include sr-only($sm);
-  }
-
-  @mixin sm\:not-sr-only {
-    @include not-sr-only($sm);
-  }
-
-  @mixin md\:sr-only {
-    @include sr-only($md);
-  }
-
-  @mixin md\:not-sr-only {
-    @include not-sr-only($md);
-  }
-
-  @mixin lg\:sr-only {
-    @include sr-only($lg);
-  }
-
-  @mixin lg\:not-sr-only {
-    @include not-sr-only($lg);
-  }
-
-  @mixin xl\:sr-only {
-    @include sr-only($xl);
-  }
-
-  @mixin xl\:not-sr-only {
-    @include not-sr-only($xl);
-  }
-
-  @mixin \2xl\:sr-only {
-    @include sr-only($\2xl);
-  }
-
-  @mixin \2xl\:not-sr-only {
-    @include not-sr-only($\2xl);
-  }
-  // x*/
 }
