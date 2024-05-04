@@ -2,6 +2,7 @@
 
 /* Space Between */
 @if $Basic {
+
   // /*x
   @mixin space-x-reverse {
     @include space-x-(0px, null, true);
@@ -290,11 +291,13 @@
   @mixin space-y-96 {
     @include space-y-($\96);
   }
+
   // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
+
     // /*x
     @mixin sm\:space-x-reverse {
       @include space-x-(0px, $sm, true);
@@ -583,6 +586,7 @@
     @mixin sm\:space-y-96 {
       @include space-y-($\96, $sm);
     }
+
     @mixin md\:space-x-reverse {
       @include space-x-(0px, $md, true);
     }
@@ -870,6 +874,7 @@
     @mixin md\:space-y-96 {
       @include space-y-($\96, $md);
     }
+
     @mixin lg\:space-x-reverse {
       @include space-x-(0px, $lg, true);
     }
@@ -1157,6 +1162,7 @@
     @mixin lg\:space-y-96 {
       @include space-y-($\96, $lg);
     }
+
     @mixin xl\:space-x-reverse {
       @include space-x-(0px, $xl, true);
     }
@@ -1444,6 +1450,7 @@
     @mixin xl\:space-y-96 {
       @include space-y-($\96, $xl);
     }
+
     @mixin \2xl\:space-x-reverse {
       @include space-x-(0px, $\2xl, true);
     }
@@ -1731,35 +1738,43 @@
     @mixin \2xl\:space-y-96 {
       @include space-y-($\96, $\2xl);
     }
+
     // x*/
   }
 }
 
 @if $Custom {
+
   // /*x
   @mixin space-x-($v, $rwd: null, $isReverse: false) {
     @if $rwd==null {
-      @if $isReverse == false {
-        $--space-x-value: $v !global; // update for using reverse
-      } @else {
+      @if $isReverse {
         $--tw-space-x-reverse: 1 !global;
         $v: $--space-x-value;
       }
 
-      > * ~ * {
+      @else {
+        $--space-x-value: $v !global; // update value when using reverse
+      }
+
+      >*~* {
         margin-left: $v * (1 - $--tw-space-x-reverse);
         margin-right: $v * $--tw-space-x-reverse;
       }
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
-        @if $isReverse == false {
-          $--space-x-value: $v !global; // update for using reverse
-        } @else {
+        @if $isReverse {
           $--tw-space-x-reverse: 1 !global;
           $v: $--space-x-value;
         }
 
-        > * ~ * {
+        @else {
+          $--space-x-value: $v !global; // update value when using reverse
+        }
+
+        >*~* {
           margin-left: $v * (1 - $--tw-space-x-reverse);
           margin-right: $v * $--tw-space-x-reverse;
         }
@@ -1769,27 +1784,33 @@
 
   @mixin space-y-($v, $rwd: null, $isReverse: false) {
     @if $rwd==null {
-      @if $isReverse == false {
-        $--space-y-value: $v !global; // update for using reverse
-      } @else {
+      @if $isReverse {
         $--tw-space-y-reverse: 1 !global;
         $v: $--space-y-value;
       }
 
-      > * ~ * {
+      @else {
+        $--space-y-value: $v !global; // update value when using reverse
+      }
+
+      >*~* {
         margin-top: $v * (1 - $--tw-space-y-reverse);
         margin-bottom: $v * $--tw-space-y-reverse;
       }
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
-        @if $isReverse == false {
-          $--space-y-value: $v !global; // update for using reverse
-        } @else {
+        @if $isReverse {
           $--tw-space-y-reverse: 1 !global;
           $v: $--space-y-value;
         }
 
-        > * ~ * {
+        @else {
+          $--space-y-value: $v !global; // update value when using reverse
+        }
+
+        >*~* {
           margin-top: $v * (1 - $--tw-space-y-reverse);
           margin-bottom: $v * $--tw-space-y-reverse;
         }
@@ -1842,6 +1863,7 @@
 
 @if $Negative {
   @if $Basic {
+
     // /*x
     @mixin -space-x-0 {
       @include space-x-(-$\0);
@@ -2128,6 +2150,7 @@
 
   @if $Rwd {
     @if $sizeMode ==0 or $sizeMode ==1 {
+
       // /*x
       @mixin sm\:-space-x-0 {
         @include space-x-(-$\0, $sm);
@@ -3531,5 +3554,58 @@
 
       // x*/
     }
+  }
+
+  @if $Custom {
+    // /*x
+    @mixin -space-x-($v, $rwd: null) {
+      @include space-x-(-($v), $rwd);
+    }
+  
+    @mixin -space-y-($v, $rwd: null) {
+      @include space-y-(-($v), $rwd);
+    }
+  
+    @mixin sm\:-space-x-($v) {
+      @include -space-x-($v, $sm);
+    }
+  
+    @mixin sm\:-space-y-($v) {
+      @include -space-y-($v, $sm);
+    }
+  
+    @mixin md\:-space-x-($v) {
+      @include -space-x-($v, $md);
+    }
+  
+    @mixin md\:-space-y-($v) {
+      @include -space-y-($v, $md);
+    }
+  
+    @mixin lg\:-space-x-($v) {
+      @include -space-x-($v, $lg);
+    }
+  
+    @mixin lg\:-space-y-($v) {
+      @include -space-y-($v, $lg);
+    }
+  
+    @mixin xl\:-space-x-($v) {
+      @include -space-x-($v, $xl);
+    }
+  
+    @mixin xl\:-space-y-($v) {
+      @include -space-y-($v, $xl);
+    }
+  
+    @mixin \2xl\:-space-x-($v) {
+      @include -space-x-($v, $\2xl);
+    }
+  
+    @mixin \2xl\:-space-y-($v) {
+      @include -space-y-($v, $\2xl);
+    }
+  
+    // x*/
   }
 }

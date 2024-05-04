@@ -775,4 +775,33 @@
       // x*/
     }
   }
+
+  @if $Custom {
+    // /*x
+    @mixin -order-($v, $rwd: null) {
+      @include order-(-($v), $rwd);
+    }
+  
+    @mixin sm\:-order-($v) {
+      @include -order-($v, $sm);
+    }
+  
+    @mixin md\:-order-($v) {
+      @include -order-($v, $md);
+    }
+  
+    @mixin lg\:-order-($v) {
+      @include -order-($v, $lg);
+    }
+  
+    @mixin xl\:-order-($v) {
+      @include -order-($v, $xl);
+    }
+  
+    @mixin \2xl\:-order-($v) {
+      @include -order-($v, $\2xl);
+    }
+  
+    // x*/
+  }
 }

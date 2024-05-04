@@ -2,6 +2,7 @@
 
 /* Top / Right / Bottom / Left */
 @if $Basic {
+
   // /*x
   @mixin inset-0 {
     @include inset-($\0);
@@ -1556,6 +1557,7 @@
 
 @if $Rwd {
   @if $sizeMode ==0 or $sizeMode ==1 {
+
     // /*x
     @mixin sm\:inset-0 {
       @include inset-($\0, $sm);
@@ -3104,6 +3106,7 @@
     @mixin sm\:left-full {
       @include left-(100%, $sm);
     }
+
     @mixin md\:inset-0 {
       @include inset-($\0, $md);
     }
@@ -4651,6 +4654,7 @@
     @mixin md\:left-full {
       @include left-(100%, $md);
     }
+
     @mixin lg\:inset-0 {
       @include inset-($\0, $lg);
     }
@@ -6198,6 +6202,7 @@
     @mixin lg\:left-full {
       @include left-(100%, $lg);
     }
+
     @mixin xl\:inset-0 {
       @include inset-($\0, $xl);
     }
@@ -7745,6 +7750,7 @@
     @mixin xl\:left-full {
       @include left-(100%, $xl);
     }
+
     @mixin \2xl\:inset-0 {
       @include inset-($\0, $\2xl);
     }
@@ -9303,7 +9309,9 @@
   @mixin inset-($v, $rwd: null) {
     @if $rwd ==null {
       inset: $v;
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         inset: $v;
       }
@@ -9314,7 +9322,9 @@
     @if $rwd ==null {
       left: $v;
       right: $v;
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         left: $v;
         right: $v;
@@ -9326,7 +9336,9 @@
     @if $rwd ==null {
       top: $v;
       bottom: $v;
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         top: $v;
         bottom: $v;
@@ -9337,7 +9349,9 @@
   @mixin start-($v, $rwd: null) {
     @if $rwd ==null {
       inset-inline-start: $v;
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         inset-inline-start: $v;
       }
@@ -9347,7 +9361,9 @@
   @mixin end-($v, $rwd: null) {
     @if $rwd ==null {
       inset-inline-end: $v;
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         inset-inline-end: $v;
       }
@@ -9357,7 +9373,9 @@
   @mixin top-($v, $rwd: null) {
     @if $rwd ==null {
       top: $v;
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         top: $v;
       }
@@ -9367,7 +9385,9 @@
   @mixin right-($v, $rwd: null) {
     @if $rwd ==null {
       right: $v;
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         right: $v;
       }
@@ -9377,7 +9397,9 @@
   @mixin bottom-($v, $rwd: null) {
     @if $rwd ==null {
       bottom: $v;
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         bottom: $v;
       }
@@ -9387,7 +9409,9 @@
   @mixin left-($v, $rwd: null) {
     @if $rwd ==null {
       left: $v;
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         left: $v;
       }
@@ -9579,6 +9603,7 @@
 
 @if $Negative {
   @if $Basic {
+
     // /*x
     @mixin -inset-0 {
       @include inset-(-$\0);
@@ -11091,11 +11116,13 @@
     @mixin -left-full {
       @include left-(-100%);
     }
+
     // x*/
   }
 
   @if $Rwd {
     @if $sizeMode ==0 or $sizeMode ==1 {
+
       // /*x
       @mixin sm\:-inset-0 {
         @include inset-(-$\0, $sm);
@@ -18656,7 +18683,230 @@
       @mixin \2xl\:-left-full {
         @include left-(-100%, $\2xl);
       }
+
       // x*/
     }
+  }
+
+  @if $Custom {
+    // /*x
+  
+    @mixin -inset-($v, $rwd: null) {
+      @include inset-(-($v), $rwd);
+    }
+  
+    @mixin -inset-x-($v, $rwd: null) {
+      @include inset-x-(-($v), $rwd);
+    }
+  
+    @mixin -inset-y-($v, $rwd: null) {
+      @include inset-y-(-($v), $rwd);
+    }
+  
+    @mixin -start-($v, $rwd: null) {
+      @include start-(-($v), $rwd);
+    }
+  
+    @mixin -end-($v, $rwd: null) {
+      @include end-(-($v), $rwd);
+    }
+  
+    @mixin -top-($v, $rwd: null) {
+      @include top-(-($v), $rwd);
+    }
+  
+    @mixin -right-($v, $rwd: null) {
+      @include right-(-($v), $rwd);
+    }
+  
+    @mixin -bottom-($v, $rwd: null) {
+      @include bottom-(-($v), $rwd);
+    }
+  
+    @mixin -left-($v, $rwd: null) {
+      @include left-(-($v), $rwd);
+    }
+  
+    @mixin sm\:-inset-($v) {
+      @include -inset-($v, $sm);
+    }
+  
+    @mixin sm\:-inset-x-($v) {
+      @include -inset-x-($v, $sm);
+    }
+  
+    @mixin sm\:-inset-y-($v) {
+      @include -inset-y-($v, $sm);
+    }
+  
+    @mixin sm\:-start-($v) {
+      @include -start-($v, $sm);
+    }
+  
+    @mixin sm\:-end-($v) {
+      @include -end-($v, $sm);
+    }
+  
+    @mixin sm\:-top-($v) {
+      @include -top-($v, $sm);
+    }
+  
+    @mixin sm\:-right-($v) {
+      @include -right-($v, $sm);
+    }
+  
+    @mixin sm\:-bottom-($v) {
+      @include -bottom-($v, $sm);
+    }
+  
+    @mixin sm\:-left-($v) {
+      @include -left-($v, $sm);
+    }
+  
+    @mixin md\:-inset-($v) {
+      @include -inset-($v, $md);
+    }
+  
+    @mixin md\:-inset-x-($v) {
+      @include -inset-x-($v, $md);
+    }
+  
+    @mixin md\:-inset-y-($v) {
+      @include -inset-y-($v, $md);
+    }
+  
+    @mixin md\:-start-($v) {
+      @include -start-($v, $md);
+    }
+  
+    @mixin md\:-end-($v) {
+      @include -end-($v, $md);
+    }
+  
+    @mixin md\:-top-($v) {
+      @include -top-($v, $md);
+    }
+  
+    @mixin md\:-right-($v) {
+      @include -right-($v, $md);
+    }
+  
+    @mixin md\:-bottom-($v) {
+      @include -bottom-($v, $md);
+    }
+  
+    @mixin md\:-left-($v) {
+      @include -left-($v, $md);
+    }
+  
+    @mixin lg\:-inset-($v) {
+      @include -inset-($v, $lg);
+    }
+  
+    @mixin lg\:-inset-x-($v) {
+      @include -inset-x-($v, $lg);
+    }
+  
+    @mixin lg\:-inset-y-($v) {
+      @include -inset-y-($v, $lg);
+    }
+  
+    @mixin lg\:-start-($v) {
+      @include -start-($v, $lg);
+    }
+  
+    @mixin lg\:-end-($v) {
+      @include -end-($v, $lg);
+    }
+  
+    @mixin lg\:-top-($v) {
+      @include -top-($v, $lg);
+    }
+  
+    @mixin lg\:-right-($v) {
+      @include -right-($v, $lg);
+    }
+  
+    @mixin lg\:-bottom-($v) {
+      @include -bottom-($v, $lg);
+    }
+  
+    @mixin lg\:-left-($v) {
+      @include -left-($v, $lg);
+    }
+  
+    @mixin xl\:-inset-($v) {
+      @include -inset-($v, $xl);
+    }
+  
+    @mixin xl\:-inset-x-($v) {
+      @include -inset-x-($v, $xl);
+    }
+  
+    @mixin xl\:-inset-y-($v) {
+      @include -inset-y-($v, $xl);
+    }
+  
+    @mixin xl\:-start-($v) {
+      @include -start-($v, $xl);
+    }
+  
+    @mixin xl\:-end-($v) {
+      @include -end-($v, $xl);
+    }
+  
+    @mixin xl\:-top-($v) {
+      @include -top-($v, $xl);
+    }
+  
+    @mixin xl\:-right-($v) {
+      @include -right-($v, $xl);
+    }
+  
+    @mixin xl\:-bottom-($v) {
+      @include -bottom-($v, $xl);
+    }
+  
+    @mixin xl\:-left-($v) {
+      @include -left-($v, $xl);
+    }
+  
+    @mixin \2xl\:-inset-($v) {
+      @include -inset-($v, $\2xl);
+    }
+  
+    @mixin \2xl\:-inset-x-($v) {
+      @include -inset-x-($v, $\2xl);
+    }
+  
+    @mixin \2xl\:-inset-y-($v) {
+      @include -inset-y-($v, $\2xl);
+    }
+  
+    @mixin \2xl\:-start-($v) {
+      @include -start-($v, $\2xl);
+    }
+  
+    @mixin \2xl\:-end-($v) {
+      @include -end-($v, $\2xl);
+    }
+  
+    @mixin \2xl\:-top-($v) {
+      @include -top-($v, $\2xl);
+    }
+  
+    @mixin \2xl\:-right-($v) {
+      @include -right-($v, $\2xl);
+    }
+  
+    @mixin \2xl\:-bottom-($v) {
+      @include -bottom-($v, $\2xl);
+    }
+  
+    @mixin \2xl\:-left-($v) {
+      @include -left-($v, $\2xl);
+    }
+  
+    // x*/
   }
 }

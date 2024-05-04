@@ -372,4 +372,33 @@
       // x*/
     }
   }
+
+  @if $Custom {
+    // /*x
+    @mixin -z-($v, $rwd: null) {
+      @include z-(-($v), $rwd);
+    }
+  
+    @mixin sm\:-z-($v) {
+      @include -z-($v, $sm);
+    }
+  
+    @mixin md\:-z-($v) {
+      @include -z-($v, $md);
+    }
+  
+    @mixin lg\:-z-($v) {
+      @include -z-($v, $lg);
+    }
+  
+    @mixin xl\:-z-($v) {
+      @include -z-($v, $xl);
+    }
+  
+    @mixin \2xl\:-z-($v) {
+      @include -z-($v, $\2xl);
+    }
+  
+    // x*/
+  }
 }

@@ -1740,4 +1740,33 @@
       // x*/
     }
   }
+
+  @if $Custom {
+    // /*x
+    @mixin -indent-($v, $rwd: null) {
+      @include indent-(-($v), $rwd);
+    }
+  
+    @mixin sm\:-indent-($v) {
+      @include -indent-($v, $sm);
+    }
+  
+    @mixin md\:-indent-($v) {
+      @include -indent-($v, $md);
+    }
+  
+    @mixin lg\:-indent-($v) {
+      @include -indent-($v, $lg);
+    }
+  
+    @mixin xl\:-indent-($v) {
+      @include -indent-($v, $xl);
+    }
+  
+    @mixin \2xl\:-indent-($v) {
+      @include -indent-($v, $\2xl);
+    }
+  
+    // x*/
+  }
 }
