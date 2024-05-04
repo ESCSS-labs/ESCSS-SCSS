@@ -2,145 +2,453 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Will Change */
-@if $Basic {
-  // /*x
-  @mixin will-change-auto {
-    @include will-change-(auto);
-  }
+@include describe("13.Interactivity") {
+  @include describe("Will Change") {
+    @include describe("Basic") {
+      @include it("will-change-auto") {
+        @include assert {
+          @include output {
+            @include will-change-auto;
+            @include clear;
+          }
 
-  @mixin will-change-scroll {
-    @include will-change-(scroll-position);
-  }
+          @include expect {
+            will-change: auto;
+          }
+        }
+      }
 
-  @mixin will-change-contents {
-    @include will-change-(contents);
-  }
+      @include it("will-change-scroll") {
+        @include assert {
+          @include output {
+            @include will-change-scroll;
+            @include clear;
+          }
 
-  @mixin will-change-transform {
-    @include will-change-(transform);
-  }
+          @include expect {
+            will-change: scroll-position;
+          }
+        }
+      }
 
-  // x*/
-}
+      @include it("will-change-contents") {
+        @include assert {
+          @include output {
+            @include will-change-contents;
+            @include clear;
+          }
 
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:will-change-auto {
-      @include will-change-(auto, null, $sm);
-    }
+          @include expect {
+            will-change: contents;
+          }
+        }
+      }
 
-    @mixin sm\:will-change-scroll {
-      @include will-change-(scroll-position, null, $sm);
-    }
+      @include it("will-change-transform") {
+        @include assert {
+          @include output {
+            @include will-change-transform;
+            @include clear;
+          }
 
-    @mixin sm\:will-change-contents {
-      @include will-change-(contents, null, $sm);
-    }
-
-    @mixin sm\:will-change-transform {
-      @include will-change-(transform, null, $sm);
-    }
-
-    @mixin md\:will-change-auto {
-      @include will-change-(auto, null, $md);
-    }
-
-    @mixin md\:will-change-scroll {
-      @include will-change-(scroll-position, null, $md);
-    }
-
-    @mixin md\:will-change-contents {
-      @include will-change-(contents, null, $md);
-    }
-
-    @mixin md\:will-change-transform {
-      @include will-change-(transform, null, $md);
-    }
-
-    @mixin lg\:will-change-auto {
-      @include will-change-(auto, null, $lg);
-    }
-
-    @mixin lg\:will-change-scroll {
-      @include will-change-(scroll-position, null, $lg);
-    }
-
-    @mixin lg\:will-change-contents {
-      @include will-change-(contents, null, $lg);
-    }
-
-    @mixin lg\:will-change-transform {
-      @include will-change-(transform, null, $lg);
-    }
-
-    @mixin xl\:will-change-auto {
-      @include will-change-(auto, null, $xl);
-    }
-
-    @mixin xl\:will-change-scroll {
-      @include will-change-(scroll-position, null, $xl);
-    }
-
-    @mixin xl\:will-change-contents {
-      @include will-change-(contents, null, $xl);
-    }
-
-    @mixin xl\:will-change-transform {
-      @include will-change-(transform, null, $xl);
-    }
-
-    @mixin \2xl\:will-change-auto {
-      @include will-change-(auto, null, $\2xl);
-    }
-
-    @mixin \2xl\:will-change-scroll {
-      @include will-change-(scroll-position, null, $\2xl);
-    }
-
-    @mixin \2xl\:will-change-contents {
-      @include will-change-(contents, null, $\2xl);
-    }
-
-    @mixin \2xl\:will-change-transform {
-      @include will-change-(transform, null, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin will-change-($v, $v2: null, $rwd: null) {
-    @if $rwd==null {
-      will-change: $v, $v2;
-    } @else {
-      @media (min-width: $rwd) {
-        will-change: $v, $v2;
+          @include expect {
+            will-change: transform;
+          }
+        }
       }
     }
-  }
 
-  @mixin sm\:will-change-($v, $v2: null) {
-    @include will-change-($v, $v2, $sm);
-  }
+    @include describe("Rwd") {
+      @include it("sm\:will-change-auto") {
+        @include assert {
+          @include output {
+            @include sm\:will-change-auto;
+            @include clear;
+          }
 
-  @mixin md\:will-change-($v, $v2: null) {
-    @include will-change-($v, $v2, $md);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              will-change: auto;
+            }
+          }
+        }
+      }
 
-  @mixin lg\:will-change-($v, $v2: null) {
-    @include will-change-($v, $v2, $lg);
-  }
+      @include it("sm\:will-change-scroll") {
+        @include assert {
+          @include output {
+            @include sm\:will-change-scroll;
+            @include clear;
+          }
 
-  @mixin xl\:will-change-($v, $v2: null) {
-    @include will-change-($v, $v2, $xl);
-  }
+          @include expect {
+            @media(min-width:$sm) {
+              will-change: scroll-position;
+            }
+          }
+        }
+      }
 
-  @mixin \2xl\:will-change-($v, $v2: null) {
-    @include will-change-($v, $v2, $\2xl);
-  }
+      @include it("sm\:will-change-contents") {
+        @include assert {
+          @include output {
+            @include sm\:will-change-contents;
+            @include clear;
+          }
 
-  // x*/
+          @include expect {
+            @media(min-width:$sm) {
+              will-change: contents;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:will-change-transform") {
+        @include assert {
+          @include output {
+            @include sm\:will-change-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              will-change: transform;
+            }
+          }
+        }
+      }
+
+      @include it("md\:will-change-auto") {
+        @include assert {
+          @include output {
+            @include md\:will-change-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              will-change: auto;
+            }
+          }
+        }
+      }
+
+      @include it("md\:will-change-scroll") {
+        @include assert {
+          @include output {
+            @include md\:will-change-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              will-change: scroll-position;
+            }
+          }
+        }
+      }
+
+      @include it("md\:will-change-contents") {
+        @include assert {
+          @include output {
+            @include md\:will-change-contents;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              will-change: contents;
+            }
+          }
+        }
+      }
+
+      @include it("md\:will-change-transform") {
+        @include assert {
+          @include output {
+            @include md\:will-change-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              will-change: transform;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:will-change-auto") {
+        @include assert {
+          @include output {
+            @include lg\:will-change-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              will-change: auto;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:will-change-scroll") {
+        @include assert {
+          @include output {
+            @include lg\:will-change-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              will-change: scroll-position;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:will-change-contents") {
+        @include assert {
+          @include output {
+            @include lg\:will-change-contents;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              will-change: contents;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:will-change-transform") {
+        @include assert {
+          @include output {
+            @include lg\:will-change-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              will-change: transform;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:will-change-auto") {
+        @include assert {
+          @include output {
+            @include xl\:will-change-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              will-change: auto;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:will-change-scroll") {
+        @include assert {
+          @include output {
+            @include xl\:will-change-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              will-change: scroll-position;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:will-change-contents") {
+        @include assert {
+          @include output {
+            @include xl\:will-change-contents;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              will-change: contents;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:will-change-transform") {
+        @include assert {
+          @include output {
+            @include xl\:will-change-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              will-change: transform;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:will-change-auto") {
+        @include assert {
+          @include output {
+            @include \2xl\:will-change-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              will-change: auto;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:will-change-scroll") {
+        @include assert {
+          @include output {
+            @include \2xl\:will-change-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              will-change: scroll-position;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:will-change-contents") {
+        @include assert {
+          @include output {
+            @include \2xl\:will-change-contents;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              will-change: contents;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:will-change-transform") {
+        @include assert {
+          @include output {
+            @include \2xl\:will-change-transform;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              will-change: transform;
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("will-change-(top, left)") {
+        @include assert {
+          @include output {
+            @include will-change-(top, left);
+            @include clear;
+          }
+
+          @include expect {
+            will-change: top, left;
+          }
+        }
+      }
+
+      @include it("sm\:will-change-(top, left)") {
+        @include assert {
+          @include output {
+            @include sm\:will-change-(top, left);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              will-change: top, left;
+            }
+          }
+        }
+      }
+
+      @include it("md\:will-change-(top, left)") {
+        @include assert {
+          @include output {
+            @include md\:will-change-(top, left);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              will-change: top, left;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:will-change-(top, left)") {
+        @include assert {
+          @include output {
+            @include lg\:will-change-(top, left);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              will-change: top, left;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:will-change-(top, left)") {
+        @include assert {
+          @include output {
+            @include xl\:will-change-(top, left);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              will-change: top, left;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:will-change-(top, left)") {
+        @include assert {
+          @include output {
+            @include \2xl\:will-change-(top, left);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              will-change: top, left;
+            }
+          }
+        }
+      }
+
+    }
+  }
 }

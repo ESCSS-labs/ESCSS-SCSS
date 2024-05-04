@@ -2,73 +2,178 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Appearance */
-@if $Basic {
-  // /*x
-  @mixin appearance-none($rwd: null) {
-    @if $rwd==null {
-      appearance: none;
-    } @else {
-      @media (min-width: $rwd) {
-        appearance: none;
+@include describe("13.Interactivity") {
+  @include describe("Appearance") {
+    @include describe("Basic") {
+      @include it("appearance-none") {
+        @include assert {
+          @include output {
+            @include appearance-none;
+            @include clear;
+          }
+      
+          @include expect {
+            appearance: none;
+          }
+        }
+      }
+      
+      @include it("appearance-auto") {
+        @include assert {
+          @include output {
+            @include appearance-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            appearance: auto;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:appearance-none") {
+        @include assert {
+          @include output {
+            @include sm\:appearance-none;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              appearance: none;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:appearance-auto") {
+        @include assert {
+          @include output {
+            @include sm\:appearance-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              appearance: auto;
+            }
+          }
+        }
+      }@include it("md\:appearance-none") {
+        @include assert {
+          @include output {
+            @include md\:appearance-none;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              appearance: none;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:appearance-auto") {
+        @include assert {
+          @include output {
+            @include md\:appearance-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              appearance: auto;
+            }
+          }
+        }
+      }@include it("lg\:appearance-none") {
+        @include assert {
+          @include output {
+            @include lg\:appearance-none;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              appearance: none;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:appearance-auto") {
+        @include assert {
+          @include output {
+            @include lg\:appearance-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              appearance: auto;
+            }
+          }
+        }
+      }@include it("xl\:appearance-none") {
+        @include assert {
+          @include output {
+            @include xl\:appearance-none;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              appearance: none;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:appearance-auto") {
+        @include assert {
+          @include output {
+            @include xl\:appearance-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              appearance: auto;
+            }
+          }
+        }
+      }@include it("\2xl\:appearance-none") {
+        @include assert {
+          @include output {
+            @include \2xl\:appearance-none;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              appearance: none;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:appearance-auto") {
+        @include assert {
+          @include output {
+            @include \2xl\:appearance-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              appearance: auto;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin appearance-auto($rwd: null) {
-    @if $rwd==null {
-      appearance: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        appearance: auto;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:appearance-none {
-    @include appearance-none($sm);
-  }
-
-  @mixin sm\:appearance-auto {
-    @include appearance-auto($sm);
-  }
-
-  @mixin md\:appearance-none {
-    @include appearance-none($md);
-  }
-
-  @mixin md\:appearance-auto {
-    @include appearance-auto($md);
-  }
-
-  @mixin lg\:appearance-none {
-    @include appearance-none($lg);
-  }
-
-  @mixin lg\:appearance-auto {
-    @include appearance-auto($lg);
-  }
-
-  @mixin xl\:appearance-none {
-    @include appearance-none($xl);
-  }
-
-  @mixin xl\:appearance-auto {
-    @include appearance-auto($xl);
-  }
-
-  @mixin \2xl\:appearance-none {
-    @include appearance-none($\2xl);
-  }
-
-  @mixin \2xl\:appearance-auto {
-    @include appearance-auto($\2xl);
-  }
-
-  // x*/
 }

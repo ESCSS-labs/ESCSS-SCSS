@@ -2,913 +2,3268 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Cursor */
-@if $Basic {
-  // /*x
-  @mixin cursor-auto {
-    @include cursor-(auto);
-  }
-
-  @mixin cursor-default {
-    @include cursor-(default);
-  }
-
-  @mixin cursor-pointer {
-    @include cursor-(pointer);
-  }
-
-  @mixin cursor-wait {
-    @include cursor-(wait);
-  }
-
-  @mixin cursor-text {
-    @include cursor-(text);
-  }
-
-  @mixin cursor-move {
-    @include cursor-(move);
-  }
-
-  @mixin cursor-help {
-    @include cursor-(help);
-  }
-
-  @mixin cursor-not-allowed {
-    @include cursor-(not-allowed);
-  }
-
-  @mixin cursor-none {
-    @include cursor-(none);
-  }
-
-  @mixin cursor-context-menu {
-    @include cursor-(context-menu);
-  }
-
-  @mixin cursor-progress {
-    @include cursor-(progress);
-  }
-
-  @mixin cursor-cell {
-    @include cursor-(cell);
-  }
-
-  @mixin cursor-crosshair {
-    @include cursor-(crosshair);
-  }
-
-  @mixin cursor-vertical-text {
-    @include cursor-(vertical-text);
-  }
-
-  @mixin cursor-alias {
-    @include cursor-(alias);
-  }
-
-  @mixin cursor-copy {
-    @include cursor-(copy);
-  }
-
-  @mixin cursor-no-drop {
-    @include cursor-(no-drop);
-  }
-
-  @mixin cursor-grab {
-    @include cursor-(grab);
-  }
-
-  @mixin cursor-grabbing {
-    @include cursor-(grabbing);
-  }
-
-  @mixin cursor-all-scroll {
-    @include cursor-(all-scroll);
-  }
-
-  @mixin cursor-col-resize {
-    @include cursor-(col-resize);
-  }
-
-  @mixin cursor-row-resize {
-    @include cursor-(row-resize);
-  }
-
-  @mixin cursor-n-resize {
-    @include cursor-(n-resize);
-  }
-
-  @mixin cursor-e-resize {
-    @include cursor-(e-resize);
-  }
-
-  @mixin cursor-s-resize {
-    @include cursor-(s-resize);
-  }
-
-  @mixin cursor-w-resize {
-    @include cursor-(w-resize);
-  }
-
-  @mixin cursor-ne-resize {
-    @include cursor-(ne-resize);
-  }
-
-  @mixin cursor-nw-resize {
-    @include cursor-(nw-resize);
-  }
-
-  @mixin cursor-se-resize {
-    @include cursor-(se-resize);
-  }
-
-  @mixin cursor-sw-resize {
-    @include cursor-(sw-resize);
-  }
-
-  @mixin cursor-ew-resize {
-    @include cursor-(ew-resize);
-  }
-
-  @mixin cursor-ns-resize {
-    @include cursor-(ns-resize);
-  }
-
-  @mixin cursor-nesw-resize {
-    @include cursor-(nesw-resize);
-  }
-
-  @mixin cursor-nwse-resize {
-    @include cursor-(nwse-resize);
-  }
-
-  @mixin cursor-zoom-in {
-    @include cursor-(zoom-in);
-  }
-
-  @mixin cursor-zoom-out {
-    @include cursor-(zoom-out);
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
-    // /*x
-    @mixin sm\:cursor-auto {
-      @include cursor-(auto, null, $sm);
-    }
-
-    @mixin sm\:cursor-default {
-      @include cursor-(default, null, $sm);
-    }
-
-    @mixin sm\:cursor-pointer {
-      @include cursor-(pointer, null, $sm);
-    }
-
-    @mixin sm\:cursor-wait {
-      @include cursor-(wait, null, $sm);
-    }
-
-    @mixin sm\:cursor-text {
-      @include cursor-(text, null, $sm);
-    }
-
-    @mixin sm\:cursor-move {
-      @include cursor-(move, null, $sm);
-    }
-
-    @mixin sm\:cursor-help {
-      @include cursor-(help, null, $sm);
-    }
-
-    @mixin sm\:cursor-not-allowed {
-      @include cursor-(not-allowed, null, $sm);
-    }
-
-    @mixin sm\:cursor-none {
-      @include cursor-(none, null, $sm);
-    }
-
-    @mixin sm\:cursor-context-menu {
-      @include cursor-(context-menu, null, $sm);
-    }
-
-    @mixin sm\:cursor-progress {
-      @include cursor-(progress, null, $sm);
-    }
-
-    @mixin sm\:cursor-cell {
-      @include cursor-(cell, null, $sm);
-    }
-
-    @mixin sm\:cursor-crosshair {
-      @include cursor-(crosshair, null, $sm);
-    }
-
-    @mixin sm\:cursor-vertical-text {
-      @include cursor-(vertical-text, null, $sm);
-    }
-
-    @mixin sm\:cursor-alias {
-      @include cursor-(alias, null, $sm);
-    }
-
-    @mixin sm\:cursor-copy {
-      @include cursor-(copy, null, $sm);
-    }
-
-    @mixin sm\:cursor-no-drop {
-      @include cursor-(no-drop, null, $sm);
-    }
-
-    @mixin sm\:cursor-grab {
-      @include cursor-(grab, null, $sm);
-    }
-
-    @mixin sm\:cursor-grabbing {
-      @include cursor-(grabbing, null, $sm);
-    }
-
-    @mixin sm\:cursor-all-scroll {
-      @include cursor-(all-scroll, null, $sm);
-    }
-
-    @mixin sm\:cursor-col-resize {
-      @include cursor-(col-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-row-resize {
-      @include cursor-(row-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-n-resize {
-      @include cursor-(n-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-e-resize {
-      @include cursor-(e-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-s-resize {
-      @include cursor-(s-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-w-resize {
-      @include cursor-(w-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-ne-resize {
-      @include cursor-(ne-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-nw-resize {
-      @include cursor-(nw-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-se-resize {
-      @include cursor-(se-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-sw-resize {
-      @include cursor-(sw-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-ew-resize {
-      @include cursor-(ew-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-ns-resize {
-      @include cursor-(ns-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-nesw-resize {
-      @include cursor-(nesw-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-nwse-resize {
-      @include cursor-(nwse-resize, null, $sm);
-    }
-
-    @mixin sm\:cursor-zoom-in {
-      @include cursor-(zoom-in, null, $sm);
-    }
-
-    @mixin sm\:cursor-zoom-out {
-      @include cursor-(zoom-out, null, $sm);
-    }
-
-    @mixin md\:cursor-auto {
-      @include cursor-(auto, null, $md);
-    }
-
-    @mixin md\:cursor-default {
-      @include cursor-(default, null, $md);
-    }
-
-    @mixin md\:cursor-pointer {
-      @include cursor-(pointer, null, $md);
-    }
-
-    @mixin md\:cursor-wait {
-      @include cursor-(wait, null, $md);
-    }
-
-    @mixin md\:cursor-text {
-      @include cursor-(text, null, $md);
-    }
-
-    @mixin md\:cursor-move {
-      @include cursor-(move, null, $md);
-    }
-
-    @mixin md\:cursor-help {
-      @include cursor-(help, null, $md);
-    }
-
-    @mixin md\:cursor-not-allowed {
-      @include cursor-(not-allowed, null, $md);
-    }
-
-    @mixin md\:cursor-none {
-      @include cursor-(none, null, $md);
-    }
-
-    @mixin md\:cursor-context-menu {
-      @include cursor-(context-menu, null, $md);
-    }
-
-    @mixin md\:cursor-progress {
-      @include cursor-(progress, null, $md);
-    }
-
-    @mixin md\:cursor-cell {
-      @include cursor-(cell, null, $md);
-    }
-
-    @mixin md\:cursor-crosshair {
-      @include cursor-(crosshair, null, $md);
-    }
-
-    @mixin md\:cursor-vertical-text {
-      @include cursor-(vertical-text, null, $md);
-    }
-
-    @mixin md\:cursor-alias {
-      @include cursor-(alias, null, $md);
-    }
-
-    @mixin md\:cursor-copy {
-      @include cursor-(copy, null, $md);
-    }
-
-    @mixin md\:cursor-no-drop {
-      @include cursor-(no-drop, null, $md);
-    }
-
-    @mixin md\:cursor-grab {
-      @include cursor-(grab, null, $md);
-    }
-
-    @mixin md\:cursor-grabbing {
-      @include cursor-(grabbing, null, $md);
-    }
-
-    @mixin md\:cursor-all-scroll {
-      @include cursor-(all-scroll, null, $md);
-    }
-
-    @mixin md\:cursor-col-resize {
-      @include cursor-(col-resize, null, $md);
-    }
-
-    @mixin md\:cursor-row-resize {
-      @include cursor-(row-resize, null, $md);
-    }
-
-    @mixin md\:cursor-n-resize {
-      @include cursor-(n-resize, null, $md);
-    }
-
-    @mixin md\:cursor-e-resize {
-      @include cursor-(e-resize, null, $md);
-    }
-
-    @mixin md\:cursor-s-resize {
-      @include cursor-(s-resize, null, $md);
-    }
-
-    @mixin md\:cursor-w-resize {
-      @include cursor-(w-resize, null, $md);
-    }
-
-    @mixin md\:cursor-ne-resize {
-      @include cursor-(ne-resize, null, $md);
-    }
-
-    @mixin md\:cursor-nw-resize {
-      @include cursor-(nw-resize, null, $md);
-    }
-
-    @mixin md\:cursor-se-resize {
-      @include cursor-(se-resize, null, $md);
-    }
-
-    @mixin md\:cursor-sw-resize {
-      @include cursor-(sw-resize, null, $md);
-    }
-
-    @mixin md\:cursor-ew-resize {
-      @include cursor-(ew-resize, null, $md);
-    }
-
-    @mixin md\:cursor-ns-resize {
-      @include cursor-(ns-resize, null, $md);
-    }
-
-    @mixin md\:cursor-nesw-resize {
-      @include cursor-(nesw-resize, null, $md);
-    }
-
-    @mixin md\:cursor-nwse-resize {
-      @include cursor-(nwse-resize, null, $md);
-    }
-
-    @mixin md\:cursor-zoom-in {
-      @include cursor-(zoom-in, null, $md);
-    }
-
-    @mixin md\:cursor-zoom-out {
-      @include cursor-(zoom-out, null, $md);
-    }
-
-    @mixin lg\:cursor-auto {
-      @include cursor-(auto, null, $lg);
-    }
-
-    @mixin lg\:cursor-default {
-      @include cursor-(default, null, $lg);
-    }
-
-    @mixin lg\:cursor-pointer {
-      @include cursor-(pointer, null, $lg);
-    }
-
-    @mixin lg\:cursor-wait {
-      @include cursor-(wait, null, $lg);
-    }
-
-    @mixin lg\:cursor-text {
-      @include cursor-(text, null, $lg);
-    }
-
-    @mixin lg\:cursor-move {
-      @include cursor-(move, null, $lg);
-    }
-
-    @mixin lg\:cursor-help {
-      @include cursor-(help, null, $lg);
-    }
-
-    @mixin lg\:cursor-not-allowed {
-      @include cursor-(not-allowed, null, $lg);
-    }
-
-    @mixin lg\:cursor-none {
-      @include cursor-(none, null, $lg);
-    }
-
-    @mixin lg\:cursor-context-menu {
-      @include cursor-(context-menu, null, $lg);
-    }
-
-    @mixin lg\:cursor-progress {
-      @include cursor-(progress, null, $lg);
-    }
-
-    @mixin lg\:cursor-cell {
-      @include cursor-(cell, null, $lg);
-    }
-
-    @mixin lg\:cursor-crosshair {
-      @include cursor-(crosshair, null, $lg);
-    }
-
-    @mixin lg\:cursor-vertical-text {
-      @include cursor-(vertical-text, null, $lg);
-    }
-
-    @mixin lg\:cursor-alias {
-      @include cursor-(alias, null, $lg);
-    }
-
-    @mixin lg\:cursor-copy {
-      @include cursor-(copy, null, $lg);
-    }
-
-    @mixin lg\:cursor-no-drop {
-      @include cursor-(no-drop, null, $lg);
-    }
-
-    @mixin lg\:cursor-grab {
-      @include cursor-(grab, null, $lg);
-    }
-
-    @mixin lg\:cursor-grabbing {
-      @include cursor-(grabbing, null, $lg);
-    }
-
-    @mixin lg\:cursor-all-scroll {
-      @include cursor-(all-scroll, null, $lg);
-    }
-
-    @mixin lg\:cursor-col-resize {
-      @include cursor-(col-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-row-resize {
-      @include cursor-(row-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-n-resize {
-      @include cursor-(n-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-e-resize {
-      @include cursor-(e-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-s-resize {
-      @include cursor-(s-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-w-resize {
-      @include cursor-(w-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-ne-resize {
-      @include cursor-(ne-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-nw-resize {
-      @include cursor-(nw-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-se-resize {
-      @include cursor-(se-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-sw-resize {
-      @include cursor-(sw-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-ew-resize {
-      @include cursor-(ew-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-ns-resize {
-      @include cursor-(ns-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-nesw-resize {
-      @include cursor-(nesw-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-nwse-resize {
-      @include cursor-(nwse-resize, null, $lg);
-    }
-
-    @mixin lg\:cursor-zoom-in {
-      @include cursor-(zoom-in, null, $lg);
-    }
-
-    @mixin lg\:cursor-zoom-out {
-      @include cursor-(zoom-out, null, $lg);
-    }
-
-    @mixin xl\:cursor-auto {
-      @include cursor-(auto, null, $xl);
-    }
-
-    @mixin xl\:cursor-default {
-      @include cursor-(default, null, $xl);
-    }
-
-    @mixin xl\:cursor-pointer {
-      @include cursor-(pointer, null, $xl);
-    }
-
-    @mixin xl\:cursor-wait {
-      @include cursor-(wait, null, $xl);
-    }
-
-    @mixin xl\:cursor-text {
-      @include cursor-(text, null, $xl);
-    }
-
-    @mixin xl\:cursor-move {
-      @include cursor-(move, null, $xl);
-    }
-
-    @mixin xl\:cursor-help {
-      @include cursor-(help, null, $xl);
-    }
-
-    @mixin xl\:cursor-not-allowed {
-      @include cursor-(not-allowed, null, $xl);
-    }
-
-    @mixin xl\:cursor-none {
-      @include cursor-(none, null, $xl);
-    }
-
-    @mixin xl\:cursor-context-menu {
-      @include cursor-(context-menu, null, $xl);
-    }
-
-    @mixin xl\:cursor-progress {
-      @include cursor-(progress, null, $xl);
-    }
-
-    @mixin xl\:cursor-cell {
-      @include cursor-(cell, null, $xl);
-    }
-
-    @mixin xl\:cursor-crosshair {
-      @include cursor-(crosshair, null, $xl);
-    }
-
-    @mixin xl\:cursor-vertical-text {
-      @include cursor-(vertical-text, null, $xl);
-    }
-
-    @mixin xl\:cursor-alias {
-      @include cursor-(alias, null, $xl);
-    }
-
-    @mixin xl\:cursor-copy {
-      @include cursor-(copy, null, $xl);
-    }
-
-    @mixin xl\:cursor-no-drop {
-      @include cursor-(no-drop, null, $xl);
-    }
-
-    @mixin xl\:cursor-grab {
-      @include cursor-(grab, null, $xl);
-    }
-
-    @mixin xl\:cursor-grabbing {
-      @include cursor-(grabbing, null, $xl);
-    }
-
-    @mixin xl\:cursor-all-scroll {
-      @include cursor-(all-scroll, null, $xl);
-    }
-
-    @mixin xl\:cursor-col-resize {
-      @include cursor-(col-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-row-resize {
-      @include cursor-(row-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-n-resize {
-      @include cursor-(n-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-e-resize {
-      @include cursor-(e-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-s-resize {
-      @include cursor-(s-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-w-resize {
-      @include cursor-(w-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-ne-resize {
-      @include cursor-(ne-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-nw-resize {
-      @include cursor-(nw-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-se-resize {
-      @include cursor-(se-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-sw-resize {
-      @include cursor-(sw-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-ew-resize {
-      @include cursor-(ew-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-ns-resize {
-      @include cursor-(ns-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-nesw-resize {
-      @include cursor-(nesw-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-nwse-resize {
-      @include cursor-(nwse-resize, null, $xl);
-    }
-
-    @mixin xl\:cursor-zoom-in {
-      @include cursor-(zoom-in, null, $xl);
-    }
-
-    @mixin xl\:cursor-zoom-out {
-      @include cursor-(zoom-out, null, $xl);
-    }
-
-    @mixin \2xl\:cursor-auto {
-      @include cursor-(auto, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-default {
-      @include cursor-(default, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-pointer {
-      @include cursor-(pointer, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-wait {
-      @include cursor-(wait, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-text {
-      @include cursor-(text, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-move {
-      @include cursor-(move, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-help {
-      @include cursor-(help, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-not-allowed {
-      @include cursor-(not-allowed, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-none {
-      @include cursor-(none, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-context-menu {
-      @include cursor-(context-menu, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-progress {
-      @include cursor-(progress, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-cell {
-      @include cursor-(cell, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-crosshair {
-      @include cursor-(crosshair, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-vertical-text {
-      @include cursor-(vertical-text, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-alias {
-      @include cursor-(alias, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-copy {
-      @include cursor-(copy, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-no-drop {
-      @include cursor-(no-drop, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-grab {
-      @include cursor-(grab, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-grabbing {
-      @include cursor-(grabbing, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-all-scroll {
-      @include cursor-(all-scroll, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-col-resize {
-      @include cursor-(col-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-row-resize {
-      @include cursor-(row-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-n-resize {
-      @include cursor-(n-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-e-resize {
-      @include cursor-(e-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-s-resize {
-      @include cursor-(s-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-w-resize {
-      @include cursor-(w-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-ne-resize {
-      @include cursor-(ne-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-nw-resize {
-      @include cursor-(nw-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-se-resize {
-      @include cursor-(se-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-sw-resize {
-      @include cursor-(sw-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-ew-resize {
-      @include cursor-(ew-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-ns-resize {
-      @include cursor-(ns-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-nesw-resize {
-      @include cursor-(nesw-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-nwse-resize {
-      @include cursor-(nwse-resize, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-zoom-in {
-      @include cursor-(zoom-in, null, $\2xl);
-    }
-
-    @mixin \2xl\:cursor-zoom-out {
-      @include cursor-(zoom-out, null, $\2xl);
-    }
-    // x*/
-  }
-}
-
-@if $Custom {
-  // /*x
-  @mixin cursor-($v, $v2: null, $rwd: null) {
-    @if $rwd==null {
-      cursor: $v, $v2;
-    } @else {
-      @media (min-width: $rwd) {
-        cursor: $v, $v2;
+@include describe("13.Interactivity") {
+  @include describe("Cursor") {
+    @include describe("Basic") {
+      @include it("cursor-auto") {
+        @include assert {
+          @include output {
+            @include cursor-auto;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: auto;
+          }
+        }
+      }
+
+      @include it("cursor-default") {
+        @include assert {
+          @include output {
+            @include cursor-default;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: default;
+          }
+        }
+      }
+
+      @include it("cursor-pointer") {
+        @include assert {
+          @include output {
+            @include cursor-pointer;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: pointer;
+          }
+        }
+      }
+
+      @include it("cursor-wait") {
+        @include assert {
+          @include output {
+            @include cursor-wait;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: wait;
+          }
+        }
+      }
+
+      @include it("cursor-text") {
+        @include assert {
+          @include output {
+            @include cursor-text;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: text;
+          }
+        }
+      }
+
+      @include it("cursor-move") {
+        @include assert {
+          @include output {
+            @include cursor-move;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: move;
+          }
+        }
+      }
+
+      @include it("cursor-help") {
+        @include assert {
+          @include output {
+            @include cursor-help;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: help;
+          }
+        }
+      }
+
+      @include it("cursor-not-allowed") {
+        @include assert {
+          @include output {
+            @include cursor-not-allowed;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      @include it("cursor-none") {
+        @include assert {
+          @include output {
+            @include cursor-none;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: none;
+          }
+        }
+      }
+
+      @include it("cursor-context-menu") {
+        @include assert {
+          @include output {
+            @include cursor-context-menu;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: context-menu;
+          }
+        }
+      }
+
+      @include it("cursor-progress") {
+        @include assert {
+          @include output {
+            @include cursor-progress;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: progress;
+          }
+        }
+      }
+
+      @include it("cursor-cell") {
+        @include assert {
+          @include output {
+            @include cursor-cell;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: cell;
+          }
+        }
+      }
+
+      @include it("cursor-crosshair") {
+        @include assert {
+          @include output {
+            @include cursor-crosshair;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: crosshair;
+          }
+        }
+      }
+
+      @include it("cursor-vertical-text") {
+        @include assert {
+          @include output {
+            @include cursor-vertical-text;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: vertical-text;
+          }
+        }
+      }
+
+      @include it("cursor-alias") {
+        @include assert {
+          @include output {
+            @include cursor-alias;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: alias;
+          }
+        }
+      }
+
+      @include it("cursor-copy") {
+        @include assert {
+          @include output {
+            @include cursor-copy;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: copy;
+          }
+        }
+      }
+
+      @include it("cursor-no-drop") {
+        @include assert {
+          @include output {
+            @include cursor-no-drop;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: no-drop;
+          }
+        }
+      }
+
+      @include it("cursor-grab") {
+        @include assert {
+          @include output {
+            @include cursor-grab;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: grab;
+          }
+        }
+      }
+
+      @include it("cursor-grabbing") {
+        @include assert {
+          @include output {
+            @include cursor-grabbing;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: grabbing;
+          }
+        }
+      }
+
+      @include it("cursor-all-scroll") {
+        @include assert {
+          @include output {
+            @include cursor-all-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: all-scroll;
+          }
+        }
+      }
+
+      @include it("cursor-col-resize") {
+        @include assert {
+          @include output {
+            @include cursor-col-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: col-resize;
+          }
+        }
+      }
+
+      @include it("cursor-row-resize") {
+        @include assert {
+          @include output {
+            @include cursor-row-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: row-resize;
+          }
+        }
+      }
+
+      @include it("cursor-n-resize") {
+        @include assert {
+          @include output {
+            @include cursor-n-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: n-resize;
+          }
+        }
+      }
+
+      @include it("cursor-e-resize") {
+        @include assert {
+          @include output {
+            @include cursor-e-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: e-resize;
+          }
+        }
+      }
+
+      @include it("cursor-s-resize") {
+        @include assert {
+          @include output {
+            @include cursor-s-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: s-resize;
+          }
+        }
+      }
+
+      @include it("cursor-w-resize") {
+        @include assert {
+          @include output {
+            @include cursor-w-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: w-resize;
+          }
+        }
+      }
+
+      @include it("cursor-ne-resize") {
+        @include assert {
+          @include output {
+            @include cursor-ne-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: ne-resize;
+          }
+        }
+      }
+
+      @include it("cursor-nw-resize") {
+        @include assert {
+          @include output {
+            @include cursor-nw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: nw-resize;
+          }
+        }
+      }
+
+      @include it("cursor-se-resize") {
+        @include assert {
+          @include output {
+            @include cursor-se-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: se-resize;
+          }
+        }
+      }
+
+      @include it("cursor-sw-resize") {
+        @include assert {
+          @include output {
+            @include cursor-sw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: sw-resize;
+          }
+        }
+      }
+
+      @include it("cursor-ew-resize") {
+        @include assert {
+          @include output {
+            @include cursor-ew-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: ew-resize;
+          }
+        }
+      }
+
+      @include it("cursor-ns-resize") {
+        @include assert {
+          @include output {
+            @include cursor-ns-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: ns-resize;
+          }
+        }
+      }
+
+      @include it("cursor-nesw-resize") {
+        @include assert {
+          @include output {
+            @include cursor-nesw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: nesw-resize;
+          }
+        }
+      }
+
+      @include it("cursor-nwse-resize") {
+        @include assert {
+          @include output {
+            @include cursor-nwse-resize;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: nwse-resize;
+          }
+        }
+      }
+
+      @include it("cursor-zoom-in") {
+        @include assert {
+          @include output {
+            @include cursor-zoom-in;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: zoom-in;
+          }
+        }
+      }
+
+      @include it("cursor-zoom-out") {
+        @include assert {
+          @include output {
+            @include cursor-zoom-out;
+            @include clear;
+          }
+
+          @include expect {
+            cursor: zoom-out
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:cursor-auto") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: auto;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-default") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-default;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: default;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-pointer") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-pointer;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-wait") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-wait;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: wait;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-text") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: text;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-move") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-move;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: move;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-help") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-help;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: help;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-not-allowed") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-not-allowed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-none") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: none;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-context-menu") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-context-menu;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: context-menu;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-progress") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-progress;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: progress;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-cell") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-cell;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: cell;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-crosshair") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-crosshair;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: crosshair;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-vertical-text") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-vertical-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: vertical-text;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-alias") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-alias;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: alias;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-copy") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-copy;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: copy;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-no-drop") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-no-drop;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: no-drop;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-grab") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-grab;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: grab;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-grabbing") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-grabbing;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: grabbing;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-all-scroll") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-all-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: all-scroll;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-col-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-col-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: col-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-row-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-row-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: row-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-n-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-n-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: n-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-e-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-e-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: e-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-s-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-s-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: s-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-w-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-w-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: w-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-ne-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-ne-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: ne-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-nw-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-nw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: nw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-se-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-se-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: se-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-sw-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-sw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: sw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-ew-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-ew-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: ew-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-ns-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-ns-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: ns-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-nesw-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-nesw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: nesw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-nwse-resize") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-nwse-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: nwse-resize;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-zoom-in") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-zoom-in;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: zoom-in;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:cursor-zoom-out") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-zoom-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: zoom-out
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-auto") {
+        @include assert {
+          @include output {
+            @include md\:cursor-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: auto;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-default") {
+        @include assert {
+          @include output {
+            @include md\:cursor-default;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: default;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-pointer") {
+        @include assert {
+          @include output {
+            @include md\:cursor-pointer;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-wait") {
+        @include assert {
+          @include output {
+            @include md\:cursor-wait;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: wait;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-text") {
+        @include assert {
+          @include output {
+            @include md\:cursor-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: text;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-move") {
+        @include assert {
+          @include output {
+            @include md\:cursor-move;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: move;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-help") {
+        @include assert {
+          @include output {
+            @include md\:cursor-help;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: help;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-not-allowed") {
+        @include assert {
+          @include output {
+            @include md\:cursor-not-allowed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-none") {
+        @include assert {
+          @include output {
+            @include md\:cursor-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: none;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-context-menu") {
+        @include assert {
+          @include output {
+            @include md\:cursor-context-menu;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: context-menu;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-progress") {
+        @include assert {
+          @include output {
+            @include md\:cursor-progress;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: progress;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-cell") {
+        @include assert {
+          @include output {
+            @include md\:cursor-cell;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: cell;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-crosshair") {
+        @include assert {
+          @include output {
+            @include md\:cursor-crosshair;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: crosshair;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-vertical-text") {
+        @include assert {
+          @include output {
+            @include md\:cursor-vertical-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: vertical-text;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-alias") {
+        @include assert {
+          @include output {
+            @include md\:cursor-alias;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: alias;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-copy") {
+        @include assert {
+          @include output {
+            @include md\:cursor-copy;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: copy;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-no-drop") {
+        @include assert {
+          @include output {
+            @include md\:cursor-no-drop;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: no-drop;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-grab") {
+        @include assert {
+          @include output {
+            @include md\:cursor-grab;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: grab;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-grabbing") {
+        @include assert {
+          @include output {
+            @include md\:cursor-grabbing;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: grabbing;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-all-scroll") {
+        @include assert {
+          @include output {
+            @include md\:cursor-all-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: all-scroll;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-col-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-col-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: col-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-row-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-row-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: row-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-n-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-n-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: n-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-e-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-e-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: e-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-s-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-s-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: s-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-w-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-w-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: w-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-ne-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-ne-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: ne-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-nw-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-nw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: nw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-se-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-se-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: se-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-sw-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-sw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: sw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-ew-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-ew-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: ew-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-ns-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-ns-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: ns-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-nesw-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-nesw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: nesw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-nwse-resize") {
+        @include assert {
+          @include output {
+            @include md\:cursor-nwse-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: nwse-resize;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-zoom-in") {
+        @include assert {
+          @include output {
+            @include md\:cursor-zoom-in;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: zoom-in;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-zoom-out") {
+        @include assert {
+          @include output {
+            @include md\:cursor-zoom-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: zoom-out
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-auto") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: auto;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-default") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-default;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: default;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-pointer") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-pointer;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-wait") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-wait;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: wait;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-text") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: text;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-move") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-move;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: move;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-help") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-help;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: help;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-not-allowed") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-not-allowed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-none") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: none;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-context-menu") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-context-menu;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: context-menu;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-progress") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-progress;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: progress;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-cell") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-cell;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: cell;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-crosshair") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-crosshair;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: crosshair;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-vertical-text") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-vertical-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: vertical-text;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-alias") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-alias;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: alias;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-copy") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-copy;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: copy;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-no-drop") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-no-drop;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: no-drop;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-grab") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-grab;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: grab;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-grabbing") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-grabbing;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: grabbing;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-all-scroll") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-all-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: all-scroll;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-col-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-col-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: col-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-row-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-row-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: row-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-n-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-n-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: n-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-e-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-e-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: e-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-s-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-s-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: s-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-w-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-w-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: w-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-ne-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-ne-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: ne-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-nw-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-nw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: nw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-se-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-se-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: se-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-sw-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-sw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: sw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-ew-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-ew-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: ew-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-ns-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-ns-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: ns-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-nesw-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-nesw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: nesw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-nwse-resize") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-nwse-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: nwse-resize;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-zoom-in") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-zoom-in;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: zoom-in;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-zoom-out") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-zoom-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: zoom-out
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-auto") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: auto;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-default") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-default;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: default;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-pointer") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-pointer;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-wait") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-wait;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: wait;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-text") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: text;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-move") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-move;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: move;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-help") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-help;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: help;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-not-allowed") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-not-allowed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-none") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: none;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-context-menu") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-context-menu;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: context-menu;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-progress") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-progress;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: progress;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-cell") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-cell;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: cell;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-crosshair") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-crosshair;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: crosshair;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-vertical-text") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-vertical-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: vertical-text;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-alias") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-alias;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: alias;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-copy") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-copy;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: copy;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-no-drop") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-no-drop;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: no-drop;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-grab") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-grab;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: grab;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-grabbing") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-grabbing;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: grabbing;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-all-scroll") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-all-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: all-scroll;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-col-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-col-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: col-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-row-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-row-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: row-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-n-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-n-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: n-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-e-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-e-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: e-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-s-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-s-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: s-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-w-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-w-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: w-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-ne-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-ne-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: ne-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-nw-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-nw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: nw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-se-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-se-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: se-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-sw-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-sw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: sw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-ew-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-ew-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: ew-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-ns-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-ns-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: ns-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-nesw-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-nesw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: nesw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-nwse-resize") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-nwse-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: nwse-resize;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-zoom-in") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-zoom-in;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: zoom-in;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-zoom-out") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-zoom-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: zoom-out
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-auto") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: auto;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-default") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-default;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: default;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-pointer") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-pointer;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-wait") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-wait;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: wait;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-text") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: text;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-move") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-move;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: move;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-help") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-help;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: help;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-not-allowed") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-not-allowed;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-none") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: none;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-context-menu") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-context-menu;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: context-menu;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-progress") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-progress;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: progress;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-cell") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-cell;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: cell;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-crosshair") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-crosshair;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: crosshair;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-vertical-text") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-vertical-text;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: vertical-text;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-alias") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-alias;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: alias;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-copy") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-copy;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: copy;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-no-drop") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-no-drop;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: no-drop;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-grab") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-grab;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: grab;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-grabbing") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-grabbing;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: grabbing;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-all-scroll") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-all-scroll;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: all-scroll;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-col-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-col-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: col-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-row-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-row-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: row-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-n-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-n-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: n-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-e-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-e-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: e-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-s-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-s-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: s-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-w-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-w-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: w-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-ne-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-ne-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: ne-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-nw-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-nw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: nw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-se-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-se-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: se-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-sw-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-sw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: sw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-ew-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-ew-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: ew-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-ns-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-ns-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: ns-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-nesw-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-nesw-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: nesw-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-nwse-resize") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-nwse-resize;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: nwse-resize;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-zoom-in") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-zoom-in;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: zoom-in;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-zoom-out") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-zoom-out;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: zoom-out
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("cursor-(url(hand.cur), pointer)") {
+        @include assert {
+          @include output {
+            @include cursor-(url(hand.cur), pointer);
+            @include clear;
+          }
+
+          @include expect {
+            cursor: url(hand.cur), pointer;
+          }
+        }
+      }
+
+      @include it("sm\:cursor-(url(hand.cur), pointer)") {
+        @include assert {
+          @include output {
+            @include sm\:cursor-(url(hand.cur), pointer);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              cursor: url(hand.cur), pointer;
+            }
+          }
+        }
+      }
+
+      @include it("md\:cursor-(url(hand.cur), pointer)") {
+        @include assert {
+          @include output {
+            @include md\:cursor-(url(hand.cur), pointer);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              cursor: url(hand.cur), pointer;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:cursor-(url(hand.cur), pointer)") {
+        @include assert {
+          @include output {
+            @include lg\:cursor-(url(hand.cur), pointer);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              cursor: url(hand.cur), pointer;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:cursor-(url(hand.cur), pointer)") {
+        @include assert {
+          @include output {
+            @include xl\:cursor-(url(hand.cur), pointer);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              cursor: url(hand.cur), pointer;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:cursor-(url(hand.cur), pointer)") {
+        @include assert {
+          @include output {
+            @include \2xl\:cursor-(url(hand.cur), pointer);
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              cursor: url(hand.cur), pointer;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin sm\:cursor-($v, $v2: null) {
-    @include cursor-($v, $v2, $sm);
-  }
-
-  @mixin md\:cursor-($v, $v2: null) {
-    @include cursor-($v, $v2, $md);
-  }
-
-  @mixin lg\:cursor-($v, $v2: null) {
-    @include cursor-($v, $v2, $lg);
-  }
-
-  @mixin xl\:cursor-($v, $v2: null) {
-    @include cursor-($v, $v2, $xl);
-  }
-
-  @mixin \2xl\:cursor-($v, $v2: null) {
-    @include cursor-($v, $v2, $\2xl);
-  }
-
-  // x*/
 }

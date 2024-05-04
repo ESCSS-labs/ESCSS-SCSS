@@ -2,73 +2,178 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Scroll Behavior */
-@if $Basic {
-  // /*x
-  @mixin scroll-auto($rwd: null) {
-    @if $rwd==null {
-      scroll-behavior: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        scroll-behavior: auto;
+@include describe("13.Interactivity") {
+  @include describe("Scroll Behavior") {
+    @include describe("Basic") {
+      @include it("scroll-auto") {
+        @include assert {
+          @include output {
+            @include scroll-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            scroll-behavior: auto;
+          }
+        }
+      }
+      
+      @include it("scroll-smooth") {
+        @include assert {
+          @include output {
+            @include scroll-smooth;
+            @include clear;
+          }
+      
+          @include expect {
+            scroll-behavior: smooth;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:scroll-auto") {
+        @include assert {
+          @include output {
+            @include sm\:scroll-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+      
+      @include it("sm\:scroll-smooth") {
+        @include assert {
+          @include output {
+            @include sm\:scroll-smooth;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$sm) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
+      }@include it("md\:scroll-auto") {
+        @include assert {
+          @include output {
+            @include md\:scroll-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+      
+      @include it("md\:scroll-smooth") {
+        @include assert {
+          @include output {
+            @include md\:scroll-smooth;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$md) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
+      }@include it("lg\:scroll-auto") {
+        @include assert {
+          @include output {
+            @include lg\:scroll-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+      
+      @include it("lg\:scroll-smooth") {
+        @include assert {
+          @include output {
+            @include lg\:scroll-smooth;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$lg) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
+      }@include it("xl\:scroll-auto") {
+        @include assert {
+          @include output {
+            @include xl\:scroll-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+      
+      @include it("xl\:scroll-smooth") {
+        @include assert {
+          @include output {
+            @include xl\:scroll-smooth;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$xl) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
+      }@include it("\2xl\:scroll-auto") {
+        @include assert {
+          @include output {
+            @include \2xl\:scroll-auto;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+      
+      @include it("\2xl\:scroll-smooth") {
+        @include assert {
+          @include output {
+            @include \2xl\:scroll-smooth;
+            @include clear;
+          }
+      
+          @include expect {
+            @media(min-width:$\2xl) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin scroll-smooth($rwd: null) {
-    @if $rwd==null {
-      scroll-behavior: smooth;
-    } @else {
-      @media (min-width: $rwd) {
-        scroll-behavior: smooth;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:scroll-auto {
-    @include scroll-auto($sm);
-  }
-
-  @mixin sm\:scroll-smooth {
-    @include scroll-smooth($sm);
-  }
-
-  @mixin md\:scroll-auto {
-    @include scroll-auto($md);
-  }
-
-  @mixin md\:scroll-smooth {
-    @include scroll-smooth($md);
-  }
-
-  @mixin lg\:scroll-auto {
-    @include scroll-auto($lg);
-  }
-
-  @mixin lg\:scroll-smooth {
-    @include scroll-smooth($lg);
-  }
-
-  @mixin xl\:scroll-auto {
-    @include scroll-auto($xl);
-  }
-
-  @mixin xl\:scroll-smooth {
-    @include scroll-smooth($xl);
-  }
-
-  @mixin \2xl\:scroll-auto {
-    @include scroll-auto($\2xl);
-  }
-
-  @mixin \2xl\:scroll-smooth {
-    @include scroll-smooth($\2xl);
-  }
-
-  // x*/
 }

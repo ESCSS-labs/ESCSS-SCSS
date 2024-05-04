@@ -2,73 +2,186 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Pointer Events */
-@if $Basic {
-  // /*x
-  @mixin pointer-events-none($rwd: null) {
-    @if $rwd==null {
-      pointer-events: none;
-    } @else {
-      @media (min-width: $rwd) {
-        pointer-events: none;
+@include describe("13.Interactivity") {
+  @include describe("Pointer Events") {
+    @include describe("Basic") {
+      @include it("pointer-events-none") {
+        @include assert {
+          @include output {
+            @include pointer-events-none;
+            @include clear;
+          }
+
+          @include expect {
+            pointer-events: none;
+          }
+        }
+      }
+
+      @include it("pointer-events-auto") {
+        @include assert {
+          @include output {
+            @include pointer-events-auto;
+            @include clear;
+          }
+
+          @include expect {
+            pointer-events: auto;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:pointer-events-none") {
+        @include assert {
+          @include output {
+            @include sm\:pointer-events-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:pointer-events-auto") {
+        @include assert {
+          @include output {
+            @include sm\:pointer-events-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+
+      @include it("md\:pointer-events-none") {
+        @include assert {
+          @include output {
+            @include md\:pointer-events-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it("md\:pointer-events-auto") {
+        @include assert {
+          @include output {
+            @include md\:pointer-events-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:pointer-events-none") {
+        @include assert {
+          @include output {
+            @include lg\:pointer-events-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:pointer-events-auto") {
+        @include assert {
+          @include output {
+            @include lg\:pointer-events-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:pointer-events-none") {
+        @include assert {
+          @include output {
+            @include xl\:pointer-events-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:pointer-events-auto") {
+        @include assert {
+          @include output {
+            @include xl\:pointer-events-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:pointer-events-none") {
+        @include assert {
+          @include output {
+            @include \2xl\:pointer-events-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:pointer-events-auto") {
+        @include assert {
+          @include output {
+            @include \2xl\:pointer-events-auto;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              pointer-events: auto;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin pointer-events-auto($rwd: null) {
-    @if $rwd==null {
-      pointer-events: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        pointer-events: auto;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:pointer-events-none {
-    @include pointer-events-none($sm);
-  }
-
-  @mixin sm\:pointer-events-auto {
-    @include pointer-events-auto($sm);
-  }
-
-  @mixin md\:pointer-events-none {
-    @include pointer-events-none($md);
-  }
-
-  @mixin md\:pointer-events-auto {
-    @include pointer-events-auto($md);
-  }
-
-  @mixin lg\:pointer-events-none {
-    @include pointer-events-none($lg);
-  }
-
-  @mixin lg\:pointer-events-auto {
-    @include pointer-events-auto($lg);
-  }
-
-  @mixin xl\:pointer-events-none {
-    @include pointer-events-none($xl);
-  }
-
-  @mixin xl\:pointer-events-auto {
-    @include pointer-events-auto($xl);
-  }
-
-  @mixin \2xl\:pointer-events-none {
-    @include pointer-events-none($\2xl);
-  }
-
-  @mixin \2xl\:pointer-events-auto {
-    @include pointer-events-auto($\2xl);
-  }
-
-  // x*/
 }

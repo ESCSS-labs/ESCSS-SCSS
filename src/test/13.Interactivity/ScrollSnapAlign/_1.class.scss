@@ -2,133 +2,362 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-/* Scroll Snap Align */
-@if $Basic {
-  // /*x
-  @mixin snap-start($rwd: null) {
-    @if $rwd==null {
-      scroll-snap-align: start;
-    } @else {
-      @media (min-width: $rwd) {
-        scroll-snap-align: start;
+@include describe("13.Interactivity") {
+  @include describe("Scroll Snap Align") {
+    @include describe("Basic") {
+      @include it("snap-start") {
+        @include assert {
+          @include output {
+            @include snap-start;
+            @include clear;
+          }
+
+          @include expect {
+            scroll-snap-align: start;
+          }
+        }
+      }
+
+      @include it("snap-end") {
+        @include assert {
+          @include output {
+            @include snap-end;
+            @include clear;
+          }
+
+          @include expect {
+            scroll-snap-align: end;
+          }
+        }
+      }
+
+      @include it("snap-center") {
+        @include assert {
+          @include output {
+            @include snap-center;
+            @include clear;
+          }
+
+          @include expect {
+            scroll-snap-align: center;
+          }
+        }
+      }
+
+      @include it("snap-align-none") {
+        @include assert {
+          @include output {
+            @include snap-align-none;
+            @include clear;
+          }
+
+          @include expect {
+            scroll-snap-align: none;
+          }
+        }
+      }
+    }
+
+    @include describe("Rwd") {
+      @include it("sm\:snap-start") {
+        @include assert {
+          @include output {
+            @include sm\:snap-start;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              scroll-snap-align: start;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:snap-end") {
+        @include assert {
+          @include output {
+            @include sm\:snap-end;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              scroll-snap-align: end;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:snap-center") {
+        @include assert {
+          @include output {
+            @include sm\:snap-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              scroll-snap-align: center;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:snap-align-none") {
+        @include assert {
+          @include output {
+            @include sm\:snap-align-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$sm) {
+              scroll-snap-align: none;
+            }
+          }
+        }
+      }
+
+      @include it("md\:snap-start") {
+        @include assert {
+          @include output {
+            @include md\:snap-start;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              scroll-snap-align: start;
+            }
+          }
+        }
+      }
+
+      @include it("md\:snap-end") {
+        @include assert {
+          @include output {
+            @include md\:snap-end;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              scroll-snap-align: end;
+            }
+          }
+        }
+      }
+
+      @include it("md\:snap-center") {
+        @include assert {
+          @include output {
+            @include md\:snap-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              scroll-snap-align: center;
+            }
+          }
+        }
+      }
+
+      @include it("md\:snap-align-none") {
+        @include assert {
+          @include output {
+            @include md\:snap-align-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$md) {
+              scroll-snap-align: none;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:snap-start") {
+        @include assert {
+          @include output {
+            @include lg\:snap-start;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              scroll-snap-align: start;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:snap-end") {
+        @include assert {
+          @include output {
+            @include lg\:snap-end;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              scroll-snap-align: end;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:snap-center") {
+        @include assert {
+          @include output {
+            @include lg\:snap-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              scroll-snap-align: center;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:snap-align-none") {
+        @include assert {
+          @include output {
+            @include lg\:snap-align-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$lg) {
+              scroll-snap-align: none;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:snap-start") {
+        @include assert {
+          @include output {
+            @include xl\:snap-start;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              scroll-snap-align: start;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:snap-end") {
+        @include assert {
+          @include output {
+            @include xl\:snap-end;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              scroll-snap-align: end;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:snap-center") {
+        @include assert {
+          @include output {
+            @include xl\:snap-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              scroll-snap-align: center;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:snap-align-none") {
+        @include assert {
+          @include output {
+            @include xl\:snap-align-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$xl) {
+              scroll-snap-align: none;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:snap-start") {
+        @include assert {
+          @include output {
+            @include \2xl\:snap-start;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              scroll-snap-align: start;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:snap-end") {
+        @include assert {
+          @include output {
+            @include \2xl\:snap-end;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              scroll-snap-align: end;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:snap-center") {
+        @include assert {
+          @include output {
+            @include \2xl\:snap-center;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              scroll-snap-align: center;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:snap-align-none") {
+        @include assert {
+          @include output {
+            @include \2xl\:snap-align-none;
+            @include clear;
+          }
+
+          @include expect {
+            @media(min-width:$\2xl) {
+              scroll-snap-align: none;
+            }
+          }
+        }
       }
     }
   }
-
-  @mixin snap-end($rwd: null) {
-    @if $rwd==null {
-      scroll-snap-align: end;
-    } @else {
-      @media (min-width: $rwd) {
-        scroll-snap-align: end;
-      }
-    }
-  }
-
-  @mixin snap-center($rwd: null) {
-    @if $rwd==null {
-      scroll-snap-align: center;
-    } @else {
-      @media (min-width: $rwd) {
-        scroll-snap-align: center;
-      }
-    }
-  }
-
-  @mixin snap-align-none($rwd: null) {
-    @if $rwd==null {
-      scroll-snap-align: none;
-    } @else {
-      @media (min-width: $rwd) {
-        scroll-snap-align: none;
-      }
-    }
-  }
-
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:snap-start {
-    @include snap-start($sm);
-  }
-
-  @mixin sm\:snap-end {
-    @include snap-end($sm);
-  }
-
-  @mixin sm\:snap-center {
-    @include snap-center($sm);
-  }
-
-  @mixin sm\:snap-align-none {
-    @include snap-align-none($sm);
-  }
-
-  @mixin md\:snap-start {
-    @include snap-start($md);
-  }
-
-  @mixin md\:snap-end {
-    @include snap-end($md);
-  }
-
-  @mixin md\:snap-center {
-    @include snap-center($md);
-  }
-
-  @mixin md\:snap-align-none {
-    @include snap-align-none($md);
-  }
-
-  @mixin lg\:snap-start {
-    @include snap-start($lg);
-  }
-
-  @mixin lg\:snap-end {
-    @include snap-end($lg);
-  }
-
-  @mixin lg\:snap-center {
-    @include snap-center($lg);
-  }
-
-  @mixin lg\:snap-align-none {
-    @include snap-align-none($lg);
-  }
-
-  @mixin xl\:snap-start {
-    @include snap-start($xl);
-  }
-
-  @mixin xl\:snap-end {
-    @include snap-end($xl);
-  }
-
-  @mixin xl\:snap-center {
-    @include snap-center($xl);
-  }
-
-  @mixin xl\:snap-align-none {
-    @include snap-align-none($xl);
-  }
-
-  @mixin \2xl\:snap-start {
-    @include snap-start($\2xl);
-  }
-
-  @mixin \2xl\:snap-end {
-    @include snap-end($\2xl);
-  }
-
-  @mixin \2xl\:snap-center {
-    @include snap-center($\2xl);
-  }
-
-  @mixin \2xl\:snap-align-none {
-    @include snap-align-none($\2xl);
-  }
-
-  // x*/
 }
