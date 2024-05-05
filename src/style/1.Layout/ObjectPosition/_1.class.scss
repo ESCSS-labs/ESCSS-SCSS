@@ -232,10 +232,10 @@
   // /*x
   @mixin object-($v, $rwd: null) {
     @if $rwd==null {
-      object-position: $v;
+      @include _object-position-($v);
     } @else {
       @media (min-width: $rwd) {
-        object-position: $v;
+        @include _object-position-($v);
       }
     }
   }

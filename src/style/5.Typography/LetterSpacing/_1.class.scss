@@ -161,10 +161,10 @@
   // /*x
   @mixin tracking-($v, $rwd: null) {
     @if $rwd==null {
-      letter-spacing: $v;
+      @include _letter-spacing-($v);
     } @else {
       @media (min-width: $rwd) {
-        letter-spacing: $v;
+        @include _letter-spacing-($v);
       }
     }
   }

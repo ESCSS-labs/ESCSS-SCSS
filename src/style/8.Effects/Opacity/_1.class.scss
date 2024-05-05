@@ -521,10 +521,10 @@
   // /*x
   @mixin opacity-($v, $rwd: null) {
     @if $rwd==null {
-      opacity: $v;
+      @include _opacity-($v);
     } @else {
       @media (min-width: $rwd) {
-        opacity: $v;
+        @include _opacity-($v);
       }
     }
   }

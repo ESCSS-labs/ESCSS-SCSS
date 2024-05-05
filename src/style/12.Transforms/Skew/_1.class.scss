@@ -300,11 +300,11 @@
   @mixin skew-x-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-skew-x: $v !global;
-      transform: __transform();
+      @include _transform-(__transform());
     } @else {
       @media (min-width: $rwd) {
         $--tw-skew-x: $v !global;
-        transform: __transform();
+        @include _transform-(__transform());
       }
     }
   }
@@ -312,11 +312,11 @@
   @mixin skew-y-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-skew-y: $v !global;
-      transform: __transform();
+      @include _transform-(__transform());
     } @else {
       @media (min-width: $rwd) {
         $--tw-skew-y: $v !global;
-        transform: __transform();
+        @include _transform-(__transform());
       }
     }
   }

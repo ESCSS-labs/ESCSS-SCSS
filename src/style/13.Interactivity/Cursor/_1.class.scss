@@ -880,10 +880,10 @@
   // /*x
   @mixin cursor-($v, $v2: null, $rwd: null) {
     @if $rwd==null {
-      cursor: $v, $v2;
+      @include _cursor-($v, $v2);
     } @else {
       @media (min-width: $rwd) {
-        cursor: $v, $v2;
+        @include _cursor-($v, $v2);
       }
     }
   }

@@ -1,73 +1,3 @@
-// /*x
-// Inner Methods - internal purpose
-
-// c stands for color (file size concern)
-@function c($token, $v) {
-  @if not math.is-unitless($v) {
-    @error "TRY 0.xx INSTEAD OF xx%. Concerning performance: Since all colors depend on this function, removing the xx% code to simulate opacity will speed up processing.";
-  }
-
-  // $alpha only accepts 0 ~ 1, https://sass-lang.com/documentation/modules/color/#change
-  @return color.change($token, $alpha: $v);
-}
-
-@function __box-shadow() {
-  $--tw-ring-offset-shadow: $--tw-ring-inset 0 0 0 $--tw-ring-offset-width
-    $--tw-ring-offset-color;
-  $--tw-ring-shadow: $--tw-ring-inset 0 0 0 $--ring-width $--tw-ring-color;
-  $--tw-shadow: null;
-
-  @if list.index(shadow md lg xl, $-shadow-token) {
-    $--tw-shadow:
-      list.nth($--shadow-width, 1) $--tw-shadow-color,
-      list.nth($--shadow-width, 2) $--tw-shadow-color;
-  } @else if $-shadow-token ==inner {
-    $--tw-shadow: inset $--shadow-width $--tw-shadow-color;
-  } @else {
-    $--tw-shadow: $--shadow-width $--tw-shadow-color;
-  }
-
-  @return $--tw-ring-offset-shadow, $--tw-ring-shadow, $--tw-shadow;
-}
-
-@function __transform() {
-  @return translate($--tw-translate-x, $--tw-translate-y) rotate($--tw-rotate)
-    skewX($--tw-skew-x) skewY($--tw-skew-y) scaleX($--tw-scale-x)
-    scaleY($--tw-scale-y);
-}
-
-@function __filter() {
-  @return $--tw-blur $--tw-brightness $--tw-contrast $--tw-grayscale
-    $--tw-hue-rotate $--tw-invert $--tw-saturate $--tw-sepia $--tw-drop-shadow;
-}
-
-@function __backdrop-filter() {
-  @return $--tw-backdrop-blur $--tw-backdrop-brightness $--tw-backdrop-contrast
-    $--tw-backdrop-grayscale $--tw-backdrop-hue-rotate $--tw-backdrop-invert
-    $--tw-backdrop-opacity $--tw-backdrop-saturate $--tw-backdrop-sepia;
-}
-
-@function __linear-gradient() {
-  @if $--gradient-direction==none {
-    @return none;
-  } @else if $--tw-gradient-via==null {
-    @return linear-gradient(
-      $--gradient-direction,
-      $--tw-gradient-from $--tw-gradient-from-position,
-      $--tw-gradient-to $--tw-gradient-to-position
-    );
-  } @else {
-    @return linear-gradient(
-      $--gradient-direction,
-      $--tw-gradient-from $--tw-gradient-from-position,
-      $--tw-gradient-via $--tw-gradient-via-position,
-      $--tw-gradient-to $--tw-gradient-to-position
-    );
-  }
-}
-
-
-// Atomic css
 @mixin _aspect-ratio-($v, $rwd: null) {
   @if $rwd ==null {
     aspect-ratio: $v;
@@ -1612,4 +1542,3 @@
     }
   }
 }
-// x*/

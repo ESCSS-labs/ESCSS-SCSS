@@ -173,10 +173,10 @@
   // /*x
   @mixin animate-($v, $rwd: null) {
     @if $rwd==null {
-      animation: $v;
+      @include _animation-($v);
     } @else {
       @media (min-width: $rwd) {
-        animation: $v;
+        @include _animation-($v);
       }
     }
   }

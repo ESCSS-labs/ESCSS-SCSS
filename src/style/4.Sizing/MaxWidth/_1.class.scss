@@ -1385,10 +1385,10 @@
   // /*x
   @mixin max-w-($v, $rwd: null) {
     @if $rwd==null {
-      max-width: $v;
+      @include _max-width-($v);
     } @else {
       @media (min-width: $rwd) {
-        max-width: $v;
+        @include _max-width-($v);
       }
     }
   }

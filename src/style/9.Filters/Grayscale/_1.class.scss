@@ -65,11 +65,11 @@
   @mixin grayscale-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-grayscale: grayscale($v) !global;
-      filter: __filter();
+      @include _filter-(__filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-grayscale: grayscale($v) !global;
-        filter: __filter();
+        @include _filter-(__filter());
       }
     }
   }

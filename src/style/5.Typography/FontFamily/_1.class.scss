@@ -242,19 +242,19 @@
   // /*x
   @mixin font-($v, $rwd: null) {
     @if $rwd==null {
-      @if meta.type-of($v) ==string or meta.type-of($v) ==list {
-        font-family: $v;
-      } @else {
-        font-weight: $v;
-      }
+      @include __font-($v, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        @if meta.type-of($v) ==string or meta.type-of($v) ==list {
-          font-family: $v;
-        } @else {
-          font-weight: $v;
-        }
+        @include __font-($v, $rwd);
       }
+    }
+  }
+
+  @mixin __font-($v, $rwd: null) {
+    @if meta.type-of($v) ==string or meta.type-of($v) ==list {
+      @include _font-family-($v);
+    } @else {
+      @include _font-weight-($v);
     }
   }
 

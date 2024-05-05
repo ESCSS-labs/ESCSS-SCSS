@@ -112,10 +112,10 @@
   // /*x
   @mixin will-change-($v, $v2: null, $rwd: null) {
     @if $rwd==null {
-      will-change: $v, $v2;
+      @include _will-change-($v, $v2);
     } @else {
       @media (min-width: $rwd) {
-        will-change: $v, $v2;
+        @include _will-change-($v, $v2);
       }
     }
   }

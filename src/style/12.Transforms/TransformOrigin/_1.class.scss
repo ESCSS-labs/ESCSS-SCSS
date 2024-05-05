@@ -233,10 +233,10 @@
   // /*x
   @mixin origin-($v, $rwd: null) {
     @if $rwd==null {
-      transform-origin: $v;
+      @include _transform-origin-($v);
     } @else {
       @media (min-width: $rwd) {
-        transform-origin: $v;
+        @include _transform-origin-($v);
       }
     }
   }

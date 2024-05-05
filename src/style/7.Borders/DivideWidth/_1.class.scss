@@ -311,8 +311,8 @@
       }
 
       > * ~ * {
-        border-right-width: $--divide-x-value * $--tw-divide-x-reverse;
-        border-left-width: $--divide-x-value * (1 - $--tw-divide-x-reverse);
+        @include _border-right-width-($--divide-x-value * $--tw-divide-x-reverse);
+        @include _border-left-width-($--divide-x-value * (1 - $--tw-divide-x-reverse));
       }
     } @else {
       @media (min-width: $rwd) {
@@ -323,8 +323,8 @@
         }
 
         > * ~ * {
-          border-right-width: $--divide-x-value * $--tw-divide-x-reverse;
-          border-left-width: $--divide-x-value * (1 - $--tw-divide-x-reverse);
+          @include _border-right-width-($--divide-x-value * $--tw-divide-x-reverse);
+          @include _border-left-width-($--divide-x-value * (1 - $--tw-divide-x-reverse));
         }
       }
     }
@@ -339,8 +339,8 @@
       }
 
       > * ~ * {
-        border-top-width: $--divide-y-value * (1 - $--tw-divide-y-reverse);
-        border-bottom-width: $--divide-y-value * $--tw-divide-y-reverse;
+        @include _border-top-width-($--divide-y-value * (1 - $--tw-divide-y-reverse));
+        @include _border-bottom-width-($--divide-y-value * $--tw-divide-y-reverse);
       }
     } @else {
       @media (min-width: $rwd) {
@@ -351,8 +351,8 @@
         }
 
         > * ~ * {
-          border-top-width: $--divide-y-value * (1 - $--tw-divide-y-reverse);
-          border-bottom-width: $--divide-y-value * $--tw-divide-y-reverse;
+          @include _border-top-width-($--divide-y-value * (1 - $--tw-divide-y-reverse));
+          @include _border-bottom-width-($--divide-y-value * $--tw-divide-y-reverse);
         }
       }
     }

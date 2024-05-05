@@ -2535,30 +2535,30 @@
   // /*x
   @mixin border-spacing-($v, $rwd: null) {
     @if $rwd == null {
-      border-spacing: $v $v;
+      @include _border-spacing-($v $v);
     } @else {
       @media (min-width: $rwd) {
-        border-spacing: $v $v;
+        @include _border-spacing-($v $v);
       }
     }
   }
 
   @mixin border-spacing-x-($v, $rwd: null) {
     @if $rwd == null {
-      border-spacing: $v 0;
+      @include _border-spacing-($v 0);
     } @else {
       @media (min-width: $rwd) {
-        border-spacing: $v 0;
+        @include _border-spacing-($v 0);
       }
     }
   }
 
   @mixin border-spacing-y-($v, $rwd: null) {
     @if $rwd == null {
-      border-spacing: 0 $v;
+      @include _border-spacing-(0 $v);
     } @else {
       @media (min-width: $rwd) {
-        border-spacing: 0 $v;
+        @include _border-spacing-(0 $v);
       }
     }
   }

@@ -86,10 +86,10 @@
   // /*x
   @mixin aspect-($v, $rwd: null) {
     @if $rwd ==null {
-      aspect-ratio: $v;
+      @include _aspect-ratio-($v);
     } @else {
       @media (min-width: $rwd) {
-        aspect-ratio: $v;
+        @include _aspect-ratio-($v);
       }
     }
   }

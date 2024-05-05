@@ -64,10 +64,10 @@
   // /*x
   @mixin grow-($v, $rwd: null) {
     @if $rwd==null {
-      flex-grow: $v;
+      @include _flex-grow-($v);
     } @else {
       @media (min-width: $rwd) {
-        flex-grow: $v;
+        @include _flex-grow-($v);
       }
     }
   }

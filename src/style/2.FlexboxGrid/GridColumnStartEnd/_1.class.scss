@@ -1024,30 +1024,30 @@
   // /*x
   @mixin col-($v, $rwd: null) {
     @if $rwd==null {
-      grid-column: $v;
+      @include _grid-column-($v);
     } @else {
       @media (min-width: $rwd) {
-        grid-column: $v;
+        @include _grid-column-($v);
       }
     }
   }
 
   @mixin col-start-($v, $rwd: null) {
     @if $rwd==null {
-      grid-column-start: $v;
+      @include _grid-column-start-($v);
     } @else {
       @media (min-width: $rwd) {
-        grid-column-start: $v;
+        @include _grid-column-start-($v);
       }
     }
   }
 
   @mixin col-end-($v, $rwd: null) {
     @if $rwd==null {
-      grid-column-end: $v;
+      @include _grid-column-end-($v);
     } @else {
       @media (min-width: $rwd) {
-        grid-column-end: $v;
+        @include _grid-column-end-($v);
       }
     }
   }

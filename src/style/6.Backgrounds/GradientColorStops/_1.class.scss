@@ -19323,7 +19323,7 @@
 
   @mixin __from-($token, $v) {
     @if list.index(inherit, $token) {
-      background-image: inherit !important;
+      @include background-image-(inherit !important);
     } @else {
       @if list.index(currentColor transparent, $token) {
         $--tw-gradient-from: $token !global;
@@ -19333,7 +19333,7 @@
         $--tw-gradient-from-position: $token !global;
       }
 
-      background-image: __linear-gradient();
+      @include background-image-(__linear-gradient());
     }
   }
 
@@ -19349,7 +19349,7 @@
 
   @mixin __via-($token, $v) {
     @if list.index(inherit, $token) {
-      background-image: inherit !important;
+      @include background-image-(inherit !important);
     } @else {
       @if list.index(currentColor transparent, $token) {
         $--tw-gradient-via: $token !global;
@@ -19359,7 +19359,7 @@
         $--tw-gradient-via-position: $token !global;
       }
 
-      background-image: __linear-gradient();
+      @include background-image-(__linear-gradient());
     }
   }
 
@@ -19375,7 +19375,7 @@
 
   @mixin __to-($token, $v) {
     @if list.index(inherit, $token) {
-      background-image: inherit !important;
+      @include background-image-(inherit !important);
     } @else {
       @if list.index(currentColor transparent, $token) {
         $--tw-gradient-to: $token !global;
@@ -19385,7 +19385,7 @@
         $--tw-gradient-to-position: $token !global;
       }
 
-      background-image: __linear-gradient();
+      @include background-image-(__linear-gradient());
     }
   }
 

@@ -5967,10 +5967,10 @@
   // /*x
   @mixin fill-($v, $rwd: null) {
     @if $rwd==null {
-      fill: $v;
+      @include _fill-($v);
     } @else {
       @media (min-width: $rwd) {
-        fill: $v;
+        @include _fill-($v);
       }
     }
   }

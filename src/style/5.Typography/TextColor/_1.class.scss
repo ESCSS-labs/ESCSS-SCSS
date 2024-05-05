@@ -2,6 +2,7 @@
 
 /* Text Color */
 @if $Basic {
+
   // /*x
   @mixin text-inherit {
     @include text-(inherit);
@@ -996,6 +997,7 @@
 
 @if $Rwd {
   @if $sizeMode ==0 {
+
     // /*x
     @mixin sm\:text-inherit {
       @include text-(inherit, $sm);
@@ -5942,11 +5944,14 @@
 }
 
 @if $Custom {
+
   // /*x
   @mixin text-($v, $rwd: null) {
     @if $rwd==null {
       @include __text-($v);
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         @include __text-($v);
       }
@@ -5954,13 +5959,18 @@
   }
 
   @mixin __text-($v) {
-    @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor, $v) {
       color: $v;
-    } @else if list.length($v) ==2 {
-      font-size: list.nth($v, 1);
-      line-height: list.nth($v, 2);
-    } @else {
-      font-size: $v; // custom
+    }
+
+    @else if list.length($v)==2 {
+      @include _font-size-(list.nth($v, 1));
+      @include _line-height-(list.nth($v, 2));
+    }
+
+    // custom
+    @else {
+      @include _font-size-($v);
     }
   }
 

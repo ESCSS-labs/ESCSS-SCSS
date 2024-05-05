@@ -5956,9 +5956,9 @@
   @mixin __divide($token, $v) {
     > * ~ * {
       @if list.index(inherit currentColor transparent, $token) {
-        border-color: $token;
+        @include _border-color-($token);
       } @else {
-        border-color: c($token, $v);
+        @include _border-color-(c($token, $v));
       }
     }
   }

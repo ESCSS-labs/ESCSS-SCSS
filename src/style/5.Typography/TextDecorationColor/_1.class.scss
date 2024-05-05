@@ -5955,9 +5955,9 @@
 
   @mixin __decoration-($v) {
     @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-      text-decoration-color: $v;
+      @include _text-decoration-color-($v);
     } @else {
-      text-decoration-thickness: $v;
+      @include _text-decoration-thickness-($v);
     }
   }
 

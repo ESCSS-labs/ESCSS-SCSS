@@ -185,10 +185,10 @@
   // /*x
   @mixin z-($v, $rwd: null) {
     @if $rwd==null {
-      z-index: $v;
+      @include _z-index-($v);
     } @else {
       @media (min-width: $rwd) {
-        z-index: $v;
+        @include _z-index-($v);
       }
     }
   }

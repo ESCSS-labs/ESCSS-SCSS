@@ -638,10 +638,10 @@
   // /*x
   @mixin columns-($v, $rwd: null) {
     @if $rwd==null {
-      columns: $v;
+      @include _columns-($v);
     } @else {
       @media (min-width: $rwd) {
-        columns: $v;
+        @include _columns-($v);
       }
     }
   }

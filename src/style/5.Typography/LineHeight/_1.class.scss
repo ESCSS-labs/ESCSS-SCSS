@@ -353,10 +353,10 @@
   // /*x
   @mixin leading-($v, $rwd: null) {
     @if $rwd==null {
-      line-height: $v;
+      @include _line-height-($v);
     } @else {
       @media (min-width: $rwd) {
-        line-height: $v;
+        @include _line-height-($v);
       }
     }
   }

@@ -113,10 +113,10 @@
   // /*x
   @mixin auto-cols-($v, $rwd: null) {
     @if $rwd==null {
-      grid-auto-columns: $v;
+      @include grid-auto-columns-($v);
     } @else {
       @media (min-width: $rwd) {
-        grid-auto-columns: $v;
+        @include grid-auto-columns-($v);
       }
     }
   }

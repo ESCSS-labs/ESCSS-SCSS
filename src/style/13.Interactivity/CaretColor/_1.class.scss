@@ -5945,10 +5945,10 @@
   // /*x
   @mixin caret-($v, $rwd: null) {
     @if $rwd==null {
-      caret-color: $v;
+      @include _caret-color-($v);
     } @else {
       @media (min-width: $rwd) {
-        caret-color: $v;
+        @include _caret-color-($v);
       }
     }
   }

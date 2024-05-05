@@ -209,11 +209,11 @@
   @mixin blur-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-blur: blur($v) !global;
-      filter: __filter();
+      @include _filter-(__filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-blur: blur($v) !global;
-        filter: __filter();
+        @include _filter-(__filter());
       }
     }
   }

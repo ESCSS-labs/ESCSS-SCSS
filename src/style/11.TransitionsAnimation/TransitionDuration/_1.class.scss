@@ -233,10 +233,10 @@
   // /*x
   @mixin duration-($v, $rwd: null) {
     @if $rwd==null {
-      transition-duration: $v;
+      @include _transition-duration-($v);
     } @else {
       @media (min-width: $rwd) {
-        transition-duration: $v;
+        @include _transition-duration-($v);
       }
     }
   }

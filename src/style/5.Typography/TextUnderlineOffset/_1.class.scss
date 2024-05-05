@@ -161,10 +161,10 @@
   // /*x
   @mixin underline-offset-($v, $rwd: null) {
     @if $rwd==null {
-      text-underline-offset: $v;
+      @include _text-underline-offset-($v);
     } @else {
       @media (min-width: $rwd) {
-        text-underline-offset: $v;
+        @include _text-underline-offset-($v);
       }
     }
   }

@@ -113,10 +113,10 @@
   // /*x
   @mixin ease-($v, $rwd: null) {
     @if $rwd==null {
-      transition-timing-function: $v;
+      @include _transition-timing-function-($v);
     } @else {
       @media (min-width: $rwd) {
-        transition-timing-function: $v;
+        @include _transition-timing-function-($v);
       }
     }
   }

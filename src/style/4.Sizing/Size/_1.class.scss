@@ -1600,12 +1600,12 @@
   // /*x
   @mixin size-($v, $rwd: null) {
     @if $rwd==null {
-      width: $v;
-      height: $v;
+      @include _width-($v);
+      @include _height-($v);
     } @else {
       @media (min-width: $rwd) {
-        width: $v;
-        height: $v;
+        @include _width-($v);
+        @include _height-($v);
       }
     }
   }

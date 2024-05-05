@@ -2536,30 +2536,30 @@
   // /*x
   @mixin gap-($v, $rwd: null) {
     @if $rwd==null {
-      gap: $v;
+      @include gap-($v);
     } @else {
       @media (min-width: $rwd) {
-        gap: $v;
+        @include gap-($v);
       }
     }
   }
 
   @mixin gap-x-($v, $rwd: null) {
     @if $rwd==null {
-      column-gap: $v;
+      @include column-gap-($v);
     } @else {
       @media (min-width: $rwd) {
-        column-gap: $v;
+        @include column-gap-($v);
       }
     }
   }
 
   @mixin gap-y-($v, $rwd: null) {
     @if $rwd==null {
-      row-gap: $v;
+      @include row-gap-($v);
     } @else {
       @media (min-width: $rwd) {
-        row-gap: $v;
+        @include row-gap-($v);
       }
     }
   }

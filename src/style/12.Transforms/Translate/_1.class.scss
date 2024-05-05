@@ -2034,11 +2034,11 @@
   @mixin translate-x-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-translate-x: $v !global;
-      transform: __transform();
+      @include _transform-(__transform());
     } @else {
       @media (min-width: $rwd) {
         $--tw-translate-x: $v !global;
-        transform: __transform();
+        @include _transform-(__transform());
       }
     }
   }
@@ -2046,11 +2046,11 @@
   @mixin translate-y-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-translate-y: $v !global;
-      transform: __transform();
+      @include _transform-(__transform());
     } @else {
       @media (min-width: $rwd) {
         $--tw-translate-y: $v !global;
-        transform: __transform();
+        @include _transform-(__transform());
       }
     }
   }

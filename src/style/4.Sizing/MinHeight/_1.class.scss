@@ -1048,10 +1048,10 @@
   // /*x
   @mixin min-h-($v, $rwd: null) {
     @if $rwd==null {
-      min-height: $v;
+      @include _min-height-($v);
     } @else {
       @media (min-width: $rwd) {
-        min-height: $v;
+        @include _min-height-($v);
       }
     }
   }

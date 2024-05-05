@@ -953,10 +953,10 @@
   // /*x
   @mixin min-w-($v, $rwd: null) {
     @if $rwd ==null {
-      min-width: $v;
+      @include _min-width-($v);
     } @else {
       @media (min-width: $rwd) {
-        min-width: $v;
+        @include _min-width-($v);
       }
     }
   }

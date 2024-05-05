@@ -1431,10 +1431,10 @@
   // /*x
   @mixin h-($v, $rwd: null) {
     @if $rwd==null {
-      height: $v;
+      @include _height-($v);
     } @else {
       @media (min-width: $rwd) {
-        height: $v;
+        @include _height-($v);
       }
     }
   }

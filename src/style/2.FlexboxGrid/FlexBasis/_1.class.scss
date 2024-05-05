@@ -1528,10 +1528,10 @@
   // /*x
   @mixin basis-($v, $rwd: null) {
     @if $rwd ==null {
-      flex-basis: $v;
+      @include _flex-basis-($v);
     } @else {
       @media (min-width: $rwd) {
-        flex-basis: $v;
+        @include _flex-basis-($v);
       }
     }
   }

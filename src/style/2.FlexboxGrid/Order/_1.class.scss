@@ -372,10 +372,10 @@
   // /*x
   @mixin order-($v, $rwd: null) {
     @if $rwd==null {
-      order: $v;
+      @include _order-($v);
     } @else {
       @media (min-width: $rwd) {
-        order: $v;
+        @include _order-($v);
       }
     }
   }

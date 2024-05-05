@@ -53365,16 +53365,16 @@
   @mixin border-($v, $rwd: null) {
     @if $rwd==null {
       @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-        border-color: $v;
+        @include _border-color-($v);
       } @else {
-        border-width: $v;
+        @include _border-width-($v);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-          border-color: $v;
+          @include _border-color-($v);
         } @else {
-          border-width: $v;
+          @include _border-width-($v);
         }
       }
     }
@@ -53383,20 +53383,20 @@
   @mixin border-x-($v, $rwd: null) {
     @if $rwd==null {
       @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-        border-left-color: $v;
-        border-right-color: $v;
+        @include _border-left-color-($v);
+        @include _border-right-color-($v);
       } @else {
-        border-left-width: $v;
-        border-right-width: $v;
+        @include _border-left-width-($v);
+        @include _border-right-width-($v);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-          border-left-color: $v;
-          border-right-color: $v;
+          @include _border-left-color-($v);
+          @include _border-right-color-($v);
         } @else {
-          border-left-width: $v;
-          border-right-width: $v;
+          @include _border-left-width-($v);
+          @include _border-right-width-($v);
         }
       }
     }
@@ -53405,20 +53405,20 @@
   @mixin border-y-($v, $rwd: null) {
     @if $rwd==null {
       @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-        border-top-color: $v;
-        border-bottom-color: $v;
+        @include _border-top-color-($v);
+        @include _border-bottom-color-($v);
       } @else {
-        border-top-width: $v;
-        border-bottom-width: $v;
+        @include _border-top-width-($v);
+        @include _border-bottom-width-($v);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-          border-top-color: $v;
-          border-bottom-color: $v;
+          @include _border-top-color-($v);
+          @include _border-bottom-color-($v);
         } @else {
-          border-top-width: $v;
-          border-bottom-width: $v;
+          @include _border-top-width-($v);
+          @include _border-bottom-width-($v);
         }
       }
     }
@@ -53427,16 +53427,16 @@
   @mixin border-s-($v, $rwd: null) {
     @if $rwd==null {
       @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-        border-inline-start-color: $v;
+        @include _border-inline-start-color-($v);
       } @else {
-        border-inline-start-width: $v;
+        @include _border-inline-start-width-($v);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-          border-inline-start-color: $v;
+          @include _border-inline-start-color-($v);
         } @else {
-          border-inline-start-width: $v;
+          @include _border-inline-start-width-($v);
         }
       }
     }
@@ -53445,16 +53445,16 @@
   @mixin border-e-($v, $rwd: null) {
     @if $rwd==null {
       @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-        border-inline-end-color: $v;
+        @include _border-inline-end-color-($v);
       } @else {
-        border-inline-end-width: $v;
+        @include _border-inline-end-width-($v);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-          border-inline-end-color: $v;
+          @include _border-inline-end-color-($v);
         } @else {
-          border-inline-end-width: $v;
+          @include _border-inline-end-width-($v);
         }
       }
     }
@@ -53463,16 +53463,16 @@
   @mixin border-t-($v, $rwd: null) {
     @if $rwd==null {
       @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-        border-top-color: $v;
+        @include _border-top-color-($v);
       } @else {
-        border-top-width: $v;
+        @include _border-top-width-($v);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-          border-top-color: $v;
+          @include _border-top-color-($v);
         } @else {
-          border-top-width: $v;
+          @include _border-top-width-($v);
         }
       }
     }
@@ -53481,16 +53481,16 @@
   @mixin border-r-($v, $rwd: null) {
     @if $rwd==null {
       @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-        border-right-color: $v;
+        @include _border-right-color-($v);
       } @else {
-        border-right-width: $v;
+        @include _border-right-width-($v);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-          border-right-color: $v;
+          @include _border-right-color-($v);
         } @else {
-          border-right-width: $v;
+          @include _border-right-width-($v);
         }
       }
     }
@@ -53499,16 +53499,16 @@
   @mixin border-b-($v, $rwd: null) {
     @if $rwd==null {
       @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-        border-bottom-color: $v;
+        @include _border-bottom-color-($v);
       } @else {
-        border-bottom-width: $v;
+        @include _border-bottom-width-($v);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-          border-bottom-color: $v;
+          @include _border-bottom-color-($v);
         } @else {
-          border-bottom-width: $v;
+          @include _border-bottom-width-($v);
         }
       }
     }
@@ -53517,16 +53517,16 @@
   @mixin border-l-($v, $rwd: null) {
     @if $rwd==null {
       @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-        border-left-color: $v;
+        @include _border-left-color-($v);
       } @else {
-        border-left-width: $v;
+        @include _border-left-width-($v);
       }
     } @else {
       @media (min-width: $rwd) {
         @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
-          border-left-color: $v;
+          @include _border-left-color-($v);
         } @else {
-          border-left-width: $v;
+          @include _border-left-width-($v);
         }
       }
     }

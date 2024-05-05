@@ -66,11 +66,11 @@
   @mixin backdrop-invert-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-backdrop-invert: invert($v) !global;
-      backdrop-filter: __backdrop-filter();
+      @include _backdrop-filter-(__backdrop-filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-backdrop-invert: invert($v) !global;
-        backdrop-filter: __backdrop-filter();
+        @include _backdrop-filter-(__backdrop-filter());
       }
     }
   }

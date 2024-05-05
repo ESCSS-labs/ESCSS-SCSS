@@ -162,11 +162,11 @@
   @mixin hue-rotate-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-hue-rotate: hue-rotate($v) !global;
-      filter: __filter();
+      @include _filter-(__filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-hue-rotate: hue-rotate($v) !global;
-        filter: __filter();
+        @include _filter-(__filter());
       }
     }
   }

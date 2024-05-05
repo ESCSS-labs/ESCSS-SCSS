@@ -137,10 +137,10 @@
   // /*x
   @mixin outline-offset-($v, $rwd: null) {
     @if $rwd==null {
-      outline-offset: $v;
+      @include _outline-offset-($v);
     } @else {
       @media (min-width: $rwd) {
-        outline-offset: $v;
+        @include _outline-offset-($v);
       }
     }
   }

@@ -64,10 +64,10 @@
   // /*x
   @mixin shrink-($v, $rwd: null) {
     @if $rwd==null {
-      flex-shrink: $v;
+      @include _flex-shrink-($v);
     } @else {
       @media (min-width: $rwd) {
-        flex-shrink: $v;
+        @include _flex-shrink-($v);
       }
     }
   }

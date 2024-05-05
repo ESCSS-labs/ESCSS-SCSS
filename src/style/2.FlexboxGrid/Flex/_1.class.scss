@@ -111,10 +111,10 @@
   // /*x
   @mixin flex-($v, $rwd: null) {
     @if $rwd == null {
-      flex: $v;
+      @include _flex-($v);
     } @else {
       @media (min-width: $rwd) {
-        flex: $v;
+        @include _flex-($v);
       }
     }
   }

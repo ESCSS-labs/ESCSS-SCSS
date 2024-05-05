@@ -63,11 +63,11 @@
   @mixin backdrop-grayscale-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-backdrop-grayscale: grayscale($v) !global;
-      backdrop-filter: __backdrop-filter();
+      @include _backdrop-filter-(__backdrop-filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-backdrop-grayscale: grayscale($v) !global;
-        backdrop-filter: __backdrop-filter();
+        @include _backdrop-filter-(__backdrop-filter());
       }
     }
   }

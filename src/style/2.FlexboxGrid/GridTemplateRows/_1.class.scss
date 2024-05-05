@@ -352,10 +352,10 @@
   // /*x
   @mixin grid-rows-($v, $rwd: null) {
     @if $rwd==null {
-      grid-template-rows: $v;
+      @include _grid-template-rows-($v);
     } @else {
       @media (min-width: $rwd) {
-        grid-template-rows: $v;
+        @include _grid-template-rows-($v);
       }
     }
   }

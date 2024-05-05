@@ -5969,10 +5969,10 @@
   // /*x
   @mixin accent-($v, $rwd: null) {
     @if $rwd==null {
-      accent-color: $v;
+      @include _accent-color-($v);
     } @else {
       @media (min-width: $rwd) {
-        accent-color: $v;
+        @include _accent-color-($v);
       }
     }
   }

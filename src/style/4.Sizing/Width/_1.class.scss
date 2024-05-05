@@ -1694,10 +1694,10 @@
   // /*x
   @mixin w-($v, $rwd: null) {
     @if $rwd==null {
-      width: $v;
+      @include _width-($v);
     } @else {
       @media (min-width: $rwd) {
-        width: $v;
+        @include _width-($v);
       }
     }
   }

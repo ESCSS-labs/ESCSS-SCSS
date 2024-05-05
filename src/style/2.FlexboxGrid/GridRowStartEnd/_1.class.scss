@@ -1025,30 +1025,30 @@
   // /*x
   @mixin row-($v, $rwd: null) {
     @if $rwd==null {
-      grid-row: $v;
+      @include _grid-row-($v);
     } @else {
       @media (min-width: $rwd) {
-        grid-row: $v;
+        @include _grid-row-($v);
       }
     }
   }
 
   @mixin row-start-($v, $rwd: null) {
     @if $rwd==null {
-      grid-row-start: $v;
+      @include _grid-row-start-($v);
     } @else {
       @media (min-width: $rwd) {
-        grid-row-start: $v;
+        @include _grid-row-start-($v);
       }
     }
   }
 
   @mixin row-end-($v, $rwd: null) {
     @if $rwd==null {
-      grid-row-end: $v;
+      @include _grid-row-end-($v);
     } @else {
       @media (min-width: $rwd) {
-        grid-row-end: $v;
+        @include _grid-row-end-($v);
       }
     }
   }
