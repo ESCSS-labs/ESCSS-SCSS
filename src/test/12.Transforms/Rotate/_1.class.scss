@@ -1,7 +1,8 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-// negative testing
+// for testing negative values
+
 @mixin -rotate-0 {
   @include rotate-(-0deg);
 }
@@ -216,6 +217,30 @@
 
 @mixin \2xl\:-rotate-180 {
   @include rotate-(-180deg, $\2xl);
+}
+
+@mixin -rotate-($v) {
+  @include rotate-(-($v));
+}
+
+@mixin sm\:-rotate-($v) {
+  @include rotate-(-($v), $sm);
+}
+
+@mixin md\:-rotate-($v) {
+  @include rotate-(-($v), $md);
+}
+
+@mixin lg\:-rotate-($v) {
+  @include rotate-(-($v), $lg);
+}
+
+@mixin xl\:-rotate-($v) {
+  @include rotate-(-($v), $xl);
+}
+
+@mixin \2xl\:-rotate-($v) {
+  @include rotate-(-($v), $\2xl);
 }
 
 @include describe("12.Transforms") {
@@ -1931,10 +1956,10 @@
         }
       }
 
-      @include it("rotate-(-17deg)") {
+      @include it("-rotate-(17deg)") {
         @include assert {
           @include output {
-            @include rotate-(-17deg);
+            @include -rotate-(17deg);
             @include clear;
           }
 
@@ -1961,10 +1986,10 @@
         }
       }
 
-      @include it("sm\:rotate-(-17deg)") {
+      @include it("sm\:-rotate-(17deg)") {
         @include assert {
           @include output {
-            @include sm\:rotate-(-17deg);
+            @include sm\:-rotate-(17deg);
             @include clear;
           }
 
@@ -1993,10 +2018,10 @@
         }
       }
 
-      @include it("md\:rotate-(-17deg)") {
+      @include it("md\:-rotate-(17deg)") {
         @include assert {
           @include output {
-            @include md\:rotate-(-17deg);
+            @include md\:-rotate-(17deg);
             @include clear;
           }
 
@@ -2025,10 +2050,10 @@
         }
       }
 
-      @include it("lg\:rotate-(-17deg)") {
+      @include it("lg\:-rotate-(17deg)") {
         @include assert {
           @include output {
-            @include lg\:rotate-(-17deg);
+            @include lg\:-rotate-(17deg);
             @include clear;
           }
 
@@ -2057,10 +2082,10 @@
         }
       }
 
-      @include it("xl\:rotate-(-17deg)") {
+      @include it("xl\:-rotate-(17deg)") {
         @include assert {
           @include output {
-            @include xl\:rotate-(-17deg);
+            @include xl\:-rotate-(17deg);
             @include clear;
           }
 
@@ -2089,10 +2114,10 @@
         }
       }
 
-      @include it("\2xl\:rotate-(-17deg)") {
+      @include it("\2xl\:-rotate-(17deg)") {
         @include assert {
           @include output {
-            @include \2xl\:rotate-(-17deg);
+            @include \2xl\:-rotate-(17deg);
             @include clear;
           }
 

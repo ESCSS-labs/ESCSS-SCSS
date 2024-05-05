@@ -1,6 +1,176 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
+// for testing negative value
+
+@mixin -backdrop-hue-rotate-0 {
+  @include backdrop-hue-rotate-(-0deg);
+}
+
+@mixin -backdrop-hue-rotate-15 {
+  @include backdrop-hue-rotate-(-15deg);
+}
+
+@mixin -backdrop-hue-rotate-30 {
+  @include backdrop-hue-rotate-(-30deg);
+}
+
+@mixin -backdrop-hue-rotate-60 {
+  @include backdrop-hue-rotate-(-60deg);
+}
+
+@mixin -backdrop-hue-rotate-90 {
+  @include backdrop-hue-rotate-(-90deg);
+}
+
+@mixin -backdrop-hue-rotate-180 {
+  @include backdrop-hue-rotate-(-180deg);
+}
+
+@mixin sm\:-backdrop-hue-rotate-0 {
+  @include backdrop-hue-rotate-(-0deg, $sm);
+}
+
+@mixin sm\:-backdrop-hue-rotate-15 {
+  @include backdrop-hue-rotate-(-15deg, $sm);
+}
+
+@mixin sm\:-backdrop-hue-rotate-30 {
+  @include backdrop-hue-rotate-(-30deg, $sm);
+}
+
+@mixin sm\:-backdrop-hue-rotate-60 {
+  @include backdrop-hue-rotate-(-60deg, $sm);
+}
+
+@mixin sm\:-backdrop-hue-rotate-90 {
+  @include backdrop-hue-rotate-(-90deg, $sm);
+}
+
+@mixin sm\:-backdrop-hue-rotate-180 {
+  @include backdrop-hue-rotate-(-180deg, $sm);
+}
+
+@mixin md\:-backdrop-hue-rotate-0 {
+  @include backdrop-hue-rotate-(-0deg, $md);
+}
+
+@mixin md\:-backdrop-hue-rotate-15 {
+  @include backdrop-hue-rotate-(-15deg, $md);
+}
+
+@mixin md\:-backdrop-hue-rotate-30 {
+  @include backdrop-hue-rotate-(-30deg, $md);
+}
+
+@mixin md\:-backdrop-hue-rotate-60 {
+  @include backdrop-hue-rotate-(-60deg, $md);
+}
+
+@mixin md\:-backdrop-hue-rotate-90 {
+  @include backdrop-hue-rotate-(-90deg, $md);
+}
+
+@mixin md\:-backdrop-hue-rotate-180 {
+  @include backdrop-hue-rotate-(-180deg, $md);
+}
+
+@mixin lg\:-backdrop-hue-rotate-0 {
+  @include backdrop-hue-rotate-(-0deg, $lg);
+}
+
+@mixin lg\:-backdrop-hue-rotate-15 {
+  @include backdrop-hue-rotate-(-15deg, $lg);
+}
+
+@mixin lg\:-backdrop-hue-rotate-30 {
+  @include backdrop-hue-rotate-(-30deg, $lg);
+}
+
+@mixin lg\:-backdrop-hue-rotate-60 {
+  @include backdrop-hue-rotate-(-60deg, $lg);
+}
+
+@mixin lg\:-backdrop-hue-rotate-90 {
+  @include backdrop-hue-rotate-(-90deg, $lg);
+}
+
+@mixin lg\:-backdrop-hue-rotate-180 {
+  @include backdrop-hue-rotate-(-180deg, $lg);
+}
+
+@mixin xl\:-backdrop-hue-rotate-0 {
+  @include backdrop-hue-rotate-(-0deg, $xl);
+}
+
+@mixin xl\:-backdrop-hue-rotate-15 {
+  @include backdrop-hue-rotate-(-15deg, $xl);
+}
+
+@mixin xl\:-backdrop-hue-rotate-30 {
+  @include backdrop-hue-rotate-(-30deg, $xl);
+}
+
+@mixin xl\:-backdrop-hue-rotate-60 {
+  @include backdrop-hue-rotate-(-60deg, $xl);
+}
+
+@mixin xl\:-backdrop-hue-rotate-90 {
+  @include backdrop-hue-rotate-(-90deg, $xl);
+}
+
+@mixin xl\:-backdrop-hue-rotate-180 {
+  @include backdrop-hue-rotate-(-180deg, $xl);
+}
+
+@mixin \2xl\:-backdrop-hue-rotate-0 {
+  @include backdrop-hue-rotate-(-0deg, $\2xl);
+}
+
+@mixin \2xl\:-backdrop-hue-rotate-15 {
+  @include backdrop-hue-rotate-(-15deg, $\2xl);
+}
+
+@mixin \2xl\:-backdrop-hue-rotate-30 {
+  @include backdrop-hue-rotate-(-30deg, $\2xl);
+}
+
+@mixin \2xl\:-backdrop-hue-rotate-60 {
+  @include backdrop-hue-rotate-(-60deg, $\2xl);
+}
+
+@mixin \2xl\:-backdrop-hue-rotate-90 {
+  @include backdrop-hue-rotate-(-90deg, $\2xl);
+}
+
+@mixin \2xl\:-backdrop-hue-rotate-180 {
+  @include backdrop-hue-rotate-(-180deg, $\2xl);
+}
+
+@mixin -backdrop-hue-rotate-($v) {
+  @include backdrop-hue-rotate-(-($v));
+}
+
+@mixin sm\:-backdrop-hue-rotate-($v) {
+  @include backdrop-hue-rotate-(-($v), $sm);
+}
+
+@mixin md\:-backdrop-hue-rotate-($v) {
+  @include backdrop-hue-rotate-(-($v), $md);
+}
+
+@mixin lg\:-backdrop-hue-rotate-($v) {
+  @include backdrop-hue-rotate-(-($v), $lg);
+}
+
+@mixin xl\:-backdrop-hue-rotate-($v) {
+  @include backdrop-hue-rotate-(-($v), $xl);
+}
+
+@mixin \2xl\:-backdrop-hue-rotate-($v) {
+  @include backdrop-hue-rotate-(-($v), $\2xl);
+}
+
 @include describe("9.Filters") {
   @include describe("Backdrop Hue Rotate") {
     @include describe("Basic") {
@@ -81,9 +251,243 @@
           }
         }
       }
+
+      @include it("-backdrop-hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-0deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-15deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-30deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-60deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-90deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-180deg);
+          }
+        }
+      }
     }
 
     @include describe("Rwd") {
+      @include it("backdrop-hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include backdrop-hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(0deg);
+          }
+        }
+      }
+
+      @include it("backdrop-hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include backdrop-hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(15deg);
+          }
+        }
+      }
+
+      @include it("backdrop-hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include backdrop-hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(30deg);
+          }
+        }
+      }
+
+      @include it("backdrop-hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include backdrop-hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(60deg);
+          }
+        }
+      }
+
+      @include it("backdrop-hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include backdrop-hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(90deg);
+          }
+        }
+      }
+
+      @include it("backdrop-hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include backdrop-hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(180deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-0deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-15deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-30deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-60deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-90deg);
+          }
+        }
+      }
+
+      @include it("-backdrop-hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-180deg);
+          }
+        }
+      }
+
       @include it("sm\:backdrop-hue-rotate-0") {
         @include assert {
           @include output {
@@ -169,6 +573,96 @@
           @include expect {
             @media (min-width: $sm) {
               backdrop-filter: hue-rotate(180deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-backdrop-hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include sm\:-backdrop-hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              backdrop-filter: hue-rotate(-0deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-backdrop-hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include sm\:-backdrop-hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              backdrop-filter: hue-rotate(-15deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-backdrop-hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include sm\:-backdrop-hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              backdrop-filter: hue-rotate(-30deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-backdrop-hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include sm\:-backdrop-hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              backdrop-filter: hue-rotate(-60deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-backdrop-hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include sm\:-backdrop-hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              backdrop-filter: hue-rotate(-90deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-backdrop-hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include sm\:-backdrop-hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              backdrop-filter: hue-rotate(-180deg);
             }
           }
         }
@@ -264,6 +758,96 @@
         }
       }
 
+      @include it("md\:-backdrop-hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include md\:-backdrop-hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              backdrop-filter: hue-rotate(-0deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-backdrop-hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include md\:-backdrop-hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              backdrop-filter: hue-rotate(-15deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-backdrop-hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include md\:-backdrop-hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              backdrop-filter: hue-rotate(-30deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-backdrop-hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include md\:-backdrop-hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              backdrop-filter: hue-rotate(-60deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-backdrop-hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include md\:-backdrop-hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              backdrop-filter: hue-rotate(-90deg);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-backdrop-hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include md\:-backdrop-hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              backdrop-filter: hue-rotate(-180deg);
+            }
+          }
+        }
+      }
+
       @include it("lg\:backdrop-hue-rotate-0") {
         @include assert {
           @include output {
@@ -349,6 +933,96 @@
           @include expect {
             @media (min-width: $lg) {
               backdrop-filter: hue-rotate(180deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-backdrop-hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include lg\:-backdrop-hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              backdrop-filter: hue-rotate(-0deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-backdrop-hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include lg\:-backdrop-hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              backdrop-filter: hue-rotate(-15deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-backdrop-hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include lg\:-backdrop-hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              backdrop-filter: hue-rotate(-30deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-backdrop-hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include lg\:-backdrop-hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              backdrop-filter: hue-rotate(-60deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-backdrop-hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include lg\:-backdrop-hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              backdrop-filter: hue-rotate(-90deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-backdrop-hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include lg\:-backdrop-hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              backdrop-filter: hue-rotate(-180deg);
             }
           }
         }
@@ -444,6 +1118,96 @@
         }
       }
 
+      @include it("xl\:-backdrop-hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include xl\:-backdrop-hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              backdrop-filter: hue-rotate(-0deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-backdrop-hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include xl\:-backdrop-hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              backdrop-filter: hue-rotate(-15deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-backdrop-hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include xl\:-backdrop-hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              backdrop-filter: hue-rotate(-30deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-backdrop-hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include xl\:-backdrop-hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              backdrop-filter: hue-rotate(-60deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-backdrop-hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include xl\:-backdrop-hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              backdrop-filter: hue-rotate(-90deg);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-backdrop-hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include xl\:-backdrop-hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              backdrop-filter: hue-rotate(-180deg);
+            }
+          }
+        }
+      }
+
       @include it("\2xl\:backdrop-hue-rotate-0") {
         @include assert {
           @include output {
@@ -533,6 +1297,96 @@
           }
         }
       }
+
+      @include it("\2xl\:-backdrop-hue-rotate-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:-backdrop-hue-rotate-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              backdrop-filter: hue-rotate(-0deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-backdrop-hue-rotate-15") {
+        @include assert {
+          @include output {
+            @include \2xl\:-backdrop-hue-rotate-15;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              backdrop-filter: hue-rotate(-15deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-backdrop-hue-rotate-30") {
+        @include assert {
+          @include output {
+            @include \2xl\:-backdrop-hue-rotate-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              backdrop-filter: hue-rotate(-30deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-backdrop-hue-rotate-60") {
+        @include assert {
+          @include output {
+            @include \2xl\:-backdrop-hue-rotate-60;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              backdrop-filter: hue-rotate(-60deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-backdrop-hue-rotate-90") {
+        @include assert {
+          @include output {
+            @include \2xl\:-backdrop-hue-rotate-90;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              backdrop-filter: hue-rotate(-90deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-backdrop-hue-rotate-180") {
+        @include assert {
+          @include output {
+            @include \2xl\:-backdrop-hue-rotate-180;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              backdrop-filter: hue-rotate(-180deg);
+            }
+          }
+        }
+      }
     }
 
     @include describe("Custom") {
@@ -549,6 +1403,19 @@
         }
       }
 
+      @include it("-backdrop-hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include -backdrop-hue-rotate-(270deg);
+            @include clear;
+          }
+
+          @include expect {
+            backdrop-filter: hue-rotate(-270deg);
+          }
+        }
+      }
+
       @include it("sm\:backdrop-hue-rotate-(270deg)") {
         @include assert {
           @include output {
@@ -559,6 +1426,21 @@
           @include expect {
             @media (min-width: $sm) {
               backdrop-filter: hue-rotate(270deg);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-backdrop-hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include sm\:-backdrop-hue-rotate-(270deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              backdrop-filter: hue-rotate(-270deg);
             }
           }
         }
@@ -579,6 +1461,21 @@
         }
       }
 
+      @include it("md\:-backdrop-hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include md\:-backdrop-hue-rotate-(270deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              backdrop-filter: hue-rotate(-270deg);
+            }
+          }
+        }
+      }
+
       @include it("lg\:backdrop-hue-rotate-(270deg)") {
         @include assert {
           @include output {
@@ -589,6 +1486,21 @@
           @include expect {
             @media (min-width: $lg) {
               backdrop-filter: hue-rotate(270deg);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-backdrop-hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include lg\:-backdrop-hue-rotate-(270deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              backdrop-filter: hue-rotate(-270deg);
             }
           }
         }
@@ -609,6 +1521,21 @@
         }
       }
 
+      @include it("xl\:-backdrop-hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include xl\:-backdrop-hue-rotate-(270deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              backdrop-filter: hue-rotate(-270deg);
+            }
+          }
+        }
+      }
+
       @include it("\2xl\:backdrop-hue-rotate-(270deg)") {
         @include assert {
           @include output {
@@ -619,6 +1546,21 @@
           @include expect {
             @media (min-width: $\2xl) {
               backdrop-filter: hue-rotate(270deg);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-backdrop-hue-rotate-(270deg)") {
+        @include assert {
+          @include output {
+            @include \2xl\:-backdrop-hue-rotate-(270deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              backdrop-filter: hue-rotate(-270deg);
             }
           }
         }

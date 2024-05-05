@@ -1,6 +1,175 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
+// testing for negative values
+@mixin -z-0 {
+  @include z-(-0);
+}
+
+@mixin -z-10 {
+  @include z-(-10);
+}
+
+@mixin -z-20 {
+  @include z-(-20);
+}
+
+@mixin -z-30 {
+  @include z-(-30);
+}
+
+@mixin -z-40 {
+  @include z-(-40);
+}
+
+@mixin -z-50 {
+  @include z-(-50);
+}
+
+@mixin sm\:-z-0 {
+  @include z-(-0, $sm);
+}
+
+@mixin sm\:-z-10 {
+  @include z-(-10, $sm);
+}
+
+@mixin sm\:-z-20 {
+  @include z-(-20, $sm);
+}
+
+@mixin sm\:-z-30 {
+  @include z-(-30, $sm);
+}
+
+@mixin sm\:-z-40 {
+  @include z-(-40, $sm);
+}
+
+@mixin sm\:-z-50 {
+  @include z-(-50, $sm);
+}
+
+@mixin md\:-z-0 {
+  @include z-(-0, $md);
+}
+
+@mixin md\:-z-10 {
+  @include z-(-10, $md);
+}
+
+@mixin md\:-z-20 {
+  @include z-(-20, $md);
+}
+
+@mixin md\:-z-30 {
+  @include z-(-30, $md);
+}
+
+@mixin md\:-z-40 {
+  @include z-(-40, $md);
+}
+
+@mixin md\:-z-50 {
+  @include z-(-50, $md);
+}
+
+@mixin lg\:-z-0 {
+  @include z-(-0, $lg);
+}
+
+@mixin lg\:-z-10 {
+  @include z-(-10, $lg);
+}
+
+@mixin lg\:-z-20 {
+  @include z-(-20, $lg);
+}
+
+@mixin lg\:-z-30 {
+  @include z-(-30, $lg);
+}
+
+@mixin lg\:-z-40 {
+  @include z-(-40, $lg);
+}
+
+@mixin lg\:-z-50 {
+  @include z-(-50, $lg);
+}
+
+@mixin xl\:-z-0 {
+  @include z-(-0, $xl);
+}
+
+@mixin xl\:-z-10 {
+  @include z-(-10, $xl);
+}
+
+@mixin xl\:-z-20 {
+  @include z-(-20, $xl);
+}
+
+@mixin xl\:-z-30 {
+  @include z-(-30, $xl);
+}
+
+@mixin xl\:-z-40 {
+  @include z-(-40, $xl);
+}
+
+@mixin xl\:-z-50 {
+  @include z-(-50, $xl);
+}
+
+@mixin \2xl\:-z-0 {
+  @include z-(-0, $\2xl);
+}
+
+@mixin \2xl\:-z-10 {
+  @include z-(-10, $\2xl);
+}
+
+@mixin \2xl\:-z-20 {
+  @include z-(-20, $\2xl);
+}
+
+@mixin \2xl\:-z-30 {
+  @include z-(-30, $\2xl);
+}
+
+@mixin \2xl\:-z-40 {
+  @include z-(-40, $\2xl);
+}
+
+@mixin \2xl\:-z-50 {
+  @include z-(-50, $\2xl);
+}
+
+@mixin -z-($v) {
+  @include z-(-($v));
+}
+
+@mixin sm\:-z-($v) {
+  @include z-(-($v), $sm);
+}
+
+@mixin md\:-z-($v) {
+  @include z-(-($v), $md);
+}
+
+@mixin lg\:-z-($v) {
+  @include z-(-($v), $lg);
+}
+
+@mixin xl\:-z-($v) {
+  @include z-(-($v), $xl);
+}
+
+@mixin \2xl\:-z-($v) {
+  @include z-(-($v), $\2xl);
+}
+
 @include describe("1.Layout") {
   @include describe("Z-Index") {
     @include describe("Basic") {
@@ -91,6 +260,84 @@
 
           @include expect {
             z-index: auto;
+          }
+        }
+      }
+
+      @include it("-z-0") {
+        @include assert {
+          @include output {
+            @include -z-0;
+            @include clear;
+          }
+
+          @include expect {
+            z-index: -0;
+          }
+        }
+      }
+
+      @include it("-z-10") {
+        @include assert {
+          @include output {
+            @include -z-10;
+            @include clear;
+          }
+
+          @include expect {
+            z-index: -10;
+          }
+        }
+      }
+
+      @include it("-z-20") {
+        @include assert {
+          @include output {
+            @include -z-20;
+            @include clear;
+          }
+
+          @include expect {
+            z-index: -20;
+          }
+        }
+      }
+
+      @include it("-z-30") {
+        @include assert {
+          @include output {
+            @include -z-30;
+            @include clear;
+          }
+
+          @include expect {
+            z-index: -30;
+          }
+        }
+      }
+
+      @include it("-z-40") {
+        @include assert {
+          @include output {
+            @include -z-40;
+            @include clear;
+          }
+
+          @include expect {
+            z-index: -40;
+          }
+        }
+      }
+
+      @include it("-z-50") {
+        @include assert {
+          @include output {
+            @include -z-50;
+            @include clear;
+          }
+
+          @include expect {
+            z-index: -50;
           }
         }
       }
@@ -202,6 +449,96 @@
         }
       }
 
+      @include it("sm\:-z-0") {
+        @include assert {
+          @include output {
+            @include sm\:-z-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              z-index: -0;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-z-10") {
+        @include assert {
+          @include output {
+            @include sm\:-z-10;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              z-index: -10;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-z-20") {
+        @include assert {
+          @include output {
+            @include sm\:-z-20;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              z-index: -20;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-z-30") {
+        @include assert {
+          @include output {
+            @include sm\:-z-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              z-index: -30;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-z-40") {
+        @include assert {
+          @include output {
+            @include sm\:-z-40;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              z-index: -40;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-z-50") {
+        @include assert {
+          @include output {
+            @include sm\:-z-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              z-index: -50;
+            }
+          }
+        }
+      }
+
       @include it("md\:z-0") {
         @include assert {
           @include output {
@@ -302,6 +639,96 @@
           @include expect {
             @media (min-width: $md) {
               z-index: auto;
+            }
+          }
+        }
+      }
+
+      @include it("md\:-z-0") {
+        @include assert {
+          @include output {
+            @include md\:-z-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              z-index: -0;
+            }
+          }
+        }
+      }
+
+      @include it("md\:-z-10") {
+        @include assert {
+          @include output {
+            @include md\:-z-10;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              z-index: -10;
+            }
+          }
+        }
+      }
+
+      @include it("md\:-z-20") {
+        @include assert {
+          @include output {
+            @include md\:-z-20;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              z-index: -20;
+            }
+          }
+        }
+      }
+
+      @include it("md\:-z-30") {
+        @include assert {
+          @include output {
+            @include md\:-z-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              z-index: -30;
+            }
+          }
+        }
+      }
+
+      @include it("md\:-z-40") {
+        @include assert {
+          @include output {
+            @include md\:-z-40;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              z-index: -40;
+            }
+          }
+        }
+      }
+
+      @include it("md\:-z-50") {
+        @include assert {
+          @include output {
+            @include md\:-z-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              z-index: -50;
             }
           }
         }
@@ -412,6 +839,96 @@
         }
       }
 
+      @include it("lg\:-z-0") {
+        @include assert {
+          @include output {
+            @include lg\:-z-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              z-index: -0;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-z-10") {
+        @include assert {
+          @include output {
+            @include lg\:-z-10;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              z-index: -10;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-z-20") {
+        @include assert {
+          @include output {
+            @include lg\:-z-20;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              z-index: -20;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-z-30") {
+        @include assert {
+          @include output {
+            @include lg\:-z-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              z-index: -30;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-z-40") {
+        @include assert {
+          @include output {
+            @include lg\:-z-40;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              z-index: -40;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-z-50") {
+        @include assert {
+          @include output {
+            @include lg\:-z-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              z-index: -50;
+            }
+          }
+        }
+      }
+
       @include it("xl\:z-0") {
         @include assert {
           @include output {
@@ -517,6 +1034,96 @@
         }
       }
 
+      @include it("xl\:-z-0") {
+        @include assert {
+          @include output {
+            @include xl\:-z-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              z-index: -0;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-z-10") {
+        @include assert {
+          @include output {
+            @include xl\:-z-10;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              z-index: -10;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-z-20") {
+        @include assert {
+          @include output {
+            @include xl\:-z-20;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              z-index: -20;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-z-30") {
+        @include assert {
+          @include output {
+            @include xl\:-z-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              z-index: -30;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-z-40") {
+        @include assert {
+          @include output {
+            @include xl\:-z-40;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              z-index: -40;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-z-50") {
+        @include assert {
+          @include output {
+            @include xl\:-z-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              z-index: -50;
+            }
+          }
+        }
+      }
+
       @include it("\2xl\:z-0") {
         @include assert {
           @include output {
@@ -617,6 +1224,274 @@
           @include expect {
             @media (min-width: $\2xl) {
               z-index: auto;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-z-0") {
+        @include assert {
+          @include output {
+            @include \2xl\:-z-0;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              z-index: -0;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-z-10") {
+        @include assert {
+          @include output {
+            @include \2xl\:-z-10;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              z-index: -10;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-z-20") {
+        @include assert {
+          @include output {
+            @include \2xl\:-z-20;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              z-index: -20;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-z-30") {
+        @include assert {
+          @include output {
+            @include \2xl\:-z-30;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              z-index: -30;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-z-40") {
+        @include assert {
+          @include output {
+            @include \2xl\:-z-40;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              z-index: -40;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-z-50") {
+        @include assert {
+          @include output {
+            @include \2xl\:-z-50;
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              z-index: -50;
+            }
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("z-(100)") {
+        @include assert {
+          @include output {
+            @include z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            z-index: 100;
+          }
+        }
+      }
+
+      @include it("-z-(100)") {
+        @include assert {
+          @include output {
+            @include -z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            z-index: -100;
+          }
+        }
+      }
+
+      @include it("sm\:z-(100)") {
+        @include assert {
+          @include output {
+            @include sm\:z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              z-index: 100;
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-z-(100)") {
+        @include assert {
+          @include output {
+            @include sm\:-z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              z-index: -100;
+            }
+          }
+        }
+      }
+
+      @include it("md\:z-(100)") {
+        @include assert {
+          @include output {
+            @include md\:z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              z-index: 100;
+            }
+          }
+        }
+      }
+
+      @include it("md\:-z-(100)") {
+        @include assert {
+          @include output {
+            @include md\:-z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              z-index: -100;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:z-(100)") {
+        @include assert {
+          @include output {
+            @include lg\:z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              z-index: 100;
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-z-(100)") {
+        @include assert {
+          @include output {
+            @include lg\:-z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              z-index: -100;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:z-(100)") {
+        @include assert {
+          @include output {
+            @include xl\:z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              z-index: 100;
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-z-(100)") {
+        @include assert {
+          @include output {
+            @include xl\:-z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              z-index: -100;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:z-(100)") {
+        @include assert {
+          @include output {
+            @include \2xl\:z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              z-index: 100;
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-z-(100)") {
+        @include assert {
+          @include output {
+            @include \2xl\:-z-(100);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              z-index: -100;
             }
           }
         }

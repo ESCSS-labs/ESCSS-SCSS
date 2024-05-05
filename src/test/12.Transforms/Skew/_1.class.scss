@@ -1,7 +1,8 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-// negative testing
+// for testing negative values
+
 @mixin -skew-x-0 {
   @include skew-x-(-0deg);
 }
@@ -288,6 +289,54 @@
 
 @mixin \2xl\:-skew-y-12 {
   @include skew-y-(-12deg, $\2xl);
+}
+
+@mixin -skew-x-($v) {
+  @include skew-x-(-($v));
+}
+
+@mixin -skew-y-($v) {
+  @include skew-y-(-($v));
+}
+
+@mixin sm\:-skew-x-($v) {
+  @include skew-x-(-($v), $sm);
+}
+
+@mixin sm\:-skew-y-($v) {
+  @include skew-y-(-($v), $sm);
+}
+
+@mixin md\:-skew-x-($v) {
+  @include skew-x-(-($v), $md);
+}
+
+@mixin md\:-skew-y-($v) {
+  @include skew-y-(-($v), $md);
+}
+
+@mixin lg\:-skew-x-($v) {
+  @include skew-x-(-($v), $lg);
+}
+
+@mixin lg\:-skew-y-($v) {
+  @include skew-y-(-($v), $lg);
+}
+
+@mixin xl\:-skew-x-($v) {
+  @include skew-x-(-($v), $xl);
+}
+
+@mixin xl\:-skew-y-($v) {
+  @include skew-y-(-($v), $xl);
+}
+
+@mixin \2xl\:-skew-x-($v) {
+  @include skew-x-(-($v), $\2xl);
+}
+
+@mixin \2xl\:-skew-y-($v) {
+  @include skew-y-(-($v), $\2xl);
 }
 
 @include describe("12.Transforms") {
@@ -2581,6 +2630,34 @@
         }
       }
 
+      @include it("-skew-x-(17deg)") {
+        @include assert {
+          @include output {
+            @include -skew-x-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0deg) skewX(-17deg) skewY(0deg)
+              scaleX(1) scaleY(1);
+          }
+        }
+      }
+
+      @include it("-skew-y-(17deg)") {
+        @include assert {
+          @include output {
+            @include -skew-y-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-17deg)
+              scaleX(1) scaleY(1);
+          }
+        }
+      }
+
       @include it("sm\:skew-x-(17deg)") {
         @include assert {
           @include output {
@@ -2607,6 +2684,38 @@
           @include expect {
             @media (min-width: $sm) {
               transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(17deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-skew-x-(17deg)") {
+        @include assert {
+          @include output {
+            @include sm\:-skew-x-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              transform: translate(0, 0) rotate(0deg) skewX(-17deg) skewY(0deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("sm\:-skew-y-(17deg)") {
+        @include assert {
+          @include output {
+            @include sm\:-skew-y-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $sm) {
+              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-17deg)
                 scaleX(1) scaleY(1);
             }
           }
@@ -2645,6 +2754,38 @@
         }
       }
 
+      @include it("md\:-skew-x-(17deg)") {
+        @include assert {
+          @include output {
+            @include md\:-skew-x-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              transform: translate(0, 0) rotate(0deg) skewX(-17deg) skewY(0deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("md\:-skew-y-(17deg)") {
+        @include assert {
+          @include output {
+            @include md\:-skew-y-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $md) {
+              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-17deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
       @include it("lg\:skew-x-(17deg)") {
         @include assert {
           @include output {
@@ -2671,6 +2812,38 @@
           @include expect {
             @media (min-width: $lg) {
               transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(17deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-skew-x-(17deg)") {
+        @include assert {
+          @include output {
+            @include lg\:-skew-x-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              transform: translate(0, 0) rotate(0deg) skewX(-17deg) skewY(0deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("lg\:-skew-y-(17deg)") {
+        @include assert {
+          @include output {
+            @include lg\:-skew-y-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $lg) {
+              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-17deg)
                 scaleX(1) scaleY(1);
             }
           }
@@ -2709,6 +2882,38 @@
         }
       }
 
+      @include it("xl\:-skew-x-(17deg)") {
+        @include assert {
+          @include output {
+            @include xl\:-skew-x-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              transform: translate(0, 0) rotate(0deg) skewX(-17deg) skewY(0deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("xl\:-skew-y-(17deg)") {
+        @include assert {
+          @include output {
+            @include xl\:-skew-y-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $xl) {
+              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-17deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
       @include it("\2xl\:skew-x-(17deg)") {
         @include assert {
           @include output {
@@ -2735,6 +2940,38 @@
           @include expect {
             @media (min-width: $\2xl) {
               transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(17deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-skew-x-(17deg)") {
+        @include assert {
+          @include output {
+            @include \2xl\:-skew-x-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              transform: translate(0, 0) rotate(0deg) skewX(-17deg) skewY(0deg)
+                scaleX(1) scaleY(1);
+            }
+          }
+        }
+      }
+
+      @include it("\2xl\:-skew-y-(17deg)") {
+        @include assert {
+          @include output {
+            @include \2xl\:-skew-y-(17deg);
+            @include clear;
+          }
+
+          @include expect {
+            @media (min-width: $\2xl) {
+              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-17deg)
                 scaleX(1) scaleY(1);
             }
           }
