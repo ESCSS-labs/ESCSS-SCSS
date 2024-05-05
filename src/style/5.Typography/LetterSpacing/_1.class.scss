@@ -2,7 +2,6 @@
 
 /* Letter Spacing */
 @if $Basic {
-
   // /*x
   @mixin tracking-tighter {
     @include tracking-(-0.05em);
@@ -33,7 +32,6 @@
 
 @if $Rwd {
   @if $sizeMode ==0 or $sizeMode ==1 {
-
     // /*x
     @mixin sm\:tracking-tighter {
       @include tracking-(-0.05em, $sm);
@@ -160,14 +158,11 @@
 }
 
 @if $Custom {
-
   // /*x
   @mixin tracking-($v, $rwd: null) {
     @if $rwd==null {
       letter-spacing: $v;
-    }
-
-    @else {
+    } @else {
       @media (min-width: $rwd) {
         letter-spacing: $v;
       }
@@ -199,7 +194,6 @@
 
 @if $Negative {
   @if $Basic {
-
     // /*x
     @mixin -tracking-tighter {
       @include tracking-(0.05em);
@@ -230,7 +224,6 @@
 
   @if $Rwd {
     @if $sizeMode ==0 or $sizeMode ==1 {
-
       // /*x
       @mixin sm\:-tracking-tighter {
         @include tracking-(0.05em, $sm);
@@ -357,30 +350,29 @@
   }
 
   @if $Custom {
-
     // /*x
-    @mixin -tracking-($v, $rwd: null) {
-      @include tracking-(-($v), $rwd);
+    @mixin -tracking-($v) {
+      @include tracking-(-($v));
     }
 
     @mixin sm\:-tracking-($v) {
-      @include -tracking-($v, $sm);
+      @include tracking-(-($v), $sm);
     }
 
     @mixin md\:-tracking-($v) {
-      @include -tracking-($v, $md);
+      @include tracking-(-($v), $md);
     }
 
     @mixin lg\:-tracking-($v) {
-      @include -tracking-($v, $lg);
+      @include tracking-(-($v), $lg);
     }
 
     @mixin xl\:-tracking-($v) {
-      @include -tracking-($v, $xl);
+      @include tracking-(-($v), $xl);
     }
 
     @mixin \2xl\:-tracking-($v) {
-      @include -tracking-($v, $\2xl);
+      @include tracking-(-($v), $\2xl);
     }
 
     // x*/
