@@ -5,34 +5,34 @@
   // /*x
   @mixin truncate($rwd: null) {
     @if $rwd==null {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      @include _overflow-(hidden);
+      @include _text-overflow-(ellipsis);
+      @include _white-space-(nowrap);
     } @else {
       @media (min-width: $rwd) {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        @include _overflow-(hidden);
+        @include _text-overflow-(ellipsis);
+        @include _white-space-(nowrap);
       }
     }
   }
 
   @mixin text-ellipsis($rwd: null) {
     @if $rwd==null {
-      text-overflow: ellipsis;
+      @include _text-overflow-(ellipsis);
     } @else {
       @media (min-width: $rwd) {
-        text-overflow: ellipsis;
+        @include _text-overflow-(ellipsis);
       }
     }
   }
 
   @mixin text-clip($rwd: null) {
     @if $rwd==null {
-      text-overflow: clip;
+      @include _text-overflow-(clip);
     } @else {
       @media (min-width: $rwd) {
-        text-overflow: clip;
+        @include _text-overflow-(clip);
       }
     }
   }

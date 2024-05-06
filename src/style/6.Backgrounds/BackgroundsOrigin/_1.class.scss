@@ -5,30 +5,30 @@
   // /*x
   @mixin bg-origin-border($rwd: null) {
     @if $rwd==null {
-      background-origin: border-box;
+      @include _background-origin-(border-box);
     } @else {
       @media (min-width: $rwd) {
-        background-origin: border-box;
+        @include _background-origin-(border-box);
       }
     }
   }
 
   @mixin bg-origin-padding($rwd: null) {
     @if $rwd==null {
-      background-origin: padding-box;
+      @include _background-origin-(padding-box);
     } @else {
       @media (min-width: $rwd) {
-        background-origin: padding-box;
+        @include _background-origin-(padding-box);
       }
     }
   }
 
   @mixin bg-origin-content($rwd: null) {
     @if $rwd==null {
-      background-origin: content-box;
+      @include _background-origin-(content-box);
     } @else {
       @media (min-width: $rwd) {
-        background-origin: content-box;
+        @include _background-origin-(content-box);
       }
     }
   }

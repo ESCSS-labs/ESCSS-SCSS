@@ -5,52 +5,52 @@
   // /*x
   @mixin outline-none($rwd: null) {
     @if $rwd==null {
-      outline: 2px solid transparent;
-      outline-offset: 2px;
+      @include _outline-(2px solid transparent);
+      @include _outline-offset-(2px);
     } @else {
       @media (min-width: $rwd) {
-        outline: 2px solid transparent;
-        outline-offset: 2px;
+        @include _outline-(2px solid transparent);
+        @include _outline-offset-(2px);
       }
     }
   }
 
   @mixin outline($rwd: null) {
     @if $rwd==null {
-      outline-style: solid;
+      @include _outline-style-(solid);
     } @else {
       @media (min-width: $rwd) {
-        outline-style: solid;
+        @include _outline-style-(solid);
       }
     }
   }
 
   @mixin outline-dashed($rwd: null) {
     @if $rwd==null {
-      outline-style: dashed;
+      @include _outline-style-(dashed);
     } @else {
       @media (min-width: $rwd) {
-        outline-style: dashed;
+        @include _outline-style-(dashed);
       }
     }
   }
 
   @mixin outline-dotted($rwd: null) {
     @if $rwd==null {
-      outline-style: dotted;
+      @include _outline-style-(dotted);
     } @else {
       @media (min-width: $rwd) {
-        outline-style: dotted;
+        @include _outline-style-(dotted);
       }
     }
   }
 
   @mixin outline-double($rwd: null) {
     @if $rwd==null {
-      outline-style: double;
+      @include _outline-style-(double);
     } @else {
       @media (min-width: $rwd) {
-        outline-style: double;
+        @include _outline-style-(double);
       }
     }
   }

@@ -5,20 +5,20 @@
   // /*x
   @mixin italic($rwd: null) {
     @if $rwd==null {
-      font-style: italic;
+      @include _font-style-(italic);
     } @else {
       @media (min-width: $rwd) {
-        font-style: italic;
+        @include _font-style-(italic);
       }
     }
   }
 
   @mixin not-italic($rwd: null) {
     @if $rwd==null {
-      font-style: normal;
+      @include _font-style-(normal);
     } @else {
       @media (min-width: $rwd) {
-        font-style: normal;
+        @include _font-style-(normal);
       }
     }
   }

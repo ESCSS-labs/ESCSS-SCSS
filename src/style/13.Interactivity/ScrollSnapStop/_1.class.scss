@@ -5,20 +5,20 @@
   // /*x
   @mixin snap-normal($rwd: null) {
     @if $rwd==null {
-      scroll-snap-stop: normal;
+      @include _scroll-snap-stop-(normal);
     } @else {
       @media (min-width: $rwd) {
-        scroll-snap-stop: normal;
+        @include _scroll-snap-stop-(normal);
       }
     }
   }
 
   @mixin snap-always($rwd: null) {
     @if $rwd==null {
-      scroll-snap-stop: always;
+      @include _scroll-snap-stop-(always);
     } @else {
       @media (min-width: $rwd) {
-        scroll-snap-stop: always;
+        @include _scroll-snap-stop-(always);
       }
     }
   }

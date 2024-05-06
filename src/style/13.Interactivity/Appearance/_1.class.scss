@@ -5,20 +5,20 @@
   // /*x
   @mixin appearance-none($rwd: null) {
     @if $rwd==null {
-      appearance: none;
+      @include _appearance-(none);
     } @else {
       @media (min-width: $rwd) {
-        appearance: none;
+        @include _appearance-(none);
       }
     }
   }
 
   @mixin appearance-auto($rwd: null) {
     @if $rwd==null {
-      appearance: auto;
+      @include _appearance-(auto);
     } @else {
       @media (min-width: $rwd) {
-        appearance: auto;
+        @include _appearance-(auto);
       }
     }
   }

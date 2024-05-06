@@ -5,20 +5,20 @@
   // /*x
   @mixin table-auto($rwd: null) {
     @if $rwd==null {
-      table-layout: auto;
+      @include _table-layout-(auto);
     } @else {
       @media (min-width: $rwd) {
-        table-layout: auto;
+        @include _table-layout-(auto);
       }
     }
   }
 
   @mixin table-fixed($rwd: null) {
     @if $rwd==null {
-      table-layout: fixed;
+      @include _table-layout-(fixed);
     } @else {
       @media (min-width: $rwd) {
-        table-layout: fixed;
+        @include _table-layout-(fixed);
       }
     }
   }

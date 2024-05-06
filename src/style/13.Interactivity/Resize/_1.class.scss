@@ -5,40 +5,40 @@
   // /*x
   @mixin resize-none($rwd: null) {
     @if $rwd==null {
-      resize: none;
+      @include _resize-(none);
     } @else {
       @media (min-width: $rwd) {
-        resize: none;
+        @include _resize-(none);
       }
     }
   }
 
   @mixin resize-y($rwd: null) {
     @if $rwd==null {
-      resize: vertical;
+      @include _resize-(vertical);
     } @else {
       @media (min-width: $rwd) {
-        resize: vertical;
+        @include _resize-(vertical);
       }
     }
   }
 
   @mixin resize-x($rwd: null) {
     @if $rwd==null {
-      resize: horizontal;
+      @include _resize-(horizontal);
     } @else {
       @media (min-width: $rwd) {
-        resize: horizontal;
+        @include _resize-(horizontal);
       }
     }
   }
 
   @mixin resize($rwd: null) {
     @if $rwd==null {
-      resize: both;
+      @include _resize-(both);
     } @else {
       @media (min-width: $rwd) {
-        resize: both;
+        @include _resize-(both);
       }
     }
   } // x*/

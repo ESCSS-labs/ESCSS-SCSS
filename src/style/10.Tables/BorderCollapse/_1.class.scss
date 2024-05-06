@@ -5,20 +5,20 @@
   // /*x
   @mixin border-collapse($rwd: null) {
     @if $rwd==null {
-      border-collapse: collapse;
+      @include _border-collapse-(collapse);
     } @else {
       @media (min-width: $rwd) {
-        border-collapse: collapse;
+        @include _border-collapse-(collapse);
       }
     }
   }
 
   @mixin border-separate($rwd: null) {
     @if $rwd==null {
-      border-collapse: separate;
+      @include _border-collapse-(separate);
     } @else {
       @media (min-width: $rwd) {
-        border-collapse: separate;
+        @include _border-collapse-(separate);
       }
     }
   } // x*/

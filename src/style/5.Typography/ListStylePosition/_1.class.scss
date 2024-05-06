@@ -5,20 +5,20 @@
   // /*x
   @mixin list-inside($rwd: null) {
     @if $rwd==null {
-      list-style-position: inside;
+      @include _list-style-position-(inside);
     } @else {
       @media (min-width: $rwd) {
-        list-style-position: inside;
+        @include _list-style-position-(inside);
       }
     }
   }
 
   @mixin list-outside($rwd: null) {
     @if $rwd==null {
-      list-style-position: outside;
+      @include _list-style-position-(outside);
     } @else {
       @media (min-width: $rwd) {
-        list-style-position: outside;
+        @include _list-style-position-(outside);
       }
     }
   }

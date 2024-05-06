@@ -5,30 +5,30 @@
   // /*x
   @mixin flex-wrap($rwd: null) {
     @if $rwd==null {
-      flex-wrap: wrap;
+      @include _flex-wrap-(wrap);
     } @else {
       @media (min-width: $rwd) {
-        flex-wrap: wrap;
+        @include _flex-wrap-(wrap);
       }
     }
   }
 
   @mixin flex-wrap-reverse($rwd: null) {
     @if $rwd==null {
-      flex-wrap: wrap-reverse;
+      @include _flex-wrap-(wrap-reverse);
     } @else {
       @media (min-width: $rwd) {
-        flex-wrap: wrap-reverse;
+        @include _flex-wrap-(wrap-reverse);
       }
     }
   }
 
   @mixin flex-nowrap($rwd: null) {
     @if $rwd==null {
-      flex-wrap: nowrap;
+      @include _flex-wrap-(nowrap);
     } @else {
       @media (min-width: $rwd) {
-        flex-wrap: nowrap;
+        @include _flex-wrap-(nowrap);
       }
     }
   }

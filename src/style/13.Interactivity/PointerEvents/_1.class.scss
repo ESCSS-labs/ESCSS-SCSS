@@ -5,20 +5,20 @@
   // /*x
   @mixin pointer-events-none($rwd: null) {
     @if $rwd==null {
-      pointer-events: none;
+      @include _pointer-events-(none);
     } @else {
       @media (min-width: $rwd) {
-        pointer-events: none;
+        @include _pointer-events-(none);
       }
     }
   }
 
   @mixin pointer-events-auto($rwd: null) {
     @if $rwd==null {
-      pointer-events: auto;
+      @include _pointer-events-(auto);
     } @else {
       @media (min-width: $rwd) {
-        pointer-events: auto;
+        @include _pointer-events-(auto);
       }
     }
   }

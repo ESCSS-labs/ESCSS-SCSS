@@ -5,20 +5,20 @@
   // /*x
   @mixin scroll-auto($rwd: null) {
     @if $rwd==null {
-      scroll-behavior: auto;
+      @include _scroll-behavior-(auto);
     } @else {
       @media (min-width: $rwd) {
-        scroll-behavior: auto;
+        @include _scroll-behavior-(auto);
       }
     }
   }
 
   @mixin scroll-smooth($rwd: null) {
     @if $rwd==null {
-      scroll-behavior: smooth;
+      @include _scroll-behavior-(smooth);
     } @else {
       @media (min-width: $rwd) {
-        scroll-behavior: smooth;
+        @include _scroll-behavior-(smooth);
       }
     }
   }
