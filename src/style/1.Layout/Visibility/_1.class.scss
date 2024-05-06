@@ -5,30 +5,30 @@
   // /*x
   @mixin visible($rwd: null) {
     @if $rwd==null {
-      visibility: visible;
+      @include _visibility-(visible, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        visibility: visible;
+        @include _visibility-(visible, $rwd);
       }
     }
   }
 
   @mixin invisible($rwd: null) {
     @if $rwd==null {
-      visibility: hidden;
+      @include _visibility-(hidden, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        visibility: hidden;
+        @include _visibility-(hidden, $rwd);
       }
     }
   }
 
   @mixin collapse($rwd: null) {
     @if $rwd==null {
-      visibility: collapse;
+      @include _visibility-(collapse, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        visibility: collapse;
+        @include _visibility-(collapse, $rwd);
       }
     }
   } // x*/

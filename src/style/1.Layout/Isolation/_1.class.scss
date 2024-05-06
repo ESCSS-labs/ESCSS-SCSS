@@ -5,20 +5,20 @@
   // /*x
   @mixin isolate($rwd: null) {
     @if $rwd==null {
-      isolation: isolate;
+      @include _isolation-(isolate, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        isolation: isolate;
+        @include _isolation-(isolate, $rwd);
       }
     }
   }
 
   @mixin isolation-auto($rwd: null) {
     @if $rwd==null {
-      isolation: auto;
+      @include _isolation-(auto, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        isolation: auto;
+        @include _isolation-(auto, $rwd);
       }
     }
   } // x*/

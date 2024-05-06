@@ -5,40 +5,40 @@
   // /*x
   @mixin break-inside-auto($rwd: null) {
     @if $rwd==null {
-      break-inside: auto;
+      @include _break-inside-(auto, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        break-inside: auto;
+        @include _break-inside-(auto, $rwd);
       }
     }
   }
 
   @mixin break-inside-avoid($rwd: null) {
     @if $rwd==null {
-      break-inside: avoid;
+      @include _break-inside-(avoid, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        break-inside: avoid;
+        @include _break-inside-(avoid, $rwd);
       }
     }
   }
 
   @mixin break-inside-avoid-page($rwd: null) {
     @if $rwd==null {
-      break-inside: avoid-page;
+      @include _break-inside-(avoid-page, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        break-inside: avoid-page;
+        @include _break-inside-(avoid-page, $rwd);
       }
     }
   }
 
   @mixin break-inside-avoid-column($rwd: null) {
     @if $rwd==null {
-      break-inside: avoid-column;
+      @include _break-inside-(avoid-column, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        break-inside: avoid-column;
+        @include _break-inside-(avoid-column, $rwd);
       }
     }
   }

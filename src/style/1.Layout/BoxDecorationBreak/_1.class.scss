@@ -2,29 +2,37 @@
 
 /* Box Decoration Break */
 @if $Basic {
+
   // /*x
   @mixin box-decoration-clone($rwd: null) {
     @if $rwd==null {
-      box-decoration-break: clone;
-    } @else {
+      @include _box-decoration-break-(clone, $rwd);
+    }
+
+    @else {
       @media (min-width: $rwd) {
-        box-decoration-break: clone;
+        @include _box-decoration-break-(clone, $rwd);
       }
     }
   }
 
   @mixin box-decoration-slice($rwd: null) {
     @if $rwd==null {
-      box-decoration-break: slice;
-    } @else {
+      @include _box-decoration-break-(slice, $rwd);
+    }
+
+    @else {
       @media (min-width: $rwd) {
-        box-decoration-break: slice;
+        @include _box-decoration-break-(slice, $rwd);
       }
     }
-  } // x*/
+  }
+
+  // x*/
 }
 
 @if $Rwd {
+
   // /*x
   @mixin sm\:box-decoration-clone {
     @include box-decoration-clone($sm);
@@ -64,5 +72,7 @@
 
   @mixin \2xl\:box-decoration-slice {
     @include box-decoration-slice($\2xl);
-  } // x*/
+  }
+
+  // x*/
 }

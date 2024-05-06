@@ -5,20 +5,20 @@
   // /*x
   @mixin box-border($rwd: null) {
     @if $rwd==null {
-      box-sizing: border-box;
+      @include _box-sizing-(border-box, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        box-sizing: border-box;
+        @include _box-sizing-(border-box, $rwd);
       }
     }
   }
 
   @mixin box-content($rwd: null) {
     @if $rwd==null {
-      box-sizing: content-box;
+      @include _box-sizing-(content-box, $rwd);
     } @else {
       @media (min-width: $rwd) {
-        box-sizing: content-box;
+        @include _box-sizing-(content-box, $rwd);
       }
     }
   }
