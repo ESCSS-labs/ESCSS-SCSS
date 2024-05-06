@@ -2,7 +2,6 @@
 
 /* Transition Property */
 @if $Basic {
-
   // /*x
   @mixin transition-none {
     @include transition-(none);
@@ -13,7 +12,9 @@
   }
 
   @mixin transition {
-    @include transition-((color,
+    @include transition-(
+      (
+        color,
         background-color,
         border-color,
         text-decoration-color,
@@ -23,16 +24,22 @@
         box-shadow,
         transform,
         filter,
-        backdrop-filter));
+        backdrop-filter
+      )
+    );
   }
 
   @mixin transition-colors {
-    @include transition-((color,
+    @include transition-(
+      (
+        color,
         background-color,
         border-color,
         text-decoration-color,
         fill,
-        stroke));
+        stroke
+      )
+    );
   }
 
   @mixin transition-opacity {
@@ -52,7 +59,6 @@
 
 @if $Rwd {
   @if $sizeMode ==0 or $sizeMode ==1 {
-
     // /*x
     @mixin sm\:transition-none {
       @include transition-(none, $sm);
@@ -63,7 +69,9 @@
     }
 
     @mixin sm\:transition {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
@@ -73,18 +81,24 @@
           box-shadow,
           transform,
           filter,
-          backdrop-filter),
-        $sm );
+          backdrop-filter
+        ),
+        $sm
+      );
     }
 
     @mixin sm\:transition-colors {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
           fill,
-          stroke),
-        $sm );
+          stroke
+        ),
+        $sm
+      );
     }
 
     @mixin sm\:transition-opacity {
@@ -108,7 +122,9 @@
     }
 
     @mixin md\:transition {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
@@ -118,18 +134,24 @@
           box-shadow,
           transform,
           filter,
-          backdrop-filter),
-        $md );
+          backdrop-filter
+        ),
+        $md
+      );
     }
 
     @mixin md\:transition-colors {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
           fill,
-          stroke),
-        $md );
+          stroke
+        ),
+        $md
+      );
     }
 
     @mixin md\:transition-opacity {
@@ -153,7 +175,9 @@
     }
 
     @mixin lg\:transition {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
@@ -163,18 +187,24 @@
           box-shadow,
           transform,
           filter,
-          backdrop-filter),
-        $lg );
+          backdrop-filter
+        ),
+        $lg
+      );
     }
 
     @mixin lg\:transition-colors {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
           fill,
-          stroke),
-        $lg );
+          stroke
+        ),
+        $lg
+      );
     }
 
     @mixin lg\:transition-opacity {
@@ -198,7 +228,9 @@
     }
 
     @mixin xl\:transition {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
@@ -208,18 +240,24 @@
           box-shadow,
           transform,
           filter,
-          backdrop-filter),
-        $xl );
+          backdrop-filter
+        ),
+        $xl
+      );
     }
 
     @mixin xl\:transition-colors {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
           fill,
-          stroke),
-        $xl );
+          stroke
+        ),
+        $xl
+      );
     }
 
     @mixin xl\:transition-opacity {
@@ -243,7 +281,9 @@
     }
 
     @mixin \2xl\:transition {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
@@ -253,18 +293,24 @@
           box-shadow,
           transform,
           filter,
-          backdrop-filter),
-        $\2xl );
+          backdrop-filter
+        ),
+        $\2xl
+      );
     }
 
     @mixin \2xl\:transition-colors {
-      @include transition-((color,
+      @include transition-(
+        (
+          color,
           background-color,
           border-color,
           text-decoration-color,
           fill,
-          stroke),
-        $\2xl );
+          stroke
+        ),
+        $\2xl
+      );
     }
 
     @mixin \2xl\:transition-opacity {
@@ -284,14 +330,11 @@
 }
 
 @if $Custom {
-
   // /*x
   @mixin transition-($v, $rwd: null) {
     @if $rwd==null {
       @include __transition-($v);
-    }
-
-    @else {
+    } @else {
       @media (min-width: $rwd) {
         @include __transition-($v);
       }
@@ -301,9 +344,7 @@
   @mixin __transition-($v) {
     @if $v==none {
       @include _transition-property-(none);
-    }
-
-    @else {
+    } @else {
       @include _transition-property-($v);
       @include _transition-timing-function-(cubic-bezier(0.4, 0, 0.2, 1));
       @include _transition-duration-(150ms);

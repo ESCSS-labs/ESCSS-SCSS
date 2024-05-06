@@ -2,14 +2,11 @@
 
 /* Box Decoration Break */
 @if $Basic {
-
   // /*x
   @mixin box-decoration-clone($rwd: null) {
     @if $rwd==null {
       @include _box-decoration-break-(clone);
-    }
-
-    @else {
+    } @else {
       @media (min-width: $rwd) {
         @include _box-decoration-break-(clone);
       }
@@ -19,9 +16,7 @@
   @mixin box-decoration-slice($rwd: null) {
     @if $rwd==null {
       @include _box-decoration-break-(slice);
-    }
-
-    @else {
+    } @else {
       @media (min-width: $rwd) {
         @include _box-decoration-break-(slice);
       }
@@ -32,7 +27,6 @@
 }
 
 @if $Rwd {
-
   // /*x
   @mixin sm\:box-decoration-clone {
     @include box-decoration-clone($sm);
