@@ -1,68 +1,47 @@
 @use "../../setting" as *;
 
 /* Border Collapse */
+// border-collapse is same as atomic
 @if $Basic {
-  // /*x
-  @mixin border-collapse($rwd: null) {
-    @if $rwd==null {
-      @include border-collapse(collapse);
-    } @else {
-      @media (min-width: $rwd) {
-        @include border-collapse(collapse);
-      }
-    }
-  }
 
+  // /*x
   @mixin border-separate($rwd: null) {
     @if $rwd==null {
       @include border-collapse(separate);
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         @include border-collapse(separate);
       }
     }
-  } // x*/
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:border-collapse {
-    @include border-collapse($sm);
-  }
 
+  // /*x
   @mixin sm\:border-separate {
     @include border-separate($sm);
-  }
-
-  @mixin md\:border-collapse {
-    @include border-collapse($md);
   }
 
   @mixin md\:border-separate {
     @include border-separate($md);
   }
 
-  @mixin lg\:border-collapse {
-    @include border-collapse($lg);
-  }
-
   @mixin lg\:border-separate {
     @include border-separate($lg);
-  }
-
-  @mixin xl\:border-collapse {
-    @include border-collapse($xl);
   }
 
   @mixin xl\:border-separate {
     @include border-separate($xl);
   }
 
-  @mixin \2xl\:border-collapse {
-    @include border-collapse($\2xl);
-  }
-
   @mixin \2xl\:border-separate {
     @include border-separate($\2xl);
-  } // x*/
+  }
+
+  // x*/
 }

@@ -1,6 +1,7 @@
 @use "../../setting" as *;
 
 /* Resize */
+// resize is same as atomic
 @if $Basic {
   // /*x
   @mixin resize-none($rwd: null) {
@@ -33,15 +34,7 @@
     }
   }
 
-  @mixin resize($rwd: null) {
-    @if $rwd==null {
-      @include resize(both);
-    } @else {
-      @media (min-width: $rwd) {
-        @include resize(both);
-      }
-    }
-  } // x*/
+  // x*/
 }
 
 @if $Rwd {
@@ -58,10 +51,6 @@
     @include resize-x($sm);
   }
 
-  @mixin sm\:resize {
-    @include resize($sm);
-  }
-
   @mixin md\:resize-none {
     @include resize-none($md);
   }
@@ -72,10 +61,6 @@
 
   @mixin md\:resize-x {
     @include resize-x($md);
-  }
-
-  @mixin md\:resize {
-    @include resize($md);
   }
 
   @mixin lg\:resize-none {
@@ -90,10 +75,6 @@
     @include resize-x($lg);
   }
 
-  @mixin lg\:resize {
-    @include resize($lg);
-  }
-
   @mixin xl\:resize-none {
     @include resize-none($xl);
   }
@@ -104,10 +85,6 @@
 
   @mixin xl\:resize-x {
     @include resize-x($xl);
-  }
-
-  @mixin xl\:resize {
-    @include resize($xl);
   }
 
   @mixin \2xl\:resize-none {
@@ -122,7 +99,5 @@
     @include resize-x($\2xl);
   }
 
-  @mixin \2xl\:resize {
-    @include resize($\2xl);
-  } // x*/
+  // x*/
 }

@@ -606,13 +606,10 @@
 
   @else {
     @media(min-width: $rwd) {
-
-      // Tailwind flex class
       @if $v==flex {
         display: flex;
       }
 
-      // Atomic class
       @else {
         flex: $v;
       }
@@ -2218,25 +2215,28 @@
 
 @mixin outline($v: solid, $rwd: null) {
 
-  // Tailwind flex class
   @if $rwd==null {
+
+    // Tailwind flex class
     @if $v==solid {
       outline-style: solid;
     }
 
+    // Atomic class
     @else {
       outline: $v;
     }
   }
 
-  // Atomic class
   @else {
-    @if $v==solid {
-      outline-style: solid;
-    }
+    @media(min-width: $rwd) {
+      @if $v==solid {
+        outline-style: solid;
+      }
 
-    @else {
-      outline: $v;
+      @else {
+        outline: $v;
+      }
     }
   }
 }
@@ -2277,7 +2277,7 @@
   }
 }
 
-@mixin border-collapse($v, $rwd: null) {
+@mixin border-collapse($v: collapse, $rwd: null) {
   @if $rwd==null {
     border-collapse: $v;
   }
@@ -2337,7 +2337,7 @@
   }
 }
 
-@mixin resize($v, $rwd: null) {
+@mixin resize($v: both, $rwd: null) {
   @if $rwd==null {
     resize: $v;
   }
@@ -3145,7 +3145,7 @@
   @include mix-blend-mode($v, $sm);
 }
 
-@mixin sm\:border-collapse($v) {
+@mixin sm\:border-collapse($v: collapse) {
   @include border-collapse($v, $sm);
 }
 
@@ -3165,7 +3165,7 @@
   @include pointer-events($v, $sm);
 }
 
-@mixin sm\:resize($v) {
+@mixin sm\:resize($v: both) {
   @include resize($v, $sm);
 }
 
@@ -3909,7 +3909,7 @@
   @include mix-blend-mode($v, $md);
 }
 
-@mixin md\:border-collapse($v) {
+@mixin md\:border-collapse($v: collapse) {
   @include border-collapse($v, $md);
 }
 
@@ -3929,7 +3929,7 @@
   @include pointer-events($v, $md);
 }
 
-@mixin md\:resize($v) {
+@mixin md\:resize($v: both) {
   @include resize($v, $md);
 }
 
@@ -4673,7 +4673,7 @@
   @include mix-blend-mode($v, $lg);
 }
 
-@mixin lg\:border-collapse($v) {
+@mixin lg\:border-collapse($v: collapse) {
   @include border-collapse($v, $lg);
 }
 
@@ -4693,7 +4693,7 @@
   @include pointer-events($v, $lg);
 }
 
-@mixin lg\:resize($v) {
+@mixin lg\:resize($v: both) {
   @include resize($v, $lg);
 }
 
@@ -5437,7 +5437,7 @@
   @include mix-blend-mode($v, $xl);
 }
 
-@mixin xl\:border-collapse($v) {
+@mixin xl\:border-collapse($v: collapse) {
   @include border-collapse($v, $xl);
 }
 
@@ -5457,7 +5457,7 @@
   @include pointer-events($v, $xl);
 }
 
-@mixin xl\:resize($v) {
+@mixin xl\:resize($v: both) {
   @include resize($v, $xl);
 }
 
@@ -6201,7 +6201,7 @@
   @include mix-blend-mode($v, $\2xl);
 }
 
-@mixin \2xl\:border-collapse($v) {
+@mixin \2xl\:border-collapse($v: collapse) {
   @include border-collapse($v, $\2xl);
 }
 
@@ -6221,7 +6221,7 @@
   @include pointer-events($v, $\2xl);
 }
 
-@mixin \2xl\:resize($v) {
+@mixin \2xl\:resize($v: both) {
   @include resize($v, $\2xl);
 }
 
