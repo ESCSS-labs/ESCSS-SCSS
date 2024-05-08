@@ -2,7 +2,7 @@ use css compiler to compile \_index.scss, replace
 
 1. x\*/
 2. /\*x
-   good to go!
+   clear to go!
 
 /_ Tailwind css v3.4.1 All Arbitrary values _/
 
