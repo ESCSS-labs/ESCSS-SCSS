@@ -213,16 +213,16 @@
   // /*x
   @mixin line-clamp-($v, $rwd: null) {
     @if $rwd==null {
-      @include _overflow-(hidden);
-      @include _display-(-webkit-box);
-      @include _webkit-box-orient-(vertical);
-      @include _webkit-line-clamp-($v);
+      @include overflow(hidden);
+      @include display(-webkit-box);
+      @include -webkit-box-orient(vertical);
+      @include -webkit-line-clamp($v);
     } @else {
       @media (min-width: $rwd) {
-        @include _overflow-(hidden);
-        @include _display-(-webkit-box);
-        @include _webkit-box-orient-(vertical);
-        @include _webkit-line-clamp-($v);
+        @include overflow(hidden);
+        @include display(-webkit-box);
+        @include -webkit-box-orient(vertical);
+        @include -webkit-line-clamp($v);
       }
     }
   }

@@ -522,11 +522,11 @@
   @mixin backdrop-opacity-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-backdrop-opacity: opacity($v) !global;
-      @include _backdrop-filter-(get_backdrop-filter());
+      @include backdrop-filter(get_backdrop-filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-backdrop-opacity: opacity($v) !global;
-        @include _backdrop-filter-(get_backdrop-filter());
+        @include backdrop-filter(get_backdrop-filter());
       }
     }
   }

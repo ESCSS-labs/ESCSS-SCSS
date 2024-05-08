@@ -343,11 +343,11 @@
 
   @mixin __transition-($v) {
     @if $v==none {
-      @include _transition-property-(none);
+      @include transition-property(none);
     } @else {
-      @include _transition-property-($v);
-      @include _transition-timing-function-(cubic-bezier(0.4, 0, 0.2, 1));
-      @include _transition-duration-(150ms);
+      @include transition-property($v);
+      @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+      @include transition-duration(150ms);
     }
   }
 

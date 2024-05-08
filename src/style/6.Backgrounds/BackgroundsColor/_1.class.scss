@@ -5959,11 +5959,11 @@
       ==color or
       list.index(inherit currentColor transparent, $v)
     {
-      @include _background-color-($v);
+      @include background-color($v);
     }
     // bg-size
     @else if list.nth($v, 1) ==length {
-      @include _background-size-(list.set-nth($v, 1, $space));
+      @include background-size(list.set-nth($v, 1, $space));
     }
     // bg-position
     @else if
@@ -5973,11 +5973,11 @@
       meta.type-of($v)
       ==list
     {
-      @include _background-position-($v);
+      @include background-position($v);
     }
     // bg-image
     @else {
-      @include _background-image-($v);
+      @include background-image($v);
     }
   }
 

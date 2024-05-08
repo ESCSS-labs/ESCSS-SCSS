@@ -5,42 +5,42 @@
   // /*x
   @mixin break-normal($rwd: null) {
     @if $rwd==null {
-      @include _overflow-wrap-(normal);
-      @include _word-break-(normal);
+      @include overflow-wrap(normal);
+      @include word-break(normal);
     } @else {
       @media (min-width: $rwd) {
-        @include _overflow-wrap-(normal);
-        @include _word-break-(normal);
+        @include overflow-wrap(normal);
+        @include word-break(normal);
       }
     }
   }
 
   @mixin break-words($rwd: null) {
     @if $rwd==null {
-      @include _overflow-wrap-(break-word);
+      @include overflow-wrap(break-word);
     } @else {
       @media (min-width: $rwd) {
-        @include _overflow-wrap-(break-word);
+        @include overflow-wrap(break-word);
       }
     }
   }
 
   @mixin break-all($rwd: null) {
     @if $rwd==null {
-      @include _word-break-(break-all);
+      @include word-break(break-all);
     } @else {
       @media (min-width: $rwd) {
-        @include _word-break-(break-all);
+        @include word-break(break-all);
       }
     }
   }
 
   @mixin break-keep($rwd: null) {
     @if $rwd==null {
-      @include _word-break-(keep-all);
+      @include word-break(keep-all);
     } @else {
       @media (min-width: $rwd) {
-        @include _word-break-(keep-all);
+        @include word-break(keep-all);
       }
     }
   }

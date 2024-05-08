@@ -66,11 +66,11 @@
   @mixin sepia-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-sepia: sepia($v) !global;
-      @include _filter-(get_filter());
+      @include filter(get_filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-sepia: sepia($v) !global;
-        @include _filter-(get_filter());
+        @include filter(get_filter());
       }
     }
   }

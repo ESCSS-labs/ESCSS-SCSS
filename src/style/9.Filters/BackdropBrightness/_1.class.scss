@@ -282,11 +282,11 @@
   @mixin backdrop-brightness-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-backdrop-brightness: brightness($v) !global;
-      @include _backdrop-filter-(get_backdrop-filter());
+      @include backdrop-filter(get_backdrop-filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-backdrop-brightness: brightness($v) !global;
-        @include _backdrop-filter-(get_backdrop-filter());
+        @include backdrop-filter(get_backdrop-filter());
       }
     }
   }

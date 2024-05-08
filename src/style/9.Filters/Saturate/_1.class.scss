@@ -137,11 +137,11 @@
   @mixin saturate-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-saturate: saturate($v) !global;
-      @include _filter-(get_filter());
+      @include filter(get_filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-saturate: saturate($v) !global;
-        @include _filter-(get_filter());
+        @include filter(get_filter());
       }
     }
   }

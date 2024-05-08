@@ -280,11 +280,11 @@
   @mixin brightness-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-brightness: brightness($v) !global;
-      @include _filter-(get_filter());
+      @include filter(get_filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-brightness: brightness($v) !global;
-        @include _filter-(get_filter());
+        @include filter(get_filter());
       }
     }
   }

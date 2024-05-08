@@ -5957,13 +5957,13 @@
     @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
       color: $v;
     } @else if list.length($v) ==2 {
-      @include _font-size-(list.nth($v, 1));
-      @include _line-height-(list.nth($v, 2));
+      @include font-size(list.nth($v, 1));
+      @include line-height(list.nth($v, 2));
     }
 
     // custom
     @else {
-      @include _font-size-($v);
+      @include font-size($v);
     }
   }
 
