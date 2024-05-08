@@ -1,6 +1,7 @@
 @use "../../setting" as *;
 
 /* Display */
+// flex is same as atomic
 @if $Basic {
   // /*x
   @mixin block($rwd: null) {
@@ -29,16 +30,6 @@
     } @else {
       @media (min-width: $rwd) {
         @include display(inline);
-      }
-    }
-  }
-
-  @mixin flex($rwd: null) {
-    @if $rwd==null {
-      @include display(flex);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(flex);
       }
     }
   }
@@ -228,10 +219,6 @@
     @include inline($sm);
   }
 
-  @mixin sm\:flex {
-    @include flex($sm);
-  }
-
   @mixin sm\:inline-flex {
     @include inline-flex($sm);
   }
@@ -310,10 +297,6 @@
 
   @mixin md\:inline {
     @include inline($md);
-  }
-
-  @mixin md\:flex {
-    @include flex($md);
   }
 
   @mixin md\:inline-flex {
@@ -396,10 +379,6 @@
     @include inline($lg);
   }
 
-  @mixin lg\:flex {
-    @include flex($lg);
-  }
-
   @mixin lg\:inline-flex {
     @include inline-flex($lg);
   }
@@ -480,10 +459,6 @@
     @include inline($xl);
   }
 
-  @mixin xl\:flex {
-    @include flex($xl);
-  }
-
   @mixin xl\:inline-flex {
     @include inline-flex($xl);
   }
@@ -562,10 +537,6 @@
 
   @mixin \2xl\:inline {
     @include inline($\2xl);
-  }
-
-  @mixin \2xl\:flex {
-    @include flex($\2xl);
   }
 
   @mixin \2xl\:inline-flex {

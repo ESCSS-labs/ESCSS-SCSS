@@ -510,12 +510,32 @@
   }
 }
 
-@mixin flex($v, $rwd: null) {
-  @if $rwd==null {
-    flex: $v;
-  } @else {
-    @media (min-width: $rwd) {
+@mixin flex($v: flex, $rwd: null) {
+  @if $rwd ==null {
+
+    // Tailwind flex class
+    @if $v==flex {
+      display: flex;
+    }
+
+    // Atomic class
+    @else {
       flex: $v;
+    }
+  }
+
+  @else {
+    @media(min-width: $rwd) {
+
+      // Tailwind flex class
+      @if $v==flex {
+        display: flex;
+      }
+
+      // Atomic class
+      @else {
+        flex: $v;
+      }
     }
   }
 }
@@ -1570,7 +1590,7 @@
   }
 }
 
-@mixin flex-wrap($v, $rwd: null) {
+@mixin flex-wrap($v: wrap, $rwd: null) {
   @if $rwd==null {
     flex-wrap: $v;
   } @else {
@@ -2180,7 +2200,7 @@
   @include stroke-width($v, $sm);
 }
 
-@mixin sm\:flex($v) {
+@mixin sm\:flex($v: flex) {
   @include flex($v, $sm);
 }
 
@@ -2604,7 +2624,7 @@
   @include flex-direction($v, $sm);
 }
 
-@mixin sm\:flex-wrap($v) {
+@mixin sm\:flex-wrap($v: wrap) {
   @include flex-wrap($v, $sm);
 }
 
@@ -2944,7 +2964,7 @@
   @include stroke-width($v, $md);
 }
 
-@mixin md\:flex($v) {
+@mixin md\:flex($v: flex) {
   @include flex($v, $md);
 }
 
@@ -3368,7 +3388,7 @@
   @include flex-direction($v, $md);
 }
 
-@mixin md\:flex-wrap($v) {
+@mixin md\:flex-wrap($v: wrap) {
   @include flex-wrap($v, $md);
 }
 
@@ -3708,7 +3728,7 @@
   @include stroke-width($v, $lg);
 }
 
-@mixin lg\:flex($v) {
+@mixin lg\:flex($v: flex) {
   @include flex($v, $lg);
 }
 
@@ -4132,7 +4152,7 @@
   @include flex-direction($v, $lg);
 }
 
-@mixin lg\:flex-wrap($v) {
+@mixin lg\:flex-wrap($v: wrap) {
   @include flex-wrap($v, $lg);
 }
 
@@ -4472,7 +4492,7 @@
   @include stroke-width($v, $xl);
 }
 
-@mixin xl\:flex($v) {
+@mixin xl\:flex($v: flex) {
   @include flex($v, $xl);
 }
 
@@ -4896,7 +4916,7 @@
   @include flex-direction($v, $xl);
 }
 
-@mixin xl\:flex-wrap($v) {
+@mixin xl\:flex-wrap($v: wrap) {
   @include flex-wrap($v, $xl);
 }
 
@@ -5236,7 +5256,7 @@
   @include stroke-width($v, $\2xl);
 }
 
-@mixin \2xl\:flex($v) {
+@mixin \2xl\:flex($v: flex) {
   @include flex($v, $\2xl);
 }
 
@@ -5660,7 +5680,7 @@
   @include flex-direction($v, $\2xl);
 }
 
-@mixin \2xl\:flex-wrap($v) {
+@mixin \2xl\:flex-wrap($v: wrap) {
   @include flex-wrap($v, $\2xl);
 }
 
