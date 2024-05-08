@@ -162,11 +162,11 @@
   @mixin backdrop-hue-rotate-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-backdrop-hue-rotate: hue-rotate($v) !global;
-      @include _backdrop-filter-(__backdrop-filter());
+      @include _backdrop-filter-(get_backdrop-filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-backdrop-hue-rotate: hue-rotate($v) !global;
-        @include _backdrop-filter-(__backdrop-filter());
+        @include _backdrop-filter-(get_backdrop-filter());
       }
     }
   }

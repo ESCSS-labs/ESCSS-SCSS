@@ -185,11 +185,11 @@
   @mixin backdrop-contrast-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-backdrop-contrast: contrast($v) !global;
-      @include _backdrop-filter-(__backdrop-filter());
+      @include _backdrop-filter-(get_backdrop-filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-backdrop-contrast: contrast($v) !global;
-        @include _backdrop-filter-(__backdrop-filter());
+        @include _backdrop-filter-(get_backdrop-filter());
       }
     }
   }

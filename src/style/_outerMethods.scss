@@ -33,7 +33,7 @@
   }
 }
 
-// clear global variables, when use internal mixin/function, e.g, __box-shadow()
+// clear global variables, when use internal mixin/function, e.g, get_box-shadow()
 // Best Practice: USE IN EVERY CLASSES.
 // why? 1. Can be an indicator of how many css that you've used,
 //      2. only internal mixin/function needs to do clear, but people will be lazy.
@@ -109,4 +109,5734 @@
   $--tw-backdrop-sepia: null !global;
 }
 
+// atomic
+@mixin _aspect-ratio-($v, $rwd: null) {
+  @if $rwd==null {
+    aspect-ratio: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      aspect-ratio: $v;
+    }
+  }
+}
+
+@mixin _columns-($v, $rwd: null) {
+  @if $rwd==null {
+    columns: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      columns: $v;
+    }
+  }
+}
+
+@mixin _object-position-($v, $rwd: null) {
+  @if $rwd==null {
+    object-position: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      object-position: $v;
+    }
+  }
+}
+
+@mixin _inset-($v, $rwd: null) {
+  @if $rwd==null {
+    inset: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      inset: $v;
+    }
+  }
+}
+
+@mixin _inset-inline-start-($v, $rwd: null) {
+  @if $rwd==null {
+    inset-inline-start: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      inset-inline-start: $v;
+    }
+  }
+}
+
+@mixin _inset-inline-end-($v, $rwd: null) {
+  @if $rwd==null {
+    inset-inline-end: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      inset-inline-end: $v;
+    }
+  }
+}
+
+@mixin _top-($v, $rwd: null) {
+  @if $rwd==null {
+    top: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      top: $v;
+    }
+  }
+}
+
+@mixin _right-($v, $rwd: null) {
+  @if $rwd==null {
+    right: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      right: $v;
+    }
+  }
+}
+
+@mixin _bottom-($v, $rwd: null) {
+  @if $rwd==null {
+    bottom: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      bottom: $v;
+    }
+  }
+}
+
+@mixin _left-($v, $rwd: null) {
+  @if $rwd==null {
+    left: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      left: $v;
+    }
+  }
+}
+
+@mixin _z-index-($v, $rwd: null) {
+  @if $rwd==null {
+    z-index: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      z-index: $v;
+    }
+  }
+}
+
+@mixin _border-spacing-($v, $rwd: null) {
+  @if $rwd==null {
+    border-spacing: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-spacing: $v;
+    }
+  }
+}
+
+@mixin _animation-($v, $rwd: null) {
+  @if $rwd==null {
+    animation: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      animation: $v;
+    }
+  }
+}
+
+@mixin _transition-delay-($v, $rwd: null) {
+  @if $rwd==null {
+    transition-delay: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      transition-delay: $v;
+    }
+  }
+}
+
+@mixin _transition-property-($v, $rwd: null) {
+  @if $rwd==null {
+    transition-property: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      transition-property: $v;
+    }
+  }
+}
+
+@mixin _transition-timing-function-($v, $rwd: null) {
+  @if $rwd==null {
+    transition-timing-function: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      transition-timing-function: $v;
+    }
+  }
+}
+
+@mixin _transition-duration-($v, $rwd: null) {
+  @if $rwd==null {
+    transition-duration: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      transition-duration: $v;
+    }
+  }
+}
+
+@mixin _transform-($v, $rwd: null) {
+  @if $rwd==null {
+    transform: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      transform: $v;
+    }
+  }
+}
+
+@mixin _transform-origin-($v, $rwd: null) {
+  @if $rwd==null {
+    transform-origin: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      transform-origin: $v;
+    }
+  }
+}
+
+@mixin _accent-color-($v, $rwd: null) {
+  @if $rwd==null {
+    accent-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      accent-color: $v;
+    }
+  }
+}
+
+@mixin _caret-color-($v, $rwd: null) {
+  @if $rwd==null {
+    caret-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      caret-color: $v;
+    }
+  }
+}
+
+@mixin _cursor-($v, $v2: null, $rwd: null) {
+  @if $rwd==null {
+    cursor: $v, $v2;
+  } @else {
+    @media (min-width: $rwd) {
+      cursor: $v, $v2;
+    }
+  }
+}
+
+@mixin _scroll-margin-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-margin: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-margin: $v;
+    }
+  }
+}
+
+@mixin _scroll-margin-inline-start-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-margin-inline-start: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-margin-inline-start: $v;
+    }
+  }
+}
+
+@mixin _scroll-margin-inline-end-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-margin-inline-end: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-margin-inline-end: $v;
+    }
+  }
+}
+
+@mixin _scroll-margin-top-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-margin-top: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-margin-top: $v;
+    }
+  }
+}
+
+@mixin _scroll-margin-right-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-margin-right: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-margin-right: $v;
+    }
+  }
+}
+
+@mixin _scroll-margin-bottom-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-margin-bottom: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-margin-bottom: $v;
+    }
+  }
+}
+
+@mixin _scroll-margin-left-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-margin-left: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-margin-left: $v;
+    }
+  }
+}
+
+@mixin _scroll-padding-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-padding: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-padding: $v;
+    }
+  }
+}
+
+@mixin _scroll-padding-inline-start-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-padding-inline-start: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-padding-inline-start: $v;
+    }
+  }
+}
+
+@mixin _scroll-padding-inline-end-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-padding-inline-end: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-padding-inline-end: $v;
+    }
+  }
+}
+
+@mixin _scroll-padding-top-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-padding-top: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-padding-top: $v;
+    }
+  }
+}
+
+@mixin _scroll-padding-right-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-padding-right: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-padding-right: $v;
+    }
+  }
+}
+
+@mixin _scroll-padding-bottom-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-padding-bottom: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-padding-bottom: $v;
+    }
+  }
+}
+
+@mixin _scroll-padding-left-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-padding-left: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-padding-left: $v;
+    }
+  }
+}
+
+@mixin _will-change-($v, $v2: null, $rwd: null) {
+  @if $rwd==null {
+    will-change: $v, $v2;
+  } @else {
+    @media (min-width: $rwd) {
+      will-change: $v, $v2;
+    }
+  }
+}
+
+@mixin _fill-($v, $rwd: null) {
+  @if $rwd==null {
+    fill: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      fill: $v;
+    }
+  }
+}
+
+@mixin _stroke-($v, $rwd: null) {
+  @if $rwd==null {
+    stroke: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      stroke: $v;
+    }
+  }
+}
+
+@mixin _stroke-width-($v, $rwd: null) {
+  @if $rwd==null {
+    stroke-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      stroke-width: $v;
+    }
+  }
+}
+
+@mixin _flex-($v, $rwd: null) {
+  @if $rwd==null {
+    flex: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      flex: $v;
+    }
+  }
+}
+
+@mixin _flex-basis-($v, $rwd: null) {
+  @if $rwd==null {
+    flex-basis: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      flex-basis: $v;
+    }
+  }
+}
+
+@mixin _flex-grow-($v, $rwd: null) {
+  @if $rwd==null {
+    flex-grow: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      flex-grow: $v;
+    }
+  }
+}
+
+@mixin _flex-shrink-($v, $rwd: null) {
+  @if $rwd==null {
+    flex-shrink: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      flex-shrink: $v;
+    }
+  }
+}
+
+@mixin _gap-($v, $rwd: null) {
+  @if $rwd==null {
+    gap: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      gap: $v;
+    }
+  }
+}
+
+@mixin _column-gap-($v, $rwd: null) {
+  @if $rwd==null {
+    column-gap: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      column-gap: $v;
+    }
+  }
+}
+
+@mixin _row-gap-($v, $rwd: null) {
+  @if $rwd==null {
+    row-gap: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      row-gap: $v;
+    }
+  }
+}
+
+@mixin _grid-auto-columns-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-auto-columns: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-auto-columns: $v;
+    }
+  }
+}
+
+@mixin _grid-auto-rows-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-auto-rows: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-auto-rows: $v;
+    }
+  }
+}
+
+@mixin _grid-column-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-column: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-column: $v;
+    }
+  }
+}
+
+@mixin _grid-column-start-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-column-start: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-column-start: $v;
+    }
+  }
+}
+
+@mixin _grid-column-end-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-column-end: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-column-end: $v;
+    }
+  }
+}
+
+@mixin _grid-row-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-row: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-row: $v;
+    }
+  }
+}
+
+@mixin _grid-row-start-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-row-start: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-row-start: $v;
+    }
+  }
+}
+
+@mixin _grid-row-end-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-row-end: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-row-end: $v;
+    }
+  }
+}
+
+@mixin _grid-template-columns-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-template-columns: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-template-columns: $v;
+    }
+  }
+}
+
+@mixin _grid-template-rows-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-template-rows: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-template-rows: $v;
+    }
+  }
+}
+
+@mixin _order-($v, $rwd: null) {
+  @if $rwd==null {
+    order: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      order: $v;
+    }
+  }
+}
+
+@mixin _margin-($v, $rwd: null) {
+  @if $rwd==null {
+    margin: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      margin: $v;
+    }
+  }
+}
+
+@mixin _margin-inline-start-($v, $rwd: null) {
+  @if $rwd==null {
+    margin-inline-start: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      margin-inline-start: $v;
+    }
+  }
+}
+
+@mixin _margin-inline-end-($v, $rwd: null) {
+  @if $rwd==null {
+    margin-inline-end: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      margin-inline-end: $v;
+    }
+  }
+}
+
+@mixin _margin-top-($v, $rwd: null) {
+  @if $rwd==null {
+    margin-top: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      margin-top: $v;
+    }
+  }
+}
+
+@mixin _margin-right-($v, $rwd: null) {
+  @if $rwd==null {
+    margin-right: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      margin-right: $v;
+    }
+  }
+}
+
+@mixin _margin-bottom-($v, $rwd: null) {
+  @if $rwd==null {
+    margin-bottom: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      margin-bottom: $v;
+    }
+  }
+}
+
+@mixin _margin-left-($v, $rwd: null) {
+  @if $rwd==null {
+    margin-left: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      margin-left: $v;
+    }
+  }
+}
+
+@mixin _padding-($v, $rwd: null) {
+  @if $rwd==null {
+    padding: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      padding: $v;
+    }
+  }
+}
+
+@mixin _padding-inline-start-($v, $rwd: null) {
+  @if $rwd==null {
+    padding-inline-start: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      padding-inline-start: $v;
+    }
+  }
+}
+
+@mixin _padding-inline-end-($v, $rwd: null) {
+  @if $rwd==null {
+    padding-inline-end: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      padding-inline-end: $v;
+    }
+  }
+}
+
+@mixin _padding-top-($v, $rwd: null) {
+  @if $rwd==null {
+    padding-top: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      padding-top: $v;
+    }
+  }
+}
+
+@mixin _padding-right-($v, $rwd: null) {
+  @if $rwd==null {
+    padding-right: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      padding-right: $v;
+    }
+  }
+}
+
+@mixin _padding-bottom-($v, $rwd: null) {
+  @if $rwd==null {
+    padding-bottom: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      padding-bottom: $v;
+    }
+  }
+}
+
+@mixin _padding-left-($v, $rwd: null) {
+  @if $rwd==null {
+    padding-left: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      padding-left: $v;
+    }
+  }
+}
+
+@mixin _height-($v, $rwd: null) {
+  @if $rwd==null {
+    height: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      height: $v;
+    }
+  }
+}
+
+@mixin _max-height-($v, $rwd: null) {
+  @if $rwd==null {
+    max-height: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      max-height: $v;
+    }
+  }
+}
+
+@mixin _max-width-($v, $rwd: null) {
+  @if $rwd==null {
+    max-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      max-width: $v;
+    }
+  }
+}
+
+@mixin _min-height-($v, $rwd: null) {
+  @if $rwd==null {
+    min-height: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      min-height: $v;
+    }
+  }
+}
+
+@mixin _min-width-($v, $rwd: null) {
+  @if $rwd==null {
+    min-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      min-width: $v;
+    }
+  }
+}
+
+@mixin _width-($v, $rwd: null) {
+  @if $rwd==null {
+    width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      width: $v;
+    }
+  }
+}
+
+@mixin _font-family-($v, $rwd: null) {
+  @if $rwd==null {
+    font-family: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      font-family: $v;
+    }
+  }
+}
+
+@mixin _font-weight-($v, $rwd: null) {
+  @if $rwd==null {
+    font-weight: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      font-weight: $v;
+    }
+  }
+}
+
+@mixin _letter-spacing-($v, $rwd: null) {
+  @if $rwd==null {
+    letter-spacing: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      letter-spacing: $v;
+    }
+  }
+}
+
+@mixin _overflow-($v, $rwd: null) {
+  @if $rwd==null {
+    overflow: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      overflow: $v;
+    }
+  }
+}
+
+@mixin _display-($v, $rwd: null) {
+  @if $rwd==null {
+    display: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      display: $v;
+    }
+  }
+}
+
+@mixin _webkit-box-orient-($v, $rwd: null) {
+  @if $rwd==null {
+    -webkit-box-orient: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      -webkit-box-orient: $v;
+    }
+  }
+}
+
+@mixin _webkit-line-clamp-($v, $rwd: null) {
+  @if $rwd==null {
+    -webkit-line-clamp: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      -webkit-line-clamp: $v;
+    }
+  }
+}
+
+@mixin _line-height-($v, $rwd: null) {
+  @if $rwd==null {
+    line-height: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      line-height: $v;
+    }
+  }
+}
+
+@mixin _list-style-image-($v, $rwd: null) {
+  @if $rwd==null {
+    list-style-image: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      list-style-image: $v;
+    }
+  }
+}
+
+@mixin _list-style-type-($v, $rwd: null) {
+  @if $rwd==null {
+    list-style-type: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      list-style-type: $v;
+    }
+  }
+}
+
+@mixin _font-size-($v, $rwd: null) {
+  @if $rwd==null {
+    font-size: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      font-size: $v;
+    }
+  }
+}
+
+@mixin _text-decoration-color-($v, $rwd: null) {
+  @if $rwd==null {
+    text-decoration-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-decoration-color: $v;
+    }
+  }
+}
+
+@mixin _text-decoration-thickness-($v, $rwd: null) {
+  @if $rwd==null {
+    text-decoration-thickness: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-decoration-thickness: $v;
+    }
+  }
+}
+
+@mixin _text-indent-($v, $rwd: null) {
+  @if $rwd==null {
+    text-indent: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-indent: $v;
+    }
+  }
+}
+
+@mixin _text-underline-offset-($v, $rwd: null) {
+  @if $rwd==null {
+    text-underline-offset: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-underline-offset: $v;
+    }
+  }
+}
+
+@mixin _vertical-align-($v, $rwd: null) {
+  @if $rwd==null {
+    vertical-align: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      vertical-align: $v;
+    }
+  }
+}
+
+@mixin _background-color-($v, $rwd: null) {
+  @if $rwd==null {
+    background-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      background-color: $v;
+    }
+  }
+}
+
+@mixin _background-size-($v, $rwd: null) {
+  @if $rwd==null {
+    background-size: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      background-size: $v;
+    }
+  }
+}
+
+@mixin _background-position-($v, $rwd: null) {
+  @if $rwd==null {
+    background-position: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      background-position: $v;
+    }
+  }
+}
+
+@mixin _background-image-($v, $rwd: null) {
+  @if $rwd==null {
+    background-image: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      background-image: $v;
+    }
+  }
+}
+
+@mixin _border-color-($v, $rwd: null) {
+  @if $rwd==null {
+    border-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-color: $v;
+    }
+  }
+}
+
+@mixin _border-width-($v, $rwd: null) {
+  @if $rwd==null {
+    border-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-width: $v;
+    }
+  }
+}
+
+@mixin _border-left-color-($v, $rwd: null) {
+  @if $rwd==null {
+    border-left-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-left-color: $v;
+    }
+  }
+}
+
+@mixin _border-left-width-($v, $rwd: null) {
+  @if $rwd==null {
+    border-left-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-left-width: $v;
+    }
+  }
+}
+
+@mixin _border-right-color-($v, $rwd: null) {
+  @if $rwd==null {
+    border-right-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-right-color: $v;
+    }
+  }
+}
+
+@mixin _border-right-width-($v, $rwd: null) {
+  @if $rwd==null {
+    border-right-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-right-width: $v;
+    }
+  }
+}
+
+@mixin _border-top-color-($v, $rwd: null) {
+  @if $rwd==null {
+    border-top-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-top-color: $v;
+    }
+  }
+}
+
+@mixin _border-top-width-($v, $rwd: null) {
+  @if $rwd==null {
+    border-top-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-top-width: $v;
+    }
+  }
+}
+
+@mixin _border-bottom-color-($v, $rwd: null) {
+  @if $rwd==null {
+    border-bottom-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-bottom-color: $v;
+    }
+  }
+}
+
+@mixin _border-bottom-width-($v, $rwd: null) {
+  @if $rwd==null {
+    border-bottom-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-bottom-width: $v;
+    }
+  }
+}
+
+@mixin _border-inline-start-color-($v, $rwd: null) {
+  @if $rwd==null {
+    border-inline-start-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-inline-start-color: $v;
+    }
+  }
+}
+
+@mixin _border-inline-start-width-($v, $rwd: null) {
+  @if $rwd==null {
+    border-inline-start-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-inline-start-width: $v;
+    }
+  }
+}
+
+@mixin _border-inline-end-color-($v, $rwd: null) {
+  @if $rwd==null {
+    border-inline-end-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-inline-end-color: $v;
+    }
+  }
+}
+
+@mixin _border-inline-end-width-($v, $rwd: null) {
+  @if $rwd==null {
+    border-inline-end-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-inline-end-width: $v;
+    }
+  }
+}
+
+@mixin _border-radius-($v, $rwd: null) {
+  @if $rwd==null {
+    border-radius: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-radius: $v;
+    }
+  }
+}
+
+@mixin _border-start-start-radius-($v, $rwd: null) {
+  @if $rwd==null {
+    border-start-start-radius: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-start-start-radius: $v;
+    }
+  }
+}
+
+@mixin _border-end-start-radius-($v, $rwd: null) {
+  @if $rwd==null {
+    border-end-start-radius: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-end-start-radius: $v;
+    }
+  }
+}
+
+@mixin _border-start-end-radius-($v, $rwd: null) {
+  @if $rwd==null {
+    border-start-end-radius: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-start-end-radius: $v;
+    }
+  }
+}
+
+@mixin _border-end-end-radius-($v, $rwd: null) {
+  @if $rwd==null {
+    border-end-end-radius: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-end-end-radius: $v;
+    }
+  }
+}
+
+@mixin _border-top-left-radius-($v, $rwd: null) {
+  @if $rwd==null {
+    border-top-left-radius: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-top-left-radius: $v;
+    }
+  }
+}
+
+@mixin _border-top-right-radius-($v, $rwd: null) {
+  @if $rwd==null {
+    border-top-right-radius: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-top-right-radius: $v;
+    }
+  }
+}
+
+@mixin _border-bottom-right-radius-($v, $rwd: null) {
+  @if $rwd==null {
+    border-bottom-right-radius: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-bottom-right-radius: $v;
+    }
+  }
+}
+
+@mixin _border-bottom-left-radius-($v, $rwd: null) {
+  @if $rwd==null {
+    border-bottom-left-radius: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-bottom-left-radius: $v;
+    }
+  }
+}
+
+@mixin _outline-color-($v, $rwd: null) {
+  @if $rwd==null {
+    outline-color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      outline-color: $v;
+    }
+  }
+}
+
+@mixin _outline-width-($v, $rwd: null) {
+  @if $rwd==null {
+    outline-width: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      outline-width: $v;
+    }
+  }
+}
+
+@mixin _outline-offset-($v, $rwd: null) {
+  @if $rwd==null {
+    outline-offset: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      outline-offset: $v;
+    }
+  }
+}
+
+@mixin _box-shadow-($v, $rwd: null) {
+  @if $rwd==null {
+    box-shadow: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      box-shadow: $v;
+    }
+  }
+}
+
+@mixin _opacity-($v, $rwd: null) {
+  @if $rwd==null {
+    opacity: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      opacity: $v;
+    }
+  }
+}
+
+@mixin _backdrop-filter-($v, $rwd: null) {
+  @if $rwd==null {
+    backdrop-filter: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      backdrop-filter: $v;
+    }
+  }
+}
+
+@mixin _filter-($v, $rwd: null) {
+  @if $rwd==null {
+    filter: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      filter: $v;
+    }
+  }
+}
+
+@mixin _box-decoration-break-($v, $rwd: null) {
+  @if $rwd==null {
+    box-decoration-break: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      box-decoration-break: $v;
+    }
+  }
+}
+
+@mixin _box-sizing-($v, $rwd: null) {
+  @if $rwd==null {
+    box-sizing: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      box-sizing: $v;
+    }
+  }
+}
+
+@mixin _break-after-($v, $rwd: null) {
+  @if $rwd==null {
+    break-after: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      break-after: $v;
+    }
+  }
+}
+
+@mixin _break-before-($v, $rwd: null) {
+  @if $rwd==null {
+    break-before: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      break-before: $v;
+    }
+  }
+}
+
+@mixin _break-inside-($v, $rwd: null) {
+  @if $rwd==null {
+    break-inside: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      break-inside: $v;
+    }
+  }
+}
+
+@mixin _clear-($v, $rwd: null) {
+  @if $rwd==null {
+    clear: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      clear: $v;
+    }
+  }
+}
+
+@mixin _float-($v, $rwd: null) {
+  @if $rwd==null {
+    float: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      float: $v;
+    }
+  }
+}
+
+@mixin _isolation-($v, $rwd: null) {
+  @if $rwd==null {
+    isolation: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      isolation: $v;
+    }
+  }
+}
+
+@mixin _object-fit-($v, $rwd: null) {
+  @if $rwd==null {
+    object-fit: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      object-fit: $v;
+    }
+  }
+}
+
+@mixin _overscroll-behavior-($v, $rwd: null) {
+  @if $rwd==null {
+    overscroll-behavior: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      overscroll-behavior: $v;
+    }
+  }
+}
+
+@mixin _overscroll-behavior-y-($v, $rwd: null) {
+  @if $rwd==null {
+    overscroll-behavior-y: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      overscroll-behavior-y: $v;
+    }
+  }
+}
+
+@mixin _overscroll-behavior-x-($v, $rwd: null) {
+  @if $rwd==null {
+    overscroll-behavior-x: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      overscroll-behavior-x: $v;
+    }
+  }
+}
+
+@mixin _position-($v, $rwd: null) {
+  @if $rwd==null {
+    position: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      position: $v;
+    }
+  }
+}
+
+@mixin _visibility-($v, $rwd: null) {
+  @if $rwd==null {
+    visibility: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      visibility: $v;
+    }
+  }
+}
+
+@mixin _align-content-($v, $rwd: null) {
+  @if $rwd==null {
+    align-content: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      align-content: $v;
+    }
+  }
+}
+
+@mixin _align-items-($v, $rwd: null) {
+  @if $rwd==null {
+    align-items: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      align-items: $v;
+    }
+  }
+}
+
+@mixin _align-self-($v, $rwd: null) {
+  @if $rwd==null {
+    align-self: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      align-self: $v;
+    }
+  }
+}
+
+@mixin _flex-direction-($v, $rwd: null) {
+  @if $rwd==null {
+    flex-direction: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      flex-direction: $v;
+    }
+  }
+}
+
+@mixin _flex-wrap-($v, $rwd: null) {
+  @if $rwd==null {
+    flex-wrap: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      flex-wrap: $v;
+    }
+  }
+}
+
+@mixin _grid-auto-flow-($v, $rwd: null) {
+  @if $rwd==null {
+    grid-auto-flow: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      grid-auto-flow: $v;
+    }
+  }
+}
+
+@mixin _justify-content-($v, $rwd: null) {
+  @if $rwd==null {
+    justify-content: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      justify-content: $v;
+    }
+  }
+}
+
+@mixin _justify-items-($v, $rwd: null) {
+  @if $rwd==null {
+    justify-items: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      justify-items: $v;
+    }
+  }
+}
+
+@mixin _justify-self-($v, $rwd: null) {
+  @if $rwd==null {
+    justify-self: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      justify-self: $v;
+    }
+  }
+}
+
+@mixin _place-content-($v, $rwd: null) {
+  @if $rwd==null {
+    place-content: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      place-content: $v;
+    }
+  }
+}
+
+@mixin _place-items-($v, $rwd: null) {
+  @if $rwd==null {
+    place-items: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      place-items: $v;
+    }
+  }
+}
+
+@mixin _place-self-($v, $rwd: null) {
+  @if $rwd==null {
+    place-self: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      place-self: $v;
+    }
+  }
+}
+
+@mixin _webkit-font-smoothing-($v, $rwd: null) {
+  @if $rwd==null {
+    -webkit-font-smoothing: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      -webkit-font-smoothing: $v;
+    }
+  }
+}
+
+@mixin _moz-osx-font-smoothing-($v, $rwd: null) {
+  @if $rwd==null {
+    -moz-osx-font-smoothing: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      -moz-osx-font-smoothing: $v;
+    }
+  }
+}
+
+@mixin _font-style-($v, $rwd: null) {
+  @if $rwd==null {
+    font-style: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      font-style: $v;
+    }
+  }
+}
+
+@mixin _font-variant-numeric-($v, $rwd: null) {
+  @if $rwd==null {
+    font-variant-numeric: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      font-variant-numeric: $v;
+    }
+  }
+}
+
+@mixin _hyphens-($v, $rwd: null) {
+  @if $rwd==null {
+    hyphens: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      hyphens: $v;
+    }
+  }
+}
+
+@mixin _list-style-position-($v, $rwd: null) {
+  @if $rwd==null {
+    list-style-position: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      list-style-position: $v;
+    }
+  }
+}
+
+@mixin _text-align-($v, $rwd: null) {
+  @if $rwd==null {
+    text-align: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-align: $v;
+    }
+  }
+}
+
+@mixin _text-decoration-line-($v, $rwd: null) {
+  @if $rwd==null {
+    text-decoration-line: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-decoration-line: $v;
+    }
+  }
+}
+
+@mixin _text-decoration-style-($v, $rwd: null) {
+  @if $rwd==null {
+    text-decoration-style: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-decoration-style: $v;
+    }
+  }
+}
+
+@mixin _text-overflow-($v, $rwd: null) {
+  @if $rwd==null {
+    text-overflow: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-overflow: $v;
+    }
+  }
+}
+
+@mixin _white-space-($v, $rwd: null) {
+  @if $rwd==null {
+    white-space: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      white-space: $v;
+    }
+  }
+}
+
+@mixin _text-transform-($v, $rwd: null) {
+  @if $rwd==null {
+    text-transform: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-transform: $v;
+    }
+  }
+}
+
+@mixin _text-wrap-($v, $rwd: null) {
+  @if $rwd==null {
+    text-wrap: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      text-wrap: $v;
+    }
+  }
+}
+
+@mixin _overflow-wrap-($v, $rwd: null) {
+  @if $rwd==null {
+    overflow-wrap: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      overflow-wrap: $v;
+    }
+  }
+}
+
+@mixin _word-break-($v, $rwd: null) {
+  @if $rwd==null {
+    word-break: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      word-break: $v;
+    }
+  }
+}
+
+@mixin _background-attachment-($v, $rwd: null) {
+  @if $rwd==null {
+    background-attachment: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      background-attachment: $v;
+    }
+  }
+}
+
+@mixin _background-clip-($v, $rwd: null) {
+  @if $rwd==null {
+    background-clip: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      background-clip: $v;
+    }
+  }
+}
+
+@mixin _background-origin-($v, $rwd: null) {
+  @if $rwd==null {
+    background-origin: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      background-origin: $v;
+    }
+  }
+}
+
+@mixin _background-repeat-($v, $rwd: null) {
+  @if $rwd==null {
+    background-repeat: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      background-repeat: $v;
+    }
+  }
+}
+
+@mixin _border-style-($v, $rwd: null) {
+  @if $rwd==null {
+    border-style: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-style: $v;
+    }
+  }
+}
+
+@mixin _outline-($v, $rwd: null) {
+  @if $rwd==null {
+    outline: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      outline: $v;
+    }
+  }
+}
+
+@mixin _outline-style-($v, $rwd: null) {
+  @if $rwd==null {
+    outline-style: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      outline-style: $v;
+    }
+  }
+}
+
+@mixin _background-blend-mode-($v, $rwd: null) {
+  @if $rwd==null {
+    background-blend-mode: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      background-blend-mode: $v;
+    }
+  }
+}
+
+@mixin _mix-blend-mode-($v, $rwd: null) {
+  @if $rwd==null {
+    mix-blend-mode: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      mix-blend-mode: $v;
+    }
+  }
+}
+
+@mixin _border-collapse-($v, $rwd: null) {
+  @if $rwd==null {
+    border-collapse: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      border-collapse: $v;
+    }
+  }
+}
+
+@mixin _caption-side-($v, $rwd: null) {
+  @if $rwd==null {
+    caption-side: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      caption-side: $v;
+    }
+  }
+}
+
+@mixin _table-layout-($v, $rwd: null) {
+  @if $rwd==null {
+    table-layout: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      table-layout: $v;
+    }
+  }
+}
+
+@mixin _appearance-($v, $rwd: null) {
+  @if $rwd==null {
+    appearance: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      appearance: $v;
+    }
+  }
+}
+
+@mixin _pointer-events-($v, $rwd: null) {
+  @if $rwd==null {
+    pointer-events: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      pointer-events: $v;
+    }
+  }
+}
+
+@mixin _resize-($v, $rwd: null) {
+  @if $rwd==null {
+    resize: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      resize: $v;
+    }
+  }
+}
+
+@mixin _scroll-behavior-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-behavior: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-behavior: $v;
+    }
+  }
+}
+
+@mixin _scroll-snap-align-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-snap-align: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-snap-align: $v;
+    }
+  }
+}
+
+@mixin _scroll-snap-stop-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-snap-stop: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-snap-stop: $v;
+    }
+  }
+}
+
+@mixin _scroll-snap-type-($v, $rwd: null) {
+  @if $rwd==null {
+    scroll-snap-type: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      scroll-snap-type: $v;
+    }
+  }
+}
+
+@mixin _touch-action-($v, $rwd: null) {
+  @if $rwd==null {
+    touch-action: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      touch-action: $v;
+    }
+  }
+}
+
+@mixin _user-select-($v, $rwd: null) {
+  @if $rwd==null {
+    user-select: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      user-select: $v;
+    }
+  }
+}
+
+@mixin _forced-color-adjust-($v, $rwd: null) {
+  @if $rwd==null {
+    forced-color-adjust: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      forced-color-adjust: $v;
+    }
+  }
+}
+
+@mixin sm\:_aspect-ratio-($v) {
+  @include _aspect-ratio-($v, $sm);
+}
+
+@mixin sm\:_columns-($v) {
+  @include _columns-($v, $sm);
+}
+
+@mixin sm\:_object-position-($v) {
+  @include _object-position-($v, $sm);
+}
+
+@mixin sm\:_inset-($v) {
+  @include _inset-($v, $sm);
+}
+
+@mixin sm\:_inset-inline-start-($v) {
+  @include _inset-inline-start-($v, $sm);
+}
+
+@mixin sm\:_inset-inline-end-($v) {
+  @include _inset-inline-end-($v, $sm);
+}
+
+@mixin sm\:_top-($v) {
+  @include _top-($v, $sm);
+}
+
+@mixin sm\:_right-($v) {
+  @include _right-($v, $sm);
+}
+
+@mixin sm\:_bottom-($v) {
+  @include _bottom-($v, $sm);
+}
+
+@mixin sm\:_left-($v) {
+  @include _left-($v, $sm);
+}
+
+@mixin sm\:_z-index-($v) {
+  @include _z-index-($v, $sm);
+}
+
+@mixin sm\:_border-spacing-($v) {
+  @include _border-spacing-($v, $sm);
+}
+
+@mixin sm\:_animation-($v) {
+  @include _animation-($v, $sm);
+}
+
+@mixin sm\:_transition-delay-($v) {
+  @include _transition-delay-($v, $sm);
+}
+
+@mixin sm\:_transition-property-($v) {
+  @include _transition-property-($v, $sm);
+}
+
+@mixin sm\:_transition-timing-function-($v) {
+  @include _transition-timing-function-($v, $sm);
+}
+
+@mixin sm\:_transition-duration-($v) {
+  @include _transition-duration-($v, $sm);
+}
+
+@mixin sm\:_transform-($v) {
+  @include _transform-($v, $sm);
+}
+
+@mixin sm\:_transform-origin-($v) {
+  @include _transform-origin-($v, $sm);
+}
+
+@mixin sm\:_accent-color-($v) {
+  @include _accent-color-($v, $sm);
+}
+
+@mixin sm\:_caret-color-($v) {
+  @include _caret-color-($v, $sm);
+}
+
+@mixin sm\:_cursor-($v, $v2: null) {
+  @include _cursor-($v, $v2, $sm);
+}
+
+@mixin sm\:_scroll-margin-($v) {
+  @include _scroll-margin-($v, $sm);
+}
+
+@mixin sm\:_scroll-margin-inline-start-($v) {
+  @include _scroll-margin-inline-start-($v, $sm);
+}
+
+@mixin sm\:_scroll-margin-inline-end-($v) {
+  @include _scroll-margin-inline-end-($v, $sm);
+}
+
+@mixin sm\:_scroll-margin-top-($v) {
+  @include _scroll-margin-top-($v, $sm);
+}
+
+@mixin sm\:_scroll-margin-right-($v) {
+  @include _scroll-margin-right-($v, $sm);
+}
+
+@mixin sm\:_scroll-margin-bottom-($v) {
+  @include _scroll-margin-bottom-($v, $sm);
+}
+
+@mixin sm\:_scroll-margin-left-($v) {
+  @include _scroll-margin-left-($v, $sm);
+}
+
+@mixin sm\:_scroll-padding-($v) {
+  @include _scroll-padding-($v, $sm);
+}
+
+@mixin sm\:_scroll-padding-inline-start-($v) {
+  @include _scroll-padding-inline-start-($v, $sm);
+}
+
+@mixin sm\:_scroll-padding-inline-end-($v) {
+  @include _scroll-padding-inline-end-($v, $sm);
+}
+
+@mixin sm\:_scroll-padding-top-($v) {
+  @include _scroll-padding-top-($v, $sm);
+}
+
+@mixin sm\:_scroll-padding-right-($v) {
+  @include _scroll-padding-right-($v, $sm);
+}
+
+@mixin sm\:_scroll-padding-bottom-($v) {
+  @include _scroll-padding-bottom-($v, $sm);
+}
+
+@mixin sm\:_scroll-padding-left-($v) {
+  @include _scroll-padding-left-($v, $sm);
+}
+
+@mixin sm\:_will-change-($v, $v2: null) {
+  @include _will-change-($v, $v2, $sm);
+}
+
+@mixin sm\:_fill-($v) {
+  @include _fill-($v, $sm);
+}
+
+@mixin sm\:_stroke-($v) {
+  @include _stroke-($v, $sm);
+}
+
+@mixin sm\:_stroke-width-($v) {
+  @include _stroke-width-($v, $sm);
+}
+
+@mixin sm\:_flex-($v) {
+  @include _flex-($v, $sm);
+}
+
+@mixin sm\:_flex-basis-($v) {
+  @include _flex-basis-($v, $sm);
+}
+
+@mixin sm\:_flex-grow-($v) {
+  @include _flex-grow-($v, $sm);
+}
+
+@mixin sm\:_flex-shrink-($v) {
+  @include _flex-shrink-($v, $sm);
+}
+
+@mixin sm\:_gap-($v) {
+  @include _gap-($v, $sm);
+}
+
+@mixin sm\:_column-gap-($v) {
+  @include _column-gap-($v, $sm);
+}
+
+@mixin sm\:_row-gap-($v) {
+  @include _row-gap-($v, $sm);
+}
+
+@mixin sm\:_grid-auto-columns-($v) {
+  @include _grid-auto-columns-($v, $sm);
+}
+
+@mixin sm\:_grid-auto-rows-($v) {
+  @include _grid-auto-rows-($v, $sm);
+}
+
+@mixin sm\:_grid-column-($v) {
+  @include _grid-column-($v, $sm);
+}
+
+@mixin sm\:_grid-column-start-($v) {
+  @include _grid-column-start-($v, $sm);
+}
+
+@mixin sm\:_grid-column-end-($v) {
+  @include _grid-column-end-($v, $sm);
+}
+
+@mixin sm\:_grid-row-($v) {
+  @include _grid-row-($v, $sm);
+}
+
+@mixin sm\:_grid-row-start-($v) {
+  @include _grid-row-start-($v, $sm);
+}
+
+@mixin sm\:_grid-row-end-($v) {
+  @include _grid-row-end-($v, $sm);
+}
+
+@mixin sm\:_grid-template-columns-($v) {
+  @include _grid-template-columns-($v, $sm);
+}
+
+@mixin sm\:_grid-template-rows-($v) {
+  @include _grid-template-rows-($v, $sm);
+}
+
+@mixin sm\:_order-($v) {
+  @include _order-($v, $sm);
+}
+
+@mixin sm\:_margin-($v) {
+  @include _margin-($v, $sm);
+}
+
+@mixin sm\:_margin-inline-start-($v) {
+  @include _margin-inline-start-($v, $sm);
+}
+
+@mixin sm\:_margin-inline-end-($v) {
+  @include _margin-inline-end-($v, $sm);
+}
+
+@mixin sm\:_margin-top-($v) {
+  @include _margin-top-($v, $sm);
+}
+
+@mixin sm\:_margin-right-($v) {
+  @include _margin-right-($v, $sm);
+}
+
+@mixin sm\:_margin-bottom-($v) {
+  @include _margin-bottom-($v, $sm);
+}
+
+@mixin sm\:_margin-left-($v) {
+  @include _margin-left-($v, $sm);
+}
+
+@mixin sm\:_padding-($v) {
+  @include _padding-($v, $sm);
+}
+
+@mixin sm\:_padding-inline-start-($v) {
+  @include _padding-inline-start-($v, $sm);
+}
+
+@mixin sm\:_padding-inline-end-($v) {
+  @include _padding-inline-end-($v, $sm);
+}
+
+@mixin sm\:_padding-top-($v) {
+  @include _padding-top-($v, $sm);
+}
+
+@mixin sm\:_padding-right-($v) {
+  @include _padding-right-($v, $sm);
+}
+
+@mixin sm\:_padding-bottom-($v) {
+  @include _padding-bottom-($v, $sm);
+}
+
+@mixin sm\:_padding-left-($v) {
+  @include _padding-left-($v, $sm);
+}
+
+@mixin sm\:_height-($v) {
+  @include _height-($v, $sm);
+}
+
+@mixin sm\:_max-height-($v) {
+  @include _max-height-($v, $sm);
+}
+
+@mixin sm\:_max-width-($v) {
+  @include _max-width-($v, $sm);
+}
+
+@mixin sm\:_min-height-($v) {
+  @include _min-height-($v, $sm);
+}
+
+@mixin sm\:_min-width-($v) {
+  @include _min-width-($v, $sm);
+}
+
+@mixin sm\:_width-($v) {
+  @include _width-($v, $sm);
+}
+
+@mixin sm\:_font-family-($v) {
+  @include _font-family-($v, $sm);
+}
+
+@mixin sm\:_font-weight-($v) {
+  @include _font-weight-($v, $sm);
+}
+
+@mixin sm\:_letter-spacing-($v) {
+  @include _letter-spacing-($v, $sm);
+}
+
+@mixin sm\:_overflow-($v) {
+  @include _overflow-($v, $sm);
+}
+
+@mixin sm\:_display-($v) {
+  @include _display-($v, $sm);
+}
+
+@mixin sm\:_webkit-box-orient-($v) {
+  @include _webkit-box-orient-($v, $sm);
+}
+
+@mixin sm\:_webkit-line-clamp-($v) {
+  @include _webkit-line-clamp-($v, $sm);
+}
+
+@mixin sm\:_line-height-($v) {
+  @include _line-height-($v, $sm);
+}
+
+@mixin sm\:_list-style-image-($v) {
+  @include _list-style-image-($v, $sm);
+}
+
+@mixin sm\:_list-style-type-($v) {
+  @include _list-style-type-($v, $sm);
+}
+
+@mixin sm\:_font-size-($v) {
+  @include _font-size-($v, $sm);
+}
+
+@mixin sm\:_text-decoration-color-($v) {
+  @include _text-decoration-color-($v, $sm);
+}
+
+@mixin sm\:_text-decoration-thickness-($v) {
+  @include _text-decoration-thickness-($v, $sm);
+}
+
+@mixin sm\:_text-indent-($v) {
+  @include _text-indent-($v, $sm);
+}
+
+@mixin sm\:_text-underline-offset-($v) {
+  @include _text-underline-offset-($v, $sm);
+}
+
+@mixin sm\:_vertical-align-($v) {
+  @include _vertical-align-($v, $sm);
+}
+
+@mixin sm\:_background-color-($v) {
+  @include _background-color-($v, $sm);
+}
+
+@mixin sm\:_background-size-($v) {
+  @include _background-size-($v, $sm);
+}
+
+@mixin sm\:_background-position-($v) {
+  @include _background-position-($v, $sm);
+}
+
+@mixin sm\:_background-image-($v) {
+  @include _background-image-($v, $sm);
+}
+
+@mixin sm\:_border-color-($v) {
+  @include _border-color-($v, $sm);
+}
+
+@mixin sm\:_border-width-($v) {
+  @include _border-width-($v, $sm);
+}
+
+@mixin sm\:_border-left-color-($v) {
+  @include _border-left-color-($v, $sm);
+}
+
+@mixin sm\:_border-left-width-($v) {
+  @include _border-left-width-($v, $sm);
+}
+
+@mixin sm\:_border-right-color-($v) {
+  @include _border-right-color-($v, $sm);
+}
+
+@mixin sm\:_border-right-width-($v) {
+  @include _border-right-width-($v, $sm);
+}
+
+@mixin sm\:_border-top-color-($v) {
+  @include _border-top-color-($v, $sm);
+}
+
+@mixin sm\:_border-top-width-($v) {
+  @include _border-top-width-($v, $sm);
+}
+
+@mixin sm\:_border-bottom-color-($v) {
+  @include _border-bottom-color-($v, $sm);
+}
+
+@mixin sm\:_border-bottom-width-($v) {
+  @include _border-bottom-width-($v, $sm);
+}
+
+@mixin sm\:_border-inline-start-color-($v) {
+  @include _border-inline-start-color-($v, $sm);
+}
+
+@mixin sm\:_border-inline-start-width-($v) {
+  @include _border-inline-start-width-($v, $sm);
+}
+
+@mixin sm\:_border-inline-end-color-($v) {
+  @include _border-inline-end-color-($v, $sm);
+}
+
+@mixin sm\:_border-inline-end-width-($v) {
+  @include _border-inline-end-width-($v, $sm);
+}
+
+@mixin sm\:_border-radius-($v) {
+  @include _border-radius-($v, $sm);
+}
+
+@mixin sm\:_border-start-start-radius-($v) {
+  @include _border-start-start-radius-($v, $sm);
+}
+
+@mixin sm\:_border-end-start-radius-($v) {
+  @include _border-end-start-radius-($v, $sm);
+}
+
+@mixin sm\:_border-start-end-radius-($v) {
+  @include _border-start-end-radius-($v, $sm);
+}
+
+@mixin sm\:_border-end-end-radius-($v) {
+  @include _border-end-end-radius-($v, $sm);
+}
+
+@mixin sm\:_border-top-left-radius-($v) {
+  @include _border-top-left-radius-($v, $sm);
+}
+
+@mixin sm\:_border-top-right-radius-($v) {
+  @include _border-top-right-radius-($v, $sm);
+}
+
+@mixin sm\:_border-bottom-right-radius-($v) {
+  @include _border-bottom-right-radius-($v, $sm);
+}
+
+@mixin sm\:_border-bottom-left-radius-($v) {
+  @include _border-bottom-left-radius-($v, $sm);
+}
+
+@mixin sm\:_outline-color-($v) {
+  @include _outline-color-($v, $sm);
+}
+
+@mixin sm\:_outline-width-($v) {
+  @include _outline-width-($v, $sm);
+}
+
+@mixin sm\:_outline-offset-($v) {
+  @include _outline-offset-($v, $sm);
+}
+
+@mixin sm\:_box-shadow-($v) {
+  @include _box-shadow-($v, $sm);
+}
+
+@mixin sm\:_opacity-($v) {
+  @include _opacity-($v, $sm);
+}
+
+@mixin sm\:_backdrop-filter-($v) {
+  @include _backdrop-filter-($v, $sm);
+}
+
+@mixin sm\:_filter-($v) {
+  @include _filter-($v, $sm);
+}
+
+@mixin sm\:_box-decoration-break-($v) {
+  @include _box-decoration-break-($v, $sm);
+}
+
+@mixin sm\:_box-sizing-($v) {
+  @include _box-sizing-($v, $sm);
+}
+
+@mixin sm\:_break-after-($v) {
+  @include _break-after-($v, $sm);
+}
+
+@mixin sm\:_break-before-($v) {
+  @include _break-before-($v, $sm);
+}
+
+@mixin sm\:_break-inside-($v) {
+  @include _break-inside-($v, $sm);
+}
+
+@mixin sm\:_clear-($v) {
+  @include _clear-($v, $sm);
+}
+
+@mixin sm\:_float-($v) {
+  @include _float-($v, $sm);
+}
+
+@mixin sm\:_isolation-($v) {
+  @include _isolation-($v, $sm);
+}
+
+@mixin sm\:_object-fit-($v) {
+  @include _object-fit-($v, $sm);
+}
+
+@mixin sm\:_overscroll-behavior-($v) {
+  @include _overscroll-behavior-($v, $sm);
+}
+
+@mixin sm\:_overscroll-behavior-y-($v) {
+  @include _overscroll-behavior-y-($v, $sm);
+}
+
+@mixin sm\:_overscroll-behavior-x-($v) {
+  @include _overscroll-behavior-x-($v, $sm);
+}
+
+@mixin sm\:_position-($v) {
+  @include _position-($v, $sm);
+}
+
+@mixin sm\:_visibility-($v) {
+  @include _visibility-($v, $sm);
+}
+
+@mixin sm\:_align-content-($v) {
+  @include _align-content-($v, $sm);
+}
+
+@mixin sm\:_align-items-($v) {
+  @include _align-items-($v, $sm);
+}
+
+@mixin sm\:_align-self-($v) {
+  @include _align-self-($v, $sm);
+}
+
+@mixin sm\:_flex-direction-($v) {
+  @include _flex-direction-($v, $sm);
+}
+
+@mixin sm\:_flex-wrap-($v) {
+  @include _flex-wrap-($v, $sm);
+}
+
+@mixin sm\:_grid-auto-flow-($v) {
+  @include _grid-auto-flow-($v, $sm);
+}
+
+@mixin sm\:_justify-content-($v) {
+  @include _justify-content-($v, $sm);
+}
+
+@mixin sm\:_justify-items-($v) {
+  @include _justify-items-($v, $sm);
+}
+
+@mixin sm\:_justify-self-($v) {
+  @include _justify-self-($v, $sm);
+}
+
+@mixin sm\:_place-content-($v) {
+  @include _place-content-($v, $sm);
+}
+
+@mixin sm\:_place-items-($v) {
+  @include _place-items-($v, $sm);
+}
+
+@mixin sm\:_place-self-($v) {
+  @include _place-self-($v, $sm);
+}
+
+@mixin sm\:_webkit-font-smoothing-($v) {
+  @include _webkit-font-smoothing-($v, $sm);
+}
+
+@mixin sm\:_moz-osx-font-smoothing-($v) {
+  @include _moz-osx-font-smoothing-($v, $sm);
+}
+
+@mixin sm\:_font-style-($v) {
+  @include _font-style-($v, $sm);
+}
+
+@mixin sm\:_font-variant-numeric-($v) {
+  @include _font-variant-numeric-($v, $sm);
+}
+
+@mixin sm\:_hyphens-($v) {
+  @include _hyphens-($v, $sm);
+}
+
+@mixin sm\:_list-style-position-($v) {
+  @include _list-style-position-($v, $sm);
+}
+
+@mixin sm\:_text-align-($v) {
+  @include _text-align-($v, $sm);
+}
+
+@mixin sm\:_text-decoration-line-($v) {
+  @include _text-decoration-line-($v, $sm);
+}
+
+@mixin sm\:_text-decoration-style-($v) {
+  @include _text-decoration-style-($v, $sm);
+}
+
+@mixin sm\:_text-overflow-($v) {
+  @include _text-overflow-($v, $sm);
+}
+
+@mixin sm\:_white-space-($v) {
+  @include _white-space-($v, $sm);
+}
+
+@mixin sm\:_text-transform-($v) {
+  @include _text-transform-($v, $sm);
+}
+
+@mixin sm\:_text-wrap-($v) {
+  @include _text-wrap-($v, $sm);
+}
+
+@mixin sm\:_overflow-wrap-($v) {
+  @include _overflow-wrap-($v, $sm);
+}
+
+@mixin sm\:_word-break-($v) {
+  @include _word-break-($v, $sm);
+}
+
+@mixin sm\:_background-attachment-($v) {
+  @include _background-attachment-($v, $sm);
+}
+
+@mixin sm\:_background-clip-($v) {
+  @include _background-clip-($v, $sm);
+}
+
+@mixin sm\:_background-origin-($v) {
+  @include _background-origin-($v, $sm);
+}
+
+@mixin sm\:_background-repeat-($v) {
+  @include _background-repeat-($v, $sm);
+}
+
+@mixin sm\:_border-style-($v) {
+  @include _border-style-($v, $sm);
+}
+
+@mixin sm\:_outline-($v) {
+  @include _outline-($v, $sm);
+}
+
+@mixin sm\:_outline-style-($v) {
+  @include _outline-style-($v, $sm);
+}
+
+@mixin sm\:_background-blend-mode-($v) {
+  @include _background-blend-mode-($v, $sm);
+}
+
+@mixin sm\:_mix-blend-mode-($v) {
+  @include _mix-blend-mode-($v, $sm);
+}
+
+@mixin sm\:_border-collapse-($v) {
+  @include _border-collapse-($v, $sm);
+}
+
+@mixin sm\:_caption-side-($v) {
+  @include _caption-side-($v, $sm);
+}
+
+@mixin sm\:_table-layout-($v) {
+  @include _table-layout-($v, $sm);
+}
+
+@mixin sm\:_appearance-($v) {
+  @include _appearance-($v, $sm);
+}
+
+@mixin sm\:_pointer-events-($v) {
+  @include _pointer-events-($v, $sm);
+}
+
+@mixin sm\:_resize-($v) {
+  @include _resize-($v, $sm);
+}
+
+@mixin sm\:_scroll-behavior-($v) {
+  @include _scroll-behavior-($v, $sm);
+}
+
+@mixin sm\:_scroll-snap-align-($v) {
+  @include _scroll-snap-align-($v, $sm);
+}
+
+@mixin sm\:_scroll-snap-stop-($v) {
+  @include _scroll-snap-stop-($v, $sm);
+}
+
+@mixin sm\:_scroll-snap-type-($v) {
+  @include _scroll-snap-type-($v, $sm);
+}
+
+@mixin sm\:_touch-action-($v) {
+  @include _touch-action-($v, $sm);
+}
+
+@mixin sm\:_user-select-($v) {
+  @include _user-select-($v, $sm);
+}
+
+@mixin sm\:_forced-color-adjust-($v) {
+  @include _forced-color-adjust-($v, $sm);
+}
+
+@mixin md\:_aspect-ratio-($v) {
+  @include _aspect-ratio-($v, $md);
+}
+
+@mixin md\:_columns-($v) {
+  @include _columns-($v, $md);
+}
+
+@mixin md\:_object-position-($v) {
+  @include _object-position-($v, $md);
+}
+
+@mixin md\:_inset-($v) {
+  @include _inset-($v, $md);
+}
+
+@mixin md\:_inset-inline-start-($v) {
+  @include _inset-inline-start-($v, $md);
+}
+
+@mixin md\:_inset-inline-end-($v) {
+  @include _inset-inline-end-($v, $md);
+}
+
+@mixin md\:_top-($v) {
+  @include _top-($v, $md);
+}
+
+@mixin md\:_right-($v) {
+  @include _right-($v, $md);
+}
+
+@mixin md\:_bottom-($v) {
+  @include _bottom-($v, $md);
+}
+
+@mixin md\:_left-($v) {
+  @include _left-($v, $md);
+}
+
+@mixin md\:_z-index-($v) {
+  @include _z-index-($v, $md);
+}
+
+@mixin md\:_border-spacing-($v) {
+  @include _border-spacing-($v, $md);
+}
+
+@mixin md\:_animation-($v) {
+  @include _animation-($v, $md);
+}
+
+@mixin md\:_transition-delay-($v) {
+  @include _transition-delay-($v, $md);
+}
+
+@mixin md\:_transition-property-($v) {
+  @include _transition-property-($v, $md);
+}
+
+@mixin md\:_transition-timing-function-($v) {
+  @include _transition-timing-function-($v, $md);
+}
+
+@mixin md\:_transition-duration-($v) {
+  @include _transition-duration-($v, $md);
+}
+
+@mixin md\:_transform-($v) {
+  @include _transform-($v, $md);
+}
+
+@mixin md\:_transform-origin-($v) {
+  @include _transform-origin-($v, $md);
+}
+
+@mixin md\:_accent-color-($v) {
+  @include _accent-color-($v, $md);
+}
+
+@mixin md\:_caret-color-($v) {
+  @include _caret-color-($v, $md);
+}
+
+@mixin md\:_cursor-($v, $v2: null) {
+  @include _cursor-($v, $v2, $md);
+}
+
+@mixin md\:_scroll-margin-($v) {
+  @include _scroll-margin-($v, $md);
+}
+
+@mixin md\:_scroll-margin-inline-start-($v) {
+  @include _scroll-margin-inline-start-($v, $md);
+}
+
+@mixin md\:_scroll-margin-inline-end-($v) {
+  @include _scroll-margin-inline-end-($v, $md);
+}
+
+@mixin md\:_scroll-margin-top-($v) {
+  @include _scroll-margin-top-($v, $md);
+}
+
+@mixin md\:_scroll-margin-right-($v) {
+  @include _scroll-margin-right-($v, $md);
+}
+
+@mixin md\:_scroll-margin-bottom-($v) {
+  @include _scroll-margin-bottom-($v, $md);
+}
+
+@mixin md\:_scroll-margin-left-($v) {
+  @include _scroll-margin-left-($v, $md);
+}
+
+@mixin md\:_scroll-padding-($v) {
+  @include _scroll-padding-($v, $md);
+}
+
+@mixin md\:_scroll-padding-inline-start-($v) {
+  @include _scroll-padding-inline-start-($v, $md);
+}
+
+@mixin md\:_scroll-padding-inline-end-($v) {
+  @include _scroll-padding-inline-end-($v, $md);
+}
+
+@mixin md\:_scroll-padding-top-($v) {
+  @include _scroll-padding-top-($v, $md);
+}
+
+@mixin md\:_scroll-padding-right-($v) {
+  @include _scroll-padding-right-($v, $md);
+}
+
+@mixin md\:_scroll-padding-bottom-($v) {
+  @include _scroll-padding-bottom-($v, $md);
+}
+
+@mixin md\:_scroll-padding-left-($v) {
+  @include _scroll-padding-left-($v, $md);
+}
+
+@mixin md\:_will-change-($v, $v2: null) {
+  @include _will-change-($v, $v2, $md);
+}
+
+@mixin md\:_fill-($v) {
+  @include _fill-($v, $md);
+}
+
+@mixin md\:_stroke-($v) {
+  @include _stroke-($v, $md);
+}
+
+@mixin md\:_stroke-width-($v) {
+  @include _stroke-width-($v, $md);
+}
+
+@mixin md\:_flex-($v) {
+  @include _flex-($v, $md);
+}
+
+@mixin md\:_flex-basis-($v) {
+  @include _flex-basis-($v, $md);
+}
+
+@mixin md\:_flex-grow-($v) {
+  @include _flex-grow-($v, $md);
+}
+
+@mixin md\:_flex-shrink-($v) {
+  @include _flex-shrink-($v, $md);
+}
+
+@mixin md\:_gap-($v) {
+  @include _gap-($v, $md);
+}
+
+@mixin md\:_column-gap-($v) {
+  @include _column-gap-($v, $md);
+}
+
+@mixin md\:_row-gap-($v) {
+  @include _row-gap-($v, $md);
+}
+
+@mixin md\:_grid-auto-columns-($v) {
+  @include _grid-auto-columns-($v, $md);
+}
+
+@mixin md\:_grid-auto-rows-($v) {
+  @include _grid-auto-rows-($v, $md);
+}
+
+@mixin md\:_grid-column-($v) {
+  @include _grid-column-($v, $md);
+}
+
+@mixin md\:_grid-column-start-($v) {
+  @include _grid-column-start-($v, $md);
+}
+
+@mixin md\:_grid-column-end-($v) {
+  @include _grid-column-end-($v, $md);
+}
+
+@mixin md\:_grid-row-($v) {
+  @include _grid-row-($v, $md);
+}
+
+@mixin md\:_grid-row-start-($v) {
+  @include _grid-row-start-($v, $md);
+}
+
+@mixin md\:_grid-row-end-($v) {
+  @include _grid-row-end-($v, $md);
+}
+
+@mixin md\:_grid-template-columns-($v) {
+  @include _grid-template-columns-($v, $md);
+}
+
+@mixin md\:_grid-template-rows-($v) {
+  @include _grid-template-rows-($v, $md);
+}
+
+@mixin md\:_order-($v) {
+  @include _order-($v, $md);
+}
+
+@mixin md\:_margin-($v) {
+  @include _margin-($v, $md);
+}
+
+@mixin md\:_margin-inline-start-($v) {
+  @include _margin-inline-start-($v, $md);
+}
+
+@mixin md\:_margin-inline-end-($v) {
+  @include _margin-inline-end-($v, $md);
+}
+
+@mixin md\:_margin-top-($v) {
+  @include _margin-top-($v, $md);
+}
+
+@mixin md\:_margin-right-($v) {
+  @include _margin-right-($v, $md);
+}
+
+@mixin md\:_margin-bottom-($v) {
+  @include _margin-bottom-($v, $md);
+}
+
+@mixin md\:_margin-left-($v) {
+  @include _margin-left-($v, $md);
+}
+
+@mixin md\:_padding-($v) {
+  @include _padding-($v, $md);
+}
+
+@mixin md\:_padding-inline-start-($v) {
+  @include _padding-inline-start-($v, $md);
+}
+
+@mixin md\:_padding-inline-end-($v) {
+  @include _padding-inline-end-($v, $md);
+}
+
+@mixin md\:_padding-top-($v) {
+  @include _padding-top-($v, $md);
+}
+
+@mixin md\:_padding-right-($v) {
+  @include _padding-right-($v, $md);
+}
+
+@mixin md\:_padding-bottom-($v) {
+  @include _padding-bottom-($v, $md);
+}
+
+@mixin md\:_padding-left-($v) {
+  @include _padding-left-($v, $md);
+}
+
+@mixin md\:_height-($v) {
+  @include _height-($v, $md);
+}
+
+@mixin md\:_max-height-($v) {
+  @include _max-height-($v, $md);
+}
+
+@mixin md\:_max-width-($v) {
+  @include _max-width-($v, $md);
+}
+
+@mixin md\:_min-height-($v) {
+  @include _min-height-($v, $md);
+}
+
+@mixin md\:_min-width-($v) {
+  @include _min-width-($v, $md);
+}
+
+@mixin md\:_width-($v) {
+  @include _width-($v, $md);
+}
+
+@mixin md\:_font-family-($v) {
+  @include _font-family-($v, $md);
+}
+
+@mixin md\:_font-weight-($v) {
+  @include _font-weight-($v, $md);
+}
+
+@mixin md\:_letter-spacing-($v) {
+  @include _letter-spacing-($v, $md);
+}
+
+@mixin md\:_overflow-($v) {
+  @include _overflow-($v, $md);
+}
+
+@mixin md\:_display-($v) {
+  @include _display-($v, $md);
+}
+
+@mixin md\:_webkit-box-orient-($v) {
+  @include _webkit-box-orient-($v, $md);
+}
+
+@mixin md\:_webkit-line-clamp-($v) {
+  @include _webkit-line-clamp-($v, $md);
+}
+
+@mixin md\:_line-height-($v) {
+  @include _line-height-($v, $md);
+}
+
+@mixin md\:_list-style-image-($v) {
+  @include _list-style-image-($v, $md);
+}
+
+@mixin md\:_list-style-type-($v) {
+  @include _list-style-type-($v, $md);
+}
+
+@mixin md\:_font-size-($v) {
+  @include _font-size-($v, $md);
+}
+
+@mixin md\:_text-decoration-color-($v) {
+  @include _text-decoration-color-($v, $md);
+}
+
+@mixin md\:_text-decoration-thickness-($v) {
+  @include _text-decoration-thickness-($v, $md);
+}
+
+@mixin md\:_text-indent-($v) {
+  @include _text-indent-($v, $md);
+}
+
+@mixin md\:_text-underline-offset-($v) {
+  @include _text-underline-offset-($v, $md);
+}
+
+@mixin md\:_vertical-align-($v) {
+  @include _vertical-align-($v, $md);
+}
+
+@mixin md\:_background-color-($v) {
+  @include _background-color-($v, $md);
+}
+
+@mixin md\:_background-size-($v) {
+  @include _background-size-($v, $md);
+}
+
+@mixin md\:_background-position-($v) {
+  @include _background-position-($v, $md);
+}
+
+@mixin md\:_background-image-($v) {
+  @include _background-image-($v, $md);
+}
+
+@mixin md\:_border-color-($v) {
+  @include _border-color-($v, $md);
+}
+
+@mixin md\:_border-width-($v) {
+  @include _border-width-($v, $md);
+}
+
+@mixin md\:_border-left-color-($v) {
+  @include _border-left-color-($v, $md);
+}
+
+@mixin md\:_border-left-width-($v) {
+  @include _border-left-width-($v, $md);
+}
+
+@mixin md\:_border-right-color-($v) {
+  @include _border-right-color-($v, $md);
+}
+
+@mixin md\:_border-right-width-($v) {
+  @include _border-right-width-($v, $md);
+}
+
+@mixin md\:_border-top-color-($v) {
+  @include _border-top-color-($v, $md);
+}
+
+@mixin md\:_border-top-width-($v) {
+  @include _border-top-width-($v, $md);
+}
+
+@mixin md\:_border-bottom-color-($v) {
+  @include _border-bottom-color-($v, $md);
+}
+
+@mixin md\:_border-bottom-width-($v) {
+  @include _border-bottom-width-($v, $md);
+}
+
+@mixin md\:_border-inline-start-color-($v) {
+  @include _border-inline-start-color-($v, $md);
+}
+
+@mixin md\:_border-inline-start-width-($v) {
+  @include _border-inline-start-width-($v, $md);
+}
+
+@mixin md\:_border-inline-end-color-($v) {
+  @include _border-inline-end-color-($v, $md);
+}
+
+@mixin md\:_border-inline-end-width-($v) {
+  @include _border-inline-end-width-($v, $md);
+}
+
+@mixin md\:_border-radius-($v) {
+  @include _border-radius-($v, $md);
+}
+
+@mixin md\:_border-start-start-radius-($v) {
+  @include _border-start-start-radius-($v, $md);
+}
+
+@mixin md\:_border-end-start-radius-($v) {
+  @include _border-end-start-radius-($v, $md);
+}
+
+@mixin md\:_border-start-end-radius-($v) {
+  @include _border-start-end-radius-($v, $md);
+}
+
+@mixin md\:_border-end-end-radius-($v) {
+  @include _border-end-end-radius-($v, $md);
+}
+
+@mixin md\:_border-top-left-radius-($v) {
+  @include _border-top-left-radius-($v, $md);
+}
+
+@mixin md\:_border-top-right-radius-($v) {
+  @include _border-top-right-radius-($v, $md);
+}
+
+@mixin md\:_border-bottom-right-radius-($v) {
+  @include _border-bottom-right-radius-($v, $md);
+}
+
+@mixin md\:_border-bottom-left-radius-($v) {
+  @include _border-bottom-left-radius-($v, $md);
+}
+
+@mixin md\:_outline-color-($v) {
+  @include _outline-color-($v, $md);
+}
+
+@mixin md\:_outline-width-($v) {
+  @include _outline-width-($v, $md);
+}
+
+@mixin md\:_outline-offset-($v) {
+  @include _outline-offset-($v, $md);
+}
+
+@mixin md\:_box-shadow-($v) {
+  @include _box-shadow-($v, $md);
+}
+
+@mixin md\:_opacity-($v) {
+  @include _opacity-($v, $md);
+}
+
+@mixin md\:_backdrop-filter-($v) {
+  @include _backdrop-filter-($v, $md);
+}
+
+@mixin md\:_filter-($v) {
+  @include _filter-($v, $md);
+}
+
+@mixin md\:_box-decoration-break-($v) {
+  @include _box-decoration-break-($v, $md);
+}
+
+@mixin md\:_box-sizing-($v) {
+  @include _box-sizing-($v, $md);
+}
+
+@mixin md\:_break-after-($v) {
+  @include _break-after-($v, $md);
+}
+
+@mixin md\:_break-before-($v) {
+  @include _break-before-($v, $md);
+}
+
+@mixin md\:_break-inside-($v) {
+  @include _break-inside-($v, $md);
+}
+
+@mixin md\:_clear-($v) {
+  @include _clear-($v, $md);
+}
+
+@mixin md\:_float-($v) {
+  @include _float-($v, $md);
+}
+
+@mixin md\:_isolation-($v) {
+  @include _isolation-($v, $md);
+}
+
+@mixin md\:_object-fit-($v) {
+  @include _object-fit-($v, $md);
+}
+
+@mixin md\:_overscroll-behavior-($v) {
+  @include _overscroll-behavior-($v, $md);
+}
+
+@mixin md\:_overscroll-behavior-y-($v) {
+  @include _overscroll-behavior-y-($v, $md);
+}
+
+@mixin md\:_overscroll-behavior-x-($v) {
+  @include _overscroll-behavior-x-($v, $md);
+}
+
+@mixin md\:_position-($v) {
+  @include _position-($v, $md);
+}
+
+@mixin md\:_visibility-($v) {
+  @include _visibility-($v, $md);
+}
+
+@mixin md\:_align-content-($v) {
+  @include _align-content-($v, $md);
+}
+
+@mixin md\:_align-items-($v) {
+  @include _align-items-($v, $md);
+}
+
+@mixin md\:_align-self-($v) {
+  @include _align-self-($v, $md);
+}
+
+@mixin md\:_flex-direction-($v) {
+  @include _flex-direction-($v, $md);
+}
+
+@mixin md\:_flex-wrap-($v) {
+  @include _flex-wrap-($v, $md);
+}
+
+@mixin md\:_grid-auto-flow-($v) {
+  @include _grid-auto-flow-($v, $md);
+}
+
+@mixin md\:_justify-content-($v) {
+  @include _justify-content-($v, $md);
+}
+
+@mixin md\:_justify-items-($v) {
+  @include _justify-items-($v, $md);
+}
+
+@mixin md\:_justify-self-($v) {
+  @include _justify-self-($v, $md);
+}
+
+@mixin md\:_place-content-($v) {
+  @include _place-content-($v, $md);
+}
+
+@mixin md\:_place-items-($v) {
+  @include _place-items-($v, $md);
+}
+
+@mixin md\:_place-self-($v) {
+  @include _place-self-($v, $md);
+}
+
+@mixin md\:_webkit-font-smoothing-($v) {
+  @include _webkit-font-smoothing-($v, $md);
+}
+
+@mixin md\:_moz-osx-font-smoothing-($v) {
+  @include _moz-osx-font-smoothing-($v, $md);
+}
+
+@mixin md\:_font-style-($v) {
+  @include _font-style-($v, $md);
+}
+
+@mixin md\:_font-variant-numeric-($v) {
+  @include _font-variant-numeric-($v, $md);
+}
+
+@mixin md\:_hyphens-($v) {
+  @include _hyphens-($v, $md);
+}
+
+@mixin md\:_list-style-position-($v) {
+  @include _list-style-position-($v, $md);
+}
+
+@mixin md\:_text-align-($v) {
+  @include _text-align-($v, $md);
+}
+
+@mixin md\:_text-decoration-line-($v) {
+  @include _text-decoration-line-($v, $md);
+}
+
+@mixin md\:_text-decoration-style-($v) {
+  @include _text-decoration-style-($v, $md);
+}
+
+@mixin md\:_text-overflow-($v) {
+  @include _text-overflow-($v, $md);
+}
+
+@mixin md\:_white-space-($v) {
+  @include _white-space-($v, $md);
+}
+
+@mixin md\:_text-transform-($v) {
+  @include _text-transform-($v, $md);
+}
+
+@mixin md\:_text-wrap-($v) {
+  @include _text-wrap-($v, $md);
+}
+
+@mixin md\:_overflow-wrap-($v) {
+  @include _overflow-wrap-($v, $md);
+}
+
+@mixin md\:_word-break-($v) {
+  @include _word-break-($v, $md);
+}
+
+@mixin md\:_background-attachment-($v) {
+  @include _background-attachment-($v, $md);
+}
+
+@mixin md\:_background-clip-($v) {
+  @include _background-clip-($v, $md);
+}
+
+@mixin md\:_background-origin-($v) {
+  @include _background-origin-($v, $md);
+}
+
+@mixin md\:_background-repeat-($v) {
+  @include _background-repeat-($v, $md);
+}
+
+@mixin md\:_border-style-($v) {
+  @include _border-style-($v, $md);
+}
+
+@mixin md\:_outline-($v) {
+  @include _outline-($v, $md);
+}
+
+@mixin md\:_outline-style-($v) {
+  @include _outline-style-($v, $md);
+}
+
+@mixin md\:_background-blend-mode-($v) {
+  @include _background-blend-mode-($v, $md);
+}
+
+@mixin md\:_mix-blend-mode-($v) {
+  @include _mix-blend-mode-($v, $md);
+}
+
+@mixin md\:_border-collapse-($v) {
+  @include _border-collapse-($v, $md);
+}
+
+@mixin md\:_caption-side-($v) {
+  @include _caption-side-($v, $md);
+}
+
+@mixin md\:_table-layout-($v) {
+  @include _table-layout-($v, $md);
+}
+
+@mixin md\:_appearance-($v) {
+  @include _appearance-($v, $md);
+}
+
+@mixin md\:_pointer-events-($v) {
+  @include _pointer-events-($v, $md);
+}
+
+@mixin md\:_resize-($v) {
+  @include _resize-($v, $md);
+}
+
+@mixin md\:_scroll-behavior-($v) {
+  @include _scroll-behavior-($v, $md);
+}
+
+@mixin md\:_scroll-snap-align-($v) {
+  @include _scroll-snap-align-($v, $md);
+}
+
+@mixin md\:_scroll-snap-stop-($v) {
+  @include _scroll-snap-stop-($v, $md);
+}
+
+@mixin md\:_scroll-snap-type-($v) {
+  @include _scroll-snap-type-($v, $md);
+}
+
+@mixin md\:_touch-action-($v) {
+  @include _touch-action-($v, $md);
+}
+
+@mixin md\:_user-select-($v) {
+  @include _user-select-($v, $md);
+}
+
+@mixin md\:_forced-color-adjust-($v) {
+  @include _forced-color-adjust-($v, $md);
+}
+
+@mixin lg\:_aspect-ratio-($v) {
+  @include _aspect-ratio-($v, $lg);
+}
+
+@mixin lg\:_columns-($v) {
+  @include _columns-($v, $lg);
+}
+
+@mixin lg\:_object-position-($v) {
+  @include _object-position-($v, $lg);
+}
+
+@mixin lg\:_inset-($v) {
+  @include _inset-($v, $lg);
+}
+
+@mixin lg\:_inset-inline-start-($v) {
+  @include _inset-inline-start-($v, $lg);
+}
+
+@mixin lg\:_inset-inline-end-($v) {
+  @include _inset-inline-end-($v, $lg);
+}
+
+@mixin lg\:_top-($v) {
+  @include _top-($v, $lg);
+}
+
+@mixin lg\:_right-($v) {
+  @include _right-($v, $lg);
+}
+
+@mixin lg\:_bottom-($v) {
+  @include _bottom-($v, $lg);
+}
+
+@mixin lg\:_left-($v) {
+  @include _left-($v, $lg);
+}
+
+@mixin lg\:_z-index-($v) {
+  @include _z-index-($v, $lg);
+}
+
+@mixin lg\:_border-spacing-($v) {
+  @include _border-spacing-($v, $lg);
+}
+
+@mixin lg\:_animation-($v) {
+  @include _animation-($v, $lg);
+}
+
+@mixin lg\:_transition-delay-($v) {
+  @include _transition-delay-($v, $lg);
+}
+
+@mixin lg\:_transition-property-($v) {
+  @include _transition-property-($v, $lg);
+}
+
+@mixin lg\:_transition-timing-function-($v) {
+  @include _transition-timing-function-($v, $lg);
+}
+
+@mixin lg\:_transition-duration-($v) {
+  @include _transition-duration-($v, $lg);
+}
+
+@mixin lg\:_transform-($v) {
+  @include _transform-($v, $lg);
+}
+
+@mixin lg\:_transform-origin-($v) {
+  @include _transform-origin-($v, $lg);
+}
+
+@mixin lg\:_accent-color-($v) {
+  @include _accent-color-($v, $lg);
+}
+
+@mixin lg\:_caret-color-($v) {
+  @include _caret-color-($v, $lg);
+}
+
+@mixin lg\:_cursor-($v, $v2: null) {
+  @include _cursor-($v, $v2, $lg);
+}
+
+@mixin lg\:_scroll-margin-($v) {
+  @include _scroll-margin-($v, $lg);
+}
+
+@mixin lg\:_scroll-margin-inline-start-($v) {
+  @include _scroll-margin-inline-start-($v, $lg);
+}
+
+@mixin lg\:_scroll-margin-inline-end-($v) {
+  @include _scroll-margin-inline-end-($v, $lg);
+}
+
+@mixin lg\:_scroll-margin-top-($v) {
+  @include _scroll-margin-top-($v, $lg);
+}
+
+@mixin lg\:_scroll-margin-right-($v) {
+  @include _scroll-margin-right-($v, $lg);
+}
+
+@mixin lg\:_scroll-margin-bottom-($v) {
+  @include _scroll-margin-bottom-($v, $lg);
+}
+
+@mixin lg\:_scroll-margin-left-($v) {
+  @include _scroll-margin-left-($v, $lg);
+}
+
+@mixin lg\:_scroll-padding-($v) {
+  @include _scroll-padding-($v, $lg);
+}
+
+@mixin lg\:_scroll-padding-inline-start-($v) {
+  @include _scroll-padding-inline-start-($v, $lg);
+}
+
+@mixin lg\:_scroll-padding-inline-end-($v) {
+  @include _scroll-padding-inline-end-($v, $lg);
+}
+
+@mixin lg\:_scroll-padding-top-($v) {
+  @include _scroll-padding-top-($v, $lg);
+}
+
+@mixin lg\:_scroll-padding-right-($v) {
+  @include _scroll-padding-right-($v, $lg);
+}
+
+@mixin lg\:_scroll-padding-bottom-($v) {
+  @include _scroll-padding-bottom-($v, $lg);
+}
+
+@mixin lg\:_scroll-padding-left-($v) {
+  @include _scroll-padding-left-($v, $lg);
+}
+
+@mixin lg\:_will-change-($v, $v2: null) {
+  @include _will-change-($v, $v2, $lg);
+}
+
+@mixin lg\:_fill-($v) {
+  @include _fill-($v, $lg);
+}
+
+@mixin lg\:_stroke-($v) {
+  @include _stroke-($v, $lg);
+}
+
+@mixin lg\:_stroke-width-($v) {
+  @include _stroke-width-($v, $lg);
+}
+
+@mixin lg\:_flex-($v) {
+  @include _flex-($v, $lg);
+}
+
+@mixin lg\:_flex-basis-($v) {
+  @include _flex-basis-($v, $lg);
+}
+
+@mixin lg\:_flex-grow-($v) {
+  @include _flex-grow-($v, $lg);
+}
+
+@mixin lg\:_flex-shrink-($v) {
+  @include _flex-shrink-($v, $lg);
+}
+
+@mixin lg\:_gap-($v) {
+  @include _gap-($v, $lg);
+}
+
+@mixin lg\:_column-gap-($v) {
+  @include _column-gap-($v, $lg);
+}
+
+@mixin lg\:_row-gap-($v) {
+  @include _row-gap-($v, $lg);
+}
+
+@mixin lg\:_grid-auto-columns-($v) {
+  @include _grid-auto-columns-($v, $lg);
+}
+
+@mixin lg\:_grid-auto-rows-($v) {
+  @include _grid-auto-rows-($v, $lg);
+}
+
+@mixin lg\:_grid-column-($v) {
+  @include _grid-column-($v, $lg);
+}
+
+@mixin lg\:_grid-column-start-($v) {
+  @include _grid-column-start-($v, $lg);
+}
+
+@mixin lg\:_grid-column-end-($v) {
+  @include _grid-column-end-($v, $lg);
+}
+
+@mixin lg\:_grid-row-($v) {
+  @include _grid-row-($v, $lg);
+}
+
+@mixin lg\:_grid-row-start-($v) {
+  @include _grid-row-start-($v, $lg);
+}
+
+@mixin lg\:_grid-row-end-($v) {
+  @include _grid-row-end-($v, $lg);
+}
+
+@mixin lg\:_grid-template-columns-($v) {
+  @include _grid-template-columns-($v, $lg);
+}
+
+@mixin lg\:_grid-template-rows-($v) {
+  @include _grid-template-rows-($v, $lg);
+}
+
+@mixin lg\:_order-($v) {
+  @include _order-($v, $lg);
+}
+
+@mixin lg\:_margin-($v) {
+  @include _margin-($v, $lg);
+}
+
+@mixin lg\:_margin-inline-start-($v) {
+  @include _margin-inline-start-($v, $lg);
+}
+
+@mixin lg\:_margin-inline-end-($v) {
+  @include _margin-inline-end-($v, $lg);
+}
+
+@mixin lg\:_margin-top-($v) {
+  @include _margin-top-($v, $lg);
+}
+
+@mixin lg\:_margin-right-($v) {
+  @include _margin-right-($v, $lg);
+}
+
+@mixin lg\:_margin-bottom-($v) {
+  @include _margin-bottom-($v, $lg);
+}
+
+@mixin lg\:_margin-left-($v) {
+  @include _margin-left-($v, $lg);
+}
+
+@mixin lg\:_padding-($v) {
+  @include _padding-($v, $lg);
+}
+
+@mixin lg\:_padding-inline-start-($v) {
+  @include _padding-inline-start-($v, $lg);
+}
+
+@mixin lg\:_padding-inline-end-($v) {
+  @include _padding-inline-end-($v, $lg);
+}
+
+@mixin lg\:_padding-top-($v) {
+  @include _padding-top-($v, $lg);
+}
+
+@mixin lg\:_padding-right-($v) {
+  @include _padding-right-($v, $lg);
+}
+
+@mixin lg\:_padding-bottom-($v) {
+  @include _padding-bottom-($v, $lg);
+}
+
+@mixin lg\:_padding-left-($v) {
+  @include _padding-left-($v, $lg);
+}
+
+@mixin lg\:_height-($v) {
+  @include _height-($v, $lg);
+}
+
+@mixin lg\:_max-height-($v) {
+  @include _max-height-($v, $lg);
+}
+
+@mixin lg\:_max-width-($v) {
+  @include _max-width-($v, $lg);
+}
+
+@mixin lg\:_min-height-($v) {
+  @include _min-height-($v, $lg);
+}
+
+@mixin lg\:_min-width-($v) {
+  @include _min-width-($v, $lg);
+}
+
+@mixin lg\:_width-($v) {
+  @include _width-($v, $lg);
+}
+
+@mixin lg\:_font-family-($v) {
+  @include _font-family-($v, $lg);
+}
+
+@mixin lg\:_font-weight-($v) {
+  @include _font-weight-($v, $lg);
+}
+
+@mixin lg\:_letter-spacing-($v) {
+  @include _letter-spacing-($v, $lg);
+}
+
+@mixin lg\:_overflow-($v) {
+  @include _overflow-($v, $lg);
+}
+
+@mixin lg\:_display-($v) {
+  @include _display-($v, $lg);
+}
+
+@mixin lg\:_webkit-box-orient-($v) {
+  @include _webkit-box-orient-($v, $lg);
+}
+
+@mixin lg\:_webkit-line-clamp-($v) {
+  @include _webkit-line-clamp-($v, $lg);
+}
+
+@mixin lg\:_line-height-($v) {
+  @include _line-height-($v, $lg);
+}
+
+@mixin lg\:_list-style-image-($v) {
+  @include _list-style-image-($v, $lg);
+}
+
+@mixin lg\:_list-style-type-($v) {
+  @include _list-style-type-($v, $lg);
+}
+
+@mixin lg\:_font-size-($v) {
+  @include _font-size-($v, $lg);
+}
+
+@mixin lg\:_text-decoration-color-($v) {
+  @include _text-decoration-color-($v, $lg);
+}
+
+@mixin lg\:_text-decoration-thickness-($v) {
+  @include _text-decoration-thickness-($v, $lg);
+}
+
+@mixin lg\:_text-indent-($v) {
+  @include _text-indent-($v, $lg);
+}
+
+@mixin lg\:_text-underline-offset-($v) {
+  @include _text-underline-offset-($v, $lg);
+}
+
+@mixin lg\:_vertical-align-($v) {
+  @include _vertical-align-($v, $lg);
+}
+
+@mixin lg\:_background-color-($v) {
+  @include _background-color-($v, $lg);
+}
+
+@mixin lg\:_background-size-($v) {
+  @include _background-size-($v, $lg);
+}
+
+@mixin lg\:_background-position-($v) {
+  @include _background-position-($v, $lg);
+}
+
+@mixin lg\:_background-image-($v) {
+  @include _background-image-($v, $lg);
+}
+
+@mixin lg\:_border-color-($v) {
+  @include _border-color-($v, $lg);
+}
+
+@mixin lg\:_border-width-($v) {
+  @include _border-width-($v, $lg);
+}
+
+@mixin lg\:_border-left-color-($v) {
+  @include _border-left-color-($v, $lg);
+}
+
+@mixin lg\:_border-left-width-($v) {
+  @include _border-left-width-($v, $lg);
+}
+
+@mixin lg\:_border-right-color-($v) {
+  @include _border-right-color-($v, $lg);
+}
+
+@mixin lg\:_border-right-width-($v) {
+  @include _border-right-width-($v, $lg);
+}
+
+@mixin lg\:_border-top-color-($v) {
+  @include _border-top-color-($v, $lg);
+}
+
+@mixin lg\:_border-top-width-($v) {
+  @include _border-top-width-($v, $lg);
+}
+
+@mixin lg\:_border-bottom-color-($v) {
+  @include _border-bottom-color-($v, $lg);
+}
+
+@mixin lg\:_border-bottom-width-($v) {
+  @include _border-bottom-width-($v, $lg);
+}
+
+@mixin lg\:_border-inline-start-color-($v) {
+  @include _border-inline-start-color-($v, $lg);
+}
+
+@mixin lg\:_border-inline-start-width-($v) {
+  @include _border-inline-start-width-($v, $lg);
+}
+
+@mixin lg\:_border-inline-end-color-($v) {
+  @include _border-inline-end-color-($v, $lg);
+}
+
+@mixin lg\:_border-inline-end-width-($v) {
+  @include _border-inline-end-width-($v, $lg);
+}
+
+@mixin lg\:_border-radius-($v) {
+  @include _border-radius-($v, $lg);
+}
+
+@mixin lg\:_border-start-start-radius-($v) {
+  @include _border-start-start-radius-($v, $lg);
+}
+
+@mixin lg\:_border-end-start-radius-($v) {
+  @include _border-end-start-radius-($v, $lg);
+}
+
+@mixin lg\:_border-start-end-radius-($v) {
+  @include _border-start-end-radius-($v, $lg);
+}
+
+@mixin lg\:_border-end-end-radius-($v) {
+  @include _border-end-end-radius-($v, $lg);
+}
+
+@mixin lg\:_border-top-left-radius-($v) {
+  @include _border-top-left-radius-($v, $lg);
+}
+
+@mixin lg\:_border-top-right-radius-($v) {
+  @include _border-top-right-radius-($v, $lg);
+}
+
+@mixin lg\:_border-bottom-right-radius-($v) {
+  @include _border-bottom-right-radius-($v, $lg);
+}
+
+@mixin lg\:_border-bottom-left-radius-($v) {
+  @include _border-bottom-left-radius-($v, $lg);
+}
+
+@mixin lg\:_outline-color-($v) {
+  @include _outline-color-($v, $lg);
+}
+
+@mixin lg\:_outline-width-($v) {
+  @include _outline-width-($v, $lg);
+}
+
+@mixin lg\:_outline-offset-($v) {
+  @include _outline-offset-($v, $lg);
+}
+
+@mixin lg\:_box-shadow-($v) {
+  @include _box-shadow-($v, $lg);
+}
+
+@mixin lg\:_opacity-($v) {
+  @include _opacity-($v, $lg);
+}
+
+@mixin lg\:_backdrop-filter-($v) {
+  @include _backdrop-filter-($v, $lg);
+}
+
+@mixin lg\:_filter-($v) {
+  @include _filter-($v, $lg);
+}
+
+@mixin lg\:_box-decoration-break-($v) {
+  @include _box-decoration-break-($v, $lg);
+}
+
+@mixin lg\:_box-sizing-($v) {
+  @include _box-sizing-($v, $lg);
+}
+
+@mixin lg\:_break-after-($v) {
+  @include _break-after-($v, $lg);
+}
+
+@mixin lg\:_break-before-($v) {
+  @include _break-before-($v, $lg);
+}
+
+@mixin lg\:_break-inside-($v) {
+  @include _break-inside-($v, $lg);
+}
+
+@mixin lg\:_clear-($v) {
+  @include _clear-($v, $lg);
+}
+
+@mixin lg\:_float-($v) {
+  @include _float-($v, $lg);
+}
+
+@mixin lg\:_isolation-($v) {
+  @include _isolation-($v, $lg);
+}
+
+@mixin lg\:_object-fit-($v) {
+  @include _object-fit-($v, $lg);
+}
+
+@mixin lg\:_overscroll-behavior-($v) {
+  @include _overscroll-behavior-($v, $lg);
+}
+
+@mixin lg\:_overscroll-behavior-y-($v) {
+  @include _overscroll-behavior-y-($v, $lg);
+}
+
+@mixin lg\:_overscroll-behavior-x-($v) {
+  @include _overscroll-behavior-x-($v, $lg);
+}
+
+@mixin lg\:_position-($v) {
+  @include _position-($v, $lg);
+}
+
+@mixin lg\:_visibility-($v) {
+  @include _visibility-($v, $lg);
+}
+
+@mixin lg\:_align-content-($v) {
+  @include _align-content-($v, $lg);
+}
+
+@mixin lg\:_align-items-($v) {
+  @include _align-items-($v, $lg);
+}
+
+@mixin lg\:_align-self-($v) {
+  @include _align-self-($v, $lg);
+}
+
+@mixin lg\:_flex-direction-($v) {
+  @include _flex-direction-($v, $lg);
+}
+
+@mixin lg\:_flex-wrap-($v) {
+  @include _flex-wrap-($v, $lg);
+}
+
+@mixin lg\:_grid-auto-flow-($v) {
+  @include _grid-auto-flow-($v, $lg);
+}
+
+@mixin lg\:_justify-content-($v) {
+  @include _justify-content-($v, $lg);
+}
+
+@mixin lg\:_justify-items-($v) {
+  @include _justify-items-($v, $lg);
+}
+
+@mixin lg\:_justify-self-($v) {
+  @include _justify-self-($v, $lg);
+}
+
+@mixin lg\:_place-content-($v) {
+  @include _place-content-($v, $lg);
+}
+
+@mixin lg\:_place-items-($v) {
+  @include _place-items-($v, $lg);
+}
+
+@mixin lg\:_place-self-($v) {
+  @include _place-self-($v, $lg);
+}
+
+@mixin lg\:_webkit-font-smoothing-($v) {
+  @include _webkit-font-smoothing-($v, $lg);
+}
+
+@mixin lg\:_moz-osx-font-smoothing-($v) {
+  @include _moz-osx-font-smoothing-($v, $lg);
+}
+
+@mixin lg\:_font-style-($v) {
+  @include _font-style-($v, $lg);
+}
+
+@mixin lg\:_font-variant-numeric-($v) {
+  @include _font-variant-numeric-($v, $lg);
+}
+
+@mixin lg\:_hyphens-($v) {
+  @include _hyphens-($v, $lg);
+}
+
+@mixin lg\:_list-style-position-($v) {
+  @include _list-style-position-($v, $lg);
+}
+
+@mixin lg\:_text-align-($v) {
+  @include _text-align-($v, $lg);
+}
+
+@mixin lg\:_text-decoration-line-($v) {
+  @include _text-decoration-line-($v, $lg);
+}
+
+@mixin lg\:_text-decoration-style-($v) {
+  @include _text-decoration-style-($v, $lg);
+}
+
+@mixin lg\:_text-overflow-($v) {
+  @include _text-overflow-($v, $lg);
+}
+
+@mixin lg\:_white-space-($v) {
+  @include _white-space-($v, $lg);
+}
+
+@mixin lg\:_text-transform-($v) {
+  @include _text-transform-($v, $lg);
+}
+
+@mixin lg\:_text-wrap-($v) {
+  @include _text-wrap-($v, $lg);
+}
+
+@mixin lg\:_overflow-wrap-($v) {
+  @include _overflow-wrap-($v, $lg);
+}
+
+@mixin lg\:_word-break-($v) {
+  @include _word-break-($v, $lg);
+}
+
+@mixin lg\:_background-attachment-($v) {
+  @include _background-attachment-($v, $lg);
+}
+
+@mixin lg\:_background-clip-($v) {
+  @include _background-clip-($v, $lg);
+}
+
+@mixin lg\:_background-origin-($v) {
+  @include _background-origin-($v, $lg);
+}
+
+@mixin lg\:_background-repeat-($v) {
+  @include _background-repeat-($v, $lg);
+}
+
+@mixin lg\:_border-style-($v) {
+  @include _border-style-($v, $lg);
+}
+
+@mixin lg\:_outline-($v) {
+  @include _outline-($v, $lg);
+}
+
+@mixin lg\:_outline-style-($v) {
+  @include _outline-style-($v, $lg);
+}
+
+@mixin lg\:_background-blend-mode-($v) {
+  @include _background-blend-mode-($v, $lg);
+}
+
+@mixin lg\:_mix-blend-mode-($v) {
+  @include _mix-blend-mode-($v, $lg);
+}
+
+@mixin lg\:_border-collapse-($v) {
+  @include _border-collapse-($v, $lg);
+}
+
+@mixin lg\:_caption-side-($v) {
+  @include _caption-side-($v, $lg);
+}
+
+@mixin lg\:_table-layout-($v) {
+  @include _table-layout-($v, $lg);
+}
+
+@mixin lg\:_appearance-($v) {
+  @include _appearance-($v, $lg);
+}
+
+@mixin lg\:_pointer-events-($v) {
+  @include _pointer-events-($v, $lg);
+}
+
+@mixin lg\:_resize-($v) {
+  @include _resize-($v, $lg);
+}
+
+@mixin lg\:_scroll-behavior-($v) {
+  @include _scroll-behavior-($v, $lg);
+}
+
+@mixin lg\:_scroll-snap-align-($v) {
+  @include _scroll-snap-align-($v, $lg);
+}
+
+@mixin lg\:_scroll-snap-stop-($v) {
+  @include _scroll-snap-stop-($v, $lg);
+}
+
+@mixin lg\:_scroll-snap-type-($v) {
+  @include _scroll-snap-type-($v, $lg);
+}
+
+@mixin lg\:_touch-action-($v) {
+  @include _touch-action-($v, $lg);
+}
+
+@mixin lg\:_user-select-($v) {
+  @include _user-select-($v, $lg);
+}
+
+@mixin lg\:_forced-color-adjust-($v) {
+  @include _forced-color-adjust-($v, $lg);
+}
+
+@mixin xl\:_aspect-ratio-($v) {
+  @include _aspect-ratio-($v, $xl);
+}
+
+@mixin xl\:_columns-($v) {
+  @include _columns-($v, $xl);
+}
+
+@mixin xl\:_object-position-($v) {
+  @include _object-position-($v, $xl);
+}
+
+@mixin xl\:_inset-($v) {
+  @include _inset-($v, $xl);
+}
+
+@mixin xl\:_inset-inline-start-($v) {
+  @include _inset-inline-start-($v, $xl);
+}
+
+@mixin xl\:_inset-inline-end-($v) {
+  @include _inset-inline-end-($v, $xl);
+}
+
+@mixin xl\:_top-($v) {
+  @include _top-($v, $xl);
+}
+
+@mixin xl\:_right-($v) {
+  @include _right-($v, $xl);
+}
+
+@mixin xl\:_bottom-($v) {
+  @include _bottom-($v, $xl);
+}
+
+@mixin xl\:_left-($v) {
+  @include _left-($v, $xl);
+}
+
+@mixin xl\:_z-index-($v) {
+  @include _z-index-($v, $xl);
+}
+
+@mixin xl\:_border-spacing-($v) {
+  @include _border-spacing-($v, $xl);
+}
+
+@mixin xl\:_animation-($v) {
+  @include _animation-($v, $xl);
+}
+
+@mixin xl\:_transition-delay-($v) {
+  @include _transition-delay-($v, $xl);
+}
+
+@mixin xl\:_transition-property-($v) {
+  @include _transition-property-($v, $xl);
+}
+
+@mixin xl\:_transition-timing-function-($v) {
+  @include _transition-timing-function-($v, $xl);
+}
+
+@mixin xl\:_transition-duration-($v) {
+  @include _transition-duration-($v, $xl);
+}
+
+@mixin xl\:_transform-($v) {
+  @include _transform-($v, $xl);
+}
+
+@mixin xl\:_transform-origin-($v) {
+  @include _transform-origin-($v, $xl);
+}
+
+@mixin xl\:_accent-color-($v) {
+  @include _accent-color-($v, $xl);
+}
+
+@mixin xl\:_caret-color-($v) {
+  @include _caret-color-($v, $xl);
+}
+
+@mixin xl\:_cursor-($v, $v2: null) {
+  @include _cursor-($v, $v2, $xl);
+}
+
+@mixin xl\:_scroll-margin-($v) {
+  @include _scroll-margin-($v, $xl);
+}
+
+@mixin xl\:_scroll-margin-inline-start-($v) {
+  @include _scroll-margin-inline-start-($v, $xl);
+}
+
+@mixin xl\:_scroll-margin-inline-end-($v) {
+  @include _scroll-margin-inline-end-($v, $xl);
+}
+
+@mixin xl\:_scroll-margin-top-($v) {
+  @include _scroll-margin-top-($v, $xl);
+}
+
+@mixin xl\:_scroll-margin-right-($v) {
+  @include _scroll-margin-right-($v, $xl);
+}
+
+@mixin xl\:_scroll-margin-bottom-($v) {
+  @include _scroll-margin-bottom-($v, $xl);
+}
+
+@mixin xl\:_scroll-margin-left-($v) {
+  @include _scroll-margin-left-($v, $xl);
+}
+
+@mixin xl\:_scroll-padding-($v) {
+  @include _scroll-padding-($v, $xl);
+}
+
+@mixin xl\:_scroll-padding-inline-start-($v) {
+  @include _scroll-padding-inline-start-($v, $xl);
+}
+
+@mixin xl\:_scroll-padding-inline-end-($v) {
+  @include _scroll-padding-inline-end-($v, $xl);
+}
+
+@mixin xl\:_scroll-padding-top-($v) {
+  @include _scroll-padding-top-($v, $xl);
+}
+
+@mixin xl\:_scroll-padding-right-($v) {
+  @include _scroll-padding-right-($v, $xl);
+}
+
+@mixin xl\:_scroll-padding-bottom-($v) {
+  @include _scroll-padding-bottom-($v, $xl);
+}
+
+@mixin xl\:_scroll-padding-left-($v) {
+  @include _scroll-padding-left-($v, $xl);
+}
+
+@mixin xl\:_will-change-($v, $v2: null) {
+  @include _will-change-($v, $v2, $xl);
+}
+
+@mixin xl\:_fill-($v) {
+  @include _fill-($v, $xl);
+}
+
+@mixin xl\:_stroke-($v) {
+  @include _stroke-($v, $xl);
+}
+
+@mixin xl\:_stroke-width-($v) {
+  @include _stroke-width-($v, $xl);
+}
+
+@mixin xl\:_flex-($v) {
+  @include _flex-($v, $xl);
+}
+
+@mixin xl\:_flex-basis-($v) {
+  @include _flex-basis-($v, $xl);
+}
+
+@mixin xl\:_flex-grow-($v) {
+  @include _flex-grow-($v, $xl);
+}
+
+@mixin xl\:_flex-shrink-($v) {
+  @include _flex-shrink-($v, $xl);
+}
+
+@mixin xl\:_gap-($v) {
+  @include _gap-($v, $xl);
+}
+
+@mixin xl\:_column-gap-($v) {
+  @include _column-gap-($v, $xl);
+}
+
+@mixin xl\:_row-gap-($v) {
+  @include _row-gap-($v, $xl);
+}
+
+@mixin xl\:_grid-auto-columns-($v) {
+  @include _grid-auto-columns-($v, $xl);
+}
+
+@mixin xl\:_grid-auto-rows-($v) {
+  @include _grid-auto-rows-($v, $xl);
+}
+
+@mixin xl\:_grid-column-($v) {
+  @include _grid-column-($v, $xl);
+}
+
+@mixin xl\:_grid-column-start-($v) {
+  @include _grid-column-start-($v, $xl);
+}
+
+@mixin xl\:_grid-column-end-($v) {
+  @include _grid-column-end-($v, $xl);
+}
+
+@mixin xl\:_grid-row-($v) {
+  @include _grid-row-($v, $xl);
+}
+
+@mixin xl\:_grid-row-start-($v) {
+  @include _grid-row-start-($v, $xl);
+}
+
+@mixin xl\:_grid-row-end-($v) {
+  @include _grid-row-end-($v, $xl);
+}
+
+@mixin xl\:_grid-template-columns-($v) {
+  @include _grid-template-columns-($v, $xl);
+}
+
+@mixin xl\:_grid-template-rows-($v) {
+  @include _grid-template-rows-($v, $xl);
+}
+
+@mixin xl\:_order-($v) {
+  @include _order-($v, $xl);
+}
+
+@mixin xl\:_margin-($v) {
+  @include _margin-($v, $xl);
+}
+
+@mixin xl\:_margin-inline-start-($v) {
+  @include _margin-inline-start-($v, $xl);
+}
+
+@mixin xl\:_margin-inline-end-($v) {
+  @include _margin-inline-end-($v, $xl);
+}
+
+@mixin xl\:_margin-top-($v) {
+  @include _margin-top-($v, $xl);
+}
+
+@mixin xl\:_margin-right-($v) {
+  @include _margin-right-($v, $xl);
+}
+
+@mixin xl\:_margin-bottom-($v) {
+  @include _margin-bottom-($v, $xl);
+}
+
+@mixin xl\:_margin-left-($v) {
+  @include _margin-left-($v, $xl);
+}
+
+@mixin xl\:_padding-($v) {
+  @include _padding-($v, $xl);
+}
+
+@mixin xl\:_padding-inline-start-($v) {
+  @include _padding-inline-start-($v, $xl);
+}
+
+@mixin xl\:_padding-inline-end-($v) {
+  @include _padding-inline-end-($v, $xl);
+}
+
+@mixin xl\:_padding-top-($v) {
+  @include _padding-top-($v, $xl);
+}
+
+@mixin xl\:_padding-right-($v) {
+  @include _padding-right-($v, $xl);
+}
+
+@mixin xl\:_padding-bottom-($v) {
+  @include _padding-bottom-($v, $xl);
+}
+
+@mixin xl\:_padding-left-($v) {
+  @include _padding-left-($v, $xl);
+}
+
+@mixin xl\:_height-($v) {
+  @include _height-($v, $xl);
+}
+
+@mixin xl\:_max-height-($v) {
+  @include _max-height-($v, $xl);
+}
+
+@mixin xl\:_max-width-($v) {
+  @include _max-width-($v, $xl);
+}
+
+@mixin xl\:_min-height-($v) {
+  @include _min-height-($v, $xl);
+}
+
+@mixin xl\:_min-width-($v) {
+  @include _min-width-($v, $xl);
+}
+
+@mixin xl\:_width-($v) {
+  @include _width-($v, $xl);
+}
+
+@mixin xl\:_font-family-($v) {
+  @include _font-family-($v, $xl);
+}
+
+@mixin xl\:_font-weight-($v) {
+  @include _font-weight-($v, $xl);
+}
+
+@mixin xl\:_letter-spacing-($v) {
+  @include _letter-spacing-($v, $xl);
+}
+
+@mixin xl\:_overflow-($v) {
+  @include _overflow-($v, $xl);
+}
+
+@mixin xl\:_display-($v) {
+  @include _display-($v, $xl);
+}
+
+@mixin xl\:_webkit-box-orient-($v) {
+  @include _webkit-box-orient-($v, $xl);
+}
+
+@mixin xl\:_webkit-line-clamp-($v) {
+  @include _webkit-line-clamp-($v, $xl);
+}
+
+@mixin xl\:_line-height-($v) {
+  @include _line-height-($v, $xl);
+}
+
+@mixin xl\:_list-style-image-($v) {
+  @include _list-style-image-($v, $xl);
+}
+
+@mixin xl\:_list-style-type-($v) {
+  @include _list-style-type-($v, $xl);
+}
+
+@mixin xl\:_font-size-($v) {
+  @include _font-size-($v, $xl);
+}
+
+@mixin xl\:_text-decoration-color-($v) {
+  @include _text-decoration-color-($v, $xl);
+}
+
+@mixin xl\:_text-decoration-thickness-($v) {
+  @include _text-decoration-thickness-($v, $xl);
+}
+
+@mixin xl\:_text-indent-($v) {
+  @include _text-indent-($v, $xl);
+}
+
+@mixin xl\:_text-underline-offset-($v) {
+  @include _text-underline-offset-($v, $xl);
+}
+
+@mixin xl\:_vertical-align-($v) {
+  @include _vertical-align-($v, $xl);
+}
+
+@mixin xl\:_background-color-($v) {
+  @include _background-color-($v, $xl);
+}
+
+@mixin xl\:_background-size-($v) {
+  @include _background-size-($v, $xl);
+}
+
+@mixin xl\:_background-position-($v) {
+  @include _background-position-($v, $xl);
+}
+
+@mixin xl\:_background-image-($v) {
+  @include _background-image-($v, $xl);
+}
+
+@mixin xl\:_border-color-($v) {
+  @include _border-color-($v, $xl);
+}
+
+@mixin xl\:_border-width-($v) {
+  @include _border-width-($v, $xl);
+}
+
+@mixin xl\:_border-left-color-($v) {
+  @include _border-left-color-($v, $xl);
+}
+
+@mixin xl\:_border-left-width-($v) {
+  @include _border-left-width-($v, $xl);
+}
+
+@mixin xl\:_border-right-color-($v) {
+  @include _border-right-color-($v, $xl);
+}
+
+@mixin xl\:_border-right-width-($v) {
+  @include _border-right-width-($v, $xl);
+}
+
+@mixin xl\:_border-top-color-($v) {
+  @include _border-top-color-($v, $xl);
+}
+
+@mixin xl\:_border-top-width-($v) {
+  @include _border-top-width-($v, $xl);
+}
+
+@mixin xl\:_border-bottom-color-($v) {
+  @include _border-bottom-color-($v, $xl);
+}
+
+@mixin xl\:_border-bottom-width-($v) {
+  @include _border-bottom-width-($v, $xl);
+}
+
+@mixin xl\:_border-inline-start-color-($v) {
+  @include _border-inline-start-color-($v, $xl);
+}
+
+@mixin xl\:_border-inline-start-width-($v) {
+  @include _border-inline-start-width-($v, $xl);
+}
+
+@mixin xl\:_border-inline-end-color-($v) {
+  @include _border-inline-end-color-($v, $xl);
+}
+
+@mixin xl\:_border-inline-end-width-($v) {
+  @include _border-inline-end-width-($v, $xl);
+}
+
+@mixin xl\:_border-radius-($v) {
+  @include _border-radius-($v, $xl);
+}
+
+@mixin xl\:_border-start-start-radius-($v) {
+  @include _border-start-start-radius-($v, $xl);
+}
+
+@mixin xl\:_border-end-start-radius-($v) {
+  @include _border-end-start-radius-($v, $xl);
+}
+
+@mixin xl\:_border-start-end-radius-($v) {
+  @include _border-start-end-radius-($v, $xl);
+}
+
+@mixin xl\:_border-end-end-radius-($v) {
+  @include _border-end-end-radius-($v, $xl);
+}
+
+@mixin xl\:_border-top-left-radius-($v) {
+  @include _border-top-left-radius-($v, $xl);
+}
+
+@mixin xl\:_border-top-right-radius-($v) {
+  @include _border-top-right-radius-($v, $xl);
+}
+
+@mixin xl\:_border-bottom-right-radius-($v) {
+  @include _border-bottom-right-radius-($v, $xl);
+}
+
+@mixin xl\:_border-bottom-left-radius-($v) {
+  @include _border-bottom-left-radius-($v, $xl);
+}
+
+@mixin xl\:_outline-color-($v) {
+  @include _outline-color-($v, $xl);
+}
+
+@mixin xl\:_outline-width-($v) {
+  @include _outline-width-($v, $xl);
+}
+
+@mixin xl\:_outline-offset-($v) {
+  @include _outline-offset-($v, $xl);
+}
+
+@mixin xl\:_box-shadow-($v) {
+  @include _box-shadow-($v, $xl);
+}
+
+@mixin xl\:_opacity-($v) {
+  @include _opacity-($v, $xl);
+}
+
+@mixin xl\:_backdrop-filter-($v) {
+  @include _backdrop-filter-($v, $xl);
+}
+
+@mixin xl\:_filter-($v) {
+  @include _filter-($v, $xl);
+}
+
+@mixin xl\:_box-decoration-break-($v) {
+  @include _box-decoration-break-($v, $xl);
+}
+
+@mixin xl\:_box-sizing-($v) {
+  @include _box-sizing-($v, $xl);
+}
+
+@mixin xl\:_break-after-($v) {
+  @include _break-after-($v, $xl);
+}
+
+@mixin xl\:_break-before-($v) {
+  @include _break-before-($v, $xl);
+}
+
+@mixin xl\:_break-inside-($v) {
+  @include _break-inside-($v, $xl);
+}
+
+@mixin xl\:_clear-($v) {
+  @include _clear-($v, $xl);
+}
+
+@mixin xl\:_float-($v) {
+  @include _float-($v, $xl);
+}
+
+@mixin xl\:_isolation-($v) {
+  @include _isolation-($v, $xl);
+}
+
+@mixin xl\:_object-fit-($v) {
+  @include _object-fit-($v, $xl);
+}
+
+@mixin xl\:_overscroll-behavior-($v) {
+  @include _overscroll-behavior-($v, $xl);
+}
+
+@mixin xl\:_overscroll-behavior-y-($v) {
+  @include _overscroll-behavior-y-($v, $xl);
+}
+
+@mixin xl\:_overscroll-behavior-x-($v) {
+  @include _overscroll-behavior-x-($v, $xl);
+}
+
+@mixin xl\:_position-($v) {
+  @include _position-($v, $xl);
+}
+
+@mixin xl\:_visibility-($v) {
+  @include _visibility-($v, $xl);
+}
+
+@mixin xl\:_align-content-($v) {
+  @include _align-content-($v, $xl);
+}
+
+@mixin xl\:_align-items-($v) {
+  @include _align-items-($v, $xl);
+}
+
+@mixin xl\:_align-self-($v) {
+  @include _align-self-($v, $xl);
+}
+
+@mixin xl\:_flex-direction-($v) {
+  @include _flex-direction-($v, $xl);
+}
+
+@mixin xl\:_flex-wrap-($v) {
+  @include _flex-wrap-($v, $xl);
+}
+
+@mixin xl\:_grid-auto-flow-($v) {
+  @include _grid-auto-flow-($v, $xl);
+}
+
+@mixin xl\:_justify-content-($v) {
+  @include _justify-content-($v, $xl);
+}
+
+@mixin xl\:_justify-items-($v) {
+  @include _justify-items-($v, $xl);
+}
+
+@mixin xl\:_justify-self-($v) {
+  @include _justify-self-($v, $xl);
+}
+
+@mixin xl\:_place-content-($v) {
+  @include _place-content-($v, $xl);
+}
+
+@mixin xl\:_place-items-($v) {
+  @include _place-items-($v, $xl);
+}
+
+@mixin xl\:_place-self-($v) {
+  @include _place-self-($v, $xl);
+}
+
+@mixin xl\:_webkit-font-smoothing-($v) {
+  @include _webkit-font-smoothing-($v, $xl);
+}
+
+@mixin xl\:_moz-osx-font-smoothing-($v) {
+  @include _moz-osx-font-smoothing-($v, $xl);
+}
+
+@mixin xl\:_font-style-($v) {
+  @include _font-style-($v, $xl);
+}
+
+@mixin xl\:_font-variant-numeric-($v) {
+  @include _font-variant-numeric-($v, $xl);
+}
+
+@mixin xl\:_hyphens-($v) {
+  @include _hyphens-($v, $xl);
+}
+
+@mixin xl\:_list-style-position-($v) {
+  @include _list-style-position-($v, $xl);
+}
+
+@mixin xl\:_text-align-($v) {
+  @include _text-align-($v, $xl);
+}
+
+@mixin xl\:_text-decoration-line-($v) {
+  @include _text-decoration-line-($v, $xl);
+}
+
+@mixin xl\:_text-decoration-style-($v) {
+  @include _text-decoration-style-($v, $xl);
+}
+
+@mixin xl\:_text-overflow-($v) {
+  @include _text-overflow-($v, $xl);
+}
+
+@mixin xl\:_white-space-($v) {
+  @include _white-space-($v, $xl);
+}
+
+@mixin xl\:_text-transform-($v) {
+  @include _text-transform-($v, $xl);
+}
+
+@mixin xl\:_text-wrap-($v) {
+  @include _text-wrap-($v, $xl);
+}
+
+@mixin xl\:_overflow-wrap-($v) {
+  @include _overflow-wrap-($v, $xl);
+}
+
+@mixin xl\:_word-break-($v) {
+  @include _word-break-($v, $xl);
+}
+
+@mixin xl\:_background-attachment-($v) {
+  @include _background-attachment-($v, $xl);
+}
+
+@mixin xl\:_background-clip-($v) {
+  @include _background-clip-($v, $xl);
+}
+
+@mixin xl\:_background-origin-($v) {
+  @include _background-origin-($v, $xl);
+}
+
+@mixin xl\:_background-repeat-($v) {
+  @include _background-repeat-($v, $xl);
+}
+
+@mixin xl\:_border-style-($v) {
+  @include _border-style-($v, $xl);
+}
+
+@mixin xl\:_outline-($v) {
+  @include _outline-($v, $xl);
+}
+
+@mixin xl\:_outline-style-($v) {
+  @include _outline-style-($v, $xl);
+}
+
+@mixin xl\:_background-blend-mode-($v) {
+  @include _background-blend-mode-($v, $xl);
+}
+
+@mixin xl\:_mix-blend-mode-($v) {
+  @include _mix-blend-mode-($v, $xl);
+}
+
+@mixin xl\:_border-collapse-($v) {
+  @include _border-collapse-($v, $xl);
+}
+
+@mixin xl\:_caption-side-($v) {
+  @include _caption-side-($v, $xl);
+}
+
+@mixin xl\:_table-layout-($v) {
+  @include _table-layout-($v, $xl);
+}
+
+@mixin xl\:_appearance-($v) {
+  @include _appearance-($v, $xl);
+}
+
+@mixin xl\:_pointer-events-($v) {
+  @include _pointer-events-($v, $xl);
+}
+
+@mixin xl\:_resize-($v) {
+  @include _resize-($v, $xl);
+}
+
+@mixin xl\:_scroll-behavior-($v) {
+  @include _scroll-behavior-($v, $xl);
+}
+
+@mixin xl\:_scroll-snap-align-($v) {
+  @include _scroll-snap-align-($v, $xl);
+}
+
+@mixin xl\:_scroll-snap-stop-($v) {
+  @include _scroll-snap-stop-($v, $xl);
+}
+
+@mixin xl\:_scroll-snap-type-($v) {
+  @include _scroll-snap-type-($v, $xl);
+}
+
+@mixin xl\:_touch-action-($v) {
+  @include _touch-action-($v, $xl);
+}
+
+@mixin xl\:_user-select-($v) {
+  @include _user-select-($v, $xl);
+}
+
+@mixin xl\:_forced-color-adjust-($v) {
+  @include _forced-color-adjust-($v, $xl);
+}
+
+@mixin \2xl\:_aspect-ratio-($v) {
+  @include _aspect-ratio-($v, $\2xl);
+}
+
+@mixin \2xl\:_columns-($v) {
+  @include _columns-($v, $\2xl);
+}
+
+@mixin \2xl\:_object-position-($v) {
+  @include _object-position-($v, $\2xl);
+}
+
+@mixin \2xl\:_inset-($v) {
+  @include _inset-($v, $\2xl);
+}
+
+@mixin \2xl\:_inset-inline-start-($v) {
+  @include _inset-inline-start-($v, $\2xl);
+}
+
+@mixin \2xl\:_inset-inline-end-($v) {
+  @include _inset-inline-end-($v, $\2xl);
+}
+
+@mixin \2xl\:_top-($v) {
+  @include _top-($v, $\2xl);
+}
+
+@mixin \2xl\:_right-($v) {
+  @include _right-($v, $\2xl);
+}
+
+@mixin \2xl\:_bottom-($v) {
+  @include _bottom-($v, $\2xl);
+}
+
+@mixin \2xl\:_left-($v) {
+  @include _left-($v, $\2xl);
+}
+
+@mixin \2xl\:_z-index-($v) {
+  @include _z-index-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-spacing-($v) {
+  @include _border-spacing-($v, $\2xl);
+}
+
+@mixin \2xl\:_animation-($v) {
+  @include _animation-($v, $\2xl);
+}
+
+@mixin \2xl\:_transition-delay-($v) {
+  @include _transition-delay-($v, $\2xl);
+}
+
+@mixin \2xl\:_transition-property-($v) {
+  @include _transition-property-($v, $\2xl);
+}
+
+@mixin \2xl\:_transition-timing-function-($v) {
+  @include _transition-timing-function-($v, $\2xl);
+}
+
+@mixin \2xl\:_transition-duration-($v) {
+  @include _transition-duration-($v, $\2xl);
+}
+
+@mixin \2xl\:_transform-($v) {
+  @include _transform-($v, $\2xl);
+}
+
+@mixin \2xl\:_transform-origin-($v) {
+  @include _transform-origin-($v, $\2xl);
+}
+
+@mixin \2xl\:_accent-color-($v) {
+  @include _accent-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_caret-color-($v) {
+  @include _caret-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_cursor-($v, $v2: null) {
+  @include _cursor-($v, $v2, $\2xl);
+}
+
+@mixin \2xl\:_scroll-margin-($v) {
+  @include _scroll-margin-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-margin-inline-start-($v) {
+  @include _scroll-margin-inline-start-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-margin-inline-end-($v) {
+  @include _scroll-margin-inline-end-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-margin-top-($v) {
+  @include _scroll-margin-top-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-margin-right-($v) {
+  @include _scroll-margin-right-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-margin-bottom-($v) {
+  @include _scroll-margin-bottom-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-margin-left-($v) {
+  @include _scroll-margin-left-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-padding-($v) {
+  @include _scroll-padding-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-padding-inline-start-($v) {
+  @include _scroll-padding-inline-start-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-padding-inline-end-($v) {
+  @include _scroll-padding-inline-end-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-padding-top-($v) {
+  @include _scroll-padding-top-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-padding-right-($v) {
+  @include _scroll-padding-right-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-padding-bottom-($v) {
+  @include _scroll-padding-bottom-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-padding-left-($v) {
+  @include _scroll-padding-left-($v, $\2xl);
+}
+
+@mixin \2xl\:_will-change-($v, $v2: null) {
+  @include _will-change-($v, $v2, $\2xl);
+}
+
+@mixin \2xl\:_fill-($v) {
+  @include _fill-($v, $\2xl);
+}
+
+@mixin \2xl\:_stroke-($v) {
+  @include _stroke-($v, $\2xl);
+}
+
+@mixin \2xl\:_stroke-width-($v) {
+  @include _stroke-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_flex-($v) {
+  @include _flex-($v, $\2xl);
+}
+
+@mixin \2xl\:_flex-basis-($v) {
+  @include _flex-basis-($v, $\2xl);
+}
+
+@mixin \2xl\:_flex-grow-($v) {
+  @include _flex-grow-($v, $\2xl);
+}
+
+@mixin \2xl\:_flex-shrink-($v) {
+  @include _flex-shrink-($v, $\2xl);
+}
+
+@mixin \2xl\:_gap-($v) {
+  @include _gap-($v, $\2xl);
+}
+
+@mixin \2xl\:_column-gap-($v) {
+  @include _column-gap-($v, $\2xl);
+}
+
+@mixin \2xl\:_row-gap-($v) {
+  @include _row-gap-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-auto-columns-($v) {
+  @include _grid-auto-columns-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-auto-rows-($v) {
+  @include _grid-auto-rows-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-column-($v) {
+  @include _grid-column-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-column-start-($v) {
+  @include _grid-column-start-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-column-end-($v) {
+  @include _grid-column-end-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-row-($v) {
+  @include _grid-row-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-row-start-($v) {
+  @include _grid-row-start-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-row-end-($v) {
+  @include _grid-row-end-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-template-columns-($v) {
+  @include _grid-template-columns-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-template-rows-($v) {
+  @include _grid-template-rows-($v, $\2xl);
+}
+
+@mixin \2xl\:_order-($v) {
+  @include _order-($v, $\2xl);
+}
+
+@mixin \2xl\:_margin-($v) {
+  @include _margin-($v, $\2xl);
+}
+
+@mixin \2xl\:_margin-inline-start-($v) {
+  @include _margin-inline-start-($v, $\2xl);
+}
+
+@mixin \2xl\:_margin-inline-end-($v) {
+  @include _margin-inline-end-($v, $\2xl);
+}
+
+@mixin \2xl\:_margin-top-($v) {
+  @include _margin-top-($v, $\2xl);
+}
+
+@mixin \2xl\:_margin-right-($v) {
+  @include _margin-right-($v, $\2xl);
+}
+
+@mixin \2xl\:_margin-bottom-($v) {
+  @include _margin-bottom-($v, $\2xl);
+}
+
+@mixin \2xl\:_margin-left-($v) {
+  @include _margin-left-($v, $\2xl);
+}
+
+@mixin \2xl\:_padding-($v) {
+  @include _padding-($v, $\2xl);
+}
+
+@mixin \2xl\:_padding-inline-start-($v) {
+  @include _padding-inline-start-($v, $\2xl);
+}
+
+@mixin \2xl\:_padding-inline-end-($v) {
+  @include _padding-inline-end-($v, $\2xl);
+}
+
+@mixin \2xl\:_padding-top-($v) {
+  @include _padding-top-($v, $\2xl);
+}
+
+@mixin \2xl\:_padding-right-($v) {
+  @include _padding-right-($v, $\2xl);
+}
+
+@mixin \2xl\:_padding-bottom-($v) {
+  @include _padding-bottom-($v, $\2xl);
+}
+
+@mixin \2xl\:_padding-left-($v) {
+  @include _padding-left-($v, $\2xl);
+}
+
+@mixin \2xl\:_height-($v) {
+  @include _height-($v, $\2xl);
+}
+
+@mixin \2xl\:_max-height-($v) {
+  @include _max-height-($v, $\2xl);
+}
+
+@mixin \2xl\:_max-width-($v) {
+  @include _max-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_min-height-($v) {
+  @include _min-height-($v, $\2xl);
+}
+
+@mixin \2xl\:_min-width-($v) {
+  @include _min-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_width-($v) {
+  @include _width-($v, $\2xl);
+}
+
+@mixin \2xl\:_font-family-($v) {
+  @include _font-family-($v, $\2xl);
+}
+
+@mixin \2xl\:_font-weight-($v) {
+  @include _font-weight-($v, $\2xl);
+}
+
+@mixin \2xl\:_letter-spacing-($v) {
+  @include _letter-spacing-($v, $\2xl);
+}
+
+@mixin \2xl\:_overflow-($v) {
+  @include _overflow-($v, $\2xl);
+}
+
+@mixin \2xl\:_display-($v) {
+  @include _display-($v, $\2xl);
+}
+
+@mixin \2xl\:_webkit-box-orient-($v) {
+  @include _webkit-box-orient-($v, $\2xl);
+}
+
+@mixin \2xl\:_webkit-line-clamp-($v) {
+  @include _webkit-line-clamp-($v, $\2xl);
+}
+
+@mixin \2xl\:_line-height-($v) {
+  @include _line-height-($v, $\2xl);
+}
+
+@mixin \2xl\:_list-style-image-($v) {
+  @include _list-style-image-($v, $\2xl);
+}
+
+@mixin \2xl\:_list-style-type-($v) {
+  @include _list-style-type-($v, $\2xl);
+}
+
+@mixin \2xl\:_font-size-($v) {
+  @include _font-size-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-decoration-color-($v) {
+  @include _text-decoration-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-decoration-thickness-($v) {
+  @include _text-decoration-thickness-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-indent-($v) {
+  @include _text-indent-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-underline-offset-($v) {
+  @include _text-underline-offset-($v, $\2xl);
+}
+
+@mixin \2xl\:_vertical-align-($v) {
+  @include _vertical-align-($v, $\2xl);
+}
+
+@mixin \2xl\:_background-color-($v) {
+  @include _background-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_background-size-($v) {
+  @include _background-size-($v, $\2xl);
+}
+
+@mixin \2xl\:_background-position-($v) {
+  @include _background-position-($v, $\2xl);
+}
+
+@mixin \2xl\:_background-image-($v) {
+  @include _background-image-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-color-($v) {
+  @include _border-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-width-($v) {
+  @include _border-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-left-color-($v) {
+  @include _border-left-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-left-width-($v) {
+  @include _border-left-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-right-color-($v) {
+  @include _border-right-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-right-width-($v) {
+  @include _border-right-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-top-color-($v) {
+  @include _border-top-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-top-width-($v) {
+  @include _border-top-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-bottom-color-($v) {
+  @include _border-bottom-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-bottom-width-($v) {
+  @include _border-bottom-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-inline-start-color-($v) {
+  @include _border-inline-start-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-inline-start-width-($v) {
+  @include _border-inline-start-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-inline-end-color-($v) {
+  @include _border-inline-end-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-inline-end-width-($v) {
+  @include _border-inline-end-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-radius-($v) {
+  @include _border-radius-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-start-start-radius-($v) {
+  @include _border-start-start-radius-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-end-start-radius-($v) {
+  @include _border-end-start-radius-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-start-end-radius-($v) {
+  @include _border-start-end-radius-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-end-end-radius-($v) {
+  @include _border-end-end-radius-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-top-left-radius-($v) {
+  @include _border-top-left-radius-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-top-right-radius-($v) {
+  @include _border-top-right-radius-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-bottom-right-radius-($v) {
+  @include _border-bottom-right-radius-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-bottom-left-radius-($v) {
+  @include _border-bottom-left-radius-($v, $\2xl);
+}
+
+@mixin \2xl\:_outline-color-($v) {
+  @include _outline-color-($v, $\2xl);
+}
+
+@mixin \2xl\:_outline-width-($v) {
+  @include _outline-width-($v, $\2xl);
+}
+
+@mixin \2xl\:_outline-offset-($v) {
+  @include _outline-offset-($v, $\2xl);
+}
+
+@mixin \2xl\:_box-shadow-($v) {
+  @include _box-shadow-($v, $\2xl);
+}
+
+@mixin \2xl\:_opacity-($v) {
+  @include _opacity-($v, $\2xl);
+}
+
+@mixin \2xl\:_backdrop-filter-($v) {
+  @include _backdrop-filter-($v, $\2xl);
+}
+
+@mixin \2xl\:_filter-($v) {
+  @include _filter-($v, $\2xl);
+}
+
+@mixin \2xl\:_box-decoration-break-($v) {
+  @include _box-decoration-break-($v, $\2xl);
+}
+
+@mixin \2xl\:_box-sizing-($v) {
+  @include _box-sizing-($v, $\2xl);
+}
+
+@mixin \2xl\:_break-after-($v) {
+  @include _break-after-($v, $\2xl);
+}
+
+@mixin \2xl\:_break-before-($v) {
+  @include _break-before-($v, $\2xl);
+}
+
+@mixin \2xl\:_break-inside-($v) {
+  @include _break-inside-($v, $\2xl);
+}
+
+@mixin \2xl\:_clear-($v) {
+  @include _clear-($v, $\2xl);
+}
+
+@mixin \2xl\:_float-($v) {
+  @include _float-($v, $\2xl);
+}
+
+@mixin \2xl\:_isolation-($v) {
+  @include _isolation-($v, $\2xl);
+}
+
+@mixin \2xl\:_object-fit-($v) {
+  @include _object-fit-($v, $\2xl);
+}
+
+@mixin \2xl\:_overscroll-behavior-($v) {
+  @include _overscroll-behavior-($v, $\2xl);
+}
+
+@mixin \2xl\:_overscroll-behavior-y-($v) {
+  @include _overscroll-behavior-y-($v, $\2xl);
+}
+
+@mixin \2xl\:_overscroll-behavior-x-($v) {
+  @include _overscroll-behavior-x-($v, $\2xl);
+}
+
+@mixin \2xl\:_position-($v) {
+  @include _position-($v, $\2xl);
+}
+
+@mixin \2xl\:_visibility-($v) {
+  @include _visibility-($v, $\2xl);
+}
+
+@mixin \2xl\:_align-content-($v) {
+  @include _align-content-($v, $\2xl);
+}
+
+@mixin \2xl\:_align-items-($v) {
+  @include _align-items-($v, $\2xl);
+}
+
+@mixin \2xl\:_align-self-($v) {
+  @include _align-self-($v, $\2xl);
+}
+
+@mixin \2xl\:_flex-direction-($v) {
+  @include _flex-direction-($v, $\2xl);
+}
+
+@mixin \2xl\:_flex-wrap-($v) {
+  @include _flex-wrap-($v, $\2xl);
+}
+
+@mixin \2xl\:_grid-auto-flow-($v) {
+  @include _grid-auto-flow-($v, $\2xl);
+}
+
+@mixin \2xl\:_justify-content-($v) {
+  @include _justify-content-($v, $\2xl);
+}
+
+@mixin \2xl\:_justify-items-($v) {
+  @include _justify-items-($v, $\2xl);
+}
+
+@mixin \2xl\:_justify-self-($v) {
+  @include _justify-self-($v, $\2xl);
+}
+
+@mixin \2xl\:_place-content-($v) {
+  @include _place-content-($v, $\2xl);
+}
+
+@mixin \2xl\:_place-items-($v) {
+  @include _place-items-($v, $\2xl);
+}
+
+@mixin \2xl\:_place-self-($v) {
+  @include _place-self-($v, $\2xl);
+}
+
+@mixin \2xl\:_webkit-font-smoothing-($v) {
+  @include _webkit-font-smoothing-($v, $\2xl);
+}
+
+@mixin \2xl\:_moz-osx-font-smoothing-($v) {
+  @include _moz-osx-font-smoothing-($v, $\2xl);
+}
+
+@mixin \2xl\:_font-style-($v) {
+  @include _font-style-($v, $\2xl);
+}
+
+@mixin \2xl\:_font-variant-numeric-($v) {
+  @include _font-variant-numeric-($v, $\2xl);
+}
+
+@mixin \2xl\:_hyphens-($v) {
+  @include _hyphens-($v, $\2xl);
+}
+
+@mixin \2xl\:_list-style-position-($v) {
+  @include _list-style-position-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-align-($v) {
+  @include _text-align-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-decoration-line-($v) {
+  @include _text-decoration-line-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-decoration-style-($v) {
+  @include _text-decoration-style-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-overflow-($v) {
+  @include _text-overflow-($v, $\2xl);
+}
+
+@mixin \2xl\:_white-space-($v) {
+  @include _white-space-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-transform-($v) {
+  @include _text-transform-($v, $\2xl);
+}
+
+@mixin \2xl\:_text-wrap-($v) {
+  @include _text-wrap-($v, $\2xl);
+}
+
+@mixin \2xl\:_overflow-wrap-($v) {
+  @include _overflow-wrap-($v, $\2xl);
+}
+
+@mixin \2xl\:_word-break-($v) {
+  @include _word-break-($v, $\2xl);
+}
+
+@mixin \2xl\:_background-attachment-($v) {
+  @include _background-attachment-($v, $\2xl);
+}
+
+@mixin \2xl\:_background-clip-($v) {
+  @include _background-clip-($v, $\2xl);
+}
+
+@mixin \2xl\:_background-origin-($v) {
+  @include _background-origin-($v, $\2xl);
+}
+
+@mixin \2xl\:_background-repeat-($v) {
+  @include _background-repeat-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-style-($v) {
+  @include _border-style-($v, $\2xl);
+}
+
+@mixin \2xl\:_outline-($v) {
+  @include _outline-($v, $\2xl);
+}
+
+@mixin \2xl\:_outline-style-($v) {
+  @include _outline-style-($v, $\2xl);
+}
+
+@mixin \2xl\:_background-blend-mode-($v) {
+  @include _background-blend-mode-($v, $\2xl);
+}
+
+@mixin \2xl\:_mix-blend-mode-($v) {
+  @include _mix-blend-mode-($v, $\2xl);
+}
+
+@mixin \2xl\:_border-collapse-($v) {
+  @include _border-collapse-($v, $\2xl);
+}
+
+@mixin \2xl\:_caption-side-($v) {
+  @include _caption-side-($v, $\2xl);
+}
+
+@mixin \2xl\:_table-layout-($v) {
+  @include _table-layout-($v, $\2xl);
+}
+
+@mixin \2xl\:_appearance-($v) {
+  @include _appearance-($v, $\2xl);
+}
+
+@mixin \2xl\:_pointer-events-($v) {
+  @include _pointer-events-($v, $\2xl);
+}
+
+@mixin \2xl\:_resize-($v) {
+  @include _resize-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-behavior-($v) {
+  @include _scroll-behavior-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-snap-align-($v) {
+  @include _scroll-snap-align-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-snap-stop-($v) {
+  @include _scroll-snap-stop-($v, $\2xl);
+}
+
+@mixin \2xl\:_scroll-snap-type-($v) {
+  @include _scroll-snap-type-($v, $\2xl);
+}
+
+@mixin \2xl\:_touch-action-($v) {
+  @include _touch-action-($v, $\2xl);
+}
+
+@mixin \2xl\:_user-select-($v) {
+  @include _user-select-($v, $\2xl);
+}
+
+@mixin \2xl\:_forced-color-adjust-($v) {
+  @include _forced-color-adjust-($v, $\2xl);
+}
 // x*/

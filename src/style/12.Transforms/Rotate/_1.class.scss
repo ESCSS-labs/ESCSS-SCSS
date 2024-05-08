@@ -228,11 +228,11 @@
   @mixin rotate-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-rotate: $v !global;
-      @include _transform-(__transform());
+      @include _transform-(get_transform());
     } @else {
       @media (min-width: $rwd) {
         $--tw-rotate: $v !global;
-        @include _transform-(__transform());
+        @include _transform-(get_transform());
       }
     }
   }

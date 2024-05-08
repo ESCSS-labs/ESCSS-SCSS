@@ -183,11 +183,11 @@
   @mixin contrast-($v, $rwd: null) {
     @if $rwd==null {
       $--tw-contrast: contrast($v) !global;
-      @include _filter-(__filter());
+      @include _filter-(get_filter());
     } @else {
       @media (min-width: $rwd) {
         $--tw-contrast: contrast($v) !global;
-        @include _filter-(__filter());
+        @include _filter-(get_filter());
       }
     }
   }

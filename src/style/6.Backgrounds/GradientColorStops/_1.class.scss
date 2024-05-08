@@ -2,6 +2,7 @@
 
 /* Gradient Color Stops */
 @if $Basic {
+
   // /*x
   @mixin from-inherit {
     @include from-(inherit, null);
@@ -3223,7 +3224,8 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 {
+  @if $sizeMode ==0 {
+
     // /*x
     @mixin sm\:from-inherit {
       @include from-(inherit, null, $sm);
@@ -19310,11 +19312,14 @@
 }
 
 @if $Custom {
+
   // /*x
   @mixin from-($token, $v: 1, $rwd: null) {
     @if $rwd==null {
       @include __from-($token, $v);
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         @include __from-($token, $v);
       }
@@ -19324,23 +19329,30 @@
   @mixin __from-($token, $v) {
     @if list.index(inherit, $token) {
       @include _background-image-(inherit !important);
-    } @else {
-      @if list.index(currentColor transparent, $token) {
-        $--tw-gradient-from: $token !global;
-      } @else if meta.type-of($token) ==color {
-        $--tw-gradient-from: c($token, $v) !global;
-      } @else {
-        $--tw-gradient-from-position: $token !global;
-      }
+    }
 
-      @include _background-image-(__linear-gradient());
+    @else if list.index(currentColor transparent, $token) {
+      $--tw-gradient-from: $token !global;
+      @include _background-image-(get_linear-gradient());
+    }
+
+    @else if meta.type-of($token)==color {
+      $--tw-gradient-from: c($token, $v) !global;
+      @include _background-image-(get_linear-gradient());
+    }
+
+    @else {
+      $--tw-gradient-from-position: $token !global;
+      @include _background-image-(get_linear-gradient());
     }
   }
 
   @mixin via-($token, $v: 1, $rwd: null) {
     @if $rwd==null {
       @include __via-($token, $v);
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         @include __via-($token, $v);
       }
@@ -19350,23 +19362,30 @@
   @mixin __via-($token, $v) {
     @if list.index(inherit, $token) {
       @include _background-image-(inherit !important);
-    } @else {
-      @if list.index(currentColor transparent, $token) {
-        $--tw-gradient-via: $token !global;
-      } @else if meta.type-of($token) ==color {
-        $--tw-gradient-via: c($token, $v) !global;
-      } @else {
-        $--tw-gradient-via-position: $token !global;
-      }
+    }
 
-      @include _background-image-(__linear-gradient());
+    @else if list.index(currentColor transparent, $token) {
+      $--tw-gradient-via: $token !global;
+      @include _background-image-(get_linear-gradient());
+    }
+
+    @else if meta.type-of($token)==color {
+      $--tw-gradient-via: c($token, $v) !global;
+      @include _background-image-(get_linear-gradient());
+    }
+
+    @else {
+      $--tw-gradient-via-position: $token !global;
+      @include _background-image-(get_linear-gradient());
     }
   }
 
   @mixin to-($token, $v: 1, $rwd: null) {
     @if $rwd==null {
       @include __to-($token, $v);
-    } @else {
+    }
+
+    @else {
       @media (min-width: $rwd) {
         @include __to-($token, $v);
       }
@@ -19376,16 +19395,22 @@
   @mixin __to-($token, $v) {
     @if list.index(inherit, $token) {
       @include _background-image-(inherit !important);
-    } @else {
-      @if list.index(currentColor transparent, $token) {
-        $--tw-gradient-to: $token !global;
-      } @else if meta.type-of($token) ==color {
-        $--tw-gradient-to: c($token, $v) !global;
-      } @else {
-        $--tw-gradient-to-position: $token !global;
-      }
+    }
 
-      @include _background-image-(__linear-gradient());
+    @else if list.index(currentColor transparent, $token) {
+      $--tw-gradient-to: $token !global;
+      @include _background-image-(get_linear-gradient());
+
+    }
+
+    @else if meta.type-of($token)==color {
+      $--tw-gradient-to: c($token, $v) !global;
+      @include _background-image-(get_linear-gradient());
+    }
+
+    @else {
+      $--tw-gradient-to-position: $token !global;
+      @include _background-image-(get_linear-gradient());
     }
   }
 

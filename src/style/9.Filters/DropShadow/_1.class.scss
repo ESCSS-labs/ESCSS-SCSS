@@ -279,12 +279,12 @@
     @if $rwd==null {
       $v2: if($v2, $v2, 0 0 0 #fff); // $v2? true: false;
       $--tw-drop-shadow: drop-shadow($v) drop-shadow($v2) !global;
-      @include _filter-(__filter());
+      @include _filter-(get_filter());
     } @else {
       @media (min-width: $rwd) {
         $v2: if($v2, $v2, 0 0 0 #fff); // $v2? true: false;
         $--tw-drop-shadow: drop-shadow($v) drop-shadow($v2) !global;
-        @include _filter-(__filter());
+        @include _filter-(get_filter());
       }
     }
   }
