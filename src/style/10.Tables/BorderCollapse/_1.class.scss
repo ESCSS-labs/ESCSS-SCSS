@@ -1,16 +1,13 @@
 @use "../../setting" as *;
 
 /* Border Collapse */
-// border-collapse is same as atomic
+// border-collapse is same as atomic class
 @if $Basic {
-
   // /*x
   @mixin border-separate($rwd: null) {
     @if $rwd==null {
       @include border-collapse(separate);
-    }
-
-    @else {
+    } @else {
       @media (min-width: $rwd) {
         @include border-collapse(separate);
       }
@@ -21,7 +18,6 @@
 }
 
 @if $Rwd {
-
   // /*x
   @mixin sm\:border-separate {
     @include border-separate($sm);
