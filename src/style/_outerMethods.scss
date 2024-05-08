@@ -33,7 +33,7 @@
   }
 }
 
-// reset global variables, when use internal mixin/function, e.g, get_box-shadow()
+// reset global variables, when use internal mixin/function
 // Best Practice: USE IN EVERY CLASSES.
 // why? 1. Can be an indicator of how many css that you've used,
 //      2. only internal mixin/function needs to do reset, but people will be lazy.
@@ -512,7 +512,6 @@
 
 @mixin flex($v: flex, $rwd: null) {
   @if $rwd ==null {
-
     // Tailwind flex class
     @if $v==flex {
       display: flex;
@@ -522,11 +521,8 @@
     @else {
       flex: $v;
     }
-  }
-
-  @else {
-    @media(min-width: $rwd) {
-
+  } @else {
+    @media (min-width: $rwd) {
       // Tailwind flex class
       @if $v==flex {
         display: flex;

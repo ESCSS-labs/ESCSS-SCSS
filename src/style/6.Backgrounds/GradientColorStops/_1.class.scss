@@ -19313,15 +19313,15 @@
   // /*x
   @mixin from-($token, $v: 1, $rwd: null) {
     @if $rwd==null {
-      @include __from-($token, $v);
+      @include get_from-($token, $v);
     } @else {
       @media (min-width: $rwd) {
-        @include __from-($token, $v);
+        @include get_from-($token, $v);
       }
     }
   }
 
-  @mixin __from-($token, $v) {
+  @mixin get_from-($token, $v) {
     @if list.index(inherit, $token) {
       @include background-image(inherit !important);
     } @else if list.index(currentColor transparent, $token) {
@@ -19338,15 +19338,15 @@
 
   @mixin via-($token, $v: 1, $rwd: null) {
     @if $rwd==null {
-      @include __via-($token, $v);
+      @include get_via-($token, $v);
     } @else {
       @media (min-width: $rwd) {
-        @include __via-($token, $v);
+        @include get_via-($token, $v);
       }
     }
   }
 
-  @mixin __via-($token, $v) {
+  @mixin get_via-($token, $v) {
     @if list.index(inherit, $token) {
       @include background-image(inherit !important);
     } @else if list.index(currentColor transparent, $token) {
@@ -19363,15 +19363,15 @@
 
   @mixin to-($token, $v: 1, $rwd: null) {
     @if $rwd==null {
-      @include __to-($token, $v);
+      @include get_to-($token, $v);
     } @else {
       @media (min-width: $rwd) {
-        @include __to-($token, $v);
+        @include get_to-($token, $v);
       }
     }
   }
 
-  @mixin __to-($token, $v) {
+  @mixin get_to-($token, $v) {
     @if list.index(inherit, $token) {
       @include background-image(inherit !important);
     } @else if list.index(currentColor transparent, $token) {

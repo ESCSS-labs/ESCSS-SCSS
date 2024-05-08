@@ -5945,15 +5945,15 @@
   // /*x
   @mixin divide-($token, $v: 1, $rwd: null) {
     @if $rwd==null {
-      @include __divide($token, $v);
+      @include get_divide-($token, $v);
     } @else {
       @media (min-width: $rwd) {
-        @include __divide($token, $v);
+        @include get_divide-($token, $v);
       }
     }
   }
 
-  @mixin __divide($token, $v) {
+  @mixin get_divide-($token, $v) {
     > * ~ * {
       @if list.index(inherit currentColor transparent, $token) {
         @include border-color($token);

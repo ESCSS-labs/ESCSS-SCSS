@@ -5945,15 +5945,15 @@
   // /*x
   @mixin text-($v, $rwd: null) {
     @if $rwd==null {
-      @include __text-($v);
+      @include get_text-($v);
     } @else {
       @media (min-width: $rwd) {
-        @include __text-($v);
+        @include get_text-($v);
       }
     }
   }
 
-  @mixin __text-($v) {
+  @mixin get_text-($v) {
     @if meta.type-of($v) ==color or list.index(inherit currentColor, $v) {
       color: $v;
     } @else if list.length($v) ==2 {

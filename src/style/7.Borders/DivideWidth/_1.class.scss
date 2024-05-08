@@ -311,10 +311,8 @@
       }
 
       > * ~ * {
-        @include _border-right-width-(
-          $--divide-x-value * $--tw-divide-x-reverse
-        );
-        @include _border-left-width-(
+        @include border-right-width($--divide-x-value * $--tw-divide-x-reverse);
+        @include border-left-width(
           $--divide-x-value * (1 - $--tw-divide-x-reverse)
         );
       }
@@ -327,10 +325,10 @@
         }
 
         > * ~ * {
-          @include _border-right-width-(
+          @include border-right-width(
             $--divide-x-value * $--tw-divide-x-reverse
           );
-          @include _border-left-width-(
+          @include border-left-width(
             $--divide-x-value * (1 - $--tw-divide-x-reverse)
           );
         }

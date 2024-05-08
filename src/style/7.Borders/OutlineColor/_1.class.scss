@@ -5945,15 +5945,15 @@
   // /*x
   @mixin outline-($v, $rwd: null) {
     @if $rwd==null {
-      @include __outline-($v);
+      @include get_outline-($v);
     } @else {
       @media (min-width: $rwd) {
-        @include __outline-($v);
+        @include get_outline-($v);
       }
     }
   }
 
-  @mixin __outline-($v, $rwd: null) {
+  @mixin get_outline-($v, $rwd: null) {
     @if meta.type-of($v)
       ==color or
       list.index(inherit currentColor transparent, $v)

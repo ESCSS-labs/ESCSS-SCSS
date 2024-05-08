@@ -242,15 +242,15 @@
   // /*x
   @mixin font-($v, $rwd: null) {
     @if $rwd==null {
-      @include __font-($v);
+      @include get_font-($v);
     } @else {
       @media (min-width: $rwd) {
-        @include __font-($v);
+        @include get_font-($v);
       }
     }
   }
 
-  @mixin __font-($v, $rwd: null) {
+  @mixin get_font-($v, $rwd: null) {
     @if meta.type-of($v) ==string or meta.type-of($v) ==list {
       @include font-family($v);
     } @else {

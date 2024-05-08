@@ -5945,15 +5945,15 @@
   // /*x
   @mixin ring-offset-($v, $rwd: null) {
     @if $rwd==null {
-      @include __ring-offset-($v);
+      @include get_ring-offset-($v);
     } @else {
       @media (min-width: $rwd) {
-        @include __ring-offset-($v);
+        @include get_ring-offset-($v);
       }
     }
   }
 
-  @mixin __ring-offset-($v) {
+  @mixin get_ring-offset-($v) {
     // color
     @if meta.type-of($v) ==string {
       @if string.index($v, inherit) or string.index($v, currentColor) {

@@ -333,15 +333,15 @@
   // /*x
   @mixin transition-($v, $rwd: null) {
     @if $rwd==null {
-      @include __transition-($v);
+      @include get_transition-($v);
     } @else {
       @media (min-width: $rwd) {
-        @include __transition-($v);
+        @include get_transition-($v);
       }
     }
   }
 
-  @mixin __transition-($v) {
+  @mixin get_transition-($v) {
     @if $v==none {
       @include transition-property(none);
     } @else {

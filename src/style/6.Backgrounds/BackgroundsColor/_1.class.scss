@@ -5945,15 +5945,15 @@
   // /*x
   @mixin bg-($v, $rwd: null) {
     @if $rwd==null {
-      @include __bg-($v);
+      @include get_bg-($v);
     } @else {
       @media (min-width: $rwd) {
-        @include __bg-($v);
+        @include get_bg-($v);
       }
     }
   }
 
-  @mixin __bg-($v) {
+  @mixin get_bg-($v) {
     // bg-color
     @if meta.type-of($v)
       ==color or

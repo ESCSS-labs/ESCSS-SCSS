@@ -5945,15 +5945,15 @@
   // /*x
   @mixin shadow-($v, $rwd: null) {
     @if $rwd==null {
-      @include __shadow-($v);
+      @include get_shadow-($v);
     } @else {
       @media (min-width: $rwd) {
-        @include __shadow-($v);
+        @include get_shadow-($v);
       }
     }
   }
 
-  @mixin __shadow-($v) {
+  @mixin get_shadow-($v) {
     @if meta.type-of($v) ==string {
       // color
       @if string.index($v, inherit) or string.index($v, currentColor) {
@@ -6033,7 +6033,7 @@
       }
     }
 
-    @include _box-shadow-(get_box-shadow());
+    @include box-shadow(get_box-shadow());
   }
 
   @mixin sm\:shadow-($v) {
