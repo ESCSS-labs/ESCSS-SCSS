@@ -512,6 +512,7 @@
 
 @mixin flex($v: flex, $rwd: null) {
   @if $rwd ==null {
+
     // Tailwind flex class
     @if $v==flex {
       display: flex;
@@ -521,8 +522,11 @@
     @else {
       flex: $v;
     }
-  } @else {
-    @media (min-width: $rwd) {
+  }
+
+  @else {
+    @media(min-width: $rwd) {
+
       // Tailwind flex class
       @if $v==flex {
         display: flex;
@@ -956,7 +960,7 @@
   }
 }
 
-@mixin webkit-box-orient($v, $rwd: null) {
+@mixin -webkit-box-orient($v, $rwd: null) {
   @if $rwd==null {
     -webkit-box-orient: $v;
   } @else {
@@ -966,7 +970,7 @@
   }
 }
 
-@mixin webkit-line-clamp($v, $rwd: null) {
+@mixin -webkit-line-clamp($v, $rwd: null) {
   @if $rwd==null {
     -webkit-line-clamp: $v;
   } @else {
@@ -1666,7 +1670,7 @@
   }
 }
 
-@mixin webkit-font-smoothing($v, $rwd: null) {
+@mixin -webkit-font-smoothing($v, $rwd: null) {
   @if $rwd==null {
     -webkit-font-smoothing: $v;
   } @else {
@@ -1676,7 +1680,7 @@
   }
 }
 
-@mixin moz-osx-font-smoothing($v, $rwd: null) {
+@mixin -moz-osx-font-smoothing($v, $rwd: null) {
   @if $rwd==null {
     -moz-osx-font-smoothing: $v;
   } @else {
@@ -2368,12 +2372,12 @@
   @include display($v, $sm);
 }
 
-@mixin sm\:webkit-box-orient($v) {
-  @include webkit-box-orient($v, $sm);
+@mixin sm\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $sm);
 }
 
-@mixin sm\:webkit-line-clamp($v) {
-  @include webkit-line-clamp($v, $sm);
+@mixin sm\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $sm);
 }
 
 @mixin sm\:line-height($v) {
@@ -2652,12 +2656,12 @@
   @include place-self($v, $sm);
 }
 
-@mixin sm\:webkit-font-smoothing($v) {
-  @include webkit-font-smoothing($v, $sm);
+@mixin sm\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $sm);
 }
 
-@mixin sm\:moz-osx-font-smoothing($v) {
-  @include moz-osx-font-smoothing($v, $sm);
+@mixin sm\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $sm);
 }
 
 @mixin sm\:font-style($v) {
@@ -3132,12 +3136,12 @@
   @include display($v, $md);
 }
 
-@mixin md\:webkit-box-orient($v) {
-  @include webkit-box-orient($v, $md);
+@mixin md\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $md);
 }
 
-@mixin md\:webkit-line-clamp($v) {
-  @include webkit-line-clamp($v, $md);
+@mixin md\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $md);
 }
 
 @mixin md\:line-height($v) {
@@ -3416,12 +3420,12 @@
   @include place-self($v, $md);
 }
 
-@mixin md\:webkit-font-smoothing($v) {
-  @include webkit-font-smoothing($v, $md);
+@mixin md\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $md);
 }
 
-@mixin md\:moz-osx-font-smoothing($v) {
-  @include moz-osx-font-smoothing($v, $md);
+@mixin md\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $md);
 }
 
 @mixin md\:font-style($v) {
@@ -3896,12 +3900,12 @@
   @include display($v, $lg);
 }
 
-@mixin lg\:webkit-box-orient($v) {
-  @include webkit-box-orient($v, $lg);
+@mixin lg\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $lg);
 }
 
-@mixin lg\:webkit-line-clamp($v) {
-  @include webkit-line-clamp($v, $lg);
+@mixin lg\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $lg);
 }
 
 @mixin lg\:line-height($v) {
@@ -4180,12 +4184,12 @@
   @include place-self($v, $lg);
 }
 
-@mixin lg\:webkit-font-smoothing($v) {
-  @include webkit-font-smoothing($v, $lg);
+@mixin lg\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $lg);
 }
 
-@mixin lg\:moz-osx-font-smoothing($v) {
-  @include moz-osx-font-smoothing($v, $lg);
+@mixin lg\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $lg);
 }
 
 @mixin lg\:font-style($v) {
@@ -4660,12 +4664,12 @@
   @include display($v, $xl);
 }
 
-@mixin xl\:webkit-box-orient($v) {
-  @include webkit-box-orient($v, $xl);
+@mixin xl\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $xl);
 }
 
-@mixin xl\:webkit-line-clamp($v) {
-  @include webkit-line-clamp($v, $xl);
+@mixin xl\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $xl);
 }
 
 @mixin xl\:line-height($v) {
@@ -4944,12 +4948,12 @@
   @include place-self($v, $xl);
 }
 
-@mixin xl\:webkit-font-smoothing($v) {
-  @include webkit-font-smoothing($v, $xl);
+@mixin xl\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $xl);
 }
 
-@mixin xl\:moz-osx-font-smoothing($v) {
-  @include moz-osx-font-smoothing($v, $xl);
+@mixin xl\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $xl);
 }
 
 @mixin xl\:font-style($v) {
@@ -5424,12 +5428,12 @@
   @include display($v, $\2xl);
 }
 
-@mixin \2xl\:webkit-box-orient($v) {
-  @include webkit-box-orient($v, $\2xl);
+@mixin \2xl\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $\2xl);
 }
 
-@mixin \2xl\:webkit-line-clamp($v) {
-  @include webkit-line-clamp($v, $\2xl);
+@mixin \2xl\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $\2xl);
 }
 
 @mixin \2xl\:line-height($v) {
@@ -5708,12 +5712,12 @@
   @include place-self($v, $\2xl);
 }
 
-@mixin \2xl\:webkit-font-smoothing($v) {
-  @include webkit-font-smoothing($v, $\2xl);
+@mixin \2xl\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $\2xl);
 }
 
-@mixin \2xl\:moz-osx-font-smoothing($v) {
-  @include moz-osx-font-smoothing($v, $\2xl);
+@mixin \2xl\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $\2xl);
 }
 
 @mixin \2xl\:font-style($v) {
