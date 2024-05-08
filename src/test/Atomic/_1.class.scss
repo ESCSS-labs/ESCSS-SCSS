@@ -1,6 +1,136 @@
 @use "../mode0" as *;
 @use "true" as *;
 
+// private member(prefix - or _) can't be import, so I put here for testing
+
+@mixin -webkit-box-orient($v, $rwd: null) {
+  @if $rwd==null {
+    -webkit-box-orient: $v;
+  }
+
+  @else {
+    @media (min-width: $rwd) {
+      -webkit-box-orient: $v;
+    }
+  }
+}
+
+@mixin -webkit-line-clamp($v, $rwd: null) {
+  @if $rwd==null {
+    -webkit-line-clamp: $v;
+  }
+
+  @else {
+    @media (min-width: $rwd) {
+      -webkit-line-clamp: $v;
+    }
+  }
+}
+
+@mixin -webkit-font-smoothing($v, $rwd: null) {
+  @if $rwd==null {
+    -webkit-font-smoothing: $v;
+  }
+
+  @else {
+    @media (min-width: $rwd) {
+      -webkit-font-smoothing: $v;
+    }
+  }
+}
+
+@mixin -moz-osx-font-smoothing($v, $rwd: null) {
+  @if $rwd==null {
+    -moz-osx-font-smoothing: $v;
+  }
+
+  @else {
+    @media (min-width: $rwd) {
+      -moz-osx-font-smoothing: $v;
+    }
+  }
+}
+
+@mixin sm\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $sm);
+}
+
+@mixin sm\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $sm);
+}
+
+@mixin sm\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $sm);
+}
+
+@mixin sm\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $sm);
+}
+
+@mixin md\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $md);
+}
+
+@mixin md\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $md);
+}
+
+@mixin md\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $md);
+}
+
+@mixin md\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $md);
+}
+
+@mixin lg\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $lg);
+}
+
+@mixin lg\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $lg);
+}
+
+@mixin lg\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $lg);
+}
+
+@mixin lg\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $lg);
+}
+
+@mixin xl\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $xl);
+}
+
+@mixin xl\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $xl);
+}
+
+@mixin xl\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $xl);
+}
+
+@mixin xl\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $xl);
+}
+
+@mixin \2xl\:-webkit-box-orient($v) {
+  @include -webkit-box-orient($v, $\2xl);
+}
+
+@mixin \2xl\:-webkit-line-clamp($v) {
+  @include -webkit-line-clamp($v, $\2xl);
+}
+
+@mixin \2xl\:-webkit-font-smoothing($v) {
+  @include -webkit-font-smoothing($v, $\2xl);
+}
+
+@mixin \2xl\:-moz-osx-font-smoothing($v) {
+  @include -moz-osx-font-smoothing($v, $\2xl);
+}
+
 @include describe("Atomic") {
   @include describe("Basic") {
     @include it("aspect-ratio(0)") {
