@@ -1,6 +1,7 @@
 @use "../../setting" as *;
 
 /* Outline Style */
+// outline is same as atomic
 @if $Basic {
   // /*x
   @mixin outline-none($rwd: null) {
@@ -11,16 +12,6 @@
       @media (min-width: $rwd) {
         @include outline(2px solid transparent);
         @include outline-offset(2px);
-      }
-    }
-  }
-
-  @mixin outline($rwd: null) {
-    @if $rwd==null {
-      @include outline-style(solid);
-    } @else {
-      @media (min-width: $rwd) {
-        @include outline-style(solid);
       }
     }
   }
@@ -64,10 +55,6 @@
     @include outline-none($sm);
   }
 
-  @mixin sm\:outline {
-    @include outline($sm);
-  }
-
   @mixin sm\:outline-dashed {
     @include outline-dashed($sm);
   }
@@ -82,10 +69,6 @@
 
   @mixin md\:outline-none {
     @include outline-none($md);
-  }
-
-  @mixin md\:outline {
-    @include outline($md);
   }
 
   @mixin md\:outline-dashed {
@@ -104,10 +87,6 @@
     @include outline-none($lg);
   }
 
-  @mixin lg\:outline {
-    @include outline($lg);
-  }
-
   @mixin lg\:outline-dashed {
     @include outline-dashed($lg);
   }
@@ -124,10 +103,6 @@
     @include outline-none($xl);
   }
 
-  @mixin xl\:outline {
-    @include outline($xl);
-  }
-
   @mixin xl\:outline-dashed {
     @include outline-dashed($xl);
   }
@@ -142,10 +117,6 @@
 
   @mixin \2xl\:outline-none {
     @include outline-none($\2xl);
-  }
-
-  @mixin \2xl\:outline {
-    @include outline($\2xl);
   }
 
   @mixin \2xl\:outline-dashed {
