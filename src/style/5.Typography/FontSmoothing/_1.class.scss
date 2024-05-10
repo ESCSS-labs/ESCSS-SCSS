@@ -3,71 +3,87 @@
 /* Font Smoothing */
 @if $Basic {
   // /*x
-  @mixin antialiased($rwd: null) {
-    @if $rwd==null {
-      @include -webkit-font-smoothing(antialiased);
-      @include -moz-osx-font-smoothing(grayscale);
-    } @else {
-      @media (min-width: $rwd) {
-        @include -webkit-font-smoothing(antialiased);
-        @include -moz-osx-font-smoothing(grayscale);
-      }
-    }
+  @mixin antialiased {
+    @include -webkit-font-smoothing(antialiased);
+    @include -moz-osx-font-smoothing(grayscale);
   }
 
-  @mixin subpixel-antialiased($rwd: null) {
-    @if $rwd==null {
-      @include -webkit-font-smoothing(auto);
-      @include -moz-osx-font-smoothing(auto);
-    } @else {
-      @media (min-width: $rwd) {
-        @include -webkit-font-smoothing(auto);
-        @include -moz-osx-font-smoothing(auto);
-      }
-    }
+  @mixin subpixel-antialiased {
+    @include -webkit-font-smoothing(auto);
+    @include -moz-osx-font-smoothing(auto);
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:antialiased {
-    @include antialiased($sm);
+    @media (min-width: $sm) {
+      @include -webkit-font-smoothing(antialiased);
+      @include -moz-osx-font-smoothing(grayscale);
+    }
   }
 
   @mixin sm\:subpixel-antialiased {
-    @include subpixel-antialiased($sm);
+    @media (min-width: $sm) {
+      @include -webkit-font-smoothing(auto);
+      @include -moz-osx-font-smoothing(auto);
+    }
   }
 
   @mixin md\:antialiased {
-    @include antialiased($md);
+    @media (min-width: $md) {
+      @include -webkit-font-smoothing(antialiased);
+      @include -moz-osx-font-smoothing(grayscale);
+    }
   }
 
   @mixin md\:subpixel-antialiased {
-    @include subpixel-antialiased($md);
+    @media (min-width: $md) {
+      @include -webkit-font-smoothing(auto);
+      @include -moz-osx-font-smoothing(auto);
+    }
   }
 
   @mixin lg\:antialiased {
-    @include antialiased($lg);
+    @media (min-width: $lg) {
+      @include -webkit-font-smoothing(antialiased);
+      @include -moz-osx-font-smoothing(grayscale);
+    }
   }
 
   @mixin lg\:subpixel-antialiased {
-    @include subpixel-antialiased($lg);
+    @media (min-width: $lg) {
+      @include -webkit-font-smoothing(auto);
+      @include -moz-osx-font-smoothing(auto);
+    }
   }
 
   @mixin xl\:antialiased {
-    @include antialiased($xl);
+    @media (min-width: $xl) {
+      @include -webkit-font-smoothing(antialiased);
+      @include -moz-osx-font-smoothing(grayscale);
+    }
   }
 
   @mixin xl\:subpixel-antialiased {
-    @include subpixel-antialiased($xl);
+    @media (min-width: $xl) {
+      @include -webkit-font-smoothing(auto);
+      @include -moz-osx-font-smoothing(auto);
+    }
   }
 
   @mixin \2xl\:antialiased {
-    @include antialiased($\2xl);
+    @media (min-width: $\2xl) {
+      @include -webkit-font-smoothing(antialiased);
+      @include -moz-osx-font-smoothing(grayscale);
+    }
   }
 
   @mixin \2xl\:subpixel-antialiased {
-    @include subpixel-antialiased($\2xl);
+    @media (min-width: $\2xl) {
+      @include -webkit-font-smoothing(auto);
+      @include -moz-osx-font-smoothing(auto);
+    }
   }
   // x*/
 }

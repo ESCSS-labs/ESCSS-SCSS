@@ -3,24 +3,12 @@
 /* Box Decoration Break */
 @if $Basic {
   // /*x
-  @mixin box-decoration-clone($rwd: null) {
-    @if $rwd==null {
-      @include box-decoration-break(clone);
-    } @else {
-      @media (min-width: $rwd) {
-        @include box-decoration-break(clone);
-      }
-    }
+  @mixin box-decoration-clone {
+    @include box-decoration-break(clone);
   }
 
-  @mixin box-decoration-slice($rwd: null) {
-    @if $rwd==null {
-      @include box-decoration-break(slice);
-    } @else {
-      @media (min-width: $rwd) {
-        @include box-decoration-break(slice);
-      }
-    }
+  @mixin box-decoration-slice {
+    @include box-decoration-break(slice);
   }
 
   // x*/
@@ -29,43 +17,43 @@
 @if $Rwd {
   // /*x
   @mixin sm\:box-decoration-clone {
-    @include box-decoration-clone($sm);
+    @include sm\:box-decoration-break(clone);
   }
 
   @mixin sm\:box-decoration-slice {
-    @include box-decoration-slice($sm);
+    @include sm\:box-decoration-break(slice);
   }
 
   @mixin md\:box-decoration-clone {
-    @include box-decoration-clone($md);
+    @include md\:box-decoration-break(clone);
   }
 
   @mixin md\:box-decoration-slice {
-    @include box-decoration-slice($md);
+    @include md\:box-decoration-break(slice);
   }
 
   @mixin lg\:box-decoration-clone {
-    @include box-decoration-clone($lg);
+    @include lg\:box-decoration-break(clone);
   }
 
   @mixin lg\:box-decoration-slice {
-    @include box-decoration-slice($lg);
+    @include lg\:box-decoration-break(slice);
   }
 
   @mixin xl\:box-decoration-clone {
-    @include box-decoration-clone($xl);
+    @include xl\:box-decoration-break(clone);
   }
 
   @mixin xl\:box-decoration-slice {
-    @include box-decoration-slice($xl);
+    @include xl\:box-decoration-break(slice);
   }
 
   @mixin \2xl\:box-decoration-clone {
-    @include box-decoration-clone($\2xl);
+    @include \2xl\:box-decoration-break(clone);
   }
 
   @mixin \2xl\:box-decoration-slice {
-    @include box-decoration-slice($\2xl);
+    @include \2xl\:box-decoration-break(slice);
   }
 
   // x*/

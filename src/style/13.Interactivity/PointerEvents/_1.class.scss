@@ -3,24 +3,12 @@
 /* Pointer Events */
 @if $Basic {
   // /*x
-  @mixin pointer-events-none($rwd: null) {
-    @if $rwd==null {
-      @include pointer-events(none);
-    } @else {
-      @media (min-width: $rwd) {
-        @include pointer-events(none);
-      }
-    }
+  @mixin pointer-events-none {
+    @include pointer-events(none);
   }
 
-  @mixin pointer-events-auto($rwd: null) {
-    @if $rwd==null {
-      @include pointer-events(auto);
-    } @else {
-      @media (min-width: $rwd) {
-        @include pointer-events(auto);
-      }
-    }
+  @mixin pointer-events-auto {
+    @include pointer-events(auto);
   }
 
   // x*/
@@ -29,43 +17,43 @@
 @if $Rwd {
   // /*x
   @mixin sm\:pointer-events-none {
-    @include pointer-events-none($sm);
+    @include sm\:pointer-events(none);
   }
 
   @mixin sm\:pointer-events-auto {
-    @include pointer-events-auto($sm);
+    @include sm\:pointer-events(auto);
   }
 
   @mixin md\:pointer-events-none {
-    @include pointer-events-none($md);
+    @include md\:pointer-events(none);
   }
 
   @mixin md\:pointer-events-auto {
-    @include pointer-events-auto($md);
+    @include md\:pointer-events(auto);
   }
 
   @mixin lg\:pointer-events-none {
-    @include pointer-events-none($lg);
+    @include lg\:pointer-events(none);
   }
 
   @mixin lg\:pointer-events-auto {
-    @include pointer-events-auto($lg);
+    @include lg\:pointer-events(auto);
   }
 
   @mixin xl\:pointer-events-none {
-    @include pointer-events-none($xl);
+    @include xl\:pointer-events(none);
   }
 
   @mixin xl\:pointer-events-auto {
-    @include pointer-events-auto($xl);
+    @include xl\:pointer-events(auto);
   }
 
   @mixin \2xl\:pointer-events-none {
-    @include pointer-events-none($\2xl);
+    @include \2xl\:pointer-events(none);
   }
 
   @mixin \2xl\:pointer-events-auto {
-    @include pointer-events-auto($\2xl);
+    @include \2xl\:pointer-events(auto);
   }
 
   // x*/

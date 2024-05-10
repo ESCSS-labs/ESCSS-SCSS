@@ -4,24 +4,12 @@
 // flex-wrap is same as atomic class
 @if $Basic {
   // /*x
-  @mixin flex-wrap-reverse($rwd: null) {
-    @if $rwd==null {
-      @include flex-wrap(wrap-reverse);
-    } @else {
-      @media (min-width: $rwd) {
-        @include flex-wrap(wrap-reverse);
-      }
-    }
+  @mixin flex-wrap-reverse {
+    @include flex-wrap(wrap-reverse);
   }
 
-  @mixin flex-nowrap($rwd: null) {
-    @if $rwd==null {
-      @include flex-wrap(nowrap);
-    } @else {
-      @media (min-width: $rwd) {
-        @include flex-wrap(nowrap);
-      }
-    }
+  @mixin flex-nowrap {
+    @include flex-wrap(nowrap);
   }
 
   // x*/
@@ -31,44 +19,42 @@
   // /*x
 
   @mixin sm\:flex-wrap-reverse {
-    @include flex-wrap-reverse($sm);
+    @include sm\:flex-wrap(wrap-reverse);
   }
 
   @mixin sm\:flex-nowrap {
-    @include flex-nowrap($sm);
+    @include sm\:flex-wrap(nowrap);
   }
 
   @mixin md\:flex-wrap-reverse {
-    @include flex-wrap-reverse($md);
+    @include md\:flex-wrap(wrap-reverse);
   }
 
   @mixin md\:flex-nowrap {
-    @include flex-nowrap($md);
+    @include md\:flex-wrap(nowrap);
   }
 
   @mixin lg\:flex-wrap-reverse {
-    @include flex-wrap-reverse($lg);
+    @include lg\:flex-wrap(wrap-reverse);
   }
 
   @mixin lg\:flex-nowrap {
-    @include flex-nowrap($lg);
+    @include lg\:flex-wrap(nowrap);
   }
 
   @mixin xl\:flex-wrap-reverse {
-    @include flex-wrap-reverse($xl);
+    @include xl\:flex-wrap(wrap-reverse);
   }
 
   @mixin xl\:flex-nowrap {
-    @include flex-nowrap($xl);
+    @include xl\:flex-wrap(nowrap);
   }
 
   @mixin \2xl\:flex-wrap-reverse {
-    @include flex-wrap-reverse($\2xl);
+    @include \2xl\:flex-wrap(wrap-reverse);
   }
 
   @mixin \2xl\:flex-nowrap {
-    @include flex-nowrap($\2xl);
-  }
-
-  // x*/
+    @include \2xl\:flex-wrap(nowrap);
+  } // x*/
 }

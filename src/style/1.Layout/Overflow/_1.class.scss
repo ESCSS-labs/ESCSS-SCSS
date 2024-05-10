@@ -3,457 +3,369 @@
 /* Overflow */
 @if $Basic {
   // /*x
-  @mixin overflow-auto($rwd: null) {
-    @if $rwd==null {
-      @include overflow(auto);
-    } @else {
-      @media (min-width: $rwd) {
-        @include overflow(auto);
-      }
-    }
+  @mixin overflow-auto {
+    @include overflow(auto);
   }
 
-  @mixin overflow-hidden($rwd: null) {
-    @if $rwd==null {
-      @include overflow(hidden);
-    } @else {
-      @media (min-width: $rwd) {
-        @include overflow(hidden);
-      }
-    }
+  @mixin overflow-hidden {
+    @include overflow(hidden);
   }
 
-  @mixin overflow-clip($rwd: null) {
-    @if $rwd==null {
-      @include overflow(clip);
-    } @else {
-      @media (min-width: $rwd) {
-        @include overflow(clip);
-      }
-    }
+  @mixin overflow-clip {
+    @include overflow(clip);
   }
 
-  @mixin overflow-visible($rwd: null) {
-    @if $rwd==null {
-      @include overflow(visible);
-    } @else {
-      @media (min-width: $rwd) {
-        @include overflow(visible);
-      }
-    }
+  @mixin overflow-visible {
+    @include overflow(visible);
   }
 
-  @mixin overflow-scroll($rwd: null) {
-    @if $rwd==null {
-      @include overflow(scroll);
-    } @else {
-      @media (min-width: $rwd) {
-        @include overflow(scroll);
-      }
-    }
+  @mixin overflow-scroll {
+    @include overflow(scroll);
   }
 
-  @mixin overflow-x-auto($rwd: null) {
-    @if $rwd==null {
-      overflow-x: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: auto;
-      }
-    }
+  @mixin overflow-x-auto {
+    @include overflow-x(auto);
   }
 
-  @mixin overflow-y-auto($rwd: null) {
-    @if $rwd==null {
-      overflow-y: auto;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: auto;
-      }
-    }
+  @mixin overflow-y-auto {
+    @include overflow-y(auto);
   }
 
-  @mixin overflow-x-hidden($rwd: null) {
-    @if $rwd==null {
-      overflow-x: hidden;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: hidden;
-      }
-    }
+  @mixin overflow-x-hidden {
+    @include overflow-x(hidden);
   }
 
-  @mixin overflow-y-hidden($rwd: null) {
-    @if $rwd==null {
-      overflow-y: hidden;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: hidden;
-      }
-    }
+  @mixin overflow-y-hidden {
+    @include overflow-y(hidden);
   }
 
-  @mixin overflow-x-clip($rwd: null) {
-    @if $rwd==null {
-      overflow-x: clip;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: clip;
-      }
-    }
+  @mixin overflow-x-clip {
+    @include overflow-x(clip);
   }
 
-  @mixin overflow-y-clip($rwd: null) {
-    @if $rwd==null {
-      overflow-y: clip;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: clip;
-      }
-    }
+  @mixin overflow-y-clip {
+    @include overflow-y(clip);
   }
 
-  @mixin overflow-x-visible($rwd: null) {
-    @if $rwd==null {
-      overflow-x: visible;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: visible;
-      }
-    }
+  @mixin overflow-x-visible {
+    @include overflow-x(visible);
   }
 
-  @mixin overflow-y-visible($rwd: null) {
-    @if $rwd==null {
-      overflow-y: visible;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: visible;
-      }
-    }
+  @mixin overflow-y-visible {
+    @include overflow-y(visible);
   }
 
-  @mixin overflow-x-scroll($rwd: null) {
-    @if $rwd==null {
-      overflow-x: scroll;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-x: scroll;
-      }
-    }
+  @mixin overflow-x-scroll {
+    @include overflow-x(scroll);
   }
 
-  @mixin overflow-y-scroll($rwd: null) {
-    @if $rwd==null {
-      overflow-y: scroll;
-    } @else {
-      @media (min-width: $rwd) {
-        overflow-y: scroll;
-      }
-    }
-  } // x*/
+  @mixin overflow-y-scroll {
+    @include overflow-y(scroll);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:overflow-auto {
-    @include overflow-auto($sm);
+    @include sm\:overflow(auto);
   }
 
   @mixin sm\:overflow-hidden {
-    @include overflow-hidden($sm);
+    @include sm\:overflow(hidden);
   }
 
   @mixin sm\:overflow-clip {
-    @include overflow-clip($sm);
+    @include sm\:overflow(clip);
   }
 
   @mixin sm\:overflow-visible {
-    @include overflow-visible($sm);
+    @include sm\:overflow(visible);
   }
 
   @mixin sm\:overflow-scroll {
-    @include overflow-scroll($sm);
+    @include sm\:overflow(scroll);
   }
 
   @mixin sm\:overflow-x-auto {
-    @include overflow-x-auto($sm);
+    @include sm\:overflow-x(auto);
   }
 
   @mixin sm\:overflow-y-auto {
-    @include overflow-y-auto($sm);
+    @include sm\:overflow-y(auto);
   }
 
   @mixin sm\:overflow-x-hidden {
-    @include overflow-x-hidden($sm);
+    @include sm\:overflow-x(hidden);
   }
 
   @mixin sm\:overflow-y-hidden {
-    @include overflow-y-hidden($sm);
+    @include sm\:overflow-y(hidden);
   }
 
   @mixin sm\:overflow-x-clip {
-    @include overflow-x-clip($sm);
+    @include sm\:overflow-x(clip);
   }
 
   @mixin sm\:overflow-y-clip {
-    @include overflow-y-clip($sm);
+    @include sm\:overflow-y(clip);
   }
 
   @mixin sm\:overflow-x-visible {
-    @include overflow-x-visible($sm);
+    @include sm\:overflow-x(visible);
   }
 
   @mixin sm\:overflow-y-visible {
-    @include overflow-y-visible($sm);
+    @include sm\:overflow-y(visible);
   }
 
   @mixin sm\:overflow-x-scroll {
-    @include overflow-x-scroll($sm);
+    @include sm\:overflow-x(scroll);
   }
 
   @mixin sm\:overflow-y-scroll {
-    @include overflow-y-scroll($sm);
+    @include sm\:overflow-y(scroll);
   }
 
   @mixin md\:overflow-auto {
-    @include overflow-auto($md);
+    @include md\:overflow(auto);
   }
 
   @mixin md\:overflow-hidden {
-    @include overflow-hidden($md);
+    @include md\:overflow(hidden);
   }
 
   @mixin md\:overflow-clip {
-    @include overflow-clip($md);
+    @include md\:overflow(clip);
   }
 
   @mixin md\:overflow-visible {
-    @include overflow-visible($md);
+    @include md\:overflow(visible);
   }
 
   @mixin md\:overflow-scroll {
-    @include overflow-scroll($md);
+    @include md\:overflow(scroll);
   }
 
   @mixin md\:overflow-x-auto {
-    @include overflow-x-auto($md);
+    @include md\:overflow-x(auto);
   }
 
   @mixin md\:overflow-y-auto {
-    @include overflow-y-auto($md);
+    @include md\:overflow-y(auto);
   }
 
   @mixin md\:overflow-x-hidden {
-    @include overflow-x-hidden($md);
+    @include md\:overflow-x(hidden);
   }
 
   @mixin md\:overflow-y-hidden {
-    @include overflow-y-hidden($md);
+    @include md\:overflow-y(hidden);
   }
 
   @mixin md\:overflow-x-clip {
-    @include overflow-x-clip($md);
+    @include md\:overflow-x(clip);
   }
 
   @mixin md\:overflow-y-clip {
-    @include overflow-y-clip($md);
+    @include md\:overflow-y(clip);
   }
 
   @mixin md\:overflow-x-visible {
-    @include overflow-x-visible($md);
+    @include md\:overflow-x(visible);
   }
 
   @mixin md\:overflow-y-visible {
-    @include overflow-y-visible($md);
+    @include md\:overflow-y(visible);
   }
 
   @mixin md\:overflow-x-scroll {
-    @include overflow-x-scroll($md);
+    @include md\:overflow-x(scroll);
   }
 
   @mixin md\:overflow-y-scroll {
-    @include overflow-y-scroll($md);
+    @include md\:overflow-y(scroll);
   }
 
   @mixin lg\:overflow-auto {
-    @include overflow-auto($lg);
+    @include lg\:overflow(auto);
   }
 
   @mixin lg\:overflow-hidden {
-    @include overflow-hidden($lg);
+    @include lg\:overflow(hidden);
   }
 
   @mixin lg\:overflow-clip {
-    @include overflow-clip($lg);
+    @include lg\:overflow(clip);
   }
 
   @mixin lg\:overflow-visible {
-    @include overflow-visible($lg);
+    @include lg\:overflow(visible);
   }
 
   @mixin lg\:overflow-scroll {
-    @include overflow-scroll($lg);
+    @include lg\:overflow(scroll);
   }
 
   @mixin lg\:overflow-x-auto {
-    @include overflow-x-auto($lg);
+    @include lg\:overflow-x(auto);
   }
 
   @mixin lg\:overflow-y-auto {
-    @include overflow-y-auto($lg);
+    @include lg\:overflow-y(auto);
   }
 
   @mixin lg\:overflow-x-hidden {
-    @include overflow-x-hidden($lg);
+    @include lg\:overflow-x(hidden);
   }
 
   @mixin lg\:overflow-y-hidden {
-    @include overflow-y-hidden($lg);
+    @include lg\:overflow-y(hidden);
   }
 
   @mixin lg\:overflow-x-clip {
-    @include overflow-x-clip($lg);
+    @include lg\:overflow-x(clip);
   }
 
   @mixin lg\:overflow-y-clip {
-    @include overflow-y-clip($lg);
+    @include lg\:overflow-y(clip);
   }
 
   @mixin lg\:overflow-x-visible {
-    @include overflow-x-visible($lg);
+    @include lg\:overflow-x(visible);
   }
 
   @mixin lg\:overflow-y-visible {
-    @include overflow-y-visible($lg);
+    @include lg\:overflow-y(visible);
   }
 
   @mixin lg\:overflow-x-scroll {
-    @include overflow-x-scroll($lg);
+    @include lg\:overflow-x(scroll);
   }
 
   @mixin lg\:overflow-y-scroll {
-    @include overflow-y-scroll($lg);
+    @include lg\:overflow-y(scroll);
   }
 
   @mixin xl\:overflow-auto {
-    @include overflow-auto($xl);
+    @include xl\:overflow(auto);
   }
 
   @mixin xl\:overflow-hidden {
-    @include overflow-hidden($xl);
+    @include xl\:overflow(hidden);
   }
 
   @mixin xl\:overflow-clip {
-    @include overflow-clip($xl);
+    @include xl\:overflow(clip);
   }
 
   @mixin xl\:overflow-visible {
-    @include overflow-visible($xl);
+    @include xl\:overflow(visible);
   }
 
   @mixin xl\:overflow-scroll {
-    @include overflow-scroll($xl);
+    @include xl\:overflow(scroll);
   }
 
   @mixin xl\:overflow-x-auto {
-    @include overflow-x-auto($xl);
+    @include xl\:overflow-x(auto);
   }
 
   @mixin xl\:overflow-y-auto {
-    @include overflow-y-auto($xl);
+    @include xl\:overflow-y(auto);
   }
 
   @mixin xl\:overflow-x-hidden {
-    @include overflow-x-hidden($xl);
+    @include xl\:overflow-x(hidden);
   }
 
   @mixin xl\:overflow-y-hidden {
-    @include overflow-y-hidden($xl);
+    @include xl\:overflow-y(hidden);
   }
 
   @mixin xl\:overflow-x-clip {
-    @include overflow-x-clip($xl);
+    @include xl\:overflow-x(clip);
   }
 
   @mixin xl\:overflow-y-clip {
-    @include overflow-y-clip($xl);
+    @include xl\:overflow-y(clip);
   }
 
   @mixin xl\:overflow-x-visible {
-    @include overflow-x-visible($xl);
+    @include xl\:overflow-x(visible);
   }
 
   @mixin xl\:overflow-y-visible {
-    @include overflow-y-visible($xl);
+    @include xl\:overflow-y(visible);
   }
 
   @mixin xl\:overflow-x-scroll {
-    @include overflow-x-scroll($xl);
+    @include xl\:overflow-x(scroll);
   }
 
   @mixin xl\:overflow-y-scroll {
-    @include overflow-y-scroll($xl);
+    @include xl\:overflow-y(scroll);
   }
 
   @mixin \2xl\:overflow-auto {
-    @include overflow-auto($\2xl);
+    @include \2xl\:overflow(auto);
   }
 
   @mixin \2xl\:overflow-hidden {
-    @include overflow-hidden($\2xl);
+    @include \2xl\:overflow(hidden);
   }
 
   @mixin \2xl\:overflow-clip {
-    @include overflow-clip($\2xl);
+    @include \2xl\:overflow(clip);
   }
 
   @mixin \2xl\:overflow-visible {
-    @include overflow-visible($\2xl);
+    @include \2xl\:overflow(visible);
   }
 
   @mixin \2xl\:overflow-scroll {
-    @include overflow-scroll($\2xl);
+    @include \2xl\:overflow(scroll);
   }
 
   @mixin \2xl\:overflow-x-auto {
-    @include overflow-x-auto($\2xl);
+    @include \2xl\:overflow-x(auto);
   }
 
   @mixin \2xl\:overflow-y-auto {
-    @include overflow-y-auto($\2xl);
+    @include \2xl\:overflow-y(auto);
   }
 
   @mixin \2xl\:overflow-x-hidden {
-    @include overflow-x-hidden($\2xl);
+    @include \2xl\:overflow-x(hidden);
   }
 
   @mixin \2xl\:overflow-y-hidden {
-    @include overflow-y-hidden($\2xl);
+    @include \2xl\:overflow-y(hidden);
   }
 
   @mixin \2xl\:overflow-x-clip {
-    @include overflow-x-clip($\2xl);
+    @include \2xl\:overflow-x(clip);
   }
 
   @mixin \2xl\:overflow-y-clip {
-    @include overflow-y-clip($\2xl);
+    @include \2xl\:overflow-y(clip);
   }
 
   @mixin \2xl\:overflow-x-visible {
-    @include overflow-x-visible($\2xl);
+    @include \2xl\:overflow-x(visible);
   }
 
   @mixin \2xl\:overflow-y-visible {
-    @include overflow-y-visible($\2xl);
+    @include \2xl\:overflow-y(visible);
   }
 
   @mixin \2xl\:overflow-x-scroll {
-    @include overflow-x-scroll($\2xl);
+    @include \2xl\:overflow-x(scroll);
   }
 
   @mixin \2xl\:overflow-y-scroll {
-    @include overflow-y-scroll($\2xl);
+    @include \2xl\:overflow-y(scroll);
   }
 
   // x*/

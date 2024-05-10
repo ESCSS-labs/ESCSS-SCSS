@@ -943,6 +943,36 @@
   }
 }
 
+@mixin overflow-x($v, $rwd: null) {
+  @if $rwd==null {
+    overflow-x: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      overflow-x: $v;
+    }
+  }
+}
+
+@mixin overflow-y($v, $rwd: null) {
+  @if $rwd==null {
+    overflow-y: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      overflow-y: $v;
+    }
+  }
+}
+
+@mixin clip($v, $rwd: null) {
+  @if $rwd==null {
+    clip: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      clip: $v;
+    }
+  }
+}
+
 @mixin display($v, $rwd: null) {
   @if $rwd==null {
     display: $v;
@@ -2383,6 +2413,18 @@
   @include overflow($v, $sm);
 }
 
+@mixin sm\:overflow-x($v) {
+  @include overflow-x($v, $sm);
+}
+
+@mixin sm\:overflow-y($v) {
+  @include overflow-y($v, $sm);
+}
+
+@mixin sm\:clip($v) {
+  @include clip($v, $sm);
+}
+
 @mixin sm\:display($v) {
   @include display($v, $sm);
 }
@@ -3149,6 +3191,18 @@
 
 @mixin md\:overflow($v) {
   @include overflow($v, $md);
+}
+
+@mixin md\:overflow-x($v) {
+  @include overflow-x($v, $md);
+}
+
+@mixin md\:overflow-y($v) {
+  @include overflow-y($v, $md);
+}
+
+@mixin md\:clip($v) {
+  @include clip($v, $md);
 }
 
 @mixin md\:display($v) {
@@ -3919,6 +3973,18 @@
   @include overflow($v, $lg);
 }
 
+@mixin lg\:overflow-x($v) {
+  @include overflow-x($v, $lg);
+}
+
+@mixin lg\:overflow-y($v) {
+  @include overflow-y($v, $lg);
+}
+
+@mixin lg\:clip($v) {
+  @include clip($v, $lg);
+}
+
 @mixin lg\:display($v) {
   @include display($v, $lg);
 }
@@ -4687,6 +4753,18 @@
   @include overflow($v, $xl);
 }
 
+@mixin xl\:overflow-x($v) {
+  @include overflow-x($v, $xl);
+}
+
+@mixin xl\:overflow-y($v) {
+  @include overflow-y($v, $xl);
+}
+
+@mixin xl\:clip($v) {
+  @include clip($v, $xl);
+}
+
 @mixin xl\:display($v) {
   @include display($v, $xl);
 }
@@ -5453,6 +5531,18 @@
 
 @mixin \2xl\:overflow($v) {
   @include overflow($v, $\2xl);
+}
+
+@mixin \2xl\:overflow-x($v) {
+  @include overflow-x($v, $\2xl);
+}
+
+@mixin \2xl\:overflow-y($v) {
+  @include overflow-y($v, $\2xl);
+}
+
+@mixin \2xl\:clip($v) {
+  @include clip($v, $\2xl);
 }
 
 @mixin \2xl\:display($v) {

@@ -3,24 +3,12 @@
 /* Font Style */
 @if $Basic {
   // /*x
-  @mixin italic($rwd: null) {
-    @if $rwd==null {
-      @include font-style(italic);
-    } @else {
-      @media (min-width: $rwd) {
-        @include font-style(italic);
-      }
-    }
+  @mixin italic {
+    @include font-style(italic);
   }
 
-  @mixin not-italic($rwd: null) {
-    @if $rwd==null {
-      @include font-style(normal);
-    } @else {
-      @media (min-width: $rwd) {
-        @include font-style(normal);
-      }
-    }
+  @mixin not-italic {
+    @include font-style(normal);
   }
 
   // x*/
@@ -29,43 +17,43 @@
 @if $Rwd {
   // /*x
   @mixin sm\:italic {
-    @include italic($sm);
+    @include sm\:font-style(italic);
   }
 
   @mixin sm\:not-italic {
-    @include not-italic($sm);
+    @include sm\:font-style(normal);
   }
 
   @mixin md\:italic {
-    @include italic($md);
+    @include md\:font-style(italic);
   }
 
   @mixin md\:not-italic {
-    @include not-italic($md);
+    @include md\:font-style(normal);
   }
 
   @mixin lg\:italic {
-    @include italic($lg);
+    @include lg\:font-style(italic);
   }
 
   @mixin lg\:not-italic {
-    @include not-italic($lg);
+    @include lg\:font-style(normal);
   }
 
   @mixin xl\:italic {
-    @include italic($xl);
+    @include xl\:font-style(italic);
   }
 
   @mixin xl\:not-italic {
-    @include not-italic($xl);
+    @include xl\:font-style(normal);
   }
 
   @mixin \2xl\:italic {
-    @include italic($\2xl);
+    @include \2xl\:font-style(italic);
   }
 
   @mixin \2xl\:not-italic {
-    @include not-italic($\2xl);
+    @include \2xl\:font-style(normal);
   }
 
   // x*/

@@ -3,8 +3,37 @@
 /* Container */
 @if $Basic {
   // /*x
-  @mixin container($rwd: null) {
-    @if $rwd==null {
+  @mixin container {
+    @include width(100%);
+
+    @media (min-width: $sm) {
+      @include max-width($sm);
+    }
+
+    @media (min-width: $md) {
+      @include max-width($md);
+    }
+
+    @media (min-width: $lg) {
+      @include max-width($lg);
+    }
+
+    @media (min-width: $xl) {
+      @include max-width($xl);
+    }
+
+    @media (min-width: $\2xl) {
+      @include max-width($\2xl);
+    }
+  }
+
+  // x*/
+}
+
+@if $Rwd {
+  // /*x
+  @mixin sm\:container {
+    @media (min-width: $sm) {
       @include width(100%);
 
       @media (min-width: $sm) {
@@ -26,56 +55,111 @@
       @media (min-width: $\2xl) {
         @include max-width($\2xl);
       }
-    } @else {
-      @media (min-width: $rwd) {
-        @include width(100%);
+    }
+  }
 
-        @media (min-width: $sm) {
-          @include max-width($sm);
-        }
+  @mixin md\:container {
+    @media (min-width: $md) {
+      @include width(100%);
 
-        @media (min-width: $md) {
-          @include max-width($md);
-        }
+      @media (min-width: $sm) {
+        @include max-width($sm);
+      }
 
-        @media (min-width: $lg) {
-          @include max-width($lg);
-        }
+      @media (min-width: $md) {
+        @include max-width($md);
+      }
 
-        @media (min-width: $xl) {
-          @include max-width($xl);
-        }
+      @media (min-width: $lg) {
+        @include max-width($lg);
+      }
 
-        @media (min-width: $\2xl) {
-          @include max-width($\2xl);
-        }
+      @media (min-width: $xl) {
+        @include max-width($xl);
+      }
+
+      @media (min-width: $\2xl) {
+        @include max-width($\2xl);
       }
     }
   }
 
-  // x*/
-}
-
-@if $Rwd {
-  // /*x
-  @mixin sm\:container {
-    @include container($sm);
-  }
-
-  @mixin md\:container {
-    @include container($md);
-  }
-
   @mixin lg\:container {
-    @include container($lg);
+    @media (min-width: $lg) {
+      @include width(100%);
+
+      @media (min-width: $sm) {
+        @include max-width($sm);
+      }
+
+      @media (min-width: $md) {
+        @include max-width($md);
+      }
+
+      @media (min-width: $lg) {
+        @include max-width($lg);
+      }
+
+      @media (min-width: $xl) {
+        @include max-width($xl);
+      }
+
+      @media (min-width: $\2xl) {
+        @include max-width($\2xl);
+      }
+    }
   }
 
   @mixin xl\:container {
-    @include container($xl);
+    @media (min-width: $xl) {
+      @include width(100%);
+
+      @media (min-width: $sm) {
+        @include max-width($sm);
+      }
+
+      @media (min-width: $md) {
+        @include max-width($md);
+      }
+
+      @media (min-width: $lg) {
+        @include max-width($lg);
+      }
+
+      @media (min-width: $xl) {
+        @include max-width($xl);
+      }
+
+      @media (min-width: $\2xl) {
+        @include max-width($\2xl);
+      }
+    }
   }
 
   @mixin \2xl\:container {
-    @include container($\2xl);
+    @media (min-width: $\2xl) {
+      @include width(100%);
+
+      @media (min-width: $sm) {
+        @include max-width($sm);
+      }
+
+      @media (min-width: $md) {
+        @include max-width($md);
+      }
+
+      @media (min-width: $lg) {
+        @include max-width($lg);
+      }
+
+      @media (min-width: $xl) {
+        @include max-width($xl);
+      }
+
+      @media (min-width: $\2xl) {
+        @include max-width($\2xl);
+      }
+    }
   }
 
   // x*/

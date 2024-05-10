@@ -4,14 +4,8 @@
 // border-collapse is same as atomic class
 @if $Basic {
   // /*x
-  @mixin border-separate($rwd: null) {
-    @if $rwd==null {
-      @include border-collapse(separate);
-    } @else {
-      @media (min-width: $rwd) {
-        @include border-collapse(separate);
-      }
-    }
+  @mixin border-separate {
+    @include border-collapse(separate);
   }
 
   // x*/
@@ -20,23 +14,23 @@
 @if $Rwd {
   // /*x
   @mixin sm\:border-separate {
-    @include border-separate($sm);
+    @include sm\:border-collapse(separate);
   }
 
   @mixin md\:border-separate {
-    @include border-separate($md);
+    @include md\:border-collapse(separate);
   }
 
   @mixin lg\:border-separate {
-    @include border-separate($lg);
+    @include lg\:border-collapse(separate);
   }
 
   @mixin xl\:border-separate {
-    @include border-separate($xl);
+    @include xl\:border-collapse(separate);
   }
 
   @mixin \2xl\:border-separate {
-    @include border-separate($\2xl);
+    @include \2xl\:border-collapse(separate);
   }
 
   // x*/

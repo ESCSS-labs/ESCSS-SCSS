@@ -3,64 +3,28 @@
 /* Scroll Snap Type */
 @if $Basic {
   // /*x
-  @mixin snap-none($rwd: null) {
-    @if $rwd==null {
-      @include scroll-snap-type(none);
-    } @else {
-      @media (min-width: $rwd) {
-        @include scroll-snap-type(none);
-      }
-    }
+  @mixin snap-none {
+    @include scroll-snap-type(none);
   }
 
-  @mixin snap-x($rwd: null) {
-    @if $rwd==null {
-      @include scroll-snap-type(x $tw-scroll-snap-strictness);
-    } @else {
-      @media (min-width: $rwd) {
-        @include scroll-snap-type(x $tw-scroll-snap-strictness);
-      }
-    }
+  @mixin snap-x {
+    @include scroll-snap-type(x $tw-scroll-snap-strictness);
   }
 
-  @mixin snap-y($rwd: null) {
-    @if $rwd==null {
-      @include scroll-snap-type(y $tw-scroll-snap-strictness);
-    } @else {
-      @media (min-width: $rwd) {
-        @include scroll-snap-type(y $tw-scroll-snap-strictness);
-      }
-    }
+  @mixin snap-y {
+    @include scroll-snap-type(y $tw-scroll-snap-strictness);
   }
 
-  @mixin snap-both($rwd: null) {
-    @if $rwd==null {
-      @include scroll-snap-type(both $tw-scroll-snap-strictness);
-    } @else {
-      @media (min-width: $rwd) {
-        @include scroll-snap-type(both $tw-scroll-snap-strictness);
-      }
-    }
+  @mixin snap-both {
+    @include scroll-snap-type(both $tw-scroll-snap-strictness);
   }
 
-  @mixin snap-mandatory($rwd: null) {
-    @if $rwd==null {
-      $tw-scroll-snap-strictness: mandatory !global;
-    } @else {
-      @media (min-width: $rwd) {
-        $tw-scroll-snap-strictness: mandatory !global;
-      }
-    }
+  @mixin snap-mandatory {
+    $tw-scroll-snap-strictness: mandatory !global;
   }
 
-  @mixin snap-proximity($rwd: null) {
-    @if $rwd==null {
-      $tw-scroll-snap-strictness: proximity !global;
-    } @else {
-      @media (min-width: $rwd) {
-        $tw-scroll-snap-strictness: proximity !global;
-      }
-    }
+  @mixin snap-proximity {
+    $tw-scroll-snap-strictness: proximity !global;
   }
 
   // x*/
@@ -69,124 +33,143 @@
 @if $Rwd {
   // /*x
   @mixin sm\:snap-none {
-    @include snap-none($sm);
+    @include sm\:scroll-snap-type(none);
   }
-
+  
   @mixin sm\:snap-x {
-    @include snap-x($sm);
+    @include sm\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
-
+  
   @mixin sm\:snap-y {
-    @include snap-y($sm);
+    @include sm\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
-
+  
   @mixin sm\:snap-both {
-    @include snap-both($sm);
+    @include sm\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
-
+  
   @mixin sm\:snap-mandatory {
-    @include snap-mandatory($sm);
+    @media (min-width: $sm) {
+      $tw-scroll-snap-strictness: mandatory !global;
+    }
   }
-
+  
   @mixin sm\:snap-proximity {
-    @include snap-proximity($sm);
+    @media (min-width: $sm) {
+      $tw-scroll-snap-strictness: proximity !global;
+    }
   }
-
+  
   @mixin md\:snap-none {
-    @include snap-none($md);
+    @include md\:scroll-snap-type(none);
   }
-
+  
   @mixin md\:snap-x {
-    @include snap-x($md);
+    @include md\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
-
+  
   @mixin md\:snap-y {
-    @include snap-y($md);
+    @include md\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
-
+  
   @mixin md\:snap-both {
-    @include snap-both($md);
+    @include md\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
-
+  
   @mixin md\:snap-mandatory {
-    @include snap-mandatory($md);
+    @media (min-width: $md) {
+      $tw-scroll-snap-strictness: mandatory !global;
+    }
   }
-
+  
   @mixin md\:snap-proximity {
-    @include snap-proximity($md);
+    @media (min-width: $md) {
+      $tw-scroll-snap-strictness: proximity !global;
+    }
   }
-
+  
   @mixin lg\:snap-none {
-    @include snap-none($lg);
+    @include lg\:scroll-snap-type(none);
   }
-
+  
   @mixin lg\:snap-x {
-    @include snap-x($lg);
+    @include lg\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
-
+  
   @mixin lg\:snap-y {
-    @include snap-y($lg);
+    @include lg\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
-
+  
   @mixin lg\:snap-both {
-    @include snap-both($lg);
+    @include lg\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
-
+  
   @mixin lg\:snap-mandatory {
-    @include snap-mandatory($lg);
+    @media (min-width: $lg) {
+      $tw-scroll-snap-strictness: mandatory !global;
+    }
   }
-
+  
   @mixin lg\:snap-proximity {
-    @include snap-proximity($lg);
+    @media (min-width: $lg) {
+      $tw-scroll-snap-strictness: proximity !global;
+    }
   }
-
+  
   @mixin xl\:snap-none {
-    @include snap-none($xl);
+    @include xl\:scroll-snap-type(none);
   }
-
+  
   @mixin xl\:snap-x {
-    @include snap-x($xl);
+    @include xl\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
-
+  
   @mixin xl\:snap-y {
-    @include snap-y($xl);
+    @include xl\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
-
+  
   @mixin xl\:snap-both {
-    @include snap-both($xl);
+    @include xl\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
-
+  
   @mixin xl\:snap-mandatory {
-    @include snap-mandatory($xl);
+    @media (min-width: $xl) {
+      $tw-scroll-snap-strictness: mandatory !global;
+    }
   }
-
+  
   @mixin xl\:snap-proximity {
-    @include snap-proximity($xl);
+    @media (min-width: $xl) {
+      $tw-scroll-snap-strictness: proximity !global;
+    }
   }
-
+  
   @mixin \2xl\:snap-none {
-    @include snap-none($\2xl);
+    @include \2xl\:scroll-snap-type(none);
   }
-
+  
   @mixin \2xl\:snap-x {
-    @include snap-x($\2xl);
+    @include \2xl\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
-
+  
   @mixin \2xl\:snap-y {
-    @include snap-y($\2xl);
+    @include \2xl\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
-
+  
   @mixin \2xl\:snap-both {
-    @include snap-both($\2xl);
+    @include \2xl\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
-
+  
   @mixin \2xl\:snap-mandatory {
-    @include snap-mandatory($\2xl);
+    @media (min-width: $\2xl) {
+      $tw-scroll-snap-strictness: mandatory !global;
+    }
   }
-
+  
   @mixin \2xl\:snap-proximity {
-    @include snap-proximity($\2xl);
+    @media (min-width: $\2xl) {
+      $tw-scroll-snap-strictness: proximity !global;
+    }
   }
-
   // x*/
 }

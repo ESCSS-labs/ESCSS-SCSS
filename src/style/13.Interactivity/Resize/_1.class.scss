@@ -4,34 +4,16 @@
 // resize is same as atomic class
 @if $Basic {
   // /*x
-  @mixin resize-none($rwd: null) {
-    @if $rwd==null {
-      @include resize(none);
-    } @else {
-      @media (min-width: $rwd) {
-        @include resize(none);
-      }
-    }
+  @mixin resize-none {
+    @include resize(none);
   }
 
-  @mixin resize-y($rwd: null) {
-    @if $rwd==null {
-      @include resize(vertical);
-    } @else {
-      @media (min-width: $rwd) {
-        @include resize(vertical);
-      }
-    }
+  @mixin resize-y {
+    @include resize(vertical);
   }
 
-  @mixin resize-x($rwd: null) {
-    @if $rwd==null {
-      @include resize(horizontal);
-    } @else {
-      @media (min-width: $rwd) {
-        @include resize(horizontal);
-      }
-    }
+  @mixin resize-x {
+    @include resize(horizontal);
   }
 
   // x*/
@@ -40,63 +22,63 @@
 @if $Rwd {
   // /*x
   @mixin sm\:resize-none {
-    @include resize-none($sm);
+    @include sm\:resize(none);
   }
 
   @mixin sm\:resize-y {
-    @include resize-y($sm);
+    @include sm\:resize(vertical);
   }
 
   @mixin sm\:resize-x {
-    @include resize-x($sm);
+    @include sm\:resize(horizontal);
   }
 
   @mixin md\:resize-none {
-    @include resize-none($md);
+    @include md\:resize(none);
   }
 
   @mixin md\:resize-y {
-    @include resize-y($md);
+    @include md\:resize(vertical);
   }
 
   @mixin md\:resize-x {
-    @include resize-x($md);
+    @include md\:resize(horizontal);
   }
 
   @mixin lg\:resize-none {
-    @include resize-none($lg);
+    @include lg\:resize(none);
   }
 
   @mixin lg\:resize-y {
-    @include resize-y($lg);
+    @include lg\:resize(vertical);
   }
 
   @mixin lg\:resize-x {
-    @include resize-x($lg);
+    @include lg\:resize(horizontal);
   }
 
   @mixin xl\:resize-none {
-    @include resize-none($xl);
+    @include xl\:resize(none);
   }
 
   @mixin xl\:resize-y {
-    @include resize-y($xl);
+    @include xl\:resize(vertical);
   }
 
   @mixin xl\:resize-x {
-    @include resize-x($xl);
+    @include xl\:resize(horizontal);
   }
 
   @mixin \2xl\:resize-none {
-    @include resize-none($\2xl);
+    @include \2xl\:resize(none);
   }
 
   @mixin \2xl\:resize-y {
-    @include resize-y($\2xl);
+    @include \2xl\:resize(vertical);
   }
 
   @mixin \2xl\:resize-x {
-    @include resize-x($\2xl);
+    @include \2xl\:resize(horizontal);
   }
 
   // x*/

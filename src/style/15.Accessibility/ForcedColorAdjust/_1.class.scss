@@ -3,67 +3,57 @@
 /* Forced Color Adjust */
 @if $Basic {
   // /*x
-  @mixin forced-color-adjust-auto($rwd: null) {
-    @if $rwd==null {
-      @include forced-color-adjust(auto);
-    } @else {
-      @media (min-width: $rwd) {
-        @include forced-color-adjust(auto);
-      }
-    }
+  @mixin forced-color-adjust-auto {
+    @include forced-color-adjust(auto);
   }
 
-  @mixin forced-color-adjust-none($rwd: null) {
-    @if $rwd==null {
-      @include forced-color-adjust(none);
-    } @else {
-      @media (min-width: $rwd) {
-        @include forced-color-adjust(none);
-      }
-    }
-  } // x*/
+  @mixin forced-color-adjust-none {
+    @include forced-color-adjust(none);
+  }
+
+  // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:forced-color-adjust-auto {
-    @include forced-color-adjust-auto($sm);
+    @include sm\:forced-color-adjust(auto);
   }
 
   @mixin sm\:forced-color-adjust-none {
-    @include forced-color-adjust-none($sm);
+    @include sm\:forced-color-adjust(none);
   }
 
   @mixin md\:forced-color-adjust-auto {
-    @include forced-color-adjust-auto($md);
+    @include md\:forced-color-adjust(auto);
   }
 
   @mixin md\:forced-color-adjust-none {
-    @include forced-color-adjust-none($md);
+    @include md\:forced-color-adjust(none);
   }
 
   @mixin lg\:forced-color-adjust-auto {
-    @include forced-color-adjust-auto($lg);
+    @include lg\:forced-color-adjust(auto);
   }
 
   @mixin lg\:forced-color-adjust-none {
-    @include forced-color-adjust-none($lg);
+    @include lg\:forced-color-adjust(none);
   }
 
   @mixin xl\:forced-color-adjust-auto {
-    @include forced-color-adjust-auto($xl);
+    @include xl\:forced-color-adjust(auto);
   }
 
   @mixin xl\:forced-color-adjust-none {
-    @include forced-color-adjust-none($xl);
+    @include xl\:forced-color-adjust(none);
   }
 
   @mixin \2xl\:forced-color-adjust-auto {
-    @include forced-color-adjust-auto($\2xl);
+    @include \2xl\:forced-color-adjust(auto);
   }
 
   @mixin \2xl\:forced-color-adjust-none {
-    @include forced-color-adjust-none($\2xl);
+    @include \2xl\:forced-color-adjust(none);
   }
 
   // x*/

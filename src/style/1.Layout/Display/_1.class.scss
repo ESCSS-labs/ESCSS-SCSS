@@ -4,607 +4,487 @@
 // flex is same as atomic class
 @if $Basic {
   // /*x
-  @mixin block($rwd: null) {
-    @if $rwd==null {
-      @include display(block);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(block);
-      }
-    }
+  @mixin block {
+    @include display(block);
   }
 
-  @mixin inline-block($rwd: null) {
-    @if $rwd==null {
-      @include display(inline-block);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(inline-block);
-      }
-    }
+  @mixin inline-block {
+    @include display(inline-block);
   }
 
-  @mixin inline($rwd: null) {
-    @if $rwd==null {
-      @include display(inline);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(inline);
-      }
-    }
+  @mixin inline {
+    @include display(inline);
   }
 
-  @mixin inline-flex($rwd: null) {
-    @if $rwd==null {
-      @include display(inline-flex);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(inline-flex);
-      }
-    }
+  @mixin inline-flex {
+    @include display(inline-flex);
   }
 
-  @mixin table($rwd: null) {
-    @if $rwd==null {
-      @include display(table);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(table);
-      }
-    }
+  @mixin table {
+    @include display(table);
   }
 
-  @mixin inline-table($rwd: null) {
-    @if $rwd==null {
-      @include display(inline-table);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(inline-table);
-      }
-    }
+  @mixin inline-table {
+    @include display(inline-table);
   }
 
-  @mixin table-caption($rwd: null) {
-    @if $rwd==null {
-      @include display(table-caption);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(table-caption);
-      }
-    }
+  @mixin table-caption {
+    @include display(table-caption);
   }
 
-  @mixin table-cell($rwd: null) {
-    @if $rwd==null {
-      @include display(table-cell);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(table-cell);
-      }
-    }
+  @mixin table-cell {
+    @include display(table-cell);
   }
 
-  @mixin table-column($rwd: null) {
-    @if $rwd==null {
-      @include display(table-column);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(table-column);
-      }
-    }
+  @mixin table-column {
+    @include display(table-column);
   }
 
-  @mixin table-column-group($rwd: null) {
-    @if $rwd==null {
-      @include display(table-column-group);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(table-column-group);
-      }
-    }
+  @mixin table-column-group {
+    @include display(table-column-group);
   }
 
-  @mixin table-footer-group($rwd: null) {
-    @if $rwd==null {
-      @include display(table-footer-group);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(table-footer-group);
-      }
-    }
+  @mixin table-footer-group {
+    @include display(table-footer-group);
   }
 
-  @mixin table-header-group($rwd: null) {
-    @if $rwd==null {
-      @include display(table-header-group);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(table-header-group);
-      }
-    }
+  @mixin table-header-group {
+    @include display(table-header-group);
   }
 
-  @mixin table-row-group($rwd: null) {
-    @if $rwd==null {
-      @include display(table-row-group);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(table-row-group);
-      }
-    }
+  @mixin table-row-group {
+    @include display(table-row-group);
   }
 
-  @mixin table-row($rwd: null) {
-    @if $rwd==null {
-      @include display(table-row);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(table-row);
-      }
-    }
+  @mixin table-row {
+    @include display(table-row);
   }
 
-  @mixin flow-root($rwd: null) {
-    @if $rwd==null {
-      @include display(flow-root);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(flow-root);
-      }
-    }
+  @mixin flow-root {
+    @include display(flow-root);
   }
 
-  @mixin grid($rwd: null) {
-    @if $rwd==null {
-      @include display(grid);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(grid);
-      }
-    }
+  @mixin grid {
+    @include display(grid);
   }
 
-  @mixin inline-grid($rwd: null) {
-    @if $rwd==null {
-      @include display(inline-grid);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(inline-grid);
-      }
-    }
+  @mixin inline-grid {
+    @include display(inline-grid);
   }
 
-  @mixin contents($rwd: null) {
-    @if $rwd==null {
-      @include display(contents);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(contents);
-      }
-    }
+  @mixin contents {
+    @include display(contents);
   }
 
-  @mixin list-item($rwd: null) {
-    @if $rwd==null {
-      @include display(list-item);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(list-item);
-      }
-    }
+  @mixin list-item {
+    @include display(list-item);
   }
 
-  @mixin hidden($rwd: null) {
-    @if $rwd==null {
-      @include display(none);
-    } @else {
-      @media (min-width: $rwd) {
-        @include display(none);
-      }
-    }
+  @mixin hidden {
+    @include display(none);
   } // x*/
 }
 
 @if $Rwd {
   // /*x
   @mixin sm\:block {
-    @include block($sm);
+    @include sm\:display(block);
   }
 
   @mixin sm\:inline-block {
-    @include inline-block($sm);
+    @include sm\:display(inline-block);
   }
 
   @mixin sm\:inline {
-    @include inline($sm);
+    @include sm\:display(inline);
   }
 
   @mixin sm\:inline-flex {
-    @include inline-flex($sm);
+    @include sm\:display(inline-flex);
   }
 
   @mixin sm\:table {
-    @include table($sm);
+    @include sm\:display(table);
   }
 
   @mixin sm\:inline-table {
-    @include inline-table($sm);
+    @include sm\:display(inline-table);
   }
 
   @mixin sm\:table-caption {
-    @include table-caption($sm);
+    @include sm\:display(table-caption);
   }
 
   @mixin sm\:table-cell {
-    @include table-cell($sm);
+    @include sm\:display(table-cell);
   }
 
   @mixin sm\:table-column {
-    @include table-column($sm);
+    @include sm\:display(table-column);
   }
 
   @mixin sm\:table-column-group {
-    @include table-column-group($sm);
+    @include sm\:display(table-column-group);
   }
 
   @mixin sm\:table-footer-group {
-    @include table-footer-group($sm);
+    @include sm\:display(table-footer-group);
   }
 
   @mixin sm\:table-header-group {
-    @include table-header-group($sm);
+    @include sm\:display(table-header-group);
   }
 
   @mixin sm\:table-row-group {
-    @include table-row-group($sm);
+    @include sm\:display(table-row-group);
   }
 
   @mixin sm\:table-row {
-    @include table-row($sm);
+    @include sm\:display(table-row);
   }
 
   @mixin sm\:flow-root {
-    @include flow-root($sm);
+    @include sm\:display(flow-root);
   }
 
   @mixin sm\:grid {
-    @include grid($sm);
+    @include sm\:display(grid);
   }
 
   @mixin sm\:inline-grid {
-    @include inline-grid($sm);
+    @include sm\:display(inline-grid);
   }
 
   @mixin sm\:contents {
-    @include contents($sm);
+    @include sm\:display(contents);
   }
 
   @mixin sm\:list-item {
-    @include list-item($sm);
+    @include sm\:display(list-item);
   }
 
   @mixin sm\:hidden {
-    @include hidden($sm);
+    @include sm\:display(none);
   }
 
   @mixin md\:block {
-    @include block($md);
+    @include md\:display(block);
   }
 
   @mixin md\:inline-block {
-    @include inline-block($md);
+    @include md\:display(inline-block);
   }
 
   @mixin md\:inline {
-    @include inline($md);
+    @include md\:display(inline);
   }
 
   @mixin md\:inline-flex {
-    @include inline-flex($md);
+    @include md\:display(inline-flex);
   }
 
   @mixin md\:table {
-    @include table($md);
+    @include md\:display(table);
   }
 
   @mixin md\:inline-table {
-    @include inline-table($md);
+    @include md\:display(inline-table);
   }
 
   @mixin md\:table-caption {
-    @include table-caption($md);
+    @include md\:display(table-caption);
   }
 
   @mixin md\:table-cell {
-    @include table-cell($md);
+    @include md\:display(table-cell);
   }
 
   @mixin md\:table-column {
-    @include table-column($md);
+    @include md\:display(table-column);
   }
 
   @mixin md\:table-column-group {
-    @include table-column-group($md);
+    @include md\:display(table-column-group);
   }
 
   @mixin md\:table-footer-group {
-    @include table-footer-group($md);
+    @include md\:display(table-footer-group);
   }
 
   @mixin md\:table-header-group {
-    @include table-header-group($md);
+    @include md\:display(table-header-group);
   }
 
   @mixin md\:table-row-group {
-    @include table-row-group($md);
+    @include md\:display(table-row-group);
   }
 
   @mixin md\:table-row {
-    @include table-row($md);
+    @include md\:display(table-row);
   }
 
   @mixin md\:flow-root {
-    @include flow-root($md);
+    @include md\:display(flow-root);
   }
 
   @mixin md\:grid {
-    @include grid($md);
+    @include md\:display(grid);
   }
 
   @mixin md\:inline-grid {
-    @include inline-grid($md);
+    @include md\:display(inline-grid);
   }
 
   @mixin md\:contents {
-    @include contents($md);
+    @include md\:display(contents);
   }
 
   @mixin md\:list-item {
-    @include list-item($md);
+    @include md\:display(list-item);
   }
 
   @mixin md\:hidden {
-    @include hidden($md);
+    @include md\:display(none);
   }
 
   @mixin lg\:block {
-    @include block($lg);
+    @include lg\:display(block);
   }
 
   @mixin lg\:inline-block {
-    @include inline-block($lg);
+    @include lg\:display(inline-block);
   }
 
   @mixin lg\:inline {
-    @include inline($lg);
+    @include lg\:display(inline);
   }
 
   @mixin lg\:inline-flex {
-    @include inline-flex($lg);
+    @include lg\:display(inline-flex);
   }
 
   @mixin lg\:table {
-    @include table($lg);
+    @include lg\:display(table);
   }
 
   @mixin lg\:inline-table {
-    @include inline-table($lg);
+    @include lg\:display(inline-table);
   }
 
   @mixin lg\:table-caption {
-    @include table-caption($lg);
+    @include lg\:display(table-caption);
   }
 
   @mixin lg\:table-cell {
-    @include table-cell($lg);
+    @include lg\:display(table-cell);
   }
 
   @mixin lg\:table-column {
-    @include table-column($lg);
+    @include lg\:display(table-column);
   }
 
   @mixin lg\:table-column-group {
-    @include table-column-group($lg);
+    @include lg\:display(table-column-group);
   }
 
   @mixin lg\:table-footer-group {
-    @include table-footer-group($lg);
+    @include lg\:display(table-footer-group);
   }
 
   @mixin lg\:table-header-group {
-    @include table-header-group($lg);
+    @include lg\:display(table-header-group);
   }
 
   @mixin lg\:table-row-group {
-    @include table-row-group($lg);
+    @include lg\:display(table-row-group);
   }
 
   @mixin lg\:table-row {
-    @include table-row($lg);
+    @include lg\:display(table-row);
   }
 
   @mixin lg\:flow-root {
-    @include flow-root($lg);
+    @include lg\:display(flow-root);
   }
 
   @mixin lg\:grid {
-    @include grid($lg);
+    @include lg\:display(grid);
   }
 
   @mixin lg\:inline-grid {
-    @include inline-grid($lg);
+    @include lg\:display(inline-grid);
   }
 
   @mixin lg\:contents {
-    @include contents($lg);
+    @include lg\:display(contents);
   }
 
   @mixin lg\:list-item {
-    @include list-item($lg);
+    @include lg\:display(list-item);
   }
 
   @mixin lg\:hidden {
-    @include hidden($lg);
+    @include lg\:display(none);
   }
 
   @mixin xl\:block {
-    @include block($xl);
+    @include xl\:display(block);
   }
 
   @mixin xl\:inline-block {
-    @include inline-block($xl);
+    @include xl\:display(inline-block);
   }
 
   @mixin xl\:inline {
-    @include inline($xl);
+    @include xl\:display(inline);
   }
 
   @mixin xl\:inline-flex {
-    @include inline-flex($xl);
+    @include xl\:display(inline-flex);
   }
 
   @mixin xl\:table {
-    @include table($xl);
+    @include xl\:display(table);
   }
 
   @mixin xl\:inline-table {
-    @include inline-table($xl);
+    @include xl\:display(inline-table);
   }
 
   @mixin xl\:table-caption {
-    @include table-caption($xl);
+    @include xl\:display(table-caption);
   }
 
   @mixin xl\:table-cell {
-    @include table-cell($xl);
+    @include xl\:display(table-cell);
   }
 
   @mixin xl\:table-column {
-    @include table-column($xl);
+    @include xl\:display(table-column);
   }
 
   @mixin xl\:table-column-group {
-    @include table-column-group($xl);
+    @include xl\:display(table-column-group);
   }
 
   @mixin xl\:table-footer-group {
-    @include table-footer-group($xl);
+    @include xl\:display(table-footer-group);
   }
 
   @mixin xl\:table-header-group {
-    @include table-header-group($xl);
+    @include xl\:display(table-header-group);
   }
 
   @mixin xl\:table-row-group {
-    @include table-row-group($xl);
+    @include xl\:display(table-row-group);
   }
 
   @mixin xl\:table-row {
-    @include table-row($xl);
+    @include xl\:display(table-row);
   }
 
   @mixin xl\:flow-root {
-    @include flow-root($xl);
+    @include xl\:display(flow-root);
   }
 
   @mixin xl\:grid {
-    @include grid($xl);
+    @include xl\:display(grid);
   }
 
   @mixin xl\:inline-grid {
-    @include inline-grid($xl);
+    @include xl\:display(inline-grid);
   }
 
   @mixin xl\:contents {
-    @include contents($xl);
+    @include xl\:display(contents);
   }
 
   @mixin xl\:list-item {
-    @include list-item($xl);
+    @include xl\:display(list-item);
   }
 
   @mixin xl\:hidden {
-    @include hidden($xl);
+    @include xl\:display(none);
   }
 
   @mixin \2xl\:block {
-    @include block($\2xl);
+    @include \2xl\:display(block);
   }
 
   @mixin \2xl\:inline-block {
-    @include inline-block($\2xl);
+    @include \2xl\:display(inline-block);
   }
 
   @mixin \2xl\:inline {
-    @include inline($\2xl);
+    @include \2xl\:display(inline);
   }
 
   @mixin \2xl\:inline-flex {
-    @include inline-flex($\2xl);
+    @include \2xl\:display(inline-flex);
   }
 
   @mixin \2xl\:table {
-    @include table($\2xl);
+    @include \2xl\:display(table);
   }
 
   @mixin \2xl\:inline-table {
-    @include inline-table($\2xl);
+    @include \2xl\:display(inline-table);
   }
 
   @mixin \2xl\:table-caption {
-    @include table-caption($\2xl);
+    @include \2xl\:display(table-caption);
   }
 
   @mixin \2xl\:table-cell {
-    @include table-cell($\2xl);
+    @include \2xl\:display(table-cell);
   }
 
   @mixin \2xl\:table-column {
-    @include table-column($\2xl);
+    @include \2xl\:display(table-column);
   }
 
   @mixin \2xl\:table-column-group {
-    @include table-column-group($\2xl);
+    @include \2xl\:display(table-column-group);
   }
 
   @mixin \2xl\:table-footer-group {
-    @include table-footer-group($\2xl);
+    @include \2xl\:display(table-footer-group);
   }
 
   @mixin \2xl\:table-header-group {
-    @include table-header-group($\2xl);
+    @include \2xl\:display(table-header-group);
   }
 
   @mixin \2xl\:table-row-group {
-    @include table-row-group($\2xl);
+    @include \2xl\:display(table-row-group);
   }
 
   @mixin \2xl\:table-row {
-    @include table-row($\2xl);
+    @include \2xl\:display(table-row);
   }
 
   @mixin \2xl\:flow-root {
-    @include flow-root($\2xl);
+    @include \2xl\:display(flow-root);
   }
 
   @mixin \2xl\:grid {
-    @include grid($\2xl);
+    @include \2xl\:display(grid);
   }
 
   @mixin \2xl\:inline-grid {
-    @include inline-grid($\2xl);
+    @include \2xl\:display(inline-grid);
   }
 
   @mixin \2xl\:contents {
-    @include contents($\2xl);
+    @include \2xl\:display(contents);
   }
 
   @mixin \2xl\:list-item {
-    @include list-item($\2xl);
+    @include \2xl\:display(list-item);
   }
 
   @mixin \2xl\:hidden {
-    @include hidden($\2xl);
+    @include \2xl\:display(none);
   }
   // x*/
 }

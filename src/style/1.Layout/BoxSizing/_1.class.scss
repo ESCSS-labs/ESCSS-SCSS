@@ -3,24 +3,12 @@
 /* Box Sizing */
 @if $Basic {
   // /*x
-  @mixin box-border($rwd: null) {
-    @if $rwd==null {
-      @include box-sizing(border-box);
-    } @else {
-      @media (min-width: $rwd) {
-        @include box-sizing(border-box);
-      }
-    }
+  @mixin box-border {
+    @include box-sizing(border-box);
   }
 
-  @mixin box-content($rwd: null) {
-    @if $rwd==null {
-      @include box-sizing(content-box);
-    } @else {
-      @media (min-width: $rwd) {
-        @include box-sizing(content-box);
-      }
-    }
+  @mixin box-content {
+    @include box-sizing(content-box);
   }
 
   // x*/
@@ -29,43 +17,43 @@
 @if $Rwd {
   // /*x
   @mixin sm\:box-border {
-    @include box-border($sm);
+    @include sm\:box-sizing(border-box);
   }
 
   @mixin sm\:box-content {
-    @include box-content($sm);
+    @include sm\:box-sizing(content-box);
   }
 
   @mixin md\:box-border {
-    @include box-border($md);
+    @include md\:box-sizing(border-box);
   }
 
   @mixin md\:box-content {
-    @include box-content($md);
+    @include md\:box-sizing(content-box);
   }
 
   @mixin lg\:box-border {
-    @include box-border($lg);
+    @include lg\:box-sizing(border-box);
   }
 
   @mixin lg\:box-content {
-    @include box-content($lg);
+    @include lg\:box-sizing(content-box);
   }
 
   @mixin xl\:box-border {
-    @include box-border($xl);
+    @include xl\:box-sizing(border-box);
   }
 
   @mixin xl\:box-content {
-    @include box-content($xl);
+    @include xl\:box-sizing(content-box);
   }
 
   @mixin \2xl\:box-border {
-    @include box-border($\2xl);
+    @include \2xl\:box-sizing(border-box);
   }
 
   @mixin \2xl\:box-content {
-    @include box-content($\2xl);
+    @include \2xl\:box-sizing(content-box);
   }
 
   // x*/

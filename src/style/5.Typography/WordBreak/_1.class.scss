@@ -3,46 +3,21 @@
 /* Word Break */
 @if $Basic {
   // /*x
-  @mixin break-normal($rwd: null) {
-    @if $rwd==null {
-      @include overflow-wrap(normal);
-      @include word-break(normal);
-    } @else {
-      @media (min-width: $rwd) {
-        @include overflow-wrap(normal);
-        @include word-break(normal);
-      }
-    }
+  @mixin break-normal {
+    @include overflow-wrap(normal);
+    @include word-break(normal);
   }
 
-  @mixin break-words($rwd: null) {
-    @if $rwd==null {
-      @include overflow-wrap(break-word);
-    } @else {
-      @media (min-width: $rwd) {
-        @include overflow-wrap(break-word);
-      }
-    }
+  @mixin break-words {
+    @include overflow-wrap(break-word);
   }
 
-  @mixin break-all($rwd: null) {
-    @if $rwd==null {
-      @include word-break(break-all);
-    } @else {
-      @media (min-width: $rwd) {
-        @include word-break(break-all);
-      }
-    }
+  @mixin break-all {
+    @include word-break(break-all);
   }
 
-  @mixin break-keep($rwd: null) {
-    @if $rwd==null {
-      @include word-break(keep-all);
-    } @else {
-      @media (min-width: $rwd) {
-        @include word-break(keep-all);
-      }
-    }
+  @mixin break-keep {
+    @include word-break(keep-all);
   }
 
   // x*/
@@ -51,83 +26,98 @@
 @if $Rwd {
   // /*x
   @mixin sm\:break-normal {
-    @include break-normal($sm);
+    @media (min-width: $sm) {
+      @include overflow-wrap(normal);
+      @include word-break(normal);
+    }
   }
 
   @mixin sm\:break-words {
-    @include break-words($sm);
+    @include sm\:overflow-wrap(break-word);
   }
 
   @mixin sm\:break-all {
-    @include break-all($sm);
+    @include sm\:word-break(break-all);
   }
 
   @mixin sm\:break-keep {
-    @include break-keep($sm);
+    @include sm\:word-break(keep-all);
   }
 
   @mixin md\:break-normal {
-    @include break-normal($md);
+    @media (min-width: $md) {
+      @include overflow-wrap(normal);
+      @include word-break(normal);
+    }
   }
 
   @mixin md\:break-words {
-    @include break-words($md);
+    @include md\:overflow-wrap(break-word);
   }
 
   @mixin md\:break-all {
-    @include break-all($md);
+    @include md\:word-break(break-all);
   }
 
   @mixin md\:break-keep {
-    @include break-keep($md);
+    @include md\:word-break(keep-all);
   }
 
   @mixin lg\:break-normal {
-    @include break-normal($lg);
+    @media (min-width: $lg) {
+      @include overflow-wrap(normal);
+      @include word-break(normal);
+    }
   }
 
   @mixin lg\:break-words {
-    @include break-words($lg);
+    @include lg\:overflow-wrap(break-word);
   }
 
   @mixin lg\:break-all {
-    @include break-all($lg);
+    @include lg\:word-break(break-all);
   }
 
   @mixin lg\:break-keep {
-    @include break-keep($lg);
+    @include lg\:word-break(keep-all);
   }
 
   @mixin xl\:break-normal {
-    @include break-normal($xl);
+    @media (min-width: $xl) {
+      @include overflow-wrap(normal);
+      @include word-break(normal);
+    }
   }
 
   @mixin xl\:break-words {
-    @include break-words($xl);
+    @include xl\:overflow-wrap(break-word);
   }
 
   @mixin xl\:break-all {
-    @include break-all($xl);
+    @include xl\:word-break(break-all);
   }
 
   @mixin xl\:break-keep {
-    @include break-keep($xl);
+    @include xl\:word-break(keep-all);
   }
 
   @mixin \2xl\:break-normal {
-    @include break-normal($\2xl);
+    @media (min-width: $\2xl) {
+      @include overflow-wrap(normal);
+      @include word-break(normal);
+    }
   }
 
   @mixin \2xl\:break-words {
-    @include break-words($\2xl);
+    @include \2xl\:overflow-wrap(break-word);
   }
 
   @mixin \2xl\:break-all {
-    @include break-all($\2xl);
+    @include \2xl\:word-break(break-all);
   }
 
   @mixin \2xl\:break-keep {
-    @include break-keep($\2xl);
+    @include \2xl\:word-break(keep-all);
   }
 
   // x*/
