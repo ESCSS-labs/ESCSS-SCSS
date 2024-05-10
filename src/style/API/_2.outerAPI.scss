@@ -46,68 +46,68 @@
 // }
 @mixin reset {
   // Gradient Color Stops
-  $--gradient-direction: null !global;
-  $--tw-gradient-from: #fff !global;
-  $--tw-gradient-via: null !global; // detects the use of 2 or 3 gradient stops
-  $--tw-gradient-to: transparent !global;
-  $--tw-gradient-from-position: null !global;
-  $--tw-gradient-via-position: null !global;
-  $--tw-gradient-to-position: null !global;
+  $gradient-direction: null !global;
+  $tw-gradient-from: #fff !global;
+  $tw-gradient-via: null !global; // detects the use of 2 or 3 gradient stops
+  $tw-gradient-to: transparent !global;
+  $tw-gradient-from-position: null !global;
+  $tw-gradient-via-position: null !global;
+  $tw-gradient-to-position: null !global;
 
   // Space Between
-  $--space-x-value: 0 !global;
-  $--space-y-value: 0 !global;
-  $--tw-space-x-reverse: 0 !global;
-  $--tw-space-y-reverse: 0 !global;
+  $space-x-value: 0 !global;
+  $space-y-value: 0 !global;
+  $tw-space-x-reverse: 0 !global;
+  $tw-space-y-reverse: 0 !global;
 
   // Divide Width
-  $--divide-x-value: 0 !global;
-  $--divide-y-value: 0 !global;
-  $--tw-divide-x-reverse: 0 !global;
-  $--tw-divide-y-reverse: 0 !global;
+  $divide-x-value: 0 !global;
+  $divide-y-value: 0 !global;
+  $tw-divide-x-reverse: 0 !global;
+  $tw-divide-y-reverse: 0 !global;
 
   // Box Shadow
-  $--tw-ring-offset-width: 0 !global;
-  $--tw-ring-offset-color: #fff !global;
-  $--tw-ring-inset: null !global;
-  $--ring-width: 0 !global;
-  $--tw-ring-color: rgb(59 130 246 / 0.5) !global;
-  $-shadow-color-not-match-tailwind: false global;
-  $-shadow-token: null !global;
-  $--shadow-width: 0 0 0 0 !global;
-  $--tw-shadow-color: #fff !global;
+  $tw-ring-offset-width: 0 !global;
+  $tw-ring-offset-color: #fff !global;
+  $tw-ring-inset: null !global;
+  $ring-width: 0 !global;
+  $tw-ring-color: rgb(59 130 246 / 0.5) !global;
+  $shadow-color-not-match-tailwind: false global;
+  $shadow-token: null !global;
+  $shadow-width: 0 0 0 0 !global;
+  $tw-shadow-color: #fff !global;
 
   // Scroll Snap Type
-  $--tw-scroll-snap-strictness: proximity !global;
+  $tw-scroll-snap-strictness: proximity !global;
 
   // Transforms
-  $--tw-translate-x: 0 !global;
-  $--tw-translate-y: 0 !global;
-  $--tw-rotate: 0deg !global;
-  $--tw-skew-x: 0deg !global;
-  $--tw-skew-y: 0deg !global;
-  $--tw-scale-x: 1 !global;
-  $--tw-scale-y: 1 !global;
+  $tw-translate-x: 0 !global;
+  $tw-translate-y: 0 !global;
+  $tw-rotate: 0deg !global;
+  $tw-skew-x: 0deg !global;
+  $tw-skew-y: 0deg !global;
+  $tw-scale-x: 1 !global;
+  $tw-scale-y: 1 !global;
 
   // Filters
-  $--tw-blur: null !global;
-  $--tw-brightness: null !global;
-  $--tw-contrast: null !global;
-  $--tw-grayscale: null !global;
-  $--tw-hue-rotate: null !global;
-  $--tw-invert: null !global;
-  $--tw-saturate: null !global;
-  $--tw-sepia: null !global;
-  $--tw-drop-shadow: null !global;
-  $--tw-backdrop-blur: null !global;
-  $--tw-backdrop-brightness: null !global;
-  $--tw-backdrop-contrast: null !global;
-  $--tw-backdrop-grayscale: null !global;
-  $--tw-backdrop-hue-rotate: null !global;
-  $--tw-backdrop-invert: null !global;
-  $--tw-backdrop-opacity: null !global;
-  $--tw-backdrop-saturate: null !global;
-  $--tw-backdrop-sepia: null !global;
+  $tw-blur: null !global;
+  $tw-brightness: null !global;
+  $tw-contrast: null !global;
+  $tw-grayscale: null !global;
+  $tw-hue-rotate: null !global;
+  $tw-invert: null !global;
+  $tw-saturate: null !global;
+  $tw-sepia: null !global;
+  $tw-drop-shadow: null !global;
+  $tw-backdrop-blur: null !global;
+  $tw-backdrop-brightness: null !global;
+  $tw-backdrop-contrast: null !global;
+  $tw-backdrop-grayscale: null !global;
+  $tw-backdrop-hue-rotate: null !global;
+  $tw-backdrop-invert: null !global;
+  $tw-backdrop-opacity: null !global;
+  $tw-backdrop-saturate: null !global;
+  $tw-backdrop-sepia: null !global;
 }
 
 // atomic class
@@ -2045,6 +2045,16 @@
   }
 }
 
+@mixin color($v, $rwd: null) {
+  @if $rwd==null {
+    color: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      color: $v;
+    }
+  }
+}
+
 @mixin sm\:aspect-ratio($v) {
   @include aspect-ratio($v, $sm);
 }
@@ -2807,6 +2817,10 @@
 
 @mixin sm\:forced-color-adjust($v) {
   @include forced-color-adjust($v, $sm);
+}
+
+@mixin sm\:color($v) {
+  @include color($v, $sm);
 }
 
 @mixin md\:aspect-ratio($v) {
@@ -3573,6 +3587,10 @@
   @include forced-color-adjust($v, $md);
 }
 
+@mixin md\:color($v) {
+  @include color($v, $md);
+}
+
 @mixin lg\:aspect-ratio($v) {
   @include aspect-ratio($v, $lg);
 }
@@ -4335,6 +4353,10 @@
 
 @mixin lg\:forced-color-adjust($v) {
   @include forced-color-adjust($v, $lg);
+}
+
+@mixin lg\:color($v) {
+  @include color($v, $lg);
 }
 
 @mixin xl\:aspect-ratio($v) {
@@ -5101,6 +5123,10 @@
   @include forced-color-adjust($v, $xl);
 }
 
+@mixin xl\:color($v) {
+  @include color($v, $xl);
+}
+
 @mixin \2xl\:aspect-ratio($v) {
   @include aspect-ratio($v, $\2xl);
 }
@@ -5864,4 +5890,9 @@
 @mixin \2xl\:forced-color-adjust($v) {
   @include forced-color-adjust($v, $\2xl);
 }
+
+@mixin \2xl\:color($v) {
+  @include color($v, $\2xl);
+}
+
 // x*/

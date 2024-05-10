@@ -4,130 +4,170 @@
 @if $Basic {
   // /*x
   @mixin scale-0 {
-    @include scale-(0);
+    $tw-scale-x: 0 !global;
+    $tw-scale-y: 0 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-0 {
-    @include scale-x-(0);
+    $tw-scale-x: 0 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-0 {
-    @include scale-y-(0);
+    $tw-scale-y: 0 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-50 {
-    @include scale-(0.5);
+    $tw-scale-x: 0.5 !global;
+    $tw-scale-y: 0.5 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-50 {
-    @include scale-x-(0.5);
+    $tw-scale-x: 0.5 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-50 {
-    @include scale-y-(0.5);
+    $tw-scale-y: 0.5 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-75 {
-    @include scale-(0.75);
+    $tw-scale-x: 0.75 !global;
+    $tw-scale-y: 0.75 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-75 {
-    @include scale-x-(0.75);
+    $tw-scale-x: 0.75 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-75 {
-    @include scale-y-(0.75);
+    $tw-scale-y: 0.75 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-90 {
-    @include scale-(0.9);
+    $tw-scale-x: 0.9 !global;
+    $tw-scale-y: 0.9 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-90 {
-    @include scale-x-(0.9);
+    $tw-scale-x: 0.9 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-90 {
-    @include scale-y-(0.9);
+    $tw-scale-y: 0.9 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-95 {
-    @include scale-(0.95);
+    $tw-scale-x: 0.95 !global;
+    $tw-scale-y: 0.95 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-95 {
-    @include scale-x-(0.95);
+    $tw-scale-x: 0.95 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-95 {
-    @include scale-y-(0.95);
+    $tw-scale-y: 0.95 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-100 {
-    @include scale-(1);
+    $tw-scale-x: 1 !global;
+    $tw-scale-y: 1 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-100 {
-    @include scale-x-(1);
+    $tw-scale-x: 1 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-100 {
-    @include scale-y-(1);
+    $tw-scale-y: 1 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-105 {
-    @include scale-(1.05);
+    $tw-scale-x: 1.05 !global;
+    $tw-scale-y: 1.05 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-105 {
-    @include scale-x-(1.05);
+    $tw-scale-x: 1.05 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-105 {
-    @include scale-y-(1.05);
+    $tw-scale-y: 1.05 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-110 {
-    @include scale-(1.1);
+    $tw-scale-x: 1.1 !global;
+    $tw-scale-y: 1.1 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-110 {
-    @include scale-x-(1.1);
+    $tw-scale-x: 1.1 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-110 {
-    @include scale-y-(1.1);
+    $tw-scale-y: 1.1 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-125 {
-    @include scale-(1.25);
+    $tw-scale-x: 1.25 !global;
+    $tw-scale-y: 1.25 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-125 {
-    @include scale-x-(1.25);
+    $tw-scale-x: 1.25 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-125 {
-    @include scale-y-(1.25);
+    $tw-scale-y: 1.25 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-150 {
-    @include scale-(1.5);
+    $tw-scale-x: 1.5 !global;
+    $tw-scale-y: 1.5 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-x-150 {
-    @include scale-x-(1.5);
+    $tw-scale-x: 1.5 !global;
+    @include transform(get_transform());
   }
 
   @mixin scale-y-150 {
-    @include scale-y-(1.5);
+    $tw-scale-y: 1.5 !global;
+    @include transform(get_transform());
   }
 
   // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:scale-0 {
       @include scale-(0, $sm);
@@ -737,13 +777,13 @@
   // /*x
   @mixin scale-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-scale-x: $v !global;
-      $--tw-scale-y: $v !global;
+      $tw-scale-x: $v !global;
+      $tw-scale-y: $v !global;
       @include transform(get_transform());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-scale-x: $v !global;
-        $--tw-scale-y: $v !global;
+        $tw-scale-x: $v !global;
+        $tw-scale-y: $v !global;
         @include transform(get_transform());
       }
     }
@@ -751,11 +791,11 @@
 
   @mixin scale-x-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-scale-x: $v !global;
+      $tw-scale-x: $v !global;
       @include transform(get_transform());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-scale-x: $v !global;
+        $tw-scale-x: $v !global;
         @include transform(get_transform());
       }
     }
@@ -763,11 +803,11 @@
 
   @mixin scale-y-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-scale-y: $v !global;
+      $tw-scale-y: $v !global;
       @include transform(get_transform());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-scale-y: $v !global;
+        $tw-scale-y: $v !global;
         @include transform(get_transform());
       }
     }
@@ -840,130 +880,170 @@
   @if $Basic {
     // /*x
     @mixin -scale-0 {
-      @include scale-(-0);
+      $tw-scale-x: -0 !global;
+      $tw-scale-y: -0 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-0 {
-      @include scale-x-(-0);
+      $tw-scale-x: -0 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-0 {
-      @include scale-y-(-0);
+      $tw-scale-y: -0 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-50 {
-      @include scale-(-0.5);
+      $tw-scale-x: -0.5 !global;
+      $tw-scale-y: -0.5 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-50 {
-      @include scale-x-(-0.5);
+      $tw-scale-x: -0.5 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-50 {
-      @include scale-y-(-0.5);
+      $tw-scale-y: -0.5 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-75 {
-      @include scale-(-0.75);
+      $tw-scale-x: -0.75 !global;
+      $tw-scale-y: -0.75 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-75 {
-      @include scale-x-(-0.75);
+      $tw-scale-x: -0.75 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-75 {
-      @include scale-y-(-0.75);
+      $tw-scale-y: -0.75 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-90 {
-      @include scale-(-0.9);
+      $tw-scale-x: -0.9 !global;
+      $tw-scale-y: -0.9 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-90 {
-      @include scale-x-(-0.9);
+      $tw-scale-x: -0.9 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-90 {
-      @include scale-y-(-0.9);
+      $tw-scale-y: -0.9 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-95 {
-      @include scale-(-0.95);
+      $tw-scale-x: -0.95 !global;
+      $tw-scale-y: -0.95 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-95 {
-      @include scale-x-(-0.95);
+      $tw-scale-x: -0.95 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-95 {
-      @include scale-y-(-0.95);
+      $tw-scale-y: -0.95 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-100 {
-      @include scale-(-1);
+      $tw-scale-x: -1 !global;
+      $tw-scale-y: -1 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-100 {
-      @include scale-x-(-1);
+      $tw-scale-x: -1 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-100 {
-      @include scale-y-(-1);
+      $tw-scale-y: -1 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-105 {
-      @include scale-(-1.05);
+      $tw-scale-x: -1.05 !global;
+      $tw-scale-y: -1.05 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-105 {
-      @include scale-x-(-1.05);
+      $tw-scale-x: -1.05 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-105 {
-      @include scale-y-(-1.05);
+      $tw-scale-y: -1.05 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-110 {
-      @include scale-(-1.1);
+      $tw-scale-x: -1.1 !global;
+      $tw-scale-y: -1.1 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-110 {
-      @include scale-x-(-1.1);
+      $tw-scale-x: -1.1 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-110 {
-      @include scale-y-(-1.1);
+      $tw-scale-y: -1.1 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-125 {
-      @include scale-(-1.25);
+      $tw-scale-x: -1.25 !global;
+      $tw-scale-y: -1.25 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-125 {
-      @include scale-x-(-1.25);
+      $tw-scale-x: -1.25 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-125 {
-      @include scale-y-(-1.25);
+      $tw-scale-y: -1.25 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-150 {
-      @include scale-(-1.5);
+      $tw-scale-x: -1.5 !global;
+      $tw-scale-y: -1.5 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-x-150 {
-      @include scale-x-(-1.5);
+      $tw-scale-x: -1.5 !global;
+      @include transform(get_transform());
     }
 
     @mixin -scale-y-150 {
-      @include scale-y-(-1.5);
+      $tw-scale-y: -1.5 !global;
+      @include transform(get_transform());
     }
 
     // x*/
   }
 
   @if $Rwd {
-    @if $sizeMode == 0 or $sizeMode == 1 {
+    @if $sizeMode ==0 or $sizeMode ==1 {
       // /*x
       @mixin sm\:-scale-0 {
         @include scale-(-0, $sm);
@@ -1642,6 +1722,7 @@
     @mixin \2xl\:-scale-y-($v) {
       @include scale-y-(-($v), $\2xl);
     }
+
     // x*/
   }
 }

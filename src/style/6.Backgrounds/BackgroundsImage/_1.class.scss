@@ -4,39 +4,39 @@
 @if $Basic {
   // /*x
   @mixin bg-none {
-    @include bg-(get_background-image(none));
+    @include background-image(get_background-image(none));
   }
 
   @mixin bg-gradient-to-t {
-    @include bg-(get_background-image(to top));
+    @include background-image(get_background-image(to top));
   }
 
   @mixin bg-gradient-to-tr {
-    @include bg-(get_background-image(to top right));
+    @include background-image(get_background-image(to top right));
   }
 
   @mixin bg-gradient-to-r {
-    @include bg-(get_background-image(to right));
+    @include background-image(get_background-image(to right));
   }
 
   @mixin bg-gradient-to-br {
-    @include bg-(get_background-image(to bottom right));
+    @include background-image(get_background-image(to bottom right));
   }
 
   @mixin bg-gradient-to-b {
-    @include bg-(get_background-image(to bottom));
+    @include background-image(get_background-image(to bottom));
   }
 
   @mixin bg-gradient-to-bl {
-    @include bg-(get_background-image(to bottom left));
+    @include background-image(get_background-image(to bottom left));
   }
 
   @mixin bg-gradient-to-l {
-    @include bg-(get_background-image(to left));
+    @include background-image(get_background-image(to left));
   }
 
   @mixin bg-gradient-to-tl {
-    @include bg-(get_background-image(to top left));
+    @include background-image(get_background-image(to top left));
   }
 
   // x*/
@@ -233,7 +233,7 @@
 @if $Custom {
   // /*x
   @function get_background-image($v) {
-    $--gradient-direction: $v !global;
+    $gradient-direction: $v !global;
 
     @return get_linear-gradient();
   }

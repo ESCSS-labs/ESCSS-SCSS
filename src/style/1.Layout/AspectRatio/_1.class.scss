@@ -4,20 +4,22 @@
 @if $Basic {
   // /*x
   @mixin aspect-auto {
-    // /*x@include aspect-(auto);
+    // /*x@include aspect-ratio(auto);
   }
 
   @mixin aspect-square {
-    // /*x@include aspect-(#/*x{1 / 1});
+    // /*x@include aspect-ratio(#/*x{1 / 1});
   }
 
   @mixin aspect-video {
-    // /*x@include aspect-(#/*x{16 / 9});
-  } // x*/
+    // /*x@include aspect-ratio(#/*x{16 / 9});
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:aspect-auto {
       // /*x@include aspect-(auto, $sm);
@@ -78,6 +80,7 @@
     @mixin \2xl\:aspect-video {
       // /*x@include aspect-(#/*x{16 / 9}, $\2xl);
     }
+
     // x*/
   }
 }
@@ -112,5 +115,7 @@
 
   @mixin \2xl\:aspect-($v) {
     @include aspect-($v, $\2xl);
-  } // x*/
+  }
+
+  // x*/
 }

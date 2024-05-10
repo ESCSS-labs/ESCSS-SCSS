@@ -4,171 +4,37 @@
 // private member(prefix - or _) can't be import, so I put here for testing
 
 @mixin -backdrop-hue-rotate-0 {
-  @include backdrop-hue-rotate-(-0deg);
+  $tw-backdrop-hue-rotate: hue-rotate(-0deg) !global;
+  @include backdrop-filter(get_backdrop-filter());
 }
 
 @mixin -backdrop-hue-rotate-15 {
-  @include backdrop-hue-rotate-(-15deg);
+  $tw-backdrop-hue-rotate: hue-rotate(-15deg) !global;
+  @include backdrop-filter(get_backdrop-filter());
 }
 
 @mixin -backdrop-hue-rotate-30 {
-  @include backdrop-hue-rotate-(-30deg);
+  $tw-backdrop-hue-rotate: hue-rotate(-30deg) !global;
+  @include backdrop-filter(get_backdrop-filter());
 }
 
 @mixin -backdrop-hue-rotate-60 {
-  @include backdrop-hue-rotate-(-60deg);
+  $tw-backdrop-hue-rotate: hue-rotate(-60deg) !global;
+  @include backdrop-filter(get_backdrop-filter());
 }
 
 @mixin -backdrop-hue-rotate-90 {
-  @include backdrop-hue-rotate-(-90deg);
+  $tw-backdrop-hue-rotate: hue-rotate(-90deg) !global;
+  @include backdrop-filter(get_backdrop-filter());
 }
 
 @mixin -backdrop-hue-rotate-180 {
-  @include backdrop-hue-rotate-(-180deg);
-}
-
-@mixin sm\:-backdrop-hue-rotate-0 {
-  @include backdrop-hue-rotate-(-0deg, $sm);
-}
-
-@mixin sm\:-backdrop-hue-rotate-15 {
-  @include backdrop-hue-rotate-(-15deg, $sm);
-}
-
-@mixin sm\:-backdrop-hue-rotate-30 {
-  @include backdrop-hue-rotate-(-30deg, $sm);
-}
-
-@mixin sm\:-backdrop-hue-rotate-60 {
-  @include backdrop-hue-rotate-(-60deg, $sm);
-}
-
-@mixin sm\:-backdrop-hue-rotate-90 {
-  @include backdrop-hue-rotate-(-90deg, $sm);
-}
-
-@mixin sm\:-backdrop-hue-rotate-180 {
-  @include backdrop-hue-rotate-(-180deg, $sm);
-}
-
-@mixin md\:-backdrop-hue-rotate-0 {
-  @include backdrop-hue-rotate-(-0deg, $md);
-}
-
-@mixin md\:-backdrop-hue-rotate-15 {
-  @include backdrop-hue-rotate-(-15deg, $md);
-}
-
-@mixin md\:-backdrop-hue-rotate-30 {
-  @include backdrop-hue-rotate-(-30deg, $md);
-}
-
-@mixin md\:-backdrop-hue-rotate-60 {
-  @include backdrop-hue-rotate-(-60deg, $md);
-}
-
-@mixin md\:-backdrop-hue-rotate-90 {
-  @include backdrop-hue-rotate-(-90deg, $md);
-}
-
-@mixin md\:-backdrop-hue-rotate-180 {
-  @include backdrop-hue-rotate-(-180deg, $md);
-}
-
-@mixin lg\:-backdrop-hue-rotate-0 {
-  @include backdrop-hue-rotate-(-0deg, $lg);
-}
-
-@mixin lg\:-backdrop-hue-rotate-15 {
-  @include backdrop-hue-rotate-(-15deg, $lg);
-}
-
-@mixin lg\:-backdrop-hue-rotate-30 {
-  @include backdrop-hue-rotate-(-30deg, $lg);
-}
-
-@mixin lg\:-backdrop-hue-rotate-60 {
-  @include backdrop-hue-rotate-(-60deg, $lg);
-}
-
-@mixin lg\:-backdrop-hue-rotate-90 {
-  @include backdrop-hue-rotate-(-90deg, $lg);
-}
-
-@mixin lg\:-backdrop-hue-rotate-180 {
-  @include backdrop-hue-rotate-(-180deg, $lg);
-}
-
-@mixin xl\:-backdrop-hue-rotate-0 {
-  @include backdrop-hue-rotate-(-0deg, $xl);
-}
-
-@mixin xl\:-backdrop-hue-rotate-15 {
-  @include backdrop-hue-rotate-(-15deg, $xl);
-}
-
-@mixin xl\:-backdrop-hue-rotate-30 {
-  @include backdrop-hue-rotate-(-30deg, $xl);
-}
-
-@mixin xl\:-backdrop-hue-rotate-60 {
-  @include backdrop-hue-rotate-(-60deg, $xl);
-}
-
-@mixin xl\:-backdrop-hue-rotate-90 {
-  @include backdrop-hue-rotate-(-90deg, $xl);
-}
-
-@mixin xl\:-backdrop-hue-rotate-180 {
-  @include backdrop-hue-rotate-(-180deg, $xl);
-}
-
-@mixin \2xl\:-backdrop-hue-rotate-0 {
-  @include backdrop-hue-rotate-(-0deg, $\2xl);
-}
-
-@mixin \2xl\:-backdrop-hue-rotate-15 {
-  @include backdrop-hue-rotate-(-15deg, $\2xl);
-}
-
-@mixin \2xl\:-backdrop-hue-rotate-30 {
-  @include backdrop-hue-rotate-(-30deg, $\2xl);
-}
-
-@mixin \2xl\:-backdrop-hue-rotate-60 {
-  @include backdrop-hue-rotate-(-60deg, $\2xl);
-}
-
-@mixin \2xl\:-backdrop-hue-rotate-90 {
-  @include backdrop-hue-rotate-(-90deg, $\2xl);
-}
-
-@mixin \2xl\:-backdrop-hue-rotate-180 {
-  @include backdrop-hue-rotate-(-180deg, $\2xl);
+  $tw-backdrop-hue-rotate: hue-rotate(-180deg) !global;
+  @include backdrop-filter(get_backdrop-filter());
 }
 
 @mixin -backdrop-hue-rotate-($v) {
   @include backdrop-hue-rotate-(-($v));
-}
-
-@mixin sm\:-backdrop-hue-rotate-($v) {
-  @include backdrop-hue-rotate-(-($v), $sm);
-}
-
-@mixin md\:-backdrop-hue-rotate-($v) {
-  @include backdrop-hue-rotate-(-($v), $md);
-}
-
-@mixin lg\:-backdrop-hue-rotate-($v) {
-  @include backdrop-hue-rotate-(-($v), $lg);
-}
-
-@mixin xl\:-backdrop-hue-rotate-($v) {
-  @include backdrop-hue-rotate-(-($v), $xl);
-}
-
-@mixin \2xl\:-backdrop-hue-rotate-($v) {
-  @include backdrop-hue-rotate-(-($v), $\2xl);
 }
 
 @include describe("9.Filters") {

@@ -4,15 +4,17 @@
 @if $Basic {
   // /*x
   @mixin transition-none {
-    @include transition-(none);
+    @include transition-property(none);
   }
 
   @mixin transition-all {
-    @include transition-(all);
+    @include transition-property(all);
+    @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+    @include transition-duration(150ms);
   }
 
   @mixin transition {
-    @include transition-(
+    @include transition-property(
       (
         color,
         background-color,
@@ -27,10 +29,12 @@
         backdrop-filter
       )
     );
+    @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+    @include transition-duration(150ms);
   }
 
   @mixin transition-colors {
-    @include transition-(
+    @include transition-property(
       (
         color,
         background-color,
@@ -40,25 +44,33 @@
         stroke
       )
     );
+    @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+    @include transition-duration(150ms);
   }
 
   @mixin transition-opacity {
-    @include transition-(opacity);
+    @include transition-property(opacity);
+    @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+    @include transition-duration(150ms);
   }
 
   @mixin transition-shadow {
-    @include transition-(box-shadow);
+    @include transition-property(box-shadow);
+    @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+    @include transition-duration(150ms);
   }
 
   @mixin transition-transform {
-    @include transition-(transform);
+    @include transition-property(transform);
+    @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+    @include transition-duration(150ms);
   }
 
   // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:transition-none {
       @include transition-(none, $sm);

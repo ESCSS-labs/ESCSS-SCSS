@@ -4,32 +4,41 @@
 @if $Basic {
   // /*x
   @mixin contrast-0 {
-    @include contrast-(0);
+    $tw-contrast: contrast(0) !global;
+    @include filter(get_filter());
   }
 
   @mixin contrast-50 {
-    @include contrast-(0.5);
+    $tw-contrast: contrast(0.5) !global;
+    @include filter(get_filter());
   }
 
   @mixin contrast-75 {
-    @include contrast-(0.75);
+    $tw-contrast: contrast(0.75) !global;
+    @include filter(get_filter());
   }
 
   @mixin contrast-100 {
-    @include contrast-(1);
+    $tw-contrast: contrast(1) !global;
+    @include filter(get_filter());
   }
 
   @mixin contrast-125 {
-    @include contrast-(1.25);
+    $tw-contrast: contrast(1.25) !global;
+    @include filter(get_filter());
   }
 
   @mixin contrast-150 {
-    @include contrast-(1.5);
+    $tw-contrast: contrast(1.5) !global;
+    @include filter(get_filter());
   }
 
   @mixin contrast-200 {
-    @include contrast-(2);
-  } // x*/
+    $tw-contrast: contrast(2) !global;
+    @include filter(get_filter());
+  }
+
+  // x*/
 }
 
 @if $Rwd {
@@ -182,11 +191,11 @@
   // /*x
   @mixin contrast-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-contrast: contrast($v) !global;
+      $tw-contrast: contrast($v) !global;
       @include filter(get_filter());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-contrast: contrast($v) !global;
+        $tw-contrast: contrast($v) !global;
         @include filter(get_filter());
       }
     }

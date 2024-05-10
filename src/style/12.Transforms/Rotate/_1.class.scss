@@ -4,45 +4,55 @@
 @if $Basic {
   // /*x
   @mixin rotate-0 {
-    @include rotate-(0deg);
+    $tw-rotate: 0deg !global;
+    @include transform(get_transform());
   }
 
   @mixin rotate-1 {
-    @include rotate-(1deg);
+    $tw-rotate: 1deg !global;
+    @include transform(get_transform());
   }
 
   @mixin rotate-2 {
-    @include rotate-(2deg);
+    $tw-rotate: 2deg !global;
+    @include transform(get_transform());
   }
 
   @mixin rotate-3 {
-    @include rotate-(3deg);
+    $tw-rotate: 3deg !global;
+    @include transform(get_transform());
   }
 
   @mixin rotate-6 {
-    @include rotate-(6deg);
+    $tw-rotate: 6deg !global;
+    @include transform(get_transform());
   }
 
   @mixin rotate-12 {
-    @include rotate-(12deg);
+    $tw-rotate: 12deg !global;
+    @include transform(get_transform());
   }
 
   @mixin rotate-45 {
-    @include rotate-(45deg);
+    $tw-rotate: 45deg !global;
+    @include transform(get_transform());
   }
 
   @mixin rotate-90 {
-    @include rotate-(90deg);
+    $tw-rotate: 90deg !global;
+    @include transform(get_transform());
   }
 
   @mixin rotate-180 {
-    @include rotate-(180deg);
+    $tw-rotate: 180deg !global;
+    @include transform(get_transform());
   }
+
   // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:rotate-0 {
       @include rotate-(0deg, $sm);
@@ -79,6 +89,7 @@
     @mixin sm\:rotate-180 {
       @include rotate-(180deg, $sm);
     }
+
     @mixin md\:rotate-0 {
       @include rotate-(0deg, $md);
     }
@@ -114,6 +125,7 @@
     @mixin md\:rotate-180 {
       @include rotate-(180deg, $md);
     }
+
     @mixin lg\:rotate-0 {
       @include rotate-(0deg, $lg);
     }
@@ -149,6 +161,7 @@
     @mixin lg\:rotate-180 {
       @include rotate-(180deg, $lg);
     }
+
     @mixin xl\:rotate-0 {
       @include rotate-(0deg, $xl);
     }
@@ -184,6 +197,7 @@
     @mixin xl\:rotate-180 {
       @include rotate-(180deg, $xl);
     }
+
     @mixin \2xl\:rotate-0 {
       @include rotate-(0deg, $\2xl);
     }
@@ -219,6 +233,7 @@
     @mixin \2xl\:rotate-180 {
       @include rotate-(180deg, $\2xl);
     }
+
     // x*/
   }
 }
@@ -227,11 +242,11 @@
   // /*x
   @mixin rotate-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-rotate: $v !global;
+      $tw-rotate: $v !global;
       @include transform(get_transform());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-rotate: $v !global;
+        $tw-rotate: $v !global;
         @include transform(get_transform());
       }
     }
@@ -264,46 +279,55 @@
   @if $Basic {
     // /*x
     @mixin -rotate-0 {
-      @include rotate-(-0deg);
+      $tw-rotate: -0deg !global;
+      @include transform(get_transform());
     }
 
     @mixin -rotate-1 {
-      @include rotate-(-1deg);
+      $tw-rotate: -1deg !global;
+      @include transform(get_transform());
     }
 
     @mixin -rotate-2 {
-      @include rotate-(-2deg);
+      $tw-rotate: -2deg !global;
+      @include transform(get_transform());
     }
 
     @mixin -rotate-3 {
-      @include rotate-(-3deg);
+      $tw-rotate: -3deg !global;
+      @include transform(get_transform());
     }
 
     @mixin -rotate-6 {
-      @include rotate-(-6deg);
+      $tw-rotate: -6deg !global;
+      @include transform(get_transform());
     }
 
     @mixin -rotate-12 {
-      @include rotate-(-12deg);
+      $tw-rotate: -12deg !global;
+      @include transform(get_transform());
     }
 
     @mixin -rotate-45 {
-      @include rotate-(-45deg);
+      $tw-rotate: -45deg !global;
+      @include transform(get_transform());
     }
 
     @mixin -rotate-90 {
-      @include rotate-(-90deg);
+      $tw-rotate: -90deg !global;
+      @include transform(get_transform());
     }
 
     @mixin -rotate-180 {
-      @include rotate-(-180deg);
+      $tw-rotate: -180deg !global;
+      @include transform(get_transform());
     }
 
     // x*/
   }
 
   @if $Rwd {
-    @if $sizeMode == 0 or $sizeMode == 1 {
+    @if $sizeMode ==0 or $sizeMode ==1 {
       // /*x
       @mixin sm\:-rotate-0 {
         @include rotate-(-0deg, $sm);
@@ -513,6 +537,8 @@
 
     @mixin \2xl\:-rotate-($v) {
       @include rotate-(-($v), $\2xl);
-    } // x*/
+    }
+
+    // x*/
   }
 }

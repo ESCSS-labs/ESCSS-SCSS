@@ -4,11 +4,13 @@
 @if $Basic {
   // /*x
   @mixin sepia-0 {
-    @include sepia-(0);
+    $tw-sepia: sepia(0) !global;
+    @include filter(get_filter());
   }
 
   @mixin sepia {
-    @include sepia-(100%);
+    $tw-sepia: sepia(100%) !global;
+    @include filter(get_filter());
   }
 
   // x*/
@@ -65,11 +67,11 @@
   // /*x
   @mixin sepia-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-sepia: sepia($v) !global;
+      $tw-sepia: sepia($v) !global;
       @include filter(get_filter());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-sepia: sepia($v) !global;
+        $tw-sepia: sepia($v) !global;
         @include filter(get_filter());
       }
     }

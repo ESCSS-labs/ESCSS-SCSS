@@ -4,23 +4,48 @@
 @if $Basic {
   // /*x
   @mixin ring-offset-0 {
-    @include ring-offset-(0px);
+    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
+      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    }
+
+    $tw-ring-offset-width: 0px !global;
+    @include box-shadow(get_box-shadow());
   }
 
   @mixin ring-offset-1 {
-    @include ring-offset-(1px);
+    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
+      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    }
+
+    $tw-ring-offset-width: 1px !global;
+    @include box-shadow(get_box-shadow());
   }
 
   @mixin ring-offset-2 {
-    @include ring-offset-(2px);
+    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
+      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    }
+
+    $tw-ring-offset-width: 2px !global;
+    @include box-shadow(get_box-shadow());
   }
 
   @mixin ring-offset-4 {
-    @include ring-offset-(4px);
+    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
+      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    }
+
+    $tw-ring-offset-width: 4px !global;
+    @include box-shadow(get_box-shadow());
   }
 
   @mixin ring-offset-8 {
-    @include ring-offset-(8px);
+    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
+      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    }
+
+    $tw-ring-offset-width: 8px !global;
+    @include box-shadow(get_box-shadow());
   }
 
   // x*/

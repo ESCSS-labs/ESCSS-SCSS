@@ -4,30 +4,35 @@
 @if $Basic {
   // /*x
   @mixin saturate-0 {
-    @include saturate-(0);
+    $tw-saturate: saturate(0) !global;
+    @include filter(get_filter());
   }
 
   @mixin saturate-50 {
-    @include saturate-(0.5);
+    $tw-saturate: saturate(0.5) !global;
+    @include filter(get_filter());
   }
 
   @mixin saturate-100 {
-    @include saturate-(1);
+    $tw-saturate: saturate(1) !global;
+    @include filter(get_filter());
   }
 
   @mixin saturate-150 {
-    @include saturate-(1.5);
+    $tw-saturate: saturate(1.5) !global;
+    @include filter(get_filter());
   }
 
   @mixin saturate-200 {
-    @include saturate-(2);
+    $tw-saturate: saturate(2) !global;
+    @include filter(get_filter());
   }
 
   // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:saturate-0 {
       @include saturate-(0, $sm);
@@ -128,6 +133,7 @@
     @mixin \2xl\:saturate-200 {
       @include saturate-(2, $\2xl);
     }
+
     // x*/
   }
 }
@@ -136,11 +142,11 @@
   // /*x
   @mixin saturate-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-saturate: saturate($v) !global;
+      $tw-saturate: saturate($v) !global;
       @include filter(get_filter());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-saturate: saturate($v) !global;
+        $tw-saturate: saturate($v) !global;
         @include filter(get_filter());
       }
     }

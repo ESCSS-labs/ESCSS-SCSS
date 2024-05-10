@@ -4,11 +4,13 @@
 @if $Basic {
   // /*x
   @mixin invert-0 {
-    @include invert-(0);
+    $tw-invert: invert(0) !global;
+    @include filter(get_filter());
   }
 
   @mixin invert {
-    @include invert-(100%);
+    $tw-invert: invert(100%) !global;
+    @include filter(get_filter());
   }
 
   // x*/
@@ -65,11 +67,11 @@
   // /*x
   @mixin invert-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-invert: invert($v) !global;
+      $tw-invert: invert($v) !global;
       @include filter(get_filter());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-invert: invert($v) !global;
+        $tw-invert: invert($v) !global;
         @include filter(get_filter());
       }
     }

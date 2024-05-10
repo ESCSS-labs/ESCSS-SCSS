@@ -4,48 +4,61 @@
 @if $Basic {
   // /*x
   @mixin brightness-0 {
-    @include brightness-(0);
+    $tw-brightness: brightness(0) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-50 {
-    @include brightness-(0.5);
+    $tw-brightness: brightness(0.5) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-75 {
-    @include brightness-(0.75);
+    $tw-brightness: brightness(0.75) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-90 {
-    @include brightness-(0.9);
+    $tw-brightness: brightness(0.9) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-95 {
-    @include brightness-(0.95);
+    $tw-brightness: brightness(0.95) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-100 {
-    @include brightness-(1);
+    $tw-brightness: brightness(1) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-105 {
-    @include brightness-(1.05);
+    $tw-brightness: brightness(1.05) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-110 {
-    @include brightness-(1.1);
+    $tw-brightness: brightness(1.1) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-125 {
-    @include brightness-(1.25);
+    $tw-brightness: brightness(1.25) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-150 {
-    @include brightness-(1.5);
+    $tw-brightness: brightness(1.5) !global;
+    @include filter(get_filter());
   }
 
   @mixin brightness-200 {
-    @include brightness-(2);
-  } // x*/
+    $tw-brightness: brightness(2) !global;
+    @include filter(get_filter());
+  }
+
+  // x*/
 }
 
 @if $Rwd {
@@ -279,11 +292,11 @@
   // /*x
   @mixin brightness-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-brightness: brightness($v) !global;
+      $tw-brightness: brightness($v) !global;
       @include filter(get_filter());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-brightness: brightness($v) !global;
+        $tw-brightness: brightness($v) !global;
         @include filter(get_filter());
       }
     }

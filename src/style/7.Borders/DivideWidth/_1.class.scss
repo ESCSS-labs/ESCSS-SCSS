@@ -4,51 +4,111 @@
 @if $Basic {
   // /*x
   @mixin divide-x-reverse {
-    @include divide-x-(0px, null, true);
+    $tw-divide-x-reverse: 1 !global;
+
+    > * ~ * {
+      @include border-right-width($divide-x-value * $tw-divide-x-reverse);
+      @include border-left-width($divide-x-value * (1 - $tw-divide-x-reverse));
+    }
   }
 
   @mixin divide-y-reverse {
-    @include divide-y-(0px, null, true);
+    $tw-divide-y-reverse: 1 !global;
+
+    > * ~ * {
+      @include border-top-width($divide-y-value * (1 - $tw-divide-y-reverse));
+      @include border-bottom-width($divide-y-value * $tw-divide-y-reverse);
+    }
   }
 
   @mixin divide-x-0 {
-    @include divide-x-(0px);
+    $divide-x-value: 0px !global;
+
+    > * ~ * {
+      @include border-right-width(0px * $tw-divide-x-reverse);
+      @include border-left-width(0px * (1 - $tw-divide-x-reverse));
+    }
   }
 
   @mixin divide-x {
-    @include divide-x-(1px);
+    $divide-x-value: 1px !global;
+
+    > * ~ * {
+      @include border-right-width(1px * $tw-divide-x-reverse);
+      @include border-left-width(1px * (1 - $tw-divide-x-reverse));
+    }
   }
 
   @mixin divide-x-2 {
-    @include divide-x-(2px);
+    $divide-x-value: 2px !global;
+
+    > * ~ * {
+      @include border-right-width(2px * $tw-divide-x-reverse);
+      @include border-left-width(2px * (1 - $tw-divide-x-reverse));
+    }
   }
 
   @mixin divide-x-4 {
-    @include divide-x-(4px);
+    $divide-x-value: 4px !global;
+
+    > * ~ * {
+      @include border-right-width(4px * $tw-divide-x-reverse);
+      @include border-left-width(4px * (1 - $tw-divide-x-reverse));
+    }
   }
 
   @mixin divide-x-8 {
-    @include divide-x-(8px);
+    $divide-x-value: 8px !global;
+
+    > * ~ * {
+      @include border-right-width(8px * $tw-divide-x-reverse);
+      @include border-left-width(8px * (1 - $tw-divide-x-reverse));
+    }
   }
 
   @mixin divide-y-0 {
-    @include divide-y-(0px);
+    $divide-y-value: 0px !global;
+
+    > * ~ * {
+      @include border-top-width(0px * (1 - $tw-divide-y-reverse));
+      @include border-bottom-width(0px * $tw-divide-y-reverse);
+    }
   }
 
   @mixin divide-y {
-    @include divide-y-(1px);
+    $divide-y-value: 1px !global;
+
+    > * ~ * {
+      @include border-top-width(1px * (1 - $tw-divide-y-reverse));
+      @include border-bottom-width(1px * $tw-divide-y-reverse);
+    }
   }
 
   @mixin divide-y-2 {
-    @include divide-y-(2px);
+    $divide-y-value: 2px !global;
+
+    > * ~ * {
+      @include border-top-width(2px * (1 - $tw-divide-y-reverse));
+      @include border-bottom-width(2px * $tw-divide-y-reverse);
+    }
   }
 
   @mixin divide-y-4 {
-    @include divide-y-(4px);
+    $divide-y-value: 4px !global;
+
+    > * ~ * {
+      @include border-top-width(4px * (1 - $tw-divide-y-reverse));
+      @include border-bottom-width(4px * $tw-divide-y-reverse);
+    }
   }
 
   @mixin divide-y-8 {
-    @include divide-y-(8px);
+    $divide-y-value: 8px !global;
+
+    > * ~ * {
+      @include border-top-width(8px * (1 - $tw-divide-y-reverse));
+      @include border-bottom-width(8px * $tw-divide-y-reverse);
+    }
   }
 
   // x*/
@@ -305,31 +365,29 @@
   @mixin divide-x-($v, $rwd: null, $isReverse: false) {
     @if $rwd==null {
       @if $isReverse {
-        $--tw-divide-x-reverse: 1 !global;
+        $tw-divide-x-reverse: 1 !global;
       } @else {
-        $--divide-x-value: $v !global; // update for using reverse
+        $divide-x-value: $v !global; // update for using reverse
       }
 
       > * ~ * {
-        @include border-right-width($--divide-x-value * $--tw-divide-x-reverse);
+        @include border-right-width($divide-x-value * $tw-divide-x-reverse);
         @include border-left-width(
-          $--divide-x-value * (1 - $--tw-divide-x-reverse)
+          $divide-x-value * (1 - $tw-divide-x-reverse)
         );
       }
     } @else {
       @media (min-width: $rwd) {
         @if $isReverse {
-          $--tw-divide-x-reverse: 1 !global;
+          $tw-divide-x-reverse: 1 !global;
         } @else {
-          $--divide-x-value: $v !global; // update for using reverse
+          $divide-x-value: $v !global; // update for using reverse
         }
 
         > * ~ * {
-          @include border-right-width(
-            $--divide-x-value * $--tw-divide-x-reverse
-          );
+          @include border-right-width($divide-x-value * $tw-divide-x-reverse);
           @include border-left-width(
-            $--divide-x-value * (1 - $--tw-divide-x-reverse)
+            $divide-x-value * (1 - $tw-divide-x-reverse)
           );
         }
       }
@@ -339,34 +397,28 @@
   @mixin divide-y-($v, $rwd: null, $isReverse: false) {
     @if $rwd==null {
       @if $isReverse {
-        $--tw-divide-y-reverse: 1 !global;
+        $tw-divide-y-reverse: 1 !global;
       } @else {
-        $--divide-y-value: $v !global; // update for using reverse
+        $divide-y-value: $v !global; // update for using reverse
       }
 
       > * ~ * {
-        @include border-top-width(
-          $--divide-y-value * (1 - $--tw-divide-y-reverse)
-        );
-        @include border-bottom-width(
-          $--divide-y-value * $--tw-divide-y-reverse
-        );
+        @include border-top-width($divide-y-value * (1 - $tw-divide-y-reverse));
+        @include border-bottom-width($divide-y-value * $tw-divide-y-reverse);
       }
     } @else {
       @media (min-width: $rwd) {
         @if $isReverse {
-          $--tw-divide-y-reverse: 1 !global;
+          $tw-divide-y-reverse: 1 !global;
         } @else {
-          $--divide-y-value: $v !global; // update for using reverse
+          $divide-y-value: $v !global; // update for using reverse
         }
 
         > * ~ * {
           @include border-top-width(
-            $--divide-y-value * (1 - $--tw-divide-y-reverse)
+            $divide-y-value * (1 - $tw-divide-y-reverse)
           );
-          @include border-bottom-width(
-            $--divide-y-value * $--tw-divide-y-reverse
-          );
+          @include border-bottom-width($divide-y-value * $tw-divide-y-reverse);
         }
       }
     }

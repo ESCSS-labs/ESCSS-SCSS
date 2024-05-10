@@ -4,31 +4,38 @@
 @if $Basic {
   // /*x
   @mixin backdrop-contrast-0 {
-    @include backdrop-contrast-(0);
+    $tw-backdrop-contrast: contrast(0) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-contrast-50 {
-    @include backdrop-contrast-(0.5);
+    $tw-backdrop-contrast: contrast(0.5) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-contrast-75 {
-    @include backdrop-contrast-(0.75);
+    $tw-backdrop-contrast: contrast(0.75) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-contrast-100 {
-    @include backdrop-contrast-(1);
+    $tw-backdrop-contrast: contrast(1) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-contrast-125 {
-    @include backdrop-contrast-(1.25);
+    $tw-backdrop-contrast: contrast(1.25) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-contrast-150 {
-    @include backdrop-contrast-(1.5);
+    $tw-backdrop-contrast: contrast(1.5) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-contrast-200 {
-    @include backdrop-contrast-(2);
+    $tw-backdrop-contrast: contrast(2) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   // x*/
@@ -184,11 +191,11 @@
   // /*x
   @mixin backdrop-contrast-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-backdrop-contrast: contrast($v) !global;
+      $tw-backdrop-contrast: contrast($v) !global;
       @include backdrop-filter(get_backdrop-filter());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-backdrop-contrast: contrast($v) !global;
+        $tw-backdrop-contrast: contrast($v) !global;
         @include backdrop-filter(get_backdrop-filter());
       }
     }

@@ -4,41 +4,59 @@
 @if $Basic {
   // /*x
   @mixin line-clamp-1 {
-    @include line-clamp-(1);
+    @include overflow(hidden);
+    @include display(-webkit-box);
+    @include -webkit-box-orient(vertical);
+    @include -webkit-line-clamp(1);
   }
 
   @mixin line-clamp-2 {
-    @include line-clamp-(2);
+    @include overflow(hidden);
+    @include display(-webkit-box);
+    @include -webkit-box-orient(vertical);
+    @include -webkit-line-clamp(2);
   }
 
   @mixin line-clamp-3 {
-    @include line-clamp-(3);
+    @include overflow(hidden);
+    @include display(-webkit-box);
+    @include -webkit-box-orient(vertical);
+    @include -webkit-line-clamp(3);
   }
 
   @mixin line-clamp-4 {
-    @include line-clamp-(4);
+    @include overflow(hidden);
+    @include display(-webkit-box);
+    @include -webkit-box-orient(vertical);
+    @include -webkit-line-clamp(4);
   }
 
   @mixin line-clamp-5 {
-    @include line-clamp-(5);
+    @include overflow(hidden);
+    @include display(-webkit-box);
+    @include -webkit-box-orient(vertical);
+    @include -webkit-line-clamp(5);
   }
 
   @mixin line-clamp-6 {
-    @include line-clamp-(6);
+    @include overflow(hidden);
+    @include display(-webkit-box);
+    @include -webkit-box-orient(vertical);
+    @include -webkit-line-clamp(6);
   }
 
   @mixin line-clamp-none {
-    overflow: visible;
-    display: block;
-    -webkit-box-orient: horizontal;
-    -webkit-line-clamp: none;
+    @include overflow(visible);
+    @include display(block);
+    @include -webkit-box-orient(horizontal);
+    @include -webkit-line-clamp(none);
   }
 
   // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:line-clamp-1 {
       @include line-clamp-(1, $sm);
@@ -66,10 +84,10 @@
 
     @mixin sm\:line-clamp-none {
       @media (min-width: $sm) {
-        overflow: visible;
-        display: block;
-        -webkit-box-orient: horizontal;
-        -webkit-line-clamp: none;
+        @include overflow(visible);
+        @include display(block);
+        @include -webkit-box-orient(horizontal);
+        @include -webkit-line-clamp(none);
       }
     }
 
@@ -99,10 +117,10 @@
 
     @mixin md\:line-clamp-none {
       @media (min-width: $md) {
-        overflow: visible;
-        display: block;
-        -webkit-box-orient: horizontal;
-        -webkit-line-clamp: none;
+        @include overflow(visible);
+        @include display(block);
+        @include -webkit-box-orient(horizontal);
+        @include -webkit-line-clamp(none);
       }
     }
 
@@ -132,10 +150,10 @@
 
     @mixin lg\:line-clamp-none {
       @media (min-width: $lg) {
-        overflow: visible;
-        display: block;
-        -webkit-box-orient: horizontal;
-        -webkit-line-clamp: none;
+        @include overflow(visible);
+        @include display(block);
+        @include -webkit-box-orient(horizontal);
+        @include -webkit-line-clamp(none);
       }
     }
 
@@ -165,10 +183,10 @@
 
     @mixin xl\:line-clamp-none {
       @media (min-width: $xl) {
-        overflow: visible;
-        display: block;
-        -webkit-box-orient: horizontal;
-        -webkit-line-clamp: none;
+        @include overflow(visible);
+        @include display(block);
+        @include -webkit-box-orient(horizontal);
+        @include -webkit-line-clamp(none);
       }
     }
 
@@ -198,10 +216,10 @@
 
     @mixin \2xl\:line-clamp-none {
       @media (min-width: $\2xl) {
-        overflow: visible;
-        display: block;
-        -webkit-box-orient: horizontal;
-        -webkit-line-clamp: none;
+        @include overflow(visible);
+        @include display(block);
+        @include -webkit-box-orient(horizontal);
+        @include -webkit-line-clamp(none);
       }
     }
 

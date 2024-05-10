@@ -4,11 +4,13 @@
 @if $Basic {
   // /*x
   @mixin grayscale-0 {
-    @include grayscale-(0);
+    $tw-grayscale: grayscale(0) !global;
+    @include filter(get_filter());
   }
 
   @mixin grayscale {
-    @include grayscale-(100%);
+    $tw-grayscale: grayscale(100%) !global;
+    @include filter(get_filter());
   }
 
   // x*/
@@ -64,11 +66,11 @@
   // /*x
   @mixin grayscale-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-grayscale: grayscale($v) !global;
+      $tw-grayscale: grayscale($v) !global;
       @include filter(get_filter());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-grayscale: grayscale($v) !global;
+        $tw-grayscale: grayscale($v) !global;
         @include filter(get_filter());
       }
     }

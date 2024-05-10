@@ -4,11 +4,13 @@
 @if $Basic {
   // /*x
   @mixin backdrop-invert-0 {
-    @include backdrop-invert-(0);
+    $tw-backdrop-invert: invert(0) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-invert {
-    @include backdrop-invert-(100%);
+    $tw-backdrop-invert: invert(100%) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   // x*/
@@ -65,11 +67,11 @@
   // /*x
   @mixin backdrop-invert-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-backdrop-invert: invert($v) !global;
+      $tw-backdrop-invert: invert($v) !global;
       @include backdrop-filter(get_backdrop-filter());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-backdrop-invert: invert($v) !global;
+        $tw-backdrop-invert: invert($v) !global;
         @include backdrop-filter(get_backdrop-filter());
       }
     }

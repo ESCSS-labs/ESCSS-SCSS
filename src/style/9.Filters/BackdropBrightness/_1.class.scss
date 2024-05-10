@@ -4,47 +4,58 @@
 @if $Basic {
   // /*x
   @mixin backdrop-brightness-0 {
-    @include backdrop-brightness-(0);
+    $tw-backdrop-brightness: brightness(0) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-50 {
-    @include backdrop-brightness-(0.5);
+    $tw-backdrop-brightness: brightness(0.5) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-75 {
-    @include backdrop-brightness-(0.75);
+    $tw-backdrop-brightness: brightness(0.75) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-90 {
-    @include backdrop-brightness-(0.9);
+    $tw-backdrop-brightness: brightness(0.9) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-95 {
-    @include backdrop-brightness-(0.95);
+    $tw-backdrop-brightness: brightness(0.95) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-100 {
-    @include backdrop-brightness-(1);
+    $tw-backdrop-brightness: brightness(1) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-105 {
-    @include backdrop-brightness-(1.05);
+    $tw-backdrop-brightness: brightness(1.05) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-110 {
-    @include backdrop-brightness-(1.1);
+    $tw-backdrop-brightness: brightness(1.1) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-125 {
-    @include backdrop-brightness-(1.25);
+    $tw-backdrop-brightness: brightness(1.25) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-150 {
-    @include backdrop-brightness-(1.5);
+    $tw-backdrop-brightness: brightness(1.5) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin backdrop-brightness-200 {
-    @include backdrop-brightness-(2);
+    $tw-backdrop-brightness: brightness(2) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   // x*/
@@ -281,11 +292,11 @@
   // /*x
   @mixin backdrop-brightness-($v, $rwd: null) {
     @if $rwd==null {
-      $--tw-backdrop-brightness: brightness($v) !global;
+      $tw-backdrop-brightness: brightness($v) !global;
       @include backdrop-filter(get_backdrop-filter());
     } @else {
       @media (min-width: $rwd) {
-        $--tw-backdrop-brightness: brightness($v) !global;
+        $tw-backdrop-brightness: brightness($v) !global;
         @include backdrop-filter(get_backdrop-filter());
       }
     }
