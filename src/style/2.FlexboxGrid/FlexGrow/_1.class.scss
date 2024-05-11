@@ -4,17 +4,18 @@
 @if $Basic {
   // /*x
   @mixin grow {
-    @include flex-grow(1);
+    flex-grow: 1;
   }
 
   @mixin grow-0 {
-    @include flex-grow(0);
+    flex-grow: 0;
   }
+
   // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:grow {
       @include grow-(1, $sm);
@@ -90,5 +91,7 @@
 
   @mixin \2xl\:grow-($v) {
     @include grow-($v, $\2xl);
-  } // x*/
+  }
+
+  // x*/
 }

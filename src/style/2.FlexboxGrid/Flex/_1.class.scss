@@ -4,24 +4,26 @@
 @if $Basic {
   // /*x
   @mixin flex-1 {
-    @include flex(1 1 0%);
+    flex: 1 1 0%;
   }
 
   @mixin flex-auto {
-    @include flex(1 1 auto);
+    flex: 1 1 auto;
   }
 
   @mixin flex-initial {
-    @include flex(0 1 auto);
+    flex: 0 1 auto;
   }
 
   @mixin flex-none {
-    @include flex(none);
-  } // x*/
+    flex: none;
+  }
+
+  // x*/
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:flex-1 {
       @include flex-(1 1 0%, $sm);
