@@ -8,22 +8,33 @@
   }
 
   @mixin snap-x {
+    $tw-dummy-not-match--snap: true !global;
     @include scroll-snap-type(x $tw-scroll-snap-strictness);
   }
 
   @mixin snap-y {
+    $tw-dummy-not-match--snap: true !global;
     @include scroll-snap-type(y $tw-scroll-snap-strictness);
   }
 
   @mixin snap-both {
+    $tw-dummy-not-match--snap: true !global;
     @include scroll-snap-type(both $tw-scroll-snap-strictness);
   }
 
   @mixin snap-mandatory {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     $tw-scroll-snap-strictness: mandatory !global;
   }
 
   @mixin snap-proximity {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     $tw-scroll-snap-strictness: proximity !global;
   }
 
@@ -37,24 +48,35 @@
   }
 
   @mixin sm\:snap-x {
+    $tw-dummy-not-match--snap: true !global;
     @include sm\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
 
   @mixin sm\:snap-y {
+    $tw-dummy-not-match--snap: true !global;
     @include sm\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
 
   @mixin sm\:snap-both {
+    $tw-dummy-not-match--snap: true !global;
     @include sm\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
 
   @mixin sm\:snap-mandatory {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $sm) {
       $tw-scroll-snap-strictness: mandatory !global;
     }
   }
 
   @mixin sm\:snap-proximity {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $sm) {
       $tw-scroll-snap-strictness: proximity !global;
     }
@@ -65,24 +87,35 @@
   }
 
   @mixin md\:snap-x {
+    $tw-dummy-not-match--snap: true !global;
     @include md\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
 
   @mixin md\:snap-y {
+    $tw-dummy-not-match--snap: true !global;
     @include md\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
 
   @mixin md\:snap-both {
+    $tw-dummy-not-match--snap: true !global;
     @include md\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
 
   @mixin md\:snap-mandatory {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $md) {
       $tw-scroll-snap-strictness: mandatory !global;
     }
   }
 
   @mixin md\:snap-proximity {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $md) {
       $tw-scroll-snap-strictness: proximity !global;
     }
@@ -93,24 +126,35 @@
   }
 
   @mixin lg\:snap-x {
+    $tw-dummy-not-match--snap: true !global;
     @include lg\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
 
   @mixin lg\:snap-y {
+    $tw-dummy-not-match--snap: true !global;
     @include lg\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
 
   @mixin lg\:snap-both {
+    $tw-dummy-not-match--snap: true !global;
     @include lg\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
 
   @mixin lg\:snap-mandatory {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $lg) {
       $tw-scroll-snap-strictness: mandatory !global;
     }
   }
 
   @mixin lg\:snap-proximity {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $lg) {
       $tw-scroll-snap-strictness: proximity !global;
     }
@@ -121,24 +165,35 @@
   }
 
   @mixin xl\:snap-x {
+    $tw-dummy-not-match--snap: true !global;
     @include xl\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
 
   @mixin xl\:snap-y {
+    $tw-dummy-not-match--snap: true !global;
     @include xl\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
 
   @mixin xl\:snap-both {
+    $tw-dummy-not-match--snap: true !global;
     @include xl\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
 
   @mixin xl\:snap-mandatory {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $xl) {
       $tw-scroll-snap-strictness: mandatory !global;
     }
   }
 
   @mixin xl\:snap-proximity {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $xl) {
       $tw-scroll-snap-strictness: proximity !global;
     }
@@ -149,27 +204,39 @@
   }
 
   @mixin \2xl\:snap-x {
+    $tw-dummy-not-match--snap: true !global;
     @include \2xl\:scroll-snap-type(x $tw-scroll-snap-strictness);
   }
 
   @mixin \2xl\:snap-y {
+    $tw-dummy-not-match--snap: true !global;
     @include \2xl\:scroll-snap-type(y $tw-scroll-snap-strictness);
   }
 
   @mixin \2xl\:snap-both {
+    $tw-dummy-not-match--snap: true !global;
     @include \2xl\:scroll-snap-type(both $tw-scroll-snap-strictness);
   }
 
   @mixin \2xl\:snap-mandatory {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $\2xl) {
       $tw-scroll-snap-strictness: mandatory !global;
     }
   }
 
   @mixin \2xl\:snap-proximity {
+    @if $tw-dummy-not-match--snap {
+      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    }
+
     @media (min-width: $\2xl) {
       $tw-scroll-snap-strictness: proximity !global;
     }
   }
+
   // x*/
 }

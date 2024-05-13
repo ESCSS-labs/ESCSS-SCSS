@@ -26,83 +26,83 @@
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:auto-rows-auto {
-      @include auto-rows-(auto, $sm);
+      @include sm\:auto-rows-(auto);
     }
 
     @mixin sm\:auto-rows-min {
-      @include auto-rows-(min-content, $sm);
+      @include sm\:auto-rows-(min-content);
     }
 
     @mixin sm\:auto-rows-max {
-      @include auto-rows-(max-content, $sm);
+      @include sm\:auto-rows-(max-content);
     }
 
     @mixin sm\:auto-rows-fr {
-      @include auto-rows-(minmax(0, 1fr), $sm);
+      @include sm\:auto-rows-(minmax(0, 1fr));
     }
 
     @mixin md\:auto-rows-auto {
-      @include auto-rows-(auto, $md);
+      @include md\:auto-rows-(auto);
     }
 
     @mixin md\:auto-rows-min {
-      @include auto-rows-(min-content, $md);
+      @include md\:auto-rows-(min-content);
     }
 
     @mixin md\:auto-rows-max {
-      @include auto-rows-(max-content, $md);
+      @include md\:auto-rows-(max-content);
     }
 
     @mixin md\:auto-rows-fr {
-      @include auto-rows-(minmax(0, 1fr), $md);
+      @include md\:auto-rows-(minmax(0, 1fr));
     }
 
     @mixin lg\:auto-rows-auto {
-      @include auto-rows-(auto, $lg);
+      @include lg\:auto-rows-(auto);
     }
 
     @mixin lg\:auto-rows-min {
-      @include auto-rows-(min-content, $lg);
+      @include lg\:auto-rows-(min-content);
     }
 
     @mixin lg\:auto-rows-max {
-      @include auto-rows-(max-content, $lg);
+      @include lg\:auto-rows-(max-content);
     }
 
     @mixin lg\:auto-rows-fr {
-      @include auto-rows-(minmax(0, 1fr), $lg);
+      @include lg\:auto-rows-(minmax(0, 1fr));
     }
 
     @mixin xl\:auto-rows-auto {
-      @include auto-rows-(auto, $xl);
+      @include xl\:auto-rows-(auto);
     }
 
     @mixin xl\:auto-rows-min {
-      @include auto-rows-(min-content, $xl);
+      @include xl\:auto-rows-(min-content);
     }
 
     @mixin xl\:auto-rows-max {
-      @include auto-rows-(max-content, $xl);
+      @include xl\:auto-rows-(max-content);
     }
 
     @mixin xl\:auto-rows-fr {
-      @include auto-rows-(minmax(0, 1fr), $xl);
+      @include xl\:auto-rows-(minmax(0, 1fr));
     }
 
     @mixin \2xl\:auto-rows-auto {
-      @include auto-rows-(auto, $\2xl);
+      @include \2xl\:auto-rows-(auto);
     }
 
     @mixin \2xl\:auto-rows-min {
-      @include auto-rows-(min-content, $\2xl);
+      @include \2xl\:auto-rows-(min-content);
     }
 
     @mixin \2xl\:auto-rows-max {
-      @include auto-rows-(max-content, $\2xl);
+      @include \2xl\:auto-rows-(max-content);
     }
 
     @mixin \2xl\:auto-rows-fr {
-      @include auto-rows-(minmax(0, 1fr), $\2xl);
+      @include \2xl\:auto-rows-(minmax(0, 1fr));
     }
 
     // x*/
@@ -111,34 +111,28 @@
 
 @if $Custom {
   // /*x
-  @mixin auto-rows-($v, $rwd: null) {
-    @if $rwd==null {
-      @include grid-auto-rows($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include grid-auto-rows($v);
-      }
-    }
+  @mixin auto-rows-($v) {
+    @include grid-auto-rows($v);
   }
 
   @mixin sm\:auto-rows-($v) {
-    @include auto-rows-($v, $sm);
+    @include sm\:grid-auto-rows($v);
   }
 
   @mixin md\:auto-rows-($v) {
-    @include auto-rows-($v, $md);
+    @include md\:grid-auto-rows($v);
   }
 
   @mixin lg\:auto-rows-($v) {
-    @include auto-rows-($v, $lg);
+    @include lg\:grid-auto-rows($v);
   }
 
   @mixin xl\:auto-rows-($v) {
-    @include auto-rows-($v, $xl);
+    @include xl\:grid-auto-rows($v);
   }
 
   @mixin \2xl\:auto-rows-($v) {
-    @include auto-rows-($v, $\2xl);
+    @include \2xl\:grid-auto-rows($v);
   }
 
   // x*/

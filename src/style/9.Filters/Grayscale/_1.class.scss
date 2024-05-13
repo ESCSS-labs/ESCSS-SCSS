@@ -17,83 +17,82 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:grayscale-0 {
-      @include grayscale-(0, $sm);
+      @include sm\:grayscale-(0);
     }
 
     @mixin sm\:grayscale {
-      @include grayscale-(100%, $sm);
+      @include sm\:grayscale-(100%);
     }
 
     @mixin md\:grayscale-0 {
-      @include grayscale-(0, $md);
+      @include md\:grayscale-(0);
     }
 
     @mixin md\:grayscale {
-      @include grayscale-(100%, $md);
+      @include md\:grayscale-(100%);
     }
 
     @mixin lg\:grayscale-0 {
-      @include grayscale-(0, $lg);
+      @include lg\:grayscale-(0);
     }
 
     @mixin lg\:grayscale {
-      @include grayscale-(100%, $lg);
+      @include lg\:grayscale-(100%);
     }
 
     @mixin xl\:grayscale-0 {
-      @include grayscale-(0, $xl);
+      @include xl\:grayscale-(0);
     }
 
     @mixin xl\:grayscale {
-      @include grayscale-(100%, $xl);
+      @include xl\:grayscale-(100%);
     }
 
     @mixin \2xl\:grayscale-0 {
-      @include grayscale-(0, $\2xl);
+      @include \2xl\:grayscale-(0);
     }
 
     @mixin \2xl\:grayscale {
-      @include grayscale-(100%, $\2xl);
+      @include \2xl\:grayscale-(100%);
     }
+
     // x*/
   }
 }
 
 @if $Custom {
   // /*x
-  @mixin grayscale-($v, $rwd: null) {
-    @if $rwd==null {
-      $tw-grayscale: grayscale($v) !global;
-      @include filter(get_filter());
-    } @else {
-      @media (min-width: $rwd) {
-        $tw-grayscale: grayscale($v) !global;
-        @include filter(get_filter());
-      }
-    }
+  @mixin grayscale-($v) {
+    $tw-grayscale: grayscale($v) !global;
+    @include filter(get_filter());
   }
 
   @mixin sm\:grayscale-($v) {
-    @include grayscale-($v, $sm);
+    $tw-grayscale: grayscale($v) !global;
+    @include sm\:filter(get_filter());
   }
 
   @mixin md\:grayscale-($v) {
-    @include grayscale-($v, $md);
+    $tw-grayscale: grayscale($v) !global;
+    @include md\:filter(get_filter());
   }
 
   @mixin lg\:grayscale-($v) {
-    @include grayscale-($v, $lg);
+    $tw-grayscale: grayscale($v) !global;
+    @include lg\:filter(get_filter());
   }
 
   @mixin xl\:grayscale-($v) {
-    @include grayscale-($v, $xl);
+    $tw-grayscale: grayscale($v) !global;
+    @include xl\:filter(get_filter());
   }
 
   @mixin \2xl\:grayscale-($v) {
-    @include grayscale-($v, $\2xl);
+    $tw-grayscale: grayscale($v) !global;
+    @include \2xl\:filter(get_filter());
   }
 
   // x*/

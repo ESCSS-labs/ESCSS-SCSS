@@ -59,27 +59,27 @@
   @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:line-clamp-1 {
-      @include line-clamp-(1, $sm);
+      @include sm\:line-clamp-(1);
     }
 
     @mixin sm\:line-clamp-2 {
-      @include line-clamp-(2, $sm);
+      @include sm\:line-clamp-(2);
     }
 
     @mixin sm\:line-clamp-3 {
-      @include line-clamp-(3, $sm);
+      @include sm\:line-clamp-(3);
     }
 
     @mixin sm\:line-clamp-4 {
-      @include line-clamp-(4, $sm);
+      @include sm\:line-clamp-(4);
     }
 
     @mixin sm\:line-clamp-5 {
-      @include line-clamp-(5, $sm);
+      @include sm\:line-clamp-(5);
     }
 
     @mixin sm\:line-clamp-6 {
-      @include line-clamp-(6, $sm);
+      @include sm\:line-clamp-(6);
     }
 
     @mixin sm\:line-clamp-none {
@@ -92,27 +92,27 @@
     }
 
     @mixin md\:line-clamp-1 {
-      @include line-clamp-(1, $md);
+      @include md\:line-clamp-(1);
     }
 
     @mixin md\:line-clamp-2 {
-      @include line-clamp-(2, $md);
+      @include md\:line-clamp-(2);
     }
 
     @mixin md\:line-clamp-3 {
-      @include line-clamp-(3, $md);
+      @include md\:line-clamp-(3);
     }
 
     @mixin md\:line-clamp-4 {
-      @include line-clamp-(4, $md);
+      @include md\:line-clamp-(4);
     }
 
     @mixin md\:line-clamp-5 {
-      @include line-clamp-(5, $md);
+      @include md\:line-clamp-(5);
     }
 
     @mixin md\:line-clamp-6 {
-      @include line-clamp-(6, $md);
+      @include md\:line-clamp-(6);
     }
 
     @mixin md\:line-clamp-none {
@@ -125,27 +125,27 @@
     }
 
     @mixin lg\:line-clamp-1 {
-      @include line-clamp-(1, $lg);
+      @include lg\:line-clamp-(1);
     }
 
     @mixin lg\:line-clamp-2 {
-      @include line-clamp-(2, $lg);
+      @include lg\:line-clamp-(2);
     }
 
     @mixin lg\:line-clamp-3 {
-      @include line-clamp-(3, $lg);
+      @include lg\:line-clamp-(3);
     }
 
     @mixin lg\:line-clamp-4 {
-      @include line-clamp-(4, $lg);
+      @include lg\:line-clamp-(4);
     }
 
     @mixin lg\:line-clamp-5 {
-      @include line-clamp-(5, $lg);
+      @include lg\:line-clamp-(5);
     }
 
     @mixin lg\:line-clamp-6 {
-      @include line-clamp-(6, $lg);
+      @include lg\:line-clamp-(6);
     }
 
     @mixin lg\:line-clamp-none {
@@ -158,27 +158,27 @@
     }
 
     @mixin xl\:line-clamp-1 {
-      @include line-clamp-(1, $xl);
+      @include xl\:line-clamp-(1);
     }
 
     @mixin xl\:line-clamp-2 {
-      @include line-clamp-(2, $xl);
+      @include xl\:line-clamp-(2);
     }
 
     @mixin xl\:line-clamp-3 {
-      @include line-clamp-(3, $xl);
+      @include xl\:line-clamp-(3);
     }
 
     @mixin xl\:line-clamp-4 {
-      @include line-clamp-(4, $xl);
+      @include xl\:line-clamp-(4);
     }
 
     @mixin xl\:line-clamp-5 {
-      @include line-clamp-(5, $xl);
+      @include xl\:line-clamp-(5);
     }
 
     @mixin xl\:line-clamp-6 {
-      @include line-clamp-(6, $xl);
+      @include xl\:line-clamp-(6);
     }
 
     @mixin xl\:line-clamp-none {
@@ -191,27 +191,27 @@
     }
 
     @mixin \2xl\:line-clamp-1 {
-      @include line-clamp-(1, $\2xl);
+      @include \2xl\:line-clamp-(1);
     }
 
     @mixin \2xl\:line-clamp-2 {
-      @include line-clamp-(2, $\2xl);
+      @include \2xl\:line-clamp-(2);
     }
 
     @mixin \2xl\:line-clamp-3 {
-      @include line-clamp-(3, $\2xl);
+      @include \2xl\:line-clamp-(3);
     }
 
     @mixin \2xl\:line-clamp-4 {
-      @include line-clamp-(4, $\2xl);
+      @include \2xl\:line-clamp-(4);
     }
 
     @mixin \2xl\:line-clamp-5 {
-      @include line-clamp-(5, $\2xl);
+      @include \2xl\:line-clamp-(5);
     }
 
     @mixin \2xl\:line-clamp-6 {
-      @include line-clamp-(6, $\2xl);
+      @include \2xl\:line-clamp-(6);
     }
 
     @mixin \2xl\:line-clamp-none {
@@ -229,40 +229,56 @@
 
 @if $Custom {
   // /*x
-  @mixin line-clamp-($v, $rwd: null) {
-    @if $rwd==null {
+  @mixin line-clamp-($v) {
+    @include overflow(hidden);
+    @include display(-webkit-box);
+    @include -webkit-box-orient(vertical);
+    @include -webkit-line-clamp($v);
+  }
+
+  @mixin sm\:line-clamp-($v) {
+    @media (min-width: $sm) {
       @include overflow(hidden);
       @include display(-webkit-box);
       @include -webkit-box-orient(vertical);
       @include -webkit-line-clamp($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include overflow(hidden);
-        @include display(-webkit-box);
-        @include -webkit-box-orient(vertical);
-        @include -webkit-line-clamp($v);
-      }
     }
   }
 
-  @mixin sm\:line-clamp-($v) {
-    @include line-clamp-($v, $sm);
-  }
-
   @mixin md\:line-clamp-($v) {
-    @include line-clamp-($v, $md);
+    @media (min-width: $md) {
+      @include overflow(hidden);
+      @include display(-webkit-box);
+      @include -webkit-box-orient(vertical);
+      @include -webkit-line-clamp($v);
+    }
   }
 
   @mixin lg\:line-clamp-($v) {
-    @include line-clamp-($v, $lg);
+    @media (min-width: $lg) {
+      @include overflow(hidden);
+      @include display(-webkit-box);
+      @include -webkit-box-orient(vertical);
+      @include -webkit-line-clamp($v);
+    }
   }
 
   @mixin xl\:line-clamp-($v) {
-    @include line-clamp-($v, $xl);
+    @media (min-width: $xl) {
+      @include overflow(hidden);
+      @include display(-webkit-box);
+      @include -webkit-box-orient(vertical);
+      @include -webkit-line-clamp($v);
+    }
   }
 
   @mixin \2xl\:line-clamp-($v) {
-    @include line-clamp-($v, $\2xl);
+    @media (min-width: $\2xl) {
+      @include overflow(hidden);
+      @include display(-webkit-box);
+      @include -webkit-box-orient(vertical);
+      @include -webkit-line-clamp($v);
+    }
   }
 
   // x*/

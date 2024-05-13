@@ -42,163 +42,163 @@
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:align-baseline {
-      @include align-(baseline, $sm);
+      @include sm\:align-(baseline);
     }
 
     @mixin sm\:align-top {
-      @include align-(top, $sm);
+      @include sm\:align-(top);
     }
 
     @mixin sm\:align-middle {
-      @include align-(middle, $sm);
+      @include sm\:align-(middle);
     }
 
     @mixin sm\:align-bottom {
-      @include align-(bottom, $sm);
+      @include sm\:align-(bottom);
     }
 
     @mixin sm\:align-text-top {
-      @include align-(text-top, $sm);
+      @include sm\:align-(text-top);
     }
 
     @mixin sm\:align-text-bottom {
-      @include align-(text-bottom, $sm);
+      @include sm\:align-(text-bottom);
     }
 
     @mixin sm\:align-sub {
-      @include align-(sub, $sm);
+      @include sm\:align-(sub);
     }
 
     @mixin sm\:align-super {
-      @include align-(super, $sm);
+      @include sm\:align-(super);
     }
 
     @mixin md\:align-baseline {
-      @include align-(baseline, $md);
+      @include md\:align-(baseline);
     }
 
     @mixin md\:align-top {
-      @include align-(top, $md);
+      @include md\:align-(top);
     }
 
     @mixin md\:align-middle {
-      @include align-(middle, $md);
+      @include md\:align-(middle);
     }
 
     @mixin md\:align-bottom {
-      @include align-(bottom, $md);
+      @include md\:align-(bottom);
     }
 
     @mixin md\:align-text-top {
-      @include align-(text-top, $md);
+      @include md\:align-(text-top);
     }
 
     @mixin md\:align-text-bottom {
-      @include align-(text-bottom, $md);
+      @include md\:align-(text-bottom);
     }
 
     @mixin md\:align-sub {
-      @include align-(sub, $md);
+      @include md\:align-(sub);
     }
 
     @mixin md\:align-super {
-      @include align-(super, $md);
+      @include md\:align-(super);
     }
 
     @mixin lg\:align-baseline {
-      @include align-(baseline, $lg);
+      @include lg\:align-(baseline);
     }
 
     @mixin lg\:align-top {
-      @include align-(top, $lg);
+      @include lg\:align-(top);
     }
 
     @mixin lg\:align-middle {
-      @include align-(middle, $lg);
+      @include lg\:align-(middle);
     }
 
     @mixin lg\:align-bottom {
-      @include align-(bottom, $lg);
+      @include lg\:align-(bottom);
     }
 
     @mixin lg\:align-text-top {
-      @include align-(text-top, $lg);
+      @include lg\:align-(text-top);
     }
 
     @mixin lg\:align-text-bottom {
-      @include align-(text-bottom, $lg);
+      @include lg\:align-(text-bottom);
     }
 
     @mixin lg\:align-sub {
-      @include align-(sub, $lg);
+      @include lg\:align-(sub);
     }
 
     @mixin lg\:align-super {
-      @include align-(super, $lg);
+      @include lg\:align-(super);
     }
 
     @mixin xl\:align-baseline {
-      @include align-(baseline, $xl);
+      @include xl\:align-(baseline);
     }
 
     @mixin xl\:align-top {
-      @include align-(top, $xl);
+      @include xl\:align-(top);
     }
 
     @mixin xl\:align-middle {
-      @include align-(middle, $xl);
+      @include xl\:align-(middle);
     }
 
     @mixin xl\:align-bottom {
-      @include align-(bottom, $xl);
+      @include xl\:align-(bottom);
     }
 
     @mixin xl\:align-text-top {
-      @include align-(text-top, $xl);
+      @include xl\:align-(text-top);
     }
 
     @mixin xl\:align-text-bottom {
-      @include align-(text-bottom, $xl);
+      @include xl\:align-(text-bottom);
     }
 
     @mixin xl\:align-sub {
-      @include align-(sub, $xl);
+      @include xl\:align-(sub);
     }
 
     @mixin xl\:align-super {
-      @include align-(super, $xl);
+      @include xl\:align-(super);
     }
 
     @mixin \2xl\:align-baseline {
-      @include align-(baseline, $\2xl);
+      @include \2xl\:align-(baseline);
     }
 
     @mixin \2xl\:align-top {
-      @include align-(top, $\2xl);
+      @include \2xl\:align-(top);
     }
 
     @mixin \2xl\:align-middle {
-      @include align-(middle, $\2xl);
+      @include \2xl\:align-(middle);
     }
 
     @mixin \2xl\:align-bottom {
-      @include align-(bottom, $\2xl);
+      @include \2xl\:align-(bottom);
     }
 
     @mixin \2xl\:align-text-top {
-      @include align-(text-top, $\2xl);
+      @include \2xl\:align-(text-top);
     }
 
     @mixin \2xl\:align-text-bottom {
-      @include align-(text-bottom, $\2xl);
+      @include \2xl\:align-(text-bottom);
     }
 
     @mixin \2xl\:align-sub {
-      @include align-(sub, $\2xl);
+      @include \2xl\:align-(sub);
     }
 
     @mixin \2xl\:align-super {
-      @include align-(super, $\2xl);
+      @include \2xl\:align-(super);
     }
 
     // x*/
@@ -207,34 +207,28 @@
 
 @if $Custom {
   // /*x
-  @mixin align-($v, $rwd: null) {
-    @if $rwd==null {
-      @include vertical-align($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include vertical-align($v);
-      }
-    }
+  @mixin align-($v) {
+    @include vertical-align($v);
   }
 
   @mixin sm\:align-($v) {
-    @include align-($v, $sm);
+    @include sm\:vertical-align($v);
   }
 
   @mixin md\:align-($v) {
-    @include align-($v, $md);
+    @include md\:vertical-align($v);
   }
 
   @mixin lg\:align-($v) {
-    @include align-($v, $lg);
+    @include lg\:vertical-align($v);
   }
 
   @mixin xl\:align-($v) {
-    @include align-($v, $xl);
+    @include xl\:vertical-align($v);
   }
 
   @mixin \2xl\:align-($v) {
-    @include align-($v, $\2xl);
+    @include \2xl\:vertical-align($v);
   }
 
   // x*/

@@ -4,36 +4,42 @@
 @if $Basic {
   // /*x
   @mixin ring-0 {
-    $ring-width: 0px + $tw-ring-offset-width !global;
+    $tw-dummy-not-match--ring-offset-width: true !global;
+    $tw-dummy-ring-width: 0px + $tw-ring-offset-width !global;
     box-shadow: get_box-shadow();
   }
 
   @mixin ring-1 {
-    $ring-width: 1px + $tw-ring-offset-width !global;
+    $tw-dummy-not-match--ring-offset-width: true !global;
+    $tw-dummy-ring-width: 1px + $tw-ring-offset-width !global;
     box-shadow: get_box-shadow();
   }
 
   @mixin ring-2 {
-    $ring-width: 2px + $tw-ring-offset-width !global;
+    $tw-dummy-not-match--ring-offset-width: true !global;
+    $tw-dummy-ring-width: 2px + $tw-ring-offset-width !global;
     box-shadow: get_box-shadow();
   }
 
   @mixin ring {
-    $ring-width: 3px + $tw-ring-offset-width !global;
+    $tw-dummy-ring-width: 3px + $tw-ring-offset-width !global;
     box-shadow: get_box-shadow();
   }
 
   @mixin ring-4 {
-    $ring-width: 4px + $tw-ring-offset-width !global;
+    $tw-dummy-not-match--ring-offset-width: true !global;
+    $tw-dummy-ring-width: 4px + $tw-ring-offset-width !global;
     box-shadow: get_box-shadow();
   }
 
   @mixin ring-8 {
-    $ring-width: 8px + $tw-ring-offset-width !global;
+    $tw-dummy-not-match--ring-offset-width: true !global;
+    $tw-dummy-ring-width: 8px + $tw-ring-offset-width !global;
     box-shadow: get_box-shadow();
   }
 
   @mixin ring-inset {
+    $tw-dummy-not-match--ring-offset-width: true !global;
     box-shadow: get_box-shadow();
   }
 
@@ -41,152 +47,237 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:ring-0 {
-      @include ring-(0px, $sm);
+      @include sm\:ring-(0px);
     }
 
     @mixin sm\:ring-1 {
-      @include ring-(1px, $sm);
+      @include sm\:ring-(1px);
     }
 
     @mixin sm\:ring-2 {
-      @include ring-(2px, $sm);
+      @include sm\:ring-(2px);
     }
 
     @mixin sm\:ring {
-      @include ring-(3px, $sm);
+      @include sm\:ring-(3px);
     }
 
     @mixin sm\:ring-4 {
-      @include ring-(4px, $sm);
+      @include sm\:ring-(4px);
     }
 
     @mixin sm\:ring-8 {
-      @include ring-(8px, $sm);
+      @include sm\:ring-(8px);
     }
 
     @mixin sm\:ring-inset {
-      @include ring-(inset, $sm);
+      @include sm\:ring-(inset);
     }
 
     @mixin md\:ring-0 {
-      @include ring-(0px, $md);
+      @include md\:ring-(0px);
     }
 
     @mixin md\:ring-1 {
-      @include ring-(1px, $md);
+      @include md\:ring-(1px);
     }
 
     @mixin md\:ring-2 {
-      @include ring-(2px, $md);
+      @include md\:ring-(2px);
     }
 
     @mixin md\:ring {
-      @include ring-(3px, $md);
+      @include md\:ring-(3px);
     }
 
     @mixin md\:ring-4 {
-      @include ring-(4px, $md);
+      @include md\:ring-(4px);
     }
 
     @mixin md\:ring-8 {
-      @include ring-(8px, $md);
+      @include md\:ring-(8px);
     }
 
     @mixin md\:ring-inset {
-      @include ring-(inset, $md);
+      @include md\:ring-(inset);
     }
 
     @mixin lg\:ring-0 {
-      @include ring-(0px, $lg);
+      @include lg\:ring-(0px);
     }
 
     @mixin lg\:ring-1 {
-      @include ring-(1px, $lg);
+      @include lg\:ring-(1px);
     }
 
     @mixin lg\:ring-2 {
-      @include ring-(2px, $lg);
+      @include lg\:ring-(2px);
     }
 
     @mixin lg\:ring {
-      @include ring-(3px, $lg);
+      @include lg\:ring-(3px);
     }
 
     @mixin lg\:ring-4 {
-      @include ring-(4px, $lg);
+      @include lg\:ring-(4px);
     }
 
     @mixin lg\:ring-8 {
-      @include ring-(8px, $lg);
+      @include lg\:ring-(8px);
     }
 
     @mixin lg\:ring-inset {
-      @include ring-(inset, $lg);
+      @include lg\:ring-(inset);
     }
 
     @mixin xl\:ring-0 {
-      @include ring-(0px, $xl);
+      @include xl\:ring-(0px);
     }
 
     @mixin xl\:ring-1 {
-      @include ring-(1px, $xl);
+      @include xl\:ring-(1px);
     }
 
     @mixin xl\:ring-2 {
-      @include ring-(2px, $xl);
+      @include xl\:ring-(2px);
     }
 
     @mixin xl\:ring {
-      @include ring-(3px, $xl);
+      @include xl\:ring-(3px);
     }
 
     @mixin xl\:ring-4 {
-      @include ring-(4px, $xl);
+      @include xl\:ring-(4px);
     }
 
     @mixin xl\:ring-8 {
-      @include ring-(8px, $xl);
+      @include xl\:ring-(8px);
     }
 
     @mixin xl\:ring-inset {
-      @include ring-(inset, $xl);
+      @include xl\:ring-(inset);
     }
 
     @mixin \2xl\:ring-0 {
-      @include ring-(0px, $\2xl);
+      @include \2xl\:ring-(0px);
     }
 
     @mixin \2xl\:ring-1 {
-      @include ring-(1px, $\2xl);
+      @include \2xl\:ring-(1px);
     }
 
     @mixin \2xl\:ring-2 {
-      @include ring-(2px, $\2xl);
+      @include \2xl\:ring-(2px);
     }
 
     @mixin \2xl\:ring {
-      @include ring-(3px, $\2xl);
+      @include \2xl\:ring-(3px);
     }
 
     @mixin \2xl\:ring-4 {
-      @include ring-(4px, $\2xl);
+      @include \2xl\:ring-(4px);
     }
 
     @mixin \2xl\:ring-8 {
-      @include ring-(8px, $\2xl);
+      @include \2xl\:ring-(8px);
     }
 
     @mixin \2xl\:ring-inset {
-      @include ring-(inset, $\2xl);
+      @include \2xl\:ring-(inset);
     }
 
     // x*/
   }
 }
 
-// same as  @mixin ring-($v, $rwd: null)
 @if $Custom {
+  // /*x
+  @mixin ring-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-color: $v !global;
+    } @else {
+      $tw-dummy-not-match--ring-offset-width: true !global;
+      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
+    }
+
+    @include box-shadow(get_box-shadow());
+  }
+
+  @mixin sm\:ring-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-color: $v !global;
+    } @else {
+      $tw-dummy-not-match--ring-offset-width: true !global;
+      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
+    }
+
+    @include sm\:box-shadow(get_box-shadow());
+  }
+
+  @mixin md\:ring-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-color: $v !global;
+    } @else {
+      $tw-dummy-not-match--ring-offset-width: true !global;
+      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
+    }
+
+    @include md\:box-shadow(get_box-shadow());
+  }
+
+  @mixin lg\:ring-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-color: $v !global;
+    } @else {
+      $tw-dummy-not-match--ring-offset-width: true !global;
+      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
+    }
+
+    @include lg\:box-shadow(get_box-shadow());
+  }
+
+  @mixin xl\:ring-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-color: $v !global;
+    } @else {
+      $tw-dummy-not-match--ring-offset-width: true !global;
+      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
+    }
+
+    @include xl\:box-shadow(get_box-shadow());
+  }
+
+  @mixin \2xl\:ring-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-color: $v !global;
+    } @else {
+      $tw-dummy-not-match--ring-offset-width: true !global;
+      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
+    }
+
+    @include \2xl\:box-shadow(get_box-shadow());
+  }
+
+  // x*/
 }

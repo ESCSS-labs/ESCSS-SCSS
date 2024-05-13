@@ -26,83 +26,83 @@
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:auto-cols-auto {
-      @include auto-cols-(auto, $sm);
+      @include sm\:auto-cols-(auto);
     }
 
     @mixin sm\:auto-cols-min {
-      @include auto-cols-(min-content, $sm);
+      @include sm\:auto-cols-(min-content);
     }
 
     @mixin sm\:auto-cols-max {
-      @include auto-cols-(max-content, $sm);
+      @include sm\:auto-cols-(max-content);
     }
 
     @mixin sm\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $sm);
+      @include sm\:auto-cols-(minmax(0, 1fr));
     }
 
     @mixin md\:auto-cols-auto {
-      @include auto-cols-(auto, $md);
+      @include md\:auto-cols-(auto);
     }
 
     @mixin md\:auto-cols-min {
-      @include auto-cols-(min-content, $md);
+      @include md\:auto-cols-(min-content);
     }
 
     @mixin md\:auto-cols-max {
-      @include auto-cols-(max-content, $md);
+      @include md\:auto-cols-(max-content);
     }
 
     @mixin md\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $md);
+      @include md\:auto-cols-(minmax(0, 1fr));
     }
 
     @mixin lg\:auto-cols-auto {
-      @include auto-cols-(auto, $lg);
+      @include lg\:auto-cols-(auto);
     }
 
     @mixin lg\:auto-cols-min {
-      @include auto-cols-(min-content, $lg);
+      @include lg\:auto-cols-(min-content);
     }
 
     @mixin lg\:auto-cols-max {
-      @include auto-cols-(max-content, $lg);
+      @include lg\:auto-cols-(max-content);
     }
 
     @mixin lg\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $lg);
+      @include lg\:auto-cols-(minmax(0, 1fr));
     }
 
     @mixin xl\:auto-cols-auto {
-      @include auto-cols-(auto, $xl);
+      @include xl\:auto-cols-(auto);
     }
 
     @mixin xl\:auto-cols-min {
-      @include auto-cols-(min-content, $xl);
+      @include xl\:auto-cols-(min-content);
     }
 
     @mixin xl\:auto-cols-max {
-      @include auto-cols-(max-content, $xl);
+      @include xl\:auto-cols-(max-content);
     }
 
     @mixin xl\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $xl);
+      @include xl\:auto-cols-(minmax(0, 1fr));
     }
 
     @mixin \2xl\:auto-cols-auto {
-      @include auto-cols-(auto, $\2xl);
+      @include \2xl\:auto-cols-(auto);
     }
 
     @mixin \2xl\:auto-cols-min {
-      @include auto-cols-(min-content, $\2xl);
+      @include \2xl\:auto-cols-(min-content);
     }
 
     @mixin \2xl\:auto-cols-max {
-      @include auto-cols-(max-content, $\2xl);
+      @include \2xl\:auto-cols-(max-content);
     }
 
     @mixin \2xl\:auto-cols-fr {
-      @include auto-cols-(minmax(0, 1fr), $\2xl);
+      @include \2xl\:auto-cols-(minmax(0, 1fr));
     }
 
     // x*/
@@ -111,34 +111,28 @@
 
 @if $Custom {
   // /*x
-  @mixin auto-cols-($v, $rwd: null) {
-    @if $rwd==null {
-      @include grid-auto-columns($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include grid-auto-columns($v);
-      }
-    }
+  @mixin auto-cols-($v) {
+    @include grid-auto-columns($v);
   }
 
   @mixin sm\:auto-cols-($v) {
-    @include auto-cols-($v, $sm);
+    @include sm\:grid-auto-columns($v);
   }
 
   @mixin md\:auto-cols-($v) {
-    @include auto-cols-($v, $md);
+    @include md\:grid-auto-columns($v);
   }
 
   @mixin lg\:auto-cols-($v) {
-    @include auto-cols-($v, $lg);
+    @include lg\:grid-auto-columns($v);
   }
 
   @mixin xl\:auto-cols-($v) {
-    @include auto-cols-($v, $xl);
+    @include xl\:grid-auto-columns($v);
   }
 
   @mixin \2xl\:auto-cols-($v) {
-    @include auto-cols-($v, $\2xl);
+    @include \2xl\:grid-auto-columns($v);
   }
 
   // x*/

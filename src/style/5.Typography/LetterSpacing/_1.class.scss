@@ -31,126 +31,126 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:tracking-tighter {
-      @include tracking-(-0.05em, $sm);
+      @include sm\:tracking-(-0.05em);
     }
 
     @mixin sm\:tracking-tight {
-      @include tracking-(-0.025em, $sm);
+      @include sm\:tracking-(-0.025em);
     }
 
     @mixin sm\:tracking-normal {
-      @include tracking-(0em, $sm);
+      @include sm\:tracking-(0em);
     }
 
     @mixin sm\:tracking-wide {
-      @include tracking-(0.025em, $sm);
+      @include sm\:tracking-(0.025em);
     }
 
     @mixin sm\:tracking-wider {
-      @include tracking-(0.05em, $sm);
+      @include sm\:tracking-(0.05em);
     }
 
     @mixin sm\:tracking-widest {
-      @include tracking-(0.1em, $sm);
+      @include sm\:tracking-(0.1em);
     }
 
     @mixin md\:tracking-tighter {
-      @include tracking-(-0.05em, $md);
+      @include md\:tracking-(-0.05em);
     }
 
     @mixin md\:tracking-tight {
-      @include tracking-(-0.025em, $md);
+      @include md\:tracking-(-0.025em);
     }
 
     @mixin md\:tracking-normal {
-      @include tracking-(0em, $md);
+      @include md\:tracking-(0em);
     }
 
     @mixin md\:tracking-wide {
-      @include tracking-(0.025em, $md);
+      @include md\:tracking-(0.025em);
     }
 
     @mixin md\:tracking-wider {
-      @include tracking-(0.05em, $md);
+      @include md\:tracking-(0.05em);
     }
 
     @mixin md\:tracking-widest {
-      @include tracking-(0.1em, $md);
+      @include md\:tracking-(0.1em);
     }
 
     @mixin lg\:tracking-tighter {
-      @include tracking-(-0.05em, $lg);
+      @include lg\:tracking-(-0.05em);
     }
 
     @mixin lg\:tracking-tight {
-      @include tracking-(-0.025em, $lg);
+      @include lg\:tracking-(-0.025em);
     }
 
     @mixin lg\:tracking-normal {
-      @include tracking-(0em, $lg);
+      @include lg\:tracking-(0em);
     }
 
     @mixin lg\:tracking-wide {
-      @include tracking-(0.025em, $lg);
+      @include lg\:tracking-(0.025em);
     }
 
     @mixin lg\:tracking-wider {
-      @include tracking-(0.05em, $lg);
+      @include lg\:tracking-(0.05em);
     }
 
     @mixin lg\:tracking-widest {
-      @include tracking-(0.1em, $lg);
+      @include lg\:tracking-(0.1em);
     }
 
     @mixin xl\:tracking-tighter {
-      @include tracking-(-0.05em, $xl);
+      @include xl\:tracking-(-0.05em);
     }
 
     @mixin xl\:tracking-tight {
-      @include tracking-(-0.025em, $xl);
+      @include xl\:tracking-(-0.025em);
     }
 
     @mixin xl\:tracking-normal {
-      @include tracking-(0em, $xl);
+      @include xl\:tracking-(0em);
     }
 
     @mixin xl\:tracking-wide {
-      @include tracking-(0.025em, $xl);
+      @include xl\:tracking-(0.025em);
     }
 
     @mixin xl\:tracking-wider {
-      @include tracking-(0.05em, $xl);
+      @include xl\:tracking-(0.05em);
     }
 
     @mixin xl\:tracking-widest {
-      @include tracking-(0.1em, $xl);
+      @include xl\:tracking-(0.1em);
     }
 
     @mixin \2xl\:tracking-tighter {
-      @include tracking-(-0.05em, $\2xl);
+      @include \2xl\:tracking-(-0.05em);
     }
 
     @mixin \2xl\:tracking-tight {
-      @include tracking-(-0.025em, $\2xl);
+      @include \2xl\:tracking-(-0.025em);
     }
 
     @mixin \2xl\:tracking-normal {
-      @include tracking-(0em, $\2xl);
+      @include \2xl\:tracking-(0em);
     }
 
     @mixin \2xl\:tracking-wide {
-      @include tracking-(0.025em, $\2xl);
+      @include \2xl\:tracking-(0.025em);
     }
 
     @mixin \2xl\:tracking-wider {
-      @include tracking-(0.05em, $\2xl);
+      @include \2xl\:tracking-(0.05em);
     }
 
     @mixin \2xl\:tracking-widest {
-      @include tracking-(0.1em, $\2xl);
+      @include \2xl\:tracking-(0.1em);
     }
 
     // x*/
@@ -159,34 +159,28 @@
 
 @if $Custom {
   // /*x
-  @mixin tracking-($v, $rwd: null) {
-    @if $rwd==null {
-      @include letter-spacing($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include letter-spacing($v);
-      }
-    }
+  @mixin tracking-($v) {
+    @include letter-spacing($v);
   }
 
   @mixin sm\:tracking-($v) {
-    @include tracking-($v, $sm);
+    @include sm\:letter-spacing($v);
   }
 
   @mixin md\:tracking-($v) {
-    @include tracking-($v, $md);
+    @include md\:letter-spacing($v);
   }
 
   @mixin lg\:tracking-($v) {
-    @include tracking-($v, $lg);
+    @include lg\:letter-spacing($v);
   }
 
   @mixin xl\:tracking-($v) {
-    @include tracking-($v, $xl);
+    @include xl\:letter-spacing($v);
   }
 
   @mixin \2xl\:tracking-($v) {
-    @include tracking-($v, $\2xl);
+    @include \2xl\:letter-spacing($v);
   }
 
   // x*/
@@ -223,126 +217,126 @@
   }
 
   @if $Rwd {
-    @if $sizeMode == 0 or $sizeMode == 1 {
+    @if $sizeMode ==0 or $sizeMode ==1 {
       // /*x
       @mixin sm\:-tracking-tighter {
-        @include tracking-(0.05em, $sm);
+        @include sm\:-tracking-(-0.05em);
       }
 
       @mixin sm\:-tracking-tight {
-        @include tracking-(0.025em, $sm);
+        @include sm\:-tracking-(-0.025em);
       }
 
       @mixin sm\:-tracking-normal {
-        @include tracking-(-0em, $sm);
+        @include sm\:-tracking-(0em);
       }
 
       @mixin sm\:-tracking-wide {
-        @include tracking-(-0.025em, $sm);
+        @include sm\:-tracking-(0.025em);
       }
 
       @mixin sm\:-tracking-wider {
-        @include tracking-(-0.05em, $sm);
+        @include sm\:-tracking-(0.05em);
       }
 
       @mixin sm\:-tracking-widest {
-        @include tracking-(-0.1em, $sm);
+        @include sm\:-tracking-(0.1em);
       }
 
       @mixin md\:-tracking-tighter {
-        @include tracking-(0.05em, $md);
+        @include md\:-tracking-(-0.05em);
       }
 
       @mixin md\:-tracking-tight {
-        @include tracking-(0.025em, $md);
+        @include md\:-tracking-(-0.025em);
       }
 
       @mixin md\:-tracking-normal {
-        @include tracking-(-0em, $md);
+        @include md\:-tracking-(0em);
       }
 
       @mixin md\:-tracking-wide {
-        @include tracking-(-0.025em, $md);
+        @include md\:-tracking-(0.025em);
       }
 
       @mixin md\:-tracking-wider {
-        @include tracking-(-0.05em, $md);
+        @include md\:-tracking-(0.05em);
       }
 
       @mixin md\:-tracking-widest {
-        @include tracking-(-0.1em, $md);
+        @include md\:-tracking-(0.1em);
       }
 
       @mixin lg\:-tracking-tighter {
-        @include tracking-(0.05em, $lg);
+        @include lg\:-tracking-(-0.05em);
       }
 
       @mixin lg\:-tracking-tight {
-        @include tracking-(0.025em, $lg);
+        @include lg\:-tracking-(-0.025em);
       }
 
       @mixin lg\:-tracking-normal {
-        @include tracking-(-0em, $lg);
+        @include lg\:-tracking-(0em);
       }
 
       @mixin lg\:-tracking-wide {
-        @include tracking-(-0.025em, $lg);
+        @include lg\:-tracking-(0.025em);
       }
 
       @mixin lg\:-tracking-wider {
-        @include tracking-(-0.05em, $lg);
+        @include lg\:-tracking-(0.05em);
       }
 
       @mixin lg\:-tracking-widest {
-        @include tracking-(-0.1em, $lg);
+        @include lg\:-tracking-(0.1em);
       }
 
       @mixin xl\:-tracking-tighter {
-        @include tracking-(0.05em, $xl);
+        @include xl\:-tracking-(-0.05em);
       }
 
       @mixin xl\:-tracking-tight {
-        @include tracking-(0.025em, $xl);
+        @include xl\:-tracking-(-0.025em);
       }
 
       @mixin xl\:-tracking-normal {
-        @include tracking-(-0em, $xl);
+        @include xl\:-tracking-(0em);
       }
 
       @mixin xl\:-tracking-wide {
-        @include tracking-(-0.025em, $xl);
+        @include xl\:-tracking-(0.025em);
       }
 
       @mixin xl\:-tracking-wider {
-        @include tracking-(-0.05em, $xl);
+        @include xl\:-tracking-(0.05em);
       }
 
       @mixin xl\:-tracking-widest {
-        @include tracking-(-0.1em, $xl);
+        @include xl\:-tracking-(0.1em);
       }
 
       @mixin \2xl\:-tracking-tighter {
-        @include tracking-(0.05em, $\2xl);
+        @include \2xl\:-tracking-(-0.05em);
       }
 
       @mixin \2xl\:-tracking-tight {
-        @include tracking-(0.025em, $\2xl);
+        @include \2xl\:-tracking-(-0.025em);
       }
 
       @mixin \2xl\:-tracking-normal {
-        @include tracking-(-0em, $\2xl);
+        @include \2xl\:-tracking-(0em);
       }
 
       @mixin \2xl\:-tracking-wide {
-        @include tracking-(-0.025em, $\2xl);
+        @include \2xl\:-tracking-(0.025em);
       }
 
       @mixin \2xl\:-tracking-wider {
-        @include tracking-(-0.05em, $\2xl);
+        @include \2xl\:-tracking-(0.05em);
       }
 
       @mixin \2xl\:-tracking-widest {
-        @include tracking-(-0.1em, $\2xl);
+        @include \2xl\:-tracking-(0.1em);
       }
 
       // x*/
@@ -352,27 +346,27 @@
   @if $Custom {
     // /*x
     @mixin -tracking-($v) {
-      @include tracking-(-($v));
+      @include letter-spacing(-$v);
     }
 
     @mixin sm\:-tracking-($v) {
-      @include tracking-(-($v), $sm);
+      @include sm\:letter-spacing(-$v);
     }
 
     @mixin md\:-tracking-($v) {
-      @include tracking-(-($v), $md);
+      @include md\:letter-spacing(-$v);
     }
 
     @mixin lg\:-tracking-($v) {
-      @include tracking-(-($v), $lg);
+      @include lg\:letter-spacing(-$v);
     }
 
     @mixin xl\:-tracking-($v) {
-      @include tracking-(-($v), $xl);
+      @include xl\:letter-spacing(-$v);
     }
 
     @mixin \2xl\:-tracking-($v) {
-      @include tracking-(-($v), $\2xl);
+      @include \2xl\:letter-spacing(-$v);
     }
 
     // x*/

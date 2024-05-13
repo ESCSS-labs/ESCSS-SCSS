@@ -23,86 +23,87 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
+
     @mixin sm\:ease-linear {
-      @include ease-(linear, $sm);
+      @include sm\:ease-(linear);
     }
 
     @mixin sm\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $sm);
+      @include sm\:ease-(cubic-bezier(0.4, 0, 1, 1));
     }
 
     @mixin sm\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $sm);
+      @include sm\:ease-(cubic-bezier(0, 0, 0.2, 1));
     }
 
     @mixin sm\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $sm);
+      @include sm\:ease-(cubic-bezier(0.4, 0, 0.2, 1));
     }
 
     @mixin md\:ease-linear {
-      @include ease-(linear, $md);
+      @include md\:ease-(linear);
     }
 
     @mixin md\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $md);
+      @include md\:ease-(cubic-bezier(0.4, 0, 1, 1));
     }
 
     @mixin md\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $md);
+      @include md\:ease-(cubic-bezier(0, 0, 0.2, 1));
     }
 
     @mixin md\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $md);
+      @include md\:ease-(cubic-bezier(0.4, 0, 0.2, 1));
     }
 
     @mixin lg\:ease-linear {
-      @include ease-(linear, $lg);
+      @include lg\:ease-(linear);
     }
 
     @mixin lg\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $lg);
+      @include lg\:ease-(cubic-bezier(0.4, 0, 1, 1));
     }
 
     @mixin lg\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $lg);
+      @include lg\:ease-(cubic-bezier(0, 0, 0.2, 1));
     }
 
     @mixin lg\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $lg);
+      @include lg\:ease-(cubic-bezier(0.4, 0, 0.2, 1));
     }
 
     @mixin xl\:ease-linear {
-      @include ease-(linear, $xl);
+      @include xl\:ease-(linear);
     }
 
     @mixin xl\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $xl);
+      @include xl\:ease-(cubic-bezier(0.4, 0, 1, 1));
     }
 
     @mixin xl\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $xl);
+      @include xl\:ease-(cubic-bezier(0, 0, 0.2, 1));
     }
 
     @mixin xl\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $xl);
+      @include xl\:ease-(cubic-bezier(0.4, 0, 0.2, 1));
     }
 
     @mixin \2xl\:ease-linear {
-      @include ease-(linear, $\2xl);
+      @include \2xl\:ease-(linear);
     }
 
     @mixin \2xl\:ease-in {
-      @include ease-(cubic-bezier(0.4, 0, 1, 1), $\2xl);
+      @include \2xl\:ease-(cubic-bezier(0.4, 0, 1, 1));
     }
 
     @mixin \2xl\:ease-out {
-      @include ease-(cubic-bezier(0, 0, 0.2, 1), $\2xl);
+      @include \2xl\:ease-(cubic-bezier(0, 0, 0.2, 1));
     }
 
     @mixin \2xl\:ease-in-out {
-      @include ease-(cubic-bezier(0.4, 0, 0.2, 1), $\2xl);
+      @include \2xl\:ease-(cubic-bezier(0.4, 0, 0.2, 1));
     }
 
     // x*/
@@ -111,34 +112,28 @@
 
 @if $Custom {
   // /*x
-  @mixin ease-($v, $rwd: null) {
-    @if $rwd==null {
-      @include transition-timing-function($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include transition-timing-function($v);
-      }
-    }
+  @mixin ease-($v) {
+    @include transition-timing-function($v);
   }
 
   @mixin sm\:ease-($v) {
-    @include ease-($v, $sm);
+    @include sm\:transition-timing-function($v);
   }
 
   @mixin md\:ease-($v) {
-    @include ease-($v, $md);
+    @include md\:transition-timing-function($v);
   }
 
   @mixin lg\:ease-($v) {
-    @include ease-($v, $lg);
+    @include lg\:transition-timing-function($v);
   }
 
   @mixin xl\:ease-($v) {
-    @include ease-($v, $xl);
+    @include xl\:transition-timing-function($v);
   }
 
   @mixin \2xl\:ease-($v) {
-    @include ease-($v, $\2xl);
+    @include \2xl\:transition-timing-function($v);
   }
 
   // x*/

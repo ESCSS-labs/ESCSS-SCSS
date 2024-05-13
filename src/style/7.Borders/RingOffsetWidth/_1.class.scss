@@ -4,8 +4,8 @@
 @if $Basic {
   // /*x
   @mixin ring-offset-0 {
-    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
-      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    @if $tw-dummy-not-match--ring-offset-width {
+      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
     }
 
     $tw-ring-offset-width: 0px !global;
@@ -13,8 +13,8 @@
   }
 
   @mixin ring-offset-1 {
-    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
-      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    @if $tw-dummy-not-match--ring-offset-width {
+      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
     }
 
     $tw-ring-offset-width: 1px !global;
@@ -22,8 +22,8 @@
   }
 
   @mixin ring-offset-2 {
-    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
-      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    @if $tw-dummy-not-match--ring-offset-width {
+      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
     }
 
     $tw-ring-offset-width: 2px !global;
@@ -31,8 +31,8 @@
   }
 
   @mixin ring-offset-4 {
-    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
-      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    @if $tw-dummy-not-match--ring-offset-width {
+      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
     }
 
     $tw-ring-offset-width: 4px !global;
@@ -40,8 +40,8 @@
   }
 
   @mixin ring-offset-8 {
-    @if $ring-width !=0 and $tw-ring-offset-width ==0 {
-      @error ("「 ring-offset-* 」 should before 「 ring-* 」 (to have same behavior as tailwind)");
+    @if $tw-dummy-not-match--ring-offset-width {
+      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
     }
 
     $tw-ring-offset-width: 8px !global;
@@ -52,111 +52,215 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:ring-offset-0 {
-      @include ring-offset-(0px, $sm);
+      @include sm\:ring-offset-(0px);
     }
 
     @mixin sm\:ring-offset-1 {
-      @include ring-offset-(1px, $sm);
+      @include sm\:ring-offset-(1px);
     }
 
     @mixin sm\:ring-offset-2 {
-      @include ring-offset-(2px, $sm);
+      @include sm\:ring-offset-(2px);
     }
 
     @mixin sm\:ring-offset-4 {
-      @include ring-offset-(4px, $sm);
+      @include sm\:ring-offset-(4px);
     }
 
     @mixin sm\:ring-offset-8 {
-      @include ring-offset-(8px, $sm);
+      @include sm\:ring-offset-(8px);
     }
 
     @mixin md\:ring-offset-0 {
-      @include ring-offset-(0px, $md);
+      @include md\:ring-offset-(0px);
     }
 
     @mixin md\:ring-offset-1 {
-      @include ring-offset-(1px, $md);
+      @include md\:ring-offset-(1px);
     }
 
     @mixin md\:ring-offset-2 {
-      @include ring-offset-(2px, $md);
+      @include md\:ring-offset-(2px);
     }
 
     @mixin md\:ring-offset-4 {
-      @include ring-offset-(4px, $md);
+      @include md\:ring-offset-(4px);
     }
 
     @mixin md\:ring-offset-8 {
-      @include ring-offset-(8px, $md);
+      @include md\:ring-offset-(8px);
     }
 
     @mixin lg\:ring-offset-0 {
-      @include ring-offset-(0px, $lg);
+      @include lg\:ring-offset-(0px);
     }
 
     @mixin lg\:ring-offset-1 {
-      @include ring-offset-(1px, $lg);
+      @include lg\:ring-offset-(1px);
     }
 
     @mixin lg\:ring-offset-2 {
-      @include ring-offset-(2px, $lg);
+      @include lg\:ring-offset-(2px);
     }
 
     @mixin lg\:ring-offset-4 {
-      @include ring-offset-(4px, $lg);
+      @include lg\:ring-offset-(4px);
     }
 
     @mixin lg\:ring-offset-8 {
-      @include ring-offset-(8px, $lg);
+      @include lg\:ring-offset-(8px);
     }
 
     @mixin xl\:ring-offset-0 {
-      @include ring-offset-(0px, $xl);
+      @include xl\:ring-offset-(0px);
     }
 
     @mixin xl\:ring-offset-1 {
-      @include ring-offset-(1px, $xl);
+      @include xl\:ring-offset-(1px);
     }
 
     @mixin xl\:ring-offset-2 {
-      @include ring-offset-(2px, $xl);
+      @include xl\:ring-offset-(2px);
     }
 
     @mixin xl\:ring-offset-4 {
-      @include ring-offset-(4px, $xl);
+      @include xl\:ring-offset-(4px);
     }
 
     @mixin xl\:ring-offset-8 {
-      @include ring-offset-(8px, $xl);
+      @include xl\:ring-offset-(8px);
     }
 
     @mixin \2xl\:ring-offset-0 {
-      @include ring-offset-(0px, $\2xl);
+      @include \2xl\:ring-offset-(0px);
     }
 
     @mixin \2xl\:ring-offset-1 {
-      @include ring-offset-(1px, $\2xl);
+      @include \2xl\:ring-offset-(1px);
     }
 
     @mixin \2xl\:ring-offset-2 {
-      @include ring-offset-(2px, $\2xl);
+      @include \2xl\:ring-offset-(2px);
     }
 
     @mixin \2xl\:ring-offset-4 {
-      @include ring-offset-(4px, $\2xl);
+      @include \2xl\:ring-offset-(4px);
     }
 
     @mixin \2xl\:ring-offset-8 {
-      @include ring-offset-(8px, $\2xl);
+      @include \2xl\:ring-offset-(8px);
     }
+
     // x*/
   }
 }
 
-// same as @mixin ring-offset-($v, $rwd: null)
 @if $Custom {
+  // /*x
+  @mixin ring-offset-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-offset-color: $v !global;
+    } @else {
+      @if $tw-dummy-not-match--ring-offset-width {
+        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+      }
+
+      $tw-ring-offset-width: $v !global;
+    }
+
+    @include box-shadow(get_box-shadow());
+  }
+
+  @mixin sm\:ring-offset-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-offset-color: $v !global;
+    } @else {
+      @if $tw-dummy-not-match--ring-offset-width {
+        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+      }
+
+      $tw-ring-offset-width: $v !global;
+    }
+
+    @include sm\:box-shadow(get_box-shadow());
+  }
+
+  @mixin md\:ring-offset-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-offset-color: $v !global;
+    } @else {
+      @if $tw-dummy-not-match--ring-offset-width {
+        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+      }
+
+      $tw-ring-offset-width: $v !global;
+    }
+
+    @include md\:box-shadow(get_box-shadow());
+  }
+
+  @mixin lg\:ring-offset-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-offset-color: $v !global;
+    } @else {
+      @if $tw-dummy-not-match--ring-offset-width {
+        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+      }
+
+      $tw-ring-offset-width: $v !global;
+    }
+
+    @include lg\:box-shadow(get_box-shadow());
+  }
+
+  @mixin xl\:ring-offset-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-offset-color: $v !global;
+    } @else {
+      @if $tw-dummy-not-match--ring-offset-width {
+        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+      }
+
+      $tw-ring-offset-width: $v !global;
+    }
+
+    @include xl\:box-shadow(get_box-shadow());
+  }
+
+  @mixin \2xl\:ring-offset-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-ring-offset-color: $v !global;
+    } @else {
+      @if $tw-dummy-not-match--ring-offset-width {
+        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+      }
+
+      $tw-ring-offset-width: $v !global;
+    }
+
+    @include \2xl\:box-shadow(get_box-shadow());
+  }
+
+  // x*/
 }

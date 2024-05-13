@@ -17,46 +17,46 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:invert-0 {
-      @include invert-(0, $sm);
+      @include sm\:invert-(0);
     }
 
     @mixin sm\:invert {
-      @include invert-(100%, $sm);
+      @include sm\:invert-(100%);
     }
 
     @mixin md\:invert-0 {
-      @include invert-(0, $md);
+      @include md\:invert-(0);
     }
 
     @mixin md\:invert {
-      @include invert-(100%, $md);
+      @include md\:invert-(100%);
     }
 
     @mixin lg\:invert-0 {
-      @include invert-(0, $lg);
+      @include lg\:invert-(0);
     }
 
     @mixin lg\:invert {
-      @include invert-(100%, $lg);
+      @include lg\:invert-(100%);
     }
 
     @mixin xl\:invert-0 {
-      @include invert-(0, $xl);
+      @include xl\:invert-(0);
     }
 
     @mixin xl\:invert {
-      @include invert-(100%, $xl);
+      @include xl\:invert-(100%);
     }
 
     @mixin \2xl\:invert-0 {
-      @include invert-(0, $\2xl);
+      @include \2xl\:invert-(0);
     }
 
     @mixin \2xl\:invert {
-      @include invert-(100%, $\2xl);
+      @include \2xl\:invert-(100%);
     }
 
     // x*/
@@ -65,36 +65,34 @@
 
 @if $Custom {
   // /*x
-  @mixin invert-($v, $rwd: null) {
-    @if $rwd==null {
-      $tw-invert: invert($v) !global;
-      @include filter(get_filter());
-    } @else {
-      @media (min-width: $rwd) {
-        $tw-invert: invert($v) !global;
-        @include filter(get_filter());
-      }
-    }
+  @mixin invert-($v) {
+    $tw-invert: invert($v) !global;
+    @include filter(get_filter());
   }
 
   @mixin sm\:invert-($v) {
-    @include invert-($v, $sm);
+    $tw-invert: invert($v) !global;
+    @include sm\:filter(get_filter());
   }
 
   @mixin md\:invert-($v) {
-    @include invert-($v, $md);
+    $tw-invert: invert($v) !global;
+    @include md\:filter(get_filter());
   }
 
   @mixin lg\:invert-($v) {
-    @include invert-($v, $lg);
+    $tw-invert: invert($v) !global;
+    @include lg\:filter(get_filter());
   }
 
   @mixin xl\:invert-($v) {
-    @include invert-($v, $xl);
+    $tw-invert: invert($v) !global;
+    @include xl\:filter(get_filter());
   }
 
   @mixin \2xl\:invert-($v) {
-    @include invert-($v, $\2xl);
+    $tw-invert: invert($v) !global;
+    @include \2xl\:filter(get_filter());
   }
 
   // x*/

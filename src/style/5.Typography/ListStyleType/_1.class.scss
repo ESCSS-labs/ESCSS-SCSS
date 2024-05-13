@@ -22,63 +22,63 @@
   @if $sizeMode == 0 or $sizeMode == 1 {
     // /*x
     @mixin sm\:list-none {
-      @include list-(none, $sm);
+      @include sm\:list-(none);
     }
 
     @mixin sm\:list-disc {
-      @include list-(disc, $sm);
+      @include sm\:list-(disc);
     }
 
     @mixin sm\:list-decimal {
-      @include list-(decimal, $sm);
+      @include sm\:list-(decimal);
     }
 
     @mixin md\:list-none {
-      @include list-(none, $md);
+      @include md\:list-(none);
     }
 
     @mixin md\:list-disc {
-      @include list-(disc, $md);
+      @include md\:list-(disc);
     }
 
     @mixin md\:list-decimal {
-      @include list-(decimal, $md);
+      @include md\:list-(decimal);
     }
 
     @mixin lg\:list-none {
-      @include list-(none, $lg);
+      @include lg\:list-(none);
     }
 
     @mixin lg\:list-disc {
-      @include list-(disc, $lg);
+      @include lg\:list-(disc);
     }
 
     @mixin lg\:list-decimal {
-      @include list-(decimal, $lg);
+      @include lg\:list-(decimal);
     }
 
     @mixin xl\:list-none {
-      @include list-(none, $xl);
+      @include xl\:list-(none);
     }
 
     @mixin xl\:list-disc {
-      @include list-(disc, $xl);
+      @include xl\:list-(disc);
     }
 
     @mixin xl\:list-decimal {
-      @include list-(decimal, $xl);
+      @include xl\:list-(decimal);
     }
 
     @mixin \2xl\:list-none {
-      @include list-(none, $\2xl);
+      @include \2xl\:list-(none);
     }
 
     @mixin \2xl\:list-disc {
-      @include list-(disc, $\2xl);
+      @include \2xl\:list-(disc);
     }
 
     @mixin \2xl\:list-decimal {
-      @include list-(decimal, $\2xl);
+      @include \2xl\:list-(decimal);
     }
 
     // x*/
@@ -87,34 +87,28 @@
 
 @if $Custom {
   // /*x
-  @mixin list-($v, $rwd: null) {
-    @if $rwd==null {
-      @include list-style-type($v);
-    } @else {
-      @media (min-width: $rwd) {
-        @include list-style-type($v);
-      }
-    }
+  @mixin list-($v) {
+    @include list-style-type($v);
   }
 
   @mixin sm\:list-($v) {
-    @include list-($v, $sm);
+    @include sm\:list-style-type($v);
   }
 
   @mixin md\:list-($v) {
-    @include list-($v, $md);
+    @include md\:list-style-type($v);
   }
 
   @mixin lg\:list-($v) {
-    @include list-($v, $lg);
+    @include lg\:list-style-type($v);
   }
 
   @mixin xl\:list-($v) {
-    @include list-($v, $xl);
+    @include xl\:list-style-type($v);
   }
 
   @mixin \2xl\:list-($v) {
-    @include list-($v, $\2xl);
+    @include \2xl\:list-style-type($v);
   }
 
   // x*/

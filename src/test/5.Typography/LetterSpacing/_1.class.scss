@@ -1,7 +1,7 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-// private member(prefix - or _) can't be import, so I put here for testing
+// private member(prefix - or _) can't be imported, so I put here for testing
 
 @mixin -tracking-tighter {
   letter-spacing: 0.05em;
@@ -28,7 +28,27 @@
 }
 
 @mixin -tracking-($v) {
-  @include tracking-(-($v));
+  @include letter-spacing(-$v);
+}
+
+@mixin sm\:-tracking-($v) {
+  @include sm\:letter-spacing(-$v);
+}
+
+@mixin md\:-tracking-($v) {
+  @include md\:letter-spacing(-$v);
+}
+
+@mixin lg\:-tracking-($v) {
+  @include lg\:letter-spacing(-$v);
+}
+
+@mixin xl\:-tracking-($v) {
+  @include xl\:letter-spacing(-$v);
+}
+
+@mixin \2xl\:-tracking-($v) {
+  @include \2xl\:letter-spacing(-$v);
 }
 
 @include describe("5.Typography") {

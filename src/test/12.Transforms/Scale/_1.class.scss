@@ -1,7 +1,7 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-// private member(prefix - or _) can't be import, so I put here for testing
+// private member(prefix - or _) can't be imported, so I put here for testing
 
 @mixin -scale-0 {
   $tw-scale-x: -0 !global;
@@ -164,15 +164,19 @@
 }
 
 @mixin -scale-($v) {
-  @include scale-(-($v));
+  $tw-scale-x: -$v !global;
+  $tw-scale-y: -$v !global;
+  @include transform(get_transform());
 }
 
 @mixin -scale-x-($v) {
-  @include scale-x-(-($v));
+  $tw-scale-x: -$v !global;
+  @include transform(get_transform());
 }
 
 @mixin -scale-y-($v) {
-  @include scale-y-(-($v));
+  $tw-scale-y: -$v !global;
+  @include transform(get_transform());
 }
 
 @include describe("12.Transforms") {

@@ -14,17 +14,17 @@
 @function get_box-shadow() {
   $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width
     $tw-ring-offset-color;
-  $tw-ring-shadow: $tw-ring-inset 0 0 0 $ring-width $tw-ring-color;
+  $tw-ring-shadow: $tw-ring-inset 0 0 0 $tw-dummy-ring-width $tw-ring-color;
   $tw-shadow: null;
 
-  @if list.index(shadow md lg xl, $shadow-token) {
+  @if list.index(shadow md lg xl, $tw-dummy-shadow-token) {
     $tw-shadow:
-      list.nth($shadow-width, 1) $tw-shadow-color,
-      list.nth($shadow-width, 2) $tw-shadow-color;
-  } @else if $shadow-token ==inner {
-    $tw-shadow: inset $shadow-width $tw-shadow-color;
+      list.nth($tw-dummy-shadow-width, 1) $tw-shadow-color,
+      list.nth($tw-dummy-shadow-width, 2) $tw-shadow-color;
+  } @else if $tw-dummy-shadow-token ==inner {
+    $tw-shadow: inset $tw-dummy-shadow-width $tw-shadow-color;
   } @else {
-    $tw-shadow: $shadow-width $tw-shadow-color;
+    $tw-shadow: $tw-dummy-shadow-width $tw-shadow-color;
   }
 
   @return $tw-ring-offset-shadow, $tw-ring-shadow, $tw-shadow;
@@ -47,17 +47,17 @@
 }
 
 @function get_linear-gradient() {
-  @if $gradient-direction==none {
+  @if $tw-dummy-gradient-direction==none {
     @return none;
   } @else if $tw-gradient-via==null {
     @return linear-gradient(
-      $gradient-direction,
+      $tw-dummy-gradient-direction,
       $tw-gradient-from $tw-gradient-from-position,
       $tw-gradient-to $tw-gradient-to-position
     );
   } @else {
     @return linear-gradient(
-      $gradient-direction,
+      $tw-dummy-gradient-direction,
       $tw-gradient-from $tw-gradient-from-position,
       $tw-gradient-via $tw-gradient-via-position,
       $tw-gradient-to $tw-gradient-to-position

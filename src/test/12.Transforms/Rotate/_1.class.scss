@@ -1,7 +1,7 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-// private member(prefix - or _) can't be import, so I put here for testing
+// private member(prefix - or _) can't be imported, so I put here for testing
 
 @mixin -rotate-0 {
   $tw-rotate: -0deg !global;
@@ -49,7 +49,8 @@
 }
 
 @mixin -rotate-($v) {
-  @include rotate-(-($v));
+  $tw-rotate: -$v !global;
+  @include transform(get_transform());
 }
 
 @include describe("12.Transforms") {

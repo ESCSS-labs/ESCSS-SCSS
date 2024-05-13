@@ -1,7 +1,7 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-// private member(prefix - or _) can't be import, so I put here for testing
+// private member(prefix - or _) can't be imported, so I put here for testing
 
 @mixin -translate-x-0 {
   $tw-translate-x: -$\0 !global;
@@ -424,11 +424,13 @@
 }
 
 @mixin -translate-x-($v) {
-  @include translate-x-(-($v));
+  $tw-translate-x: -$v !global;
+  @include transform(get_transform());
 }
 
 @mixin -translate-y-($v) {
-  @include translate-y-(-($v));
+  $tw-translate-y: -$v !global;
+  @include transform(get_transform());
 }
 
 @include describe("12.Transforms") {

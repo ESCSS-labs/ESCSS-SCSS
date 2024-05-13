@@ -17,46 +17,46 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $sm);
+      @include sm\:backdrop-sepia-(0);
     }
 
     @mixin sm\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $sm);
+      @include sm\:backdrop-sepia-(100%);
     }
 
     @mixin md\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $md);
+      @include md\:backdrop-sepia-(0);
     }
 
     @mixin md\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $md);
+      @include md\:backdrop-sepia-(100%);
     }
 
     @mixin lg\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $lg);
+      @include lg\:backdrop-sepia-(0);
     }
 
     @mixin lg\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $lg);
+      @include lg\:backdrop-sepia-(100%);
     }
 
     @mixin xl\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $xl);
+      @include xl\:backdrop-sepia-(0);
     }
 
     @mixin xl\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $xl);
+      @include xl\:backdrop-sepia-(100%);
     }
 
     @mixin \2xl\:backdrop-sepia-0 {
-      @include backdrop-sepia-(0, $\2xl);
+      @include \2xl\:backdrop-sepia-(0);
     }
 
     @mixin \2xl\:backdrop-sepia {
-      @include backdrop-sepia-(100%, $\2xl);
+      @include \2xl\:backdrop-sepia-(100%);
     }
 
     // x*/
@@ -65,36 +65,34 @@
 
 @if $Custom {
   // /*x
-  @mixin backdrop-sepia-($v, $rwd: null) {
-    @if $rwd==null {
-      $tw-backdrop-sepia: sepia($v) !global;
-      @include backdrop-filter(get_backdrop-filter());
-    } @else {
-      @media (min-width: $rwd) {
-        $tw-backdrop-sepia: sepia($v) !global;
-        @include backdrop-filter(get_backdrop-filter());
-      }
-    }
+  @mixin backdrop-sepia-($v) {
+    $tw-backdrop-sepia: sepia($v) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
 
   @mixin sm\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $sm);
+    $tw-backdrop-sepia: sepia($v) !global;
+    @include sm\:backdrop-filter(get_backdrop-filter());
   }
 
   @mixin md\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $md);
+    $tw-backdrop-sepia: sepia($v) !global;
+    @include md\:backdrop-filter(get_backdrop-filter());
   }
 
   @mixin lg\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $lg);
+    $tw-backdrop-sepia: sepia($v) !global;
+    @include lg\:backdrop-filter(get_backdrop-filter());
   }
 
   @mixin xl\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $xl);
+    $tw-backdrop-sepia: sepia($v) !global;
+    @include xl\:backdrop-filter(get_backdrop-filter());
   }
 
   @mixin \2xl\:backdrop-sepia-($v) {
-    @include backdrop-sepia-($v, $\2xl);
+    $tw-backdrop-sepia: sepia($v) !global;
+    @include \2xl\:backdrop-filter(get_backdrop-filter());
   }
 
   // x*/

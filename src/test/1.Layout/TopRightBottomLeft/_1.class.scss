@@ -1,7 +1,7 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-// private member(prefix - or _) can't be import, so I put here for testing
+// private member(prefix - or _) can't be imported, so I put here for testing
 
 @mixin -inset-0 {
   inset: -$\0;
@@ -1600,39 +1600,41 @@
 }
 
 @mixin -inset-($v) {
-  @include inset-(-($v));
+  @include inset(-$v);
 }
 
 @mixin -inset-x-($v) {
-  @include inset-x-(-($v));
+  @include left(-$v);
+  @include right(-$v);
 }
 
 @mixin -inset-y-($v) {
-  @include inset-y-(-($v));
+  @include top(-$v);
+  @include bottom(-$v);
 }
 
 @mixin -start-($v) {
-  @include start-(-($v));
+  @include inset-inline-start(-$v);
 }
 
 @mixin -end-($v) {
-  @include end-(-($v));
+  @include inset-inline-end(-$v);
 }
 
 @mixin -top-($v) {
-  @include top-(-($v));
+  @include top(-$v);
 }
 
 @mixin -right-($v) {
-  @include right-(-($v));
+  @include right(-$v);
 }
 
 @mixin -bottom-($v) {
-  @include bottom-(-($v));
+  @include bottom(-$v);
 }
 
 @mixin -left-($v) {
-  @include left-(-($v));
+  @include left(-$v);
 }
 
 @include describe("1.Layout") {

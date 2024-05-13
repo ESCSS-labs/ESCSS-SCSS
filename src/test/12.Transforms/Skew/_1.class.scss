@@ -1,7 +1,7 @@
 @use "../../mode0" as *;
 @use "true" as *;
 
-// private member(prefix - or _) can't be import, so I put here for testing
+// private member(prefix - or _) can't be imported, so I put here for testing
 
 @mixin -skew-x-0 {
   $tw-skew-x: -0deg !global;
@@ -64,11 +64,13 @@
 }
 
 @mixin -skew-x-($v) {
-  @include skew-x-(-($v));
+  $tw-skew-x: -$v !global;
+  @include transform(get_transform());
 }
 
 @mixin -skew-y-($v) {
-  @include skew-y-(-($v));
+  $tw-skew-y: -$v !global;
+  @include transform(get_transform());
 }
 
 @include describe("12.Transforms") {
