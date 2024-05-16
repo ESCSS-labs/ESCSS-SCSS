@@ -147,7 +147,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:indent-0 {
       @include sm\:indent-($\0);
@@ -860,23 +860,23 @@
   }
 
   @mixin sm\:indent-($v) {
-    @include sm\:text-indent($v);
+    @include text-indent($v, $sm);
   }
 
   @mixin md\:indent-($v) {
-    @include md\:text-indent($v);
+    @include text-indent($v, $md);
   }
 
   @mixin lg\:indent-($v) {
-    @include lg\:text-indent($v);
+    @include text-indent($v, $lg);
   }
 
   @mixin xl\:indent-($v) {
-    @include xl\:text-indent($v);
+    @include text-indent($v, $xl);
   }
 
   @mixin \2xl\:indent-($v) {
-    @include \2xl\:text-indent($v);
+    @include text-indent($v, $\2xl);
   }
 
   // x*/
@@ -1029,7 +1029,7 @@
   }
 
   @if $Rwd {
-    @if $sizeMode == 0 or $sizeMode == 1 {
+    @if $sizeMode ==0 or $sizeMode ==1 {
       // /*x
       @mixin sm\:-indent-0 {
         @include sm\:-indent-($\0);
@@ -1742,24 +1742,25 @@
     }
 
     @mixin sm\:-indent-($v) {
-      @include sm\:text-indent(-$v);
+      @include text-indent(-$v, $sm);
     }
 
     @mixin md\:-indent-($v) {
-      @include md\:text-indent(-$v);
+      @include text-indent(-$v, $md);
     }
 
     @mixin lg\:-indent-($v) {
-      @include lg\:text-indent(-$v);
+      @include text-indent(-$v, $lg);
     }
 
     @mixin xl\:-indent-($v) {
-      @include xl\:text-indent(-$v);
+      @include text-indent(-$v, $xl);
     }
 
     @mixin \2xl\:-indent-($v) {
-      @include \2xl\:text-indent(-$v);
+      @include text-indent(-$v, $\2xl);
     }
+
     // x*/
   }
 }

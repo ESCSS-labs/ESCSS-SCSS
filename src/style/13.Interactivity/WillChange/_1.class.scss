@@ -23,7 +23,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:will-change-auto {
       @include sm\:will-change-(auto);
@@ -104,6 +104,7 @@
     @mixin \2xl\:will-change-transform {
       @include \2xl\:will-change-(transform);
     }
+
     // x*/
   }
 }
@@ -115,23 +116,24 @@
   }
 
   @mixin sm\:will-change-($v, $v2: null) {
-    @include sm\:will-change($v, $v2);
+    @include will-change($v, $v2, $sm);
   }
 
   @mixin md\:will-change-($v, $v2: null) {
-    @include md\:will-change($v, $v2);
+    @include will-change($v, $v2, $md);
   }
 
   @mixin lg\:will-change-($v, $v2: null) {
-    @include lg\:will-change($v, $v2);
+    @include will-change($v, $v2, $lg);
   }
 
   @mixin xl\:will-change-($v, $v2: null) {
-    @include xl\:will-change($v, $v2);
+    @include will-change($v, $v2, $xl);
   }
 
   @mixin \2xl\:will-change-($v, $v2: null) {
-    @include \2xl\:will-change($v, $v2);
+    @include will-change($v, $v2, $\2xl);
   }
+
   // x*/
 }

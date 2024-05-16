@@ -43,7 +43,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:duration-0 {
       @include sm\:duration-(0s);
@@ -224,6 +224,7 @@
     @mixin \2xl\:duration-1000 {
       @include \2xl\:duration-(1000ms);
     }
+
     // x*/
   }
 }
@@ -235,23 +236,24 @@
   }
 
   @mixin sm\:duration-($v) {
-    @include sm\:transition-duration($v);
+    @include transition-duration($v, $sm);
   }
 
   @mixin md\:duration-($v) {
-    @include md\:transition-duration($v);
+    @include transition-duration($v, $md);
   }
 
   @mixin lg\:duration-($v) {
-    @include lg\:transition-duration($v);
+    @include transition-duration($v, $lg);
   }
 
   @mixin xl\:duration-($v) {
-    @include xl\:transition-duration($v);
+    @include transition-duration($v, $xl);
   }
 
   @mixin \2xl\:duration-($v) {
-    @include \2xl\:transition-duration($v);
+    @include transition-duration($v, $\2xl);
   }
+
   // x*/
 }

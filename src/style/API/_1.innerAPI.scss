@@ -4,7 +4,9 @@
 // c stands for color (file size concern)
 @function c($token, $v) {
   @if not math.is-unitless($v) {
-    @error "TRY 0.xx INSTEAD OF xx%. Concerning performance: Since all colors depend on this function, removing the xx% code to simulate opacity will speed up processing.";
+    // If used / for dividing after v1.33, it will get lots of warnings in the terminal,
+    // the better way is forbidden % and provides the color.change() method
+    @error "$v: Expected #/*x{$v / 100%} not #/*x{$v}, backward compatibility concern";
   }
 
   // $alpha only accepts 0 ~ 1, https://sass-lang.com/documentation/modules/color/#change
@@ -12,9 +14,6 @@
 }
 
 @function get_box-shadow() {
-  $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width
-    $tw-ring-offset-color;
-  $tw-ring-shadow: $tw-ring-inset 0 0 0 $tw-dummy-ring-width $tw-ring-color;
   $tw-shadow: null;
 
   @if list.index(shadow md lg xl, $tw-dummy-shadow-token) {
@@ -26,6 +25,10 @@
   } @else {
     $tw-shadow: $tw-dummy-shadow-width $tw-shadow-color;
   }
+
+  $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width
+    $tw-ring-offset-color;
+  $tw-ring-shadow: $tw-ring-inset 0 0 0 $tw-dummy-ring-width $tw-ring-color;
 
   @return $tw-ring-offset-shadow, $tw-ring-shadow, $tw-shadow;
 }

@@ -19,7 +19,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:stroke-0 {
       @include sm\:stroke-(0);
@@ -80,10 +80,57 @@
     @mixin \2xl\:stroke-2 {
       @include \2xl\:stroke-(2);
     }
+
     // x*/
   }
 }
 
-// same as @mixin stroke-($v)
 @if $Custom {
+  // /*x
+  @mixin get_stroke-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include stroke($v);
+    } @else {
+      @include stroke-width($v);
+    }
+  }
+
+  @mixin stroke-($v) {
+    @include get_stroke-($v);
+  }
+
+  @mixin sm\:stroke-($v) {
+    @include sm {
+      @include get_stroke-($v);
+    }
+  }
+
+  @mixin md\:stroke-($v) {
+    @include md {
+      @include get_stroke-($v);
+    }
+  }
+
+  @mixin lg\:stroke-($v) {
+    @include lg {
+      @include get_stroke-($v);
+    }
+  }
+
+  @mixin xl\:stroke-($v) {
+    @include xl {
+      @include get_stroke-($v);
+    }
+  }
+
+  @mixin \2xl\:stroke-($v) {
+    @include \2xl {
+      @include get_stroke-($v);
+    }
+  }
+
+  // x*/
 }

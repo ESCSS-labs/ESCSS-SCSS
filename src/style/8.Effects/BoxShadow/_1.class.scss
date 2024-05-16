@@ -71,7 +71,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:shadow-sm {
       @include sm\:shadow-(sm);
@@ -237,6 +237,117 @@
   }
 }
 
-// same as @mixin shadow-($v)
 @if $Custom {
+  // /*x
+  @mixin get_shadow-($v) {
+    // shadow color e.g. sm\:shadow-red-500
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      $tw-dummy-not-match--shadow-color: true !global;
+      $tw-shadow-color: $v !global;
+    }
+
+    // shadow width e.g. sm\:shadow-lg
+    @else if meta.type-of($v) ==string {
+      @if $v ==sm {
+        $tw-dummy-shadow-token: sm !global;
+        $tw-dummy-shadow-width: 0 1px 2px 0 !global;
+        $tw-shadow-color: rgb(0 0 0 / 0.05) !global;
+      } @else if $v ==null {
+        $tw-dummy-shadow-token: shadow !global;
+        $tw-dummy-shadow-width:
+          0 1px 3px 0,
+          0 1px 2px -1px !global;
+        $tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+      } @else if $v ==md {
+        $tw-dummy-shadow-token: md !global;
+        $tw-dummy-shadow-width:
+          0 4px 6px -1px,
+          0 2px 4px -2px !global;
+        $tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+      } @else if $v ==lg {
+        $tw-dummy-shadow-token: lg !global;
+        $tw-dummy-shadow-width:
+          0 10px 15px -3px,
+          0 4px 6px -4px !global;
+        $tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+      } @else if $v ==xl {
+        $tw-dummy-shadow-token: xl !global;
+        $tw-dummy-shadow-width:
+          0 20px 25px -5px,
+          0 8px 10px -6px !global;
+        $tw-shadow-color: rgb(0 0 0 / 0.1) !global;
+      } @else if $v ==2xl {
+        $tw-dummy-shadow-token: 2xl !global;
+        $tw-dummy-shadow-width: 0 25px 50px -12px !global;
+        $tw-shadow-color: rgb(0 0 0 / 0.25) !global;
+      } @else if $v ==inner {
+        $tw-dummy-shadow-token: inner !global;
+        $tw-dummy-shadow-width: 0 2px 4px 0 !global;
+        $tw-shadow-color: rgb(0 0 0 / 0.05) !global;
+      } @else if $v ==none {
+        $tw-dummy-shadow-token: none !global;
+        $tw-dummy-shadow-width: 0 0 0 0 !global;
+        $tw-shadow-color: #fff !global;
+      }
+    }
+
+    // custom shadow e.g shadow-(inset 0px 0px 5px 10px red)
+    @else if meta.type-of($v) ==list {
+      @if $tw-dummy-not-match--shadow-color {
+        @error ("e.g.「 shadow-(0px 0px 5px 10px red) 」should go before「 shadow-sky-500 」(to have same behavior as tailwind)");
+      }
+
+      $tw-dummy-shadow-token: custom !global;
+      $tw-shadow-color: list.nth($v, -1) !global; // red
+
+      @if list.nth($v, 1) ==inset {
+        $tw-dummy-shadow-width: list.set-nth(
+          $v,
+          -1,
+          $space
+        ) !global; // inset 0px 0px 5px 10px
+      } @else {
+        $tw-dummy-shadow-width: list.set-nth(
+          $v,
+          -1,
+          $space
+        ) !global; // inset 0px 0px 5px 10px
+      }
+    }
+  }
+
+  @mixin shadow-($v) {
+    @include get_shadow-($v);
+    @include box-shadow(get_box-shadow());
+  }
+
+  @mixin sm\:shadow-($v) {
+    @include get_shadow-($v);
+    @include box-shadow(get_box-shadow(), $sm);
+  }
+
+  @mixin md\:shadow-($v) {
+    @include get_shadow-($v);
+    @include box-shadow(get_box-shadow(), $md);
+  }
+
+  @mixin lg\:shadow-($v) {
+    @include get_shadow-($v);
+    @include box-shadow(get_box-shadow(), $lg);
+  }
+
+  @mixin xl\:shadow-($v) {
+    @include get_shadow-($v);
+    @include box-shadow(get_box-shadow(), $xl);
+  }
+
+  @mixin \2xl\:shadow-($v) {
+    @include get_shadow-($v);
+    @include box-shadow(get_box-shadow(), $\2xl);
+  }
+
+  // x*/
 }

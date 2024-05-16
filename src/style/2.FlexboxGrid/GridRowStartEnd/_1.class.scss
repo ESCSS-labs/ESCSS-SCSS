@@ -175,7 +175,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:row-auto {
       // /*x@include sm\:row-(auto);
@@ -1016,6 +1016,7 @@
     @mixin \2xl\:row-end-auto {
       // /*x@include \2xl\:row-end-(auto);
     }
+
     // x*/
   }
 }
@@ -1035,63 +1036,64 @@
   }
 
   @mixin sm\:row-($v) {
-    @include sm\:grid-row($v);
+    @include grid-row($v, $sm);
   }
 
   @mixin sm\:row-start-($v) {
-    @include sm\:grid-row-start($v);
+    @include grid-row-start($v, $sm);
   }
 
   @mixin sm\:row-end-($v) {
-    @include sm\:grid-row-end($v);
+    @include grid-row-end($v, $sm);
   }
 
   @mixin md\:row-($v) {
-    @include md\:grid-row($v);
+    @include grid-row($v, $md);
   }
 
   @mixin md\:row-start-($v) {
-    @include md\:grid-row-start($v);
+    @include grid-row-start($v, $md);
   }
 
   @mixin md\:row-end-($v) {
-    @include md\:grid-row-end($v);
+    @include grid-row-end($v, $md);
   }
 
   @mixin lg\:row-($v) {
-    @include lg\:grid-row($v);
+    @include grid-row($v, $lg);
   }
 
   @mixin lg\:row-start-($v) {
-    @include lg\:grid-row-start($v);
+    @include grid-row-start($v, $lg);
   }
 
   @mixin lg\:row-end-($v) {
-    @include lg\:grid-row-end($v);
+    @include grid-row-end($v, $lg);
   }
 
   @mixin xl\:row-($v) {
-    @include xl\:grid-row($v);
+    @include grid-row($v, $xl);
   }
 
   @mixin xl\:row-start-($v) {
-    @include xl\:grid-row-start($v);
+    @include grid-row-start($v, $xl);
   }
 
   @mixin xl\:row-end-($v) {
-    @include xl\:grid-row-end($v);
+    @include grid-row-end($v, $xl);
   }
 
   @mixin \2xl\:row-($v) {
-    @include \2xl\:grid-row($v);
+    @include grid-row($v, $\2xl);
   }
 
   @mixin \2xl\:row-start-($v) {
-    @include \2xl\:grid-row-start($v);
+    @include grid-row-start($v, $\2xl);
   }
 
   @mixin \2xl\:row-end-($v) {
-    @include \2xl\:grid-row-end($v);
+    @include grid-row-end($v, $\2xl);
   }
+
   // x*/
 }

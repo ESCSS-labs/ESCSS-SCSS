@@ -2103,7 +2103,7 @@
 
 @if $Custom {
   // /*x
-  @mixin space-x-($v, $isReverse: false) {
+  @mixin get_space-x-($v, $isReverse: false) {
     @if $isReverse {
       $tw-space-x-reverse: 1 !global;
       $v: $tw-dummy-space-x-value;
@@ -2117,7 +2117,7 @@
     }
   }
 
-  @mixin space-y-($v, $isReverse: false) {
+  @mixin get_space-y-($v, $isReverse: false) {
     @if $isReverse {
       $tw-space-y-reverse: 1 !global;
       $v: $tw-dummy-space-y-value;
@@ -2131,165 +2131,74 @@
     }
   }
 
-  @mixin sm\:space-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-x-reverse: 1 !global;
-      $v: $tw-dummy-space-x-value;
-    } @else {
-      $tw-dummy-space-x-value: $v !global; // update value when using reverse
-    }
+  @mixin space-x-($v, $isReverse: false) {
+    @include get_space-x-($v, $isReverse);
+  }
 
-    @media (min-width: $sm) {
-      > * ~ * {
-        @include margin-left($v * (1 - $tw-space-x-reverse));
-        @include margin-right($v * $tw-space-x-reverse);
-      }
+  @mixin space-y-($v, $isReverse: false) {
+    @include get_space-y-($v, $isReverse);
+  }
+
+  @mixin sm\:space-x-($v, $isReverse: false) {
+    @include sm {
+      @include get_space-x-($v, $isReverse);
     }
   }
 
   @mixin sm\:space-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-y-reverse: 1 !global;
-      $v: $tw-dummy-space-y-value;
-    } @else {
-      $tw-dummy-space-y-value: $v !global; // update value when using reverse
-    }
-
-    @media (min-width: $sm) {
-      > * ~ * {
-        @include margin-top($v * (1 - $tw-space-y-reverse));
-        @include margin-bottom($v * $tw-space-y-reverse);
-      }
+    @include sm {
+      @include get_space-y-($v, $isReverse);
     }
   }
 
   @mixin md\:space-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-x-reverse: 1 !global;
-      $v: $tw-dummy-space-x-value;
-    } @else {
-      $tw-dummy-space-x-value: $v !global; // update value when using reverse
-    }
-
-    @media (min-width: $md) {
-      > * ~ * {
-        @include margin-left($v * (1 - $tw-space-x-reverse));
-        @include margin-right($v * $tw-space-x-reverse);
-      }
+    @include md {
+      @include get_space-x-($v, $isReverse);
     }
   }
 
   @mixin md\:space-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-y-reverse: 1 !global;
-      $v: $tw-dummy-space-y-value;
-    } @else {
-      $tw-dummy-space-y-value: $v !global; // update value when using reverse
-    }
-
-    @media (min-width: $md) {
-      > * ~ * {
-        @include margin-top($v * (1 - $tw-space-y-reverse));
-        @include margin-bottom($v * $tw-space-y-reverse);
-      }
+    @include md {
+      @include get_space-y-($v, $isReverse);
     }
   }
 
   @mixin lg\:space-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-x-reverse: 1 !global;
-      $v: $tw-dummy-space-x-value;
-    } @else {
-      $tw-dummy-space-x-value: $v !global; // update value when using reverse
-    }
-
-    @media (min-width: $lg) {
-      > * ~ * {
-        @include margin-left($v * (1 - $tw-space-x-reverse));
-        @include margin-right($v * $tw-space-x-reverse);
-      }
+    @include lg {
+      @include get_space-x-($v, $isReverse);
     }
   }
 
   @mixin lg\:space-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-y-reverse: 1 !global;
-      $v: $tw-dummy-space-y-value;
-    } @else {
-      $tw-dummy-space-y-value: $v !global; // update value when using reverse
-    }
-
-    @media (min-width: $lg) {
-      > * ~ * {
-        @include margin-top($v * (1 - $tw-space-y-reverse));
-        @include margin-bottom($v * $tw-space-y-reverse);
-      }
+    @include lg {
+      @include get_space-y-($v, $isReverse);
     }
   }
 
   @mixin xl\:space-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-x-reverse: 1 !global;
-      $v: $tw-dummy-space-x-value;
-    } @else {
-      $tw-dummy-space-x-value: $v !global; // update value when using reverse
-    }
-
-    @media (min-width: $xl) {
-      > * ~ * {
-        @include margin-left($v * (1 - $tw-space-x-reverse));
-        @include margin-right($v * $tw-space-x-reverse);
-      }
+    @include xl {
+      @include get_space-x-($v, $isReverse);
     }
   }
 
   @mixin xl\:space-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-y-reverse: 1 !global;
-      $v: $tw-dummy-space-y-value;
-    } @else {
-      $tw-dummy-space-y-value: $v !global; // update value when using reverse
-    }
-
-    @media (min-width: $xl) {
-      > * ~ * {
-        @include margin-top($v * (1 - $tw-space-y-reverse));
-        @include margin-bottom($v * $tw-space-y-reverse);
-      }
+    @include xl {
+      @include get_space-y-($v, $isReverse);
     }
   }
 
   @mixin \2xl\:space-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-x-reverse: 1 !global;
-      $v: $tw-dummy-space-x-value;
-    } @else {
-      $tw-dummy-space-x-value: $v !global; // update value when using reverse
-    }
-
-    @media (min-width: $\2xl) {
-      > * ~ * {
-        @include margin-left($v * (1 - $tw-space-x-reverse));
-        @include margin-right($v * $tw-space-x-reverse);
-      }
+    @include \2xl {
+      @include get_space-x-($v, $isReverse);
     }
   }
 
   @mixin \2xl\:space-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-space-y-reverse: 1 !global;
-      $v: $tw-dummy-space-y-value;
-    } @else {
-      $tw-dummy-space-y-value: $v !global; // update value when using reverse
-    }
-
-    @media (min-width: $\2xl) {
-      > * ~ * {
-        @include margin-top($v * (1 - $tw-space-y-reverse));
-        @include margin-bottom($v * $tw-space-y-reverse);
-      }
+    @include \2xl {
+      @include get_space-y-($v, $isReverse);
     }
   }
+
   // x*/
 }
 
@@ -4356,7 +4265,7 @@
 
   @if $Custom {
     // /*x
-    @mixin -space-x-($v, $isReverse: false) {
+    @mixin get_-space-x-($v, $isReverse: false) {
       @if $isReverse {
         $tw-space-x-reverse: 1 !global;
         $v: $tw-dummy-space-x-value;
@@ -4370,7 +4279,7 @@
       }
     }
 
-    @mixin -space-y-($v, $isReverse: false) {
+    @mixin get_-space-y-($v, $isReverse: false) {
       @if $isReverse {
         $tw-space-y-reverse: 1 !global;
         $v: $tw-dummy-space-y-value;
@@ -4384,165 +4293,74 @@
       }
     }
 
-    @mixin sm\:-space-x-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-x-reverse: 1 !global;
-        $v: $tw-dummy-space-x-value;
-      } @else {
-        $tw-dummy-space-x-value: -$v !global; // update value when using reverse
-      }
+    @mixin -space-x-($v, $isReverse: false) {
+      @include get_-space-x-($v, $isReverse);
+    }
 
-      @media (min-width: $sm) {
-        > * ~ * {
-          @include margin-left(-$v * (1 - $tw-space-x-reverse));
-          @include margin-right(-$v * $tw-space-x-reverse);
-        }
+    @mixin -space-y-($v, $isReverse: false) {
+      @include get_-space-y-($v, $isReverse);
+    }
+
+    @mixin sm\:-space-x-($v, $isReverse: false) {
+      @include sm {
+        @include get_-space-x-($v, $isReverse);
       }
     }
 
     @mixin sm\:-space-y-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-y-reverse: 1 !global;
-        $v: $tw-dummy-space-y-value;
-      } @else {
-        $tw-dummy-space-y-value: -$v !global; // update value when using reverse
-      }
-
-      @media (min-width: $sm) {
-        > * ~ * {
-          @include margin-top(-$v * (1 - $tw-space-y-reverse));
-          @include margin-bottom(-$v * $tw-space-y-reverse);
-        }
+      @include sm {
+        @include get_-space-y-($v, $isReverse);
       }
     }
 
     @mixin md\:-space-x-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-x-reverse: 1 !global;
-        $v: $tw-dummy-space-x-value;
-      } @else {
-        $tw-dummy-space-x-value: -$v !global; // update value when using reverse
-      }
-
-      @media (min-width: $md) {
-        > * ~ * {
-          @include margin-left(-$v * (1 - $tw-space-x-reverse));
-          @include margin-right(-$v * $tw-space-x-reverse);
-        }
+      @include md {
+        @include get_-space-x-($v, $isReverse);
       }
     }
 
     @mixin md\:-space-y-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-y-reverse: 1 !global;
-        $v: $tw-dummy-space-y-value;
-      } @else {
-        $tw-dummy-space-y-value: -$v !global; // update value when using reverse
-      }
-
-      @media (min-width: $md) {
-        > * ~ * {
-          @include margin-top(-$v * (1 - $tw-space-y-reverse));
-          @include margin-bottom(-$v * $tw-space-y-reverse);
-        }
+      @include md {
+        @include get_-space-y-($v, $isReverse);
       }
     }
 
     @mixin lg\:-space-x-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-x-reverse: 1 !global;
-        $v: $tw-dummy-space-x-value;
-      } @else {
-        $tw-dummy-space-x-value: -$v !global; // update value when using reverse
-      }
-
-      @media (min-width: $lg) {
-        > * ~ * {
-          @include margin-left(-$v * (1 - $tw-space-x-reverse));
-          @include margin-right(-$v * $tw-space-x-reverse);
-        }
+      @include lg {
+        @include get_-space-x-($v, $isReverse);
       }
     }
 
     @mixin lg\:-space-y-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-y-reverse: 1 !global;
-        $v: $tw-dummy-space-y-value;
-      } @else {
-        $tw-dummy-space-y-value: -$v !global; // update value when using reverse
-      }
-
-      @media (min-width: $lg) {
-        > * ~ * {
-          @include margin-top(-$v * (1 - $tw-space-y-reverse));
-          @include margin-bottom(-$v * $tw-space-y-reverse);
-        }
+      @include lg {
+        @include get_-space-y-($v, $isReverse);
       }
     }
 
     @mixin xl\:-space-x-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-x-reverse: 1 !global;
-        $v: $tw-dummy-space-x-value;
-      } @else {
-        $tw-dummy-space-x-value: -$v !global; // update value when using reverse
-      }
-
-      @media (min-width: $xl) {
-        > * ~ * {
-          @include margin-left(-$v * (1 - $tw-space-x-reverse));
-          @include margin-right(-$v * $tw-space-x-reverse);
-        }
+      @include xl {
+        @include get_-space-x-($v, $isReverse);
       }
     }
 
     @mixin xl\:-space-y-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-y-reverse: 1 !global;
-        $v: $tw-dummy-space-y-value;
-      } @else {
-        $tw-dummy-space-y-value: -$v !global; // update value when using reverse
-      }
-
-      @media (min-width: $xl) {
-        > * ~ * {
-          @include margin-top(-$v * (1 - $tw-space-y-reverse));
-          @include margin-bottom(-$v * $tw-space-y-reverse);
-        }
+      @include xl {
+        @include get_-space-y-($v, $isReverse);
       }
     }
 
     @mixin \2xl\:-space-x-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-x-reverse: 1 !global;
-        $v: $tw-dummy-space-x-value;
-      } @else {
-        $tw-dummy-space-x-value: -$v !global; // update value when using reverse
-      }
-
-      @media (min-width: $\2xl) {
-        > * ~ * {
-          @include margin-left(-$v * (1 - $tw-space-x-reverse));
-          @include margin-right(-$v * $tw-space-x-reverse);
-        }
+      @include \2xl {
+        @include get_-space-x-($v, $isReverse);
       }
     }
 
     @mixin \2xl\:-space-y-($v, $isReverse: false) {
-      @if $isReverse {
-        $tw-space-y-reverse: 1 !global;
-        $v: $tw-dummy-space-y-value;
-      } @else {
-        $tw-dummy-space-y-value: -$v !global; // update value when using reverse
-      }
-
-      @media (min-width: $\2xl) {
-        > * ~ * {
-          @include margin-top(-$v * (1 - $tw-space-y-reverse));
-          @include margin-bottom(-$v * $tw-space-y-reverse);
-        }
+      @include \2xl {
+        @include get_-space-y-($v, $isReverse);
       }
     }
+
     // x*/
   }
 }

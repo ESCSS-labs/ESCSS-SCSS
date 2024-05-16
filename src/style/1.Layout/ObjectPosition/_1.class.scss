@@ -43,7 +43,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:object-bottom {
       @include sm\:object-(bottom);
@@ -224,6 +224,7 @@
     @mixin \2xl\:object-top {
       @include \2xl\:object-(top);
     }
+
     // x*/
   }
 }
@@ -235,23 +236,23 @@
   }
 
   @mixin sm\:object-($v) {
-    @include sm\:object-position($v);
+    @include object-position($v, $sm);
   }
 
   @mixin md\:object-($v) {
-    @include md\:object-position($v);
+    @include object-position($v, $md);
   }
 
   @mixin lg\:object-($v) {
-    @include lg\:object-position($v);
+    @include object-position($v, $lg);
   }
 
   @mixin xl\:object-($v) {
-    @include xl\:object-position($v);
+    @include object-position($v, $xl);
   }
 
   @mixin \2xl\:object-($v) {
-    @include \2xl\:object-position($v);
+    @include object-position($v, $\2xl);
   }
 
   // x*/

@@ -229,55 +229,44 @@
 
 @if $Custom {
   // /*x
-  @mixin line-clamp-($v) {
+  @mixin get_line-clamp-($v) {
     @include overflow(hidden);
     @include display(-webkit-box);
     @include -webkit-box-orient(vertical);
     @include -webkit-line-clamp($v);
   }
 
+  @mixin line-clamp-($v) {
+    @include get_line-clamp-($v);
+  }
+
   @mixin sm\:line-clamp-($v) {
-    @media (min-width: $sm) {
-      @include overflow(hidden);
-      @include display(-webkit-box);
-      @include -webkit-box-orient(vertical);
-      @include -webkit-line-clamp($v);
+    @include sm {
+      @include get_line-clamp-($v);
     }
   }
 
   @mixin md\:line-clamp-($v) {
-    @media (min-width: $md) {
-      @include overflow(hidden);
-      @include display(-webkit-box);
-      @include -webkit-box-orient(vertical);
-      @include -webkit-line-clamp($v);
+    @include md {
+      @include get_line-clamp-($v);
     }
   }
 
   @mixin lg\:line-clamp-($v) {
-    @media (min-width: $lg) {
-      @include overflow(hidden);
-      @include display(-webkit-box);
-      @include -webkit-box-orient(vertical);
-      @include -webkit-line-clamp($v);
+    @include lg {
+      @include get_line-clamp-($v);
     }
   }
 
   @mixin xl\:line-clamp-($v) {
-    @media (min-width: $xl) {
-      @include overflow(hidden);
-      @include display(-webkit-box);
-      @include -webkit-box-orient(vertical);
-      @include -webkit-line-clamp($v);
+    @include xl {
+      @include get_line-clamp-($v);
     }
   }
 
   @mixin \2xl\:line-clamp-($v) {
-    @media (min-width: $\2xl) {
-      @include overflow(hidden);
-      @include display(-webkit-box);
-      @include -webkit-box-orient(vertical);
-      @include -webkit-line-clamp($v);
+    @include \2xl {
+      @include get_line-clamp-($v);
     }
   }
 

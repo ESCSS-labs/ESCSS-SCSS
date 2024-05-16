@@ -23,7 +23,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:auto-rows-auto {
       @include sm\:auto-rows-(auto);
@@ -116,23 +116,23 @@
   }
 
   @mixin sm\:auto-rows-($v) {
-    @include sm\:grid-auto-rows($v);
+    @include grid-auto-rows($v, $sm);
   }
 
   @mixin md\:auto-rows-($v) {
-    @include md\:grid-auto-rows($v);
+    @include grid-auto-rows($v, $md);
   }
 
   @mixin lg\:auto-rows-($v) {
-    @include lg\:grid-auto-rows($v);
+    @include grid-auto-rows($v, $lg);
   }
 
   @mixin xl\:auto-rows-($v) {
-    @include xl\:grid-auto-rows($v);
+    @include grid-auto-rows($v, $xl);
   }
 
   @mixin \2xl\:auto-rows-($v) {
-    @include \2xl\:grid-auto-rows($v);
+    @include grid-auto-rows($v, $\2xl);
   }
 
   // x*/

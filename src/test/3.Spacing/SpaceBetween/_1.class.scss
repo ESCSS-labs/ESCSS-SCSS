@@ -651,7 +651,7 @@
   }
 }
 
-@mixin -space-x-($v, $isReverse: false) {
+@mixin get_-space-x-($v, $isReverse: false) {
   @if $isReverse {
     $tw-space-x-reverse: 1 !global;
     $v: $tw-dummy-space-x-value;
@@ -665,7 +665,7 @@
   }
 }
 
-@mixin -space-y-($v, $isReverse: false) {
+@mixin get_-space-y-($v, $isReverse: false) {
   @if $isReverse {
     $tw-space-y-reverse: 1 !global;
     $v: $tw-dummy-space-y-value;
@@ -677,6 +677,14 @@
     @include margin-top(-$v * (1 - $tw-space-y-reverse));
     @include margin-bottom(-$v * $tw-space-y-reverse);
   }
+}
+
+@mixin -space-x-($v, $isReverse: false) {
+  @include get_-space-x-($v, $isReverse);
+}
+
+@mixin -space-y-($v, $isReverse: false) {
+  @include get_-space-y-($v, $isReverse);
 }
 
 @include describe("3.Spacing") {

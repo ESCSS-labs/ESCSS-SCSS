@@ -5943,7 +5943,7 @@
 
 @if $Custom {
   // /*x
-  @mixin text-($v) {
+  @mixin get_text-($v) {
     @if meta.type-of($v)
       ==color or
       list.index(inherit currentColor transparent, $v)
@@ -5963,113 +5963,37 @@
     }
   }
 
+  @mixin text-($v) {
+    @include get_text-($v);
+  }
+
   @mixin sm\:text-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      @include sm\:color($v);
-    }
-
-    // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
-    @else if meta.type-of($v) ==list {
-      @media (min-width: $sm) {
-        @include font-size(list.nth($v, 1));
-        @include line-height(list.nth($v, 2));
-      }
-    }
-
-    // e.g. text-(14px)
-    @else {
-      @include sm\:font-size($v);
+    @include sm {
+      @include get_text-($v);
     }
   }
 
   @mixin md\:text-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      @include md\:color($v);
-    }
-
-    // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
-    @else if meta.type-of($v) ==list {
-      @media (min-width: $md) {
-        @include font-size(list.nth($v, 1));
-        @include line-height(list.nth($v, 2));
-      }
-    }
-
-    // e.g. text-(14px)
-    @else {
-      @include md\:font-size($v);
+    @include md {
+      @include get_text-($v);
     }
   }
 
   @mixin lg\:text-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      @include lg\:color($v);
-    }
-
-    // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
-    @else if meta.type-of($v) ==list {
-      @media (min-width: $lg) {
-        @include font-size(list.nth($v, 1));
-        @include line-height(list.nth($v, 2));
-      }
-    }
-
-    // e.g. text-(14px)
-    @else {
-      @include lg\:font-size($v);
+    @include lg {
+      @include get_text-($v);
     }
   }
 
   @mixin xl\:text-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      @include xl\:color($v);
-    }
-
-    // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
-    @else if meta.type-of($v) ==list {
-      @media (min-width: $xl) {
-        @include font-size(list.nth($v, 1));
-        @include line-height(list.nth($v, 2));
-      }
-    }
-
-    // e.g. text-(14px)
-    @else {
-      @include xl\:font-size($v);
+    @include xl {
+      @include get_text-($v);
     }
   }
 
   @mixin \2xl\:text-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      @include \2xl\:color($v);
-    }
-
-    // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
-    @else if meta.type-of($v) ==list {
-      @media (min-width: $\2xl) {
-        @include font-size(list.nth($v, 1));
-        @include line-height(list.nth($v, 2));
-      }
-    }
-
-    // e.g. text-(14px)
-    @else {
-      @include \2xl\:font-size($v);
+    @include \2xl {
+      @include get_text-($v);
     }
   }
 

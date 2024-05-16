@@ -39,7 +39,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:align-baseline {
       @include sm\:align-(baseline);
@@ -212,23 +212,23 @@
   }
 
   @mixin sm\:align-($v) {
-    @include sm\:vertical-align($v);
+    @include vertical-align($v, $sm);
   }
 
   @mixin md\:align-($v) {
-    @include md\:vertical-align($v);
+    @include vertical-align($v, $md);
   }
 
   @mixin lg\:align-($v) {
-    @include lg\:vertical-align($v);
+    @include vertical-align($v, $lg);
   }
 
   @mixin xl\:align-($v) {
-    @include xl\:vertical-align($v);
+    @include vertical-align($v, $xl);
   }
 
   @mixin \2xl\:align-($v) {
-    @include \2xl\:vertical-align($v);
+    @include vertical-align($v, $\2xl);
   }
 
   // x*/

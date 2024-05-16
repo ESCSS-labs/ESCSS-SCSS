@@ -63,7 +63,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:grid-rows-1 {
       @include sm\:grid-rows-(repeat(1, minmax(0, 1fr)));
@@ -344,6 +344,7 @@
     @mixin \2xl\:grid-rows-subgrid {
       @include \2xl\:grid-rows-(subgrid);
     }
+
     // x*/
   }
 }
@@ -355,23 +356,23 @@
   }
 
   @mixin sm\:grid-rows-($v) {
-    @include sm\:grid-template-rows($v);
+    @include grid-template-rows($v, $sm);
   }
 
   @mixin md\:grid-rows-($v) {
-    @include md\:grid-template-rows($v);
+    @include grid-template-rows($v, $md);
   }
 
   @mixin lg\:grid-rows-($v) {
-    @include lg\:grid-template-rows($v);
+    @include grid-template-rows($v, $lg);
   }
 
   @mixin xl\:grid-rows-($v) {
-    @include xl\:grid-template-rows($v);
+    @include grid-template-rows($v, $xl);
   }
 
   @mixin \2xl\:grid-rows-($v) {
-    @include \2xl\:grid-template-rows($v);
+    @include grid-template-rows($v, $\2xl);
   }
 
   // x*/

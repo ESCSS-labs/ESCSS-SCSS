@@ -163,7 +163,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:min-w-0 {
       @include sm\:min-w-($\0);
@@ -956,22 +956,24 @@
   }
 
   @mixin sm\:min-w-($v) {
-    @include sm\:min-width($v);
+    @include min-width($v, $sm);
   }
 
   @mixin md\:min-w-($v) {
-    @include md\:min-width($v);
+    @include min-width($v, $md);
   }
 
   @mixin lg\:min-w-($v) {
-    @include lg\:min-width($v);
+    @include min-width($v, $lg);
   }
 
   @mixin xl\:min-w-($v) {
-    @include xl\:min-width($v);
+    @include min-width($v, $xl);
   }
 
   @mixin \2xl\:min-w-($v) {
-    @include \2xl\:min-width($v);
-  } // x*/
+    @include min-width($v, $\2xl);
+  }
+
+  // x*/
 }

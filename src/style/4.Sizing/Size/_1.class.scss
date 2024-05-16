@@ -1665,43 +1665,42 @@
 
 @if $Custom {
   // /*x
-  @mixin size-($v) {
+  @mixin get_size-($v) {
     @include width($v);
     @include height($v);
   }
 
+  @mixin size-($v) {
+    @include get_size-($v);
+  }
+
   @mixin sm\:size-($v) {
-    @media (min-width: $sm) {
-      @include width($v);
-      @include height($v);
+    @include sm {
+      @include get_size-($v);
     }
   }
 
   @mixin md\:size-($v) {
-    @media (min-width: $md) {
-      @include width($v);
-      @include height($v);
+    @include md {
+      @include get_size-($v);
     }
   }
 
   @mixin lg\:size-($v) {
-    @media (min-width: $lg) {
-      @include width($v);
-      @include height($v);
+    @include lg {
+      @include get_size-($v);
     }
   }
 
   @mixin xl\:size-($v) {
-    @media (min-width: $xl) {
-      @include width($v);
-      @include height($v);
+    @include xl {
+      @include get_size-($v);
     }
   }
 
   @mixin \2xl\:size-($v) {
-    @media (min-width: $\2xl) {
-      @include width($v);
-      @include height($v);
+    @include \2xl {
+      @include get_size-($v);
     }
   }
 

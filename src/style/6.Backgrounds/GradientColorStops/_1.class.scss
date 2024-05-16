@@ -20112,7 +20112,7 @@
 
 @if $Custom {
   // /*x
-  @mixin from-($v) {
+  @mixin get_from-($v) {
     @if list.index(inherit, $v) {
       @include background-image(
         inherit !important
@@ -20126,7 +20126,7 @@
     }
   }
 
-  @mixin via-($v) {
+  @mixin get_via-($v) {
     @if list.index(inherit, $v) {
       @include background-image(
         inherit !important
@@ -20140,7 +20140,7 @@
     }
   }
 
-  @mixin to-($v) {
+  @mixin get_to-($v) {
     @if list.index(inherit, $v) {
       @include background-image(
         inherit !important
@@ -20154,183 +20154,105 @@
     }
   }
 
+  @mixin from-($v) {
+    @include get_from-($v);
+  }
+
+  @mixin via-($v) {
+    @include get_via-($v);
+  }
+
+  @mixin to-($v) {
+    @include get_to-($v);
+  }
+
   @mixin sm\:from-($v) {
-    @if list.index(inherit, $v) {
-      @include sm\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-from: $v !global;
-      @include sm\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-from-position: $v !global;
-      @include sm\:background-image(get_linear-gradient());
+    @include sm {
+      @include get_from-($v);
     }
   }
 
   @mixin sm\:via-($v) {
-    @if list.index(inherit, $v) {
-      @include sm\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-via: $v !global;
-      @include sm\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-via-position: $v !global;
-      @include sm\:background-image(get_linear-gradient());
+    @include sm {
+      @include get_via-($v);
     }
   }
 
   @mixin sm\:to-($v) {
-    @if list.index(inherit, $v) {
-      @include sm\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-to: $v !global;
-      @include sm\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-to-position: $v !global;
-      @include sm\:background-image(get_linear-gradient());
+    @include sm {
+      @include get_to-($v);
     }
   }
 
   @mixin md\:from-($v) {
-    @if list.index(inherit, $v) {
-      @include md\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-from: $v !global;
-      @include md\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-from-position: $v !global;
-      @include md\:background-image(get_linear-gradient());
+    @include md {
+      @include get_from-($v);
     }
   }
 
   @mixin md\:via-($v) {
-    @if list.index(inherit, $v) {
-      @include md\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-via: $v !global;
-      @include md\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-via-position: $v !global;
-      @include md\:background-image(get_linear-gradient());
+    @include md {
+      @include get_via-($v);
     }
   }
 
   @mixin md\:to-($v) {
-    @if list.index(inherit, $v) {
-      @include md\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-to: $v !global;
-      @include md\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-to-position: $v !global;
-      @include md\:background-image(get_linear-gradient());
+    @include md {
+      @include get_to-($v);
     }
   }
 
   @mixin lg\:from-($v) {
-    @if list.index(inherit, $v) {
-      @include lg\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-from: $v !global;
-      @include lg\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-from-position: $v !global;
-      @include lg\:background-image(get_linear-gradient());
+    @include lg {
+      @include get_from-($v);
     }
   }
 
   @mixin lg\:via-($v) {
-    @if list.index(inherit, $v) {
-      @include lg\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-via: $v !global;
-      @include lg\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-via-position: $v !global;
-      @include lg\:background-image(get_linear-gradient());
+    @include lg {
+      @include get_via-($v);
     }
   }
 
   @mixin lg\:to-($v) {
-    @if list.index(inherit, $v) {
-      @include lg\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-to: $v !global;
-      @include lg\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-to-position: $v !global;
-      @include lg\:background-image(get_linear-gradient());
+    @include lg {
+      @include get_to-($v);
     }
   }
 
   @mixin xl\:from-($v) {
-    @if list.index(inherit, $v) {
-      @include xl\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-from: $v !global;
-      @include xl\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-from-position: $v !global;
-      @include xl\:background-image(get_linear-gradient());
+    @include xl {
+      @include get_from-($v);
     }
   }
 
   @mixin xl\:via-($v) {
-    @if list.index(inherit, $v) {
-      @include xl\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-via: $v !global;
-      @include xl\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-via-position: $v !global;
-      @include xl\:background-image(get_linear-gradient());
+    @include xl {
+      @include get_via-($v);
     }
   }
 
   @mixin xl\:to-($v) {
-    @if list.index(inherit, $v) {
-      @include xl\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-to: $v !global;
-      @include xl\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-to-position: $v !global;
-      @include xl\:background-image(get_linear-gradient());
+    @include xl {
+      @include get_to-($v);
     }
   }
 
   @mixin \2xl\:from-($v) {
-    @if list.index(inherit, $v) {
-      @include \2xl\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-from: $v !global;
-      @include \2xl\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-from-position: $v !global;
-      @include \2xl\:background-image(get_linear-gradient());
+    @include \2xl {
+      @include get_from-($v);
     }
   }
 
   @mixin \2xl\:via-($v) {
-    @if list.index(inherit, $v) {
-      @include \2xl\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-via: $v !global;
-      @include \2xl\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-via-position: $v !global;
-      @include \2xl\:background-image(get_linear-gradient());
+    @include \2xl {
+      @include get_via-($v);
     }
   }
 
   @mixin \2xl\:to-($v) {
-    @if list.index(inherit, $v) {
-      @include \2xl\:background-image(inherit !important); // to match same behavior as tailwind
-    } @else if meta.type-of($v) ==color or list.index(currentColor, $v) {
-      $tw-gradient-to: $v !global;
-      @include \2xl\:background-image(get_linear-gradient());
-    } @else {
-      $tw-gradient-to-position: $v !global;
-      @include \2xl\:background-image(get_linear-gradient());
+    @include \2xl {
+      @include get_to-($v);
     }
   }
 

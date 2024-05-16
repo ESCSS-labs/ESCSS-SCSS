@@ -43,7 +43,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:origin-center {
       @include sm\:origin-(center);
@@ -224,6 +224,7 @@
     @mixin \2xl\:origin-top-left {
       @include \2xl\:origin-(top left);
     }
+
     // x*/
   }
 }
@@ -235,23 +236,24 @@
   }
 
   @mixin sm\:origin-($v) {
-    @include sm\:transform-origin($v);
+    @include transform-origin($v, $sm);
   }
 
   @mixin md\:origin-($v) {
-    @include md\:transform-origin($v);
+    @include transform-origin($v, $md);
   }
 
   @mixin lg\:origin-($v) {
-    @include lg\:transform-origin($v);
+    @include transform-origin($v, $lg);
   }
 
   @mixin xl\:origin-($v) {
-    @include xl\:transform-origin($v);
+    @include transform-origin($v, $xl);
   }
 
   @mixin \2xl\:origin-($v) {
-    @include \2xl\:transform-origin($v);
+    @include transform-origin($v, $\2xl);
   }
+
   // x*/
 }

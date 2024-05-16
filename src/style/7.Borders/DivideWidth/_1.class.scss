@@ -356,13 +356,14 @@
     @mixin \2xl\:divide-y-8 {
       @include \2xl\:divide-y-(8px);
     }
+
     // x*/
   }
 }
 
 @if $Custom {
   // /*x
-  @mixin divide-x-($v, $isReverse: false) {
+  @mixin get_divide-x-($v, $isReverse: false) {
     @if $isReverse {
       $tw-divide-x-reverse: 1 !global;
       $v: $tw-dummy-divide-x-value;
@@ -376,7 +377,7 @@
     }
   }
 
-  @mixin divide-y-($v, $isReverse: false) {
+  @mixin get_divide-y-($v, $isReverse: false) {
     @if $isReverse {
       $tw-divide-y-reverse: 1 !global;
       $v: $tw-dummy-divide-y-value;
@@ -390,163 +391,71 @@
     }
   }
 
-  @mixin sm\:divide-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-x-reverse: 1 !global;
-      $v: $tw-dummy-divide-x-value;
-    } @else {
-      $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
-    }
+  @mixin divide-x-($v, $isReverse: false) {
+    @include get_divide-x-($v, $isReverse);
+  }
 
-    @media (min-width: $sm) {
-      > * ~ * {
-        @include border-right-width($v * $tw-divide-x-reverse);
-        @include border-left-width($v * (1 - $tw-divide-x-reverse));
-      }
+  @mixin divide-y-($v, $isReverse: false) {
+    @include get_divide-y-($v, $isReverse);
+  }
+
+  @mixin sm\:divide-x-($v, $isReverse: false) {
+    @include sm {
+      @include get_divide-x-($v, $isReverse);
     }
   }
 
   @mixin sm\:divide-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-y-reverse: 1 !global;
-      $v: $tw-dummy-divide-y-value;
-    } @else {
-      $tw-dummy-divide-y-value: $v !global; // update global value for using reverse
-    }
-
-    @media (min-width: $sm) {
-      > * ~ * {
-        @include border-top-width($v * (1 - $tw-divide-y-reverse));
-        @include border-bottom-width($v * $tw-divide-y-reverse);
-      }
+    @include sm {
+      @include get_divide-y-($v, $isReverse);
     }
   }
 
   @mixin md\:divide-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-x-reverse: 1 !global;
-      $v: $tw-dummy-divide-x-value;
-    } @else {
-      $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
-    }
-
-    @media (min-width: $md) {
-      > * ~ * {
-        @include border-right-width($v * $tw-divide-x-reverse);
-        @include border-left-width($v * (1 - $tw-divide-x-reverse));
-      }
+    @include md {
+      @include get_divide-x-($v, $isReverse);
     }
   }
 
   @mixin md\:divide-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-y-reverse: 1 !global;
-      $v: $tw-dummy-divide-y-value;
-    } @else {
-      $tw-dummy-divide-y-value: $v !global; // update global value for using reverse
-    }
-
-    @media (min-width: $md) {
-      > * ~ * {
-        @include border-top-width($v * (1 - $tw-divide-y-reverse));
-        @include border-bottom-width($v * $tw-divide-y-reverse);
-      }
+    @include md {
+      @include get_divide-y-($v, $isReverse);
     }
   }
 
   @mixin lg\:divide-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-x-reverse: 1 !global;
-      $v: $tw-dummy-divide-x-value;
-    } @else {
-      $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
-    }
-
-    @media (min-width: $lg) {
-      > * ~ * {
-        @include border-right-width($v * $tw-divide-x-reverse);
-        @include border-left-width($v * (1 - $tw-divide-x-reverse));
-      }
+    @include lg {
+      @include get_divide-x-($v, $isReverse);
     }
   }
 
   @mixin lg\:divide-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-y-reverse: 1 !global;
-      $v: $tw-dummy-divide-y-value;
-    } @else {
-      $tw-dummy-divide-y-value: $v !global; // update global value for using reverse
-    }
-
-    @media (min-width: $lg) {
-      > * ~ * {
-        @include border-top-width($v * (1 - $tw-divide-y-reverse));
-        @include border-bottom-width($v * $tw-divide-y-reverse);
-      }
+    @include lg {
+      @include get_divide-y-($v, $isReverse);
     }
   }
 
   @mixin xl\:divide-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-x-reverse: 1 !global;
-      $v: $tw-dummy-divide-x-value;
-    } @else {
-      $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
-    }
-
-    @media (min-width: $xl) {
-      > * ~ * {
-        @include border-right-width($v * $tw-divide-x-reverse);
-        @include border-left-width($v * (1 - $tw-divide-x-reverse));
-      }
+    @include xl {
+      @include get_divide-x-($v, $isReverse);
     }
   }
 
   @mixin xl\:divide-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-y-reverse: 1 !global;
-      $v: $tw-dummy-divide-y-value;
-    } @else {
-      $tw-dummy-divide-y-value: $v !global; // update global value for using reverse
-    }
-
-    @media (min-width: $xl) {
-      > * ~ * {
-        @include border-top-width($v * (1 - $tw-divide-y-reverse));
-        @include border-bottom-width($v * $tw-divide-y-reverse);
-      }
+    @include xl {
+      @include get_divide-y-($v, $isReverse);
     }
   }
 
   @mixin \2xl\:divide-x-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-x-reverse: 1 !global;
-      $v: $tw-dummy-divide-x-value;
-    } @else {
-      $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
-    }
-
-    @media (min-width: $\2xl) {
-      > * ~ * {
-        @include border-right-width($v * $tw-divide-x-reverse);
-        @include border-left-width($v * (1 - $tw-divide-x-reverse));
-      }
+    @include \2xl {
+      @include get_divide-x-($v, $isReverse);
     }
   }
 
   @mixin \2xl\:divide-y-($v, $isReverse: false) {
-    @if $isReverse {
-      $tw-divide-y-reverse: 1 !global;
-      $v: $tw-dummy-divide-y-value;
-    } @else {
-      $tw-dummy-divide-y-value: $v !global; // update global value for using reverse
-    }
-
-    @media (min-width: $\2xl) {
-      > * ~ * {
-        @include border-top-width($v * (1 - $tw-divide-y-reverse));
-        @include border-bottom-width($v * $tw-divide-y-reverse);
-      }
+    @include \2xl {
+      @include get_divide-y-($v, $isReverse);
     }
   }
 

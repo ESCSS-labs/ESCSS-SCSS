@@ -995,7 +995,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 {
+  @if $sizeMode ==0 {
     // /*x
     @mixin sm\:caret-inherit {
       @include sm\:caret-(inherit);
@@ -5936,6 +5936,7 @@
     @mixin \2xl\:caret-rose-950($v: 1) {
       @include \2xl\:caret-(c($ros-950, $v));
     }
+
     // x*/
   }
 }
@@ -5947,23 +5948,23 @@
   }
 
   @mixin sm\:caret-($v) {
-    @include sm\:caret-color($v);
+    @include caret-color($v, $sm);
   }
 
   @mixin md\:caret-($v) {
-    @include md\:caret-color($v);
+    @include caret-color($v, $md);
   }
 
   @mixin lg\:caret-($v) {
-    @include lg\:caret-color($v);
+    @include caret-color($v, $lg);
   }
 
   @mixin xl\:caret-($v) {
-    @include xl\:caret-color($v);
+    @include caret-color($v, $xl);
   }
 
   @mixin \2xl\:caret-($v) {
-    @include \2xl\:caret-color($v);
+    @include caret-color($v, $\2xl);
   }
 
   // x*/

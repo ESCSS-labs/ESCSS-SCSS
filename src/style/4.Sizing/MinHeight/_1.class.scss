@@ -179,7 +179,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:min-h-0 {
       @include sm\:min-h-($\0);
@@ -1040,6 +1040,7 @@
     @mixin \2xl\:min-h-fit {
       @include \2xl\:min-h-(fit-content);
     }
+
     // x*/
   }
 }
@@ -1051,23 +1052,24 @@
   }
 
   @mixin sm\:min-h-($v) {
-    @include sm\:min-height($v);
+    @include min-height($v, $sm);
   }
 
   @mixin md\:min-h-($v) {
-    @include md\:min-height($v);
+    @include min-height($v, $md);
   }
 
   @mixin lg\:min-h-($v) {
-    @include lg\:min-height($v);
+    @include min-height($v, $lg);
   }
 
   @mixin xl\:min-h-($v) {
-    @include xl\:min-height($v);
+    @include min-height($v, $xl);
   }
 
   @mixin \2xl\:min-h-($v) {
-    @include \2xl\:min-height($v);
+    @include min-height($v, $\2xl);
   }
+
   // x*/
 }

@@ -160,7 +160,7 @@
 
 @if $Custom {
   // /*x
-  @mixin ring-offset-($v) {
+  @mixin get_ring-offset-($v) {
     @if meta.type-of($v)
       ==color or
       list.index(inherit currentColor transparent, $v)
@@ -173,93 +173,36 @@
 
       $tw-ring-offset-width: $v !global;
     }
+  }
 
+  @mixin ring-offset-($v) {
+    @include get_ring-offset-($v);
     @include box-shadow(get_box-shadow());
   }
 
   @mixin sm\:ring-offset-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-offset-color: $v !global;
-    } @else {
-      @if $tw-dummy-not-match--ring-offset-width {
-        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
-      }
-
-      $tw-ring-offset-width: $v !global;
-    }
-
-    @include sm\:box-shadow(get_box-shadow());
+    @include get_ring-offset-($v);
+    @include box-shadow(get_box-shadow(), $sm);
   }
 
   @mixin md\:ring-offset-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-offset-color: $v !global;
-    } @else {
-      @if $tw-dummy-not-match--ring-offset-width {
-        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
-      }
-
-      $tw-ring-offset-width: $v !global;
-    }
-
-    @include md\:box-shadow(get_box-shadow());
+    @include get_ring-offset-($v);
+    @include box-shadow(get_box-shadow(), $md);
   }
 
   @mixin lg\:ring-offset-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-offset-color: $v !global;
-    } @else {
-      @if $tw-dummy-not-match--ring-offset-width {
-        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
-      }
-
-      $tw-ring-offset-width: $v !global;
-    }
-
-    @include lg\:box-shadow(get_box-shadow());
+    @include get_ring-offset-($v);
+    @include box-shadow(get_box-shadow(), $lg);
   }
 
   @mixin xl\:ring-offset-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-offset-color: $v !global;
-    } @else {
-      @if $tw-dummy-not-match--ring-offset-width {
-        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
-      }
-
-      $tw-ring-offset-width: $v !global;
-    }
-
-    @include xl\:box-shadow(get_box-shadow());
+    @include get_ring-offset-($v);
+    @include box-shadow(get_box-shadow(), $xl);
   }
 
   @mixin \2xl\:ring-offset-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-offset-color: $v !global;
-    } @else {
-      @if $tw-dummy-not-match--ring-offset-width {
-        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
-      }
-
-      $tw-ring-offset-width: $v !global;
-    }
-
-    @include \2xl\:box-shadow(get_box-shadow());
+    @include get_ring-offset-($v);
+    @include box-shadow(get_box-shadow(), $\2xl);
   }
 
   // x*/

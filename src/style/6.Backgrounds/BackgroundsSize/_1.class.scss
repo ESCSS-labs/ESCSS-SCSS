@@ -19,7 +19,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:bg-auto {
       @include sm\:bg-(length auto);
@@ -85,6 +85,64 @@
   }
 }
 
-// same as  @mixin bg-($v)
 @if $Custom {
+  // /*x
+  @mixin get_bg-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include background-color($v);
+    } @else if list.nth($v, 1) ==length {
+      @include background-size(
+        list.set-nth($v, 1, $space)
+      ); // remove the token "length" to identify background-size
+    } @else if
+      list.index(top right bottom left center, $v) or
+      meta.type-of($v)
+      ==number or
+      meta.type-of($v)
+      ==list
+    {
+      @include background-position($v);
+    } @else {
+      @include background-image($v);
+    }
+  }
+
+  @mixin bg-($v) {
+    @include get_bg-($v);
+  }
+
+  @mixin sm\:bg-($v) {
+    @include sm {
+      @include get_bg-($v);
+    }
+  }
+
+  @mixin md\:bg-($v) {
+    @include md {
+      @include get_bg-($v);
+    }
+  }
+
+  @mixin lg\:bg-($v) {
+    @include lg {
+      @include get_bg-($v);
+    }
+  }
+
+  @mixin xl\:bg-($v) {
+    @include xl {
+      @include get_bg-($v);
+    }
+  }
+
+  @mixin \2xl\:bg-($v) {
+    @include \2xl {
+      @include get_bg-($v);
+    }
+  }
+
+  // x*/
 }

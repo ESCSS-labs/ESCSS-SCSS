@@ -63,7 +63,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:leading-3 {
       @include sm\:leading-($leading-3);
@@ -356,23 +356,23 @@
   }
 
   @mixin sm\:leading-($v) {
-    @include sm\:line-height($v);
+    @include line-height($v, $sm);
   }
 
   @mixin md\:leading-($v) {
-    @include md\:line-height($v);
+    @include line-height($v, $md);
   }
 
   @mixin lg\:leading-($v) {
-    @include lg\:line-height($v);
+    @include line-height($v, $lg);
   }
 
   @mixin xl\:leading-($v) {
-    @include xl\:line-height($v);
+    @include line-height($v, $xl);
   }
 
   @mixin \2xl\:leading-($v) {
-    @include \2xl\:line-height($v);
+    @include line-height($v, $\2xl);
   }
 
   // x*/

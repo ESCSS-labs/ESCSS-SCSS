@@ -195,7 +195,7 @@
 
 @if $Custom {
   // /*x
-  @mixin ring-($v) {
+  @mixin get_ring-($v) {
     @if meta.type-of($v)
       ==color or
       list.index(inherit currentColor transparent, $v)
@@ -205,78 +205,36 @@
       $tw-dummy-not-match--ring-offset-width: true !global;
       $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
     }
+  }
 
+  @mixin ring-($v) {
+    @include get_ring-($v);
     @include box-shadow(get_box-shadow());
   }
 
   @mixin sm\:ring-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-color: $v !global;
-    } @else {
-      $tw-dummy-not-match--ring-offset-width: true !global;
-      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
-    }
-
-    @include sm\:box-shadow(get_box-shadow());
+    @include get_ring-($v);
+    @include box-shadow(get_box-shadow(), $sm);
   }
 
   @mixin md\:ring-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-color: $v !global;
-    } @else {
-      $tw-dummy-not-match--ring-offset-width: true !global;
-      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
-    }
-
-    @include md\:box-shadow(get_box-shadow());
+    @include get_ring-($v);
+    @include box-shadow(get_box-shadow(), $md);
   }
 
   @mixin lg\:ring-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-color: $v !global;
-    } @else {
-      $tw-dummy-not-match--ring-offset-width: true !global;
-      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
-    }
-
-    @include lg\:box-shadow(get_box-shadow());
+    @include get_ring-($v);
+    @include box-shadow(get_box-shadow(), $lg);
   }
 
   @mixin xl\:ring-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-color: $v !global;
-    } @else {
-      $tw-dummy-not-match--ring-offset-width: true !global;
-      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
-    }
-
-    @include xl\:box-shadow(get_box-shadow());
+    @include get_ring-($v);
+    @include box-shadow(get_box-shadow(), $xl);
   }
 
   @mixin \2xl\:ring-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
-      $tw-ring-color: $v !global;
-    } @else {
-      $tw-dummy-not-match--ring-offset-width: true !global;
-      $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
-    }
-
-    @include \2xl\:box-shadow(get_box-shadow());
+    @include get_ring-($v);
+    @include box-shadow(get_box-shadow(), $\2xl);
   }
 
   // x*/

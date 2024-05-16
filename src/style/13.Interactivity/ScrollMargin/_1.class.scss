@@ -1337,7 +1337,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:scroll-m-0 {
       @include sm\:scroll-m-($\0);
@@ -10204,214 +10204,215 @@
   }
 
   @mixin sm\:scroll-m-($v) {
-    @include sm\:scroll-margin($v);
+    @include scroll-margin($v, $sm);
   }
 
   @mixin sm\:scroll-mx-($v) {
-    @media (min-width: $sm) {
+    @include sm {
       @include scroll-margin-left($v);
       @include scroll-margin-right($v);
     }
   }
 
   @mixin sm\:scroll-my-($v) {
-    @media (min-width: $sm) {
+    @include sm {
       @include scroll-margin-top($v);
       @include scroll-margin-bottom($v);
     }
   }
 
   @mixin sm\:scroll-ms-($v) {
-    @include sm\:scroll-margin-inline-start($v);
+    @include scroll-margin-inline-start($v, $sm);
   }
 
   @mixin sm\:scroll-me-($v) {
-    @include sm\:scroll-margin-inline-end($v);
+    @include scroll-margin-inline-end($v, $sm);
   }
 
   @mixin sm\:scroll-mt-($v) {
-    @include sm\:scroll-margin-top($v);
+    @include scroll-margin-top($v, $sm);
   }
 
   @mixin sm\:scroll-mr-($v) {
-    @include sm\:scroll-margin-right($v);
+    @include scroll-margin-right($v, $sm);
   }
 
   @mixin sm\:scroll-mb-($v) {
-    @include sm\:scroll-margin-bottom($v);
+    @include scroll-margin-bottom($v, $sm);
   }
 
   @mixin sm\:scroll-ml-($v) {
-    @include sm\:scroll-margin-left($v);
+    @include scroll-margin-left($v, $sm);
   }
 
   @mixin md\:scroll-m-($v) {
-    @include md\:scroll-margin($v);
+    @include scroll-margin($v, $md);
   }
 
   @mixin md\:scroll-mx-($v) {
-    @media (min-width: $md) {
+    @include md {
       @include scroll-margin-left($v);
       @include scroll-margin-right($v);
     }
   }
 
   @mixin md\:scroll-my-($v) {
-    @media (min-width: $md) {
+    @include md {
       @include scroll-margin-top($v);
       @include scroll-margin-bottom($v);
     }
   }
 
   @mixin md\:scroll-ms-($v) {
-    @include md\:scroll-margin-inline-start($v);
+    @include scroll-margin-inline-start($v, $md);
   }
 
   @mixin md\:scroll-me-($v) {
-    @include md\:scroll-margin-inline-end($v);
+    @include scroll-margin-inline-end($v, $md);
   }
 
   @mixin md\:scroll-mt-($v) {
-    @include md\:scroll-margin-top($v);
+    @include scroll-margin-top($v, $md);
   }
 
   @mixin md\:scroll-mr-($v) {
-    @include md\:scroll-margin-right($v);
+    @include scroll-margin-right($v, $md);
   }
 
   @mixin md\:scroll-mb-($v) {
-    @include md\:scroll-margin-bottom($v);
+    @include scroll-margin-bottom($v, $md);
   }
 
   @mixin md\:scroll-ml-($v) {
-    @include md\:scroll-margin-left($v);
+    @include scroll-margin-left($v, $md);
   }
 
   @mixin lg\:scroll-m-($v) {
-    @include lg\:scroll-margin($v);
+    @include scroll-margin($v, $lg);
   }
 
   @mixin lg\:scroll-mx-($v) {
-    @media (min-width: $lg) {
+    @include lg {
       @include scroll-margin-left($v);
       @include scroll-margin-right($v);
     }
   }
 
   @mixin lg\:scroll-my-($v) {
-    @media (min-width: $lg) {
+    @include lg {
       @include scroll-margin-top($v);
       @include scroll-margin-bottom($v);
     }
   }
 
   @mixin lg\:scroll-ms-($v) {
-    @include lg\:scroll-margin-inline-start($v);
+    @include scroll-margin-inline-start($v, $lg);
   }
 
   @mixin lg\:scroll-me-($v) {
-    @include lg\:scroll-margin-inline-end($v);
+    @include scroll-margin-inline-end($v, $lg);
   }
 
   @mixin lg\:scroll-mt-($v) {
-    @include lg\:scroll-margin-top($v);
+    @include scroll-margin-top($v, $lg);
   }
 
   @mixin lg\:scroll-mr-($v) {
-    @include lg\:scroll-margin-right($v);
+    @include scroll-margin-right($v, $lg);
   }
 
   @mixin lg\:scroll-mb-($v) {
-    @include lg\:scroll-margin-bottom($v);
+    @include scroll-margin-bottom($v, $lg);
   }
 
   @mixin lg\:scroll-ml-($v) {
-    @include lg\:scroll-margin-left($v);
+    @include scroll-margin-left($v, $lg);
   }
 
   @mixin xl\:scroll-m-($v) {
-    @include xl\:scroll-margin($v);
+    @include scroll-margin($v, $xl);
   }
 
   @mixin xl\:scroll-mx-($v) {
-    @media (min-width: $xl) {
+    @include xl {
       @include scroll-margin-left($v);
       @include scroll-margin-right($v);
     }
   }
 
   @mixin xl\:scroll-my-($v) {
-    @media (min-width: $xl) {
+    @include xl {
       @include scroll-margin-top($v);
       @include scroll-margin-bottom($v);
     }
   }
 
   @mixin xl\:scroll-ms-($v) {
-    @include xl\:scroll-margin-inline-start($v);
+    @include scroll-margin-inline-start($v, $xl);
   }
 
   @mixin xl\:scroll-me-($v) {
-    @include xl\:scroll-margin-inline-end($v);
+    @include scroll-margin-inline-end($v, $xl);
   }
 
   @mixin xl\:scroll-mt-($v) {
-    @include xl\:scroll-margin-top($v);
+    @include scroll-margin-top($v, $xl);
   }
 
   @mixin xl\:scroll-mr-($v) {
-    @include xl\:scroll-margin-right($v);
+    @include scroll-margin-right($v, $xl);
   }
 
   @mixin xl\:scroll-mb-($v) {
-    @include xl\:scroll-margin-bottom($v);
+    @include scroll-margin-bottom($v, $xl);
   }
 
   @mixin xl\:scroll-ml-($v) {
-    @include xl\:scroll-margin-left($v);
+    @include scroll-margin-left($v, $xl);
   }
 
   @mixin \2xl\:scroll-m-($v) {
-    @include \2xl\:scroll-margin($v);
+    @include scroll-margin($v, $\2xl);
   }
 
   @mixin \2xl\:scroll-mx-($v) {
-    @media (min-width: $\2xl) {
+    @include \2xl {
       @include scroll-margin-left($v);
       @include scroll-margin-right($v);
     }
   }
 
   @mixin \2xl\:scroll-my-($v) {
-    @media (min-width: $\2xl) {
+    @include \2xl {
       @include scroll-margin-top($v);
       @include scroll-margin-bottom($v);
     }
   }
 
   @mixin \2xl\:scroll-ms-($v) {
-    @include \2xl\:scroll-margin-inline-start($v);
+    @include scroll-margin-inline-start($v, $\2xl);
   }
 
   @mixin \2xl\:scroll-me-($v) {
-    @include \2xl\:scroll-margin-inline-end($v);
+    @include scroll-margin-inline-end($v, $\2xl);
   }
 
   @mixin \2xl\:scroll-mt-($v) {
-    @include \2xl\:scroll-margin-top($v);
+    @include scroll-margin-top($v, $\2xl);
   }
 
   @mixin \2xl\:scroll-mr-($v) {
-    @include \2xl\:scroll-margin-right($v);
+    @include scroll-margin-right($v, $\2xl);
   }
 
   @mixin \2xl\:scroll-mb-($v) {
-    @include \2xl\:scroll-margin-bottom($v);
+    @include scroll-margin-bottom($v, $\2xl);
   }
 
   @mixin \2xl\:scroll-ml-($v) {
-    @include \2xl\:scroll-margin-left($v);
+    @include scroll-margin-left($v, $\2xl);
   }
+
   // x*/
 }
 
@@ -11752,7 +11753,7 @@
   }
 
   @if $Rwd {
-    @if $sizeMode == 0 or $sizeMode == 1 {
+    @if $sizeMode ==0 or $sizeMode ==1 {
       // /*x
       @mixin sm\:-scroll-m-0 {
         @include sm\:-scroll-m-($\0);
@@ -18099,214 +18100,215 @@
     }
 
     @mixin sm\:-scroll-m-($v) {
-      @include sm\:scroll-margin(-$v);
+      @include scroll-margin(-$v, $sm);
     }
 
     @mixin sm\:-scroll-mx-($v) {
-      @media (min-width: $sm) {
+      @include sm {
         @include scroll-margin-left(-$v);
         @include scroll-margin-right(-$v);
       }
     }
 
     @mixin sm\:-scroll-my-($v) {
-      @media (min-width: $sm) {
+      @include sm {
         @include scroll-margin-top(-$v);
         @include scroll-margin-bottom(-$v);
       }
     }
 
     @mixin sm\:-scroll-ms-($v) {
-      @include sm\:scroll-margin-inline-start(-$v);
+      @include scroll-margin-inline-start(-$v, $sm);
     }
 
     @mixin sm\:-scroll-me-($v) {
-      @include sm\:scroll-margin-inline-end(-$v);
+      @include scroll-margin-inline-end(-$v, $sm);
     }
 
     @mixin sm\:-scroll-mt-($v) {
-      @include sm\:scroll-margin-top(-$v);
+      @include scroll-margin-top(-$v, $sm);
     }
 
     @mixin sm\:-scroll-mr-($v) {
-      @include sm\:scroll-margin-right(-$v);
+      @include scroll-margin-right(-$v, $sm);
     }
 
     @mixin sm\:-scroll-mb-($v) {
-      @include sm\:scroll-margin-bottom(-$v);
+      @include scroll-margin-bottom(-$v, $sm);
     }
 
     @mixin sm\:-scroll-ml-($v) {
-      @include sm\:scroll-margin-left(-$v);
+      @include scroll-margin-left(-$v, $sm);
     }
 
     @mixin md\:-scroll-m-($v) {
-      @include md\:scroll-margin(-$v);
+      @include scroll-margin(-$v, $md);
     }
 
     @mixin md\:-scroll-mx-($v) {
-      @media (min-width: $md) {
+      @include md {
         @include scroll-margin-left(-$v);
         @include scroll-margin-right(-$v);
       }
     }
 
     @mixin md\:-scroll-my-($v) {
-      @media (min-width: $md) {
+      @include md {
         @include scroll-margin-top(-$v);
         @include scroll-margin-bottom(-$v);
       }
     }
 
     @mixin md\:-scroll-ms-($v) {
-      @include md\:scroll-margin-inline-start(-$v);
+      @include scroll-margin-inline-start(-$v, $md);
     }
 
     @mixin md\:-scroll-me-($v) {
-      @include md\:scroll-margin-inline-end(-$v);
+      @include scroll-margin-inline-end(-$v, $md);
     }
 
     @mixin md\:-scroll-mt-($v) {
-      @include md\:scroll-margin-top(-$v);
+      @include scroll-margin-top(-$v, $md);
     }
 
     @mixin md\:-scroll-mr-($v) {
-      @include md\:scroll-margin-right(-$v);
+      @include scroll-margin-right(-$v, $md);
     }
 
     @mixin md\:-scroll-mb-($v) {
-      @include md\:scroll-margin-bottom(-$v);
+      @include scroll-margin-bottom(-$v, $md);
     }
 
     @mixin md\:-scroll-ml-($v) {
-      @include md\:scroll-margin-left(-$v);
+      @include scroll-margin-left(-$v, $md);
     }
 
     @mixin lg\:-scroll-m-($v) {
-      @include lg\:scroll-margin(-$v);
+      @include scroll-margin(-$v, $lg);
     }
 
     @mixin lg\:-scroll-mx-($v) {
-      @media (min-width: $lg) {
+      @include lg {
         @include scroll-margin-left(-$v);
         @include scroll-margin-right(-$v);
       }
     }
 
     @mixin lg\:-scroll-my-($v) {
-      @media (min-width: $lg) {
+      @include lg {
         @include scroll-margin-top(-$v);
         @include scroll-margin-bottom(-$v);
       }
     }
 
     @mixin lg\:-scroll-ms-($v) {
-      @include lg\:scroll-margin-inline-start(-$v);
+      @include scroll-margin-inline-start(-$v, $lg);
     }
 
     @mixin lg\:-scroll-me-($v) {
-      @include lg\:scroll-margin-inline-end(-$v);
+      @include scroll-margin-inline-end(-$v, $lg);
     }
 
     @mixin lg\:-scroll-mt-($v) {
-      @include lg\:scroll-margin-top(-$v);
+      @include scroll-margin-top(-$v, $lg);
     }
 
     @mixin lg\:-scroll-mr-($v) {
-      @include lg\:scroll-margin-right(-$v);
+      @include scroll-margin-right(-$v, $lg);
     }
 
     @mixin lg\:-scroll-mb-($v) {
-      @include lg\:scroll-margin-bottom(-$v);
+      @include scroll-margin-bottom(-$v, $lg);
     }
 
     @mixin lg\:-scroll-ml-($v) {
-      @include lg\:scroll-margin-left(-$v);
+      @include scroll-margin-left(-$v, $lg);
     }
 
     @mixin xl\:-scroll-m-($v) {
-      @include xl\:scroll-margin(-$v);
+      @include scroll-margin(-$v, $xl);
     }
 
     @mixin xl\:-scroll-mx-($v) {
-      @media (min-width: $xl) {
+      @include xl {
         @include scroll-margin-left(-$v);
         @include scroll-margin-right(-$v);
       }
     }
 
     @mixin xl\:-scroll-my-($v) {
-      @media (min-width: $xl) {
+      @include xl {
         @include scroll-margin-top(-$v);
         @include scroll-margin-bottom(-$v);
       }
     }
 
     @mixin xl\:-scroll-ms-($v) {
-      @include xl\:scroll-margin-inline-start(-$v);
+      @include scroll-margin-inline-start(-$v, $xl);
     }
 
     @mixin xl\:-scroll-me-($v) {
-      @include xl\:scroll-margin-inline-end(-$v);
+      @include scroll-margin-inline-end(-$v, $xl);
     }
 
     @mixin xl\:-scroll-mt-($v) {
-      @include xl\:scroll-margin-top(-$v);
+      @include scroll-margin-top(-$v, $xl);
     }
 
     @mixin xl\:-scroll-mr-($v) {
-      @include xl\:scroll-margin-right(-$v);
+      @include scroll-margin-right(-$v, $xl);
     }
 
     @mixin xl\:-scroll-mb-($v) {
-      @include xl\:scroll-margin-bottom(-$v);
+      @include scroll-margin-bottom(-$v, $xl);
     }
 
     @mixin xl\:-scroll-ml-($v) {
-      @include xl\:scroll-margin-left(-$v);
+      @include scroll-margin-left(-$v, $xl);
     }
 
     @mixin \2xl\:-scroll-m-($v) {
-      @include \2xl\:scroll-margin(-$v);
+      @include scroll-margin(-$v, $\2xl);
     }
 
     @mixin \2xl\:-scroll-mx-($v) {
-      @media (min-width: $\2xl) {
+      @include \2xl {
         @include scroll-margin-left(-$v);
         @include scroll-margin-right(-$v);
       }
     }
 
     @mixin \2xl\:-scroll-my-($v) {
-      @media (min-width: $\2xl) {
+      @include \2xl {
         @include scroll-margin-top(-$v);
         @include scroll-margin-bottom(-$v);
       }
     }
 
     @mixin \2xl\:-scroll-ms-($v) {
-      @include \2xl\:scroll-margin-inline-start(-$v);
+      @include scroll-margin-inline-start(-$v, $\2xl);
     }
 
     @mixin \2xl\:-scroll-me-($v) {
-      @include \2xl\:scroll-margin-inline-end(-$v);
+      @include scroll-margin-inline-end(-$v, $\2xl);
     }
 
     @mixin \2xl\:-scroll-mt-($v) {
-      @include \2xl\:scroll-margin-top(-$v);
+      @include scroll-margin-top(-$v, $\2xl);
     }
 
     @mixin \2xl\:-scroll-mr-($v) {
-      @include \2xl\:scroll-margin-right(-$v);
+      @include scroll-margin-right(-$v, $\2xl);
     }
 
     @mixin \2xl\:-scroll-mb-($v) {
-      @include \2xl\:scroll-margin-bottom(-$v);
+      @include scroll-margin-bottom(-$v, $\2xl);
     }
 
     @mixin \2xl\:-scroll-ml-($v) {
-      @include \2xl\:scroll-margin-left(-$v);
+      @include scroll-margin-left(-$v, $\2xl);
     }
+
     // x*/
   }
 }

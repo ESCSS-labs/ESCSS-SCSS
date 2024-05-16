@@ -35,7 +35,7 @@
 }
 
 @if $Rwd {
-  @if $sizeMode == 0 or $sizeMode == 1 {
+  @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:decoration-auto {
       @include sm\:decoration-(auto);
@@ -181,6 +181,52 @@
   }
 }
 
-// same as @mixin decoration-($v)
 @if $Custom {
+  // /*x
+  @mixin get_decoration-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include text-decoration-color($v);
+    } @else {
+      @include text-decoration-thickness($v);
+    }
+  }
+
+  @mixin decoration-($v) {
+    @include get_decoration-($v);
+  }
+
+  @mixin sm\:decoration-($v) {
+    @include sm {
+      @include get_decoration-($v);
+    }
+  }
+
+  @mixin md\:decoration-($v) {
+    @include md {
+      @include get_decoration-($v);
+    }
+  }
+
+  @mixin lg\:decoration-($v) {
+    @include lg {
+      @include get_decoration-($v);
+    }
+  }
+
+  @mixin xl\:decoration-($v) {
+    @include xl {
+      @include get_decoration-($v);
+    }
+  }
+
+  @mixin \2xl\:decoration-($v) {
+    @include \2xl {
+      @include get_decoration-($v);
+    }
+  }
+
+  // x*/
 }

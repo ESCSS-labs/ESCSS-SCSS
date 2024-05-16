@@ -1103,6 +1103,416 @@
   }
 }
 
-// same as @mixin border-($v)
 @if $Custom {
+  // /*x
+  @mixin get_border-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include border-color($v);
+    } @else {
+      @include border-width($v);
+    }
+  }
+
+  @mixin get_border-x-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include border-left-color($v);
+      @include border-right-color($v);
+    } @else {
+      @include border-left-width($v);
+      @include border-right-width($v);
+    }
+  }
+
+  @mixin get_border-y-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include border-top-color($v);
+      @include border-bottom-color($v);
+    } @else {
+      @include border-top-width($v);
+      @include border-bottom-width($v);
+    }
+  }
+
+  @mixin get_border-s-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include border-inline-start-color($v);
+    } @else {
+      @include border-inline-start-width($v);
+    }
+  }
+
+  @mixin get_border-e-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include border-inline-end-color($v);
+    } @else {
+      @include border-inline-end-width($v);
+    }
+  }
+
+  @mixin get_border-t-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include border-top-color($v);
+    } @else {
+      @include border-top-width($v);
+    }
+  }
+
+  @mixin get_border-r-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include border-right-color($v);
+    } @else {
+      @include border-right-width($v);
+    }
+  }
+
+  @mixin get_border-b-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include border-bottom-color($v);
+    } @else {
+      @include border-bottom-width($v);
+    }
+  }
+
+  @mixin get_border-l-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include border-left-color($v);
+    } @else {
+      @include border-left-width($v);
+    }
+  }
+
+  @mixin border-($v) {
+    @include get_border-($v);
+  }
+
+  @mixin border-x-($v) {
+    @include get_border-x-($v);
+  }
+
+  @mixin border-y-($v) {
+    @include get_border-y-($v);
+  }
+
+  @mixin border-s-($v) {
+    @include get_border-s-($v);
+  }
+
+  @mixin border-e-($v) {
+    @include get_border-e-($v);
+  }
+
+  @mixin border-t-($v) {
+    @include get_border-t-($v);
+  }
+
+  @mixin border-r-($v) {
+    @include get_border-r-($v);
+  }
+
+  @mixin border-b-($v) {
+    @include get_border-b-($v);
+  }
+
+  @mixin border-l-($v) {
+    @include get_border-l-($v);
+  }
+
+  @mixin sm\:border-($v) {
+    @include sm {
+      @include get_border-($v);
+    }
+  }
+
+  @mixin sm\:border-x-($v) {
+    @include sm {
+      @include get_border-x-($v);
+    }
+  }
+
+  @mixin sm\:border-y-($v) {
+    @include sm {
+      @include get_border-y-($v);
+    }
+  }
+
+  @mixin sm\:border-s-($v) {
+    @include sm {
+      @include get_border-s-($v);
+    }
+  }
+
+  @mixin sm\:border-e-($v) {
+    @include sm {
+      @include get_border-e-($v);
+    }
+  }
+
+  @mixin sm\:border-t-($v) {
+    @include sm {
+      @include get_border-t-($v);
+    }
+  }
+
+  @mixin sm\:border-r-($v) {
+    @include sm {
+      @include get_border-r-($v);
+    }
+  }
+
+  @mixin sm\:border-b-($v) {
+    @include sm {
+      @include get_border-b-($v);
+    }
+  }
+
+  @mixin sm\:border-l-($v) {
+    @include sm {
+      @include get_border-l-($v);
+    }
+  }
+
+  @mixin md\:border-($v) {
+    @include md {
+      @include get_border-($v);
+    }
+  }
+
+  @mixin md\:border-x-($v) {
+    @include md {
+      @include get_border-x-($v);
+    }
+  }
+
+  @mixin md\:border-y-($v) {
+    @include md {
+      @include get_border-y-($v);
+    }
+  }
+
+  @mixin md\:border-s-($v) {
+    @include md {
+      @include get_border-s-($v);
+    }
+  }
+
+  @mixin md\:border-e-($v) {
+    @include md {
+      @include get_border-e-($v);
+    }
+  }
+
+  @mixin md\:border-t-($v) {
+    @include md {
+      @include get_border-t-($v);
+    }
+  }
+
+  @mixin md\:border-r-($v) {
+    @include md {
+      @include get_border-r-($v);
+    }
+  }
+
+  @mixin md\:border-b-($v) {
+    @include md {
+      @include get_border-b-($v);
+    }
+  }
+
+  @mixin md\:border-l-($v) {
+    @include md {
+      @include get_border-l-($v);
+    }
+  }
+
+  @mixin lg\:border-($v) {
+    @include lg {
+      @include get_border-($v);
+    }
+  }
+
+  @mixin lg\:border-x-($v) {
+    @include lg {
+      @include get_border-x-($v);
+    }
+  }
+
+  @mixin lg\:border-y-($v) {
+    @include lg {
+      @include get_border-y-($v);
+    }
+  }
+
+  @mixin lg\:border-s-($v) {
+    @include lg {
+      @include get_border-s-($v);
+    }
+  }
+
+  @mixin lg\:border-e-($v) {
+    @include lg {
+      @include get_border-e-($v);
+    }
+  }
+
+  @mixin lg\:border-t-($v) {
+    @include lg {
+      @include get_border-t-($v);
+    }
+  }
+
+  @mixin lg\:border-r-($v) {
+    @include lg {
+      @include get_border-r-($v);
+    }
+  }
+
+  @mixin lg\:border-b-($v) {
+    @include lg {
+      @include get_border-b-($v);
+    }
+  }
+
+  @mixin lg\:border-l-($v) {
+    @include lg {
+      @include get_border-l-($v);
+    }
+  }
+
+  @mixin xl\:border-($v) {
+    @include xl {
+      @include get_border-($v);
+    }
+  }
+
+  @mixin xl\:border-x-($v) {
+    @include xl {
+      @include get_border-x-($v);
+    }
+  }
+
+  @mixin xl\:border-y-($v) {
+    @include xl {
+      @include get_border-y-($v);
+    }
+  }
+
+  @mixin xl\:border-s-($v) {
+    @include xl {
+      @include get_border-s-($v);
+    }
+  }
+
+  @mixin xl\:border-e-($v) {
+    @include xl {
+      @include get_border-e-($v);
+    }
+  }
+
+  @mixin xl\:border-t-($v) {
+    @include xl {
+      @include get_border-t-($v);
+    }
+  }
+
+  @mixin xl\:border-r-($v) {
+    @include xl {
+      @include get_border-r-($v);
+    }
+  }
+
+  @mixin xl\:border-b-($v) {
+    @include xl {
+      @include get_border-b-($v);
+    }
+  }
+
+  @mixin xl\:border-l-($v) {
+    @include xl {
+      @include get_border-l-($v);
+    }
+  }
+
+  @mixin \2xl\:border-($v) {
+    @include \2xl {
+      @include get_border-($v);
+    }
+  }
+
+  @mixin \2xl\:border-x-($v) {
+    @include \2xl {
+      @include get_border-x-($v);
+    }
+  }
+
+  @mixin \2xl\:border-y-($v) {
+    @include \2xl {
+      @include get_border-y-($v);
+    }
+  }
+
+  @mixin \2xl\:border-s-($v) {
+    @include \2xl {
+      @include get_border-s-($v);
+    }
+  }
+
+  @mixin \2xl\:border-e-($v) {
+    @include \2xl {
+      @include get_border-e-($v);
+    }
+  }
+
+  @mixin \2xl\:border-t-($v) {
+    @include \2xl {
+      @include get_border-t-($v);
+    }
+  }
+
+  @mixin \2xl\:border-r-($v) {
+    @include \2xl {
+      @include get_border-r-($v);
+    }
+  }
+
+  @mixin \2xl\:border-b-($v) {
+    @include \2xl {
+      @include get_border-b-($v);
+    }
+  }
+
+  @mixin \2xl\:border-l-($v) {
+    @include \2xl {
+      @include get_border-l-($v);
+    }
+  }
+
+  // x*/
 }

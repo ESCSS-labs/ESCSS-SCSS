@@ -229,6 +229,49 @@
   }
 }
 
-// same as @mixin font-($vl)
 @if $Custom {
+  // /*x
+  @mixin get_font-($v) {
+    @if meta.type-of($v) ==number {
+      @include font-weight($v);
+    } @else {
+      @include font-family($v);
+    }
+  }
+
+  @mixin font-($v) {
+    @include get_font-($v);
+  }
+
+  @mixin sm\:font-($v) {
+    @include sm {
+      @include get_font-($v);
+    }
+  }
+
+  @mixin md\:font-($v) {
+    @include md {
+      @include get_font-($v);
+    }
+  }
+
+  @mixin lg\:font-($v) {
+    @include lg {
+      @include get_font-($v);
+    }
+  }
+
+  @mixin xl\:font-($v) {
+    @include xl {
+      @include get_font-($v);
+    }
+  }
+
+  @mixin \2xl\:font-($v) {
+    @include \2xl {
+      @include get_font-($v);
+    }
+  }
+
+  // x*/
 }

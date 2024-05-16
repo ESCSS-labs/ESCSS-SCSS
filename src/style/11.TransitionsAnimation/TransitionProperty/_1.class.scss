@@ -53,7 +53,7 @@
   @if $sizeMode ==0 or $sizeMode ==1 {
     // /*x
     @mixin sm\:transition-none {
-      @include sm\:transition-property(none);
+      @include transition-property(none, $sm);
     }
 
     @mixin sm\:transition-all {
@@ -104,7 +104,7 @@
     }
 
     @mixin md\:transition-none {
-      @include md\:transition-property(none);
+      @include transition-property(none, $md);
     }
 
     @mixin md\:transition-all {
@@ -155,7 +155,7 @@
     }
 
     @mixin lg\:transition-none {
-      @include lg\:transition-property(none);
+      @include transition-property(none, $lg);
     }
 
     @mixin lg\:transition-all {
@@ -206,7 +206,7 @@
     }
 
     @mixin xl\:transition-none {
-      @include xl\:transition-property(none);
+      @include transition-property(none, $xl);
     }
 
     @mixin xl\:transition-all {
@@ -257,7 +257,7 @@
     }
 
     @mixin \2xl\:transition-none {
-      @include \2xl\:transition-property(none);
+      @include transition-property(none, $\2xl);
     }
 
     @mixin \2xl\:transition-all {
@@ -313,49 +313,43 @@
 
 @if $Custom {
   // /*x
-  @mixin transition-($v) {
+  @mixin get_transition-($v) {
     @include transition-property($v);
     @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
     @include transition-duration(150ms);
   }
 
+  @mixin transition-($v) {
+    @include get_transition-($v);
+  }
+
   @mixin sm\:transition-($v) {
-    @media (min-width: $sm) {
-      @include transition-property($v);
-      @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
-      @include transition-duration(150ms);
+    @include sm {
+      @include get_transition-($v);
     }
   }
 
   @mixin md\:transition-($v) {
-    @media (min-width: $md) {
-      @include transition-property($v);
-      @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
-      @include transition-duration(150ms);
+    @include md {
+      @include get_transition-($v);
     }
   }
 
   @mixin lg\:transition-($v) {
-    @media (min-width: $lg) {
-      @include transition-property($v);
-      @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
-      @include transition-duration(150ms);
+    @include lg {
+      @include get_transition-($v);
     }
   }
 
   @mixin xl\:transition-($v) {
-    @media (min-width: $xl) {
-      @include transition-property($v);
-      @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
-      @include transition-duration(150ms);
+    @include xl {
+      @include get_transition-($v);
     }
   }
 
   @mixin \2xl\:transition-($v) {
-    @media (min-width: $\2xl) {
-      @include transition-property($v);
-      @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
-      @include transition-duration(150ms);
+    @include \2xl {
+      @include get_transition-($v);
     }
   }
 

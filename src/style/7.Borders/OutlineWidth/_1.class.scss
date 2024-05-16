@@ -132,6 +132,52 @@
   }
 }
 
-// same as @mixin outline-($v)
 @if $Custom {
+  // /*x
+  @mixin get_outline-($v) {
+    @if meta.type-of($v)
+      ==color or
+      list.index(inherit currentColor transparent, $v)
+    {
+      @include outline-color($v);
+    } @else {
+      @include outline-width($v);
+    }
+  }
+
+  @mixin outline-($v) {
+    @include get_outline-($v);
+  }
+
+  @mixin sm\:outline-($v) {
+    @include sm {
+      @include get_outline-($v);
+    }
+  }
+
+  @mixin md\:outline-($v) {
+    @include md {
+      @include get_outline-($v);
+    }
+  }
+
+  @mixin lg\:outline-($v) {
+    @include lg {
+      @include get_outline-($v);
+    }
+  }
+
+  @mixin xl\:outline-($v) {
+    @include xl {
+      @include get_outline-($v);
+    }
+  }
+
+  @mixin \2xl\:outline-($v) {
+    @include \2xl {
+      @include get_outline-($v);
+    }
+  }
+
+  // x*/
 }
