@@ -4,7 +4,7 @@
 // c stands for color (file size concern)
 @function c($token, $v) {
   @if not math.is-unitless($v) {
-    // If used / for dividing after v1.33, it will get lots of warnings in the terminal,
+    // If use / outside of calc() after v1.33, it will pop out warnings in the terminal,
     // the better way is forbidden % and provides the color.change() method
     @error "$v: Expected #/*x{$v / 100%} not #/*x{$v}, backward compatibility concern";
   }
