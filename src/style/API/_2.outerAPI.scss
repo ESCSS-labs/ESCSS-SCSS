@@ -115,10 +115,9 @@
 
 // reset your base css
 // #example {
-//   @include init;  initial your default reset css
-//   @include preflight; add new reset css(preflight)
+//   @include init;  initial your default base css
+//   @include escss-preflight; add new base css
 //   color: red;  your style
-//   font-size: 2rem; your style
 // }
 
 @mixin init {
@@ -127,7 +126,7 @@
   }
 }
 
-@mixin preflight {
+@mixin escss-preflight {
   // escss-preflight is based on tailwindcss v3.4.4
   @layer base {
     $isHtmlTagOnly: selector.is-superselector(&, html);
