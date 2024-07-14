@@ -1,136 +1,47 @@
 @use "../../setting" as *;
 
+
+$GridAutoRows: (
+  "auto-rows-auto": auto,
+  "auto-rows-min": min-content,
+  "auto-rows-max": max-content,
+  "auto-rows-fr": minmax(0, 1fr),
+);
+
 @if $Basic {
-  // /*x
-  @mixin auto-rows-auto {
-    grid-auto-rows: auto;
+  @each $key, $value in $GridAutoRows {
+    /*x
+    @mixin #{$key} {
+      @include grid-auto-rows(#{$value});
+    }
+    x*/
   }
-
-  @mixin auto-rows-min {
-    grid-auto-rows: min-content;
-  }
-
-  @mixin auto-rows-max {
-    grid-auto-rows: max-content;
-  }
-
-  @mixin auto-rows-fr {
-    grid-auto-rows: minmax(0, 1fr);
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:auto-rows-auto {
-    @include sm\:auto-rows-(auto);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $GridAutoRows {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include grid-auto-rows(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:auto-rows-min {
-    @include sm\:auto-rows-(min-content);
-  }
-
-  @mixin sm\:auto-rows-max {
-    @include sm\:auto-rows-(max-content);
-  }
-
-  @mixin sm\:auto-rows-fr {
-    @include sm\:auto-rows-(minmax(0, 1fr));
-  }
-
-  @mixin md\:auto-rows-auto {
-    @include md\:auto-rows-(auto);
-  }
-
-  @mixin md\:auto-rows-min {
-    @include md\:auto-rows-(min-content);
-  }
-
-  @mixin md\:auto-rows-max {
-    @include md\:auto-rows-(max-content);
-  }
-
-  @mixin md\:auto-rows-fr {
-    @include md\:auto-rows-(minmax(0, 1fr));
-  }
-
-  @mixin lg\:auto-rows-auto {
-    @include lg\:auto-rows-(auto);
-  }
-
-  @mixin lg\:auto-rows-min {
-    @include lg\:auto-rows-(min-content);
-  }
-
-  @mixin lg\:auto-rows-max {
-    @include lg\:auto-rows-(max-content);
-  }
-
-  @mixin lg\:auto-rows-fr {
-    @include lg\:auto-rows-(minmax(0, 1fr));
-  }
-
-  @mixin xl\:auto-rows-auto {
-    @include xl\:auto-rows-(auto);
-  }
-
-  @mixin xl\:auto-rows-min {
-    @include xl\:auto-rows-(min-content);
-  }
-
-  @mixin xl\:auto-rows-max {
-    @include xl\:auto-rows-(max-content);
-  }
-
-  @mixin xl\:auto-rows-fr {
-    @include xl\:auto-rows-(minmax(0, 1fr));
-  }
-
-  @mixin \2xl\:auto-rows-auto {
-    @include \2xl\:auto-rows-(auto);
-  }
-
-  @mixin \2xl\:auto-rows-min {
-    @include \2xl\:auto-rows-(min-content);
-  }
-
-  @mixin \2xl\:auto-rows-max {
-    @include \2xl\:auto-rows-(max-content);
-  }
-
-  @mixin \2xl\:auto-rows-fr {
-    @include \2xl\:auto-rows-(minmax(0, 1fr));
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin auto-rows-($v) {
     @include grid-auto-rows($v);
   }
+  x*/
 
-  @mixin sm\:auto-rows-($v) {
-    @include grid-auto-rows($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:auto-rows-($v) {
+      @include grid-auto-rows($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:auto-rows-($v) {
-    @include grid-auto-rows($v, $md);
-  }
-
-  @mixin lg\:auto-rows-($v) {
-    @include grid-auto-rows($v, $lg);
-  }
-
-  @mixin xl\:auto-rows-($v) {
-    @include grid-auto-rows($v, $xl);
-  }
-
-  @mixin \2xl\:auto-rows-($v) {
-    @include grid-auto-rows($v, $\2xl);
-  }
-
-  // x*/
 }

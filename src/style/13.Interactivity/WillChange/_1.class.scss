@@ -1,136 +1,46 @@
 @use "../../setting" as *;
 
+$WillChange: (
+  "will-change-auto": auto,
+  "will-change-scroll": scroll-position,
+  "will-change-contents": contents,
+  "will-change-transform": transform,
+);
+
 @if $Basic {
-  // /*x
-  @mixin will-change-auto {
-    will-change: auto;
+  @each $key, $value in $WillChange {
+    /*x
+    @mixin #{$key} {
+      @include will-change(#{$value});
+    }
+    x*/
   }
-
-  @mixin will-change-scroll {
-    will-change: scroll-position;
-  }
-
-  @mixin will-change-contents {
-    will-change: contents;
-  }
-
-  @mixin will-change-transform {
-    will-change: transform;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:will-change-auto {
-    @include sm\:will-change-(auto);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $WillChange {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include will-change(#{$value}, null, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:will-change-scroll {
-    @include sm\:will-change-(scroll-position);
-  }
-
-  @mixin sm\:will-change-contents {
-    @include sm\:will-change-(contents);
-  }
-
-  @mixin sm\:will-change-transform {
-    @include sm\:will-change-(transform);
-  }
-
-  @mixin md\:will-change-auto {
-    @include md\:will-change-(auto);
-  }
-
-  @mixin md\:will-change-scroll {
-    @include md\:will-change-(scroll-position);
-  }
-
-  @mixin md\:will-change-contents {
-    @include md\:will-change-(contents);
-  }
-
-  @mixin md\:will-change-transform {
-    @include md\:will-change-(transform);
-  }
-
-  @mixin lg\:will-change-auto {
-    @include lg\:will-change-(auto);
-  }
-
-  @mixin lg\:will-change-scroll {
-    @include lg\:will-change-(scroll-position);
-  }
-
-  @mixin lg\:will-change-contents {
-    @include lg\:will-change-(contents);
-  }
-
-  @mixin lg\:will-change-transform {
-    @include lg\:will-change-(transform);
-  }
-
-  @mixin xl\:will-change-auto {
-    @include xl\:will-change-(auto);
-  }
-
-  @mixin xl\:will-change-scroll {
-    @include xl\:will-change-(scroll-position);
-  }
-
-  @mixin xl\:will-change-contents {
-    @include xl\:will-change-(contents);
-  }
-
-  @mixin xl\:will-change-transform {
-    @include xl\:will-change-(transform);
-  }
-
-  @mixin \2xl\:will-change-auto {
-    @include \2xl\:will-change-(auto);
-  }
-
-  @mixin \2xl\:will-change-scroll {
-    @include \2xl\:will-change-(scroll-position);
-  }
-
-  @mixin \2xl\:will-change-contents {
-    @include \2xl\:will-change-(contents);
-  }
-
-  @mixin \2xl\:will-change-transform {
-    @include \2xl\:will-change-(transform);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin will-change-($v, $v2: null) {
     @include will-change($v, $v2);
   }
+  x*/
 
-  @mixin sm\:will-change-($v, $v2: null) {
-    @include will-change($v, $v2, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:will-change-($v, $v2: null) {
+      @include will-change($v, $v2, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:will-change-($v, $v2: null) {
-    @include will-change($v, $v2, $md);
-  }
-
-  @mixin lg\:will-change-($v, $v2: null) {
-    @include will-change($v, $v2, $lg);
-  }
-
-  @mixin xl\:will-change-($v, $v2: null) {
-    @include will-change($v, $v2, $xl);
-  }
-
-  @mixin \2xl\:will-change-($v, $v2: null) {
-    @include will-change($v, $v2, $\2xl);
-  }
-
-  // x*/
 }

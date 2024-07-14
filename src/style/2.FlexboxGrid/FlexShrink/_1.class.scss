@@ -1,88 +1,45 @@
 @use "../../setting" as *;
 
+
+$FlexShrink: (
+  "shrink": "1",
+  "shrink-0": "0",
+);
+
 @if $Basic {
-  // /*x
-  @mixin shrink {
-    flex-shrink: 1;
+  @each $key, $value in $FlexShrink {
+    /*x
+    @mixin #{$key} {
+      @include flex-shrink(#{$value});
+    }
+    x*/
   }
-
-  @mixin shrink-0 {
-    flex-shrink: 0;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:shrink {
-    @include sm\:shrink-(1);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $FlexShrink {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include flex-shrink(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:shrink-0 {
-    @include sm\:shrink-(0);
-  }
-
-  @mixin md\:shrink {
-    @include md\:shrink-(1);
-  }
-
-  @mixin md\:shrink-0 {
-    @include md\:shrink-(0);
-  }
-
-  @mixin lg\:shrink {
-    @include lg\:shrink-(1);
-  }
-
-  @mixin lg\:shrink-0 {
-    @include lg\:shrink-(0);
-  }
-
-  @mixin xl\:shrink {
-    @include xl\:shrink-(1);
-  }
-
-  @mixin xl\:shrink-0 {
-    @include xl\:shrink-(0);
-  }
-
-  @mixin \2xl\:shrink {
-    @include \2xl\:shrink-(1);
-  }
-
-  @mixin \2xl\:shrink-0 {
-    @include \2xl\:shrink-(0);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin shrink-($v) {
     @include flex-shrink($v);
   }
+  x*/
 
-  @mixin sm\:shrink-($v) {
-    @include flex-shrink($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:shrink-($v) {
+      @include flex-shrink($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:shrink-($v) {
-    @include flex-shrink($v, $md);
-  }
-
-  @mixin lg\:shrink-($v) {
-    @include flex-shrink($v, $lg);
-  }
-
-  @mixin xl\:shrink-($v) {
-    @include flex-shrink($v, $xl);
-  }
-
-  @mixin \2xl\:shrink-($v) {
-    @include flex-shrink($v, $\2xl);
-  }
-
-  // x*/
 }

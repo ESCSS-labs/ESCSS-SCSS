@@ -1,256 +1,52 @@
 @use "../../setting" as *;
 
+
+$TransitionDelay: (
+  "delay-0": 0s,
+  "delay-75": 75ms,
+  "delay-100": 100ms,
+  "delay-150": 150ms,
+  "delay-200": 200ms,
+  "delay-300": 300ms,
+  "delay-500": 500ms,
+  "delay-700": 700ms,
+  "delay-1000": 1000ms,
+);
+
 @if $Basic {
-  // /*x
-  @mixin delay-0 {
-    transition-delay: 0s;
+  @each $key, $value in $TransitionDelay {
+    /*x
+    @mixin #{$key} {
+      @include transition-delay(#{$value});
+    }
+    x*/
   }
-
-  @mixin delay-75 {
-    transition-delay: 75ms;
-  }
-
-  @mixin delay-100 {
-    transition-delay: 100ms;
-  }
-
-  @mixin delay-150 {
-    transition-delay: 150ms;
-  }
-
-  @mixin delay-200 {
-    transition-delay: 200ms;
-  }
-
-  @mixin delay-300 {
-    transition-delay: 300ms;
-  }
-
-  @mixin delay-500 {
-    transition-delay: 500ms;
-  }
-
-  @mixin delay-700 {
-    transition-delay: 700ms;
-  }
-
-  @mixin delay-1000 {
-    transition-delay: 1000ms;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:delay-0 {
-    @include sm\:delay-(0s);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TransitionDelay {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include transition-delay(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:delay-75 {
-    @include sm\:delay-(75ms);
-  }
-
-  @mixin sm\:delay-100 {
-    @include sm\:delay-(100ms);
-  }
-
-  @mixin sm\:delay-150 {
-    @include sm\:delay-(150ms);
-  }
-
-  @mixin sm\:delay-200 {
-    @include sm\:delay-(200ms);
-  }
-
-  @mixin sm\:delay-300 {
-    @include sm\:delay-(300ms);
-  }
-
-  @mixin sm\:delay-500 {
-    @include sm\:delay-(500ms);
-  }
-
-  @mixin sm\:delay-700 {
-    @include sm\:delay-(700ms);
-  }
-
-  @mixin sm\:delay-1000 {
-    @include sm\:delay-(1000ms);
-  }
-
-  @mixin md\:delay-0 {
-    @include md\:delay-(0s);
-  }
-
-  @mixin md\:delay-75 {
-    @include md\:delay-(75ms);
-  }
-
-  @mixin md\:delay-100 {
-    @include md\:delay-(100ms);
-  }
-
-  @mixin md\:delay-150 {
-    @include md\:delay-(150ms);
-  }
-
-  @mixin md\:delay-200 {
-    @include md\:delay-(200ms);
-  }
-
-  @mixin md\:delay-300 {
-    @include md\:delay-(300ms);
-  }
-
-  @mixin md\:delay-500 {
-    @include md\:delay-(500ms);
-  }
-
-  @mixin md\:delay-700 {
-    @include md\:delay-(700ms);
-  }
-
-  @mixin md\:delay-1000 {
-    @include md\:delay-(1000ms);
-  }
-
-  @mixin lg\:delay-0 {
-    @include lg\:delay-(0s);
-  }
-
-  @mixin lg\:delay-75 {
-    @include lg\:delay-(75ms);
-  }
-
-  @mixin lg\:delay-100 {
-    @include lg\:delay-(100ms);
-  }
-
-  @mixin lg\:delay-150 {
-    @include lg\:delay-(150ms);
-  }
-
-  @mixin lg\:delay-200 {
-    @include lg\:delay-(200ms);
-  }
-
-  @mixin lg\:delay-300 {
-    @include lg\:delay-(300ms);
-  }
-
-  @mixin lg\:delay-500 {
-    @include lg\:delay-(500ms);
-  }
-
-  @mixin lg\:delay-700 {
-    @include lg\:delay-(700ms);
-  }
-
-  @mixin lg\:delay-1000 {
-    @include lg\:delay-(1000ms);
-  }
-
-  @mixin xl\:delay-0 {
-    @include xl\:delay-(0s);
-  }
-
-  @mixin xl\:delay-75 {
-    @include xl\:delay-(75ms);
-  }
-
-  @mixin xl\:delay-100 {
-    @include xl\:delay-(100ms);
-  }
-
-  @mixin xl\:delay-150 {
-    @include xl\:delay-(150ms);
-  }
-
-  @mixin xl\:delay-200 {
-    @include xl\:delay-(200ms);
-  }
-
-  @mixin xl\:delay-300 {
-    @include xl\:delay-(300ms);
-  }
-
-  @mixin xl\:delay-500 {
-    @include xl\:delay-(500ms);
-  }
-
-  @mixin xl\:delay-700 {
-    @include xl\:delay-(700ms);
-  }
-
-  @mixin xl\:delay-1000 {
-    @include xl\:delay-(1000ms);
-  }
-
-  @mixin \2xl\:delay-0 {
-    @include \2xl\:delay-(0s);
-  }
-
-  @mixin \2xl\:delay-75 {
-    @include \2xl\:delay-(75ms);
-  }
-
-  @mixin \2xl\:delay-100 {
-    @include \2xl\:delay-(100ms);
-  }
-
-  @mixin \2xl\:delay-150 {
-    @include \2xl\:delay-(150ms);
-  }
-
-  @mixin \2xl\:delay-200 {
-    @include \2xl\:delay-(200ms);
-  }
-
-  @mixin \2xl\:delay-300 {
-    @include \2xl\:delay-(300ms);
-  }
-
-  @mixin \2xl\:delay-500 {
-    @include \2xl\:delay-(500ms);
-  }
-
-  @mixin \2xl\:delay-700 {
-    @include \2xl\:delay-(700ms);
-  }
-
-  @mixin \2xl\:delay-1000 {
-    @include \2xl\:delay-(1000ms);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin delay-($v) {
     @include transition-delay($v);
   }
+  x*/
 
-  @mixin sm\:delay-($v) {
-    @include transition-delay($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:delay-($v) {
+      @include transition-delay($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:delay-($v) {
-    @include transition-delay($v, $md);
-  }
-
-  @mixin lg\:delay-($v) {
-    @include transition-delay($v, $lg);
-  }
-
-  @mixin xl\:delay-($v) {
-    @include transition-delay($v, $xl);
-  }
-
-  @mixin \2xl\:delay-($v) {
-    @include transition-delay($v, $\2xl);
-  }
-
-  // x*/
 }

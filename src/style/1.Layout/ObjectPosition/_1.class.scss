@@ -1,256 +1,52 @@
 @use "../../setting" as *;
 
+
+$ObjectPosition: (
+  "object-bottom": bottom,
+  "object-center": center,
+  "object-left": left,
+  "object-left-bottom": left bottom,
+  "object-left-top": left top,
+  "object-right": right,
+  "object-right-bottom": right bottom,
+  "object-right-top": right top,
+  "object-top": top,
+);
+
 @if $Basic {
-  // /*x
-  @mixin object-bottom {
-    object-position: bottom;
+  @each $key, $value in $ObjectPosition {
+    /*x
+    @mixin #{$key} {
+      @include object-position(#{$value});
+    }
+    x*/
   }
-
-  @mixin object-center {
-    object-position: center;
-  }
-
-  @mixin object-left {
-    object-position: left;
-  }
-
-  @mixin object-left-bottom {
-    object-position: left bottom;
-  }
-
-  @mixin object-left-top {
-    object-position: left top;
-  }
-
-  @mixin object-right {
-    object-position: right;
-  }
-
-  @mixin object-right-bottom {
-    object-position: right bottom;
-  }
-
-  @mixin object-right-top {
-    object-position: right top;
-  }
-
-  @mixin object-top {
-    object-position: top;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:object-bottom {
-    @include sm\:object-(bottom);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ObjectPosition {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include object-position(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:object-center {
-    @include sm\:object-(center);
-  }
-
-  @mixin sm\:object-left {
-    @include sm\:object-(left);
-  }
-
-  @mixin sm\:object-left-bottom {
-    @include sm\:object-(left bottom);
-  }
-
-  @mixin sm\:object-left-top {
-    @include sm\:object-(left top);
-  }
-
-  @mixin sm\:object-right {
-    @include sm\:object-(right);
-  }
-
-  @mixin sm\:object-right-bottom {
-    @include sm\:object-(right bottom);
-  }
-
-  @mixin sm\:object-right-top {
-    @include sm\:object-(right top);
-  }
-
-  @mixin sm\:object-top {
-    @include sm\:object-(top);
-  }
-
-  @mixin md\:object-bottom {
-    @include md\:object-(bottom);
-  }
-
-  @mixin md\:object-center {
-    @include md\:object-(center);
-  }
-
-  @mixin md\:object-left {
-    @include md\:object-(left);
-  }
-
-  @mixin md\:object-left-bottom {
-    @include md\:object-(left bottom);
-  }
-
-  @mixin md\:object-left-top {
-    @include md\:object-(left top);
-  }
-
-  @mixin md\:object-right {
-    @include md\:object-(right);
-  }
-
-  @mixin md\:object-right-bottom {
-    @include md\:object-(right bottom);
-  }
-
-  @mixin md\:object-right-top {
-    @include md\:object-(right top);
-  }
-
-  @mixin md\:object-top {
-    @include md\:object-(top);
-  }
-
-  @mixin lg\:object-bottom {
-    @include lg\:object-(bottom);
-  }
-
-  @mixin lg\:object-center {
-    @include lg\:object-(center);
-  }
-
-  @mixin lg\:object-left {
-    @include lg\:object-(left);
-  }
-
-  @mixin lg\:object-left-bottom {
-    @include lg\:object-(left bottom);
-  }
-
-  @mixin lg\:object-left-top {
-    @include lg\:object-(left top);
-  }
-
-  @mixin lg\:object-right {
-    @include lg\:object-(right);
-  }
-
-  @mixin lg\:object-right-bottom {
-    @include lg\:object-(right bottom);
-  }
-
-  @mixin lg\:object-right-top {
-    @include lg\:object-(right top);
-  }
-
-  @mixin lg\:object-top {
-    @include lg\:object-(top);
-  }
-
-  @mixin xl\:object-bottom {
-    @include xl\:object-(bottom);
-  }
-
-  @mixin xl\:object-center {
-    @include xl\:object-(center);
-  }
-
-  @mixin xl\:object-left {
-    @include xl\:object-(left);
-  }
-
-  @mixin xl\:object-left-bottom {
-    @include xl\:object-(left bottom);
-  }
-
-  @mixin xl\:object-left-top {
-    @include xl\:object-(left top);
-  }
-
-  @mixin xl\:object-right {
-    @include xl\:object-(right);
-  }
-
-  @mixin xl\:object-right-bottom {
-    @include xl\:object-(right bottom);
-  }
-
-  @mixin xl\:object-right-top {
-    @include xl\:object-(right top);
-  }
-
-  @mixin xl\:object-top {
-    @include xl\:object-(top);
-  }
-
-  @mixin \2xl\:object-bottom {
-    @include \2xl\:object-(bottom);
-  }
-
-  @mixin \2xl\:object-center {
-    @include \2xl\:object-(center);
-  }
-
-  @mixin \2xl\:object-left {
-    @include \2xl\:object-(left);
-  }
-
-  @mixin \2xl\:object-left-bottom {
-    @include \2xl\:object-(left bottom);
-  }
-
-  @mixin \2xl\:object-left-top {
-    @include \2xl\:object-(left top);
-  }
-
-  @mixin \2xl\:object-right {
-    @include \2xl\:object-(right);
-  }
-
-  @mixin \2xl\:object-right-bottom {
-    @include \2xl\:object-(right bottom);
-  }
-
-  @mixin \2xl\:object-right-top {
-    @include \2xl\:object-(right top);
-  }
-
-  @mixin \2xl\:object-top {
-    @include \2xl\:object-(top);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin object-($v) {
     @include object-position($v);
   }
+  x*/
 
-  @mixin sm\:object-($v) {
-    @include object-position($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:object-($v) {
+      @include object-position($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:object-($v) {
-    @include object-position($v, $md);
-  }
-
-  @mixin lg\:object-($v) {
-    @include object-position($v, $lg);
-  }
-
-  @mixin xl\:object-($v) {
-    @include object-position($v, $xl);
-  }
-
-  @mixin \2xl\:object-($v) {
-    @include object-position($v, $\2xl);
-  }
-
-  // x*/
 }

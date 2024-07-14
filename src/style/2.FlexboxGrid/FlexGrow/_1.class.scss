@@ -1,88 +1,45 @@
 @use "../../setting" as *;
 
+
+$FlexGrow: (
+  "grow": 1,
+  "grow-0": 0,
+);
+
 @if $Basic {
-  // /*x
-  @mixin grow {
-    flex-grow: 1;
+  @each $key, $value in $FlexGrow {
+    /*x
+    @mixin #{$key} {
+      @include flex-grow(#{$value});
+    }
+    x*/
   }
-
-  @mixin grow-0 {
-    flex-grow: 0;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:grow {
-    @include sm\:grow-(1);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $FlexGrow {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include flex-grow(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:grow-0 {
-    @include sm\:grow-(0);
-  }
-
-  @mixin md\:grow {
-    @include md\:grow-(1);
-  }
-
-  @mixin md\:grow-0 {
-    @include md\:grow-(0);
-  }
-
-  @mixin lg\:grow {
-    @include lg\:grow-(1);
-  }
-
-  @mixin lg\:grow-0 {
-    @include lg\:grow-(0);
-  }
-
-  @mixin xl\:grow {
-    @include xl\:grow-(1);
-  }
-
-  @mixin xl\:grow-0 {
-    @include xl\:grow-(0);
-  }
-
-  @mixin \2xl\:grow {
-    @include \2xl\:grow-(1);
-  }
-
-  @mixin \2xl\:grow-0 {
-    @include \2xl\:grow-(0);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin grow-($v) {
     @include flex-grow($v);
   }
+  x*/
 
-  @mixin sm\:grow-($v) {
-    @include flex-grow($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:grow-($v) {
+      @include flex-grow($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:grow-($v) {
-    @include flex-grow($v, $md);
-  }
-
-  @mixin lg\:grow-($v) {
-    @include flex-grow($v, $lg);
-  }
-
-  @mixin xl\:grow-($v) {
-    @include flex-grow($v, $xl);
-  }
-
-  @mixin \2xl\:grow-($v) {
-    @include flex-grow($v, $\2xl);
-  }
-
-  // x*/
 }

@@ -1,136 +1,47 @@
 @use "../../setting" as *;
 
+
+$Flex: (
+  "flex-1": 1 1 0%,
+  "flex-auto": 1 1 auto,
+  "flex-initial": 0 1 auto,
+  "flex-none": none,
+);
+
 @if $Basic {
-  // /*x
-  @mixin flex-1 {
-    flex: 1 1 0%;
+  @each $key, $value in $Flex {
+    /*x
+    @mixin #{$key} {
+      @include flex(#{$value});
+    }
+    x*/
   }
-
-  @mixin flex-auto {
-    flex: 1 1 auto;
-  }
-
-  @mixin flex-initial {
-    flex: 0 1 auto;
-  }
-
-  @mixin flex-none {
-    flex: none;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:flex-1 {
-    @include sm\:flex-(1 1 0%);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Flex {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include flex(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:flex-auto {
-    @include sm\:flex-(1 1 auto);
-  }
-
-  @mixin sm\:flex-initial {
-    @include sm\:flex-(0 1 auto);
-  }
-
-  @mixin sm\:flex-none {
-    @include sm\:flex-(none);
-  }
-
-  @mixin md\:flex-1 {
-    @include md\:flex-(1 1 0%);
-  }
-
-  @mixin md\:flex-auto {
-    @include md\:flex-(1 1 auto);
-  }
-
-  @mixin md\:flex-initial {
-    @include md\:flex-(0 1 auto);
-  }
-
-  @mixin md\:flex-none {
-    @include md\:flex-(none);
-  }
-
-  @mixin lg\:flex-1 {
-    @include lg\:flex-(1 1 0%);
-  }
-
-  @mixin lg\:flex-auto {
-    @include lg\:flex-(1 1 auto);
-  }
-
-  @mixin lg\:flex-initial {
-    @include lg\:flex-(0 1 auto);
-  }
-
-  @mixin lg\:flex-none {
-    @include lg\:flex-(none);
-  }
-
-  @mixin xl\:flex-1 {
-    @include xl\:flex-(1 1 0%);
-  }
-
-  @mixin xl\:flex-auto {
-    @include xl\:flex-(1 1 auto);
-  }
-
-  @mixin xl\:flex-initial {
-    @include xl\:flex-(0 1 auto);
-  }
-
-  @mixin xl\:flex-none {
-    @include xl\:flex-(none);
-  }
-
-  @mixin \2xl\:flex-1 {
-    @include \2xl\:flex-(1 1 0%);
-  }
-
-  @mixin \2xl\:flex-auto {
-    @include \2xl\:flex-(1 1 auto);
-  }
-
-  @mixin \2xl\:flex-initial {
-    @include \2xl\:flex-(0 1 auto);
-  }
-
-  @mixin \2xl\:flex-none {
-    @include \2xl\:flex-(none);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin flex-($v) {
     @include flex($v);
   }
+  x*/
 
-  @mixin sm\:flex-($v) {
-    @include flex($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:flex-($v) {
+      @include flex($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:flex-($v) {
-    @include flex($v, $md);
-  }
-
-  @mixin lg\:flex-($v) {
-    @include flex($v, $lg);
-  }
-
-  @mixin xl\:flex-($v) {
-    @include flex($v, $xl);
-  }
-
-  @mixin \2xl\:flex-($v) {
-    @include flex($v, $\2xl);
-  }
-
-  // x*/
 }
