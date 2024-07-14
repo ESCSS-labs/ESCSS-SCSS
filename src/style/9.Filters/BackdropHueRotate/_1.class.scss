@@ -1,397 +1,77 @@
 @use "../../setting" as *;
 
+
+$BackdropHueRotate: (
+  "backdrop-hue-rotate-0": 0deg,
+  "backdrop-hue-rotate-15": 15deg,
+  "backdrop-hue-rotate-30": 30deg,
+  "backdrop-hue-rotate-60": 60deg,
+  "backdrop-hue-rotate-90": 90deg,
+  "backdrop-hue-rotate-180": 180deg
+);
+
 @if $Basic {
-  // /*x
-  @mixin backdrop-hue-rotate-0 {
-    $tw-backdrop-hue-rotate: hue-rotate(0deg) !global;
-    backdrop-filter: get_backdrop-filter();
+  @each $key, $value in $BackdropHueRotate {
+    /*x
+    @mixin #{$key} {
+      $tw-backdrop-hue-rotate: hue-rotate(#{$value}) !global;
+      @include backdrop-filter(get_backdrop-filter());
+    }
+    x*/
+    /*x
+    @mixin -#{$key} {
+      $tw-backdrop-hue-rotate: hue-rotate(-#{$value}) !global;
+      @include backdrop-filter(get_backdrop-filter());
+    }
+    x*/
   }
-
-  @mixin backdrop-hue-rotate-15 {
-    $tw-backdrop-hue-rotate: hue-rotate(15deg) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-hue-rotate-30 {
-    $tw-backdrop-hue-rotate: hue-rotate(30deg) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-hue-rotate-60 {
-    $tw-backdrop-hue-rotate: hue-rotate(60deg) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-hue-rotate-90 {
-    $tw-backdrop-hue-rotate: hue-rotate(90deg) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-hue-rotate-180 {
-    $tw-backdrop-hue-rotate: hue-rotate(180deg) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd {
-  @if $sizeMode ==0 or $sizeMode ==1 {
-    // /*x
-    @mixin sm\:backdrop-hue-rotate-0 {
-      @include sm\:backdrop-hue-rotate-(0deg);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackdropHueRotate {
+    /*x
+    @mixin #{$rwd}\:#{$key} {
+      $tw-backdrop-hue-rotate: hue-rotate(#{$value}) !global;
+      @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
     }
-
-    @mixin sm\:backdrop-hue-rotate-15 {
-      @include sm\:backdrop-hue-rotate-(15deg);
+    x*/
+    /*x
+    @mixin #{$rwd}\:-#{$key} {
+      $tw-backdrop-hue-rotate: hue-rotate(-#{$value}) !global;
+      @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
     }
-
-    @mixin sm\:backdrop-hue-rotate-30 {
-      @include sm\:backdrop-hue-rotate-(30deg);
+    x*/
     }
-
-    @mixin sm\:backdrop-hue-rotate-60 {
-      @include sm\:backdrop-hue-rotate-(60deg);
-    }
-
-    @mixin sm\:backdrop-hue-rotate-90 {
-      @include sm\:backdrop-hue-rotate-(90deg);
-    }
-
-    @mixin sm\:backdrop-hue-rotate-180 {
-      @include sm\:backdrop-hue-rotate-(180deg);
-    }
-
-    @mixin md\:backdrop-hue-rotate-0 {
-      @include md\:backdrop-hue-rotate-(0deg);
-    }
-
-    @mixin md\:backdrop-hue-rotate-15 {
-      @include md\:backdrop-hue-rotate-(15deg);
-    }
-
-    @mixin md\:backdrop-hue-rotate-30 {
-      @include md\:backdrop-hue-rotate-(30deg);
-    }
-
-    @mixin md\:backdrop-hue-rotate-60 {
-      @include md\:backdrop-hue-rotate-(60deg);
-    }
-
-    @mixin md\:backdrop-hue-rotate-90 {
-      @include md\:backdrop-hue-rotate-(90deg);
-    }
-
-    @mixin md\:backdrop-hue-rotate-180 {
-      @include md\:backdrop-hue-rotate-(180deg);
-    }
-
-    @mixin lg\:backdrop-hue-rotate-0 {
-      @include lg\:backdrop-hue-rotate-(0deg);
-    }
-
-    @mixin lg\:backdrop-hue-rotate-15 {
-      @include lg\:backdrop-hue-rotate-(15deg);
-    }
-
-    @mixin lg\:backdrop-hue-rotate-30 {
-      @include lg\:backdrop-hue-rotate-(30deg);
-    }
-
-    @mixin lg\:backdrop-hue-rotate-60 {
-      @include lg\:backdrop-hue-rotate-(60deg);
-    }
-
-    @mixin lg\:backdrop-hue-rotate-90 {
-      @include lg\:backdrop-hue-rotate-(90deg);
-    }
-
-    @mixin lg\:backdrop-hue-rotate-180 {
-      @include lg\:backdrop-hue-rotate-(180deg);
-    }
-
-    @mixin xl\:backdrop-hue-rotate-0 {
-      @include xl\:backdrop-hue-rotate-(0deg);
-    }
-
-    @mixin xl\:backdrop-hue-rotate-15 {
-      @include xl\:backdrop-hue-rotate-(15deg);
-    }
-
-    @mixin xl\:backdrop-hue-rotate-30 {
-      @include xl\:backdrop-hue-rotate-(30deg);
-    }
-
-    @mixin xl\:backdrop-hue-rotate-60 {
-      @include xl\:backdrop-hue-rotate-(60deg);
-    }
-
-    @mixin xl\:backdrop-hue-rotate-90 {
-      @include xl\:backdrop-hue-rotate-(90deg);
-    }
-
-    @mixin xl\:backdrop-hue-rotate-180 {
-      @include xl\:backdrop-hue-rotate-(180deg);
-    }
-
-    @mixin \2xl\:backdrop-hue-rotate-0 {
-      @include \2xl\:backdrop-hue-rotate-(0deg);
-    }
-
-    @mixin \2xl\:backdrop-hue-rotate-15 {
-      @include \2xl\:backdrop-hue-rotate-(15deg);
-    }
-
-    @mixin \2xl\:backdrop-hue-rotate-30 {
-      @include \2xl\:backdrop-hue-rotate-(30deg);
-    }
-
-    @mixin \2xl\:backdrop-hue-rotate-60 {
-      @include \2xl\:backdrop-hue-rotate-(60deg);
-    }
-
-    @mixin \2xl\:backdrop-hue-rotate-90 {
-      @include \2xl\:backdrop-hue-rotate-(90deg);
-    }
-
-    @mixin \2xl\:backdrop-hue-rotate-180 {
-      @include \2xl\:backdrop-hue-rotate-(180deg);
-    }
-
-    // x*/
   }
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin backdrop-hue-rotate-($v) {
     $tw-backdrop-hue-rotate: hue-rotate($v) !global;
     @include backdrop-filter(get_backdrop-filter());
   }
-
-  @mixin sm\:backdrop-hue-rotate-($v) {
-    $tw-backdrop-hue-rotate: hue-rotate($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $sm);
+  x*/
+  /*x
+  @mixin -backdrop-hue-rotate-($v) {
+    $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
+    @include backdrop-filter(get_backdrop-filter());
   }
+  x*/
 
-  @mixin md\:backdrop-hue-rotate-($v) {
-    $tw-backdrop-hue-rotate: hue-rotate($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $md);
-  }
-
-  @mixin lg\:backdrop-hue-rotate-($v) {
-    $tw-backdrop-hue-rotate: hue-rotate($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $lg);
-  }
-
-  @mixin xl\:backdrop-hue-rotate-($v) {
-    $tw-backdrop-hue-rotate: hue-rotate($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $xl);
-  }
-
-  @mixin \2xl\:backdrop-hue-rotate-($v) {
-    $tw-backdrop-hue-rotate: hue-rotate($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $\2xl);
-  }
-
-  // x*/
-}
-
-@if $Negative {
-  @if $Basic {
-    // /*x
-    @mixin -backdrop-hue-rotate-0 {
-      $tw-backdrop-hue-rotate: hue-rotate(-0deg) !global;
-      backdrop-filter: get_backdrop-filter();
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:backdrop-hue-rotate-($v) {
+      $tw-backdrop-hue-rotate: hue-rotate($v) !global;
+      @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
     }
-
-    @mixin -backdrop-hue-rotate-15 {
-      $tw-backdrop-hue-rotate: hue-rotate(-15deg) !global;
-      backdrop-filter: get_backdrop-filter();
-    }
-
-    @mixin -backdrop-hue-rotate-30 {
-      $tw-backdrop-hue-rotate: hue-rotate(-30deg) !global;
-      backdrop-filter: get_backdrop-filter();
-    }
-
-    @mixin -backdrop-hue-rotate-60 {
-      $tw-backdrop-hue-rotate: hue-rotate(-60deg) !global;
-      backdrop-filter: get_backdrop-filter();
-    }
-
-    @mixin -backdrop-hue-rotate-90 {
-      $tw-backdrop-hue-rotate: hue-rotate(-90deg) !global;
-      backdrop-filter: get_backdrop-filter();
-    }
-
-    @mixin -backdrop-hue-rotate-180 {
-      $tw-backdrop-hue-rotate: hue-rotate(-180deg) !global;
-      backdrop-filter: get_backdrop-filter();
-    }
-
-    // x*/
-  }
-
-  @if $Rwd {
-    @if $sizeMode ==0 or $sizeMode ==1 {
-      // /*x
-      @mixin sm\:-backdrop-hue-rotate-0 {
-        @include sm\:-backdrop-hue-rotate-(0deg);
-      }
-
-      @mixin sm\:-backdrop-hue-rotate-15 {
-        @include sm\:-backdrop-hue-rotate-(15deg);
-      }
-
-      @mixin sm\:-backdrop-hue-rotate-30 {
-        @include sm\:-backdrop-hue-rotate-(30deg);
-      }
-
-      @mixin sm\:-backdrop-hue-rotate-60 {
-        @include sm\:-backdrop-hue-rotate-(60deg);
-      }
-
-      @mixin sm\:-backdrop-hue-rotate-90 {
-        @include sm\:-backdrop-hue-rotate-(90deg);
-      }
-
-      @mixin sm\:-backdrop-hue-rotate-180 {
-        @include sm\:-backdrop-hue-rotate-(180deg);
-      }
-
-      @mixin md\:-backdrop-hue-rotate-0 {
-        @include md\:-backdrop-hue-rotate-(0deg);
-      }
-
-      @mixin md\:-backdrop-hue-rotate-15 {
-        @include md\:-backdrop-hue-rotate-(15deg);
-      }
-
-      @mixin md\:-backdrop-hue-rotate-30 {
-        @include md\:-backdrop-hue-rotate-(30deg);
-      }
-
-      @mixin md\:-backdrop-hue-rotate-60 {
-        @include md\:-backdrop-hue-rotate-(60deg);
-      }
-
-      @mixin md\:-backdrop-hue-rotate-90 {
-        @include md\:-backdrop-hue-rotate-(90deg);
-      }
-
-      @mixin md\:-backdrop-hue-rotate-180 {
-        @include md\:-backdrop-hue-rotate-(180deg);
-      }
-
-      @mixin lg\:-backdrop-hue-rotate-0 {
-        @include lg\:-backdrop-hue-rotate-(0deg);
-      }
-
-      @mixin lg\:-backdrop-hue-rotate-15 {
-        @include lg\:-backdrop-hue-rotate-(15deg);
-      }
-
-      @mixin lg\:-backdrop-hue-rotate-30 {
-        @include lg\:-backdrop-hue-rotate-(30deg);
-      }
-
-      @mixin lg\:-backdrop-hue-rotate-60 {
-        @include lg\:-backdrop-hue-rotate-(60deg);
-      }
-
-      @mixin lg\:-backdrop-hue-rotate-90 {
-        @include lg\:-backdrop-hue-rotate-(90deg);
-      }
-
-      @mixin lg\:-backdrop-hue-rotate-180 {
-        @include lg\:-backdrop-hue-rotate-(180deg);
-      }
-
-      @mixin xl\:-backdrop-hue-rotate-0 {
-        @include xl\:-backdrop-hue-rotate-(0deg);
-      }
-
-      @mixin xl\:-backdrop-hue-rotate-15 {
-        @include xl\:-backdrop-hue-rotate-(15deg);
-      }
-
-      @mixin xl\:-backdrop-hue-rotate-30 {
-        @include xl\:-backdrop-hue-rotate-(30deg);
-      }
-
-      @mixin xl\:-backdrop-hue-rotate-60 {
-        @include xl\:-backdrop-hue-rotate-(60deg);
-      }
-
-      @mixin xl\:-backdrop-hue-rotate-90 {
-        @include xl\:-backdrop-hue-rotate-(90deg);
-      }
-
-      @mixin xl\:-backdrop-hue-rotate-180 {
-        @include xl\:-backdrop-hue-rotate-(180deg);
-      }
-
-      @mixin \2xl\:-backdrop-hue-rotate-0 {
-        @include \2xl\:-backdrop-hue-rotate-(0deg);
-      }
-
-      @mixin \2xl\:-backdrop-hue-rotate-15 {
-        @include \2xl\:-backdrop-hue-rotate-(15deg);
-      }
-
-      @mixin \2xl\:-backdrop-hue-rotate-30 {
-        @include \2xl\:-backdrop-hue-rotate-(30deg);
-      }
-
-      @mixin \2xl\:-backdrop-hue-rotate-60 {
-        @include \2xl\:-backdrop-hue-rotate-(60deg);
-      }
-
-      @mixin \2xl\:-backdrop-hue-rotate-90 {
-        @include \2xl\:-backdrop-hue-rotate-(90deg);
-      }
-
-      @mixin \2xl\:-backdrop-hue-rotate-180 {
-        @include \2xl\:-backdrop-hue-rotate-(180deg);
-      }
-
-      // x*/
-    }
-  }
-
-  @if $Custom {
-    // /*x
-    @mixin -backdrop-hue-rotate-($v) {
+    x*/
+    /*x
+    @mixin #{$rwd}\:-backdrop-hue-rotate-($v) {
       $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
-      @include backdrop-filter(get_backdrop-filter());
+      @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
     }
-
-    @mixin sm\:-backdrop-hue-rotate-($v) {
-      $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
-      @include backdrop-filter(get_backdrop-filter(), $sm);
-    }
-
-    @mixin md\:-backdrop-hue-rotate-($v) {
-      $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
-      @include backdrop-filter(get_backdrop-filter(), $md);
-    }
-
-    @mixin lg\:-backdrop-hue-rotate-($v) {
-      $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
-      @include backdrop-filter(get_backdrop-filter(), $lg);
-    }
-
-    @mixin xl\:-backdrop-hue-rotate-($v) {
-      $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
-      @include backdrop-filter(get_backdrop-filter(), $xl);
-    }
-
-    @mixin \2xl\:-backdrop-hue-rotate-($v) {
-      $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
-      @include backdrop-filter(get_backdrop-filter(), $\2xl);
-    }
-
-    // x*/
+    x*/
   }
 }

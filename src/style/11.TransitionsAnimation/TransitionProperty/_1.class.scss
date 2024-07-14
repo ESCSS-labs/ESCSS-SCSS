@@ -48,266 +48,264 @@
   // x*/
 }
 
-@if $Rwd {
-  @if $sizeMode ==0 or $sizeMode ==1 {
-    // /*x
-    @mixin sm\:transition-none {
-      @include transition-property(none, $sm);
-    }
-
-    @mixin sm\:transition-all {
-      @include sm\:transition-(all);
-    }
-
-    @mixin sm\:transition {
-      @include sm\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke,
-            opacity,
-            box-shadow,
-            transform,
-            filter,
-            backdrop-filter
-          )
-        );
-    }
-
-    @mixin sm\:transition-colors {
-      @include sm\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke
-          )
-        );
-    }
-
-    @mixin sm\:transition-opacity {
-      @include sm\:transition-(opacity);
-    }
-
-    @mixin sm\:transition-shadow {
-      @include sm\:transition-(box-shadow);
-    }
-
-    @mixin sm\:transition-transform {
-      @include sm\:transition-(transform);
-    }
-
-    @mixin md\:transition-none {
-      @include transition-property(none, $md);
-    }
-
-    @mixin md\:transition-all {
-      @include md\:transition-(all);
-    }
-
-    @mixin md\:transition {
-      @include md\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke,
-            opacity,
-            box-shadow,
-            transform,
-            filter,
-            backdrop-filter
-          )
-        );
-    }
-
-    @mixin md\:transition-colors {
-      @include md\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke
-          )
-        );
-    }
-
-    @mixin md\:transition-opacity {
-      @include md\:transition-(opacity);
-    }
-
-    @mixin md\:transition-shadow {
-      @include md\:transition-(box-shadow);
-    }
-
-    @mixin md\:transition-transform {
-      @include md\:transition-(transform);
-    }
-
-    @mixin lg\:transition-none {
-      @include transition-property(none, $lg);
-    }
-
-    @mixin lg\:transition-all {
-      @include lg\:transition-(all);
-    }
-
-    @mixin lg\:transition {
-      @include lg\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke,
-            opacity,
-            box-shadow,
-            transform,
-            filter,
-            backdrop-filter
-          )
-        );
-    }
-
-    @mixin lg\:transition-colors {
-      @include lg\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke
-          )
-        );
-    }
-
-    @mixin lg\:transition-opacity {
-      @include lg\:transition-(opacity);
-    }
-
-    @mixin lg\:transition-shadow {
-      @include lg\:transition-(box-shadow);
-    }
-
-    @mixin lg\:transition-transform {
-      @include lg\:transition-(transform);
-    }
-
-    @mixin xl\:transition-none {
-      @include transition-property(none, $xl);
-    }
-
-    @mixin xl\:transition-all {
-      @include xl\:transition-(all);
-    }
-
-    @mixin xl\:transition {
-      @include xl\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke,
-            opacity,
-            box-shadow,
-            transform,
-            filter,
-            backdrop-filter
-          )
-        );
-    }
-
-    @mixin xl\:transition-colors {
-      @include xl\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke
-          )
-        );
-    }
-
-    @mixin xl\:transition-opacity {
-      @include xl\:transition-(opacity);
-    }
-
-    @mixin xl\:transition-shadow {
-      @include xl\:transition-(box-shadow);
-    }
-
-    @mixin xl\:transition-transform {
-      @include xl\:transition-(transform);
-    }
-
-    @mixin \2xl\:transition-none {
-      @include transition-property(none, $\2xl);
-    }
-
-    @mixin \2xl\:transition-all {
-      @include \2xl\:transition-(all);
-    }
-
-    @mixin \2xl\:transition {
-      @include \2xl\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke,
-            opacity,
-            box-shadow,
-            transform,
-            filter,
-            backdrop-filter
-          )
-        );
-    }
-
-    @mixin \2xl\:transition-colors {
-      @include \2xl\:transition-(
-          (
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke
-          )
-        );
-    }
-
-    @mixin \2xl\:transition-opacity {
-      @include \2xl\:transition-(opacity);
-    }
-
-    @mixin \2xl\:transition-shadow {
-      @include \2xl\:transition-(box-shadow);
-    }
-
-    @mixin \2xl\:transition-transform {
-      @include \2xl\:transition-(transform);
-    }
-
-    // x*/
+@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
+  // /*x
+  @mixin sm\:transition-none {
+    @include transition-property(none, $sm);
   }
+
+  @mixin sm\:transition-all {
+    @include sm\:transition-(all);
+  }
+
+  @mixin sm\:transition {
+    @include sm\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        )
+      );
+  }
+
+  @mixin sm\:transition-colors {
+    @include sm\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        )
+      );
+  }
+
+  @mixin sm\:transition-opacity {
+    @include sm\:transition-(opacity);
+  }
+
+  @mixin sm\:transition-shadow {
+    @include sm\:transition-(box-shadow);
+  }
+
+  @mixin sm\:transition-transform {
+    @include sm\:transition-(transform);
+  }
+
+  @mixin md\:transition-none {
+    @include transition-property(none, $md);
+  }
+
+  @mixin md\:transition-all {
+    @include md\:transition-(all);
+  }
+
+  @mixin md\:transition {
+    @include md\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        )
+      );
+  }
+
+  @mixin md\:transition-colors {
+    @include md\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        )
+      );
+  }
+
+  @mixin md\:transition-opacity {
+    @include md\:transition-(opacity);
+  }
+
+  @mixin md\:transition-shadow {
+    @include md\:transition-(box-shadow);
+  }
+
+  @mixin md\:transition-transform {
+    @include md\:transition-(transform);
+  }
+
+  @mixin lg\:transition-none {
+    @include transition-property(none, $lg);
+  }
+
+  @mixin lg\:transition-all {
+    @include lg\:transition-(all);
+  }
+
+  @mixin lg\:transition {
+    @include lg\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        )
+      );
+  }
+
+  @mixin lg\:transition-colors {
+    @include lg\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        )
+      );
+  }
+
+  @mixin lg\:transition-opacity {
+    @include lg\:transition-(opacity);
+  }
+
+  @mixin lg\:transition-shadow {
+    @include lg\:transition-(box-shadow);
+  }
+
+  @mixin lg\:transition-transform {
+    @include lg\:transition-(transform);
+  }
+
+  @mixin xl\:transition-none {
+    @include transition-property(none, $xl);
+  }
+
+  @mixin xl\:transition-all {
+    @include xl\:transition-(all);
+  }
+
+  @mixin xl\:transition {
+    @include xl\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        )
+      );
+  }
+
+  @mixin xl\:transition-colors {
+    @include xl\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        )
+      );
+  }
+
+  @mixin xl\:transition-opacity {
+    @include xl\:transition-(opacity);
+  }
+
+  @mixin xl\:transition-shadow {
+    @include xl\:transition-(box-shadow);
+  }
+
+  @mixin xl\:transition-transform {
+    @include xl\:transition-(transform);
+  }
+
+  @mixin \2xl\:transition-none {
+    @include transition-property(none, $\2xl);
+  }
+
+  @mixin \2xl\:transition-all {
+    @include \2xl\:transition-(all);
+  }
+
+  @mixin \2xl\:transition {
+    @include \2xl\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke,
+          opacity,
+          box-shadow,
+          transform,
+          filter,
+          backdrop-filter
+        )
+      );
+  }
+
+  @mixin \2xl\:transition-colors {
+    @include \2xl\:transition-(
+        (
+          color,
+          background-color,
+          border-color,
+          text-decoration-color,
+          fill,
+          stroke
+        )
+      );
+  }
+
+  @mixin \2xl\:transition-opacity {
+    @include \2xl\:transition-(opacity);
+  }
+
+  @mixin \2xl\:transition-shadow {
+    @include \2xl\:transition-(box-shadow);
+  }
+
+  @mixin \2xl\:transition-transform {
+    @include \2xl\:transition-(transform);
+  }
+
+  // x*/
 }
 
 @if $Custom {

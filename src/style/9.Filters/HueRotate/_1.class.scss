@@ -1,397 +1,76 @@
 @use "../../setting" as *;
 
+$HueRotate: (
+  "hue-rotate-0": 0deg,
+  "hue-rotate-15": 15deg,
+  "hue-rotate-30": 30deg,
+  "hue-rotate-60": 60deg,
+  "hue-rotate-90": 90deg,
+  "hue-rotate-180": 180deg
+);
+
 @if $Basic {
-  // /*x
-  @mixin hue-rotate-0 {
-    $tw-hue-rotate: hue-rotate(0deg) !global;
-    filter: get_filter();
+  @each $key, $value in $HueRotate {
+    /*x
+    @mixin #{$key} {
+      $tw-hue-rotate: hue-rotate(#{$value}) !global;
+      @include filter(get_filter());
+    }
+    x*/
+    /*x
+    @mixin -#{$key} {
+      $tw-hue-rotate: hue-rotate(-#{$value}) !global;
+      @include filter(get_filter());
+    }
+    x*/
   }
-
-  @mixin hue-rotate-15 {
-    $tw-hue-rotate: hue-rotate(15deg) !global;
-    filter: get_filter();
-  }
-
-  @mixin hue-rotate-30 {
-    $tw-hue-rotate: hue-rotate(30deg) !global;
-    filter: get_filter();
-  }
-
-  @mixin hue-rotate-60 {
-    $tw-hue-rotate: hue-rotate(60deg) !global;
-    filter: get_filter();
-  }
-
-  @mixin hue-rotate-90 {
-    $tw-hue-rotate: hue-rotate(90deg) !global;
-    filter: get_filter();
-  }
-
-  @mixin hue-rotate-180 {
-    $tw-hue-rotate: hue-rotate(180deg) !global;
-    filter: get_filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd {
-  @if $sizeMode ==0 or $sizeMode ==1 {
-    // /*x
-    @mixin sm\:hue-rotate-0 {
-      @include sm\:hue-rotate-(0deg);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $HueRotate {
+    /*x
+    @mixin #{$rwd}\:#{$key} {
+      $tw-hue-rotate: hue-rotate(#{$value}) !global;
+      @include filter(get_filter(), $#{$rwd});
     }
-
-    @mixin sm\:hue-rotate-15 {
-      @include sm\:hue-rotate-(15deg);
+    x*/
+    /*x
+    @mixin #{$rwd}\:-#{$key} {
+      $tw-hue-rotate: hue-rotate(-#{$value}) !global;
+      @include filter(get_filter(), $#{$rwd});
     }
-
-    @mixin sm\:hue-rotate-30 {
-      @include sm\:hue-rotate-(30deg);
+    x*/
     }
-
-    @mixin sm\:hue-rotate-60 {
-      @include sm\:hue-rotate-(60deg);
-    }
-
-    @mixin sm\:hue-rotate-90 {
-      @include sm\:hue-rotate-(90deg);
-    }
-
-    @mixin sm\:hue-rotate-180 {
-      @include sm\:hue-rotate-(180deg);
-    }
-
-    @mixin md\:hue-rotate-0 {
-      @include md\:hue-rotate-(0deg);
-    }
-
-    @mixin md\:hue-rotate-15 {
-      @include md\:hue-rotate-(15deg);
-    }
-
-    @mixin md\:hue-rotate-30 {
-      @include md\:hue-rotate-(30deg);
-    }
-
-    @mixin md\:hue-rotate-60 {
-      @include md\:hue-rotate-(60deg);
-    }
-
-    @mixin md\:hue-rotate-90 {
-      @include md\:hue-rotate-(90deg);
-    }
-
-    @mixin md\:hue-rotate-180 {
-      @include md\:hue-rotate-(180deg);
-    }
-
-    @mixin lg\:hue-rotate-0 {
-      @include lg\:hue-rotate-(0deg);
-    }
-
-    @mixin lg\:hue-rotate-15 {
-      @include lg\:hue-rotate-(15deg);
-    }
-
-    @mixin lg\:hue-rotate-30 {
-      @include lg\:hue-rotate-(30deg);
-    }
-
-    @mixin lg\:hue-rotate-60 {
-      @include lg\:hue-rotate-(60deg);
-    }
-
-    @mixin lg\:hue-rotate-90 {
-      @include lg\:hue-rotate-(90deg);
-    }
-
-    @mixin lg\:hue-rotate-180 {
-      @include lg\:hue-rotate-(180deg);
-    }
-
-    @mixin xl\:hue-rotate-0 {
-      @include xl\:hue-rotate-(0deg);
-    }
-
-    @mixin xl\:hue-rotate-15 {
-      @include xl\:hue-rotate-(15deg);
-    }
-
-    @mixin xl\:hue-rotate-30 {
-      @include xl\:hue-rotate-(30deg);
-    }
-
-    @mixin xl\:hue-rotate-60 {
-      @include xl\:hue-rotate-(60deg);
-    }
-
-    @mixin xl\:hue-rotate-90 {
-      @include xl\:hue-rotate-(90deg);
-    }
-
-    @mixin xl\:hue-rotate-180 {
-      @include xl\:hue-rotate-(180deg);
-    }
-
-    @mixin \2xl\:hue-rotate-0 {
-      @include \2xl\:hue-rotate-(0deg);
-    }
-
-    @mixin \2xl\:hue-rotate-15 {
-      @include \2xl\:hue-rotate-(15deg);
-    }
-
-    @mixin \2xl\:hue-rotate-30 {
-      @include \2xl\:hue-rotate-(30deg);
-    }
-
-    @mixin \2xl\:hue-rotate-60 {
-      @include \2xl\:hue-rotate-(60deg);
-    }
-
-    @mixin \2xl\:hue-rotate-90 {
-      @include \2xl\:hue-rotate-(90deg);
-    }
-
-    @mixin \2xl\:hue-rotate-180 {
-      @include \2xl\:hue-rotate-(180deg);
-    }
-
-    // x*/
   }
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin hue-rotate-($v) {
     $tw-hue-rotate: hue-rotate($v) !global;
     @include filter(get_filter());
   }
-
-  @mixin sm\:hue-rotate-($v) {
-    $tw-hue-rotate: hue-rotate($v) !global;
-    @include filter(get_filter(), $sm);
+  x*/
+  /*x
+  @mixin -hue-rotate-($v) {
+    $tw-hue-rotate: hue-rotate(-$v) !global;
+    @include filter(get_filter());
   }
+  x*/
 
-  @mixin md\:hue-rotate-($v) {
-    $tw-hue-rotate: hue-rotate($v) !global;
-    @include filter(get_filter(), $md);
-  }
-
-  @mixin lg\:hue-rotate-($v) {
-    $tw-hue-rotate: hue-rotate($v) !global;
-    @include filter(get_filter(), $lg);
-  }
-
-  @mixin xl\:hue-rotate-($v) {
-    $tw-hue-rotate: hue-rotate($v) !global;
-    @include filter(get_filter(), $xl);
-  }
-
-  @mixin \2xl\:hue-rotate-($v) {
-    $tw-hue-rotate: hue-rotate($v) !global;
-    @include filter(get_filter(), $\2xl);
-  }
-
-  // x*/
-}
-
-@if $Negative {
-  @if $Basic {
-    // /*x
-    @mixin -hue-rotate-0 {
-      $tw-hue-rotate: hue-rotate(-0deg) !global;
-      filter: get_filter();
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:hue-rotate-($v) {
+      $tw-hue-rotate: hue-rotate($v) !global;
+      @include filter(get_filter(), $#{$rwd});
     }
-
-    @mixin -hue-rotate-15 {
-      $tw-hue-rotate: hue-rotate(-15deg) !global;
-      filter: get_filter();
-    }
-
-    @mixin -hue-rotate-30 {
-      $tw-hue-rotate: hue-rotate(-30deg) !global;
-      filter: get_filter();
-    }
-
-    @mixin -hue-rotate-60 {
-      $tw-hue-rotate: hue-rotate(-60deg) !global;
-      filter: get_filter();
-    }
-
-    @mixin -hue-rotate-90 {
-      $tw-hue-rotate: hue-rotate(-90deg) !global;
-      filter: get_filter();
-    }
-
-    @mixin -hue-rotate-180 {
-      $tw-hue-rotate: hue-rotate(-180deg) !global;
-      filter: get_filter();
-    }
-
-    // x*/
-  }
-
-  @if $Rwd {
-    @if $sizeMode ==0 or $sizeMode ==1 {
-      // /*x
-      @mixin sm\:-hue-rotate-0 {
-        @include sm\:-hue-rotate-(0deg);
-      }
-
-      @mixin sm\:-hue-rotate-15 {
-        @include sm\:-hue-rotate-(15deg);
-      }
-
-      @mixin sm\:-hue-rotate-30 {
-        @include sm\:-hue-rotate-(30deg);
-      }
-
-      @mixin sm\:-hue-rotate-60 {
-        @include sm\:-hue-rotate-(60deg);
-      }
-
-      @mixin sm\:-hue-rotate-90 {
-        @include sm\:-hue-rotate-(90deg);
-      }
-
-      @mixin sm\:-hue-rotate-180 {
-        @include sm\:-hue-rotate-(180deg);
-      }
-
-      @mixin md\:-hue-rotate-0 {
-        @include md\:-hue-rotate-(0deg);
-      }
-
-      @mixin md\:-hue-rotate-15 {
-        @include md\:-hue-rotate-(15deg);
-      }
-
-      @mixin md\:-hue-rotate-30 {
-        @include md\:-hue-rotate-(30deg);
-      }
-
-      @mixin md\:-hue-rotate-60 {
-        @include md\:-hue-rotate-(60deg);
-      }
-
-      @mixin md\:-hue-rotate-90 {
-        @include md\:-hue-rotate-(90deg);
-      }
-
-      @mixin md\:-hue-rotate-180 {
-        @include md\:-hue-rotate-(180deg);
-      }
-
-      @mixin lg\:-hue-rotate-0 {
-        @include lg\:-hue-rotate-(0deg);
-      }
-
-      @mixin lg\:-hue-rotate-15 {
-        @include lg\:-hue-rotate-(15deg);
-      }
-
-      @mixin lg\:-hue-rotate-30 {
-        @include lg\:-hue-rotate-(30deg);
-      }
-
-      @mixin lg\:-hue-rotate-60 {
-        @include lg\:-hue-rotate-(60deg);
-      }
-
-      @mixin lg\:-hue-rotate-90 {
-        @include lg\:-hue-rotate-(90deg);
-      }
-
-      @mixin lg\:-hue-rotate-180 {
-        @include lg\:-hue-rotate-(180deg);
-      }
-
-      @mixin xl\:-hue-rotate-0 {
-        @include xl\:-hue-rotate-(0deg);
-      }
-
-      @mixin xl\:-hue-rotate-15 {
-        @include xl\:-hue-rotate-(15deg);
-      }
-
-      @mixin xl\:-hue-rotate-30 {
-        @include xl\:-hue-rotate-(30deg);
-      }
-
-      @mixin xl\:-hue-rotate-60 {
-        @include xl\:-hue-rotate-(60deg);
-      }
-
-      @mixin xl\:-hue-rotate-90 {
-        @include xl\:-hue-rotate-(90deg);
-      }
-
-      @mixin xl\:-hue-rotate-180 {
-        @include xl\:-hue-rotate-(180deg);
-      }
-
-      @mixin \2xl\:-hue-rotate-0 {
-        @include \2xl\:-hue-rotate-(0deg);
-      }
-
-      @mixin \2xl\:-hue-rotate-15 {
-        @include \2xl\:-hue-rotate-(15deg);
-      }
-
-      @mixin \2xl\:-hue-rotate-30 {
-        @include \2xl\:-hue-rotate-(30deg);
-      }
-
-      @mixin \2xl\:-hue-rotate-60 {
-        @include \2xl\:-hue-rotate-(60deg);
-      }
-
-      @mixin \2xl\:-hue-rotate-90 {
-        @include \2xl\:-hue-rotate-(90deg);
-      }
-
-      @mixin \2xl\:-hue-rotate-180 {
-        @include \2xl\:-hue-rotate-(180deg);
-      }
-
-      // x*/
-    }
-  }
-
-  @if $Custom {
-    // /*x
-    @mixin -hue-rotate-($v) {
+    x*/
+    /*x
+    @mixin #{$rwd}\:-hue-rotate-($v) {
       $tw-hue-rotate: hue-rotate(-$v) !global;
-      @include filter(get_filter());
+      @include filter(get_filter(), $#{$rwd});
     }
-
-    @mixin sm\:-hue-rotate-($v) {
-      $tw-hue-rotate: hue-rotate(-$v) !global;
-      @include filter(get_filter(), $sm);
-    }
-
-    @mixin md\:-hue-rotate-($v) {
-      $tw-hue-rotate: hue-rotate(-$v) !global;
-      @include filter(get_filter(), $md);
-    }
-
-    @mixin lg\:-hue-rotate-($v) {
-      $tw-hue-rotate: hue-rotate(-$v) !global;
-      @include filter(get_filter(), $lg);
-    }
-
-    @mixin xl\:-hue-rotate-($v) {
-      $tw-hue-rotate: hue-rotate(-$v) !global;
-      @include filter(get_filter(), $xl);
-    }
-
-    @mixin \2xl\:-hue-rotate-($v) {
-      $tw-hue-rotate: hue-rotate(-$v) !global;
-      @include filter(get_filter(), $\2xl);
-    }
-
-    // x*/
+    x*/
   }
 }

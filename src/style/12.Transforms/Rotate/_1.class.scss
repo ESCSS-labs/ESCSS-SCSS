@@ -1,547 +1,80 @@
 @use "../../setting" as *;
 
+
+$Rotate: (
+  "rotate-0": 0deg,
+  "rotate-1": 1deg,
+  "rotate-2": 2deg,
+  "rotate-3": 3deg,
+  "rotate-6": 6deg,
+  "rotate-12": 12deg,
+  "rotate-45": 45deg,
+  "rotate-90": 90deg,
+  "rotate-180": 180deg
+);
+
 @if $Basic {
-  // /*x
-  @mixin rotate-0 {
-    $tw-rotate: 0deg !global;
-    transform: get_transform();
+  @each $key, $value in $Rotate {
+    /*x
+    @mixin #{$key} {
+      $tw-rotate: #{$value} !global;
+      @include transform(get_transform());
+    }
+    x*/
+    /*x
+    @mixin -#{$key} {
+      $tw-rotate: #{-$value} !global;
+      @include transform(get_transform());
+    }
+    x*/
   }
-
-  @mixin rotate-1 {
-    $tw-rotate: 1deg !global;
-    transform: get_transform();
-  }
-
-  @mixin rotate-2 {
-    $tw-rotate: 2deg !global;
-    transform: get_transform();
-  }
-
-  @mixin rotate-3 {
-    $tw-rotate: 3deg !global;
-    transform: get_transform();
-  }
-
-  @mixin rotate-6 {
-    $tw-rotate: 6deg !global;
-    transform: get_transform();
-  }
-
-  @mixin rotate-12 {
-    $tw-rotate: 12deg !global;
-    transform: get_transform();
-  }
-
-  @mixin rotate-45 {
-    $tw-rotate: 45deg !global;
-    transform: get_transform();
-  }
-
-  @mixin rotate-90 {
-    $tw-rotate: 90deg !global;
-    transform: get_transform();
-  }
-
-  @mixin rotate-180 {
-    $tw-rotate: 180deg !global;
-    transform: get_transform();
-  }
-
-  // x*/
 }
 
-@if $Rwd {
-  @if $sizeMode ==0 or $sizeMode ==1 {
-    // /*x
-    @mixin sm\:rotate-0 {
-      @include sm\:rotate-(0deg);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Rotate {
+    /*x
+    @mixin #{$rwd}\:#{$key} {
+      $tw-rotate: #{$value} !global;
+      @include transform(get_transform(), $#{$rwd});
     }
-
-    @mixin sm\:rotate-1 {
-      @include sm\:rotate-(1deg);
+    x*/
+    /*x
+    @mixin #{$rwd}\:-#{$key} {
+      $tw-rotate: #{-$value} !global;
+      @include transform(get_transform(), $#{$rwd});
     }
-
-    @mixin sm\:rotate-2 {
-      @include sm\:rotate-(2deg);
+    x*/
     }
-
-    @mixin sm\:rotate-3 {
-      @include sm\:rotate-(3deg);
-    }
-
-    @mixin sm\:rotate-6 {
-      @include sm\:rotate-(6deg);
-    }
-
-    @mixin sm\:rotate-12 {
-      @include sm\:rotate-(12deg);
-    }
-
-    @mixin sm\:rotate-45 {
-      @include sm\:rotate-(45deg);
-    }
-
-    @mixin sm\:rotate-90 {
-      @include sm\:rotate-(90deg);
-    }
-
-    @mixin sm\:rotate-180 {
-      @include sm\:rotate-(180deg);
-    }
-
-    @mixin md\:rotate-0 {
-      @include md\:rotate-(0deg);
-    }
-
-    @mixin md\:rotate-1 {
-      @include md\:rotate-(1deg);
-    }
-
-    @mixin md\:rotate-2 {
-      @include md\:rotate-(2deg);
-    }
-
-    @mixin md\:rotate-3 {
-      @include md\:rotate-(3deg);
-    }
-
-    @mixin md\:rotate-6 {
-      @include md\:rotate-(6deg);
-    }
-
-    @mixin md\:rotate-12 {
-      @include md\:rotate-(12deg);
-    }
-
-    @mixin md\:rotate-45 {
-      @include md\:rotate-(45deg);
-    }
-
-    @mixin md\:rotate-90 {
-      @include md\:rotate-(90deg);
-    }
-
-    @mixin md\:rotate-180 {
-      @include md\:rotate-(180deg);
-    }
-
-    @mixin lg\:rotate-0 {
-      @include lg\:rotate-(0deg);
-    }
-
-    @mixin lg\:rotate-1 {
-      @include lg\:rotate-(1deg);
-    }
-
-    @mixin lg\:rotate-2 {
-      @include lg\:rotate-(2deg);
-    }
-
-    @mixin lg\:rotate-3 {
-      @include lg\:rotate-(3deg);
-    }
-
-    @mixin lg\:rotate-6 {
-      @include lg\:rotate-(6deg);
-    }
-
-    @mixin lg\:rotate-12 {
-      @include lg\:rotate-(12deg);
-    }
-
-    @mixin lg\:rotate-45 {
-      @include lg\:rotate-(45deg);
-    }
-
-    @mixin lg\:rotate-90 {
-      @include lg\:rotate-(90deg);
-    }
-
-    @mixin lg\:rotate-180 {
-      @include lg\:rotate-(180deg);
-    }
-
-    @mixin xl\:rotate-0 {
-      @include xl\:rotate-(0deg);
-    }
-
-    @mixin xl\:rotate-1 {
-      @include xl\:rotate-(1deg);
-    }
-
-    @mixin xl\:rotate-2 {
-      @include xl\:rotate-(2deg);
-    }
-
-    @mixin xl\:rotate-3 {
-      @include xl\:rotate-(3deg);
-    }
-
-    @mixin xl\:rotate-6 {
-      @include xl\:rotate-(6deg);
-    }
-
-    @mixin xl\:rotate-12 {
-      @include xl\:rotate-(12deg);
-    }
-
-    @mixin xl\:rotate-45 {
-      @include xl\:rotate-(45deg);
-    }
-
-    @mixin xl\:rotate-90 {
-      @include xl\:rotate-(90deg);
-    }
-
-    @mixin xl\:rotate-180 {
-      @include xl\:rotate-(180deg);
-    }
-
-    @mixin \2xl\:rotate-0 {
-      @include \2xl\:rotate-(0deg);
-    }
-
-    @mixin \2xl\:rotate-1 {
-      @include \2xl\:rotate-(1deg);
-    }
-
-    @mixin \2xl\:rotate-2 {
-      @include \2xl\:rotate-(2deg);
-    }
-
-    @mixin \2xl\:rotate-3 {
-      @include \2xl\:rotate-(3deg);
-    }
-
-    @mixin \2xl\:rotate-6 {
-      @include \2xl\:rotate-(6deg);
-    }
-
-    @mixin \2xl\:rotate-12 {
-      @include \2xl\:rotate-(12deg);
-    }
-
-    @mixin \2xl\:rotate-45 {
-      @include \2xl\:rotate-(45deg);
-    }
-
-    @mixin \2xl\:rotate-90 {
-      @include \2xl\:rotate-(90deg);
-    }
-
-    @mixin \2xl\:rotate-180 {
-      @include \2xl\:rotate-(180deg);
-    }
-
-    // x*/
   }
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin rotate-($v) {
     $tw-rotate: $v !global;
     @include transform(get_transform());
   }
-
-  @mixin sm\:rotate-($v) {
-    $tw-rotate: $v !global;
-    @include transform(get_transform(), $sm);
+  x*/
+  /*x
+  @mixin -rotate-($v) {
+    $tw-rotate: -$v !global;
+    @include transform(get_transform());
   }
+  x*/
 
-  @mixin md\:rotate-($v) {
-    $tw-rotate: $v !global;
-    @include transform(get_transform(), $md);
-  }
-
-  @mixin lg\:rotate-($v) {
-    $tw-rotate: $v !global;
-    @include transform(get_transform(), $lg);
-  }
-
-  @mixin xl\:rotate-($v) {
-    $tw-rotate: $v !global;
-    @include transform(get_transform(), $xl);
-  }
-
-  @mixin \2xl\:rotate-($v) {
-    $tw-rotate: $v !global;
-    @include transform(get_transform(), $\2xl);
-  }
-
-  // x*/
-}
-
-@if $Negative {
-  @if $Basic {
-    // /*x
-    @mixin -rotate-0 {
-      $tw-rotate: -0deg !global;
-      transform: get_transform();
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:rotate-($v) {
+      $tw-rotate: $v !global;
+      @include transform(get_transform(), $#{$rwd});
     }
-
-    @mixin -rotate-1 {
-      $tw-rotate: -1deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -rotate-2 {
-      $tw-rotate: -2deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -rotate-3 {
-      $tw-rotate: -3deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -rotate-6 {
-      $tw-rotate: -6deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -rotate-12 {
-      $tw-rotate: -12deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -rotate-45 {
-      $tw-rotate: -45deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -rotate-90 {
-      $tw-rotate: -90deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -rotate-180 {
-      $tw-rotate: -180deg !global;
-      transform: get_transform();
-    }
-
-    // x*/
-  }
-
-  @if $Rwd {
-    @if $sizeMode ==0 or $sizeMode ==1 {
-      // /*x
-      @mixin sm\:-rotate-0 {
-        @include sm\:-rotate-(0deg);
-      }
-
-      @mixin sm\:-rotate-1 {
-        @include sm\:-rotate-(1deg);
-      }
-
-      @mixin sm\:-rotate-2 {
-        @include sm\:-rotate-(2deg);
-      }
-
-      @mixin sm\:-rotate-3 {
-        @include sm\:-rotate-(3deg);
-      }
-
-      @mixin sm\:-rotate-6 {
-        @include sm\:-rotate-(6deg);
-      }
-
-      @mixin sm\:-rotate-12 {
-        @include sm\:-rotate-(12deg);
-      }
-
-      @mixin sm\:-rotate-45 {
-        @include sm\:-rotate-(45deg);
-      }
-
-      @mixin sm\:-rotate-90 {
-        @include sm\:-rotate-(90deg);
-      }
-
-      @mixin sm\:-rotate-180 {
-        @include sm\:-rotate-(180deg);
-      }
-
-      @mixin md\:-rotate-0 {
-        @include md\:-rotate-(0deg);
-      }
-
-      @mixin md\:-rotate-1 {
-        @include md\:-rotate-(1deg);
-      }
-
-      @mixin md\:-rotate-2 {
-        @include md\:-rotate-(2deg);
-      }
-
-      @mixin md\:-rotate-3 {
-        @include md\:-rotate-(3deg);
-      }
-
-      @mixin md\:-rotate-6 {
-        @include md\:-rotate-(6deg);
-      }
-
-      @mixin md\:-rotate-12 {
-        @include md\:-rotate-(12deg);
-      }
-
-      @mixin md\:-rotate-45 {
-        @include md\:-rotate-(45deg);
-      }
-
-      @mixin md\:-rotate-90 {
-        @include md\:-rotate-(90deg);
-      }
-
-      @mixin md\:-rotate-180 {
-        @include md\:-rotate-(180deg);
-      }
-
-      @mixin lg\:-rotate-0 {
-        @include lg\:-rotate-(0deg);
-      }
-
-      @mixin lg\:-rotate-1 {
-        @include lg\:-rotate-(1deg);
-      }
-
-      @mixin lg\:-rotate-2 {
-        @include lg\:-rotate-(2deg);
-      }
-
-      @mixin lg\:-rotate-3 {
-        @include lg\:-rotate-(3deg);
-      }
-
-      @mixin lg\:-rotate-6 {
-        @include lg\:-rotate-(6deg);
-      }
-
-      @mixin lg\:-rotate-12 {
-        @include lg\:-rotate-(12deg);
-      }
-
-      @mixin lg\:-rotate-45 {
-        @include lg\:-rotate-(45deg);
-      }
-
-      @mixin lg\:-rotate-90 {
-        @include lg\:-rotate-(90deg);
-      }
-
-      @mixin lg\:-rotate-180 {
-        @include lg\:-rotate-(180deg);
-      }
-
-      @mixin xl\:-rotate-0 {
-        @include xl\:-rotate-(0deg);
-      }
-
-      @mixin xl\:-rotate-1 {
-        @include xl\:-rotate-(1deg);
-      }
-
-      @mixin xl\:-rotate-2 {
-        @include xl\:-rotate-(2deg);
-      }
-
-      @mixin xl\:-rotate-3 {
-        @include xl\:-rotate-(3deg);
-      }
-
-      @mixin xl\:-rotate-6 {
-        @include xl\:-rotate-(6deg);
-      }
-
-      @mixin xl\:-rotate-12 {
-        @include xl\:-rotate-(12deg);
-      }
-
-      @mixin xl\:-rotate-45 {
-        @include xl\:-rotate-(45deg);
-      }
-
-      @mixin xl\:-rotate-90 {
-        @include xl\:-rotate-(90deg);
-      }
-
-      @mixin xl\:-rotate-180 {
-        @include xl\:-rotate-(180deg);
-      }
-
-      @mixin \2xl\:-rotate-0 {
-        @include \2xl\:-rotate-(0deg);
-      }
-
-      @mixin \2xl\:-rotate-1 {
-        @include \2xl\:-rotate-(1deg);
-      }
-
-      @mixin \2xl\:-rotate-2 {
-        @include \2xl\:-rotate-(2deg);
-      }
-
-      @mixin \2xl\:-rotate-3 {
-        @include \2xl\:-rotate-(3deg);
-      }
-
-      @mixin \2xl\:-rotate-6 {
-        @include \2xl\:-rotate-(6deg);
-      }
-
-      @mixin \2xl\:-rotate-12 {
-        @include \2xl\:-rotate-(12deg);
-      }
-
-      @mixin \2xl\:-rotate-45 {
-        @include \2xl\:-rotate-(45deg);
-      }
-
-      @mixin \2xl\:-rotate-90 {
-        @include \2xl\:-rotate-(90deg);
-      }
-
-      @mixin \2xl\:-rotate-180 {
-        @include \2xl\:-rotate-(180deg);
-      }
-
-      // x*/
-    }
-  }
-
-  @if $Custom {
-    // /*x
-    @mixin -rotate-($v) {
+    x*/
+    /*x
+    @mixin #{$rwd}\:-rotate-($v) {
       $tw-rotate: -$v !global;
-      @include transform(get_transform());
+      @include transform(get_transform(), $#{$rwd});
     }
-
-    @mixin sm\:-rotate-($v) {
-      $tw-rotate: -$v !global;
-      @include transform(get_transform(), $sm);
-    }
-
-    @mixin md\:-rotate-($v) {
-      $tw-rotate: -$v !global;
-      @include transform(get_transform(), $md);
-    }
-
-    @mixin lg\:-rotate-($v) {
-      $tw-rotate: -$v !global;
-      @include transform(get_transform(), $lg);
-    }
-
-    @mixin xl\:-rotate-($v) {
-      $tw-rotate: -$v !global;
-      @include transform(get_transform(), $xl);
-    }
-
-    @mixin \2xl\:-rotate-($v) {
-      $tw-rotate: -$v !global;
-      @include transform(get_transform(), $\2xl);
-    }
-
-    // x*/
+    x*/
   }
 }

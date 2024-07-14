@@ -1,6 +1,6 @@
 @use "../../setting" as *;
 
-$TopRightBottomLeft: (
+$box: (
   "0": "$\\0",
   "px": "$\\px",
   "0\\.5": "$\\0\\.5",
@@ -47,7 +47,7 @@ $TopRightBottomLeft: (
 );
 
 @if $Basic {
-  @each $key, $value in $TopRightBottomLeft {
+  @each $key, $value in $box {
     /*x
     @mixin inset-#{$key} {
       inset: #{$value};
@@ -131,7 +131,7 @@ $TopRightBottomLeft: (
 
 @if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
   @each $rwd in $rwdBox {
-    @each $key, $value in $TopRightBottomLeft {
+    @each $key, $value in $box {
       /*x
       @mixin #{$rwd}\:inset-#{$key} {
         @include inset(#{$value}, $#{$rwd});

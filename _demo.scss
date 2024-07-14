@@ -1,0 +1,55 @@
+@use "../../setting" as *;
+
+
+$ObjectPosition: (
+  "object-bottom": "bottom",
+  "object-center": "center",
+  "object-left": "left",
+  "object-left-bottom": "left bottom",
+  "object-left-top": "left top",
+  "object-right": "right",
+  "object-right-bottom": "right bottom",
+  "object-right-top": "right top",
+  "object-top": "top"
+);
+
+@if $Basic {
+  @each $key, $value in $ObjectPosition {
+    /*x
+      @mixin #{$key} {
+        @include object-position(#{$value});
+      }
+    x*/
+  }
+}
+
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ObjectPosition {
+      /*x
+        @mixin #{$rwd}\:#{$key} {
+          @include object-position(#{$value}, $#{$rwd});
+        }
+      x*/
+    }
+  }
+}
+
+
+@if $Custom {
+  /*x
+    @mixin object-($v) {
+      @include object-position($v);
+    } 
+  x*/
+
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ObjectPosition {
+      /*x
+        @mixin #{$rwd}\:object-($v) {
+          @include object-position($v, $#{$rwd});
+        } 
+      x*/
+    }
+  }
+}

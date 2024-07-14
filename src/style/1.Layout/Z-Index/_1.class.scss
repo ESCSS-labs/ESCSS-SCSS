@@ -1,397 +1,73 @@
 @use "../../setting" as *;
 
+$Z-Index: (
+  "z-0": 0,
+  "z-10": 10,
+  "z-20": 20,
+  "z-30": 30,
+  "z-40": 40,
+  "z-50": 50,
+  "z-auto": auto
+);
+
 @if $Basic {
-  // /*x
-  @mixin z-0 {
-    z-index: 0;
-  }
+  @each $key, $value in $Z-Index {
+    /*x
+    @mixin #{$key} {
+      z-index: #{$value};
+    }
+    x*/
 
-  @mixin z-10 {
-    z-index: 10;
+    /*x
+    @mixin -#{$key} {
+      z-index: -#{$value};
+    }
+    x*/
   }
-
-  @mixin z-20 {
-    z-index: 20;
-  }
-
-  @mixin z-30 {
-    z-index: 30;
-  }
-
-  @mixin z-40 {
-    z-index: 40;
-  }
-
-  @mixin z-50 {
-    z-index: 50;
-  }
-
-  @mixin z-auto {
-    z-index: auto;
-  }
-
-  // x*/
 }
 
-@if $Rwd {
-  @if $sizeMode ==0 or $sizeMode ==1 {
-    // /*x
-    @mixin sm\:z-0 {
-      @include sm\:z-(0);
-    }
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Z-Index {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include z-index(#{$value}, $#{$rwd});
+      }
+      x*/
 
-    @mixin sm\:z-10 {
-      @include sm\:z-(10);
+      /*x
+      @mixin #{$rwd}\:-#{$key} {
+        @include z-index(#{-$value}, $#{$rwd});
+      }
+    x*/
     }
-
-    @mixin sm\:z-20 {
-      @include sm\:z-(20);
-    }
-
-    @mixin sm\:z-30 {
-      @include sm\:z-(30);
-    }
-
-    @mixin sm\:z-40 {
-      @include sm\:z-(40);
-    }
-
-    @mixin sm\:z-50 {
-      @include sm\:z-(50);
-    }
-
-    @mixin sm\:z-auto {
-      @include sm\:z-(auto);
-    }
-
-    @mixin md\:z-0 {
-      @include md\:z-(0);
-    }
-
-    @mixin md\:z-10 {
-      @include md\:z-(10);
-    }
-
-    @mixin md\:z-20 {
-      @include md\:z-(20);
-    }
-
-    @mixin md\:z-30 {
-      @include md\:z-(30);
-    }
-
-    @mixin md\:z-40 {
-      @include md\:z-(40);
-    }
-
-    @mixin md\:z-50 {
-      @include md\:z-(50);
-    }
-
-    @mixin md\:z-auto {
-      @include md\:z-(auto);
-    }
-
-    @mixin lg\:z-0 {
-      @include lg\:z-(0);
-    }
-
-    @mixin lg\:z-10 {
-      @include lg\:z-(10);
-    }
-
-    @mixin lg\:z-20 {
-      @include lg\:z-(20);
-    }
-
-    @mixin lg\:z-30 {
-      @include lg\:z-(30);
-    }
-
-    @mixin lg\:z-40 {
-      @include lg\:z-(40);
-    }
-
-    @mixin lg\:z-50 {
-      @include lg\:z-(50);
-    }
-
-    @mixin lg\:z-auto {
-      @include lg\:z-(auto);
-    }
-
-    @mixin xl\:z-0 {
-      @include xl\:z-(0);
-    }
-
-    @mixin xl\:z-10 {
-      @include xl\:z-(10);
-    }
-
-    @mixin xl\:z-20 {
-      @include xl\:z-(20);
-    }
-
-    @mixin xl\:z-30 {
-      @include xl\:z-(30);
-    }
-
-    @mixin xl\:z-40 {
-      @include xl\:z-(40);
-    }
-
-    @mixin xl\:z-50 {
-      @include xl\:z-(50);
-    }
-
-    @mixin xl\:z-auto {
-      @include xl\:z-(auto);
-    }
-
-    @mixin \2xl\:z-0 {
-      @include \2xl\:z-(0);
-    }
-
-    @mixin \2xl\:z-10 {
-      @include \2xl\:z-(10);
-    }
-
-    @mixin \2xl\:z-20 {
-      @include \2xl\:z-(20);
-    }
-
-    @mixin \2xl\:z-30 {
-      @include \2xl\:z-(30);
-    }
-
-    @mixin \2xl\:z-40 {
-      @include \2xl\:z-(40);
-    }
-
-    @mixin \2xl\:z-50 {
-      @include \2xl\:z-(50);
-    }
-
-    @mixin \2xl\:z-auto {
-      @include \2xl\:z-(auto);
-    }
-
-    // x*/
   }
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin z-($v) {
     @include z-index($v);
   }
+  x*/
 
-  @mixin sm\:z-($v) {
-    @include z-index($v, $sm);
+  /*x
+  @mixin -z-($v) {
+    @include z-index(-$v);
   }
+  x*/
 
-  @mixin md\:z-($v) {
-    @include z-index($v, $md);
+  @each $rwd in $rwdBox {
+  /*x
+    @mixin #{$rwd}\:z-($v) {
+      @include z-index($v, $#{$rwd});
+    }
+  x*/
+
+  /*x
+  @mixin #{$rwd}\:-z-($v) {
+    @include z-index(-$v, $#{$rwd});
   }
-
-  @mixin lg\:z-($v) {
-    @include z-index($v, $lg);
-  }
-
-  @mixin xl\:z-($v) {
-    @include z-index($v, $xl);
-  }
-
-  @mixin \2xl\:z-($v) {
-    @include z-index($v, $\2xl);
-  }
-
-  // x*/
-}
-
-@if $Negative {
-  @if $Basic {
-    // /*x
-    @mixin -z-0 {
-      z-index: -0;
-    }
-
-    @mixin -z-10 {
-      z-index: -10;
-    }
-
-    @mixin -z-20 {
-      z-index: -20;
-    }
-
-    @mixin -z-30 {
-      z-index: -30;
-    }
-
-    @mixin -z-40 {
-      z-index: -40;
-    }
-
-    @mixin -z-50 {
-      z-index: -50;
-    }
-
-    // x*/
-  }
-
-  @if $Rwd {
-    @if $sizeMode ==0 or $sizeMode ==1 {
-      // /*x
-      @mixin sm\:-z-0 {
-        @include sm\:-z-(0);
-      }
-
-      @mixin sm\:-z-10 {
-        @include sm\:-z-(10);
-      }
-
-      @mixin sm\:-z-20 {
-        @include sm\:-z-(20);
-      }
-
-      @mixin sm\:-z-30 {
-        @include sm\:-z-(30);
-      }
-
-      @mixin sm\:-z-40 {
-        @include sm\:-z-(40);
-      }
-
-      @mixin sm\:-z-50 {
-        @include sm\:-z-(50);
-      }
-
-      @mixin md\:-z-0 {
-        @include md\:-z-(0);
-      }
-
-      @mixin md\:-z-10 {
-        @include md\:-z-(10);
-      }
-
-      @mixin md\:-z-20 {
-        @include md\:-z-(20);
-      }
-
-      @mixin md\:-z-30 {
-        @include md\:-z-(30);
-      }
-
-      @mixin md\:-z-40 {
-        @include md\:-z-(40);
-      }
-
-      @mixin md\:-z-50 {
-        @include md\:-z-(50);
-      }
-
-      @mixin lg\:-z-0 {
-        @include lg\:-z-(0);
-      }
-
-      @mixin lg\:-z-10 {
-        @include lg\:-z-(10);
-      }
-
-      @mixin lg\:-z-20 {
-        @include lg\:-z-(20);
-      }
-
-      @mixin lg\:-z-30 {
-        @include lg\:-z-(30);
-      }
-
-      @mixin lg\:-z-40 {
-        @include lg\:-z-(40);
-      }
-
-      @mixin lg\:-z-50 {
-        @include lg\:-z-(50);
-      }
-
-      @mixin xl\:-z-0 {
-        @include xl\:-z-(0);
-      }
-
-      @mixin xl\:-z-10 {
-        @include xl\:-z-(10);
-      }
-
-      @mixin xl\:-z-20 {
-        @include xl\:-z-(20);
-      }
-
-      @mixin xl\:-z-30 {
-        @include xl\:-z-(30);
-      }
-
-      @mixin xl\:-z-40 {
-        @include xl\:-z-(40);
-      }
-
-      @mixin xl\:-z-50 {
-        @include xl\:-z-(50);
-      }
-
-      @mixin \2xl\:-z-0 {
-        @include \2xl\:-z-(0);
-      }
-
-      @mixin \2xl\:-z-10 {
-        @include \2xl\:-z-(10);
-      }
-
-      @mixin \2xl\:-z-20 {
-        @include \2xl\:-z-(20);
-      }
-
-      @mixin \2xl\:-z-30 {
-        @include \2xl\:-z-(30);
-      }
-
-      @mixin \2xl\:-z-40 {
-        @include \2xl\:-z-(40);
-      }
-
-      @mixin \2xl\:-z-50 {
-        @include \2xl\:-z-(50);
-      }
-
-      // x*/
-    }
-  }
-
-  @if $Custom {
-    // /*x
-    @mixin -z-($v) {
-      @include z-index(-$v);
-    }
-
-    @mixin sm\:-z-($v) {
-      @include z-index(-$v, $sm);
-    }
-
-    @mixin md\:-z-($v) {
-      @include z-index(-$v, $md);
-    }
-
-    @mixin lg\:-z-($v) {
-      @include z-index(-$v, $lg);
-    }
-
-    @mixin xl\:-z-($v) {
-      @include z-index(-$v, $xl);
-    }
-
-    @mixin \2xl\:-z-($v) {
-      @include z-index(-$v, $\2xl);
-    }
-
-    // x*/
+  x*/
   }
 }

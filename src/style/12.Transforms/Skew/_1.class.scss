@@ -1,319 +1,72 @@
 @use "../../setting" as *;
 
+$Skew: (
+  "0": 0deg,
+  "1": 1deg,
+  "2": 2deg,
+  "3": 3deg,
+  "6": 6deg,
+  "12": 12deg
+);
+
 @if $Basic {
-  // /*x
-  @mixin skew-x-0 {
-    $tw-skew-x: 0deg !global;
-    transform: get_transform();
-  }
+  @each $key, $value in $Skew {
+    /*x
+    @mixin skew-x-#{$key} {
+      $tw-skew-x: #{$value} !global;
+      @include transform(get_transform());
+    }
 
-  @mixin skew-y-0 {
-    $tw-skew-y: 0deg !global;
-    transform: get_transform();
-  }
+    @mixin skew-y-#{$key} {
+      $tw-skew-y: #{$value} !global;
+      @include transform(get_transform());
+    }
+    x*/
+    /*x
+    @mixin -skew-x-#{$key} {
+      $tw-skew-x: #{-$value} !global;
+      @include transform(get_transform());
+    }
 
-  @mixin skew-x-1 {
-    $tw-skew-x: 1deg !global;
-    transform: get_transform();
+    @mixin -skew-y-#{$key} {
+      $tw-skew-y: #{-$value} !global;
+      @include transform(get_transform());
+    }
+    x*/
   }
-
-  @mixin skew-y-1 {
-    $tw-skew-y: 1deg !global;
-    transform: get_transform();
-  }
-
-  @mixin skew-x-2 {
-    $tw-skew-x: 2deg !global;
-    transform: get_transform();
-  }
-
-  @mixin skew-y-2 {
-    $tw-skew-y: 2deg !global;
-    transform: get_transform();
-  }
-
-  @mixin skew-x-3 {
-    $tw-skew-x: 3deg !global;
-    transform: get_transform();
-  }
-
-  @mixin skew-y-3 {
-    $tw-skew-y: 3deg !global;
-    transform: get_transform();
-  }
-
-  @mixin skew-x-6 {
-    $tw-skew-x: 6deg !global;
-    transform: get_transform();
-  }
-
-  @mixin skew-y-6 {
-    $tw-skew-y: 6deg !global;
-    transform: get_transform();
-  }
-
-  @mixin skew-x-12 {
-    $tw-skew-x: 12deg !global;
-    transform: get_transform();
-  }
-
-  @mixin skew-y-12 {
-    $tw-skew-y: 12deg !global;
-    transform: get_transform();
-  }
-
-  // x*/
 }
 
-@if $Rwd {
-  @if $sizeMode ==0 or $sizeMode ==1 {
-    // /*x
-    @mixin sm\:skew-x-0 {
-      @include sm\:skew-x-(0deg);
-    }
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Skew {
+      /*x
+      @mixin #{$rwd}\:skew-x-#{$key} {
+        $tw-skew-x: #{$value} !global;
+        @include transform(get_transform(), $#{$rwd});
+      }
 
-    @mixin sm\:skew-y-0 {
-      @include sm\:skew-y-(0deg);
-    }
+      @mixin #{$rwd}\:skew-y-#{$key} {
+        $tw-skew-y: #{$value} !global;
+        @include transform(get_transform(), $#{$rwd});
+      }
+      x*/
+      /*x
+      @mixin #{$rwd}\:-skew-x-#{$key} {
+        $tw-skew-x: #{-$value} !global;
+        @include transform(get_transform(), $#{$rwd});
+      }
 
-    @mixin sm\:skew-x-1 {
-      @include sm\:skew-x-(1deg);
+      @mixin #{$rwd}\:-skew-y-#{$key} {
+        $tw-skew-y: #{-$value} !global;
+        @include transform(get_transform(), $#{$rwd});
+      }
+      x*/
     }
-
-    @mixin sm\:skew-y-1 {
-      @include sm\:skew-y-(1deg);
-    }
-
-    @mixin sm\:skew-x-2 {
-      @include sm\:skew-x-(2deg);
-    }
-
-    @mixin sm\:skew-y-2 {
-      @include sm\:skew-y-(2deg);
-    }
-
-    @mixin sm\:skew-x-3 {
-      @include sm\:skew-x-(3deg);
-    }
-
-    @mixin sm\:skew-y-3 {
-      @include sm\:skew-y-(3deg);
-    }
-
-    @mixin sm\:skew-x-6 {
-      @include sm\:skew-x-(6deg);
-    }
-
-    @mixin sm\:skew-y-6 {
-      @include sm\:skew-y-(6deg);
-    }
-
-    @mixin sm\:skew-x-12 {
-      @include sm\:skew-x-(12deg);
-    }
-
-    @mixin sm\:skew-y-12 {
-      @include sm\:skew-y-(12deg);
-    }
-
-    @mixin md\:skew-x-0 {
-      @include md\:skew-x-(0deg);
-    }
-
-    @mixin md\:skew-y-0 {
-      @include md\:skew-y-(0deg);
-    }
-
-    @mixin md\:skew-x-1 {
-      @include md\:skew-x-(1deg);
-    }
-
-    @mixin md\:skew-y-1 {
-      @include md\:skew-y-(1deg);
-    }
-
-    @mixin md\:skew-x-2 {
-      @include md\:skew-x-(2deg);
-    }
-
-    @mixin md\:skew-y-2 {
-      @include md\:skew-y-(2deg);
-    }
-
-    @mixin md\:skew-x-3 {
-      @include md\:skew-x-(3deg);
-    }
-
-    @mixin md\:skew-y-3 {
-      @include md\:skew-y-(3deg);
-    }
-
-    @mixin md\:skew-x-6 {
-      @include md\:skew-x-(6deg);
-    }
-
-    @mixin md\:skew-y-6 {
-      @include md\:skew-y-(6deg);
-    }
-
-    @mixin md\:skew-x-12 {
-      @include md\:skew-x-(12deg);
-    }
-
-    @mixin md\:skew-y-12 {
-      @include md\:skew-y-(12deg);
-    }
-
-    @mixin lg\:skew-x-0 {
-      @include lg\:skew-x-(0deg);
-    }
-
-    @mixin lg\:skew-y-0 {
-      @include lg\:skew-y-(0deg);
-    }
-
-    @mixin lg\:skew-x-1 {
-      @include lg\:skew-x-(1deg);
-    }
-
-    @mixin lg\:skew-y-1 {
-      @include lg\:skew-y-(1deg);
-    }
-
-    @mixin lg\:skew-x-2 {
-      @include lg\:skew-x-(2deg);
-    }
-
-    @mixin lg\:skew-y-2 {
-      @include lg\:skew-y-(2deg);
-    }
-
-    @mixin lg\:skew-x-3 {
-      @include lg\:skew-x-(3deg);
-    }
-
-    @mixin lg\:skew-y-3 {
-      @include lg\:skew-y-(3deg);
-    }
-
-    @mixin lg\:skew-x-6 {
-      @include lg\:skew-x-(6deg);
-    }
-
-    @mixin lg\:skew-y-6 {
-      @include lg\:skew-y-(6deg);
-    }
-
-    @mixin lg\:skew-x-12 {
-      @include lg\:skew-x-(12deg);
-    }
-
-    @mixin lg\:skew-y-12 {
-      @include lg\:skew-y-(12deg);
-    }
-
-    @mixin xl\:skew-x-0 {
-      @include xl\:skew-x-(0deg);
-    }
-
-    @mixin xl\:skew-y-0 {
-      @include xl\:skew-y-(0deg);
-    }
-
-    @mixin xl\:skew-x-1 {
-      @include xl\:skew-x-(1deg);
-    }
-
-    @mixin xl\:skew-y-1 {
-      @include xl\:skew-y-(1deg);
-    }
-
-    @mixin xl\:skew-x-2 {
-      @include xl\:skew-x-(2deg);
-    }
-
-    @mixin xl\:skew-y-2 {
-      @include xl\:skew-y-(2deg);
-    }
-
-    @mixin xl\:skew-x-3 {
-      @include xl\:skew-x-(3deg);
-    }
-
-    @mixin xl\:skew-y-3 {
-      @include xl\:skew-y-(3deg);
-    }
-
-    @mixin xl\:skew-x-6 {
-      @include xl\:skew-x-(6deg);
-    }
-
-    @mixin xl\:skew-y-6 {
-      @include xl\:skew-y-(6deg);
-    }
-
-    @mixin xl\:skew-x-12 {
-      @include xl\:skew-x-(12deg);
-    }
-
-    @mixin xl\:skew-y-12 {
-      @include xl\:skew-y-(12deg);
-    }
-
-    @mixin \2xl\:skew-x-0 {
-      @include \2xl\:skew-x-(0deg);
-    }
-
-    @mixin \2xl\:skew-y-0 {
-      @include \2xl\:skew-y-(0deg);
-    }
-
-    @mixin \2xl\:skew-x-1 {
-      @include \2xl\:skew-x-(1deg);
-    }
-
-    @mixin \2xl\:skew-y-1 {
-      @include \2xl\:skew-y-(1deg);
-    }
-
-    @mixin \2xl\:skew-x-2 {
-      @include \2xl\:skew-x-(2deg);
-    }
-
-    @mixin \2xl\:skew-y-2 {
-      @include \2xl\:skew-y-(2deg);
-    }
-
-    @mixin \2xl\:skew-x-3 {
-      @include \2xl\:skew-x-(3deg);
-    }
-
-    @mixin \2xl\:skew-y-3 {
-      @include \2xl\:skew-y-(3deg);
-    }
-
-    @mixin \2xl\:skew-x-6 {
-      @include \2xl\:skew-x-(6deg);
-    }
-
-    @mixin \2xl\:skew-y-6 {
-      @include \2xl\:skew-y-(6deg);
-    }
-
-    @mixin \2xl\:skew-x-12 {
-      @include \2xl\:skew-x-(12deg);
-    }
-
-    @mixin \2xl\:skew-y-12 {
-      @include \2xl\:skew-y-(12deg);
-    }
-
-    // x*/
   }
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin skew-x-($v) {
     $tw-skew-x: $v !global;
     @include transform(get_transform());
@@ -323,435 +76,41 @@
     $tw-skew-y: $v !global;
     @include transform(get_transform());
   }
-
-  @mixin sm\:skew-x-($v) {
-    $tw-skew-x: $v !global;
-    @include transform(get_transform(), $sm);
+  x*/
+  /*x
+  @mixin -skew-x-($v) {
+    $tw-skew-x: -$v !global;
+    @include transform(get_transform());
   }
 
-  @mixin sm\:skew-y-($v) {
-    $tw-skew-y: $v !global;
-    @include transform(get_transform(), $sm);
+  @mixin -skew-y-($v) {
+    $tw-skew-y: -$v !global;
+    @include transform(get_transform());
   }
+  x*/
 
-  @mixin md\:skew-x-($v) {
-    $tw-skew-x: $v !global;
-    @include transform(get_transform(), $md);
-  }
-
-  @mixin md\:skew-y-($v) {
-    $tw-skew-y: $v !global;
-    @include transform(get_transform(), $md);
-  }
-
-  @mixin lg\:skew-x-($v) {
-    $tw-skew-x: $v !global;
-    @include transform(get_transform(), $lg);
-  }
-
-  @mixin lg\:skew-y-($v) {
-    $tw-skew-y: $v !global;
-    @include transform(get_transform(), $lg);
-  }
-
-  @mixin xl\:skew-x-($v) {
-    $tw-skew-x: $v !global;
-    @include transform(get_transform(), $xl);
-  }
-
-  @mixin xl\:skew-y-($v) {
-    $tw-skew-y: $v !global;
-    @include transform(get_transform(), $xl);
-  }
-
-  @mixin \2xl\:skew-x-($v) {
-    $tw-skew-x: $v !global;
-    @include transform(get_transform(), $\2xl);
-  }
-
-  @mixin \2xl\:skew-y-($v) {
-    $tw-skew-y: $v !global;
-    @include transform(get_transform(), $\2xl);
-  }
-
-  // x*/
-}
-
-@if $Negative {
-  @if $Basic {
-    // /*x
-    @mixin -skew-x-0 {
-      $tw-skew-x: -0deg !global;
-      transform: get_transform();
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:skew-x-($v) {
+      $tw-skew-x: $v !global;
+      @include transform(get_transform(), $#{$rwd});
     }
 
-    @mixin -skew-y-0 {
-      $tw-skew-y: -0deg !global;
-      transform: get_transform();
+    @mixin #{$rwd}\:skew-y-($v) {
+      $tw-skew-y: $v !global;
+      @include transform(get_transform(), $#{$rwd});
     }
-
-    @mixin -skew-x-1 {
-      $tw-skew-x: -1deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -skew-y-1 {
-      $tw-skew-y: -1deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -skew-x-2 {
-      $tw-skew-x: -2deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -skew-y-2 {
-      $tw-skew-y: -2deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -skew-x-3 {
-      $tw-skew-x: -3deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -skew-y-3 {
-      $tw-skew-y: -3deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -skew-x-6 {
-      $tw-skew-x: -6deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -skew-y-6 {
-      $tw-skew-y: -6deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -skew-x-12 {
-      $tw-skew-x: -12deg !global;
-      transform: get_transform();
-    }
-
-    @mixin -skew-y-12 {
-      $tw-skew-y: -12deg !global;
-      transform: get_transform();
-    }
-
-    // x*/
-  }
-
-  @if $Rwd {
-    @if $sizeMode ==0 or $sizeMode ==1 {
-      // /*x
-      @mixin sm\:-skew-x-0 {
-        @include sm\:-skew-x-(0deg);
-      }
-
-      @mixin sm\:-skew-y-0 {
-        @include sm\:-skew-y-(0deg);
-      }
-
-      @mixin sm\:-skew-x-1 {
-        @include sm\:-skew-x-(1deg);
-      }
-
-      @mixin sm\:-skew-y-1 {
-        @include sm\:-skew-y-(1deg);
-      }
-
-      @mixin sm\:-skew-x-2 {
-        @include sm\:-skew-x-(2deg);
-      }
-
-      @mixin sm\:-skew-y-2 {
-        @include sm\:-skew-y-(2deg);
-      }
-
-      @mixin sm\:-skew-x-3 {
-        @include sm\:-skew-x-(3deg);
-      }
-
-      @mixin sm\:-skew-y-3 {
-        @include sm\:-skew-y-(3deg);
-      }
-
-      @mixin sm\:-skew-x-6 {
-        @include sm\:-skew-x-(6deg);
-      }
-
-      @mixin sm\:-skew-y-6 {
-        @include sm\:-skew-y-(6deg);
-      }
-
-      @mixin sm\:-skew-x-12 {
-        @include sm\:-skew-x-(12deg);
-      }
-
-      @mixin sm\:-skew-y-12 {
-        @include sm\:-skew-y-(12deg);
-      }
-
-      @mixin md\:-skew-x-0 {
-        @include md\:-skew-x-(0deg);
-      }
-
-      @mixin md\:-skew-y-0 {
-        @include md\:-skew-y-(0deg);
-      }
-
-      @mixin md\:-skew-x-1 {
-        @include md\:-skew-x-(1deg);
-      }
-
-      @mixin md\:-skew-y-1 {
-        @include md\:-skew-y-(1deg);
-      }
-
-      @mixin md\:-skew-x-2 {
-        @include md\:-skew-x-(2deg);
-      }
-
-      @mixin md\:-skew-y-2 {
-        @include md\:-skew-y-(2deg);
-      }
-
-      @mixin md\:-skew-x-3 {
-        @include md\:-skew-x-(3deg);
-      }
-
-      @mixin md\:-skew-y-3 {
-        @include md\:-skew-y-(3deg);
-      }
-
-      @mixin md\:-skew-x-6 {
-        @include md\:-skew-x-(6deg);
-      }
-
-      @mixin md\:-skew-y-6 {
-        @include md\:-skew-y-(6deg);
-      }
-
-      @mixin md\:-skew-x-12 {
-        @include md\:-skew-x-(12deg);
-      }
-
-      @mixin md\:-skew-y-12 {
-        @include md\:-skew-y-(12deg);
-      }
-
-      @mixin lg\:-skew-x-0 {
-        @include lg\:-skew-x-(0deg);
-      }
-
-      @mixin lg\:-skew-y-0 {
-        @include lg\:-skew-y-(0deg);
-      }
-
-      @mixin lg\:-skew-x-1 {
-        @include lg\:-skew-x-(1deg);
-      }
-
-      @mixin lg\:-skew-y-1 {
-        @include lg\:-skew-y-(1deg);
-      }
-
-      @mixin lg\:-skew-x-2 {
-        @include lg\:-skew-x-(2deg);
-      }
-
-      @mixin lg\:-skew-y-2 {
-        @include lg\:-skew-y-(2deg);
-      }
-
-      @mixin lg\:-skew-x-3 {
-        @include lg\:-skew-x-(3deg);
-      }
-
-      @mixin lg\:-skew-y-3 {
-        @include lg\:-skew-y-(3deg);
-      }
-
-      @mixin lg\:-skew-x-6 {
-        @include lg\:-skew-x-(6deg);
-      }
-
-      @mixin lg\:-skew-y-6 {
-        @include lg\:-skew-y-(6deg);
-      }
-
-      @mixin lg\:-skew-x-12 {
-        @include lg\:-skew-x-(12deg);
-      }
-
-      @mixin lg\:-skew-y-12 {
-        @include lg\:-skew-y-(12deg);
-      }
-
-      @mixin xl\:-skew-x-0 {
-        @include xl\:-skew-x-(0deg);
-      }
-
-      @mixin xl\:-skew-y-0 {
-        @include xl\:-skew-y-(0deg);
-      }
-
-      @mixin xl\:-skew-x-1 {
-        @include xl\:-skew-x-(1deg);
-      }
-
-      @mixin xl\:-skew-y-1 {
-        @include xl\:-skew-y-(1deg);
-      }
-
-      @mixin xl\:-skew-x-2 {
-        @include xl\:-skew-x-(2deg);
-      }
-
-      @mixin xl\:-skew-y-2 {
-        @include xl\:-skew-y-(2deg);
-      }
-
-      @mixin xl\:-skew-x-3 {
-        @include xl\:-skew-x-(3deg);
-      }
-
-      @mixin xl\:-skew-y-3 {
-        @include xl\:-skew-y-(3deg);
-      }
-
-      @mixin xl\:-skew-x-6 {
-        @include xl\:-skew-x-(6deg);
-      }
-
-      @mixin xl\:-skew-y-6 {
-        @include xl\:-skew-y-(6deg);
-      }
-
-      @mixin xl\:-skew-x-12 {
-        @include xl\:-skew-x-(12deg);
-      }
-
-      @mixin xl\:-skew-y-12 {
-        @include xl\:-skew-y-(12deg);
-      }
-
-      @mixin \2xl\:-skew-x-0 {
-        @include \2xl\:-skew-x-(0deg);
-      }
-
-      @mixin \2xl\:-skew-y-0 {
-        @include \2xl\:-skew-y-(0deg);
-      }
-
-      @mixin \2xl\:-skew-x-1 {
-        @include \2xl\:-skew-x-(1deg);
-      }
-
-      @mixin \2xl\:-skew-y-1 {
-        @include \2xl\:-skew-y-(1deg);
-      }
-
-      @mixin \2xl\:-skew-x-2 {
-        @include \2xl\:-skew-x-(2deg);
-      }
-
-      @mixin \2xl\:-skew-y-2 {
-        @include \2xl\:-skew-y-(2deg);
-      }
-
-      @mixin \2xl\:-skew-x-3 {
-        @include \2xl\:-skew-x-(3deg);
-      }
-
-      @mixin \2xl\:-skew-y-3 {
-        @include \2xl\:-skew-y-(3deg);
-      }
-
-      @mixin \2xl\:-skew-x-6 {
-        @include \2xl\:-skew-x-(6deg);
-      }
-
-      @mixin \2xl\:-skew-y-6 {
-        @include \2xl\:-skew-y-(6deg);
-      }
-
-      @mixin \2xl\:-skew-x-12 {
-        @include \2xl\:-skew-x-(12deg);
-      }
-
-      @mixin \2xl\:-skew-y-12 {
-        @include \2xl\:-skew-y-(12deg);
-      }
-
-      // x*/
-    }
-  }
-
-  @if $Custom {
-    // /*x
-    @mixin -skew-x-($v) {
+    x*/
+    /*x
+    @mixin #{$rwd}\:-skew-x-($v) {
       $tw-skew-x: -$v !global;
-      @include transform(get_transform());
+      @include transform(get_transform(), $#{$rwd});
     }
 
-    @mixin -skew-y-($v) {
+    @mixin #{$rwd}\:-skew-y-($v) {
       $tw-skew-y: -$v !global;
-      @include transform(get_transform());
+      @include transform(get_transform(), $#{$rwd});
     }
-
-    @mixin sm\:-skew-x-($v) {
-      $tw-skew-x: -$v !global;
-      @include transform(get_transform(), $sm);
-    }
-
-    @mixin sm\:-skew-y-($v) {
-      $tw-skew-y: -$v !global;
-      @include transform(get_transform(), $sm);
-    }
-
-    @mixin md\:-skew-x-($v) {
-      $tw-skew-x: -$v !global;
-      @include transform(get_transform(), $md);
-    }
-
-    @mixin md\:-skew-y-($v) {
-      $tw-skew-y: -$v !global;
-      @include transform(get_transform(), $md);
-    }
-
-    @mixin lg\:-skew-x-($v) {
-      $tw-skew-x: -$v !global;
-      @include transform(get_transform(), $lg);
-    }
-
-    @mixin lg\:-skew-y-($v) {
-      $tw-skew-y: -$v !global;
-      @include transform(get_transform(), $lg);
-    }
-
-    @mixin xl\:-skew-x-($v) {
-      $tw-skew-x: -$v !global;
-      @include transform(get_transform(), $xl);
-    }
-
-    @mixin xl\:-skew-y-($v) {
-      $tw-skew-y: -$v !global;
-      @include transform(get_transform(), $xl);
-    }
-
-    @mixin \2xl\:-skew-x-($v) {
-      $tw-skew-x: -$v !global;
-      @include transform(get_transform(), $\2xl);
-    }
-
-    @mixin \2xl\:-skew-y-($v) {
-      $tw-skew-y: -$v !global;
-      @include transform(get_transform(), $\2xl);
-    }
-
-    // x*/
+    x*/
   }
 }
