@@ -1,293 +1,54 @@
 @use "../../setting" as *;
 
+$DropShadow: (
+  "drop-shadow-sm": drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)) drop-shadow(0 0 0 #fff),
+  "drop-shadow": drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)),
+  "drop-shadow-md": drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)),
+  "drop-shadow-lg": drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)),
+  "drop-shadow-xl": drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08)),
+  "drop-shadow-2xl": drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)) drop-shadow(0 0 0 #fff),
+  "drop-shadow-none": drop-shadow(0 0 #0000) drop-shadow(0 0 0 #fff),
+);
+
+
 @if $Basic {
-  // /*x
-  @mixin drop-shadow-sm {
-    $tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))
-      drop-shadow(0 0 0 #fff) !global;
-    filter: get_filter();
+  @each $key, $value in $DropShadow {
+    /*x
+    @mixin #{$key} {
+      $tw-drop-shadow: #{$value} !global;
+      @include filter(get_filter());
+    }
+    x*/
   }
-
-  @mixin drop-shadow {
-    $tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
-      drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)) !global;
-    filter: get_filter();
-  }
-
-  @mixin drop-shadow-md {
-    $tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
-      drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)) !global;
-    filter: get_filter();
-  }
-
-  @mixin drop-shadow-lg {
-    $tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-      drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)) !global;
-    filter: get_filter();
-  }
-
-  @mixin drop-shadow-xl {
-    $tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
-      drop-shadow(0 8px 5px rgb(0 0 0 / 0.08)) !global;
-    filter: get_filter();
-  }
-
-  @mixin drop-shadow-2xl {
-    $tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))
-      drop-shadow(0 0 0 #fff) !global;
-    filter: get_filter();
-  }
-
-  @mixin drop-shadow-none {
-    $tw-drop-shadow: drop-shadow(0 0 #0000) drop-shadow(0 0 0 #fff) !global;
-    filter: get_filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:drop-shadow-sm {
-    @include sm\:drop-shadow-(0 1px 1px rgb(0 0 0 / 0.05));
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $DropShadow {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-drop-shadow: list.nth($value, 1) list.nth($value, 2) !global;
+        @include filter(get_filter(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:drop-shadow {
-    @include sm\:drop-shadow-(
-        0 1px 2px rgb(0 0 0 / 0.1),
-        0 1px 1px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin sm\:drop-shadow-md {
-    @include sm\:drop-shadow-(
-        0 4px 3px rgb(0 0 0 / 0.07),
-        0 2px 2px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin sm\:drop-shadow-lg {
-    @include sm\:drop-shadow-(
-        0 10px 8px rgb(0 0 0 / 0.04),
-        0 4px 3px rgb(0 0 0 / 0.1)
-      );
-  }
-
-  @mixin sm\:drop-shadow-xl {
-    @include sm\:drop-shadow-(
-        0 20px 13px rgb(0 0 0 / 0.03),
-        0 8px 5px rgb(0 0 0 / 0.08)
-      );
-  }
-
-  @mixin sm\:drop-shadow-2xl {
-    @include sm\:drop-shadow-(0 25px 25px rgb(0 0 0 / 0.15));
-  }
-
-  @mixin sm\:drop-shadow-none {
-    @include sm\:drop-shadow-(0 0 #0000);
-  }
-
-  @mixin md\:drop-shadow-sm {
-    @include md\:drop-shadow-(0 1px 1px rgb(0 0 0 / 0.05));
-  }
-
-  @mixin md\:drop-shadow {
-    @include md\:drop-shadow-(
-        0 1px 2px rgb(0 0 0 / 0.1),
-        0 1px 1px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin md\:drop-shadow-md {
-    @include md\:drop-shadow-(
-        0 4px 3px rgb(0 0 0 / 0.07),
-        0 2px 2px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin md\:drop-shadow-lg {
-    @include md\:drop-shadow-(
-        0 10px 8px rgb(0 0 0 / 0.04),
-        0 4px 3px rgb(0 0 0 / 0.1)
-      );
-  }
-
-  @mixin md\:drop-shadow-xl {
-    @include md\:drop-shadow-(
-        0 20px 13px rgb(0 0 0 / 0.03),
-        0 8px 5px rgb(0 0 0 / 0.08)
-      );
-  }
-
-  @mixin md\:drop-shadow-2xl {
-    @include md\:drop-shadow-(0 25px 25px rgb(0 0 0 / 0.15));
-  }
-
-  @mixin md\:drop-shadow-none {
-    @include md\:drop-shadow-(0 0 #0000);
-  }
-
-  @mixin lg\:drop-shadow-sm {
-    @include lg\:drop-shadow-(0 1px 1px rgb(0 0 0 / 0.05));
-  }
-
-  @mixin lg\:drop-shadow {
-    @include lg\:drop-shadow-(
-        0 1px 2px rgb(0 0 0 / 0.1),
-        0 1px 1px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin lg\:drop-shadow-md {
-    @include lg\:drop-shadow-(
-        0 4px 3px rgb(0 0 0 / 0.07),
-        0 2px 2px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin lg\:drop-shadow-lg {
-    @include lg\:drop-shadow-(
-        0 10px 8px rgb(0 0 0 / 0.04),
-        0 4px 3px rgb(0 0 0 / 0.1)
-      );
-  }
-
-  @mixin lg\:drop-shadow-xl {
-    @include lg\:drop-shadow-(
-        0 20px 13px rgb(0 0 0 / 0.03),
-        0 8px 5px rgb(0 0 0 / 0.08)
-      );
-  }
-
-  @mixin lg\:drop-shadow-2xl {
-    @include lg\:drop-shadow-(0 25px 25px rgb(0 0 0 / 0.15));
-  }
-
-  @mixin lg\:drop-shadow-none {
-    @include lg\:drop-shadow-(0 0 #0000);
-  }
-
-  @mixin xl\:drop-shadow-sm {
-    @include xl\:drop-shadow-(0 1px 1px rgb(0 0 0 / 0.05));
-  }
-
-  @mixin xl\:drop-shadow {
-    @include xl\:drop-shadow-(
-        0 1px 2px rgb(0 0 0 / 0.1),
-        0 1px 1px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin xl\:drop-shadow-md {
-    @include xl\:drop-shadow-(
-        0 4px 3px rgb(0 0 0 / 0.07),
-        0 2px 2px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin xl\:drop-shadow-lg {
-    @include xl\:drop-shadow-(
-        0 10px 8px rgb(0 0 0 / 0.04),
-        0 4px 3px rgb(0 0 0 / 0.1)
-      );
-  }
-
-  @mixin xl\:drop-shadow-xl {
-    @include xl\:drop-shadow-(
-        0 20px 13px rgb(0 0 0 / 0.03),
-        0 8px 5px rgb(0 0 0 / 0.08)
-      );
-  }
-
-  @mixin xl\:drop-shadow-2xl {
-    @include xl\:drop-shadow-(0 25px 25px rgb(0 0 0 / 0.15));
-  }
-
-  @mixin xl\:drop-shadow-none {
-    @include xl\:drop-shadow-(0 0 #0000);
-  }
-
-  @mixin \2xl\:drop-shadow-sm {
-    @include \2xl\:drop-shadow-(0 1px 1px rgb(0 0 0 / 0.05));
-  }
-
-  @mixin \2xl\:drop-shadow {
-    @include \2xl\:drop-shadow-(
-        0 1px 2px rgb(0 0 0 / 0.1),
-        0 1px 1px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin \2xl\:drop-shadow-md {
-    @include \2xl\:drop-shadow-(
-        0 4px 3px rgb(0 0 0 / 0.07),
-        0 2px 2px rgb(0 0 0 / 0.06)
-      );
-  }
-
-  @mixin \2xl\:drop-shadow-lg {
-    @include \2xl\:drop-shadow-(
-        0 10px 8px rgb(0 0 0 / 0.04),
-        0 4px 3px rgb(0 0 0 / 0.1)
-      );
-  }
-
-  @mixin \2xl\:drop-shadow-xl {
-    @include \2xl\:drop-shadow-(
-        0 20px 13px rgb(0 0 0 / 0.03),
-        0 8px 5px rgb(0 0 0 / 0.08)
-      );
-  }
-
-  @mixin \2xl\:drop-shadow-2xl {
-    @include \2xl\:drop-shadow-(0 25px 25px rgb(0 0 0 / 0.15));
-  }
-
-  @mixin \2xl\:drop-shadow-none {
-    @include \2xl\:drop-shadow-(0 0 #0000);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
-  @mixin drop-shadow-($v, $v2: null) {
-    $v2: if($v2, $v2, 0 0 0 #fff); // $v2? true: false;
-    $tw-drop-shadow: drop-shadow($v) drop-shadow($v2) !global;
+  /*x
+  @mixin drop-shadow-($v) {
+    $tw-drop-shadow: drop-shadow($v) drop-shadow(0 0 0 #fff) !global;
     @include filter(get_filter());
   }
+  x*/
 
-  @mixin sm\:drop-shadow-($v, $v2: null) {
-    $v2: if($v2, $v2, 0 0 0 #fff); // $v2? true: false;
-    $tw-drop-shadow: drop-shadow($v) drop-shadow($v2) !global;
-    @include filter(get_filter(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:drop-shadow-($v) {
+      $tw-drop-shadow: drop-shadow($v) drop-shadow(0 0 0 #fff) !global;
+      @include filter(get_filter(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:drop-shadow-($v, $v2: null) {
-    $v2: if($v2, $v2, 0 0 0 #fff); // $v2? true: false;
-    $tw-drop-shadow: drop-shadow($v) drop-shadow($v2) !global;
-    @include filter(get_filter(), $md);
-  }
-
-  @mixin lg\:drop-shadow-($v, $v2: null) {
-    $v2: if($v2, $v2, 0 0 0 #fff); // $v2? true: false;
-    $tw-drop-shadow: drop-shadow($v) drop-shadow($v2) !global;
-    @include filter(get_filter(), $lg);
-  }
-
-  @mixin xl\:drop-shadow-($v, $v2: null) {
-    $v2: if($v2, $v2, 0 0 0 #fff); // $v2? true: false;
-    $tw-drop-shadow: drop-shadow($v) drop-shadow($v2) !global;
-    @include filter(get_filter(), $xl);
-  }
-
-  @mixin \2xl\:drop-shadow-($v, $v2: null) {
-    $v2: if($v2, $v2, 0 0 0 #fff); // $v2? true: false;
-    $tw-drop-shadow: drop-shadow($v) drop-shadow($v2) !global;
-    @include filter(get_filter(), $\2xl);
-  }
-
-  // x*/
 }
