@@ -1,55 +1,31 @@
-@use "../../setting" as *;
-
-
-$ObjectPosition: (
-  "object-bottom": "bottom",
-  "object-center": "center",
-  "object-left": "left",
-  "object-left-bottom": "left bottom",
-  "object-left-top": "left top",
-  "object-right": "right",
-  "object-right-bottom": "right bottom",
-  "object-right-top": "right top",
-  "object-top": "top"
-);
-
-@if $Basic {
-  @each $key, $value in $ObjectPosition {
-    /*x
-      @mixin #{$key} {
-        @include object-position(#{$value});
-      }
-    x*/
-  }
+@mixin rounded-ss#{$key} {
+  @include border-start-start-radius(#{$value})
 }
 
-@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
-  @each $rwd in $rwdBox {
-    @each $key, $value in $ObjectPosition {
-      /*x
-        @mixin #{$rwd}\:#{$key} {
-          @include object-position(#{$value}, $#{$rwd});
-        }
-      x*/
-    }
-  }
+@mixin rounded-se#{$key} {
+  @include border-start-end-radius(#{$value})
 }
 
+@mixin rounded-ee#{$key} {
+  @include border-end-end-radius(#{$value})
+}
 
-@if $Custom {
-  /*x
-    @mixin object-($v) {
-      @include object-position($v);
-    } 
-  x*/
+@mixin rounded-es#{$key} {
+  @include border-end-start-radius(#{$value})
+}
 
-  @each $rwd in $rwdBox {
-    @each $key, $value in $ObjectPosition {
-      /*x
-        @mixin #{$rwd}\:object-($v) {
-          @include object-position($v, $#{$rwd});
-        } 
-      x*/
-    }
-  }
+@mixin rounded-tl#{$key} {
+  @include border-top-left-radius(#{$value})
+}
+
+@mixin rounded-tr#{$key} {
+  @include border-top-right-radius(#{$value})
+}
+
+@mixin rounded-br#{$key} {
+  @include border-bottom-right-radius(#{$value})
+}
+
+@mixin rounded-bl#{$key} {
+  @include border-bottom-left-radius(#{$value})
 }
