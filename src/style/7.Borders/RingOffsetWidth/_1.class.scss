@@ -1,206 +1,81 @@
 @use "../../setting" as *;
 
+$RingOffsetWidth: (
+  "ring-offset-0": 0px,
+  "ring-offset-1": 1px,
+  "ring-offset-2": 2px,
+  "ring-offset-4": 4px,
+  "ring-offset-8": 8px,
+);
+
 @if $Basic {
-  // /*x
-  @mixin ring-offset-0 {
-    @if $tw-dummy-not-match--ring-offset-width {
-      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+  @each $key, $value in $RingOffsetWidth {
+    /*x
+    @mixin #{$key} {
+      @if $tw-dummy-not-match--ring-offset-width {
+        @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+      }
+
+      $tw-ring-offset-width: #{$value} !global;
+      @include box-shadow(get_box-shadow());
     }
-
-    $tw-ring-offset-width: 0px !global;
-    box-shadow: get_box-shadow();
+    x*/
   }
-
-  @mixin ring-offset-1 {
-    @if $tw-dummy-not-match--ring-offset-width {
-      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
-    }
-
-    $tw-ring-offset-width: 1px !global;
-    box-shadow: get_box-shadow();
-  }
-
-  @mixin ring-offset-2 {
-    @if $tw-dummy-not-match--ring-offset-width {
-      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
-    }
-
-    $tw-ring-offset-width: 2px !global;
-    box-shadow: get_box-shadow();
-  }
-
-  @mixin ring-offset-4 {
-    @if $tw-dummy-not-match--ring-offset-width {
-      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
-    }
-
-    $tw-ring-offset-width: 4px !global;
-    box-shadow: get_box-shadow();
-  }
-
-  @mixin ring-offset-8 {
-    @if $tw-dummy-not-match--ring-offset-width {
-      @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
-    }
-
-    $tw-ring-offset-width: 8px !global;
-    box-shadow: get_box-shadow();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:ring-offset-0 {
-    @include sm\:ring-offset-(0px);
-  }
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $RingOffsetWidth {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @if $tw-dummy-not-match--ring-offset-width {
+          @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+        }
 
-  @mixin sm\:ring-offset-1 {
-    @include sm\:ring-offset-(1px);
+        $tw-ring-offset-width: #{$value} !global;
+        @include box-shadow(get_box-shadow(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:ring-offset-2 {
-    @include sm\:ring-offset-(2px);
-  }
-
-  @mixin sm\:ring-offset-4 {
-    @include sm\:ring-offset-(4px);
-  }
-
-  @mixin sm\:ring-offset-8 {
-    @include sm\:ring-offset-(8px);
-  }
-
-  @mixin md\:ring-offset-0 {
-    @include md\:ring-offset-(0px);
-  }
-
-  @mixin md\:ring-offset-1 {
-    @include md\:ring-offset-(1px);
-  }
-
-  @mixin md\:ring-offset-2 {
-    @include md\:ring-offset-(2px);
-  }
-
-  @mixin md\:ring-offset-4 {
-    @include md\:ring-offset-(4px);
-  }
-
-  @mixin md\:ring-offset-8 {
-    @include md\:ring-offset-(8px);
-  }
-
-  @mixin lg\:ring-offset-0 {
-    @include lg\:ring-offset-(0px);
-  }
-
-  @mixin lg\:ring-offset-1 {
-    @include lg\:ring-offset-(1px);
-  }
-
-  @mixin lg\:ring-offset-2 {
-    @include lg\:ring-offset-(2px);
-  }
-
-  @mixin lg\:ring-offset-4 {
-    @include lg\:ring-offset-(4px);
-  }
-
-  @mixin lg\:ring-offset-8 {
-    @include lg\:ring-offset-(8px);
-  }
-
-  @mixin xl\:ring-offset-0 {
-    @include xl\:ring-offset-(0px);
-  }
-
-  @mixin xl\:ring-offset-1 {
-    @include xl\:ring-offset-(1px);
-  }
-
-  @mixin xl\:ring-offset-2 {
-    @include xl\:ring-offset-(2px);
-  }
-
-  @mixin xl\:ring-offset-4 {
-    @include xl\:ring-offset-(4px);
-  }
-
-  @mixin xl\:ring-offset-8 {
-    @include xl\:ring-offset-(8px);
-  }
-
-  @mixin \2xl\:ring-offset-0 {
-    @include \2xl\:ring-offset-(0px);
-  }
-
-  @mixin \2xl\:ring-offset-1 {
-    @include \2xl\:ring-offset-(1px);
-  }
-
-  @mixin \2xl\:ring-offset-2 {
-    @include \2xl\:ring-offset-(2px);
-  }
-
-  @mixin \2xl\:ring-offset-4 {
-    @include \2xl\:ring-offset-(4px);
-  }
-
-  @mixin \2xl\:ring-offset-8 {
-    @include \2xl\:ring-offset-(8px);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
-  @mixin get_ring-offset-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
+  /*x
+  @mixin ring-offset-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
       $tw-ring-offset-color: $v !global;
-    } @else {
+    }
+
+    @else {
       @if $tw-dummy-not-match--ring-offset-width {
         @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
       }
 
       $tw-ring-offset-width: $v !global;
     }
-  }
 
-  @mixin ring-offset-($v) {
-    @include get_ring-offset-($v);
     @include box-shadow(get_box-shadow());
   }
+  x*/
 
-  @mixin sm\:ring-offset-($v) {
-    @include get_ring-offset-($v);
-    @include box-shadow(get_box-shadow(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:ring-offset-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        $tw-ring-offset-color: $v !global;
+      }
+
+      @else {
+        @if $tw-dummy-not-match--ring-offset-width {
+          @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
+        }
+
+        $tw-ring-offset-width: $v !global;
+      }
+
+      @include box-shadow(get_box-shadow(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:ring-offset-($v) {
-    @include get_ring-offset-($v);
-    @include box-shadow(get_box-shadow(), $md);
-  }
-
-  @mixin lg\:ring-offset-($v) {
-    @include get_ring-offset-($v);
-    @include box-shadow(get_box-shadow(), $lg);
-  }
-
-  @mixin xl\:ring-offset-($v) {
-    @include get_ring-offset-($v);
-    @include box-shadow(get_box-shadow(), $xl);
-  }
-
-  @mixin \2xl\:ring-offset-($v) {
-    @include get_ring-offset-($v);
-    @include box-shadow(get_box-shadow(), $\2xl);
-  }
-
-  // x*/
 }

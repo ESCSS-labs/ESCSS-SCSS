@@ -1,133 +1,57 @@
 @use "../../setting" as *;
 
+$StrokeWidth: (
+  "stroke-0": 0,
+  "stroke-1": 1,
+  "stroke-2": 2,
+);
+
 @if $Basic {
-  // /*x
-  @mixin stroke-0 {
-    stroke-width: 0;
+  @each $key, $value in $StrokeWidth {
+    /*x
+    @mixin #{$key} {
+      @include stroke-width(#{$value});
+    }
+    x*/
   }
-
-  @mixin stroke-1 {
-    stroke-width: 1;
-  }
-
-  @mixin stroke-2 {
-    stroke-width: 2;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:stroke-0 {
-    @include sm\:stroke-(0);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $StrokeWidth {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include stroke-width(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:stroke-1 {
-    @include sm\:stroke-(1);
-  }
-
-  @mixin sm\:stroke-2 {
-    @include sm\:stroke-(2);
-  }
-
-  @mixin md\:stroke-0 {
-    @include md\:stroke-(0);
-  }
-
-  @mixin md\:stroke-1 {
-    @include md\:stroke-(1);
-  }
-
-  @mixin md\:stroke-2 {
-    @include md\:stroke-(2);
-  }
-
-  @mixin lg\:stroke-0 {
-    @include lg\:stroke-(0);
-  }
-
-  @mixin lg\:stroke-1 {
-    @include lg\:stroke-(1);
-  }
-
-  @mixin lg\:stroke-2 {
-    @include lg\:stroke-(2);
-  }
-
-  @mixin xl\:stroke-0 {
-    @include xl\:stroke-(0);
-  }
-
-  @mixin xl\:stroke-1 {
-    @include xl\:stroke-(1);
-  }
-
-  @mixin xl\:stroke-2 {
-    @include xl\:stroke-(2);
-  }
-
-  @mixin \2xl\:stroke-0 {
-    @include \2xl\:stroke-(0);
-  }
-
-  @mixin \2xl\:stroke-1 {
-    @include \2xl\:stroke-(1);
-  }
-
-  @mixin \2xl\:stroke-2 {
-    @include \2xl\:stroke-(2);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
-  @mixin get_stroke-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
+  /*x
+  @mixin stroke-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
       @include stroke($v);
-    } @else {
+    }
+
+    @else {
       @include stroke-width($v);
     }
   }
+  x*/
 
-  @mixin stroke-($v) {
-    @include get_stroke-($v);
-  }
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:stroke-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        @include stroke($v, $#{$rwd});
+      }
 
-  @mixin sm\:stroke-($v) {
-    @include sm {
-      @include get_stroke-($v);
+      @else {
+        @include stroke-width($v, $#{$rwd});
+      }
     }
+    x*/
   }
-
-  @mixin md\:stroke-($v) {
-    @include md {
-      @include get_stroke-($v);
-    }
-  }
-
-  @mixin lg\:stroke-($v) {
-    @include lg {
-      @include get_stroke-($v);
-    }
-  }
-
-  @mixin xl\:stroke-($v) {
-    @include xl {
-      @include get_stroke-($v);
-    }
-  }
-
-  @mixin \2xl\:stroke-($v) {
-    @include \2xl {
-      @include get_stroke-($v);
-    }
-  }
-
-  // x*/
 }

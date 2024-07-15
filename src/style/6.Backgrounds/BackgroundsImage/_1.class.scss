@@ -1,246 +1,38 @@
 @use "../../setting" as *;
 
+// Custom same as  @mixin bg-($v)
+$BackgroundsImage: (
+  "bg-none": none,
+  "bg-gradient-to-t": to top,
+  "bg-gradient-to-tr": to top right,
+  "bg-gradient-to-r": to right,
+  "bg-gradient-to-br": to bottom right,
+  "bg-gradient-to-b": to bottom,
+  "bg-gradient-to-bl": to bottom left,
+  "bg-gradient-to-l": to left,
+  "bg-gradient-to-tl": to top left,
+);
+
 @if $Basic {
-  // /*x
-  @mixin bg-none {
-    $tw-dummy-gradient-direction: none !global;
-    background-image: get_linear-gradient();
+  @each $key, $value in $BackgroundsImage {
+    /*x
+    @mixin #{$key} {
+      $tw-dummy-gradient-direction: #{$value} !global;
+      @include background-image(get_linear-gradient());
+    }
+    x*/
   }
-
-  @mixin bg-gradient-to-t {
-    $tw-dummy-gradient-direction: to top !global;
-    background-image: get_linear-gradient();
-  }
-
-  @mixin bg-gradient-to-tr {
-    $tw-dummy-gradient-direction: to top right !global;
-    background-image: get_linear-gradient();
-  }
-
-  @mixin bg-gradient-to-r {
-    $tw-dummy-gradient-direction: to right !global;
-    background-image: get_linear-gradient();
-  }
-
-  @mixin bg-gradient-to-br {
-    $tw-dummy-gradient-direction: to bottom right !global;
-    background-image: get_linear-gradient();
-  }
-
-  @mixin bg-gradient-to-b {
-    $tw-dummy-gradient-direction: to bottom !global;
-    background-image: get_linear-gradient();
-  }
-
-  @mixin bg-gradient-to-bl {
-    $tw-dummy-gradient-direction: to bottom left !global;
-    background-image: get_linear-gradient();
-  }
-
-  @mixin bg-gradient-to-l {
-    $tw-dummy-gradient-direction: to left !global;
-    background-image: get_linear-gradient();
-  }
-
-  @mixin bg-gradient-to-tl {
-    $tw-dummy-gradient-direction: to top left !global;
-    background-image: get_linear-gradient();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:bg-none {
-    @include sm\:bg-(get_background-image(none));
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackgroundsImage {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-dummy-gradient-direction: #{$value} !global;
+        @include background-image(get_linear-gradient(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:bg-gradient-to-t {
-    @include sm\:bg-(get_background-image(to top));
-  }
-
-  @mixin sm\:bg-gradient-to-tr {
-    @include sm\:bg-(get_background-image(to top right));
-  }
-
-  @mixin sm\:bg-gradient-to-r {
-    @include sm\:bg-(get_background-image(to right));
-  }
-
-  @mixin sm\:bg-gradient-to-br {
-    @include sm\:bg-(get_background-image(to bottom right));
-  }
-
-  @mixin sm\:bg-gradient-to-b {
-    @include sm\:bg-(get_background-image(to bottom));
-  }
-
-  @mixin sm\:bg-gradient-to-bl {
-    @include sm\:bg-(get_background-image(to bottom left));
-  }
-
-  @mixin sm\:bg-gradient-to-l {
-    @include sm\:bg-(get_background-image(to left));
-  }
-
-  @mixin sm\:bg-gradient-to-tl {
-    @include sm\:bg-(get_background-image(to top left));
-  }
-
-  @mixin md\:bg-none {
-    @include md\:bg-(get_background-image(none));
-  }
-
-  @mixin md\:bg-gradient-to-t {
-    @include md\:bg-(get_background-image(to top));
-  }
-
-  @mixin md\:bg-gradient-to-tr {
-    @include md\:bg-(get_background-image(to top right));
-  }
-
-  @mixin md\:bg-gradient-to-r {
-    @include md\:bg-(get_background-image(to right));
-  }
-
-  @mixin md\:bg-gradient-to-br {
-    @include md\:bg-(get_background-image(to bottom right));
-  }
-
-  @mixin md\:bg-gradient-to-b {
-    @include md\:bg-(get_background-image(to bottom));
-  }
-
-  @mixin md\:bg-gradient-to-bl {
-    @include md\:bg-(get_background-image(to bottom left));
-  }
-
-  @mixin md\:bg-gradient-to-l {
-    @include md\:bg-(get_background-image(to left));
-  }
-
-  @mixin md\:bg-gradient-to-tl {
-    @include md\:bg-(get_background-image(to top left));
-  }
-
-  @mixin lg\:bg-none {
-    @include lg\:bg-(get_background-image(none));
-  }
-
-  @mixin lg\:bg-gradient-to-t {
-    @include lg\:bg-(get_background-image(to top));
-  }
-
-  @mixin lg\:bg-gradient-to-tr {
-    @include lg\:bg-(get_background-image(to top right));
-  }
-
-  @mixin lg\:bg-gradient-to-r {
-    @include lg\:bg-(get_background-image(to right));
-  }
-
-  @mixin lg\:bg-gradient-to-br {
-    @include lg\:bg-(get_background-image(to bottom right));
-  }
-
-  @mixin lg\:bg-gradient-to-b {
-    @include lg\:bg-(get_background-image(to bottom));
-  }
-
-  @mixin lg\:bg-gradient-to-bl {
-    @include lg\:bg-(get_background-image(to bottom left));
-  }
-
-  @mixin lg\:bg-gradient-to-l {
-    @include lg\:bg-(get_background-image(to left));
-  }
-
-  @mixin lg\:bg-gradient-to-tl {
-    @include lg\:bg-(get_background-image(to top left));
-  }
-
-  @mixin xl\:bg-none {
-    @include xl\:bg-(get_background-image(none));
-  }
-
-  @mixin xl\:bg-gradient-to-t {
-    @include xl\:bg-(get_background-image(to top));
-  }
-
-  @mixin xl\:bg-gradient-to-tr {
-    @include xl\:bg-(get_background-image(to top right));
-  }
-
-  @mixin xl\:bg-gradient-to-r {
-    @include xl\:bg-(get_background-image(to right));
-  }
-
-  @mixin xl\:bg-gradient-to-br {
-    @include xl\:bg-(get_background-image(to bottom right));
-  }
-
-  @mixin xl\:bg-gradient-to-b {
-    @include xl\:bg-(get_background-image(to bottom));
-  }
-
-  @mixin xl\:bg-gradient-to-bl {
-    @include xl\:bg-(get_background-image(to bottom left));
-  }
-
-  @mixin xl\:bg-gradient-to-l {
-    @include xl\:bg-(get_background-image(to left));
-  }
-
-  @mixin xl\:bg-gradient-to-tl {
-    @include xl\:bg-(get_background-image(to top left));
-  }
-
-  @mixin \2xl\:bg-none {
-    @include \2xl\:bg-(get_background-image(none));
-  }
-
-  @mixin \2xl\:bg-gradient-to-t {
-    @include \2xl\:bg-(get_background-image(to top));
-  }
-
-  @mixin \2xl\:bg-gradient-to-tr {
-    @include \2xl\:bg-(get_background-image(to top right));
-  }
-
-  @mixin \2xl\:bg-gradient-to-r {
-    @include \2xl\:bg-(get_background-image(to right));
-  }
-
-  @mixin \2xl\:bg-gradient-to-br {
-    @include \2xl\:bg-(get_background-image(to bottom right));
-  }
-
-  @mixin \2xl\:bg-gradient-to-b {
-    @include \2xl\:bg-(get_background-image(to bottom));
-  }
-
-  @mixin \2xl\:bg-gradient-to-bl {
-    @include \2xl\:bg-(get_background-image(to bottom left));
-  }
-
-  @mixin \2xl\:bg-gradient-to-l {
-    @include \2xl\:bg-(get_background-image(to left));
-  }
-
-  @mixin \2xl\:bg-gradient-to-tl {
-    @include \2xl\:bg-(get_background-image(to top left));
-  }
-  // x*/
-}
-
-// same as  @mixin bg-($v)
-@if $Custom {
-  // /*x
-  @function get_background-image($v) {
-    $tw-dummy-gradient-direction: $v !global;
-    @return get_linear-gradient();
-  }
-
-  // x*/
 }

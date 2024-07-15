@@ -1,1025 +1,112 @@
 @use "../../setting" as *;
 
+$GridColumnStartEnd: (
+  "col-auto": auto,
+  "col-span-1": span 1 / span 1,
+  "col-span-2": span 2 / span 2,
+  "col-span-3": span 3 / span 3,
+  "col-span-4": span 4 / span 4,
+  "col-span-5": span 5 / span 5,
+  "col-span-6": span 6 / span 6,
+  "col-span-7": span 7 / span 7,
+  "col-span-8": span 8 / span 8,
+  "col-span-9": span 9 / span 9,
+  "col-span-10": span 10 / span 10,
+  "col-span-11": span 11 / span 11,
+  "col-span-12": span 12 / span 12,
+  "col-span-full": "#/*x{1 / -1}", // workaround to support after sass@1.32.13, see https://sass-lang.com/documentation/breaking-changes/slash-div/
+);
+
+$GridColumnStartEnd2: (
+  "col-start-1": 1,
+  "col-start-2": 2,
+  "col-start-3": 3,
+  "col-start-4": 4,
+  "col-start-5": 5,
+  "col-start-6": 6,
+  "col-start-7": 7,
+  "col-start-8": 8,
+  "col-start-9": 9,
+  "col-start-10": 10,
+  "col-start-11": 11,
+  "col-start-12": 12,
+  "col-start-13": 13,
+  "col-start-auto": auto,
+);
+
+$GridColumnStartEnd3: (
+  "col-end-1": 1,
+  "col-end-2": 2,
+  "col-end-3": 3,
+  "col-end-4": 4,
+  "col-end-5": 5,
+  "col-end-6": 6,
+  "col-end-7": 7,
+  "col-end-8": 8,
+  "col-end-9": 9,
+  "col-end-10": 10,
+  "col-end-11": 11,
+  "col-end-12": 12,
+  "col-end-13": 13,
+  "col-end-auto": auto,
+);
+
 @if $Basic {
-  // /*x
-  @mixin col-auto {
-    grid-column: auto;
+  @each $key, $value in $GridColumnStartEnd {
+    /*x
+    @mixin #{$key} {
+      @include grid-column(#{$value});
+    }
+    x*/
   }
 
-  @mixin col-span-1 {
-    grid-column: span 1 / span 1;
+  @each $key, $value in $GridColumnStartEnd2 {
+    /*x
+    @mixin #{$key} {
+      @include grid-column-start(#{$value});
+    }
+    x*/
   }
 
-  @mixin col-span-2 {
-    grid-column: span 2 / span 2;
+  @each $key, $value in $GridColumnStartEnd3 {
+    /*x
+    @mixin #{$key} {
+      @include grid-column-end(#{$value});
+    }
+    x*/
   }
-
-  @mixin col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-
-  @mixin col-span-4 {
-    grid-column: span 4 / span 4;
-  }
-
-  @mixin col-span-5 {
-    grid-column: span 5 / span 5;
-  }
-
-  @mixin col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
-  @mixin col-span-7 {
-    grid-column: span 7 / span 7;
-  }
-
-  @mixin col-span-8 {
-    grid-column: span 8 / span 8;
-  }
-
-  @mixin col-span-9 {
-    grid-column: span 9 / span 9;
-  }
-
-  @mixin col-span-10 {
-    grid-column: span 10 / span 10;
-  }
-
-  @mixin col-span-11 {
-    grid-column: span 11 / span 11;
-  }
-
-  @mixin col-span-12 {
-    grid-column: span 12 / span 12;
-  }
-
-  @mixin col-span-full {
-    grid-column: 1 / -1;
-  }
-
-  @mixin col-start-1 {
-    grid-column-start: 1;
-  }
-
-  @mixin col-start-2 {
-    grid-column-start: 2;
-  }
-
-  @mixin col-start-3 {
-    grid-column-start: 3;
-  }
-
-  @mixin col-start-4 {
-    grid-column-start: 4;
-  }
-
-  @mixin col-start-5 {
-    grid-column-start: 5;
-  }
-
-  @mixin col-start-6 {
-    grid-column-start: 6;
-  }
-
-  @mixin col-start-7 {
-    grid-column-start: 7;
-  }
-
-  @mixin col-start-8 {
-    grid-column-start: 8;
-  }
-
-  @mixin col-start-9 {
-    grid-column-start: 9;
-  }
-
-  @mixin col-start-10 {
-    grid-column-start: 10;
-  }
-
-  @mixin col-start-11 {
-    grid-column-start: 11;
-  }
-
-  @mixin col-start-12 {
-    grid-column-start: 12;
-  }
-
-  @mixin col-start-13 {
-    grid-column-start: 13;
-  }
-
-  @mixin col-start-auto {
-    grid-column-start: auto;
-  }
-
-  @mixin col-end-1 {
-    grid-column-end: 1;
-  }
-
-  @mixin col-end-2 {
-    grid-column-end: 2;
-  }
-
-  @mixin col-end-3 {
-    grid-column-end: 3;
-  }
-
-  @mixin col-end-4 {
-    grid-column-end: 4;
-  }
-
-  @mixin col-end-5 {
-    grid-column-end: 5;
-  }
-
-  @mixin col-end-6 {
-    grid-column-end: 6;
-  }
-
-  @mixin col-end-7 {
-    grid-column-end: 7;
-  }
-
-  @mixin col-end-8 {
-    grid-column-end: 8;
-  }
-
-  @mixin col-end-9 {
-    grid-column-end: 9;
-  }
-
-  @mixin col-end-10 {
-    grid-column-end: 10;
-  }
-
-  @mixin col-end-11 {
-    grid-column-end: 11;
-  }
-
-  @mixin col-end-12 {
-    grid-column-end: 12;
-  }
-
-  @mixin col-end-13 {
-    grid-column-end: 13;
-  }
-
-  @mixin col-end-auto {
-    grid-column-end: auto;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:col-auto {
-    // /*x@include sm\:col-(auto);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $GridColumnStartEnd {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include grid-column(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
+
+    @each $key, $value in $GridColumnStartEnd2 {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include grid-column-start(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
+
+    @each $key, $value in $GridColumnStartEnd3 {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include grid-column-end(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:col-span-1 {
-    // /*x@include sm\:col-(#/*x{span 1 / span 1});
-  }
-
-  @mixin sm\:col-span-2 {
-    // /*x@include sm\:col-(#/*x{span 2 / span 2});
-  }
-
-  @mixin sm\:col-span-3 {
-    // /*x@include sm\:col-(#/*x{span 3 / span 3});
-  }
-
-  @mixin sm\:col-span-4 {
-    // /*x@include sm\:col-(#/*x{span 4 / span 4});
-  }
-
-  @mixin sm\:col-span-5 {
-    // /*x@include sm\:col-(#/*x{span 5 / span 5});
-  }
-
-  @mixin sm\:col-span-6 {
-    // /*x@include sm\:col-(#/*x{span 6 / span 6});
-  }
-
-  @mixin sm\:col-span-7 {
-    // /*x@include sm\:col-(#/*x{span 7 / span 7});
-  }
-
-  @mixin sm\:col-span-8 {
-    // /*x@include sm\:col-(#/*x{span 8 / span 8});
-  }
-
-  @mixin sm\:col-span-9 {
-    // /*x@include sm\:col-(#/*x{span 9 / span 9});
-  }
-
-  @mixin sm\:col-span-10 {
-    // /*x@include sm\:col-(#/*x{span 10 / span 10});
-  }
-
-  @mixin sm\:col-span-11 {
-    // /*x@include sm\:col-(#/*x{span 11 / span 11});
-  }
-
-  @mixin sm\:col-span-12 {
-    // /*x@include sm\:col-(#/*x{span 12 / span 12});
-  }
-
-  @mixin sm\:col-span-full {
-    // /*x@include sm\:col-(#/*x{1 / -1});
-  }
-
-  @mixin sm\:col-start-1 {
-    // /*x@include sm\:col-start-(#/*x{1});
-  }
-
-  @mixin sm\:col-start-2 {
-    // /*x@include sm\:col-start-(#/*x{2});
-  }
-
-  @mixin sm\:col-start-3 {
-    // /*x@include sm\:col-start-(#/*x{3});
-  }
-
-  @mixin sm\:col-start-4 {
-    // /*x@include sm\:col-start-(#/*x{4});
-  }
-
-  @mixin sm\:col-start-5 {
-    // /*x@include sm\:col-start-(#/*x{5});
-  }
-
-  @mixin sm\:col-start-6 {
-    // /*x@include sm\:col-start-(#/*x{6});
-  }
-
-  @mixin sm\:col-start-7 {
-    // /*x@include sm\:col-start-(#/*x{7});
-  }
-
-  @mixin sm\:col-start-8 {
-    // /*x@include sm\:col-start-(#/*x{8});
-  }
-
-  @mixin sm\:col-start-9 {
-    // /*x@include sm\:col-start-(#/*x{9});
-  }
-
-  @mixin sm\:col-start-10 {
-    // /*x@include sm\:col-start-(#/*x{10});
-  }
-
-  @mixin sm\:col-start-11 {
-    // /*x@include sm\:col-start-(#/*x{11});
-  }
-
-  @mixin sm\:col-start-12 {
-    // /*x@include sm\:col-start-(#/*x{12});
-  }
-
-  @mixin sm\:col-start-13 {
-    // /*x@include sm\:col-start-(#/*x{13});
-  }
-
-  @mixin sm\:col-start-auto {
-    // /*x@include sm\:col-start-(auto);
-  }
-
-  @mixin sm\:col-end-1 {
-    // /*x@include sm\:col-end-(#/*x{1});
-  }
-
-  @mixin sm\:col-end-2 {
-    // /*x@include sm\:col-end-(#/*x{2});
-  }
-
-  @mixin sm\:col-end-3 {
-    // /*x@include sm\:col-end-(#/*x{3});
-  }
-
-  @mixin sm\:col-end-4 {
-    // /*x@include sm\:col-end-(#/*x{4});
-  }
-
-  @mixin sm\:col-end-5 {
-    // /*x@include sm\:col-end-(#/*x{5});
-  }
-
-  @mixin sm\:col-end-6 {
-    // /*x@include sm\:col-end-(#/*x{6});
-  }
-
-  @mixin sm\:col-end-7 {
-    // /*x@include sm\:col-end-(#/*x{7});
-  }
-
-  @mixin sm\:col-end-8 {
-    // /*x@include sm\:col-end-(#/*x{8});
-  }
-
-  @mixin sm\:col-end-9 {
-    // /*x@include sm\:col-end-(#/*x{9});
-  }
-
-  @mixin sm\:col-end-10 {
-    // /*x@include sm\:col-end-(#/*x{10});
-  }
-
-  @mixin sm\:col-end-11 {
-    // /*x@include sm\:col-end-(#/*x{11});
-  }
-
-  @mixin sm\:col-end-12 {
-    // /*x@include sm\:col-end-(#/*x{12});
-  }
-
-  @mixin sm\:col-end-13 {
-    // /*x@include sm\:col-end-(#/*x{13});
-  }
-
-  @mixin sm\:col-end-auto {
-    // /*x@include sm\:col-end-(auto);
-  }
-
-  @mixin md\:col-auto {
-    // /*x@include md\:col-(auto);
-  }
-
-  @mixin md\:col-span-1 {
-    // /*x@include md\:col-(#/*x{span 1 / span 1});
-  }
-
-  @mixin md\:col-span-2 {
-    // /*x@include md\:col-(#/*x{span 2 / span 2});
-  }
-
-  @mixin md\:col-span-3 {
-    // /*x@include md\:col-(#/*x{span 3 / span 3});
-  }
-
-  @mixin md\:col-span-4 {
-    // /*x@include md\:col-(#/*x{span 4 / span 4});
-  }
-
-  @mixin md\:col-span-5 {
-    // /*x@include md\:col-(#/*x{span 5 / span 5});
-  }
-
-  @mixin md\:col-span-6 {
-    // /*x@include md\:col-(#/*x{span 6 / span 6});
-  }
-
-  @mixin md\:col-span-7 {
-    // /*x@include md\:col-(#/*x{span 7 / span 7});
-  }
-
-  @mixin md\:col-span-8 {
-    // /*x@include md\:col-(#/*x{span 8 / span 8});
-  }
-
-  @mixin md\:col-span-9 {
-    // /*x@include md\:col-(#/*x{span 9 / span 9});
-  }
-
-  @mixin md\:col-span-10 {
-    // /*x@include md\:col-(#/*x{span 10 / span 10});
-  }
-
-  @mixin md\:col-span-11 {
-    // /*x@include md\:col-(#/*x{span 11 / span 11});
-  }
-
-  @mixin md\:col-span-12 {
-    // /*x@include md\:col-(#/*x{span 12 / span 12});
-  }
-
-  @mixin md\:col-span-full {
-    // /*x@include md\:col-(#/*x{1 / -1});
-  }
-
-  @mixin md\:col-start-1 {
-    // /*x@include md\:col-start-(#/*x{1});
-  }
-
-  @mixin md\:col-start-2 {
-    // /*x@include md\:col-start-(#/*x{2});
-  }
-
-  @mixin md\:col-start-3 {
-    // /*x@include md\:col-start-(#/*x{3});
-  }
-
-  @mixin md\:col-start-4 {
-    // /*x@include md\:col-start-(#/*x{4});
-  }
-
-  @mixin md\:col-start-5 {
-    // /*x@include md\:col-start-(#/*x{5});
-  }
-
-  @mixin md\:col-start-6 {
-    // /*x@include md\:col-start-(#/*x{6});
-  }
-
-  @mixin md\:col-start-7 {
-    // /*x@include md\:col-start-(#/*x{7});
-  }
-
-  @mixin md\:col-start-8 {
-    // /*x@include md\:col-start-(#/*x{8});
-  }
-
-  @mixin md\:col-start-9 {
-    // /*x@include md\:col-start-(#/*x{9});
-  }
-
-  @mixin md\:col-start-10 {
-    // /*x@include md\:col-start-(#/*x{10});
-  }
-
-  @mixin md\:col-start-11 {
-    // /*x@include md\:col-start-(#/*x{11});
-  }
-
-  @mixin md\:col-start-12 {
-    // /*x@include md\:col-start-(#/*x{12});
-  }
-
-  @mixin md\:col-start-13 {
-    // /*x@include md\:col-start-(#/*x{13});
-  }
-
-  @mixin md\:col-start-auto {
-    // /*x@include md\:col-start-(auto);
-  }
-
-  @mixin md\:col-end-1 {
-    // /*x@include md\:col-end-(#/*x{1});
-  }
-
-  @mixin md\:col-end-2 {
-    // /*x@include md\:col-end-(#/*x{2});
-  }
-
-  @mixin md\:col-end-3 {
-    // /*x@include md\:col-end-(#/*x{3});
-  }
-
-  @mixin md\:col-end-4 {
-    // /*x@include md\:col-end-(#/*x{4});
-  }
-
-  @mixin md\:col-end-5 {
-    // /*x@include md\:col-end-(#/*x{5});
-  }
-
-  @mixin md\:col-end-6 {
-    // /*x@include md\:col-end-(#/*x{6});
-  }
-
-  @mixin md\:col-end-7 {
-    // /*x@include md\:col-end-(#/*x{7});
-  }
-
-  @mixin md\:col-end-8 {
-    // /*x@include md\:col-end-(#/*x{8});
-  }
-
-  @mixin md\:col-end-9 {
-    // /*x@include md\:col-end-(#/*x{9});
-  }
-
-  @mixin md\:col-end-10 {
-    // /*x@include md\:col-end-(#/*x{10});
-  }
-
-  @mixin md\:col-end-11 {
-    // /*x@include md\:col-end-(#/*x{11});
-  }
-
-  @mixin md\:col-end-12 {
-    // /*x@include md\:col-end-(#/*x{12});
-  }
-
-  @mixin md\:col-end-13 {
-    // /*x@include md\:col-end-(#/*x{13});
-  }
-
-  @mixin md\:col-end-auto {
-    // /*x@include md\:col-end-(auto);
-  }
-
-  @mixin lg\:col-auto {
-    // /*x@include lg\:col-(auto);
-  }
-
-  @mixin lg\:col-span-1 {
-    // /*x@include lg\:col-(#/*x{span 1 / span 1});
-  }
-
-  @mixin lg\:col-span-2 {
-    // /*x@include lg\:col-(#/*x{span 2 / span 2});
-  }
-
-  @mixin lg\:col-span-3 {
-    // /*x@include lg\:col-(#/*x{span 3 / span 3});
-  }
-
-  @mixin lg\:col-span-4 {
-    // /*x@include lg\:col-(#/*x{span 4 / span 4});
-  }
-
-  @mixin lg\:col-span-5 {
-    // /*x@include lg\:col-(#/*x{span 5 / span 5});
-  }
-
-  @mixin lg\:col-span-6 {
-    // /*x@include lg\:col-(#/*x{span 6 / span 6});
-  }
-
-  @mixin lg\:col-span-7 {
-    // /*x@include lg\:col-(#/*x{span 7 / span 7});
-  }
-
-  @mixin lg\:col-span-8 {
-    // /*x@include lg\:col-(#/*x{span 8 / span 8});
-  }
-
-  @mixin lg\:col-span-9 {
-    // /*x@include lg\:col-(#/*x{span 9 / span 9});
-  }
-
-  @mixin lg\:col-span-10 {
-    // /*x@include lg\:col-(#/*x{span 10 / span 10});
-  }
-
-  @mixin lg\:col-span-11 {
-    // /*x@include lg\:col-(#/*x{span 11 / span 11});
-  }
-
-  @mixin lg\:col-span-12 {
-    // /*x@include lg\:col-(#/*x{span 12 / span 12});
-  }
-
-  @mixin lg\:col-span-full {
-    // /*x@include lg\:col-(#/*x{1 / -1});
-  }
-
-  @mixin lg\:col-start-1 {
-    // /*x@include lg\:col-start-(#/*x{1});
-  }
-
-  @mixin lg\:col-start-2 {
-    // /*x@include lg\:col-start-(#/*x{2});
-  }
-
-  @mixin lg\:col-start-3 {
-    // /*x@include lg\:col-start-(#/*x{3});
-  }
-
-  @mixin lg\:col-start-4 {
-    // /*x@include lg\:col-start-(#/*x{4});
-  }
-
-  @mixin lg\:col-start-5 {
-    // /*x@include lg\:col-start-(#/*x{5});
-  }
-
-  @mixin lg\:col-start-6 {
-    // /*x@include lg\:col-start-(#/*x{6});
-  }
-
-  @mixin lg\:col-start-7 {
-    // /*x@include lg\:col-start-(#/*x{7});
-  }
-
-  @mixin lg\:col-start-8 {
-    // /*x@include lg\:col-start-(#/*x{8});
-  }
-
-  @mixin lg\:col-start-9 {
-    // /*x@include lg\:col-start-(#/*x{9});
-  }
-
-  @mixin lg\:col-start-10 {
-    // /*x@include lg\:col-start-(#/*x{10});
-  }
-
-  @mixin lg\:col-start-11 {
-    // /*x@include lg\:col-start-(#/*x{11});
-  }
-
-  @mixin lg\:col-start-12 {
-    // /*x@include lg\:col-start-(#/*x{12});
-  }
-
-  @mixin lg\:col-start-13 {
-    // /*x@include lg\:col-start-(#/*x{13});
-  }
-
-  @mixin lg\:col-start-auto {
-    // /*x@include lg\:col-start-(auto);
-  }
-
-  @mixin lg\:col-end-1 {
-    // /*x@include lg\:col-end-(#/*x{1});
-  }
-
-  @mixin lg\:col-end-2 {
-    // /*x@include lg\:col-end-(#/*x{2});
-  }
-
-  @mixin lg\:col-end-3 {
-    // /*x@include lg\:col-end-(#/*x{3});
-  }
-
-  @mixin lg\:col-end-4 {
-    // /*x@include lg\:col-end-(#/*x{4});
-  }
-
-  @mixin lg\:col-end-5 {
-    // /*x@include lg\:col-end-(#/*x{5});
-  }
-
-  @mixin lg\:col-end-6 {
-    // /*x@include lg\:col-end-(#/*x{6});
-  }
-
-  @mixin lg\:col-end-7 {
-    // /*x@include lg\:col-end-(#/*x{7});
-  }
-
-  @mixin lg\:col-end-8 {
-    // /*x@include lg\:col-end-(#/*x{8});
-  }
-
-  @mixin lg\:col-end-9 {
-    // /*x@include lg\:col-end-(#/*x{9});
-  }
-
-  @mixin lg\:col-end-10 {
-    // /*x@include lg\:col-end-(#/*x{10});
-  }
-
-  @mixin lg\:col-end-11 {
-    // /*x@include lg\:col-end-(#/*x{11});
-  }
-
-  @mixin lg\:col-end-12 {
-    // /*x@include lg\:col-end-(#/*x{12});
-  }
-
-  @mixin lg\:col-end-13 {
-    // /*x@include lg\:col-end-(#/*x{13});
-  }
-
-  @mixin lg\:col-end-auto {
-    // /*x@include lg\:col-end-(auto);
-  }
-
-  @mixin xl\:col-auto {
-    // /*x@include xl\:col-(auto);
-  }
-
-  @mixin xl\:col-span-1 {
-    // /*x@include xl\:col-(#/*x{span 1 / span 1});
-  }
-
-  @mixin xl\:col-span-2 {
-    // /*x@include xl\:col-(#/*x{span 2 / span 2});
-  }
-
-  @mixin xl\:col-span-3 {
-    // /*x@include xl\:col-(#/*x{span 3 / span 3});
-  }
-
-  @mixin xl\:col-span-4 {
-    // /*x@include xl\:col-(#/*x{span 4 / span 4});
-  }
-
-  @mixin xl\:col-span-5 {
-    // /*x@include xl\:col-(#/*x{span 5 / span 5});
-  }
-
-  @mixin xl\:col-span-6 {
-    // /*x@include xl\:col-(#/*x{span 6 / span 6});
-  }
-
-  @mixin xl\:col-span-7 {
-    // /*x@include xl\:col-(#/*x{span 7 / span 7});
-  }
-
-  @mixin xl\:col-span-8 {
-    // /*x@include xl\:col-(#/*x{span 8 / span 8});
-  }
-
-  @mixin xl\:col-span-9 {
-    // /*x@include xl\:col-(#/*x{span 9 / span 9});
-  }
-
-  @mixin xl\:col-span-10 {
-    // /*x@include xl\:col-(#/*x{span 10 / span 10});
-  }
-
-  @mixin xl\:col-span-11 {
-    // /*x@include xl\:col-(#/*x{span 11 / span 11});
-  }
-
-  @mixin xl\:col-span-12 {
-    // /*x@include xl\:col-(#/*x{span 12 / span 12});
-  }
-
-  @mixin xl\:col-span-full {
-    // /*x@include xl\:col-(#/*x{1 / -1});
-  }
-
-  @mixin xl\:col-start-1 {
-    // /*x@include xl\:col-start-(#/*x{1});
-  }
-
-  @mixin xl\:col-start-2 {
-    // /*x@include xl\:col-start-(#/*x{2});
-  }
-
-  @mixin xl\:col-start-3 {
-    // /*x@include xl\:col-start-(#/*x{3});
-  }
-
-  @mixin xl\:col-start-4 {
-    // /*x@include xl\:col-start-(#/*x{4});
-  }
-
-  @mixin xl\:col-start-5 {
-    // /*x@include xl\:col-start-(#/*x{5});
-  }
-
-  @mixin xl\:col-start-6 {
-    // /*x@include xl\:col-start-(#/*x{6});
-  }
-
-  @mixin xl\:col-start-7 {
-    // /*x@include xl\:col-start-(#/*x{7});
-  }
-
-  @mixin xl\:col-start-8 {
-    // /*x@include xl\:col-start-(#/*x{8});
-  }
-
-  @mixin xl\:col-start-9 {
-    // /*x@include xl\:col-start-(#/*x{9});
-  }
-
-  @mixin xl\:col-start-10 {
-    // /*x@include xl\:col-start-(#/*x{10});
-  }
-
-  @mixin xl\:col-start-11 {
-    // /*x@include xl\:col-start-(#/*x{11});
-  }
-
-  @mixin xl\:col-start-12 {
-    // /*x@include xl\:col-start-(#/*x{12});
-  }
-
-  @mixin xl\:col-start-13 {
-    // /*x@include xl\:col-start-(#/*x{13});
-  }
-
-  @mixin xl\:col-start-auto {
-    // /*x@include xl\:col-start-(auto);
-  }
-
-  @mixin xl\:col-end-1 {
-    // /*x@include xl\:col-end-(#/*x{1});
-  }
-
-  @mixin xl\:col-end-2 {
-    // /*x@include xl\:col-end-(#/*x{2});
-  }
-
-  @mixin xl\:col-end-3 {
-    // /*x@include xl\:col-end-(#/*x{3});
-  }
-
-  @mixin xl\:col-end-4 {
-    // /*x@include xl\:col-end-(#/*x{4});
-  }
-
-  @mixin xl\:col-end-5 {
-    // /*x@include xl\:col-end-(#/*x{5});
-  }
-
-  @mixin xl\:col-end-6 {
-    // /*x@include xl\:col-end-(#/*x{6});
-  }
-
-  @mixin xl\:col-end-7 {
-    // /*x@include xl\:col-end-(#/*x{7});
-  }
-
-  @mixin xl\:col-end-8 {
-    // /*x@include xl\:col-end-(#/*x{8});
-  }
-
-  @mixin xl\:col-end-9 {
-    // /*x@include xl\:col-end-(#/*x{9});
-  }
-
-  @mixin xl\:col-end-10 {
-    // /*x@include xl\:col-end-(#/*x{10});
-  }
-
-  @mixin xl\:col-end-11 {
-    // /*x@include xl\:col-end-(#/*x{11});
-  }
-
-  @mixin xl\:col-end-12 {
-    // /*x@include xl\:col-end-(#/*x{12});
-  }
-
-  @mixin xl\:col-end-13 {
-    // /*x@include xl\:col-end-(#/*x{13});
-  }
-
-  @mixin xl\:col-end-auto {
-    // /*x@include xl\:col-end-(auto);
-  }
-
-  @mixin \2xl\:col-auto {
-    // /*x@include \2xl\:col-(auto);
-  }
-
-  @mixin \2xl\:col-span-1 {
-    // /*x@include \2xl\:col-(#/*x{span 1 / span 1});
-  }
-
-  @mixin \2xl\:col-span-2 {
-    // /*x@include \2xl\:col-(#/*x{span 2 / span 2});
-  }
-
-  @mixin \2xl\:col-span-3 {
-    // /*x@include \2xl\:col-(#/*x{span 3 / span 3});
-  }
-
-  @mixin \2xl\:col-span-4 {
-    // /*x@include \2xl\:col-(#/*x{span 4 / span 4});
-  }
-
-  @mixin \2xl\:col-span-5 {
-    // /*x@include \2xl\:col-(#/*x{span 5 / span 5});
-  }
-
-  @mixin \2xl\:col-span-6 {
-    // /*x@include \2xl\:col-(#/*x{span 6 / span 6});
-  }
-
-  @mixin \2xl\:col-span-7 {
-    // /*x@include \2xl\:col-(#/*x{span 7 / span 7});
-  }
-
-  @mixin \2xl\:col-span-8 {
-    // /*x@include \2xl\:col-(#/*x{span 8 / span 8});
-  }
-
-  @mixin \2xl\:col-span-9 {
-    // /*x@include \2xl\:col-(#/*x{span 9 / span 9});
-  }
-
-  @mixin \2xl\:col-span-10 {
-    // /*x@include \2xl\:col-(#/*x{span 10 / span 10});
-  }
-
-  @mixin \2xl\:col-span-11 {
-    // /*x@include \2xl\:col-(#/*x{span 11 / span 11});
-  }
-
-  @mixin \2xl\:col-span-12 {
-    // /*x@include \2xl\:col-(#/*x{span 12 / span 12});
-  }
-
-  @mixin \2xl\:col-span-full {
-    // /*x@include \2xl\:col-(#/*x{1 / -1});
-  }
-
-  @mixin \2xl\:col-start-1 {
-    // /*x@include \2xl\:col-start-(#/*x{1});
-  }
-
-  @mixin \2xl\:col-start-2 {
-    // /*x@include \2xl\:col-start-(#/*x{2});
-  }
-
-  @mixin \2xl\:col-start-3 {
-    // /*x@include \2xl\:col-start-(#/*x{3});
-  }
-
-  @mixin \2xl\:col-start-4 {
-    // /*x@include \2xl\:col-start-(#/*x{4});
-  }
-
-  @mixin \2xl\:col-start-5 {
-    // /*x@include \2xl\:col-start-(#/*x{5});
-  }
-
-  @mixin \2xl\:col-start-6 {
-    // /*x@include \2xl\:col-start-(#/*x{6});
-  }
-
-  @mixin \2xl\:col-start-7 {
-    // /*x@include \2xl\:col-start-(#/*x{7});
-  }
-
-  @mixin \2xl\:col-start-8 {
-    // /*x@include \2xl\:col-start-(#/*x{8});
-  }
-
-  @mixin \2xl\:col-start-9 {
-    // /*x@include \2xl\:col-start-(#/*x{9});
-  }
-
-  @mixin \2xl\:col-start-10 {
-    // /*x@include \2xl\:col-start-(#/*x{10});
-  }
-
-  @mixin \2xl\:col-start-11 {
-    // /*x@include \2xl\:col-start-(#/*x{11});
-  }
-
-  @mixin \2xl\:col-start-12 {
-    // /*x@include \2xl\:col-start-(#/*x{12});
-  }
-
-  @mixin \2xl\:col-start-13 {
-    // /*x@include \2xl\:col-start-(#/*x{13});
-  }
-
-  @mixin \2xl\:col-start-auto {
-    // /*x@include \2xl\:col-start-(auto);
-  }
-
-  @mixin \2xl\:col-end-1 {
-    // /*x@include \2xl\:col-end-(#/*x{1});
-  }
-
-  @mixin \2xl\:col-end-2 {
-    // /*x@include \2xl\:col-end-(#/*x{2});
-  }
-
-  @mixin \2xl\:col-end-3 {
-    // /*x@include \2xl\:col-end-(#/*x{3});
-  }
-
-  @mixin \2xl\:col-end-4 {
-    // /*x@include \2xl\:col-end-(#/*x{4});
-  }
-
-  @mixin \2xl\:col-end-5 {
-    // /*x@include \2xl\:col-end-(#/*x{5});
-  }
-
-  @mixin \2xl\:col-end-6 {
-    // /*x@include \2xl\:col-end-(#/*x{6});
-  }
-
-  @mixin \2xl\:col-end-7 {
-    // /*x@include \2xl\:col-end-(#/*x{7});
-  }
-
-  @mixin \2xl\:col-end-8 {
-    // /*x@include \2xl\:col-end-(#/*x{8});
-  }
-
-  @mixin \2xl\:col-end-9 {
-    // /*x@include \2xl\:col-end-(#/*x{9});
-  }
-
-  @mixin \2xl\:col-end-10 {
-    // /*x@include \2xl\:col-end-(#/*x{10});
-  }
-
-  @mixin \2xl\:col-end-11 {
-    // /*x@include \2xl\:col-end-(#/*x{11});
-  }
-
-  @mixin \2xl\:col-end-12 {
-    // /*x@include \2xl\:col-end-(#/*x{12});
-  }
-
-  @mixin \2xl\:col-end-13 {
-    // /*x@include \2xl\:col-end-(#/*x{13});
-  }
-
-  @mixin \2xl\:col-end-auto {
-    // /*x@include \2xl\:col-end-(auto);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin col-($v) {
     @include grid-column($v);
   }
@@ -1031,66 +118,21 @@
   @mixin col-end-($v) {
     @include grid-column-end($v);
   }
+  x*/
 
-  @mixin sm\:col-($v) {
-    @include grid-column($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:col-($v) {
+      @include grid-column($v, $#{$rwd});
+    }
+
+    @mixin #{$rwd}\:col-start-($v) {
+      @include grid-column-start($v, $#{$rwd});
+    }
+
+    @mixin #{$rwd}\:col-end-($v) {
+      @include grid-column-end($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin sm\:col-start-($v) {
-    @include grid-column-start($v, $sm);
-  }
-
-  @mixin sm\:col-end-($v) {
-    @include grid-column-end($v, $sm);
-  }
-
-  @mixin md\:col-($v) {
-    @include grid-column($v, $md);
-  }
-
-  @mixin md\:col-start-($v) {
-    @include grid-column-start($v, $md);
-  }
-
-  @mixin md\:col-end-($v) {
-    @include grid-column-end($v, $md);
-  }
-
-  @mixin lg\:col-($v) {
-    @include grid-column($v, $lg);
-  }
-
-  @mixin lg\:col-start-($v) {
-    @include grid-column-start($v, $lg);
-  }
-
-  @mixin lg\:col-end-($v) {
-    @include grid-column-end($v, $lg);
-  }
-
-  @mixin xl\:col-($v) {
-    @include grid-column($v, $xl);
-  }
-
-  @mixin xl\:col-start-($v) {
-    @include grid-column-start($v, $xl);
-  }
-
-  @mixin xl\:col-end-($v) {
-    @include grid-column-end($v, $xl);
-  }
-
-  @mixin \2xl\:col-($v) {
-    @include grid-column($v, $\2xl);
-  }
-
-  @mixin \2xl\:col-start-($v) {
-    @include grid-column-start($v, $\2xl);
-  }
-
-  @mixin \2xl\:col-end-($v) {
-    @include grid-column-end($v, $\2xl);
-  }
-
-  // x*/
 }

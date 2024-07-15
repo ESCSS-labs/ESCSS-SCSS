@@ -1,376 +1,56 @@
 @use "../../setting" as *;
 
+$LineHeight: (
+  "leading-3": "$leading-3",
+  "leading-4": "$leading-4",
+  "leading-5": "$leading-5",
+  "leading-6": "$leading-6",
+  "leading-7": "$leading-7",
+  "leading-8": "$leading-8",
+  "leading-9": "$leading-9",
+  "leading-10": "$leading-10",
+  "leading-none": "$leading-none",
+  "leading-tight": "$leading-tight",
+  "leading-snug": "$leading-snug",
+  "leading-normal": "$leading-normal",
+  "leading-relaxed": "$leading-relaxed",
+  "leading-loose": "$leading-loose",
+);
+
 @if $Basic {
-  // /*x
-  @mixin leading-3 {
-    line-height: $leading-3;
+  @each $key, $value in $LineHeight {
+    /*x
+    @mixin #{$key} {
+      @include line-height(#{$value});
+    }
+    x*/
   }
-
-  @mixin leading-4 {
-    line-height: $leading-4;
-  }
-
-  @mixin leading-5 {
-    line-height: $leading-5;
-  }
-
-  @mixin leading-6 {
-    line-height: $leading-6;
-  }
-
-  @mixin leading-7 {
-    line-height: $leading-7;
-  }
-
-  @mixin leading-8 {
-    line-height: $leading-8;
-  }
-
-  @mixin leading-9 {
-    line-height: $leading-9;
-  }
-
-  @mixin leading-10 {
-    line-height: $leading-10;
-  }
-
-  @mixin leading-none {
-    line-height: $leading-none;
-  }
-
-  @mixin leading-tight {
-    line-height: $leading-tight;
-  }
-
-  @mixin leading-snug {
-    line-height: $leading-snug;
-  }
-
-  @mixin leading-normal {
-    line-height: $leading-normal;
-  }
-
-  @mixin leading-relaxed {
-    line-height: $leading-relaxed;
-  }
-
-  @mixin leading-loose {
-    line-height: $leading-loose;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:leading-3 {
-    @include sm\:leading-($leading-3);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $LineHeight {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include line-height(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:leading-4 {
-    @include sm\:leading-($leading-4);
-  }
-
-  @mixin sm\:leading-5 {
-    @include sm\:leading-($leading-5);
-  }
-
-  @mixin sm\:leading-6 {
-    @include sm\:leading-($leading-6);
-  }
-
-  @mixin sm\:leading-7 {
-    @include sm\:leading-($leading-7);
-  }
-
-  @mixin sm\:leading-8 {
-    @include sm\:leading-($leading-8);
-  }
-
-  @mixin sm\:leading-9 {
-    @include sm\:leading-($leading-9);
-  }
-
-  @mixin sm\:leading-10 {
-    @include sm\:leading-($leading-10);
-  }
-
-  @mixin sm\:leading-none {
-    @include sm\:leading-($leading-none);
-  }
-
-  @mixin sm\:leading-tight {
-    @include sm\:leading-($leading-tight);
-  }
-
-  @mixin sm\:leading-snug {
-    @include sm\:leading-($leading-snug);
-  }
-
-  @mixin sm\:leading-normal {
-    @include sm\:leading-($leading-normal);
-  }
-
-  @mixin sm\:leading-relaxed {
-    @include sm\:leading-($leading-relaxed);
-  }
-
-  @mixin sm\:leading-loose {
-    @include sm\:leading-($leading-loose);
-  }
-
-  @mixin md\:leading-3 {
-    @include md\:leading-($leading-3);
-  }
-
-  @mixin md\:leading-4 {
-    @include md\:leading-($leading-4);
-  }
-
-  @mixin md\:leading-5 {
-    @include md\:leading-($leading-5);
-  }
-
-  @mixin md\:leading-6 {
-    @include md\:leading-($leading-6);
-  }
-
-  @mixin md\:leading-7 {
-    @include md\:leading-($leading-7);
-  }
-
-  @mixin md\:leading-8 {
-    @include md\:leading-($leading-8);
-  }
-
-  @mixin md\:leading-9 {
-    @include md\:leading-($leading-9);
-  }
-
-  @mixin md\:leading-10 {
-    @include md\:leading-($leading-10);
-  }
-
-  @mixin md\:leading-none {
-    @include md\:leading-($leading-none);
-  }
-
-  @mixin md\:leading-tight {
-    @include md\:leading-($leading-tight);
-  }
-
-  @mixin md\:leading-snug {
-    @include md\:leading-($leading-snug);
-  }
-
-  @mixin md\:leading-normal {
-    @include md\:leading-($leading-normal);
-  }
-
-  @mixin md\:leading-relaxed {
-    @include md\:leading-($leading-relaxed);
-  }
-
-  @mixin md\:leading-loose {
-    @include md\:leading-($leading-loose);
-  }
-
-  @mixin lg\:leading-3 {
-    @include lg\:leading-($leading-3);
-  }
-
-  @mixin lg\:leading-4 {
-    @include lg\:leading-($leading-4);
-  }
-
-  @mixin lg\:leading-5 {
-    @include lg\:leading-($leading-5);
-  }
-
-  @mixin lg\:leading-6 {
-    @include lg\:leading-($leading-6);
-  }
-
-  @mixin lg\:leading-7 {
-    @include lg\:leading-($leading-7);
-  }
-
-  @mixin lg\:leading-8 {
-    @include lg\:leading-($leading-8);
-  }
-
-  @mixin lg\:leading-9 {
-    @include lg\:leading-($leading-9);
-  }
-
-  @mixin lg\:leading-10 {
-    @include lg\:leading-($leading-10);
-  }
-
-  @mixin lg\:leading-none {
-    @include lg\:leading-($leading-none);
-  }
-
-  @mixin lg\:leading-tight {
-    @include lg\:leading-($leading-tight);
-  }
-
-  @mixin lg\:leading-snug {
-    @include lg\:leading-($leading-snug);
-  }
-
-  @mixin lg\:leading-normal {
-    @include lg\:leading-($leading-normal);
-  }
-
-  @mixin lg\:leading-relaxed {
-    @include lg\:leading-($leading-relaxed);
-  }
-
-  @mixin lg\:leading-loose {
-    @include lg\:leading-($leading-loose);
-  }
-
-  @mixin xl\:leading-3 {
-    @include xl\:leading-($leading-3);
-  }
-
-  @mixin xl\:leading-4 {
-    @include xl\:leading-($leading-4);
-  }
-
-  @mixin xl\:leading-5 {
-    @include xl\:leading-($leading-5);
-  }
-
-  @mixin xl\:leading-6 {
-    @include xl\:leading-($leading-6);
-  }
-
-  @mixin xl\:leading-7 {
-    @include xl\:leading-($leading-7);
-  }
-
-  @mixin xl\:leading-8 {
-    @include xl\:leading-($leading-8);
-  }
-
-  @mixin xl\:leading-9 {
-    @include xl\:leading-($leading-9);
-  }
-
-  @mixin xl\:leading-10 {
-    @include xl\:leading-($leading-10);
-  }
-
-  @mixin xl\:leading-none {
-    @include xl\:leading-($leading-none);
-  }
-
-  @mixin xl\:leading-tight {
-    @include xl\:leading-($leading-tight);
-  }
-
-  @mixin xl\:leading-snug {
-    @include xl\:leading-($leading-snug);
-  }
-
-  @mixin xl\:leading-normal {
-    @include xl\:leading-($leading-normal);
-  }
-
-  @mixin xl\:leading-relaxed {
-    @include xl\:leading-($leading-relaxed);
-  }
-
-  @mixin xl\:leading-loose {
-    @include xl\:leading-($leading-loose);
-  }
-
-  @mixin \2xl\:leading-3 {
-    @include \2xl\:leading-($leading-3);
-  }
-
-  @mixin \2xl\:leading-4 {
-    @include \2xl\:leading-($leading-4);
-  }
-
-  @mixin \2xl\:leading-5 {
-    @include \2xl\:leading-($leading-5);
-  }
-
-  @mixin \2xl\:leading-6 {
-    @include \2xl\:leading-($leading-6);
-  }
-
-  @mixin \2xl\:leading-7 {
-    @include \2xl\:leading-($leading-7);
-  }
-
-  @mixin \2xl\:leading-8 {
-    @include \2xl\:leading-($leading-8);
-  }
-
-  @mixin \2xl\:leading-9 {
-    @include \2xl\:leading-($leading-9);
-  }
-
-  @mixin \2xl\:leading-10 {
-    @include \2xl\:leading-($leading-10);
-  }
-
-  @mixin \2xl\:leading-none {
-    @include \2xl\:leading-($leading-none);
-  }
-
-  @mixin \2xl\:leading-tight {
-    @include \2xl\:leading-($leading-tight);
-  }
-
-  @mixin \2xl\:leading-snug {
-    @include \2xl\:leading-($leading-snug);
-  }
-
-  @mixin \2xl\:leading-normal {
-    @include \2xl\:leading-($leading-normal);
-  }
-
-  @mixin \2xl\:leading-relaxed {
-    @include \2xl\:leading-($leading-relaxed);
-  }
-
-  @mixin \2xl\:leading-loose {
-    @include \2xl\:leading-($leading-loose);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin leading-($v) {
     @include line-height($v);
   }
+  x*/
 
-  @mixin sm\:leading-($v) {
-    @include line-height($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:leading-($v) {
+      @include line-height($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:leading-($v) {
-    @include line-height($v, $md);
-  }
-
-  @mixin lg\:leading-($v) {
-    @include line-height($v, $lg);
-  }
-
-  @mixin xl\:leading-($v) {
-    @include line-height($v, $xl);
-  }
-
-  @mixin \2xl\:leading-($v) {
-    @include line-height($v, $\2xl);
-  }
-
-  // x*/
 }

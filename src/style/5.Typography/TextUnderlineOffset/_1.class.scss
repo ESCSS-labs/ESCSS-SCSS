@@ -1,184 +1,48 @@
 @use "../../setting" as *;
 
+$TextUnderlineOffset: (
+  "underline-offset-auto": auto,
+  "underline-offset-0":0px,
+  "underline-offset-1":1px,
+  "underline-offset-2":2px,
+  "underline-offset-4":4px,
+  "underline-offset-8":8px,
+);
+
 @if $Basic {
-  // /*x
-  @mixin underline-offset-auto {
-    text-underline-offset: auto;
+  @each $key, $value in $TextUnderlineOffset {
+    /*x
+    @mixin #{$key} {
+      @include text-underline-offset(#{$value});
+    }
+    x*/
   }
-
-  @mixin underline-offset-0 {
-    text-underline-offset: 0px;
-  }
-
-  @mixin underline-offset-1 {
-    text-underline-offset: 1px;
-  }
-
-  @mixin underline-offset-2 {
-    text-underline-offset: 2px;
-  }
-
-  @mixin underline-offset-4 {
-    text-underline-offset: 4px;
-  }
-
-  @mixin underline-offset-8 {
-    text-underline-offset: 8px;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:underline-offset-auto {
-    @include sm\:underline-offset-(auto);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TextUnderlineOffset {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include text-underline-offset(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:underline-offset-0 {
-    @include sm\:underline-offset-(0px);
-  }
-
-  @mixin sm\:underline-offset-1 {
-    @include sm\:underline-offset-(1px);
-  }
-
-  @mixin sm\:underline-offset-2 {
-    @include sm\:underline-offset-(2px);
-  }
-
-  @mixin sm\:underline-offset-4 {
-    @include sm\:underline-offset-(4px);
-  }
-
-  @mixin sm\:underline-offset-8 {
-    @include sm\:underline-offset-(8px);
-  }
-
-  @mixin md\:underline-offset-auto {
-    @include md\:underline-offset-(auto);
-  }
-
-  @mixin md\:underline-offset-0 {
-    @include md\:underline-offset-(0px);
-  }
-
-  @mixin md\:underline-offset-1 {
-    @include md\:underline-offset-(1px);
-  }
-
-  @mixin md\:underline-offset-2 {
-    @include md\:underline-offset-(2px);
-  }
-
-  @mixin md\:underline-offset-4 {
-    @include md\:underline-offset-(4px);
-  }
-
-  @mixin md\:underline-offset-8 {
-    @include md\:underline-offset-(8px);
-  }
-
-  @mixin lg\:underline-offset-auto {
-    @include lg\:underline-offset-(auto);
-  }
-
-  @mixin lg\:underline-offset-0 {
-    @include lg\:underline-offset-(0px);
-  }
-
-  @mixin lg\:underline-offset-1 {
-    @include lg\:underline-offset-(1px);
-  }
-
-  @mixin lg\:underline-offset-2 {
-    @include lg\:underline-offset-(2px);
-  }
-
-  @mixin lg\:underline-offset-4 {
-    @include lg\:underline-offset-(4px);
-  }
-
-  @mixin lg\:underline-offset-8 {
-    @include lg\:underline-offset-(8px);
-  }
-
-  @mixin xl\:underline-offset-auto {
-    @include xl\:underline-offset-(auto);
-  }
-
-  @mixin xl\:underline-offset-0 {
-    @include xl\:underline-offset-(0px);
-  }
-
-  @mixin xl\:underline-offset-1 {
-    @include xl\:underline-offset-(1px);
-  }
-
-  @mixin xl\:underline-offset-2 {
-    @include xl\:underline-offset-(2px);
-  }
-
-  @mixin xl\:underline-offset-4 {
-    @include xl\:underline-offset-(4px);
-  }
-
-  @mixin xl\:underline-offset-8 {
-    @include xl\:underline-offset-(8px);
-  }
-
-  @mixin \2xl\:underline-offset-auto {
-    @include \2xl\:underline-offset-(auto);
-  }
-
-  @mixin \2xl\:underline-offset-0 {
-    @include \2xl\:underline-offset-(0px);
-  }
-
-  @mixin \2xl\:underline-offset-1 {
-    @include \2xl\:underline-offset-(1px);
-  }
-
-  @mixin \2xl\:underline-offset-2 {
-    @include \2xl\:underline-offset-(2px);
-  }
-
-  @mixin \2xl\:underline-offset-4 {
-    @include \2xl\:underline-offset-(4px);
-  }
-
-  @mixin \2xl\:underline-offset-8 {
-    @include \2xl\:underline-offset-(8px);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin underline-offset-($v) {
     @include text-underline-offset($v);
   }
+  x*/
 
-  @mixin sm\:underline-offset-($v) {
-    @include text-underline-offset($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:underline-offset-($v) {
+      @include text-underline-offset($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:underline-offset-($v) {
-    @include text-underline-offset($v, $md);
-  }
-
-  @mixin lg\:underline-offset-($v) {
-    @include text-underline-offset($v, $lg);
-  }
-
-  @mixin xl\:underline-offset-($v) {
-    @include text-underline-offset($v, $xl);
-  }
-
-  @mixin \2xl\:underline-offset-($v) {
-    @include text-underline-offset($v, $\2xl);
-  }
-
-  // x*/
 }

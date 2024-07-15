@@ -1,232 +1,51 @@
 @use "../../setting" as *;
 
+
+$VerticalAlign: (
+  "align-baseline": baseline,
+  "align-top": top,
+  "align-middle": middle,
+  "align-bottom": bottom,
+  "align-text-top": text-top,
+  "align-text-bottom": text-bottom,
+  "align-sub": sub,
+  "align-super": super,
+);
+
 @if $Basic {
-  // /*x
-  @mixin align-baseline {
-    vertical-align: baseline;
+  @each $key, $value in $VerticalAlign {
+    /*x
+    @mixin #{$key} {
+      @include vertical-align(#{$value});
+    }
+    x*/
   }
-
-  @mixin align-top {
-    vertical-align: top;
-  }
-
-  @mixin align-middle {
-    vertical-align: middle;
-  }
-
-  @mixin align-bottom {
-    vertical-align: bottom;
-  }
-
-  @mixin align-text-top {
-    vertical-align: text-top;
-  }
-
-  @mixin align-text-bottom {
-    vertical-align: text-bottom;
-  }
-
-  @mixin align-sub {
-    vertical-align: sub;
-  }
-
-  @mixin align-super {
-    vertical-align: super;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:align-baseline {
-    @include sm\:align-(baseline);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $VerticalAlign {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include vertical-align(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:align-top {
-    @include sm\:align-(top);
-  }
-
-  @mixin sm\:align-middle {
-    @include sm\:align-(middle);
-  }
-
-  @mixin sm\:align-bottom {
-    @include sm\:align-(bottom);
-  }
-
-  @mixin sm\:align-text-top {
-    @include sm\:align-(text-top);
-  }
-
-  @mixin sm\:align-text-bottom {
-    @include sm\:align-(text-bottom);
-  }
-
-  @mixin sm\:align-sub {
-    @include sm\:align-(sub);
-  }
-
-  @mixin sm\:align-super {
-    @include sm\:align-(super);
-  }
-
-  @mixin md\:align-baseline {
-    @include md\:align-(baseline);
-  }
-
-  @mixin md\:align-top {
-    @include md\:align-(top);
-  }
-
-  @mixin md\:align-middle {
-    @include md\:align-(middle);
-  }
-
-  @mixin md\:align-bottom {
-    @include md\:align-(bottom);
-  }
-
-  @mixin md\:align-text-top {
-    @include md\:align-(text-top);
-  }
-
-  @mixin md\:align-text-bottom {
-    @include md\:align-(text-bottom);
-  }
-
-  @mixin md\:align-sub {
-    @include md\:align-(sub);
-  }
-
-  @mixin md\:align-super {
-    @include md\:align-(super);
-  }
-
-  @mixin lg\:align-baseline {
-    @include lg\:align-(baseline);
-  }
-
-  @mixin lg\:align-top {
-    @include lg\:align-(top);
-  }
-
-  @mixin lg\:align-middle {
-    @include lg\:align-(middle);
-  }
-
-  @mixin lg\:align-bottom {
-    @include lg\:align-(bottom);
-  }
-
-  @mixin lg\:align-text-top {
-    @include lg\:align-(text-top);
-  }
-
-  @mixin lg\:align-text-bottom {
-    @include lg\:align-(text-bottom);
-  }
-
-  @mixin lg\:align-sub {
-    @include lg\:align-(sub);
-  }
-
-  @mixin lg\:align-super {
-    @include lg\:align-(super);
-  }
-
-  @mixin xl\:align-baseline {
-    @include xl\:align-(baseline);
-  }
-
-  @mixin xl\:align-top {
-    @include xl\:align-(top);
-  }
-
-  @mixin xl\:align-middle {
-    @include xl\:align-(middle);
-  }
-
-  @mixin xl\:align-bottom {
-    @include xl\:align-(bottom);
-  }
-
-  @mixin xl\:align-text-top {
-    @include xl\:align-(text-top);
-  }
-
-  @mixin xl\:align-text-bottom {
-    @include xl\:align-(text-bottom);
-  }
-
-  @mixin xl\:align-sub {
-    @include xl\:align-(sub);
-  }
-
-  @mixin xl\:align-super {
-    @include xl\:align-(super);
-  }
-
-  @mixin \2xl\:align-baseline {
-    @include \2xl\:align-(baseline);
-  }
-
-  @mixin \2xl\:align-top {
-    @include \2xl\:align-(top);
-  }
-
-  @mixin \2xl\:align-middle {
-    @include \2xl\:align-(middle);
-  }
-
-  @mixin \2xl\:align-bottom {
-    @include \2xl\:align-(bottom);
-  }
-
-  @mixin \2xl\:align-text-top {
-    @include \2xl\:align-(text-top);
-  }
-
-  @mixin \2xl\:align-text-bottom {
-    @include \2xl\:align-(text-bottom);
-  }
-
-  @mixin \2xl\:align-sub {
-    @include \2xl\:align-(sub);
-  }
-
-  @mixin \2xl\:align-super {
-    @include \2xl\:align-(super);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin align-($v) {
     @include vertical-align($v);
   }
+  x*/
 
-  @mixin sm\:align-($v) {
-    @include vertical-align($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:align-($v) {
+      @include vertical-align($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:align-($v) {
-    @include vertical-align($v, $md);
-  }
-
-  @mixin lg\:align-($v) {
-    @include vertical-align($v, $lg);
-  }
-
-  @mixin xl\:align-($v) {
-    @include vertical-align($v, $xl);
-  }
-
-  @mixin \2xl\:align-($v) {
-    @include vertical-align($v, $\2xl);
-  }
-
-  // x*/
 }

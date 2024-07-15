@@ -1,145 +1,73 @@
 @use "../../setting" as *;
 
+$BackgroundsSize: (
+  "bg-auto": auto,
+  "bg-cover": cover,
+  "bg-contain": contain,
+);
+
 @if $Basic {
-  // /*x
-  @mixin bg-auto {
-    background-size: auto;
+  @each $key, $value in $BackgroundsSize {
+    /*x
+    @mixin #{$key} {
+      @include background-size(#{$value});
+    }
+    x*/
   }
-
-  @mixin bg-cover {
-    background-size: cover;
-  }
-
-  @mixin bg-contain {
-    background-size: contain;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:bg-auto {
-    @include sm\:bg-(length auto);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackgroundsSize {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include background-size(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:bg-cover {
-    @include sm\:bg-(length cover);
-  }
-
-  @mixin sm\:bg-contain {
-    @include sm\:bg-(length contain);
-  }
-
-  @mixin md\:bg-auto {
-    @include md\:bg-(length auto);
-  }
-
-  @mixin md\:bg-cover {
-    @include md\:bg-(length cover);
-  }
-
-  @mixin md\:bg-contain {
-    @include md\:bg-(length contain);
-  }
-
-  @mixin lg\:bg-auto {
-    @include lg\:bg-(length auto);
-  }
-
-  @mixin lg\:bg-cover {
-    @include lg\:bg-(length cover);
-  }
-
-  @mixin lg\:bg-contain {
-    @include lg\:bg-(length contain);
-  }
-
-  @mixin xl\:bg-auto {
-    @include xl\:bg-(length auto);
-  }
-
-  @mixin xl\:bg-cover {
-    @include xl\:bg-(length cover);
-  }
-
-  @mixin xl\:bg-contain {
-    @include xl\:bg-(length contain);
-  }
-
-  @mixin \2xl\:bg-auto {
-    @include \2xl\:bg-(length auto);
-  }
-
-  @mixin \2xl\:bg-cover {
-    @include \2xl\:bg-(length cover);
-  }
-
-  @mixin \2xl\:bg-contain {
-    @include \2xl\:bg-(length contain);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
-  @mixin get_bg-($v) {
-    @if meta.type-of($v)
-      ==color or
-      list.index(inherit currentColor transparent, $v)
-    {
+  /*x
+  @mixin bg-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
       @include background-color($v);
-    } @else if list.nth($v, 1) ==length {
-      @include background-size(
-        list.set-nth($v, 1, $space)
-      ); // remove the token "length" to identify background-size
-    } @else if
-      list.index(top right bottom left center, $v) or
-      meta.type-of($v)
-      ==number or
-      meta.type-of($v)
-      ==list
-    {
+    }
+
+    @else if list.nth($v, 1)==length {
+      @include background-size(list.set-nth($v, 1, $space)); // remove the token "length" to identify background-size
+    }
+
+    @else if list.index(top right bottom left center, $v) or meta.type-of($v)==number or meta.type-of($v)==list {
       @include background-position($v);
-    } @else {
+    }
+
+    @else {
       @include background-image($v);
     }
   }
+  x*/
 
-  @mixin bg-($v) {
-    @include get_bg-($v);
-  }
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:bg-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        @include background-color($v, $#{$rwd});
+      }
 
-  @mixin sm\:bg-($v) {
-    @include sm {
-      @include get_bg-($v);
+      @else if list.nth($v, 1)==length {
+        @include background-size(list.set-nth($v, 1, $space), $#{$rwd}); // remove the token "length" to identify background-size
+      }
+
+      @else if list.index(top right bottom left center, $v) or meta.type-of($v)==number or meta.type-of($v)==list {
+        @include background-position($v, $#{$rwd});
+      }
+
+      @else {
+        @include background-image($v, $#{$rwd});
+      }
     }
+    x*/
   }
-
-  @mixin md\:bg-($v) {
-    @include md {
-      @include get_bg-($v);
-    }
-  }
-
-  @mixin lg\:bg-($v) {
-    @include lg {
-      @include get_bg-($v);
-    }
-  }
-
-  @mixin xl\:bg-($v) {
-    @include xl {
-      @include get_bg-($v);
-    }
-  }
-
-  @mixin \2xl\:bg-($v) {
-    @include \2xl {
-      @include get_bg-($v);
-    }
-  }
-
-  // x*/
 }

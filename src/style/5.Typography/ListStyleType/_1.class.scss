@@ -1,112 +1,46 @@
 @use "../../setting" as *;
 
+
+$ListStyleType: (
+  "list-none": none,
+  "list-disc": disc,
+  "list-decimal": decimal,
+);
+
 @if $Basic {
-  // /*x
-  @mixin list-none {
-    list-style-type: none;
+  @each $key, $value in $ListStyleType {
+    /*x
+    @mixin #{$key} {
+      @include list-style-type(#{$value});
+    }
+    x*/
   }
-
-  @mixin list-disc {
-    list-style-type: disc;
-  }
-
-  @mixin list-decimal {
-    list-style-type: decimal;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:list-none {
-    @include sm\:list-(none);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ListStyleType {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include list-style-type(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:list-disc {
-    @include sm\:list-(disc);
-  }
-
-  @mixin sm\:list-decimal {
-    @include sm\:list-(decimal);
-  }
-
-  @mixin md\:list-none {
-    @include md\:list-(none);
-  }
-
-  @mixin md\:list-disc {
-    @include md\:list-(disc);
-  }
-
-  @mixin md\:list-decimal {
-    @include md\:list-(decimal);
-  }
-
-  @mixin lg\:list-none {
-    @include lg\:list-(none);
-  }
-
-  @mixin lg\:list-disc {
-    @include lg\:list-(disc);
-  }
-
-  @mixin lg\:list-decimal {
-    @include lg\:list-(decimal);
-  }
-
-  @mixin xl\:list-none {
-    @include xl\:list-(none);
-  }
-
-  @mixin xl\:list-disc {
-    @include xl\:list-(disc);
-  }
-
-  @mixin xl\:list-decimal {
-    @include xl\:list-(decimal);
-  }
-
-  @mixin \2xl\:list-none {
-    @include \2xl\:list-(none);
-  }
-
-  @mixin \2xl\:list-disc {
-    @include \2xl\:list-(disc);
-  }
-
-  @mixin \2xl\:list-decimal {
-    @include \2xl\:list-(decimal);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin list-($v) {
     @include list-style-type($v);
   }
+  x*/
 
-  @mixin sm\:list-($v) {
-    @include list-style-type($v, $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:list-($v) {
+      @include list-style-type($v, $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:list-($v) {
-    @include list-style-type($v, $md);
-  }
-
-  @mixin lg\:list-($v) {
-    @include list-style-type($v, $lg);
-  }
-
-  @mixin xl\:list-($v) {
-    @include list-style-type($v, $xl);
-  }
-
-  @mixin \2xl\:list-($v) {
-    @include list-style-type($v, $\2xl);
-  }
-
-  // x*/
 }
