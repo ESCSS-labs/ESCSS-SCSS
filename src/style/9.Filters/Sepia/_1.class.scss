@@ -1,96 +1,49 @@
 @use "../../setting" as *;
 
+
+$Sepia: (
+  "sepia-0": sepia(0),
+  "sepia": sepia(100%),
+);
+
 @if $Basic {
-  // /*x
-  @mixin sepia-0 {
-    $tw-sepia: sepia(0) !global;
-    filter: get_filter();
+  @each $key, $value in $Sepia {
+    /*x
+    @mixin #{$key} {
+      $tw-sepia: #{$value} !global;
+      @include filter(#{$value});
+    }
+    x*/
   }
-
-  @mixin sepia {
-    $tw-sepia: sepia(100%) !global;
-    filter: get_filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:sepia-0 {
-    @include sm\:sepia-(0);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Sepia {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-sepia: #{$value} !global;
+        @include filter(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:sepia {
-    @include sm\:sepia-(100%);
-  }
-
-  @mixin md\:sepia-0 {
-    @include md\:sepia-(0);
-  }
-
-  @mixin md\:sepia {
-    @include md\:sepia-(100%);
-  }
-
-  @mixin lg\:sepia-0 {
-    @include lg\:sepia-(0);
-  }
-
-  @mixin lg\:sepia {
-    @include lg\:sepia-(100%);
-  }
-
-  @mixin xl\:sepia-0 {
-    @include xl\:sepia-(0);
-  }
-
-  @mixin xl\:sepia {
-    @include xl\:sepia-(100%);
-  }
-
-  @mixin \2xl\:sepia-0 {
-    @include \2xl\:sepia-(0);
-  }
-
-  @mixin \2xl\:sepia {
-    @include \2xl\:sepia-(100%);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin sepia-($v) {
     $tw-sepia: sepia($v) !global;
     @include filter(get_filter());
   }
+  x*/
 
-  @mixin sm\:sepia-($v) {
-    $tw-sepia: sepia($v) !global;
-    @include filter(get_filter(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:sepia-($v) {
+      $tw-sepia: sepia($v) !global;
+      @include filter(get_filter(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:sepia-($v) {
-    $tw-sepia: sepia($v) !global;
-    @include filter(get_filter(), $md);
-  }
-
-  @mixin lg\:sepia-($v) {
-    $tw-sepia: sepia($v) !global;
-    @include filter(get_filter(), $lg);
-  }
-
-  @mixin xl\:sepia-($v) {
-    $tw-sepia: sepia($v) !global;
-    @include filter(get_filter(), $xl);
-  }
-
-  @mixin \2xl\:sepia-($v) {
-    $tw-sepia: sepia($v) !global;
-    @include filter(get_filter(), $\2xl);
-  }
-
-  // x*/
 }

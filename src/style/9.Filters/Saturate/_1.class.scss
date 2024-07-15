@@ -1,171 +1,51 @@
 @use "../../setting" as *;
 
+$Saturate: (
+  "saturate-0": saturate(0),
+  "saturate-50": saturate(0.5),
+  "saturate-100": saturate(1),
+  "saturate-150": saturate(1.5),
+  "saturate-200": saturate(2),
+);
+
 @if $Basic {
-  // /*x
-  @mixin saturate-0 {
-    $tw-saturate: saturate(0) !global;
-    filter: get_filter();
+  @each $key, $value in $Saturate {
+    /*x
+    @mixin #{$key} {
+      $tw-saturate: #{$value} !global;
+      @include filter(get_filter());
+    }
+    x*/
   }
-
-  @mixin saturate-50 {
-    $tw-saturate: saturate(0.5) !global;
-    filter: get_filter();
-  }
-
-  @mixin saturate-100 {
-    $tw-saturate: saturate(1) !global;
-    filter: get_filter();
-  }
-
-  @mixin saturate-150 {
-    $tw-saturate: saturate(1.5) !global;
-    filter: get_filter();
-  }
-
-  @mixin saturate-200 {
-    $tw-saturate: saturate(2) !global;
-    filter: get_filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:saturate-0 {
-    @include sm\:saturate-(0);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Saturate {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-saturate: #{$value} !global;
+        @include filter(get_filter(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:saturate-50 {
-    @include sm\:saturate-(0.5);
-  }
-
-  @mixin sm\:saturate-100 {
-    @include sm\:saturate-(1);
-  }
-
-  @mixin sm\:saturate-150 {
-    @include sm\:saturate-(1.5);
-  }
-
-  @mixin sm\:saturate-200 {
-    @include sm\:saturate-(2);
-  }
-
-  @mixin md\:saturate-0 {
-    @include md\:saturate-(0);
-  }
-
-  @mixin md\:saturate-50 {
-    @include md\:saturate-(0.5);
-  }
-
-  @mixin md\:saturate-100 {
-    @include md\:saturate-(1);
-  }
-
-  @mixin md\:saturate-150 {
-    @include md\:saturate-(1.5);
-  }
-
-  @mixin md\:saturate-200 {
-    @include md\:saturate-(2);
-  }
-
-  @mixin lg\:saturate-0 {
-    @include lg\:saturate-(0);
-  }
-
-  @mixin lg\:saturate-50 {
-    @include lg\:saturate-(0.5);
-  }
-
-  @mixin lg\:saturate-100 {
-    @include lg\:saturate-(1);
-  }
-
-  @mixin lg\:saturate-150 {
-    @include lg\:saturate-(1.5);
-  }
-
-  @mixin lg\:saturate-200 {
-    @include lg\:saturate-(2);
-  }
-
-  @mixin xl\:saturate-0 {
-    @include xl\:saturate-(0);
-  }
-
-  @mixin xl\:saturate-50 {
-    @include xl\:saturate-(0.5);
-  }
-
-  @mixin xl\:saturate-100 {
-    @include xl\:saturate-(1);
-  }
-
-  @mixin xl\:saturate-150 {
-    @include xl\:saturate-(1.5);
-  }
-
-  @mixin xl\:saturate-200 {
-    @include xl\:saturate-(2);
-  }
-
-  @mixin \2xl\:saturate-0 {
-    @include \2xl\:saturate-(0);
-  }
-
-  @mixin \2xl\:saturate-50 {
-    @include \2xl\:saturate-(0.5);
-  }
-
-  @mixin \2xl\:saturate-100 {
-    @include \2xl\:saturate-(1);
-  }
-
-  @mixin \2xl\:saturate-150 {
-    @include \2xl\:saturate-(1.5);
-  }
-
-  @mixin \2xl\:saturate-200 {
-    @include \2xl\:saturate-(2);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin saturate-($v) {
     $tw-saturate: saturate($v) !global;
     @include filter(get_filter());
   }
+  x*/
 
-  @mixin sm\:saturate-($v) {
-    $tw-saturate: saturate($v) !global;
-    @include filter(get_filter(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:saturate-($v) {
+      $tw-saturate: saturate($v) !global;
+      @include filter(get_filter(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:saturate-($v) {
-    $tw-saturate: saturate($v) !global;
-    @include filter(get_filter(), $md);
-  }
-
-  @mixin lg\:saturate-($v) {
-    $tw-saturate: saturate($v) !global;
-    @include filter(get_filter(), $lg);
-  }
-
-  @mixin xl\:saturate-($v) {
-    $tw-saturate: saturate($v) !global;
-    @include filter(get_filter(), $xl);
-  }
-
-  @mixin \2xl\:saturate-($v) {
-    $tw-saturate: saturate($v) !global;
-    @include filter(get_filter(), $\2xl);
-  }
-
-  // x*/
 }

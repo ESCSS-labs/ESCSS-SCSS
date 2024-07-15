@@ -1,221 +1,53 @@
 @use "../../setting" as *;
 
+$BackdropContrast: (
+  "backdrop-contrast-0": contrast(0),
+  "backdrop-contrast-50": contrast(0.5),
+  "backdrop-contrast-75": contrast(0.75),
+  "backdrop-contrast-100": contrast(1),
+  "backdrop-contrast-125": contrast(1.25),
+  "backdrop-contrast-150": contrast(1.5),
+  "backdrop-contrast-200": contrast(2),
+);
+
 @if $Basic {
-  // /*x
-  @mixin backdrop-contrast-0 {
-    $tw-backdrop-contrast: contrast(0) !global;
-    backdrop-filter: get_backdrop-filter();
+  @each $key, $value in $BackdropContrast {
+    /*x
+    @mixin #{$key} {
+      $tw-backdrop-contrast: #{$value} !global;
+      @include backdrop-filter(get_backdrop-filter());
+    }
+    x*/
   }
-
-  @mixin backdrop-contrast-50 {
-    $tw-backdrop-contrast: contrast(0.5) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-contrast-75 {
-    $tw-backdrop-contrast: contrast(0.75) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-contrast-100 {
-    $tw-backdrop-contrast: contrast(1) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-contrast-125 {
-    $tw-backdrop-contrast: contrast(1.25) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-contrast-150 {
-    $tw-backdrop-contrast: contrast(1.5) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-contrast-200 {
-    $tw-backdrop-contrast: contrast(2) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:backdrop-contrast-0 {
-    @include sm\:backdrop-contrast-(0);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackdropContrast {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-backdrop-contrast: #{$value} !global;
+        @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:backdrop-contrast-50 {
-    @include sm\:backdrop-contrast-(0.5);
-  }
-
-  @mixin sm\:backdrop-contrast-75 {
-    @include sm\:backdrop-contrast-(0.75);
-  }
-
-  @mixin sm\:backdrop-contrast-100 {
-    @include sm\:backdrop-contrast-(1);
-  }
-
-  @mixin sm\:backdrop-contrast-125 {
-    @include sm\:backdrop-contrast-(1.25);
-  }
-
-  @mixin sm\:backdrop-contrast-150 {
-    @include sm\:backdrop-contrast-(1.5);
-  }
-
-  @mixin sm\:backdrop-contrast-200 {
-    @include sm\:backdrop-contrast-(2);
-  }
-
-  @mixin md\:backdrop-contrast-0 {
-    @include md\:backdrop-contrast-(0);
-  }
-
-  @mixin md\:backdrop-contrast-50 {
-    @include md\:backdrop-contrast-(0.5);
-  }
-
-  @mixin md\:backdrop-contrast-75 {
-    @include md\:backdrop-contrast-(0.75);
-  }
-
-  @mixin md\:backdrop-contrast-100 {
-    @include md\:backdrop-contrast-(1);
-  }
-
-  @mixin md\:backdrop-contrast-125 {
-    @include md\:backdrop-contrast-(1.25);
-  }
-
-  @mixin md\:backdrop-contrast-150 {
-    @include md\:backdrop-contrast-(1.5);
-  }
-
-  @mixin md\:backdrop-contrast-200 {
-    @include md\:backdrop-contrast-(2);
-  }
-
-  @mixin lg\:backdrop-contrast-0 {
-    @include lg\:backdrop-contrast-(0);
-  }
-
-  @mixin lg\:backdrop-contrast-50 {
-    @include lg\:backdrop-contrast-(0.5);
-  }
-
-  @mixin lg\:backdrop-contrast-75 {
-    @include lg\:backdrop-contrast-(0.75);
-  }
-
-  @mixin lg\:backdrop-contrast-100 {
-    @include lg\:backdrop-contrast-(1);
-  }
-
-  @mixin lg\:backdrop-contrast-125 {
-    @include lg\:backdrop-contrast-(1.25);
-  }
-
-  @mixin lg\:backdrop-contrast-150 {
-    @include lg\:backdrop-contrast-(1.5);
-  }
-
-  @mixin lg\:backdrop-contrast-200 {
-    @include lg\:backdrop-contrast-(2);
-  }
-
-  @mixin xl\:backdrop-contrast-0 {
-    @include xl\:backdrop-contrast-(0);
-  }
-
-  @mixin xl\:backdrop-contrast-50 {
-    @include xl\:backdrop-contrast-(0.5);
-  }
-
-  @mixin xl\:backdrop-contrast-75 {
-    @include xl\:backdrop-contrast-(0.75);
-  }
-
-  @mixin xl\:backdrop-contrast-100 {
-    @include xl\:backdrop-contrast-(1);
-  }
-
-  @mixin xl\:backdrop-contrast-125 {
-    @include xl\:backdrop-contrast-(1.25);
-  }
-
-  @mixin xl\:backdrop-contrast-150 {
-    @include xl\:backdrop-contrast-(1.5);
-  }
-
-  @mixin xl\:backdrop-contrast-200 {
-    @include xl\:backdrop-contrast-(2);
-  }
-
-  @mixin \2xl\:backdrop-contrast-0 {
-    @include \2xl\:backdrop-contrast-(0);
-  }
-
-  @mixin \2xl\:backdrop-contrast-50 {
-    @include \2xl\:backdrop-contrast-(0.5);
-  }
-
-  @mixin \2xl\:backdrop-contrast-75 {
-    @include \2xl\:backdrop-contrast-(0.75);
-  }
-
-  @mixin \2xl\:backdrop-contrast-100 {
-    @include \2xl\:backdrop-contrast-(1);
-  }
-
-  @mixin \2xl\:backdrop-contrast-125 {
-    @include \2xl\:backdrop-contrast-(1.25);
-  }
-
-  @mixin \2xl\:backdrop-contrast-150 {
-    @include \2xl\:backdrop-contrast-(1.5);
-  }
-
-  @mixin \2xl\:backdrop-contrast-200 {
-    @include \2xl\:backdrop-contrast-(2);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin backdrop-contrast-($v) {
     $tw-backdrop-contrast: contrast($v) !global;
     @include backdrop-filter(get_backdrop-filter());
   }
+  x*/
 
-  @mixin sm\:backdrop-contrast-($v) {
-    $tw-backdrop-contrast: contrast($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:backdrop-contrast-($v) {
+      $tw-backdrop-contrast: contrast($v) !global;
+      @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:backdrop-contrast-($v) {
-    $tw-backdrop-contrast: contrast($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $md);
-  }
-
-  @mixin lg\:backdrop-contrast-($v) {
-    $tw-backdrop-contrast: contrast($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $lg);
-  }
-
-  @mixin xl\:backdrop-contrast-($v) {
-    $tw-backdrop-contrast: contrast($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $xl);
-  }
-
-  @mixin \2xl\:backdrop-contrast-($v) {
-    $tw-backdrop-contrast: contrast($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $\2xl);
-  }
-
-  // x*/
 }

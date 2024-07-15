@@ -1,96 +1,48 @@
 @use "../../setting" as *;
 
+$BackdropGrayscale: (
+  "backdrop-grayscale-0": grayscale(0),
+  "backdrop-grayscale": grayscale(100%),
+);
+
 @if $Basic {
-  // /*x
-  @mixin backdrop-grayscale-0 {
-    $tw-backdrop-grayscale: grayscale(0) !global;
-    backdrop-filter: get_backdrop-filter();
+  @each $key, $value in $BackdropGrayscale {
+    /*x
+    @mixin #{$key} {
+      $tw-backdrop-invert: #{$value} !global;
+      @include backdrop-filter(get_backdrop-filter());
+    }
+    x*/
   }
-
-  @mixin backdrop-grayscale {
-    $tw-backdrop-grayscale: grayscale(100%) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:backdrop-grayscale-0 {
-    @include sm\:backdrop-grayscale-(0);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackdropGrayscale {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-backdrop-invert: #{$value} !global;
+        @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:backdrop-grayscale {
-    @include sm\:backdrop-grayscale-(100%);
-  }
-
-  @mixin md\:backdrop-grayscale-0 {
-    @include md\:backdrop-grayscale-(0);
-  }
-
-  @mixin md\:backdrop-grayscale {
-    @include md\:backdrop-grayscale-(100%);
-  }
-
-  @mixin lg\:backdrop-grayscale-0 {
-    @include lg\:backdrop-grayscale-(0);
-  }
-
-  @mixin lg\:backdrop-grayscale {
-    @include lg\:backdrop-grayscale-(100%);
-  }
-
-  @mixin xl\:backdrop-grayscale-0 {
-    @include xl\:backdrop-grayscale-(0);
-  }
-
-  @mixin xl\:backdrop-grayscale {
-    @include xl\:backdrop-grayscale-(100%);
-  }
-
-  @mixin \2xl\:backdrop-grayscale-0 {
-    @include \2xl\:backdrop-grayscale-(0);
-  }
-
-  @mixin \2xl\:backdrop-grayscale {
-    @include \2xl\:backdrop-grayscale-(100%);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin backdrop-grayscale-($v) {
     $tw-backdrop-grayscale: grayscale($v) !global;
     @include backdrop-filter(get_backdrop-filter());
   }
+  x*/
 
-  @mixin sm\:backdrop-grayscale-($v) {
-    $tw-backdrop-grayscale: grayscale($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:backdrop-grayscale-($v) {
+      $tw-backdrop-grayscale: grayscale($v) !global;
+      @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:backdrop-grayscale-($v) {
-    $tw-backdrop-grayscale: grayscale($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $md);
-  }
-
-  @mixin lg\:backdrop-grayscale-($v) {
-    $tw-backdrop-grayscale: grayscale($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $lg);
-  }
-
-  @mixin xl\:backdrop-grayscale-($v) {
-    $tw-backdrop-grayscale: grayscale($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $xl);
-  }
-
-  @mixin \2xl\:backdrop-grayscale-($v) {
-    $tw-backdrop-grayscale: grayscale($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $\2xl);
-  }
-
-  // x*/
 }

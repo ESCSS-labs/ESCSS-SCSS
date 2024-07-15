@@ -1,571 +1,68 @@
 @use "../../setting" as *;
 
+
+$BackdropOpacity: (
+  "backdrop-opacity-0": opacity(0),
+  "backdrop-opacity-5": opacity(0.05),
+  "backdrop-opacity-10": opacity(0.1),
+  "backdrop-opacity-15": opacity(0.15),
+  "backdrop-opacity-20": opacity(0.2),
+  "backdrop-opacity-25": opacity(0.25),
+  "backdrop-opacity-30": opacity(0.3),
+  "backdrop-opacity-35": opacity(0.35),
+  "backdrop-opacity-40": opacity(0.4),
+  "backdrop-opacity-45": opacity(0.45),
+  "backdrop-opacity-50": opacity(0.5),
+  "backdrop-opacity-55": opacity(0.55),
+  "backdrop-opacity-60": opacity(0.6),
+  "backdrop-opacity-65": opacity(0.65),
+  "backdrop-opacity-70": opacity(0.7),
+  "backdrop-opacity-75": opacity(0.75),
+  "backdrop-opacity-80": opacity(0.8),
+  "backdrop-opacity-85": opacity(0.85),
+  "backdrop-opacity-90": opacity(0.9),
+  "backdrop-opacity-95": opacity(0.95),
+  "backdrop-opacity-100": opacity(1),
+);
+
 @if $Basic {
-  // /*x
-  @mixin backdrop-opacity-0 {
-    $tw-backdrop-opacity: opacity(0) !global;
-    backdrop-filter: get_backdrop-filter();
+  @each $key, $value in $BackdropOpacity {
+    /*x
+    @mixin #{$key} {
+      $tw-backdrop-opacity: #{$value} !global;
+      @include backdrop-filter(get_backdrop-filter());
+    }
+    x*/
   }
-
-  @mixin backdrop-opacity-5 {
-    $tw-backdrop-opacity: opacity(0.05) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-10 {
-    $tw-backdrop-opacity: opacity(0.1) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-15 {
-    $tw-backdrop-opacity: opacity(0.15) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-20 {
-    $tw-backdrop-opacity: opacity(0.2) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-25 {
-    $tw-backdrop-opacity: opacity(0.25) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-30 {
-    $tw-backdrop-opacity: opacity(0.3) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-35 {
-    $tw-backdrop-opacity: opacity(0.35) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-40 {
-    $tw-backdrop-opacity: opacity(0.4) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-45 {
-    $tw-backdrop-opacity: opacity(0.45) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-50 {
-    $tw-backdrop-opacity: opacity(0.5) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-55 {
-    $tw-backdrop-opacity: opacity(0.55) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-60 {
-    $tw-backdrop-opacity: opacity(0.6) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-65 {
-    $tw-backdrop-opacity: opacity(0.65) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-70 {
-    $tw-backdrop-opacity: opacity(0.7) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-75 {
-    $tw-backdrop-opacity: opacity(0.75) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-80 {
-    $tw-backdrop-opacity: opacity(0.8) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-85 {
-    $tw-backdrop-opacity: opacity(0.85) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-90 {
-    $tw-backdrop-opacity: opacity(0.9) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-95 {
-    $tw-backdrop-opacity: opacity(0.95) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-opacity-100 {
-    $tw-backdrop-opacity: opacity(1) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:backdrop-opacity-0 {
-    @include sm\:backdrop-opacity-(0);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackdropOpacity {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-backdrop-opacity: #{$value} !global;
+        @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:backdrop-opacity-5 {
-    @include sm\:backdrop-opacity-(0.05);
-  }
-
-  @mixin sm\:backdrop-opacity-10 {
-    @include sm\:backdrop-opacity-(0.1);
-  }
-
-  @mixin sm\:backdrop-opacity-15 {
-    @include sm\:backdrop-opacity-(0.15);
-  }
-
-  @mixin sm\:backdrop-opacity-20 {
-    @include sm\:backdrop-opacity-(0.2);
-  }
-
-  @mixin sm\:backdrop-opacity-25 {
-    @include sm\:backdrop-opacity-(0.25);
-  }
-
-  @mixin sm\:backdrop-opacity-30 {
-    @include sm\:backdrop-opacity-(0.3);
-  }
-
-  @mixin sm\:backdrop-opacity-35 {
-    @include sm\:backdrop-opacity-(0.35);
-  }
-
-  @mixin sm\:backdrop-opacity-40 {
-    @include sm\:backdrop-opacity-(0.4);
-  }
-
-  @mixin sm\:backdrop-opacity-45 {
-    @include sm\:backdrop-opacity-(0.45);
-  }
-
-  @mixin sm\:backdrop-opacity-50 {
-    @include sm\:backdrop-opacity-(0.5);
-  }
-
-  @mixin sm\:backdrop-opacity-55 {
-    @include sm\:backdrop-opacity-(0.55);
-  }
-
-  @mixin sm\:backdrop-opacity-60 {
-    @include sm\:backdrop-opacity-(0.6);
-  }
-
-  @mixin sm\:backdrop-opacity-65 {
-    @include sm\:backdrop-opacity-(0.65);
-  }
-
-  @mixin sm\:backdrop-opacity-70 {
-    @include sm\:backdrop-opacity-(0.7);
-  }
-
-  @mixin sm\:backdrop-opacity-75 {
-    @include sm\:backdrop-opacity-(0.75);
-  }
-
-  @mixin sm\:backdrop-opacity-80 {
-    @include sm\:backdrop-opacity-(0.8);
-  }
-
-  @mixin sm\:backdrop-opacity-85 {
-    @include sm\:backdrop-opacity-(0.85);
-  }
-
-  @mixin sm\:backdrop-opacity-90 {
-    @include sm\:backdrop-opacity-(0.9);
-  }
-
-  @mixin sm\:backdrop-opacity-95 {
-    @include sm\:backdrop-opacity-(0.95);
-  }
-
-  @mixin sm\:backdrop-opacity-100 {
-    @include sm\:backdrop-opacity-(1);
-  }
-
-  @mixin md\:backdrop-opacity-0 {
-    @include md\:backdrop-opacity-(0);
-  }
-
-  @mixin md\:backdrop-opacity-5 {
-    @include md\:backdrop-opacity-(0.05);
-  }
-
-  @mixin md\:backdrop-opacity-10 {
-    @include md\:backdrop-opacity-(0.1);
-  }
-
-  @mixin md\:backdrop-opacity-15 {
-    @include md\:backdrop-opacity-(0.15);
-  }
-
-  @mixin md\:backdrop-opacity-20 {
-    @include md\:backdrop-opacity-(0.2);
-  }
-
-  @mixin md\:backdrop-opacity-25 {
-    @include md\:backdrop-opacity-(0.25);
-  }
-
-  @mixin md\:backdrop-opacity-30 {
-    @include md\:backdrop-opacity-(0.3);
-  }
-
-  @mixin md\:backdrop-opacity-35 {
-    @include md\:backdrop-opacity-(0.35);
-  }
-
-  @mixin md\:backdrop-opacity-40 {
-    @include md\:backdrop-opacity-(0.4);
-  }
-
-  @mixin md\:backdrop-opacity-45 {
-    @include md\:backdrop-opacity-(0.45);
-  }
-
-  @mixin md\:backdrop-opacity-50 {
-    @include md\:backdrop-opacity-(0.5);
-  }
-
-  @mixin md\:backdrop-opacity-55 {
-    @include md\:backdrop-opacity-(0.55);
-  }
-
-  @mixin md\:backdrop-opacity-60 {
-    @include md\:backdrop-opacity-(0.6);
-  }
-
-  @mixin md\:backdrop-opacity-65 {
-    @include md\:backdrop-opacity-(0.65);
-  }
-
-  @mixin md\:backdrop-opacity-70 {
-    @include md\:backdrop-opacity-(0.7);
-  }
-
-  @mixin md\:backdrop-opacity-75 {
-    @include md\:backdrop-opacity-(0.75);
-  }
-
-  @mixin md\:backdrop-opacity-80 {
-    @include md\:backdrop-opacity-(0.8);
-  }
-
-  @mixin md\:backdrop-opacity-85 {
-    @include md\:backdrop-opacity-(0.85);
-  }
-
-  @mixin md\:backdrop-opacity-90 {
-    @include md\:backdrop-opacity-(0.9);
-  }
-
-  @mixin md\:backdrop-opacity-95 {
-    @include md\:backdrop-opacity-(0.95);
-  }
-
-  @mixin md\:backdrop-opacity-100 {
-    @include md\:backdrop-opacity-(1);
-  }
-
-  @mixin lg\:backdrop-opacity-0 {
-    @include lg\:backdrop-opacity-(0);
-  }
-
-  @mixin lg\:backdrop-opacity-5 {
-    @include lg\:backdrop-opacity-(0.05);
-  }
-
-  @mixin lg\:backdrop-opacity-10 {
-    @include lg\:backdrop-opacity-(0.1);
-  }
-
-  @mixin lg\:backdrop-opacity-15 {
-    @include lg\:backdrop-opacity-(0.15);
-  }
-
-  @mixin lg\:backdrop-opacity-20 {
-    @include lg\:backdrop-opacity-(0.2);
-  }
-
-  @mixin lg\:backdrop-opacity-25 {
-    @include lg\:backdrop-opacity-(0.25);
-  }
-
-  @mixin lg\:backdrop-opacity-30 {
-    @include lg\:backdrop-opacity-(0.3);
-  }
-
-  @mixin lg\:backdrop-opacity-35 {
-    @include lg\:backdrop-opacity-(0.35);
-  }
-
-  @mixin lg\:backdrop-opacity-40 {
-    @include lg\:backdrop-opacity-(0.4);
-  }
-
-  @mixin lg\:backdrop-opacity-45 {
-    @include lg\:backdrop-opacity-(0.45);
-  }
-
-  @mixin lg\:backdrop-opacity-50 {
-    @include lg\:backdrop-opacity-(0.5);
-  }
-
-  @mixin lg\:backdrop-opacity-55 {
-    @include lg\:backdrop-opacity-(0.55);
-  }
-
-  @mixin lg\:backdrop-opacity-60 {
-    @include lg\:backdrop-opacity-(0.6);
-  }
-
-  @mixin lg\:backdrop-opacity-65 {
-    @include lg\:backdrop-opacity-(0.65);
-  }
-
-  @mixin lg\:backdrop-opacity-70 {
-    @include lg\:backdrop-opacity-(0.7);
-  }
-
-  @mixin lg\:backdrop-opacity-75 {
-    @include lg\:backdrop-opacity-(0.75);
-  }
-
-  @mixin lg\:backdrop-opacity-80 {
-    @include lg\:backdrop-opacity-(0.8);
-  }
-
-  @mixin lg\:backdrop-opacity-85 {
-    @include lg\:backdrop-opacity-(0.85);
-  }
-
-  @mixin lg\:backdrop-opacity-90 {
-    @include lg\:backdrop-opacity-(0.9);
-  }
-
-  @mixin lg\:backdrop-opacity-95 {
-    @include lg\:backdrop-opacity-(0.95);
-  }
-
-  @mixin lg\:backdrop-opacity-100 {
-    @include lg\:backdrop-opacity-(1);
-  }
-
-  @mixin xl\:backdrop-opacity-0 {
-    @include xl\:backdrop-opacity-(0);
-  }
-
-  @mixin xl\:backdrop-opacity-5 {
-    @include xl\:backdrop-opacity-(0.05);
-  }
-
-  @mixin xl\:backdrop-opacity-10 {
-    @include xl\:backdrop-opacity-(0.1);
-  }
-
-  @mixin xl\:backdrop-opacity-15 {
-    @include xl\:backdrop-opacity-(0.15);
-  }
-
-  @mixin xl\:backdrop-opacity-20 {
-    @include xl\:backdrop-opacity-(0.2);
-  }
-
-  @mixin xl\:backdrop-opacity-25 {
-    @include xl\:backdrop-opacity-(0.25);
-  }
-
-  @mixin xl\:backdrop-opacity-30 {
-    @include xl\:backdrop-opacity-(0.3);
-  }
-
-  @mixin xl\:backdrop-opacity-35 {
-    @include xl\:backdrop-opacity-(0.35);
-  }
-
-  @mixin xl\:backdrop-opacity-40 {
-    @include xl\:backdrop-opacity-(0.4);
-  }
-
-  @mixin xl\:backdrop-opacity-45 {
-    @include xl\:backdrop-opacity-(0.45);
-  }
-
-  @mixin xl\:backdrop-opacity-50 {
-    @include xl\:backdrop-opacity-(0.5);
-  }
-
-  @mixin xl\:backdrop-opacity-55 {
-    @include xl\:backdrop-opacity-(0.55);
-  }
-
-  @mixin xl\:backdrop-opacity-60 {
-    @include xl\:backdrop-opacity-(0.6);
-  }
-
-  @mixin xl\:backdrop-opacity-65 {
-    @include xl\:backdrop-opacity-(0.65);
-  }
-
-  @mixin xl\:backdrop-opacity-70 {
-    @include xl\:backdrop-opacity-(0.7);
-  }
-
-  @mixin xl\:backdrop-opacity-75 {
-    @include xl\:backdrop-opacity-(0.75);
-  }
-
-  @mixin xl\:backdrop-opacity-80 {
-    @include xl\:backdrop-opacity-(0.8);
-  }
-
-  @mixin xl\:backdrop-opacity-85 {
-    @include xl\:backdrop-opacity-(0.85);
-  }
-
-  @mixin xl\:backdrop-opacity-90 {
-    @include xl\:backdrop-opacity-(0.9);
-  }
-
-  @mixin xl\:backdrop-opacity-95 {
-    @include xl\:backdrop-opacity-(0.95);
-  }
-
-  @mixin xl\:backdrop-opacity-100 {
-    @include xl\:backdrop-opacity-(1);
-  }
-
-  @mixin \2xl\:backdrop-opacity-0 {
-    @include \2xl\:backdrop-opacity-(0);
-  }
-
-  @mixin \2xl\:backdrop-opacity-5 {
-    @include \2xl\:backdrop-opacity-(0.05);
-  }
-
-  @mixin \2xl\:backdrop-opacity-10 {
-    @include \2xl\:backdrop-opacity-(0.1);
-  }
-
-  @mixin \2xl\:backdrop-opacity-15 {
-    @include \2xl\:backdrop-opacity-(0.15);
-  }
-
-  @mixin \2xl\:backdrop-opacity-20 {
-    @include \2xl\:backdrop-opacity-(0.2);
-  }
-
-  @mixin \2xl\:backdrop-opacity-25 {
-    @include \2xl\:backdrop-opacity-(0.25);
-  }
-
-  @mixin \2xl\:backdrop-opacity-30 {
-    @include \2xl\:backdrop-opacity-(0.3);
-  }
-
-  @mixin \2xl\:backdrop-opacity-35 {
-    @include \2xl\:backdrop-opacity-(0.35);
-  }
-
-  @mixin \2xl\:backdrop-opacity-40 {
-    @include \2xl\:backdrop-opacity-(0.4);
-  }
-
-  @mixin \2xl\:backdrop-opacity-45 {
-    @include \2xl\:backdrop-opacity-(0.45);
-  }
-
-  @mixin \2xl\:backdrop-opacity-50 {
-    @include \2xl\:backdrop-opacity-(0.5);
-  }
-
-  @mixin \2xl\:backdrop-opacity-55 {
-    @include \2xl\:backdrop-opacity-(0.55);
-  }
-
-  @mixin \2xl\:backdrop-opacity-60 {
-    @include \2xl\:backdrop-opacity-(0.6);
-  }
-
-  @mixin \2xl\:backdrop-opacity-65 {
-    @include \2xl\:backdrop-opacity-(0.65);
-  }
-
-  @mixin \2xl\:backdrop-opacity-70 {
-    @include \2xl\:backdrop-opacity-(0.7);
-  }
-
-  @mixin \2xl\:backdrop-opacity-75 {
-    @include \2xl\:backdrop-opacity-(0.75);
-  }
-
-  @mixin \2xl\:backdrop-opacity-80 {
-    @include \2xl\:backdrop-opacity-(0.8);
-  }
-
-  @mixin \2xl\:backdrop-opacity-85 {
-    @include \2xl\:backdrop-opacity-(0.85);
-  }
-
-  @mixin \2xl\:backdrop-opacity-90 {
-    @include \2xl\:backdrop-opacity-(0.9);
-  }
-
-  @mixin \2xl\:backdrop-opacity-95 {
-    @include \2xl\:backdrop-opacity-(0.95);
-  }
-
-  @mixin \2xl\:backdrop-opacity-100 {
-    @include \2xl\:backdrop-opacity-(1);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin backdrop-opacity-($v) {
     $tw-backdrop-opacity: opacity($v) !global;
     @include backdrop-filter(get_backdrop-filter());
   }
+  x*/
 
-  @mixin sm\:backdrop-opacity-($v) {
-    $tw-backdrop-opacity: opacity($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:backdrop-opacity-($v) {
+      $tw-backdrop-opacity: opacity($v) !global;
+      @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:backdrop-opacity-($v) {
-    $tw-backdrop-opacity: opacity($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $md);
-  }
-
-  @mixin lg\:backdrop-opacity-($v) {
-    $tw-backdrop-opacity: opacity($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $lg);
-  }
-
-  @mixin xl\:backdrop-opacity-($v) {
-    $tw-backdrop-opacity: opacity($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $xl);
-  }
-
-  @mixin \2xl\:backdrop-opacity-($v) {
-    $tw-backdrop-opacity: opacity($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $\2xl);
-  }
-
-  // x*/
 }

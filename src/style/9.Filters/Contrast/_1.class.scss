@@ -1,221 +1,53 @@
 @use "../../setting" as *;
 
+$Contrast: (
+  "contrast-0": contrast(0),
+  "contrast-50": contrast(0.5),
+  "contrast-75": contrast(0.75),
+  "contrast-100": contrast(1),
+  "contrast-125": contrast(1.25),
+  "contrast-150": contrast(1.5),
+  "contrast-200": contrast(2),
+);
+
 @if $Basic {
-  // /*x
-  @mixin contrast-0 {
-    $tw-contrast: contrast(0) !global;
-    filter: get_filter();
+  @each $key, $value in $Contrast {
+    /*x
+    @mixin #{$key} {
+      $tw-contrast: #{$value} !global;
+      @include filter(get_filter());
+    }
+    x*/
   }
-
-  @mixin contrast-50 {
-    $tw-contrast: contrast(0.5) !global;
-    filter: get_filter();
-  }
-
-  @mixin contrast-75 {
-    $tw-contrast: contrast(0.75) !global;
-    filter: get_filter();
-  }
-
-  @mixin contrast-100 {
-    $tw-contrast: contrast(1) !global;
-    filter: get_filter();
-  }
-
-  @mixin contrast-125 {
-    $tw-contrast: contrast(1.25) !global;
-    filter: get_filter();
-  }
-
-  @mixin contrast-150 {
-    $tw-contrast: contrast(1.5) !global;
-    filter: get_filter();
-  }
-
-  @mixin contrast-200 {
-    $tw-contrast: contrast(2) !global;
-    filter: get_filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:contrast-0 {
-    @include sm\:contrast-(0);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Contrast {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-contrast: #{$value} !global;
+        @include filter(get_filter(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:contrast-50 {
-    @include sm\:contrast-(0.5);
-  }
-
-  @mixin sm\:contrast-75 {
-    @include sm\:contrast-(0.75);
-  }
-
-  @mixin sm\:contrast-100 {
-    @include sm\:contrast-(1);
-  }
-
-  @mixin sm\:contrast-125 {
-    @include sm\:contrast-(1.25);
-  }
-
-  @mixin sm\:contrast-150 {
-    @include sm\:contrast-(1.5);
-  }
-
-  @mixin sm\:contrast-200 {
-    @include sm\:contrast-(2);
-  }
-
-  @mixin md\:contrast-0 {
-    @include md\:contrast-(0);
-  }
-
-  @mixin md\:contrast-50 {
-    @include md\:contrast-(0.5);
-  }
-
-  @mixin md\:contrast-75 {
-    @include md\:contrast-(0.75);
-  }
-
-  @mixin md\:contrast-100 {
-    @include md\:contrast-(1);
-  }
-
-  @mixin md\:contrast-125 {
-    @include md\:contrast-(1.25);
-  }
-
-  @mixin md\:contrast-150 {
-    @include md\:contrast-(1.5);
-  }
-
-  @mixin md\:contrast-200 {
-    @include md\:contrast-(2);
-  }
-
-  @mixin lg\:contrast-0 {
-    @include lg\:contrast-(0);
-  }
-
-  @mixin lg\:contrast-50 {
-    @include lg\:contrast-(0.5);
-  }
-
-  @mixin lg\:contrast-75 {
-    @include lg\:contrast-(0.75);
-  }
-
-  @mixin lg\:contrast-100 {
-    @include lg\:contrast-(1);
-  }
-
-  @mixin lg\:contrast-125 {
-    @include lg\:contrast-(1.25);
-  }
-
-  @mixin lg\:contrast-150 {
-    @include lg\:contrast-(1.5);
-  }
-
-  @mixin lg\:contrast-200 {
-    @include lg\:contrast-(2);
-  }
-
-  @mixin xl\:contrast-0 {
-    @include xl\:contrast-(0);
-  }
-
-  @mixin xl\:contrast-50 {
-    @include xl\:contrast-(0.5);
-  }
-
-  @mixin xl\:contrast-75 {
-    @include xl\:contrast-(0.75);
-  }
-
-  @mixin xl\:contrast-100 {
-    @include xl\:contrast-(1);
-  }
-
-  @mixin xl\:contrast-125 {
-    @include xl\:contrast-(1.25);
-  }
-
-  @mixin xl\:contrast-150 {
-    @include xl\:contrast-(1.5);
-  }
-
-  @mixin xl\:contrast-200 {
-    @include xl\:contrast-(2);
-  }
-
-  @mixin \2xl\:contrast-0 {
-    @include \2xl\:contrast-(0);
-  }
-
-  @mixin \2xl\:contrast-50 {
-    @include \2xl\:contrast-(0.5);
-  }
-
-  @mixin \2xl\:contrast-75 {
-    @include \2xl\:contrast-(0.75);
-  }
-
-  @mixin \2xl\:contrast-100 {
-    @include \2xl\:contrast-(1);
-  }
-
-  @mixin \2xl\:contrast-125 {
-    @include \2xl\:contrast-(1.25);
-  }
-
-  @mixin \2xl\:contrast-150 {
-    @include \2xl\:contrast-(1.5);
-  }
-
-  @mixin \2xl\:contrast-200 {
-    @include \2xl\:contrast-(2);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin contrast-($v) {
     $tw-contrast: contrast($v) !global;
     @include filter(get_filter());
   }
+  x*/
 
-  @mixin sm\:contrast-($v) {
-    $tw-contrast: contrast($v) !global;
-    @include filter(get_filter(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:contrast-($v) {
+      $tw-contrast: contrast($v) !global;
+      @include filter(get_filter(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:contrast-($v) {
-    $tw-contrast: contrast($v) !global;
-    @include filter(get_filter(), $md);
-  }
-
-  @mixin lg\:contrast-($v) {
-    $tw-contrast: contrast($v) !global;
-    @include filter(get_filter(), $lg);
-  }
-
-  @mixin xl\:contrast-($v) {
-    $tw-contrast: contrast($v) !global;
-    @include filter(get_filter(), $xl);
-  }
-
-  @mixin \2xl\:contrast-($v) {
-    $tw-contrast: contrast($v) !global;
-    @include filter(get_filter(), $\2xl);
-  }
-
-  // x*/
 }

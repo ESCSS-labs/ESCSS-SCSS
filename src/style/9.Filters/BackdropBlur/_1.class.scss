@@ -1,246 +1,54 @@
 @use "../../setting" as *;
 
+$BackdropBlur: (
+  "backdrop-blur-none": blur(0),
+  "backdrop-blur-sm": blur(4px),
+  "backdrop-blur": blur(8px),
+  "backdrop-blur-md": blur(12px),
+  "backdrop-blur-lg": blur(16px),
+  "backdrop-blur-xl": blur(24px),
+  "backdrop-blur-2xl": blur(40px),
+  "backdrop-blur-3xl": blur(64px),
+);
+
 @if $Basic {
-  // /*x
-  @mixin backdrop-blur-none {
-    $tw-backdrop-blur: blur(0) !global;
-    backdrop-filter: get_backdrop-filter();
+  @each $key, $value in $BackdropBlur {
+    /*x
+    @mixin #{$key} {
+      $tw-backdrop-blur: #{$value} !global;
+      @include backdrop-filter(get_backdrop-filter());
+    }
+    x*/
   }
-
-  @mixin backdrop-blur-sm {
-    $tw-backdrop-blur: blur(4px) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-blur {
-    $tw-backdrop-blur: blur(8px) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-blur-md {
-    $tw-backdrop-blur: blur(12px) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-blur-lg {
-    $tw-backdrop-blur: blur(16px) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-blur-xl {
-    $tw-backdrop-blur: blur(24px) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-blur-2xl {
-    $tw-backdrop-blur: blur(40px) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  @mixin backdrop-blur-3xl {
-    $tw-backdrop-blur: blur(64px) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd {
-  // /*x
-  @mixin sm\:backdrop-blur-none {
-    @include sm\:backdrop-blur-(0);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackdropBlur {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-backdrop-blur: #{$value} !global;
+        @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:backdrop-blur-sm {
-    @include sm\:backdrop-blur-(4px);
-  }
-
-  @mixin sm\:backdrop-blur {
-    @include sm\:backdrop-blur-(8px);
-  }
-
-  @mixin sm\:backdrop-blur-md {
-    @include sm\:backdrop-blur-(12px);
-  }
-
-  @mixin sm\:backdrop-blur-lg {
-    @include sm\:backdrop-blur-(16px);
-  }
-
-  @mixin sm\:backdrop-blur-xl {
-    @include sm\:backdrop-blur-(24px);
-  }
-
-  @mixin sm\:backdrop-blur-2xl {
-    @include sm\:backdrop-blur-(40px);
-  }
-
-  @mixin sm\:backdrop-blur-3xl {
-    @include sm\:backdrop-blur-(64px);
-  }
-
-  @mixin md\:backdrop-blur-none {
-    @include md\:backdrop-blur-(0);
-  }
-
-  @mixin md\:backdrop-blur-sm {
-    @include md\:backdrop-blur-(4px);
-  }
-
-  @mixin md\:backdrop-blur {
-    @include md\:backdrop-blur-(8px);
-  }
-
-  @mixin md\:backdrop-blur-md {
-    @include md\:backdrop-blur-(12px);
-  }
-
-  @mixin md\:backdrop-blur-lg {
-    @include md\:backdrop-blur-(16px);
-  }
-
-  @mixin md\:backdrop-blur-xl {
-    @include md\:backdrop-blur-(24px);
-  }
-
-  @mixin md\:backdrop-blur-2xl {
-    @include md\:backdrop-blur-(40px);
-  }
-
-  @mixin md\:backdrop-blur-3xl {
-    @include md\:backdrop-blur-(64px);
-  }
-
-  @mixin lg\:backdrop-blur-none {
-    @include lg\:backdrop-blur-(0);
-  }
-
-  @mixin lg\:backdrop-blur-sm {
-    @include lg\:backdrop-blur-(4px);
-  }
-
-  @mixin lg\:backdrop-blur {
-    @include lg\:backdrop-blur-(8px);
-  }
-
-  @mixin lg\:backdrop-blur-md {
-    @include lg\:backdrop-blur-(12px);
-  }
-
-  @mixin lg\:backdrop-blur-lg {
-    @include lg\:backdrop-blur-(16px);
-  }
-
-  @mixin lg\:backdrop-blur-xl {
-    @include lg\:backdrop-blur-(24px);
-  }
-
-  @mixin lg\:backdrop-blur-2xl {
-    @include lg\:backdrop-blur-(40px);
-  }
-
-  @mixin lg\:backdrop-blur-3xl {
-    @include lg\:backdrop-blur-(64px);
-  }
-
-  @mixin xl\:backdrop-blur-none {
-    @include xl\:backdrop-blur-(0);
-  }
-
-  @mixin xl\:backdrop-blur-sm {
-    @include xl\:backdrop-blur-(4px);
-  }
-
-  @mixin xl\:backdrop-blur {
-    @include xl\:backdrop-blur-(8px);
-  }
-
-  @mixin xl\:backdrop-blur-md {
-    @include xl\:backdrop-blur-(12px);
-  }
-
-  @mixin xl\:backdrop-blur-lg {
-    @include xl\:backdrop-blur-(16px);
-  }
-
-  @mixin xl\:backdrop-blur-xl {
-    @include xl\:backdrop-blur-(24px);
-  }
-
-  @mixin xl\:backdrop-blur-2xl {
-    @include xl\:backdrop-blur-(40px);
-  }
-
-  @mixin xl\:backdrop-blur-3xl {
-    @include xl\:backdrop-blur-(64px);
-  }
-
-  @mixin \2xl\:backdrop-blur-none {
-    @include \2xl\:backdrop-blur-(0);
-  }
-
-  @mixin \2xl\:backdrop-blur-sm {
-    @include \2xl\:backdrop-blur-(4px);
-  }
-
-  @mixin \2xl\:backdrop-blur {
-    @include \2xl\:backdrop-blur-(8px);
-  }
-
-  @mixin \2xl\:backdrop-blur-md {
-    @include \2xl\:backdrop-blur-(12px);
-  }
-
-  @mixin \2xl\:backdrop-blur-lg {
-    @include \2xl\:backdrop-blur-(16px);
-  }
-
-  @mixin \2xl\:backdrop-blur-xl {
-    @include \2xl\:backdrop-blur-(24px);
-  }
-
-  @mixin \2xl\:backdrop-blur-2xl {
-    @include \2xl\:backdrop-blur-(40px);
-  }
-
-  @mixin \2xl\:backdrop-blur-3xl {
-    @include \2xl\:backdrop-blur-(64px);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin backdrop-blur-($v) {
     $tw-backdrop-blur: blur($v) !global;
     @include backdrop-filter(get_backdrop-filter());
   }
+  x*/
 
-  @mixin sm\:backdrop-blur-($v) {
-    $tw-backdrop-blur: blur($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:backdrop-blur-($v) {
+      $tw-backdrop-blur: blur($v) !global;
+      @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:backdrop-blur-($v) {
-    $tw-backdrop-blur: blur($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $md);
-  }
-
-  @mixin lg\:backdrop-blur-($v) {
-    $tw-backdrop-blur: blur($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $lg);
-  }
-
-  @mixin xl\:backdrop-blur-($v) {
-    $tw-backdrop-blur: blur($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $xl);
-  }
-
-  @mixin \2xl\:backdrop-blur-($v) {
-    $tw-backdrop-blur: blur($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $\2xl);
-  }
-
-  // x*/
 }

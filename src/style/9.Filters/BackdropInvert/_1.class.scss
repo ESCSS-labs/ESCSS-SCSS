@@ -1,96 +1,49 @@
 @use "../../setting" as *;
 
+
+$BackdropInvert: (
+  "backdrop-invert-0": invert(0),
+  "backdrop-invert": invert(100%),
+);
+
 @if $Basic {
-  // /*x
-  @mixin backdrop-invert-0 {
-    $tw-backdrop-invert: invert(0) !global;
-    backdrop-filter: get_backdrop-filter();
+  @each $key, $value in $BackdropInvert {
+    /*x
+    @mixin #{$key} {
+      $tw-backdrop-invert: #{$value} !global;
+      @include backdrop-filter(get_backdrop-filter());
+    }
+    x*/
   }
-
-  @mixin backdrop-invert {
-    $tw-backdrop-invert: invert(100%) !global;
-    backdrop-filter: get_backdrop-filter();
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:backdrop-invert-0 {
-    @include sm\:backdrop-invert-(0);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackdropInvert {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        $tw-backdrop-invert: #{$value} !global;
+        @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:backdrop-invert {
-    @include sm\:backdrop-invert-(100%);
-  }
-
-  @mixin md\:backdrop-invert-0 {
-    @include md\:backdrop-invert-(0);
-  }
-
-  @mixin md\:backdrop-invert {
-    @include md\:backdrop-invert-(100%);
-  }
-
-  @mixin lg\:backdrop-invert-0 {
-    @include lg\:backdrop-invert-(0);
-  }
-
-  @mixin lg\:backdrop-invert {
-    @include lg\:backdrop-invert-(100%);
-  }
-
-  @mixin xl\:backdrop-invert-0 {
-    @include xl\:backdrop-invert-(0);
-  }
-
-  @mixin xl\:backdrop-invert {
-    @include xl\:backdrop-invert-(100%);
-  }
-
-  @mixin \2xl\:backdrop-invert-0 {
-    @include \2xl\:backdrop-invert-(0);
-  }
-
-  @mixin \2xl\:backdrop-invert {
-    @include \2xl\:backdrop-invert-(100%);
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
+  /*x
   @mixin backdrop-invert-($v) {
     $tw-backdrop-invert: invert($v) !global;
     @include backdrop-filter(get_backdrop-filter());
   }
+  x*/
 
-  @mixin sm\:backdrop-invert-($v) {
-    $tw-backdrop-invert: invert($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $sm);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:backdrop-invert-($v) {
+      $tw-backdrop-invert: invert($v) !global;
+      @include backdrop-filter(get_backdrop-filter(), $#{$rwd});
+    }
+    x*/
   }
-
-  @mixin md\:backdrop-invert-($v) {
-    $tw-backdrop-invert: invert($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $md);
-  }
-
-  @mixin lg\:backdrop-invert-($v) {
-    $tw-backdrop-invert: invert($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $lg);
-  }
-
-  @mixin xl\:backdrop-invert-($v) {
-    $tw-backdrop-invert: invert($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $xl);
-  }
-
-  @mixin \2xl\:backdrop-invert-($v) {
-    $tw-backdrop-invert: invert($v) !global;
-    @include backdrop-filter(get_backdrop-filter(), $\2xl);
-  }
-
-  // x*/
 }
