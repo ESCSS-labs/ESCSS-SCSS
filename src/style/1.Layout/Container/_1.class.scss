@@ -1,165 +1,42 @@
 @use "../../setting" as *;
+@use "sass:list";
+
+$Container: (
+  "container": ("100%", "$sm", "$md", "$lg", "$xl", "$\\2xl"),
+);
 
 @if $Basic {
-  // /*x
-  @mixin container {
-    width: 100%;
+  @each $key, $value in $Container {
+    /*x
+    @mixin #{$key} {
+      @include width(#{list.nth($value, 1)});
 
-    @media (min-width: $sm) {
-      max-width: $sm;
+      @include max-width(#{list.nth($value, 2), "$sm"});
+      @include max-width(#{list.nth($value, 3), "$md"});
+      @include max-width(#{list.nth($value, 4), "$lg"});
+      @include max-width(#{list.nth($value, 5), "$xl"});
+      @include max-width(#{list.nth($value, 6), "$\\2xl"});
     }
-
-    @media (min-width: $md) {
-      max-width: $md;
-    }
-
-    @media (min-width: $lg) {
-      max-width: $lg;
-    }
-
-    @media (min-width: $xl) {
-      max-width: $xl;
-    }
-
-    @media (min-width: $\2xl) {
-      max-width: $\2xl;
-    }
+    x*/
   }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:container {
-    @include sm {
-      @include width(100%);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Container {
+      /*x
+      @mixin #{$key} {
+        @include #{$rwd} {
+          @include width(#{list.nth($value, 1)});
 
-      @include sm {
-        @include max-width($sm);
+          @include max-width(#{list.nth($value, 2), "$sm"});
+          @include max-width(#{list.nth($value, 3), "$md"});
+          @include max-width(#{list.nth($value, 4), "$lg"});
+          @include max-width(#{list.nth($value, 5), "$xl"});
+          @include max-width(#{list.nth($value, 6), "$\\2xl"});
+        }
       }
-
-      @include md {
-        @include max-width($md);
-      }
-
-      @include lg {
-        @include max-width($lg);
-      }
-
-      @include xl {
-        @include max-width($xl);
-      }
-
-      @include \2xl {
-        @include max-width($\2xl);
-      }
+      x*/
     }
   }
-
-  @mixin md\:container {
-    @include md {
-      @include width(100%);
-
-      @include sm {
-        @include max-width($sm);
-      }
-
-      @include md {
-        @include max-width($md);
-      }
-
-      @include lg {
-        @include max-width($lg);
-      }
-
-      @include xl {
-        @include max-width($xl);
-      }
-
-      @include \2xl {
-        @include max-width($\2xl);
-      }
-    }
-  }
-
-  @mixin lg\:container {
-    @include lg {
-      @include width(100%);
-
-      @include sm {
-        @include max-width($sm);
-      }
-
-      @include md {
-        @include max-width($md);
-      }
-
-      @include lg {
-        @include max-width($lg);
-      }
-
-      @include xl {
-        @include max-width($xl);
-      }
-
-      @include \2xl {
-        @include max-width($\2xl);
-      }
-    }
-  }
-
-  @mixin xl\:container {
-    @include xl {
-      @include width(100%);
-
-      @include sm {
-        @include max-width($sm);
-      }
-
-      @include md {
-        @include max-width($md);
-      }
-
-      @include lg {
-        @include max-width($lg);
-      }
-
-      @include xl {
-        @include max-width($xl);
-      }
-
-      @include \2xl {
-        @include max-width($\2xl);
-      }
-    }
-  }
-
-  @mixin \2xl\:container {
-    @include \2xl {
-      @include width(100%);
-
-      @include sm {
-        @include max-width($sm);
-      }
-
-      @include md {
-        @include max-width($md);
-      }
-
-      @include lg {
-        @include max-width($lg);
-      }
-
-      @include xl {
-        @include max-width($xl);
-      }
-
-      @include \2xl {
-        @include max-width($\2xl);
-      }
-    }
-  }
-
-  // x*/
 }

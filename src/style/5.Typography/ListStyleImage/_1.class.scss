@@ -8,8 +8,8 @@ $ListStyleImage: (
 @if $Basic {
   @each $key, $value in $ListStyleImage {
     /*x
-    @mixin list-image-none {
-      @include list-style-image(none);
+    @mixin #{$key} {
+      @include list-style-image(#{$value});
     }
     x*/
   }
@@ -19,8 +19,8 @@ $ListStyleImage: (
   @each $rwd in $rwdBox {
     @each $key, $value in $ListStyleImage {
       /*x
-      @mixin #{$rwd}\:list-image-none {
-        @include list-style-image(none, $#{$rwd});
+      @mixin #{$key}\:#{$rwd} {
+        @include list-style-image(#{$value}, $#{$rwd});
       }
       x*/
     }
