@@ -1,5 +1,5 @@
 @use "../../setting" as *;
-
+@use "sass:list";
 
 // 1st: overflow-wrap
 // 2nd: word-break
@@ -13,7 +13,7 @@ $WordBreak: (
 @if $Basic {
   @each $key, $value in $WordBreak {
     /*x
-    @mixin #{$key}{
+    @mixin #{$key} {
       @include overflow-wrap(#{list.nth($value, 1)});
       @include word-break(#{list.nth($value, 2)});
     }
@@ -25,7 +25,7 @@ $WordBreak: (
   @each $rwd in $rwdBox {
     @each $key, $value in $WordBreak {
       /*x
-      @mixin #{$rwd}\:#{$key}{
+      @mixin #{$rwd}\:#{$key} {
         @include #{$rwd} {
           @include overflow-wrap(#{list.nth($value, 1)});
           @include word-break(#{list.nth($value, 2)});

@@ -1,4 +1,5 @@
 @use "../../setting" as *;
+@use "sass:list";
 
 // 1st: overflow
 // 2nd: text-overflow
@@ -12,7 +13,7 @@ $TextOverflow: (
 @if $Basic {
   @each $key, $value in $TextOverflow {
     /*x 
-    @mixin truncate {
+    @mixin #{$key} {
       @include overflow(#{list.nth($value, 1)});
       @include text-overflow(#{list.nth($value, 2)});
       @include white-space(#{list.nth($value, 3)});
@@ -25,7 +26,7 @@ $TextOverflow: (
   @each $rwd in $rwdBox {
     @each $key, $value in $TextOverflow {
       /*x
-      @mixin truncate {
+      @mixin #{$key} {
         @include #{$rwd} {
           @include overflow(#{list.nth($value, 1)});
           @include text-overflow(#{list.nth($value, 2)});

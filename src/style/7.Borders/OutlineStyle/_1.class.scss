@@ -1,4 +1,5 @@
 @use "../../setting" as *;
+@use "sass:list";
 
 // 1st: outline
 // 2nd: outline-offset
@@ -15,9 +16,9 @@ $OutlineStyle: (
   @each $key, $value in $OutlineStyle {
     /*x
     @mixin #{$key} {
-      @include outline(#{list.nth($value, 1}));
-      @include outline-offset(#{list.nth($value, 2}));
-      @include outline-style(#{list.nth($value, 3}));
+      @include overflow(#{list.nth($value, 1)});
+      @include text-overflow(#{list.nth($value, 2)});
+      @include white-space(#{list.nth($value, 3)});
     }
     x*/
   }
@@ -29,9 +30,9 @@ $OutlineStyle: (
       /*x
       @mixin #{$rwd}\:#{$key} {
         @include #{$rwd} {
-          @include outline(#{list.nth($value, 1}));
-          @include outline-offset(#{list.nth($value, 2}));
-          @include outline-style(#{list.nth($value, 3}));
+          @include overflow(#{list.nth($value, 1)});
+          @include text-overflow(#{list.nth($value, 2)});
+          @include white-space(#{list.nth($value, 3)});
         }
       }
       x*/

@@ -1,7 +1,7 @@
 @use "../../setting" as *;
 
 
-$TextWrap: (
+$WhiteSpace: (
   "whitespace-normal": normal,
   "whitespace-nowrap": nowrap,
   "whitespace-pre": pre,
@@ -11,7 +11,7 @@ $TextWrap: (
 );
 
 @if $Basic {
-  @each $key, $value in $TextWrap {
+  @each $key, $value in $WhiteSpace {
     /*x
     @mixin #{$key}{
       @include white-space(#{$value});
@@ -22,7 +22,7 @@ $TextWrap: (
 
 @if $Rwd {
   @each $rwd in $rwdBox {
-    @each $key, $value in $TextWrap {
+    @each $key, $value in $WhiteSpace {
       /*x
       @mixin #{$rwd}\:#{$key}{
         @include white-space(#{$value}, $#{$key});

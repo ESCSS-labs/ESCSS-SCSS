@@ -1,14 +1,14 @@
 @use "../../setting" as *;
 
 
-$Position: (
+$Visibility: (
   "visible": visible,
   "invisible": hidden,
   "collapse": collapse,
 );
 
 @if $Basic {
-  @each $key, $value in $Position {
+  @each $key, $value in $Visibility {
     /*x
     @mixin #{$key} {
       @include visibility(#{$value});
@@ -19,7 +19,7 @@ $Position: (
 
 @if $Rwd {
   @each $rwd in $rwdBox {
-    @each $key, $value in $Position {
+    @each $key, $value in $Visibility {
       /*x
       @mixin #{$rwd}\:#{$key} {
         @include visibility(#{$value}, $#{$rwd});

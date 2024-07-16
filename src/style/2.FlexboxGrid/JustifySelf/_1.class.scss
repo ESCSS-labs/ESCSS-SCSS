@@ -1,7 +1,7 @@
 @use "../../setting" as *;
 
 
-$JustifyItems: (
+$JustifySelf: (
   "justify-self-auto": auto,
   "justify-self-start": start,
   "justify-self-end": end,
@@ -10,7 +10,7 @@ $JustifyItems: (
 );
 
 @if $Basic {
-  @each $key, $value in $JustifyItems {
+  @each $key, $value in $JustifySelf {
     /*x
     @mixin #{$key} {
       @include justify-self(#{$value});
@@ -21,7 +21,7 @@ $JustifyItems: (
 
 @if $Rwd {
   @each $rwd in $rwdBox {
-    @each $key, $value in $JustifyItems {
+    @each $key, $value in $JustifySelf {
       /*x
       @mixin #{$rwd}\:#{$key} {
         @include justify-self(#{$value}, $#{$rwd});
