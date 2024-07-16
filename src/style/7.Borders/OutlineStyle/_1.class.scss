@@ -5,20 +5,20 @@
 // 2nd: outline-offset
 // 3rd: outline-style
 $OutlineStyle: (
-  "outline-none": ("null", (2px solid transparent), 2px),
-  "outline": (solid, "null", "null"),
-  "outline-dashed": (dashed, "null", "null"),
-  "outline-dotted": (dotted, "null", "null"),
-  "outline-double": (double, "null", "null"),
+  "outline-none": ((2px solid transparent), 2px, "null"),
+  "outline": ("null", "null", solid),
+  "outline-dashed": ("null", "null", dashed),
+  "outline-dotted": ("null", "null", dotted),
+  "outline-double": ("null", "null", double),
 );
 
 @if $Basic {
   @each $key, $value in $OutlineStyle {
     /*x
     @mixin #{$key} {
-      @include overflow(#{list.nth($value, 1)});
-      @include text-overflow(#{list.nth($value, 2)});
-      @include white-space(#{list.nth($value, 3)});
+      @include outline(#{list.nth($value, 1)});
+      @include outline-offset(#{list.nth($value, 2)});
+      @include outline-style(#{list.nth($value, 3)});
     }
     x*/
   }
@@ -30,9 +30,9 @@ $OutlineStyle: (
       /*x
       @mixin #{$rwd}\:#{$key} {
         @include #{$rwd} {
-          @include overflow(#{list.nth($value, 1)});
-          @include text-overflow(#{list.nth($value, 2)});
-          @include white-space(#{list.nth($value, 3)});
+          @include outline(#{list.nth($value, 1)});
+          @include outline-offset(#{list.nth($value, 2)});
+          @include outline-style(#{list.nth($value, 3)});
         }
       }
       x*/
