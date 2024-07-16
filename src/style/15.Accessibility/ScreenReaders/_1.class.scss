@@ -1,169 +1,56 @@
 @use "../../setting" as *;
+@use "sass:list";
+
+// 1st: position
+// 2nd: width
+// 3rd: height
+// 4th: padding
+// 5th: margin
+// 6th: overflow
+// 7th: clip
+// 8th: white-space
+// 9th: border-width
+$ScreenReaders: (
+  "sr-only": (absolute, 1px, 1px, 0, -1px, hidden, rect(0, 0, 0, 0), nowrap, 0),
+  "not-sr-only": (static, auto, auto, 0, 0, visible, auto, normal, "null"),
+);
 
 @if $Basic {
-  // /*x
-  @mixin sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+  @each $key, $value in $ScreenReaders {
+    /*x
+    @mixin #{$key} {
+      @include position(#{list.nth($value, 1)});
+      @include width(#{list.nth($value, 2)});
+      @include height(#{list.nth($value, 3)});
+      @include padding(#{list.nth($value, 4)});
+      @include margin(#{list.nth($value, 5)});
+      @include overflow(#{list.nth($value, 6)});
+      @include clip(#{list.nth($value, 7)});
+      @include white-space(#{list.nth($value, 8)});
+      @include border-width(#{list.nth($value, 9)});
+    }
+    x*/
   }
-
-  @mixin not-sr-only {
-    position: static;
-    width: auto;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:sr-only {
-    @include sm {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ScreenReaders {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include #{$rwd} {
+          @include position(#{list.nth($value, 1)});
+          @include width(#{list.nth($value, 2)});
+          @include height(#{list.nth($value, 3)});
+          @include padding(#{list.nth($value, 4)});
+          @include margin(#{list.nth($value, 5)});
+          @include overflow(#{list.nth($value, 6)});
+          @include clip(#{list.nth($value, 7)});
+          @include white-space(#{list.nth($value, 8)});
+          @include border-width(#{list.nth($value, 9)});
+        }
+      }
+      x*/
     }
   }
-
-  @mixin sm\:not-sr-only {
-    @include sm {
-      position: static;
-      width: auto;
-      height: auto;
-      padding: 0;
-      margin: 0;
-      overflow: visible;
-      clip: auto;
-      white-space: normal;
-    }
-  }
-
-  @mixin md\:sr-only {
-    @include md {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-  }
-
-  @mixin md\:not-sr-only {
-    @include md {
-      position: static;
-      width: auto;
-      height: auto;
-      padding: 0;
-      margin: 0;
-      overflow: visible;
-      clip: auto;
-      white-space: normal;
-    }
-  }
-
-  @mixin lg\:sr-only {
-    @include lg {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-  }
-
-  @mixin lg\:not-sr-only {
-    @include lg {
-      position: static;
-      width: auto;
-      height: auto;
-      padding: 0;
-      margin: 0;
-      overflow: visible;
-      clip: auto;
-      white-space: normal;
-    }
-  }
-
-  @mixin xl\:sr-only {
-    @include xl {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-  }
-
-  @mixin xl\:not-sr-only {
-    @include xl {
-      position: static;
-      width: auto;
-      height: auto;
-      padding: 0;
-      margin: 0;
-      overflow: visible;
-      clip: auto;
-      white-space: normal;
-    }
-  }
-
-  @mixin \2xl\:sr-only {
-    @include \2xl {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-  }
-
-  @mixin \2xl\:not-sr-only {
-    @include \2xl {
-      position: static;
-      width: auto;
-      height: auto;
-      padding: 0;
-      margin: 0;
-      overflow: visible;
-      clip: auto;
-      white-space: normal;
-    }
-  }
-
-  // x*/
 }
