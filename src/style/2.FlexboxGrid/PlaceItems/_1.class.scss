@@ -1,131 +1,32 @@
 @use "../../setting" as *;
 
+
+$PlaceItems: (
+  "place-items-start": start,
+  "place-items-end": end,
+  "place-items-center": center,
+  "place-items-baseline": baseline,
+  "place-items-stretch": stretch,
+);
+
 @if $Basic {
-  // /*x
-  @mixin place-items-start {
-    place-items: start;
+  @each $key, $value in $PlaceItems {
+    /*x
+    @mixin #{$key} {
+      @include place-items(#{$value});
+    }
+    x*/
   }
-
-  @mixin place-items-end {
-    place-items: end;
-  }
-
-  @mixin place-items-center {
-    place-items: center;
-  }
-
-  @mixin place-items-baseline {
-    place-items: baseline;
-  }
-
-  @mixin place-items-stretch {
-    place-items: stretch;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:place-items-start {
-    @include place-items(start, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $PlaceItems {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include place-items(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:place-items-end {
-    @include place-items(end, $sm);
-  }
-
-  @mixin sm\:place-items-center {
-    @include place-items(center, $sm);
-  }
-
-  @mixin sm\:place-items-baseline {
-    @include place-items(baseline, $sm);
-  }
-
-  @mixin sm\:place-items-stretch {
-    @include place-items(stretch, $sm);
-  }
-
-  @mixin md\:place-items-start {
-    @include place-items(start, $md);
-  }
-
-  @mixin md\:place-items-end {
-    @include place-items(end, $md);
-  }
-
-  @mixin md\:place-items-center {
-    @include place-items(center, $md);
-  }
-
-  @mixin md\:place-items-baseline {
-    @include place-items(baseline, $md);
-  }
-
-  @mixin md\:place-items-stretch {
-    @include place-items(stretch, $md);
-  }
-
-  @mixin lg\:place-items-start {
-    @include place-items(start, $lg);
-  }
-
-  @mixin lg\:place-items-end {
-    @include place-items(end, $lg);
-  }
-
-  @mixin lg\:place-items-center {
-    @include place-items(center, $lg);
-  }
-
-  @mixin lg\:place-items-baseline {
-    @include place-items(baseline, $lg);
-  }
-
-  @mixin lg\:place-items-stretch {
-    @include place-items(stretch, $lg);
-  }
-
-  @mixin xl\:place-items-start {
-    @include place-items(start, $xl);
-  }
-
-  @mixin xl\:place-items-end {
-    @include place-items(end, $xl);
-  }
-
-  @mixin xl\:place-items-center {
-    @include place-items(center, $xl);
-  }
-
-  @mixin xl\:place-items-baseline {
-    @include place-items(baseline, $xl);
-  }
-
-  @mixin xl\:place-items-stretch {
-    @include place-items(stretch, $xl);
-  }
-
-  @mixin \2xl\:place-items-start {
-    @include place-items(start, $\2xl);
-  }
-
-  @mixin \2xl\:place-items-end {
-    @include place-items(end, $\2xl);
-  }
-
-  @mixin \2xl\:place-items-center {
-    @include place-items(center, $\2xl);
-  }
-
-  @mixin \2xl\:place-items-baseline {
-    @include place-items(baseline, $\2xl);
-  }
-
-  @mixin \2xl\:place-items-stretch {
-    @include place-items(stretch, $\2xl);
-  }
-
-  // x*/
 }

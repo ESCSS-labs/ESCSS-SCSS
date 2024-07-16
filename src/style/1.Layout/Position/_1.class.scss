@@ -1,131 +1,32 @@
 @use "../../setting" as *;
 
+
+$Position: (
+  "static": static,
+  "fixed": fixed,
+  "absolute": absolute,
+  "relative": relative,
+  "sticky": sticky,
+);
+
 @if $Basic {
-  // /*x
-  @mixin static {
-    position: static;
+  @each $key, $value in $Position {
+    /*x
+    @mixin #{$key} {
+      @include position(#{$value});
+    }
+    x*/
   }
-
-  @mixin fixed {
-    position: fixed;
-  }
-
-  @mixin absolute {
-    position: absolute;
-  }
-
-  @mixin relative {
-    position: relative;
-  }
-
-  @mixin sticky {
-    position: sticky;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:static {
-    @include position(static, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Position {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include position(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:fixed {
-    @include position(fixed, $sm);
-  }
-
-  @mixin sm\:absolute {
-    @include position(absolute, $sm);
-  }
-
-  @mixin sm\:relative {
-    @include position(relative, $sm);
-  }
-
-  @mixin sm\:sticky {
-    @include position(sticky, $sm);
-  }
-
-  @mixin md\:static {
-    @include position(static, $md);
-  }
-
-  @mixin md\:fixed {
-    @include position(fixed, $md);
-  }
-
-  @mixin md\:absolute {
-    @include position(absolute, $md);
-  }
-
-  @mixin md\:relative {
-    @include position(relative, $md);
-  }
-
-  @mixin md\:sticky {
-    @include position(sticky, $md);
-  }
-
-  @mixin lg\:static {
-    @include position(static, $lg);
-  }
-
-  @mixin lg\:fixed {
-    @include position(fixed, $lg);
-  }
-
-  @mixin lg\:absolute {
-    @include position(absolute, $lg);
-  }
-
-  @mixin lg\:relative {
-    @include position(relative, $lg);
-  }
-
-  @mixin lg\:sticky {
-    @include position(sticky, $lg);
-  }
-
-  @mixin xl\:static {
-    @include position(static, $xl);
-  }
-
-  @mixin xl\:fixed {
-    @include position(fixed, $xl);
-  }
-
-  @mixin xl\:absolute {
-    @include position(absolute, $xl);
-  }
-
-  @mixin xl\:relative {
-    @include position(relative, $xl);
-  }
-
-  @mixin xl\:sticky {
-    @include position(sticky, $xl);
-  }
-
-  @mixin \2xl\:static {
-    @include position(static, $\2xl);
-  }
-
-  @mixin \2xl\:fixed {
-    @include position(fixed, $\2xl);
-  }
-
-  @mixin \2xl\:absolute {
-    @include position(absolute, $\2xl);
-  }
-
-  @mixin \2xl\:relative {
-    @include position(relative, $\2xl);
-  }
-
-  @mixin \2xl\:sticky {
-    @include position(sticky, $\2xl);
-  }
-
-  // x*/
 }

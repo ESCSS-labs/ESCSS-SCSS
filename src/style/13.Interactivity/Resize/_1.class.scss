@@ -1,104 +1,31 @@
 @use "../../setting" as *;
 
-// resize is same as atomic class
+
+$Resize: (
+  "resize-none": none,
+  "resize-y": vertical,
+  "resize-x": horizontal,
+  "resize": both,
+);
+
 @if $Basic {
-  // /*x
-  @mixin resize-none {
-    resize: none;
+  @each $key, $value in $Resize {
+    /*x
+    @mixin #{$key} {
+      @include pointer-events(#{$value});
+    }
+    x*/
   }
-
-  @mixin resize-y {
-    resize: vertical;
-  }
-
-  @mixin resize-x {
-    resize: horizontal;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:resize-none {
-    @include resize(none, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Resize {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include pointer-events(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:resize-y {
-    @include resize(vertical, $sm);
-  }
-
-  @mixin sm\:resize-x {
-    @include resize(horizontal, $sm);
-  }
-
-  @mixin sm\:resize {
-    @include resize(both, $sm);
-  }
-
-  @mixin md\:resize-none {
-    @include resize(none, $md);
-  }
-
-  @mixin md\:resize-y {
-    @include resize(vertical, $md);
-  }
-
-  @mixin md\:resize-x {
-    @include resize(horizontal, $md);
-  }
-
-  @mixin md\:resize {
-    @include resize(both, $md);
-  }
-
-  @mixin lg\:resize-none {
-    @include resize(none, $lg);
-  }
-
-  @mixin lg\:resize-y {
-    @include resize(vertical, $lg);
-  }
-
-  @mixin lg\:resize-x {
-    @include resize(horizontal, $lg);
-  }
-
-  @mixin lg\:resize {
-    @include resize(both, $lg);
-  }
-
-  @mixin xl\:resize-none {
-    @include resize(none, $xl);
-  }
-
-  @mixin xl\:resize-y {
-    @include resize(vertical, $xl);
-  }
-
-  @mixin xl\:resize-x {
-    @include resize(horizontal, $xl);
-  }
-
-  @mixin xl\:resize {
-    @include resize(both, $xl);
-  }
-
-  @mixin \2xl\:resize-none {
-    @include resize(none, $\2xl);
-  }
-
-  @mixin \2xl\:resize-y {
-    @include resize(vertical, $\2xl);
-  }
-
-  @mixin \2xl\:resize-x {
-    @include resize(horizontal, $\2xl);
-  }
-
-  @mixin \2xl\:resize {
-    @include resize(both, $\2xl);
-  }
-
-  // x*/
 }

@@ -1,56 +1,29 @@
 @use "../../setting" as *;
 
-// border-collapse is same as atomic class
-@if $Basic {
-  // /*x
-  @mixin border-separate {
-    border-collapse: separate;
-  }
 
-  // x*/
+$BorderCollapse: (
+  "border-collapse": collapse,
+  "border-separate": separate,
+);
+
+@if $Basic {
+  @each $key, $value in $BorderCollapse {
+    /*x
+    @mixin #{$key} {
+      @include border-collapse(#{$value});
+    }
+    x*/
+  }
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:border-collapse {
-    @include border-collapse(collapse, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BorderCollapse {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include border-collapse(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:border-separate {
-    @include border-collapse(separate, $sm);
-  }
-
-  @mixin md\:border-collapse {
-    @include border-collapse(collapse, $md);
-  }
-
-  @mixin md\:border-separate {
-    @include border-collapse(separate, $md);
-  }
-
-  @mixin lg\:border-collapse {
-    @include border-collapse(collapse, $lg);
-  }
-
-  @mixin lg\:border-separate {
-    @include border-collapse(separate, $lg);
-  }
-
-  @mixin xl\:border-collapse {
-    @include border-collapse(collapse, $xl);
-  }
-
-  @mixin xl\:border-separate {
-    @include border-collapse(separate, $xl);
-  }
-
-  @mixin \2xl\:border-collapse {
-    @include border-collapse(collapse, $\2xl);
-  }
-
-  @mixin \2xl\:border-separate {
-    @include border-collapse(separate, $\2xl);
-  }
-
-  // x*/
 }

@@ -1,59 +1,29 @@
 @use "../../setting" as *;
 
+
+$CaptionSide: (
+  "caption-top": top,
+  "caption-bottom": bottom,
+);
+
 @if $Basic {
-  // /*x
-  @mixin caption-top {
-    caption-side: top;
+  @each $key, $value in $CaptionSide {
+    /*x
+    @mixin #{$key} {
+      @include caption-side(#{$value});
+    }
+    x*/
   }
-
-  @mixin caption-bottom {
-    caption-side: bottom;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:caption-top {
-    @include caption-side(top, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $CaptionSide {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include caption-side(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:caption-bottom {
-    @include caption-side(bottom, $sm);
-  }
-
-  @mixin md\:caption-top {
-    @include caption-side(top, $md);
-  }
-
-  @mixin md\:caption-bottom {
-    @include caption-side(bottom, $md);
-  }
-
-  @mixin lg\:caption-top {
-    @include caption-side(top, $lg);
-  }
-
-  @mixin lg\:caption-bottom {
-    @include caption-side(bottom, $lg);
-  }
-
-  @mixin xl\:caption-top {
-    @include caption-side(top, $xl);
-  }
-
-  @mixin xl\:caption-bottom {
-    @include caption-side(bottom, $xl);
-  }
-
-  @mixin \2xl\:caption-top {
-    @include caption-side(top, $\2xl);
-  }
-
-  @mixin \2xl\:caption-bottom {
-    @include caption-side(bottom, $\2xl);
-  }
-
-  // x*/
 }

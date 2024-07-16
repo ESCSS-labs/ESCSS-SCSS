@@ -1,59 +1,28 @@
 @use "../../setting" as *;
 
+$FontStyle: (
+  "italic": italic,
+  "not-italic": normal,
+);
+
 @if $Basic {
-  // /*x
-  @mixin italic {
-    font-style: italic;
+  @each $key, $value in $FontStyle {
+    /*x
+    @mixin #{$key} {
+      @include font-style(#{$value});
+    }
+    x*/
   }
-
-  @mixin not-italic {
-    font-style: normal;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:italic {
-    @include font-style(italic, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $FontStyle {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include font-style(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:not-italic {
-    @include font-style(normal, $sm);
-  }
-
-  @mixin md\:italic {
-    @include font-style(italic, $md);
-  }
-
-  @mixin md\:not-italic {
-    @include font-style(normal, $md);
-  }
-
-  @mixin lg\:italic {
-    @include font-style(italic, $lg);
-  }
-
-  @mixin lg\:not-italic {
-    @include font-style(normal, $lg);
-  }
-
-  @mixin xl\:italic {
-    @include font-style(italic, $xl);
-  }
-
-  @mixin xl\:not-italic {
-    @include font-style(normal, $xl);
-  }
-
-  @mixin \2xl\:italic {
-    @include font-style(italic, $\2xl);
-  }
-
-  @mixin \2xl\:not-italic {
-    @include font-style(normal, $\2xl);
-  }
-
-  // x*/
 }

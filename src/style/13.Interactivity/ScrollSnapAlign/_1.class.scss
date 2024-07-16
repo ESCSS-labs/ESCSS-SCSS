@@ -1,107 +1,32 @@
 @use "../../setting" as *;
 
+
+
+$ScrollSnapAlign: (
+  "snap-start": start,
+  "snap-end": end,
+  "snap-center": center,
+  "snap-align-none": none,
+);
+
 @if $Basic {
-  // /*x
-  @mixin snap-start {
-    scroll-snap-align: start;
+  @each $key, $value in $ScrollSnapAlign {
+    /*x
+    @mixin #{$key} {
+      @include scroll-snap-align(#{$value});
+    }
+    x*/
   }
-
-  @mixin snap-end {
-    scroll-snap-align: end;
-  }
-
-  @mixin snap-center {
-    scroll-snap-align: center;
-  }
-
-  @mixin snap-align-none {
-    scroll-snap-align: none;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:snap-start {
-    @include scroll-snap-align(start, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ScrollSnapAlign {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include scroll-snap-align(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:snap-end {
-    @include scroll-snap-align(end, $sm);
-  }
-
-  @mixin sm\:snap-center {
-    @include scroll-snap-align(center, $sm);
-  }
-
-  @mixin sm\:snap-align-none {
-    @include scroll-snap-align(none, $sm);
-  }
-
-  @mixin md\:snap-start {
-    @include scroll-snap-align(start, $md);
-  }
-
-  @mixin md\:snap-end {
-    @include scroll-snap-align(end, $md);
-  }
-
-  @mixin md\:snap-center {
-    @include scroll-snap-align(center, $md);
-  }
-
-  @mixin md\:snap-align-none {
-    @include scroll-snap-align(none, $md);
-  }
-
-  @mixin lg\:snap-start {
-    @include scroll-snap-align(start, $lg);
-  }
-
-  @mixin lg\:snap-end {
-    @include scroll-snap-align(end, $lg);
-  }
-
-  @mixin lg\:snap-center {
-    @include scroll-snap-align(center, $lg);
-  }
-
-  @mixin lg\:snap-align-none {
-    @include scroll-snap-align(none, $lg);
-  }
-
-  @mixin xl\:snap-start {
-    @include scroll-snap-align(start, $xl);
-  }
-
-  @mixin xl\:snap-end {
-    @include scroll-snap-align(end, $xl);
-  }
-
-  @mixin xl\:snap-center {
-    @include scroll-snap-align(center, $xl);
-  }
-
-  @mixin xl\:snap-align-none {
-    @include scroll-snap-align(none, $xl);
-  }
-
-  @mixin \2xl\:snap-start {
-    @include scroll-snap-align(start, $\2xl);
-  }
-
-  @mixin \2xl\:snap-end {
-    @include scroll-snap-align(end, $\2xl);
-  }
-
-  @mixin \2xl\:snap-center {
-    @include scroll-snap-align(center, $\2xl);
-  }
-
-  @mixin \2xl\:snap-align-none {
-    @include scroll-snap-align(none, $\2xl);
-  }
-
-  // x*/
 }

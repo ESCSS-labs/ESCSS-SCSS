@@ -1,131 +1,32 @@
 @use "../../setting" as *;
 
+
+$ObjectFit: (
+  "object-contain": contain,
+  "object-cover": cover,
+  "object-fill": fill,
+  "object-none": none,
+  "object-scale-down": scale-down,
+);
+
 @if $Basic {
-  // /*x
-  @mixin object-contain {
-    object-fit: contain;
+  @each $key, $value in $ObjectFit {
+    /*x
+    @mixin #{$key} {
+      @include object-fit(#{$value});
+    }
+    x*/
   }
-
-  @mixin object-cover {
-    object-fit: cover;
-  }
-
-  @mixin object-fill {
-    object-fit: fill;
-  }
-
-  @mixin object-none {
-    object-fit: none;
-  }
-
-  @mixin object-scale-down {
-    object-fit: scale-down;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:object-contain {
-    @include object-fit(contain, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ObjectFit {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include object-fit(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:object-cover {
-    @include object-fit(cover, $sm);
-  }
-
-  @mixin sm\:object-fill {
-    @include object-fit(fill, $sm);
-  }
-
-  @mixin sm\:object-none {
-    @include object-fit(none, $sm);
-  }
-
-  @mixin sm\:object-scale-down {
-    @include object-fit(scale-down, $sm);
-  }
-
-  @mixin md\:object-contain {
-    @include object-fit(contain, $md);
-  }
-
-  @mixin md\:object-cover {
-    @include object-fit(cover, $md);
-  }
-
-  @mixin md\:object-fill {
-    @include object-fit(fill, $md);
-  }
-
-  @mixin md\:object-none {
-    @include object-fit(none, $md);
-  }
-
-  @mixin md\:object-scale-down {
-    @include object-fit(scale-down, $md);
-  }
-
-  @mixin lg\:object-contain {
-    @include object-fit(contain, $lg);
-  }
-
-  @mixin lg\:object-cover {
-    @include object-fit(cover, $lg);
-  }
-
-  @mixin lg\:object-fill {
-    @include object-fit(fill, $lg);
-  }
-
-  @mixin lg\:object-none {
-    @include object-fit(none, $lg);
-  }
-
-  @mixin lg\:object-scale-down {
-    @include object-fit(scale-down, $lg);
-  }
-
-  @mixin xl\:object-contain {
-    @include object-fit(contain, $xl);
-  }
-
-  @mixin xl\:object-cover {
-    @include object-fit(cover, $xl);
-  }
-
-  @mixin xl\:object-fill {
-    @include object-fit(fill, $xl);
-  }
-
-  @mixin xl\:object-none {
-    @include object-fit(none, $xl);
-  }
-
-  @mixin xl\:object-scale-down {
-    @include object-fit(scale-down, $xl);
-  }
-
-  @mixin \2xl\:object-contain {
-    @include object-fit(contain, $\2xl);
-  }
-
-  @mixin \2xl\:object-cover {
-    @include object-fit(cover, $\2xl);
-  }
-
-  @mixin \2xl\:object-fill {
-    @include object-fit(fill, $\2xl);
-  }
-
-  @mixin \2xl\:object-none {
-    @include object-fit(none, $\2xl);
-  }
-
-  @mixin \2xl\:object-scale-down {
-    @include object-fit(scale-down, $\2xl);
-  }
-
-  // x*/
 }

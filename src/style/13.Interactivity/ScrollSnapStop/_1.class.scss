@@ -1,59 +1,29 @@
 @use "../../setting" as *;
 
+
+$ScrollSnapStop: (
+  "snap-normal": normal,
+  "snap-always": always,
+);
+
 @if $Basic {
-  // /*x
-  @mixin snap-normal {
-    scroll-snap-stop: normal;
+  @each $key, $value in $ScrollSnapStop {
+    /*x
+    @mixin #{$key} {
+      @include scroll-snap-stop(#{$value});
+    }
+    x*/
   }
-
-  @mixin snap-always {
-    scroll-snap-stop: always;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:snap-normal {
-    @include scroll-snap-stop(normal, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ScrollSnapStop {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include scroll-snap-stop(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:snap-always {
-    @include scroll-snap-stop(always, $sm);
-  }
-
-  @mixin md\:snap-normal {
-    @include scroll-snap-stop(normal, $md);
-  }
-
-  @mixin md\:snap-always {
-    @include scroll-snap-stop(always, $md);
-  }
-
-  @mixin lg\:snap-normal {
-    @include scroll-snap-stop(normal, $lg);
-  }
-
-  @mixin lg\:snap-always {
-    @include scroll-snap-stop(always, $lg);
-  }
-
-  @mixin xl\:snap-normal {
-    @include scroll-snap-stop(normal, $xl);
-  }
-
-  @mixin xl\:snap-always {
-    @include scroll-snap-stop(always, $xl);
-  }
-
-  @mixin \2xl\:snap-normal {
-    @include scroll-snap-stop(normal, $\2xl);
-  }
-
-  @mixin \2xl\:snap-always {
-    @include scroll-snap-stop(always, $\2xl);
-  }
-
-  // x*/
 }

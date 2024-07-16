@@ -1,203 +1,35 @@
 @use "../../setting" as *;
 
+
+$JustifyContent: (
+  "justify-normal": normal,
+  "justify-start": flex-start,
+  "justify-end": flex-end,
+  "justify-center": center,
+  "justify-between": space-between,
+  "justify-around": space-around,
+  "justify-evenly": space-evenly,
+  "justify-stretch": stretch,
+);
+
 @if $Basic {
-  // /*x
-  @mixin justify-normal {
-    justify-content: normal;
+  @each $key, $value in $JustifyContent {
+    /*x
+    @mixin #{$key} {
+      @include justify-content(#{$value});
+    }
+    x*/
   }
-
-  @mixin justify-start {
-    justify-content: flex-start;
-  }
-
-  @mixin justify-end {
-    justify-content: flex-end;
-  }
-
-  @mixin justify-center {
-    justify-content: center;
-  }
-
-  @mixin justify-between {
-    justify-content: space-between;
-  }
-
-  @mixin justify-around {
-    justify-content: space-around;
-  }
-
-  @mixin justify-evenly {
-    justify-content: space-evenly;
-  }
-
-  @mixin justify-stretch {
-    justify-content: stretch;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:justify-normal {
-    @include justify-content(normal, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $JustifyContent {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include justify-content(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:justify-start {
-    @include justify-content(flex-start, $sm);
-  }
-
-  @mixin sm\:justify-end {
-    @include justify-content(flex-end, $sm);
-  }
-
-  @mixin sm\:justify-center {
-    @include justify-content(center, $sm);
-  }
-
-  @mixin sm\:justify-between {
-    @include justify-content(space-between, $sm);
-  }
-
-  @mixin sm\:justify-around {
-    @include justify-content(space-around, $sm);
-  }
-
-  @mixin sm\:justify-evenly {
-    @include justify-content(space-evenly, $sm);
-  }
-
-  @mixin sm\:justify-stretch {
-    @include justify-content(stretch, $sm);
-  }
-
-  @mixin md\:justify-normal {
-    @include justify-content(normal, $md);
-  }
-
-  @mixin md\:justify-start {
-    @include justify-content(flex-start, $md);
-  }
-
-  @mixin md\:justify-end {
-    @include justify-content(flex-end, $md);
-  }
-
-  @mixin md\:justify-center {
-    @include justify-content(center, $md);
-  }
-
-  @mixin md\:justify-between {
-    @include justify-content(space-between, $md);
-  }
-
-  @mixin md\:justify-around {
-    @include justify-content(space-around, $md);
-  }
-
-  @mixin md\:justify-evenly {
-    @include justify-content(space-evenly, $md);
-  }
-
-  @mixin md\:justify-stretch {
-    @include justify-content(stretch, $md);
-  }
-
-  @mixin lg\:justify-normal {
-    @include justify-content(normal, $lg);
-  }
-
-  @mixin lg\:justify-start {
-    @include justify-content(flex-start, $lg);
-  }
-
-  @mixin lg\:justify-end {
-    @include justify-content(flex-end, $lg);
-  }
-
-  @mixin lg\:justify-center {
-    @include justify-content(center, $lg);
-  }
-
-  @mixin lg\:justify-between {
-    @include justify-content(space-between, $lg);
-  }
-
-  @mixin lg\:justify-around {
-    @include justify-content(space-around, $lg);
-  }
-
-  @mixin lg\:justify-evenly {
-    @include justify-content(space-evenly, $lg);
-  }
-
-  @mixin lg\:justify-stretch {
-    @include justify-content(stretch, $lg);
-  }
-
-  @mixin xl\:justify-normal {
-    @include justify-content(normal, $xl);
-  }
-
-  @mixin xl\:justify-start {
-    @include justify-content(flex-start, $xl);
-  }
-
-  @mixin xl\:justify-end {
-    @include justify-content(flex-end, $xl);
-  }
-
-  @mixin xl\:justify-center {
-    @include justify-content(center, $xl);
-  }
-
-  @mixin xl\:justify-between {
-    @include justify-content(space-between, $xl);
-  }
-
-  @mixin xl\:justify-around {
-    @include justify-content(space-around, $xl);
-  }
-
-  @mixin xl\:justify-evenly {
-    @include justify-content(space-evenly, $xl);
-  }
-
-  @mixin xl\:justify-stretch {
-    @include justify-content(stretch, $xl);
-  }
-
-  @mixin \2xl\:justify-normal {
-    @include justify-content(normal, $\2xl);
-  }
-
-  @mixin \2xl\:justify-start {
-    @include justify-content(flex-start, $\2xl);
-  }
-
-  @mixin \2xl\:justify-end {
-    @include justify-content(flex-end, $\2xl);
-  }
-
-  @mixin \2xl\:justify-center {
-    @include justify-content(center, $\2xl);
-  }
-
-  @mixin \2xl\:justify-between {
-    @include justify-content(space-between, $\2xl);
-  }
-
-  @mixin \2xl\:justify-around {
-    @include justify-content(space-around, $\2xl);
-  }
-
-  @mixin \2xl\:justify-evenly {
-    @include justify-content(space-evenly, $\2xl);
-  }
-
-  @mixin \2xl\:justify-stretch {
-    @include justify-content(stretch, $\2xl);
-  }
-
-  // x*/
 }

@@ -1,15 +1,15 @@
 @use "../../setting" as *;
 
-
-$AspectRatio: (
-  "aspect-auto": auto,
+$BoxDecorationBreak: (
+  "box-decoration-clone": clone,
+  "box-decoration-slice": slice,
 );
 
 @if $Basic {
-  @each $key, $value in $AspectRatio {
+  @each $key, $value in $BoxDecorationBreak {
     /*x
     @mixin #{$key} {
-      @include aspect-ratio(#{$value});
+      @include box-decoration-break(#{$value});
     }
     x*/
   }
@@ -17,12 +17,12 @@ $AspectRatio: (
 
 @if $Rwd {
   @each $rwd in $rwdBox {
-    @each $key, $value in $AspectRatio {
-    /*x
-    @mixin #{$rwd}\:#{$key} {
-      @include aspect-ratio(#{$value}, $#{$rwd});
-    }
-    x*/
+    @each $key, $value in $BoxDecorationBreak {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include box-decoration-break(#{$value}, $#{$rwd});
+      }
+      x*/
     }
   }
 }

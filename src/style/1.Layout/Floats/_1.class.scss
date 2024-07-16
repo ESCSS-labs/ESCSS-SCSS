@@ -1,130 +1,32 @@
 @use "../../setting" as *;
 
+
+$Float: (
+  "float-start": inline-start,
+  "float-end": inline-end,
+  "float-right": right,
+  "float-left": left,
+  "float-none": none,
+);
+
 @if $Basic {
-  // /*x
-  @mixin float-start {
-    float: inline-start;
+  @each $key, $value in $Float {
+    /*x
+    @mixin #{$key} {
+      @include float(#{$value});
+    }
+    x*/
   }
-
-  @mixin float-end {
-    float: inline-end;
-  }
-
-  @mixin float-right {
-    float: right;
-  }
-
-  @mixin float-left {
-    float: left;
-  }
-
-  @mixin float-none {
-    float: none;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:float-start {
-    @include float(inline-start, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Float {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include float(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:float-end {
-    @include float(inline-end, $sm);
-  }
-
-  @mixin sm\:float-right {
-    @include float(right, $sm);
-  }
-
-  @mixin sm\:float-left {
-    @include float(left, $sm);
-  }
-
-  @mixin sm\:float-none {
-    @include float(none, $sm);
-  }
-
-  @mixin md\:float-start {
-    @include float(inline-start, $md);
-  }
-
-  @mixin md\:float-end {
-    @include float(inline-end, $md);
-  }
-
-  @mixin md\:float-right {
-    @include float(right, $md);
-  }
-
-  @mixin md\:float-left {
-    @include float(left, $md);
-  }
-
-  @mixin md\:float-none {
-    @include float(none, $md);
-  }
-
-  @mixin lg\:float-start {
-    @include float(inline-start, $lg);
-  }
-
-  @mixin lg\:float-end {
-    @include float(inline-end, $lg);
-  }
-
-  @mixin lg\:float-right {
-    @include float(right, $lg);
-  }
-
-  @mixin lg\:float-left {
-    @include float(left, $lg);
-  }
-
-  @mixin lg\:float-none {
-    @include float(none, $lg);
-  }
-
-  @mixin xl\:float-start {
-    @include float(inline-start, $xl);
-  }
-
-  @mixin xl\:float-end {
-    @include float(inline-end, $xl);
-  }
-
-  @mixin xl\:float-right {
-    @include float(right, $xl);
-  }
-
-  @mixin xl\:float-left {
-    @include float(left, $xl);
-  }
-
-  @mixin xl\:float-none {
-    @include float(none, $xl);
-  }
-
-  @mixin \2xl\:float-start {
-    @include float(inline-start, $\2xl);
-  }
-
-  @mixin \2xl\:float-end {
-    @include float(inline-end, $\2xl);
-  }
-
-  @mixin \2xl\:float-right {
-    @include float(right, $\2xl);
-  }
-
-  @mixin \2xl\:float-left {
-    @include float(left, $\2xl);
-  }
-
-  @mixin \2xl\:float-none {
-    @include float(none, $\2xl);
-  }
-  // x*/
 }

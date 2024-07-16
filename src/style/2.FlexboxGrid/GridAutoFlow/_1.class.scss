@@ -1,131 +1,32 @@
 @use "../../setting" as *;
 
+
+$GridAutoFlow: (
+  "grid-flow-row": row,
+  "grid-flow-col": column,
+  "grid-flow-dense": dense,
+  "grid-flow-row-dense": row dense,
+  "grid-flow-col-dense": column dense,
+);
+
 @if $Basic {
-  // /*x
-  @mixin grid-flow-row {
-    grid-auto-flow: row;
+  @each $key, $value in $GridAutoFlow {
+    /*x
+    @mixin #{$key} {
+      @include grid-auto-flow(#{$value});
+    }
+    x*/
   }
-
-  @mixin grid-flow-col {
-    grid-auto-flow: column;
-  }
-
-  @mixin grid-flow-dense {
-    grid-auto-flow: dense;
-  }
-
-  @mixin grid-flow-row-dense {
-    grid-auto-flow: row dense;
-  }
-
-  @mixin grid-flow-col-dense {
-    grid-auto-flow: column dense;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:grid-flow-row {
-    @include grid-auto-flow(row, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $GridAutoFlow {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include grid-auto-flow(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:grid-flow-col {
-    @include grid-auto-flow(column, $sm);
-  }
-
-  @mixin sm\:grid-flow-dense {
-    @include grid-auto-flow(dense, $sm);
-  }
-
-  @mixin sm\:grid-flow-row-dense {
-    @include grid-auto-flow(row dense, $sm);
-  }
-
-  @mixin sm\:grid-flow-col-dense {
-    @include grid-auto-flow(column dense, $sm);
-  }
-
-  @mixin md\:grid-flow-row {
-    @include grid-auto-flow(row, $md);
-  }
-
-  @mixin md\:grid-flow-col {
-    @include grid-auto-flow(column, $md);
-  }
-
-  @mixin md\:grid-flow-dense {
-    @include grid-auto-flow(dense, $md);
-  }
-
-  @mixin md\:grid-flow-row-dense {
-    @include grid-auto-flow(row dense, $md);
-  }
-
-  @mixin md\:grid-flow-col-dense {
-    @include grid-auto-flow(column dense, $md);
-  }
-
-  @mixin lg\:grid-flow-row {
-    @include grid-auto-flow(row, $lg);
-  }
-
-  @mixin lg\:grid-flow-col {
-    @include grid-auto-flow(column, $lg);
-  }
-
-  @mixin lg\:grid-flow-dense {
-    @include grid-auto-flow(dense, $lg);
-  }
-
-  @mixin lg\:grid-flow-row-dense {
-    @include grid-auto-flow(row dense, $lg);
-  }
-
-  @mixin lg\:grid-flow-col-dense {
-    @include grid-auto-flow(column dense, $lg);
-  }
-
-  @mixin xl\:grid-flow-row {
-    @include grid-auto-flow(row, $xl);
-  }
-
-  @mixin xl\:grid-flow-col {
-    @include grid-auto-flow(column, $xl);
-  }
-
-  @mixin xl\:grid-flow-dense {
-    @include grid-auto-flow(dense, $xl);
-  }
-
-  @mixin xl\:grid-flow-row-dense {
-    @include grid-auto-flow(row dense, $xl);
-  }
-
-  @mixin xl\:grid-flow-col-dense {
-    @include grid-auto-flow(column dense, $xl);
-  }
-
-  @mixin \2xl\:grid-flow-row {
-    @include grid-auto-flow(row, $\2xl);
-  }
-
-  @mixin \2xl\:grid-flow-col {
-    @include grid-auto-flow(column, $\2xl);
-  }
-
-  @mixin \2xl\:grid-flow-dense {
-    @include grid-auto-flow(dense, $\2xl);
-  }
-
-  @mixin \2xl\:grid-flow-row-dense {
-    @include grid-auto-flow(row dense, $\2xl);
-  }
-
-  @mixin \2xl\:grid-flow-col-dense {
-    @include grid-auto-flow(column dense, $\2xl);
-  }
-
-  // x*/
 }

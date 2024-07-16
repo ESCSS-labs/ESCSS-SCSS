@@ -1,59 +1,28 @@
 @use "../../setting" as *;
 
+$BoxDecorationBreak: (
+  "box-decoration-clone": clone,
+  "box-decoration-slice": slice,
+);
+
 @if $Basic {
-  // /*x
-  @mixin box-decoration-clone {
-    box-decoration-break: clone;
+  @each $key, $value in $BoxDecorationBreak {
+    /*x
+    @mixin #{$key} {
+      @include box-decoration-break(#{$value});
+    }
+    x*/
   }
-
-  @mixin box-decoration-slice {
-    box-decoration-break: slice;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:box-decoration-clone {
-    @include box-decoration-break(clone, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BoxDecorationBreak {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include box-decoration-break(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:box-decoration-slice {
-    @include box-decoration-break(slice, $sm);
-  }
-
-  @mixin md\:box-decoration-clone {
-    @include box-decoration-break(clone, $md);
-  }
-
-  @mixin md\:box-decoration-slice {
-    @include box-decoration-break(slice, $md);
-  }
-
-  @mixin lg\:box-decoration-clone {
-    @include box-decoration-break(clone, $lg);
-  }
-
-  @mixin lg\:box-decoration-slice {
-    @include box-decoration-break(slice, $lg);
-  }
-
-  @mixin xl\:box-decoration-clone {
-    @include box-decoration-break(clone, $xl);
-  }
-
-  @mixin xl\:box-decoration-slice {
-    @include box-decoration-break(slice, $xl);
-  }
-
-  @mixin \2xl\:box-decoration-clone {
-    @include box-decoration-break(clone, $\2xl);
-  }
-
-  @mixin \2xl\:box-decoration-slice {
-    @include box-decoration-break(slice, $\2xl);
-  }
-
-  // x*/
 }

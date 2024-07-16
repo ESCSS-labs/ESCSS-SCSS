@@ -1,227 +1,36 @@
 @use "../../setting" as *;
 
+
+$AlignContent: (
+  "content-normal": normal,
+  "content-center": center,
+  "content-start": flex-start,
+  "content-end": flex-end,
+  "content-between": space-between,
+  "content-around": space-around,
+  "content-evenly": space-evenly,
+  "content-baseline": baseline,
+  "content-stretch": stretch,
+);
+
 @if $Basic {
-  // /*x
-  @mixin content-normal {
-    align-content: normal;
+  @each $key, $value in $AlignContent {
+    /*x
+    @mixin #{$key} {
+      @include align-content(#{$value});
+    }
+    x*/
   }
-
-  @mixin content-center {
-    align-content: center;
-  }
-
-  @mixin content-start {
-    align-content: flex-start;
-  }
-
-  @mixin content-end {
-    align-content: flex-end;
-  }
-
-  @mixin content-between {
-    align-content: space-between;
-  }
-
-  @mixin content-around {
-    align-content: space-around;
-  }
-
-  @mixin content-evenly {
-    align-content: space-evenly;
-  }
-
-  @mixin content-baseline {
-    align-content: baseline;
-  }
-
-  @mixin content-stretch {
-    align-content: stretch;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:content-normal {
-    @include align-content(normal, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $AlignContent {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include align-content(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:content-center {
-    @include align-content(center, $sm);
-  }
-
-  @mixin sm\:content-start {
-    @include align-content(flex-start, $sm);
-  }
-
-  @mixin sm\:content-end {
-    @include align-content(flex-end, $sm);
-  }
-
-  @mixin sm\:content-between {
-    @include align-content(space-between, $sm);
-  }
-
-  @mixin sm\:content-around {
-    @include align-content(space-around, $sm);
-  }
-
-  @mixin sm\:content-evenly {
-    @include align-content(space-evenly, $sm);
-  }
-
-  @mixin sm\:content-baseline {
-    @include align-content(baseline, $sm);
-  }
-
-  @mixin sm\:content-stretch {
-    @include align-content(stretch, $sm);
-  }
-
-  @mixin md\:content-normal {
-    @include align-content(normal, $md);
-  }
-
-  @mixin md\:content-center {
-    @include align-content(center, $md);
-  }
-
-  @mixin md\:content-start {
-    @include align-content(flex-start, $md);
-  }
-
-  @mixin md\:content-end {
-    @include align-content(flex-end, $md);
-  }
-
-  @mixin md\:content-between {
-    @include align-content(space-between, $md);
-  }
-
-  @mixin md\:content-around {
-    @include align-content(space-around, $md);
-  }
-
-  @mixin md\:content-evenly {
-    @include align-content(space-evenly, $md);
-  }
-
-  @mixin md\:content-baseline {
-    @include align-content(baseline, $md);
-  }
-
-  @mixin md\:content-stretch {
-    @include align-content(stretch, $md);
-  }
-
-  @mixin lg\:content-normal {
-    @include align-content(normal, $lg);
-  }
-
-  @mixin lg\:content-center {
-    @include align-content(center, $lg);
-  }
-
-  @mixin lg\:content-start {
-    @include align-content(flex-start, $lg);
-  }
-
-  @mixin lg\:content-end {
-    @include align-content(flex-end, $lg);
-  }
-
-  @mixin lg\:content-between {
-    @include align-content(space-between, $lg);
-  }
-
-  @mixin lg\:content-around {
-    @include align-content(space-around, $lg);
-  }
-
-  @mixin lg\:content-evenly {
-    @include align-content(space-evenly, $lg);
-  }
-
-  @mixin lg\:content-baseline {
-    @include align-content(baseline, $lg);
-  }
-
-  @mixin lg\:content-stretch {
-    @include align-content(stretch, $lg);
-  }
-
-  @mixin xl\:content-normal {
-    @include align-content(normal, $xl);
-  }
-
-  @mixin xl\:content-center {
-    @include align-content(center, $xl);
-  }
-
-  @mixin xl\:content-start {
-    @include align-content(flex-start, $xl);
-  }
-
-  @mixin xl\:content-end {
-    @include align-content(flex-end, $xl);
-  }
-
-  @mixin xl\:content-between {
-    @include align-content(space-between, $xl);
-  }
-
-  @mixin xl\:content-around {
-    @include align-content(space-around, $xl);
-  }
-
-  @mixin xl\:content-evenly {
-    @include align-content(space-evenly, $xl);
-  }
-
-  @mixin xl\:content-baseline {
-    @include align-content(baseline, $xl);
-  }
-
-  @mixin xl\:content-stretch {
-    @include align-content(stretch, $xl);
-  }
-
-  @mixin \2xl\:content-normal {
-    @include align-content(normal, $\2xl);
-  }
-
-  @mixin \2xl\:content-center {
-    @include align-content(center, $\2xl);
-  }
-
-  @mixin \2xl\:content-start {
-    @include align-content(flex-start, $\2xl);
-  }
-
-  @mixin \2xl\:content-end {
-    @include align-content(flex-end, $\2xl);
-  }
-
-  @mixin \2xl\:content-between {
-    @include align-content(space-between, $\2xl);
-  }
-
-  @mixin \2xl\:content-around {
-    @include align-content(space-around, $\2xl);
-  }
-
-  @mixin \2xl\:content-evenly {
-    @include align-content(space-evenly, $\2xl);
-  }
-
-  @mixin \2xl\:content-baseline {
-    @include align-content(baseline, $\2xl);
-  }
-
-  @mixin \2xl\:content-stretch {
-    @include align-content(stretch, $\2xl);
-  }
-
-  // x*/
 }

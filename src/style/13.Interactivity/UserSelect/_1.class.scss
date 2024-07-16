@@ -1,107 +1,31 @@
 @use "../../setting" as *;
 
+
+$UserSelect: (
+  "select-non": none,
+  "select-tex": text,
+  "select-al": all,
+  "select-aut": auto,
+);
+
 @if $Basic {
-  // /*x
-  @mixin select-none {
-    user-select: none;
+  @each $key, $value in $UserSelect {
+    /*x
+    @mixin #{$key} {
+      @include user-select(#{$value});
+    }
+    x*/
   }
-
-  @mixin select-text {
-    user-select: text;
-  }
-
-  @mixin select-all {
-    user-select: all;
-  }
-
-  @mixin select-auto {
-    user-select: auto;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:select-none {
-    @include user-select(none, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $UserSelect {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include user-select(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:select-text {
-    @include user-select(text, $sm);
-  }
-
-  @mixin sm\:select-all {
-    @include user-select(all, $sm);
-  }
-
-  @mixin sm\:select-auto {
-    @include user-select(auto, $sm);
-  }
-
-  @mixin md\:select-none {
-    @include user-select(none, $md);
-  }
-
-  @mixin md\:select-text {
-    @include user-select(text, $md);
-  }
-
-  @mixin md\:select-all {
-    @include user-select(all, $md);
-  }
-
-  @mixin md\:select-auto {
-    @include user-select(auto, $md);
-  }
-
-  @mixin lg\:select-none {
-    @include user-select(none, $lg);
-  }
-
-  @mixin lg\:select-text {
-    @include user-select(text, $lg);
-  }
-
-  @mixin lg\:select-all {
-    @include user-select(all, $lg);
-  }
-
-  @mixin lg\:select-auto {
-    @include user-select(auto, $lg);
-  }
-
-  @mixin xl\:select-none {
-    @include user-select(none, $xl);
-  }
-
-  @mixin xl\:select-text {
-    @include user-select(text, $xl);
-  }
-
-  @mixin xl\:select-all {
-    @include user-select(all, $xl);
-  }
-
-  @mixin xl\:select-auto {
-    @include user-select(auto, $xl);
-  }
-
-  @mixin \2xl\:select-none {
-    @include user-select(none, $\2xl);
-  }
-
-  @mixin \2xl\:select-text {
-    @include user-select(text, $\2xl);
-  }
-
-  @mixin \2xl\:select-all {
-    @include user-select(all, $\2xl);
-  }
-
-  @mixin \2xl\:select-auto {
-    @include user-select(auto, $\2xl);
-  }
-
-  // x*/
 }

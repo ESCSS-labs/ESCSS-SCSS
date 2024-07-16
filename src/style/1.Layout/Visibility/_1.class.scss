@@ -1,81 +1,30 @@
 @use "../../setting" as *;
 
+
+$Position: (
+  "visible": visible,
+  "invisible": hidden,
+  "collapse": collapse,
+);
+
 @if $Basic {
-  // /*x
-  @mixin visible {
-    visibility: visible;
+  @each $key, $value in $Position {
+    /*x
+    @mixin #{$key} {
+      @include visibility(#{$value});
+    }
+    x*/
   }
-
-  @mixin invisible {
-    visibility: hidden;
-  }
-
-  @mixin collapse {
-    visibility: collapse;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:visible {
-    @include visibility(visible, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Position {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include visibility(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:invisible {
-    @include visibility(hidden, $sm);
-  }
-
-  @mixin sm\:collapse {
-    @include visibility(collapse, $sm);
-  }
-
-  @mixin md\:visible {
-    @include visibility(visible, $md);
-  }
-
-  @mixin md\:invisible {
-    @include visibility(hidden, $md);
-  }
-
-  @mixin md\:collapse {
-    @include visibility(collapse, $md);
-  }
-
-  @mixin lg\:visible {
-    @include visibility(visible, $lg);
-  }
-
-  @mixin lg\:invisible {
-    @include visibility(hidden, $lg);
-  }
-
-  @mixin lg\:collapse {
-    @include visibility(collapse, $lg);
-  }
-
-  @mixin xl\:visible {
-    @include visibility(visible, $xl);
-  }
-
-  @mixin xl\:invisible {
-    @include visibility(hidden, $xl);
-  }
-
-  @mixin xl\:collapse {
-    @include visibility(collapse, $xl);
-  }
-
-  @mixin \2xl\:visible {
-    @include visibility(visible, $\2xl);
-  }
-
-  @mixin \2xl\:invisible {
-    @include visibility(hidden, $\2xl);
-  }
-
-  @mixin \2xl\:collapse {
-    @include visibility(collapse, $\2xl);
-  } // x*/
 }

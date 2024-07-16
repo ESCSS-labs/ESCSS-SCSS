@@ -1,59 +1,29 @@
 @use "../../setting" as *;
 
+
+$Appearance: (
+  "appearance-none": none,
+  "appearance-auto": auto,
+);
+
 @if $Basic {
-  // /*x
-  @mixin appearance-none {
-    appearance: none;
+  @each $key, $value in $Appearance {
+    /*x
+    @mixin #{$key} {
+      @include appearance(#{$value});
+    }
+    x*/
   }
-
-  @mixin appearance-auto {
-    appearance: auto;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:appearance-none {
-    @include appearance(none, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Appearance {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include appearance(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:appearance-auto {
-    @include appearance(auto, $sm);
-  }
-
-  @mixin md\:appearance-none {
-    @include appearance(none, $md);
-  }
-
-  @mixin md\:appearance-auto {
-    @include appearance(auto, $md);
-  }
-
-  @mixin lg\:appearance-none {
-    @include appearance(none, $lg);
-  }
-
-  @mixin lg\:appearance-auto {
-    @include appearance(auto, $lg);
-  }
-
-  @mixin xl\:appearance-none {
-    @include appearance(none, $xl);
-  }
-
-  @mixin xl\:appearance-auto {
-    @include appearance(auto, $xl);
-  }
-
-  @mixin \2xl\:appearance-none {
-    @include appearance(none, $\2xl);
-  }
-
-  @mixin \2xl\:appearance-auto {
-    @include appearance(auto, $\2xl);
-  }
-
-  // x*/
 }

@@ -1,152 +1,34 @@
 @use "../../setting" as *;
 
+
+
+$AlignSelf: (
+  "self-auto": auto,
+  "self-start": flex-start,
+  "self-end": flex-end,
+  "self-center": center,
+  "self-stretch": stretch,
+  "self-baseline": baseline,
+);
+
 @if $Basic {
-  // /*x
-  @mixin self-auto {
-    align-self: auto;
+  @each $key, $value in $AlignSelf {
+    /*x
+    @mixin #{$key} {
+      @include align-items(#{$value});
+    }
+    x*/
   }
-
-  @mixin self-start {
-    align-self: flex-start;
-  }
-
-  @mixin self-end {
-    align-self: flex-end;
-  }
-
-  @mixin self-center {
-    align-self: center;
-  }
-
-  @mixin self-stretch {
-    align-self: stretch;
-  }
-
-  @mixin self-baseline {
-    align-self: baseline;
-  } // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:self-auto {
-    @include align-self(auto, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $AlignSelf {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include align-items(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:self-start {
-    @include align-self(flex-start, $sm);
-  }
-
-  @mixin sm\:self-end {
-    @include align-self(flex-end, $sm);
-  }
-
-  @mixin sm\:self-center {
-    @include align-self(center, $sm);
-  }
-
-  @mixin sm\:self-stretch {
-    @include align-self(stretch, $sm);
-  }
-
-  @mixin sm\:self-baseline {
-    @include align-self(baseline, $sm);
-  }
-
-  @mixin md\:self-auto {
-    @include align-self(auto, $md);
-  }
-
-  @mixin md\:self-start {
-    @include align-self(flex-start, $md);
-  }
-
-  @mixin md\:self-end {
-    @include align-self(flex-end, $md);
-  }
-
-  @mixin md\:self-center {
-    @include align-self(center, $md);
-  }
-
-  @mixin md\:self-stretch {
-    @include align-self(stretch, $md);
-  }
-
-  @mixin md\:self-baseline {
-    @include align-self(baseline, $md);
-  }
-
-  @mixin lg\:self-auto {
-    @include align-self(auto, $lg);
-  }
-
-  @mixin lg\:self-start {
-    @include align-self(flex-start, $lg);
-  }
-
-  @mixin lg\:self-end {
-    @include align-self(flex-end, $lg);
-  }
-
-  @mixin lg\:self-center {
-    @include align-self(center, $lg);
-  }
-
-  @mixin lg\:self-stretch {
-    @include align-self(stretch, $lg);
-  }
-
-  @mixin lg\:self-baseline {
-    @include align-self(baseline, $lg);
-  }
-
-  @mixin xl\:self-auto {
-    @include align-self(auto, $xl);
-  }
-
-  @mixin xl\:self-start {
-    @include align-self(flex-start, $xl);
-  }
-
-  @mixin xl\:self-end {
-    @include align-self(flex-end, $xl);
-  }
-
-  @mixin xl\:self-center {
-    @include align-self(center, $xl);
-  }
-
-  @mixin xl\:self-stretch {
-    @include align-self(stretch, $xl);
-  }
-
-  @mixin xl\:self-baseline {
-    @include align-self(baseline, $xl);
-  }
-
-  @mixin \2xl\:self-auto {
-    @include align-self(auto, $\2xl);
-  }
-
-  @mixin \2xl\:self-start {
-    @include align-self(flex-start, $\2xl);
-  }
-
-  @mixin \2xl\:self-end {
-    @include align-self(flex-end, $\2xl);
-  }
-
-  @mixin \2xl\:self-center {
-    @include align-self(center, $\2xl);
-  }
-
-  @mixin \2xl\:self-stretch {
-    @include align-self(stretch, $\2xl);
-  }
-
-  @mixin \2xl\:self-baseline {
-    @include align-self(baseline, $\2xl);
-  }
-  // x*/
 }

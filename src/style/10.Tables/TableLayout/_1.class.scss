@@ -1,59 +1,29 @@
 @use "../../setting" as *;
 
+
+$TableLayout: (
+  "table-auto": auto,
+  "table-fixed": fixed,
+);
+
 @if $Basic {
-  // /*x
-  @mixin table-auto {
-    table-layout: auto;
+  @each $key, $value in $TableLayout {
+    /*x
+    @mixin #{$key} {
+      @include table-layout(#{$value});
+    }
+    x*/
   }
-
-  @mixin table-fixed {
-    table-layout: fixed;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:table-auto {
-    @include table-layout(auto, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TableLayout {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include table-layout(#{$value}, $#{$rwd});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:table-fixed {
-    @include table-layout(fixed, $sm);
-  }
-
-  @mixin md\:table-auto {
-    @include table-layout(auto, $md);
-  }
-
-  @mixin md\:table-fixed {
-    @include table-layout(fixed, $md);
-  }
-
-  @mixin lg\:table-auto {
-    @include table-layout(auto, $lg);
-  }
-
-  @mixin lg\:table-fixed {
-    @include table-layout(fixed, $lg);
-  }
-
-  @mixin xl\:table-auto {
-    @include table-layout(auto, $xl);
-  }
-
-  @mixin xl\:table-fixed {
-    @include table-layout(fixed, $xl);
-  }
-
-  @mixin \2xl\:table-auto {
-    @include table-layout(auto, $\2xl);
-  }
-
-  @mixin \2xl\:table-fixed {
-    @include table-layout(fixed, $\2xl);
-  }
-
-  // x*/
 }
