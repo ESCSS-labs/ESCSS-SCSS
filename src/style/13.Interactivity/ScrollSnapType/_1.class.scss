@@ -1,241 +1,79 @@
 @use "../../setting" as *;
 
+
+$ScrollSnapType: (
+  "snap-none": none,
+  "snap-x": x "$tw-scroll-snap-strictness",
+  "snap-y": y "$tw-scroll-snap-strictness",
+  "snap-both": both "$tw-scroll-snap-strictness",
+  "snap-mandatory": mandatory,
+  "snap-proximity": proximity,
+);
+
 @if $Basic {
-  // /*x
-  @mixin snap-none {
-    scroll-snap-type: none;
-  }
-
-  @mixin snap-x {
-    $tw-dummy-not-match--snap: true !global;
-    scroll-snap-type: x $tw-scroll-snap-strictness;
-  }
-
-  @mixin snap-y {
-    $tw-dummy-not-match--snap: true !global;
-    scroll-snap-type: y $tw-scroll-snap-strictness;
-  }
-
-  @mixin snap-both {
-    $tw-dummy-not-match--snap: true !global;
-    scroll-snap-type: both $tw-scroll-snap-strictness;
-  }
-
-  @mixin snap-mandatory {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+  @each $key, $value in $ScrollSnapType {
+    @if list.index("snap-none", $key) {
+      /*x
+      @mixin #{$key} {
+        @include scroll-snap-type(#{$value});
+      }
+      x*/
     }
 
-    $tw-scroll-snap-strictness: mandatory !global;
-  }
-
-  @mixin snap-proximity {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+    @else if list.index("snap-x" "snap-y" "snap-both", $key) {
+      /*x
+      @mixin #{$key} {
+        $tw-dummy-not-match--snap: true !global;
+        @include scroll-snap-type(#{$value});
+      }
+      x*/
     }
 
-    $tw-scroll-snap-strictness: proximity !global;
-  }
+    @else if list.index("snap-mandatory" "snap-proximity", $key) {
+      /*x
+      @mixin #{$key} {
+        @if $tw-dummy-not-match--snap {
+          @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+        }
 
-  // x*/
+        $tw-scroll-snap-strictness: #{$value} !global;
+      }
+      x*/
+    }
+  }
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:snap-none {
-    @include scroll-snap-type(none, $sm);
-  }
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ScrollSnapType {
+      @if list.index("snap-none", $key) {
+        /*x
+        @mixin #{$rwd}\:#{$key} {
+          @include scroll-snap-type(#{$value}, $#{$rwd});
+        }
+        x*/
+      }
 
-  @mixin sm\:snap-x {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(x $tw-scroll-snap-strictness, $sm);
-  }
+      @else if list.index("snap-x" "snap-y" "snap-both", $key) {
+        /*x
+        @mixin #{$rwd}\:#{$key} {
+          $tw-dummy-not-match--snap: true !global;
+          @include scroll-snap-type(#{$value}, $#{$rwd});
+        }
+        x*/
+      }
 
-  @mixin sm\:snap-y {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(y $tw-scroll-snap-strictness, $sm);
-  }
-
-  @mixin sm\:snap-both {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(both $tw-scroll-snap-strictness, $sm);
-  }
-
-  @mixin sm\:snap-mandatory {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include sm {
-      $tw-scroll-snap-strictness: mandatory !global;
-    }
-  }
-
-  @mixin sm\:snap-proximity {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include sm {
-      $tw-scroll-snap-strictness: proximity !global;
+      @else if list.index("snap-mandatory" "snap-proximity", $key) {
+        /*x
+        @mixin #{$rwd}\:#{$key} {
+          @if $tw-dummy-not-match--snap {
+            @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+          }
+  
+          $tw-scroll-snap-strictness: #{$value} !global;
+        }
+        x*/
+      }
     }
   }
-
-  @mixin md\:snap-none {
-    @include scroll-snap-type(none, $md);
-  }
-
-  @mixin md\:snap-x {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(x $tw-scroll-snap-strictness, $md);
-  }
-
-  @mixin md\:snap-y {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(y $tw-scroll-snap-strictness, $md);
-  }
-
-  @mixin md\:snap-both {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(both $tw-scroll-snap-strictness, $md);
-  }
-
-  @mixin md\:snap-mandatory {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include md {
-      $tw-scroll-snap-strictness: mandatory !global;
-    }
-  }
-
-  @mixin md\:snap-proximity {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include md {
-      $tw-scroll-snap-strictness: proximity !global;
-    }
-  }
-
-  @mixin lg\:snap-none {
-    @include scroll-snap-type(none, $lg);
-  }
-
-  @mixin lg\:snap-x {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(x $tw-scroll-snap-strictness, $lg);
-  }
-
-  @mixin lg\:snap-y {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(y $tw-scroll-snap-strictness, $lg);
-  }
-
-  @mixin lg\:snap-both {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(both $tw-scroll-snap-strictness, $lg);
-  }
-
-  @mixin lg\:snap-mandatory {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include lg {
-      $tw-scroll-snap-strictness: mandatory !global;
-    }
-  }
-
-  @mixin lg\:snap-proximity {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include lg {
-      $tw-scroll-snap-strictness: proximity !global;
-    }
-  }
-
-  @mixin xl\:snap-none {
-    @include scroll-snap-type(none, $xl);
-  }
-
-  @mixin xl\:snap-x {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(x $tw-scroll-snap-strictness, $xl);
-  }
-
-  @mixin xl\:snap-y {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(y $tw-scroll-snap-strictness, $xl);
-  }
-
-  @mixin xl\:snap-both {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(both $tw-scroll-snap-strictness, $xl);
-  }
-
-  @mixin xl\:snap-mandatory {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include xl {
-      $tw-scroll-snap-strictness: mandatory !global;
-    }
-  }
-
-  @mixin xl\:snap-proximity {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include xl {
-      $tw-scroll-snap-strictness: proximity !global;
-    }
-  }
-
-  @mixin \2xl\:snap-none {
-    @include scroll-snap-type(none, $\2xl);
-  }
-
-  @mixin \2xl\:snap-x {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(x $tw-scroll-snap-strictness, $\2xl);
-  }
-
-  @mixin \2xl\:snap-y {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(y $tw-scroll-snap-strictness, $\2xl);
-  }
-
-  @mixin \2xl\:snap-both {
-    $tw-dummy-not-match--snap: true !global;
-    @include scroll-snap-type(both $tw-scroll-snap-strictness, $\2xl);
-  }
-
-  @mixin \2xl\:snap-mandatory {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include \2xl {
-      $tw-scroll-snap-strictness: mandatory !global;
-    }
-  }
-
-  @mixin \2xl\:snap-proximity {
-    @if $tw-dummy-not-match--snap {
-      @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
-    }
-
-    @include \2xl {
-      $tw-scroll-snap-strictness: proximity !global;
-    }
-  }
-
-  // x*/
 }
