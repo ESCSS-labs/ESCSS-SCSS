@@ -1,271 +1,70 @@
 @use "../../setting" as *;
+@use "sass:list";
+
+// 1st: overflow
+// 2nd: display
+// 3rd: -webkit-box-orient
+// 4th: -webkit-line-clamp
+$LineClamp: (
+  "line-clamp-1": (hidden, -webkit-box, vertical, 1),
+  "line-clamp-2": (hidden, -webkit-box, vertical, 2),
+  "line-clamp-3": (hidden, -webkit-box, vertical, 3),
+  "line-clamp-4": (hidden, -webkit-box, vertical, 4),
+  "line-clamp-5": (hidden, -webkit-box, vertical, 5),
+  "line-clamp-6": (hidden, -webkit-box, vertical, 6),
+  "line-clamp-none": (visible, block, horizontal, none),
+);
 
 @if $Basic {
-  // /*x
-  @mixin line-clamp-1 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+  @each $key, $value in $LineClamp {
+    /*x
+    @mixin #{$key} {
+      @include overflow(#{list.nth($value, 1)});
+      @include display(#{list.nth($value, 2)});
+      @include -webkit-box-orient(#{list.nth($value, 3)});
+      @include -webkit-line-clamp(#{list.nth($value, 4)});
+    }
+    x*/
   }
-
-  @mixin line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-
-  @mixin line-clamp-3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-  }
-
-  @mixin line-clamp-4 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-  }
-
-  @mixin line-clamp-5 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-  }
-
-  @mixin line-clamp-6 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6;
-  }
-
-  @mixin line-clamp-none {
-    overflow: visible;
-    display: block;
-    -webkit-box-orient: horizontal;
-    -webkit-line-clamp: none;
-  }
-
-  // x*/
 }
 
-@if $Rwd and ($sizeMode == 0 or $sizeMode == 1) {
-  // /*x
-  @mixin sm\:line-clamp-1 {
-    @include sm\:line-clamp-(1);
-  }
-
-  @mixin sm\:line-clamp-2 {
-    @include sm\:line-clamp-(2);
-  }
-
-  @mixin sm\:line-clamp-3 {
-    @include sm\:line-clamp-(3);
-  }
-
-  @mixin sm\:line-clamp-4 {
-    @include sm\:line-clamp-(4);
-  }
-
-  @mixin sm\:line-clamp-5 {
-    @include sm\:line-clamp-(5);
-  }
-
-  @mixin sm\:line-clamp-6 {
-    @include sm\:line-clamp-(6);
-  }
-
-  @mixin sm\:line-clamp-none {
-    @media (min-width: $sm) {
-      @include overflow(visible);
-      @include display(block);
-      @include -webkit-box-orient(horizontal);
-      @include -webkit-line-clamp(none);
+@if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
+  @each $rwd in $rwdBox {
+    @each $key, $value in $LineClamp {
+      /*x
+    @mixin #{$rwd}\:#{$key} {
+      @include #{$rwd} {
+        @include overflow(#{list.nth($value, 1)});
+        @include display(#{list.nth($value, 2)});
+        @include -webkit-box-orient(#{list.nth($value, 3)});
+        @include -webkit-line-clamp(#{list.nth($value, 4)});
+      }
+    }
+    x*/
     }
   }
-
-  @mixin md\:line-clamp-1 {
-    @include md\:line-clamp-(1);
-  }
-
-  @mixin md\:line-clamp-2 {
-    @include md\:line-clamp-(2);
-  }
-
-  @mixin md\:line-clamp-3 {
-    @include md\:line-clamp-(3);
-  }
-
-  @mixin md\:line-clamp-4 {
-    @include md\:line-clamp-(4);
-  }
-
-  @mixin md\:line-clamp-5 {
-    @include md\:line-clamp-(5);
-  }
-
-  @mixin md\:line-clamp-6 {
-    @include md\:line-clamp-(6);
-  }
-
-  @mixin md\:line-clamp-none {
-    @media (min-width: $md) {
-      @include overflow(visible);
-      @include display(block);
-      @include -webkit-box-orient(horizontal);
-      @include -webkit-line-clamp(none);
-    }
-  }
-
-  @mixin lg\:line-clamp-1 {
-    @include lg\:line-clamp-(1);
-  }
-
-  @mixin lg\:line-clamp-2 {
-    @include lg\:line-clamp-(2);
-  }
-
-  @mixin lg\:line-clamp-3 {
-    @include lg\:line-clamp-(3);
-  }
-
-  @mixin lg\:line-clamp-4 {
-    @include lg\:line-clamp-(4);
-  }
-
-  @mixin lg\:line-clamp-5 {
-    @include lg\:line-clamp-(5);
-  }
-
-  @mixin lg\:line-clamp-6 {
-    @include lg\:line-clamp-(6);
-  }
-
-  @mixin lg\:line-clamp-none {
-    @media (min-width: $lg) {
-      @include overflow(visible);
-      @include display(block);
-      @include -webkit-box-orient(horizontal);
-      @include -webkit-line-clamp(none);
-    }
-  }
-
-  @mixin xl\:line-clamp-1 {
-    @include xl\:line-clamp-(1);
-  }
-
-  @mixin xl\:line-clamp-2 {
-    @include xl\:line-clamp-(2);
-  }
-
-  @mixin xl\:line-clamp-3 {
-    @include xl\:line-clamp-(3);
-  }
-
-  @mixin xl\:line-clamp-4 {
-    @include xl\:line-clamp-(4);
-  }
-
-  @mixin xl\:line-clamp-5 {
-    @include xl\:line-clamp-(5);
-  }
-
-  @mixin xl\:line-clamp-6 {
-    @include xl\:line-clamp-(6);
-  }
-
-  @mixin xl\:line-clamp-none {
-    @media (min-width: $xl) {
-      @include overflow(visible);
-      @include display(block);
-      @include -webkit-box-orient(horizontal);
-      @include -webkit-line-clamp(none);
-    }
-  }
-
-  @mixin \2xl\:line-clamp-1 {
-    @include \2xl\:line-clamp-(1);
-  }
-
-  @mixin \2xl\:line-clamp-2 {
-    @include \2xl\:line-clamp-(2);
-  }
-
-  @mixin \2xl\:line-clamp-3 {
-    @include \2xl\:line-clamp-(3);
-  }
-
-  @mixin \2xl\:line-clamp-4 {
-    @include \2xl\:line-clamp-(4);
-  }
-
-  @mixin \2xl\:line-clamp-5 {
-    @include \2xl\:line-clamp-(5);
-  }
-
-  @mixin \2xl\:line-clamp-6 {
-    @include \2xl\:line-clamp-(6);
-  }
-
-  @mixin \2xl\:line-clamp-none {
-    @media (min-width: $\2xl) {
-      @include overflow(visible);
-      @include display(block);
-      @include -webkit-box-orient(horizontal);
-      @include -webkit-line-clamp(none);
-    }
-  }
-
-  // x*/
 }
 
 @if $Custom {
-  // /*x
-  @mixin get_line-clamp-($v) {
+  /*x
+  @mixin line-clamp-($v) {
     @include overflow(hidden);
     @include display(-webkit-box);
     @include -webkit-box-orient(vertical);
     @include -webkit-line-clamp($v);
   }
+  x*/
 
-  @mixin line-clamp-($v) {
-    @include get_line-clamp-($v);
-  }
-
-  @mixin sm\:line-clamp-($v) {
-    @include sm {
-      @include get_line-clamp-($v);
+  @each $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwd}\:line-clamp-($v) {
+      @include #{$rwd} {
+        @include overflow(hidden);
+        @include display(-webkit-box);
+        @include -webkit-box-orient(vertical);
+        @include -webkit-line-clamp($v);
+      }
     }
+    x*/
   }
-
-  @mixin md\:line-clamp-($v) {
-    @include md {
-      @include get_line-clamp-($v);
-    }
-  }
-
-  @mixin lg\:line-clamp-($v) {
-    @include lg {
-      @include get_line-clamp-($v);
-    }
-  }
-
-  @mixin xl\:line-clamp-($v) {
-    @include xl {
-      @include get_line-clamp-($v);
-    }
-  }
-
-  @mixin \2xl\:line-clamp-($v) {
-    @include \2xl {
-      @include get_line-clamp-($v);
-    }
-  }
-
-  // x*/
 }
