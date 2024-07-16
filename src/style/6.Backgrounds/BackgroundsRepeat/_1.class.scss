@@ -1,155 +1,33 @@
 @use "../../setting" as *;
 
+
+$BackgroundsRepeat: (
+  "bg-repeat": repeat,
+  "bg-no-repeat": no-repeat,
+  "bg-repeat-x": repeat-x,
+  "bg-repeat-y": repeat-y,
+  "bg-repeat-round": round,
+  "bg-repeat-space": space,
+);
+
 @if $Basic {
-  // /*x
-  @mixin bg-repeat {
-    background-repeat: repeat;
+  @each $key, $value in $BackgroundsRepeat {
+    /*x
+    @mixin #{$key}{
+      @include background-repeat(#{$value});
+    }
+    x*/
   }
-
-  @mixin bg-no-repeat {
-    background-repeat: no-repeat;
-  }
-
-  @mixin bg-repeat-x {
-    background-repeat: repeat-x;
-  }
-
-  @mixin bg-repeat-y {
-    background-repeat: repeat-y;
-  }
-
-  @mixin bg-repeat-round {
-    background-repeat: round;
-  }
-
-  @mixin bg-repeat-space {
-    background-repeat: space;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:bg-repeat {
-    @include background-repeat(repeat, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackgroundsRepeat {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include background-repeat(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:bg-no-repeat {
-    @include background-repeat(no-repeat, $sm);
-  }
-
-  @mixin sm\:bg-repeat-x {
-    @include background-repeat(repeat-x, $sm);
-  }
-
-  @mixin sm\:bg-repeat-y {
-    @include background-repeat(repeat-y, $sm);
-  }
-
-  @mixin sm\:bg-repeat-round {
-    @include background-repeat(round, $sm);
-  }
-
-  @mixin sm\:bg-repeat-space {
-    @include background-repeat(space, $sm);
-  }
-
-  @mixin md\:bg-repeat {
-    @include background-repeat(repeat, $md);
-  }
-
-  @mixin md\:bg-no-repeat {
-    @include background-repeat(no-repeat, $md);
-  }
-
-  @mixin md\:bg-repeat-x {
-    @include background-repeat(repeat-x, $md);
-  }
-
-  @mixin md\:bg-repeat-y {
-    @include background-repeat(repeat-y, $md);
-  }
-
-  @mixin md\:bg-repeat-round {
-    @include background-repeat(round, $md);
-  }
-
-  @mixin md\:bg-repeat-space {
-    @include background-repeat(space, $md);
-  }
-
-  @mixin lg\:bg-repeat {
-    @include background-repeat(repeat, $lg);
-  }
-
-  @mixin lg\:bg-no-repeat {
-    @include background-repeat(no-repeat, $lg);
-  }
-
-  @mixin lg\:bg-repeat-x {
-    @include background-repeat(repeat-x, $lg);
-  }
-
-  @mixin lg\:bg-repeat-y {
-    @include background-repeat(repeat-y, $lg);
-  }
-
-  @mixin lg\:bg-repeat-round {
-    @include background-repeat(round, $lg);
-  }
-
-  @mixin lg\:bg-repeat-space {
-    @include background-repeat(space, $lg);
-  }
-
-  @mixin xl\:bg-repeat {
-    @include background-repeat(repeat, $xl);
-  }
-
-  @mixin xl\:bg-no-repeat {
-    @include background-repeat(no-repeat, $xl);
-  }
-
-  @mixin xl\:bg-repeat-x {
-    @include background-repeat(repeat-x, $xl);
-  }
-
-  @mixin xl\:bg-repeat-y {
-    @include background-repeat(repeat-y, $xl);
-  }
-
-  @mixin xl\:bg-repeat-round {
-    @include background-repeat(round, $xl);
-  }
-
-  @mixin xl\:bg-repeat-space {
-    @include background-repeat(space, $xl);
-  }
-
-  @mixin \2xl\:bg-repeat {
-    @include background-repeat(repeat, $\2xl);
-  }
-
-  @mixin \2xl\:bg-no-repeat {
-    @include background-repeat(no-repeat, $\2xl);
-  }
-
-  @mixin \2xl\:bg-repeat-x {
-    @include background-repeat(repeat-x, $\2xl);
-  }
-
-  @mixin \2xl\:bg-repeat-y {
-    @include background-repeat(repeat-y, $\2xl);
-  }
-
-  @mixin \2xl\:bg-repeat-round {
-    @include background-repeat(round, $\2xl);
-  }
-
-  @mixin \2xl\:bg-repeat-space {
-    @include background-repeat(space, $\2xl);
-  }
-
-  // x*/
 }

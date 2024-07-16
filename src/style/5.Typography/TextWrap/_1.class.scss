@@ -1,107 +1,32 @@
 @use "../../setting" as *;
 
+
+
+$TextWrap: (
+  "text-wrap": wrap,
+  "text-nowrap": nowrap,
+  "text-balance": balance,
+  "text-pretty": pretty,
+);
+
 @if $Basic {
-  // /*x
-  @mixin text-wrap {
-    text-wrap: wrap;
+  @each $key, $value in $TextWrap {
+    /*x
+    @mixin #{$key}{
+      @include text-wrap(#{$value});
+    }
+    x*/
   }
-
-  @mixin text-nowrap {
-    text-wrap: nowrap;
-  }
-
-  @mixin text-balance {
-    text-wrap: balance;
-  }
-
-  @mixin text-pretty {
-    text-wrap: pretty;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:text-wrap {
-    @include text-wrap(wrap, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TextWrap {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include text-wrap(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:text-nowrap {
-    @include text-wrap(nowrap, $sm);
-  }
-
-  @mixin sm\:text-balance {
-    @include text-wrap(balance, $sm);
-  }
-
-  @mixin sm\:text-pretty {
-    @include text-wrap(pretty, $sm);
-  }
-
-  @mixin md\:text-wrap {
-    @include text-wrap(wrap, $md);
-  }
-
-  @mixin md\:text-nowrap {
-    @include text-wrap(nowrap, $md);
-  }
-
-  @mixin md\:text-balance {
-    @include text-wrap(balance, $md);
-  }
-
-  @mixin md\:text-pretty {
-    @include text-wrap(pretty, $md);
-  }
-
-  @mixin lg\:text-wrap {
-    @include text-wrap(wrap, $lg);
-  }
-
-  @mixin lg\:text-nowrap {
-    @include text-wrap(nowrap, $lg);
-  }
-
-  @mixin lg\:text-balance {
-    @include text-wrap(balance, $lg);
-  }
-
-  @mixin lg\:text-pretty {
-    @include text-wrap(pretty, $lg);
-  }
-
-  @mixin xl\:text-wrap {
-    @include text-wrap(wrap, $xl);
-  }
-
-  @mixin xl\:text-nowrap {
-    @include text-wrap(nowrap, $xl);
-  }
-
-  @mixin xl\:text-balance {
-    @include text-wrap(balance, $xl);
-  }
-
-  @mixin xl\:text-pretty {
-    @include text-wrap(pretty, $xl);
-  }
-
-  @mixin \2xl\:text-wrap {
-    @include text-wrap(wrap, $\2xl);
-  }
-
-  @mixin \2xl\:text-nowrap {
-    @include text-wrap(nowrap, $\2xl);
-  }
-
-  @mixin \2xl\:text-balance {
-    @include text-wrap(balance, $\2xl);
-  }
-
-  @mixin \2xl\:text-pretty {
-    @include text-wrap(pretty, $\2xl);
-  }
-
-  // x*/
 }

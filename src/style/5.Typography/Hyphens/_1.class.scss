@@ -1,83 +1,30 @@
 @use "../../setting" as *;
 
+
+$Hyphens: (
+  "hyphens-none": none,
+  "hyphens-manual": manual,
+  "hyphens-auto": auto,
+);
+
 @if $Basic {
-  // /*x
-  @mixin hyphens-none {
-    hyphens: none;
+  @each $key, $value in $Hyphens {
+    /*x
+    @mixin #{$key}{
+      @include hyphens(#{$value});
+    }
+    x*/
   }
-
-  @mixin hyphens-manual {
-    hyphens: manual;
-  }
-
-  @mixin hyphens-auto {
-    hyphens: auto;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:hyphens-none {
-    @include hyphens(none, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $Hyphens {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include hyphens(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:hyphens-manual {
-    @include hyphens(manual, $sm);
-  }
-
-  @mixin sm\:hyphens-auto {
-    @include hyphens(auto, $sm);
-  }
-
-  @mixin md\:hyphens-none {
-    @include hyphens(none, $md);
-  }
-
-  @mixin md\:hyphens-manual {
-    @include hyphens(manual, $md);
-  }
-
-  @mixin md\:hyphens-auto {
-    @include hyphens(auto, $md);
-  }
-
-  @mixin lg\:hyphens-none {
-    @include hyphens(none, $lg);
-  }
-
-  @mixin lg\:hyphens-manual {
-    @include hyphens(manual, $lg);
-  }
-
-  @mixin lg\:hyphens-auto {
-    @include hyphens(auto, $lg);
-  }
-
-  @mixin xl\:hyphens-none {
-    @include hyphens(none, $xl);
-  }
-
-  @mixin xl\:hyphens-manual {
-    @include hyphens(manual, $xl);
-  }
-
-  @mixin xl\:hyphens-auto {
-    @include hyphens(auto, $xl);
-  }
-
-  @mixin \2xl\:hyphens-none {
-    @include hyphens(none, $\2xl);
-  }
-
-  @mixin \2xl\:hyphens-manual {
-    @include hyphens(manual, $\2xl);
-  }
-
-  @mixin \2xl\:hyphens-auto {
-    @include hyphens(auto, $\2xl);
-  }
-
-  // x*/
 }

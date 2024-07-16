@@ -1,107 +1,30 @@
 @use "../../setting" as *;
 
+$TextTransform: (
+  "uppercase": uppercase,
+  "lowercase": lowercase,
+  "capitalize": capitalize,
+  "normal-case": none,
+);
+
 @if $Basic {
-  // /*x
-  @mixin uppercase {
-    text-transform: uppercase;
+  @each $key, $value in $TextTransform {
+    /*x
+    @mixin #{$key}{
+      @include text-transform(#{$value});
+    }
+    x*/
   }
-
-  @mixin lowercase {
-    text-transform: lowercase;
-  }
-
-  @mixin capitalize {
-    text-transform: capitalize;
-  }
-
-  @mixin normal-case {
-    text-transform: none;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:uppercase {
-    @include text-transform(uppercase, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TextTransform {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include text-transform(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:lowercase {
-    @include text-transform(lowercase, $sm);
-  }
-
-  @mixin sm\:capitalize {
-    @include text-transform(capitalize, $sm);
-  }
-
-  @mixin sm\:normal-case {
-    @include text-transform(none, $sm);
-  }
-
-  @mixin md\:uppercase {
-    @include text-transform(uppercase, $md);
-  }
-
-  @mixin md\:lowercase {
-    @include text-transform(lowercase, $md);
-  }
-
-  @mixin md\:capitalize {
-    @include text-transform(capitalize, $md);
-  }
-
-  @mixin md\:normal-case {
-    @include text-transform(none, $md);
-  }
-
-  @mixin lg\:uppercase {
-    @include text-transform(uppercase, $lg);
-  }
-
-  @mixin lg\:lowercase {
-    @include text-transform(lowercase, $lg);
-  }
-
-  @mixin lg\:capitalize {
-    @include text-transform(capitalize, $lg);
-  }
-
-  @mixin lg\:normal-case {
-    @include text-transform(none, $lg);
-  }
-
-  @mixin xl\:uppercase {
-    @include text-transform(uppercase, $xl);
-  }
-
-  @mixin xl\:lowercase {
-    @include text-transform(lowercase, $xl);
-  }
-
-  @mixin xl\:capitalize {
-    @include text-transform(capitalize, $xl);
-  }
-
-  @mixin xl\:normal-case {
-    @include text-transform(none, $xl);
-  }
-
-  @mixin \2xl\:uppercase {
-    @include text-transform(uppercase, $\2xl);
-  }
-
-  @mixin \2xl\:lowercase {
-    @include text-transform(lowercase, $\2xl);
-  }
-
-  @mixin \2xl\:capitalize {
-    @include text-transform(capitalize, $\2xl);
-  }
-
-  @mixin \2xl\:normal-case {
-    @include text-transform(none, $\2xl);
-  }
-
-  // x*/
 }

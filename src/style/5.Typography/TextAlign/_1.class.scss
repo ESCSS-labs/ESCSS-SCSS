@@ -1,155 +1,33 @@
 @use "../../setting" as *;
 
+
+$TextAlign: (
+  "text-left": left,
+  "text-center": center,
+  "text-right": right,
+  "text-justify": justify,
+  "text-start": start,
+  "text-end": end,
+);
+
 @if $Basic {
-  // /*x
-  @mixin text-left {
-    text-align: left;
+  @each $key, $value in $TextAlign {
+    /*x
+    @mixin #{$key}{
+      @include list-style-position(#{$value});
+    }
+    x*/
   }
-
-  @mixin text-center {
-    text-align: center;
-  }
-
-  @mixin text-right {
-    text-align: right;
-  }
-
-  @mixin text-justify {
-    text-align: justify;
-  }
-
-  @mixin text-start {
-    text-align: start;
-  }
-
-  @mixin text-end {
-    text-align: end;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:text-left {
-    @include text-align(left, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TextAlign {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include list-style-position(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:text-center {
-    @include text-align(center, $sm);
-  }
-
-  @mixin sm\:text-right {
-    @include text-align(right, $sm);
-  }
-
-  @mixin sm\:text-justify {
-    @include text-align(justify, $sm);
-  }
-
-  @mixin sm\:text-start {
-    @include text-align(start, $sm);
-  }
-
-  @mixin sm\:text-end {
-    @include text-align(end, $sm);
-  }
-
-  @mixin md\:text-left {
-    @include text-align(left, $md);
-  }
-
-  @mixin md\:text-center {
-    @include text-align(center, $md);
-  }
-
-  @mixin md\:text-right {
-    @include text-align(right, $md);
-  }
-
-  @mixin md\:text-justify {
-    @include text-align(justify, $md);
-  }
-
-  @mixin md\:text-start {
-    @include text-align(start, $md);
-  }
-
-  @mixin md\:text-end {
-    @include text-align(end, $md);
-  }
-
-  @mixin lg\:text-left {
-    @include text-align(left, $lg);
-  }
-
-  @mixin lg\:text-center {
-    @include text-align(center, $lg);
-  }
-
-  @mixin lg\:text-right {
-    @include text-align(right, $lg);
-  }
-
-  @mixin lg\:text-justify {
-    @include text-align(justify, $lg);
-  }
-
-  @mixin lg\:text-start {
-    @include text-align(start, $lg);
-  }
-
-  @mixin lg\:text-end {
-    @include text-align(end, $lg);
-  }
-
-  @mixin xl\:text-left {
-    @include text-align(left, $xl);
-  }
-
-  @mixin xl\:text-center {
-    @include text-align(center, $xl);
-  }
-
-  @mixin xl\:text-right {
-    @include text-align(right, $xl);
-  }
-
-  @mixin xl\:text-justify {
-    @include text-align(justify, $xl);
-  }
-
-  @mixin xl\:text-start {
-    @include text-align(start, $xl);
-  }
-
-  @mixin xl\:text-end {
-    @include text-align(end, $xl);
-  }
-
-  @mixin \2xl\:text-left {
-    @include text-align(left, $\2xl);
-  }
-
-  @mixin \2xl\:text-center {
-    @include text-align(center, $\2xl);
-  }
-
-  @mixin \2xl\:text-right {
-    @include text-align(right, $\2xl);
-  }
-
-  @mixin \2xl\:text-justify {
-    @include text-align(justify, $\2xl);
-  }
-
-  @mixin \2xl\:text-start {
-    @include text-align(start, $\2xl);
-  }
-
-  @mixin \2xl\:text-end {
-    @include text-align(end, $\2xl);
-  }
-
-  // x*/
 }

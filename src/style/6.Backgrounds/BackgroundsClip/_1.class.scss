@@ -1,107 +1,31 @@
 @use "../../setting" as *;
 
+
+$BackgroundsClip: (
+  "bg-clip-border": border-box,
+  "bg-clip-padding": padding-box,
+  "bg-clip-content": content-box,
+  "bg-clip-text": text,
+);
+
 @if $Basic {
-  // /*x
-  @mixin bg-clip-border {
-    background-clip: border-box;
+  @each $key, $value in $BackgroundsClip {
+    /*x
+    @mixin #{$key}{
+      @include background-clip(#{$value});
+    }
+    x*/
   }
-
-  @mixin bg-clip-padding {
-    background-clip: padding-box;
-  }
-
-  @mixin bg-clip-content {
-    background-clip: content-box;
-  }
-
-  @mixin bg-clip-text {
-    background-clip: text;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:bg-clip-border {
-    @include background-clip(border-box, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackgroundsClip {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include background-clip(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:bg-clip-padding {
-    @include background-clip(padding-box, $sm);
-  }
-
-  @mixin sm\:bg-clip-content {
-    @include background-clip(content-box, $sm);
-  }
-
-  @mixin sm\:bg-clip-text {
-    @include background-clip(text, $sm);
-  }
-
-  @mixin md\:bg-clip-border {
-    @include background-clip(border-box, $md);
-  }
-
-  @mixin md\:bg-clip-padding {
-    @include background-clip(padding-box, $md);
-  }
-
-  @mixin md\:bg-clip-content {
-    @include background-clip(content-box, $md);
-  }
-
-  @mixin md\:bg-clip-text {
-    @include background-clip(text, $md);
-  }
-
-  @mixin lg\:bg-clip-border {
-    @include background-clip(border-box, $lg);
-  }
-
-  @mixin lg\:bg-clip-padding {
-    @include background-clip(padding-box, $lg);
-  }
-
-  @mixin lg\:bg-clip-content {
-    @include background-clip(content-box, $lg);
-  }
-
-  @mixin lg\:bg-clip-text {
-    @include background-clip(text, $lg);
-  }
-
-  @mixin xl\:bg-clip-border {
-    @include background-clip(border-box, $xl);
-  }
-
-  @mixin xl\:bg-clip-padding {
-    @include background-clip(padding-box, $xl);
-  }
-
-  @mixin xl\:bg-clip-content {
-    @include background-clip(content-box, $xl);
-  }
-
-  @mixin xl\:bg-clip-text {
-    @include background-clip(text, $xl);
-  }
-
-  @mixin \2xl\:bg-clip-border {
-    @include background-clip(border-box, $\2xl);
-  }
-
-  @mixin \2xl\:bg-clip-padding {
-    @include background-clip(padding-box, $\2xl);
-  }
-
-  @mixin \2xl\:bg-clip-content {
-    @include background-clip(content-box, $\2xl);
-  }
-
-  @mixin \2xl\:bg-clip-text {
-    @include background-clip(text, $\2xl);
-  }
-
-  // x*/
 }

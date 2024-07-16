@@ -1,107 +1,31 @@
 @use "../../setting" as *;
 
+
+$TextDecoration: (
+  "underline": underline,
+  "overline": overline,
+  "line-through": line-through,
+  "no-underline": none,
+);
+
 @if $Basic {
-  // /*x
-  @mixin underline {
-    text-decoration-line: underline;
+  @each $key, $value in $TextDecoration {
+    /*x
+    @mixin #{$key}{
+      @include list-style-position(#{$value});
+    }
+    x*/
   }
-
-  @mixin overline {
-    text-decoration-line: overline;
-  }
-
-  @mixin line-through {
-    text-decoration-line: line-through;
-  }
-
-  @mixin no-underline {
-    text-decoration-line: none;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:underline {
-    @include text-decoration-line(underline, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TextDecoration {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include list-style-position(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:overline {
-    @include text-decoration-line(overline, $sm);
-  }
-
-  @mixin sm\:line-through {
-    @include text-decoration-line(line-through, $sm);
-  }
-
-  @mixin sm\:no-underline {
-    @include text-decoration-line(none, $sm);
-  }
-
-  @mixin md\:underline {
-    @include text-decoration-line(underline, $md);
-  }
-
-  @mixin md\:overline {
-    @include text-decoration-line(overline, $md);
-  }
-
-  @mixin md\:line-through {
-    @include text-decoration-line(line-through, $md);
-  }
-
-  @mixin md\:no-underline {
-    @include text-decoration-line(none, $md);
-  }
-
-  @mixin lg\:underline {
-    @include text-decoration-line(underline, $lg);
-  }
-
-  @mixin lg\:overline {
-    @include text-decoration-line(overline, $lg);
-  }
-
-  @mixin lg\:line-through {
-    @include text-decoration-line(line-through, $lg);
-  }
-
-  @mixin lg\:no-underline {
-    @include text-decoration-line(none, $lg);
-  }
-
-  @mixin xl\:underline {
-    @include text-decoration-line(underline, $xl);
-  }
-
-  @mixin xl\:overline {
-    @include text-decoration-line(overline, $xl);
-  }
-
-  @mixin xl\:line-through {
-    @include text-decoration-line(line-through, $xl);
-  }
-
-  @mixin xl\:no-underline {
-    @include text-decoration-line(none, $xl);
-  }
-
-  @mixin \2xl\:underline {
-    @include text-decoration-line(underline, $\2xl);
-  }
-
-  @mixin \2xl\:overline {
-    @include text-decoration-line(overline, $\2xl);
-  }
-
-  @mixin \2xl\:line-through {
-    @include text-decoration-line(line-through, $\2xl);
-  }
-
-  @mixin \2xl\:no-underline {
-    @include text-decoration-line(none, $\2xl);
-  }
-
-  // x*/
 }

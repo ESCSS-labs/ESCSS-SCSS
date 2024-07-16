@@ -1,144 +1,40 @@
 @use "../../setting" as *;
 
-// outline is same as atomic class
+// 1st: outline
+// 2nd: outline-offset
+// 3rd: outline-style
+$OutlineStyle: (
+  "outline-none": ("null", (2px solid transparent), 2px),
+  "outline": (solid, "null", "null"),
+  "outline-dashed": (dashed, "null", "null"),
+  "outline-dotted": (dotted, "null", "null"),
+  "outline-double": (double, "null", "null"),
+);
+
 @if $Basic {
-  // /*x
-  @mixin outline-none {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
+  @each $key, $value in $OutlineStyle {
+    /*x
+    @mixin #{$key} {
+      @include outline(#{list.nth($value, 1}));
+      @include outline-offset(#{list.nth($value, 2}));
+      @include outline-style(#{list.nth($value, 3}));
+    }
+    x*/
   }
-
-  @mixin outline-dashed {
-    outline-style: dashed;
-  }
-
-  @mixin outline-dotted {
-    outline-style: dotted;
-  }
-
-  @mixin outline-double {
-    outline-style: double;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:outline-none {
-    @media (min-width: $sm) {
-      @include outline(2px solid transparent);
-      @include outline-offset(2px);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $OutlineStyle {
+      /*x
+      @mixin #{$rwd}\:#{$key} {
+        @include #{$rwd} {
+          @include outline(#{list.nth($value, 1}));
+          @include outline-offset(#{list.nth($value, 2}));
+          @include outline-style(#{list.nth($value, 3}));
+        }
+      }
+      x*/
     }
   }
-
-  @mixin sm\:outline {
-    @include outline-style(solid, $sm);
-  }
-
-  @mixin sm\:outline-dashed {
-    @include outline-style(dashed, $sm);
-  }
-
-  @mixin sm\:outline-dotted {
-    @include outline-style(dotted, $sm);
-  }
-
-  @mixin sm\:outline-double {
-    @include outline-style(double, $sm);
-  }
-
-  @mixin md\:outline-none {
-    @media (min-width: $md) {
-      @include outline(2px solid transparent);
-      @include outline-offset(2px);
-    }
-  }
-
-  @mixin md\:outline {
-    @include outline-style(solid, $md);
-  }
-
-  @mixin md\:outline-dashed {
-    @include outline-style(dashed, $md);
-  }
-
-  @mixin md\:outline-dotted {
-    @include outline-style(dotted, $md);
-  }
-
-  @mixin md\:outline-double {
-    @include outline-style(double, $md);
-  }
-
-  @mixin lg\:outline-none {
-    @media (min-width: $lg) {
-      @include outline(2px solid transparent);
-      @include outline-offset(2px);
-    }
-  }
-
-  @mixin lg\:outline {
-    @include outline-style(solid, $lg);
-  }
-
-  @mixin lg\:outline-dashed {
-    @include outline-style(dashed, $lg);
-  }
-
-  @mixin lg\:outline-dotted {
-    @include outline-style(dotted, $lg);
-  }
-
-  @mixin lg\:outline-double {
-    @include outline-style(double, $lg);
-  }
-
-  @mixin xl\:outline-none {
-    @media (min-width: $xl) {
-      @include outline(2px solid transparent);
-      @include outline-offset(2px);
-    }
-  }
-
-  @mixin xl\:outline {
-    @include outline-style(solid, $xl);
-  }
-
-  @mixin xl\:outline-dashed {
-    @include outline-style(dashed, $xl);
-  }
-
-  @mixin xl\:outline-dotted {
-    @include outline-style(dotted, $xl);
-  }
-
-  @mixin xl\:outline-double {
-    @include outline-style(double, $xl);
-  }
-
-  @mixin \2xl\:outline-none {
-    @media (min-width: $\2xl) {
-      @include outline(2px solid transparent);
-      @include outline-offset(2px);
-    }
-  }
-
-  @mixin \2xl\:outline {
-    @include outline-style(solid, $\2xl);
-  }
-
-  @mixin \2xl\:outline-dashed {
-    @include outline-style(dashed, $\2xl);
-  }
-
-  @mixin \2xl\:outline-dotted {
-    @include outline-style(dotted, $\2xl);
-  }
-
-  @mixin \2xl\:outline-double {
-    @include outline-style(double, $\2xl);
-  }
-
-  // x*/
 }

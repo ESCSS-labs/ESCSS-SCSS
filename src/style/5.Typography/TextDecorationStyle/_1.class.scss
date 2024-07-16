@@ -1,131 +1,31 @@
 @use "../../setting" as *;
 
+$TextDecorationStyle: (
+  "decoration-solid": solid,
+  "decoration-double": double,
+  "decoration-dotted": dotted,
+  "decoration-dashed": dashed,
+  "decoration-wavy": wavy,
+);
+
 @if $Basic {
-  // /*x
-  @mixin decoration-solid {
-    text-decoration-style: solid;
+  @each $key, $value in $TextDecorationStyle {
+    /*x
+    @mixin #{$key}{
+      @include list-style-position(#{$value});
+    }
+    x*/
   }
-
-  @mixin decoration-double {
-    text-decoration-style: double;
-  }
-
-  @mixin decoration-dotted {
-    text-decoration-style: dotted;
-  }
-
-  @mixin decoration-dashed {
-    text-decoration-style: dashed;
-  }
-
-  @mixin decoration-wavy {
-    text-decoration-style: wavy;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:decoration-solid {
-    @include text-decoration-style(solid, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TextDecorationStyle {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include list-style-position(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:decoration-double {
-    @include text-decoration-style(double, $sm);
-  }
-
-  @mixin sm\:decoration-dotted {
-    @include text-decoration-style(dotted, $sm);
-  }
-
-  @mixin sm\:decoration-dashed {
-    @include text-decoration-style(dashed, $sm);
-  }
-
-  @mixin sm\:decoration-wavy {
-    @include text-decoration-style(wavy, $sm);
-  }
-
-  @mixin md\:decoration-solid {
-    @include text-decoration-style(solid, $md);
-  }
-
-  @mixin md\:decoration-double {
-    @include text-decoration-style(double, $md);
-  }
-
-  @mixin md\:decoration-dotted {
-    @include text-decoration-style(dotted, $md);
-  }
-
-  @mixin md\:decoration-dashed {
-    @include text-decoration-style(dashed, $md);
-  }
-
-  @mixin md\:decoration-wavy {
-    @include text-decoration-style(wavy, $md);
-  }
-
-  @mixin lg\:decoration-solid {
-    @include text-decoration-style(solid, $lg);
-  }
-
-  @mixin lg\:decoration-double {
-    @include text-decoration-style(double, $lg);
-  }
-
-  @mixin lg\:decoration-dotted {
-    @include text-decoration-style(dotted, $lg);
-  }
-
-  @mixin lg\:decoration-dashed {
-    @include text-decoration-style(dashed, $lg);
-  }
-
-  @mixin lg\:decoration-wavy {
-    @include text-decoration-style(wavy, $lg);
-  }
-
-  @mixin xl\:decoration-solid {
-    @include text-decoration-style(solid, $xl);
-  }
-
-  @mixin xl\:decoration-double {
-    @include text-decoration-style(double, $xl);
-  }
-
-  @mixin xl\:decoration-dotted {
-    @include text-decoration-style(dotted, $xl);
-  }
-
-  @mixin xl\:decoration-dashed {
-    @include text-decoration-style(dashed, $xl);
-  }
-
-  @mixin xl\:decoration-wavy {
-    @include text-decoration-style(wavy, $xl);
-  }
-
-  @mixin \2xl\:decoration-solid {
-    @include text-decoration-style(solid, $\2xl);
-  }
-
-  @mixin \2xl\:decoration-double {
-    @include text-decoration-style(double, $\2xl);
-  }
-
-  @mixin \2xl\:decoration-dotted {
-    @include text-decoration-style(dotted, $\2xl);
-  }
-
-  @mixin \2xl\:decoration-dashed {
-    @include text-decoration-style(dashed, $\2xl);
-  }
-
-  @mixin \2xl\:decoration-wavy {
-    @include text-decoration-style(wavy, $\2xl);
-  }
-
-  // x*/
 }

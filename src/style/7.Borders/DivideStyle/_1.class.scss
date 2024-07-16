@@ -1,191 +1,36 @@
 @use "../../setting" as *;
 
+
+$DivideStyle: (
+  "divide-solid": solid,
+  "divide-dashed": dashed,
+  "divide-dotted": dotted,
+  "divide-double": double,
+  "divide-none": none,
+);
+
 @if $Basic {
-  // /*x
-  @mixin divide-solid {
-    > * ~ * {
-      border-style: solid;
+  @each $key, $value in $DivideStyle {
+    /*x
+    @mixin #{$key}{
+      >*~* {
+        @include border-style(#{$value});
+      }
     }
+    x*/
   }
-
-  @mixin divide-dashed {
-    > * ~ * {
-      border-style: dashed;
-    }
-  }
-
-  @mixin divide-dotted {
-    > * ~ * {
-      border-style: dotted;
-    }
-  }
-
-  @mixin divide-double {
-    > * ~ * {
-      border-style: double;
-    }
-  }
-
-  @mixin divide-none {
-    > * ~ * {
-      border-style: none;
-    }
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:divide-solid {
-    > * ~ * {
-      @include border-style(solid, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $DivideStyle {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        >*~* {
+          @include border-style(#{$value}, $#{$rwd});
+        }
+      }
+      x*/
     }
   }
-
-  @mixin sm\:divide-dashed {
-    > * ~ * {
-      @include border-style(dashed, $sm);
-    }
-  }
-
-  @mixin sm\:divide-dotted {
-    > * ~ * {
-      @include border-style(dotted, $sm);
-    }
-  }
-
-  @mixin sm\:divide-double {
-    > * ~ * {
-      @include border-style(double, $sm);
-    }
-  }
-
-  @mixin sm\:divide-none {
-    > * ~ * {
-      @include border-style(none, $sm);
-    }
-  }
-
-  @mixin md\:divide-solid {
-    > * ~ * {
-      @include border-style(solid, $md);
-    }
-  }
-
-  @mixin md\:divide-dashed {
-    > * ~ * {
-      @include border-style(dashed, $md);
-    }
-  }
-
-  @mixin md\:divide-dotted {
-    > * ~ * {
-      @include border-style(dotted, $md);
-    }
-  }
-
-  @mixin md\:divide-double {
-    > * ~ * {
-      @include border-style(double, $md);
-    }
-  }
-
-  @mixin md\:divide-none {
-    > * ~ * {
-      @include border-style(none, $md);
-    }
-  }
-
-  @mixin lg\:divide-solid {
-    > * ~ * {
-      @include border-style(solid, $lg);
-    }
-  }
-
-  @mixin lg\:divide-dashed {
-    > * ~ * {
-      @include border-style(dashed, $lg);
-    }
-  }
-
-  @mixin lg\:divide-dotted {
-    > * ~ * {
-      @include border-style(dotted, $lg);
-    }
-  }
-
-  @mixin lg\:divide-double {
-    > * ~ * {
-      @include border-style(double, $lg);
-    }
-  }
-
-  @mixin lg\:divide-none {
-    > * ~ * {
-      @include border-style(none, $lg);
-    }
-  }
-
-  @mixin xl\:divide-solid {
-    > * ~ * {
-      @include border-style(solid, $xl);
-    }
-  }
-
-  @mixin xl\:divide-dashed {
-    > * ~ * {
-      @include border-style(dashed, $xl);
-    }
-  }
-
-  @mixin xl\:divide-dotted {
-    > * ~ * {
-      @include border-style(dotted, $xl);
-    }
-  }
-
-  @mixin xl\:divide-double {
-    > * ~ * {
-      @include border-style(double, $xl);
-    }
-  }
-
-  @mixin xl\:divide-none {
-    > * ~ * {
-      @include border-style(none, $xl);
-    }
-  }
-
-  @mixin \2xl\:divide-solid {
-    > * ~ * {
-      @include border-style(solid, $\2xl);
-    }
-  }
-
-  @mixin \2xl\:divide-dashed {
-    > * ~ * {
-      @include border-style(dashed, $\2xl);
-    }
-  }
-
-  @mixin \2xl\:divide-dotted {
-    > * ~ * {
-      @include border-style(dotted, $\2xl);
-    }
-  }
-
-  @mixin \2xl\:divide-double {
-    > * ~ * {
-      @include border-style(double, $\2xl);
-    }
-  }
-
-  @mixin \2xl\:divide-none {
-    > * ~ * {
-      @include border-style(none, $\2xl);
-    }
-  }
-
-  // x*/
 }

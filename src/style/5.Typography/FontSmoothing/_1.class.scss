@@ -1,91 +1,34 @@
 @use "../../setting" as *;
 
+// 1st: -webkit-font-smoothing
+// 2nd: -moz-osx-font-smoothing
+$FontSmoothing: (
+  "antialiased": (antialiased, grayscale),
+  "subpixel-antialiased": (auto, auto),
+);
+
 @if $Basic {
-  // /*x
-  @mixin antialiased {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  @each $key, $value in $FontSmoothing {
+    /*x
+    @mixin #{$key} {
+      @include -webkit-font-smoothing(#{list.nth($value, 1)});
+      @include -moz-osx-font-smoothing(#{list.nth($value, 2)});
+    }
+    x*/
   }
-
-  @mixin subpixel-antialiased {
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:antialiased {
-    @media (min-width: $sm) {
-      @include -webkit-font-smoothing(antialiased);
-      @include -moz-osx-font-smoothing(grayscale);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $FontSmoothing {
+      /*x
+        @mixin #{$rwd}\:#{$key} {
+          @include #{$rwd} {
+            @include -webkit-font-smoothing(#{list.nth($value, 1)});
+            @include -moz-osx-font-smoothing(#{list.nth($value, 2)});
+          }
+        }
+      x*/
     }
   }
-
-  @mixin sm\:subpixel-antialiased {
-    @media (min-width: $sm) {
-      @include -webkit-font-smoothing(auto);
-      @include -moz-osx-font-smoothing(auto);
-    }
-  }
-
-  @mixin md\:antialiased {
-    @media (min-width: $md) {
-      @include -webkit-font-smoothing(antialiased);
-      @include -moz-osx-font-smoothing(grayscale);
-    }
-  }
-
-  @mixin md\:subpixel-antialiased {
-    @media (min-width: $md) {
-      @include -webkit-font-smoothing(auto);
-      @include -moz-osx-font-smoothing(auto);
-    }
-  }
-
-  @mixin lg\:antialiased {
-    @media (min-width: $lg) {
-      @include -webkit-font-smoothing(antialiased);
-      @include -moz-osx-font-smoothing(grayscale);
-    }
-  }
-
-  @mixin lg\:subpixel-antialiased {
-    @media (min-width: $lg) {
-      @include -webkit-font-smoothing(auto);
-      @include -moz-osx-font-smoothing(auto);
-    }
-  }
-
-  @mixin xl\:antialiased {
-    @media (min-width: $xl) {
-      @include -webkit-font-smoothing(antialiased);
-      @include -moz-osx-font-smoothing(grayscale);
-    }
-  }
-
-  @mixin xl\:subpixel-antialiased {
-    @media (min-width: $xl) {
-      @include -webkit-font-smoothing(auto);
-      @include -moz-osx-font-smoothing(auto);
-    }
-  }
-
-  @mixin \2xl\:antialiased {
-    @media (min-width: $\2xl) {
-      @include -webkit-font-smoothing(antialiased);
-      @include -moz-osx-font-smoothing(grayscale);
-    }
-  }
-
-  @mixin \2xl\:subpixel-antialiased {
-    @media (min-width: $\2xl) {
-      @include -webkit-font-smoothing(auto);
-      @include -moz-osx-font-smoothing(auto);
-    }
-  }
-
-  // x*/
 }

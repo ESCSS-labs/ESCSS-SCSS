@@ -1,155 +1,33 @@
 @use "../../setting" as *;
 
+
+$TextWrap: (
+  "whitespace-normal": normal,
+  "whitespace-nowrap": nowrap,
+  "whitespace-pre": pre,
+  "whitespace-pre-line": pre-line,
+  "whitespace-pre-wrap": pre-wrap,
+  "whitespace-break-spaces": break-spaces,
+);
+
 @if $Basic {
-  // /*x
-  @mixin whitespace-normal {
-    white-space: normal;
+  @each $key, $value in $TextWrap {
+    /*x
+    @mixin #{$key}{
+      @include white-space(#{$value});
+    }
+    x*/
   }
-
-  @mixin whitespace-nowrap {
-    white-space: nowrap;
-  }
-
-  @mixin whitespace-pre {
-    white-space: pre;
-  }
-
-  @mixin whitespace-pre-line {
-    white-space: pre-line;
-  }
-
-  @mixin whitespace-pre-wrap {
-    white-space: pre-wrap;
-  }
-
-  @mixin whitespace-break-spaces {
-    white-space: break-spaces;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:whitespace-normal {
-    @include white-space(normal, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TextWrap {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include white-space(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:whitespace-nowrap {
-    @include white-space(nowrap, $sm);
-  }
-
-  @mixin sm\:whitespace-pre {
-    @include white-space(pre, $sm);
-  }
-
-  @mixin sm\:whitespace-pre-line {
-    @include white-space(pre-line, $sm);
-  }
-
-  @mixin sm\:whitespace-pre-wrap {
-    @include white-space(pre-wrap, $sm);
-  }
-
-  @mixin sm\:whitespace-break-spaces {
-    @include white-space(break-spaces, $sm);
-  }
-
-  @mixin md\:whitespace-normal {
-    @include white-space(normal, $md);
-  }
-
-  @mixin md\:whitespace-nowrap {
-    @include white-space(nowrap, $md);
-  }
-
-  @mixin md\:whitespace-pre {
-    @include white-space(pre, $md);
-  }
-
-  @mixin md\:whitespace-pre-line {
-    @include white-space(pre-line, $md);
-  }
-
-  @mixin md\:whitespace-pre-wrap {
-    @include white-space(pre-wrap, $md);
-  }
-
-  @mixin md\:whitespace-break-spaces {
-    @include white-space(break-spaces, $md);
-  }
-
-  @mixin lg\:whitespace-normal {
-    @include white-space(normal, $lg);
-  }
-
-  @mixin lg\:whitespace-nowrap {
-    @include white-space(nowrap, $lg);
-  }
-
-  @mixin lg\:whitespace-pre {
-    @include white-space(pre, $lg);
-  }
-
-  @mixin lg\:whitespace-pre-line {
-    @include white-space(pre-line, $lg);
-  }
-
-  @mixin lg\:whitespace-pre-wrap {
-    @include white-space(pre-wrap, $lg);
-  }
-
-  @mixin lg\:whitespace-break-spaces {
-    @include white-space(break-spaces, $lg);
-  }
-
-  @mixin xl\:whitespace-normal {
-    @include white-space(normal, $xl);
-  }
-
-  @mixin xl\:whitespace-nowrap {
-    @include white-space(nowrap, $xl);
-  }
-
-  @mixin xl\:whitespace-pre {
-    @include white-space(pre, $xl);
-  }
-
-  @mixin xl\:whitespace-pre-line {
-    @include white-space(pre-line, $xl);
-  }
-
-  @mixin xl\:whitespace-pre-wrap {
-    @include white-space(pre-wrap, $xl);
-  }
-
-  @mixin xl\:whitespace-break-spaces {
-    @include white-space(break-spaces, $xl);
-  }
-
-  @mixin \2xl\:whitespace-normal {
-    @include white-space(normal, $\2xl);
-  }
-
-  @mixin \2xl\:whitespace-nowrap {
-    @include white-space(nowrap, $\2xl);
-  }
-
-  @mixin \2xl\:whitespace-pre {
-    @include white-space(pre, $\2xl);
-  }
-
-  @mixin \2xl\:whitespace-pre-line {
-    @include white-space(pre-line, $\2xl);
-  }
-
-  @mixin \2xl\:whitespace-pre-wrap {
-    @include white-space(pre-wrap, $\2xl);
-  }
-
-  @mixin \2xl\:whitespace-break-spaces {
-    @include white-space(break-spaces, $\2xl);
-  }
-
-  // x*/
 }

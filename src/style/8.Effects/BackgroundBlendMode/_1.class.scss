@@ -1,395 +1,43 @@
 @use "../../setting" as *;
 
+
+$BackgroundsBlendMode: (
+  "bg-blend-normal": normal,
+  "bg-blend-multiply": multiply,
+  "bg-blend-screen": screen,
+  "bg-blend-overlay": overlay,
+  "bg-blend-darken": darken,
+  "bg-blend-lighten": lighten,
+  "bg-blend-color-dodge": color-dodge,
+  "bg-blend-color-burn": color-burn,
+  "bg-blend-hard-light": hard-light,
+  "bg-blend-soft-light": soft-light,
+  "bg-blend-difference": difference,
+  "bg-blend-exclusion": exclusion,
+  "bg-blend-hue": hue,
+  "bg-blend-saturation": saturation,
+  "bg-blend-color": color,
+  "bg-blend-luminosity": luminosity,
+);
+
 @if $Basic {
-  // /*x
-  @mixin bg-blend-normal {
-    background-blend-mode: normal;
+  @each $key, $value in $BackgroundsBlendMode {
+    /*x
+    @mixin #{$key}{
+      @include background-blend-mode(#{$value});
+    }
+    x*/
   }
-
-  @mixin bg-blend-multiply {
-    background-blend-mode: multiply;
-  }
-
-  @mixin bg-blend-screen {
-    background-blend-mode: screen;
-  }
-
-  @mixin bg-blend-overlay {
-    background-blend-mode: overlay;
-  }
-
-  @mixin bg-blend-darken {
-    background-blend-mode: darken;
-  }
-
-  @mixin bg-blend-lighten {
-    background-blend-mode: lighten;
-  }
-
-  @mixin bg-blend-color-dodge {
-    background-blend-mode: color-dodge;
-  }
-
-  @mixin bg-blend-color-burn {
-    background-blend-mode: color-burn;
-  }
-
-  @mixin bg-blend-hard-light {
-    background-blend-mode: hard-light;
-  }
-
-  @mixin bg-blend-soft-light {
-    background-blend-mode: soft-light;
-  }
-
-  @mixin bg-blend-difference {
-    background-blend-mode: difference;
-  }
-
-  @mixin bg-blend-exclusion {
-    background-blend-mode: exclusion;
-  }
-
-  @mixin bg-blend-hue {
-    background-blend-mode: hue;
-  }
-
-  @mixin bg-blend-saturation {
-    background-blend-mode: saturation;
-  }
-
-  @mixin bg-blend-color {
-    background-blend-mode: color;
-  }
-
-  @mixin bg-blend-luminosity {
-    background-blend-mode: luminosity;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:bg-blend-normal {
-    @include background-blend-mode(normal, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BackgroundsBlendMode {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include background-blend-mode(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:bg-blend-multiply {
-    @include background-blend-mode(multiply, $sm);
-  }
-
-  @mixin sm\:bg-blend-screen {
-    @include background-blend-mode(screen, $sm);
-  }
-
-  @mixin sm\:bg-blend-overlay {
-    @include background-blend-mode(overlay, $sm);
-  }
-
-  @mixin sm\:bg-blend-darken {
-    @include background-blend-mode(darken, $sm);
-  }
-
-  @mixin sm\:bg-blend-lighten {
-    @include background-blend-mode(lighten, $sm);
-  }
-
-  @mixin sm\:bg-blend-color-dodge {
-    @include background-blend-mode(color-dodge, $sm);
-  }
-
-  @mixin sm\:bg-blend-color-burn {
-    @include background-blend-mode(color-burn, $sm);
-  }
-
-  @mixin sm\:bg-blend-hard-light {
-    @include background-blend-mode(hard-light, $sm);
-  }
-
-  @mixin sm\:bg-blend-soft-light {
-    @include background-blend-mode(soft-light, $sm);
-  }
-
-  @mixin sm\:bg-blend-difference {
-    @include background-blend-mode(difference, $sm);
-  }
-
-  @mixin sm\:bg-blend-exclusion {
-    @include background-blend-mode(exclusion, $sm);
-  }
-
-  @mixin sm\:bg-blend-hue {
-    @include background-blend-mode(hue, $sm);
-  }
-
-  @mixin sm\:bg-blend-saturation {
-    @include background-blend-mode(saturation, $sm);
-  }
-
-  @mixin sm\:bg-blend-color {
-    @include background-blend-mode(color, $sm);
-  }
-
-  @mixin sm\:bg-blend-luminosity {
-    @include background-blend-mode(luminosity, $sm);
-  }
-
-  @mixin md\:bg-blend-normal {
-    @include background-blend-mode(normal, $md);
-  }
-
-  @mixin md\:bg-blend-multiply {
-    @include background-blend-mode(multiply, $md);
-  }
-
-  @mixin md\:bg-blend-screen {
-    @include background-blend-mode(screen, $md);
-  }
-
-  @mixin md\:bg-blend-overlay {
-    @include background-blend-mode(overlay, $md);
-  }
-
-  @mixin md\:bg-blend-darken {
-    @include background-blend-mode(darken, $md);
-  }
-
-  @mixin md\:bg-blend-lighten {
-    @include background-blend-mode(lighten, $md);
-  }
-
-  @mixin md\:bg-blend-color-dodge {
-    @include background-blend-mode(color-dodge, $md);
-  }
-
-  @mixin md\:bg-blend-color-burn {
-    @include background-blend-mode(color-burn, $md);
-  }
-
-  @mixin md\:bg-blend-hard-light {
-    @include background-blend-mode(hard-light, $md);
-  }
-
-  @mixin md\:bg-blend-soft-light {
-    @include background-blend-mode(soft-light, $md);
-  }
-
-  @mixin md\:bg-blend-difference {
-    @include background-blend-mode(difference, $md);
-  }
-
-  @mixin md\:bg-blend-exclusion {
-    @include background-blend-mode(exclusion, $md);
-  }
-
-  @mixin md\:bg-blend-hue {
-    @include background-blend-mode(hue, $md);
-  }
-
-  @mixin md\:bg-blend-saturation {
-    @include background-blend-mode(saturation, $md);
-  }
-
-  @mixin md\:bg-blend-color {
-    @include background-blend-mode(color, $md);
-  }
-
-  @mixin md\:bg-blend-luminosity {
-    @include background-blend-mode(luminosity, $md);
-  }
-
-  @mixin lg\:bg-blend-normal {
-    @include background-blend-mode(normal, $lg);
-  }
-
-  @mixin lg\:bg-blend-multiply {
-    @include background-blend-mode(multiply, $lg);
-  }
-
-  @mixin lg\:bg-blend-screen {
-    @include background-blend-mode(screen, $lg);
-  }
-
-  @mixin lg\:bg-blend-overlay {
-    @include background-blend-mode(overlay, $lg);
-  }
-
-  @mixin lg\:bg-blend-darken {
-    @include background-blend-mode(darken, $lg);
-  }
-
-  @mixin lg\:bg-blend-lighten {
-    @include background-blend-mode(lighten, $lg);
-  }
-
-  @mixin lg\:bg-blend-color-dodge {
-    @include background-blend-mode(color-dodge, $lg);
-  }
-
-  @mixin lg\:bg-blend-color-burn {
-    @include background-blend-mode(color-burn, $lg);
-  }
-
-  @mixin lg\:bg-blend-hard-light {
-    @include background-blend-mode(hard-light, $lg);
-  }
-
-  @mixin lg\:bg-blend-soft-light {
-    @include background-blend-mode(soft-light, $lg);
-  }
-
-  @mixin lg\:bg-blend-difference {
-    @include background-blend-mode(difference, $lg);
-  }
-
-  @mixin lg\:bg-blend-exclusion {
-    @include background-blend-mode(exclusion, $lg);
-  }
-
-  @mixin lg\:bg-blend-hue {
-    @include background-blend-mode(hue, $lg);
-  }
-
-  @mixin lg\:bg-blend-saturation {
-    @include background-blend-mode(saturation, $lg);
-  }
-
-  @mixin lg\:bg-blend-color {
-    @include background-blend-mode(color, $lg);
-  }
-
-  @mixin lg\:bg-blend-luminosity {
-    @include background-blend-mode(luminosity, $lg);
-  }
-
-  @mixin xl\:bg-blend-normal {
-    @include background-blend-mode(normal, $xl);
-  }
-
-  @mixin xl\:bg-blend-multiply {
-    @include background-blend-mode(multiply, $xl);
-  }
-
-  @mixin xl\:bg-blend-screen {
-    @include background-blend-mode(screen, $xl);
-  }
-
-  @mixin xl\:bg-blend-overlay {
-    @include background-blend-mode(overlay, $xl);
-  }
-
-  @mixin xl\:bg-blend-darken {
-    @include background-blend-mode(darken, $xl);
-  }
-
-  @mixin xl\:bg-blend-lighten {
-    @include background-blend-mode(lighten, $xl);
-  }
-
-  @mixin xl\:bg-blend-color-dodge {
-    @include background-blend-mode(color-dodge, $xl);
-  }
-
-  @mixin xl\:bg-blend-color-burn {
-    @include background-blend-mode(color-burn, $xl);
-  }
-
-  @mixin xl\:bg-blend-hard-light {
-    @include background-blend-mode(hard-light, $xl);
-  }
-
-  @mixin xl\:bg-blend-soft-light {
-    @include background-blend-mode(soft-light, $xl);
-  }
-
-  @mixin xl\:bg-blend-difference {
-    @include background-blend-mode(difference, $xl);
-  }
-
-  @mixin xl\:bg-blend-exclusion {
-    @include background-blend-mode(exclusion, $xl);
-  }
-
-  @mixin xl\:bg-blend-hue {
-    @include background-blend-mode(hue, $xl);
-  }
-
-  @mixin xl\:bg-blend-saturation {
-    @include background-blend-mode(saturation, $xl);
-  }
-
-  @mixin xl\:bg-blend-color {
-    @include background-blend-mode(color, $xl);
-  }
-
-  @mixin xl\:bg-blend-luminosity {
-    @include background-blend-mode(luminosity, $xl);
-  }
-
-  @mixin \2xl\:bg-blend-normal {
-    @include background-blend-mode(normal, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-multiply {
-    @include background-blend-mode(multiply, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-screen {
-    @include background-blend-mode(screen, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-overlay {
-    @include background-blend-mode(overlay, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-darken {
-    @include background-blend-mode(darken, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-lighten {
-    @include background-blend-mode(lighten, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-color-dodge {
-    @include background-blend-mode(color-dodge, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-color-burn {
-    @include background-blend-mode(color-burn, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-hard-light {
-    @include background-blend-mode(hard-light, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-soft-light {
-    @include background-blend-mode(soft-light, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-difference {
-    @include background-blend-mode(difference, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-exclusion {
-    @include background-blend-mode(exclusion, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-hue {
-    @include background-blend-mode(hue, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-saturation {
-    @include background-blend-mode(saturation, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-color {
-    @include background-blend-mode(color, $\2xl);
-  }
-
-  @mixin \2xl\:bg-blend-luminosity {
-    @include background-blend-mode(luminosity, $\2xl);
-  }
-
-  // x*/
 }

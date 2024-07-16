@@ -1,155 +1,32 @@
 @use "../../setting" as *;
 
+$BorderStyle: (
+  "border-solid": solid,
+  "border-dashed": dashed,
+  "border-dotted": dotted,
+  "border-double": double,
+  "border-hidden": hidden,
+  "border-none": none,
+);
+
 @if $Basic {
-  // /*x
-  @mixin border-solid {
-    border-style: solid;
+  @each $key, $value in $BorderStyle {
+    /*x
+    @mixin #{$key}{
+      @include border-style(#{$value});
+    }
+    x*/
   }
-
-  @mixin border-dashed {
-    border-style: dashed;
-  }
-
-  @mixin border-dotted {
-    border-style: dotted;
-  }
-
-  @mixin border-double {
-    border-style: double;
-  }
-
-  @mixin border-hidden {
-    border-style: hidden;
-  }
-
-  @mixin border-none {
-    border-style: none;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:border-solid {
-    @include border-style(solid, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $BorderStyle {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include border-style(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:border-dashed {
-    @include border-style(dashed, $sm);
-  }
-
-  @mixin sm\:border-dotted {
-    @include border-style(dotted, $sm);
-  }
-
-  @mixin sm\:border-double {
-    @include border-style(double, $sm);
-  }
-
-  @mixin sm\:border-hidden {
-    @include border-style(hidden, $sm);
-  }
-
-  @mixin sm\:border-none {
-    @include border-style(none, $sm);
-  }
-
-  @mixin md\:border-solid {
-    @include border-style(solid, $md);
-  }
-
-  @mixin md\:border-dashed {
-    @include border-style(dashed, $md);
-  }
-
-  @mixin md\:border-dotted {
-    @include border-style(dotted, $md);
-  }
-
-  @mixin md\:border-double {
-    @include border-style(double, $md);
-  }
-
-  @mixin md\:border-hidden {
-    @include border-style(hidden, $md);
-  }
-
-  @mixin md\:border-none {
-    @include border-style(none, $md);
-  }
-
-  @mixin lg\:border-solid {
-    @include border-style(solid, $lg);
-  }
-
-  @mixin lg\:border-dashed {
-    @include border-style(dashed, $lg);
-  }
-
-  @mixin lg\:border-dotted {
-    @include border-style(dotted, $lg);
-  }
-
-  @mixin lg\:border-double {
-    @include border-style(double, $lg);
-  }
-
-  @mixin lg\:border-hidden {
-    @include border-style(hidden, $lg);
-  }
-
-  @mixin lg\:border-none {
-    @include border-style(none, $lg);
-  }
-
-  @mixin xl\:border-solid {
-    @include border-style(solid, $xl);
-  }
-
-  @mixin xl\:border-dashed {
-    @include border-style(dashed, $xl);
-  }
-
-  @mixin xl\:border-dotted {
-    @include border-style(dotted, $xl);
-  }
-
-  @mixin xl\:border-double {
-    @include border-style(double, $xl);
-  }
-
-  @mixin xl\:border-hidden {
-    @include border-style(hidden, $xl);
-  }
-
-  @mixin xl\:border-none {
-    @include border-style(none, $xl);
-  }
-
-  @mixin \2xl\:border-solid {
-    @include border-style(solid, $\2xl);
-  }
-
-  @mixin \2xl\:border-dashed {
-    @include border-style(dashed, $\2xl);
-  }
-
-  @mixin \2xl\:border-dotted {
-    @include border-style(dotted, $\2xl);
-  }
-
-  @mixin \2xl\:border-double {
-    @include border-style(double, $\2xl);
-  }
-
-  @mixin \2xl\:border-hidden {
-    @include border-style(hidden, $\2xl);
-  }
-
-  @mixin \2xl\:border-none {
-    @include border-style(none, $\2xl);
-  }
-
-  // x*/
 }

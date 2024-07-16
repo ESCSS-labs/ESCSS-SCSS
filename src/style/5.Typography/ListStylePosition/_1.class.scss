@@ -1,59 +1,28 @@
 @use "../../setting" as *;
 
+$ListStylePosition: (
+  "list-inside": inside,
+  "list-outside": outside,
+);
+
 @if $Basic {
-  // /*x
-  @mixin list-inside {
-    list-style-position: inside;
+  @each $key, $value in $ListStylePosition {
+    /*x
+    @mixin #{$key}{
+      @include list-style-position(#{$value});
+    }
+    x*/
   }
-
-  @mixin list-outside {
-    list-style-position: outside;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:list-inside {
-    @include list-style-position(inside, $sm);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $ListStylePosition {
+      /*x
+      @mixin #{$rwd}\:#{$key}{
+        @include list-style-position(#{$value}, $#{$key});
+      }
+      x*/
+    }
   }
-
-  @mixin sm\:list-outside {
-    @include list-style-position(outside, $sm);
-  }
-
-  @mixin md\:list-inside {
-    @include list-style-position(inside, $md);
-  }
-
-  @mixin md\:list-outside {
-    @include list-style-position(outside, $md);
-  }
-
-  @mixin lg\:list-inside {
-    @include list-style-position(inside, $lg);
-  }
-
-  @mixin lg\:list-outside {
-    @include list-style-position(outside, $lg);
-  }
-
-  @mixin xl\:list-inside {
-    @include list-style-position(inside, $xl);
-  }
-
-  @mixin xl\:list-outside {
-    @include list-style-position(outside, $xl);
-  }
-
-  @mixin \2xl\:list-inside {
-    @include list-style-position(inside, $\2xl);
-  }
-
-  @mixin \2xl\:list-outside {
-    @include list-style-position(outside, $\2xl);
-  }
-
-  // x*/
 }

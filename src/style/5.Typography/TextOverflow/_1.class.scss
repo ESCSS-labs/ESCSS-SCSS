@@ -1,105 +1,38 @@
 @use "../../setting" as *;
 
+// 1st: overflow
+// 2nd: text-overflow
+// 3rd: white-space
+$TextOverflow: (
+  "truncate": (hidden, ellipsis, nowrap, ),
+  "text-ellipsis": (ellipsis, null, null),
+  "text-clipL": (clip, null, null)
+);
+
 @if $Basic {
-  // /*x
-  @mixin truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  @each $key, $value in $TextOverflow {
+    /*x 
+    @mixin truncate {
+      @include overflow(#{list.nth($value, 1)});
+      @include text-overflow(#{list.nth($value, 2)});
+      @include white-space(#{list.nth($value, 3)});
+    }
+    x*/
   }
-
-  @mixin text-ellipsis {
-    text-overflow: ellipsis;
-  }
-
-  @mixin text-clip {
-    text-overflow: clip;
-  }
-
-  // x*/
 }
 
 @if $Rwd {
-  // /*x
-  @mixin sm\:truncate {
-    @media (min-width: $sm) {
-      @include overflow(hidden);
-      @include text-overflow(ellipsis);
-      @include white-space(nowrap);
+  @each $rwd in $rwdBox {
+    @each $key, $value in $TextOverflow {
+      /*x
+      @mixin truncate {
+        @include #{$rwd} {
+          @include overflow(#{list.nth($value, 1)});
+          @include text-overflow(#{list.nth($value, 2)});
+          @include white-space(#{list.nth($value, 3)});
+        }
+      }
+      x*/
     }
   }
-
-  @mixin sm\:text-ellipsis {
-    @include text-overflow(ellipsis, $sm);
-  }
-
-  @mixin sm\:text-clip {
-    @include text-overflow(clip, $sm);
-  }
-
-  @mixin md\:truncate {
-    @media (min-width: $md) {
-      @include overflow(hidden);
-      @include text-overflow(ellipsis);
-      @include white-space(nowrap);
-    }
-  }
-
-  @mixin md\:text-ellipsis {
-    @include text-overflow(ellipsis, $md);
-  }
-
-  @mixin md\:text-clip {
-    @include text-overflow(clip, $md);
-  }
-
-  @mixin lg\:truncate {
-    @media (min-width: $lg) {
-      @include overflow(hidden);
-      @include text-overflow(ellipsis);
-      @include white-space(nowrap);
-    }
-  }
-
-  @mixin lg\:text-ellipsis {
-    @include text-overflow(ellipsis, $lg);
-  }
-
-  @mixin lg\:text-clip {
-    @include text-overflow(clip, $lg);
-  }
-
-  @mixin xl\:truncate {
-    @media (min-width: $xl) {
-      @include overflow(hidden);
-      @include text-overflow(ellipsis);
-      @include white-space(nowrap);
-    }
-  }
-
-  @mixin xl\:text-ellipsis {
-    @include text-overflow(ellipsis, $xl);
-  }
-
-  @mixin xl\:text-clip {
-    @include text-overflow(clip, $xl);
-  }
-
-  @mixin \2xl\:truncate {
-    @media (min-width: $\2xl) {
-      @include overflow(hidden);
-      @include text-overflow(ellipsis);
-      @include white-space(nowrap);
-    }
-  }
-
-  @mixin \2xl\:text-ellipsis {
-    @include text-overflow(ellipsis, $\2xl);
-  }
-
-  @mixin \2xl\:text-clip {
-    @include text-overflow(clip, $\2xl);
-  }
-
-  // x*/
 }
