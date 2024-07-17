@@ -10,13 +10,12 @@ $DivideWidth: (
 );
 
 $DivideWidth2: (
-  
 );
 
 @if $Basic {
   @each $key, $value in $DivideWidth {
-    @if $key == "-reverse" {
-    /*x
+    @if $key =="-reverse" {
+      /*x
     @mixin divide-x#{$key} {
       $tw-divide-x-reverse: #{$value} !global;
 
@@ -37,6 +36,7 @@ $DivideWidth2: (
     x*/
 
     }
+
     /*x
     @mixin divide-x#{$key} {
       $tw-dummy-divide-x-value: #{$value} !global;
@@ -62,32 +62,32 @@ $DivideWidth2: (
 @if $Rwd and ($sizeMode ==0 or $sizeMode ==1) {
   @each $rwd in $rwdBox {
     @each $key, $value in $DivideWidth {
-      @if $key == "-reverse" {
-      /*x
-      @mixin #{$rwd}\:divide-x#{$key} {
-        $tw-divide-x-reverse: #{$value} !global;
-  
-        @include #{$rwd} {
-          > * ~ * {
-            @include border-right-width($tw-dummy-divide-x-value * $tw-divide-x-reverse);
-            @include border-left-width($tw-dummy-divide-x-value * (1 - $tw-divide-x-reverse));
+      @if $key =="-reverse" {
+        /*x
+        @mixin #{$rwd}\:divide-x#{$key} {
+          $tw-divide-x-reverse: 1 !global;
+
+          @include #{$rwd} {
+            >*~* {
+              @include border-right-width($tw-dummy-divide-x-value * $tw-divide-x-reverse);
+              @include border-left-width($tw-dummy-divide-x-value * (1 - $tw-divide-x-reverse));
+            }
           }
         }
-      }
   
-      @mixin #{$rwd}\:divide-y#{$key} {
-        $tw-divide-y-reverse: #{$value} !global;
-  
-        @include #{$rwd} {
-          > * ~ * {
-            @include border-top-width($tw-dummy-divide-y-value * (1 - $tw-divide-y-reverse));
-            @include border-bottom-width($tw-dummy-divide-y-value * $tw-divide-y-reverse);
+        @mixin #{$rwd}\:divide-y#{$key} {
+          $tw-divide-y-reverse: 1 !global;
+
+          @include #{$rwd} {
+            >*~* {
+              @include border-right-width($tw-dummy-divide-y-value * $tw-divide-y-reverse);
+              @include border-left-width($tw-dummy-divide-y-value * (1 - $tw-divide-y-reverse));
+            }
           }
         }
+        x*/
       }
-      x*/
-  
-      }
+
       /*x
       @mixin #{$rwd}\:divide-x#{$key} {
         $tw-dummy-divide-x-value: #{$value} !global;
