@@ -36,7 +36,7 @@ $BackgroundsSize: (
     }
 
     @else if list.nth($v, 1)==length {
-      @include background-size(list.set-nth($v, 1, $space)); // remove the token "length" to identify background-size
+      @include background-size(list.set-nth($v, 1, #/*x{""})); // remove the token "length" to identify background-size
     }
 
     @else if list.index(top right bottom left center, $v) or meta.type-of($v)==number or meta.type-of($v)==list {
@@ -57,7 +57,7 @@ $BackgroundsSize: (
       }
 
       @else if list.nth($v, 1)==length {
-        @include background-size(list.set-nth($v, 1, $space), $#{$rwd}); // remove the token "length" to identify background-size
+        @include background-size(list.set-nth($v, 1, #/*x{""}), $#{$rwd}); // remove the token "length" to identify background-size
       }
 
       @else if list.index(top right bottom left center, $v) or meta.type-of($v)==number or meta.type-of($v)==list {
