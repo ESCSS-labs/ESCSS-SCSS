@@ -33,13 +33,13 @@ $BoxShadow: (
   @each $rwd in $rwdBox {
     @each $key, $value in $BoxShadow {
       /*x
-      @mixin #{$key} {
+      @mixin #{$rwd}\:#{$key} {
         @include #{$rwd} {
-        $tw-dummy-shadow-token: #{list.nth($value, 1)} !global;
-        $tw-dummy-shadow-width: #{list.nth($value, 2)} !global;
-        $tw-shadow-color: #{list.nth($value, 3)} !global;
+          $tw-dummy-shadow-token: #{list.nth($value, 1)} !global;
+          $tw-dummy-shadow-width: #{list.nth($value, 2)} !global;
+          $tw-shadow-color: #{list.nth($value, 3)} !global;
 
-        @include box-shadow(get_box-shadow());
+          @include box-shadow(get_box-shadow());
         }
       }
       x*/
