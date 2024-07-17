@@ -1,0 +1,52 @@
+// Custom same as @mixin font-($vl)
+$FontFamily: (
+  'font-sans': (
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji',
+  ),
+  'font-serif': (
+    ui-serif,
+    Georgia,
+    Cambria,
+    'Times New Roman',
+    Times,
+    serif,
+  ),
+  'font-mono': (
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Liberation Mono',
+    'Courier New',
+    monospace,
+  ),
+);
+
+@if $isBasic {
+  @each $key, $value in $FontFamily {
+    /*x
+    @mixin #{$key} {
+      @include font-family(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $FontFamily {
+      /*x
+      @mixin #{$key} {
+        @include font-family(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

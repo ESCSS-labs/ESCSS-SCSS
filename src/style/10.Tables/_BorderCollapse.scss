@@ -1,0 +1,29 @@
+$BorderCollapse: (
+  'border-collapse': collapse,
+  'border-separate': separate,
+);
+
+@if $isBasic {
+  @each $key, $value in $BorderCollapse {
+    // atomic handle border-collapse
+    @if $key != 'border-collapse' {
+      /*x
+      @mixin #{$key} {
+        @include border-collapse(#{$value});
+      }
+      x*/
+    }
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BorderCollapse {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include border-collapse(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

@@ -1,0 +1,32 @@
+$PlaceContent: (
+  'place-content-center': center,
+  'place-content-start': start,
+  'place-content-end': end,
+  'place-content-between': space-between,
+  'place-content-around': space-around,
+  'place-content-evenly': space-evenly,
+  'place-content-baseline': baseline,
+  'place-content-stretch': stretch,
+);
+
+@if $isBasic {
+  @each $key, $value in $PlaceContent {
+    /*x
+    @mixin #{$key} {
+      @include place-content(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $PlaceContent {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include place-content(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

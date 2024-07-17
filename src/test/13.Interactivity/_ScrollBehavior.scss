@@ -1,0 +1,181 @@
+@import '../_classic_only';
+
+@include describe('13.Interactivity') {
+  @include describe('Scroll Behavior') {
+    @include describe('Basic') {
+      @include it('scroll-auto') {
+        @include assert {
+          @include output {
+            @include scroll-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            scroll-behavior: auto;
+          }
+        }
+      }
+
+      @include it('scroll-smooth') {
+        @include assert {
+          @include output {
+            @include scroll-smooth;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            scroll-behavior: smooth;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:scroll-auto') {
+        @include assert {
+          @include output {
+            @include sm\:scroll-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:scroll-smooth') {
+        @include assert {
+          @include output {
+            @include sm\:scroll-smooth;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
+      }
+      @include it('md\:scroll-auto') {
+        @include assert {
+          @include output {
+            @include md\:scroll-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+
+      @include it('md\:scroll-smooth') {
+        @include assert {
+          @include output {
+            @include md\:scroll-smooth;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
+      }
+      @include it('lg\:scroll-auto') {
+        @include assert {
+          @include output {
+            @include lg\:scroll-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:scroll-smooth') {
+        @include assert {
+          @include output {
+            @include lg\:scroll-smooth;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
+      }
+      @include it('xl\:scroll-auto') {
+        @include assert {
+          @include output {
+            @include xl\:scroll-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:scroll-smooth') {
+        @include assert {
+          @include output {
+            @include xl\:scroll-smooth;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
+      }
+      @include it('2xl\:scroll-auto') {
+        @include assert {
+          @include output {
+            @include \2xl\:scroll-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              scroll-behavior: auto;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:scroll-smooth') {
+        @include assert {
+          @include output {
+            @include \2xl\:scroll-smooth;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              scroll-behavior: smooth;
+            }
+          }
+        }
+      }
+    }
+  }
+}

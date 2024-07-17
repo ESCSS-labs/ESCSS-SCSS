@@ -1,0 +1,32 @@
+$BreakBefore: (
+  'break-before-auto': auto,
+  'break-before-avoid': avoid,
+  'break-before-all': all,
+  'break-before-avoid-page': avoid-page,
+  'break-before-page': page,
+  'break-before-left': left,
+  'break-before-right': right,
+  'break-before-column': column,
+);
+
+@if $isBasic {
+  @each $key, $value in $BreakBefore {
+    /*x
+    @mixin #{$key} {
+      @include break-before(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BreakBefore {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include break-before(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

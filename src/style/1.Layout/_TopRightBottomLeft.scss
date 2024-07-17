@@ -1,0 +1,411 @@
+$TopRightBottomLeft: (
+  '0': '$_0',
+  'px': '$_px',
+  '0\\.5': '$_0\\.5',
+  '1': '$_1',
+  '1\\.5': '$_1\\.5',
+  '2': '$_2',
+  '2\\.5': '$_2\\.5',
+  '3': '$_3',
+  '3\\.5': '$_3\\.5',
+  '4': '$_4',
+  '5': '$_5',
+  '6': '$_6',
+  '7': '$_7',
+  '8': '$_8',
+  '9': '$_9',
+  '10': '$_10',
+  '11': '$_11',
+  '12': '$_12',
+  '14': '$_14',
+  '16': '$_16',
+  '20': '$_20',
+  '24': '$_24',
+  '28': '$_28',
+  '32': '$_32',
+  '36': '$_36',
+  '40': '$_40',
+  '44': '$_44',
+  '48': '$_48',
+  '52': '$_52',
+  '56': '$_56',
+  '60': '$_60',
+  '64': '$_64',
+  '72': '$_72',
+  '80': '$_80',
+  '96': '$_96',
+  'auto': auto,
+  '1\\/2': 50%,
+  '1\\/3': 33.333333%,
+  '2\\/3': 66.666667%,
+  '1\\/4': 25%,
+  '2\\/4': 50%,
+  '3\\/4': 75%,
+  'full': 100%,
+);
+
+@if $isBasic {
+  @each $key, $value in $TopRightBottomLeft {
+    /*x
+    @mixin inset-#{$key} {
+      @include inset(#{$value});
+    }
+
+    @mixin inset-x-#{$key} {
+      @include left(#{$value});
+      @include right(#{$value});
+    }
+
+    @mixin inset-y-#{$key} {
+      @include top(#{$value});
+      @include bottom(#{$value});
+    }
+
+    @mixin start-#{$key} {
+      @include inset-inline-start(#{$value});
+    }
+
+    @mixin end-#{$key} {
+      @include inset-inline-end(#{$value});
+    }
+
+    @mixin top-#{$key} {
+      @include top(#{$value});
+    }
+
+    @mixin right-#{$key} {
+      @include right(#{$value});
+    }
+
+    @mixin bottom-#{$key} {
+      @include bottom(#{$value});
+    }
+
+    @mixin left-#{$key} {
+      @include left(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $TopRightBottomLeft {
+      /*x
+      @mixin #{$rwdToken}\:inset-#{$key} {
+        @include inset(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:inset-x-#{$key} {
+        @include utils_#{$rwdToken} {
+          @include left(#{$value});
+          @include right(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:inset-y-#{$key} {
+        @include utils_#{$rwdToken} {
+          @include top(#{$value});
+          @include bottom(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:start-#{$key} {
+        @include inset-inline-start(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:end-#{$key} {
+        @include inset-inline-end(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:top-#{$key} {
+        @include top(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:right-#{$key} {
+        @include right(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:bottom-#{$key} {
+        @include bottom(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:left-#{$key} {
+        @include left(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin inset-($v) {
+    @include inset($v);
+  }
+
+  @mixin inset-x-($v) {
+    @include left($v);
+    @include right($v);
+  }
+
+  @mixin inset-y-($v) {
+    @include top($v);
+    @include bottom($v);
+  }
+
+  @mixin start-($v) {
+    @include inset-inline-start($v);
+  }
+
+  @mixin end-($v) {
+    @include inset-inline-end($v);
+  }
+
+  @mixin top-($v) {
+    @include top($v);
+  }
+
+  @mixin right-($v) {
+    @include right($v);
+  }
+
+  @mixin bottom-($v) {
+    @include bottom($v);
+  }
+
+  @mixin left-($v) {
+    @include left($v);
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:inset-($v) {
+      @include inset($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:inset-x-($v) {
+      @include utils_#{$rwdToken} {
+        @include left($v);
+        @include right($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:inset-y-($v) {
+      @include utils_#{$rwdToken} {
+        @include top($v);
+        @include bottom($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:start-($v) {
+      @include inset-inline-start($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:end-($v) {
+      @include inset-inline-end($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:top-($v) {
+      @include top($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:right-($v) {
+      @include right($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:bottom-($v) {
+      @include bottom($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:left-($v) {
+      @include left($v, #{$rwd});
+    }
+    x*/
+  }
+}
+
+@if $isNegative {
+  @if $isBasic {
+    @each $key, $value in $TopRightBottomLeft {
+      /*x
+      @mixin -inset-#{$key} {
+        @include inset(-#{$value});
+      }
+  
+      @mixin -inset-x-#{$key} {
+        @include left(-#{$value});
+        @include right(-#{$value});
+      }
+  
+      @mixin -inset-y-#{$key} {
+        @include top(-#{$value});
+        @include bottom(-#{$value});
+      }
+  
+      @mixin -start-#{$key} {
+        @include inset-inline-start(-#{$value});
+      }
+  
+      @mixin -end-#{$key} {
+        @include inset-inline-end(-#{$value});
+      }
+  
+      @mixin -top-#{$key} {
+        @include top(-#{$value});
+      }
+  
+      @mixin -right-#{$key} {
+        @include right(-#{$value});
+      }
+  
+      @mixin -bottom-#{$key} {
+        @include bottom(-#{$value});
+      }
+  
+      @mixin -left-#{$key} {
+        @include left(-#{$value});
+      }
+      x*/
+    }
+  }
+
+  @if $isRwd and $isClassic {
+    @each $rwdToken, $rwd in $rwdBox {
+      @each $key, $value in $TopRightBottomLeft {
+        /*x
+        @mixin #{$rwdToken}\:-inset-#{$key} {
+          @include inset(-#{$value}, #{$rwd});
+        }
+  
+        @mixin #{$rwdToken}\:-inset-x-#{$key} {
+          @include utils_#{$rwdToken} {
+            @include left(-#{$value});
+            @include right(-#{$value});
+          }
+        }
+  
+        @mixin #{$rwdToken}\:-inset-y-#{$key} {
+          @include utils_#{$rwdToken} {
+            @include top(-#{$value});
+            @include bottom(-#{$value});
+          }
+        }
+  
+        @mixin #{$rwdToken}\:-start-#{$key} {
+          @include inset-inline-start(-#{$value}, #{$rwd});
+        }
+  
+        @mixin #{$rwdToken}\:-end-#{$key} {
+          @include inset-inline-end(-#{$value}, #{$rwd});
+        }
+  
+        @mixin #{$rwdToken}\:-top-#{$key} {
+          @include top(-#{$value}, #{$rwd});
+        }
+  
+        @mixin #{$rwdToken}\:-right-#{$key} {
+          @include right(-#{$value}, #{$rwd});
+        }
+  
+        @mixin #{$rwdToken}\:-bottom-#{$key} {
+          @include bottom(-#{$value}, #{$rwd});
+        }
+  
+        @mixin #{$rwdToken}\:-left-#{$key} {
+          @include left(-#{$value}, #{$rwd});
+        }
+      x*/
+      }
+    }
+  }
+
+  @if $isCustom {
+    /*x
+    @mixin -inset-($v) {
+      @include inset(-$v);
+    }
+  
+    @mixin -inset-x-($v) {
+      @include left(-$v);
+      @include right(-$v);
+    }
+  
+    @mixin -inset-y-($v) {
+      @include top(-$v);
+      @include bottom(-$v);
+    }
+  
+    @mixin -start-($v) {
+      @include inset-inline-start(-$v);
+    }
+  
+    @mixin -end-($v) {
+      @include inset-inline-end(-$v);
+    }
+  
+    @mixin -top-($v) {
+      @include top(-$v);
+    }
+  
+    @mixin -right-($v) {
+      @include right(-$v);
+    }
+  
+    @mixin -bottom-($v) {
+      @include bottom(-$v);
+    }
+  
+    @mixin -left-($v) {
+      @include left(-$v);
+    }
+    x*/
+
+    @each $rwdToken, $rwd in $rwdBox {
+      /*x
+      @mixin #{$rwdToken}\:-inset-($v) {
+        @include inset(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-inset-x-($v) {
+        @include utils_#{$rwdToken} {
+          @include left(-$v);
+          @include right(-$v);
+        }
+      }
+  
+      @mixin #{$rwdToken}\:-inset-y-($v) {
+        @include utils_#{$rwdToken} {
+          @include top(-$v);
+          @include bottom(-$v);
+        }
+      }
+  
+      @mixin #{$rwdToken}\:-start-($v) {
+        @include inset-inline-start(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-end-($v) {
+        @include inset-inline-end(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-top-($v) {
+        @include top(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-right-($v) {
+        @include right(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-bottom-($v) {
+        @include bottom(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-left-($v) {
+        @include left(-$v, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

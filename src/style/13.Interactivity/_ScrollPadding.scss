@@ -1,0 +1,219 @@
+$ScrollPadding: (
+  '0': '$_0',
+  'px': '$_px',
+  '0\\.5': '$_0\\.5',
+  '1': '$_1',
+  '1\\.5': '$_1\\.5',
+  '2': '$_2',
+  '2\\.5': '$_2\\.5',
+  '3': '$_3',
+  '3\\.5': '$_3\\.5',
+  '4': '$_4',
+  '5': '$_5',
+  '6': '$_6',
+  '7': '$_7',
+  '8': '$_8',
+  '9': '$_9',
+  '10': '$_10',
+  '11': '$_11',
+  '12': '$_12',
+  '14': '$_14',
+  '16': '$_16',
+  '20': '$_20',
+  '24': '$_24',
+  '28': '$_28',
+  '32': '$_32',
+  '36': '$_36',
+  '40': '$_40',
+  '44': '$_44',
+  '48': '$_48',
+  '52': '$_52',
+  '56': '$_56',
+  '60': '$_60',
+  '64': '$_64',
+  '72': '$_72',
+  '80': '$_80',
+  '96': '$_96',
+);
+
+@if $isBasic {
+  @each $key, $value in $ScrollPadding {
+    /*x
+    @mixin scroll-p-#{$key} {
+      @include scroll-padding( #{$value});
+    }
+
+    @mixin scroll-px-#{$key} {
+      @include scroll-padding-left(#{$value});
+      @include scroll-padding-right(#{$value});
+    }
+
+    @mixin scroll-py-#{$key} {
+      @include scroll-padding-top(#{$value});
+      @include scroll-padding-bottom(#{$value});
+    }
+
+    @mixin scroll-ps-#{$key} {
+      @include scroll-padding-inline-start(#{$value});
+    }
+
+    @mixin scroll-pe-#{$key} {
+      @include scroll-padding-inline-end(#{$value});
+    }
+
+    @mixin scroll-pt-#{$key} {
+      @include scroll-padding-top(#{$value});
+    }
+
+    @mixin scroll-pr-#{$key} {
+      @include scroll-padding-right(#{$value});
+    }
+
+    @mixin scroll-pb-#{$key} {
+      @include scroll-padding-bottom(#{$value});
+    }
+
+    @mixin scroll-pl-#{$key} {
+      @include scroll-padding-left(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $ScrollPadding {
+      /*x
+      @mixin #{$rwdToken}\:scroll-p-#{$key} {
+        @include scroll-padding( #{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-px-#{$key} {
+        @include utils_#{$rwdToken} {
+          @include scroll-padding-left(#{$value});
+          @include scroll-padding-right(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:scroll-py-#{$key} {
+        @include utils_#{$rwdToken} {
+          @include scroll-padding-top(#{$value});
+          @include scroll-padding-bottom(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:scroll-ps-#{$key} {
+        @include scroll-padding-inline-start(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-pe-#{$key} {
+        @include scroll-padding-inline-end(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-pt-#{$key} {
+        @include scroll-padding-top(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-pr-#{$key} {
+        @include scroll-padding-right(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-pb-#{$key} {
+        @include scroll-padding-bottom(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-pl-#{$key} {
+        @include scroll-padding-left(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin scroll-p-($v) {
+    @include scroll-padding($v);
+  }
+
+  @mixin scroll-px-($v) {
+    @include scroll-padding-left($v);
+    @include scroll-padding-right($v);
+  }
+
+  @mixin scroll-py-($v) {
+    @include scroll-padding-top($v);
+    @include scroll-padding-bottom($v);
+  }
+
+  @mixin scroll-ps-($v) {
+    @include scroll-padding-inline-start($v);
+  }
+
+  @mixin scroll-pe-($v) {
+    @include scroll-padding-inline-end($v);
+  }
+
+  @mixin scroll-pt-($v) {
+    @include scroll-padding-top($v);
+  }
+
+  @mixin scroll-pr-($v) {
+    @include scroll-padding-right($v);
+  }
+
+  @mixin scroll-pb-($v) {
+    @include scroll-padding-bottom($v);
+  }
+
+  @mixin scroll-pl-($v) {
+    @include scroll-padding-left($v);
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:scroll-p-($v) {
+      @include scroll-padding($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-px-($v) {
+      @include utils_#{$rwdToken} {
+        @include scroll-padding-left($v);
+        @include scroll-padding-right($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:scroll-py-($v) {
+      @include utils_#{$rwdToken} {
+        @include scroll-padding-top($v);
+        @include scroll-padding-bottom($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:scroll-ps-($v) {
+      @include scroll-padding-inline-start($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-pe-($v) {
+      @include scroll-padding-inline-end($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-pt-($v) {
+      @include scroll-padding-top($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-pr-($v) {
+      @include scroll-padding-right($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-pb-($v) {
+      @include scroll-padding-bottom($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-pl-($v) {
+      @include scroll-padding-left($v, #{$rwd});
+    }
+    x*/
+  }
+}

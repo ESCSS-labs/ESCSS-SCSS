@@ -1,0 +1,79 @@
+// Custom same as @mixin shadow-($v)
+
+// 1st: $tw-dummy-shadow-token
+// 2nd: $tw-dummy-shadow-width
+// 3rd: $tw-shadow-color
+$BoxShadow: (
+  'shadow-sm': (
+    sm,
+    (0 1px 2px 0, null),
+    rgb(0 0 0 / 0.05),
+  ),
+  'shadow': (
+    shadow,
+    (0 1px 3px 0, 0 1px 2px -1px),
+    rgb(0 0 0 / 0.1),
+  ),
+  'shadow-md': (
+    md,
+    (0 4px 6px -1px, 0 2px 4px -2px),
+    rgb(0 0 0 / 0.1),
+  ),
+  'shadow-lg': (
+    lg,
+    (0 10px 15px -3px, 0 4px 6px -4px),
+    rgb(0 0 0 / 0.1),
+  ),
+  'shadow-xl': (
+    xl,
+    (0 20px 25px -5px, 0 8px 10px -6px),
+    rgb(0 0 0 / 0.1),
+  ),
+  'shadow-2xl': (
+    2xl,
+    (0 25px 50px -12px, null),
+    rgb(0 0 0 / 0.25),
+  ),
+  'shadow-inner': (
+    inner,
+    (0 2px 4px 0, null),
+    rgb(0 0 0 / 0.05),
+  ),
+  'shadow-none': (
+    none,
+    (0 0 0 0, null),
+    #fff,
+  ),
+);
+
+@if $isBasic {
+  @each $key, $value in $BoxShadow {
+    /*x
+    @mixin #{$key} {
+      $tw-dummy-shadow-token: #{list.nth($value, 1)} !global;
+      $tw-dummy-shadow-width: #{list.nth($value, 2)} !global;
+      $tw-shadow-color: #{list.nth($value, 3)} !global;
+
+      @include box-shadow(_get_box-shadow());
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BoxShadow {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include utils_#{$rwdToken} {
+          $tw-dummy-shadow-token: #{list.nth($value, 1)} !global;
+          $tw-dummy-shadow-width: #{list.nth($value, 2)} !global;
+          $tw-shadow-color: #{list.nth($value, 3)} !global;
+
+          @include box-shadow(_get_box-shadow());
+        }
+      }
+      x*/
+    }
+  }
+}

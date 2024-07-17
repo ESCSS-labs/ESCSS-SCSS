@@ -1,0 +1,28 @@
+$ScrollSnapAlign: (
+  'snap-start': start,
+  'snap-end': end,
+  'snap-center': center,
+  'snap-align-none': none,
+);
+
+@if $isBasic {
+  @each $key, $value in $ScrollSnapAlign {
+    /*x
+    @mixin #{$key} {
+      @include scroll-snap-align(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $ScrollSnapAlign {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include scroll-snap-align(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

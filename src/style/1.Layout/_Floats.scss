@@ -1,0 +1,29 @@
+$Float: (
+  'float-start': inline-start,
+  'float-end': inline-end,
+  'float-right': right,
+  'float-left': left,
+  'float-none': none,
+);
+
+@if $isBasic {
+  @each $key, $value in $Float {
+    /*x
+    @mixin #{$key} {
+      @include float(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $Float {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include float(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

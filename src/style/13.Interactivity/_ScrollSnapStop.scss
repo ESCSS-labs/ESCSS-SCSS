@@ -1,0 +1,26 @@
+$ScrollSnapStop: (
+  'snap-normal': normal,
+  'snap-always': always,
+);
+
+@if $isBasic {
+  @each $key, $value in $ScrollSnapStop {
+    /*x
+    @mixin #{$key} {
+      @include scroll-snap-stop(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $ScrollSnapStop {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include scroll-snap-stop(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

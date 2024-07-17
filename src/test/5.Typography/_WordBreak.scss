@@ -1,0 +1,367 @@
+@import '../_classic_only';
+
+@include describe('5.Typography') {
+  @include describe('Word Break') {
+    @include describe('Basic') {
+      @include it('break-normal') {
+        @include assert {
+          @include output {
+            @include break-normal;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            overflow-wrap: normal;
+            word-break: normal;
+          }
+        }
+      }
+
+      @include it('break-words') {
+        @include assert {
+          @include output {
+            @include break-words;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            overflow-wrap: break-word;
+          }
+        }
+      }
+
+      @include it('break-all') {
+        @include assert {
+          @include output {
+            @include break-all;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            word-break: break-all;
+          }
+        }
+      }
+
+      @include it('break-keep') {
+        @include assert {
+          @include output {
+            @include break-keep;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:break-normal') {
+        @include assert {
+          @include output {
+            @include sm\:break-normal;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              overflow-wrap: normal;
+              word-break: normal;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:break-words') {
+        @include assert {
+          @include output {
+            @include sm\:break-words;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              overflow-wrap: break-word;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:break-all') {
+        @include assert {
+          @include output {
+            @include sm\:break-all;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              word-break: break-all;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:break-keep') {
+        @include assert {
+          @include output {
+            @include sm\:break-keep;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              word-break: keep-all;
+            }
+          }
+        }
+      }
+
+      @include it('md\:break-normal') {
+        @include assert {
+          @include output {
+            @include md\:break-normal;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              overflow-wrap: normal;
+              word-break: normal;
+            }
+          }
+        }
+      }
+
+      @include it('md\:break-words') {
+        @include assert {
+          @include output {
+            @include md\:break-words;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              overflow-wrap: break-word;
+            }
+          }
+        }
+      }
+
+      @include it('md\:break-all') {
+        @include assert {
+          @include output {
+            @include md\:break-all;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              word-break: break-all;
+            }
+          }
+        }
+      }
+
+      @include it('md\:break-keep') {
+        @include assert {
+          @include output {
+            @include md\:break-keep;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              word-break: keep-all;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:break-normal') {
+        @include assert {
+          @include output {
+            @include lg\:break-normal;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              overflow-wrap: normal;
+              word-break: normal;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:break-words') {
+        @include assert {
+          @include output {
+            @include lg\:break-words;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              overflow-wrap: break-word;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:break-all') {
+        @include assert {
+          @include output {
+            @include lg\:break-all;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              word-break: break-all;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:break-keep') {
+        @include assert {
+          @include output {
+            @include lg\:break-keep;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              word-break: keep-all;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:break-normal') {
+        @include assert {
+          @include output {
+            @include xl\:break-normal;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              overflow-wrap: normal;
+              word-break: normal;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:break-words') {
+        @include assert {
+          @include output {
+            @include xl\:break-words;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              overflow-wrap: break-word;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:break-all') {
+        @include assert {
+          @include output {
+            @include xl\:break-all;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              word-break: break-all;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:break-keep') {
+        @include assert {
+          @include output {
+            @include xl\:break-keep;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              word-break: keep-all;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:break-normal') {
+        @include assert {
+          @include output {
+            @include \2xl\:break-normal;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              overflow-wrap: normal;
+              word-break: normal;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:break-words') {
+        @include assert {
+          @include output {
+            @include \2xl\:break-words;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              overflow-wrap: break-word;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:break-all') {
+        @include assert {
+          @include output {
+            @include \2xl\:break-all;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              word-break: break-all;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:break-keep') {
+        @include assert {
+          @include output {
+            @include \2xl\:break-keep;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              word-break: keep-all;
+            }
+          }
+        }
+      }
+    }
+  }
+}

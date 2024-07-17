@@ -1,0 +1,647 @@
+@import '../_classic_only';
+
+@include describe('7.Borders') {
+  @include describe('Ring Width') {
+    @include describe('Basic') {
+      @include it('ring-0') {
+        @include assert {
+          @include output {
+            @include ring-0;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            box-shadow:
+              0 0 0 0 #fff,
+              0 0 0 0px rgba(59, 130, 246, 0.5),
+              0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it('ring-1') {
+        @include assert {
+          @include output {
+            @include ring-1;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            box-shadow:
+              0 0 0 0 #fff,
+              0 0 0 1px rgba(59, 130, 246, 0.5),
+              0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it('ring-2') {
+        @include assert {
+          @include output {
+            @include ring-2;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            box-shadow:
+              0 0 0 0 #fff,
+              0 0 0 2px rgba(59, 130, 246, 0.5),
+              0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it('ring-4') {
+        @include assert {
+          @include output {
+            @include ring-4;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            box-shadow:
+              0 0 0 0 #fff,
+              0 0 0 4px rgba(59, 130, 246, 0.5),
+              0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it('ring-8') {
+        @include assert {
+          @include output {
+            @include ring-8;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            box-shadow:
+              0 0 0 0 #fff,
+              0 0 0 8px rgba(59, 130, 246, 0.5),
+              0 0 0 0 #fff;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:ring-0') {
+        @include assert {
+          @include output {
+            @include sm\:ring-0;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 0px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:ring-1') {
+        @include assert {
+          @include output {
+            @include sm\:ring-1;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 1px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:ring-2') {
+        @include assert {
+          @include output {
+            @include sm\:ring-2;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 2px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:ring-4') {
+        @include assert {
+          @include output {
+            @include sm\:ring-4;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 4px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:ring-8') {
+        @include assert {
+          @include output {
+            @include sm\:ring-8;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 8px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('md\:ring-0') {
+        @include assert {
+          @include output {
+            @include md\:ring-0;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 0px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('md\:ring-1') {
+        @include assert {
+          @include output {
+            @include md\:ring-1;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 1px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('md\:ring-2') {
+        @include assert {
+          @include output {
+            @include md\:ring-2;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 2px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('md\:ring-4') {
+        @include assert {
+          @include output {
+            @include md\:ring-4;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 4px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('md\:ring-8') {
+        @include assert {
+          @include output {
+            @include md\:ring-8;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 8px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ring-0') {
+        @include assert {
+          @include output {
+            @include lg\:ring-0;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 0px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ring-1') {
+        @include assert {
+          @include output {
+            @include lg\:ring-1;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 1px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ring-2') {
+        @include assert {
+          @include output {
+            @include lg\:ring-2;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 2px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ring-4') {
+        @include assert {
+          @include output {
+            @include lg\:ring-4;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 4px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ring-8') {
+        @include assert {
+          @include output {
+            @include lg\:ring-8;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 8px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ring-0') {
+        @include assert {
+          @include output {
+            @include xl\:ring-0;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 0px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ring-1') {
+        @include assert {
+          @include output {
+            @include xl\:ring-1;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 1px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ring-2') {
+        @include assert {
+          @include output {
+            @include xl\:ring-2;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 2px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ring-4') {
+        @include assert {
+          @include output {
+            @include xl\:ring-4;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 4px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ring-8') {
+        @include assert {
+          @include output {
+            @include xl\:ring-8;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 8px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ring-0') {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-0;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 0px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ring-1') {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-1;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 1px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ring-2') {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-2;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 2px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ring-4') {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-4;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 4px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ring-8') {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-8;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 8px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+    }
+
+    @include describe('Custom') {
+      @include it('ring-(3px)') {
+        @include assert {
+          @include output {
+            @include ring-(3px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            box-shadow:
+              0 0 0 0 #fff,
+              0 0 0 3px rgba(59, 130, 246, 0.5),
+              0 0 0 0 #fff;
+          }
+        }
+      }
+
+      @include it('sm\:ring-(3px)') {
+        @include assert {
+          @include output {
+            @include sm\:ring-(3px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 3px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('md\:ring-(3px)') {
+        @include assert {
+          @include output {
+            @include md\:ring-(3px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 3px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ring-(3px)') {
+        @include assert {
+          @include output {
+            @include lg\:ring-(3px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 3px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ring-(3px)') {
+        @include assert {
+          @include output {
+            @include xl\:ring-(3px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 3px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ring-(3px)') {
+        @include assert {
+          @include output {
+            @include \2xl\:ring-(3px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 3px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

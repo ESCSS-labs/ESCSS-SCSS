@@ -1,0 +1,61 @@
+// Custom same as @mixin ring-($v)
+$group-RingWidth: (
+  'ring-0': '0px + $tw-ring-offset-width',
+  'ring-1': '1px + $tw-ring-offset-width',
+  'ring-2': '2px + $tw-ring-offset-width',
+  'ring': '3px + $tw-ring-offset-width',
+  'ring-4': '4px + $tw-ring-offset-width',
+  'ring-8': '8px + $tw-ring-offset-width',
+);
+
+$group-RingWidth-inset: (
+  'ring-inset': null,
+);
+
+@if $isBasic {
+  @each $key, $value in $group-RingWidth {
+    /*x
+    @mixin #{$key} {
+      $tw-dummy-not-match--ring-offset-width: true !global;
+      $tw-dummy-ring-width: #{$value} !global;
+
+      @include box-shadow(_get_box-shadow());
+    }
+    x*/
+  }
+
+  @each $key, $value in $group-RingWidth-inset {
+    /*x
+    @mixin #{$key} {
+      $tw-dummy-not-match--ring-offset-width: true !global;
+
+      @include box-shadow(_get_box-shadow());
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $group-RingWidth {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        $tw-dummy-not-match--ring-offset-width: true !global;
+        $tw-dummy-ring-width: #{$value} !global;
+
+        @include box-shadow(_get_box-shadow(), #{$rwd});
+      }
+      x*/
+    }
+
+    @each $key, $value in $group-RingWidth-inset {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        $tw-dummy-not-match--ring-offset-width: true !global;
+
+        @include box-shadow(_get_box-shadow(), #{$rwd});
+      }
+      x*/
+    }
+  }
+}

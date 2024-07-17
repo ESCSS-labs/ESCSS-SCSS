@@ -1,0 +1,33 @@
+$FontVariantNumeric: (
+  'normal-nums': normal,
+  'ordinal': ordinal,
+  'slashed-zero': slashed-zero,
+  'lining-nums': lining-nums,
+  'oldstyle-nums': oldstyle-nums,
+  'proportional-nums': proportional-nums,
+  'tabular-nums': tabular-nums,
+  'diagonal-fractions': diagonal-fractions,
+  'stacked-fractions': stacked-fractions,
+);
+
+@if $isBasic {
+  @each $key, $value in $FontVariantNumeric {
+    /*x
+    @mixin #{$key} {
+      @include font-variant-numeric(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $FontVariantNumeric {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include font-variant-numeric(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

@@ -1,0 +1,136 @@
+$group-GridRowStartEnd: (
+  'row-auto': auto,
+  'row-span-1': span 1 / span 1,
+  'row-span-2': span 2 / span 2,
+  'row-span-3': span 3 / span 3,
+  'row-span-4': span 4 / span 4,
+  'row-span-5': span 5 / span 5,
+  'row-span-6': span 6 / span 6,
+  'row-span-7': span 7 / span 7,
+  'row-span-8': span 8 / span 8,
+  'row-span-9': span 9 / span 9,
+  'row-span-10': span 10 / span 10,
+  'row-span-11': span 11 / span 11,
+  'row-span-12': span 12 / span 12,
+  'row-span-full': '#/*x{1 / -1}',
+);
+
+$group-GridRowStartEnd-start: (
+  'row-start-1': 1,
+  'row-start-2': 2,
+  'row-start-3': 3,
+  'row-start-4': 4,
+  'row-start-5': 5,
+  'row-start-6': 6,
+  'row-start-7': 7,
+  'row-start-8': 8,
+  'row-start-9': 9,
+  'row-start-10': 10,
+  'row-start-11': 11,
+  'row-start-12': 12,
+  'row-start-13': 13,
+  'row-start-auto': auto,
+);
+
+$group-GridRowStartEnd-end: (
+  'row-end-1': 1,
+  'row-end-2': 2,
+  'row-end-3': 3,
+  'row-end-4': 4,
+  'row-end-5': 5,
+  'row-end-6': 6,
+  'row-end-7': 7,
+  'row-end-8': 8,
+  'row-end-9': 9,
+  'row-end-10': 10,
+  'row-end-11': 11,
+  'row-end-12': 12,
+  'row-end-13': 13,
+  'row-end-auto': auto,
+);
+
+@if $isBasic {
+  @each $key, $value in $group-GridRowStartEnd {
+    /*x
+    @mixin #{$key} {
+      @include grid-row(#{$value});
+    }
+    x*/
+  }
+
+  @each $key, $value in $group-GridRowStartEnd-start {
+    /*x
+    @mixin #{$key} {
+      @include grid-row-start(#{$value});
+    }
+    x*/
+  }
+
+  @each $key, $value in $group-GridRowStartEnd-end {
+    /*x
+    @mixin #{$key} {
+      @include grid-row-end(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $group-GridRowStartEnd {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include grid-row(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+
+    @each $key, $value in $group-GridRowStartEnd-start {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include grid-row-start(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+
+    @each $key, $value in $group-GridRowStartEnd-end {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include grid-row-end(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin row-($v) {
+    @include grid-row($v);
+  }
+
+  @mixin row-start-($v) {
+    @include grid-row-start($v);
+  }
+
+  @mixin row-end-($v) {
+    @include grid-row-end($v);
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:row-($v) {
+      @include grid-row($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:row-start-($v) {
+      @include grid-row-start($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:row-end-($v) {
+      @include grid-row-end($v, #{$rwd});
+    }
+    x*/
+  }
+}

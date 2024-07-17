@@ -1,0 +1,30 @@
+$TextAlign: (
+  'text-left': left,
+  'text-center': center,
+  'text-right': right,
+  'text-justify': justify,
+  'text-start': start,
+  'text-end': end,
+);
+
+@if $isBasic {
+  @each $key, $value in $TextAlign {
+    /*x
+    @mixin #{$key}{
+      @include text-align(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $TextAlign {
+      /*x
+      @mixin #{$rwdToken}\:#{$key}{
+        @include text-align(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

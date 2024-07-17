@@ -1,0 +1,26 @@
+$CaptionSide: (
+  'caption-top': top,
+  'caption-bottom': bottom,
+);
+
+@if $isBasic {
+  @each $key, $value in $CaptionSide {
+    /*x
+    @mixin #{$key} {
+      @include caption-side(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $CaptionSide {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include caption-side(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

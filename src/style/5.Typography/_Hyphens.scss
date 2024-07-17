@@ -1,0 +1,27 @@
+$Hyphens: (
+  'hyphens-none': none,
+  'hyphens-manual': manual,
+  'hyphens-auto': auto,
+);
+
+@if $isBasic {
+  @each $key, $value in $Hyphens {
+    /*x
+    @mixin #{$key}{
+      @include hyphens(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $Hyphens {
+      /*x
+      @mixin #{$rwdToken}\:#{$key}{
+        @include hyphens(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

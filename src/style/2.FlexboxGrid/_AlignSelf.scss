@@ -1,0 +1,30 @@
+$AlignSelf: (
+  'self-auto': auto,
+  'self-start': flex-start,
+  'self-end': flex-end,
+  'self-center': center,
+  'self-stretch': stretch,
+  'self-baseline': baseline,
+);
+
+@if $isBasic {
+  @each $key, $value in $AlignSelf {
+    /*x
+    @mixin #{$key} {
+      @include align-self(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $AlignSelf {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include align-self(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

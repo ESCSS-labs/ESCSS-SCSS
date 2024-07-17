@@ -1,0 +1,26 @@
+$BoxDecorationBreak: (
+  'box-decoration-clone': clone,
+  'box-decoration-slice': slice,
+);
+
+@if $isBasic {
+  @each $key, $value in $BoxDecorationBreak {
+    /*x
+    @mixin #{$key} {
+      @include box-decoration-break(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BoxDecorationBreak {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include box-decoration-break(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

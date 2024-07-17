@@ -1,0 +1,363 @@
+@import '../_classic_only';
+
+@include describe('1.Layout') {
+  @include describe('Aspect Ratio') {
+    @include describe('Basic') {
+      @include it('aspect-auto') {
+        @include assert {
+          @include output {
+            @include aspect-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            aspect-ratio: auto;
+          }
+        }
+      }
+
+      @include it('aspect-square') {
+        @include assert {
+          @include output {
+            @include aspect-square;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            aspect-ratio: #{1 / 1};
+          }
+        }
+      }
+
+      @include it('aspect-video') {
+        @include assert {
+          @include output {
+            @include aspect-video;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            aspect-ratio: #{16 / 9};
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:aspect-auto') {
+        @include assert {
+          @include output {
+            @include sm\:aspect-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              aspect-ratio: auto;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:aspect-square') {
+        @include assert {
+          @include output {
+            @include sm\:aspect-square;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              aspect-ratio: #{1 / 1};
+            }
+          }
+        }
+      }
+
+      @include it('sm\:aspect-video') {
+        @include assert {
+          @include output {
+            @include sm\:aspect-video;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              aspect-ratio: #{16 / 9};
+            }
+          }
+        }
+      }
+
+      @include it('md\:aspect-auto') {
+        @include assert {
+          @include output {
+            @include md\:aspect-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              aspect-ratio: auto;
+            }
+          }
+        }
+      }
+
+      @include it('md\:aspect-square') {
+        @include assert {
+          @include output {
+            @include md\:aspect-square;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              aspect-ratio: #{1 / 1};
+            }
+          }
+        }
+      }
+
+      @include it('md\:aspect-video') {
+        @include assert {
+          @include output {
+            @include md\:aspect-video;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              aspect-ratio: #{16 / 9};
+            }
+          }
+        }
+      }
+
+      @include it('lg\:aspect-auto') {
+        @include assert {
+          @include output {
+            @include lg\:aspect-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              aspect-ratio: auto;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:aspect-square') {
+        @include assert {
+          @include output {
+            @include lg\:aspect-square;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              aspect-ratio: #{1 / 1};
+            }
+          }
+        }
+      }
+
+      @include it('lg\:aspect-video') {
+        @include assert {
+          @include output {
+            @include lg\:aspect-video;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              aspect-ratio: #{16 / 9};
+            }
+          }
+        }
+      }
+
+      @include it('xl\:aspect-auto') {
+        @include assert {
+          @include output {
+            @include xl\:aspect-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              aspect-ratio: auto;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:aspect-square') {
+        @include assert {
+          @include output {
+            @include xl\:aspect-square;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              aspect-ratio: #{1 / 1};
+            }
+          }
+        }
+      }
+
+      @include it('xl\:aspect-video') {
+        @include assert {
+          @include output {
+            @include xl\:aspect-video;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              aspect-ratio: #{16 / 9};
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:aspect-auto') {
+        @include assert {
+          @include output {
+            @include \2xl\:aspect-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              aspect-ratio: auto;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:aspect-square') {
+        @include assert {
+          @include output {
+            @include \2xl\:aspect-square;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              aspect-ratio: #{1 / 1};
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:aspect-video') {
+        @include assert {
+          @include output {
+            @include \2xl\:aspect-video;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              aspect-ratio: #{16 / 9};
+            }
+          }
+        }
+      }
+    }
+
+    @include describe('Custom') {
+      @include it('aspect-(4/3)') {
+        @include assert {
+          @include output {
+            @include aspect-(#{4/3});
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            aspect-ratio: #{4/3};
+          }
+        }
+      }
+
+      @include it('sm\:aspect-(4/3)') {
+        @include assert {
+          @include output {
+            @include sm\:aspect-(#{4/3});
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              aspect-ratio: #{4/3};
+            }
+          }
+        }
+      }
+
+      @include it('md\:aspect-(4/3)') {
+        @include assert {
+          @include output {
+            @include md\:aspect-(#{4/3});
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              aspect-ratio: #{4/3};
+            }
+          }
+        }
+      }
+
+      @include it('lg\:aspect-(4/3)') {
+        @include assert {
+          @include output {
+            @include lg\:aspect-(#{4/3});
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              aspect-ratio: #{4/3};
+            }
+          }
+        }
+      }
+
+      @include it('xl\:aspect-(4/3)') {
+        @include assert {
+          @include output {
+            @include xl\:aspect-(#{4/3});
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              aspect-ratio: #{4/3};
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:aspect-(4/3)') {
+        @include assert {
+          @include output {
+            @include \2xl\:aspect-(#{4/3});
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              aspect-ratio: #{4/3};
+            }
+          }
+        }
+      }
+    }
+  }
+}

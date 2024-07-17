@@ -1,0 +1,48 @@
+// 1st: overflow
+// 2nd: text-overflow
+// 3rd: white-space
+$TextOverflow: (
+  'truncate': (
+    hidden,
+    ellipsis,
+    nowrap,
+  ),
+  'text-ellipsis': (
+    'null',
+    ellipsis,
+    'null',
+  ),
+  'text-clip': (
+    'null',
+    clip,
+    'null',
+  ),
+);
+
+@if $isBasic {
+  @each $key, $value in $TextOverflow {
+    /*x 
+    @mixin #{$key} {
+      @include overflow(#{list.nth($value, 1)});
+      @include text-overflow(#{list.nth($value, 2)});
+      @include white-space(#{list.nth($value, 3)});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $TextOverflow {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include utils_#{$rwdToken} {
+          @include overflow(#{list.nth($value, 1)});
+          @include text-overflow(#{list.nth($value, 2)});
+          @include white-space(#{list.nth($value, 3)});
+        }
+      }
+      x*/
+    }
+  }
+}

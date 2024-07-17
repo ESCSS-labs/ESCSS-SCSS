@@ -1,0 +1,77 @@
+$group-Overflow: (
+  'overflow-auto': auto,
+  'overflow-hidden': hidden,
+  'overflow-clip': clip,
+  'overflow-visible': visible,
+  'overflow-scroll': scroll,
+);
+
+$group-Overflow-x: (
+  'overflow-x-auto': auto,
+  'overflow-x-hidden': hidden,
+  'overflow-x-clip': clip,
+  'overflow-x-visible': visible,
+  'overflow-x-scroll': scroll,
+);
+
+$group-Overflow-y: (
+  'overflow-y-auto': auto,
+  'overflow-y-hidden': hidden,
+  'overflow-y-clip': clip,
+  'overflow-y-visible': visible,
+  'overflow-y-scroll': scroll,
+);
+
+@if $isBasic {
+  @each $key, $value in $group-Overflow {
+    /*x
+    @mixin #{$key} {
+      @include overflow(#{$value});
+    }
+    x*/
+  }
+
+  @each $key, $value in $group-Overflow-x {
+    /*x
+    @mixin #{$key} {
+      @include overflow-x(#{$value});
+    }
+    x*/
+  }
+
+  @each $key, $value in $group-Overflow-y {
+    /*x
+    @mixin #{$key} {
+      @include overflow-y(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $group-Overflow {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include overflow(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+
+    @each $key, $value in $group-Overflow-x {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include overflow-x(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+
+    @each $key, $value in $group-Overflow-y {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include overflow-y(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

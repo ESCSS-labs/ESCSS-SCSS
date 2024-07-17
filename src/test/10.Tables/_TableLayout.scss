@@ -1,0 +1,185 @@
+@import '../_classic_only';
+
+@include describe('10.Tables') {
+  @include describe('Table Layout') {
+    @include describe('Basic') {
+      @include it('table-auto') {
+        @include assert {
+          @include output {
+            @include table-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            table-layout: auto;
+          }
+        }
+      }
+
+      @include it('table-fixed') {
+        @include assert {
+          @include output {
+            @include table-fixed;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            table-layout: fixed;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:table-auto') {
+        @include assert {
+          @include output {
+            @include sm\:table-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              table-layout: auto;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:table-fixed') {
+        @include assert {
+          @include output {
+            @include sm\:table-fixed;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              table-layout: fixed;
+            }
+          }
+        }
+      }
+
+      @include it('md\:table-auto') {
+        @include assert {
+          @include output {
+            @include md\:table-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              table-layout: auto;
+            }
+          }
+        }
+      }
+
+      @include it('md\:table-fixed') {
+        @include assert {
+          @include output {
+            @include md\:table-fixed;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              table-layout: fixed;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:table-auto') {
+        @include assert {
+          @include output {
+            @include lg\:table-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              table-layout: auto;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:table-fixed') {
+        @include assert {
+          @include output {
+            @include lg\:table-fixed;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              table-layout: fixed;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:table-auto') {
+        @include assert {
+          @include output {
+            @include xl\:table-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              table-layout: auto;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:table-fixed') {
+        @include assert {
+          @include output {
+            @include xl\:table-fixed;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              table-layout: fixed;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:table-auto') {
+        @include assert {
+          @include output {
+            @include \2xl\:table-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              table-layout: auto;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:table-fixed') {
+        @include assert {
+          @include output {
+            @include \2xl\:table-fixed;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              table-layout: fixed;
+            }
+          }
+        }
+      }
+    }
+  }
+}

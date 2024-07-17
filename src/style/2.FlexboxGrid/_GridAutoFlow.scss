@@ -1,0 +1,29 @@
+$GridAutoFlow: (
+  'grid-flow-row': row,
+  'grid-flow-col': column,
+  'grid-flow-dense': dense,
+  'grid-flow-row-dense': row dense,
+  'grid-flow-col-dense': column dense,
+);
+
+@if $isBasic {
+  @each $key, $value in $GridAutoFlow {
+    /*x
+    @mixin #{$key} {
+      @include grid-auto-flow(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $GridAutoFlow {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include grid-auto-flow(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

@@ -1,0 +1,29 @@
+$AlignItems: (
+  'items-start': flex-start,
+  'items-end': flex-end,
+  'items-center': center,
+  'items-baseline': baseline,
+  'items-stretch': stretch,
+);
+
+@if $isBasic {
+  @each $key, $value in $AlignItems {
+    /*x
+    @mixin #{$key} {
+      @include align-items(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $AlignItems {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include align-items(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

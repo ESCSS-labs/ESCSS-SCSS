@@ -1,0 +1,285 @@
+@import '../_classic_only';
+
+@include describe('5.Typography') {
+  @include describe('Text Overflow') {
+    @include describe('Basic') {
+      @include it('truncate') {
+        @include assert {
+          @include output {
+            @include truncate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      @include it('text-ellipsis') {
+        @include assert {
+          @include output {
+            @include text-ellipsis;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            text-overflow: ellipsis;
+          }
+        }
+      }
+
+      @include it('text-clip') {
+        @include assert {
+          @include output {
+            @include text-clip;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            text-overflow: clip;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:truncate') {
+        @include assert {
+          @include output {
+            @include sm\:truncate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:text-ellipsis') {
+        @include assert {
+          @include output {
+            @include sm\:text-ellipsis;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:text-clip') {
+        @include assert {
+          @include output {
+            @include sm\:text-clip;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              text-overflow: clip;
+            }
+          }
+        }
+      }
+
+      @include it('md\:truncate') {
+        @include assert {
+          @include output {
+            @include md\:truncate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+
+      @include it('md\:text-ellipsis') {
+        @include assert {
+          @include output {
+            @include md\:text-ellipsis;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+
+      @include it('md\:text-clip') {
+        @include assert {
+          @include output {
+            @include md\:text-clip;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              text-overflow: clip;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:truncate') {
+        @include assert {
+          @include output {
+            @include lg\:truncate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:text-ellipsis') {
+        @include assert {
+          @include output {
+            @include lg\:text-ellipsis;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:text-clip') {
+        @include assert {
+          @include output {
+            @include lg\:text-clip;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              text-overflow: clip;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:truncate') {
+        @include assert {
+          @include output {
+            @include xl\:truncate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:text-ellipsis') {
+        @include assert {
+          @include output {
+            @include xl\:text-ellipsis;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:text-clip') {
+        @include assert {
+          @include output {
+            @include xl\:text-clip;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              text-overflow: clip;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:truncate') {
+        @include assert {
+          @include output {
+            @include \2xl\:truncate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:text-ellipsis') {
+        @include assert {
+          @include output {
+            @include \2xl\:text-ellipsis;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:text-clip') {
+        @include assert {
+          @include output {
+            @include \2xl\:text-clip;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              text-overflow: clip;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,539 @@
+@import '../_classic_only';
+
+@include describe('11.Transitions & Animation') {
+  @include describe('Animation') {
+    @include describe('Basic') {
+      @include it('animate-none') {
+        @include assert {
+          @include output {
+            @include animate-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            animation: none;
+          }
+        }
+      }
+
+      @include it('animate-spin') {
+        @include assert {
+          @include output {
+            @include animate-spin;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            animation: spin 1s linear infinite;
+          }
+        }
+      }
+
+      @include it('animate-ping') {
+        @include assert {
+          @include output {
+            @include animate-ping;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          }
+        }
+      }
+
+      @include it('animate-pulse') {
+        @include assert {
+          @include output {
+            @include animate-pulse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          }
+        }
+      }
+
+      @include it('animate-bounce') {
+        @include assert {
+          @include output {
+            @include animate-bounce;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            animation: bounce 1s infinite;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:animate-none') {
+        @include assert {
+          @include output {
+            @include sm\:animate-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              animation: none;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:animate-spin') {
+        @include assert {
+          @include output {
+            @include sm\:animate-spin;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:animate-ping') {
+        @include assert {
+          @include output {
+            @include sm\:animate-ping;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include sm\:animate-pulse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include sm\:animate-bounce;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+
+      @include it('md\:animate-none') {
+        @include assert {
+          @include output {
+            @include md\:animate-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              animation: none;
+            }
+          }
+        }
+      }
+
+      @include it('md\:animate-spin') {
+        @include assert {
+          @include output {
+            @include md\:animate-spin;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+
+      @include it('md\:animate-ping') {
+        @include assert {
+          @include output {
+            @include md\:animate-ping;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('md\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include md\:animate-pulse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('md\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include md\:animate-bounce;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:animate-none') {
+        @include assert {
+          @include output {
+            @include lg\:animate-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              animation: none;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:animate-spin') {
+        @include assert {
+          @include output {
+            @include lg\:animate-spin;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:animate-ping') {
+        @include assert {
+          @include output {
+            @include lg\:animate-ping;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include lg\:animate-pulse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include lg\:animate-bounce;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:animate-none') {
+        @include assert {
+          @include output {
+            @include xl\:animate-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              animation: none;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:animate-spin') {
+        @include assert {
+          @include output {
+            @include xl\:animate-spin;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:animate-ping') {
+        @include assert {
+          @include output {
+            @include xl\:animate-ping;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include xl\:animate-pulse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include xl\:animate-bounce;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:animate-none') {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              animation: none;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:animate-spin') {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-spin;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:animate-ping') {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-ping;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-pulse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-bounce;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              animation: bounce 1s infinite;
+            }
+          }
+        }
+      }
+    }
+
+    @include describe('Custom') {
+      @include it('animate-(wiggle 1s ease-in-out infinite)') {
+        @include assert {
+          @include output {
+            @include animate-(wiggle 1s ease-in-out infinite);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            animation: wiggle 1s ease-in-out infinite;
+          }
+        }
+      }
+
+      @include it('sm\:animate-(wiggle 1s ease-in-out infinite)') {
+        @include assert {
+          @include output {
+            @include sm\:animate-(wiggle 1s ease-in-out infinite);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+      @include it('md\:animate-(wiggle 1s ease-in-out infinite)') {
+        @include assert {
+          @include output {
+            @include md\:animate-(wiggle 1s ease-in-out infinite);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:animate-(wiggle 1s ease-in-out infinite)') {
+        @include assert {
+          @include output {
+            @include lg\:animate-(wiggle 1s ease-in-out infinite);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:animate-(wiggle 1s ease-in-out infinite)') {
+        @include assert {
+          @include output {
+            @include xl\:animate-(wiggle 1s ease-in-out infinite);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:animate-(wiggle 1s ease-in-out infinite)') {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-(wiggle 1s ease-in-out infinite);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              animation: wiggle 1s ease-in-out infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+}

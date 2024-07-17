@@ -1,0 +1,28 @@
+$BackgroundsClip: (
+  'bg-clip-border': border-box,
+  'bg-clip-padding': padding-box,
+  'bg-clip-content': content-box,
+  'bg-clip-text': text,
+);
+
+@if $isBasic {
+  @each $key, $value in $BackgroundsClip {
+    /*x
+    @mixin #{$key}{
+      @include background-clip(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BackgroundsClip {
+      /*x
+      @mixin #{$rwdToken}\:#{$key}{
+        @include background-clip(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

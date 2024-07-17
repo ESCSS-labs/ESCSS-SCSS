@@ -1,0 +1,162 @@
+@import '../_classic_only';
+
+// https://www.oddbird.net/true/docs/api-errors
+// Sass doesn’t (yet) provide a way to catch errors, you need to switch @mixin and get a error message as expected
+
+@include describe(
+  'you need to manually test to check error message is working'
+) {
+  @include describe('Scroll Snap Type') {
+    @include describe('Basic') {
+      @include it(
+        '「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)'
+      ) {
+        @include assert {
+          @include output {
+            @include snap-mandatory;
+            @include snap-y;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            scroll-snap-type: y mandatory;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it(
+        '「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)'
+      ) {
+        @include assert {
+          @include output {
+            @include sm\:snap-mandatory;
+            @include sm\:snap-y;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              scroll-snap-type: y mandatory;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include describe('Box Shadow Color') {
+    @include describe('Basic') {
+      @include it(
+        'e.g.「 shadow-(0px 0px 5px 10px red) 」should go before「 shadow-sky-500 」(to have same behavior as tailwind)'
+      ) {
+        @include assert {
+          @include output {
+            @include shadow-(0px 0px 5px 10px red);
+            @include shadow-sky-500;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            box-shadow:
+              0 0 0 0 #fff,
+              0 0 0 0 rgba(59, 130, 246, 0.5),
+              0px 0px 5px 10px red;
+            box-shadow:
+              0 0 0 0 #fff,
+              0 0 0 0 rgba(59, 130, 246, 0.5),
+              0px 0px 5px 10px #0ea5e9;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it(
+        'e.g.「 shadow-(0px 0px 5px 10px red) 」should go before「 shadow-sky-500 」(to have same behavior as tailwind)'
+      ) {
+        @include assert {
+          @include output {
+            @include sm\:shadow-(0px 0px 5px 10px red);
+            @include sm\:shadow-sky-500;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 0 rgba(59, 130, 246, 0.5),
+                0px 0px 5px 10px red;
+            }
+
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 0 #fff,
+                0 0 0 0 rgba(59, 130, 246, 0.5),
+                0px 0px 5px 10px #0ea5e9;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include describe('Ring Shadow Width') {
+    @include describe('Basic') {
+      @include it(
+        '「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)'
+      ) {
+        @include assert {
+          @include output {
+            @include ring-offset-8;
+            @include ring-8;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            box-shadow:
+              0 0 0 8px #fff,
+              0 0 0 0 rgba(59, 130, 246, 0.5),
+              0 0 0 0 #fff;
+            box-shadow:
+              0 0 0 8px #fff,
+              0 0 0 16px rgba(59, 130, 246, 0.5),
+              0 0 0 0 #fff;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it(
+        '「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)'
+      ) {
+        @include assert {
+          @include output {
+            @include sm\:ring-offset-8;
+            @include sm\:ring-8;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 8px #fff,
+                0 0 0 0 rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+
+            @media (min-width: $_sm) {
+              box-shadow:
+                0 0 0 8px #fff,
+                0 0 0 16px rgba(59, 130, 246, 0.5),
+                0 0 0 0 #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

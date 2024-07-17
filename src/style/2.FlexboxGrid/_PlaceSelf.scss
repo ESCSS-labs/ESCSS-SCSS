@@ -1,0 +1,29 @@
+$PlaceSelf: (
+  'place-self-auto': auto,
+  'place-self-start': start,
+  'place-self-end': end,
+  'place-self-center': center,
+  'place-self-stretch': stretch,
+);
+
+@if $isBasic {
+  @each $key, $value in $PlaceSelf {
+    /*x
+    @mixin #{$key} {
+      @include place-self(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $PlaceSelf {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include place-self(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

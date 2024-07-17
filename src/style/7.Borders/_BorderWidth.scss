@@ -1,0 +1,102 @@
+// Custom same as @mixin border-($v)
+$BorderWidth: (
+  '-0': 0px,
+  null: 1px,
+  '-2': 2px,
+  '-4': 4px,
+  '-8': 8px,
+);
+
+@if $isBasic {
+  @each $key, $value in $BorderWidth {
+    /*x
+    @mixin border#{$key} {
+      @include border-width(#{$value});
+    }
+
+    @mixin border-x#{$key} {
+      @include border-left-width(#{$value});
+      @include border-right-width(#{$value});
+    }
+
+    @mixin border-y#{$key} {
+      @include border-top-width(#{$value});
+      @include border-bottom-width(#{$value});
+    }
+
+    @mixin border-s#{$key} {
+      @include border-inline-start-width(#{$value});
+    }
+
+    @mixin border-e#{$key} {
+      @include border-inline-end-width(#{$value});
+    }
+
+    @mixin border-t#{$key} {
+      @include border-top-width(#{$value});
+    }
+
+    @mixin border-r#{$key} {
+      @include border-right-width(#{$value});
+    }
+
+    @mixin border-b#{$key} {
+      @include border-bottom-width(#{$value});
+    }
+
+    @mixin border-l#{$key} {
+      @include border-left-width(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BorderWidth {
+      /*x
+      @mixin #{$rwdToken}\:border#{$key} {
+        @include border-width(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:border-x#{$key} {
+        @include utils_#{$rwdToken} {
+          @include border-left-width(#{$value});
+          @include border-right-width(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:border-y#{$key} {
+        @include utils_#{$rwdToken} {
+          @include border-top-width(#{$value});
+          @include border-bottom-width(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:border-s#{$key} {
+        @include border-inline-start-width(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:border-e#{$key} {
+        @include border-inline-end-width(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:border-t#{$key} {
+        @include border-top-width(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:border-r#{$key} {
+        @include border-right-width(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:border-b#{$key} {
+        @include border-bottom-width(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:border-l#{$key} {
+        @include border-left-width(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

@@ -1,0 +1,30 @@
+$Clear: (
+  'clear-start': inline-start,
+  'clear-end': inline-end,
+  'clear-left': left,
+  'clear-right': right,
+  'clear-both': both,
+  'clear-none': none,
+);
+
+@if $isBasic {
+  @each $key, $value in $Clear {
+    /*x
+    @mixin #{$key} {
+      @include clear(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $Clear {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include clear(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

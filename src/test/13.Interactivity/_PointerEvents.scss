@@ -1,0 +1,185 @@
+@import '../_classic_only';
+
+@include describe('13.Interactivity') {
+  @include describe('Pointer Events') {
+    @include describe('Basic') {
+      @include it('pointer-events-none') {
+        @include assert {
+          @include output {
+            @include pointer-events-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            pointer-events: none;
+          }
+        }
+      }
+
+      @include it('pointer-events-auto') {
+        @include assert {
+          @include output {
+            @include pointer-events-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            pointer-events: auto;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:pointer-events-none') {
+        @include assert {
+          @include output {
+            @include sm\:pointer-events-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:pointer-events-auto') {
+        @include assert {
+          @include output {
+            @include sm\:pointer-events-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+
+      @include it('md\:pointer-events-none') {
+        @include assert {
+          @include output {
+            @include md\:pointer-events-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it('md\:pointer-events-auto') {
+        @include assert {
+          @include output {
+            @include md\:pointer-events-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:pointer-events-none') {
+        @include assert {
+          @include output {
+            @include lg\:pointer-events-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:pointer-events-auto') {
+        @include assert {
+          @include output {
+            @include lg\:pointer-events-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:pointer-events-none') {
+        @include assert {
+          @include output {
+            @include xl\:pointer-events-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:pointer-events-auto') {
+        @include assert {
+          @include output {
+            @include xl\:pointer-events-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:pointer-events-none') {
+        @include assert {
+          @include output {
+            @include \2xl\:pointer-events-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:pointer-events-auto') {
+        @include assert {
+          @include output {
+            @include \2xl\:pointer-events-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

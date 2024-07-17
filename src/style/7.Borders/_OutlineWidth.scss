@@ -1,0 +1,30 @@
+// Custom same as @mixin outline-($v)
+$OutlineWidth: (
+  'outline-0': 0px,
+  'outline-1': 1px,
+  'outline-2': 2px,
+  'outline-4': 4px,
+  'outline-8': 8px,
+);
+
+@if $isBasic {
+  @each $key, $value in $OutlineWidth {
+    /*x
+    @mixin #{$key} {
+      @include outline-width(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $OutlineWidth {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include outline-width(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

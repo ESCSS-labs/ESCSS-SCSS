@@ -1,0 +1,28 @@
+$UserSelect: (
+  'select-none': none,
+  'select-text': text,
+  'select-all': all,
+  'select-auto': auto,
+);
+
+@if $isBasic {
+  @each $key, $value in $UserSelect {
+    /*x
+    @mixin #{$key} {
+      @include user-select(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $UserSelect {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include user-select(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

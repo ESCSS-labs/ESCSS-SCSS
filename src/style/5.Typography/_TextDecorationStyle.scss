@@ -1,0 +1,29 @@
+$TextDecorationStyle: (
+  'decoration-solid': solid,
+  'decoration-double': double,
+  'decoration-dotted': dotted,
+  'decoration-dashed': dashed,
+  'decoration-wavy': wavy,
+);
+
+@if $isBasic {
+  @each $key, $value in $TextDecorationStyle {
+    /*x
+    @mixin #{$key}{
+      @include text-decoration-style(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $TextDecorationStyle {
+      /*x
+      @mixin #{$rwdToken}\:#{$key}{
+        @include text-decoration-style(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

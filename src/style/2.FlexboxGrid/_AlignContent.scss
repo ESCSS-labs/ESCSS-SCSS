@@ -1,0 +1,33 @@
+$AlignContent: (
+  'content-normal': normal,
+  'content-center': center,
+  'content-start': flex-start,
+  'content-end': flex-end,
+  'content-between': space-between,
+  'content-around': space-around,
+  'content-evenly': space-evenly,
+  'content-baseline': baseline,
+  'content-stretch': stretch,
+);
+
+@if $isBasic {
+  @each $key, $value in $AlignContent {
+    /*x
+    @mixin #{$key} {
+      @include align-content(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $AlignContent {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include align-content(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

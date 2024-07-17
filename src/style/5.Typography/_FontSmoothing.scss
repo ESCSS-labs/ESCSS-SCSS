@@ -1,0 +1,38 @@
+// 1st: -webkit-font-smoothing
+// 2nd: -moz-osx-font-smoothing
+$FontSmoothing: (
+  'antialiased': (
+    antialiased,
+    grayscale,
+  ),
+  'subpixel-antialiased': (
+    auto,
+    auto,
+  ),
+);
+
+@if $isBasic {
+  @each $key, $value in $FontSmoothing {
+    /*x
+    @mixin #{$key} {
+      @include -webkit-font-smoothing(#{list.nth($value, 1)});
+      @include -moz-osx-font-smoothing(#{list.nth($value, 2)});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $FontSmoothing {
+      /*x
+        @mixin #{$rwdToken}\:#{$key} {
+          @include utils_#{$rwdToken} {
+            @include -webkit-font-smoothing(#{list.nth($value, 1)});
+            @include -moz-osx-font-smoothing(#{list.nth($value, 2)});
+          }
+        }
+      x*/
+    }
+  }
+}

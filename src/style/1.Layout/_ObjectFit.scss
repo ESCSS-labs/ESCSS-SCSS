@@ -1,0 +1,29 @@
+$ObjectFit: (
+  'object-contain': contain,
+  'object-cover': cover,
+  'object-fill': fill,
+  'object-none': none,
+  'object-scale-down': scale-down,
+);
+
+@if $isBasic {
+  @each $key, $value in $ObjectFit {
+    /*x
+    @mixin #{$key} {
+      @include object-fit(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $ObjectFit {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include object-fit(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

@@ -2,73 +2,21 @@
 // 0: update time: 2.5s <5.45 MB>. all basic classes & @media in tailwind.
 // 1: update time 1s <1.92 MB>. no Margin/Padding、ScrollMargin/ScrollPadding、color, using arbitrary values to instead.
 // 2: update time 0.7s <972 KB>. using arbitrary values to instead RWD (if there is an arbitrary value).
-$sizeMode: 0;
+
+// true: tailwind without bg-red-500/25 feature(to reduce 400+ MB). <7.29 MB>
+// false: remove all tailwind rwd without custom feature and replace color opacity by bg-red-500($v: 1). <984 KB>
+$isClassic: false;
 
 // Controlling render output
-$Basic: true; // Tailwind classes
-$Rwd: true; // Tailwind classes which have media queries
-$Custom: true; // Tailwind classes which have arbitrary values
+$isBasic: true; // Tailwind classes
+$isRwd: true; // Tailwind classes which have media queries
+$isCustom: true; // Tailwind classes which have arbitrary values
+$isNegative: true; // Tailwind tailwind negative utils
 
-$rwdBox: "sm", "md", "lg", "xl", "\\2xl";
-
-/*x
-// Inner API
-
-// c stands for color (file size concern)
-@function c($token, $v) {
-  @if not math.is-unitless($v) {
-    // If use / outside of calc() after v1.33, it will pop out warnings in the terminal,
-    // the better way is forbidden % and provides the color.change() method
-    @error "$v: Expected #/*x{$v / 100%} not #/*x{$v}, backward compatibility concern";
-  }
-
-  // $alpha only accepts 0 ~ 1, https://sass-lang.com/documentation/modules/color/#change
-  @return color.change($token, $alpha: $v);
-}
-
-@function get_box-shadow() {
-  $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width $tw-ring-offset-color;
-  $tw-ring-shadow: $tw-ring-inset 0 0 0 $tw-dummy-ring-width $tw-ring-color;
-  $tw-shadow: null;
-
-  @if list.index(shadow md lg xl, $tw-dummy-shadow-token) {
-    $tw-shadow: list.nth($tw-dummy-shadow-width, 1) $tw-shadow-color, list.nth($tw-dummy-shadow-width, 2) $tw-shadow-color;
-  }
-
-  @else if $tw-dummy-shadow-token ==inner {
-    $tw-shadow: inset $tw-dummy-shadow-width $tw-shadow-color;
-  }
-
-  @else {
-    $tw-shadow: $tw-dummy-shadow-width $tw-shadow-color;
-  }
-
-  @return $tw-ring-offset-shadow, $tw-ring-shadow, $tw-shadow;
-}
-
-@function get_transform() {
-  @return translate($tw-translate-x, $tw-translate-y) rotate($tw-rotate) skewX($tw-skew-x) skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
-}
-
-@function get_filter() {
-  @return $tw-blur $tw-brightness $tw-contrast $tw-grayscale $tw-hue-rotate $tw-invert $tw-saturate $tw-sepia $tw-drop-shadow;
-}
-
-@function get_backdrop-filter() {
-  @return $tw-backdrop-blur $tw-backdrop-brightness $tw-backdrop-contrast $tw-backdrop-grayscale $tw-backdrop-hue-rotate $tw-backdrop-invert $tw-backdrop-opacity $tw-backdrop-saturate $tw-backdrop-sepia;
-}
-
-@function get_linear-gradient() {
-  @if $tw-dummy-gradient-direction==none {
-    @return none;
-  }
-
-  @else if $tw-gradient-via==null {
-    @return linear-gradient($tw-dummy-gradient-direction, $tw-gradient-from $tw-gradient-from-position, $tw-gradient-to $tw-gradient-to-position );
-  }
-
-  @else {
-    @return linear-gradient($tw-dummy-gradient-direction, $tw-gradient-from $tw-gradient-from-position, $tw-gradient-via $tw-gradient-via-position, $tw-gradient-to $tw-gradient-to-position );
-  }
-}
-x*/
+$rwdBox: (
+  'sm': '$_sm',
+  'md': '$_md',
+  'lg': '$_lg',
+  'xl': '$_xl',
+  '\\2xl': '$_2xl',
+);

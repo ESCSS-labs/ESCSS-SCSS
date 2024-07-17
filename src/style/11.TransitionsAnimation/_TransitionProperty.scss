@@ -1,0 +1,90 @@
+// 1st: transition-property
+// 2nd: transition-timing-function
+// 3rd: transition-duration
+$TransitionProperty: (
+  'transition-none': (
+    none,
+    'null',
+    'null',
+  ),
+  'transition-all': (
+    all,
+    cubic-bezier(0.4, 0, 0.2, 1),
+    150ms,
+  ),
+  'transition': (
+    '#/*x{(color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter)}',
+    cubic-bezier(0.4, 0, 0.2, 1),
+    150ms,
+  ),
+  'transition-colors': (
+    '#/*x{(color, background-color, border-color, text-decoration-color, fill, stroke)}',
+    cubic-bezier(0.4, 0, 0.2, 1),
+    150ms,
+  ),
+  'transition-opacity': (
+    opacity,
+    cubic-bezier(0.4, 0, 0.2, 1),
+    150ms,
+  ),
+  'transition-shadow': (
+    box-shadow,
+    cubic-bezier(0.4, 0, 0.2, 1),
+    150ms,
+  ),
+  'transition-transform': (
+    transform,
+    cubic-bezier(0.4, 0, 0.2, 1),
+    150ms,
+  ),
+);
+
+@if $isBasic {
+  @each $key, $value in $TransitionProperty {
+    /*x
+    @mixin #{$key} {
+      @include transition-property(#{list.nth($value, 1)});
+      @include transition-timing-function(#{list.nth($value, 2)});
+      @include transition-duration(#{list.nth($value, 3)});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $TransitionProperty {
+      /*x
+    @mixin #{$rwdToken}\:#{$key} {
+      @include utils_#{$rwdToken} {
+        @include transition-property(#{list.nth($value, 1)});
+        @include transition-timing-function(#{list.nth($value, 2)});
+        @include transition-duration(#{list.nth($value, 3)});
+      }
+    }
+    x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin transition-($v) {
+    @include transition-property($v);
+    @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+    @include transition-duration(150ms);
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:transition-($v) {
+      @include utils_#{$rwdToken} {
+        @include transition-property($v);
+        @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+        @include transition-duration(150ms);
+      }
+    }
+    x*/
+  }
+}

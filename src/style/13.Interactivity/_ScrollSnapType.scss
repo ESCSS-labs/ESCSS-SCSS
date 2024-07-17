@@ -1,0 +1,68 @@
+$ScrollSnapType: (
+  'snap-none': none,
+  'snap-x': x '$tw-scroll-snap-strictness',
+  'snap-y': y '$tw-scroll-snap-strictness',
+  'snap-both': both '$tw-scroll-snap-strictness',
+  'snap-mandatory': mandatory,
+  'snap-proximity': proximity,
+);
+
+@if $isBasic {
+  @each $key, $value in $ScrollSnapType {
+    @if list.index('snap-none', $key) {
+      /*x
+      @mixin #{$key} {
+        @include scroll-snap-type(#{$value});
+      }
+      x*/
+    } @else if list.index('snap-x' 'snap-y' 'snap-both', $key) {
+      /*x
+      @mixin #{$key} {
+        $tw-dummy-not-match--snap: true !global;
+        @include scroll-snap-type(#{$value});
+      }
+      x*/
+    } @else if list.index('snap-mandatory' 'snap-proximity', $key) {
+      /*x
+      @mixin #{$key} {
+        @if $tw-dummy-not-match--snap {
+          @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+        }
+
+        $tw-scroll-snap-strictness: #{$value} !global;
+      }
+      x*/
+    }
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $ScrollSnapType {
+      @if list.index('snap-none', $key) {
+        /*x
+        @mixin #{$rwdToken}\:#{$key} {
+          @include scroll-snap-type(#{$value}, #{$rwd});
+        }
+        x*/
+      } @else if list.index('snap-x' 'snap-y' 'snap-both', $key) {
+        /*x
+        @mixin #{$rwdToken}\:#{$key} {
+          $tw-dummy-not-match--snap: true !global;
+          @include scroll-snap-type(#{$value}, #{$rwd});
+        }
+        x*/
+      } @else if list.index('snap-mandatory' 'snap-proximity', $key) {
+        /*x
+        @mixin #{$rwdToken}\:#{$key} {
+          @if $tw-dummy-not-match--snap {
+            @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
+          }
+  
+          $tw-scroll-snap-strictness: #{$value} !global;
+        }
+        x*/
+      }
+    }
+  }
+}

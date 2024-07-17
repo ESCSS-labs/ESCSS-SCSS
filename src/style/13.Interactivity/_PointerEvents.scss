@@ -1,0 +1,26 @@
+$PointerEvents: (
+  'pointer-events-none': none,
+  'pointer-events-auto': auto,
+);
+
+@if $isBasic {
+  @each $key, $value in $PointerEvents {
+    /*x
+    @mixin #{$key} {
+      @include pointer-events(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $PointerEvents {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include pointer-events(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

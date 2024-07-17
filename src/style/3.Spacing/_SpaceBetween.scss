@@ -1,0 +1,329 @@
+$SpaceBetween: (
+  '0': '$_0',
+  'px': '$_px',
+  '0\\.5': '$_0\\.5',
+  '1': '$_1',
+  '1\\.5': '$_1\\.5',
+  '2': '$_2',
+  '2\\.5': '$_2\\.5',
+  '3': '$_3',
+  '3\\.5': '$_3\\.5',
+  '4': '$_4',
+  '5': '$_5',
+  '6': '$_6',
+  '7': '$_7',
+  '8': '$_8',
+  '9': '$_9',
+  '10': '$_10',
+  '11': '$_11',
+  '12': '$_12',
+  '14': '$_14',
+  '16': '$_16',
+  '20': '$_20',
+  '24': '$_24',
+  '28': '$_28',
+  '32': '$_32',
+  '36': '$_36',
+  '40': '$_40',
+  '44': '$_44',
+  '48': '$_48',
+  '52': '$_52',
+  '56': '$_56',
+  '60': '$_60',
+  '64': '$_64',
+  '72': '$_72',
+  '80': '$_80',
+  '96': '$_96',
+);
+
+@if $isBasic {
+  /*x
+  @mixin space-x-reverse {
+    $tw-space-x-reverse: 1 !global;
+
+    > * ~ * {
+      @include margin-left($tw-dummy-space-x-value * (1 - $tw-space-x-reverse));
+      @include margin-right($tw-dummy-space-x-value * $tw-space-x-reverse);
+    }
+  }
+
+  @mixin space-y-reverse {
+    $tw-space-y-reverse: 1 !global;
+
+    > * ~ * {
+      @include margin-top($tw-dummy-space-y-value * (1 - $tw-space-y-reverse));
+      @include margin-bottom($tw-dummy-space-y-value * $tw-space-y-reverse);
+    }
+  }
+  x*/
+
+  @each $key, $value in $SpaceBetween {
+    /*x
+    @mixin space-x-#{$key} {
+      $tw-dummy-space-x-value: #{$value} !global;
+
+      > * ~ * {
+        @include margin-left(#{$value} * (1 - $tw-space-x-reverse));
+        @include margin-right(#{$value} * $tw-space-x-reverse);
+      }
+    }
+
+    @mixin space-y-#{$key} {
+      $tw-dummy-space-y-value: #{$value} !global;
+
+      > * ~ * {
+        @include margin-top(#{$value} * (1 - $tw-space-y-reverse));
+        @include margin-bottom(#{$value} * $tw-space-y-reverse);
+      }
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:space-x-reverse {
+      $tw-space-x-reverse: 1 !global;
+
+      @include utils_#{$rwdToken} {
+        > * ~ * {
+          @include margin-left($tw-dummy-space-x-value * (1 - $tw-space-x-reverse));
+          @include margin-right($tw-dummy-space-x-value * $tw-space-x-reverse);
+        }
+      }
+    }
+
+    @mixin #{$rwdToken}\:space-y-reverse {
+      $tw-space-y-reverse: 1 !global;
+
+      @include utils_#{$rwdToken} {
+        > * ~ * {
+          @include margin-top($tw-dummy-space-y-value * (1 - $tw-space-y-reverse));
+          @include margin-bottom($tw-dummy-space-y-value * $tw-space-y-reverse);
+        }
+      }
+    }
+    x*/
+
+    @each $key, $value in $SpaceBetween {
+      /*x
+      @mixin #{$rwdToken}\:space-x-#{$key} {
+        $tw-dummy-space-x-value: #{$value} !global;
+
+        @include utils_#{$rwdToken} {
+          > * ~ * {
+            @include margin-left(#{$value} * (1 - $tw-space-x-reverse));
+            @include margin-right(#{$value} * $tw-space-x-reverse);
+          }
+        }
+      }
+
+      @mixin #{$rwdToken}\:space-y-#{$key} {
+        $tw-dummy-space-y-value: #{$value} !global;
+
+        @include utils_#{$rwdToken} {
+          > * ~ * {
+            @include margin-top(#{$value} * (1 - $tw-space-y-reverse));
+            @include margin-bottom(#{$value} * $tw-space-y-reverse);
+          }
+        }
+      }
+      x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin space-x-($v) {
+    $tw-dummy-space-x-value: $v !global; // update value when using reverse
+
+    > * ~ * {
+      @include margin-left($v * (1 - $tw-space-x-reverse));
+      @include margin-right($v * $tw-space-x-reverse);
+    }
+  }
+
+  @mixin space-y-($v) {
+    $tw-dummy-space-y-value: $v !global; // update value when using reverse
+
+    > * ~ * {
+      @include margin-top($v * (1 - $tw-space-y-reverse));
+      @include margin-bottom($v * $tw-space-y-reverse);
+    }
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:space-x-($v) {
+      $tw-dummy-space-x-value: $v !global; // update value when using reverse
+
+      @include utils_#{$rwdToken} {
+        > * ~ * {
+          @include margin-left($v * (1 - $tw-space-x-reverse));
+          @include margin-right($v * $tw-space-x-reverse);
+        }
+      }
+    }
+
+    @mixin #{$rwdToken}\:space-y-($v) {
+      $tw-dummy-space-y-value: $v !global; // update value when using reverse
+
+      @include utils_#{$rwdToken} {
+        > * ~ * {
+          @include margin-top($v * (1 - $tw-space-y-reverse));
+          @include margin-bottom($v * $tw-space-y-reverse);
+        }
+      }
+    }
+    x*/
+  }
+}
+
+@if $isNegative {
+  @if $isBasic {
+    /*x
+      @mixin -space-x-reverse {
+        $tw-space-x-reverse: 1 !global;
+  
+        > * ~ * {
+          @include margin-left(-$tw-dummy-space-x-value * (1 - $tw-space-x-reverse));
+          @include margin-right(-$tw-dummy-space-x-value * $tw-space-x-reverse);
+        }
+      }
+  
+      @mixin -space-y-reverse {
+        $tw-space-y-reverse: 1 !global;
+  
+        > * ~ * {
+          @include margin-top(-$tw-dummy-space-y-value * (1 - $tw-space-y-reverse));
+          @include margin-bottom(-$tw-dummy-space-y-value * $tw-space-y-reverse);
+        }
+      }
+    x*/
+    @each $key, $value in $SpaceBetween {
+      /*x
+      @mixin -space-x-#{$key} {
+        $tw-dummy-space-x-value: -#{$value} !global;
+  
+        > * ~ * {
+          @include margin-left(-#{$value} * (1 - $tw-space-x-reverse));
+          @include margin-right(-#{$value} * $tw-space-x-reverse);
+        }
+      }
+  
+      @mixin -space-y-#{$key} {
+        $tw-dummy-space-y-value: -#{$value} !global;
+  
+        > * ~ * {
+          @include margin-top(-#{$value} * (1 - $tw-space-y-reverse));
+          @include margin-bottom(-#{$value} * $tw-space-y-reverse);
+        }
+      }
+      x*/
+    }
+  }
+
+  @if $isRwd and $isClassic {
+    @each $rwdToken, $rwd in $rwdBox {
+      /*x
+      @mixin #{$rwdToken}\:-space-x-reverse {
+        $tw-space-x-reverse: 1 !global;
+  
+        @include utils_#{$rwdToken} {
+          > * ~ * {
+            @include margin-left(-$tw-dummy-space-x-value * (1 - $tw-space-x-reverse));
+            @include margin-right(-$tw-dummy-space-x-value * $tw-space-x-reverse);
+          }
+        }
+      }
+  
+      @mixin #{$rwdToken}\:-space-y-reverse {
+        $tw-space-y-reverse: 1 !global;
+  
+        @include utils_#{$rwdToken} {
+          > * ~ * {
+            @include margin-top(-$tw-dummy-space-y-value * (1 - $tw-space-y-reverse));
+            @include margin-bottom(-$tw-dummy-space-y-value * $tw-space-y-reverse);
+          }
+        }
+      }
+      x*/
+      @each $key, $value in $SpaceBetween {
+        /*x
+        @mixin #{$rwdToken}\:-space-x-#{$key} {
+          $tw-dummy-space-x-value: -#{$value} !global;
+  
+          @include utils_#{$rwdToken} {
+            > * ~ * {
+              @include margin-left(-#{$value} * (1 - $tw-space-x-reverse));
+              @include margin-right(-#{$value} * $tw-space-x-reverse);
+            }
+          }
+        }
+  
+        @mixin #{$rwdToken}\:-space-y-#{$key} {
+          $tw-dummy-space-y-value: -#{$value} !global;
+  
+          @include utils_#{$rwdToken} {
+            > * ~ * {
+              @include margin-top(-#{$value} * (1 - $tw-space-y-reverse));
+              @include margin-bottom(-#{$value} * $tw-space-y-reverse);
+            }
+          }
+        }
+        x*/
+      }
+    }
+  }
+
+  @if $isCustom {
+    /*x
+    @mixin -space-x-($v) {
+      $tw-dummy-space-x-value: -$v !global; // update value when using reverse
+  
+      > * ~ * {
+        @include margin-left(-$v * (1 - $tw-space-x-reverse));
+        @include margin-right(-$v * $tw-space-x-reverse);
+      }
+    }
+  
+    @mixin -space-y-($v) {
+      $tw-dummy-space-y-value: -$v !global; // update value when using reverse
+  
+      > * ~ * {
+        @include margin-top(-$v * (1 - $tw-space-y-reverse));
+        @include margin-bottom(-$v * $tw-space-y-reverse);
+      }
+    }
+    x*/
+
+    @each $rwdToken, $rwd in $rwdBox {
+      /*x
+      @mixin #{$rwdToken}\:-space-x-($v) {
+        $tw-dummy-space-x-value: -$v !global; // update value when using reverse
+  
+        @include utils_#{$rwdToken} {
+          > * ~ * {
+            @include margin-left(-$v * (1 - $tw-space-x-reverse));
+            @include margin-right(-$v * $tw-space-x-reverse);
+          }
+        }
+      }
+  
+      @mixin #{$rwdToken}\:-space-y-($v) {
+        $tw-dummy-space-y-value: -$v !global; // update value when using reverse
+  
+        @include utils_#{$rwdToken} {
+          > * ~ * {
+            @include margin-top(-$v * (1 - $tw-space-y-reverse));
+            @include margin-bottom(-$v * $tw-space-y-reverse);
+          }
+        }
+      }
+      x*/
+    }
+  }
+}

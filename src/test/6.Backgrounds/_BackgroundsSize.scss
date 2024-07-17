@@ -1,0 +1,363 @@
+@import '../_classic_only';
+
+@include describe('6.Backgrounds') {
+  @include describe('Background Size') {
+    @include describe('Basic') {
+      @include it('bg-auto') {
+        @include assert {
+          @include output {
+            @include bg-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            background-size: auto;
+          }
+        }
+      }
+
+      @include it('bg-cover') {
+        @include assert {
+          @include output {
+            @include bg-cover;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            background-size: cover;
+          }
+        }
+      }
+
+      @include it('bg-contain') {
+        @include assert {
+          @include output {
+            @include bg-contain;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            background-size: contain;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:bg-auto') {
+        @include assert {
+          @include output {
+            @include sm\:bg-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              background-size: auto;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:bg-cover') {
+        @include assert {
+          @include output {
+            @include sm\:bg-cover;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              background-size: cover;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:bg-contain') {
+        @include assert {
+          @include output {
+            @include sm\:bg-contain;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              background-size: contain;
+            }
+          }
+        }
+      }
+
+      @include it('md\:bg-auto') {
+        @include assert {
+          @include output {
+            @include md\:bg-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              background-size: auto;
+            }
+          }
+        }
+      }
+
+      @include it('md\:bg-cover') {
+        @include assert {
+          @include output {
+            @include md\:bg-cover;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              background-size: cover;
+            }
+          }
+        }
+      }
+
+      @include it('md\:bg-contain') {
+        @include assert {
+          @include output {
+            @include md\:bg-contain;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              background-size: contain;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:bg-auto') {
+        @include assert {
+          @include output {
+            @include lg\:bg-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              background-size: auto;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:bg-cover') {
+        @include assert {
+          @include output {
+            @include lg\:bg-cover;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              background-size: cover;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:bg-contain') {
+        @include assert {
+          @include output {
+            @include lg\:bg-contain;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              background-size: contain;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:bg-auto') {
+        @include assert {
+          @include output {
+            @include xl\:bg-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              background-size: auto;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:bg-cover') {
+        @include assert {
+          @include output {
+            @include xl\:bg-cover;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              background-size: cover;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:bg-contain') {
+        @include assert {
+          @include output {
+            @include xl\:bg-contain;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              background-size: contain;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:bg-auto') {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              background-size: auto;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:bg-cover') {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-cover;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              background-size: cover;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:bg-contain') {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-contain;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              background-size: contain;
+            }
+          }
+        }
+      }
+    }
+
+    @include describe('Custom') {
+      @include it('bg-(length: 200px 100px)') {
+        @include assert {
+          @include output {
+            @include bg-(length 200px 100px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            background-size: 200px 100px;
+          }
+        }
+      }
+
+      @include it('sm\:bg-(length: 200px 100px)') {
+        @include assert {
+          @include output {
+            @include sm\:bg-(length 200px 100px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              background-size: 200px 100px;
+            }
+          }
+        }
+      }
+
+      @include it('md\:bg-(length: 200px 100px)') {
+        @include assert {
+          @include output {
+            @include md\:bg-(length 200px 100px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              background-size: 200px 100px;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:bg-(length: 200px 100px)') {
+        @include assert {
+          @include output {
+            @include lg\:bg-(length 200px 100px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              background-size: 200px 100px;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:bg-(length: 200px 100px)') {
+        @include assert {
+          @include output {
+            @include xl\:bg-(length 200px 100px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              background-size: 200px 100px;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:bg-(length: 200px 100px)') {
+        @include assert {
+          @include output {
+            @include \2xl\:bg-(length 200px 100px);
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              background-size: 200px 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

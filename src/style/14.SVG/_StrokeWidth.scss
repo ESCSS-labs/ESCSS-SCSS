@@ -1,0 +1,28 @@
+// Custom same as @mixin stroke-($v)
+$StrokeWidth: (
+  'stroke-0': 0,
+  'stroke-1': 1,
+  'stroke-2': 2,
+);
+
+@if $isBasic {
+  @each $key, $value in $StrokeWidth {
+    /*x
+    @mixin #{$key} {
+      @include stroke-width(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $StrokeWidth {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include stroke-width(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

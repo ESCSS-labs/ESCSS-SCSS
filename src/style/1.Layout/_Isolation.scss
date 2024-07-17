@@ -1,0 +1,26 @@
+$Isolation: (
+  'isolate': isolate,
+  'isolation-auto': auto,
+);
+
+@if $isBasic {
+  @each $key, $value in $Isolation {
+    /*x
+    @mixin #{$key} {
+      @include isolation(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $Isolation {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include isolation(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

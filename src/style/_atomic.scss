@@ -1,0 +1,351 @@
+$atomic: (
+  '-moz-osx-font-smoothing',
+  '-webkit-box-orient',
+  '-webkit-font-smoothing',
+  '-webkit-line-clamp',
+  'accent-color',
+  'align-content',
+  'align-items',
+  'align-self',
+  'animation',
+  'appearance',
+  'aspect-ratio',
+  'backdrop-filter',
+  'background-attachment',
+  'background-blend-mode',
+  'background-clip',
+  'background-color',
+  'background-image',
+  'background-origin',
+  'background-position',
+  'background-repeat',
+  'background-size',
+  'border-bottom-color',
+  'border-bottom-left-radius',
+  'border-bottom-right-radius',
+  'border-bottom-width',
+  'border-collapse',
+  'border-color',
+  'border-end-end-radius',
+  'border-end-start-radius',
+  'border-inline-end-color',
+  'border-inline-end-width',
+  'border-inline-start-color',
+  'border-inline-start-width',
+  'border-left-color',
+  'border-left-width',
+  'border-radius',
+  'border-right-color',
+  'border-right-width',
+  'border-spacing',
+  'border-start-end-radius',
+  'border-start-start-radius',
+  'border-style',
+  'border-top-color',
+  'border-top-left-radius',
+  'border-top-right-radius',
+  'border-top-width',
+  'border-width',
+  'bottom',
+  'box-decoration-break',
+  'box-shadow',
+  'box-sizing',
+  'break-after',
+  'break-before',
+  'break-inside',
+  'caption-side',
+  'caret-color',
+  'clear',
+  'clip',
+  'color',
+  'column-gap',
+  'columns',
+  'cursor',
+  'display',
+  'fill',
+  'filter',
+  'flex',
+  'flex-basis',
+  'flex-direction',
+  'flex-grow',
+  'flex-shrink',
+  'flex-wrap',
+  'float',
+  'font-family',
+  'font-size',
+  'font-style',
+  'font-variant-numeric',
+  'font-weight',
+  'forced-color-adjust',
+  'gap',
+  'grid-auto-columns',
+  'grid-auto-flow',
+  'grid-auto-rows',
+  'grid-column',
+  'grid-column-end',
+  'grid-column-start',
+  'grid-row',
+  'grid-row-end',
+  'grid-row-start',
+  'grid-template-columns',
+  'grid-template-rows',
+  'height',
+  'hyphens',
+  'inset',
+  'inset-inline-end',
+  'inset-inline-start',
+  'isolation',
+  'justify-content',
+  'justify-items',
+  'justify-self',
+  'left',
+  'letter-spacing',
+  'line-height',
+  'list-style-image',
+  'list-style-position',
+  'list-style-type',
+  'margin',
+  'margin-bottom',
+  'margin-inline-end',
+  'margin-inline-start',
+  'margin-left',
+  'margin-right',
+  'margin-top',
+  'max-height',
+  'max-width',
+  'min-height',
+  'min-width',
+  'mix-blend-mode',
+  'object-fit',
+  'object-position',
+  'opacity',
+  'order',
+  'outline',
+  'outline-color',
+  'outline-offset',
+  'outline-style',
+  'outline-width',
+  'overflow',
+  'overflow-wrap',
+  'overflow-x',
+  'overflow-y',
+  'overscroll-behavior',
+  'overscroll-behavior-x',
+  'overscroll-behavior-y',
+  'padding',
+  'padding-bottom',
+  'padding-inline-end',
+  'padding-inline-start',
+  'padding-left',
+  'padding-right',
+  'padding-top',
+  'place-content',
+  'place-items',
+  'place-self',
+  'pointer-events',
+  'position',
+  'resize',
+  'right',
+  'row-gap',
+  'scroll-behavior',
+  'scroll-margin',
+  'scroll-margin-bottom',
+  'scroll-margin-inline-end',
+  'scroll-margin-inline-start',
+  'scroll-margin-left',
+  'scroll-margin-right',
+  'scroll-margin-top',
+  'scroll-padding',
+  'scroll-padding-bottom',
+  'scroll-padding-inline-end',
+  'scroll-padding-inline-start',
+  'scroll-padding-left',
+  'scroll-padding-right',
+  'scroll-padding-top',
+  'scroll-snap-align',
+  'scroll-snap-stop',
+  'scroll-snap-type',
+  'stroke',
+  'stroke-width',
+  'table-layout',
+  'text-align',
+  'text-decoration-color',
+  'text-decoration-line',
+  'text-decoration-style',
+  'text-decoration-thickness',
+  'text-indent',
+  'text-overflow',
+  'text-transform',
+  'text-underline-offset',
+  'text-wrap',
+  'top',
+  'touch-action',
+  'transform',
+  'transform-origin',
+  'transition-delay',
+  'transition-duration',
+  'transition-property',
+  'transition-timing-function',
+  'user-select',
+  'vertical-align',
+  'visibility',
+  'white-space',
+  'width',
+  'will-change',
+  'word-break',
+  'z-index'
+);
+
+@each $property in $atomic {
+  @if $property == 'flex' {
+    /*x
+    @mixin flex($v: flex, $rwd: null) {
+      @if $rwd==null {
+        @if $v==flex {
+          display: flex;
+        }
+
+        @else {
+          flex: $v;
+        }
+      }
+
+      @else {
+        @media (min-width: $rwd) {
+          @if $v==flex {
+            display: flex;
+          }
+
+          @else {
+            flex: $v;
+          }
+        }
+      }
+    }
+    x*/
+  } @else if $property == 'resize' {
+    /*x
+    @mixin resize($v: both, $rwd: null) {
+      @if $rwd==null {
+        resize: $v;
+      }
+
+      @else {
+        @media (min-width: $rwd) {
+          resize: $v;
+        }
+      }
+    }
+    x*/
+  } @else if $property == 'cursor' {
+    /*x
+    @mixin cursor($v, $v2: null, $rwd: null) {
+      @if $rwd==null {
+        cursor: $v, $v2;
+      }
+
+      @else {
+        @media (min-width: $rwd) {
+          cursor: $v, $v2;
+        }
+      }
+    }
+    x*/
+  } @else if $property == 'outline' {
+    /*x
+    @mixin outline($v: solid, $rwd: null) {
+      @if $rwd==null {
+        @if $v==solid {
+          outline-style: solid;
+        }
+
+        @else {
+          outline: $v;
+        }
+      }
+
+      @else {
+        @media (min-width: $rwd) {
+          @if $v==solid {
+            outline-style: solid;
+          }
+
+          @else {
+            outline: $v;
+          }
+        }
+      }
+    }
+    x*/
+  } @else if $property == 'flex-wrap' {
+    /*x
+    @mixin flex-wrap($v: wrap, $rwd: null) {
+      @if $rwd==null {
+        flex-wrap: $v;
+      }
+
+      @else {
+        @media (min-width: $rwd) {
+          flex-wrap: $v;
+        }
+      }
+    }
+    x*/
+  } @else if $property == 'text-wrap' {
+    /*x
+    @mixin text-wrap($v: wrap, $rwd: null) {
+      @if $rwd==null {
+        text-wrap: $v;
+      }
+    
+      @else {
+        @media (min-width: $rwd) {
+          text-wrap: $v;
+        }
+      }
+    }
+    x*/
+  } @else if $property == 'will-change' {
+    /*x
+    @mixin will-change($v, $v2: null, $rwd: null) {
+      @if $rwd==null {
+        will-change: $v, $v2;
+      }
+
+      @else {
+        @media (min-width: $rwd) {
+          will-change: $v, $v2;
+        }
+      }
+    }
+    x*/
+  } @else if $property == 'border-collapse' {
+    /*x
+    @mixin border-collapse($v: collapse, $rwd: null) {
+      @if $rwd==null {
+        border-collapse: $v;
+      }
+
+      @else {
+        @media (min-width: $rwd) {
+          border-collapse: $v;
+        }
+      }
+    }
+    x*/
+  } @else {
+    /*x
+    @mixin #{$property}($v, $rwd: null) {
+      @if $rwd==null {
+        #{$property}: $v;
+      }
+
+      @else {
+        @media (min-width: $rwd) {
+          #{$property}: $v;
+        }
+      }
+    }
+    x*/
+  }
+}

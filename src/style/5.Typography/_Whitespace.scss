@@ -1,0 +1,30 @@
+$_whiteSpace: (
+  'whitespace-normal': normal,
+  'whitespace-nowrap': nowrap,
+  'whitespace-pre': pre,
+  'whitespace-pre-line': pre-line,
+  'whitespace-pre-wrap': pre-wrap,
+  'whitespace-break-spaces': break-spaces,
+);
+
+@if $isBasic {
+  @each $key, $value in $_whiteSpace {
+    /*x
+    @mixin #{$key}{
+      @include white-space(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $_whiteSpace {
+      /*x
+      @mixin #{$rwdToken}\:#{$key}{
+        @include white-space(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

@@ -1,0 +1,46 @@
+$BackdropGrayscale: (
+  'backdrop-grayscale-0': grayscale(0),
+  'backdrop-grayscale': grayscale(100%),
+);
+
+@if $isBasic {
+  @each $key, $value in $BackdropGrayscale {
+    /*x
+    @mixin #{$key} {
+      $tw-backdrop-invert: #{$value} !global;
+      @include backdrop-filter(_get_backdrop-filter());
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BackdropGrayscale {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        $tw-backdrop-invert: #{$value} !global;
+        @include backdrop-filter(_get_backdrop-filter(), #{$rwd});
+      }
+      x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin backdrop-grayscale-($v) {
+    $tw-backdrop-grayscale: grayscale($v) !global;
+    @include backdrop-filter(_get_backdrop-filter());
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:backdrop-grayscale-($v) {
+      $tw-backdrop-grayscale: grayscale($v) !global;
+      @include backdrop-filter(_get_backdrop-filter(), #{$rwd});
+    }
+    x*/
+  }
+}

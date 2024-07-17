@@ -1,0 +1,34 @@
+$TouchAction: (
+  'touch-auto': auto,
+  'touch-none': none,
+  'touch-pan-x': pan-x,
+  'touch-pan-left': pan-left,
+  'touch-pan-right': pan-right,
+  'touch-pan-y': pan-y,
+  'touch-pan-up': pan-up,
+  'touch-pan-down': pan-down,
+  'touch-pinch-zoom': pinch-zoom,
+  'touch-manipulation': manipulation,
+);
+
+@if $isBasic {
+  @each $key, $value in $TouchAction {
+    /*x
+    @mixin #{$key} {
+      @include touch-action(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $TouchAction {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include touch-action(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

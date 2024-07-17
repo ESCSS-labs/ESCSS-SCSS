@@ -1,0 +1,29 @@
+$Position: (
+  'static': static,
+  'fixed': fixed,
+  'absolute': absolute,
+  'relative': relative,
+  'sticky': sticky,
+);
+
+@if $isBasic {
+  @each $key, $value in $Position {
+    /*x
+    @mixin #{$key} {
+      @include position(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $Position {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include position(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

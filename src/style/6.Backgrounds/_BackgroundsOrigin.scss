@@ -1,0 +1,27 @@
+$BackgroundsOrigin: (
+  'bg-origin-border': border-box,
+  'bg-origin-padding': padding-box,
+  'bg-origin-content': content-box,
+);
+
+@if $isBasic {
+  @each $key, $value in $BackgroundsOrigin {
+    /*x
+    @mixin #{$key}{
+      @include background-origin(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BackgroundsOrigin {
+      /*x
+      @mixin #{$rwdToken}\:#{$key}{
+        @include background-origin(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

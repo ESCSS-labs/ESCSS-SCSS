@@ -1,0 +1,46 @@
+// 1st: overflow-wrap
+// 2nd: word-break
+$WordBreak: (
+  'break-normal': (
+    normal,
+    normal,
+  ),
+  'break-words': (
+    break-word,
+    'null',
+  ),
+  'break-all': (
+    'null',
+    break-all,
+  ),
+  'break-keep': (
+    'null',
+    keep-all,
+  ),
+);
+
+@if $isBasic {
+  @each $key, $value in $WordBreak {
+    /*x
+    @mixin #{$key} {
+      @include overflow-wrap(#{list.nth($value, 1)});
+      @include word-break(#{list.nth($value, 2)});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $WordBreak {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include utils_#{$rwdToken} {
+          @include overflow-wrap(#{list.nth($value, 1)});
+          @include word-break(#{list.nth($value, 2)});
+        }
+      }
+      x*/
+    }
+  }
+}

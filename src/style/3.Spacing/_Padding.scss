@@ -1,0 +1,219 @@
+$Padding: (
+  '0': '$_0',
+  'px': '$_px',
+  '0\\.5': '$_0\\.5',
+  '1': '$_1',
+  '1\\.5': '$_1\\.5',
+  '2': '$_2',
+  '2\\.5': '$_2\\.5',
+  '3': '$_3',
+  '3\\.5': '$_3\\.5',
+  '4': '$_4',
+  '5': '$_5',
+  '6': '$_6',
+  '7': '$_7',
+  '8': '$_8',
+  '9': '$_9',
+  '10': '$_10',
+  '11': '$_11',
+  '12': '$_12',
+  '14': '$_14',
+  '16': '$_16',
+  '20': '$_20',
+  '24': '$_24',
+  '28': '$_28',
+  '32': '$_32',
+  '36': '$_36',
+  '40': '$_40',
+  '44': '$_44',
+  '48': '$_48',
+  '52': '$_52',
+  '56': '$_56',
+  '60': '$_60',
+  '64': '$_64',
+  '72': '$_72',
+  '80': '$_80',
+  '96': '$_96',
+);
+
+@if $isBasic {
+  @each $key, $value in $Padding {
+    /*x
+    @mixin p-#{$key} {
+      @include padding(#{$value});
+    }
+
+    @mixin px-#{$key} {
+      @include padding-left(#{$value});
+      @include padding-right(#{$value});
+    }
+
+    @mixin py-#{$key} {
+      @include padding-top(#{$value});
+      @include padding-bottom(#{$value});
+    }
+
+    @mixin ps-#{$key} {
+      @include padding-inline-start(#{$value});
+    }
+
+    @mixin pe-#{$key} {
+      @include padding-inline-end(#{$value});
+    }
+
+    @mixin pt-#{$key} {
+      @include padding-top(#{$value});
+    }
+
+    @mixin pr-#{$key} {
+      @include padding-right(#{$value});
+    }
+
+    @mixin pb-#{$key} {
+      @include padding-bottom(#{$value});
+    }
+
+    @mixin pl-#{$key} {
+      @include padding-left(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $Padding {
+      /*x
+    @mixin #{$rwdToken}\:p-#{$key} {
+      @include padding(#{$value}, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:px-#{$key} {
+      @include utils_#{$rwdToken} {
+        @include padding-left(#{$value});
+        @include padding-right(#{$value});
+      }
+    }
+
+    @mixin #{$rwdToken}\:py-#{$key} {
+      @include utils_#{$rwdToken} {
+        @include padding-top(#{$value});
+        @include padding-bottom(#{$value});
+      }
+    }
+
+    @mixin #{$rwdToken}\:ps-#{$key} {
+      @include padding-inline-start(#{$value}, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pe-#{$key} {
+      @include padding-inline-end(#{$value}, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pt-#{$key} {
+      @include padding-top(#{$value}, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pr-#{$key} {
+      @include padding-right(#{$value}, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pb-#{$key} {
+      @include padding-bottom(#{$value}, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pl-#{$key} {
+      @include padding-left(#{$value}, #{$rwd});
+    }
+    x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin p-($v) {
+    @include padding($v);
+  }
+
+  @mixin px-($v) {
+    @include padding-left($v);
+    @include padding-right($v);
+  }
+
+  @mixin py-($v) {
+    @include padding-top($v);
+    @include padding-bottom($v);
+  }
+
+  @mixin ps-($v) {
+    @include padding-inline-start($v);
+  }
+
+  @mixin pe-($v) {
+    @include padding-inline-end($v);
+  }
+
+  @mixin pt-($v) {
+    @include padding-top($v);
+  }
+
+  @mixin pr-($v) {
+    @include padding-right($v);
+  }
+
+  @mixin pb-($v) {
+    @include padding-bottom($v);
+  }
+
+  @mixin pl-($v) {
+    @include padding-left($v);
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+  @mixin #{$rwdToken}\:p-($v) {
+    @include padding($v, #{$rwd});
+  }
+
+  @mixin #{$rwdToken}\:px-($v) {
+    @include utils_#{$rwdToken} {
+      @include padding-left($v);
+      @include padding-right($v);
+    }
+  }
+
+  @mixin #{$rwdToken}\:py-($v) {
+    @include utils_#{$rwdToken} {
+      @include padding-top($v);
+      @include padding-bottom($v);
+    }
+  }
+
+  @mixin #{$rwdToken}\:ps-($v) {
+    @include padding-inline-start($v, #{$rwd});
+  }
+
+  @mixin #{$rwdToken}\:pe-($v) {
+    @include padding-inline-end($v, #{$rwd});
+  }
+
+  @mixin #{$rwdToken}\:pt-($v) {
+    @include padding-top($v, #{$rwd});
+  }
+
+  @mixin #{$rwdToken}\:pr-($v) {
+    @include padding-right($v, #{$rwd});
+  }
+
+  @mixin #{$rwdToken}\:pb-($v) {
+    @include padding-bottom($v, #{$rwd});
+  }
+
+  @mixin #{$rwdToken}\:pl-($v) {
+    @include padding-left($v, #{$rwd});
+  }
+  x*/
+  }
+}

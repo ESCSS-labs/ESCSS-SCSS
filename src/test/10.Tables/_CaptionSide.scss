@@ -1,0 +1,185 @@
+@import '../_classic_only';
+
+@include describe('10.Tables') {
+  @include describe('Caption Side') {
+    @include describe('Basic') {
+      @include it('caption-top') {
+        @include assert {
+          @include output {
+            @include caption-top;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            caption-side: top;
+          }
+        }
+      }
+
+      @include it('caption-bottom') {
+        @include assert {
+          @include output {
+            @include caption-bottom;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            caption-side: bottom;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:caption-top') {
+        @include assert {
+          @include output {
+            @include sm\:caption-top;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:caption-bottom') {
+        @include assert {
+          @include output {
+            @include sm\:caption-bottom;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              caption-side: bottom;
+            }
+          }
+        }
+      }
+
+      @include it('md\:caption-top') {
+        @include assert {
+          @include output {
+            @include md\:caption-top;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it('md\:caption-bottom') {
+        @include assert {
+          @include output {
+            @include md\:caption-bottom;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              caption-side: bottom;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:caption-top') {
+        @include assert {
+          @include output {
+            @include lg\:caption-top;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:caption-bottom') {
+        @include assert {
+          @include output {
+            @include lg\:caption-bottom;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              caption-side: bottom;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:caption-top') {
+        @include assert {
+          @include output {
+            @include xl\:caption-top;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:caption-bottom') {
+        @include assert {
+          @include output {
+            @include xl\:caption-bottom;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              caption-side: bottom;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:caption-top') {
+        @include assert {
+          @include output {
+            @include \2xl\:caption-top;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              caption-side: top;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:caption-bottom') {
+        @include assert {
+          @include output {
+            @include \2xl\:caption-bottom;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              caption-side: bottom;
+            }
+          }
+        }
+      }
+    }
+  }
+}

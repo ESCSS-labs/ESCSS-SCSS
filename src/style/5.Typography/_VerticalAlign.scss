@@ -1,0 +1,48 @@
+$VerticalAlign: (
+  'align-baseline': baseline,
+  'align-top': top,
+  'align-middle': middle,
+  'align-bottom': bottom,
+  'align-text-top': text-top,
+  'align-text-bottom': text-bottom,
+  'align-sub': sub,
+  'align-super': super,
+);
+
+@if $isBasic {
+  @each $key, $value in $VerticalAlign {
+    /*x
+    @mixin #{$key} {
+      @include vertical-align(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $VerticalAlign {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include vertical-align(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin align-($v) {
+    @include vertical-align($v);
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:align-($v) {
+      @include vertical-align($v, #{$rwd});
+    }
+    x*/
+  }
+}

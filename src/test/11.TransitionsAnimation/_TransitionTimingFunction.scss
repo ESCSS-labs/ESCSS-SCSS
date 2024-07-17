@@ -1,0 +1,476 @@
+@import '../_classic_only';
+
+@include describe('11.Transitions & Animation') {
+  @include describe('Transition Timing Function') {
+    @include describe('Basic') {
+      @include it('ease-linear') {
+        @include assert {
+          @include output {
+            @include ease-linear;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            transition-timing-function: linear;
+          }
+        }
+      }
+
+      @include it('ease-in') {
+        @include assert {
+          @include output {
+            @include ease-in;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+          }
+        }
+      }
+
+      @include it('ease-out') {
+        @include assert {
+          @include output {
+            @include ease-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          }
+        }
+      }
+
+      @include it('ease-in-out') {
+        @include assert {
+          @include output {
+            @include ease-in-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:ease-linear') {
+        @include assert {
+          @include output {
+            @include sm\:ease-linear;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:ease-in') {
+        @include assert {
+          @include output {
+            @include sm\:ease-in;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
+
+      @include it('sm\:ease-out') {
+        @include assert {
+          @include output {
+            @include sm\:ease-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it('sm\:ease-in-out') {
+        @include assert {
+          @include output {
+            @include sm\:ease-in-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it('md\:ease-linear') {
+        @include assert {
+          @include output {
+            @include md\:ease-linear;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+
+      @include it('md\:ease-in') {
+        @include assert {
+          @include output {
+            @include md\:ease-in;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
+
+      @include it('md\:ease-out') {
+        @include assert {
+          @include output {
+            @include md\:ease-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it('md\:ease-in-out') {
+        @include assert {
+          @include output {
+            @include md\:ease-in-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ease-linear') {
+        @include assert {
+          @include output {
+            @include lg\:ease-linear;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ease-in') {
+        @include assert {
+          @include output {
+            @include lg\:ease-in;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ease-out') {
+        @include assert {
+          @include output {
+            @include lg\:ease-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ease-in-out') {
+        @include assert {
+          @include output {
+            @include lg\:ease-in-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ease-linear') {
+        @include assert {
+          @include output {
+            @include xl\:ease-linear;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ease-in') {
+        @include assert {
+          @include output {
+            @include xl\:ease-in;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ease-out') {
+        @include assert {
+          @include output {
+            @include xl\:ease-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ease-in-out') {
+        @include assert {
+          @include output {
+            @include xl\:ease-in-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ease-linear') {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-linear;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ease-in') {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-in;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ease-out') {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ease-in-out') {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-in-out;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          }
+        }
+      }
+    }
+
+    @include describe('Custom') {
+      @include it('ease-(cubic-bezier(0.95,0.05,0.795,0.035))') {
+        @include assert {
+          @include output {
+            @include ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+          }
+        }
+      }
+
+      @include it('sm\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))') {
+        @include assert {
+          @include output {
+            @include sm\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              transition-timing-function: cubic-bezier(
+                0.95,
+                0.05,
+                0.795,
+                0.035
+              );
+            }
+          }
+        }
+      }
+
+      @include it('md\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))') {
+        @include assert {
+          @include output {
+            @include md\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              transition-timing-function: cubic-bezier(
+                0.95,
+                0.05,
+                0.795,
+                0.035
+              );
+            }
+          }
+        }
+      }
+
+      @include it('lg\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))') {
+        @include assert {
+          @include output {
+            @include lg\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              transition-timing-function: cubic-bezier(
+                0.95,
+                0.05,
+                0.795,
+                0.035
+              );
+            }
+          }
+        }
+      }
+
+      @include it('xl\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))') {
+        @include assert {
+          @include output {
+            @include xl\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              transition-timing-function: cubic-bezier(
+                0.95,
+                0.05,
+                0.795,
+                0.035
+              );
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:ease-(cubic-bezier(0.95,0.05,0.795,0.035))') {
+        @include assert {
+          @include output {
+            @include \2xl\:ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              transition-timing-function: cubic-bezier(
+                0.95,
+                0.05,
+                0.795,
+                0.035
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+}

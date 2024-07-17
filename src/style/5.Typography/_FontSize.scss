@@ -1,0 +1,440 @@
+// Custom same as @mixin text-($v)
+$FontSize: (
+  'text-xs': (
+    '$_font-size_xs',
+    '$_line-height_xs',
+  ),
+  'text-sm': (
+    '$_font-size_sm',
+    '$_line-height_sm',
+  ),
+  'text-base': (
+    '$_font-size_base',
+    '$_line-height_base',
+  ),
+  'text-lg': (
+    '$_font-size_lg',
+    '$_line-height_lg',
+  ),
+  'text-xl': (
+    '$_font-size_xl',
+    '$_line-height_xl',
+  ),
+  'text-2xl': (
+    '$_font-size_2xl',
+    '$_line-height_2xl',
+  ),
+  'text-3xl': (
+    '$_font-size_3xl',
+    '$_line-height_3xl',
+  ),
+  'text-4xl': (
+    '$_font-size_4xl',
+    '$_line-height_4xl',
+  ),
+  'text-5xl': (
+    '$_font-size_5xl',
+    '$_line-height_5xl',
+  ),
+  'text-6xl': (
+    '$_font-size_6xl',
+    '$_line-height_6xl',
+  ),
+  'text-7xl': (
+    '$_font-size_7xl',
+    '$_line-height_7xl',
+  ),
+  'text-8xl': (
+    '$_font-size_8xl',
+    '$_line-height_8xl',
+  ),
+  'text-9xl': (
+    '$_font-size_9xl',
+    '$_line-height_9xl',
+  ),
+);
+
+@if $isBasic {
+  @each $key, $value in $FontSize {
+    /*x
+    @mixin #{$key} {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height(#{list.nth($value, 2)});
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/3 {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-3);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/4 {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-4);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/5 {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-5);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/6 {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-6);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/7 {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-7);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/8 {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-8);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/9 {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-9);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/10 {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-10);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/none {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-none);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/tight {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-tight);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/snug {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-snug);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/normal {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-normal);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/relaxed {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-relaxed);
+    }
+    x*/
+    /*x
+    @mixin #{$key}\/loose {
+      @include font-size(#{list.nth($value, 1)});
+      @include line-height($_leading-loose);
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $FontSize {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height(#{list.nth($value, 2)});
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/3 {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-3);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/4 {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-4);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/5 {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-5);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/6 {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-6);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/7 {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-7);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/8 {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-8);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/9 {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-9);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/10 {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-10);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/none {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-none);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/tight {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-tight);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/snug {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-snug);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/normal {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-normal);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/relaxed {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-relaxed);
+        }
+      }
+      x*/
+      /*x
+      @mixin #{$rwdToken}\:#{$key}\/loose {
+        @include utils_#{$rwdToken} {
+          @include font-size(#{list.nth($value, 1)});
+          @include line-height($_leading-loose);
+        }
+      }
+      x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin text-xs\/($v) {
+    @include font-size($_font-size_xs);
+    @include line-height($v);
+  }
+
+  @mixin text-sm\/($v) {
+    @include font-size($_font-size_sm);
+    @include line-height($v);
+  }
+
+  @mixin text-base\/($v) {
+    @include font-size($_font-size_base);
+    @include line-height($v);
+  }
+
+  @mixin text-lg\/($v) {
+    @include font-size($_font-size_lg);
+    @include line-height($v);
+  }
+
+  @mixin text-xl\/($v) {
+    @include font-size($_font-size_xl);
+    @include line-height($v);
+  }
+
+  @mixin text-2xl\/($v) {
+    @include font-size($_font-size_2xl);
+    @include line-height($v);
+  }
+
+  @mixin text-3xl\/($v) {
+    @include font-size($_font-size_3xl);
+    @include line-height($v);
+  }
+
+  @mixin text-4xl\/($v) {
+    @include font-size($_font-size_4xl);
+    @include line-height($v);
+  }
+
+  @mixin text-5xl\/($v) {
+    @include font-size($_font-size_5xl);
+    @include line-height($v);
+  }
+
+  @mixin text-6xl\/($v) {
+    @include font-size($_font-size_6xl);
+    @include line-height($v);
+  }
+
+  @mixin text-7xl\/($v) {
+    @include font-size($_font-size_7xl);
+    @include line-height($v);
+  }
+
+  @mixin text-8xl\/($v) {
+    @include font-size($_font-size_8xl);
+    @include line-height($v);
+  }
+
+  @mixin text-9xl\/($v) {
+    @include font-size($_font-size_9xl);
+    @include line-height($v);
+  }
+  x*/
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:text-xs\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_xs);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-sm\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_sm);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-base\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_base);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-lg\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_lg);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-xl\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_xl);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-2xl\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_2xl);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-3xl\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_3xl);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-4xl\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_4xl);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-5xl\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_5xl);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-6xl\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_6xl);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-7xl\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_7xl);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-8xl\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_8xl);
+        @include line-height($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:text-9xl\/($v) {
+      @include utils_#{$rwdToken} {
+        @include font-size($_font-size_9xl);
+        @include line-height($v);
+      }
+    }
+    x*/
+  }
+}

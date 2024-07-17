@@ -1,0 +1,181 @@
+@import '../_classic_only';
+
+@include describe('13.Interactivity') {
+  @include describe('Appearance') {
+    @include describe('Basic') {
+      @include it('appearance-none') {
+        @include assert {
+          @include output {
+            @include appearance-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            appearance: none;
+          }
+        }
+      }
+
+      @include it('appearance-auto') {
+        @include assert {
+          @include output {
+            @include appearance-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            appearance: auto;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:appearance-none') {
+        @include assert {
+          @include output {
+            @include sm\:appearance-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              appearance: none;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:appearance-auto') {
+        @include assert {
+          @include output {
+            @include sm\:appearance-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              appearance: auto;
+            }
+          }
+        }
+      }
+      @include it('md\:appearance-none') {
+        @include assert {
+          @include output {
+            @include md\:appearance-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              appearance: none;
+            }
+          }
+        }
+      }
+
+      @include it('md\:appearance-auto') {
+        @include assert {
+          @include output {
+            @include md\:appearance-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              appearance: auto;
+            }
+          }
+        }
+      }
+      @include it('lg\:appearance-none') {
+        @include assert {
+          @include output {
+            @include lg\:appearance-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              appearance: none;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:appearance-auto') {
+        @include assert {
+          @include output {
+            @include lg\:appearance-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              appearance: auto;
+            }
+          }
+        }
+      }
+      @include it('xl\:appearance-none') {
+        @include assert {
+          @include output {
+            @include xl\:appearance-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              appearance: none;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:appearance-auto') {
+        @include assert {
+          @include output {
+            @include xl\:appearance-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              appearance: auto;
+            }
+          }
+        }
+      }
+      @include it('2xl\:appearance-none') {
+        @include assert {
+          @include output {
+            @include \2xl\:appearance-none;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              appearance: none;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:appearance-auto') {
+        @include assert {
+          @include output {
+            @include \2xl\:appearance-auto;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              appearance: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

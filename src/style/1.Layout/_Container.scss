@@ -1,0 +1,46 @@
+$Container: (
+  'container': (
+    '100%',
+    '$_sm',
+    '$_md',
+    '$_lg',
+    '$_xl',
+    '$_2xl',
+  ),
+);
+
+@if $isBasic {
+  @each $key, $value in $Container {
+    /*x
+    @mixin #{$key} {
+      @include width(#{list.nth($value, 1)});
+
+      @include max-width(#{list.nth($value, 2)}, #{list.nth($value, 2)});
+      @include max-width(#{list.nth($value, 3)}, #{list.nth($value, 3)});
+      @include max-width(#{list.nth($value, 4)}, #{list.nth($value, 4)});
+      @include max-width(#{list.nth($value, 5)}, #{list.nth($value, 5)});
+      @include max-width(#{list.nth($value, 6)}, #{list.nth($value, 6)});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $Container {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include utils_#{$rwdToken} {
+          @include width(#{list.nth($value, 1)});
+
+        @include max-width(#{list.nth($value, 2)}, #{list.nth($value, 2)});
+        @include max-width(#{list.nth($value, 3)}, #{list.nth($value, 3)});
+        @include max-width(#{list.nth($value, 4)}, #{list.nth($value, 4)});
+        @include max-width(#{list.nth($value, 5)}, #{list.nth($value, 5)});
+        @include max-width(#{list.nth($value, 6)}, #{list.nth($value, 6)});
+        }
+      }
+      x*/
+    }
+  }
+}

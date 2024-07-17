@@ -1,0 +1,32 @@
+// Custom same as @mixin decoration-($v)
+$TextDecorationThickness: (
+  'decoration-auto': auto,
+  'decoration-from-font': from-font,
+  'decoration-0': 0px,
+  'decoration-1': 1px,
+  'decoration-2': 2px,
+  'decoration-4': 4px,
+  'decoration-8': 8px,
+);
+
+@if $isBasic {
+  @each $key, $value in $TextDecorationThickness {
+    /*x
+    @mixin #{$key} {
+      @include text-decoration-thickness(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $TextDecorationThickness {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include text-decoration-thickness(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

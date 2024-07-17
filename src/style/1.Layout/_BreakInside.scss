@@ -1,0 +1,28 @@
+$BreakInside: (
+  'break-inside-auto': auto,
+  'break-inside-avoid': avoid,
+  'break-inside-avoid-page': avoid-page,
+  'break-inside-avoid-column': avoid-column,
+);
+
+@if $isBasic {
+  @each $key, $value in $BreakInside {
+    /*x
+    @mixin #{$key} {
+      @include break-inside(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BreakInside {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include break-inside(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

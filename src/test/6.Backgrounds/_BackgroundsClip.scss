@@ -1,0 +1,121 @@
+@import '../_classic_only';
+
+@include describe('6.Backgrounds') {
+  @include describe('Background Clip') {
+    @include describe('Basic') {
+      @include it('bg-clip-border') {
+        @include assert {
+          @include output {
+            @include bg-clip-border;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            background-clip: border-box;
+          }
+        }
+      }
+
+      @include it('bg-clip-padding') {
+        @include assert {
+          @include output {
+            @include bg-clip-padding;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            background-clip: padding-box;
+          }
+        }
+      }
+
+      @include it('bg-clip-content') {
+        @include assert {
+          @include output {
+            @include bg-clip-content;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            background-clip: content-box;
+          }
+        }
+      }
+
+      @include it('bg-clip-text') {
+        @include assert {
+          @include output {
+            @include bg-clip-text;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            background-clip: text;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:bg-clip-border') {
+        @include assert {
+          @include output {
+            @include sm\:bg-clip-border;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              background-clip: border-box;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:bg-clip-padding') {
+        @include assert {
+          @include output {
+            @include sm\:bg-clip-padding;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              background-clip: padding-box;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:bg-clip-content') {
+        @include assert {
+          @include output {
+            @include sm\:bg-clip-content;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              background-clip: content-box;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:bg-clip-text') {
+        @include assert {
+          @include output {
+            @include sm\:bg-clip-text;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              background-clip: text;
+            }
+          }
+        }
+      }
+    }
+  }
+}

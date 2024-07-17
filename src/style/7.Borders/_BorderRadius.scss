@@ -1,0 +1,321 @@
+$BorderRadius: (
+  '-none': 0px,
+  '-sm': '$_rounded-sm',
+  null: '$_rounded',
+  '-md': '$_rounded-md',
+  '-lg': '$_rounded-lg',
+  '-xl': '$_rounded-xl',
+  '-2xl': '$_rounded-2xl',
+  '-3xl': '$_rounded-3xl',
+  '-full': 9999px,
+);
+
+@if $isBasic {
+  @each $key, $value in $BorderRadius {
+    /*x
+    @mixin rounded#{$key} {
+      @include border-radius(#{$value});
+    }
+
+    @mixin rounded-s#{$key} {
+      @include border-start-start-radius(#{$value});
+      @include border-end-start-radius(#{$value});
+    }
+
+    @mixin rounded-e#{$key} {
+      @include border-start-end-radius(#{$value});
+      @include border-end-end-radius(#{$value});
+    }
+
+    @mixin rounded-t#{$key} {
+      @include border-top-left-radius(#{$value});
+      @include border-top-right-radius(#{$value});
+    }
+
+    @mixin rounded-r#{$key} {
+      @include border-top-right-radius(#{$value});
+      @include border-bottom-right-radius(#{$value});
+    }
+
+    @mixin rounded-b#{$key} {
+      @include border-bottom-right-radius(#{$value});
+      @include border-bottom-left-radius(#{$value});
+    }
+
+    @mixin rounded-l#{$key} {
+      @include border-top-left-radius(#{$value});
+      @include border-bottom-left-radius(#{$value});
+    }
+
+    @mixin rounded-ss#{$key} {
+      @include border-start-start-radius(#{$value});
+    }
+
+    @mixin rounded-se#{$key} {
+      @include border-start-end-radius(#{$value});
+    }
+
+    @mixin rounded-ee#{$key} {
+      @include border-end-end-radius(#{$value});
+    }
+
+    @mixin rounded-es#{$key} {
+      @include border-end-start-radius(#{$value});
+    }
+
+    @mixin rounded-tl#{$key} {
+      @include border-top-left-radius(#{$value});
+    }
+
+    @mixin rounded-tr#{$key} {
+      @include border-top-right-radius(#{$value});
+    }
+
+    @mixin rounded-br#{$key} {
+      @include border-bottom-right-radius(#{$value});
+    }
+
+    @mixin rounded-bl#{$key} {
+      @include border-bottom-left-radius(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BorderRadius {
+      /*x
+      @mixin #{$rwdToken}\:rounded#{$key} {
+        @include border-radius(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:rounded-s#{$key} {
+        @include utils_#{$rwdToken} {
+          @include border-start-start-radius(#{$value});
+          @include border-end-start-radius(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:rounded-e#{$key} {
+        @include utils_#{$rwdToken} {
+          @include border-start-end-radius(#{$value});
+          @include border-end-end-radius(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:rounded-t#{$key} {
+        @include utils_#{$rwdToken} {
+          @include border-top-left-radius(#{$value});
+          @include border-top-right-radius(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:rounded-r#{$key} {
+        @include utils_#{$rwdToken} {
+          @include border-top-right-radius(#{$value});
+          @include border-bottom-right-radius(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:rounded-b#{$key} {
+        @include utils_#{$rwdToken} {
+          @include border-bottom-right-radius(#{$value});
+          @include border-bottom-left-radius(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:rounded-l#{$key} {
+        @include utils_#{$rwdToken} {
+          @include border-top-left-radius(#{$value});
+          @include border-bottom-left-radius(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:rounded-ss#{$key} {
+        @include border-start-start-radius(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:rounded-se#{$key} {
+        @include border-start-end-radius(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:rounded-ee#{$key} {
+        @include border-end-end-radius(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:rounded-es#{$key} {
+        @include border-end-start-radius(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:rounded-tl#{$key} {
+        @include border-top-left-radius(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:rounded-tr#{$key} {
+        @include border-top-right-radius(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:rounded-br#{$key} {
+        @include border-bottom-right-radius(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:rounded-bl#{$key} {
+        @include border-bottom-left-radius(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin rounded-($v) {
+    @include border-radius($v);
+  }
+
+  @mixin rounded-s-($v) {
+    @include border-start-start-radius($v);
+    @include border-end-start-radius($v);
+  }
+
+  @mixin rounded-e-($v) {
+    @include border-start-end-radius($v);
+    @include border-end-end-radius($v);
+  }
+
+  @mixin rounded-t-($v) {
+    @include border-top-left-radius($v);
+    @include border-top-right-radius($v);
+  }
+
+  @mixin rounded-r-($v) {
+    @include border-top-right-radius($v);
+    @include border-bottom-right-radius($v);
+  }
+
+  @mixin rounded-b-($v) {
+    @include border-bottom-right-radius($v);
+    @include border-bottom-left-radius($v);
+  }
+
+  @mixin rounded-l-($v) {
+    @include border-top-left-radius($v);
+    @include border-bottom-left-radius($v);
+  }
+
+  @mixin rounded-ss-($v) {
+    @include border-start-start-radius($v);
+  }
+
+  @mixin rounded-se-($v) {
+    @include border-start-end-radius($v);
+  }
+
+  @mixin rounded-ee-($v) {
+    @include border-end-end-radius($v);
+  }
+
+  @mixin rounded-es-($v) {
+    @include border-end-start-radius($v);
+  }
+
+  @mixin rounded-tl-($v) {
+    @include border-top-left-radius($v);
+  }
+
+  @mixin rounded-tr-($v) {
+    @include border-top-right-radius($v);
+  }
+
+  @mixin rounded-br-($v) {
+    @include border-bottom-right-radius($v);
+  }
+
+  @mixin rounded-bl-($v) {
+    @include border-bottom-left-radius($v);
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:rounded-($v) {
+      @include border-radius($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:rounded-s-($v) {
+      @include utils_#{$rwdToken} {
+        @include border-start-start-radius($v);
+        @include border-end-start-radius($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:rounded-e-($v) {
+      @include utils_#{$rwdToken} {
+        @include border-start-end-radius($v);
+        @include border-end-end-radius($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:rounded-t-($v) {
+      @include utils_#{$rwdToken} {
+        @include border-top-left-radius($v);
+        @include border-top-right-radius($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:rounded-r-($v) {
+      @include utils_#{$rwdToken} {
+        @include border-top-right-radius($v);
+        @include border-bottom-right-radius($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:rounded-b-($v) {
+      @include utils_#{$rwdToken} {
+        @include border-bottom-right-radius($v);
+        @include border-bottom-left-radius($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:rounded-l-($v) {
+      @include utils_#{$rwdToken} {
+        @include border-top-left-radius($v);
+        @include border-bottom-left-radius($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:rounded-ss-($v) {
+      @include border-start-start-radius($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:rounded-se-($v) {
+      @include border-start-end-radius($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:rounded-ee-($v) {
+      @include border-end-end-radius($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:rounded-es-($v) {
+      @include border-end-start-radius($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:rounded-tl-($v) {
+      @include border-top-left-radius($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:rounded-tr-($v) {
+      @include border-top-right-radius($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:rounded-br-($v) {
+      @include border-bottom-right-radius($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:rounded-bl-($v) {
+      @include border-bottom-left-radius($v, #{$rwd});
+    }
+    x*/
+  }
+}

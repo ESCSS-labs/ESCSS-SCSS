@@ -1,0 +1,188 @@
+@import '../_classic_only';
+
+@include describe('10.Tables') {
+  @include describe('Title') {
+    @include describe('Basic') {
+    }
+
+    @include describe('Rwd') {
+      @include it('border-collapse') {
+        @include assert {
+          @include output {
+            @include border-collapse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            border-collapse: collapse;
+          }
+        }
+      }
+
+      @include it('border-separate') {
+        @include assert {
+          @include output {
+            @include border-separate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            border-collapse: separate;
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:border-collapse') {
+        @include assert {
+          @include output {
+            @include sm\:border-collapse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              border-collapse: collapse;
+            }
+          }
+        }
+      }
+
+      @include it('sm\:border-separate') {
+        @include assert {
+          @include output {
+            @include sm\:border-separate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              border-collapse: separate;
+            }
+          }
+        }
+      }
+
+      @include it('md\:border-collapse') {
+        @include assert {
+          @include output {
+            @include md\:border-collapse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              border-collapse: collapse;
+            }
+          }
+        }
+      }
+
+      @include it('md\:border-separate') {
+        @include assert {
+          @include output {
+            @include md\:border-separate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              border-collapse: separate;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:border-collapse') {
+        @include assert {
+          @include output {
+            @include lg\:border-collapse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              border-collapse: collapse;
+            }
+          }
+        }
+      }
+
+      @include it('lg\:border-separate') {
+        @include assert {
+          @include output {
+            @include lg\:border-separate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              border-collapse: separate;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:border-collapse') {
+        @include assert {
+          @include output {
+            @include xl\:border-collapse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              border-collapse: collapse;
+            }
+          }
+        }
+      }
+
+      @include it('xl\:border-separate') {
+        @include assert {
+          @include output {
+            @include xl\:border-separate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              border-collapse: separate;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:border-collapse') {
+        @include assert {
+          @include output {
+            @include \2xl\:border-collapse;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              border-collapse: collapse;
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:border-separate') {
+        @include assert {
+          @include output {
+            @include \2xl\:border-separate;
+            @include utils_reset-scss-tw-variables;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              border-collapse: separate;
+            }
+          }
+        }
+      }
+    }
+  }
+}

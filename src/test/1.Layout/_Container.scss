@@ -1,0 +1,211 @@
+@import '../_classic_only';
+
+@include describe('1.Layout') {
+  @include describe('Container') {
+    @include describe('Basic') {
+      @include it('container') {
+        @include assert {
+          @include output {
+            @include container;
+          }
+
+          @include expect {
+            width: 100%;
+
+            @media (min-width: $_sm) {
+              max-width: $_sm;
+            }
+
+            @media (min-width: $_md) {
+              max-width: $_md;
+            }
+
+            @media (min-width: $_lg) {
+              max-width: $_lg;
+            }
+
+            @media (min-width: $_xl) {
+              max-width: $_xl;
+            }
+
+            @media (min-width: $_2xl) {
+              max-width: $_2xl;
+            }
+          }
+        }
+      }
+    }
+
+    @include describe('Rwd') {
+      @include it('sm\:container') {
+        @include assert {
+          @include output {
+            @include sm\:container;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              width: 100%;
+
+              @media (min-width: $_sm) {
+                max-width: $_sm;
+              }
+
+              @media (min-width: $_md) {
+                max-width: $_md;
+              }
+
+              @media (min-width: $_lg) {
+                max-width: $_lg;
+              }
+
+              @media (min-width: $_xl) {
+                max-width: $_xl;
+              }
+
+              @media (min-width: $_2xl) {
+                max-width: $_2xl;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('md\:container') {
+        @include assert {
+          @include output {
+            @include md\:container;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              width: 100%;
+
+              @media (min-width: $_sm) {
+                max-width: $_sm;
+              }
+
+              @media (min-width: $_md) {
+                max-width: $_md;
+              }
+
+              @media (min-width: $_lg) {
+                max-width: $_lg;
+              }
+
+              @media (min-width: $_xl) {
+                max-width: $_xl;
+              }
+
+              @media (min-width: $_2xl) {
+                max-width: $_2xl;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('lg\:container') {
+        @include assert {
+          @include output {
+            @include lg\:container;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              width: 100%;
+
+              @media (min-width: $_sm) {
+                max-width: $_sm;
+              }
+
+              @media (min-width: $_md) {
+                max-width: $_md;
+              }
+
+              @media (min-width: $_lg) {
+                max-width: $_lg;
+              }
+
+              @media (min-width: $_xl) {
+                max-width: $_xl;
+              }
+
+              @media (min-width: $_2xl) {
+                max-width: $_2xl;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('xl\:container') {
+        @include assert {
+          @include output {
+            @include xl\:container;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              width: 100%;
+
+              @media (min-width: $_sm) {
+                max-width: $_sm;
+              }
+
+              @media (min-width: $_md) {
+                max-width: $_md;
+              }
+
+              @media (min-width: $_lg) {
+                max-width: $_lg;
+              }
+
+              @media (min-width: $_xl) {
+                max-width: $_xl;
+              }
+
+              @media (min-width: $_2xl) {
+                max-width: $_2xl;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('2xl\:container') {
+        @include assert {
+          @include output {
+            @include \2xl\:container;
+          }
+
+          @include expect {
+            @media (min-width: $_2xl) {
+              width: 100%;
+
+              @media (min-width: $_sm) {
+                max-width: $_sm;
+              }
+
+              @media (min-width: $_md) {
+                max-width: $_md;
+              }
+
+              @media (min-width: $_lg) {
+                max-width: $_lg;
+              }
+
+              @media (min-width: $_xl) {
+                max-width: $_xl;
+              }
+
+              @media (min-width: $_2xl) {
+                max-width: $_2xl;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

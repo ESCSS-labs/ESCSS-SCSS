@@ -1,0 +1,27 @@
+$BackgroundsAttachment: (
+  'bg-fixed': fixed,
+  'bg-local': local,
+  'bg-scroll': scroll,
+);
+
+@if $isBasic {
+  @each $key, $value in $BackgroundsAttachment {
+    /*x
+    @mixin #{$key}{
+      @include background-attachment(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BackgroundsAttachment {
+      /*x
+      @mixin #{$rwdToken}\:#{$key}{
+        @include background-attachment(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

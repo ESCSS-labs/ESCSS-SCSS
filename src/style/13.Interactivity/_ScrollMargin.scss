@@ -1,0 +1,403 @@
+$ScrollMargin: (
+  '0': '$_0',
+  'px': '$_px',
+  '0\\.5': '$_0\\.5',
+  '1': '$_1',
+  '1\\.5': '$_1\\.5',
+  '2': '$_2',
+  '2\\.5': '$_2\\.5',
+  '3': '$_3',
+  '3\\.5': '$_3\\.5',
+  '4': '$_4',
+  '5': '$_5',
+  '6': '$_6',
+  '7': '$_7',
+  '8': '$_8',
+  '9': '$_9',
+  '10': '$_10',
+  '11': '$_11',
+  '12': '$_12',
+  '14': '$_14',
+  '16': '$_16',
+  '20': '$_20',
+  '24': '$_24',
+  '28': '$_28',
+  '32': '$_32',
+  '36': '$_36',
+  '40': '$_40',
+  '44': '$_44',
+  '48': '$_48',
+  '52': '$_52',
+  '56': '$_56',
+  '60': '$_60',
+  '64': '$_64',
+  '72': '$_72',
+  '80': '$_80',
+  '96': '$_96',
+);
+
+@if $isBasic {
+  @each $key, $value in $ScrollMargin {
+    /*x
+    @mixin scroll-m-#{$key} {
+      @include scroll-margin(#{$value});
+    }
+
+    @mixin scroll-mx-#{$key} {
+      @include scroll-margin-left(#{$value});
+      @include scroll-margin-right(#{$value});
+    }
+
+    @mixin scroll-my-#{$key} {
+      @include scroll-margin-top(#{$value});
+      @include scroll-margin-bottom(#{$value});
+    }
+
+    @mixin scroll-ms-#{$key} {
+      @include scroll-margin-inline-start(#{$value});
+    }
+
+    @mixin scroll-me-#{$key} {
+      @include scroll-margin-inline-end(#{$value});
+    }
+
+    @mixin scroll-mt-#{$key} {
+      @include scroll-margin-top(#{$value});
+    }
+
+    @mixin scroll-mr-#{$key} {
+      @include scroll-margin-right(#{$value});
+    }
+
+    @mixin scroll-mb-#{$key} {
+      @include scroll-margin-bottom(#{$value});
+    }
+
+    @mixin scroll-ml-#{$key} {
+      @include scroll-margin-left(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $ScrollMargin {
+      /*x
+      @mixin #{$rwdToken}\:scroll-m-#{$key} {
+        @include scroll-margin(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-mx-#{$key} {
+        @include utils_#{$rwdToken} {
+          @include scroll-margin-left(#{$value});
+          @include scroll-margin-right(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:scroll-my-#{$key} {
+        @include utils_#{$rwdToken} {
+          @include scroll-margin-top(#{$value});
+          @include scroll-margin-bottom(#{$value});
+        }
+      }
+
+      @mixin #{$rwdToken}\:scroll-ms-#{$key} {
+        @include scroll-margin-inline-start(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-me-#{$key} {
+        @include scroll-margin-inline-end(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-mt-#{$key} {
+        @include scroll-margin-top(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-mr-#{$key} {
+        @include scroll-margin-right(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-mb-#{$key} {
+        @include scroll-margin-bottom(#{$value}, #{$rwd});
+      }
+
+      @mixin #{$rwdToken}\:scroll-ml-#{$key} {
+        @include scroll-margin-left(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}
+
+@if $isCustom {
+  /*x
+  @mixin scroll-m-($v) {
+    @include scroll-margin($v);
+  }
+
+  @mixin scroll-mx-($v) {
+    @include scroll-margin-left($v);
+    @include scroll-margin-right($v);
+  }
+
+  @mixin scroll-my-($v) {
+    @include scroll-margin-top($v);
+    @include scroll-margin-bottom($v);
+  }
+
+  @mixin scroll-ms-($v) {
+    @include scroll-margin-inline-start($v);
+  }
+
+  @mixin scroll-me-($v) {
+    @include scroll-margin-inline-end($v);
+  }
+
+  @mixin scroll-mt-($v) {
+    @include scroll-margin-top($v);
+  }
+
+  @mixin scroll-mr-($v) {
+    @include scroll-margin-right($v);
+  }
+
+  @mixin scroll-mb-($v) {
+    @include scroll-margin-bottom($v);
+  }
+
+  @mixin scroll-ml-($v) {
+    @include scroll-margin-left($v);
+  }
+  x*/
+
+  @each $rwdToken, $rwd in $rwdBox {
+    /*x
+    @mixin #{$rwdToken}\:scroll-m-($v) {
+      @include scroll-margin($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-mx-($v) {
+      @include utils_#{$rwdToken} {
+        @include scroll-margin-left($v);
+        @include scroll-margin-right($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:scroll-my-($v) {
+      @include utils_#{$rwdToken} {
+        @include scroll-margin-top($v);
+        @include scroll-margin-bottom($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:scroll-ms-($v) {
+      @include scroll-margin-inline-start($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-me-($v) {
+      @include scroll-margin-inline-end($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-mt-($v) {
+      @include scroll-margin-top($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-mr-($v) {
+      @include scroll-margin-right($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-mb-($v) {
+      @include scroll-margin-bottom($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scroll-ml-($v) {
+      @include scroll-margin-left($v, #{$rwd});
+    }
+    x*/
+  }
+}
+
+@if $isNegative {
+  @if $isBasic {
+    @each $key, $value in $ScrollMargin {
+      /*x
+      @mixin -scroll-m-#{$key} {
+        @include scroll-margin(-#{$value});
+      }
+  
+      @mixin -scroll-mx-#{$key} {
+        @include scroll-margin-left(-#{$value});
+        @include scroll-margin-right(-#{$value});
+      }
+  
+      @mixin -scroll-my-#{$key} {
+        @include scroll-margin-top(-#{$value});
+        @include scroll-margin-bottom(-#{$value});
+      }
+  
+      @mixin -scroll-ms-#{$key} {
+        @include scroll-margin-inline-start(-#{$value});
+      }
+  
+      @mixin -scroll-me-#{$key} {
+        @include scroll-margin-inline-end(-#{$value});
+      }
+  
+      @mixin -scroll-mt-#{$key} {
+        @include scroll-margin-top(-#{$value});
+      }
+  
+      @mixin -scroll-mr-#{$key} {
+        @include scroll-margin-right(-#{$value});
+      }
+  
+      @mixin -scroll-mb-#{$key} {
+        @include scroll-margin-bottom(-#{$value});
+      }
+  
+      @mixin -scroll-ml-#{$key} {
+        @include scroll-margin-left(-#{$value});
+      }
+      x*/
+    }
+  }
+
+  @if $isRwd and $isClassic {
+    @each $rwdToken, $rwd in $rwdBox {
+      @each $key, $value in $ScrollMargin {
+        /*x
+        @mixin #{$rwdToken}\:-scroll-m-#{$key} {
+          @include scroll-margin(-#{$value}, #{$rwd});
+        }
+    
+        @mixin #{$rwdToken}\:-scroll-mx-#{$key} {
+          @include utils_#{$rwdToken} {
+            @include scroll-margin-left(-#{$value});
+            @include scroll-margin-right(-#{$value});
+          }
+        }
+    
+        @mixin #{$rwdToken}\:-scroll-my-#{$key} {
+          @include utils_#{$rwdToken} {
+            @include scroll-margin-top(-#{$value});
+            @include scroll-margin-bottom(-#{$value});
+          }
+        }
+    
+        @mixin #{$rwdToken}\:-scroll-ms-#{$key} {
+          @include scroll-margin-inline-start(-#{$value}, #{$rwd});
+        }
+    
+        @mixin #{$rwdToken}\:-scroll-me-#{$key} {
+          @include scroll-margin-inline-end(-#{$value}, #{$rwd});
+        }
+    
+        @mixin #{$rwdToken}\:-scroll-mt-#{$key} {
+          @include scroll-margin-top(-#{$value}, #{$rwd});
+        }
+    
+        @mixin #{$rwdToken}\:-scroll-mr-#{$key} {
+          @include scroll-margin-right(-#{$value}, #{$rwd});
+        }
+    
+        @mixin #{$rwdToken}\:-scroll-mb-#{$key} {
+          @include scroll-margin-bottom(-#{$value}, #{$rwd});
+        }
+    
+        @mixin #{$rwdToken}\:-scroll-ml-#{$key} {
+          @include scroll-margin-left(-#{$value}, #{$rwd});
+        }
+        x*/
+      }
+    }
+  }
+
+  @if $isCustom {
+    /*x
+    @mixin -scroll-m-($v) {
+      @include scroll-margin(-$v);
+    }
+  
+    @mixin -scroll-mx-($v) {
+      @include scroll-margin-left(-$v);
+      @include scroll-margin-right(-$v);
+    }
+  
+    @mixin -scroll-my-($v) {
+      @include scroll-margin-top(-$v);
+      @include scroll-margin-bottom(-$v);
+    }
+  
+    @mixin -scroll-ms-($v) {
+      @include scroll-margin-inline-start(-$v);
+    }
+  
+    @mixin -scroll-me-($v) {
+      @include scroll-margin-inline-end(-$v);
+    }
+  
+    @mixin -scroll-mt-($v) {
+      @include scroll-margin-top(-$v);
+    }
+  
+    @mixin -scroll-mr-($v) {
+      @include scroll-margin-right(-$v);
+    }
+  
+    @mixin -scroll-mb-($v) {
+      @include scroll-margin-bottom(-$v);
+    }
+  
+    @mixin -scroll-ml-($v) {
+      @include scroll-margin-left(-$v);
+    }
+    x*/
+
+    @each $rwdToken, $rwd in $rwdBox {
+      /*x
+      @mixin #{$rwdToken}\:-scroll-m-($v) {
+        @include scroll-margin(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-scroll-mx-($v) {
+        @include utils_#{$rwdToken} {
+          @include scroll-margin-left(-$v);
+          @include scroll-margin-right(-$v);
+        }
+      }
+  
+      @mixin #{$rwdToken}\:-scroll-my-($v) {
+        @include utils_#{$rwdToken} {
+          @include scroll-margin-top(-$v);
+          @include scroll-margin-bottom(-$v);
+        }
+      }
+  
+      @mixin #{$rwdToken}\:-scroll-ms-($v) {
+        @include scroll-margin-inline-start(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-scroll-me-($v) {
+        @include scroll-margin-inline-end(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-scroll-mt-($v) {
+        @include scroll-margin-top(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-scroll-mr-($v) {
+        @include scroll-margin-right(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-scroll-mb-($v) {
+        @include scroll-margin-bottom(-$v, #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-scroll-ml-($v) {
+        @include scroll-margin-left(-$v, #{$rwd});
+      }
+      x*/
+    }
+  }
+}

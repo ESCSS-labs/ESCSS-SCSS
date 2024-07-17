@@ -1,0 +1,28 @@
+// Custom same as @mixin bg-($v)
+$BackgroundsSize: (
+  'bg-auto': auto,
+  'bg-cover': cover,
+  'bg-contain': contain,
+);
+
+@if $isBasic {
+  @each $key, $value in $BackgroundsSize {
+    /*x
+    @mixin #{$key} {
+      @include background-size(#{$value});
+    }
+    x*/
+  }
+}
+
+@if $isRwd and $isClassic {
+  @each $rwdToken, $rwd in $rwdBox {
+    @each $key, $value in $BackgroundsSize {
+      /*x
+      @mixin #{$rwdToken}\:#{$key} {
+        @include background-size(#{$value}, #{$rwd});
+      }
+      x*/
+    }
+  }
+}
