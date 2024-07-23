@@ -4,27 +4,27 @@ $FontFamily: (
     ui-sans-serif,
     system-ui,
     sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji',
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji"
   ),
-  'font-serif': (
+  "font-serif": (
     ui-serif,
     Georgia,
     Cambria,
-    'Times New Roman',
+    "Times New Roman",
     Times,
     serif,
   ),
-  'font-mono': (
+  "font-mono": (
     ui-monospace,
     SFMono-Regular,
     Menlo,
     Monaco,
     Consolas,
-    'Liberation Mono',
-    'Courier New',
+    "Liberation Mono",
+    "Courier New",
     monospace,
   ),
 );
@@ -33,7 +33,7 @@ $FontFamily: (
   @each $key, $value in $FontFamily {
     /*x
     @mixin #{$key} {
-      @include font-family(#{$value});
+      @include font-family((#{meta.inspect($value)}));
     }
     x*/
   }
@@ -43,8 +43,8 @@ $FontFamily: (
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $FontFamily {
       /*x
-      @mixin #{$key} {
-        @include font-family(#{$value}, #{$rwd});
+      @mixin #{$rwdToken}\:#{$key} {
+        @include font-family((#{meta.inspect($value)}), #{$rwd});
       }
       x*/
     }

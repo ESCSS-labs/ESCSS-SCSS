@@ -267,14 +267,14 @@ $RingOffsetColor: (
       }
 
       @mixin ring-offset-#{$key}\/($v) {
-        $tw-ring-offset-color: c(#{$value}, $v) !global;
+        $tw-ring-offset-color: _c(#{$value}, $v) !global;
         @include box-shadow(_get_box-shadow());
       }
       x*/
     } @else {
       /*x
       @mixin ring-offset-#{$key}($v: 1) {
-        $tw-ring-offset-color: c(#{$value}, $v) !global;
+        $tw-ring-offset-color: _c(#{$value}, $v) !global;
         @include box-shadow(_get_box-shadow());
       }
       x*/
@@ -303,7 +303,7 @@ $RingOffsetColor: (
       }
 
       @mixin #{$rwdToken}\:ring-offset-#{$key}\/($v) {
-        $tw-ring-offset-color: c(#{$value}, $v) !global;
+        $tw-ring-offset-color: _c(#{$value}, $v) !global;
         @include box-shadow(_get_box-shadow(), #{$rwd});
       }
       x*/
