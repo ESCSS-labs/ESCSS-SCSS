@@ -41,7 +41,30 @@
           }
         }
       }
+      @include it('caret-black') {
+        @include assert {
+          @include output {
+            @include caret-black;
+            @include utils_reset-scss-tw-variables;
+          }
     
+          @include expect {
+            caret-color: #000;
+          }
+        }
+      }
+      @include it('caret-white') {
+        @include assert {
+          @include output {
+            @include caret-white;
+            @include utils_reset-scss-tw-variables;
+          }
+    
+          @include expect {
+            caret-color: #fff;
+          }
+        }
+      }
       @include it('caret-slate-50') {
         @include assert {
           @include output {
@@ -3200,7 +3223,30 @@
           }
         }
       }
+      @include it('caret-black\/(0.11)') {
+        @include assert {
+          @include output {
+            @include caret-black\/(0.11);
+            @include utils_reset-scss-tw-variables;
+          }
       
+          @include expect {
+            caret-color: color.change(#000, $alpha: 0.11);
+          }
+        }
+      }
+      @include it('caret-white\/(0.11)') {
+        @include assert {
+          @include output {
+            @include caret-white\/(0.11);
+            @include utils_reset-scss-tw-variables;
+          }
+      
+          @include expect {
+            caret-color: color.change(#fff, $alpha: 0.11);
+          }
+        }
+      }
       @include it('caret-slate-50\/(0.11)') {
         @include assert {
           @include output {
@@ -6389,6 +6435,36 @@
       @include expect {
         @media (min-width: $_sm) {
           caret-color: transparent;
+        }
+      }
+    }
+  }
+
+  @include it('sm\:caret-black') {
+    @include assert {
+      @include output {
+        @include sm\:caret-black;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_sm) {
+          caret-color: #000;
+        }
+      }
+    }
+  }
+
+  @include it('sm\:caret-white') {
+    @include assert {
+      @include output {
+        @include sm\:caret-white;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_sm) {
+          caret-color: #fff;
         }
       }
     }
@@ -10034,6 +10110,36 @@
       @include expect {
         @media (min-width: $_sm) {
           caret-color: color.change(transparent, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('sm\:caret-black\/(0.11)') {
+    @include assert {
+      @include output {
+        @include sm\:caret-black\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_sm) {
+          caret-color: color.change(#000, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('sm\:caret-white\/(0.11)') {
+    @include assert {
+      @include output {
+        @include sm\:caret-white\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_sm) {
+          caret-color: color.change(#fff, $alpha: 0.11);
         }
       }
     }
@@ -13714,6 +13820,36 @@
     }
   }
 
+  @include it('md\:caret-black') {
+    @include assert {
+      @include output {
+        @include md\:caret-black;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_md) {
+          caret-color: #000;
+        }
+      }
+    }
+  }
+
+  @include it('md\:caret-white') {
+    @include assert {
+      @include output {
+        @include md\:caret-white;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_md) {
+          caret-color: #fff;
+        }
+      }
+    }
+  }
+
   @include it('md\:caret-slate-50') {
     @include assert {
       @include output {
@@ -17354,6 +17490,36 @@
       @include expect {
         @media (min-width: $_md) {
           caret-color: color.change(transparent, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('md\:caret-black\/(0.11)') {
+    @include assert {
+      @include output {
+        @include md\:caret-black\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_md) {
+          caret-color: color.change(#000, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('md\:caret-white\/(0.11)') {
+    @include assert {
+      @include output {
+        @include md\:caret-white\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_md) {
+          caret-color: color.change(#fff, $alpha: 0.11);
         }
       }
     }
@@ -21034,6 +21200,36 @@
     }
   }
 
+  @include it('lg\:caret-black') {
+    @include assert {
+      @include output {
+        @include lg\:caret-black;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_lg) {
+          caret-color: #000;
+        }
+      }
+    }
+  }
+
+  @include it('lg\:caret-white') {
+    @include assert {
+      @include output {
+        @include lg\:caret-white;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_lg) {
+          caret-color: #fff;
+        }
+      }
+    }
+  }
+
   @include it('lg\:caret-slate-50') {
     @include assert {
       @include output {
@@ -24674,6 +24870,36 @@
       @include expect {
         @media (min-width: $_lg) {
           caret-color: color.change(transparent, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('lg\:caret-black\/(0.11)') {
+    @include assert {
+      @include output {
+        @include lg\:caret-black\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_lg) {
+          caret-color: color.change(#000, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('lg\:caret-white\/(0.11)') {
+    @include assert {
+      @include output {
+        @include lg\:caret-white\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_lg) {
+          caret-color: color.change(#fff, $alpha: 0.11);
         }
       }
     }
@@ -28354,6 +28580,36 @@
     }
   }
 
+  @include it('xl\:caret-black') {
+    @include assert {
+      @include output {
+        @include xl\:caret-black;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_xl) {
+          caret-color: #000;
+        }
+      }
+    }
+  }
+
+  @include it('xl\:caret-white') {
+    @include assert {
+      @include output {
+        @include xl\:caret-white;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_xl) {
+          caret-color: #fff;
+        }
+      }
+    }
+  }
+
   @include it('xl\:caret-slate-50') {
     @include assert {
       @include output {
@@ -31994,6 +32250,36 @@
       @include expect {
         @media (min-width: $_xl) {
           caret-color: color.change(transparent, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('xl\:caret-black\/(0.11)') {
+    @include assert {
+      @include output {
+        @include xl\:caret-black\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_xl) {
+          caret-color: color.change(#000, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('xl\:caret-white\/(0.11)') {
+    @include assert {
+      @include output {
+        @include xl\:caret-white\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_xl) {
+          caret-color: color.change(#fff, $alpha: 0.11);
         }
       }
     }
@@ -35674,6 +35960,36 @@
     }
   }
 
+  @include it('\2xl\:caret-black') {
+    @include assert {
+      @include output {
+        @include \2xl\:caret-black;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_\2xl) {
+          caret-color: #000;
+        }
+      }
+    }
+  }
+
+  @include it('\2xl\:caret-white') {
+    @include assert {
+      @include output {
+        @include \2xl\:caret-white;
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_\2xl) {
+          caret-color: #fff;
+        }
+      }
+    }
+  }
+
   @include it('\2xl\:caret-slate-50') {
     @include assert {
       @include output {
@@ -39314,6 +39630,36 @@
       @include expect {
         @media (min-width: $_\2xl) {
           caret-color: color.change(transparent, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('\2xl\:caret-black\/(0.11)') {
+    @include assert {
+      @include output {
+        @include \2xl\:caret-black\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_\2xl) {
+          caret-color: color.change(#000, $alpha: 0.11);
+        }
+      }
+    }
+  }
+
+  @include it('\2xl\:caret-white\/(0.11)') {
+    @include assert {
+      @include output {
+        @include \2xl\:caret-white\/(0.11);
+        @include utils_reset-scss-tw-variables;
+      }
+
+      @include expect {
+        @media (min-width: $_\2xl) {
+          caret-color: color.change(#fff, $alpha: 0.11);
         }
       }
     }
