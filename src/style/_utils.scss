@@ -1,26 +1,25 @@
-
 //  ---------------------------- Utils Start ------------------------------
-// 
+//
 //  1. @mixin utils_sm/md/lg/xl/\2xl -> use rwd in your id/class
 //  2. @mixin utils_dark -> use dark mode in your project
 //  3. @mixin utils_hover_bg-gradient -> makes bg-gradient util can be hovered.
 //    .demo {
 //        @include bg-gradient-to-r;
 //        @include from-red-500;
-//    
+//
 //        @include hover_bg-gradient {
 //          @include from-sky-500;
 //          @include sm\:from-rose-500;
 //        }
 //    }
 //
-//  4. @mixin utils_reset-scss-tw-variables 
+//  4. @mixin utils_reset-scss-tw-variables
 //    .demo {
 //      @include scale-50; // this one uses global scss variable.
 //      @include utils_reset-scss-variables;  // to prevent unexpected behavior that relates to transform property. e.g. using scale、rotate、skew..
 //    }
-//  
-//     <Note> Best practice is used in every id/class. 
+//
+//     <Note> Best practice is used in every id/class.
 //      a. To reset specific necessary id/class is annoying
 //      b. To Know how many id/class used in the project
 //
@@ -30,7 +29,6 @@
 //      @include utils_base-set-preflight; set base preflight in .demo-3
 //      color: red;  your style
 //    }
-
 
 @mixin utils_sm {
   @media (min-width: $_sm) {
@@ -80,7 +78,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     @include absolute;
     @include inset-0;
     @include opacity-0;
@@ -174,36 +172,35 @@
       border-style: solid;
       border-color: #e5e7eb;
     }
-  
+
     html,
     :host {
       line-height: 1.5;
       -webkit-text-size-adjust: 100%;
       -moz-tab-size: 4;
       tab-size: 4;
-      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
       font-feature-settings: normal;
       font-variation-settings: normal;
       -webkit-tap-highlight-color: transparent;
     }
-    
+
     body {
       margin: 0;
       line-height: inherit;
     }
-  
+
     hr {
       height: 0;
       color: inherit;
       border-top-width: 1px;
     }
-  
-  
+
     abbr:where([title]) {
       text-decoration: underline dotted;
     }
-  
-  
+
     h1,
     h2,
     h3,
@@ -213,36 +210,32 @@
       font-size: inherit;
       font-weight: inherit;
     }
-  
-  
+
     a {
       color: inherit;
       text-decoration: inherit;
     }
-  
+
     b,
     strong {
       font-weight: bolder;
     }
-  
-  
+
     code,
     kbd,
     samp,
     pre {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        'Liberation Mono', 'Courier New', monospace;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+        'Courier New', monospace;
       font-feature-settings: normal;
       font-variation-settings: normal;
       font-size: 1em;
     }
-  
-  
+
     small {
       font-size: 80%;
     }
-  
-  
+
     sub,
     sup {
       font-size: 75%;
@@ -250,23 +243,21 @@
       position: relative;
       vertical-align: baseline;
     }
-  
+
     sub {
       bottom: -0.25em;
     }
-  
+
     sup {
       top: -0.5em;
     }
-  
-  
+
     table {
       text-indent: 0;
       border-color: inherit;
       border-collapse: collapse;
     }
-  
-  
+
     button,
     input,
     optgroup,
@@ -283,14 +274,12 @@
       margin: 0;
       padding: 0;
     }
-  
-  
+
     button,
     select {
       text-transform: none;
     }
-  
-  
+
     button,
     input:where([type='button']),
     input:where([type='reset']),
@@ -299,47 +288,42 @@
       background-color: transparent;
       background-image: none;
     }
-  
-  
+
     :-moz-focusring {
       outline: auto;
     }
-  
-  
+
     :-moz-ui-invalid {
       box-shadow: none;
     }
-  
-  
+
     progress {
       vertical-align: baseline;
     }
-  
+
     ::-webkit-inner-spin-button,
     ::-webkit-outer-spin-button {
       height: auto;
     }
-  
-  
+
     [type='search'] {
       -webkit-appearance: textfield;
       outline-offset: -2px;
     }
-  
+
     ::-webkit-search-decoration {
       -webkit-appearance: none;
     }
-  
+
     ::-webkit-file-upload-button {
       -webkit-appearance: button;
       font: inherit;
     }
-  
+
     summary {
       display: list-item;
     }
-  
-  
+
     blockquote,
     dl,
     dd,
@@ -355,16 +339,16 @@
     pre {
       margin: 0;
     }
-  
+
     fieldset {
       margin: 0;
       padding: 0;
     }
-  
+
     legend {
       padding: 0;
     }
-  
+
     ol,
     ul,
     menu {
@@ -372,31 +356,30 @@
       margin: 0;
       padding: 0;
     }
-  
+
     dialog {
       padding: 0;
     }
-  
+
     textarea {
       resize: vertical;
     }
-  
-  
+
     input::placeholder,
     textarea::placeholder {
       opacity: 1;
       color: #9ca3af;
     }
-  
+
     button,
     [role='button'] {
       cursor: pointer;
     }
-  
+
     :disabled {
       cursor: default;
     }
-  
+
     img,
     svg,
     video,
@@ -408,13 +391,13 @@
       display: block;
       vertical-align: middle;
     }
-  
+
     img,
     video {
       max-width: 100%;
       height: auto;
     }
-  
+
     [hidden] {
       display: none;
     }
@@ -468,7 +451,8 @@
         /* 3 */
         tab-size: 4;
         /* 3 */
-        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol', 'Noto Color Emoji';
         /* 4 */
         font-feature-settings: normal;
         /* 5 */
@@ -476,10 +460,7 @@
         /* 6 */
         -webkit-tap-highlight-color: transparent;
       }
-    }
-
-    @else {
-
+    } @else {
       html &,
       &:host {
         line-height: 1.5;
@@ -490,7 +471,8 @@
         /* 3 */
         tab-size: 4;
         /* 3 */
-        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol', 'Noto Color Emoji';
         /* 4 */
         font-feature-settings: normal;
         /* 5 */
@@ -514,15 +496,12 @@
         line-height: inherit;
         /* 2 */
       }
-    }
-
-    @else {
+    } @else {
       body & {
         line-height: inherit;
         /* 2 */
       }
     }
-
 
     @at-root hr#{&} {
       height: 0;
@@ -536,11 +515,11 @@
     }
 
     @at-root h1#{&},
-    h2#{&},
-    h3#{&},
-    h4#{&},
-    h5#{&},
-    h6#{&} {
+      h2#{&},
+      h3#{&},
+      h4#{&},
+      h5#{&},
+      h6#{&} {
       font-size: inherit;
       font-weight: inherit;
     }
@@ -551,16 +530,16 @@
     }
 
     @at-root b#{&},
-    strong#{&} {
+      strong#{&} {
       font-weight: bolder;
     }
 
     @at-root code#{&},
-    kbd#{&},
-    samp#{&},
-    pre#{&} {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        'Liberation Mono', 'Courier New', monospace;
+      kbd#{&},
+      samp#{&},
+      pre#{&} {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+        'Courier New', monospace;
       font-feature-settings: normal;
       font-variation-settings: normal;
       font-size: 1em;
@@ -584,7 +563,7 @@
     }
 
     @at-root sub#{&},
-    sup#{&} {
+      sup#{&} {
       font-size: 75%;
       line-height: 0;
       position: relative;
@@ -606,10 +585,10 @@
     }
 
     @at-root button#{&},
-    input#{&},
-    optgroup#{&},
-    select#{&},
-    textarea#{&} {
+      input#{&},
+      optgroup#{&},
+      select#{&},
+      textarea#{&} {
       font-family: inherit;
       font-feature-settings: inherit;
       font-variation-settings: inherit;
@@ -623,14 +602,14 @@
     }
 
     @at-root button#{&},
-    select#{&} {
+      select#{&} {
       text-transform: none;
     }
 
     @at-root button#{&},
-    input:where([type='button'])#{&},
-    input:where([type='reset'])#{&},
-    input:where([type='submit'])#{&} {
+      input:where([type='button'])#{&},
+      input:where([type='reset'])#{&},
+      input:where([type='submit'])#{&} {
       -webkit-appearance: button;
       background-color: transparent;
       background-image: none;
@@ -672,18 +651,18 @@
     }
 
     @at-root blockquote#{&},
-    dl#{&},
-    dd#{&},
-    h1#{&},
-    h2#{&},
-    h3#{&},
-    h4#{&},
-    h5#{&},
-    h6#{&},
-    hr#{&},
-    figure#{&},
-    p#{&},
-    pre#{&} {
+      dl#{&},
+      dd#{&},
+      h1#{&},
+      h2#{&},
+      h3#{&},
+      h4#{&},
+      h5#{&},
+      h6#{&},
+      hr#{&},
+      figure#{&},
+      p#{&},
+      pre#{&} {
       margin: 0;
     }
 
@@ -697,8 +676,8 @@
     }
 
     @at-root ol#{&},
-    ul#{&},
-    menu {
+      ul#{&},
+      menu {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -713,13 +692,13 @@
     }
 
     @at-root input::-moz-placeholder#{&},
-    textarea::-moz-placeholder#{&} {
+      textarea::-moz-placeholder#{&} {
       opacity: 1;
       color: #9ca3af;
     }
 
     @at-root input::placeholder#{&},
-    textarea::placeholder#{&} {
+      textarea::placeholder#{&} {
       opacity: 1;
       color: #9ca3af;
     }
@@ -733,19 +712,19 @@
     }
 
     @at-root img#{&},
-    svg#{&},
-    video#{&},
-    canvas#{&},
-    audio#{&},
-    iframe#{&},
-    embed#{&},
-    object#{&} {
+      svg#{&},
+      video#{&},
+      canvas#{&},
+      audio#{&},
+      iframe#{&},
+      embed#{&},
+      object#{&} {
       display: block;
       vertical-align: middle;
     }
 
     @at-root img#{&},
-    video#{&} {
+      video#{&} {
       max-width: 100%;
       height: auto;
     }
