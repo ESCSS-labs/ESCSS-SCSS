@@ -56,7 +56,7 @@ $TransitionProperty: (
     @each $key, $value in $TransitionProperty {
       /*x
     @mixin #{$rwdToken}\:#{$key} {
-      @include utils_#{$rwdToken} {
+      @include #{$rwdToken} {
         @include transition-property(#{list.nth($value, 1)});
         @include transition-timing-function(#{list.nth($value, 2)});
         @include transition-duration(#{list.nth($value, 3)});
@@ -79,7 +79,7 @@ $TransitionProperty: (
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:transition-($v) {
-      @include utils_#{$rwdToken} {
+      @include #{$rwdToken} {
         @include transition-property($v);
         @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
         @include transition-duration(150ms);

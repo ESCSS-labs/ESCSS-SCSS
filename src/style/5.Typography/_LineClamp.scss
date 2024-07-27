@@ -65,7 +65,7 @@ $LineClamp: (
     @each $key, $value in $LineClamp {
       /*x
     @mixin #{$rwdToken}\:#{$key} {
-      @include utils_#{$rwdToken} {
+      @include #{$rwdToken} {
         @include overflow(#{list.nth($value, 1)});
         @include display(#{list.nth($value, 2)});
         @include -webkit-box-orient(#{list.nth($value, 3)});
@@ -90,7 +90,7 @@ $LineClamp: (
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:line-clamp-($v) {
-      @include utils_#{$rwdToken} {
+      @include #{$rwdToken} {
         @include overflow(hidden);
         @include display(-webkit-box);
         @include -webkit-box-orient(vertical);

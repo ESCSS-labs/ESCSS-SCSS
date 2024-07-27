@@ -413,14 +413,14 @@ $BorderColor: (
 
     @mixin #{$rwdToken}\:border-x-($v) {
       @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include utils_#{$rwdToken} {
+        @include #{$rwdToken} {
           @include border-left-color($v);
           @include border-right-color($v);
         }
       }
 
       @else {
-        @include utils_#{$rwdToken} {
+        @include #{$rwdToken} {
           @include border-left-width($v);
           @include border-right-width($v);
         }
@@ -429,14 +429,14 @@ $BorderColor: (
 
     @mixin #{$rwdToken}\:border-y-($v) {
       @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include utils_#{$rwdToken} {
+        @include #{$rwdToken} {
           @include border-top-color($v);
           @include border-bottom-color($v);
         }
       }
 
       @else {
-        @include utils_#{$rwdToken} {
+        @include #{$rwdToken} {
           @include border-top-width($v);
           @include border-bottom-width($v);
         }

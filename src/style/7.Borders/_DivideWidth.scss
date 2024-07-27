@@ -55,7 +55,7 @@ $DivideWidth: (
       @mixin #{$rwdToken}\:divide-x-reverse {
         $tw-divide-x-reverse: 1 !global;
 
-        @include utils_#{$rwdToken} {
+        @include #{$rwdToken} {
           >*~* {
             @include border-right-width($tw-dummy-divide-x-value * $tw-divide-x-reverse);
             @include border-left-width($tw-dummy-divide-x-value * (1 - $tw-divide-x-reverse));
@@ -65,7 +65,7 @@ $DivideWidth: (
       @mixin #{$rwdToken}\:divide-y-reverse {
         $tw-divide-y-reverse: 1 !global;
 
-        @include utils_#{$rwdToken} {
+        @include #{$rwdToken} {
           >*~* {
             @include border-top-width($tw-dummy-divide-y-value * (1 - $tw-divide-y-reverse));
             @include border-bottom-width($tw-dummy-divide-y-value * $tw-divide-y-reverse);
@@ -78,7 +78,7 @@ $DivideWidth: (
       @mixin #{$rwdToken}\:divide-x#{$key} {
         $tw-dummy-divide-x-value: #{$value} !global; // update global value for using reverse
     
-        @include utils_#{$rwdToken} {
+        @include #{$rwdToken} {
           >*~* {
             @include border-right-width(#{$value} * $tw-divide-x-reverse);
             @include border-left-width(#{$value} * (1 - $tw-divide-x-reverse));
@@ -89,7 +89,7 @@ $DivideWidth: (
       @mixin #{$rwdToken}\:divide-y#{$key} {
         $tw-dummy-divide-y-value: #{$value} !global; // update global value for using reverse
     
-        @include utils_#{$rwdToken} {
+        @include #{$rwdToken} {
           >*~* {
             @include border-top-width(#{$value} * (1 - $tw-divide-y-reverse));
             @include border-bottom-width(#{$value} * $tw-divide-y-reverse);
@@ -127,7 +127,7 @@ $DivideWidth: (
     @mixin #{$rwdToken}\:divide-x-($v, $isReverse: false) {
       $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
 
-      @include utils_#{$rwdToken} {
+      @include #{$rwdToken} {
         >*~* {
           @include border-right-width($v * $tw-divide-x-reverse);
           @include border-left-width($v * (1 - $tw-divide-x-reverse));
@@ -138,7 +138,7 @@ $DivideWidth: (
     @mixin #{$rwdToken}\:divide-y-($v, $isReverse: false) {
       $tw-dummy-divide-y-value: $v !global; // update global value for using reverse
 
-      @include utils_#{$rwdToken} {
+      @include #{$rwdToken} {
         >*~* {
           @include border-top-width($v * (1 - $tw-divide-y-reverse));
           @include border-bottom-width($v * $tw-divide-y-reverse);
