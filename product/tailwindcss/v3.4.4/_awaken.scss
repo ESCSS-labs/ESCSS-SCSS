@@ -38,7 +38,7 @@
  *   2. preflight in @minx utils_base-preflight: 
  *.      a. remove --tw-content: ''(avoid to confusion for beginner)
  *       b. --tw-xxx(use $tw-xxx instead for better DX)
- */
+!*/
 
 // Every project's breakpoint is different, setting yours in here
 // If it's new project, suggest to use Tailwind default
@@ -1245,6 +1245,76 @@ $tw-mismatch--ring-offset-width: false !default;
     @at-root [hidden] {
       display: none;
     }
+  }
+}
+
+// _c stands for color (file size concern)
+@function _c($token, $v) {
+  @if not math.is-unitless($v) {
+    // If use / outside of calc() after v1.33, it will pop out warnings in the terminal,
+    // the better way is forbidden % and provides the color.change() method
+    @error "$v: Expected #{$v / 100%} not #{$v}, backward compatibility concern";
+  }
+
+  // color.change $alpha only accepts 0 ~ 1
+  @return color.change($token, $alpha: $v);
+}
+
+// _b-s stands for box-shadow (file size concern)
+@function _b-s() {
+  $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width $tw-ring-offset-color;
+  $tw-ring-shadow: $tw-ring-inset 0 0 0 $tw-dummy-ring-width $tw-ring-color;
+  $tw-shadow: null;
+
+  @if list.index(shadow md lg xl, $tw-dummy-shadow-token) {
+    $tw-shadow:
+      list.nth($tw-dummy-shadow-width, 1) $tw-shadow-color,
+      list.nth($tw-dummy-shadow-width, 2) $tw-shadow-color;
+  } @else if $tw-dummy-shadow-token ==inner {
+    $tw-shadow: inset $tw-dummy-shadow-width $tw-shadow-color;
+  } @else {
+    $tw-shadow: $tw-dummy-shadow-width $tw-shadow-color;
+  }
+
+  @return $tw-ring-offset-shadow, $tw-ring-shadow, $tw-shadow;
+}
+
+// _t stands for transform (file size concern)
+@function _t() {
+  @return translate($tw-translate-x, $tw-translate-y) rotate($tw-rotate) skewX($tw-skew-x)
+    skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
+}
+
+// _f stands for filter (file size concern)
+@function _f() {
+  @return $tw-blur $tw-brightness $tw-contrast $tw-grayscale $tw-hue-rotate $tw-invert $tw-saturate
+    $tw-sepia $tw-drop-shadow;
+}
+
+// _b-f stands for backdrop-filter (file size concern)
+@function _b-f() {
+  @return $tw-backdrop-blur $tw-backdrop-brightness $tw-backdrop-contrast $tw-backdrop-grayscale
+    $tw-backdrop-hue-rotate $tw-backdrop-invert $tw-backdrop-opacity $tw-backdrop-saturate
+    $tw-backdrop-sepia;
+}
+
+// _l-g stands for linear-gradient (file size concern)
+@function _l-g() {
+  @if $tw-dummy-gradient-direction==none {
+    @return none;
+  } @else if $tw-gradient-via==null {
+    @return linear-gradient(
+      $tw-dummy-gradient-direction,
+      $tw-gradient-from $tw-gradient-from-position,
+      $tw-gradient-to $tw-gradient-to-position
+    );
+  } @else {
+    @return linear-gradient(
+      $tw-dummy-gradient-direction,
+      $tw-gradient-from $tw-gradient-from-position,
+      $tw-gradient-via $tw-gradient-via-position,
+      $tw-gradient-to $tw-gradient-to-position
+    );
   }
 }
 
@@ -23657,9 +23727,8 @@ $tw-mismatch--ring-offset-width: false !default;
   @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
     @include background-color($v);
   } @else if list.nth($v, 1) ==length {
-    @include background-size(
-      list.set-nth($v, 1, #{''})
-    ); // remove the token "length" to identify background-size
+    // remove the token "length" to identify background-size
+    @include background-size(list.set-nth($v, 1, #{''}));
   } @else if
     list.index(top right bottom left center, $v) or
     meta.type-of($v)
@@ -23677,10 +23746,8 @@ $tw-mismatch--ring-offset-width: false !default;
   @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
     @include background-color($v, $_sm);
   } @else if list.nth($v, 1) ==length {
-    @include background-size(
-      list.set-nth($v, 1, #{''}),
-      $_sm
-    ); // remove the token "length" to identify background-size
+    // remove the token "length" to identify background-size
+    @include background-size(list.set-nth($v, 1, #{''}), $_sm);
   } @else if
     list.index(top right bottom left center, $v) or
     meta.type-of($v)
@@ -23698,10 +23765,8 @@ $tw-mismatch--ring-offset-width: false !default;
   @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
     @include background-color($v, $_md);
   } @else if list.nth($v, 1) ==length {
-    @include background-size(
-      list.set-nth($v, 1, #{''}),
-      $_md
-    ); // remove the token "length" to identify background-size
+    // remove the token "length" to identify background-size
+    @include background-size(list.set-nth($v, 1, #{''}), $_md);
   } @else if
     list.index(top right bottom left center, $v) or
     meta.type-of($v)
@@ -23719,10 +23784,8 @@ $tw-mismatch--ring-offset-width: false !default;
   @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
     @include background-color($v, $_lg);
   } @else if list.nth($v, 1) ==length {
-    @include background-size(
-      list.set-nth($v, 1, #{''}),
-      $_lg
-    ); // remove the token "length" to identify background-size
+    // remove the token "length" to identify background-size
+    @include background-size(list.set-nth($v, 1, #{''}), $_lg);
   } @else if
     list.index(top right bottom left center, $v) or
     meta.type-of($v)
@@ -23740,10 +23803,8 @@ $tw-mismatch--ring-offset-width: false !default;
   @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
     @include background-color($v, $_xl);
   } @else if list.nth($v, 1) ==length {
-    @include background-size(
-      list.set-nth($v, 1, #{''}),
-      $_xl
-    ); // remove the token "length" to identify background-size
+    // remove the token "length" to identify background-size
+    @include background-size(list.set-nth($v, 1, #{''}), $_xl);
   } @else if
     list.index(top right bottom left center, $v) or
     meta.type-of($v)
@@ -23761,10 +23822,8 @@ $tw-mismatch--ring-offset-width: false !default;
   @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
     @include background-color($v, $_\2xl);
   } @else if list.nth($v, 1) ==length {
-    @include background-size(
-      list.set-nth($v, 1, #{''}),
-      $_\2xl
-    ); // remove the token "length" to identify background-size
+    // remove the token "length" to identify background-size
+    @include background-size(list.set-nth($v, 1, #{''}), $_\2xl);
   } @else if
     list.index(top right bottom left center, $v) or
     meta.type-of($v)
