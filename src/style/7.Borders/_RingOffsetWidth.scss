@@ -11,12 +11,12 @@ $RingOffsetWidth: (
   @each $key, $value in $RingOffsetWidth {
     /*x
     @mixin #{$key} {
-      @if $tw-dummy-not-match--ring-offset-width {
+      @if $tw-mismatch--ring-offset-width {
         @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
       }
 
       $tw-ring-offset-width: #{$value} !global;
-      @include box-shadow(_get_box-shadow());
+      @include box-shadow(_b-s());
     }
     x*/
   }
@@ -27,12 +27,12 @@ $RingOffsetWidth: (
     @each $key, $value in $RingOffsetWidth {
       /*x
       @mixin #{$rwdToken}\:#{$key} {
-        @if $tw-dummy-not-match--ring-offset-width {
+        @if $tw-mismatch--ring-offset-width {
           @error ("「 ring-offset-* 」should go before「 ring-* (to have same behavior as tailwind)");
         }
 
         $tw-ring-offset-width: #{$value} !global;
-        @include box-shadow(_get_box-shadow(), #{$rwd});
+        @include box-shadow(_b-s(), #{$rwd});
       }
       x*/
     }

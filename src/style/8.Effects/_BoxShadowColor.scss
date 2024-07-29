@@ -249,38 +249,38 @@ $BoxShadowColor: (
 @if $isBasic {
   /*x
   @mixin shadow-inherit {
-    $tw-dummy-not-match--shadow-color: true !global;
+    $tw-mismatch--shadow-color: true !global;
     $tw-shadow-color: inherit !global;
-    @include box-shadow(_get_box-shadow());
+    @include box-shadow(_b-s());
   }
 
   @mixin shadow-current {
-    $tw-dummy-not-match--shadow-color: true !global;
+    $tw-mismatch--shadow-color: true !global;
     $tw-shadow-color: currentColor !global;
-    @include box-shadow(_get_box-shadow());
+    @include box-shadow(_b-s());
   }
   x*/
   @each $key, $value in $BoxShadowColor {
     @if $isClassic {
       /*x
       @mixin shadow-#{$key} {
-        $tw-dummy-not-match--shadow-color: true !global;
+        $tw-mismatch--shadow-color: true !global;
         $tw-shadow-color: #{$value} !global;
-        @include box-shadow(_get_box-shadow());
+        @include box-shadow(_b-s());
       }
 
       @mixin shadow-#{$key}\/($v) {
-        $tw-dummy-not-match--shadow-color: true !global;
+        $tw-mismatch--shadow-color: true !global;
         $tw-shadow-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_get_box-shadow());
+        @include box-shadow(_b-s());
       }
       x*/
     } @else {
       /*x
       @mixin shadow-#{$key}($v: 1) {
-        $tw-dummy-not-match--shadow-color: true !global;
+        $tw-mismatch--shadow-color: true !global;
         $tw-shadow-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_get_box-shadow());
+        @include box-shadow(_b-s());
       }
       x*/
     }
@@ -291,29 +291,29 @@ $BoxShadowColor: (
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:shadow-inherit {
-      $tw-dummy-not-match--shadow-color: true !global;
+      $tw-mismatch--shadow-color: true !global;
       $tw-shadow-color: inherit !global;
-      @include box-shadow(_get_box-shadow(), #{$rwd});
+      @include box-shadow(_b-s(), #{$rwd});
     }
 
     @mixin #{$rwdToken}\:shadow-current {
-      $tw-dummy-not-match--shadow-color: true !global;
+      $tw-mismatch--shadow-color: true !global;
       $tw-shadow-color: currentColor !global;
-      @include box-shadow(_get_box-shadow(), #{$rwd});
+      @include box-shadow(_b-s(), #{$rwd});
     }
     x*/
     @each $key, $value in $BoxShadowColor {
       /*x
       @mixin #{$rwdToken}\:shadow-#{$key} {
-        $tw-dummy-not-match--shadow-color: true !global;
+        $tw-mismatch--shadow-color: true !global;
         $tw-shadow-color: #{$value} !global;
-        @include box-shadow(_get_box-shadow(), #{$rwd});
+        @include box-shadow(_b-s(), #{$rwd});
       }
 
       @mixin #{$rwdToken}\:shadow-#{$key}\/($v) {
-        $tw-dummy-not-match--shadow-color: true !global;
+        $tw-mismatch--shadow-color: true !global;
         $tw-shadow-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_get_box-shadow(), #{$rwd});
+        @include box-shadow(_b-s(), #{$rwd});
       }
       x*/
     }
@@ -324,13 +324,13 @@ $BoxShadowColor: (
   /*x
   @mixin shadow-($v) {
     @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      $tw-dummy-not-match--shadow-color: true !global;
+      $tw-mismatch--shadow-color: true !global;
       $tw-shadow-color: $v !global;
     }
 
     // custom shadow e.g shadow-(inset 0px 0px 5px 10px red)
     @else if meta.type-of($v)==list {
-      @if $tw-dummy-not-match--shadow-color {
+      @if $tw-mismatch--shadow-color {
         @error ("e.g.「 shadow-(0px 0px 5px 10px red) 」should go before「 shadow-sky-500 」(to have same behavior as tailwind)");
       }
 
@@ -346,7 +346,7 @@ $BoxShadowColor: (
       }
     }
 
-    @include box-shadow(_get_box-shadow());
+    @include box-shadow(_b-s());
   }
   x*/
 
@@ -354,13 +354,13 @@ $BoxShadowColor: (
     /*x
     @mixin #{$rwdToken}\:shadow-($v) {
       @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        $tw-dummy-not-match--shadow-color: true !global;
+        $tw-mismatch--shadow-color: true !global;
         $tw-shadow-color: $v !global;
       }
 
       // custom shadow e.g shadow-(inset 0px 0px 5px 10px red)
       @else if meta.type-of($v)==list {
-        @if $tw-dummy-not-match--shadow-color {
+        @if $tw-mismatch--shadow-color {
           @error ("e.g.「 shadow-(0px 0px 5px 10px red) 」should go before「 shadow-sky-500 」(to have same behavior as tailwind)");
         }
 
@@ -376,7 +376,7 @@ $BoxShadowColor: (
         }
       }
 
-      @include box-shadow(_get_box-shadow(), #{$rwd});
+      @include box-shadow(_b-s(), #{$rwd});
     }
     x*/
   }

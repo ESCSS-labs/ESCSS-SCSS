@@ -250,12 +250,12 @@ $RingColor: (
   /*x
   @mixin ring-inherit {
     $tw-ring-color: inherit !global;
-    @include box-shadow(_get_box-shadow());
+    @include box-shadow(_b-s());
   }
 
   @mixin ring-current {
     $tw-ring-color: currentColor !global;
-    @include box-shadow(_get_box-shadow());
+    @include box-shadow(_b-s());
   }
   x*/
   @each $key, $value in $RingColor {
@@ -263,19 +263,19 @@ $RingColor: (
       /*x
       @mixin ring-#{$key} {
         $tw-ring-color: #{$value} !global;
-        @include box-shadow(_get_box-shadow());
+        @include box-shadow(_b-s());
       }
 
       @mixin ring-#{$key}\/($v) {
         $tw-ring-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_get_box-shadow());
+        @include box-shadow(_b-s());
       }
       x*/
     } @else {
       /*x
       @mixin ring-#{$key}($v: 1) {
         $tw-ring-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_get_box-shadow());
+        @include box-shadow(_b-s());
       }
       x*/
     }
@@ -287,24 +287,24 @@ $RingColor: (
     /*x
     @mixin #{$rwdToken}\:ring-inherit {
       $tw-ring-color: inherit !global;
-      @include box-shadow(_get_box-shadow(), #{$rwd});
+      @include box-shadow(_b-s(), #{$rwd});
     }
 
     @mixin #{$rwdToken}\:ring-current {
       $tw-ring-color: currentColor !global;
-      @include box-shadow(_get_box-shadow(), #{$rwd});
+      @include box-shadow(_b-s(), #{$rwd});
     }
     x*/
     @each $key, $value in $RingColor {
       /*x
       @mixin #{$rwdToken}\:ring-#{$key} {
         $tw-ring-color: #{$value} !global;
-        @include box-shadow(_get_box-shadow(), #{$rwd});
+        @include box-shadow(_b-s(), #{$rwd});
       }
 
       @mixin #{$rwdToken}\:ring-#{$key}\/($v) {
         $tw-ring-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_get_box-shadow(), #{$rwd});
+        @include box-shadow(_b-s(), #{$rwd});
       }
       x*/
     }
@@ -319,11 +319,11 @@ $RingColor: (
     }
 
     @else {
-      $tw-dummy-not-match--ring-offset-width: true !global;
+      $tw-mismatch--ring-offset-width: true !global;
       $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
     }
 
-    @include box-shadow(_get_box-shadow());
+    @include box-shadow(_b-s());
   }
   x*/
 
@@ -335,11 +335,11 @@ $RingColor: (
       }
 
       @else {
-        $tw-dummy-not-match--ring-offset-width: true !global;
+        $tw-mismatch--ring-offset-width: true !global;
         $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
       }
 
-      @include box-shadow(_get_box-shadow(), #{$rwd});
+      @include box-shadow(_b-s(), #{$rwd});
     }
     x*/
   }

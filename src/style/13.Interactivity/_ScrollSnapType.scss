@@ -18,14 +18,14 @@ $ScrollSnapType: (
     } @else if list.index('snap-x' 'snap-y' 'snap-both', $key) {
       /*x
       @mixin #{$key} {
-        $tw-dummy-not-match--snap: true !global;
+        $tw-mismatch--snap: true !global;
         @include scroll-snap-type(#{$value});
       }
       x*/
     } @else if list.index('snap-mandatory' 'snap-proximity', $key) {
       /*x
       @mixin #{$key} {
-        @if $tw-dummy-not-match--snap {
+        @if $tw-mismatch--snap {
           @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
         }
 
@@ -48,14 +48,14 @@ $ScrollSnapType: (
       } @else if list.index('snap-x' 'snap-y' 'snap-both', $key) {
         /*x
         @mixin #{$rwdToken}\:#{$key} {
-          $tw-dummy-not-match--snap: true !global;
+          $tw-mismatch--snap: true !global;
           @include scroll-snap-type(#{$value}, #{$rwd});
         }
         x*/
       } @else if list.index('snap-mandatory' 'snap-proximity', $key) {
         /*x
         @mixin #{$rwdToken}\:#{$key} {
-          @if $tw-dummy-not-match--snap {
+          @if $tw-mismatch--snap {
             @error ("「 snap-mandatory/proximity 」should go before「 snap-x/y/both 」(to have same behavior as tailwind)");
           }
   
