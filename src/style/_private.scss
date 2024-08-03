@@ -1,6 +1,10 @@
 /*x
 // _c stands for color (file size concern)
 @function _c($token, $v) {
+  @if $token == null {
+    @error "customize color(e.g. $_name-*) is null"
+  }
+
   @if not math.is-unitless($v) {
     // If use / outside of calc() after v1.33, it will pop out warnings in the terminal,
     // the better way is forbidden % and provides the color.change() method
