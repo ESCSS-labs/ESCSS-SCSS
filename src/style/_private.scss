@@ -1,8 +1,8 @@
 /*x
 // _c stands for color (file size concern)
 @function _c($token, $v) {
-  @if $token == null {
-    @error "$_name-* is null"
+  @if $token ==null {
+    @error "$_name-* is null";
   }
 
   @if not math.is-unitless($v) {
@@ -22,12 +22,15 @@
   $tw-shadow: null;
 
   @if list.index(shadow md lg xl, $tw-dummy-shadow-token) {
-    $tw-shadow:
-      list.nth($tw-dummy-shadow-width, 1) $tw-shadow-color,
+    $tw-shadow: list.nth($tw-dummy-shadow-width, 1) $tw-shadow-color,
       list.nth($tw-dummy-shadow-width, 2) $tw-shadow-color;
-  } @else if $tw-dummy-shadow-token ==inner {
+  }
+
+  @else if $tw-dummy-shadow-token ==inner {
     $tw-shadow: inset $tw-dummy-shadow-width $tw-shadow-color;
-  } @else {
+  }
+
+  @else {
     $tw-shadow: $tw-dummy-shadow-width $tw-shadow-color;
   }
 
@@ -36,40 +39,36 @@
 
 // _t stands for transform (file size concern)
 @function _t() {
-  @return translate($tw-translate-x, $tw-translate-y) rotate($tw-rotate) skewX($tw-skew-x)
-    skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
+  @return translate($tw-translate-x, $tw-translate-y) rotate($tw-rotate) skewX($tw-skew-x) skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
 }
 
 // _f stands for filter (file size concern)
 @function _f() {
-  @return $tw-blur $tw-brightness $tw-contrast $tw-grayscale $tw-hue-rotate $tw-invert $tw-saturate
-    $tw-sepia $tw-drop-shadow;
+  @return $tw-blur $tw-brightness $tw-contrast $tw-grayscale $tw-hue-rotate $tw-invert $tw-saturate $tw-sepia $tw-drop-shadow;
 }
 
 // _b-f stands for backdrop-filter (file size concern)
 @function _b-f() {
-  @return $tw-backdrop-blur $tw-backdrop-brightness $tw-backdrop-contrast $tw-backdrop-grayscale
-    $tw-backdrop-hue-rotate $tw-backdrop-invert $tw-backdrop-opacity $tw-backdrop-saturate
-    $tw-backdrop-sepia;
+  @return $tw-backdrop-blur $tw-backdrop-brightness $tw-backdrop-contrast $tw-backdrop-grayscale $tw-backdrop-hue-rotate $tw-backdrop-invert $tw-backdrop-opacity $tw-backdrop-saturate $tw-backdrop-sepia;
 }
 
 // _l-g stands for linear-gradient (file size concern)
 @function _l-g() {
   @if $tw-dummy-gradient-direction==none {
     @return none;
-  } @else if $tw-gradient-via==null {
-    @return linear-gradient(
-      $tw-dummy-gradient-direction,
+  }
+
+  @else if $tw-gradient-via==null {
+    @return linear-gradient($tw-dummy-gradient-direction,
       $tw-gradient-from $tw-gradient-from-position,
-      $tw-gradient-to $tw-gradient-to-position
-    );
-  } @else {
-    @return linear-gradient(
-      $tw-dummy-gradient-direction,
+      $tw-gradient-to $tw-gradient-to-position );
+  }
+
+  @else {
+    @return linear-gradient($tw-dummy-gradient-direction,
       $tw-gradient-from $tw-gradient-from-position,
       $tw-gradient-via $tw-gradient-via-position,
-      $tw-gradient-to $tw-gradient-to-position
-    );
+      $tw-gradient-to $tw-gradient-to-position );
   }
 }
 x*/

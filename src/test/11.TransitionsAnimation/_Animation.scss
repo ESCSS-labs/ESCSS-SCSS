@@ -23,6 +23,12 @@
 
           @include expect {
             animation: spin 1s linear infinite;
+            
+            @keyframes spin {
+              to {
+                transform: rotate(360deg);
+              }
+            }
           }
         }
       }
@@ -93,6 +99,12 @@
           @include expect {
             @media (min-width: $_sm) {
               animation: spin 1s linear infinite;
+
+              @keyframes spin {
+                to {
+                  transform: rotate(360deg);
+                }
+              }
             }
           }
         }
