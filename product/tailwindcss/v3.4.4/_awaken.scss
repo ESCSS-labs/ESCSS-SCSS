@@ -12,10 +12,10 @@
  * -------------- Dual Licensing（ Commercial or AGPL 3.0 ）--------------
  *
  *  1. Commercial License
- *    see https://github.com/MikeLee0358/ESCSS-css-helper
+ *    see <https://github.com/MikeLee0358/ESCSS-css-helper>
  *
  *  2. AGPL 3.0 License
- *  Copyright (c) 2024, Mike(yingchun) Lee https://github.com/MikeLee0358
+ *  Copyright (c) 2024 - present, Mike(yingchun) Lee <https://github.com/MikeLee0358>
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Affero General Public License as published by
@@ -35,9 +35,10 @@
  *
  * modify: 
  *   1. Tailwind utils transform to ＠mixin
- *   2. preflight in @minx utils_base-preflight: 
- *.      a. remove --tw-content: ''(avoid to confusion for beginner)
- *       b. --tw-xxx(use $tw-xxx instead for better DX)
+ *   2. preflight in @mixin utils_base-preflight: 
+ *.      a. remove --tw-content: ''
+ *       b. $tw-xxx instead --tw-xxx (better DX)
+ *.      c. combined html body * in one (better DX)
 !*/
 
 // Set breakpoints here. For new projects, suggest to use Tailwind’s defaults.
@@ -522,6 +523,80 @@ $tw-mismatch--snap: false !default;
 $tw-mismatch--shadow-color: false !default;
 $tw-mismatch--ring-offset-width: false !default;
 
+// _c stands for color (file size concern)
+@function _c($token, $v) {
+  @if $token ==null {
+    @error "$_name-* is null";
+  }
+
+  @if not math.is-unitless($v) {
+    // If use / outside of calc() after v1.33, it will pop out warnings in the terminal,
+    // the better way is forbidden % and provides the color.change() method
+    @error "$v: Expected #{$v / 100%} not #{$v}, backward compatibility concern";
+  }
+
+  // color.change $alpha only accepts 0 ~ 1
+  @return color.change($token, $alpha: $v);
+}
+
+// _b-s stands for box-shadow (file size concern)
+@function _b-s() {
+  $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width $tw-ring-offset-color;
+  $tw-ring-shadow: $tw-ring-inset 0 0 0 $tw-dummy-ring-width $tw-ring-color;
+  $tw-shadow: null;
+
+  @if list.index(shadow md lg xl, $tw-dummy-shadow-token) {
+    $tw-shadow:
+      list.nth($tw-dummy-shadow-width, 1) $tw-shadow-color,
+      list.nth($tw-dummy-shadow-width, 2) $tw-shadow-color;
+  } @else if $tw-dummy-shadow-token ==inner {
+    $tw-shadow: inset $tw-dummy-shadow-width $tw-shadow-color;
+  } @else {
+    $tw-shadow: $tw-dummy-shadow-width $tw-shadow-color;
+  }
+
+  @return $tw-ring-offset-shadow, $tw-ring-shadow, $tw-shadow;
+}
+
+// _t stands for transform (file size concern)
+@function _t() {
+  @return translate($tw-translate-x, $tw-translate-y) rotate($tw-rotate) skewX($tw-skew-x)
+    skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
+}
+
+// _f stands for filter (file size concern)
+@function _f() {
+  @return $tw-blur $tw-brightness $tw-contrast $tw-grayscale $tw-hue-rotate $tw-invert $tw-saturate
+    $tw-sepia $tw-drop-shadow;
+}
+
+// _b-f stands for backdrop-filter (file size concern)
+@function _b-f() {
+  @return $tw-backdrop-blur $tw-backdrop-brightness $tw-backdrop-contrast $tw-backdrop-grayscale
+    $tw-backdrop-hue-rotate $tw-backdrop-invert $tw-backdrop-opacity $tw-backdrop-saturate
+    $tw-backdrop-sepia;
+}
+
+// _l-g stands for linear-gradient (file size concern)
+@function _l-g() {
+  @if $tw-dummy-gradient-direction==none {
+    @return none;
+  } @else if $tw-gradient-via==null {
+    @return linear-gradient(
+      $tw-dummy-gradient-direction,
+      $tw-gradient-from $tw-gradient-from-position,
+      $tw-gradient-to $tw-gradient-to-position
+    );
+  } @else {
+    @return linear-gradient(
+      $tw-dummy-gradient-direction,
+      $tw-gradient-from $tw-gradient-from-position,
+      $tw-gradient-via $tw-gradient-via-position,
+      $tw-gradient-to $tw-gradient-to-position
+    );
+  }
+}
+
 @mixin sm {
   @media (min-width: $_sm) {
     @content;
@@ -681,23 +756,6 @@ $tw-mismatch--ring-offset-width: false !default;
   @layer base-preflight {
     // tailwindcss v3.4.7 | MIT License | https://tailwindcss.com
 
-    // 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-    // 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
-
-    *,
-    ::before,
-    ::after {
-      box-sizing: border-box; // 1
-      border-width: 0; // 2
-      border-style: solid; // 2
-      border-color: #e5e7eb; // 2
-    }
-
-    ::before,
-    ::after {
-      --tw-content: '';
-    }
-
     // 1. Use a consistent sensible line-height in all browsers.
     // 2. Prevent adjustments of font size after orientation changes in iOS.
     // 3. Use a more readable tab size.
@@ -705,8 +763,14 @@ $tw-mismatch--ring-offset-width: false !default;
     // 5. Use the user's configured `sans` font-feature-settings by default.
     // 6. Use the user's configured `sans` font-variation-settings by default.
     // 7. Disable tap highlights on iOS
+    // 8. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+    // 9. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+
     html,
-    :host {
+    html *,
+    :host,
+    ::before,
+    ::after {
       line-height: 1.5; // 1
       -webkit-text-size-adjust: 100%; // 2
       -moz-tab-size: 4; // 3
@@ -716,13 +780,15 @@ $tw-mismatch--ring-offset-width: false !default;
       font-feature-settings: normal; // 5
       font-variation-settings: normal; // 6
       -webkit-tap-highlight-color: transparent; // 7
+      box-sizing: border-box; // 8
+      border-width: 0; // 9
+      border-style: solid; // 9
+      border-color: #e5e7eb; // 9
     }
 
     // 1. Remove the margin in all browsers.
-    // 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
     body {
       margin: 0; // 1
-      line-height: inherit; // 2
     }
 
     // 1. Add the correct height in Firefox.
@@ -1004,49 +1070,25 @@ $tw-mismatch--ring-offset-width: false !default;
     &,
     &::before,
     &::after {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      -webkit-tap-highlight-color: transparent;
       box-sizing: border-box;
       border-width: 0;
       border-style: solid;
       border-color: #e5e7eb;
     }
 
-    // 'html' tag and 'html &' cases
-    @if selector.is-superselector(&, 'html:root') {
-      @at-root :root {
-        line-height: 1.5;
-        -webkit-text-size-adjust: 100%;
-        -moz-tab-size: 4;
-        tab-size: 4;
-        font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-          'Segoe UI Symbol', 'Noto Color Emoji';
-        font-feature-settings: normal;
-        font-variation-settings: normal;
-        -webkit-tap-highlight-color: transparent;
-      }
-    } @else {
-      html &,
-      &:host {
-        line-height: 1.5;
-        -webkit-text-size-adjust: 100%;
-        -moz-tab-size: 4;
-        tab-size: 4;
-        font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-          'Segoe UI Symbol', 'Noto Color Emoji';
-        font-feature-settings: normal;
-        font-variation-settings: normal;
-        -webkit-tap-highlight-color: transparent;
-      }
-    }
-
-    // 'body' tag and 'body &' cases
+    // 'body' tag
     @if selector.is-superselector(&, 'body') {
       @at-root body {
         margin: 0;
-        line-height: inherit;
-      }
-    } @else {
-      body & {
-        line-height: inherit;
       }
     }
 
@@ -1279,80 +1321,6 @@ $tw-mismatch--ring-offset-width: false !default;
     @at-root [hidden] {
       display: none;
     }
-  }
-}
-
-// _c stands for color (file size concern)
-@function _c($token, $v) {
-  @if $token == null {
-    @error "$_name-* is null";
-  }
-
-  @if not math.is-unitless($v) {
-    // If use / outside of calc() after v1.33, it will pop out warnings in the terminal,
-    // the better way is forbidden % and provides the color.change() method
-    @error "$v: Expected #{$v / 100%} not #{$v}, backward compatibility concern";
-  }
-
-  // color.change $alpha only accepts 0 ~ 1
-  @return color.change($token, $alpha: $v);
-}
-
-// _b-s stands for box-shadow (file size concern)
-@function _b-s() {
-  $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width $tw-ring-offset-color;
-  $tw-ring-shadow: $tw-ring-inset 0 0 0 $tw-dummy-ring-width $tw-ring-color;
-  $tw-shadow: null;
-
-  @if list.index(shadow md lg xl, $tw-dummy-shadow-token) {
-    $tw-shadow:
-      list.nth($tw-dummy-shadow-width, 1) $tw-shadow-color,
-      list.nth($tw-dummy-shadow-width, 2) $tw-shadow-color;
-  } @else if $tw-dummy-shadow-token ==inner {
-    $tw-shadow: inset $tw-dummy-shadow-width $tw-shadow-color;
-  } @else {
-    $tw-shadow: $tw-dummy-shadow-width $tw-shadow-color;
-  }
-
-  @return $tw-ring-offset-shadow, $tw-ring-shadow, $tw-shadow;
-}
-
-// _t stands for transform (file size concern)
-@function _t() {
-  @return translate($tw-translate-x, $tw-translate-y) rotate($tw-rotate) skewX($tw-skew-x)
-    skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
-}
-
-// _f stands for filter (file size concern)
-@function _f() {
-  @return $tw-blur $tw-brightness $tw-contrast $tw-grayscale $tw-hue-rotate $tw-invert $tw-saturate
-    $tw-sepia $tw-drop-shadow;
-}
-
-// _b-f stands for backdrop-filter (file size concern)
-@function _b-f() {
-  @return $tw-backdrop-blur $tw-backdrop-brightness $tw-backdrop-contrast $tw-backdrop-grayscale
-    $tw-backdrop-hue-rotate $tw-backdrop-invert $tw-backdrop-opacity $tw-backdrop-saturate
-    $tw-backdrop-sepia;
-}
-
-// _l-g stands for linear-gradient (file size concern)
-@function _l-g() {
-  @if $tw-dummy-gradient-direction==none {
-    @return none;
-  } @else if $tw-gradient-via==null {
-    @return linear-gradient(
-      $tw-dummy-gradient-direction,
-      $tw-gradient-from $tw-gradient-from-position,
-      $tw-gradient-to $tw-gradient-to-position
-    );
-  } @else {
-    @return linear-gradient(
-      $tw-dummy-gradient-direction,
-      $tw-gradient-from $tw-gradient-from-position,
-      $tw-gradient-via $tw-gradient-via-position,
-      $tw-gradient-to $tw-gradient-to-position
-    );
   }
 }
 
@@ -42231,22 +42199,432 @@ $tw-mismatch--ring-offset-width: false !default;
 
 @mixin animate-none {
   @include animation(none);
+
+  @if list.index(
+    (
+      animate-spin,
+      sm\:animate-spin,
+      md\:animate-spin,
+      lg\:animate-spin,
+      xl\:animate-spin,
+      \2xl\:animate-spin
+    ),
+    animate-none
+  )
+  {
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-ping,
+        sm\:animate-ping,
+        md\:animate-ping,
+        lg\:animate-ping,
+        xl\:animate-ping,
+        \2xl\:animate-ping
+      ),
+      animate-none
+    )
+  {
+    @keyframes ping {
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-pulse,
+        sm\:animate-pulse,
+        md\:animate-pulse,
+        lg\:animate-pulse,
+        xl\:animate-pulse,
+        \2xl\:animate-pulse
+      ),
+      animate-none
+    )
+  {
+    @keyframes pulse {
+      50% {
+        opacity: 0.5;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-bounce,
+        sm\:animate-bounce,
+        md\:animate-bounce,
+        lg\:animate-bounce,
+        xl\:animate-bounce,
+        \2xl\:animate-bounce
+      ),
+      animate-none
+    )
+  {
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(-25%);
+        animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+
+      50% {
+        transform: translateY(0);
+        animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+  }
 }
 
 @mixin animate-spin {
   @include animation(spin 1s linear infinite);
+
+  @if list.index(
+    (
+      animate-spin,
+      sm\:animate-spin,
+      md\:animate-spin,
+      lg\:animate-spin,
+      xl\:animate-spin,
+      \2xl\:animate-spin
+    ),
+    animate-spin
+  )
+  {
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-ping,
+        sm\:animate-ping,
+        md\:animate-ping,
+        lg\:animate-ping,
+        xl\:animate-ping,
+        \2xl\:animate-ping
+      ),
+      animate-spin
+    )
+  {
+    @keyframes ping {
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-pulse,
+        sm\:animate-pulse,
+        md\:animate-pulse,
+        lg\:animate-pulse,
+        xl\:animate-pulse,
+        \2xl\:animate-pulse
+      ),
+      animate-spin
+    )
+  {
+    @keyframes pulse {
+      50% {
+        opacity: 0.5;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-bounce,
+        sm\:animate-bounce,
+        md\:animate-bounce,
+        lg\:animate-bounce,
+        xl\:animate-bounce,
+        \2xl\:animate-bounce
+      ),
+      animate-spin
+    )
+  {
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(-25%);
+        animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+
+      50% {
+        transform: translateY(0);
+        animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+  }
 }
 
 @mixin animate-ping {
   @include animation(ping 1s cubic-bezier(0, 0, 0.2, 1) infinite);
+
+  @if list.index(
+    (
+      animate-spin,
+      sm\:animate-spin,
+      md\:animate-spin,
+      lg\:animate-spin,
+      xl\:animate-spin,
+      \2xl\:animate-spin
+    ),
+    animate-ping
+  )
+  {
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-ping,
+        sm\:animate-ping,
+        md\:animate-ping,
+        lg\:animate-ping,
+        xl\:animate-ping,
+        \2xl\:animate-ping
+      ),
+      animate-ping
+    )
+  {
+    @keyframes ping {
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-pulse,
+        sm\:animate-pulse,
+        md\:animate-pulse,
+        lg\:animate-pulse,
+        xl\:animate-pulse,
+        \2xl\:animate-pulse
+      ),
+      animate-ping
+    )
+  {
+    @keyframes pulse {
+      50% {
+        opacity: 0.5;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-bounce,
+        sm\:animate-bounce,
+        md\:animate-bounce,
+        lg\:animate-bounce,
+        xl\:animate-bounce,
+        \2xl\:animate-bounce
+      ),
+      animate-ping
+    )
+  {
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(-25%);
+        animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+
+      50% {
+        transform: translateY(0);
+        animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+  }
 }
 
 @mixin animate-pulse {
   @include animation(pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite);
+
+  @if list.index(
+    (
+      animate-spin,
+      sm\:animate-spin,
+      md\:animate-spin,
+      lg\:animate-spin,
+      xl\:animate-spin,
+      \2xl\:animate-spin
+    ),
+    animate-pulse
+  )
+  {
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-ping,
+        sm\:animate-ping,
+        md\:animate-ping,
+        lg\:animate-ping,
+        xl\:animate-ping,
+        \2xl\:animate-ping
+      ),
+      animate-pulse
+    )
+  {
+    @keyframes ping {
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-pulse,
+        sm\:animate-pulse,
+        md\:animate-pulse,
+        lg\:animate-pulse,
+        xl\:animate-pulse,
+        \2xl\:animate-pulse
+      ),
+      animate-pulse
+    )
+  {
+    @keyframes pulse {
+      50% {
+        opacity: 0.5;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-bounce,
+        sm\:animate-bounce,
+        md\:animate-bounce,
+        lg\:animate-bounce,
+        xl\:animate-bounce,
+        \2xl\:animate-bounce
+      ),
+      animate-pulse
+    )
+  {
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(-25%);
+        animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+
+      50% {
+        transform: translateY(0);
+        animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+  }
 }
 
 @mixin animate-bounce {
   @include animation(bounce 1s infinite);
+
+  @if list.index(
+    (
+      animate-spin,
+      sm\:animate-spin,
+      md\:animate-spin,
+      lg\:animate-spin,
+      xl\:animate-spin,
+      \2xl\:animate-spin
+    ),
+    animate-bounce
+  )
+  {
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-ping,
+        sm\:animate-ping,
+        md\:animate-ping,
+        lg\:animate-ping,
+        xl\:animate-ping,
+        \2xl\:animate-ping
+      ),
+      animate-bounce
+    )
+  {
+    @keyframes ping {
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-pulse,
+        sm\:animate-pulse,
+        md\:animate-pulse,
+        lg\:animate-pulse,
+        xl\:animate-pulse,
+        \2xl\:animate-pulse
+      ),
+      animate-bounce
+    )
+  {
+    @keyframes pulse {
+      50% {
+        opacity: 0.5;
+      }
+    }
+  } @else if
+    list.index(
+      (
+        animate-bounce,
+        sm\:animate-bounce,
+        md\:animate-bounce,
+        lg\:animate-bounce,
+        xl\:animate-bounce,
+        \2xl\:animate-bounce
+      ),
+      animate-bounce
+    )
+  {
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(-25%);
+        animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+
+      50% {
+        transform: translateY(0);
+        animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+  }
 }
 
 @mixin animate-($v) {
@@ -42271,42 +42649,6 @@ $tw-mismatch--ring-offset-width: false !default;
 
 @mixin \2xl\:animate-($v) {
   @include animation($v, $_\2xl);
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(-25%);
-    animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(0);
-    animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
 }
 
 @mixin delay-0 {
