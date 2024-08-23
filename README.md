@@ -4,7 +4,7 @@ escss-awaken helps you write high quality(clean、maintainable、compact) CSS by
 
 ## Core Concept - Atomic CSS
 
-See Q&A
+SCSS mixin unit in the abstraction layer for performance and consistency.
 
 ## Usages
 
@@ -127,7 +127,7 @@ Yes, escss-awaken is designed for backward compatibility from Sass v1.23.0 to th
 
 ### Are you a Tailwind killer?
 
-No, escss-awaken is designed to integrate the CSS ecosystem to help developers feel less frustration. if you understand deeply in escss-awaken, it works with Tailwind pretty well(size、develop speed..)
+No, escss-awaken is designed to integrate the CSS ecosystem to help developers feel less frustration. if you understand deeply in escss-awaken, it works with Tailwind pretty well.
 
 ## Installation
 
