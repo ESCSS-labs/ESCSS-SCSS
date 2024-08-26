@@ -11,7 +11,7 @@ SCSS mixin unit in the abstraction layer for performance and consistency.
 ```
 1. Uses the same utility names and behaviors as Tailwind
 2. Type @include utils to show more API ('SCSS IntelliSense' extension)
-3. @include utils__reset-tw-variables in every id to reset some behaviors (best practice)
+3. @include utils_reset-tw-variables in every id to reset some behaviors (best practice)
 4. Concerning of file size:
     support: media query(sm、md..)、dark
     not support: all opacity colors 5、10、15.. e.g. bg-red-500\/5(awaken.scss)、pseudo class(hover、before..)
@@ -31,7 +31,7 @@ SCSS mixin unit in the abstraction layer for performance and consistency.
   @include text-green-50\/65; // not support in _awaken.scss
   @include text-green-50\/(0.65); // use arbitrary instead
 
-  @include utils__reset-tw-variables;
+  @include utils_reset-tw-variables;
 }
 
 // 2. Priority: same behavior as CSS
@@ -39,7 +39,7 @@ SCSS mixin unit in the abstraction layer for performance and consistency.
   background: red;
   @include bg-green-50; // override red
 
-  @include utils__reset-tw-variables;
+  @include utils_reset-tw-variables;
 }
 
 // 3. Media query utility for DX
@@ -58,7 +58,7 @@ SCSS mixin unit in the abstraction layer for performance and consistency.
     @include to-green-500;
   }
 
-  @include utils__reset-tw-variables;
+  @include utils_reset-tw-variables;
 }
 
 // 4. Dark mode
@@ -73,7 +73,7 @@ SCSS mixin unit in the abstraction layer for performance and consistency.
     background: black;
   }
 
-  @include utils__reset-tw-variables;
+  @include utils_reset-tw-variables;
 }
 ```
 
