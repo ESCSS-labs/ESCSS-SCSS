@@ -1,6 +1,6 @@
-# What is escss-awaken?
+# What is ESCSS-awaken?
 
-escss-awaken helps you write high quality(clean、maintainable、compact) CSS by leveraging Tailwind utilities and Sass features
+ESCSS-awaken helps you write high quality(clean、maintainable、compact) CSS by leveraging Tailwind utilities and Sass features
 
 ## Core Concept - Atomic CSS
 
@@ -123,11 +123,169 @@ Compared to my past commits, reusing utilities more frequently and reducing file
 
 ### Do you support backward compatibility?
 
-Yes, escss-awaken is designed for backward compatibility from Sass v1.23.0 to the latest version. I adhere to Sass’s deprecation warnings to ensure smooth transitions. My goal is to help you move to the latest version if possible.
+Yes, ESCSS-awaken is designed for backward compatibility from Sass v1.23.0 to the latest version. I adhere to Sass’s deprecation warnings to ensure smooth transitions. My goal is to help you move to the latest version if possible.
 
 ### Are you a Tailwind killer?
 
-No, escss-awaken is designed to integrate the CSS ecosystem to help developers feel less frustration. if you understand deeply in escss-awaken, it works with Tailwind pretty well.
+No, ESCSS-awaken is designed to integrate the CSS ecosystem to help developers feel less frustration.
+
+### How does ESCSS-awaken cooperate with Tailwind well?
+
+For early-stage products needing a quick prototype, using Tailwind-based components, ESCSS-awaken shines when it comes to maintenance.
+
+```html
+<!-- Tailwind -->
+<div
+  class="--active py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6"
+>
+  <img
+    class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0"
+    src="/img/erin-lindford.jpg"
+    alt="Woman's Face"
+  />
+  <div class="text-center space-y-2 sm:text-left">
+    <div class="space-y-0.5">
+      <p class="text-lg text-black font-semibold">Erin Lindford</p>
+      <p class="text-slate-500 font-medium">Product Engineer</p>
+    </div>
+    <button
+      class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+    >
+      Message
+    </button>
+  </div>
+</div>
+```
+
+```html
+<!-- ESCSS-awaken -->
+<div id="🔥PersonCard" class="--active">
+  <img id="🔥PersonCard__Img" src="/img/erin-lindford.jpg" alt="Woman's Face" />
+  <div id="🔥PersonCard__Div">
+    <div id="🔥PersonCard__Div__Box">
+      <p id="🔥PersonCard__Div__Box__Name">Erin Lindford</p>
+      <p id="🔥PersonCard__Div__Box__Title">Product Engineer</p>
+    </div>
+    <button id="🔥PersonCard__Div__Button">Message</button>
+  </div>
+</div>
+```
+
+```scss
+// Use 'Command + D' for greater efficiency when translating
+#🔥PersonCard {
+  @include py-8;
+  @include px-8;
+  @include max-w-sm;
+  @include mx-auto;
+  @include bg-white;
+  @include rounded-xl;
+  @include shadow-lg;
+  @include space-y-2;
+
+  @include sm {
+    @include py-4;
+    @include flex;
+    @include items-center;
+    @include space-y-0;
+    @include space-x-6;
+  }
+}
+
+#🔥PersonCard__Img {
+  @include block;
+  @include mx-auto;
+  @include h-24;
+  @include rounded-full;
+
+  @include sm {
+    @include mx-0;
+    @include shrink-0;
+  }
+}
+
+#🔥PersonCard__Div {
+  @include text-center;
+  @include space-y-2;
+
+  @include sm {
+    @include text-left;
+  }
+}
+
+#🔥PersonCard__Div__Box {
+  @include space-y-0\.5;
+}
+
+#🔥PersonCard__Div__Box__Name {
+  @include text-lg;
+  @include text-black;
+  @include font-semibold;
+}
+
+#🔥PersonCard__Div__Box__Title {
+  @include text-slate-500;
+  @include font-medium;
+}
+
+#🔥PersonCard__Div__Button {
+  @include px-4;
+  @include py-1;
+  @include text-sm;
+  @include text-purple-600;
+  @include font-semibold;
+  @include rounded-full;
+  @include border;
+  @include border-purple-200;
+
+  &:hover {
+    @include text-white;
+    @include bg-purple-600;
+    @include border-transparent;
+  }
+
+  &:focus {
+    @include outline-none;
+    @include ring-2;
+    @include ring-purple-600;
+    @include ring-offset-2;
+  }
+}
+```
+
+### Is ESCSS smaller in file size compared to Tailwind??
+
+I believe the answer is yes. In a large-scale project, I would say the file size of ESCSS is generally smaller or at least comparable to Tailwind.
+The ideal approach is to extract common properties into reusable classes, allowing them to be reused in Tailwind classes. For example, see below
+
+```html
+<!-- reused the same utility classes -->
+<!-- Tailwind based component -->
+<ul class="space-y-4">
+  <li class="flex items-center">Item 1</li>
+</ul>
+
+<!-- repeat ESCSS component in n times -->
+<ul id="🔥Ul" class="space-y-4">
+  <li id="🔥Ul__Li" class="flex items-center">Item 1</li>
+  <li id="🔥Ul__Li" class="flex items-center">Item 2</li>
+  <li id="🔥Ul__Li" class="flex items-center">Item 3</li>
+</ul>
+```
+
+```scss
+#🔥Ul__Li:nth-of-type(1) {
+  @include text-yellow-600;
+}
+
+#🔥Ul__Li:nth-of-type(2) {
+  @include text-yellow-600;
+}
+
+#🔥Ul__Li:nth-of-type(3) {
+  @include text-yellow-600;
+}
+```
 
 ## Installation
 
@@ -135,8 +293,8 @@ No, escss-awaken is designed to integrate the CSS ecosystem to help developers f
 1. copy file in /product/_awaken.scss
 
 2. install
-  npm install -dev sas
-  yarn add -D sas
+  npm install -dev sass
+  yarn add -D sass
   bun add -D sass
 
 3. using Vite to set up awaken.scss for global
