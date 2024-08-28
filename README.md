@@ -321,4 +321,4 @@ The ideal approach is to extract common properties into reusable classes, allowi
 
 ## License
 
-Dual Licensing (Commercial or AGPL 3.0), see [LICENSE](./LICENSE.md)
+Dual Licensing (Commercial or AGPL 3.0), see [LICENSE](./LICENSE)
