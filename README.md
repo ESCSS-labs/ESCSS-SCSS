@@ -251,6 +251,10 @@ For early-stage products needing a quick prototype, using Tailwind-based compone
     @include ring-offset-2;
   }
 }
+
+.--active {
+  // ...
+}
 ```
 
 ### Is ESCSS smaller in file size compared to Tailwind??
