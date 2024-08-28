@@ -82,7 +82,7 @@ SCSS mixin unit in the abstraction layer for performance and consistency.
 ### Why are the default values of breakpoints(sm、md..) set to 0px?
 
 1. I think it's fair to earn money for my work.
-2. Each project has unique breakpoints, and it's relatively easy to trigger my license [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html) to open source. As I’m not a lawyer, there could be misunderstandings, so I trigger the licensing obligations(to open source). It’s up to you (the company) to decide whether or not to use this project.
+2. Each project has unique breakpoints, and it's relatively easy to trigger my license [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html) to open source. As I’m not a lawyer, there could be misunderstandings, so I trigger the licensing obligations(to open source) and let you make a decision.
 
 ### What is Atomic CSS?
 
