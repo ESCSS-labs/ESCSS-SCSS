@@ -3291,35 +3291,436 @@ $tw-mismatch--ring-offset-width: false !default;
   }
 }
 
+
 /*!
  * -------------- Dual Licensing（ Commercial or AGPL 3.0 ）--------------
- * 1. Commercial License: 
- * see <https://opencollective.com/escss>
  *
- * 2. AGPL 3.0 License:
- * Copyright (c) 2024, Mike(yingchun) Lee <https://github.com/MikeLee0358>
+ *  1. Commercial License
+ *    see <https://github.com/MikeLee0358/ESCSS-css-helper>
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Affero General Public License for more details.
-
- * You should have received a copy of the GNU Affero General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ *  2. AGPL 3.0 License
+ *  Copyright (c) 2024 - present, Mike(yingchun) Lee <https://github.com/MikeLee0358>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU Affero General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
  *  
  *  AGPL-3.0, §13 - check is modified:
- *    original  --> after use
+ *    original --> after use
 
- *    $_sm: 0px --> #{$_sm}
- *    $_md: 0px --> #{$_md}
- *    $_lg: 0px --> #{$_lg}
- *    $_xl: 0px --> #{$_xl}
- *    $_\2xl: 0px --> #{$_\2xl}
+      $_sm: 0px --> #{$sm}
+      $_md: 0px --> #{$_md}
+      $_lg: 0px --> #{$_lg}
+      $_xl: 0px --> #{$_xl}
+      $_\2xl: 0px --> #{$_\2xl}
+
+      $_name-50: null --> #{$_name-50}
+      $_name-100: null --> #{$_name-100}
+      $_name-200: null --> #{$_name-200}
+      $_name-300: null --> #{$_name-300}
+      $_name-400: null --> #{$_name-400}
+      $_name-500: null --> #{$_name-500}
+      $_name-600: null --> #{$_name-600}
+      $_name-700: null --> #{$_name-700}
+      $_name-800: null --> #{$_name-800}
+      $_name-900: null --> #{$_name-900}
+      $_name-950: null --> #{$_name-950}
+
+      $_name2-50: null --> #{$_name2-50}
+      $_name2-100: null --> #{$_name2-100}
+      $_name2-200: null --> #{$_name2-200}
+      $_name2-300: null --> #{$_name2-300}
+      $_name2-400: null --> #{$_name2-400}
+      $_name2-500: null --> #{$_name2-500}
+      $_name2-600: null --> #{$_name2-600}
+      $_name2-700: null --> #{$_name2-700}
+      $_name2-800: null --> #{$_name2-800}
+      $_name2-900: null --> #{$_name2-900}
+      $_name2-950: null --> #{$_name2-950}
+
+      $_name3-50: null --> #{$_name3-50}
+      $_name3-100: null --> #{$_name3-100}
+      $_name3-200: null --> #{$_name3-200}
+      $_name3-300: null --> #{$_name3-300}
+      $_name3-400: null --> #{$_name3-400}
+      $_name3-500: null --> #{$_name3-500}
+      $_name3-600: null --> #{$_name3-600}
+      $_name3-700: null --> #{$_name3-700}
+      $_name3-800: null --> #{$_name3-800}
+      $_name3-900: null --> #{$_name3-900}
+      $_name3-950: null --> #{$_name3-950}
+
+      $_black: #000 --> #{$_black}
+      $_white: #fff --> #{$_white}
+
+      $_slate-50: #f8fafc --> #{$_slate-50}
+      $_slate-100: #f1f5f9 --> #{$_slate-100}
+      $_slate-200: #e2e8f0 --> #{$_slate-200}
+      $_slate-300: #cbd5e1 --> #{$_slate-300}
+      $_slate-400: #94a3b8 --> #{$_slate-400}
+      $_slate-500: #64748b --> #{$_slate-500}
+      $_slate-600: #475569 --> #{$_slate-600}
+      $_slate-700: #334155 --> #{$_slate-700}
+      $_slate-800: #1e293b --> #{$_slate-800}
+      $_slate-900: #0f172a --> #{$_slate-900}
+      $_slate-950: #020617 --> #{$_slate-950}
+
+      $_gray-50: #f9fafb --> #{$_gray-50}
+      $_gray-100: #f3f4f6 --> #{$_gray-100}
+      $_gray-200: #e5e7eb --> #{$_gray-200}
+      $_gray-300: #d1d5db --> #{$_gray-300}
+      $_gray-400: #9ca3af --> #{$_gray-400}
+      $_gray-500: #6b7280 --> #{$_gray-500}
+      $_gray-600: #4b5563 --> #{$_gray-600}
+      $_gray-700: #374151 --> #{$_gray-700}
+      $_gray-800: #1f2937 --> #{$_gray-800}
+      $_gray-900: #111827 --> #{$_gray-900}
+      $_gray-950: #030712 --> #{$_gray-950}
+
+      $_zinc-50: #fafafa --> #{$_zinc-50}
+      $_zinc-100: #f4f4f5 --> #{$_zinc-100}
+      $_zinc-200: #e4e4e7 --> #{$_zinc-200}
+      $_zinc-300: #d4d4d8 --> #{$_zinc-300}
+      $_zinc-400: #a1a1aa --> #{$_zinc-400}
+      $_zinc-500: #71717a --> #{$_zinc-500}
+      $_zinc-600: #52525b --> #{$_zinc-600}
+      $_zinc-700: #3f3f46 --> #{$_zinc-700}
+      $_zinc-800: #27272a --> #{$_zinc-800}
+      $_zinc-900: #18181b --> #{$_zinc-900}
+      $_zinc-950: #09090b --> #{$_zinc-950}
+
+      $_neutral-50: #fafafa --> #{$_neutral-50}
+      $_neutral-100: #f5f5f5 --> #{$_neutral-100}
+      $_neutral-200: #e5e5e5 --> #{$_neutral-200}
+      $_neutral-300: #d4d4d4 --> #{$_neutral-300}
+      $_neutral-400: #a3a3a3 --> #{$_neutral-400}
+      $_neutral-500: #737373 --> #{$_neutral-500}
+      $_neutral-600: #525252 --> #{$_neutral-600}
+      $_neutral-700: #404040 --> #{$_neutral-700}
+      $_neutral-800: #262626 --> #{$_neutral-800}
+      $_neutral-900: #171717 --> #{$_neutral-900}
+      $_neutral-950: #0a0a0a --> #{$_neutral-950}
+
+      $_stone-50: #fafaf9 --> #{$_stone-50}
+      $_stone-100: #f5f5f4 --> #{$_stone-100}
+      $_stone-200: #e7e5e4 --> #{$_stone-200}
+      $_stone-300: #d6d3d1 --> #{$_stone-300}
+      $_stone-400: #a8a29e --> #{$_stone-400}
+      $_stone-500: #78716c --> #{$_stone-500}
+      $_stone-600: #57534e --> #{$_stone-600}
+      $_stone-700: #44403c --> #{$_stone-700}
+      $_stone-800: #292524 --> #{$_stone-800}
+      $_stone-900: #1c1917 --> #{$_stone-900}
+      $_stone-950: #0c0a09 --> #{$_stone-950}
+
+      $_red-50: #fef2f2 --> #{$_red-50}
+      $_red-100: #fee2e2 --> #{$_red-100}
+      $_red-200: #fecaca --> #{$_red-200}
+      $_red-300: #fca5a5 --> #{$_red-300}
+      $_red-400: #f87171 --> #{$_red-400}
+      $_red-500: #ef4444 --> #{$_red-500}
+      $_red-600: #dc2626 --> #{$_red-600}
+      $_red-700: #b91c1c --> #{$_red-700}
+      $_red-800: #991b1b --> #{$_red-800}
+      $_red-900: #7f1d1d --> #{$_red-900}
+      $_red-950: #450a0a --> #{$_red-950}
+
+      $_orange-50: #fff7ed --> #{$_orange-50}
+      $_orange-100: #ffedd5 --> #{$_orange-100}
+      $_orange-200: #fed7aa --> #{$_orange-200}
+      $_orange-300: #fdba74 --> #{$_orange-300}
+      $_orange-400: #fb923c --> #{$_orange-400}
+      $_orange-500: #f97316 --> #{$_orange-500}
+      $_orange-600: #ea580c --> #{$_orange-600}
+      $_orange-700: #c2410c --> #{$_orange-700}
+      $_orange-800: #9a3412 --> #{$_orange-800}
+      $_orange-900: #7c2d12 --> #{$_orange-900}
+      $_orange-950: #431407 --> #{$_orange-950}
+
+      $_amber-50: #fffbeb --> #{$_amber-50}
+      $_amber-100: #fef3c7 --> #{$_amber-100}
+      $_amber-200: #fde68a --> #{$_amber-200}
+      $_amber-300: #fcd34d --> #{$_amber-300}
+      $_amber-400: #fbbf24 --> #{$_amber-400}
+      $_amber-500: #f59e0b --> #{$_amber-500}
+      $_amber-600: #d97706 --> #{$_amber-600}
+      $_amber-700: #b45309 --> #{$_amber-700}
+      $_amber-800: #92400e --> #{$_amber-800}
+      $_amber-900: #78350f --> #{$_amber-900}
+      $_amber-950: #451a03 --> #{$_amber-950}
+
+      $_yellow-50: #fefce8 --> #{$_yellow-50}
+      $_yellow-100: #fef9c3 --> #{$_yellow-100}
+      $_yellow-200: #fef08a --> #{$_yellow-200}
+      $_yellow-300: #fde047 --> #{$_yellow-300}
+      $_yellow-400: #facc15 --> #{$_yellow-400}
+      $_yellow-500: #eab308 --> #{$_yellow-500}
+      $_yellow-600: #ca8a04 --> #{$_yellow-600}
+      $_yellow-700: #a16207 --> #{$_yellow-700}
+      $_yellow-800: #854d0e --> #{$_yellow-800}
+      $_yellow-900: #713f12 --> #{$_yellow-900}
+      $_yellow-950: #422006 --> #{$_yellow-950}
+
+      $_lime-50: #f7fee7 --> #{$_lime-50}
+      $_lime-100: #ecfccb --> #{$_lime-100}
+      $_lime-200: #d9f99d --> #{$_lime-200}
+      $_lime-300: #bef264 --> #{$_lime-300}
+      $_lime-400: #a3e635 --> #{$_lime-400}
+      $_lime-500: #84cc16 --> #{$_lime-500}
+      $_lime-600: #65a30d --> #{$_lime-600}
+      $_lime-700: #4d7c0f --> #{$_lime-700}
+      $_lime-800: #3f6212 --> #{$_lime-800}
+      $_lime-900: #365314 --> #{$_lime-900}
+      $_lime-950: #1a2e05 --> #{$_lime-950}
+
+      $_green-50: #f0fdf4 --> #{$_green-50}
+      $_green-100: #dcfce7 --> #{$_green-100}
+      $_green-200: #bbf7d0 --> #{$_green-200}
+      $_green-300: #86efac --> #{$_green-300}
+      $_green-400: #4ade80 --> #{$_green-400}
+      $_green-500: #22c55e --> #{$_green-500}
+      $_green-600: #16a34a --> #{$_green-600}
+      $_green-700: #15803d --> #{$_green-700}
+      $_green-800: #166534 --> #{$_green-800}
+      $_green-900: #14532d --> #{$_green-900}
+      $_green-950: #052e16 --> #{$_green-950}
+
+      $_emerald-50: #ecfdf5 --> #{$_emerald-50}
+      $_emerald-100: #d1fae5 --> #{$_emerald-100}
+      $_emerald-200: #a7f3d0 --> #{$_emerald-200}
+      $_emerald-300: #6ee7b7 --> #{$_emerald-300}
+      $_emerald-400: #34d399 --> #{$_emerald-400}
+      $_emerald-500: #10b981 --> #{$_emerald-500}
+      $_emerald-600: #059669 --> #{$_emerald-600}
+      $_emerald-700: #047857 --> #{$_emerald-700}
+      $_emerald-800: #065f46 --> #{$_emerald-800}
+      $_emerald-900: #064e3b --> #{$_emerald-900}
+      $_emerald-950: #022c22 --> #{$_emerald-950}
+
+      $_teal-50: #f0fdfa --> #{$_teal-50}
+      $_teal-100: #ccfbf1 --> #{$_teal-100}
+      $_teal-200: #99f6e4 --> #{$_teal-200}
+      $_teal-300: #5eead4 --> #{$_teal-300}
+      $_teal-400: #2dd4bf --> #{$_teal-400}
+      $_teal-500: #14b8a6 --> #{$_teal-500}
+      $_teal-600: #0d9488 --> #{$_teal-600}
+      $_teal-700: #0f766e --> #{$_teal-700}
+      $_teal-800: #115e59 --> #{$_teal-800}
+      $_teal-900: #134e4a --> #{$_teal-900}
+      $_teal-950: #042f2e --> #{$_teal-950}
+
+      $_cyan-50: #ecfeff --> #{$_cyan-50}
+      $_cyan-100: #cffafe --> #{$_cyan-100}
+      $_cyan-200: #a5f3fc --> #{$_cyan-200}
+      $_cyan-300: #67e8f9 --> #{$_cyan-300}
+      $_cyan-400: #22d3ee --> #{$_cyan-400}
+      $_cyan-500: #06b6d4 --> #{$_cyan-500}
+      $_cyan-600: #0891b2 --> #{$_cyan-600}
+      $_cyan-700: #0e7490 --> #{$_cyan-700}
+      $_cyan-800: #155e75 --> #{$_cyan-800}
+      $_cyan-900: #164e63 --> #{$_cyan-900}
+      $_cyan-950: #083344 --> #{$_cyan-950}
+
+      $_sky-50: #f0f9ff --> #{$_sky-50}
+      $_sky-100: #e0f2fe --> #{$_sky-100}
+      $_sky-200: #bae6fd --> #{$_sky-200}
+      $_sky-300: #7dd3fc --> #{$_sky-300}
+      $_sky-400: #38bdf8 --> #{$_sky-400}
+      $_sky-500: #0ea5e9 --> #{$_sky-500}
+      $_sky-600: #0284c7 --> #{$_sky-600}
+      $_sky-700: #0369a1 --> #{$_sky-700}
+      $_sky-800: #075985 --> #{$_sky-800}
+      $_sky-900: #0c4a6e --> #{$_sky-900}
+      $_sky-950: #082f49 --> #{$_sky-950}
+
+      $_blue-50: #eff6ff --> #{$_blue-50}
+      $_blue-100: #dbeafe --> #{$_blue-100}
+      $_blue-200: #bfdbfe --> #{$_blue-200}
+      $_blue-300: #93c5fd --> #{$_blue-300}
+      $_blue-400: #60a5fa --> #{$_blue-400}
+      $_blue-500: #3b82f6 --> #{$_blue-500}
+      $_blue-600: #2563eb --> #{$_blue-600}
+      $_blue-700: #1d4ed8 --> #{$_blue-700}
+      $_blue-800: #1e40af --> #{$_blue-800}
+      $_blue-900: #1e3a8a --> #{$_blue-900}
+      $_blue-950: #172554 --> #{$_blue-950}
+
+      $_indigo-50: #eef2ff --> #{$_indigo-50}
+      $_indigo-100: #e0e7ff --> #{$_indigo-100}
+      $_indigo-200: #c7d2fe --> #{$_indigo-200}
+      $_indigo-300: #a5b4fc --> #{$_indigo-300}
+      $_indigo-400: #818cf8 --> #{$_indigo-400}
+      $_indigo-500: #6366f1 --> #{$_indigo-500}
+      $_indigo-600: #4f46e5 --> #{$_indigo-600}
+      $_indigo-700: #4338ca --> #{$_indigo-700}
+      $_indigo-800: #3730a3 --> #{$_indigo-800}
+      $_indigo-900: #312e81 --> #{$_indigo-900}
+      $_indigo-950: #1e1b4b --> #{$_indigo-950}
+
+      $_violet-50: #f5f3ff --> #{$_violet-50}
+      $_violet-100: #ede9fe --> #{$_violet-100}
+      $_violet-200: #ddd6fe --> #{$_violet-200}
+      $_violet-300: #c4b5fd --> #{$_violet-300}
+      $_violet-400: #a78bfa --> #{$_violet-400}
+      $_violet-500: #8b5cf6 --> #{$_violet-500}
+      $_violet-600: #7c3aed --> #{$_violet-600}
+      $_violet-700: #6d28d9 --> #{$_violet-700}
+      $_violet-800: #5b21b6 --> #{$_violet-800}
+      $_violet-900: #4c1d95 --> #{$_violet-900}
+      $_violet-950: #2e1065 --> #{$_violet-950}
+
+      $_purple-50: #faf5ff --> #{$_purple-50}
+      $_purple-100: #f3e8ff --> #{$_purple-100}
+      $_purple-200: #e9d5ff --> #{$_purple-200}
+      $_purple-300: #d8b4fe --> #{$_purple-300}
+      $_purple-400: #c084fc --> #{$_purple-400}
+      $_purple-500: #a855f7 --> #{$_purple-500}
+      $_purple-600: #9333ea --> #{$_purple-600}
+      $_purple-700: #7e22ce --> #{$_purple-700}
+      $_purple-800: #6b21a8 --> #{$_purple-800}
+      $_purple-900: #581c87 --> #{$_purple-900}
+      $_purple-950: #3b0764 --> #{$_purple-950}
+
+      $_fuchsia-50: #fdf4ff --> #{$_fuchsia-50}
+      $_fuchsia-100: #fae8ff --> #{$_fuchsia-100}
+      $_fuchsia-200: #f5d0fe --> #{$_fuchsia-200}
+      $_fuchsia-300: #f0abfc --> #{$_fuchsia-300}
+      $_fuchsia-400: #e879f9 --> #{$_fuchsia-400}
+      $_fuchsia-500: #d946ef --> #{$_fuchsia-500}
+      $_fuchsia-600: #c026d3 --> #{$_fuchsia-600}
+      $_fuchsia-700: #a21caf --> #{$_fuchsia-700}
+      $_fuchsia-800: #86198f --> #{$_fuchsia-800}
+      $_fuchsia-900: #701a75 --> #{$_fuchsia-900}
+      $_fuchsia-950: #4a044e --> #{$_fuchsia-950}
+
+      $_pink-50: #fdf2f8 --> #{$_pink-50}
+      $_pink-100: #fce7f3 --> #{$_pink-100}
+      $_pink-200: #fbcfe8 --> #{$_pink-200}
+      $_pink-300: #f9a8d4 --> #{$_pink-300}
+      $_pink-400: #f472b6 --> #{$_pink-400}
+      $_pink-500: #ec4899 --> #{$_pink-500}
+      $_pink-600: #db2777 --> #{$_pink-600}
+      $_pink-700: #be185d --> #{$_pink-700}
+      $_pink-800: #9d174d --> #{$_pink-800}
+      $_pink-900: #831843 --> #{$_pink-900}
+      $_pink-950: #500724 --> #{$_pink-950}
+
+      $_rose-50: #fff1f2 --> #{$_rose-50}
+      $_rose-100: #ffe4e6 --> #{$_rose-100}
+      $_rose-200: #fecdd3 --> #{$_rose-200}
+      $_rose-300: #fda4af --> #{$_rose-300}
+      $_rose-400: #fb7185 --> #{$_rose-400}
+      $_rose-500: #f43f5e --> #{$_rose-500}
+      $_rose-600: #e11d48 --> #{$_rose-600}
+      $_rose-700: #be123c --> #{$_rose-700}
+      $_rose-800: #9f1239 --> #{$_rose-800}
+      $_rose-900: #881337 --> #{$_rose-900}
+      $_rose-950: #4c0519 --> #{$_rose-950}
+
+      $_0: 0px --> #{$_0}
+      $_px: 1px --> #{$_px}
+      $_0\.5: 0.125rem --> #{$_0\.5}
+      $_1: 0.25rem --> #{$_1}
+      $_1\.5: 0.375rem --> #{$_1\.5}
+      $_2: 0.5rem --> #{$_2}
+      $_2\.5: 0.625rem --> #{$_2\.5}
+      $_3: 0.75rem --> #{$_3}
+      $_3\.5: 0.875rem --> #{$_3\.5}
+      $_4: 1rem --> #{$_4}
+      $_5: 1.25rem --> #{$_5}
+      $_6: 1.5rem --> #{$_6}
+      $_7: 1.75rem --> #{$_7}
+      $_8: 2rem --> #{$_8}
+      $_9: 2.25rem --> #{$_9}
+      $_10: 2.5rem --> #{$_10}
+      $_11: 2.75rem --> #{$_11}
+      $_12: 3rem --> #{$_12}
+      $_14: 3.5rem --> #{$_14}
+      $_16: 4rem --> #{$_16}
+      $_20: 5rem --> #{$_20}
+      $_24: 6rem --> #{$_24}
+      $_28: 7rem --> #{$_28}
+      $_32: 8rem --> #{$_32}
+      $_36: 9rem --> #{$_36}
+      $_40: 10rem --> #{$_40}
+      $_44: 11rem --> #{$_44}
+      $_48: 12rem --> #{$_48}
+      $_52: 13rem --> #{$_52}
+      $_56: 14rem --> #{$_56}
+      $_60: 15rem --> #{$_60}
+      $_64: 16rem --> #{$_64}
+      $_72: 18rem --> #{$_72}
+      $_80: 20rem --> #{$_80}
+      $_96: 24rem --> #{$_96}
+
+      $_font-size_xs: 0.75rem --> #{$_font-size_xs}
+      $_font-size_sm: 0.875rem --> #{$_font-size_sm}
+      $_font-size_base: 1rem --> #{$_font-size_base}
+      $_font-size_lg: 1.125rem --> #{$_font-size_lg}
+      $_font-size_xl: 1.25rem --> #{$_font-size_xl}
+      $_font-size_2xl: 1.5rem --> #{$_font-size_2xl}
+      $_font-size_3xl: 1.875rem --> #{$_font-size_3xl}
+      $_font-size_4xl: 2.25rem --> #{$_font-size_4xl}
+      $_font-size_5xl: 3rem --> #{$_font-size_5xl}
+      $_font-size_6xl: 3.75rem --> #{$_font-size_6xl}
+      $_font-size_7xl: 4.5rem --> #{$_font-size_7xl}
+      $_font-size_8xl: 6rem --> #{$_font-size_8xl}
+      $_font-size_9xl: 8rem --> #{$_font-size_9xl}
+
+      $_line-height_xs: 1rem --> #{$_line-height_xs}
+      $_line-height_sm: 1.25rem --> #{$_line-height_sm}
+      $_line-height_base: 1.5rem --> #{$_line-height_base}
+      $_line-height_lg: 1.75rem --> #{$_line-height_lg}
+      $_line-height_xl: 1.75rem --> #{$_line-height_xl}
+      $_line-height_2xl: 2rem --> #{$_line-height_2xl}
+      $_line-height_3xl: 2.25rem --> #{$_line-height_3xl}
+      $_line-height_4xl: 2.5rem --> #{$_line-height_4xl}
+      $_line-height_5xl: 1 --> #{$_line-height_5xl}
+      $_line-height_6xl: 1 --> #{$_line-height_6xl}
+      $_line-height_7xl: 1 --> #{$_line-height_7xl}
+      $_line-height_8xl: 1 --> #{$_line-height_8xl}
+      $_line-height_9xl: 1 --> #{$_line-height_9xl}
+
+      $_leading-3: 0.75rem --> #{$_leading-3}
+      $_leading-4: 1rem --> #{$_leading-4}
+      $_leading-5: 1.25rem --> #{$_leading-5}
+      $_leading-6: 1.5rem --> #{$_leading-6}
+      $_leading-7: 1.75rem --> #{$_leading-7}
+      $_leading-8: 2rem --> #{$_leading-8}
+      $_leading-9: 2.25rem --> #{$_leading-9}
+      $_leading-10: 2.5rem --> #{$_leading-10}
+      $_leading-none: 1 --> #{$_leading-none}
+      $_leading-tight: 1.25 --> #{$_leading-tight}
+      $_leading-snug: 1.375 --> #{$_leading-snug}
+      $_leading-normal: 1.5 --> #{$_leading-normal}
+      $_leading-relaxed: 1.625 --> #{$_leading-relaxed}
+      $_leading-loose: 2 --> #{$_leading-loose}
+
+      $_rounded-sm: 0.125rem --> #{$_rounded-sm}
+      $_rounded: 0.25rem --> #{$_rounded}
+      $_rounded-md: 0.375rem --> #{$_rounded-md}
+      $_rounded-lg: 0.5rem --> #{$_rounded-lg}
+      $_rounded-xl: 0.75rem --> #{$_rounded-xl}
+      $_rounded-2xl: 1rem --> #{$_rounded-2xl}
+      $_rounded-3xl: 1.5rem --> #{$_rounded-3xl}
+
+      $_tighter: -0.05em --> #{$_tighter}
+      $_tight: -0.025em --> #{$_tight}
+      $_normal: 0em --> #{$_normal}
+      $_wide: 0.025em --> #{$_wide}
+      $_wider: 0.05em --> #{$_wider}
+      $_widest: 0.1em --> #{$_widest}
+ * ----------------------------------------------------------------------
+ * tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
 !*/
 
 @mixin aspect-auto {

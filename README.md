@@ -257,10 +257,9 @@ For early-stage products needing a quick prototype, using Tailwind-based compone
 }
 ```
 
-### Is ESCSS smaller in file size compared to Tailwind??
+### How about reuse utility classes?
 
-I believe the answer is yes. In a large-scale project, I would say the file size of ESCSS is generally smaller or at least comparable to Tailwind.
-The ideal approach is to extract common properties into reusable classes, allowing them to be reused in Tailwind classes. For example, see below
+The ideal approach is to extract common properties into reusable classes, allowing them to be reused in Tailwind classes.
 
 ```html
 <!-- reused the same utility classes -->
