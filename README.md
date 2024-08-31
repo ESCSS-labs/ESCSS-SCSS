@@ -6,6 +6,9 @@ ESCSS-awaken helps you write high quality(clean、maintainable、compact) CSS by
 
 SCSS mixin unit in the abstraction layer for performance and consistency.
 
+## Requirements
+  sass >= 1.23.0
+
 ## Usages
 
 ```
