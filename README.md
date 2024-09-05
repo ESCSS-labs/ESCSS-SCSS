@@ -1,14 +1,29 @@
 ![logo](./img/logo.png)
+
 # What is ESCSS-awaken?
 
-ESCSS-awaken helps you write high quality(clean、maintainable、compact) CSS by leveraging Tailwind utilities and Sass features
+Inspired by Tailwind and SCSS, it helps you write efficient, maintainable, and clean CSS.
 
 ## Core Concept - Atomic CSS
 
-SCSS mixin unit in the abstraction layer for performance and consistency.
+Atomic CSS abstraction ensures optimal performance and consistent styling.
+
+```scss
+// An Atomic CSS mixin contains CSS properties with breakpoints, e.g.
+@mixin margin($v, $rwd: null) {
+  @if $rwd==null {
+    margin: $v;
+  } @else {
+    @media (min-width: $rwd) {
+      margin: $v;
+    }
+  }
+}
+```
 
 ## Requirements
-  sass >= 1.23.0
+
+sass >= 1.23.0
 
 ## Usages
 
@@ -87,35 +102,6 @@ SCSS mixin unit in the abstraction layer for performance and consistency.
 
 1. I think it's fair to earn money for my work.
 2. Each project has unique breakpoints, and it's relatively easy to trigger my license [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html) to open source. As I’m not a lawyer, there could be misunderstandings, so I trigger the licensing obligations(to open source) and let you make a decision.
-
-### What is Atomic CSS?
-
-```scss
-// Atomic CSS = property + media query
-@mixin margin($v, $rwd: null) {
-  @if $rwd==null {
-    margin: $v;
-  } @else {
-    @media (min-width: $rwd) {
-      margin: $v;
-    }
-  }
-}
-```
-
-### Why need Atomic CSS?
-
-```scss
-// 1. Consistency throughout the project
-// 2. CSS property is easy to understand than shorthand e.g. @include m($_10)
-@mixin m-10 {
-  @include margin($_10);
-}
-// 3. To be one line for smaller size
-@mixin sm\:m-($v) {
-  @include margin($v, $_sm);
-}
-```
 
 ### What is the benefit of using Atomic CSS?
 
@@ -296,31 +282,35 @@ The ideal approach is to extract common properties into reusable classes, allowi
 
 ## Installation
 
-````
-1. copy file in /product/_awaken.scss
+1. copy SCSS in produce file
 
 2. install
+
+```shell
   npm install -dev sass
   yarn add -D sass
   bun add -D sass
+```
 
 3. using Vite to set up awaken.scss for global
-  ```js
-  //  vite.config.js
-  export default defineConfig({
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `
-          // your path
-          @use 'src/assets/_awaken.scss' as *;`,
-        },
+
+```js
+//  vite.config.js
+export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // your path
+        additionalData: `
+        @use 'src/assets/_awaken.scss' as *;
+        `,
       },
     },
-  });
-````
+  },
+});
+```
 
-## Test Cases Guide
+## Run Test Cases
 
 1. clone project
 2. bun install
