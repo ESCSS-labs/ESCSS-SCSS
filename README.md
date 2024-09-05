@@ -117,7 +117,7 @@ Yes, ESCSS-awaken is designed for backward compatibility from Sass v1.23.0 to th
 
 ### Are you a Tailwind killer?
 
-No, ESCSS-awaken is designed to integrate the CSS ecosystem to help developers feel less frustration.
+No, ESCSS-awaken is designed to reduce developers' frustration and integrate smoothly with Tailwind.
 
 ### How does ESCSS-awaken cooperate with Tailwind well?
 
