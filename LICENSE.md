@@ -6,6 +6,7 @@
     I want to share with everyone. → AGPL-3.0 License
 
 **_Note_**
+
 - Commercial License: sell both ESCSS-SCSS and ESCSS-ESTest together, not individually.
 - This is a brief overview. For detailed information, please refer to AGPL-v3.0 and consult a lawyer as needed.
 
@@ -46,4 +47,5 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## Reference
+
 [dual-license-templates](https://github.com/lawndoc/dual-license-templates)

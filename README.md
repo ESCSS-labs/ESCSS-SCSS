@@ -133,19 +133,7 @@ No, it is designed to reduce developers' frustration and work with Tailwind pret
 ### 2. install sass in your project
 
 ```shell
-npm install -dev sass
-```
-
-```shell
-
-yarn add -D sass
-
-```
-
-```shell
-
-bun add -D sass
-
+npm add -D sass-embedded # or sass
 ```
 
 ### 3. using Vite to set up SCSS file
