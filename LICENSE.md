@@ -5,7 +5,7 @@
     I want to protect business secrets. → Commercial License
     I want to share with everyone. → AGPL-3.0 License
 
-**_Note_**
+### Note
 
 - Commercial License: sell both ESCSS-SCSS and ESCSS-ESTest together, not individually.
 - This is a brief overview. For detailed information, please refer to AGPL-v3.0 and consult a lawyer as needed.
