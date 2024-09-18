@@ -2,7 +2,7 @@
 
 # What is ESCSS-SCSS?
 
-ESCSS-SCSS helps you write clean code by empower the potential of CSS and Tailwind in SCSS.
+ESCSS-SCSS takes the full potential of CSS and Tailwind in SCSS.
 
 ## Core Concept - Atomic CSS
 
