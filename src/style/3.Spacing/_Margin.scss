@@ -81,7 +81,7 @@ $Margin: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Margin {
       /*x
@@ -128,51 +128,7 @@ $Margin: (
       }
       x*/
     }
-  }
-}
 
-@if $isArbitrary {
-  /*x
-  @mixin m-($v) {
-    @include margin($v);
-  }
-
-  @mixin mx-($v) {
-    @include margin-left($v);
-    @include margin-right($v);
-  }
-
-  @mixin my-($v) {
-    @include margin-top($v);
-    @include margin-bottom($v);
-  }
-
-  @mixin ms-($v) {
-    @include margin-inline-start($v);
-  }
-
-  @mixin me-($v) {
-    @include margin-inline-end($v);
-  }
-
-  @mixin mt-($v) {
-    @include margin-top($v);
-  }
-
-  @mixin mr-($v) {
-    @include margin-right($v);
-  }
-
-  @mixin mb-($v) {
-    @include margin-bottom($v);
-  }
-
-  @mixin ml-($v) {
-    @include margin-left($v);
-  }
-  x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:m-($v) {
       @include margin($v, #{$rwd});
@@ -217,6 +173,48 @@ $Margin: (
     }
     x*/
   }
+}
+
+@if $isArbitrary {
+  /*x
+  @mixin m-($v) {
+    @include margin($v);
+  }
+
+  @mixin mx-($v) {
+    @include margin-left($v);
+    @include margin-right($v);
+  }
+
+  @mixin my-($v) {
+    @include margin-top($v);
+    @include margin-bottom($v);
+  }
+
+  @mixin ms-($v) {
+    @include margin-inline-start($v);
+  }
+
+  @mixin me-($v) {
+    @include margin-inline-end($v);
+  }
+
+  @mixin mt-($v) {
+    @include margin-top($v);
+  }
+
+  @mixin mr-($v) {
+    @include margin-right($v);
+  }
+
+  @mixin mb-($v) {
+    @include margin-bottom($v);
+  }
+
+  @mixin ml-($v) {
+    @include margin-left($v);
+  }
+  x*/
 }
 
 @if $isNegative {
@@ -264,7 +262,7 @@ $Margin: (
     }
   }
 
-  @if $isRwd and $isClassic {
+  @if $isRwd and (not $isAwaken) {
     @each $rwdToken, $rwd in $rwdBox {
       @each $key, $value in $Margin {
         /*x
@@ -311,51 +309,7 @@ $Margin: (
         }
         x*/
       }
-    }
-  }
 
-  @if $isArbitrary {
-    /*x
-    @mixin -m-($v) {
-      @include margin(-$v);
-    }
-  
-    @mixin -mx-($v) {
-      @include margin-left(-$v);
-      @include margin-right(-$v);
-    }
-  
-    @mixin -my-($v) {
-      @include margin-top(-$v);
-      @include margin-bottom(-$v);
-    }
-  
-    @mixin -ms-($v) {
-      @include margin-inline-start(-$v);
-    }
-  
-    @mixin -me-($v) {
-      @include margin-inline-end(-$v);
-    }
-  
-    @mixin -mt-($v) {
-      @include margin-top(-$v);
-    }
-  
-    @mixin -mr-($v) {
-      @include margin-right(-$v);
-    }
-  
-    @mixin -mb-($v) {
-      @include margin-bottom(-$v);
-    }
-  
-    @mixin -ml-($v) {
-      @include margin-left(-$v);
-    }
-    x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
       /*x
       @mixin #{$rwdToken}\:-m-($v) {
         @include margin(-$v, #{$rwd});
@@ -400,5 +354,47 @@ $Margin: (
       }
       x*/
     }
+  }
+
+  @if $isArbitrary {
+    /*x
+    @mixin -m-($v) {
+      @include margin(-$v);
+    }
+  
+    @mixin -mx-($v) {
+      @include margin-left(-$v);
+      @include margin-right(-$v);
+    }
+  
+    @mixin -my-($v) {
+      @include margin-top(-$v);
+      @include margin-bottom(-$v);
+    }
+  
+    @mixin -ms-($v) {
+      @include margin-inline-start(-$v);
+    }
+  
+    @mixin -me-($v) {
+      @include margin-inline-end(-$v);
+    }
+  
+    @mixin -mt-($v) {
+      @include margin-top(-$v);
+    }
+  
+    @mixin -mr-($v) {
+      @include margin-right(-$v);
+    }
+  
+    @mixin -mb-($v) {
+      @include margin-bottom(-$v);
+    }
+  
+    @mixin -ml-($v) {
+      @include margin-left(-$v);
+    }
+    x*/
   }
 }

@@ -292,7 +292,14 @@ $RingColor: (
   }
   x*/
   @each $key, $value in $RingColor {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin ring-#{$key}($v: 1) {
+        $tw-ring-color: _c(#{$value}, $v) !global;
+        @include box-shadow(_b-s());
+      }
+      x*/
+    } @else {
       /*x
       @mixin ring-#{$key} {
         $tw-ring-color: #{$value} !global;
@@ -304,18 +311,11 @@ $RingColor: (
         @include box-shadow(_b-s());
       }
       x*/
-    } @else {
-      /*x
-      @mixin ring-#{$key}($v: 1) {
-        $tw-ring-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s());
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:ring-inherit {
@@ -341,6 +341,21 @@ $RingColor: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:ring-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        $tw-ring-color: $v !global;
+      }
+
+      @else {
+        $tw-mismatch--ring-offset-width: true !global;
+        $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
+      }
+
+      @include box-shadow(_b-s(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -359,21 +374,4 @@ $RingColor: (
     @include box-shadow(_b-s());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:ring-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        $tw-ring-color: $v !global;
-      }
-
-      @else {
-        $tw-mismatch--ring-offset-width: true !global;
-        $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
-      }
-
-      @include box-shadow(_b-s(), #{$rwd});
-    }
-    x*/
-  }
 }

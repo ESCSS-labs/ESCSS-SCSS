@@ -60,7 +60,7 @@ $LineClamp: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $LineClamp {
       /*x
@@ -74,6 +74,17 @@ $LineClamp: (
     }
     x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:line-clamp-($v) {
+      @include #{$rwdToken} {
+        @include overflow(hidden);
+        @include display(-webkit-box);
+        @include -webkit-box-orient(vertical);
+        @include -webkit-line-clamp($v);
+      }
+    }
+    x*/
   }
 }
 
@@ -86,17 +97,4 @@ $LineClamp: (
     @include -webkit-line-clamp($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:line-clamp-($v) {
-      @include #{$rwdToken} {
-        @include overflow(hidden);
-        @include display(-webkit-box);
-        @include -webkit-box-orient(vertical);
-        @include -webkit-line-clamp($v);
-      }
-    }
-    x*/
-  }
 }

@@ -49,7 +49,7 @@ $DivideWidth: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
       @mixin #{$rwdToken}\:divide-x-reverse {
@@ -98,31 +98,7 @@ $DivideWidth: (
       }
       x*/
     }
-  }
-}
 
-@if $isArbitrary {
-  /*x
-  @mixin divide-x-($v, $isReverse: false) {
-    $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
-
-    >*~* {
-      @include border-right-width($v * $tw-divide-x-reverse);
-      @include border-left-width($v * (1 - $tw-divide-x-reverse));
-    }
-  }
-
-  @mixin divide-y-($v, $isReverse: false) {
-    $tw-dummy-divide-y-value: $v !global; // update global value for using reverse
-
-    >*~* {
-      @include border-top-width($v * (1 - $tw-divide-y-reverse));
-      @include border-bottom-width($v * $tw-divide-y-reverse);
-    }
-  }
-  x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:divide-x-($v, $isReverse: false) {
       $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
@@ -147,4 +123,26 @@ $DivideWidth: (
     }
     x*/
   }
+}
+
+@if $isArbitrary {
+  /*x
+  @mixin divide-x-($v, $isReverse: false) {
+    $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
+
+    >*~* {
+      @include border-right-width($v * $tw-divide-x-reverse);
+      @include border-left-width($v * (1 - $tw-divide-x-reverse));
+    }
+  }
+
+  @mixin divide-y-($v, $isReverse: false) {
+    $tw-dummy-divide-y-value: $v !global; // update global value for using reverse
+
+    >*~* {
+      @include border-top-width($v * (1 - $tw-divide-y-reverse));
+      @include border-bottom-width($v * $tw-divide-y-reverse);
+    }
+  }
+  x*/
 }

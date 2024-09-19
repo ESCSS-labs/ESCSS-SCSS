@@ -25,7 +25,7 @@ $LineHeight: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $LineHeight {
       /*x
@@ -34,6 +34,12 @@ $LineHeight: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:leading-($v) {
+      @include line-height($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -43,12 +49,4 @@ $LineHeight: (
     @include line-height($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:leading-($v) {
-      @include line-height($v, #{$rwd});
-    }
-    x*/
-  }
 }

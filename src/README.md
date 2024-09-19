@@ -8,7 +8,7 @@
 
 ### test file - testing SCSS before use
 
-- Run all 79057 test cases.
+- Run all 79067 test cases.
 
 ```bash
 bun install

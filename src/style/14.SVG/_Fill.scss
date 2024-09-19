@@ -294,7 +294,13 @@ $Fill: (
   }
   x*/
   @each $key, $value in $Fill {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin fill-#{$key}($v: 1) {
+        @include fill(_c(#{$value}, $v));
+      }
+      x*/
+    } @else {
       /*x
       @mixin fill-#{$key} {
         @include fill(#{$value});
@@ -304,17 +310,11 @@ $Fill: (
         @include fill(_c(#{$value}, $v));
       }
       x*/
-    } @else {
-      /*x
-      @mixin fill-#{$key}($v: 1) {
-        @include fill(_c(#{$value}, $v));
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
       @mixin #{$rwdToken}\:fill-none {
@@ -340,6 +340,12 @@ $Fill: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:fill-($v) {
+      @include fill($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -349,11 +355,4 @@ $Fill: (
     @include fill($v);
   }
   x*/
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:fill-($v) {
-      @include fill($v, #{$rwd});
-    }
-    x*/
-  }
 }

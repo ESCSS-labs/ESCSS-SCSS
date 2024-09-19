@@ -12,7 +12,7 @@ $ListStyleImage: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $ListStyleImage {
       /*x
@@ -21,6 +21,12 @@ $ListStyleImage: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:list-image-($v) {
+      @include list-style-image($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -30,12 +36,4 @@ $ListStyleImage: (
     @include list-style-image($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:list-image-($v) {
-      @include list-style-image($v, #{$rwd});
-    }
-    x*/
-  }
 }

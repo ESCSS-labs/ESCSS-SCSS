@@ -15,7 +15,7 @@ $Flex: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Flex {
       /*x
@@ -24,6 +24,12 @@ $Flex: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:flex-($v) {
+      @include flex($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -33,12 +39,4 @@ $Flex: (
     @include flex($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:flex-($v) {
-      @include flex($v, #{$rwd});
-    }
-    x*/
-  }
 }

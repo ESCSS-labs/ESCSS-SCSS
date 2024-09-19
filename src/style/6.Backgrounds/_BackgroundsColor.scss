@@ -290,7 +290,13 @@ $BackgroundsColor: (
   }
   x*/
   @each $key, $value in $BackgroundsColor {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin bg-#{$key}($v: 1) {
+        @include background-color(_c(#{$value}, $v));
+      }
+      x*/
+    } @else {
       /*x
       @mixin bg-#{$key} {
         @include background-color(#{$value});
@@ -300,17 +306,11 @@ $BackgroundsColor: (
         @include background-color(_c(#{$value}, $v));
       }
       x*/
-    } @else {
-      /*x
-      @mixin bg-#{$key}($v: 1) {
-        @include background-color(_c(#{$value}, $v));
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:bg-inherit {
@@ -332,6 +332,27 @@ $BackgroundsColor: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:bg-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        @include background-color($v, #{$rwd});
+      }
+
+      @else if list.nth($v, 1)==length {
+        // remove the token "length" to identify background-size
+        @include background-size(list.set-nth($v, 1, #/*x{""}), #{$rwd}); 
+      }
+
+      @else if list.index(top right bottom left center, $v) or meta.type-of($v)==number or meta.type-of($v)==list {
+        @include background-position($v, #{$rwd});
+      }
+
+      @else {
+        @include background-image($v, #{$rwd});
+      }
+    }
+    x*/
   }
 }
 
@@ -356,27 +377,4 @@ $BackgroundsColor: (
     }
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:bg-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include background-color($v, #{$rwd});
-      }
-
-      @else if list.nth($v, 1)==length {
-        // remove the token "length" to identify background-size
-        @include background-size(list.set-nth($v, 1, #/*x{""}), #{$rwd}); 
-      }
-
-      @else if list.index(top right bottom left center, $v) or meta.type-of($v)==number or meta.type-of($v)==list {
-        @include background-position($v, #{$rwd});
-      }
-
-      @else {
-        @include background-image($v, #{$rwd});
-      }
-    }
-    x*/
-  }
 }

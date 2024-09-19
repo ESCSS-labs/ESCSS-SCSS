@@ -149,7 +149,7 @@ $FontSize: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $FontSize {
       /*x
@@ -273,77 +273,7 @@ $FontSize: (
       }
       x*/
     }
-  }
-}
 
-@if $isArbitrary {
-  /*x
-  @mixin text-xs\/($v) {
-    @include font-size($_font-size_xs);
-    @include line-height($v);
-  }
-
-  @mixin text-sm\/($v) {
-    @include font-size($_font-size_sm);
-    @include line-height($v);
-  }
-
-  @mixin text-base\/($v) {
-    @include font-size($_font-size_base);
-    @include line-height($v);
-  }
-
-  @mixin text-lg\/($v) {
-    @include font-size($_font-size_lg);
-    @include line-height($v);
-  }
-
-  @mixin text-xl\/($v) {
-    @include font-size($_font-size_xl);
-    @include line-height($v);
-  }
-
-  @mixin text-2xl\/($v) {
-    @include font-size($_font-size_2xl);
-    @include line-height($v);
-  }
-
-  @mixin text-3xl\/($v) {
-    @include font-size($_font-size_3xl);
-    @include line-height($v);
-  }
-
-  @mixin text-4xl\/($v) {
-    @include font-size($_font-size_4xl);
-    @include line-height($v);
-  }
-
-  @mixin text-5xl\/($v) {
-    @include font-size($_font-size_5xl);
-    @include line-height($v);
-  }
-
-  @mixin text-6xl\/($v) {
-    @include font-size($_font-size_6xl);
-    @include line-height($v);
-  }
-
-  @mixin text-7xl\/($v) {
-    @include font-size($_font-size_7xl);
-    @include line-height($v);
-  }
-
-  @mixin text-8xl\/($v) {
-    @include font-size($_font-size_8xl);
-    @include line-height($v);
-  }
-
-  @mixin text-9xl\/($v) {
-    @include font-size($_font-size_9xl);
-    @include line-height($v);
-  }
-  x*/
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:text-xs\/($v) {
       @include #{$rwdToken} {
@@ -437,4 +367,73 @@ $FontSize: (
     }
     x*/
   }
+}
+
+@if $isArbitrary {
+  /*x
+  @mixin text-xs\/($v) {
+    @include font-size($_font-size_xs);
+    @include line-height($v);
+  }
+
+  @mixin text-sm\/($v) {
+    @include font-size($_font-size_sm);
+    @include line-height($v);
+  }
+
+  @mixin text-base\/($v) {
+    @include font-size($_font-size_base);
+    @include line-height($v);
+  }
+
+  @mixin text-lg\/($v) {
+    @include font-size($_font-size_lg);
+    @include line-height($v);
+  }
+
+  @mixin text-xl\/($v) {
+    @include font-size($_font-size_xl);
+    @include line-height($v);
+  }
+
+  @mixin text-2xl\/($v) {
+    @include font-size($_font-size_2xl);
+    @include line-height($v);
+  }
+
+  @mixin text-3xl\/($v) {
+    @include font-size($_font-size_3xl);
+    @include line-height($v);
+  }
+
+  @mixin text-4xl\/($v) {
+    @include font-size($_font-size_4xl);
+    @include line-height($v);
+  }
+
+  @mixin text-5xl\/($v) {
+    @include font-size($_font-size_5xl);
+    @include line-height($v);
+  }
+
+  @mixin text-6xl\/($v) {
+    @include font-size($_font-size_6xl);
+    @include line-height($v);
+  }
+
+  @mixin text-7xl\/($v) {
+    @include font-size($_font-size_7xl);
+    @include line-height($v);
+  }
+
+  @mixin text-8xl\/($v) {
+    @include font-size($_font-size_8xl);
+    @include line-height($v);
+  }
+
+  @mixin text-9xl\/($v) {
+    @include font-size($_font-size_9xl);
+    @include line-height($v);
+  }
+  x*/
 }

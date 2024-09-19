@@ -17,7 +17,7 @@ $TextUnderlineOffset: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $TextUnderlineOffset {
       /*x
@@ -26,6 +26,12 @@ $TextUnderlineOffset: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:underline-offset-($v) {
+      @include text-underline-offset($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -35,12 +41,4 @@ $TextUnderlineOffset: (
     @include text-underline-offset($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:underline-offset-($v) {
-      @include text-underline-offset($v, #{$rwd});
-    }
-    x*/
-  }
 }

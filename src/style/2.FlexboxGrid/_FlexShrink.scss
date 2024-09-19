@@ -13,7 +13,7 @@ $FlexShrink: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $FlexShrink {
       /*x
@@ -22,6 +22,12 @@ $FlexShrink: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:shrink-($v) {
+      @include flex-shrink($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -31,12 +37,4 @@ $FlexShrink: (
     @include flex-shrink($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:shrink-($v) {
-      @include flex-shrink($v, #{$rwd});
-    }
-    x*/
-  }
 }

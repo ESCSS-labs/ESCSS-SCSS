@@ -14,7 +14,7 @@ $BackdropGrayscale: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $BackdropGrayscale {
       /*x
@@ -24,6 +24,13 @@ $BackdropGrayscale: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:backdrop-grayscale-($v) {
+      $tw-backdrop-grayscale: grayscale($v) !global;
+      @include backdrop-filter(_b-f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -34,13 +41,4 @@ $BackdropGrayscale: (
     @include backdrop-filter(_b-f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:backdrop-grayscale-($v) {
-      $tw-backdrop-grayscale: grayscale($v) !global;
-      @include backdrop-filter(_b-f(), #{$rwd});
-    }
-    x*/
-  }
 }

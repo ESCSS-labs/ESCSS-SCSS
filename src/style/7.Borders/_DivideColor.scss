@@ -294,7 +294,15 @@ $DivideColor: (
   }
   x*/
   @each $key, $value in $DivideColor {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin divide-#{$key}($v: 1) {
+        > * ~ * {  
+        @include border-color(_c(#{$value}, $v));
+        }
+      }
+      x*/
+    } @else {
       /*x
       @mixin divide-#{$key} {
         > * ~ * {  
@@ -308,19 +316,11 @@ $DivideColor: (
         }
       }
       x*/
-    } @else {
-      /*x
-      @mixin divide-#{$key}($v: 1) {
-        > * ~ * {  
-        @include border-color(_c(#{$value}, $v));
-        }
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:divide-inherit {
@@ -350,6 +350,14 @@ $DivideColor: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:divide-($v) {
+      > * ~ * {
+        @include border-color($v, #{$rwd});
+      }
+    }
+    x*/
   }
 }
 
@@ -361,14 +369,4 @@ $DivideColor: (
     }
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:divide-($v) {
-      > * ~ * {
-        @include border-color($v, #{$rwd});
-      }
-    }
-    x*/
-  }
 }

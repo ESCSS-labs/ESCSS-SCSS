@@ -20,7 +20,7 @@ $TransitionDuration: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $TransitionDuration {
       /*x
@@ -29,6 +29,12 @@ $TransitionDuration: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:duration-($v) {
+      @include transition-duration($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -38,12 +44,4 @@ $TransitionDuration: (
     @include transition-duration($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:duration-($v) {
-      @include transition-duration($v, #{$rwd});
-    }
-    x*/
-  }
 }

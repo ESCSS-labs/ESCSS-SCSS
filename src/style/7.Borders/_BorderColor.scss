@@ -290,7 +290,13 @@ $BorderColor: (
   }
   x*/
   @each $key, $value in $BorderColor {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin border-#{$key}($v: 1) {
+        @include border-color(_c(#{$value}, $v));
+      }
+      x*/
+    } @else {
       /*x
       @mixin border-#{$key} {
         @include border-color(#{$value});
@@ -300,17 +306,11 @@ $BorderColor: (
         @include border-color(_c(#{$value}, $v));
       }
       x*/
-    } @else {
-      /*x
-      @mixin border-#{$key}($v: 1) {
-        @include border-color(_c(#{$value}, $v));
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:border-inherit {
@@ -332,107 +332,7 @@ $BorderColor: (
       }
       x*/
     }
-  }
-}
 
-@if $isArbitrary {
-  /*x
-  @mixin border-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      @include border-color($v);
-    }
-
-    @else {
-      @include border-width($v);
-    }
-  }
-
-  @mixin border-x-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      @include border-left-color($v);
-      @include border-right-color($v);
-    }
-
-    @else {
-      @include border-left-width($v);
-      @include border-right-width($v);
-    }
-  }
-
-  @mixin border-y-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      @include border-top-color($v);
-      @include border-bottom-color($v);
-    }
-
-    @else {
-      @include border-top-width($v);
-      @include border-bottom-width($v);
-    }
-  }
-
-  @mixin border-s-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      @include border-inline-start-color($v);
-    }
-
-    @else {
-      @include border-inline-start-width($v);
-    }
-  }
-
-  @mixin border-e-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      @include border-inline-end-color($v);
-    }
-
-    @else {
-      @include border-inline-end-width($v);
-    }
-  }
-
-  @mixin border-t-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      @include border-top-color($v);
-    }
-
-    @else {
-      @include border-top-width($v);
-    }
-  }
-
-  @mixin border-r-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      @include border-right-color($v);
-    }
-
-    @else {
-      @include border-right-width($v);
-    }
-  }
-
-  @mixin border-b-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      @include border-bottom-color($v);
-    }
-
-    @else {
-      @include border-bottom-width($v);
-    }
-  }
-
-  @mixin border-l-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      @include border-left-color($v);
-    }
-
-    @else {
-      @include border-left-width($v);
-    }
-  }
-  x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:border-($v) {
       @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
@@ -537,4 +437,102 @@ $BorderColor: (
     }
     x*/
   }
+}
+
+@if $isArbitrary {
+  /*x
+  @mixin border-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+      @include border-color($v);
+    }
+
+    @else {
+      @include border-width($v);
+    }
+  }
+
+  @mixin border-x-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+      @include border-left-color($v);
+      @include border-right-color($v);
+    }
+
+    @else {
+      @include border-left-width($v);
+      @include border-right-width($v);
+    }
+  }
+
+  @mixin border-y-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+      @include border-top-color($v);
+      @include border-bottom-color($v);
+    }
+
+    @else {
+      @include border-top-width($v);
+      @include border-bottom-width($v);
+    }
+  }
+
+  @mixin border-s-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+      @include border-inline-start-color($v);
+    }
+
+    @else {
+      @include border-inline-start-width($v);
+    }
+  }
+
+  @mixin border-e-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+      @include border-inline-end-color($v);
+    }
+
+    @else {
+      @include border-inline-end-width($v);
+    }
+  }
+
+  @mixin border-t-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+      @include border-top-color($v);
+    }
+
+    @else {
+      @include border-top-width($v);
+    }
+  }
+
+  @mixin border-r-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+      @include border-right-color($v);
+    }
+
+    @else {
+      @include border-right-width($v);
+    }
+  }
+
+  @mixin border-b-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+      @include border-bottom-color($v);
+    }
+
+    @else {
+      @include border-bottom-width($v);
+    }
+  }
+
+  @mixin border-l-($v) {
+    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+      @include border-left-color($v);
+    }
+
+    @else {
+      @include border-left-width($v);
+    }
+  }
+  x*/
 }

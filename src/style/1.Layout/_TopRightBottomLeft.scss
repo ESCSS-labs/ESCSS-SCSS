@@ -88,7 +88,7 @@ $TopRightBottomLeft: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $TopRightBottomLeft {
       /*x
@@ -135,51 +135,7 @@ $TopRightBottomLeft: (
       }
       x*/
     }
-  }
-}
 
-@if $isArbitrary {
-  /*x
-  @mixin inset-($v) {
-    @include inset($v);
-  }
-
-  @mixin inset-x-($v) {
-    @include left($v);
-    @include right($v);
-  }
-
-  @mixin inset-y-($v) {
-    @include top($v);
-    @include bottom($v);
-  }
-
-  @mixin start-($v) {
-    @include inset-inline-start($v);
-  }
-
-  @mixin end-($v) {
-    @include inset-inline-end($v);
-  }
-
-  @mixin top-($v) {
-    @include top($v);
-  }
-
-  @mixin right-($v) {
-    @include right($v);
-  }
-
-  @mixin bottom-($v) {
-    @include bottom($v);
-  }
-
-  @mixin left-($v) {
-    @include left($v);
-  }
-  x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:inset-($v) {
       @include inset($v, #{$rwd});
@@ -224,6 +180,48 @@ $TopRightBottomLeft: (
     }
     x*/
   }
+}
+
+@if $isArbitrary {
+  /*x
+  @mixin inset-($v) {
+    @include inset($v);
+  }
+
+  @mixin inset-x-($v) {
+    @include left($v);
+    @include right($v);
+  }
+
+  @mixin inset-y-($v) {
+    @include top($v);
+    @include bottom($v);
+  }
+
+  @mixin start-($v) {
+    @include inset-inline-start($v);
+  }
+
+  @mixin end-($v) {
+    @include inset-inline-end($v);
+  }
+
+  @mixin top-($v) {
+    @include top($v);
+  }
+
+  @mixin right-($v) {
+    @include right($v);
+  }
+
+  @mixin bottom-($v) {
+    @include bottom($v);
+  }
+
+  @mixin left-($v) {
+    @include left($v);
+  }
+  x*/
 }
 
 @if $isNegative {
@@ -271,7 +269,7 @@ $TopRightBottomLeft: (
     }
   }
 
-  @if $isRwd and $isClassic {
+  @if $isRwd and (not $isAwaken) {
     @each $rwdToken, $rwd in $rwdBox {
       @each $key, $value in $TopRightBottomLeft {
         /*x
@@ -318,51 +316,7 @@ $TopRightBottomLeft: (
         }
       x*/
       }
-    }
-  }
 
-  @if $isArbitrary {
-    /*x
-    @mixin -inset-($v) {
-      @include inset(-$v);
-    }
-  
-    @mixin -inset-x-($v) {
-      @include left(-$v);
-      @include right(-$v);
-    }
-  
-    @mixin -inset-y-($v) {
-      @include top(-$v);
-      @include bottom(-$v);
-    }
-  
-    @mixin -start-($v) {
-      @include inset-inline-start(-$v);
-    }
-  
-    @mixin -end-($v) {
-      @include inset-inline-end(-$v);
-    }
-  
-    @mixin -top-($v) {
-      @include top(-$v);
-    }
-  
-    @mixin -right-($v) {
-      @include right(-$v);
-    }
-  
-    @mixin -bottom-($v) {
-      @include bottom(-$v);
-    }
-  
-    @mixin -left-($v) {
-      @include left(-$v);
-    }
-    x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
       /*x
       @mixin #{$rwdToken}\:-inset-($v) {
         @include inset(-$v, #{$rwd});
@@ -407,5 +361,47 @@ $TopRightBottomLeft: (
       }
       x*/
     }
+  }
+
+  @if $isArbitrary {
+    /*x
+    @mixin -inset-($v) {
+      @include inset(-$v);
+    }
+  
+    @mixin -inset-x-($v) {
+      @include left(-$v);
+      @include right(-$v);
+    }
+  
+    @mixin -inset-y-($v) {
+      @include top(-$v);
+      @include bottom(-$v);
+    }
+  
+    @mixin -start-($v) {
+      @include inset-inline-start(-$v);
+    }
+  
+    @mixin -end-($v) {
+      @include inset-inline-end(-$v);
+    }
+  
+    @mixin -top-($v) {
+      @include top(-$v);
+    }
+  
+    @mixin -right-($v) {
+      @include right(-$v);
+    }
+  
+    @mixin -bottom-($v) {
+      @include bottom(-$v);
+    }
+  
+    @mixin -left-($v) {
+      @include left(-$v);
+    }
+    x*/
   }
 }

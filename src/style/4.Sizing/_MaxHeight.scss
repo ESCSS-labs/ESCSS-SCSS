@@ -55,7 +55,7 @@ $MaxHeight: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $MaxHeight {
       /*x
@@ -64,6 +64,12 @@ $MaxHeight: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:max-h-($v) {
+      @include max-height($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -73,12 +79,4 @@ $MaxHeight: (
     @include max-height($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:max-h-($v) {
-      @include max-height($v, #{$rwd});
-    }
-    x*/
-  }
 }

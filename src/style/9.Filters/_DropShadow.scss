@@ -22,7 +22,7 @@ $DropShadow: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $DropShadow {
       /*x
@@ -32,6 +32,13 @@ $DropShadow: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:drop-shadow-($v) {
+      $tw-drop-shadow: drop-shadow($v) !global;
+      @include filter(_f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -42,13 +49,4 @@ $DropShadow: (
     @include filter(_f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:drop-shadow-($v) {
-      $tw-drop-shadow: drop-shadow($v) !global;
-      @include filter(_f(), #{$rwd});
-    }
-    x*/
-  }
 }

@@ -20,7 +20,7 @@ $ObjectPosition: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $ObjectPosition {
       /*x
@@ -29,6 +29,12 @@ $ObjectPosition: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:object-($v) {
+      @include object-position($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -38,12 +44,4 @@ $ObjectPosition: (
     @include object-position($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:object-($v) {
-      @include object-position($v, #{$rwd});
-    }
-    x*/
-  }
 }

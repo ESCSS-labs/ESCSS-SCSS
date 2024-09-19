@@ -27,7 +27,7 @@ $Rotate: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Rotate {
       /*x
@@ -43,6 +43,19 @@ $Rotate: (
     }
     x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:rotate-($v) {
+      $tw-rotate: $v !global;
+      @include transform(_t(), #{$rwd});
+    }
+    x*/
+    /*x
+    @mixin #{$rwdToken}\:-rotate-($v) {
+      $tw-rotate: -$v !global;
+      @include transform(_t(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -59,19 +72,4 @@ $Rotate: (
     @include transform(_t());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:rotate-($v) {
-      $tw-rotate: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-    /*x
-    @mixin #{$rwdToken}\:-rotate-($v) {
-      $tw-rotate: -$v !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-  }
 }

@@ -68,7 +68,7 @@ $MaxWidth: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $MaxWidth {
       /*x
@@ -77,6 +77,12 @@ $MaxWidth: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:max-w-($v) {
+      @include max-width($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -86,12 +92,4 @@ $MaxWidth: (
     @include max-width($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:max-w-($v) {
-      @include max-width($v, #{$rwd});
-    }
-    x*/
-  }
 }

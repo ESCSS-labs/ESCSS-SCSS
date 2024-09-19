@@ -33,7 +33,7 @@ $Scale: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Scale {
       /*x
@@ -54,6 +54,24 @@ $Scale: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:scale-($v) {
+      $tw-scale-x: $v !global;
+      $tw-scale-y: $v !global;
+      @include transform(_t(), #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scale-x-($v) {
+      $tw-scale-x: $v !global;
+      @include transform(_t(), #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:scale-y-($v) {
+      $tw-scale-y: $v !global;
+      @include transform(_t(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -75,26 +93,6 @@ $Scale: (
     @include transform(_t());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:scale-($v) {
-      $tw-scale-x: $v !global;
-      $tw-scale-y: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:scale-x-($v) {
-      $tw-scale-x: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:scale-y-($v) {
-      $tw-scale-y: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-  }
 }
 
 @if $isNegative {
@@ -120,7 +118,7 @@ $Scale: (
     }
   }
 
-  @if $isRwd and $isClassic {
+  @if $isRwd and (not $isAwaken) {
     @each $rwdToken, $rwd in $rwdBox {
       @each $key, $value in $Scale {
         /*x
@@ -141,6 +139,24 @@ $Scale: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:-scale-($v) {
+        $tw-scale-x: -$v !global;
+        $tw-scale-y: -$v !global;
+        @include transform(_t(), #{$rwd});
+      }
+    
+      @mixin #{$rwdToken}\:-scale-x-($v) {
+        $tw-scale-x: -$v !global;
+        @include transform(_t(), #{$rwd});
+      }
+    
+      @mixin #{$rwdToken}\:-scale-y-($v) {
+        $tw-scale-y: -$v !global;
+        @include transform(_t(), #{$rwd});
+      }
+      x*/
     }
   }
 
@@ -162,25 +178,5 @@ $Scale: (
       @include transform(_t());
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:-scale-($v) {
-        $tw-scale-x: -$v !global;
-        $tw-scale-y: -$v !global;
-        @include transform(_t(), #{$rwd});
-      }
-    
-      @mixin #{$rwdToken}\:-scale-x-($v) {
-        $tw-scale-x: -$v !global;
-        @include transform(_t(), #{$rwd});
-      }
-    
-      @mixin #{$rwdToken}\:-scale-y-($v) {
-        $tw-scale-y: -$v !global;
-        @include transform(_t(), #{$rwd});
-      }
-      x*/
-    }
   }
 }

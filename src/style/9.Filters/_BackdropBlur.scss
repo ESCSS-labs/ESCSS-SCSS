@@ -20,7 +20,7 @@ $BackdropBlur: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $BackdropBlur {
       /*x
@@ -30,6 +30,13 @@ $BackdropBlur: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:backdrop-blur-($v) {
+      $tw-backdrop-blur: blur($v) !global;
+      @include backdrop-filter(_b-f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -40,13 +47,4 @@ $BackdropBlur: (
     @include backdrop-filter(_b-f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:backdrop-blur-($v) {
-      $tw-backdrop-blur: blur($v) !global;
-      @include backdrop-filter(_b-f(), #{$rwd});
-    }
-    x*/
-  }
 }

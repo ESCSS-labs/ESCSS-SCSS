@@ -78,7 +78,7 @@ $Size: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Size {
       /*x
@@ -90,6 +90,15 @@ $Size: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:size-($v) {
+      @include #{$rwdToken} {
+        @include width($v);
+        @include height($v);
+      }
+    }
+    x*/
   }
 }
 
@@ -100,15 +109,4 @@ $Size: (
     @include height($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:size-($v) {
-      @include #{$rwdToken} {
-        @include width($v);
-        @include height($v);
-      }
-    }
-    x*/
-  }
 }

@@ -16,7 +16,7 @@ $OutlineOffset: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $OutlineOffset {
       /*x
@@ -25,6 +25,12 @@ $OutlineOffset: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:outline-offset-($v) {
+      @include outline-offset($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -34,12 +40,4 @@ $OutlineOffset: (
     @include outline-offset($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:outline-offset-($v) {
-      @include outline-offset($v, #{$rwd});
-    }
-    x*/
-  }
 }

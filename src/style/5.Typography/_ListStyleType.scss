@@ -14,7 +14,7 @@ $ListStyleType: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $ListStyleType {
       /*x
@@ -23,6 +23,12 @@ $ListStyleType: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:list-($v) {
+      @include list-style-type($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -32,12 +38,4 @@ $ListStyleType: (
     @include list-style-type($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:list-($v) {
-      @include list-style-type($v, #{$rwd});
-    }
-    x*/
-  }
 }

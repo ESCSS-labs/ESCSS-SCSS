@@ -26,7 +26,7 @@ $Order: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Order {
       /*x
@@ -35,6 +35,12 @@ $Order: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:order-($v) {
+      @include order($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -44,14 +50,6 @@ $Order: (
     @include order($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:order-($v) {
-      @include order($v, #{$rwd});
-    }
-    x*/
-  }
 }
 
 @if $isNegative {
@@ -65,7 +63,7 @@ $Order: (
     }
   }
 
-  @if $isRwd and $isClassic {
+  @if $isRwd and (not $isAwaken) {
     @each $rwdToken, $rwd in $rwdBox {
       @each $key, $value in $Order {
         /*x
@@ -74,6 +72,12 @@ $Order: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:-order-($v) {
+        @include order(-$v, #{$rwd});
+      }
+      x*/
     }
   }
 
@@ -83,13 +87,5 @@ $Order: (
       @include order(-$v);
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:-order-($v) {
-        @include order(-$v, #{$rwd});
-      }
-      x*/
-    }
   }
 }

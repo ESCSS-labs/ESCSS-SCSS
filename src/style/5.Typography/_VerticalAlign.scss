@@ -19,7 +19,7 @@ $VerticalAlign: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $VerticalAlign {
       /*x
@@ -28,6 +28,12 @@ $VerticalAlign: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:align-($v) {
+      @include vertical-align($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -37,12 +43,4 @@ $VerticalAlign: (
     @include vertical-align($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:align-($v) {
-      @include vertical-align($v, #{$rwd});
-    }
-    x*/
-  }
 }

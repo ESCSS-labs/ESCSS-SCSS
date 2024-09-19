@@ -15,7 +15,7 @@ $TransitionTimingFunction: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $TransitionTimingFunction {
       /*x
@@ -24,6 +24,12 @@ $TransitionTimingFunction: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:ease-($v) {
+      @include transition-timing-function($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -33,12 +39,4 @@ $TransitionTimingFunction: (
     @include transition-timing-function($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:ease-($v) {
-      @include transition-timing-function($v, #{$rwd});
-    }
-    x*/
-  }
 }

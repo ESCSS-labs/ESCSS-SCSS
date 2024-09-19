@@ -15,7 +15,7 @@ $GridAutoRows: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $GridAutoRows {
       /*x
@@ -24,6 +24,12 @@ $GridAutoRows: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:auto-rows-($v) {
+      @include grid-auto-rows($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -33,12 +39,4 @@ $GridAutoRows: (
     @include grid-auto-rows($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:auto-rows-($v) {
-      @include grid-auto-rows($v, #{$rwd});
-    }
-    x*/
-  }
 }

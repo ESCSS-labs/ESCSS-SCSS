@@ -50,7 +50,7 @@ $MinWidth: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $MinWidth {
       /*x
@@ -59,6 +59,12 @@ $MinWidth: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:min-w-($v) {
+      @include min-width($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -68,12 +74,4 @@ $MinWidth: (
     @include min-width($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:min-w-($v) {
-      @include min-width($v, #{$rwd});
-    }
-    x*/
-  }
 }

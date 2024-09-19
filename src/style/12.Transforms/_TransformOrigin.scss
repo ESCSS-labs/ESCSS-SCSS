@@ -20,7 +20,7 @@ $TransitionOrigin: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $TransitionOrigin {
       /*x
@@ -29,6 +29,12 @@ $TransitionOrigin: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:origin-($v) {
+      @include transform-origin($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -38,12 +44,4 @@ $TransitionOrigin: (
     @include transform-origin($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:origin-($v) {
-      @include transform-origin($v, #{$rwd});
-    }
-    x*/
-  }
 }

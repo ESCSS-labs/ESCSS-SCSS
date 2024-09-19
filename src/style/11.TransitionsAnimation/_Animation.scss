@@ -8,19 +8,27 @@ $Animation: (
 
 @if $isBasic {
   @each $key, $value in $Animation {
-    /*x
-    @mixin #{$key} {
-      @include animation(#{$value});
-
-      @if list.index((animate-spin, sm\:animate-spin, md\:animate-spin, lg\:animate-spin, xl\:animate-spin, \2xl\:animate-spin), #{$key}) {
+    @if $key == 'animate-none' {
+      /*x
+      @mixin #{$key} {
+        @include animation(#{$value});
+      }
+      x*/
+    } @else if $key == 'animate-spin' {
+      /*x
+      @mixin #{$key} {
+        @include animation(#{$value});
         @keyframes spin {
           to {
             transform: rotate(360deg);
           }
         }
       }
-
-      @else if list.index((animate-ping, sm\:animate-ping, md\:animate-ping, lg\:animate-ping, xl\:animate-ping, \2xl\:animate-ping), #{$key}) {
+      x*/
+    } @else if $key == 'animate-ping' {
+      /*x
+      @mixin #{$key} {
+        @include animation(#{$value});
         @keyframes ping {
           75%,
           100% {
@@ -29,16 +37,22 @@ $Animation: (
           }
         }
       }
-
-      @else if list.index((animate-pulse, sm\:animate-pulse, md\:animate-pulse, lg\:animate-pulse, xl\:animate-pulse, \2xl\:animate-pulse), #{$key}) {
+      x*/
+    } @else if $key == 'animate-pulse' {
+      /*x
+      @mixin #{$key} {
+        @include animation(#{$value});
         @keyframes pulse {
           50% {
             opacity: 0.5;
           }
         }
       }
-
-      @else if list.index((animate-bounce, sm\:animate-bounce, md\:animate-bounce, lg\:animate-bounce, xl\:animate-bounce, \2xl\:animate-bounce), #{$key}) {
+      x*/
+    } @else if $key == 'animate-bounce' {
+      /*x
+      @mixin #{$key} {
+        @include animation(#{$value});
         @keyframes bounce {
           0%,
           100% {
@@ -52,63 +66,81 @@ $Animation: (
           }
         }
       }
+      x*/
     }
-    x*/
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Animation {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include #{$rwdToken} {
-          @include animation(#{$value});
-
-          @if list.index((animate-spin, sm\:animate-spin, md\:animate-spin, lg\:animate-spin, xl\:animate-spin, \2xl\:animate-spin), #{$rwdToken}\:#{$key}) {
-            @keyframes spin {
-              to {
-                transform: rotate(360deg);
-              }
-            }
-          }
-
-          @else if list.index((animate-ping, sm\:animate-ping, md\:animate-ping, lg\:animate-ping, xl\:animate-ping, \2xl\:animate-ping), #{$rwdToken}\:#{$key}) {
-            @keyframes ping {
-              75%,
-              100% {
-                transform: scale(2);
-                opacity: 0;
-              }
-            }
-          }
-
-          @else if list.index((animate-pulse, sm\:animate-pulse, md\:animate-pulse, lg\:animate-pulse, xl\:animate-pulse, \2xl\:animate-pulse), #{$rwdToken}\:#{$key}) {
-            @keyframes pulse {
-              50% {
-                opacity: 0.5;
-              }
-            }
-          }
-
-          @else if list.index((animate-bounce, sm\:animate-bounce, md\:animate-bounce, lg\:animate-bounce, xl\:animate-bounce, \2xl\:animate-bounce), #{$rwdToken}\:#{$key}) {
-            @keyframes bounce {
-              0%,
-              100% {
-                transform: translateY(-25%);
-                animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
-              }
-
-              50% {
-                transform: translateY(0);
-                animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
-              }
+      @if $key == 'animate-none' {
+        /*x
+        @mixin #{$rwdToken}\:#{$key} {
+          @include animation(#{$value}, #{$rwd});
+        }
+        x*/
+      } @else if $key == 'animate-spin' {
+        /*x
+        @mixin #{$rwdToken}\:#{$key} {
+          @include animation(#{$value}, #{$rwd});
+          @keyframes spin {
+            to {
+              transform: rotate(360deg);
             }
           }
         }
+        x*/
+      } @else if $key == 'animate-ping' {
+        /*x
+        @mixin #{$rwdToken}\:#{$key} {
+          @include animation(#{$value}, #{$rwd});
+          @keyframes ping {
+            75%,
+            100% {
+              transform: scale(2);
+              opacity: 0;
+            }
+          }
+        }
+        x*/
+      } @else if $key == 'animate-pulse' {
+        /*x
+        @mixin #{$rwdToken}\:#{$key} {
+          @include animation(#{$value}, #{$rwd});
+          @keyframes pulse {
+            50% {
+              opacity: 0.5;
+            }
+          }
+        }
+        x*/
+      } @else if $key == 'animate-bounce' {
+        /*x
+        @mixin #{$rwdToken}\:#{$key} {
+          @include animation(#{$value}, #{$rwd});
+          @keyframes bounce {
+            0%,
+            100% {
+              transform: translateY(-25%);
+              animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+
+            50% {
+              transform: translateY(0);
+              animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+          }
+        }
+        x*/
       }
-      x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:animate-($v) {
+      @include animation($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -118,12 +150,4 @@ $Animation: (
     @include animation($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:animate-($v) {
-      @include animation($v, #{$rwd});
-    }
-    x*/
-  }
 }

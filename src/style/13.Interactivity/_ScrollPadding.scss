@@ -80,7 +80,7 @@ $ScrollPadding: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $ScrollPadding {
       /*x
@@ -127,51 +127,7 @@ $ScrollPadding: (
       }
       x*/
     }
-  }
-}
 
-@if $isArbitrary {
-  /*x
-  @mixin scroll-p-($v) {
-    @include scroll-padding($v);
-  }
-
-  @mixin scroll-px-($v) {
-    @include scroll-padding-left($v);
-    @include scroll-padding-right($v);
-  }
-
-  @mixin scroll-py-($v) {
-    @include scroll-padding-top($v);
-    @include scroll-padding-bottom($v);
-  }
-
-  @mixin scroll-ps-($v) {
-    @include scroll-padding-inline-start($v);
-  }
-
-  @mixin scroll-pe-($v) {
-    @include scroll-padding-inline-end($v);
-  }
-
-  @mixin scroll-pt-($v) {
-    @include scroll-padding-top($v);
-  }
-
-  @mixin scroll-pr-($v) {
-    @include scroll-padding-right($v);
-  }
-
-  @mixin scroll-pb-($v) {
-    @include scroll-padding-bottom($v);
-  }
-
-  @mixin scroll-pl-($v) {
-    @include scroll-padding-left($v);
-  }
-  x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:scroll-p-($v) {
       @include scroll-padding($v, #{$rwd});
@@ -216,4 +172,46 @@ $ScrollPadding: (
     }
     x*/
   }
+}
+
+@if $isArbitrary {
+  /*x
+  @mixin scroll-p-($v) {
+    @include scroll-padding($v);
+  }
+
+  @mixin scroll-px-($v) {
+    @include scroll-padding-left($v);
+    @include scroll-padding-right($v);
+  }
+
+  @mixin scroll-py-($v) {
+    @include scroll-padding-top($v);
+    @include scroll-padding-bottom($v);
+  }
+
+  @mixin scroll-ps-($v) {
+    @include scroll-padding-inline-start($v);
+  }
+
+  @mixin scroll-pe-($v) {
+    @include scroll-padding-inline-end($v);
+  }
+
+  @mixin scroll-pt-($v) {
+    @include scroll-padding-top($v);
+  }
+
+  @mixin scroll-pr-($v) {
+    @include scroll-padding-right($v);
+  }
+
+  @mixin scroll-pb-($v) {
+    @include scroll-padding-bottom($v);
+  }
+
+  @mixin scroll-pl-($v) {
+    @include scroll-padding-left($v);
+  }
+  x*/
 }

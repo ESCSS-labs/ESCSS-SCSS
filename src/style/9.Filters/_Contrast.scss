@@ -19,7 +19,7 @@ $Contrast: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Contrast {
       /*x
@@ -29,6 +29,13 @@ $Contrast: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:contrast-($v) {
+      $tw-contrast: contrast($v) !global;
+      @include filter(_f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -39,13 +46,4 @@ $Contrast: (
     @include filter(_f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:contrast-($v) {
-      $tw-contrast: contrast($v) !global;
-      @include filter(_f(), #{$rwd});
-    }
-    x*/
-  }
 }

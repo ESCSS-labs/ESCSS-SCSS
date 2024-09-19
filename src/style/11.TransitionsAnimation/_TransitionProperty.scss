@@ -51,7 +51,7 @@ $TransitionProperty: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $TransitionProperty {
       /*x
@@ -64,6 +64,16 @@ $TransitionProperty: (
     }
     x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:transition-($v) {
+      @include #{$rwdToken} {
+        @include transition-property($v);
+        @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
+        @include transition-duration(150ms);
+      }
+    }
+    x*/
   }
 }
 
@@ -75,16 +85,4 @@ $TransitionProperty: (
     @include transition-duration(150ms);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:transition-($v) {
-      @include #{$rwdToken} {
-        @include transition-property($v);
-        @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
-        @include transition-duration(150ms);
-      }
-    }
-    x*/
-  }
 }

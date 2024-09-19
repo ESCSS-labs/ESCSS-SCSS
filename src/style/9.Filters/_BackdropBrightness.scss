@@ -23,7 +23,7 @@ $BackdropBrightness: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $BackdropBrightness {
       /*x
@@ -33,6 +33,13 @@ $BackdropBrightness: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:backdrop-brightness-($v) {
+      $tw-backdrop-brightness: brightness($v) !global;
+      @include backdrop-filter(_b-f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -43,13 +50,4 @@ $BackdropBrightness: (
     @include backdrop-filter(_b-f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:backdrop-brightness-($v) {
-      $tw-backdrop-brightness: brightness($v) !global;
-      @include backdrop-filter(_b-f(), #{$rwd});
-    }
-    x*/
-  }
 }

@@ -80,7 +80,7 @@ $Padding: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Padding {
       /*x
@@ -127,6 +127,50 @@ $Padding: (
     }
     x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:p-($v) {
+      @include padding($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:px-($v) {
+      @include #{$rwdToken} {
+        @include padding-left($v);
+        @include padding-right($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:py-($v) {
+      @include #{$rwdToken} {
+        @include padding-top($v);
+        @include padding-bottom($v);
+      }
+    }
+
+    @mixin #{$rwdToken}\:ps-($v) {
+      @include padding-inline-start($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pe-($v) {
+      @include padding-inline-end($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pt-($v) {
+      @include padding-top($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pr-($v) {
+      @include padding-right($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pb-($v) {
+      @include padding-bottom($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:pl-($v) {
+      @include padding-left($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -170,50 +214,4 @@ $Padding: (
     @include padding-left($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-  @mixin #{$rwdToken}\:p-($v) {
-    @include padding($v, #{$rwd});
-  }
-
-  @mixin #{$rwdToken}\:px-($v) {
-    @include #{$rwdToken} {
-      @include padding-left($v);
-      @include padding-right($v);
-    }
-  }
-
-  @mixin #{$rwdToken}\:py-($v) {
-    @include #{$rwdToken} {
-      @include padding-top($v);
-      @include padding-bottom($v);
-    }
-  }
-
-  @mixin #{$rwdToken}\:ps-($v) {
-    @include padding-inline-start($v, #{$rwd});
-  }
-
-  @mixin #{$rwdToken}\:pe-($v) {
-    @include padding-inline-end($v, #{$rwd});
-  }
-
-  @mixin #{$rwdToken}\:pt-($v) {
-    @include padding-top($v, #{$rwd});
-  }
-
-  @mixin #{$rwdToken}\:pr-($v) {
-    @include padding-right($v, #{$rwd});
-  }
-
-  @mixin #{$rwdToken}\:pb-($v) {
-    @include padding-bottom($v, #{$rwd});
-  }
-
-  @mixin #{$rwdToken}\:pl-($v) {
-    @include padding-left($v, #{$rwd});
-  }
-  x*/
-  }
 }

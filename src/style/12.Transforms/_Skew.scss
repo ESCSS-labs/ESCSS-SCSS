@@ -23,7 +23,7 @@ $Skew: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Skew {
       /*x
@@ -38,6 +38,18 @@ $Skew: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:skew-x-($v) {
+      $tw-skew-x: $v !global;
+      @include transform(_t(), #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:skew-y-($v) {
+      $tw-skew-y: $v !global;
+      @include transform(_t(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -53,20 +65,6 @@ $Skew: (
     @include transform(_t());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:skew-x-($v) {
-      $tw-skew-x: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:skew-y-($v) {
-      $tw-skew-y: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-  }
 }
 
 @if $isNegative {
@@ -86,7 +84,7 @@ $Skew: (
     }
   }
 
-  @if $isRwd and $isClassic {
+  @if $isRwd and (not $isAwaken) {
     @each $rwdToken, $rwd in $rwdBox {
       @each $key, $value in $Skew {
         /*x
@@ -101,6 +99,18 @@ $Skew: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:-skew-x-($v) {
+        $tw-skew-x: -$v !global;
+        @include transform(_t(), #{$rwd});
+      }
+  
+      @mixin #{$rwdToken}\:-skew-y-($v) {
+        $tw-skew-y: -$v !global;
+        @include transform(_t(), #{$rwd});
+      }
+      x*/
     }
   }
 
@@ -116,19 +126,5 @@ $Skew: (
       @include transform(_t());
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:-skew-x-($v) {
-        $tw-skew-x: -$v !global;
-        @include transform(_t(), #{$rwd});
-      }
-  
-      @mixin #{$rwdToken}\:-skew-y-($v) {
-        $tw-skew-y: -$v !global;
-        @include transform(_t(), #{$rwd});
-      }
-      x*/
-    }
   }
 }

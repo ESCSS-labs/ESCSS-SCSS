@@ -290,7 +290,13 @@ $TextColor: (
   }
   x*/
   @each $key, $value in $TextColor {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin text-#{$key}($v: 1) {
+        @include color(_c(#{$value}, $v));
+      }
+      x*/
+    } @else {
       /*x
       @mixin text-#{$key} {
         @include color(#{$value});
@@ -300,17 +306,11 @@ $TextColor: (
         @include color(_c(#{$value}, $v));
       }
       x*/
-    } @else {
-      /*x
-      @mixin text-#{$key}($v: 1) {
-        @include color(_c(#{$value}, $v));
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:text-inherit {
@@ -332,6 +332,27 @@ $TextColor: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:text-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        @include color($v, #{$rwd});
+      }
+
+      // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
+      @else if meta.type-of($v)==list {
+        @include #{$rwdToken} {
+          @include font-size(list.nth($v, 1));
+          @include line-height(list.nth($v, 2));
+        }
+      }
+
+      // e.g. text-(14px)
+      @else {
+        @include font-size($v, #{$rwd});
+      }
+    }
+    x*/
   }
 }
 
@@ -354,27 +375,4 @@ $TextColor: (
     }
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:text-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include color($v, #{$rwd});
-      }
-
-      // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
-      @else if meta.type-of($v)==list {
-        @include #{$rwdToken} {
-          @include font-size(list.nth($v, 1));
-          @include line-height(list.nth($v, 2));
-        }
-      }
-
-      // e.g. text-(14px)
-      @else {
-        @include font-size($v, #{$rwd});
-      }
-    }
-    x*/
-  }
 }

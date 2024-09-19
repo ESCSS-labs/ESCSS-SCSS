@@ -320,7 +320,14 @@ $GradientColorStops-position: (
     }
     x*/
     @each $key, $value in $GradientColorStops-color {
-      @if $isClassic {
+      @if $isAwaken {
+        /*x
+        @mixin from-#{$key}($v: 1) {
+          $tw-gradient-from: _c(#{$value}, $v) !global;
+          @include background-image(_l-g());
+        }
+        x*/
+      } @else {
         /*x
         @mixin from-#{$key} {
           $tw-gradient-from: #{$value} !global;
@@ -328,13 +335,6 @@ $GradientColorStops-position: (
         }
 
         @mixin from-#{$key}\/($v) {
-          $tw-gradient-from: _c(#{$value}, $v) !global;
-          @include background-image(_l-g());
-        }
-        x*/
-      } @else {
-        /*x
-        @mixin from-#{$key}($v: 1) {
           $tw-gradient-from: _c(#{$value}, $v) !global;
           @include background-image(_l-g());
         }
@@ -364,7 +364,14 @@ $GradientColorStops-position: (
     }
     x*/
     @each $key, $value in $GradientColorStops-color {
-      @if $isClassic {
+      @if $isAwaken {
+        /*x
+        @mixin via-#{$key}($v: 1) {
+          $tw-gradient-via: _c(#{$value}, $v) !global;
+          @include background-image(_l-g());
+        }
+        x*/
+      } @else {
         /*x
         @mixin via-#{$key} {
           $tw-gradient-via: #{$value} !global;
@@ -372,13 +379,6 @@ $GradientColorStops-position: (
         }
 
         @mixin via-#{$key}\/($v) {
-          $tw-gradient-via: _c(#{$value}, $v) !global;
-          @include background-image(_l-g());
-        }
-        x*/
-      } @else {
-        /*x
-        @mixin via-#{$key}($v: 1) {
           $tw-gradient-via: _c(#{$value}, $v) !global;
           @include background-image(_l-g());
         }
@@ -408,7 +408,14 @@ $GradientColorStops-position: (
     }
     x*/
     @each $key, $value in $GradientColorStops-color {
-      @if $isClassic {
+      @if $isAwaken {
+        /*x
+        @mixin to-#{$key}($v: 1) {
+          $tw-gradient-to: _c(#{$value}, $v) !global;
+          @include background-image(_l-g());
+        }
+        x*/
+      } @else {
         /*x
         @mixin to-#{$key} {
           $tw-gradient-to: #{$value} !global;
@@ -416,13 +423,6 @@ $GradientColorStops-position: (
         }
 
         @mixin to-#{$key}\/($v) {
-          $tw-gradient-to: _c(#{$value}, $v) !global;
-          @include background-image(_l-g());
-        }
-        x*/
-      } @else {
-        /*x
-        @mixin to-#{$key}($v: 1) {
           $tw-gradient-to: _c(#{$value}, $v) !global;
           @include background-image(_l-g());
         }
@@ -441,7 +441,7 @@ $GradientColorStops-position: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @if $group-from {
       /*x
@@ -476,6 +476,27 @@ $GradientColorStops-position: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:from-($v) {
+        @if list.index(inherit, $v) {
+          // to match same behavior as tailwind
+          @include background-image(inherit !important, #{$rwd}); 
+        }
+  
+        @else if meta.type-of($v)==color or list.index(currentColor, $v) {
+          @include #{$rwdToken} {
+            $tw-gradient-from: $v !global;
+            @include background-image(_l-g());
+          }
+        }
+  
+        @else {
+          $tw-gradient-from-position: $v !global;
+          @include background-image(_l-g(), #{$rwd});
+        }
+      }
+      x*/
     }
 
     @if $group-via {
@@ -511,6 +532,27 @@ $GradientColorStops-position: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:via-($v) {
+        @if list.index(inherit, $v) {
+          // to match same behavior as tailwind
+          @include background-image(inherit !important, #{$rwd}); 
+        }
+  
+        @else if meta.type-of($v)==color or list.index(currentColor, $v) {
+          @include #{$rwdToken} {
+            $tw-gradient-via: $v !global;
+            @include background-image(_l-g());
+          }
+        }
+  
+        @else {
+          $tw-gradient-via-position: $v !global;
+          @include background-image(_l-g(), #{$rwd});
+        }
+      }
+      x*/
     }
 
     @if $group-to {
@@ -547,6 +589,27 @@ $GradientColorStops-position: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:to-($v) {
+        @if list.index(inherit, $v) {
+          // to match same behavior as tailwind
+          @include background-image(inherit !important, #{$rwd}); 
+        }
+  
+        @else if meta.type-of($v)==color or list.index(currentColor, $v) {
+          @include #{$rwdToken} {
+            $tw-gradient-to: $v !global;
+            @include background-image(_l-g());
+          }
+        }
+  
+        @else {
+          $tw-gradient-to-position: $v !global;
+          @include background-image(_l-g(), #{$rwd});
+        }
+      }
+      x*/
     }
   }
 }
@@ -571,29 +634,6 @@ $GradientColorStops-position: (
       }
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:from-($v) {
-        @if list.index(inherit, $v) {
-          // to match same behavior as tailwind
-          @include background-image(inherit !important, #{$rwd}); 
-        }
-  
-        @else if meta.type-of($v)==color or list.index(currentColor, $v) {
-          @include #{$rwdToken} {
-            $tw-gradient-from: $v !global;
-            @include background-image(_l-g());
-          }
-        }
-  
-        @else {
-          $tw-gradient-from-position: $v !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-      }
-      x*/
-    }
   }
 
   @if $group-via {
@@ -615,29 +655,6 @@ $GradientColorStops-position: (
       }
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:via-($v) {
-        @if list.index(inherit, $v) {
-          // to match same behavior as tailwind
-          @include background-image(inherit !important, #{$rwd}); 
-        }
-  
-        @else if meta.type-of($v)==color or list.index(currentColor, $v) {
-          @include #{$rwdToken} {
-            $tw-gradient-via: $v !global;
-            @include background-image(_l-g());
-          }
-        }
-  
-        @else {
-          $tw-gradient-via-position: $v !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-      }
-      x*/
-    }
   }
 
   @if $group-to {
@@ -659,28 +676,5 @@ $GradientColorStops-position: (
       }
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:to-($v) {
-        @if list.index(inherit, $v) {
-          // to match same behavior as tailwind
-          @include background-image(inherit !important, #{$rwd}); 
-        }
-  
-        @else if meta.type-of($v)==color or list.index(currentColor, $v) {
-          @include #{$rwdToken} {
-            $tw-gradient-to: $v !global;
-            @include background-image(_l-g());
-          }
-        }
-  
-        @else {
-          $tw-gradient-to-position: $v !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-      }
-      x*/
-    }
   }
 }

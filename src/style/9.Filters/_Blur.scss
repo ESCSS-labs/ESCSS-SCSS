@@ -20,7 +20,7 @@ $Blur: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Blur {
       /*x
@@ -30,6 +30,13 @@ $Blur: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:blur-($v) {
+      $tw-blur: blur($v) !global;
+      @include filter(_f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -40,13 +47,4 @@ $Blur: (
     @include filter(_f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:blur-($v) {
-      $tw-blur: blur($v) !global;
-      @include filter(_f(), #{$rwd});
-    }
-    x*/
-  }
 }

@@ -14,7 +14,7 @@ $_grayscale: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $_grayscale {
       /*x
@@ -24,6 +24,13 @@ $_grayscale: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:grayscale-($v) {
+      $tw-grayscale: grayscale($v) !global;
+      @include filter(_f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -34,13 +41,4 @@ $_grayscale: (
     @include filter(_f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:grayscale-($v) {
-      $tw-grayscale: grayscale($v) !global;
-      @include filter(_f(), #{$rwd});
-    }
-    x*/
-  }
 }

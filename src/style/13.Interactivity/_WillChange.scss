@@ -15,7 +15,7 @@ $WillChange: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $WillChange {
       /*x
@@ -24,6 +24,12 @@ $WillChange: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:will-change-($v, $v2: null) {
+      @include will-change($v, $v2, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -33,12 +39,4 @@ $WillChange: (
     @include will-change($v, $v2);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:will-change-($v, $v2: null) {
-      @include will-change($v, $v2, #{$rwd});
-    }
-    x*/
-  }
 }

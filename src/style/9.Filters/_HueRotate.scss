@@ -18,7 +18,7 @@ $HueRotate: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $HueRotate {
       /*x
@@ -28,6 +28,13 @@ $HueRotate: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:hue-rotate-($v) {
+      $tw-hue-rotate: hue-rotate($v) !global;
+      @include filter(_f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -38,15 +45,6 @@ $HueRotate: (
     @include filter(_f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:hue-rotate-($v) {
-      $tw-hue-rotate: hue-rotate($v) !global;
-      @include filter(_f(), #{$rwd});
-    }
-    x*/
-  }
 }
 
 @if $isNegative {
@@ -61,7 +59,7 @@ $HueRotate: (
     }
   }
 
-  @if $isRwd and $isClassic {
+  @if $isRwd and (not $isAwaken) {
     @each $rwdToken, $rwd in $rwdBox {
       @each $key, $value in $HueRotate {
         /*x
@@ -71,6 +69,13 @@ $HueRotate: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:-hue-rotate-($v) {
+        $tw-hue-rotate: hue-rotate(-$v) !global;
+        @include filter(_f(), #{$rwd});
+      }
+      x*/
     }
   }
 
@@ -81,14 +86,5 @@ $HueRotate: (
       @include filter(_f());
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:-hue-rotate-($v) {
-        $tw-hue-rotate: hue-rotate(-$v) !global;
-        @include filter(_f(), #{$rwd});
-      }
-      x*/
-    }
   }
 }

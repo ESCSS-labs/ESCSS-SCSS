@@ -25,7 +25,7 @@ $GridTemplateRows: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $GridTemplateRows {
       /*x
@@ -34,6 +34,12 @@ $GridTemplateRows: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:grid-rows-($v) {
+      @include grid-template-rows($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -43,12 +49,4 @@ $GridTemplateRows: (
     @include grid-template-rows($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:grid-rows-($v) {
-      @include grid-template-rows($v, #{$rwd});
-    }
-    x*/
-  }
 }

@@ -294,7 +294,13 @@ $AccentColor: (
   }
   x*/
   @each $key, $value in $AccentColor {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin accent-#{$key}($v: 1) {
+        @include accent-color(_c(#{$value}, $v));
+      }
+      x*/
+    } @else {
       /*x
       @mixin accent-#{$key} {
         @include accent-color(#{$value});
@@ -304,17 +310,11 @@ $AccentColor: (
         @include accent-color(_c(#{$value}, $v));
       }
       x*/
-    } @else {
-      /*x
-      @mixin accent-#{$key}($v: 1) {
-        @include accent-color(_c(#{$value}, $v));
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
       @mixin #{$rwdToken}\:accent-auto {
@@ -340,6 +340,12 @@ $AccentColor: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:accent-($v) {
+      @include accent-color($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -349,11 +355,4 @@ $AccentColor: (
     @include accent-color($v);
   }
   x*/
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:accent-($v) {
-      @include accent-color($v, #{$rwd});
-    }
-    x*/
-  }
 }

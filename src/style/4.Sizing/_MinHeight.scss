@@ -54,7 +54,7 @@ $MinHeight: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $MinHeight {
       /*x
@@ -63,6 +63,12 @@ $MinHeight: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:min-h-($v) {
+      @include min-height($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -72,12 +78,4 @@ $MinHeight: (
     @include min-height($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:min-h-($v) {
-      @include min-height($v, #{$rwd});
-    }
-    x*/
-  }
 }

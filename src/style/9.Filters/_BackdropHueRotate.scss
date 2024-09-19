@@ -18,7 +18,7 @@ $BackdropHueRotate: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $BackdropHueRotate {
       /*x
@@ -28,6 +28,13 @@ $BackdropHueRotate: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:backdrop-hue-rotate-($v) {
+      $tw-backdrop-hue-rotate: hue-rotate($v) !global;
+      @include backdrop-filter(_b-f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -38,15 +45,6 @@ $BackdropHueRotate: (
     @include backdrop-filter(_b-f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:backdrop-hue-rotate-($v) {
-      $tw-backdrop-hue-rotate: hue-rotate($v) !global;
-      @include backdrop-filter(_b-f(), #{$rwd});
-    }
-    x*/
-  }
 }
 
 @if $isNegative {
@@ -61,7 +59,7 @@ $BackdropHueRotate: (
     }
   }
 
-  @if $isRwd and $isClassic {
+  @if $isRwd and (not $isAwaken) {
     @each $rwdToken, $rwd in $rwdBox {
       @each $key, $value in $BackdropHueRotate {
         /*x
@@ -71,6 +69,13 @@ $BackdropHueRotate: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:-backdrop-hue-rotate-($v) {
+        $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
+        @include backdrop-filter(_b-f(), #{$rwd});
+      }
+      x*/
     }
   }
 
@@ -81,14 +86,5 @@ $BackdropHueRotate: (
       @include backdrop-filter(_b-f());
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:-backdrop-hue-rotate-($v) {
-        $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
-        @include backdrop-filter(_b-f(), #{$rwd});
-      }
-      x*/
-    }
   }
 }

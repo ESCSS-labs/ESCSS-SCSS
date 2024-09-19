@@ -33,7 +33,7 @@ $BackdropOpacity: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $BackdropOpacity {
       /*x
@@ -43,6 +43,13 @@ $BackdropOpacity: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:backdrop-opacity-($v) {
+      $tw-backdrop-opacity: opacity($v) !global;
+      @include backdrop-filter(_b-f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -53,13 +60,4 @@ $BackdropOpacity: (
     @include backdrop-filter(_b-f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:backdrop-opacity-($v) {
-      $tw-backdrop-opacity: opacity($v) !global;
-      @include backdrop-filter(_b-f(), #{$rwd});
-    }
-    x*/
-  }
 }

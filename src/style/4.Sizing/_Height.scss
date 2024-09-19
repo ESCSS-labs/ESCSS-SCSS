@@ -70,7 +70,7 @@ $Height: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Height {
       /*x
@@ -79,6 +79,12 @@ $Height: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:h-($v) {
+      @include height($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -88,12 +94,4 @@ $Height: (
     @include height($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:h-($v) {
-      @include height($v, #{$rwd});
-    }
-    x*/
-  }
 }

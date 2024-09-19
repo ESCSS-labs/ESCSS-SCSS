@@ -19,7 +19,7 @@ $BackdropContrast: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $BackdropContrast {
       /*x
@@ -29,6 +29,13 @@ $BackdropContrast: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:backdrop-contrast-($v) {
+      $tw-backdrop-contrast: contrast($v) !global;
+      @include backdrop-filter(_b-f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -39,13 +46,4 @@ $BackdropContrast: (
     @include backdrop-filter(_b-f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:backdrop-contrast-($v) {
-      $tw-backdrop-contrast: contrast($v) !global;
-      @include backdrop-filter(_b-f(), #{$rwd});
-    }
-    x*/
-  }
 }

@@ -294,7 +294,13 @@ $Stroke: (
   }
   x*/
   @each $key, $value in $Stroke {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin stroke-#{$key}($v: 1) {
+        @include stroke(_c(#{$value}, $v));
+      }
+      x*/
+    } @else {
       /*x
       @mixin stroke-#{$key} {
         @include stroke(#{$value});
@@ -304,17 +310,11 @@ $Stroke: (
         @include stroke(_c(#{$value}, $v));
       }
       x*/
-    } @else {
-      /*x
-      @mixin stroke-#{$key}($v: 1) {
-        @include stroke(_c(#{$value}, $v));
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
       @mixin #{$rwdToken}\:stroke-none {
@@ -340,6 +340,18 @@ $Stroke: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:stroke-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        @include stroke($v, #{$rwd});
+      }
+
+      @else {
+        @include stroke-width($v, #{$rwd});
+      }
+    }
+    x*/
   }
 }
 
@@ -355,18 +367,4 @@ $Stroke: (
     }
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:stroke-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include stroke($v, #{$rwd});
-      }
-
-      @else {
-        @include stroke-width($v, #{$rwd});
-      }
-    }
-    x*/
-  }
 }

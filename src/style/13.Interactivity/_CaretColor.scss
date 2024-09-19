@@ -290,7 +290,13 @@ $CaretColor: (
   }
   x*/
   @each $key, $value in $CaretColor {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin caret-#{$key}($v: 1) {
+        @include caret-color(_c(#{$value}, $v));
+      }
+      x*/
+    } @else {
       /*x
       @mixin caret-#{$key} {
         @include caret-color(#{$value});
@@ -300,17 +306,11 @@ $CaretColor: (
         @include caret-color(_c(#{$value}, $v));
       }
       x*/
-    } @else {
-      /*x
-      @mixin caret-#{$key}($v: 1) {
-        @include caret-color(_c(#{$value}, $v));
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:caret-inherit {
@@ -332,6 +332,12 @@ $CaretColor: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:caret-($v) {
+      @include caret-color($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -341,12 +347,4 @@ $CaretColor: (
     @include caret-color($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:caret-($v) {
-      @include caret-color($v, #{$rwd});
-    }
-    x*/
-  }
 }

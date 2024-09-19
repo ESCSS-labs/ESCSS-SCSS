@@ -14,7 +14,7 @@ $BackdropSepia: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $BackdropSepia {
       /*x
@@ -24,6 +24,13 @@ $BackdropSepia: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:backdrop-sepia-($v) {
+      $tw-backdrop-sepia: sepia($v) !global;
+      @include backdrop-filter(_b-f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -34,13 +41,4 @@ $BackdropSepia: (
     @include backdrop-filter(_b-f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:backdrop-sepia-($v) {
-      $tw-backdrop-sepia: sepia($v) !global;
-      @include backdrop-filter(_b-f(), #{$rwd});
-    }
-    x*/
-  }
 }

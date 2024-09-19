@@ -17,7 +17,7 @@ $LetterSpacing: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $LetterSpacing {
       /*x
@@ -26,6 +26,12 @@ $LetterSpacing: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:tracking-($v) {
+      @include letter-spacing($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -35,14 +41,6 @@ $LetterSpacing: (
     @include letter-spacing($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:tracking-($v) {
-      @include letter-spacing($v, #{$rwd});
-    }
-    x*/
-  }
 }
 
 @if $isNegative {
@@ -56,7 +54,7 @@ $LetterSpacing: (
     }
   }
 
-  @if $isRwd and $isClassic {
+  @if $isRwd and (not $isAwaken) {
     @each $rwdToken, $rwd in $rwdBox {
       @each $key, $value in $LetterSpacing {
         /*x
@@ -65,6 +63,12 @@ $LetterSpacing: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:-tracking-($v) {
+        @include letter-spacing(-$v, #{$rwd});
+      }
+      x*/
     }
   }
 
@@ -74,13 +78,5 @@ $LetterSpacing: (
       @include letter-spacing(-$v);
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:-tracking-($v) {
-        @include letter-spacing(-$v, #{$rwd});
-      }
-      x*/
-    }
   }
 }

@@ -290,7 +290,13 @@ $TextDecorationColor: (
   }
   x*/
   @each $key, $value in $TextDecorationColor {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin decoration-#{$key}($v: 1) {
+        @include text-decoration-color(_c(#{$value}, $v));
+      }
+      x*/
+    } @else {
       /*x
       @mixin decoration-#{$key} {
         @include text-decoration-color(#{$value});
@@ -300,17 +306,11 @@ $TextDecorationColor: (
         @include text-decoration-color(_c(#{$value}, $v));
       }
       x*/
-    } @else {
-      /*x
-      @mixin decoration-#{$key}($v: 1) {
-        @include text-decoration-color(_c(#{$value}, $v));
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:decoration-inherit {
@@ -332,6 +332,18 @@ $TextDecorationColor: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:decoration-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        @include text-decoration-color($v, #{$rwd});
+      }
+
+      @else {
+        @include text-decoration-thickness($v, #{$rwd});
+      }
+    }
+    x*/
   }
 }
 
@@ -347,18 +359,4 @@ $TextDecorationColor: (
     }
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:decoration-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include text-decoration-color($v, #{$rwd});
-      }
-
-      @else {
-        @include text-decoration-thickness($v, #{$rwd});
-      }
-    }
-    x*/
-  }
 }

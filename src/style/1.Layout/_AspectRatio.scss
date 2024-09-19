@@ -22,23 +22,21 @@ $AspectRatio: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $AspectRatio {
       /*x
       @mixin #{$rwdToken}\:#{$key} {
         @include aspect-ratio(#{$value}, #{$rwd});
       }
-
-      @mixin #{$rwdToken}\:#{$key} {
-        @include aspect-ratio(#{$value}, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:#{$key} {
-        @include aspect-ratio(#{$value}, #{$rwd});
-      }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:aspect-($v) {
+      @include aspect-ratio($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -48,12 +46,4 @@ $AspectRatio: (
     @include aspect-ratio($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:aspect-($v) {
-      @include aspect-ratio($v, #{$rwd});
-    }
-    x*/
-  }
 }

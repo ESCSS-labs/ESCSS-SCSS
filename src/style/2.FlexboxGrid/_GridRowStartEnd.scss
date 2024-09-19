@@ -75,7 +75,7 @@ $group-GridRowStartEnd-end: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $group-GridRowStartEnd {
       /*x
@@ -100,6 +100,20 @@ $group-GridRowStartEnd-end: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:row-($v) {
+      @include grid-row($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:row-start-($v) {
+      @include grid-row-start($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:row-end-($v) {
+      @include grid-row-end($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -117,20 +131,4 @@ $group-GridRowStartEnd-end: (
     @include grid-row-end($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:row-($v) {
-      @include grid-row($v, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:row-start-($v) {
-      @include grid-row-start($v, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:row-end-($v) {
-      @include grid-row-end($v, #{$rwd});
-    }
-    x*/
-  }
 }

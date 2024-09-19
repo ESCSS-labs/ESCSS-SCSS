@@ -54,7 +54,7 @@ $BorderSpacing: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $BorderSpacing {
       /*x
@@ -71,6 +71,20 @@ $BorderSpacing: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:border-spacing-($v) {
+      @include border-spacing($v $v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:border-spacing-x-($v) {
+      @include border-spacing($v 0, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:border-spacing-y-($v) {
+      @include border-spacing(0 $v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -88,20 +102,4 @@ $BorderSpacing: (
     @include border-spacing(0 $v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:border-spacing-($v) {
-      @include border-spacing($v $v, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:border-spacing-x-($v) {
-      @include border-spacing($v 0, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:border-spacing-y-($v) {
-      @include border-spacing(0 $v, #{$rwd});
-    }
-    x*/
-  }
 }

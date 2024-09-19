@@ -14,7 +14,7 @@ $BackdropInvert: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $BackdropInvert {
       /*x
@@ -24,6 +24,13 @@ $BackdropInvert: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:backdrop-invert-($v) {
+      $tw-backdrop-invert: invert($v) !global;
+      @include backdrop-filter(_b-f(), #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -34,13 +41,4 @@ $BackdropInvert: (
     @include backdrop-filter(_b-f());
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:backdrop-invert-($v) {
-      $tw-backdrop-invert: invert($v) !global;
-      @include backdrop-filter(_b-f(), #{$rwd});
-    }
-    x*/
-  }
 }

@@ -54,7 +54,7 @@ $Gap: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Gap {
       /*x
@@ -71,6 +71,20 @@ $Gap: (
     }
     x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:gap-($v) {
+      @include gap($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:gap-x-($v) {
+      @include column-gap($v, #{$rwd});
+    }
+
+    @mixin #{$rwdToken}\:gap-y-($v) {
+      @include row-gap($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -88,20 +102,4 @@ $Gap: (
     @include row-gap($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:gap-($v) {
-      @include gap($v, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:gap-x-($v) {
-      @include column-gap($v, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:gap-y-($v) {
-      @include row-gap($v, #{$rwd});
-    }
-    x*/
-  }
 }

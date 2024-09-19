@@ -37,7 +37,7 @@ $Columns: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Columns {
       /*x
@@ -46,6 +46,11 @@ $Columns: (
       }
       x*/
     }
+    /*x
+    @mixin #{$rwdToken}\:columns-($v) {
+      @include columns($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -55,12 +60,4 @@ $Columns: (
     @include columns($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:columns-($v) {
-      @include columns($v, #{$rwd});
-    }
-    x*/
-  }
 }

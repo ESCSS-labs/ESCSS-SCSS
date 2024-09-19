@@ -46,7 +46,7 @@ $TextIndent: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $TextIndent {
       /*x
@@ -55,6 +55,12 @@ $TextIndent: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:indent-($v) {
+      @include text-indent($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -64,14 +70,6 @@ $TextIndent: (
     @include text-indent($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:indent-($v) {
-      @include text-indent($v, #{$rwd});
-    }
-    x*/
-  }
 }
 
 @if $isNegative {
@@ -85,7 +83,7 @@ $TextIndent: (
     }
   }
 
-  @if $isRwd and $isClassic {
+  @if $isRwd and (not $isAwaken) {
     @each $rwdToken, $rwd in $rwdBox {
       @each $key, $value in $TextIndent {
         /*x
@@ -94,6 +92,12 @@ $TextIndent: (
         }
         x*/
       }
+
+      /*x
+      @mixin #{$rwdToken}\:-indent-($v) {
+        @include text-indent(-$v, #{$rwd});
+      }
+      x*/
     }
   }
 
@@ -103,13 +107,5 @@ $TextIndent: (
       @include text-indent(-$v);
     }
     x*/
-
-    @each $rwdToken, $rwd in $rwdBox {
-      /*x
-      @mixin #{$rwdToken}\:-indent-($v) {
-        @include text-indent(-$v, #{$rwd});
-      }
-      x*/
-    }
   }
 }

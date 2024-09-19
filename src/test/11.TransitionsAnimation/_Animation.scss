@@ -126,11 +126,11 @@
           @include expect {
             @media (min-width: $_sm) {
               animation: spin 1s linear infinite;
+            }
 
-              @keyframes spin {
-                to {
-                  transform: rotate(360deg);
-                }
+            @keyframes spin {
+              to {
+                transform: rotate(360deg);
               }
             }
           }
@@ -147,13 +147,62 @@
           @include expect {
             @media (min-width: $_sm) {
               animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
 
-              @keyframes ping {
-                75%,
-                100% {
-                  transform: scale(2);
-                  opacity: 0;
-                }
+            @keyframes ping {
+              75%,
+              100% {
+                transform: scale(2);
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('sm\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include sm\:animate-pulse;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+
+            @keyframes pulse {
+              50% {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('sm\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include sm\:animate-bounce;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_sm) {
+              animation: bounce 1s infinite;
+            }
+
+            @keyframes bounce {
+              0%,
+              100% {
+                transform: translateY(-25%);
+                animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+              }
+
+              50% {
+                transform: translateY(0);
+                animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
               }
             }
           }
@@ -185,11 +234,11 @@
           @include expect {
             @media (min-width: $_md) {
               animation: spin 1s linear infinite;
+            }
 
-              @keyframes spin {
-                to {
-                  transform: rotate(360deg);
-                }
+            @keyframes spin {
+              to {
+                transform: rotate(360deg);
               }
             }
           }
@@ -206,13 +255,62 @@
           @include expect {
             @media (min-width: $_md) {
               animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
 
-              @keyframes ping {
-                75%,
-                100% {
-                  transform: scale(2);
-                  opacity: 0;
-                }
+            @keyframes ping {
+              75%,
+              100% {
+                transform: scale(2);
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('md\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include md\:animate-pulse;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+
+            @keyframes pulse {
+              50% {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('md\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include md\:animate-bounce;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_md) {
+              animation: bounce 1s infinite;
+            }
+
+            @keyframes bounce {
+              0%,
+              100% {
+                transform: translateY(-25%);
+                animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+              }
+
+              50% {
+                transform: translateY(0);
+                animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
               }
             }
           }
@@ -244,11 +342,11 @@
           @include expect {
             @media (min-width: $_lg) {
               animation: spin 1s linear infinite;
+            }
 
-              @keyframes spin {
-                to {
-                  transform: rotate(360deg);
-                }
+            @keyframes spin {
+              to {
+                transform: rotate(360deg);
               }
             }
           }
@@ -265,13 +363,62 @@
           @include expect {
             @media (min-width: $_lg) {
               animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
 
-              @keyframes ping {
-                75%,
-                100% {
-                  transform: scale(2);
-                  opacity: 0;
-                }
+            @keyframes ping {
+              75%,
+              100% {
+                transform: scale(2);
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('lg\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include lg\:animate-pulse;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+
+            @keyframes pulse {
+              50% {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('lg\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include lg\:animate-bounce;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_lg) {
+              animation: bounce 1s infinite;
+            }
+
+            @keyframes bounce {
+              0%,
+              100% {
+                transform: translateY(-25%);
+                animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+              }
+
+              50% {
+                transform: translateY(0);
+                animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
               }
             }
           }
@@ -303,11 +450,11 @@
           @include expect {
             @media (min-width: $_xl) {
               animation: spin 1s linear infinite;
+            }
 
-              @keyframes spin {
-                to {
-                  transform: rotate(360deg);
-                }
+            @keyframes spin {
+              to {
+                transform: rotate(360deg);
               }
             }
           }
@@ -324,13 +471,62 @@
           @include expect {
             @media (min-width: $_xl) {
               animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
 
-              @keyframes ping {
-                75%,
-                100% {
-                  transform: scale(2);
-                  opacity: 0;
-                }
+            @keyframes ping {
+              75%,
+              100% {
+                transform: scale(2);
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('xl\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include xl\:animate-pulse;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+
+            @keyframes pulse {
+              50% {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('xl\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include xl\:animate-bounce;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_xl) {
+              animation: bounce 1s infinite;
+            }
+
+            @keyframes bounce {
+              0%,
+              100% {
+                transform: translateY(-25%);
+                animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+              }
+
+              50% {
+                transform: translateY(0);
+                animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
               }
             }
           }
@@ -362,11 +558,11 @@
           @include expect {
             @media (min-width: $_xxl) {
               animation: spin 1s linear infinite;
+            }
 
-              @keyframes spin {
-                to {
-                  transform: rotate(360deg);
-                }
+            @keyframes spin {
+              to {
+                transform: rotate(360deg);
               }
             }
           }
@@ -383,13 +579,62 @@
           @include expect {
             @media (min-width: $_xxl) {
               animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
 
-              @keyframes ping {
-                75%,
-                100% {
-                  transform: scale(2);
-                  opacity: 0;
-                }
+            @keyframes ping {
+              75%,
+              100% {
+                transform: scale(2);
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('\2xl\:animate-pulse') {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-pulse;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_xxl) {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+
+            @keyframes pulse {
+              50% {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+
+      @include it('\2xl\:animate-bounce') {
+        @include assert {
+          @include output {
+            @include \2xl\:animate-bounce;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            @media (min-width: $_xxl) {
+              animation: bounce 1s infinite;
+            }
+
+            @keyframes bounce {
+              0%,
+              100% {
+                transform: translateY(-25%);
+                animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+              }
+
+              50% {
+                transform: translateY(0);
+                animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
               }
             }
           }

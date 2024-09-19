@@ -290,7 +290,13 @@ $OutlineColor: (
   }
   x*/
   @each $key, $value in $OutlineColor {
-    @if $isClassic {
+    @if $isAwaken {
+      /*x
+      @mixin outline-#{$key}($v: 1) {
+        @include outline-color(_c(#{$value}, $v));
+      }
+      x*/
+    } @else {
       /*x
       @mixin outline-#{$key} {
         @include outline-color(#{$value});
@@ -300,17 +306,11 @@ $OutlineColor: (
         @include outline-color(_c(#{$value}, $v));
       }
       x*/
-    } @else {
-      /*x
-      @mixin outline-#{$key}($v: 1) {
-        @include outline-color(_c(#{$value}, $v));
-      }
-      x*/
     }
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     /*x
     @mixin #{$rwdToken}\:outline-inherit {
@@ -332,6 +332,18 @@ $OutlineColor: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:outline-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        @include outline-color($v, #{$rwd});
+      }
+
+      @else {
+        @include outline-width($v, #{$rwd});
+      }
+    }
+    x*/
   }
 }
 
@@ -347,18 +359,4 @@ $OutlineColor: (
     }
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:outline-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include outline-color($v, #{$rwd});
-      }
-
-      @else {
-        @include outline-width($v, #{$rwd});
-      }
-    }
-    x*/
-  }
 }

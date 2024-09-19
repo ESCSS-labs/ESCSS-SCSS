@@ -13,7 +13,7 @@ $FlexGrow: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $FlexGrow {
       /*x
@@ -22,6 +22,12 @@ $FlexGrow: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:grow-($v) {
+      @include flex-grow($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -31,12 +37,4 @@ $FlexGrow: (
     @include flex-grow($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:grow-($v) {
-      @include flex-grow($v, #{$rwd});
-    }
-    x*/
-  }
 }

@@ -32,7 +32,7 @@ $Opacity: (
   }
 }
 
-@if $isRwd and $isClassic {
+@if $isRwd and (not $isAwaken) {
   @each $rwdToken, $rwd in $rwdBox {
     @each $key, $value in $Opacity {
       /*x
@@ -41,6 +41,12 @@ $Opacity: (
       }
       x*/
     }
+
+    /*x
+    @mixin #{$rwdToken}\:opacity-($v) {
+      @include opacity($v, #{$rwd});
+    }
+    x*/
   }
 }
 
@@ -50,12 +56,4 @@ $Opacity: (
     @include opacity($v);
   }
   x*/
-
-  @each $rwdToken, $rwd in $rwdBox {
-    /*x
-    @mixin #{$rwdToken}\:opacity-($v) {
-      @include opacity($v, #{$rwd});
-    }
-    x*/
-  }
 }
