@@ -17,14 +17,14 @@ bun test
 
 ## How to generate SCSS file?
 
-### 1. Use 'Live Sass Compiler'(Extension) to compile index.css
+### 1. Use 'Live Sass Compiler'(Extension) to compile index.css (src/style/index.css)
 
-### 2. Use SEARCH feature(VSCode) remove below
+### 2. Use SEARCH feature(VSCode) to remove below in index.css
 
 ```
-remove /*x and x*/
+/*x and x*/
 ```
 
-### 3. Rename index.css to foo.scss (src/style/index.css)
+### 3. Rename your index.css
 
 ### 4. Ready to serve!
