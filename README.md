@@ -138,7 +138,7 @@ No, it is designed to reduce developers' frustration and work with Tailwind pret
 
 ## Installation
 
-### 1. copy SCSS file
+### 1. copy awaken.scss from the product/ directory
 
 ### 2. install sass in your project
 
