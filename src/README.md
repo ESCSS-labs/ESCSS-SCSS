@@ -20,9 +20,11 @@ style/test
 
 - Run all 79067 test cases.
 
-```bash
-bun install
-bun test
+```shell
+  git clone https://github.com/ESCSS-labs/ESCSS-SCSS.git
+  cd ESCSS-SCSS
+  bun install
+  bun test
 ```
 
 ## How to generate SCSS file?
