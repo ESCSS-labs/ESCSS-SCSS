@@ -149,8 +149,7 @@ export default defineConfig({
 
 ### Why are the default values of breakpoints(sm、md..) set to 0px?
 
-1. Each project has unique breakpoints, and it's relatively easy to trigger [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html) obligations to open source, therefore set 0 as default.
-2. I think it's fair to earn money for my work.
+Every project has its own unique design requirements, so I set 0 as the default breakpoint. Due to the nature of CSS, this might make it easier to trigger the open source obligations outlined in [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html). At the same time, I believe it's fair to earn money for my work.
 
 ### What is the benefit of using Atomic CSS?
 
