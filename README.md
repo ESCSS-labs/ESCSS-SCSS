@@ -55,6 +55,7 @@ $_xxl: 0px;
     @include bg-red-500;
     @include m-1\/2;
     @include p-(20px);
+    @include border-t-rose-100; // Use border-x/y/s/e/t/r/b/l-($color) for smaller file size. Example: border-t-($rose-100).
 
     @include sm {
       @include from-black-500;
@@ -181,7 +182,9 @@ Yes, it is designed in mind from Sass v1.23.0 to the latest version. I adhere to
 When used in conjunction with Tailwind, you gain the rapid development advantages of Tailwind while also benefiting from the encapsulation of SCSS and the timeless nature of native CSS. This achieves an excellent balance in maintainability and development efficiency.
 
 ### Is it necessary to use `@include utils_reset-tw`?
+
 For resetting some tailwind variables, you may wonder why not use native CSS var to solve the problem, so that you don’t have to manually reset it every time. This is mainly based on the following considerations:
+
 - Smaller file size: Using var actually increases the file size, which will continue to increase in the future, and also indirectly determines the file size of this project; using Sass's variable system is more in line with minimizing the file size.
 - Integrity: To avoid confusing users, usually the project itself has its own CSS variable system (var).
 - Indirect indicators: It is recommended that each style be reset using `@include utils_reset-tw`, which can query the usage of your style.
