@@ -1,5 +1,9 @@
 ![logo](https://github.com/ESCSS-labs/ESCSS/blob/main/assets/logo.png)
 
+# Language
+
+- [中文](./README-zh.md)
+
 # Quick Links
 
 - [What is ESCSS-SCSS](#what-is-escss-scss)
@@ -62,9 +66,9 @@ $_xxl: 0px !default;
       @include to-green-500;
     }
 
-    // This is different from Tailwind as it combines class and media strategies:
-    //  - Class strategy: Add a '--dark' class to the html/body/top level, and toggle the class using JavaScript.
-    //  - Media strategy: Automatically handled for you when using the dark utility. Only be triggered if the user has set their browser to dark mode.
+    // This is different from Tailwind as it combines selector and media strategies:
+    //  - selector strategy: Add a '--dark' class to the html/body/top level, and toggle the class using JavaScript.
+    //  - media strategy: Automatically handled for you when using the @include dark. Only be triggered if the user has set their browser to dark mode.
     @include dark {
       color: black;
       background-color: white;
@@ -118,16 +122,27 @@ $_xxl: 0px !default;
 ### Requirements
 
 version >= 1.23.0
+vite >= 5.4.0 // if you use sass-embedded, sass-embedded is faster than sass
 
 ### Copy `_awaken.scss` from the `product/` directory
 
-### Installing Sass in Your Project
+### Installing library in Your Project
 
-```shell
-npm add -D sass-embedded # or sass
+```bash
+  # Using npm
+  npm add -D sass-embedded # or sass
+
+  # Using yarn
+  yarn add -D sass-embedded # or sass
+
+  # Using pnpm
+  pnpm add -D sass-embedded # or sass
+
+  # Using bun
+  bun add -D sass-embedded # or sass
 ```
 
-### Setting Up SCSS Files with Vite
+### Setting Up in `vite.config.js`
 
 ```js
 //  vite.config.js
@@ -161,6 +176,12 @@ Every project has its own unique design requirements, so I set 0 as the default 
 
 Yes, it is designed in mind from Sass v1.23.0 to the latest version. I adhere to Sass’s deprecation warnings to ensure smooth transitions.
 
-### Can you work with Tailwind?
+### The Advantages of Compatibility with Tailwind
 
-Yes, it’s designed to work with Tailwind, enabling effortless transformation between Tailwind classes and SCSS styles. This collaboration enhances styling flexibility, allowing you to leverage the advantages of both.
+When used in conjunction with Tailwind, you gain the rapid development advantages of Tailwind while also benefiting from the encapsulation of SCSS and the timeless nature of native CSS. This achieves an excellent balance in maintainability and development efficiency.
+
+### Is it necessary to use `@include utils_reset-tw`?
+For resetting some tailwind variables, you may wonder why not use native CSS var to solve the problem, so that you don’t have to manually reset it every time. This is mainly based on the following considerations:
+- Smaller file size: Using var actually increases the file size, which will continue to increase in the future, and also indirectly determines the file size of this project; using Sass's variable system is more in line with minimizing the file size.
+- Integrity: To avoid confusing users, usually the project itself has its own CSS variable system (var).
+- Indirect indicators: It is recommended that each style be reset using `@include utils_reset-tw`, which can query the usage of your style.
