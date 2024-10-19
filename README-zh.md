@@ -49,6 +49,7 @@ $_xxl: 0px;
   #Demo {
     @include bg-red-500;
     @include m-1\/2;
+    @include \-m-96; // 負數
     @include p-(20px);
     @include border-t-rose-100; // 使用 border-x/y/s/e/t/r/b/l-($color) 來減小檔案大小。例如：border-t-($rose-100)。
 

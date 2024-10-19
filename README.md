@@ -54,8 +54,10 @@ $_xxl: 0px;
   #Demo {
     @include bg-red-500;
     @include m-1\/2;
+    @include \-m-96; // negative
     @include p-(20px);
     @include border-t-rose-100; // Use border-x/y/s/e/t/r/b/l-($color) for smaller file size. Example: border-t-($rose-100).
+
 
     @include sm {
       @include from-black-500;
