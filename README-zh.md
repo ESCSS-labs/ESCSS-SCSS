@@ -34,11 +34,11 @@ ESCSS-SCSS 是一個整合了 CSS 和 Tailwind 的全部潛力的 SCSS 檔案。
 
 ```scss
 // _awaken.scss
-$_sm: 0px !default;
-$_md: 0px !default;
-$_lg: 0px !default;
-$_xl: 0px !default;
-$_xxl: 0px !default;
+$_sm: 0px;
+$_md: 0px;
+$_lg: 0px;
+$_xl: 0px;
+$_xxl: 0px;
 ```
 
 ### 與 Tailwind 用法相同
