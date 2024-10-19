@@ -50,6 +50,7 @@ $_xxl: 0px;
     @include bg-red-500;
     @include m-1\/2;
     @include p-(20px);
+    @include border-t-rose-100; // 使用 border-x/y/s/e/t/r/b/l-($color) 來減小檔案大小。例如：border-t-($rose-100)。
 
     @include sm {
       @include from-black-500;
@@ -159,7 +160,7 @@ export default defineConfig({
 
 ### 為何默認斷點設置為(sm、md..) 0 px?
 
-每個專案都有自己獨特的斷點，所以我設置 0 為默認值，由於 CSS 的特性，這相對容易觸發到 [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html) 的開源義務。同時，我認爲從工作中獲取報酬是合理。 
+每個專案都有自己獨特的斷點，所以我設置 0 為默認值，由於 CSS 的特性，這相對容易觸發到 [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html) 的開源義務。同時，我認爲從工作中獲取報酬是合理。
 
 ### 使用原子化 CSS 有什麼好處?
 
@@ -176,7 +177,9 @@ export default defineConfig({
 在與 Tailwind 配合使用，會取得 tailwind 快速開發的優勢，也擁有了 SCSS 的封裝性和原生 CSS 永不過時的特性，在維護性、開發效率上取得絕佳的平衡。
 
 ### 使用 `@include utils_reset-tw` 的必要性?
+
 用於重置一些 tailwind 的變數，你可能會想為何不使用原生 CSS 的 var 來解決，這樣就不必每次都手動重置，主要基於以下考量:
+
 - 更小的檔案大小: 使用 var 實際上就是增加了檔案大小，會隨著未來不斷增加，也決定間接決定了此專案檔案大小; 使用 Sass 的變數系統比較符合檔案大小最小化。
 - 整體性: 避免混淆使用者，通常專案本身就有自己的CSS變數系統(var)。
 - 間接指標：建議每一個樣式都使用 `@include utils_reset-tw` 來重置，可以查詢你樣式的使用量。
