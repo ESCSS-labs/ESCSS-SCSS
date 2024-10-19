@@ -39,11 +39,11 @@ Atomic CSS abstraction ensures optimal performance and consistent styling.
 
 ```scss
 // _awaken.scss
-$_sm: 0px !default;
-$_md: 0px !default;
-$_lg: 0px !default;
-$_xl: 0px !default;
-$_xxl: 0px !default;
+$_sm: 0px;
+$_md: 0px;
+$_lg: 0px;
+$_xl: 0px;
+$_xxl: 0px;
 ```
 
 ### Same as Tailwind
