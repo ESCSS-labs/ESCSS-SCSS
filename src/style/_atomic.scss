@@ -200,18 +200,8 @@ $atomic: (
   @if $property == 'flex' {
     /*x
     @mixin flex($v: flex, $rwd: null) {
-      @if $rwd==null {
-        @if $v==flex {
-          display: flex;
-        }
-
-        @else {
-          flex: $v;
-        }
-      }
-
-      @else {
-        @media (min-width: $rwd) {
+      & {
+        @if $rwd==null {
           @if $v==flex {
             display: flex;
           }
@@ -220,19 +210,33 @@ $atomic: (
             flex: $v;
           }
         }
+
+        @else {
+          @media (min-width: $rwd) {
+            @if $v==flex {
+              display: flex;
+            }
+
+            @else {
+              flex: $v;
+            }
+          }
+        }
       }
     }
     x*/
   } @else if $property == 'resize' {
     /*x
     @mixin resize($v: both, $rwd: null) {
-      @if $rwd==null {
-        resize: $v;
-      }
-
-      @else {
-        @media (min-width: $rwd) {
+      & {
+        @if $rwd==null {
           resize: $v;
+        }
+
+        @else {
+          @media (min-width: $rwd) {
+            resize: $v;
+          }
         }
       }
     }
@@ -240,13 +244,15 @@ $atomic: (
   } @else if $property == 'cursor' {
     /*x
     @mixin cursor($v, $v2: null, $rwd: null) {
-      @if $rwd==null {
-        cursor: $v, $v2;
-      }
-
-      @else {
-        @media (min-width: $rwd) {
+      & {
+        @if $rwd==null {
           cursor: $v, $v2;
+        }
+
+        @else {
+          @media (min-width: $rwd) {
+            cursor: $v, $v2;
+          }
         }
       }
     }
@@ -254,18 +260,8 @@ $atomic: (
   } @else if $property == 'outline' {
     /*x
     @mixin outline($v: solid, $rwd: null) {
-      @if $rwd==null {
-        @if $v==solid {
-          outline-style: solid;
-        }
-
-        @else {
-          outline: $v;
-        }
-      }
-
-      @else {
-        @media (min-width: $rwd) {
+      & {
+        @if $rwd==null {
           @if $v==solid {
             outline-style: solid;
           }
@@ -274,19 +270,33 @@ $atomic: (
             outline: $v;
           }
         }
+
+        @else {
+          @media (min-width: $rwd) {
+            @if $v==solid {
+              outline-style: solid;
+            }
+
+            @else {
+              outline: $v;
+            }
+          }
+        }
       }
     }
     x*/
   } @else if $property == 'flex-wrap' {
     /*x
     @mixin flex-wrap($v: wrap, $rwd: null) {
-      @if $rwd==null {
-        flex-wrap: $v;
-      }
-
-      @else {
-        @media (min-width: $rwd) {
+      & {
+        @if $rwd==null {
           flex-wrap: $v;
+        }
+
+        @else {
+          @media (min-width: $rwd) {
+            flex-wrap: $v;
+          }
         }
       }
     }
@@ -294,13 +304,15 @@ $atomic: (
   } @else if $property == 'text-wrap' {
     /*x
     @mixin text-wrap($v: wrap, $rwd: null) {
-      @if $rwd==null {
-        text-wrap: $v;
-      }
-    
-      @else {
-        @media (min-width: $rwd) {
+      & {
+        @if $rwd==null {
           text-wrap: $v;
+        }
+
+        @else {
+          @media (min-width: $rwd) {
+            text-wrap: $v;
+          }
         }
       }
     }
@@ -308,13 +320,15 @@ $atomic: (
   } @else if $property == 'will-change' {
     /*x
     @mixin will-change($v, $v2: null, $rwd: null) {
-      @if $rwd==null {
-        will-change: $v, $v2;
-      }
-
-      @else {
-        @media (min-width: $rwd) {
+      & {
+        @if $rwd==null {
           will-change: $v, $v2;
+        }
+
+        @else {
+          @media (min-width: $rwd) {
+            will-change: $v, $v2;
+          }
         }
       }
     }
@@ -322,27 +336,31 @@ $atomic: (
   } @else if $property == 'border-collapse' {
     /*x
     @mixin border-collapse($v: collapse, $rwd: null) {
-      @if $rwd==null {
-        border-collapse: $v;
-      }
-
-      @else {
-        @media (min-width: $rwd) {
+      & {
+        @if $rwd==null {
           border-collapse: $v;
+        }
+
+        @else {
+          @media (min-width: $rwd) {
+            border-collapse: $v;
+          }
         }
       }
     }
     x*/
   } @else {
     /*x
-    @mixin #{$property}($v, $rwd: null) {
-      @if $rwd==null {
-        #{$property}: $v;
-      }
-
-      @else {
-        @media (min-width: $rwd) {
+    @mixin #{$property }($v, $rwd: null) {
+      & {
+        @if $rwd==null {
           #{$property}: $v;
+        }
+
+        @else {
+          @media (min-width: $rwd) {
+            #{$property}: $v;
+          }
         }
       }
     }
