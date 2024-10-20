@@ -18,7 +18,7 @@ style/test
 
 ### test file - testing SCSS before use
 
-- Run all 79067 test cases.
+- Run all test cases.
 
 ```shell
   git clone https://github.com/ESCSS-labs/ESCSS-SCSS.git

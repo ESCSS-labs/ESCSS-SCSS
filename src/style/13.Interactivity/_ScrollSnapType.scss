@@ -35,34 +35,3 @@ $data: (
     }
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      @if list.index('snap-none', $key) {
-        /*x
-        @mixin #{$rwdToken}\:#{$key} {
-          @include scroll-snap-type(#{$value}, #{$rwd});
-        }
-        x*/
-      } @else if list.index('snap-x' 'snap-y' 'snap-both', $key) {
-        /*x
-        @mixin #{$rwdToken}\:#{$key} {
-          $tw-mismatch--snap: true !global;
-          @include scroll-snap-type(#{$value}, #{$rwd});
-        }
-        x*/
-      } @else if list.index('snap-mandatory' 'snap-proximity', $key) {
-        /*x
-        @mixin #{$rwdToken}\:#{$key} {
-          @if $tw-mismatch--snap {
-            @error ("「 snap-mandatory/proximity 」should come before「 snap-x/y/both 」to match Tailwind's order.");
-          }
-  
-          $tw-scroll-snap-strictness: #{$value} !global;
-        }
-        x*/
-      }
-    }
-  }
-}

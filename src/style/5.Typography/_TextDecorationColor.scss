@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -288,60 +287,15 @@ $data: (
   @mixin decoration-current {
     @include text-decoration-color(currentColor);
   }
+
+  @mixin decoration-transparent {
+    @include text-decoration-color(transparent);
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin decoration-#{$key}($v: 1) {
-        @include text-decoration-color(_c(#{$value}, $v));
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin decoration-#{$key} {
-        @include text-decoration-color(#{$value});
-      }
-
-      @mixin decoration-#{$key}\/($v) {
-        @include text-decoration-color(_c(#{$value}, $v));
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-    @mixin #{$rwdToken}\:decoration-inherit {
-      @include text-decoration-color(inherit, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:decoration-current {
-      @include text-decoration-color(currentColor, #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:decoration-#{$key} {
-        @include text-decoration-color(#{$value}, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:decoration-#{$key}\/($v) {
-        @include text-decoration-color(_c(#{$value}, $v), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:decoration-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include text-decoration-color($v, #{$rwd});
-      }
-
-      @else {
-        @include text-decoration-thickness($v, #{$rwd});
-      }
+    @mixin decoration-#{$key}($v: 1) {
+      @include text-decoration-color(_c(#{$value}, $v));
     }
     x*/
   }

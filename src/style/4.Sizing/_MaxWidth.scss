@@ -68,24 +68,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:max-w-#{$key} {
-        @include max-width(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:max-w-($v) {
-      @include max-width($v, #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin max-w-($v) {

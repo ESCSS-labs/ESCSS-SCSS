@@ -25,25 +25,6 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include order(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:order-($v) {
-      @include order($v, #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin order-($v) {
@@ -58,24 +39,6 @@ $data: (
       /*x
       @mixin \-#{$key} {
         @include order(#{-$value});
-      }
-      x*/
-    }
-  }
-
-  @if $isResponsive and (not $isAwaken) {
-    @each $rwdToken, $rwd in $rwdBox {
-      @each $key, $value in $data {
-        /*x
-        @mixin #{$rwdToken}\:-#{$key} {
-          @include order(#{-$value}, #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:-order-($v) {
-        @include order(-$v, #{$rwd});
       }
       x*/
     }

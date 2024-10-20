@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -292,91 +291,19 @@ $data: (
     $tw-shadow-color: currentColor !global;
     @include box-shadow(_b-s());
   }
+
+  @mixin shadow-transparent {
+    $tw-mismatch--shadow-color: true !global;
+    $tw-shadow-color: transparent !global;
+    @include box-shadow(_b-s());
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin shadow-#{$key}($v: 1) {
-        $tw-mismatch--shadow-color: true !global;
-        $tw-shadow-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s());
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin shadow-#{$key} {
-        $tw-mismatch--shadow-color: true !global;
-        $tw-shadow-color: #{$value} !global;
-        @include box-shadow(_b-s());
-      }
-
-      @mixin shadow-#{$key}\/($v) {
-        $tw-mismatch--shadow-color: true !global;
-        $tw-shadow-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s());
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-    @mixin #{$rwdToken}\:shadow-inherit {
+    @mixin shadow-#{$key}($v: 1) {
       $tw-mismatch--shadow-color: true !global;
-      $tw-shadow-color: inherit !global;
-      @include box-shadow(_b-s(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:shadow-current {
-      $tw-mismatch--shadow-color: true !global;
-      $tw-shadow-color: currentColor !global;
-      @include box-shadow(_b-s(), #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:shadow-#{$key} {
-        $tw-mismatch--shadow-color: true !global;
-        $tw-shadow-color: #{$value} !global;
-        @include box-shadow(_b-s(), #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:shadow-#{$key}\/($v) {
-        $tw-mismatch--shadow-color: true !global;
-        $tw-shadow-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s(), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:shadow-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        $tw-mismatch--shadow-color: true !global;
-        $tw-shadow-color: $v !global;
-      }
-
-      // arbitrary shadow e.g shadow-(inset 0px 0px 5px 10px red)
-      @else if meta.type-of($v)==list {
-        @if $tw-mismatch--shadow-color {
-          @error ("e.g.「 shadow-(0px 0px 5px 10px red) 」should come before「 shadow-sky-500 」to match Tailwind's order.");
-        }
-
-        $tw-dummy-shadow-token: arbitrary !global;
-        $tw-shadow-color: list.nth($v, -1) !global; // red
-
-        @if list.nth($v, 1)==inset {
-          $tw-dummy-shadow-width: list.set-nth($v, -1, #/*x{""}) !global; // inset 0px 0px 5px 10px
-        }
-
-        @else {
-          $tw-dummy-shadow-width: list.set-nth($v, -1, #/*x{""}) !global; // inset 0px 0px 5px 10px
-        }
-      }
-
-      @include box-shadow(_b-s(), #{$rwd});
+      $tw-shadow-color: _c(#{$value}, $v) !global;
+      @include box-shadow(_b-s());
     }
     x*/
   }

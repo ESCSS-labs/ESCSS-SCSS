@@ -33,48 +33,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:scale-#{$key} {
-        $tw-scale-x: #{$value} !global;
-        $tw-scale-y: #{$value} !global;
-        @include transform(_t(), #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:scale-x-#{$key} {
-        $tw-scale-x: #{$value} !global;
-        @include transform(_t(), #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:scale-y-#{$key} {
-        $tw-scale-y: #{$value} !global;
-        @include transform(_t(), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:scale-($v) {
-      $tw-scale-x: $v !global;
-      $tw-scale-y: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:scale-x-($v) {
-      $tw-scale-x: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:scale-y-($v) {
-      $tw-scale-y: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin scale-($v) {
@@ -113,48 +71,6 @@ $data: (
       @mixin \-scale-y-#{$key} {
         $tw-scale-y: #{-$value} !global;
         @include transform(_t());
-      }
-      x*/
-    }
-  }
-
-  @if $isResponsive and (not $isAwaken) {
-    @each $rwdToken, $rwd in $rwdBox {
-      @each $key, $value in $data {
-        /*x
-        @mixin #{$rwdToken}\:-scale-#{$key} {
-          $tw-scale-x: #{-$value} !global;
-          $tw-scale-y: #{-$value} !global;
-          @include transform(_t(), #{$rwd});
-        }
-    
-        @mixin #{$rwdToken}\:-scale-x-#{$key} {
-          $tw-scale-x: #{-$value} !global;
-          @include transform(_t(), #{$rwd});
-        }
-    
-        @mixin #{$rwdToken}\:-scale-y-#{$key} {
-          $tw-scale-y: #{-$value} !global;
-          @include transform(_t(), #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:-scale-($v) {
-        $tw-scale-x: -$v !global;
-        $tw-scale-y: -$v !global;
-        @include transform(_t(), #{$rwd});
-      }
-    
-      @mixin #{$rwdToken}\:-scale-x-($v) {
-        $tw-scale-x: -$v !global;
-        @include transform(_t(), #{$rwd});
-      }
-    
-      @mixin #{$rwdToken}\:-scale-y-($v) {
-        $tw-scale-y: -$v !global;
-        @include transform(_t(), #{$rwd});
       }
       x*/
     }

@@ -45,25 +45,6 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:indent-#{$key} {
-        @include text-indent(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:indent-($v) {
-      @include text-indent($v, #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin indent-($v) {
@@ -78,24 +59,6 @@ $data: (
       /*x
       @mixin \-indent-#{$key} {
         @include text-indent(-#{$value});
-      }
-      x*/
-    }
-  }
-
-  @if $isResponsive and (not $isAwaken) {
-    @each $rwdToken, $rwd in $rwdBox {
-      @each $key, $value in $data {
-        /*x
-        @mixin #{$rwdToken}\:-indent-#{$key} {
-          @include text-indent(-#{$value}, #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:-indent-($v) {
-        @include text-indent(-$v, #{$rwd});
       }
       x*/
     }

@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -290,73 +289,17 @@ $data: (
     $tw-ring-offset-color: currentColor !global;
     @include box-shadow(_b-s());
   }
+
+  @mixin ring-offset-transparent {
+    $tw-ring-offset-color: transparent !global;
+    @include box-shadow(_b-s());
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin ring-offset-#{$key}($v: 1) {
-        $tw-ring-offset-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s());
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin ring-offset-#{$key} {
-        $tw-ring-offset-color: #{$value} !global;
-        @include box-shadow(_b-s());
-      }
-
-      @mixin ring-offset-#{$key}\/($v) {
-        $tw-ring-offset-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s());
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-    @mixin #{$rwdToken}\:ring-offset-inherit {
-      $tw-ring-offset-color: inherit !global;
-      @include box-shadow(_b-s(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:ring-offset-current {
-      $tw-ring-offset-color: currentColor !global;
-      @include box-shadow(_b-s(), #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:ring-offset-#{$key} {
-        $tw-ring-offset-color: #{$value} !global;
-        @include box-shadow(_b-s(), #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:ring-offset-#{$key}\/($v) {
-        $tw-ring-offset-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s(), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:ring-offset-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        $tw-ring-offset-color: $v !global;
-      }
-
-      @else {
-        @if $tw-mismatch--ring-offset-width {
-          @error ("「 ring-offset-* 」should come before「 ring-* 」to match Tailwind's order.");
-        }
-
-        $tw-ring-offset-width: $v !global;
-      }
-
-      @include box-shadow(_b-s(), #{$rwd});
+    @mixin ring-offset-#{$key}($v: 1) {
+      $tw-ring-offset-color: _c(#{$value}, $v) !global;
+      @include box-shadow(_b-s());
     }
     x*/
   }

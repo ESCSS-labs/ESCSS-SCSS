@@ -43,19 +43,3 @@ $data: (
     }
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include #{$rwdToken} {
-          @include outline(#{list.nth($value, 1)});
-          @include outline-offset(#{list.nth($value, 2)});
-          @include outline-style(#{list.nth($value, 3)});
-        }
-      }
-      x*/
-    }
-  }
-}

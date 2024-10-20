@@ -14,26 +14,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        $tw-sepia: #{$value} !global;
-        @include filter(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:sepia-($v) {
-      $tw-sepia: sepia($v) !global;
-      @include filter(_f(), #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin sepia-($v) {

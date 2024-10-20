@@ -23,36 +23,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:skew-x-#{$key} {
-        $tw-skew-x: #{$value} !global;
-        @include transform(_t(), #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:skew-y-#{$key} {
-        $tw-skew-y: #{$value} !global;
-        @include transform(_t(), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:skew-x-($v) {
-      $tw-skew-x: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:skew-y-($v) {
-      $tw-skew-y: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin skew-x-($v) {
@@ -79,36 +49,6 @@ $data: (
       @mixin \-skew-y-#{$key} {
         $tw-skew-y: #{-$value} !global;
         @include transform(_t());
-      }
-      x*/
-    }
-  }
-
-  @if $isResponsive and (not $isAwaken) {
-    @each $rwdToken, $rwd in $rwdBox {
-      @each $key, $value in $data {
-        /*x
-        @mixin #{$rwdToken}\:-skew-x-#{$key} {
-          $tw-skew-x: #{-$value} !global;
-          @include transform(_t(), #{$rwd});
-        }
-  
-        @mixin #{$rwdToken}\:-skew-y-#{$key} {
-          $tw-skew-y: #{-$value} !global;
-          @include transform(_t(), #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:-skew-x-($v) {
-        $tw-skew-x: -$v !global;
-        @include transform(_t(), #{$rwd});
-      }
-  
-      @mixin #{$rwdToken}\:-skew-y-($v) {
-        $tw-skew-y: -$v !global;
-        @include transform(_t(), #{$rwd});
       }
       x*/
     }

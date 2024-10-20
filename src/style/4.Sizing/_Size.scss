@@ -78,30 +78,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include #{$rwdToken} {
-          @include width(#{$value});
-          @include height(#{$value});
-        }
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:size-($v) {
-      @include #{$rwdToken} {
-        @include width($v);
-        @include height($v);
-      }
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin size-($v) {

@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -288,54 +287,15 @@ $data: (
   @mixin caret-current {
     @include caret-color(currentColor);
   }
+
+  @mixin caret-transparent {
+    @include caret-color(transparent);
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin caret-#{$key}($v: 1) {
-        @include caret-color(_c(#{$value}, $v));
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin caret-#{$key} {
-        @include caret-color(#{$value});
-      }
-
-      @mixin caret-#{$key}\/($v) {
-        @include caret-color(_c(#{$value}, $v));
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-    @mixin #{$rwdToken}\:caret-inherit {
-      @include caret-color(inherit, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:caret-current {
-      @include caret-color(currentColor, #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:caret-#{$key} {
-        @include caret-color(#{$value}, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:caret-#{$key}\/($v) {
-        @include caret-color(_c(#{$value}, $v), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:caret-($v) {
-      @include caret-color($v, #{$rwd});
+    @mixin caret-#{$key}($v: 1) {
+      @include caret-color(_c(#{$value}, $v));
     }
     x*/
   }

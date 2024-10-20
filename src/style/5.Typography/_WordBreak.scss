@@ -29,18 +29,3 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include #{$rwdToken} {
-          @include overflow-wrap(#{list.nth($value, 1)});
-          @include word-break(#{list.nth($value, 2)});
-        }
-      }
-      x*/
-    }
-  }
-}

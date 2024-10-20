@@ -21,20 +21,3 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @if $tw-mismatch--ring-offset-width {
-          @error ("「 ring-offset-* 」should come before「 ring-* 」to match Tailwind's order.");
-        }
-
-        $tw-ring-offset-width: #{$value} !global;
-        @include box-shadow(_b-s(), #{$rwd});
-      }
-      x*/
-    }
-  }
-}

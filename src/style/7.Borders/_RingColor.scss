@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -290,70 +289,17 @@ $data: (
     $tw-ring-color: currentColor !global;
     @include box-shadow(_b-s());
   }
+
+  @mixin ring-transparent {
+    $tw-ring-color: transparent !global;
+    @include box-shadow(_b-s());
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin ring-#{$key}($v: 1) {
-        $tw-ring-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s());
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin ring-#{$key} {
-        $tw-ring-color: #{$value} !global;
-        @include box-shadow(_b-s());
-      }
-
-      @mixin ring-#{$key}\/($v) {
-        $tw-ring-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s());
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-    @mixin #{$rwdToken}\:ring-inherit {
-      $tw-ring-color: inherit !global;
-      @include box-shadow(_b-s(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:ring-current {
-      $tw-ring-color: currentColor !global;
-      @include box-shadow(_b-s(), #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:ring-#{$key} {
-        $tw-ring-color: #{$value} !global;
-        @include box-shadow(_b-s(), #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:ring-#{$key}\/($v) {
-        $tw-ring-color: _c(#{$value}, $v) !global;
-        @include box-shadow(_b-s(), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:ring-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        $tw-ring-color: $v !global;
-      }
-
-      @else {
-        $tw-mismatch--ring-offset-width: true !global;
-        $tw-dummy-ring-width: $v + $tw-ring-offset-width !global;
-      }
-
-      @include box-shadow(_b-s(), #{$rwd});
+    @mixin ring-#{$key}($v: 1) {
+      $tw-ring-color: _c(#{$value}, $v) !global;
+      @include box-shadow(_b-s());
     }
     x*/
   }

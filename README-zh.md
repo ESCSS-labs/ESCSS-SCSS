@@ -18,11 +18,13 @@ ESCSS-SCSS 是一個整合了 CSS 和 Tailwind 的全部潛力的 SCSS 檔案。
 
 ```scss
 @mixin margin($v, $rwd: null) {
-  @if $rwd==null {
-    margin: $v;
-  } @else {
-    @media (min-width: $rwd) {
+  & {
+    @if $rwd==null {
       margin: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        margin: $v;
+      }
     }
   }
 }
@@ -43,34 +45,40 @@ $_xxl: 0px;
 
 ### 與 Tailwind 用法相同
 
-- 支援: basic / arbitrary / media / dark utilities
+- 支援: basic / arbitrary / media / dark mode utilities。
+- 效能考量: 部分 mixin 需要 \、() 來降低檔案大小。
 
   ```scss
   #Demo {
-    @include bg-red-500;
-    @include m-1\/2;
-    @include \-m-96; // 負數
-    @include p-(20px);
-    @include border-t-rose-100; // 使用 border-x/y/s/e/t/r/b/l-($color) 來減小檔案大小。例如：border-t-($rose-100)。
+    @include \-m-1\/2; // -m-1/2
+    @include m-1\/2; // m-1/2
+    @include m-(20px); // m-[20px]
+    @include border-rose-500; // same
+    @include border-x-($rose-500); // border-x-rose-500, 適用於 border-x/y/s/e/t/r/b/l-($color)
+    @include bg-rose-500; // same
+    @include bg-rose-500(25%); // bg-rose-500/[25%]
+    @include bg-rose-500(0.25); // bg-rose-500/25
 
+    // Media: sm、md、lg、xl、\2xl
     @include sm {
-      @include from-black-500;
-      @include to-white-500;
+      color: black;
+      @include bg-rose-500;
     }
 
     @include \2xl {
-      @include from-amber-500;
-      @include to-green-500;
+      color: black;
+      @include bg-rose-500;
     }
 
-    // 這與 Tailwind 不同，因為它結合了選擇器策略(selector strategy)和媒體策略(media strategy)：
-    // - 選擇器策略：將「--dark」類別新增至 html/body/top 級別，並使用 JavaScript 切換該類別。
-    // - 媒體策略：使用 @include dark 時自動為您處理。僅在使用者將瀏覽器設定為暗黑模式時才會觸發。
+    // Dark Mode: 整合了 selector and media queries (與 Tailwind 不同)
+    // - selector strategy：將「--dark」類別新增至 html/body/top 級別，並使用 JavaScript 切換該類別。
+    // - media strategy：使用 @include dark 時自動為您處理。僅在使用者將瀏覽器設定為暗黑模式時才會觸發。
     @include dark {
       color: black;
-      background-color: white;
+      @include bg-rose-500;
     }
 
+    // 這是用來重置一些默認的 tailwind 變數，通常會越做越懶，在每個樣式後面都使用(建議)。
     @include utils_reset-tw;
   }
   ```
@@ -82,30 +90,69 @@ $_xxl: 0px;
   background: red;
   @include bg-green-50; // 覆蓋 red
 
-  @include utils_reset-tw;
-}
-```
-
-### 設置顏色透明度
-
-```scss
-#Demo {
-  @include text-green-50(65%);
-  @include text-green-50(0.65);
-
-  @include utils_reset-tw;
-}
-```
-
-### 使用 @include utils_reset-tw 重置一些默認 Tailwind 的變數
-
-```scss
-#Demo {
-  @include bg-gradient-to-r;
-  @include from-cyan-500;
-  @include to-blue-500;
+  // 使用原生語法
+  &:hover {
+    color: red;
+  }
 
   // 這是用來重置一些默認的 tailwind 變數，通常會越做越懶，在每個樣式後面都使用(建議)。
+  @include utils_reset-tw;
+}
+```
+
+### Mixin 注意事項
+
+- 每個 `mixin` 都是一個嵌套規則（nested rule, see [核心概念 - 原子化 CSS](#核心概念---原子化-css)）。為了遵循 CSS 標準，並避免與 [Breaking Change: Mixed Declarations](https://sass-lang.com/documentation/breaking-changes/mixed-decls/) 發生衝突，`mixin` 應該放在後面。
+- `utils_reset-tw` 只是變數重置，不受影響。
+
+```scss
+// ✅
+#Demo {
+  background: red;
+  @include bg-orange-500;
+  @include bg-amber-500;
+
+  @include sm {
+    background: green;
+    @include bg-blue-500;
+  }
+
+  @include utils_reset-tw;
+}
+
+// ❌
+#Demo-1 {
+  @include bg-orange-500;
+  background: red; // error
+  @include bg-amber-500;
+
+  @include utils_reset-tw;
+}
+
+#Demo-2 {
+  background: red;
+  @include bg-orange-500;
+  @include bg-amber-500;
+
+  @include sm {
+    @include bg-blue-500;
+    background: green; // error
+  }
+
+  @include utils_reset-tw;
+}
+
+#Demo-3 {
+  background: red;
+  @include bg-orange-500;
+  @include bg-amber-500;
+
+  @include sm {
+    background: green;
+    @include bg-blue-500;
+  }
+
+  background: green; // error
   @include utils_reset-tw;
 }
 ```
@@ -126,17 +173,19 @@ vite >= 5.4.0 // sass-embedded
 ### 在你專案中安裝套件
 
 ```bash
-  # Using npm
-  npm add -D sass-embedded # or sass
+npm add -D sass-embedded
+```
 
-  # Using yarn
-  yarn add -D sass-embedded # or sass
+```bash
+yarn add -D sass-embedded
+```
 
-  # Using pnpm
-  pnpm add -D sass-embedded # or sass
+```bash
+pnpm add -D sass-embedded
+```
 
-  # Using bun
-  bun add -D sass-embedded # or sass
+```bash
+bun add -D sass-embedded
 ```
 
 ### 在 `vite.config.js` 中設置
@@ -147,10 +196,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // your path
-        additionalData: `
-        @use 'src/assets/_awaken.scss' as *;
-        `,
+        api: 'modern-compiler',
+        additionalData: `@use 'assets/css/_awaken.scss' as *;`,
       },
     },
   },

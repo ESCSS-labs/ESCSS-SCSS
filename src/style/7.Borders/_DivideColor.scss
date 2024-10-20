@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -292,69 +291,18 @@ $data: (
     @include border-color(currentColor);
     }
   }
-  x*/
-  @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin divide-#{$key}($v: 1) {
-        > * ~ * {  
-        @include border-color(_c(#{$value}, $v));
-        }
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin divide-#{$key} {
-        > * ~ * {  
-        @include border-color(#{$value});
-        }
-      }
 
-      @mixin divide-#{$key}\/($v) {
-        > * ~ * {  
-        @include border-color(_c(#{$value}, $v));
-        }
-      }
-      x*/
+  @mixin divide-transparent {
+    > * ~ * {  
+    @include border-color(transparent);
     }
   }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
+  x*/
+  @each $key, $value in $data {
     /*x
-    @mixin #{$rwdToken}\:divide-inherit {
+    @mixin divide-#{$key}($v: 1) {
       > * ~ * {  
-        @include border-color(inherit, #{$rwd});
-      }
-    }
-
-    @mixin #{$rwdToken}\:divide-current {
-      > * ~ * {  
-        @include border-color(currentColor, #{$rwd});
-      }
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:divide-#{$key} {
-        > * ~ * {  
-        @include border-color(#{$value}, #{$rwd});
-        }
-      }
-
-      @mixin #{$rwdToken}\:divide-#{$key}\/($v) {
-        > * ~ * {  
-        @include border-color(_c(#{$value}, $v), #{$rwd});
-        }
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:divide-($v) {
-      > * ~ * {
-        @include border-color($v, #{$rwd});
+      @include border-color(_c(#{$value}, $v));
       }
     }
     x*/

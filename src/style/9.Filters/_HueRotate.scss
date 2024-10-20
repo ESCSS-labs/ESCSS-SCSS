@@ -17,27 +17,6 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        $tw-hue-rotate: hue-rotate(#{$value}) !global;
-        @include filter(_f(), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:hue-rotate-($v) {
-      $tw-hue-rotate: hue-rotate($v) !global;
-      @include filter(_f(), #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin hue-rotate-($v) {
@@ -54,26 +33,6 @@ $data: (
       @mixin \-#{$key} {
         $tw-hue-rotate: hue-rotate(-#{$value}) !global;
         @include filter(_f());
-      }
-      x*/
-    }
-  }
-
-  @if $isResponsive and (not $isAwaken) {
-    @each $rwdToken, $rwd in $rwdBox {
-      @each $key, $value in $data {
-        /*x
-        @mixin #{$rwdToken}\:-#{$key} {
-          $tw-hue-rotate: hue-rotate(-#{$value}) !global;
-          @include filter(_f(), #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:-hue-rotate-($v) {
-        $tw-hue-rotate: hue-rotate(-$v) !global;
-        @include filter(_f(), #{$rwd});
       }
       x*/
     }

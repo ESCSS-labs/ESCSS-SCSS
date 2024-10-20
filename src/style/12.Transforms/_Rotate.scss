@@ -27,38 +27,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-    @mixin #{$rwdToken}\:#{$key} {
-      $tw-rotate: #{$value} !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-      /*x
-    @mixin #{$rwdToken}\:-#{$key} {
-      $tw-rotate: #{-$value} !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:rotate-($v) {
-      $tw-rotate: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-    /*x
-    @mixin #{$rwdToken}\:-rotate-($v) {
-      $tw-rotate: -$v !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin rotate-($v) {

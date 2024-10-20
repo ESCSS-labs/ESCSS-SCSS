@@ -75,48 +75,6 @@ $data-end: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $group-data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include grid-column(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    @each $key, $value in $data-start {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include grid-column-start(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    @each $key, $value in $data-end {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include grid-column-end(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:col-($v) {
-      @include grid-column($v, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:col-start-($v) {
-      @include grid-column-start($v, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:col-end-($v) {
-      @include grid-column-end($v, #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin col-($v) {

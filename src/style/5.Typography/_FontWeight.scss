@@ -20,30 +20,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include font-weight(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:font-($v) {
-      @if meta.type-of($v)==number {
-        @include font-weight($v, #{$rwd});
-      }
-
-      @else {
-        @include font-family($v, #{$rwd});
-      }
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin font-($v) {

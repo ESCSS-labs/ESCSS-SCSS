@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -292,58 +291,15 @@ $data: (
   @mixin fill-current {
     @include fill(currentColor);
   }
+  
+  @mixin fill-transparent {
+    @include fill(transparent);
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin fill-#{$key}($v: 1) {
-        @include fill(_c(#{$value}, $v));
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin fill-#{$key} {
-        @include fill(#{$value});
-      }
-
-      @mixin fill-#{$key}\/($v) {
-        @include fill(_c(#{$value}, $v));
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-      @mixin #{$rwdToken}\:fill-none {
-      @include fill(none, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:fill-inherit {
-      @include fill(inherit, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:fill-current {
-      @include fill(currentColor, #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:fill-#{$key} {
-        @include fill(#{$value}, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:fill-#{$key}\/($v) {
-        @include fill(_c(#{$value}, $v), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:fill-($v) {
-      @include fill($v, #{$rwd});
+    @mixin fill-#{$key}($v: 1) {
+      @include fill(_c(#{$value}, $v));
     }
     x*/
   }

@@ -51,32 +51,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-    @mixin #{$rwdToken}\:#{$key} {
-      @include #{$rwdToken} {
-        @include transition-property(#{list.nth($value, 1)});
-        @include transition-timing-function(#{list.nth($value, 2)});
-        @include transition-duration(#{list.nth($value, 3)});
-      }
-    }
-    x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:transition-($v) {
-      @include #{$rwdToken} {
-        @include transition-property($v);
-        @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
-        @include transition-duration(150ms);
-      }
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin transition-($v) {

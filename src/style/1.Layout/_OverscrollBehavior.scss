@@ -41,31 +41,3 @@ $data-y: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include overscroll-behavior(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    @each $key, $value in $data-x {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include overscroll-behavior-x(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    @each $key, $value in $data-y {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include overscroll-behavior-y(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-  }
-}

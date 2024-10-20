@@ -22,26 +22,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        $tw-drop-shadow: #{$value} !global;
-        @include filter(_f(), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:drop-shadow-($v) {
-      $tw-drop-shadow: drop-shadow($v) !global;
-      @include filter(_f(), #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin drop-shadow-($v) {

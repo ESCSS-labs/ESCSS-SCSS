@@ -9,15 +9,33 @@
           }
 
           @include expect {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
+            & {
+              position: absolute;
+            }
+            & {
+              width: 1px;
+            }
+            & {
+              height: 1px;
+            }
+            & {
+              padding: 0;
+            }
+            & {
+              margin: -1px;
+            }
+            & {
+              overflow: hidden;
+            }
+            & {
+              clip: rect(0, 0, 0, 0);
+            }
+            & {
+              white-space: nowrap;
+            }
+            & {
+              border-width: 0;
+            }
           }
         }
       }
@@ -30,239 +48,28 @@
           }
 
           @include expect {
-            position: static;
-            width: auto;
-            height: auto;
-            padding: 0;
-            margin: 0;
-            overflow: visible;
-            clip: auto;
-            white-space: normal;
-          }
-        }
-      }
-    }
-
-    @include describe('Rwd') {
-      @include it('sm\:sr-only') {
-        @include assert {
-          @include output {
-            @include sm\:sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              position: absolute;
-              width: 1px;
-              height: 1px;
-              padding: 0;
-              margin: -1px;
-              overflow: hidden;
-              clip: rect(0, 0, 0, 0);
-              white-space: nowrap;
-              border-width: 0;
-            }
-          }
-        }
-      }
-
-      @include it('sm\:not-sr-only') {
-        @include assert {
-          @include output {
-            @include sm\:not-sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
+            & {
               position: static;
+            }
+            & {
               width: auto;
+            }
+            & {
               height: auto;
+            }
+            & {
               padding: 0;
+            }
+            & {
               margin: 0;
+            }
+            & {
               overflow: visible;
+            }
+            & {
               clip: auto;
-              white-space: normal;
             }
-          }
-        }
-      }
-
-      @include it('md\:sr-only') {
-        @include assert {
-          @include output {
-            @include md\:sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              position: absolute;
-              width: 1px;
-              height: 1px;
-              padding: 0;
-              margin: -1px;
-              overflow: hidden;
-              clip: rect(0, 0, 0, 0);
-              white-space: nowrap;
-              border-width: 0;
-            }
-          }
-        }
-      }
-
-      @include it('md\:not-sr-only') {
-        @include assert {
-          @include output {
-            @include md\:not-sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              position: static;
-              width: auto;
-              height: auto;
-              padding: 0;
-              margin: 0;
-              overflow: visible;
-              clip: auto;
-              white-space: normal;
-            }
-          }
-        }
-      }
-
-      @include it('lg\:sr-only') {
-        @include assert {
-          @include output {
-            @include lg\:sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              position: absolute;
-              width: 1px;
-              height: 1px;
-              padding: 0;
-              margin: -1px;
-              overflow: hidden;
-              clip: rect(0, 0, 0, 0);
-              white-space: nowrap;
-              border-width: 0;
-            }
-          }
-        }
-      }
-
-      @include it('lg\:not-sr-only') {
-        @include assert {
-          @include output {
-            @include lg\:not-sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              position: static;
-              width: auto;
-              height: auto;
-              padding: 0;
-              margin: 0;
-              overflow: visible;
-              clip: auto;
-              white-space: normal;
-            }
-          }
-        }
-      }
-
-      @include it('xl\:sr-only') {
-        @include assert {
-          @include output {
-            @include xl\:sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              position: absolute;
-              width: 1px;
-              height: 1px;
-              padding: 0;
-              margin: -1px;
-              overflow: hidden;
-              clip: rect(0, 0, 0, 0);
-              white-space: nowrap;
-              border-width: 0;
-            }
-          }
-        }
-      }
-
-      @include it('xl\:not-sr-only') {
-        @include assert {
-          @include output {
-            @include xl\:not-sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              position: static;
-              width: auto;
-              height: auto;
-              padding: 0;
-              margin: 0;
-              overflow: visible;
-              clip: auto;
-              white-space: normal;
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:sr-only') {
-        @include assert {
-          @include output {
-            @include \2xl\:sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              position: absolute;
-              width: 1px;
-              height: 1px;
-              padding: 0;
-              margin: -1px;
-              overflow: hidden;
-              clip: rect(0, 0, 0, 0);
-              white-space: nowrap;
-              border-width: 0;
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:not-sr-only') {
-        @include assert {
-          @include output {
-            @include \2xl\:not-sr-only;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              position: static;
-              width: auto;
-              height: auto;
-              padding: 0;
-              margin: 0;
-              overflow: visible;
-              clip: auto;
+            & {
               white-space: normal;
             }
           }

@@ -21,18 +21,3 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-        @mixin #{$rwdToken}\:#{$key} {
-          @include #{$rwdToken} {
-            @include -webkit-font-smoothing(#{list.nth($value, 1)});
-            @include -moz-osx-font-smoothing(#{list.nth($value, 2)});
-          }
-        }
-      x*/
-    }
-  }
-}

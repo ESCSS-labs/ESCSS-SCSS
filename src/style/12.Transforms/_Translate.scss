@@ -59,36 +59,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:translate-x-#{$key} {
-        $tw-translate-x: #{$value} !global;
-        @include transform(_t(), #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:translate-y-#{$key} {
-        $tw-translate-y: #{$value} !global;
-        @include transform(_t(), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:translate-x-($v) {
-      $tw-translate-x: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:translate-y-($v) {
-      $tw-translate-y: $v !global;
-      @include transform(_t(), #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin translate-x-($v) {
@@ -115,36 +85,6 @@ $data: (
       @mixin \-translate-y-#{$key} {
         $tw-translate-y: -#{$value} !global;
         @include transform(_t());
-      }
-      x*/
-    }
-  }
-
-  @if $isResponsive and (not $isAwaken) {
-    @each $rwdToken, $rwd in $rwdBox {
-      @each $key, $value in $data {
-        /*x
-        @mixin #{$rwdToken}\:-translate-x-#{$key} {
-          $tw-translate-x: -#{$value} !global;
-          @include transform(_t(), #{$rwd});
-        }
-  
-        @mixin #{$rwdToken}\:-translate-y-#{$key} {
-          $tw-translate-y: -#{$value} !global;
-          @include transform(_t(), #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:-translate-x-($v) {
-        $tw-translate-x: -$v !global;
-        @include transform(_t(), #{$rwd});
-      }
-  
-      @mixin #{$rwdToken}\:-translate-y-($v) {
-        $tw-translate-y: -$v !global;
-        @include transform(_t(), #{$rwd});
       }
       x*/
     }

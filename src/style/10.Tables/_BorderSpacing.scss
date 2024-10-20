@@ -54,40 +54,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:border-spacing-#{$key} {
-        @include border-spacing((#{$value}) (#{$value}), #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:border-spacing-x-#{$key} {
-        @include border-spacing((#{$value}) 0, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:border-spacing-y-#{$key} {
-        @include border-spacing(0 (#{$value}), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:border-spacing-($v) {
-      @include border-spacing($v $v, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:border-spacing-x-($v) {
-      @include border-spacing($v 0, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:border-spacing-y-($v) {
-      @include border-spacing(0 $v, #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin border-spacing-($v) {

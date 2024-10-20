@@ -18,26 +18,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        $tw-backdrop-hue-rotate: hue-rotate(#{$value}) !global;
-        @include backdrop-filter(_b-f(), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:backdrop-hue-rotate-($v) {
-      $tw-backdrop-hue-rotate: hue-rotate($v) !global;
-      @include backdrop-filter(_b-f(), #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin backdrop-hue-rotate-($v) {
@@ -54,26 +34,6 @@ $data: (
       @mixin \-#{$key} {
         $tw-backdrop-hue-rotate: hue-rotate(-#{$value}) !global;
         @include backdrop-filter(_b-f());
-      }
-      x*/
-    }
-  }
-
-  @if $isResponsive and (not $isAwaken) {
-    @each $rwdToken, $rwd in $rwdBox {
-      @each $key, $value in $data {
-        /*x
-        @mixin #{$rwdToken}\:-#{$key} {
-          $tw-backdrop-hue-rotate: hue-rotate(-#{$value}) !global;
-          @include backdrop-filter(_b-f(), #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:-backdrop-hue-rotate-($v) {
-        $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
-        @include backdrop-filter(_b-f(), #{$rwd});
       }
       x*/
     }
