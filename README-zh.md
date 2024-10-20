@@ -119,7 +119,7 @@ $_xxl: 0px;
 ### 需求
 
 version >= 1.23.0
-vite >= 5.4.0 // 如果你使用 sass-embedded, sass-embedded 比 sass 更快
+vite >= 5.4.0 // sass-embedded
 
 ### 複製 `product/` 資料夾下的 `_awaken.scss`
 

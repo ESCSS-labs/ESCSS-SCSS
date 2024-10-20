@@ -124,7 +124,7 @@ $_xxl: 0px;
 ### Requirements
 
 version >= 1.23.0
-vite >= 5.4.0 // if you use sass-embedded, sass-embedded is faster than sass
+vite >= 5.4.0 // sass-embedded
 
 ### Copy `_awaken.scss` from the `product/` directory
 
