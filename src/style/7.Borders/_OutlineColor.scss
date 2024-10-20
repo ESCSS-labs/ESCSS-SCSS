@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -288,60 +287,15 @@ $data: (
   @mixin outline-current {
     @include outline-color(currentColor);
   }
+
+  @mixin outline-transparent {
+    @include outline-color(transparent);
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin outline-#{$key}($v: 1) {
-        @include outline-color(_c(#{$value}, $v));
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin outline-#{$key} {
-        @include outline-color(#{$value});
-      }
-
-      @mixin outline-#{$key}\/($v) {
-        @include outline-color(_c(#{$value}, $v));
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-    @mixin #{$rwdToken}\:outline-inherit {
-      @include outline-color(inherit, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:outline-current {
-      @include outline-color(currentColor, #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:outline-#{$key} {
-        @include outline-color(#{$value}, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:outline-#{$key}\/($v) {
-        @include outline-color(_c(#{$value}, $v), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:outline-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include outline-color($v, #{$rwd});
-      }
-
-      @else {
-        @include outline-width($v, #{$rwd});
-      }
+    @mixin outline-#{$key}($v: 1) {
+      @include outline-color(_c(#{$value}, $v));
     }
     x*/
   }

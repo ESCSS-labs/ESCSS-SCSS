@@ -49,25 +49,3 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include #{$rwdToken} {
-          @include position(#{list.nth($value, 1)});
-          @include width(#{list.nth($value, 2)});
-          @include height(#{list.nth($value, 3)});
-          @include padding(#{list.nth($value, 4)});
-          @include margin(#{list.nth($value, 5)});
-          @include overflow(#{list.nth($value, 6)});
-          @include clip(#{list.nth($value, 7)});
-          @include white-space(#{list.nth($value, 8)});
-          @include border-width(#{list.nth($value, 9)});
-        }
-      }
-      x*/
-    }
-  }
-}

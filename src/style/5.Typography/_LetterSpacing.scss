@@ -16,25 +16,6 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include letter-spacing(#{$value}, #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:tracking-($v) {
-      @include letter-spacing($v, #{$rwd});
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin tracking-($v) {
@@ -49,24 +30,6 @@ $data: (
       /*x
       @mixin \-#{$key} {
         @include letter-spacing(-#{$value});
-      }
-      x*/
-    }
-  }
-
-  @if $isResponsive and (not $isAwaken) {
-    @each $rwdToken, $rwd in $rwdBox {
-      @each $key, $value in $data {
-        /*x
-        @mixin #{$rwdToken}\:-#{$key} {
-          @include letter-spacing(-#{$value}, #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:-tracking-($v) {
-        @include letter-spacing(-$v, #{$rwd});
       }
       x*/
     }

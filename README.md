@@ -21,13 +21,15 @@ ESCSS-SCSS takes the full potential of CSS and Tailwind in SCSS.
 Atomic CSS abstraction ensures optimal performance and consistent styling.
 
 ```scss
-// An Atomic CSS mixin contains CSS properties with breakpoints, e.g.
+// An Atomic CSS mixin contains CSS properties with breakpoints. The & follows [Breaking Change: Mixed Declarations](https://sass-lang.com/documentation/breaking-changes/mixed-decls/)
 @mixin margin($v, $rwd: null) {
-  @if $rwd==null {
-    margin: $v;
-  } @else {
-    @media (min-width: $rwd) {
+  & {
+    @if $rwd==null {
       margin: $v;
+    } @else {
+      @media (min-width: $rwd) {
+        margin: $v;
+      }
     }
   }
 }
@@ -48,34 +50,40 @@ $_xxl: 0px;
 
 ### Same as Tailwind
 
-- Support: basic / arbitrary / media / dark utilities
+- Support: basic / arbitrary / media / dark mode utilities.
+- Performance considerations: Some mixins require \, () to reduce file size.
 
   ```scss
   #Demo {
-    @include bg-red-500;
-    @include m-1\/2;
-    @include \-m-96; // negative
-    @include p-(20px);
-    @include border-t-rose-100; // Use border-x/y/s/e/t/r/b/l-($color) for smaller file size. Example: border-t-($rose-100).
+    @include \-m-1\/2; // -m-1/2
+    @include m-1\/2; // m-1/2
+    @include m-(20px); // m-[20px]
+    @include border-rose-500; // same
+    @include border-x-($rose-500); // border-x-rose-500, apply to border-x/y/s/e/t/r/b/l-($color)
+    @include bg-rose-500; // same
+    @include bg-rose-500(25%); // bg-rose-500/[25%]
+    @include bg-rose-500(0.25); // bg-rose-500/25
 
+    // Media: sm、md、lg、xl、\2xl
     @include sm {
-      @include from-black-500;
-      @include to-white-500;
+      color: black;
+      @include bg-rose-500;
     }
 
     @include \2xl {
-      @include from-amber-500;
-      @include to-green-500;
+      color: black;
+      @include bg-rose-500;
     }
 
-    // This is different from Tailwind as it combines selector and media strategies:
+    // Dark Mode: Combines selector and media queries (unlike Tailwind)
     //  - selector strategy: Add a '--dark' class to the html/body/top level, and toggle the class using JavaScript.
     //  - media strategy: Automatically handled for you when using the @include dark. Only be triggered if the user has set their browser to dark mode.
     @include dark {
       color: black;
-      background-color: white;
+      @include bg-rose-500;
     }
 
+    // Reset some tailwind variables. If you're feeling lazy, you can use it in every ID/Class (recommended).
     @include utils_reset-tw;
   }
   ```
@@ -87,30 +95,69 @@ $_xxl: 0px;
   background: red;
   @include bg-green-50; // override red
 
-  @include utils_reset-tw;
-}
-```
-
-### Color opacity
-
-```scss
-#Demo {
-  @include text-green-50(65%);
-  @include text-green-50(0.65);
-
-  @include utils_reset-tw;
-}
-```
-
-### Use @include utils_reset-tw to reset some tailwind variables
-
-```scss
-#Demo {
-  @include bg-gradient-to-r;
-  @include from-cyan-500;
-  @include to-blue-500;
+  // Use native syntax
+  &:hover {
+    color: red;
+  }
 
   // Reset some tailwind variables. If you're feeling lazy, you can use it in every ID/Class (recommended).
+  @include utils_reset-tw;
+}
+```
+
+### Mixin Notes
+
+- Each `mixin` is a nested rule (nested rule, see [Core Concept - Atomic CSS](#core-concept---atomic-css)). To follow CSS standards and avoid conflicts with [Breaking Change: Mixed Declarations](https://sass-lang.com/documentation/breaking-changes/mixed-decls/), `mixin` should come last.
+- `utils_reset-tw` only resets variables and is not affected.
+
+```scss
+// ✅
+#Demo {
+  background: red;
+  @include bg-orange-500;
+  @include bg-amber-500;
+
+  @include sm {
+    background: green;
+    @include bg-blue-500;
+  }
+
+  @include utils_reset-tw;
+}
+
+// ❌
+#Demo-1 {
+  @include bg-orange-500;
+  background: red; // error
+  @include bg-amber-500;
+
+  @include utils_reset-tw;
+}
+
+#Demo-2 {
+  background: red;
+  @include bg-orange-500;
+  @include bg-amber-500;
+
+  @include sm {
+    @include bg-blue-500;
+    background: green; // error
+  }
+
+  @include utils_reset-tw;
+}
+
+#Demo-3 {
+  background: red;
+  @include bg-orange-500;
+  @include bg-amber-500;
+
+  @include sm {
+    background: green;
+    @include bg-blue-500;
+  }
+
+  background: green; // error
   @include utils_reset-tw;
 }
 ```
@@ -131,17 +178,19 @@ vite >= 5.4.0 // sass-embedded
 ### Installing library in Your Project
 
 ```bash
-  # Using npm
-  npm add -D sass-embedded # or sass
+npm add -D sass-embedded
+```
 
-  # Using yarn
-  yarn add -D sass-embedded # or sass
+```bash
+yarn add -D sass-embedded
+```
 
-  # Using pnpm
-  pnpm add -D sass-embedded # or sass
+```bash
+pnpm add -D sass-embedded
+```
 
-  # Using bun
-  bun add -D sass-embedded # or sass
+```bash
+bun add -D sass-embedded
 ```
 
 ### Setting Up in `vite.config.js`
@@ -152,10 +201,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // your path
-        additionalData: `
-        @use 'src/assets/_awaken.scss' as *;
-        `,
+        api: 'modern-compiler',
+        additionalData: `@use 'assets/css/_awaken.scss' as *;`,
       },
     },
   },

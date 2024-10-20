@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -288,69 +287,15 @@ $data: (
   @mixin text-current {
     @include color(currentColor);
   }
+
+  @mixin text-transparent {
+    @include color(transparent);
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin text-#{$key}($v: 1) {
-        @include color(_c(#{$value}, $v));
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin text-#{$key} {
-        @include color(#{$value});
-      }
-
-      @mixin text-#{$key}\/($v) {
-        @include color(_c(#{$value}, $v));
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-    @mixin #{$rwdToken}\:text-inherit {
-      @include color(inherit, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:text-current {
-      @include color(currentColor, #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:text-#{$key} {
-        @include color(#{$value}, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:text-#{$key}\/($v) {
-        @include color(_c(#{$value}, $v), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:text-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include color($v, #{$rwd});
-      }
-
-      // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
-      @else if meta.type-of($v)==list {
-        @include #{$rwdToken} {
-          @include font-size(list.nth($v, 1));
-          @include line-height(list.nth($v, 2));
-        }
-      }
-
-      // e.g. text-(14px)
-      @else {
-        @include font-size($v, #{$rwd});
-      }
+    @mixin text-#{$key}($v: 1) {
+      @include color(_c(#{$value}, $v));
     }
     x*/
   }

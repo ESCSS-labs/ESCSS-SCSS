@@ -59,21 +59,3 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include #{$rwdToken} {
-          $tw-dummy-shadow-token: #{list.nth($value, 1)} !global;
-          $tw-dummy-shadow-width: #{list.nth($value, 2)} !global;
-          $tw-shadow-color: #{list.nth($value, 3)} !global;
-
-          @include box-shadow(_b-s());
-        }
-      }
-      x*/
-    }
-  }
-}

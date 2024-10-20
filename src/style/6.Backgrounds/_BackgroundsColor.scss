@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -288,69 +287,15 @@ $data: (
   @mixin bg-current {
     @include background-color(currentColor);
   }
+
+  @mixin bg-transparent {
+    @include background-color(transparent);
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin bg-#{$key}($v: 1) {
-        @include background-color(_c(#{$value}, $v));
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin bg-#{$key} {
-        @include background-color(#{$value});
-      }
-
-      @mixin bg-#{$key}\/($v) {
-        @include background-color(_c(#{$value}, $v));
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-    @mixin #{$rwdToken}\:bg-inherit {
-      @include background-color(inherit, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:bg-current {
-      @include background-color(currentColor, #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:bg-#{$key} {
-        @include background-color(#{$value}, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:bg-#{$key}\/($v) {
-        @include background-color(_c(#{$value}, $v), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:bg-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include background-color($v, #{$rwd});
-      }
-
-      @else if list.nth($v, 1)==length {
-        // remove the token "length" to identify background-size
-        @include background-size(list.set-nth($v, 1, #/*x{""}), #{$rwd}); 
-      }
-
-      @else if list.index(top right bottom left center, $v) or meta.type-of($v)==number or meta.type-of($v)==list {
-        @include background-position($v, #{$rwd});
-      }
-
-      @else {
-        @include background-image($v, #{$rwd});
-      }
+    @mixin bg-#{$key}($v: 1) {
+      @include background-color(_c(#{$value}, $v));
     }
     x*/
   }

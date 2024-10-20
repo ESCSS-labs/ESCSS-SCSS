@@ -9,10 +9,18 @@
           }
 
           @include expect {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
+            & {
+              overflow: hidden;
+            }
+            & {
+              display: -webkit-box;
+            }
+            & {
+              -webkit-box-orient: vertical;
+            }
+            & {
+              -webkit-line-clamp: 1;
+            }
           }
         }
       }
@@ -25,10 +33,18 @@
           }
 
           @include expect {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
+            & {
+              overflow: hidden;
+            }
+            & {
+              display: -webkit-box;
+            }
+            & {
+              -webkit-box-orient: vertical;
+            }
+            & {
+              -webkit-line-clamp: 2;
+            }
           }
         }
       }
@@ -41,10 +57,18 @@
           }
 
           @include expect {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
+            & {
+              overflow: hidden;
+            }
+            & {
+              display: -webkit-box;
+            }
+            & {
+              -webkit-box-orient: vertical;
+            }
+            & {
+              -webkit-line-clamp: 3;
+            }
           }
         }
       }
@@ -57,10 +81,18 @@
           }
 
           @include expect {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 4;
+            & {
+              overflow: hidden;
+            }
+            & {
+              display: -webkit-box;
+            }
+            & {
+              -webkit-box-orient: vertical;
+            }
+            & {
+              -webkit-line-clamp: 4;
+            }
           }
         }
       }
@@ -73,10 +105,18 @@
           }
 
           @include expect {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 5;
+            & {
+              overflow: hidden;
+            }
+            & {
+              display: -webkit-box;
+            }
+            & {
+              -webkit-box-orient: vertical;
+            }
+            & {
+              -webkit-line-clamp: 5;
+            }
           }
         }
       }
@@ -89,10 +129,18 @@
           }
 
           @include expect {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 6;
+            & {
+              overflow: hidden;
+            }
+            & {
+              display: -webkit-box;
+            }
+            & {
+              -webkit-box-orient: vertical;
+            }
+            & {
+              -webkit-line-clamp: 6;
+            }
           }
         }
       }
@@ -105,641 +153,17 @@
           }
 
           @include expect {
-            overflow: visible;
-            display: block;
-            -webkit-box-orient: horizontal;
-            -webkit-line-clamp: none;
-          }
-        }
-      }
-    }
-
-    @include describe('Rwd') {
-      @include it('sm\:line-clamp-1') {
-        @include assert {
-          @include output {
-            @include sm\:line-clamp-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 1;
+            & {
+              overflow: visible;
             }
-          }
-        }
-      }
-
-      @include it('sm\:line-clamp-2') {
-        @include assert {
-          @include output {
-            @include sm\:line-clamp-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 2;
+            & {
+              display: block;
             }
-          }
-        }
-      }
-
-      @include it('sm\:line-clamp-3') {
-        @include assert {
-          @include output {
-            @include sm\:line-clamp-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 3;
+            & {
+              -webkit-box-orient: horizontal;
             }
-          }
-        }
-      }
-
-      @include it('sm\:line-clamp-4') {
-        @include assert {
-          @include output {
-            @include sm\:line-clamp-4;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 4;
-            }
-          }
-        }
-      }
-
-      @include it('sm\:line-clamp-5') {
-        @include assert {
-          @include output {
-            @include sm\:line-clamp-5;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 5;
-            }
-          }
-        }
-      }
-
-      @include it('sm\:line-clamp-6') {
-        @include assert {
-          @include output {
-            @include sm\:line-clamp-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 6;
-            }
-          }
-        }
-
-        @include it('sm\:line-clamp-none') {
-          @include assert {
-            @include output {
-              @include sm\:line-clamp-none;
-              @include utils_reset-tw;
-            }
-
-            @include expect {
-              @media (min-width: $_sm) {
-                overflow: visible;
-                display: block;
-                -webkit-box-orient: horizontal;
-                -webkit-line-clamp: none;
-              }
-            }
-          }
-        }
-      }
-
-      @include it('md\:line-clamp-1') {
-        @include assert {
-          @include output {
-            @include md\:line-clamp-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 1;
-            }
-          }
-        }
-      }
-
-      @include it('md\:line-clamp-2') {
-        @include assert {
-          @include output {
-            @include md\:line-clamp-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 2;
-            }
-          }
-        }
-      }
-
-      @include it('md\:line-clamp-3') {
-        @include assert {
-          @include output {
-            @include md\:line-clamp-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 3;
-            }
-          }
-        }
-      }
-
-      @include it('md\:line-clamp-4') {
-        @include assert {
-          @include output {
-            @include md\:line-clamp-4;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 4;
-            }
-          }
-        }
-      }
-
-      @include it('md\:line-clamp-5') {
-        @include assert {
-          @include output {
-            @include md\:line-clamp-5;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 5;
-            }
-          }
-        }
-      }
-
-      @include it('md\:line-clamp-6') {
-        @include assert {
-          @include output {
-            @include md\:line-clamp-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 6;
-            }
-          }
-        }
-
-        @include it('md\:line-clamp-none') {
-          @include assert {
-            @include output {
-              @include md\:line-clamp-none;
-              @include utils_reset-tw;
-            }
-
-            @include expect {
-              @media (min-width: $_md) {
-                overflow: visible;
-                display: block;
-                -webkit-box-orient: horizontal;
-                -webkit-line-clamp: none;
-              }
-            }
-          }
-        }
-      }
-
-      @include it('lg\:line-clamp-1') {
-        @include assert {
-          @include output {
-            @include lg\:line-clamp-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 1;
-            }
-          }
-        }
-      }
-
-      @include it('lg\:line-clamp-2') {
-        @include assert {
-          @include output {
-            @include lg\:line-clamp-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 2;
-            }
-          }
-        }
-      }
-
-      @include it('lg\:line-clamp-3') {
-        @include assert {
-          @include output {
-            @include lg\:line-clamp-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 3;
-            }
-          }
-        }
-      }
-
-      @include it('lg\:line-clamp-4') {
-        @include assert {
-          @include output {
-            @include lg\:line-clamp-4;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 4;
-            }
-          }
-        }
-      }
-
-      @include it('lg\:line-clamp-5') {
-        @include assert {
-          @include output {
-            @include lg\:line-clamp-5;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 5;
-            }
-          }
-        }
-      }
-
-      @include it('lg\:line-clamp-6') {
-        @include assert {
-          @include output {
-            @include lg\:line-clamp-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 6;
-            }
-          }
-        }
-
-        @include it('lg\:line-clamp-none') {
-          @include assert {
-            @include output {
-              @include lg\:line-clamp-none;
-              @include utils_reset-tw;
-            }
-
-            @include expect {
-              @media (min-width: $_lg) {
-                overflow: visible;
-                display: block;
-                -webkit-box-orient: horizontal;
-                -webkit-line-clamp: none;
-              }
-            }
-          }
-        }
-      }
-
-      @include it('xl\:line-clamp-1') {
-        @include assert {
-          @include output {
-            @include xl\:line-clamp-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 1;
-            }
-          }
-        }
-      }
-
-      @include it('xl\:line-clamp-2') {
-        @include assert {
-          @include output {
-            @include xl\:line-clamp-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 2;
-            }
-          }
-        }
-      }
-
-      @include it('xl\:line-clamp-3') {
-        @include assert {
-          @include output {
-            @include xl\:line-clamp-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 3;
-            }
-          }
-        }
-      }
-
-      @include it('xl\:line-clamp-4') {
-        @include assert {
-          @include output {
-            @include xl\:line-clamp-4;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 4;
-            }
-          }
-        }
-      }
-
-      @include it('xl\:line-clamp-5') {
-        @include assert {
-          @include output {
-            @include xl\:line-clamp-5;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 5;
-            }
-          }
-        }
-      }
-
-      @include it('xl\:line-clamp-6') {
-        @include assert {
-          @include output {
-            @include xl\:line-clamp-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 6;
-            }
-          }
-        }
-
-        @include it('xl\:line-clamp-none') {
-          @include assert {
-            @include output {
-              @include xl\:line-clamp-none;
-              @include utils_reset-tw;
-            }
-
-            @include expect {
-              @media (min-width: $_xl) {
-                overflow: visible;
-                display: block;
-                -webkit-box-orient: horizontal;
-                -webkit-line-clamp: none;
-              }
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:line-clamp-1') {
-        @include assert {
-          @include output {
-            @include \2xl\:line-clamp-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 1;
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:line-clamp-2') {
-        @include assert {
-          @include output {
-            @include \2xl\:line-clamp-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 2;
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:line-clamp-3') {
-        @include assert {
-          @include output {
-            @include \2xl\:line-clamp-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 3;
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:line-clamp-4') {
-        @include assert {
-          @include output {
-            @include \2xl\:line-clamp-4;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 4;
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:line-clamp-5') {
-        @include assert {
-          @include output {
-            @include \2xl\:line-clamp-5;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 5;
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:line-clamp-6') {
-        @include assert {
-          @include output {
-            @include \2xl\:line-clamp-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 6;
-            }
-          }
-        }
-
-        @include it('2xl\:line-clamp-none') {
-          @include assert {
-            @include output {
-              @include \2xl\:line-clamp-none;
-              @include utils_reset-tw;
-            }
-
-            @include expect {
-              @media (min-width: $_xxl) {
-                overflow: visible;
-                display: block;
-                -webkit-box-orient: horizontal;
-                -webkit-line-clamp: none;
-              }
+            & {
+              -webkit-line-clamp: none;
             }
           }
         }
@@ -755,98 +179,16 @@
           }
 
           @include expect {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 7;
-          }
-        }
-      }
-
-      @include it('sm\:line-clamp-(7)') {
-        @include assert {
-          @include output {
-            @include sm\:line-clamp-(7);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
+            & {
               overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 7;
             }
-          }
-        }
-      }
-
-      @include it('md\:line-clamp-(7)') {
-        @include assert {
-          @include output {
-            @include md\:line-clamp-(7);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              overflow: hidden;
+            & {
               display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 7;
             }
-          }
-        }
-      }
-
-      @include it('lg\:line-clamp-(7)') {
-        @include assert {
-          @include output {
-            @include lg\:line-clamp-(7);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              overflow: hidden;
-              display: -webkit-box;
+            & {
               -webkit-box-orient: vertical;
-              -webkit-line-clamp: 7;
             }
-          }
-        }
-      }
-
-      @include it('xl\:line-clamp-(7)') {
-        @include assert {
-          @include output {
-            @include xl\:line-clamp-(7);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 7;
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:line-clamp-(7)') {
-        @include assert {
-          @include output {
-            @include \2xl\:line-clamp-(7);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
+            & {
               -webkit-line-clamp: 7;
             }
           }

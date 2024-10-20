@@ -32,7 +32,6 @@ $data: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -288,152 +287,15 @@ $data: (
   @mixin border-current {
     @include border-color(currentColor);
   }
+
+  @mixin border-transparent {
+    @include border-color(transparent);
+  }
   x*/
   @each $key, $value in $data {
-    @if $isAwaken {
-      /*x
-      @mixin border-#{$key}($v: 1) {
-        @include border-color(_c(#{$value}, $v));
-      }
-      x*/
-    } @else {
-      /*x
-      @mixin border-#{$key} {
-        @include border-color(#{$value});
-      }
-
-      @mixin border-#{$key}\/($v) {
-        @include border-color(_c(#{$value}, $v));
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
     /*x
-    @mixin #{$rwdToken}\:border-inherit {
-      @include border-color(inherit, #{$rwd});
-    }
-
-    @mixin #{$rwdToken}\:border-current {
-      @include border-color(currentColor, #{$rwd});
-    }
-    x*/
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:border-#{$key} {
-        @include border-color(#{$value}, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:border-#{$key}\/($v) {
-        @include border-color(_c(#{$value}, $v), #{$rwd});
-      }
-      x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:border-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include border-color($v, #{$rwd});
-      }
-  
-      @else {
-        @include border-width($v, #{$rwd});
-      }
-    }
-
-    @mixin #{$rwdToken}\:border-x-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include #{$rwdToken} {
-          @include border-left-color($v);
-          @include border-right-color($v);
-        }
-      }
-
-      @else {
-        @include #{$rwdToken} {
-          @include border-left-width($v);
-          @include border-right-width($v);
-        }
-      }
-    }
-
-    @mixin #{$rwdToken}\:border-y-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include #{$rwdToken} {
-          @include border-top-color($v);
-          @include border-bottom-color($v);
-        }
-      }
-
-      @else {
-        @include #{$rwdToken} {
-          @include border-top-width($v);
-          @include border-bottom-width($v);
-        }
-      }
-    }
-
-    @mixin #{$rwdToken}\:border-s-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include border-inline-start-color($v, #{$rwd});
-      }
-
-      @else {
-        @include border-inline-start-width($v, #{$rwd});
-      }
-    }
-
-    @mixin #{$rwdToken}\:border-e-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include border-inline-end-color($v, #{$rwd});
-      }
-
-      @else {
-        @include border-inline-end-width($v, #{$rwd});
-      }
-    }
-
-    @mixin #{$rwdToken}\:border-t-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include border-top-color($v, #{$rwd});
-      }
-
-      @else {
-        @include border-top-width($v, #{$rwd});
-      }
-    }
-
-    @mixin #{$rwdToken}\:border-r-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include border-right-color($v, #{$rwd});
-      }
-
-      @else {
-        @include border-right-width($v, #{$rwd});
-      }
-    }
-
-    @mixin #{$rwdToken}\:border-b-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include border-bottom-color($v, #{$rwd});
-      }
-
-      @else {
-        @include border-bottom-width($v, #{$rwd});
-      }
-    }
-
-    @mixin #{$rwdToken}\:border-l-($v) {
-      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-        @include border-left-color($v, #{$rwd});
-      }
-
-      @else {
-        @include border-left-width($v, #{$rwd});
-      }
+    @mixin border-#{$key}($v: 1) {
+      @include border-color(_c(#{$value}, $v));
     }
     x*/
   }

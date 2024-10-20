@@ -1,0 +1,117 @@
+@include describe('Utils') {
+  @include describe('Basic') {
+    @include it('sm') {
+      @include assert {
+        @include output {
+          @include sm {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          @media (min-width: $_sm) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    @include it('md') {
+      @include assert {
+        @include output {
+          @include md {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          @media (min-width: $_md) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    @include it('lg') {
+      @include assert {
+        @include output {
+          @include lg {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          @media (min-width: $_lg) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    @include it('xl') {
+      @include assert {
+        @include output {
+          @include xl {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          @media (min-width: $_xl) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    @include it('2xl') {
+      @include assert {
+        @include output {
+          @include \2xl {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          @media (min-width: $_xxl) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    @include it('dark') {
+      @include assert {
+        @include output {
+          @include dark {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          .--dark & {
+            color: red;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            & {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

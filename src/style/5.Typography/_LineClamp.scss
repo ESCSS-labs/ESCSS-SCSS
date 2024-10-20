@@ -60,34 +60,6 @@ $data: (
   }
 }
 
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-    @mixin #{$rwdToken}\:#{$key} {
-      @include #{$rwdToken} {
-        @include overflow(#{list.nth($value, 1)});
-        @include display(#{list.nth($value, 2)});
-        @include -webkit-box-orient(#{list.nth($value, 3)});
-        @include -webkit-line-clamp(#{list.nth($value, 4)});
-      }
-    }
-    x*/
-    }
-
-    /*x
-    @mixin #{$rwdToken}\:line-clamp-($v) {
-      @include #{$rwdToken} {
-        @include overflow(hidden);
-        @include display(-webkit-box);
-        @include -webkit-box-orient(vertical);
-        @include -webkit-line-clamp($v);
-      }
-    }
-    x*/
-  }
-}
-
 @if $isArbitrary {
   /*x
   @mixin line-clamp-($v) {

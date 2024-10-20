@@ -24,23 +24,3 @@ $data: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        @include #{$rwdToken} {
-          @include width(#{list.nth($value, 1)});
-
-        @include max-width(#{list.nth($value, 2)}, #{list.nth($value, 2)});
-        @include max-width(#{list.nth($value, 3)}, #{list.nth($value, 3)});
-        @include max-width(#{list.nth($value, 4)}, #{list.nth($value, 4)});
-        @include max-width(#{list.nth($value, 5)}, #{list.nth($value, 5)});
-        @include max-width(#{list.nth($value, 6)}, #{list.nth($value, 6)});
-        }
-      }
-      x*/
-    }
-  }
-}

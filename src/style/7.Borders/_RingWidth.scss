@@ -34,28 +34,3 @@ $data-inset: (
     x*/
   }
 }
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @each $key, $value in $data {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        $tw-mismatch--ring-offset-width: true !global;
-        $tw-dummy-ring-width: #{$value} !global;
-
-        @include box-shadow(_b-s(), #{$rwd});
-      }
-      x*/
-    }
-
-    @each $key, $value in $data-inset {
-      /*x
-      @mixin #{$rwdToken}\:#{$key} {
-        $tw-mismatch--ring-offset-width: true !global;
-
-        @include box-shadow(_b-s(), #{$rwd});
-      }
-      x*/
-    }
-  }
-}

@@ -1,1764 +1,270 @@
 @include describe('12.Transforms') {
   @include describe('Rotate') {
-    @include describe('Basic') {
-      @include it('rotate-0') {
-        @include assert {
-          @include output {
-            @include rotate-0;
-            @include utils_reset-tw;
-          }
+    @include describe('Positive') {
+      @include describe('Basic') {
+        @include it('rotate-0') {
+          @include assert {
+            @include output {
+              @include rotate-0;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('rotate-1') {
-        @include assert {
-          @include output {
-            @include rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('rotate-2') {
-        @include assert {
-          @include output {
-            @include rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('rotate-3') {
-        @include assert {
-          @include output {
-            @include rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('rotate-6') {
-        @include assert {
-          @include output {
-            @include rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('rotate-12') {
-        @include assert {
-          @include output {
-            @include rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('rotate-45') {
-        @include assert {
-          @include output {
-            @include rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('rotate-90') {
-        @include assert {
-          @include output {
-            @include rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('rotate-180') {
-        @include assert {
-          @include output {
-            @include rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-0') {
-        @include assert {
-          @include output {
-            @include \-rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-1') {
-        @include assert {
-          @include output {
-            @include \-rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-2') {
-        @include assert {
-          @include output {
-            @include \-rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-3') {
-        @include assert {
-          @include output {
-            @include \-rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-6') {
-        @include assert {
-          @include output {
-            @include \-rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-12') {
-        @include assert {
-          @include output {
-            @include \-rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-45') {
-        @include assert {
-          @include output {
-            @include \-rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-90') {
-        @include assert {
-          @include output {
-            @include \-rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-180') {
-        @include assert {
-          @include output {
-            @include \-rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-    }
-
-    @include describe('Rwd') {
-      @include it('sm\:rotate-0') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
+            @include expect {
               transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
-      }
 
-      @include it('sm\:rotate-1') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-1;
-            @include utils_reset-tw;
-          }
+        @include it('rotate-1') {
+          @include assert {
+            @include output {
+              @include rotate-1;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            @media (min-width: $_sm) {
+            @include expect {
               transform: translate(0, 0) rotate(1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
-      }
 
-      @include it('sm\:rotate-2') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-2;
-            @include utils_reset-tw;
-          }
+        @include it('rotate-2') {
+          @include assert {
+            @include output {
+              @include rotate-2;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            @media (min-width: $_sm) {
+            @include expect {
               transform: translate(0, 0) rotate(2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
-      }
 
-      @include it('sm\:rotate-3') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-3;
-            @include utils_reset-tw;
-          }
+        @include it('rotate-3') {
+          @include assert {
+            @include output {
+              @include rotate-3;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            @media (min-width: $_sm) {
+            @include expect {
               transform: translate(0, 0) rotate(3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
-      }
 
-      @include it('sm\:rotate-6') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-6;
-            @include utils_reset-tw;
-          }
+        @include it('rotate-6') {
+          @include assert {
+            @include output {
+              @include rotate-6;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            @media (min-width: $_sm) {
+            @include expect {
               transform: translate(0, 0) rotate(6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
-      }
 
-      @include it('sm\:rotate-12') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-12;
-            @include utils_reset-tw;
-          }
+        @include it('rotate-12') {
+          @include assert {
+            @include output {
+              @include rotate-12;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            @media (min-width: $_sm) {
+            @include expect {
               transform: translate(0, 0) rotate(12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
-      }
 
-      @include it('sm\:rotate-45') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-45;
-            @include utils_reset-tw;
-          }
+        @include it('rotate-45') {
+          @include assert {
+            @include output {
+              @include rotate-45;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            @media (min-width: $_sm) {
+            @include expect {
               transform: translate(0, 0) rotate(45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
-      }
 
-      @include it('sm\:rotate-90') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-90;
-            @include utils_reset-tw;
-          }
+        @include it('rotate-90') {
+          @include assert {
+            @include output {
+              @include rotate-90;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            @media (min-width: $_sm) {
+            @include expect {
               transform: translate(0, 0) rotate(90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
-      }
 
-      @include it('sm\:rotate-180') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-180;
-            @include utils_reset-tw;
-          }
+        @include it('rotate-180') {
+          @include assert {
+            @include output {
+              @include rotate-180;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            @media (min-width: $_sm) {
+            @include expect {
               transform: translate(0, 0) rotate(180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
       }
 
-      @include it('sm\:-rotate-0') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('sm\:-rotate-1') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('sm\:-rotate-2') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('sm\:-rotate-3') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('sm\:-rotate-6') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('sm\:-rotate-12') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('sm\:-rotate-45') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('sm\:-rotate-90') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('sm\:-rotate-180') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:rotate-0') {
-        @include assert {
-          @include output {
-            @include md\:rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:rotate-1') {
-        @include assert {
-          @include output {
-            @include md\:rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:rotate-2') {
-        @include assert {
-          @include output {
-            @include md\:rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:rotate-3') {
-        @include assert {
-          @include output {
-            @include md\:rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:rotate-6') {
-        @include assert {
-          @include output {
-            @include md\:rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:rotate-12') {
-        @include assert {
-          @include output {
-            @include md\:rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:rotate-45') {
-        @include assert {
-          @include output {
-            @include md\:rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:rotate-90') {
-        @include assert {
-          @include output {
-            @include md\:rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:rotate-180') {
-        @include assert {
-          @include output {
-            @include md\:rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-0') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-1') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-2') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-3') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-6') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-12') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-45') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-90') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-180') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-0') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-1') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-2') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-3') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-6') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-12') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-45') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-90') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-180') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-0') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-1') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-2') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-3') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-6') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-12') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-45') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-90') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-180') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-0') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-1') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-2') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-3') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-6') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-12') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-45') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-90') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-180') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-0') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-1') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-2') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-3') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-6') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-12') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-45') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-90') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-180') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-0') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-1') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-2') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-3') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-6') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-12') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-45') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-90') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-180') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-0') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-0;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-1') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-1;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-2') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-2;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-3') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-3;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-6') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-6;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-12') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-12;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-45') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-45;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-90') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-90;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-180') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-180;
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+      @include describe('Custom') {
+        @include it('rotate-(17deg)') {
+          @include assert {
+            @include output {
+              @include rotate-(17deg);
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
       }
     }
 
-    @include describe('Custom') {
-      @include it('rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include rotate-(17deg);
-            @include utils_reset-tw;
-          }
+    @include describe('Negative') {
+      @include describe('Basic') {
+        @include it('-rotate-0') {
+          @include assert {
+            @include output {
+              @include \-rotate-0;
+              @include utils_reset-tw;
+            }
 
-          @include expect {
-            transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-          }
-        }
-      }
-
-      @include it('-rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include \-rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            transform: translate(0, 0) rotate(-17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+            @include expect {
+              transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+            }
           }
         }
-      }
 
-      @include it('sm\:rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include sm\:rotate-(17deg);
-            @include utils_reset-tw;
+        @include it('-rotate-1') {
+          @include assert {
+            @include output {
+              @include \-rotate-1;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+            }
           }
+        }
 
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+        @include it('-rotate-2') {
+          @include assert {
+            @include output {
+              @include \-rotate-2;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+            }
+          }
+        }
+
+        @include it('-rotate-3') {
+          @include assert {
+            @include output {
+              @include \-rotate-3;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+            }
+          }
+        }
+
+        @include it('-rotate-6') {
+          @include assert {
+            @include output {
+              @include \-rotate-6;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+            }
+          }
+        }
+
+        @include it('-rotate-12') {
+          @include assert {
+            @include output {
+              @include \-rotate-12;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+            }
+          }
+        }
+
+        @include it('-rotate-45') {
+          @include assert {
+            @include output {
+              @include \-rotate-45;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+            }
+          }
+        }
+
+        @include it('-rotate-90') {
+          @include assert {
+            @include output {
+              @include \-rotate-90;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+            }
+          }
+        }
+
+        @include it('-rotate-180') {
+          @include assert {
+            @include output {
+              @include \-rotate-180;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }
         }
       }
 
-      @include it('sm\:-rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include sm\:-rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_sm) {
-              transform: translate(0, 0) rotate(-17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+      @include describe('Custom') {
+        @include it('-rotate-(17deg)') {
+          @include assert {
+            @include output {
+              @include \-rotate-(17deg);
+              @include utils_reset-tw;
             }
-          }
-        }
-      }
 
-      @include it('md\:rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include md\:rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('md\:-rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include md\:-rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_md) {
-              transform: translate(0, 0) rotate(-17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include lg\:rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('lg\:-rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include lg\:-rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_lg) {
-              transform: translate(0, 0) rotate(-17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include xl\:rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('xl\:-rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include xl\:-rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xl) {
-              transform: translate(0, 0) rotate(-17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include \2xl\:rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
-              transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
-            }
-          }
-        }
-      }
-
-      @include it('2xl\:-rotate-(17deg)') {
-        @include assert {
-          @include output {
-            @include \2xl\:-rotate-(17deg);
-            @include utils_reset-tw;
-          }
-
-          @include expect {
-            @media (min-width: $_xxl) {
+            @include expect {
               transform: translate(0, 0) rotate(-17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
             }
           }

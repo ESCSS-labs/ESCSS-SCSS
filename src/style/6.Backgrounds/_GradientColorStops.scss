@@ -36,7 +36,6 @@ $data-color: (
   'name3-800': '$name3-800',
   'name3-900': '$name3-900',
   'name3-950': '$name3-950',
-  'transparent': transparent,
   'black': '$black',
   'white': '$white',
   'slate-50': '$slate-50',
@@ -311,35 +310,26 @@ $data-position: (
   @if $group-from {
     /*x
     @mixin from-inherit {
-    @include background-image(inherit !important);
-  }
+      @include background-image(inherit !important);
+    }
 
     @mixin from-current {
       $tw-gradient-from: currentColor !global;
       @include background-image(_l-g());
     }
+
+    @mixin from-transparent {
+      $tw-gradient-from: transparent !global;
+      @include background-image(_l-g());
+    }
     x*/
     @each $key, $value in $data-color {
-      @if $isAwaken {
-        /*x
-        @mixin from-#{$key}($v: 1) {
-          $tw-gradient-from: _c(#{$value}, $v) !global;
-          @include background-image(_l-g());
-        }
-        x*/
-      } @else {
-        /*x
-        @mixin from-#{$key} {
-          $tw-gradient-from: #{$value} !global;
-          @include background-image(_l-g());
-        }
-
-        @mixin from-#{$key}\/($v) {
-          $tw-gradient-from: _c(#{$value}, $v) !global;
-          @include background-image(_l-g());
-        }
-        x*/
+      /*x
+      @mixin from-#{$key}($v: 1) {
+        $tw-gradient-from: _c(#{$value}, $v) !global;
+        @include background-image(_l-g());
       }
+      x*/
     }
 
     @each $key, $value in $data-position {
@@ -362,28 +352,19 @@ $data-position: (
       $tw-gradient-via: currentColor !global;
       @include background-image(_l-g());
     }
+
+    @mixin via-transparent {
+      $tw-gradient-via: transparent !global;
+      @include background-image(_l-g());
+    }
     x*/
     @each $key, $value in $data-color {
-      @if $isAwaken {
-        /*x
-        @mixin via-#{$key}($v: 1) {
-          $tw-gradient-via: _c(#{$value}, $v) !global;
-          @include background-image(_l-g());
-        }
-        x*/
-      } @else {
-        /*x
-        @mixin via-#{$key} {
-          $tw-gradient-via: #{$value} !global;
-          @include background-image(_l-g());
-        }
-
-        @mixin via-#{$key}\/($v) {
-          $tw-gradient-via: _c(#{$value}, $v) !global;
-          @include background-image(_l-g());
-        }
-        x*/
+      /*x
+      @mixin via-#{$key}($v: 1) {
+        $tw-gradient-via: _c(#{$value}, $v) !global;
+        @include background-image(_l-g());
       }
+      x*/
     }
 
     @each $key, $value in $data-position {
@@ -406,28 +387,19 @@ $data-position: (
       $tw-gradient-to: currentColor !global;
       @include background-image(_l-g());
     }
+
+    @mixin to-transparent {
+      $tw-gradient-to: transparent !global;
+      @include background-image(_l-g());
+    }
     x*/
     @each $key, $value in $data-color {
-      @if $isAwaken {
-        /*x
-        @mixin to-#{$key}($v: 1) {
-          $tw-gradient-to: _c(#{$value}, $v) !global;
-          @include background-image(_l-g());
-        }
-        x*/
-      } @else {
-        /*x
-        @mixin to-#{$key} {
-          $tw-gradient-to: #{$value} !global;
-          @include background-image(_l-g());
-        }
-
-        @mixin to-#{$key}\/($v) {
-          $tw-gradient-to: _c(#{$value}, $v) !global;
-          @include background-image(_l-g());
-        }
-        x*/
+      /*x
+      @mixin to-#{$key}($v: 1) {
+        $tw-gradient-to: _c(#{$value}, $v) !global;
+        @include background-image(_l-g());
       }
+      x*/
     }
 
     @each $key, $value in $data-position {
@@ -435,179 +407,6 @@ $data-position: (
       @mixin to-#{$key} {
         $tw-gradient-to-position: #{$value} !global;
         @include background-image(_l-g());
-      }
-      x*/
-    }
-  }
-}
-
-@if $isResponsive and (not $isAwaken) {
-  @each $rwdToken, $rwd in $rwdBox {
-    @if $group-from {
-      /*x
-      @mixin #{$rwdToken}\:from-inherit {
-        @include background-image(inherit !important, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:from-current {
-        $tw-gradient-from: currentColor !global;
-        @include background-image(_l-g(), #{$rwd});
-      }
-      x*/
-      @each $key, $value in $data-color {
-        /*x
-        @mixin #{$rwdToken}\:from-#{$key} {
-          $tw-gradient-from: #{$value} !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-
-        @mixin #{$rwdToken}\:from-#{$key}\/($v) {
-          $tw-gradient-from: _c(#{$value}, $v) !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-        x*/
-      }
-
-      @each $key, $value in $data-position {
-        /*x
-        @mixin #{$rwdToken}\:from-#{$key} {
-          $tw-gradient-from-position: #{$value} !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:from-($v) {
-        @if list.index(inherit, $v) {
-          // to match same behavior as tailwind
-          @include background-image(inherit !important, #{$rwd}); 
-        }
-  
-        @else if meta.type-of($v)==color or list.index(currentColor, $v) {
-          @include #{$rwdToken} {
-            $tw-gradient-from: $v !global;
-            @include background-image(_l-g());
-          }
-        }
-  
-        @else {
-          $tw-gradient-from-position: $v !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-      }
-      x*/
-    }
-
-    @if $group-via {
-      /*x
-      @mixin #{$rwdToken}\:via-inherit {
-        @include background-image(inherit !important, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:via-current {
-        $tw-gradient-via: currentColor !global;
-        @include background-image(_l-g(), #{$rwd});
-      }
-      x*/
-      @each $key, $value in $data-color {
-        /*x
-        @mixin #{$rwdToken}\:via-#{$key} {
-          $tw-gradient-via: #{$value} !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-
-        @mixin #{$rwdToken}\:via-#{$key}\/($v) {
-          $tw-gradient-via: _c(#{$value}, $v) !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-        x*/
-      }
-
-      @each $key, $value in $data-position {
-        /*x
-        @mixin #{$rwdToken}\:via-#{$key} {
-          $tw-gradient-via-position: #{$value} !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:via-($v) {
-        @if list.index(inherit, $v) {
-          // to match same behavior as tailwind
-          @include background-image(inherit !important, #{$rwd}); 
-        }
-  
-        @else if meta.type-of($v)==color or list.index(currentColor, $v) {
-          @include #{$rwdToken} {
-            $tw-gradient-via: $v !global;
-            @include background-image(_l-g());
-          }
-        }
-  
-        @else {
-          $tw-gradient-via-position: $v !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-      }
-      x*/
-    }
-
-    @if $group-to {
-      /*x
-      @mixin #{$rwdToken}\:to-inherit {
-        @include background-image(inherit !important, #{$rwd});
-      }
-
-      @mixin #{$rwdToken}\:to-current {
-        $tw-gradient-to: currentColor !global;
-        @include background-image(_l-g(), #{$rwd});
-      }
-      x*/
-
-      @each $key, $value in $data-color {
-        /*x
-        @mixin #{$rwdToken}\:to-#{$key} {
-          $tw-gradient-to: #{$value} !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-
-        @mixin #{$rwdToken}\:to-#{$key}\/($v) {
-          $tw-gradient-to: _c(#{$value}, $v) !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-        x*/
-      }
-
-      @each $key, $value in $data-position {
-        /*x
-        @mixin #{$rwdToken}\:to-#{$key} {
-          $tw-gradient-to-position: #{$value} !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
-        x*/
-      }
-
-      /*x
-      @mixin #{$rwdToken}\:to-($v) {
-        @if list.index(inherit, $v) {
-          // to match same behavior as tailwind
-          @include background-image(inherit !important, #{$rwd}); 
-        }
-  
-        @else if meta.type-of($v)==color or list.index(currentColor, $v) {
-          @include #{$rwdToken} {
-            $tw-gradient-to: $v !global;
-            @include background-image(_l-g());
-          }
-        }
-  
-        @else {
-          $tw-gradient-to-position: $v !global;
-          @include background-image(_l-g(), #{$rwd});
-        }
       }
       x*/
     }
