@@ -1,4 +1,8 @@
-$data: (
+@use 'sass:meta';
+@use 'sass:list';
+@use '../setting' as *;
+
+$BackgroundsColor: (
   'name-50': '$name-50',
   'name-100': '$name-100',
   'name-200': '$name-200',
@@ -292,7 +296,7 @@ $data: (
     @include background-color(transparent);
   }
   x*/
-  @each $key, $value in $data {
+  @each $key, $value in $BackgroundsColor {
     /*x
     @mixin bg-#{$key}($v: 1) {
       @include background-color(_c(#{$value}, $v));

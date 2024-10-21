@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$HueRotate: (
   'hue-rotate-0': 0deg,
   'hue-rotate-15': 15deg,
   'hue-rotate-30': 30deg,
@@ -8,7 +10,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $HueRotate {
     /*x
     @mixin #{$key} {
       $tw-hue-rotate: hue-rotate(#{$value}) !global;
@@ -28,7 +30,7 @@ $data: (
 
 @if $isNegative {
   @if $isBasic {
-    @each $key, $value in $data {
+    @each $key, $value in $HueRotate {
       /*x
       @mixin \-#{$key} {
         $tw-hue-rotate: hue-rotate(-#{$value}) !global;

@@ -1,8 +1,12 @@
+@use 'sass:meta';
+@use 'sass:list';
+@use '../setting' as *;
+
 $group-from: true;
 $group-via: true;
 $group-to: true;
 
-$data-color: (
+$GradientColorStops-color: (
   'name-50': '$name-50',
   'name-100': '$name-100',
   'name-200': '$name-200',
@@ -282,7 +286,7 @@ $data-color: (
   'rose-950': '$rose-950',
 );
 
-$data-position: (
+$GradientColorStops-position: (
   '0\\%': 0%,
   '5\\%': 5%,
   '10\\%': 10%,
@@ -323,7 +327,7 @@ $data-position: (
       @include background-image(_l-g());
     }
     x*/
-    @each $key, $value in $data-color {
+    @each $key, $value in $GradientColorStops-color {
       /*x
       @mixin from-#{$key}($v: 1) {
         $tw-gradient-from: _c(#{$value}, $v) !global;
@@ -332,7 +336,7 @@ $data-position: (
       x*/
     }
 
-    @each $key, $value in $data-position {
+    @each $key, $value in $GradientColorStops-position {
       /*x
       @mixin from-#{$key} {
         $tw-gradient-from-position: #{$value} !global;
@@ -358,7 +362,7 @@ $data-position: (
       @include background-image(_l-g());
     }
     x*/
-    @each $key, $value in $data-color {
+    @each $key, $value in $GradientColorStops-color {
       /*x
       @mixin via-#{$key}($v: 1) {
         $tw-gradient-via: _c(#{$value}, $v) !global;
@@ -367,7 +371,7 @@ $data-position: (
       x*/
     }
 
-    @each $key, $value in $data-position {
+    @each $key, $value in $GradientColorStops-position {
       /*x
       @mixin via-#{$key} {
         $tw-gradient-via-position: #{$value} !global;
@@ -393,7 +397,7 @@ $data-position: (
       @include background-image(_l-g());
     }
     x*/
-    @each $key, $value in $data-color {
+    @each $key, $value in $GradientColorStops-color {
       /*x
       @mixin to-#{$key}($v: 1) {
         $tw-gradient-to: _c(#{$value}, $v) !global;
@@ -402,7 +406,7 @@ $data-position: (
       x*/
     }
 
-    @each $key, $value in $data-position {
+    @each $key, $value in $GradientColorStops-position {
       /*x
       @mixin to-#{$key} {
         $tw-gradient-to-position: #{$value} !global;

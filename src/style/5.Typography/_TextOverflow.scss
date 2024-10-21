@@ -1,7 +1,10 @@
 // 1st property: overflow
 // 2nd property: text-overflow
 // 3rd property: white-space
-$data: (
+@use 'sass:list';
+@use '../setting' as *;
+
+$TextOverflow: (
   'truncate': (
     hidden,
     ellipsis,
@@ -20,7 +23,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $TextOverflow {
     /*x 
     @mixin #{$key} {
       @include overflow(#{list.nth($value, 1)});

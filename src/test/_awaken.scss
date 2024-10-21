@@ -7,11 +7,11 @@
 /*! ESCSS-SCSS v1.0.2 | AGPL-3.0-only or Commercial License | https://github.com/ESCSS-labs */
 
 // Set your project's breakpoints
-$_sm: 0px;
-$_md: 0px;
-$_lg: 0px;
-$_xl: 0px;
-$_xxl: 0px;
+$SM: 0px;
+$MD: 0px;
+$LG: 0px;
+$XL: 0px;
+$XXL: 0px;
 
 $name-50: null;
 $name-100: null;
@@ -485,11 +485,11 @@ $tw-mismatch--shadow-color: false;
 $tw-mismatch--ring-offset-width: false;
 
 .AGPLv3-Modification-Check {
-  _sm: $_sm;
-  _md: $_md;
-  _lg: $_lg;
-  _xl: $_xl;
-  _xxl: $_xxl;
+  sm: $SM;
+  md: $MD;
+  lg: $LG;
+  xl: $XL;
+  xxl: $XXL;
 }
 
 // _c stands for color (file size concern)
@@ -560,31 +560,31 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin sm {
-  @media (min-width: $_sm) {
+  @media (min-width: $SM) {
     @content;
   }
 }
 
 @mixin md {
-  @media (min-width: $_md) {
+  @media (min-width: $MD) {
     @content;
   }
 }
 
 @mixin lg {
-  @media (min-width: $_lg) {
+  @media (min-width: $LG) {
     @content;
   }
 }
 
 @mixin xl {
-  @media (min-width: $_xl) {
+  @media (min-width: $XL) {
     @content;
   }
 }
 
 @mixin \2xl {
-  @media (min-width: $_xxl) {
+  @media (min-width: $XXL) {
     @content;
   }
 }
@@ -978,7 +978,7 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-// smaller size and clean base CSS than v3
+// smaller size and clean CSS base (Recommended)
 @mixin utils_base-preflight-v4-modify {
   // set in the root component for base css
 
@@ -1225,7 +1225,7 @@ $tw-mismatch--ring-offset-width: false;
   $tw-mismatch--ring-offset-width: false !global;
 }
 
-@mixin -moz-osx-font-smoothing($v, $rwd: null) {
+@mixin \-moz-osx-font-smoothing($v, $rwd: null) {
   & {
     @if $rwd==null {
       -moz-osx-font-smoothing: $v;
@@ -1237,7 +1237,7 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-@mixin -webkit-box-orient($v, $rwd: null) {
+@mixin \-webkit-box-orient($v, $rwd: null) {
   & {
     @if $rwd==null {
       -webkit-box-orient: $v;
@@ -1249,7 +1249,7 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-@mixin -webkit-font-smoothing($v, $rwd: null) {
+@mixin \-webkit-font-smoothing($v, $rwd: null) {
   & {
     @if $rwd==null {
       -webkit-font-smoothing: $v;
@@ -1261,7 +1261,7 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-@mixin -webkit-line-clamp($v, $rwd: null) {
+@mixin \-webkit-line-clamp($v, $rwd: null) {
   & {
     @if $rwd==null {
       -webkit-line-clamp: $v;
@@ -3828,11 +3828,11 @@ $tw-mismatch--ring-offset-width: false;
 @mixin container {
   @include width(100%);
 
-  @include max-width($_sm, $_sm);
-  @include max-width($_md, $_md);
-  @include max-width($_lg, $_lg);
-  @include max-width($_xl, $_xl);
-  @include max-width($_xxl, $_xxl);
+  @include max-width($SM, $SM);
+  @include max-width($MD, $MD);
+  @include max-width($LG, $LG);
+  @include max-width($XL, $XL);
+  @include max-width($XXL, $XXL);
 }
 
 @mixin block {
@@ -15324,23 +15324,23 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin max-w-screen-sm {
-  @include max-width($_sm);
+  @include max-width($SM);
 }
 
 @mixin max-w-screen-md {
-  @include max-width($_md);
+  @include max-width($MD);
 }
 
 @mixin max-w-screen-lg {
-  @include max-width($_lg);
+  @include max-width($LG);
 }
 
 @mixin max-w-screen-xl {
-  @include max-width($_xl);
+  @include max-width($XL);
 }
 
 @mixin max-w-screen-2xl {
-  @include max-width($_xxl);
+  @include max-width($XXL);
 }
 
 @mixin max-w-($v) {
@@ -17376,13 +17376,13 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin antialiased {
-  @include -webkit-font-smoothing(antialiased);
-  @include -moz-osx-font-smoothing(grayscale);
+  @include \-webkit-font-smoothing(antialiased);
+  @include \-moz-osx-font-smoothing(grayscale);
 }
 
 @mixin subpixel-antialiased {
-  @include -webkit-font-smoothing(auto);
-  @include -moz-osx-font-smoothing(auto);
+  @include \-webkit-font-smoothing(auto);
+  @include \-moz-osx-font-smoothing(auto);
 }
 
 @mixin italic {
@@ -17544,57 +17544,57 @@ $tw-mismatch--ring-offset-width: false;
 @mixin line-clamp-1 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(1);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(1);
 }
 
 @mixin line-clamp-2 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(2);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(2);
 }
 
 @mixin line-clamp-3 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(3);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(3);
 }
 
 @mixin line-clamp-4 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(4);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(4);
 }
 
 @mixin line-clamp-5 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(5);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(5);
 }
 
 @mixin line-clamp-6 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(6);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(6);
 }
 
 @mixin line-clamp-none {
   @include overflow(visible);
   @include display(block);
-  @include -webkit-box-orient(horizontal);
-  @include -webkit-line-clamp(none);
+  @include \-webkit-box-orient(horizontal);
+  @include \-webkit-line-clamp(none);
 }
 
 @mixin line-clamp-($v) {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp($v);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp($v);
 }
 
 @mixin leading-3 {

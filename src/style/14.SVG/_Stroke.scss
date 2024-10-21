@@ -1,4 +1,8 @@
-$data: (
+@use 'sass:list';
+@use 'sass:meta';
+@use '../setting' as *;
+
+$Stroke: (
   'name-50': '$name-50',
   'name-100': '$name-100',
   'name-200': '$name-200',
@@ -296,7 +300,7 @@ $data: (
     @include stroke(transparent);
   }
   x*/
-  @each $key, $value in $data {
+  @each $key, $value in $Stroke {
     /*x
     @mixin stroke-#{$key}($v: 1) {
       @include stroke(_c(#{$value}, $v));

@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$BackdropBlur: (
   'backdrop-blur-none': blur(0),
   'backdrop-blur-sm': blur(4px),
   'backdrop-blur': blur(8px),
@@ -10,7 +12,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BackdropBlur {
     /*x
     @mixin #{$key} {
       $tw-backdrop-blur: #{$value} !global;

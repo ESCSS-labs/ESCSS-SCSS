@@ -1,5 +1,8 @@
-@include describe('Utils') {
-  @include describe('Basic') {
+@use 'true' as *;
+@use '../awaken' as *;
+
+@include describe('Others') {
+  @include describe('utils') {
     @include it('sm') {
       @include assert {
         @include output {
@@ -11,7 +14,7 @@
         }
 
         @include expect {
-          @media (min-width: $_sm) {
+          @media (min-width: $SM) {
             color: red;
           }
         }
@@ -29,7 +32,7 @@
         }
 
         @include expect {
-          @media (min-width: $_md) {
+          @media (min-width: $MD) {
             color: red;
           }
         }
@@ -47,7 +50,7 @@
         }
 
         @include expect {
-          @media (min-width: $_lg) {
+          @media (min-width: $LG) {
             color: red;
           }
         }
@@ -65,7 +68,7 @@
         }
 
         @include expect {
-          @media (min-width: $_xl) {
+          @media (min-width: $XL) {
             color: red;
           }
         }
@@ -83,7 +86,7 @@
         }
 
         @include expect {
-          @media (min-width: $_xxl) {
+          @media (min-width: $XXL) {
             color: red;
           }
         }

@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$DropShadow: (
   'drop-shadow-sm': drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)),
   'drop-shadow': drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)),
   'drop-shadow-md': drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
@@ -12,7 +14,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $DropShadow {
     /*x
     @mixin #{$key} {
       $tw-drop-shadow: #{$value} !global;

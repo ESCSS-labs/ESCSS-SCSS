@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$TopRightBottomLeft: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -45,7 +47,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $TopRightBottomLeft {
     /*x
     @mixin inset-#{$key} {
       @include inset(#{$value});
@@ -132,7 +134,7 @@ $data: (
 
 @if $isNegative {
   @if $isBasic {
-    @each $key, $value in $data {
+    @each $key, $value in $TopRightBottomLeft {
       /*x
       @mixin \-inset-#{$key} {
         @include inset(-#{$value});

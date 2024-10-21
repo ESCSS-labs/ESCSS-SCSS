@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Brightness: (
   'brightness-0': brightness(0),
   'brightness-50': brightness(0.5),
   'brightness-75': brightness(0.75),
@@ -13,7 +15,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Brightness {
     /*x
     @mixin #{$key} {
       $tw-brightness: #{$value} !global;

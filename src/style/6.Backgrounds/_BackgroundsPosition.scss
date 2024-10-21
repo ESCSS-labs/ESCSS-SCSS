@@ -1,5 +1,7 @@
 // arbitrary utility same as  @mixin bg-($v)
-$data: (
+@use '../setting' as *;
+
+$BackgroundsPosition: (
   'bg-bottom': bottom,
   'bg-center': center,
   'bg-left': left,
@@ -12,7 +14,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BackgroundsPosition {
     /*x
     @mixin #{$key} {
       @include background-position(#{$value});

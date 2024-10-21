@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$MaxHeight: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -46,7 +48,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $MaxHeight {
     /*x
     @mixin max-h-#{$key} {
       @include max-height(#{$value});

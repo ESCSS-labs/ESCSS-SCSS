@@ -1,3 +1,6 @@
+@use 'true' as *;
+@use '../awaken' as *;
+
 @include describe('1.Layout') {
   @include describe('Container') {
     @include describe('Basic') {
@@ -10,24 +13,24 @@
           @include expect {
             width: 100%;
 
-            @media (min-width: $_sm) {
-              max-width: $_sm;
+            @media (min-width: $SM) {
+              max-width: $SM;
             }
 
-            @media (min-width: $_md) {
-              max-width: $_md;
+            @media (min-width: $MD) {
+              max-width: $MD;
             }
 
-            @media (min-width: $_lg) {
-              max-width: $_lg;
+            @media (min-width: $LG) {
+              max-width: $LG;
             }
 
-            @media (min-width: $_xl) {
-              max-width: $_xl;
+            @media (min-width: $XL) {
+              max-width: $XL;
             }
 
-            @media (min-width: $_xxl) {
-              max-width: $_xxl;
+            @media (min-width: $XXL) {
+              max-width: $XXL;
             }
           }
         }

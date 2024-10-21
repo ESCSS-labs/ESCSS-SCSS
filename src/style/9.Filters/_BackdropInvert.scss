@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$BackdropInvert: (
   'backdrop-invert-0': invert(0),
   'backdrop-invert': invert(100%),
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BackdropInvert {
     /*x
     @mixin #{$key} {
       $tw-backdrop-invert: #{$value} !global;

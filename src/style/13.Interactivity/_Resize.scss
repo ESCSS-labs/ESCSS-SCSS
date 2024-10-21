@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Resize: (
   'resize-none': none,
   'resize-y': vertical,
   'resize-x': horizontal,
@@ -6,7 +8,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Resize {
     // atomic handle resize
     @if $key != 'resize' {
       /*x

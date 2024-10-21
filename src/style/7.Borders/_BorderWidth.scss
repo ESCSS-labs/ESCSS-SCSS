@@ -1,5 +1,7 @@
 // arbitrary utility same as @mixin border-($v)
-$data: (
+@use '../setting' as *;
+
+$BorderWidth: (
   '-0': 0px,
   null: 1px,
   '-2': 2px,
@@ -8,7 +10,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BorderWidth {
     /*x
     @mixin border#{$key} {
       @include border-width(#{$value});

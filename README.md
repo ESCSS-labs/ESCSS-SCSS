@@ -41,11 +41,11 @@ Atomic CSS abstraction ensures optimal performance and consistent styling.
 
 ```scss
 // _awaken.scss
-$_sm: 0px;
-$_md: 0px;
-$_lg: 0px;
-$_xl: 0px;
-$_xxl: 0px;
+$SM: 0px;
+$MD: 0px;
+$LG: 0px;
+$XL: 0px;
+$XXL: 0px;
 ```
 
 ### Same as Tailwind
@@ -211,7 +211,7 @@ export default defineConfig({
 
 ## Q&A
 
-### Why are the default values of breakpoints(sm、md..) set to 0px?
+### Why are the default values of breakpoints($SM、$MD..) set to 0px?
 
 Every project has its own unique design requirements, so I set 0 as the default breakpoint. Due to the nature of CSS, this might make it easier to trigger the open source obligations outlined in [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html). At the same time, I believe it's fair to earn money for my work.
 

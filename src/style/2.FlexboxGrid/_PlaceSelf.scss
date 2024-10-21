@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$PlaceSelf: (
   'place-self-auto': auto,
   'place-self-start': start,
   'place-self-end': end,
@@ -7,7 +9,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $PlaceSelf {
     /*x
     @mixin #{$key} {
       @include place-self(#{$value});

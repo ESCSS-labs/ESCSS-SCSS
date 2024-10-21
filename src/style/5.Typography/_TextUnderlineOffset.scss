@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$TextUnderlineOffset: (
   'underline-offset-auto': auto,
   'underline-offset-0': 0px,
   'underline-offset-1': 1px,
@@ -8,7 +10,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $TextUnderlineOffset {
     /*x
     @mixin #{$key} {
       @include text-underline-offset(#{$value});

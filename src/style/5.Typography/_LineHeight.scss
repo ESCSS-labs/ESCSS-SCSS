@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$LineHeight: (
   'leading-3': '$leading-3',
   'leading-4': '$leading-4',
   'leading-5': '$leading-5',
@@ -16,7 +18,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $LineHeight {
     /*x
     @mixin #{$key} {
       @include line-height(#{$value});

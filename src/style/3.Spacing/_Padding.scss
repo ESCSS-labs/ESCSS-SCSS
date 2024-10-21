@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Padding: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -37,7 +39,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Padding {
     /*x
     @mixin p-#{$key} {
       @include padding(#{$value});

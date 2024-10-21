@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$AccentColor: (
   'name-50': '$name-50',
   'name-100': '$name-100',
   'name-200': '$name-200',
@@ -296,7 +298,7 @@ $data: (
     @include accent-color(transparent);
   }
   x*/
-  @each $key, $value in $data {
+  @each $key, $value in $AccentColor {
     /*x
     @mixin accent-#{$key}($v: 1) {
       @include accent-color(_c(#{$value}, $v));

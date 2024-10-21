@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Margin: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -38,7 +40,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Margin {
     /*x
     @mixin m-#{$key} {
       @include margin(#{$value});
@@ -125,7 +127,7 @@ $data: (
 
 @if $isNegative {
   @if $isBasic {
-    @each $key, $value in $data {
+    @each $key, $value in $Margin {
       /*x
       @mixin \-m-#{$key} {
         @include margin(-#{$value});

@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Translate: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -44,7 +46,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Translate {
     /*x
     @mixin translate-x-#{$key} {
       $tw-translate-x: #{$value} !global;
@@ -75,7 +77,7 @@ $data: (
 
 @if $isNegative {
   @if $isBasic {
-    @each $key, $value in $data {
+    @each $key, $value in $Translate {
       /*x
       @mixin \-translate-x-#{$key} {
         $tw-translate-x: -#{$value} !global;

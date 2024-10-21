@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Position: (
   'static': static,
   'fixed': fixed,
   'absolute': absolute,
@@ -7,7 +9,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Position {
     /*x
     @mixin #{$key} {
       @include position(#{$value});

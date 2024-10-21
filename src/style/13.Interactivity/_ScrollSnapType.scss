@@ -1,4 +1,7 @@
-$data: (
+@use 'sass:list';
+@use '../setting' as *;
+
+$ScrollSnapType: (
   'snap-none': none,
   'snap-x': x '$tw-scroll-snap-strictness',
   'snap-y': y '$tw-scroll-snap-strictness',
@@ -8,7 +11,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $ScrollSnapType {
     @if list.index('snap-none', $key) {
       /*x
       @mixin #{$key} {

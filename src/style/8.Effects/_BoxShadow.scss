@@ -3,7 +3,10 @@
 // 1st property: $tw-dummy-shadow-token
 // 2nd property: $tw-dummy-shadow-width
 // 3rd property: $tw-shadow-color
-$data: (
+@use 'sass:list';
+@use '../setting' as *;
+
+$BoxShadow: (
   'shadow-sm': (
     sm,
     (0 1px 2px 0, null),
@@ -47,7 +50,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BoxShadow {
     /*x
     @mixin #{$key} {
       $tw-dummy-shadow-token: #{list.nth($value, 1)} !global;

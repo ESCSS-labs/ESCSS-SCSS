@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Fill: (
   'name-50': '$name-50',
   'name-100': '$name-100',
   'name-200': '$name-200',
@@ -296,7 +298,7 @@ $data: (
     @include fill(transparent);
   }
   x*/
-  @each $key, $value in $data {
+  @each $key, $value in $Fill {
     /*x
     @mixin fill-#{$key}($v: 1) {
       @include fill(_c(#{$value}, $v));

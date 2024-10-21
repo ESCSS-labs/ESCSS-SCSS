@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Clear: (
   'clear-start': inline-start,
   'clear-end': inline-end,
   'clear-left': left,
@@ -8,7 +10,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Clear {
     /*x
     @mixin #{$key} {
       @include clear(#{$value});

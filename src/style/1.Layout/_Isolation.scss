@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$Isolation: (
   'isolate': isolate,
   'isolation-auto': auto,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Isolation {
     /*x
     @mixin #{$key} {
       @include isolation(#{$value});

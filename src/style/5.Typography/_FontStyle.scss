@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$FontStyle: (
   'italic': italic,
   'not-italic': normal,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $FontStyle {
     /*x
     @mixin #{$key} {
       @include font-style(#{$value});

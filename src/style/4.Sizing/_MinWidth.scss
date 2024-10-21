@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$MinWidth: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -41,7 +43,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $MinWidth {
     /*x
     @mixin min-w-#{$key} {
       @include min-width(#{$value});

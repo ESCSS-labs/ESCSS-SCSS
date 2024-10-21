@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$ScrollSnapAlign: (
   'snap-start': start,
   'snap-end': end,
   'snap-center': center,
@@ -6,7 +8,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $ScrollSnapAlign {
     /*x
     @mixin #{$key} {
       @include scroll-snap-align(#{$value});

@@ -1,4 +1,8 @@
-$data: (
+@use 'sass:meta';
+@use 'sass:list';
+@use '../setting' as *;
+
+$TextDecorationColor: (
   'name-50': '$name-50',
   'name-100': '$name-100',
   'name-200': '$name-200',
@@ -292,7 +296,7 @@ $data: (
     @include text-decoration-color(transparent);
   }
   x*/
-  @each $key, $value in $data {
+  @each $key, $value in $TextDecorationColor {
     /*x
     @mixin decoration-#{$key}($v: 1) {
       @include text-decoration-color(_c(#{$value}, $v));

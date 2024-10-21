@@ -1,5 +1,8 @@
-@include describe('atomic') {
-  @include describe('Custom') {
+@use 'true' as *;
+@use '../awaken' as *;
+
+@include describe('Others') {
+  @include describe('atomic') {
     @include it('cursor(url(hand.cur), pointer)') {
       @include assert {
         @include output {
@@ -29,7 +32,7 @@
     @include it('-moz-osx-font-smoothing(1)') {
       @include assert {
         @include output {
-          @include -moz-osx-font-smoothing(1);
+          @include \-moz-osx-font-smoothing(1);
           @include utils_reset-tw;
         }
 
@@ -42,7 +45,7 @@
     @include it('-webkit-box-orient(1)') {
       @include assert {
         @include output {
-          @include -webkit-box-orient(1);
+          @include \-webkit-box-orient(1);
           @include utils_reset-tw;
         }
 
@@ -55,7 +58,7 @@
     @include it('-webkit-font-smoothing(1)') {
       @include assert {
         @include output {
-          @include -webkit-font-smoothing(1);
+          @include \-webkit-font-smoothing(1);
           @include utils_reset-tw;
         }
 
@@ -68,7 +71,7 @@
     @include it('-webkit-line-clamp(1)') {
       @include assert {
         @include output {
-          @include -webkit-line-clamp(1);
+          @include \-webkit-line-clamp(1);
           @include utils_reset-tw;
         }
 

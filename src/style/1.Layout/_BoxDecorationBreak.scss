@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$BoxDecorationBreak: (
   'box-decoration-clone': clone,
   'box-decoration-slice': slice,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BoxDecorationBreak {
     /*x
     @mixin #{$key} {
       @include box-decoration-break(#{$value});
