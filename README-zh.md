@@ -17,15 +17,9 @@ ESCSS-SCSS 是一個整合了 CSS 和 Tailwind 的全部潛力的 SCSS 檔案。
 原子化 CSS 抽象層，帶來了最佳化性能和一致性的樣式。
 
 ```scss
-@mixin margin($v, $rwd: null) {
+@mixin margin($v) {
   & {
-    @if $rwd==null {
-      margin: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        margin: $v;
-      }
-    }
+    margin: $v;
   }
 }
 ```

@@ -22,15 +22,9 @@ Atomic CSS abstraction ensures optimal performance and consistent styling.
 
 ```scss
 // An Atomic CSS mixin contains CSS properties with breakpoints. The & follows [Breaking Change: Mixed Declarations](https://sass-lang.com/documentation/breaking-changes/mixed-decls/)
-@mixin margin($v, $rwd: null) {
+@mixin margin($v) {
   & {
-    @if $rwd==null {
-      margin: $v;
-    } @else {
-      @media (min-width: $rwd) {
-        margin: $v;
-      }
-    }
+    margin: $v;
   }
 }
 ```
