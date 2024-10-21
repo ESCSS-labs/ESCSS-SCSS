@@ -7,7 +7,10 @@
 // 7th property: clip
 // 8th property: white-space
 // 9th property: border-width
-$data: (
+@use 'sass:list';
+@use '../setting' as *;
+
+$ScreenReaders: (
   'sr-only': (
     absolute,
     1px,
@@ -33,7 +36,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $ScreenReaders {
     /*x
     @mixin #{$key} {
       @include position(#{list.nth($value, 1)});

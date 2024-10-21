@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$BackdropSepia: (
   'backdrop-sepia-0': sepia(0),
   'backdrop-sepia': sepia(100%),
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BackdropSepia {
     /*x
     @mixin #{$key} {
       $tw-backdrop-sepia: #{$value} !global;

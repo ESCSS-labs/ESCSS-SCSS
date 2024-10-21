@@ -1,11 +1,13 @@
-$data: (
+@use '../setting' as *;
+
+$BackgroundsOrigin: (
   'bg-origin-border': border-box,
   'bg-origin-padding': padding-box,
   'bg-origin-content': content-box,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BackgroundsOrigin {
     /*x
     @mixin #{$key}{
       @include background-origin(#{$value});

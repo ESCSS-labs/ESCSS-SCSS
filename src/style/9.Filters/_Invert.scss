@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$Invert: (
   'invert-0': invert(0),
   'invert': invert(100%),
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Invert {
     /*x
     @mixin #{$key} {
       $tw-invert: #{$value} !global;

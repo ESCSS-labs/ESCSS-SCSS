@@ -1,5 +1,7 @@
 // arbitrary utility same as @mixin ring-offset-($v)
-$data: (
+@use '../setting' as *;
+
+$RingOffsetWidth: (
   'ring-offset-0': 0px,
   'ring-offset-1': 1px,
   'ring-offset-2': 2px,
@@ -8,7 +10,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $RingOffsetWidth {
     /*x
     @mixin #{$key} {
       @if $tw-mismatch--ring-offset-width {

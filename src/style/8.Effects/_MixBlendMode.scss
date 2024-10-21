@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$MixBlendMode: (
   'mix-blend-normal': normal,
   'mix-blend-multiply': multiply,
   'mix-blend-screen': screen,
@@ -20,7 +22,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $MixBlendMode {
     /*x
     @mixin #{$key}{
       @include mix-blend-mode(#{$value});

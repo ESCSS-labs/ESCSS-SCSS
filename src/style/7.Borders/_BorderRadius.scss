@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$BorderRadius: (
   '-none': 0px,
   '-sm': '$rounded-sm',
   null: '$rounded',
@@ -11,7 +13,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BorderRadius {
     /*x
     @mixin rounded#{$key} {
       @include border-radius(#{$value});

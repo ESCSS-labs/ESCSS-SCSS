@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$BackdropGrayscale: (
   'backdrop-grayscale-0': grayscale(0),
   'backdrop-grayscale': grayscale(100%),
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BackdropGrayscale {
     /*x
     @mixin #{$key} {
       $tw-backdrop-invert: #{$value} !global;

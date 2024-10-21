@@ -1,5 +1,7 @@
 // arbitrary utility same as  @mixin bg-($v)
-$data: (
+@use '../setting' as *;
+
+$BackgroundsImage: (
   'bg-none': none,
   'bg-gradient-to-t': to top,
   'bg-gradient-to-tr': to top right,
@@ -12,7 +14,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BackgroundsImage {
     /*x
     @mixin #{$key} {
       $tw-dummy-gradient-direction: #{$value} !global;

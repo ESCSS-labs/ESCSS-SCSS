@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$SpaceBetween: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -57,7 +59,7 @@ $data: (
   }
   x*/
 
-  @each $key, $value in $data {
+  @each $key, $value in $SpaceBetween {
     /*x
     @mixin space-x-#{$key} {
       $tw-dummy-space-x-value: #{$value} !global;
@@ -123,7 +125,7 @@ $data: (
         }
       }
     x*/
-    @each $key, $value in $data {
+    @each $key, $value in $SpaceBetween {
       /*x
       @mixin \-space-x-#{$key} {
         $tw-dummy-space-x-value: -#{$value} !global;

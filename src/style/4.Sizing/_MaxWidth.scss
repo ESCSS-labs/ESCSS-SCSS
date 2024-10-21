@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$MaxWidth: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -51,15 +53,15 @@ $data: (
   'max': max-content,
   'fit': fit-content,
   'prose': 65ch,
-  'screen-sm': '$_sm',
-  'screen-md': '$_md',
-  'screen-lg': '$_lg',
-  'screen-xl': '$_xl',
-  'screen-2xl': '$_xxl',
+  'screen-sm': '$SM',
+  'screen-md': '$MD',
+  'screen-lg': '$LG',
+  'screen-xl': '$XL',
+  'screen-2xl': '$XXL',
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $MaxWidth {
     /*x
     @mixin max-w-#{$key} {
       @include max-width(#{$value});

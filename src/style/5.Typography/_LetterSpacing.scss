@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$LetterSpacing: (
   'tracking-tighter': '$tighter',
   'tracking-tight': '$tight',
   'tracking-normal': '$normal',
@@ -8,7 +10,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $LetterSpacing {
     /*x
     @mixin #{$key} {
       @include letter-spacing(#{$value});
@@ -26,7 +28,7 @@ $data: (
 
 @if $isNegative {
   @if $isBasic {
-    @each $key, $value in $data {
+    @each $key, $value in $LetterSpacing {
       /*x
       @mixin \-#{$key} {
         @include letter-spacing(-#{$value});

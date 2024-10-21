@@ -2,7 +2,10 @@
 // 2nd property: display
 // 3rd property: -webkit-box-orient
 // 4th property: -webkit-line-clamp
-$data: (
+@use 'sass:list';
+@use '../setting' as *;
+
+$LineClamp: (
   'line-clamp-1': (
     hidden,
     -webkit-box,
@@ -48,13 +51,13 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $LineClamp {
     /*x
     @mixin #{$key} {
       @include overflow(#{list.nth($value, 1)});
       @include display(#{list.nth($value, 2)});
-      @include -webkit-box-orient(#{list.nth($value, 3)});
-      @include -webkit-line-clamp(#{list.nth($value, 4)});
+      @include \-webkit-box-orient(#{list.nth($value, 3)});
+      @include \-webkit-line-clamp(#{list.nth($value, 4)});
     }
     x*/
   }
@@ -65,8 +68,8 @@ $data: (
   @mixin line-clamp-($v) {
     @include overflow(hidden);
     @include display(-webkit-box);
-    @include -webkit-box-orient(vertical);
-    @include -webkit-line-clamp($v);
+    @include \-webkit-box-orient(vertical);
+    @include \-webkit-line-clamp($v);
   }
   x*/
 }

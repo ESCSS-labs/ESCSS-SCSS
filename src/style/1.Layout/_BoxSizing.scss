@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$BoxSizing: (
   'box-border': border-box,
   'box-content': content-box,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BoxSizing {
     /*x
     @mixin #{$key} {
       @include box-sizing(#{$value});

@@ -1,11 +1,13 @@
-$data: (
+@use '../setting' as *;
+
+$BackgroundsAttachment: (
   'bg-fixed': fixed,
   'bg-local': local,
   'bg-scroll': scroll,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BackgroundsAttachment {
     /*x
     @mixin #{$key}{
       @include background-attachment(#{$value});

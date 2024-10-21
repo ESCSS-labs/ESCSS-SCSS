@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Skew: (
   '0': 0deg,
   '1': 1deg,
   '2': 2deg,
@@ -8,7 +10,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Skew {
     /*x
     @mixin skew-x-#{$key} {
       $tw-skew-x: #{$value} !global;
@@ -39,7 +41,7 @@ $data: (
 
 @if $isNegative {
   @if $isBasic {
-    @each $key, $value in $data {
+    @each $key, $value in $Skew {
       /*x
       @mixin \-skew-x-#{$key} {
         $tw-skew-x: #{-$value} !global;

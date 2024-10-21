@@ -1,12 +1,14 @@
 // arbitrary utility same as @mixin bg-($v)
-$data: (
+@use '../setting' as *;
+
+$BackgroundsSize: (
   'bg-auto': auto,
   'bg-cover': cover,
   'bg-contain': contain,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BackgroundsSize {
     /*x
     @mixin #{$key} {
       @include background-size(#{$value});

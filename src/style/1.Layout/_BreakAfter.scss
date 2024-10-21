@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$BreakAfter: (
   'break-after-auto': auto,
   'break-after-avoid': avoid,
   'break-after-all': all,
@@ -10,7 +12,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BreakAfter {
     /*x
     @mixin #{$key} {
       @include break-after(#{$value});

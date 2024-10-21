@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$FlexShrink: (
   'shrink': 1,
   'shrink-0': 0,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $FlexShrink {
     /*x
     @mixin #{$key} {
       @include flex-shrink(#{$value});

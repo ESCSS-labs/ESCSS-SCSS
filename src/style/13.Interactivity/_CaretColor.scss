@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$CaretColor: (
   'name-50': '$name-50',
   'name-100': '$name-100',
   'name-200': '$name-200',
@@ -292,7 +294,7 @@ $data: (
     @include caret-color(transparent);
   }
   x*/
-  @each $key, $value in $data {
+  @each $key, $value in $CaretColor {
     /*x
     @mixin caret-#{$key}($v: 1) {
       @include caret-color(_c(#{$value}, $v));

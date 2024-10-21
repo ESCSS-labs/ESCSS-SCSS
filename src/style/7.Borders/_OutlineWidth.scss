@@ -1,5 +1,7 @@
 // arbitrary utility same as @mixin outline-($v)
-$data: (
+@use '../setting' as *;
+
+$OutlineWidth: (
   'outline-0': 0px,
   'outline-1': 1px,
   'outline-2': 2px,
@@ -8,7 +10,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $OutlineWidth {
     /*x
     @mixin #{$key} {
       @include outline-width(#{$value});

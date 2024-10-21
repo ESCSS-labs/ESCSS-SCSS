@@ -1,5 +1,8 @@
 // arbitrary utility same as @mixin text-($v)
-$data: (
+@use 'sass:list';
+@use '../setting' as *;
+
+$FontSize: (
   'text-xs': (
     '$font-size_xs',
     '$line-height_xs',
@@ -55,7 +58,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $FontSize {
     /*x
     @mixin #{$key} {
       @include font-size(#{list.nth($value, 1)});

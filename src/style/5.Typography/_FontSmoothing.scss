@@ -1,6 +1,9 @@
 // 1st property: -webkit-font-smoothing
 // 2nd property: -moz-osx-font-smoothing
-$data: (
+@use 'sass:list';
+@use '../setting' as *;
+
+$FontSmoothing: (
   'antialiased': (
     antialiased,
     grayscale,
@@ -12,11 +15,11 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $FontSmoothing {
     /*x
     @mixin #{$key} {
-      @include -webkit-font-smoothing(#{list.nth($value, 1)});
-      @include -moz-osx-font-smoothing(#{list.nth($value, 2)});
+      @include \-webkit-font-smoothing(#{list.nth($value, 1)});
+      @include \-moz-osx-font-smoothing(#{list.nth($value, 2)});
     }
     x*/
   }

@@ -1,5 +1,8 @@
 // arbitrary utility same as @mixin font-($v)
-$data: (
+@use 'sass:meta';
+@use '../setting' as *;
+
+$FontFamily: (
   'font-sans': (
     ui-sans-serif,
     system-ui,
@@ -30,7 +33,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $FontFamily {
     /*x
     @mixin #{$key} {
       @include font-family((#{meta.inspect($value)}));

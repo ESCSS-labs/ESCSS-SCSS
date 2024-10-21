@@ -36,11 +36,11 @@ ESCSS-SCSS 是一個整合了 CSS 和 Tailwind 的全部潛力的 SCSS 檔案。
 
 ```scss
 // _awaken.scss
-$_sm: 0px;
-$_md: 0px;
-$_lg: 0px;
-$_xl: 0px;
-$_xxl: 0px;
+$SM: 0px;
+$MD: 0px;
+$LG: 0px;
+$XL: 0px;
+$XXL: 0px;
 ```
 
 ### 與 Tailwind 用法相同
@@ -206,7 +206,7 @@ export default defineConfig({
 
 ## 問與答
 
-### 為何默認斷點設置為(sm、md..) 0 px?
+### 為何默認斷點設置為($SM、$MD..) 0 px?
 
 每個專案都有自己獨特的斷點，所以我設置 0 為默認值，由於 CSS 的特性，這相對容易觸發到 [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html) 的開源義務。同時，我認爲從工作中獲取報酬是合理。
 

@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Order: (
   'order-1': 1,
   'order-2': 2,
   'order-3': 3,
@@ -17,7 +19,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Order {
     /*x
     @mixin #{$key} {
       @include order(#{$value});
@@ -35,7 +37,7 @@ $data: (
 
 @if $isNegative {
   @if $isBasic {
-    @each $key, $value in $data {
+    @each $key, $value in $Order {
       /*x
       @mixin \-#{$key} {
         @include order(#{-$value});

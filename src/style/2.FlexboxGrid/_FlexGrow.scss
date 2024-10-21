@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$FlexGrow: (
   'grow': 1,
   'grow-0': 0,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $FlexGrow {
     /*x
     @mixin #{$key} {
       @include flex-grow(#{$value});

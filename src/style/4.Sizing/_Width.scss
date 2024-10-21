@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Width: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -72,7 +74,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Width {
     /*x
     @mixin w-#{$key} {
       @include width(#{$value});

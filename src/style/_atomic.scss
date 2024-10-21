@@ -1,8 +1,4 @@
 $atomic: (
-  '-moz-osx-font-smoothing',
-  '-webkit-box-orient',
-  '-webkit-font-smoothing',
-  '-webkit-line-clamp',
   'accent-color',
   'align-content',
   'align-items',
@@ -196,6 +192,64 @@ $atomic: (
   'z-index'
 );
 
+/*x
+@mixin \-moz-osx-font-smoothing($v, $rwd: null) {
+  & {
+    @if $rwd==null {
+      -moz-osx-font-smoothing: $v;
+    }
+
+    @else {
+      @media (min-width: $rwd) {
+        -moz-osx-font-smoothing: $v;
+      }
+    }
+  }
+}
+
+@mixin \-webkit-box-orient($v, $rwd: null) {
+  & {
+    @if $rwd==null {
+      -webkit-box-orient: $v;
+    }
+
+    @else {
+      @media (min-width: $rwd) {
+        -webkit-box-orient: $v;
+      }
+    }
+  }
+}
+
+@mixin \-webkit-font-smoothing($v, $rwd: null) {
+  & {
+    @if $rwd==null {
+      -webkit-font-smoothing: $v;
+    }
+
+    @else {
+      @media (min-width: $rwd) {
+        -webkit-font-smoothing: $v;
+      }
+    }
+  }
+}
+
+@mixin \-webkit-line-clamp($v, $rwd: null) {
+  & {
+    @if $rwd==null {
+      -webkit-line-clamp: $v;
+    }
+
+    @else {
+      @media (min-width: $rwd) {
+        -webkit-line-clamp: $v;
+      }
+    }
+  }
+}
+x*/
+
 @each $property in $atomic {
   @if $property == 'flex' {
     /*x
@@ -351,7 +405,7 @@ $atomic: (
     x*/
   } @else {
     /*x
-    @mixin #{$property }($v, $rwd: null) {
+    @mixin #{$property}($v, $rwd: null) {
       & {
         @if $rwd==null {
           #{$property}: $v;

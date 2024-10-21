@@ -1,4 +1,8 @@
-$data: (
+@use 'sass:meta';
+@use 'sass:list';
+@use '../setting' as *;
+
+$BoxShadowColor: (
   'name-50': '$name-50',
   'name-100': '$name-100',
   'name-200': '$name-200',
@@ -298,7 +302,7 @@ $data: (
     @include box-shadow(_b-s());
   }
   x*/
-  @each $key, $value in $data {
+  @each $key, $value in $BoxShadowColor {
     /*x
     @mixin shadow-#{$key}($v: 1) {
       $tw-mismatch--shadow-color: true !global;

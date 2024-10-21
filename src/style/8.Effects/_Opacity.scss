@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Opacity: (
   'opacity-0': 0,
   'opacity-5': 0.05,
   'opacity-10': 0.1,
@@ -23,7 +25,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Opacity {
     /*x
     @mixin #{$key} {
       @include opacity(#{$value});

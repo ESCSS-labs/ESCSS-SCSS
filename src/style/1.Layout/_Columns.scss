@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Columns: (
   'columns-1': 1,
   'columns-2': 2,
   'columns-3': 3,
@@ -28,7 +30,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Columns {
     /*x
     @mixin #{$key} {
       @include columns(#{$value});

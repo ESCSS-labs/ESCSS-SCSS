@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$PointerEvents: (
   'pointer-events-none': none,
   'pointer-events-auto': auto,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $PointerEvents {
     /*x
     @mixin #{$key} {
       @include pointer-events(#{$value});

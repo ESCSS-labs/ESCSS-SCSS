@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$BreakInside: (
   'break-inside-auto': auto,
   'break-inside-avoid': avoid,
   'break-inside-avoid-page': avoid-page,
@@ -6,7 +8,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BreakInside {
     /*x
     @mixin #{$key} {
       @include break-inside(#{$value});

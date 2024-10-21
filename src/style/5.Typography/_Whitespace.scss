@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$Whitespace: (
   'whitespace-normal': normal,
   'whitespace-nowrap': nowrap,
   'whitespace-pre': pre,
@@ -8,7 +10,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Whitespace {
     /*x
     @mixin #{$key}{
       @include white-space(#{$value});

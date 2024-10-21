@@ -1,11 +1,13 @@
-$data: (
+@use '../setting' as *;
+
+$Hyphens: (
   'hyphens-none': none,
   'hyphens-manual': manual,
   'hyphens-auto': auto,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $Hyphens {
     /*x
     @mixin #{$key}{
       @include hyphens(#{$value});

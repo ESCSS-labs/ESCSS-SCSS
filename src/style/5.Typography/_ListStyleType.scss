@@ -1,11 +1,13 @@
-$data: (
+@use '../setting' as *;
+
+$ListStyleType: (
   'list-none': none,
   'list-disc': disc,
   'list-decimal': decimal,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $ListStyleType {
     /*x
     @mixin #{$key} {
       @include list-style-type(#{$value});

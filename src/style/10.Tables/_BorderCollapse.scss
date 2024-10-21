@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$BorderCollapse: (
   'border-collapse': collapse,
   'border-separate': separate,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $BorderCollapse {
     // atomic handle border-collapse
     @if $key != 'border-collapse' {
       /*x

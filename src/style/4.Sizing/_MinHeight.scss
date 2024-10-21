@@ -1,4 +1,6 @@
-$data: (
+@use '../setting' as *;
+
+$MinHeight: (
   '0': '$space-0',
   'px': '$px',
   '0\\.5': '$space-0\\.5',
@@ -45,7 +47,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $MinHeight {
     /*x
     @mixin min-h-#{$key} {
       @include min-height(#{$value});

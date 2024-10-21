@@ -1,5 +1,7 @@
 // arbitrary utility same as @mixin decoration-($v)
-$data: (
+@use '../setting' as *;
+
+$TextDecorationThickness: (
   'decoration-auto': auto,
   'decoration-from-font': from-font,
   'decoration-0': 0px,
@@ -10,7 +12,7 @@ $data: (
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $TextDecorationThickness {
     /*x
     @mixin #{$key} {
       @include text-decoration-thickness(#{$value});

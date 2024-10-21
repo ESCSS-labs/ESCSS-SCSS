@@ -1,10 +1,12 @@
-$data: (
+@use '../setting' as *;
+
+$ListStylePosition: (
   'list-inside': inside,
   'list-outside': outside,
 );
 
 @if $isBasic {
-  @each $key, $value in $data {
+  @each $key, $value in $ListStylePosition {
     /*x
     @mixin #{$key}{
       @include list-style-position(#{$value});
