@@ -308,19 +308,24 @@ $BackgroundsColor: (
 @if $isArbitrary {
   /*x
   @mixin bg-($v) {
+    // Filtering by type
+    // color
     @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
       @include background-color($v);
     }
 
+    // list (length)
     @else if list.nth($v, 1)==length {
-      // remove the token "length" to identify background-size
-      @include background-size(list.set-nth($v, 1, #/*x{""}));
+      // remove the background-size token "length"
+      @include background-size(list.set-nth($v, 1, #/*x{''}));
     }
 
+    // list、number、string(top、right、left、center)
     @else if list.index(top right bottom left center, $v) or meta.type-of($v)==number or meta.type-of($v)==list {
       @include background-position($v);
     }
 
+    // string 
     @else {
       @include background-image($v);
     }

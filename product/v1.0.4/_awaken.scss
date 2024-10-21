@@ -17672,7 +17672,16 @@ $tw-mismatch--ring-offset-width: false;
 @mixin text-($v) {
   @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
     @include color($v);
-  } @else {
+  }
+
+  // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
+  @else if meta.type-of($v) ==list {
+    @include font-size(list.nth($v, 1));
+    @include line-height(list.nth($v, 2));
+  }
+
+  // e.g. text-(14px)
+  @else {
     @include font-size($v);
   }
 }
@@ -20460,20 +20469,12 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin bg-($v) {
-  // Filtering by type
-  // color
   @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
     @include background-color($v);
-  }
-
-  // list (length)
-  @else if list.nth($v, 1) ==length {
-    // remove the background-size token "length"
+  } @else if list.nth($v, 1) ==length {
+    // remove the token "length" to identify background-size
     @include background-size(list.set-nth($v, 1, #{''}));
-  }
-
-  // list、number、string(top、right、left、center)
-  @else if
+  } @else if
     list.index(top right bottom left center, $v) or
     meta.type-of($v)
     ==number or
@@ -20481,10 +20482,7 @@ $tw-mismatch--ring-offset-width: false;
     ==list
   {
     @include background-position($v);
-  }
-
-  // string
-  @else {
+  } @else {
     @include background-image($v);
   }
 }

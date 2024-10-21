@@ -312,13 +312,6 @@ $TextColor: (
       @include color($v);
     }
 
-    // e.g. text-sm、text-sm\/3、text-sm\/loose、text-sm\/(17px)
-    @else if meta.type-of($v)==list {
-      @include font-size(list.nth($v, 1));
-      @include line-height(list.nth($v, 2));
-    }
-
-    // e.g. text-(14px)
     @else {
       @include font-size($v);
     }

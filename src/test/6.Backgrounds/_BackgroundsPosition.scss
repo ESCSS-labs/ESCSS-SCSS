@@ -122,4 +122,19 @@
       }
     }
   }
+
+  @include describe('Custom') {
+    @include it('bg-(center top 1rem)') {
+      @include assert {
+        @include output {
+          @include bg-(center top 1rem);
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          background-position: center top 1rem;
+        }
+      }
+    }
+  }
 }
