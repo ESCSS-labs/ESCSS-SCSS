@@ -40,7 +40,7 @@ $XXL: 0px;
 ### 與 Tailwind 用法相同
 
 - 支援: basic / arbitrary / media / dark mode utilities。
-- 效能考量: 部分 mixin 需要 \、() 來降低檔案大小。
+- 效能: 部分 mixin 需要 `\`、`()` 來降低檔案大小。
 
   ```scss
   #Demo {
@@ -52,6 +52,7 @@ $XXL: 0px;
     @include bg-rose-500; // same
     @include bg-rose-500(25%); // bg-rose-500/[25%]
     @include bg-rose-500(0.25); // bg-rose-500/25
+    @include bg-(length 200px 100px); // bg-[length:200px_100px]
 
     // Media: sm、md、lg、xl、\2xl
     @include sm {
