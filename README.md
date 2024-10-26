@@ -8,7 +8,7 @@
 
 - [What is ESCSS-SCSS](#what-is-escss-scss)
 - [Core Concept - Atomic CSS](#core-concept---atomic-css)
-- [Usages](#usages)
+- [Usage](#usage)
 - [Installation](#installation)
 - [Q&A](#qa)
 
@@ -29,7 +29,7 @@ Atomic CSS abstraction ensures optimal performance and consistent styling.
 }
 ```
 
-## Usages
+## Usage
 
 ### Set your project's breakpoints.
 
@@ -45,7 +45,7 @@ $XXL: 0px;
 ### Same as Tailwind
 
 - Support: basic / arbitrary / media / dark mode utilities.
-- Performance considerations: Some mixins require \, () to reduce file size.
+- Performance: Some mixins require `\`, `()` to reduce file size.
 
   ```scss
   #Demo {
@@ -57,6 +57,7 @@ $XXL: 0px;
     @include bg-rose-500; // same
     @include bg-rose-500(25%); // bg-rose-500/[25%]
     @include bg-rose-500(0.25); // bg-rose-500/25
+    @include bg-(length 200px 100px); // bg-[length:200px_100px]
 
     // Media: sm、md、lg、xl、\2xl
     @include sm {
