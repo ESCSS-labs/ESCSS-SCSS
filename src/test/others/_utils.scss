@@ -3,6 +3,28 @@
 
 @include describe('Others') {
   @include describe('utils') {
+    @include it('dark') {
+      @include assert {
+        @include output {
+          @include dark {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          .dark & {
+            color: red;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            color: red;
+          }
+        }
+      }
+    }
+
     @include it('sm') {
       @include assert {
         @include output {
@@ -93,10 +115,10 @@
       }
     }
 
-    @include it('dark') {
+    @include it('max-sm') {
       @include assert {
         @include output {
-          @include dark {
+          @include max-sm {
             color: red;
           }
 
@@ -104,14 +126,80 @@
         }
 
         @include expect {
-          .--dark & {
+          @media not all and (min-width: $SM) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    @include it('max-md') {
+      @include assert {
+        @include output {
+          @include max-md {
             color: red;
           }
 
-          @media (prefers-color-scheme: dark) {
-            & {
-              color: red;
-            }
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          @media not all and (min-width: $MD) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    @include it('max-lg') {
+      @include assert {
+        @include output {
+          @include max-lg {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          @media not all and (min-width: $LG) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    @include it('max-xl') {
+      @include assert {
+        @include output {
+          @include max-xl {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          @media not all and (min-width: $XL) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    @include it('max-2xl') {
+      @include assert {
+        @include output {
+          @include max-2xl {
+            color: red;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          @media not all and (min-width: $XXL) {
+            color: red;
           }
         }
       }

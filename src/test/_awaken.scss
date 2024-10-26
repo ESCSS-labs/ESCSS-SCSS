@@ -16,14 +16,13 @@ $XL: 0px;
 $XXL: 0px;
 
 // Colors
-// text-var-1、bg-var-1 ..
+// Use custom variables to replace color names in tailwind.config.js.
 $var-1: null;
 $var-2: null;
 $var-3: null;
 $var-4: null;
 $var-5: null;
 
-// text-name-1-50、bg-name-1-50 ..
 $name-1-50: null;
 $name-1-100: null;
 $name-1-200: null;
@@ -605,6 +604,16 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
+@mixin dark {
+  .dark & {
+    @content;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
 @mixin sm {
   @media (min-width: $SM) {
     @content;
@@ -635,15 +644,33 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-@mixin dark {
-  .--dark & {
+@mixin max-sm {
+  @media not all and (min-width: $SM) {
     @content;
   }
+}
 
-  @media (prefers-color-scheme: dark) {
-    & {
-      @content;
-    }
+@mixin max-md {
+  @media not all and (min-width: $MD) {
+    @content;
+  }
+}
+
+@mixin max-lg {
+  @media not all and (min-width: $LG) {
+    @content;
+  }
+}
+
+@mixin max-xl {
+  @media not all and (min-width: $XL) {
+    @content;
+  }
+}
+
+@mixin max-2xl {
+  @media not all and (min-width: $XXL) {
+    @content;
   }
 }
 
@@ -813,9 +840,11 @@ $tw-mismatch--ring-offset-width: false;
       position: relative;
       vertical-align: baseline;
     }
+
     sub {
       bottom: -0.25em;
     }
+
     sup {
       top: -0.5em;
     }
@@ -947,13 +976,16 @@ $tw-mismatch--ring-offset-width: false;
     pre {
       margin: 0;
     }
+
     fieldset {
       margin: 0;
       padding: 0;
     }
+
     legend {
       padding: 0;
     }
+
     ol,
     ul,
     menu {
@@ -1057,15 +1089,18 @@ $tw-mismatch--ring-offset-width: false;
         'Segoe UI Symbol', 'Noto Color Emoji';
       -webkit-tap-highlight-color: transparent;
     }
+
     hr {
       height: 0;
       color: inherit;
       border-top-width: 1px;
     }
+
     abbr:where([title]) {
       -webkit-text-decoration: underline dotted;
       text-decoration: underline dotted;
     }
+
     h1,
     h2,
     h3,
@@ -1075,15 +1110,18 @@ $tw-mismatch--ring-offset-width: false;
       font-size: inherit;
       font-weight: inherit;
     }
+
     a {
       color: inherit;
       -webkit-text-decoration: inherit;
       text-decoration: inherit;
     }
+
     b,
     strong {
       font-weight: bolder;
     }
+
     code,
     kbd,
     samp,
@@ -1092,9 +1130,11 @@ $tw-mismatch--ring-offset-width: false;
         'Courier New', monospace;
       font-size: 1em;
     }
+
     small {
       font-size: 80%;
     }
+
     sub,
     sup {
       font-size: 75%;
@@ -1102,17 +1142,21 @@ $tw-mismatch--ring-offset-width: false;
       position: relative;
       vertical-align: baseline;
     }
+
     sub {
       bottom: -0.25em;
     }
+
     sup {
       top: -0.5em;
     }
+
     table {
       text-indent: 0;
       border-color: inherit;
       border-collapse: collapse;
     }
+
     button,
     input,
     optgroup,
@@ -1126,47 +1170,59 @@ $tw-mismatch--ring-offset-width: false;
       color: inherit;
       background: transparent;
     }
+
     input:where(:not([type='button'], [type='reset'], [type='submit'])),
     select,
     textarea {
       border: 1px solid;
     }
+
     button,
     input:where([type='button'], [type='reset'], [type='submit']),
     ::file-selector-button {
       appearance: button;
     }
+
     :-moz-focusring {
       outline: auto;
     }
+
     :-moz-ui-invalid {
       box-shadow: none;
     }
+
     progress {
       vertical-align: baseline;
     }
+
     ::-webkit-inner-spin-button,
     ::-webkit-outer-spin-button {
       height: auto;
     }
+
     ::-webkit-search-decoration {
       -webkit-appearance: none;
     }
+
     summary {
       display: list-item;
     }
+
     ol,
     ul,
     menu {
       list-style: none;
     }
+
     textarea {
       resize: vertical;
     }
+
     ::placeholder {
       opacity: 1;
       color: color-mix(in srgb, currentColor 50%, transparent);
     }
+
     img,
     svg,
     video,
@@ -1178,11 +1234,13 @@ $tw-mismatch--ring-offset-width: false;
       display: block;
       vertical-align: middle;
     }
+
     img,
     video {
       max-width: 100%;
       height: auto;
     }
+
     [hidden] {
       display: none !important;
     }
