@@ -523,7 +523,12 @@ $line-height-8: 2rem; // 32px
 $line-height-9: 2.25rem; // 36px
 $line-height-10: 2.5rem; // 40px
 
-// perspective ??
+// Perspective
+$perspective-dramatic: 100px;
+$perspective-near: 300px;
+$perspective-normal: 500px;
+$perspective-midrange: 800px;
+$perspective-distant: 1200px;
 
 // Transition Timing Function
 $transition-timing-function-linear: linear;
@@ -2176,6 +2181,14 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin z-index($v) {
   z-index: $v;
+}
+
+@mixin perspective($v) {
+  perspective: $v;
+}
+
+@mixin perspective-origin($v) {
+  perspective-origin: $v;
 }
 
 @mixin aspect-auto {
@@ -37913,6 +37926,66 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin ease-($v) {
   @include transition-timing-function($v);
+}
+
+@mixin perspective-none {
+  @include perspective(none);
+}
+
+@mixin perspective-dramatic {
+  @include perspective($perspective-dramatic);
+}
+
+@mixin perspective-near {
+  @include perspective($perspective-near);
+}
+
+@mixin perspective-normal {
+  @include perspective($perspective-normal);
+}
+
+@mixin perspective-midrange {
+  @include perspective($perspective-midrange);
+}
+
+@mixin perspective-distant {
+  @include perspective($perspective-distant);
+}
+
+@mixin perspective-origin-center {
+  @include perspective-origin(center);
+}
+
+@mixin perspective-origin-top {
+  @include perspective-origin(top);
+}
+
+@mixin perspective-origin-top-right {
+  @include perspective-origin(top right);
+}
+
+@mixin perspective-origin-right {
+  @include perspective-origin(right);
+}
+
+@mixin perspective-origin-bottom-right {
+  @include perspective-origin(bottom right);
+}
+
+@mixin perspective-origin-bottom {
+  @include perspective-origin(bottom);
+}
+
+@mixin perspective-origin-bottom-left {
+  @include perspective-origin(bottom left);
+}
+
+@mixin perspective-origin-left {
+  @include perspective-origin(left);
+}
+
+@mixin perspective-origin-top-left {
+  @include perspective-origin(top left);
 }
 
 @mixin transform-none {

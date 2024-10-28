@@ -1,0 +1,32 @@
+@use "../setting" as *;
+
+$PerspectiveOrigin: (
+  "perspective-origin-center": center,
+  "perspective-origin-top": top,
+  "perspective-origin-top-right": top right,
+  "perspective-origin-right": right,
+  "perspective-origin-bottom-right": bottom right,
+  "perspective-origin-bottom": bottom,
+  "perspective-origin-bottom-left": bottom left,
+  "perspective-origin-left": left,
+  "perspective-origin-top-left": top left,
+);
+
+@if $isBasic {
+  @each $key, $value in $PerspectiveOrigin {
+    /*x
+    @mixin #{$key} {
+      @include perspective-origin(#{$value});
+    }
+    x*/
+  }
+}
+
+// v4 arbitrary is not ready yet
+// @if $isArbitrary {
+//   /*x
+//   @mixin ??-($v) {
+//     @include perspective-origin($v);
+//   }
+//   x*/
+// }
