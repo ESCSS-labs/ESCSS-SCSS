@@ -1,16 +1,16 @@
-@use '../setting' as *;
+@use "../setting" as *;
 
 $TextWrap: (
-  'text-wrap': wrap,
-  'text-nowrap': nowrap,
-  'text-balance': balance,
-  'text-pretty': pretty,
+  "text-wrap": wrap,
+  "text-nowrap": nowrap,
+  "text-balance": balance,
+  "text-pretty": pretty,
 );
 
 @if $isBasic {
   @each $key, $value in $TextWrap {
     // atomic handle text-wrap
-    @if $key != 'text-wrap' {
+    @if $key != "text-wrap" {
       /*x
     @mixin #{$key}{
       @include text-wrap(#{$value});

@@ -1,10 +1,10 @@
-@use 'true' as *;
-@use '../awaken' as *;
+@use "true" as *;
+@use "../awaken" as *;
 
-@include describe('11.Transitions & Animation') {
-  @include describe('Transition Property') {
-    @include describe('Basic') {
-      @include it('transition-none') {
+@include describe("11.Transitions & Animation") {
+  @include describe("Transition Property") {
+    @include describe("Basic") {
+      @include it("transition-none") {
         @include assert {
           @include output {
             @include transition-none;
@@ -17,7 +17,7 @@
         }
       }
 
-      @include it('transition-all') {
+      @include it("transition-all") {
         @include assert {
           @include output {
             @include transition-all;
@@ -38,7 +38,7 @@
         }
       }
 
-      @include it('transition') {
+      @include it("transition") {
         @include assert {
           @include output {
             @include transition;
@@ -47,8 +47,9 @@
 
           @include expect {
             & {
-              transition-property: color, background-color, border-color, text-decoration-color,
-                fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+              transition-property: color, background-color, border-color,
+                text-decoration-color, fill, stroke, opacity, box-shadow,
+                transform, filter, backdrop-filter;
             }
             & {
               transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,7 +61,7 @@
         }
       }
 
-      @include it('transition-colors') {
+      @include it("transition-colors") {
         @include assert {
           @include output {
             @include transition-colors;
@@ -69,8 +70,8 @@
 
           @include expect {
             & {
-              transition-property: color, background-color, border-color, text-decoration-color,
-                fill, stroke;
+              transition-property: color, background-color, border-color,
+                text-decoration-color, fill, stroke;
             }
             & {
               transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,7 +83,7 @@
         }
       }
 
-      @include it('transition-opacity') {
+      @include it("transition-opacity") {
         @include assert {
           @include output {
             @include transition-opacity;
@@ -103,7 +104,7 @@
         }
       }
 
-      @include it('transition-shadow') {
+      @include it("transition-shadow") {
         @include assert {
           @include output {
             @include transition-shadow;
@@ -124,7 +125,7 @@
         }
       }
 
-      @include it('transition-transform') {
+      @include it("transition-transform") {
         @include assert {
           @include output {
             @include transition-transform;
@@ -146,8 +147,8 @@
       }
     }
 
-    @include describe('Custom') {
-      @include it('transition-(height)') {
+    @include describe("Custom") {
+      @include it("transition-(height)") {
         @include assert {
           @include output {
             @include transition-(height);

@@ -53,7 +53,9 @@ $XXL: 0px;
     @include m-1\/2; // m-1/2
     @include m-(20px); // m-[20px]
     @include border-rose-500; // same
-    @include border-x-($rose-500); // border-x-rose-500, apply to border-x/y/s/e/t/r/b/l-($color)
+    @include border-x-(
+      $rose-500
+    ); // border-x-rose-500, apply to border-x/y/s/e/t/r/b/l-($color)
     @include bg-rose-500; // same
     @include bg-rose-500(25%); // bg-rose-500/[25%]
     @include bg-rose-500(0.25); // bg-rose-500/25
@@ -196,7 +198,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler',
+        api: "modern-compiler",
         additionalData: `@use '/assets/styles/_awaken.scss' as *;`,
       },
     },
