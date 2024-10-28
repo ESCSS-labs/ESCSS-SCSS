@@ -70,21 +70,24 @@
 }
 
 @mixin utils_hover-gradient {
-  // makes bg-gradient can be hovered.
+  // Let bg-gradient-* can be hovered.
+
+  // <div class="demo">HOVER ME!</div>
 
   // .demo {
   //   @include bg-gradient-to-r;
-  //   @include from-red-100;
-
+  //   @include from-red-200;
+  
   //   @include utils_hover-gradient {
-  //     @include from-red-500;
+  //     @include from-sky-700;
+  //     @include duration-500;
   //   }
   // }
 
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     opacity: 0;
@@ -92,8 +95,8 @@
   }
 
   &:hover::before {
-    opacity: 1;
     cursor: pointer;
+    opacity: 1;
   }
 }
 
