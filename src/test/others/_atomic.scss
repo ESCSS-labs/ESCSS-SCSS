@@ -3,7 +3,59 @@
 
 @include describe('Others') {
   @include describe('atomic') {
-    @include describe('Edge Cases') {
+    @include describe('match tailwind utility') {
+      @include it('flex') {
+        @include assert {
+          @include output {
+            @include flex;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            display: flex;
+          }
+        }
+      }
+
+      @include it('resize') {
+        @include assert {
+          @include output {
+            @include resize;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            resize: both;
+          }
+        }
+      }
+
+      @include it('cursor(url(hand.cur), pointer)') {
+        @include assert {
+          @include output {
+            @include cursor(url(hand.cur), pointer);
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            cursor: url(hand.cur), pointer;
+          }
+        }
+      }
+
+      @include it('outline') {
+        @include assert {
+          @include output {
+            @include outline;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            outline-style: solid;
+          }
+        }
+      }
+
       @include it('transform') {
         @include assert {
           @include output {
@@ -16,17 +68,29 @@
           }
         }
       }
-    }
-    @include describe('Basic') {
-      @include it('cursor(url(hand.cur), pointer)') {
+
+      @include it('flex-wrap') {
         @include assert {
           @include output {
-            @include cursor(url(hand.cur), pointer);
+            @include flex-wrap;
             @include utils_reset-tw;
           }
 
           @include expect {
-            cursor: url(hand.cur), pointer;
+            flex-wrap: wrap;
+          }
+        }
+      }
+
+      @include it('text-wrap') {
+        @include assert {
+          @include output {
+            @include text-wrap;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            text-wrap: wrap;
           }
         }
       }
@@ -44,6 +108,21 @@
         }
       }
 
+      @include it('border-collapse') {
+        @include assert {
+          @include output {
+            @include border-collapse;
+            @include utils_reset-tw;
+          }
+
+          @include expect {
+            border-collapse: collapse;
+          }
+        }
+      }
+    }
+
+    @include describe('Basic') {
       @include it('-moz-osx-font-smoothing(1)') {
         @include assert {
           @include output {
