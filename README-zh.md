@@ -93,6 +93,7 @@ $XXL: 0px;
 ```
 
 ### 注意事項
+
 - `space-*` 和 `divide-*` 需要遵守 [Breaking Change: Mixed Declarations](https://sass-lang.com/documentation/breaking-changes/mixed-decls/) 以避免發生衝突。
 
 ```scss
