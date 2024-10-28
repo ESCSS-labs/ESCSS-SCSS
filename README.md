@@ -108,6 +108,7 @@ $XXL: 0px;
 ```
 
 ### Notes
+
 - `space-*` and `divide-*` need to comply with [Breaking Change: Mixed Declarations](https://sass-lang.com/documentation/breaking-changes/mixed-decls/) to avoid conflicts.
 
 ```scss
