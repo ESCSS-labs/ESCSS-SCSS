@@ -674,14 +674,14 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-@mixin utils_hover_bg-gradient {
+@mixin utils_hover-gradient {
   //  makes bg-gradient util can be hovered.
 
   //  .demo {
   //      @include bg-gradient-to-r;
   //      @include from-red-50;
   //
-  //      @include utils_hover_bg-gradient {
+  //      @include utils_hover-gradient {
   //        @include from-green-700;
   //      }
   //  }
@@ -706,17 +706,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin utils_base-preflight-v3-modify {
-  // set in the root component for base css
+  // Set base CSS in the root component
 
-  // App.vue
-  // <style lang="scss">
-  // base css
-  // @include utils_base-preflight-v3-modify
-  //
-  // your style..
-  // </style>
   @layer base-preflight-v3-modify {
-    // tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
+    // tailwindcss v3.4.14 | MIT License | https://tailwindcss.com
 
     // 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
     // 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -733,6 +726,11 @@ $tw-mismatch--ring-offset-width: false;
       // 2
     }
 
+    ::before,
+    ::after {
+      content: '';
+    }
+
     // 1. Use a consistent sensible line-height in all browsers.
     // 2. Prevent adjustments of font size after orientation changes in iOS.
     // 3. Use a more readable tab size.
@@ -746,6 +744,8 @@ $tw-mismatch--ring-offset-width: false;
       // 1
       -webkit-text-size-adjust: 100%;
       // 2
+      -moz-tab-size: 4;
+      // 3
       tab-size: 4;
       // 3
       font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -911,7 +911,7 @@ $tw-mismatch--ring-offset-width: false;
       // 2
     }
 
-    // Use the modern Firefox focus style for all focusable elements.
+    // Use the modern Firefox focus style for all focus elements.
     :-moz-focusring {
       outline: auto;
     }
@@ -999,7 +999,7 @@ $tw-mismatch--ring-offset-width: false;
       padding: 0;
     }
 
-    // Prevent resizing textareas horizontally by default.
+    // Prevent resizing text areas horizontally by default.
     textarea {
       resize: vertical;
     }
@@ -1050,30 +1050,24 @@ $tw-mismatch--ring-offset-width: false;
     }
 
     // Make elements with the HTML hidden attribute stay hidden by default
-    [hidden] {
+    [hidden]:where(:not([hidden='until-found'])) {
       display: none;
     }
   }
 }
 
-// smaller size and clean CSS base (Recommended)
+// Smaller & Cleaner CSS base (Recommended)
 @mixin utils_base-preflight-v4-modify {
-  // set in the root component for base css
+  // Set base CSS in the root component
 
-  // App.vue
-  // <style lang="scss">
-  // base css
-  // @include utils_base-preflight-v4-modify
-  //
-  // your style..
-  // </style>
   @layer base-preflight-v4-modify {
-    // based on tailwindcss v4.0.0-alpha.21 | MIT License | https://tailwindcss.com
+    // based on tailwindcss v4.0.0-alpha.30 | MIT License | https://tailwindcss.com
     *,
     ::after,
     ::before,
     ::backdrop,
     ::file-selector-button {
+      content: '';
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -1126,9 +1120,9 @@ $tw-mismatch--ring-offset-width: false;
     kbd,
     samp,
     pre {
+      font-size: 1em;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
         'Courier New', monospace;
-      font-size: 1em;
     }
 
     small {
@@ -1201,7 +1195,7 @@ $tw-mismatch--ring-offset-width: false;
     }
 
     ::-webkit-search-decoration {
-      -webkit-appearance: none;
+      appearance: none;
     }
 
     summary {
@@ -1241,7 +1235,7 @@ $tw-mismatch--ring-offset-width: false;
       height: auto;
     }
 
-    [hidden] {
+    [hidden]:where(:not([hidden='until-found'])) {
       display: none !important;
     }
   }
