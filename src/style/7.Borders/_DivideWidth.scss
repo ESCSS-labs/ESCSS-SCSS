@@ -33,7 +33,7 @@ $DivideWidth: (
     @mixin divide-x#{$key} {
       $tw-dummy-divide-x-value: #{$value} !global;
 
-      >*~* {
+      > * ~ * {
         @include border-right-width(#{$value} * $tw-divide-x-reverse);
         @include border-left-width(#{$value} * (1 - $tw-divide-x-reverse));
       }
@@ -42,7 +42,7 @@ $DivideWidth: (
     @mixin divide-y#{$key} {
       $tw-dummy-divide-y-value: #{$value} !global;
 
-      >*~* {
+      > * ~ * {
         @include border-top-width(#{$value} * (1 - $tw-divide-y-reverse));
         @include border-bottom-width(#{$value} * $tw-divide-y-reverse);
       }
@@ -56,7 +56,7 @@ $DivideWidth: (
   @mixin divide-x-($v, $isReverse: false) {
     $tw-dummy-divide-x-value: $v !global; // update global value for using reverse
 
-    >*~* {
+    > * ~ * {
       @include border-right-width($v * $tw-divide-x-reverse);
       @include border-left-width($v * (1 - $tw-divide-x-reverse));
     }
@@ -65,7 +65,7 @@ $DivideWidth: (
   @mixin divide-y-($v, $isReverse: false) {
     $tw-dummy-divide-y-value: $v !global; // update global value for using reverse
 
-    >*~* {
+    > * ~ * {
       @include border-top-width($v * (1 - $tw-divide-y-reverse));
       @include border-bottom-width($v * $tw-divide-y-reverse);
     }

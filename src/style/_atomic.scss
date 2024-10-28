@@ -194,27 +194,19 @@ $atomic: (
 
 /*x
 @mixin \-moz-osx-font-smoothing($v) {
-  & {
-    -moz-osx-font-smoothing: $v;
-  }
+  -moz-osx-font-smoothing: $v;
 }
 
 @mixin \-webkit-box-orient($v) {
-  & {
-    -webkit-box-orient: $v;
-  }
+  -webkit-box-orient: $v;
 }
 
 @mixin \-webkit-font-smoothing($v) {
-  & {
-    -webkit-font-smoothing: $v;
-  }
+  -webkit-font-smoothing: $v;
 }
 
 @mixin \-webkit-line-clamp($v) {
-  & {
-    -webkit-line-clamp: $v;
-  }
+  -webkit-line-clamp: $v;
 }
 x*/
 
@@ -222,99 +214,73 @@ x*/
   @if $property == "flex" {
     /*x
     @mixin flex($v: flex) {
-      & {
-        @if $v==flex {
-          display: $v;
-        }
-
-        @else {
-          flex: $v;
-        }
+      @if $v==flex {
+        display: $v;
+      } @else {
+        flex: $v;
       }
     }
     x*/
   } @else if $property == "resize" {
     /*x
     @mixin resize($v: both) {
-      & {
-        resize: $v;
-      }
+      resize: $v;
     }
     x*/
   } @else if $property == "cursor" {
     /*x
     @mixin cursor($v, $v2: null) {
-      & {
-        cursor: $v, $v2;
-      }
+      cursor: $v, $v2;
     }
     x*/
   } @else if $property == "outline" {
     /*x
     @mixin outline($v: solid) {
-      & {
-        @if $v==solid {
-          outline-style: $v;
-        }
-
-        @else {
-          outline: $v;
-        }
+      @if $v==solid {
+        outline-style: $v;
+      } @else {
+        outline: $v;
       }
     }
     x*/
   } @else if $property == "transform" {
     /*x
     @mixin transform($v: null) {
-      & {
-        @if $v==null {
-          transform: _t();
-        }
-
-        @else {
-          transform: $v;
-        }
+      @if $v==null {
+        transform: _t();
+      } @else {
+        transform: $v;
       }
     }
     x*/
   } @else if $property == "flex-wrap" {
     /*x
     @mixin flex-wrap($v: wrap) {
-      & {
-        flex-wrap: $v;
-      }
+      flex-wrap: $v;
     }
     x*/
   } @else if $property == "text-wrap" {
     /*x
     @mixin text-wrap($v: wrap) {
-      & {
-        text-wrap: $v;
-      }
+      text-wrap: $v;
     }
     x*/
   } @else if $property == "will-change" {
     /*x
     @mixin will-change($v, $v2: null) {
-      & {
-        will-change: $v, $v2;
-      }
+      will-change: $v, $v2;
     }
     x*/
   } @else if $property == "border-collapse" {
     /*x
     @mixin border-collapse($v: collapse) {
-      & {
-        border-collapse: $v;
-      }
+      border-collapse: $v;
     }
     x*/
   } @else {
     /*x
     @mixin #{$property}($v) {
-      & {
-        #{$property}: $v;
-      }
+      #{$property}: $v;
     }
     x*/
   }
