@@ -1,10 +1,10 @@
-@use 'true' as *;
-@use '../awaken' as *;
+@use "true" as *;
+@use "../awaken" as *;
 
-@include describe('5.Typography') {
-  @include describe('Font Family') {
-    @include describe('Basic') {
-      @include it('font-sans') {
+@include describe("5.Typography") {
+  @include describe("Font Family") {
+    @include describe("Basic") {
+      @include it("font-sans") {
         @include assert {
           @include output {
             @include font-sans;
@@ -12,13 +12,14 @@
           }
 
           @include expect {
-            font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-              'Segoe UI Symbol', 'Noto Color Emoji';
+            font-family: ui-sans-serif, system-ui, sans-serif,
+              "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+              "Noto Color Emoji";
           }
         }
       }
 
-      @include it('font-serif') {
+      @include it("font-serif") {
         @include assert {
           @include output {
             @include font-serif;
@@ -26,12 +27,13 @@
           }
 
           @include expect {
-            font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+            font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times,
+              serif;
           }
         }
       }
 
-      @include it('font-mono') {
+      @include it("font-mono") {
         @include assert {
           @include output {
             @include font-mono;
@@ -39,23 +41,23 @@
           }
 
           @include expect {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-              'Courier New', monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+              "Liberation Mono", "Courier New", monospace;
           }
         }
       }
     }
 
-    @include describe('Custom') {
+    @include describe("Custom") {
       @include it("font-('Open Sans')") {
         @include assert {
           @include output {
-            @include font-('Open Sans');
+            @include font-("Open Sans");
             @include utils_reset-tw;
           }
 
           @include expect {
-            font-family: 'Open Sans';
+            font-family: "Open Sans";
           }
         }
       }

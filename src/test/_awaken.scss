@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-@use 'sass:color';
-@use 'sass:list';
-@use 'sass:meta';
+@use "sass:color";
+@use "sass:list";
+@use "sass:meta";
 
 /*! ESCSS-SCSS v1.0.4 | AGPL-3.0-only or Commercial License | https://github.com/ESCSS-labs !*/
 
@@ -548,7 +548,8 @@ $tw-mismatch--ring-offset-width: false;
 
 // _b-s stands for box-shadow (file size concern)
 @function _b-s() {
-  $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width $tw-ring-offset-color;
+  $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width
+    $tw-ring-offset-color;
   $tw-ring-shadow: $tw-ring-inset 0 0 0 $tw-dummy-ring-width $tw-ring-color;
   $tw-shadow: null;
 
@@ -567,21 +568,21 @@ $tw-mismatch--ring-offset-width: false;
 
 // _t stands for transform (file size concern)
 @function _t() {
-  @return translate($tw-translate-x, $tw-translate-y) rotate($tw-rotate) skewX($tw-skew-x)
-    skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
+  @return translate($tw-translate-x, $tw-translate-y) rotate($tw-rotate)
+    skewX($tw-skew-x) skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
 }
 
 // _f stands for filter (file size concern)
 @function _f() {
-  @return $tw-blur $tw-brightness $tw-contrast $tw-grayscale $tw-hue-rotate $tw-invert $tw-saturate
-    $tw-sepia $tw-drop-shadow;
+  @return $tw-blur $tw-brightness $tw-contrast $tw-grayscale $tw-hue-rotate
+    $tw-invert $tw-saturate $tw-sepia $tw-drop-shadow;
 }
 
 // _b-f stands for backdrop-filter (file size concern)
 @function _b-f() {
-  @return $tw-backdrop-blur $tw-backdrop-brightness $tw-backdrop-contrast $tw-backdrop-grayscale
-    $tw-backdrop-hue-rotate $tw-backdrop-invert $tw-backdrop-opacity $tw-backdrop-saturate
-    $tw-backdrop-sepia;
+  @return $tw-backdrop-blur $tw-backdrop-brightness $tw-backdrop-contrast
+    $tw-backdrop-grayscale $tw-backdrop-hue-rotate $tw-backdrop-invert
+    $tw-backdrop-opacity $tw-backdrop-saturate $tw-backdrop-sepia;
 }
 
 // _l-g stands for linear-gradient (file size concern)
@@ -675,33 +676,30 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin utils_hover-gradient {
-  //  makes bg-gradient util can be hovered.
+  // makes bg-gradient can be hovered.
 
-  //  .demo {
-  //      @include bg-gradient-to-r;
-  //      @include from-red-50;
-  //
-  //      @include utils_hover-gradient {
-  //        @include from-green-700;
-  //      }
-  //  }
+  // .demo {
+  //   @include bg-gradient-to-r;
+  //   @include from-red-100;
 
-  & {
-    @include relative;
-  }
+  //   @include utils_hover-gradient {
+  //     @include from-red-500;
+  //   }
+  // }
+
+  position: relative;
 
   &::before {
-    content: '';
-    @include absolute;
-    @include inset-0;
-    @include opacity-0;
-    @include transition-all;
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
     @content;
   }
 
   &:hover::before {
-    @include opacity-100;
-    @include cursor-pointer;
+    opacity: 1;
+    cursor: pointer;
   }
 }
 
@@ -726,11 +724,6 @@ $tw-mismatch--ring-offset-width: false;
       // 2
     }
 
-    ::before,
-    ::after {
-      content: '';
-    }
-
     // 1. Use a consistent sensible line-height in all browsers.
     // 2. Prevent adjustments of font size after orientation changes in iOS.
     // 3. Use a more readable tab size.
@@ -748,8 +741,8 @@ $tw-mismatch--ring-offset-width: false;
       // 3
       tab-size: 4;
       // 3
-      font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       // 4
       font-feature-settings: normal;
       // 5
@@ -816,8 +809,8 @@ $tw-mismatch--ring-offset-width: false;
     kbd,
     samp,
     pre {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-        'Courier New', monospace;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
       // 1
       font-feature-settings: normal;
       // 2
@@ -900,9 +893,9 @@ $tw-mismatch--ring-offset-width: false;
     // 1. Correct the inability to style clickable types in iOS and Safari.
     // 2. Remove default button styles.
     button,
-    input:where([type='button']),
-    input:where([type='reset']),
-    input:where([type='submit']) {
+    input:where([type="button"]),
+    input:where([type="reset"]),
+    input:where([type="submit"]) {
       -webkit-appearance: button;
       // 1
       background-color: transparent;
@@ -934,7 +927,7 @@ $tw-mismatch--ring-offset-width: false;
 
     // 1. Correct the odd appearance in Chrome and Safari.
     // 2. Correct the outline style in Safari.
-    [type='search'] {
+    [type="search"] {
       -webkit-appearance: textfield;
       // 1
       outline-offset: -2px;
@@ -1016,7 +1009,7 @@ $tw-mismatch--ring-offset-width: false;
 
     // Set the default cursor for buttons.
     button,
-    [role='button'] {
+    [role="button"] {
       cursor: pointer;
     }
 
@@ -1050,7 +1043,7 @@ $tw-mismatch--ring-offset-width: false;
     }
 
     // Make elements with the HTML hidden attribute stay hidden by default
-    [hidden]:where(:not([hidden='until-found'])) {
+    [hidden]:where(:not([hidden="until-found"])) {
       display: none;
     }
   }
@@ -1067,7 +1060,6 @@ $tw-mismatch--ring-offset-width: false;
     ::before,
     ::backdrop,
     ::file-selector-button {
-      content: '';
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -1079,8 +1071,8 @@ $tw-mismatch--ring-offset-width: false;
       line-height: 1.5;
       -webkit-text-size-adjust: 100%;
       tab-size: 4;
-      font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -1121,8 +1113,8 @@ $tw-mismatch--ring-offset-width: false;
     samp,
     pre {
       font-size: 1em;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-        'Courier New', monospace;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
     }
 
     small {
@@ -1165,14 +1157,14 @@ $tw-mismatch--ring-offset-width: false;
       background: transparent;
     }
 
-    input:where(:not([type='button'], [type='reset'], [type='submit'])),
+    input:where(:not([type="button"], [type="reset"], [type="submit"])),
     select,
     textarea {
       border: 1px solid;
     }
 
     button,
-    input:where([type='button'], [type='reset'], [type='submit']),
+    input:where([type="button"], [type="reset"], [type="submit"]),
     ::file-selector-button {
       appearance: button;
     }
@@ -1235,7 +1227,7 @@ $tw-mismatch--ring-offset-width: false;
       height: auto;
     }
 
-    [hidden]:where(:not([hidden='until-found'])) {
+    [hidden]:where(:not([hidden="until-found"])) {
       display: none !important;
     }
   }
@@ -15246,16 +15238,18 @@ $tw-mismatch--ring-offset-width: false;
       ui-sans-serif,
       system-ui,
       sans-serif,
-      'Apple Color Emoji',
-      'Segoe UI Emoji',
-      'Segoe UI Symbol',
-      'Noto Color Emoji'
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji"
     )
   );
 }
 
 @mixin font-serif {
-  @include font-family((ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif));
+  @include font-family(
+    (ui-serif, Georgia, Cambria, "Times New Roman", Times, serif)
+  );
 }
 
 @mixin font-mono {
@@ -15266,8 +15260,8 @@ $tw-mismatch--ring-offset-width: false;
       Menlo,
       Monaco,
       Consolas,
-      'Liberation Mono',
-      'Courier New',
+      "Liberation Mono",
+      "Courier New",
       monospace
     )
   );
@@ -17872,7 +17866,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin text-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include color($v);
   } @else {
     @include font-size($v);
@@ -19116,7 +19113,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin decoration-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include text-decoration-color($v);
   } @else {
     @include text-decoration-thickness($v);
@@ -20864,14 +20864,17 @@ $tw-mismatch--ring-offset-width: false;
 @mixin bg-($v) {
   // Filtering by type
   // color
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include background-color($v);
   }
 
   // list (length)
   @else if list.nth($v, 1) ==length {
     // remove the background-size token "length"
-    @include background-size(list.set-nth($v, 1, #{''}));
+    @include background-size(list.set-nth($v, 1, #{""}));
   }
 
   // list、number、string(top、right、left、center)
@@ -27167,7 +27170,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin border-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include border-color($v);
   } @else {
     @include border-width($v);
@@ -27175,7 +27181,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin border-x-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include border-left-color($v);
     @include border-right-color($v);
   } @else {
@@ -27185,7 +27194,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin border-y-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include border-top-color($v);
     @include border-bottom-color($v);
   } @else {
@@ -27195,7 +27207,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin border-s-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include border-inline-start-color($v);
   } @else {
     @include border-inline-start-width($v);
@@ -27203,7 +27218,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin border-e-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include border-inline-end-color($v);
   } @else {
     @include border-inline-end-width($v);
@@ -27211,7 +27229,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin border-t-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include border-top-color($v);
   } @else {
     @include border-top-width($v);
@@ -27219,7 +27240,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin border-r-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include border-right-color($v);
   } @else {
     @include border-right-width($v);
@@ -27227,7 +27251,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin border-b-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include border-bottom-color($v);
   } @else {
     @include border-bottom-width($v);
@@ -27235,7 +27262,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin border-l-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include border-left-color($v);
   } @else {
     @include border-left-width($v);
@@ -29986,8 +30016,12 @@ $tw-mismatch--ring-offset-width: false;
   $tw-divide-x-reverse: 1 !global;
 
   > * ~ * {
-    @include border-right-width($tw-dummy-divide-x-value * $tw-divide-x-reverse);
-    @include border-left-width($tw-dummy-divide-x-value * (1 - $tw-divide-x-reverse));
+    @include border-right-width(
+      $tw-dummy-divide-x-value * $tw-divide-x-reverse
+    );
+    @include border-left-width(
+      $tw-dummy-divide-x-value * (1 - $tw-divide-x-reverse)
+    );
   }
 }
 
@@ -29995,8 +30029,12 @@ $tw-mismatch--ring-offset-width: false;
   $tw-divide-y-reverse: 1 !global;
 
   > * ~ * {
-    @include border-top-width($tw-dummy-divide-y-value * (1 - $tw-divide-y-reverse));
-    @include border-bottom-width($tw-dummy-divide-y-value * $tw-divide-y-reverse);
+    @include border-top-width(
+      $tw-dummy-divide-y-value * (1 - $tw-divide-y-reverse)
+    );
+    @include border-bottom-width(
+      $tw-dummy-divide-y-value * $tw-divide-y-reverse
+    );
   }
 }
 
@@ -31329,7 +31367,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin outline-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include outline-color($v);
   } @else {
     @include outline-width($v);
@@ -32930,7 +32971,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin ring-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     $tw-ring-color: $v !global;
   } @else {
     $tw-mismatch--ring-offset-width: true !global;
@@ -34466,7 +34510,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin ring-offset-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     $tw-ring-offset-color: $v !global;
   } @else {
     @if $tw-mismatch--ring-offset-width {
@@ -36539,7 +36586,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin shadow-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     $tw-mismatch--shadow-color: true !global;
     $tw-shadow-color: $v !global;
   }
@@ -36554,9 +36604,17 @@ $tw-mismatch--ring-offset-width: false;
     $tw-shadow-color: list.nth($v, -1) !global; // red
 
     @if list.nth($v, 1) ==inset {
-      $tw-dummy-shadow-width: list.set-nth($v, -1, #{''}) !global; // inset 0px 0px 5px 10px
+      $tw-dummy-shadow-width: list.set-nth(
+        $v,
+        -1,
+        #{""}
+      ) !global; // inset 0px 0px 5px 10px
     } @else {
-      $tw-dummy-shadow-width: list.set-nth($v, -1, #{''}) !global; // inset 0px 0px 5px 10px
+      $tw-dummy-shadow-width: list.set-nth(
+        $v,
+        -1,
+        #{""}
+      ) !global; // inset 0px 0px 5px 10px
     }
   }
 
@@ -38076,7 +38134,14 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin transition-colors {
   @include transition-property(
-    #{(color, background-color, border-color, text-decoration-color, fill, stroke)}
+    #{(
+        color,
+        background-color,
+        border-color,
+        text-decoration-color,
+        fill,
+        stroke
+      )}
   );
   @include transition-timing-function(cubic-bezier(0.4, 0, 0.2, 1));
   @include transition-duration(150ms);
@@ -38136,8 +38201,9 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin transform-gpu {
   @include transform(
-    translate3d($tw-translate-x, $tw-translate-y, 0) rotate($tw-rotate) skewX($tw-skew-x)
-      skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y)
+    translate3d($tw-translate-x, $tw-translate-y, 0) rotate($tw-rotate)
+      skewX($tw-skew-x) skewY($tw-skew-y) scaleX($tw-scale-x)
+      scaleY($tw-scale-y)
   );
 }
 
@@ -48961,7 +49027,10 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin stroke-($v) {
-  @if meta.type-of($v) ==color or list.index(inherit currentColor transparent, $v) {
+  @if meta.type-of($v)
+    ==color or
+    list.index(inherit currentColor transparent, $v)
+  {
     @include stroke($v);
   } @else {
     @include stroke-width($v);

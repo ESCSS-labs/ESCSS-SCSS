@@ -1,11 +1,11 @@
-@use 'true' as *;
-@use '../awaken' as *;
+@use "true" as *;
+@use "../awaken" as *;
 
-@include describe('12.Transforms') {
-  @include describe('Rotate') {
-    @include describe('Positive') {
-      @include describe('Hardware acceleration') {
-        @include it('transform-none') {
+@include describe("12.Transforms") {
+  @include describe("Rotate") {
+    @include describe("Positive") {
+      @include describe("Hardware acceleration") {
+        @include it("transform-none") {
           @include assert {
             @include output {
               @include transform-none;
@@ -18,7 +18,7 @@
           }
         }
 
-        @include it('transform-cpu') {
+        @include it("transform-cpu") {
           @include assert {
             @include output {
               @include translate-x-96;
@@ -28,19 +28,19 @@
 
             @include expect {
               & {
-                transform: translate(24rem, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1)
-                  scaleY(1);
+                transform: translate(24rem, 0) rotate(0deg) skewX(0deg)
+                  skewY(0deg) scaleX(1) scaleY(1);
               }
 
               & {
-                transform: translate(24rem, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1)
-                  scaleY(1);
+                transform: translate(24rem, 0) rotate(0deg) skewX(0deg)
+                  skewY(0deg) scaleX(1) scaleY(1);
               }
             }
           }
         }
 
-        @include it('transform-gpu') {
+        @include it("transform-gpu") {
           @include assert {
             @include output {
               @include translate-x-96;
@@ -50,21 +50,21 @@
 
             @include expect {
               & {
-                transform: translate(24rem, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1)
-                  scaleY(1);
+                transform: translate(24rem, 0) rotate(0deg) skewX(0deg)
+                  skewY(0deg) scaleX(1) scaleY(1);
               }
 
               & {
-                transform: translate3d(24rem, 0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1)
-                  scaleY(1);
+                transform: translate3d(24rem, 0, 0) rotate(0deg) skewX(0deg)
+                  skewY(0deg) scaleX(1) scaleY(1);
               }
             }
           }
         }
       }
 
-      @include describe('Basic') {
-        @include it('rotate-0') {
+      @include describe("Basic") {
+        @include it("rotate-0") {
           @include assert {
             @include output {
               @include rotate-0;
@@ -72,12 +72,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('rotate-1') {
+        @include it("rotate-1") {
           @include assert {
             @include output {
               @include rotate-1;
@@ -85,12 +86,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(1deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('rotate-2') {
+        @include it("rotate-2") {
           @include assert {
             @include output {
               @include rotate-2;
@@ -98,12 +100,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(2deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('rotate-3') {
+        @include it("rotate-3") {
           @include assert {
             @include output {
               @include rotate-3;
@@ -111,12 +114,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(3deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('rotate-6') {
+        @include it("rotate-6") {
           @include assert {
             @include output {
               @include rotate-6;
@@ -124,12 +128,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(6deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('rotate-12') {
+        @include it("rotate-12") {
           @include assert {
             @include output {
               @include rotate-12;
@@ -137,12 +142,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(12deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('rotate-45') {
+        @include it("rotate-45") {
           @include assert {
             @include output {
               @include rotate-45;
@@ -150,12 +156,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(45deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('rotate-90') {
+        @include it("rotate-90") {
           @include assert {
             @include output {
               @include rotate-90;
@@ -163,12 +170,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(90deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('rotate-180') {
+        @include it("rotate-180") {
           @include assert {
             @include output {
               @include rotate-180;
@@ -176,14 +184,15 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(180deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
       }
 
-      @include describe('Custom') {
-        @include it('rotate-(17deg)') {
+      @include describe("Custom") {
+        @include it("rotate-(17deg)") {
           @include assert {
             @include output {
               @include rotate-(17deg);
@@ -191,16 +200,17 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
       }
     }
 
-    @include describe('Negative') {
-      @include describe('Basic') {
-        @include it('-rotate-0') {
+    @include describe("Negative") {
+      @include describe("Basic") {
+        @include it("-rotate-0") {
           @include assert {
             @include output {
               @include \-rotate-0;
@@ -208,12 +218,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('-rotate-1') {
+        @include it("-rotate-1") {
           @include assert {
             @include output {
               @include \-rotate-1;
@@ -221,12 +232,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('-rotate-2') {
+        @include it("-rotate-2") {
           @include assert {
             @include output {
               @include \-rotate-2;
@@ -234,12 +246,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('-rotate-3') {
+        @include it("-rotate-3") {
           @include assert {
             @include output {
               @include \-rotate-3;
@@ -247,12 +260,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('-rotate-6') {
+        @include it("-rotate-6") {
           @include assert {
             @include output {
               @include \-rotate-6;
@@ -260,12 +274,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('-rotate-12') {
+        @include it("-rotate-12") {
           @include assert {
             @include output {
               @include \-rotate-12;
@@ -273,12 +288,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('-rotate-45') {
+        @include it("-rotate-45") {
           @include assert {
             @include output {
               @include \-rotate-45;
@@ -286,12 +302,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('-rotate-90') {
+        @include it("-rotate-90") {
           @include assert {
             @include output {
               @include \-rotate-90;
@@ -299,12 +316,13 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
 
-        @include it('-rotate-180') {
+        @include it("-rotate-180") {
           @include assert {
             @include output {
               @include \-rotate-180;
@@ -312,14 +330,15 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }
       }
 
-      @include describe('Custom') {
-        @include it('-rotate-(17deg)') {
+      @include describe("Custom") {
+        @include it("-rotate-(17deg)") {
           @include assert {
             @include output {
               @include \-rotate-(17deg);
@@ -327,7 +346,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-17deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+              transform: translate(0, 0) rotate(-17deg) skewX(0deg) skewY(0deg)
+                scaleX(1) scaleY(1);
             }
           }
         }

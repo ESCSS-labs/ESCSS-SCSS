@@ -1,10 +1,10 @@
-@use 'true' as *;
-@use '../awaken' as *;
+@use "true" as *;
+@use "../awaken" as *;
 
-@include describe('9.Filters') {
-  @include describe('Drop Shadow') {
-    @include describe('Basic') {
-      @include it('drop-shadow-sm') {
+@include describe("9.Filters") {
+  @include describe("Drop Shadow") {
+    @include describe("Basic") {
+      @include it("drop-shadow-sm") {
         @include assert {
           @include output {
             @include drop-shadow-sm;
@@ -17,7 +17,7 @@
         }
       }
 
-      @include it('drop-shadow') {
+      @include it("drop-shadow") {
         @include assert {
           @include output {
             @include drop-shadow;
@@ -25,12 +25,13 @@
           }
 
           @include expect {
-            filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+            filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+              drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
           }
         }
       }
 
-      @include it('drop-shadow-md') {
+      @include it("drop-shadow-md") {
         @include assert {
           @include output {
             @include drop-shadow-md;
@@ -44,7 +45,7 @@
         }
       }
 
-      @include it('drop-shadow-lg') {
+      @include it("drop-shadow-lg") {
         @include assert {
           @include output {
             @include drop-shadow-lg;
@@ -58,7 +59,7 @@
         }
       }
 
-      @include it('drop-shadow-xl') {
+      @include it("drop-shadow-xl") {
         @include assert {
           @include output {
             @include drop-shadow-xl;
@@ -72,7 +73,7 @@
         }
       }
 
-      @include it('drop-shadow-2xl') {
+      @include it("drop-shadow-2xl") {
         @include assert {
           @include output {
             @include drop-shadow-2xl;
@@ -85,7 +86,7 @@
         }
       }
 
-      @include it('drop-shadow-none') {
+      @include it("drop-shadow-none") {
         @include assert {
           @include output {
             @include drop-shadow-none;
@@ -99,8 +100,8 @@
       }
     }
 
-    @include describe('Custom') {
-      @include it('drop-shadow-(0 35px 35px rgba(0,0,0,0.25))') {
+    @include describe("Custom") {
+      @include it("drop-shadow-(0 35px 35px rgba(0,0,0,0.25))") {
         @include assert {
           @include output {
             @include drop-shadow-(0 35px 35px rgba(0, 0, 0, 0.25));

@@ -1,10 +1,10 @@
-@use 'true' as *;
-@use '../awaken' as *;
+@use "true" as *;
+@use "../awaken" as *;
 
-@include describe('11.Transitions & Animation') {
-  @include describe('Transition Timing Function') {
-    @include describe('Basic') {
-      @include it('ease-linear') {
+@include describe("11.Transitions & Animation") {
+  @include describe("Transition Timing Function") {
+    @include describe("Basic") {
+      @include it("ease-linear") {
         @include assert {
           @include output {
             @include ease-linear;
@@ -17,7 +17,7 @@
         }
       }
 
-      @include it('ease-in') {
+      @include it("ease-in") {
         @include assert {
           @include output {
             @include ease-in;
@@ -30,7 +30,7 @@
         }
       }
 
-      @include it('ease-out') {
+      @include it("ease-out") {
         @include assert {
           @include output {
             @include ease-out;
@@ -43,7 +43,7 @@
         }
       }
 
-      @include it('ease-in-out') {
+      @include it("ease-in-out") {
         @include assert {
           @include output {
             @include ease-in-out;
@@ -57,8 +57,8 @@
       }
     }
 
-    @include describe('Custom') {
-      @include it('ease-(cubic-bezier(0.95,0.05,0.795,0.035))') {
+    @include describe("Custom") {
+      @include it("ease-(cubic-bezier(0.95,0.05,0.795,0.035))") {
         @include assert {
           @include output {
             @include ease-(cubic-bezier(0.95, 0.05, 0.795, 0.035));
