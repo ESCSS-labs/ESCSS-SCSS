@@ -197,7 +197,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',
-        additionalData: `@use 'assets/css/_awaken.scss' as *;`,
+        additionalData: `@use '/assets/styles/_awaken.scss' as *;`,
       },
     },
   },
