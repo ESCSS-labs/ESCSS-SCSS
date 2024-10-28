@@ -204,5 +204,52 @@
         }
       }
     }
+
+    @include it("utils_hover-gradient") {
+      @include assert {
+        @include output {
+          @include bg-gradient-to-r;
+          @include from-red-100;
+
+          @include utils_hover-gradient {
+            @include from-red-500;
+          }
+
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+          & {
+            background-image: linear-gradient(to right, #fff, transparent);
+            background-image: linear-gradient(to right, #fee2e2, transparent);
+            position: relative;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            background-image: linear-gradient(to right, #ef4444, transparent);
+          }
+
+          &:hover::before {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    @include it("utils_reset-tw") {
+      @include assert {
+        @include output {
+          @include utils_reset-tw;
+        }
+
+        @include expect {
+        }
+      }
+    }
   }
 }
