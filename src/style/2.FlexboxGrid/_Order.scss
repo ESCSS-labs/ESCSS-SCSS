@@ -22,7 +22,7 @@ $Order: (
   @each $key, $value in $Order {
     /*x
     @mixin #{$key} {
-      @include order(#{$value});
+      order: #{$value};
     }
     x*/
   }
@@ -30,7 +30,7 @@ $Order: (
 @if $isArbitrary {
   /*x
   @mixin order-($v) {
-    @include order($v);
+    order: $v;
   }
   x*/
 }
@@ -40,7 +40,7 @@ $Order: (
     @each $key, $value in $Order {
       /*x
       @mixin \-#{$key} {
-        @include order(#{-$value});
+        order: #{-$value};
       }
       x*/
     }
@@ -49,7 +49,7 @@ $Order: (
   @if $isArbitrary {
     /*x
     @mixin \-order-($v) {
-      @include order(-$v);
+      order: -$v;
     }
     x*/
   }

@@ -1,54 +1,28 @@
-// 1st property: position
-// 2nd property: width
-// 3rd property: height
-// 4th property: padding
-// 5th property: margin
-// 6th property: overflow
-// 7th property: clip
-// 8th property: white-space
-// 9th property: border-width
-@use "sass:list";
 @use "../setting" as *;
 
-$ScreenReaders: (
-  "sr-only": (
-    absolute,
-    1px,
-    1px,
-    0,
-    -1px,
-    hidden,
-    rect(0, 0, 0, 0),
-    nowrap,
-    0,
-  ),
-  "not-sr-only": (
-    static,
-    auto,
-    auto,
-    0,
-    0,
-    visible,
-    auto,
-    normal,
-    "null",
-  ),
-);
-
 @if $isBasic {
-  @each $key, $value in $ScreenReaders {
-    /*x
-    @mixin #{$key} {
-      @include position(#{list.nth($value, 1)});
-      @include width(#{list.nth($value, 2)});
-      @include height(#{list.nth($value, 3)});
-      @include padding(#{list.nth($value, 4)});
-      @include margin(#{list.nth($value, 5)});
-      @include overflow(#{list.nth($value, 6)});
-      @include clip(#{list.nth($value, 7)});
-      @include white-space(#{list.nth($value, 8)});
-      @include border-width(#{list.nth($value, 9)});
-    }
-    x*/
+  /*x
+  @mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
   }
+
+  @mixin not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+  x*/
 }

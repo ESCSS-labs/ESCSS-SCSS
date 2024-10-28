@@ -16,28 +16,28 @@ $Rotate: (
   // Hardware acceleration utility, see https://tailwindcss.com/docs/translate#hardware-acceleration
   /*x
   @mixin transform-none {
-    @include transform(none);
+    transform: none;
   }
 
   @mixin transform-cpu {
-    @include transform(_t());
+    transform: _t();
   }
 
   @mixin transform-gpu {
-    @include transform(translate3d($tw-translate-x, $tw-translate-y, 0) rotate($tw-rotate) skewX($tw-skew-x) skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y));
+    transform: translate3d($tw-translate-x, $tw-translate-y, 0) rotate($tw-rotate) skewX($tw-skew-x) skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
   }
   x*/
   @each $key, $value in $Rotate {
     /*x
     @mixin #{$key} {
       $tw-rotate: #{$value} !global;
-      @include transform(_t());
+      transform: _t();
     }
     x*/
     /*x
     @mixin \-#{$key} {
       $tw-rotate: #{-$value} !global;
-      @include transform(_t());
+      transform: _t();
     }
     x*/
   }
@@ -47,13 +47,13 @@ $Rotate: (
   /*x
   @mixin rotate-($v) {
     $tw-rotate: $v !global;
-    @include transform(_t());
+    transform: _t();
   }
   x*/
   /*x
   @mixin \-rotate-($v) {
     $tw-rotate: -$v !global;
-    @include transform(_t());
+    transform: _t();
   }
   x*/
 }

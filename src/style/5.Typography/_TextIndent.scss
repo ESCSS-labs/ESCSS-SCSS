@@ -42,7 +42,7 @@ $TextIndent: (
   @each $key, $value in $TextIndent {
     /*x
     @mixin indent-#{$key} {
-      @include text-indent(#{$value});
+      text-indent: #{$value};
     }
     x*/
   }
@@ -50,7 +50,7 @@ $TextIndent: (
 @if $isArbitrary {
   /*x
   @mixin indent-($v) {
-    @include text-indent($v);
+    text-indent: $v;
   }
   x*/
 }
@@ -60,7 +60,7 @@ $TextIndent: (
     @each $key, $value in $TextIndent {
       /*x
       @mixin \-indent-#{$key} {
-        @include text-indent(-#{$value});
+        text-indent: -#{$value};
       }
       x*/
     }
@@ -69,7 +69,7 @@ $TextIndent: (
   @if $isArbitrary {
     /*x
     @mixin \-indent-($v) {
-      @include text-indent(-$v);
+      text-indent: -$v;
     }
     x*/
   }
