@@ -4,6 +4,65 @@
 @include describe('12.Transforms') {
   @include describe('Rotate') {
     @include describe('Positive') {
+      @include describe('Hardware acceleration') {
+        @include it('transform-none') {
+          @include assert {
+            @include output {
+              @include transform-none;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              transform: none;
+            }
+          }
+        }
+
+        @include it('transform-cpu') {
+          @include assert {
+            @include output {
+              @include translate-x-96;
+              @include transform-cpu;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              & {
+                transform: translate(24rem, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1)
+                  scaleY(1);
+              }
+
+              & {
+                transform: translate(24rem, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1)
+                  scaleY(1);
+              }
+            }
+          }
+        }
+
+        @include it('transform-gpu') {
+          @include assert {
+            @include output {
+              @include translate-x-96;
+              @include transform-gpu;
+              @include utils_reset-tw;
+            }
+
+            @include expect {
+              & {
+                transform: translate(24rem, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1)
+                  scaleY(1);
+              }
+
+              & {
+                transform: translate3d(24rem, 0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1)
+                  scaleY(1);
+              }
+            }
+          }
+        }
+      }
+
       @include describe('Basic') {
         @include it('rotate-0') {
           @include assert {

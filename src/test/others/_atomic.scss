@@ -3,2563 +3,2579 @@
 
 @include describe('Others') {
   @include describe('atomic') {
-    @include it('cursor(url(hand.cur), pointer)') {
-      @include assert {
-        @include output {
-          @include cursor(url(hand.cur), pointer);
-          @include utils_reset-tw;
-        }
+    @include describe('Edge Cases') {
+      @include it('transform') {
+        @include assert {
+          @include output {
+            @include transform;
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          cursor: url(hand.cur), pointer;
+          @include expect {
+            transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+          }
         }
       }
     }
+    @include describe('Basic') {
+      @include it('cursor(url(hand.cur), pointer)') {
+        @include assert {
+          @include output {
+            @include cursor(url(hand.cur), pointer);
+            @include utils_reset-tw;
+          }
 
-    @include it('will-change(top, left)') {
-      @include assert {
-        @include output {
-          @include will-change(top, left);
-          @include utils_reset-tw;
+          @include expect {
+            cursor: url(hand.cur), pointer;
+          }
         }
+      }
+
+      @include it('will-change(top, left)') {
+        @include assert {
+          @include output {
+            @include will-change(top, left);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          will-change: top, left;
+          @include expect {
+            will-change: top, left;
+          }
         }
       }
-    }
 
-    @include it('-moz-osx-font-smoothing(1)') {
-      @include assert {
-        @include output {
-          @include \-moz-osx-font-smoothing(1);
-          @include utils_reset-tw;
-        }
+      @include it('-moz-osx-font-smoothing(1)') {
+        @include assert {
+          @include output {
+            @include \-moz-osx-font-smoothing(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          -moz-osx-font-smoothing: 1;
+          @include expect {
+            -moz-osx-font-smoothing: 1;
+          }
         }
       }
-    }
 
-    @include it('-webkit-box-orient(1)') {
-      @include assert {
-        @include output {
-          @include \-webkit-box-orient(1);
-          @include utils_reset-tw;
-        }
+      @include it('-webkit-box-orient(1)') {
+        @include assert {
+          @include output {
+            @include \-webkit-box-orient(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          -webkit-box-orient: 1;
+          @include expect {
+            -webkit-box-orient: 1;
+          }
         }
       }
-    }
 
-    @include it('-webkit-font-smoothing(1)') {
-      @include assert {
-        @include output {
-          @include \-webkit-font-smoothing(1);
-          @include utils_reset-tw;
-        }
+      @include it('-webkit-font-smoothing(1)') {
+        @include assert {
+          @include output {
+            @include \-webkit-font-smoothing(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          -webkit-font-smoothing: 1;
+          @include expect {
+            -webkit-font-smoothing: 1;
+          }
         }
       }
-    }
 
-    @include it('-webkit-line-clamp(1)') {
-      @include assert {
-        @include output {
-          @include \-webkit-line-clamp(1);
-          @include utils_reset-tw;
-        }
+      @include it('-webkit-line-clamp(1)') {
+        @include assert {
+          @include output {
+            @include \-webkit-line-clamp(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          -webkit-line-clamp: 1;
+          @include expect {
+            -webkit-line-clamp: 1;
+          }
         }
       }
-    }
 
-    @include it('accent-color(1)') {
-      @include assert {
-        @include output {
-          @include accent-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('accent-color(1)') {
+        @include assert {
+          @include output {
+            @include accent-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          accent-color: 1;
+          @include expect {
+            accent-color: 1;
+          }
         }
       }
-    }
 
-    @include it('align-content(1)') {
-      @include assert {
-        @include output {
-          @include align-content(1);
-          @include utils_reset-tw;
-        }
+      @include it('align-content(1)') {
+        @include assert {
+          @include output {
+            @include align-content(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          align-content: 1;
+          @include expect {
+            align-content: 1;
+          }
         }
       }
-    }
 
-    @include it('align-items(1)') {
-      @include assert {
-        @include output {
-          @include align-items(1);
-          @include utils_reset-tw;
-        }
+      @include it('align-items(1)') {
+        @include assert {
+          @include output {
+            @include align-items(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          align-items: 1;
+          @include expect {
+            align-items: 1;
+          }
         }
       }
-    }
 
-    @include it('align-self(1)') {
-      @include assert {
-        @include output {
-          @include align-self(1);
-          @include utils_reset-tw;
-        }
+      @include it('align-self(1)') {
+        @include assert {
+          @include output {
+            @include align-self(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          align-self: 1;
+          @include expect {
+            align-self: 1;
+          }
         }
       }
-    }
 
-    @include it('animation(1)') {
-      @include assert {
-        @include output {
-          @include animation(1);
-          @include utils_reset-tw;
-        }
+      @include it('animation(1)') {
+        @include assert {
+          @include output {
+            @include animation(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          animation: 1;
+          @include expect {
+            animation: 1;
+          }
         }
       }
-    }
 
-    @include it('appearance(1)') {
-      @include assert {
-        @include output {
-          @include appearance(1);
-          @include utils_reset-tw;
-        }
+      @include it('appearance(1)') {
+        @include assert {
+          @include output {
+            @include appearance(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          appearance: 1;
+          @include expect {
+            appearance: 1;
+          }
         }
       }
-    }
 
-    @include it('aspect-ratio(1)') {
-      @include assert {
-        @include output {
-          @include aspect-ratio(1);
-          @include utils_reset-tw;
-        }
+      @include it('aspect-ratio(1)') {
+        @include assert {
+          @include output {
+            @include aspect-ratio(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          aspect-ratio: 1;
+          @include expect {
+            aspect-ratio: 1;
+          }
         }
       }
-    }
 
-    @include it('backdrop-filter(1)') {
-      @include assert {
-        @include output {
-          @include backdrop-filter(1);
-          @include utils_reset-tw;
-        }
+      @include it('backdrop-filter(1)') {
+        @include assert {
+          @include output {
+            @include backdrop-filter(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          backdrop-filter: 1;
+          @include expect {
+            backdrop-filter: 1;
+          }
         }
       }
-    }
 
-    @include it('background-attachment(1)') {
-      @include assert {
-        @include output {
-          @include background-attachment(1);
-          @include utils_reset-tw;
-        }
+      @include it('background-attachment(1)') {
+        @include assert {
+          @include output {
+            @include background-attachment(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          background-attachment: 1;
+          @include expect {
+            background-attachment: 1;
+          }
         }
       }
-    }
 
-    @include it('background-blend-mode(1)') {
-      @include assert {
-        @include output {
-          @include background-blend-mode(1);
-          @include utils_reset-tw;
-        }
+      @include it('background-blend-mode(1)') {
+        @include assert {
+          @include output {
+            @include background-blend-mode(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          background-blend-mode: 1;
+          @include expect {
+            background-blend-mode: 1;
+          }
         }
       }
-    }
 
-    @include it('background-clip(1)') {
-      @include assert {
-        @include output {
-          @include background-clip(1);
-          @include utils_reset-tw;
-        }
+      @include it('background-clip(1)') {
+        @include assert {
+          @include output {
+            @include background-clip(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          background-clip: 1;
+          @include expect {
+            background-clip: 1;
+          }
         }
       }
-    }
 
-    @include it('background-color(1)') {
-      @include assert {
-        @include output {
-          @include background-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('background-color(1)') {
+        @include assert {
+          @include output {
+            @include background-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          background-color: 1;
+          @include expect {
+            background-color: 1;
+          }
         }
       }
-    }
 
-    @include it('background-image(1)') {
-      @include assert {
-        @include output {
-          @include background-image(1);
-          @include utils_reset-tw;
-        }
+      @include it('background-image(1)') {
+        @include assert {
+          @include output {
+            @include background-image(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          background-image: 1;
+          @include expect {
+            background-image: 1;
+          }
         }
       }
-    }
 
-    @include it('background-origin(1)') {
-      @include assert {
-        @include output {
-          @include background-origin(1);
-          @include utils_reset-tw;
-        }
+      @include it('background-origin(1)') {
+        @include assert {
+          @include output {
+            @include background-origin(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          background-origin: 1;
+          @include expect {
+            background-origin: 1;
+          }
         }
       }
-    }
 
-    @include it('background-position(1)') {
-      @include assert {
-        @include output {
-          @include background-position(1);
-          @include utils_reset-tw;
-        }
+      @include it('background-position(1)') {
+        @include assert {
+          @include output {
+            @include background-position(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          background-position: 1;
+          @include expect {
+            background-position: 1;
+          }
         }
       }
-    }
 
-    @include it('background-repeat(1)') {
-      @include assert {
-        @include output {
-          @include background-repeat(1);
-          @include utils_reset-tw;
-        }
+      @include it('background-repeat(1)') {
+        @include assert {
+          @include output {
+            @include background-repeat(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          background-repeat: 1;
+          @include expect {
+            background-repeat: 1;
+          }
         }
       }
-    }
 
-    @include it('background-size(1)') {
-      @include assert {
-        @include output {
-          @include background-size(1);
-          @include utils_reset-tw;
-        }
+      @include it('background-size(1)') {
+        @include assert {
+          @include output {
+            @include background-size(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          background-size: 1;
+          @include expect {
+            background-size: 1;
+          }
         }
       }
-    }
 
-    @include it('border-bottom-color(1)') {
-      @include assert {
-        @include output {
-          @include border-bottom-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-bottom-color(1)') {
+        @include assert {
+          @include output {
+            @include border-bottom-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-bottom-color: 1;
+          @include expect {
+            border-bottom-color: 1;
+          }
         }
       }
-    }
 
-    @include it('border-bottom-left-radius(1)') {
-      @include assert {
-        @include output {
-          @include border-bottom-left-radius(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-bottom-left-radius(1)') {
+        @include assert {
+          @include output {
+            @include border-bottom-left-radius(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-bottom-left-radius: 1;
+          @include expect {
+            border-bottom-left-radius: 1;
+          }
         }
       }
-    }
 
-    @include it('border-bottom-right-radius(1)') {
-      @include assert {
-        @include output {
-          @include border-bottom-right-radius(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-bottom-right-radius(1)') {
+        @include assert {
+          @include output {
+            @include border-bottom-right-radius(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-bottom-right-radius: 1;
+          @include expect {
+            border-bottom-right-radius: 1;
+          }
         }
       }
-    }
 
-    @include it('border-bottom-width(1)') {
-      @include assert {
-        @include output {
-          @include border-bottom-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-bottom-width(1)') {
+        @include assert {
+          @include output {
+            @include border-bottom-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-bottom-width: 1;
+          @include expect {
+            border-bottom-width: 1;
+          }
         }
       }
-    }
 
-    @include it('border-collapse(1)') {
-      @include assert {
-        @include output {
-          @include border-collapse(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-collapse(1)') {
+        @include assert {
+          @include output {
+            @include border-collapse(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-collapse: 1;
+          @include expect {
+            border-collapse: 1;
+          }
         }
       }
-    }
 
-    @include it('border-color(1)') {
-      @include assert {
-        @include output {
-          @include border-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-color(1)') {
+        @include assert {
+          @include output {
+            @include border-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-color: 1;
+          @include expect {
+            border-color: 1;
+          }
         }
       }
-    }
 
-    @include it('border-end-end-radius(1)') {
-      @include assert {
-        @include output {
-          @include border-end-end-radius(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-end-end-radius(1)') {
+        @include assert {
+          @include output {
+            @include border-end-end-radius(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-end-end-radius: 1;
+          @include expect {
+            border-end-end-radius: 1;
+          }
         }
       }
-    }
 
-    @include it('border-end-start-radius(1)') {
-      @include assert {
-        @include output {
-          @include border-end-start-radius(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-end-start-radius(1)') {
+        @include assert {
+          @include output {
+            @include border-end-start-radius(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-end-start-radius: 1;
+          @include expect {
+            border-end-start-radius: 1;
+          }
         }
       }
-    }
 
-    @include it('border-inline-end-color(1)') {
-      @include assert {
-        @include output {
-          @include border-inline-end-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-inline-end-color(1)') {
+        @include assert {
+          @include output {
+            @include border-inline-end-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-inline-end-color: 1;
+          @include expect {
+            border-inline-end-color: 1;
+          }
         }
       }
-    }
 
-    @include it('border-inline-end-width(1)') {
-      @include assert {
-        @include output {
-          @include border-inline-end-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-inline-end-width(1)') {
+        @include assert {
+          @include output {
+            @include border-inline-end-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-inline-end-width: 1;
+          @include expect {
+            border-inline-end-width: 1;
+          }
         }
       }
-    }
 
-    @include it('border-inline-start-color(1)') {
-      @include assert {
-        @include output {
-          @include border-inline-start-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-inline-start-color(1)') {
+        @include assert {
+          @include output {
+            @include border-inline-start-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-inline-start-color: 1;
+          @include expect {
+            border-inline-start-color: 1;
+          }
         }
       }
-    }
 
-    @include it('border-inline-start-width(1)') {
-      @include assert {
-        @include output {
-          @include border-inline-start-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-inline-start-width(1)') {
+        @include assert {
+          @include output {
+            @include border-inline-start-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-inline-start-width: 1;
+          @include expect {
+            border-inline-start-width: 1;
+          }
         }
       }
-    }
 
-    @include it('border-left-color(1)') {
-      @include assert {
-        @include output {
-          @include border-left-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-left-color(1)') {
+        @include assert {
+          @include output {
+            @include border-left-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-left-color: 1;
+          @include expect {
+            border-left-color: 1;
+          }
         }
       }
-    }
 
-    @include it('border-left-width(1)') {
-      @include assert {
-        @include output {
-          @include border-left-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-left-width(1)') {
+        @include assert {
+          @include output {
+            @include border-left-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-left-width: 1;
+          @include expect {
+            border-left-width: 1;
+          }
         }
       }
-    }
 
-    @include it('border-radius(1)') {
-      @include assert {
-        @include output {
-          @include border-radius(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-radius(1)') {
+        @include assert {
+          @include output {
+            @include border-radius(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-radius: 1;
+          @include expect {
+            border-radius: 1;
+          }
         }
       }
-    }
 
-    @include it('border-right-color(1)') {
-      @include assert {
-        @include output {
-          @include border-right-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-right-color(1)') {
+        @include assert {
+          @include output {
+            @include border-right-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-right-color: 1;
+          @include expect {
+            border-right-color: 1;
+          }
         }
       }
-    }
 
-    @include it('border-right-width(1)') {
-      @include assert {
-        @include output {
-          @include border-right-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-right-width(1)') {
+        @include assert {
+          @include output {
+            @include border-right-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-right-width: 1;
+          @include expect {
+            border-right-width: 1;
+          }
         }
       }
-    }
 
-    @include it('border-spacing(1)') {
-      @include assert {
-        @include output {
-          @include border-spacing(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-spacing(1)') {
+        @include assert {
+          @include output {
+            @include border-spacing(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-spacing: 1;
+          @include expect {
+            border-spacing: 1;
+          }
         }
       }
-    }
 
-    @include it('border-start-end-radius(1)') {
-      @include assert {
-        @include output {
-          @include border-start-end-radius(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-start-end-radius(1)') {
+        @include assert {
+          @include output {
+            @include border-start-end-radius(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-start-end-radius: 1;
+          @include expect {
+            border-start-end-radius: 1;
+          }
         }
       }
-    }
 
-    @include it('border-start-start-radius(1)') {
-      @include assert {
-        @include output {
-          @include border-start-start-radius(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-start-start-radius(1)') {
+        @include assert {
+          @include output {
+            @include border-start-start-radius(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-start-start-radius: 1;
+          @include expect {
+            border-start-start-radius: 1;
+          }
         }
       }
-    }
 
-    @include it('border-style(1)') {
-      @include assert {
-        @include output {
-          @include border-style(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-style(1)') {
+        @include assert {
+          @include output {
+            @include border-style(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-style: 1;
+          @include expect {
+            border-style: 1;
+          }
         }
       }
-    }
 
-    @include it('border-top-color(1)') {
-      @include assert {
-        @include output {
-          @include border-top-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-top-color(1)') {
+        @include assert {
+          @include output {
+            @include border-top-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-top-color: 1;
+          @include expect {
+            border-top-color: 1;
+          }
         }
       }
-    }
 
-    @include it('border-top-left-radius(1)') {
-      @include assert {
-        @include output {
-          @include border-top-left-radius(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-top-left-radius(1)') {
+        @include assert {
+          @include output {
+            @include border-top-left-radius(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-top-left-radius: 1;
+          @include expect {
+            border-top-left-radius: 1;
+          }
         }
       }
-    }
 
-    @include it('border-top-right-radius(1)') {
-      @include assert {
-        @include output {
-          @include border-top-right-radius(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-top-right-radius(1)') {
+        @include assert {
+          @include output {
+            @include border-top-right-radius(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-top-right-radius: 1;
+          @include expect {
+            border-top-right-radius: 1;
+          }
         }
       }
-    }
 
-    @include it('border-top-width(1)') {
-      @include assert {
-        @include output {
-          @include border-top-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-top-width(1)') {
+        @include assert {
+          @include output {
+            @include border-top-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-top-width: 1;
+          @include expect {
+            border-top-width: 1;
+          }
         }
       }
-    }
 
-    @include it('border-width(1)') {
-      @include assert {
-        @include output {
-          @include border-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('border-width(1)') {
+        @include assert {
+          @include output {
+            @include border-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          border-width: 1;
+          @include expect {
+            border-width: 1;
+          }
         }
       }
-    }
 
-    @include it('bottom(1)') {
-      @include assert {
-        @include output {
-          @include bottom(1);
-          @include utils_reset-tw;
-        }
+      @include it('bottom(1)') {
+        @include assert {
+          @include output {
+            @include bottom(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          bottom: 1;
+          @include expect {
+            bottom: 1;
+          }
         }
       }
-    }
 
-    @include it('box-decoration-break(1)') {
-      @include assert {
-        @include output {
-          @include box-decoration-break(1);
-          @include utils_reset-tw;
-        }
+      @include it('box-decoration-break(1)') {
+        @include assert {
+          @include output {
+            @include box-decoration-break(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          box-decoration-break: 1;
+          @include expect {
+            box-decoration-break: 1;
+          }
         }
       }
-    }
 
-    @include it('box-shadow(1)') {
-      @include assert {
-        @include output {
-          @include box-shadow(1);
-          @include utils_reset-tw;
-        }
+      @include it('box-shadow(1)') {
+        @include assert {
+          @include output {
+            @include box-shadow(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          box-shadow: 1;
+          @include expect {
+            box-shadow: 1;
+          }
         }
       }
-    }
 
-    @include it('box-sizing(1)') {
-      @include assert {
-        @include output {
-          @include box-sizing(1);
-          @include utils_reset-tw;
-        }
+      @include it('box-sizing(1)') {
+        @include assert {
+          @include output {
+            @include box-sizing(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          box-sizing: 1;
+          @include expect {
+            box-sizing: 1;
+          }
         }
       }
-    }
 
-    @include it('break-after(1)') {
-      @include assert {
-        @include output {
-          @include break-after(1);
-          @include utils_reset-tw;
-        }
+      @include it('break-after(1)') {
+        @include assert {
+          @include output {
+            @include break-after(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          break-after: 1;
+          @include expect {
+            break-after: 1;
+          }
         }
       }
-    }
 
-    @include it('break-before(1)') {
-      @include assert {
-        @include output {
-          @include break-before(1);
-          @include utils_reset-tw;
-        }
+      @include it('break-before(1)') {
+        @include assert {
+          @include output {
+            @include break-before(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          break-before: 1;
+          @include expect {
+            break-before: 1;
+          }
         }
       }
-    }
 
-    @include it('break-inside(1)') {
-      @include assert {
-        @include output {
-          @include break-inside(1);
-          @include utils_reset-tw;
-        }
+      @include it('break-inside(1)') {
+        @include assert {
+          @include output {
+            @include break-inside(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          break-inside: 1;
+          @include expect {
+            break-inside: 1;
+          }
         }
       }
-    }
 
-    @include it('caption-side(1)') {
-      @include assert {
-        @include output {
-          @include caption-side(1);
-          @include utils_reset-tw;
-        }
+      @include it('caption-side(1)') {
+        @include assert {
+          @include output {
+            @include caption-side(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          caption-side: 1;
+          @include expect {
+            caption-side: 1;
+          }
         }
       }
-    }
 
-    @include it('caret-color(1)') {
-      @include assert {
-        @include output {
-          @include caret-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('caret-color(1)') {
+        @include assert {
+          @include output {
+            @include caret-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          caret-color: 1;
+          @include expect {
+            caret-color: 1;
+          }
         }
       }
-    }
 
-    @include it('clear(1)') {
-      @include assert {
-        @include output {
-          @include clear(1);
-          @include utils_reset-tw;
-        }
+      @include it('clear(1)') {
+        @include assert {
+          @include output {
+            @include clear(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          clear: 1;
+          @include expect {
+            clear: 1;
+          }
         }
       }
-    }
 
-    @include it('clip(1)') {
-      @include assert {
-        @include output {
-          @include clip(1);
-          @include utils_reset-tw;
-        }
+      @include it('clip(1)') {
+        @include assert {
+          @include output {
+            @include clip(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          clip: 1;
+          @include expect {
+            clip: 1;
+          }
         }
       }
-    }
 
-    @include it('color(1)') {
-      @include assert {
-        @include output {
-          @include color(1);
-          @include utils_reset-tw;
-        }
+      @include it('color(1)') {
+        @include assert {
+          @include output {
+            @include color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          color: 1;
+          @include expect {
+            color: 1;
+          }
         }
       }
-    }
 
-    @include it('column-gap(1)') {
-      @include assert {
-        @include output {
-          @include column-gap(1);
-          @include utils_reset-tw;
-        }
+      @include it('column-gap(1)') {
+        @include assert {
+          @include output {
+            @include column-gap(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          column-gap: 1;
+          @include expect {
+            column-gap: 1;
+          }
         }
       }
-    }
 
-    @include it('columns(1)') {
-      @include assert {
-        @include output {
-          @include columns(1);
-          @include utils_reset-tw;
-        }
+      @include it('columns(1)') {
+        @include assert {
+          @include output {
+            @include columns(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          columns: 1;
+          @include expect {
+            columns: 1;
+          }
         }
       }
-    }
 
-    @include it('cursor(1)') {
-      @include assert {
-        @include output {
-          @include cursor(1);
-          @include utils_reset-tw;
-        }
+      @include it('cursor(1)') {
+        @include assert {
+          @include output {
+            @include cursor(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          cursor: 1;
+          @include expect {
+            cursor: 1;
+          }
         }
       }
-    }
 
-    @include it('display(1)') {
-      @include assert {
-        @include output {
-          @include display(1);
-          @include utils_reset-tw;
-        }
+      @include it('display(1)') {
+        @include assert {
+          @include output {
+            @include display(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          display: 1;
+          @include expect {
+            display: 1;
+          }
         }
       }
-    }
 
-    @include it('fill(1)') {
-      @include assert {
-        @include output {
-          @include fill(1);
-          @include utils_reset-tw;
-        }
+      @include it('fill(1)') {
+        @include assert {
+          @include output {
+            @include fill(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          fill: 1;
+          @include expect {
+            fill: 1;
+          }
         }
       }
-    }
 
-    @include it('filter(1)') {
-      @include assert {
-        @include output {
-          @include filter(1);
-          @include utils_reset-tw;
-        }
+      @include it('filter(1)') {
+        @include assert {
+          @include output {
+            @include filter(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          filter: 1;
+          @include expect {
+            filter: 1;
+          }
         }
       }
-    }
 
-    @include it('flex(1)') {
-      @include assert {
-        @include output {
-          @include flex(1);
-          @include utils_reset-tw;
-        }
+      @include it('flex(1)') {
+        @include assert {
+          @include output {
+            @include flex(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          flex: 1;
+          @include expect {
+            flex: 1;
+          }
         }
       }
-    }
 
-    @include it('flex-basis(1)') {
-      @include assert {
-        @include output {
-          @include flex-basis(1);
-          @include utils_reset-tw;
-        }
+      @include it('flex-basis(1)') {
+        @include assert {
+          @include output {
+            @include flex-basis(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          flex-basis: 1;
+          @include expect {
+            flex-basis: 1;
+          }
         }
       }
-    }
 
-    @include it('flex-direction(1)') {
-      @include assert {
-        @include output {
-          @include flex-direction(1);
-          @include utils_reset-tw;
-        }
+      @include it('flex-direction(1)') {
+        @include assert {
+          @include output {
+            @include flex-direction(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          flex-direction: 1;
+          @include expect {
+            flex-direction: 1;
+          }
         }
       }
-    }
 
-    @include it('flex-grow(1)') {
-      @include assert {
-        @include output {
-          @include flex-grow(1);
-          @include utils_reset-tw;
-        }
+      @include it('flex-grow(1)') {
+        @include assert {
+          @include output {
+            @include flex-grow(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          flex-grow: 1;
+          @include expect {
+            flex-grow: 1;
+          }
         }
       }
-    }
 
-    @include it('flex-shrink(1)') {
-      @include assert {
-        @include output {
-          @include flex-shrink(1);
-          @include utils_reset-tw;
-        }
+      @include it('flex-shrink(1)') {
+        @include assert {
+          @include output {
+            @include flex-shrink(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          flex-shrink: 1;
+          @include expect {
+            flex-shrink: 1;
+          }
         }
       }
-    }
 
-    @include it('flex-wrap(1)') {
-      @include assert {
-        @include output {
-          @include flex-wrap(1);
-          @include utils_reset-tw;
-        }
+      @include it('flex-wrap(1)') {
+        @include assert {
+          @include output {
+            @include flex-wrap(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          flex-wrap: 1;
+          @include expect {
+            flex-wrap: 1;
+          }
         }
       }
-    }
 
-    @include it('float(1)') {
-      @include assert {
-        @include output {
-          @include float(1);
-          @include utils_reset-tw;
-        }
+      @include it('float(1)') {
+        @include assert {
+          @include output {
+            @include float(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          float: 1;
+          @include expect {
+            float: 1;
+          }
         }
       }
-    }
 
-    @include it('font-family(1)') {
-      @include assert {
-        @include output {
-          @include font-family(1);
-          @include utils_reset-tw;
-        }
+      @include it('font-family(1)') {
+        @include assert {
+          @include output {
+            @include font-family(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          font-family: 1;
+          @include expect {
+            font-family: 1;
+          }
         }
       }
-    }
 
-    @include it('font-size(1)') {
-      @include assert {
-        @include output {
-          @include font-size(1);
-          @include utils_reset-tw;
-        }
+      @include it('font-size(1)') {
+        @include assert {
+          @include output {
+            @include font-size(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          font-size: 1;
+          @include expect {
+            font-size: 1;
+          }
         }
       }
-    }
 
-    @include it('font-style(1)') {
-      @include assert {
-        @include output {
-          @include font-style(1);
-          @include utils_reset-tw;
-        }
+      @include it('font-style(1)') {
+        @include assert {
+          @include output {
+            @include font-style(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          font-style: 1;
+          @include expect {
+            font-style: 1;
+          }
         }
       }
-    }
 
-    @include it('font-variant-numeric(1)') {
-      @include assert {
-        @include output {
-          @include font-variant-numeric(1);
-          @include utils_reset-tw;
-        }
+      @include it('font-variant-numeric(1)') {
+        @include assert {
+          @include output {
+            @include font-variant-numeric(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          font-variant-numeric: 1;
+          @include expect {
+            font-variant-numeric: 1;
+          }
         }
       }
-    }
 
-    @include it('font-weight(1)') {
-      @include assert {
-        @include output {
-          @include font-weight(1);
-          @include utils_reset-tw;
-        }
+      @include it('font-weight(1)') {
+        @include assert {
+          @include output {
+            @include font-weight(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          font-weight: 1;
+          @include expect {
+            font-weight: 1;
+          }
         }
       }
-    }
 
-    @include it('forced-color-adjust(1)') {
-      @include assert {
-        @include output {
-          @include forced-color-adjust(1);
-          @include utils_reset-tw;
-        }
+      @include it('forced-color-adjust(1)') {
+        @include assert {
+          @include output {
+            @include forced-color-adjust(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          forced-color-adjust: 1;
+          @include expect {
+            forced-color-adjust: 1;
+          }
         }
       }
-    }
 
-    @include it('gap(1)') {
-      @include assert {
-        @include output {
-          @include gap(1);
-          @include utils_reset-tw;
-        }
+      @include it('gap(1)') {
+        @include assert {
+          @include output {
+            @include gap(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          gap: 1;
+          @include expect {
+            gap: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-auto-columns(1)') {
-      @include assert {
-        @include output {
-          @include grid-auto-columns(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-auto-columns(1)') {
+        @include assert {
+          @include output {
+            @include grid-auto-columns(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-auto-columns: 1;
+          @include expect {
+            grid-auto-columns: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-auto-flow(1)') {
-      @include assert {
-        @include output {
-          @include grid-auto-flow(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-auto-flow(1)') {
+        @include assert {
+          @include output {
+            @include grid-auto-flow(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-auto-flow: 1;
+          @include expect {
+            grid-auto-flow: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-auto-rows(1)') {
-      @include assert {
-        @include output {
-          @include grid-auto-rows(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-auto-rows(1)') {
+        @include assert {
+          @include output {
+            @include grid-auto-rows(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-auto-rows: 1;
+          @include expect {
+            grid-auto-rows: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-column(1)') {
-      @include assert {
-        @include output {
-          @include grid-column(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-column(1)') {
+        @include assert {
+          @include output {
+            @include grid-column(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-column: 1;
+          @include expect {
+            grid-column: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-column-end(1)') {
-      @include assert {
-        @include output {
-          @include grid-column-end(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-column-end(1)') {
+        @include assert {
+          @include output {
+            @include grid-column-end(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-column-end: 1;
+          @include expect {
+            grid-column-end: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-column-start(1)') {
-      @include assert {
-        @include output {
-          @include grid-column-start(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-column-start(1)') {
+        @include assert {
+          @include output {
+            @include grid-column-start(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-column-start: 1;
+          @include expect {
+            grid-column-start: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-row(1)') {
-      @include assert {
-        @include output {
-          @include grid-row(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-row(1)') {
+        @include assert {
+          @include output {
+            @include grid-row(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-row: 1;
+          @include expect {
+            grid-row: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-row-end(1)') {
-      @include assert {
-        @include output {
-          @include grid-row-end(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-row-end(1)') {
+        @include assert {
+          @include output {
+            @include grid-row-end(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-row-end: 1;
+          @include expect {
+            grid-row-end: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-row-start(1)') {
-      @include assert {
-        @include output {
-          @include grid-row-start(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-row-start(1)') {
+        @include assert {
+          @include output {
+            @include grid-row-start(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-row-start: 1;
+          @include expect {
+            grid-row-start: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-template-columns(1)') {
-      @include assert {
-        @include output {
-          @include grid-template-columns(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-template-columns(1)') {
+        @include assert {
+          @include output {
+            @include grid-template-columns(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-template-columns: 1;
+          @include expect {
+            grid-template-columns: 1;
+          }
         }
       }
-    }
 
-    @include it('grid-template-rows(1)') {
-      @include assert {
-        @include output {
-          @include grid-template-rows(1);
-          @include utils_reset-tw;
-        }
+      @include it('grid-template-rows(1)') {
+        @include assert {
+          @include output {
+            @include grid-template-rows(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          grid-template-rows: 1;
+          @include expect {
+            grid-template-rows: 1;
+          }
         }
       }
-    }
 
-    @include it('height(1)') {
-      @include assert {
-        @include output {
-          @include height(1);
-          @include utils_reset-tw;
-        }
+      @include it('height(1)') {
+        @include assert {
+          @include output {
+            @include height(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          height: 1;
+          @include expect {
+            height: 1;
+          }
         }
       }
-    }
 
-    @include it('hyphens(1)') {
-      @include assert {
-        @include output {
-          @include hyphens(1);
-          @include utils_reset-tw;
-        }
+      @include it('hyphens(1)') {
+        @include assert {
+          @include output {
+            @include hyphens(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          hyphens: 1;
+          @include expect {
+            hyphens: 1;
+          }
         }
       }
-    }
 
-    @include it('inset(1)') {
-      @include assert {
-        @include output {
-          @include inset(1);
-          @include utils_reset-tw;
-        }
+      @include it('inset(1)') {
+        @include assert {
+          @include output {
+            @include inset(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          inset: 1;
+          @include expect {
+            inset: 1;
+          }
         }
       }
-    }
 
-    @include it('inset-inline-end(1)') {
-      @include assert {
-        @include output {
-          @include inset-inline-end(1);
-          @include utils_reset-tw;
-        }
+      @include it('inset-inline-end(1)') {
+        @include assert {
+          @include output {
+            @include inset-inline-end(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          inset-inline-end: 1;
+          @include expect {
+            inset-inline-end: 1;
+          }
         }
       }
-    }
 
-    @include it('inset-inline-start(1)') {
-      @include assert {
-        @include output {
-          @include inset-inline-start(1);
-          @include utils_reset-tw;
-        }
+      @include it('inset-inline-start(1)') {
+        @include assert {
+          @include output {
+            @include inset-inline-start(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          inset-inline-start: 1;
+          @include expect {
+            inset-inline-start: 1;
+          }
         }
       }
-    }
 
-    @include it('isolation(1)') {
-      @include assert {
-        @include output {
-          @include isolation(1);
-          @include utils_reset-tw;
-        }
+      @include it('isolation(1)') {
+        @include assert {
+          @include output {
+            @include isolation(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          isolation: 1;
+          @include expect {
+            isolation: 1;
+          }
         }
       }
-    }
 
-    @include it('justify-content(1)') {
-      @include assert {
-        @include output {
-          @include justify-content(1);
-          @include utils_reset-tw;
-        }
+      @include it('justify-content(1)') {
+        @include assert {
+          @include output {
+            @include justify-content(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          justify-content: 1;
+          @include expect {
+            justify-content: 1;
+          }
         }
       }
-    }
 
-    @include it('justify-items(1)') {
-      @include assert {
-        @include output {
-          @include justify-items(1);
-          @include utils_reset-tw;
-        }
+      @include it('justify-items(1)') {
+        @include assert {
+          @include output {
+            @include justify-items(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          justify-items: 1;
+          @include expect {
+            justify-items: 1;
+          }
         }
       }
-    }
 
-    @include it('justify-self(1)') {
-      @include assert {
-        @include output {
-          @include justify-self(1);
-          @include utils_reset-tw;
-        }
+      @include it('justify-self(1)') {
+        @include assert {
+          @include output {
+            @include justify-self(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          justify-self: 1;
+          @include expect {
+            justify-self: 1;
+          }
         }
       }
-    }
 
-    @include it('left(1)') {
-      @include assert {
-        @include output {
-          @include left(1);
-          @include utils_reset-tw;
-        }
+      @include it('left(1)') {
+        @include assert {
+          @include output {
+            @include left(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          left: 1;
+          @include expect {
+            left: 1;
+          }
         }
       }
-    }
 
-    @include it('letter-spacing(1)') {
-      @include assert {
-        @include output {
-          @include letter-spacing(1);
-          @include utils_reset-tw;
-        }
+      @include it('letter-spacing(1)') {
+        @include assert {
+          @include output {
+            @include letter-spacing(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          letter-spacing: 1;
+          @include expect {
+            letter-spacing: 1;
+          }
         }
       }
-    }
 
-    @include it('line-height(1)') {
-      @include assert {
-        @include output {
-          @include line-height(1);
-          @include utils_reset-tw;
-        }
+      @include it('line-height(1)') {
+        @include assert {
+          @include output {
+            @include line-height(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          line-height: 1;
+          @include expect {
+            line-height: 1;
+          }
         }
       }
-    }
 
-    @include it('list-style-image(1)') {
-      @include assert {
-        @include output {
-          @include list-style-image(1);
-          @include utils_reset-tw;
-        }
+      @include it('list-style-image(1)') {
+        @include assert {
+          @include output {
+            @include list-style-image(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          list-style-image: 1;
+          @include expect {
+            list-style-image: 1;
+          }
         }
       }
-    }
 
-    @include it('list-style-position(1)') {
-      @include assert {
-        @include output {
-          @include list-style-position(1);
-          @include utils_reset-tw;
-        }
+      @include it('list-style-position(1)') {
+        @include assert {
+          @include output {
+            @include list-style-position(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          list-style-position: 1;
+          @include expect {
+            list-style-position: 1;
+          }
         }
       }
-    }
 
-    @include it('list-style-type(1)') {
-      @include assert {
-        @include output {
-          @include list-style-type(1);
-          @include utils_reset-tw;
-        }
+      @include it('list-style-type(1)') {
+        @include assert {
+          @include output {
+            @include list-style-type(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          list-style-type: 1;
+          @include expect {
+            list-style-type: 1;
+          }
         }
       }
-    }
 
-    @include it('margin(1)') {
-      @include assert {
-        @include output {
-          @include margin(1);
-          @include utils_reset-tw;
-        }
+      @include it('margin(1)') {
+        @include assert {
+          @include output {
+            @include margin(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          margin: 1;
+          @include expect {
+            margin: 1;
+          }
         }
       }
-    }
 
-    @include it('margin-bottom(1)') {
-      @include assert {
-        @include output {
-          @include margin-bottom(1);
-          @include utils_reset-tw;
-        }
+      @include it('margin-bottom(1)') {
+        @include assert {
+          @include output {
+            @include margin-bottom(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          margin-bottom: 1;
+          @include expect {
+            margin-bottom: 1;
+          }
         }
       }
-    }
 
-    @include it('margin-inline-end(1)') {
-      @include assert {
-        @include output {
-          @include margin-inline-end(1);
-          @include utils_reset-tw;
-        }
+      @include it('margin-inline-end(1)') {
+        @include assert {
+          @include output {
+            @include margin-inline-end(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          margin-inline-end: 1;
+          @include expect {
+            margin-inline-end: 1;
+          }
         }
       }
-    }
 
-    @include it('margin-inline-start(1)') {
-      @include assert {
-        @include output {
-          @include margin-inline-start(1);
-          @include utils_reset-tw;
-        }
+      @include it('margin-inline-start(1)') {
+        @include assert {
+          @include output {
+            @include margin-inline-start(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          margin-inline-start: 1;
+          @include expect {
+            margin-inline-start: 1;
+          }
         }
       }
-    }
 
-    @include it('margin-left(1)') {
-      @include assert {
-        @include output {
-          @include margin-left(1);
-          @include utils_reset-tw;
-        }
+      @include it('margin-left(1)') {
+        @include assert {
+          @include output {
+            @include margin-left(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          margin-left: 1;
+          @include expect {
+            margin-left: 1;
+          }
         }
       }
-    }
 
-    @include it('margin-right(1)') {
-      @include assert {
-        @include output {
-          @include margin-right(1);
-          @include utils_reset-tw;
-        }
+      @include it('margin-right(1)') {
+        @include assert {
+          @include output {
+            @include margin-right(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          margin-right: 1;
+          @include expect {
+            margin-right: 1;
+          }
         }
       }
-    }
 
-    @include it('margin-top(1)') {
-      @include assert {
-        @include output {
-          @include margin-top(1);
-          @include utils_reset-tw;
-        }
+      @include it('margin-top(1)') {
+        @include assert {
+          @include output {
+            @include margin-top(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          margin-top: 1;
+          @include expect {
+            margin-top: 1;
+          }
         }
       }
-    }
 
-    @include it('max-height(1)') {
-      @include assert {
-        @include output {
-          @include max-height(1);
-          @include utils_reset-tw;
-        }
+      @include it('max-height(1)') {
+        @include assert {
+          @include output {
+            @include max-height(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          max-height: 1;
+          @include expect {
+            max-height: 1;
+          }
         }
       }
-    }
 
-    @include it('max-width(1)') {
-      @include assert {
-        @include output {
-          @include max-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('max-width(1)') {
+        @include assert {
+          @include output {
+            @include max-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          max-width: 1;
+          @include expect {
+            max-width: 1;
+          }
         }
       }
-    }
 
-    @include it('min-height(1)') {
-      @include assert {
-        @include output {
-          @include min-height(1);
-          @include utils_reset-tw;
-        }
+      @include it('min-height(1)') {
+        @include assert {
+          @include output {
+            @include min-height(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          min-height: 1;
+          @include expect {
+            min-height: 1;
+          }
         }
       }
-    }
 
-    @include it('min-width(1)') {
-      @include assert {
-        @include output {
-          @include min-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('min-width(1)') {
+        @include assert {
+          @include output {
+            @include min-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          min-width: 1;
+          @include expect {
+            min-width: 1;
+          }
         }
       }
-    }
 
-    @include it('mix-blend-mode(1)') {
-      @include assert {
-        @include output {
-          @include mix-blend-mode(1);
-          @include utils_reset-tw;
-        }
+      @include it('mix-blend-mode(1)') {
+        @include assert {
+          @include output {
+            @include mix-blend-mode(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          mix-blend-mode: 1;
+          @include expect {
+            mix-blend-mode: 1;
+          }
         }
       }
-    }
 
-    @include it('object-fit(1)') {
-      @include assert {
-        @include output {
-          @include object-fit(1);
-          @include utils_reset-tw;
-        }
+      @include it('object-fit(1)') {
+        @include assert {
+          @include output {
+            @include object-fit(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          object-fit: 1;
+          @include expect {
+            object-fit: 1;
+          }
         }
       }
-    }
 
-    @include it('object-position(1)') {
-      @include assert {
-        @include output {
-          @include object-position(1);
-          @include utils_reset-tw;
-        }
+      @include it('object-position(1)') {
+        @include assert {
+          @include output {
+            @include object-position(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          object-position: 1;
+          @include expect {
+            object-position: 1;
+          }
         }
       }
-    }
 
-    @include it('opacity(1)') {
-      @include assert {
-        @include output {
-          @include opacity(1);
-          @include utils_reset-tw;
-        }
+      @include it('opacity(1)') {
+        @include assert {
+          @include output {
+            @include opacity(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          opacity: 1;
+          @include expect {
+            opacity: 1;
+          }
         }
       }
-    }
 
-    @include it('order(1)') {
-      @include assert {
-        @include output {
-          @include order(1);
-          @include utils_reset-tw;
-        }
+      @include it('order(1)') {
+        @include assert {
+          @include output {
+            @include order(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          order: 1;
+          @include expect {
+            order: 1;
+          }
         }
       }
-    }
 
-    @include it('outline(1)') {
-      @include assert {
-        @include output {
-          @include outline(1);
-          @include utils_reset-tw;
-        }
+      @include it('outline(1)') {
+        @include assert {
+          @include output {
+            @include outline(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          outline: 1;
+          @include expect {
+            outline: 1;
+          }
         }
       }
-    }
 
-    @include it('outline-color(1)') {
-      @include assert {
-        @include output {
-          @include outline-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('outline-color(1)') {
+        @include assert {
+          @include output {
+            @include outline-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          outline-color: 1;
+          @include expect {
+            outline-color: 1;
+          }
         }
       }
-    }
 
-    @include it('outline-offset(1)') {
-      @include assert {
-        @include output {
-          @include outline-offset(1);
-          @include utils_reset-tw;
-        }
+      @include it('outline-offset(1)') {
+        @include assert {
+          @include output {
+            @include outline-offset(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          outline-offset: 1;
+          @include expect {
+            outline-offset: 1;
+          }
         }
       }
-    }
 
-    @include it('outline-style(1)') {
-      @include assert {
-        @include output {
-          @include outline-style(1);
-          @include utils_reset-tw;
-        }
+      @include it('outline-style(1)') {
+        @include assert {
+          @include output {
+            @include outline-style(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          outline-style: 1;
+          @include expect {
+            outline-style: 1;
+          }
         }
       }
-    }
 
-    @include it('outline-width(1)') {
-      @include assert {
-        @include output {
-          @include outline-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('outline-width(1)') {
+        @include assert {
+          @include output {
+            @include outline-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          outline-width: 1;
+          @include expect {
+            outline-width: 1;
+          }
         }
       }
-    }
 
-    @include it('overflow(1)') {
-      @include assert {
-        @include output {
-          @include overflow(1);
-          @include utils_reset-tw;
-        }
+      @include it('overflow(1)') {
+        @include assert {
+          @include output {
+            @include overflow(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          overflow: 1;
+          @include expect {
+            overflow: 1;
+          }
         }
       }
-    }
 
-    @include it('overflow-wrap(1)') {
-      @include assert {
-        @include output {
-          @include overflow-wrap(1);
-          @include utils_reset-tw;
-        }
+      @include it('overflow-wrap(1)') {
+        @include assert {
+          @include output {
+            @include overflow-wrap(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          overflow-wrap: 1;
+          @include expect {
+            overflow-wrap: 1;
+          }
         }
       }
-    }
 
-    @include it('overflow-x(1)') {
-      @include assert {
-        @include output {
-          @include overflow-x(1);
-          @include utils_reset-tw;
-        }
+      @include it('overflow-x(1)') {
+        @include assert {
+          @include output {
+            @include overflow-x(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          overflow-x: 1;
+          @include expect {
+            overflow-x: 1;
+          }
         }
       }
-    }
 
-    @include it('overflow-y(1)') {
-      @include assert {
-        @include output {
-          @include overflow-y(1);
-          @include utils_reset-tw;
-        }
+      @include it('overflow-y(1)') {
+        @include assert {
+          @include output {
+            @include overflow-y(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          overflow-y: 1;
+          @include expect {
+            overflow-y: 1;
+          }
         }
       }
-    }
 
-    @include it('overscroll-behavior(1)') {
-      @include assert {
-        @include output {
-          @include overscroll-behavior(1);
-          @include utils_reset-tw;
-        }
+      @include it('overscroll-behavior(1)') {
+        @include assert {
+          @include output {
+            @include overscroll-behavior(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          overscroll-behavior: 1;
+          @include expect {
+            overscroll-behavior: 1;
+          }
         }
       }
-    }
 
-    @include it('overscroll-behavior-x(1)') {
-      @include assert {
-        @include output {
-          @include overscroll-behavior-x(1);
-          @include utils_reset-tw;
-        }
+      @include it('overscroll-behavior-x(1)') {
+        @include assert {
+          @include output {
+            @include overscroll-behavior-x(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          overscroll-behavior-x: 1;
+          @include expect {
+            overscroll-behavior-x: 1;
+          }
         }
       }
-    }
 
-    @include it('overscroll-behavior-y(1)') {
-      @include assert {
-        @include output {
-          @include overscroll-behavior-y(1);
-          @include utils_reset-tw;
-        }
+      @include it('overscroll-behavior-y(1)') {
+        @include assert {
+          @include output {
+            @include overscroll-behavior-y(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          overscroll-behavior-y: 1;
+          @include expect {
+            overscroll-behavior-y: 1;
+          }
         }
       }
-    }
 
-    @include it('padding(1)') {
-      @include assert {
-        @include output {
-          @include padding(1);
-          @include utils_reset-tw;
-        }
+      @include it('padding(1)') {
+        @include assert {
+          @include output {
+            @include padding(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          padding: 1;
+          @include expect {
+            padding: 1;
+          }
         }
       }
-    }
 
-    @include it('padding-bottom(1)') {
-      @include assert {
-        @include output {
-          @include padding-bottom(1);
-          @include utils_reset-tw;
-        }
+      @include it('padding-bottom(1)') {
+        @include assert {
+          @include output {
+            @include padding-bottom(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          padding-bottom: 1;
+          @include expect {
+            padding-bottom: 1;
+          }
         }
       }
-    }
 
-    @include it('padding-inline-end(1)') {
-      @include assert {
-        @include output {
-          @include padding-inline-end(1);
-          @include utils_reset-tw;
-        }
+      @include it('padding-inline-end(1)') {
+        @include assert {
+          @include output {
+            @include padding-inline-end(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          padding-inline-end: 1;
+          @include expect {
+            padding-inline-end: 1;
+          }
         }
       }
-    }
 
-    @include it('padding-inline-start(1)') {
-      @include assert {
-        @include output {
-          @include padding-inline-start(1);
-          @include utils_reset-tw;
-        }
+      @include it('padding-inline-start(1)') {
+        @include assert {
+          @include output {
+            @include padding-inline-start(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          padding-inline-start: 1;
+          @include expect {
+            padding-inline-start: 1;
+          }
         }
       }
-    }
 
-    @include it('padding-left(1)') {
-      @include assert {
-        @include output {
-          @include padding-left(1);
-          @include utils_reset-tw;
-        }
+      @include it('padding-left(1)') {
+        @include assert {
+          @include output {
+            @include padding-left(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          padding-left: 1;
+          @include expect {
+            padding-left: 1;
+          }
         }
       }
-    }
 
-    @include it('padding-right(1)') {
-      @include assert {
-        @include output {
-          @include padding-right(1);
-          @include utils_reset-tw;
-        }
+      @include it('padding-right(1)') {
+        @include assert {
+          @include output {
+            @include padding-right(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          padding-right: 1;
+          @include expect {
+            padding-right: 1;
+          }
         }
       }
-    }
 
-    @include it('padding-top(1)') {
-      @include assert {
-        @include output {
-          @include padding-top(1);
-          @include utils_reset-tw;
-        }
+      @include it('padding-top(1)') {
+        @include assert {
+          @include output {
+            @include padding-top(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          padding-top: 1;
+          @include expect {
+            padding-top: 1;
+          }
         }
       }
-    }
 
-    @include it('place-content(1)') {
-      @include assert {
-        @include output {
-          @include place-content(1);
-          @include utils_reset-tw;
-        }
+      @include it('place-content(1)') {
+        @include assert {
+          @include output {
+            @include place-content(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          place-content: 1;
+          @include expect {
+            place-content: 1;
+          }
         }
       }
-    }
 
-    @include it('place-items(1)') {
-      @include assert {
-        @include output {
-          @include place-items(1);
-          @include utils_reset-tw;
-        }
+      @include it('place-items(1)') {
+        @include assert {
+          @include output {
+            @include place-items(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          place-items: 1;
+          @include expect {
+            place-items: 1;
+          }
         }
       }
-    }
 
-    @include it('place-self(1)') {
-      @include assert {
-        @include output {
-          @include place-self(1);
-          @include utils_reset-tw;
-        }
+      @include it('place-self(1)') {
+        @include assert {
+          @include output {
+            @include place-self(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          place-self: 1;
+          @include expect {
+            place-self: 1;
+          }
         }
       }
-    }
 
-    @include it('pointer-events(1)') {
-      @include assert {
-        @include output {
-          @include pointer-events(1);
-          @include utils_reset-tw;
-        }
+      @include it('pointer-events(1)') {
+        @include assert {
+          @include output {
+            @include pointer-events(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          pointer-events: 1;
+          @include expect {
+            pointer-events: 1;
+          }
         }
       }
-    }
 
-    @include it('position(1)') {
-      @include assert {
-        @include output {
-          @include position(1);
-          @include utils_reset-tw;
-        }
+      @include it('position(1)') {
+        @include assert {
+          @include output {
+            @include position(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          position: 1;
+          @include expect {
+            position: 1;
+          }
         }
       }
-    }
 
-    @include it('resize(1)') {
-      @include assert {
-        @include output {
-          @include resize(1);
-          @include utils_reset-tw;
-        }
+      @include it('resize(1)') {
+        @include assert {
+          @include output {
+            @include resize(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          resize: 1;
+          @include expect {
+            resize: 1;
+          }
         }
       }
-    }
 
-    @include it('right(1)') {
-      @include assert {
-        @include output {
-          @include right(1);
-          @include utils_reset-tw;
-        }
+      @include it('right(1)') {
+        @include assert {
+          @include output {
+            @include right(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          right: 1;
+          @include expect {
+            right: 1;
+          }
         }
       }
-    }
 
-    @include it('row-gap(1)') {
-      @include assert {
-        @include output {
-          @include row-gap(1);
-          @include utils_reset-tw;
-        }
+      @include it('row-gap(1)') {
+        @include assert {
+          @include output {
+            @include row-gap(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          row-gap: 1;
+          @include expect {
+            row-gap: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-behavior(1)') {
-      @include assert {
-        @include output {
-          @include scroll-behavior(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-behavior(1)') {
+        @include assert {
+          @include output {
+            @include scroll-behavior(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-behavior: 1;
+          @include expect {
+            scroll-behavior: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-margin(1)') {
-      @include assert {
-        @include output {
-          @include scroll-margin(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-margin(1)') {
+        @include assert {
+          @include output {
+            @include scroll-margin(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-margin: 1;
+          @include expect {
+            scroll-margin: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-margin-bottom(1)') {
-      @include assert {
-        @include output {
-          @include scroll-margin-bottom(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-margin-bottom(1)') {
+        @include assert {
+          @include output {
+            @include scroll-margin-bottom(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-margin-bottom: 1;
+          @include expect {
+            scroll-margin-bottom: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-margin-inline-end(1)') {
-      @include assert {
-        @include output {
-          @include scroll-margin-inline-end(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-margin-inline-end(1)') {
+        @include assert {
+          @include output {
+            @include scroll-margin-inline-end(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-margin-inline-end: 1;
+          @include expect {
+            scroll-margin-inline-end: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-margin-inline-start(1)') {
-      @include assert {
-        @include output {
-          @include scroll-margin-inline-start(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-margin-inline-start(1)') {
+        @include assert {
+          @include output {
+            @include scroll-margin-inline-start(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-margin-inline-start: 1;
+          @include expect {
+            scroll-margin-inline-start: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-margin-left(1)') {
-      @include assert {
-        @include output {
-          @include scroll-margin-left(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-margin-left(1)') {
+        @include assert {
+          @include output {
+            @include scroll-margin-left(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-margin-left: 1;
+          @include expect {
+            scroll-margin-left: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-margin-right(1)') {
-      @include assert {
-        @include output {
-          @include scroll-margin-right(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-margin-right(1)') {
+        @include assert {
+          @include output {
+            @include scroll-margin-right(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-margin-right: 1;
+          @include expect {
+            scroll-margin-right: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-margin-top(1)') {
-      @include assert {
-        @include output {
-          @include scroll-margin-top(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-margin-top(1)') {
+        @include assert {
+          @include output {
+            @include scroll-margin-top(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-margin-top: 1;
+          @include expect {
+            scroll-margin-top: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-padding(1)') {
-      @include assert {
-        @include output {
-          @include scroll-padding(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-padding(1)') {
+        @include assert {
+          @include output {
+            @include scroll-padding(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-padding: 1;
+          @include expect {
+            scroll-padding: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-padding-bottom(1)') {
-      @include assert {
-        @include output {
-          @include scroll-padding-bottom(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-padding-bottom(1)') {
+        @include assert {
+          @include output {
+            @include scroll-padding-bottom(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-padding-bottom: 1;
+          @include expect {
+            scroll-padding-bottom: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-padding-inline-end(1)') {
-      @include assert {
-        @include output {
-          @include scroll-padding-inline-end(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-padding-inline-end(1)') {
+        @include assert {
+          @include output {
+            @include scroll-padding-inline-end(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-padding-inline-end: 1;
+          @include expect {
+            scroll-padding-inline-end: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-padding-inline-start(1)') {
-      @include assert {
-        @include output {
-          @include scroll-padding-inline-start(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-padding-inline-start(1)') {
+        @include assert {
+          @include output {
+            @include scroll-padding-inline-start(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-padding-inline-start: 1;
+          @include expect {
+            scroll-padding-inline-start: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-padding-left(1)') {
-      @include assert {
-        @include output {
-          @include scroll-padding-left(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-padding-left(1)') {
+        @include assert {
+          @include output {
+            @include scroll-padding-left(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-padding-left: 1;
+          @include expect {
+            scroll-padding-left: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-padding-right(1)') {
-      @include assert {
-        @include output {
-          @include scroll-padding-right(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-padding-right(1)') {
+        @include assert {
+          @include output {
+            @include scroll-padding-right(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-padding-right: 1;
+          @include expect {
+            scroll-padding-right: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-padding-top(1)') {
-      @include assert {
-        @include output {
-          @include scroll-padding-top(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-padding-top(1)') {
+        @include assert {
+          @include output {
+            @include scroll-padding-top(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-padding-top: 1;
+          @include expect {
+            scroll-padding-top: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-snap-align(1)') {
-      @include assert {
-        @include output {
-          @include scroll-snap-align(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-snap-align(1)') {
+        @include assert {
+          @include output {
+            @include scroll-snap-align(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-snap-align: 1;
+          @include expect {
+            scroll-snap-align: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-snap-stop(1)') {
-      @include assert {
-        @include output {
-          @include scroll-snap-stop(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-snap-stop(1)') {
+        @include assert {
+          @include output {
+            @include scroll-snap-stop(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-snap-stop: 1;
+          @include expect {
+            scroll-snap-stop: 1;
+          }
         }
       }
-    }
 
-    @include it('scroll-snap-type(1)') {
-      @include assert {
-        @include output {
-          @include scroll-snap-type(1);
-          @include utils_reset-tw;
-        }
+      @include it('scroll-snap-type(1)') {
+        @include assert {
+          @include output {
+            @include scroll-snap-type(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          scroll-snap-type: 1;
+          @include expect {
+            scroll-snap-type: 1;
+          }
         }
       }
-    }
 
-    @include it('stroke(1)') {
-      @include assert {
-        @include output {
-          @include stroke(1);
-          @include utils_reset-tw;
-        }
+      @include it('stroke(1)') {
+        @include assert {
+          @include output {
+            @include stroke(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          stroke: 1;
+          @include expect {
+            stroke: 1;
+          }
         }
       }
-    }
 
-    @include it('stroke-width(1)') {
-      @include assert {
-        @include output {
-          @include stroke-width(1);
-          @include utils_reset-tw;
-        }
+      @include it('stroke-width(1)') {
+        @include assert {
+          @include output {
+            @include stroke-width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          stroke-width: 1;
+          @include expect {
+            stroke-width: 1;
+          }
         }
       }
-    }
 
-    @include it('table-layout(1)') {
-      @include assert {
-        @include output {
-          @include table-layout(1);
-          @include utils_reset-tw;
-        }
+      @include it('table-layout(1)') {
+        @include assert {
+          @include output {
+            @include table-layout(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          table-layout: 1;
+          @include expect {
+            table-layout: 1;
+          }
         }
       }
-    }
 
-    @include it('text-align(1)') {
-      @include assert {
-        @include output {
-          @include text-align(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-align(1)') {
+        @include assert {
+          @include output {
+            @include text-align(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-align: 1;
+          @include expect {
+            text-align: 1;
+          }
         }
       }
-    }
 
-    @include it('text-decoration-color(1)') {
-      @include assert {
-        @include output {
-          @include text-decoration-color(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-decoration-color(1)') {
+        @include assert {
+          @include output {
+            @include text-decoration-color(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-decoration-color: 1;
+          @include expect {
+            text-decoration-color: 1;
+          }
         }
       }
-    }
 
-    @include it('text-decoration-line(1)') {
-      @include assert {
-        @include output {
-          @include text-decoration-line(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-decoration-line(1)') {
+        @include assert {
+          @include output {
+            @include text-decoration-line(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-decoration-line: 1;
+          @include expect {
+            text-decoration-line: 1;
+          }
         }
       }
-    }
 
-    @include it('text-decoration-style(1)') {
-      @include assert {
-        @include output {
-          @include text-decoration-style(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-decoration-style(1)') {
+        @include assert {
+          @include output {
+            @include text-decoration-style(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-decoration-style: 1;
+          @include expect {
+            text-decoration-style: 1;
+          }
         }
       }
-    }
 
-    @include it('text-decoration-thickness(1)') {
-      @include assert {
-        @include output {
-          @include text-decoration-thickness(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-decoration-thickness(1)') {
+        @include assert {
+          @include output {
+            @include text-decoration-thickness(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-decoration-thickness: 1;
+          @include expect {
+            text-decoration-thickness: 1;
+          }
         }
       }
-    }
 
-    @include it('text-indent(1)') {
-      @include assert {
-        @include output {
-          @include text-indent(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-indent(1)') {
+        @include assert {
+          @include output {
+            @include text-indent(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-indent: 1;
+          @include expect {
+            text-indent: 1;
+          }
         }
       }
-    }
 
-    @include it('text-overflow(1)') {
-      @include assert {
-        @include output {
-          @include text-overflow(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-overflow(1)') {
+        @include assert {
+          @include output {
+            @include text-overflow(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-overflow: 1;
+          @include expect {
+            text-overflow: 1;
+          }
         }
       }
-    }
 
-    @include it('text-transform(1)') {
-      @include assert {
-        @include output {
-          @include text-transform(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-transform(1)') {
+        @include assert {
+          @include output {
+            @include text-transform(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-transform: 1;
+          @include expect {
+            text-transform: 1;
+          }
         }
       }
-    }
 
-    @include it('text-underline-offset(1)') {
-      @include assert {
-        @include output {
-          @include text-underline-offset(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-underline-offset(1)') {
+        @include assert {
+          @include output {
+            @include text-underline-offset(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-underline-offset: 1;
+          @include expect {
+            text-underline-offset: 1;
+          }
         }
       }
-    }
 
-    @include it('text-wrap(1)') {
-      @include assert {
-        @include output {
-          @include text-wrap(1);
-          @include utils_reset-tw;
-        }
+      @include it('text-wrap(1)') {
+        @include assert {
+          @include output {
+            @include text-wrap(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          text-wrap: 1;
+          @include expect {
+            text-wrap: 1;
+          }
         }
       }
-    }
 
-    @include it('top(1)') {
-      @include assert {
-        @include output {
-          @include top(1);
-          @include utils_reset-tw;
-        }
+      @include it('top(1)') {
+        @include assert {
+          @include output {
+            @include top(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          top: 1;
+          @include expect {
+            top: 1;
+          }
         }
       }
-    }
 
-    @include it('touch-action(1)') {
-      @include assert {
-        @include output {
-          @include touch-action(1);
-          @include utils_reset-tw;
-        }
+      @include it('touch-action(1)') {
+        @include assert {
+          @include output {
+            @include touch-action(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          touch-action: 1;
+          @include expect {
+            touch-action: 1;
+          }
         }
       }
-    }
 
-    @include it('transform(1)') {
-      @include assert {
-        @include output {
-          @include transform(1);
-          @include utils_reset-tw;
-        }
+      @include it('transform(1)') {
+        @include assert {
+          @include output {
+            @include transform(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          transform: 1;
+          @include expect {
+            transform: 1;
+          }
         }
       }
-    }
 
-    @include it('transform-origin(1)') {
-      @include assert {
-        @include output {
-          @include transform-origin(1);
-          @include utils_reset-tw;
-        }
+      @include it('transform-origin(1)') {
+        @include assert {
+          @include output {
+            @include transform-origin(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          transform-origin: 1;
+          @include expect {
+            transform-origin: 1;
+          }
         }
       }
-    }
 
-    @include it('transition-delay(1)') {
-      @include assert {
-        @include output {
-          @include transition-delay(1);
-          @include utils_reset-tw;
-        }
+      @include it('transition-delay(1)') {
+        @include assert {
+          @include output {
+            @include transition-delay(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          transition-delay: 1;
+          @include expect {
+            transition-delay: 1;
+          }
         }
       }
-    }
 
-    @include it('transition-duration(1)') {
-      @include assert {
-        @include output {
-          @include transition-duration(1);
-          @include utils_reset-tw;
-        }
+      @include it('transition-duration(1)') {
+        @include assert {
+          @include output {
+            @include transition-duration(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          transition-duration: 1;
+          @include expect {
+            transition-duration: 1;
+          }
         }
       }
-    }
 
-    @include it('transition-property(1)') {
-      @include assert {
-        @include output {
-          @include transition-property(1);
-          @include utils_reset-tw;
-        }
+      @include it('transition-property(1)') {
+        @include assert {
+          @include output {
+            @include transition-property(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          transition-property: 1;
+          @include expect {
+            transition-property: 1;
+          }
         }
       }
-    }
 
-    @include it('transition-timing-function(1)') {
-      @include assert {
-        @include output {
-          @include transition-timing-function(1);
-          @include utils_reset-tw;
-        }
+      @include it('transition-timing-function(1)') {
+        @include assert {
+          @include output {
+            @include transition-timing-function(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          transition-timing-function: 1;
+          @include expect {
+            transition-timing-function: 1;
+          }
         }
       }
-    }
 
-    @include it('user-select(1)') {
-      @include assert {
-        @include output {
-          @include user-select(1);
-          @include utils_reset-tw;
-        }
+      @include it('user-select(1)') {
+        @include assert {
+          @include output {
+            @include user-select(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          user-select: 1;
+          @include expect {
+            user-select: 1;
+          }
         }
       }
-    }
 
-    @include it('vertical-align(1)') {
-      @include assert {
-        @include output {
-          @include vertical-align(1);
-          @include utils_reset-tw;
-        }
+      @include it('vertical-align(1)') {
+        @include assert {
+          @include output {
+            @include vertical-align(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          vertical-align: 1;
+          @include expect {
+            vertical-align: 1;
+          }
         }
       }
-    }
 
-    @include it('visibility(1)') {
-      @include assert {
-        @include output {
-          @include visibility(1);
-          @include utils_reset-tw;
-        }
+      @include it('visibility(1)') {
+        @include assert {
+          @include output {
+            @include visibility(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          visibility: 1;
+          @include expect {
+            visibility: 1;
+          }
         }
       }
-    }
 
-    @include it('white-space(1)') {
-      @include assert {
-        @include output {
-          @include white-space(1);
-          @include utils_reset-tw;
-        }
+      @include it('white-space(1)') {
+        @include assert {
+          @include output {
+            @include white-space(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          white-space: 1;
+          @include expect {
+            white-space: 1;
+          }
         }
       }
-    }
 
-    @include it('width(1)') {
-      @include assert {
-        @include output {
-          @include width(1);
-          @include utils_reset-tw;
-        }
+      @include it('width(1)') {
+        @include assert {
+          @include output {
+            @include width(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          width: 1;
+          @include expect {
+            width: 1;
+          }
         }
       }
-    }
 
-    @include it('will-change(1)') {
-      @include assert {
-        @include output {
-          @include will-change(1);
-          @include utils_reset-tw;
-        }
+      @include it('will-change(1)') {
+        @include assert {
+          @include output {
+            @include will-change(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          will-change: 1;
+          @include expect {
+            will-change: 1;
+          }
         }
       }
-    }
 
-    @include it('word-break(1)') {
-      @include assert {
-        @include output {
-          @include word-break(1);
-          @include utils_reset-tw;
-        }
+      @include it('word-break(1)') {
+        @include assert {
+          @include output {
+            @include word-break(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          word-break: 1;
+          @include expect {
+            word-break: 1;
+          }
         }
       }
-    }
 
-    @include it('z-index(1)') {
-      @include assert {
-        @include output {
-          @include z-index(1);
-          @include utils_reset-tw;
-        }
+      @include it('z-index(1)') {
+        @include assert {
+          @include output {
+            @include z-index(1);
+            @include utils_reset-tw;
+          }
 
-        @include expect {
-          z-index: 1;
+          @include expect {
+            z-index: 1;
+          }
         }
       }
     }

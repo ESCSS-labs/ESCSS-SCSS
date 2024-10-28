@@ -2423,9 +2423,13 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-@mixin transform($v) {
+@mixin transform($v: null) {
   & {
-    transform: $v;
+    @if $v==null {
+      transform: _t();
+    } @else {
+      transform: $v;
+    }
   }
 }
 
@@ -38126,6 +38130,21 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin ease-($v) {
   @include transition-timing-function($v);
+}
+
+@mixin transform-none {
+  @include transform(none);
+}
+
+@mixin transform-cpu {
+  @include transform(_t());
+}
+
+@mixin transform-gpu {
+  @include transform(
+    translate3d($tw-translate-x, $tw-translate-y, 0) rotate($tw-rotate) skewX($tw-skew-x)
+      skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y)
+  );
 }
 
 @mixin rotate-0 {
