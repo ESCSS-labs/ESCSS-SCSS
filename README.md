@@ -171,8 +171,8 @@ $XXL: 0px;
 
 ### Requirements
 
-version >= 1.23.0
-vite (version >= v5.4.0, use sass-embedded)
+- version >= 1.23.0
+- vite (version >= v5.4.0, use sass-embedded)
 
 ### Copy `_awaken.scss` from the `product/` directory
 
