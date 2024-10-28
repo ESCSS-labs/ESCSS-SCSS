@@ -54,10 +54,10 @@ $LineClamp: (
   @each $key, $value in $LineClamp {
     /*x
     @mixin #{$key} {
-      @include overflow(#{list.nth($value, 1)});
-      @include display(#{list.nth($value, 2)});
-      @include \-webkit-box-orient(#{list.nth($value, 3)});
-      @include \-webkit-line-clamp(#{list.nth($value, 4)});
+      overflow: #{list.nth($value, 1)};
+      display: #{list.nth($value, 2)};
+      -webkit-box-orient: #{list.nth($value, 3)};
+      -webkit-line-clamp: #{list.nth($value, 4)};
     }
     x*/
   }
@@ -66,10 +66,10 @@ $LineClamp: (
 @if $isArbitrary {
   /*x
   @mixin line-clamp-($v) {
-    @include overflow(hidden);
-    @include display(-webkit-box);
-    @include \-webkit-box-orient(vertical);
-    @include \-webkit-line-clamp($v);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $v;
   }
   x*/
 }

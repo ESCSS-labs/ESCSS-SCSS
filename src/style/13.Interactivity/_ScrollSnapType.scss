@@ -15,14 +15,14 @@ $ScrollSnapType: (
     @if list.index("snap-none", $key) {
       /*x
       @mixin #{$key} {
-        @include scroll-snap-type(#{$value});
+        scroll-snap-type: #{$value};
       }
       x*/
     } @else if list.index("snap-x" "snap-y" "snap-both", $key) {
       /*x
       @mixin #{$key} {
         $tw-mismatch--snap: true !global;
-        @include scroll-snap-type(#{$value});
+        scroll-snap-type: #{$value};
       }
       x*/
     } @else if list.index("snap-mandatory" "snap-proximity", $key) {

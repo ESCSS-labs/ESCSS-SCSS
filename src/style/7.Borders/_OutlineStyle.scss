@@ -34,15 +34,12 @@ $OutlineStyle: (
 
 @if $isBasic {
   @each $key, $value in $OutlineStyle {
-    // atomic handle outline
-    @if $key != "outline" {
-      /*x
-      @mixin #{$key} {
-        @include outline(#{list.nth($value, 1)});
-        @include outline-offset(#{list.nth($value, 2)});
-        @include outline-style(#{list.nth($value, 3)});
-      }
-      x*/
+    /*x
+    @mixin #{$key} {
+      outline: #{list.nth($value, 1)};
+      outline-offset: #{list.nth($value, 2)};
+      outline-style: #{list.nth($value, 3)};
     }
+    x*/
   }
 }
