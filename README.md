@@ -7,7 +7,6 @@
 # Quick Links
 
 - [What is ESCSS-SCSS](#what-is-escss-scss)
-- [Core Concept - Atomic CSS](#core-concept---atomic-css)
 - [Usage](#usage)
 - [Installation](#installation)
 - [Q&A](#qa)
@@ -15,16 +14,6 @@
 ## What is ESCSS-SCSS?
 
 ESCSS-SCSS takes the full potential of CSS and Tailwind in SCSS.
-
-## Core Concept - Atomic CSS
-
-Atomic CSS abstraction ensures optimal performance and consistent styling.
-
-```scss
-@mixin margin($v) {
-  margin: $v;
-}
-```
 
 ## Usage
 
@@ -223,12 +212,6 @@ Yes. The original intention of the design was to use ESCSS-SCSS to assist the pr
 ### The Advantages of Compatibility with Tailwind
 
 When used in conjunction with Tailwind, you gain the rapid development advantages of Tailwind while also benefiting from the encapsulation of SCSS and the timeless nature of native CSS. This achieves an excellent balance in maintainability and development efficiency.
-
-### What is the benefit of using Atomic CSS?
-
-- Faster updates in Vite.
-- Quicker loading of 'SCSS IntelliSense' (VS Code Extension).
-- Easier maintenance and study for both author and users.
 
 ### Is it necessary to use `@include utils_reset`?
 
