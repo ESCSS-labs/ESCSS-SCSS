@@ -3,7 +3,6 @@
 ## 快速連結
 
 - [什麼是 ESCSS-SCSS](#什麼是-escss-scss)
-- [核心概念 - 原子化 CSS](#核心概念---原子化-css)
 - [使用方式](#使用方式)
 - [安裝方式](#安裝方式)
 - [問與答](#問與答)
@@ -11,16 +10,6 @@
 ## 什麼是 ESCSS-SCSS?
 
 ESCSS-SCSS 是一個整合了 CSS 和 Tailwind 的全部潛力的 SCSS 檔案。
-
-## 核心概念 - 原子化 CSS
-
-原子化 CSS 抽象層，帶來了最佳化性能和一致性的樣式。
-
-```scss
-@mixin margin($v) {
-  margin: $v;
-}
-```
 
 ## 使用方式
 
@@ -208,12 +197,6 @@ export default defineConfig({
 ### 跟 Tailwind 相容的優勢
 
 在與 Tailwind 配合使用，會取得 tailwind 快速開發的優勢，也擁有了 SCSS 的封裝性和原生 CSS 永不過時的特性，在維護性、開發效率上取得絕佳的平衡。
-
-### 使用原子化 CSS 有什麼好處?
-
-- Vite 熱更新速度更快。
-- 更快地載入“SCSS IntelliSense”（VSCode）。
-- 對於作者和使用者來說更容易維護和理解。
 
 ### 使用 `@include utils_reset` 的必要性?
 
