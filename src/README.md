@@ -29,7 +29,7 @@ style/test
 
 ## How to generate SCSS file?
 
-### 1. Use 'Live Sass Compiler'(Extension) to compile index.css (src/style/index.css)
+### 1. Use 'Live Sass Compiler'(Extension) to generate index.css (src/style/index.css)
 
 ### 2. Use SEARCH feature(VSCode) to remove below in index.css
 

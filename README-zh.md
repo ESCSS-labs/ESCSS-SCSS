@@ -145,8 +145,8 @@ $XXL: 0px;
 
 ### 需求
 
-- version >= 1.23.0
-- vite (version >= v5.4.0, 使用 sass-embedded)
+- sass >= v1.23.0
+- vite (if >= v5.4.0, use sass-embedded)
 
 ### 複製 `product/` 資料夾下的 `_awaken.scss`
 
