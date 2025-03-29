@@ -38,7 +38,7 @@ $TextIndent: (
   "96": "$spacing-96",
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   @each $key, $value in $TextIndent {
     /*x
     @mixin indent-#{$key} {
@@ -47,7 +47,7 @@ $TextIndent: (
     x*/
   }
 }
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin indent-($v) {
     text-indent: $v;
@@ -55,8 +55,8 @@ $TextIndent: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     @each $key, $value in $TextIndent {
       /*x
       @mixin \-indent-#{$key} {
@@ -66,7 +66,7 @@ $TextIndent: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-indent-($v) {
       text-indent: -$v;

@@ -38,7 +38,7 @@ $ScrollMargin: (
   "96": "$spacing-96",
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   @each $key, $value in $ScrollMargin {
     /*x
     @mixin scroll-m-#{$key} {
@@ -82,7 +82,7 @@ $ScrollMargin: (
   }
 }
 
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin scroll-m-($v) {
     scroll-margin: $v;
@@ -124,8 +124,8 @@ $ScrollMargin: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     @each $key, $value in $ScrollMargin {
       /*x
       @mixin \-scroll-m-#{$key} {
@@ -169,7 +169,7 @@ $ScrollMargin: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-scroll-m-($v) {
       scroll-margin: -$v;

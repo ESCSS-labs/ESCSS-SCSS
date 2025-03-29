@@ -39,7 +39,7 @@ $Margin: (
   "auto": auto,
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   @each $key, $value in $Margin {
     /*x
     @mixin m-#{$key} {
@@ -83,7 +83,7 @@ $Margin: (
   }
 }
 
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin m-($v) {
     margin: $v;
@@ -125,8 +125,8 @@ $Margin: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     @each $key, $value in $Margin {
       /*x
       @mixin \-m-#{$key} {
@@ -170,7 +170,7 @@ $Margin: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-m-($v) {
       margin: -$v;

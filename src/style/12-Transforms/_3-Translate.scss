@@ -45,7 +45,7 @@ $Translate: (
   "full": 100%,
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   @each $key, $value in $Translate {
     /*x
     @mixin translate-x-#{$key} {
@@ -61,7 +61,7 @@ $Translate: (
   }
 }
 
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin translate-x-($v) {
     $tw-translate-x: $v !global;
@@ -75,8 +75,8 @@ $Translate: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     @each $key, $value in $Translate {
       /*x
       @mixin \-translate-x-#{$key} {
@@ -92,7 +92,7 @@ $Translate: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-translate-x-($v) {
       $tw-translate-x: -$v !global;

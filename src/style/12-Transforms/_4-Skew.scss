@@ -9,7 +9,7 @@ $Skew: (
   "12": 12deg,
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   @each $key, $value in $Skew {
     /*x
     @mixin skew-x-#{$key} {
@@ -25,7 +25,7 @@ $Skew: (
   }
 }
 
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin skew-x-($v) {
     $tw-skew-x: $v !global;
@@ -39,8 +39,8 @@ $Skew: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     @each $key, $value in $Skew {
       /*x
       @mixin \-skew-x-#{$key} {
@@ -56,7 +56,7 @@ $Skew: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-skew-x-($v) {
       $tw-skew-x: -$v !global;
