@@ -28,19 +28,19 @@ $Rotate: (
   }
 
   @mixin transform-gpu {
-    transform: translate3d($tw-translate-x, $tw-translate-y, 0) rotate($tw-rotate) skewX($tw-skew-x) skewY($tw-skew-y) scaleX($tw-scale-x) scaleY($tw-scale-y);
+    transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
   x*/
   @each $key, $value in $Rotate {
     /*x
     @mixin #{$key} {
-      $tw-rotate: #{$value} !global;
+      --tw-rotate: #{$value};
       transform: _t();
     }
     x*/
     /*x
     @mixin \-#{$key} {
-      $tw-rotate: -#{$value} !global;
+      --tw-rotate: -#{$value};
       transform: _t();
     }
     x*/
@@ -50,13 +50,13 @@ $Rotate: (
 @if $isUsingCustomValues {
   /*x
   @mixin rotate-($v) {
-    $tw-rotate: $v !global;
+    --tw-rotate: $v;
     transform: _t();
   }
   x*/
   /*x
   @mixin \-rotate-($v) {
-    $tw-rotate: -$v !global;
+    --tw-rotate: -$v;
     transform: _t();
   }
   x*/
