@@ -41,41 +41,31 @@ $SpaceBetween: (
 @if $isBasicUsage {
   /*x
   @mixin space-x-reverse {
-    $tw-space-x-reverse: 1 !global;
-
-    > * ~ * {
-      margin-left: $tw-dummy-space-x-value * (1 - $tw-space-x-reverse);
-      margin-right: $tw-dummy-space-x-value * $tw-space-x-reverse;
-    }
+    --tw-space-x-reverse: 1;
   }
 
   @mixin space-y-reverse {
-    $tw-space-y-reverse: 1 !global;
-
-    > * ~ * {
-      margin-top: $tw-dummy-space-y-value * (1 - $tw-space-y-reverse);
-      margin-bottom: $tw-dummy-space-y-value * $tw-space-y-reverse;
-    }
+    --tw-space-y-reverse: 1;
   }
   x*/
 
   @each $key, $value in $SpaceBetween {
     /*x
     @mixin space-x-#{$key} {
-      $tw-dummy-space-x-value: #{$value} !global;
+      --tw-space-x-reverse: 0;
 
-      > * ~ * {
-        margin-left: #{$value} * (1 - $tw-space-x-reverse);
-        margin-right: #{$value} * $tw-space-x-reverse;
+      > :not([hidden]) ~ :not([hidden]) {
+        margin-left: calc(#{$value} * (1 - var(--tw-space-x-reverse)));
+        margin-right: calc(#{$value} * var(--tw-space-x-reverse));
       }
     }
 
     @mixin space-y-#{$key} {
-      $tw-dummy-space-y-value: #{$value} !global;
+     --tw-space-y-reverse: 0;
 
-      > * ~ * {
-        margin-top: #{$value} * (1 - $tw-space-y-reverse);
-        margin-bottom: #{$value} * $tw-space-y-reverse;
+      > :not([hidden]) ~ :not([hidden]) {
+        margin-top: calc(#{$value} * (1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(#{$value} * var(--tw-space-y-reverse));
       }
     }
     x*/
@@ -85,20 +75,20 @@ $SpaceBetween: (
 @if $isUsingCustomValues {
   /*x
   @mixin space-x-($v) {
-    $tw-dummy-space-x-value: $v !global; // update value when using reverse
+    --tw-space-x-reverse: 0;
 
-    > * ~ * {
-      margin-left: $v * (1 - $tw-space-x-reverse);
-      margin-right: $v * $tw-space-x-reverse;
+    > :not([hidden]) ~ :not([hidden]) {
+      margin-left: calc($v * (1 - var(--tw-space-x-reverse)));
+      margin-right: calc($v * var(--tw-space-x-reverse));
     }
   }
 
   @mixin space-y-($v) {
-    $tw-dummy-space-y-value: $v !global; // update value when using reverse
+    --tw-space-y-reverse: 0;
 
-    > * ~ * {
-      margin-top: $v * (1 - $tw-space-y-reverse);
-      margin-bottom: $v * $tw-space-y-reverse;
+    > :not([hidden]) ~ :not([hidden]) {
+      margin-top: calc($v * (1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc($v * var(--tw-space-y-reverse));
     }
   }
   x*/
@@ -108,40 +98,30 @@ $SpaceBetween: (
   @if $isBasicUsage {
     /*x
       @mixin \-space-x-reverse {
-        $tw-space-x-reverse: 1 !global;
-  
-        > * ~ * {
-          margin-left: -$tw-dummy-space-x-value * (1 - $tw-space-x-reverse);
-          margin-right: -$tw-dummy-space-x-value * $tw-space-x-reverse;
-        }
+        --tw-space-x-reverse: 1;
       }
   
       @mixin \-space-y-reverse {
-        $tw-space-y-reverse: 1 !global;
-  
-        > * ~ * {
-          margin-top: -$tw-dummy-space-y-value * (1 - $tw-space-y-reverse);
-          margin-bottom: -$tw-dummy-space-y-value * $tw-space-y-reverse;
-        }
+        --tw-space-y-reverse: 1;
       }
     x*/
     @each $key, $value in $SpaceBetween {
       /*x
       @mixin \-space-x-#{$key} {
-        $tw-dummy-space-x-value: -#{$value} !global;
+        --tw-space-x-reverse: 0;
   
-        > * ~ * {
-          margin-left: -#{$value} * (1 - $tw-space-x-reverse);
-          margin-right: -#{$value} * $tw-space-x-reverse;
+        > :not([hidden]) ~ :not([hidden]) {
+          margin-left: calc(-#{$value} * (1 - var(--tw-space-x-reverse)));
+          margin-right: calc(-#{$value} * var(--tw-space-x-reverse));
         }
       }
   
       @mixin \-space-y-#{$key} {
-        $tw-dummy-space-y-value: -#{$value} !global;
+        --tw-space-y-reverse: 0;
   
-        > * ~ * {
-          margin-top: -#{$value} * (1 - $tw-space-y-reverse);
-          margin-bottom: -#{$value} * $tw-space-y-reverse;
+        > :not([hidden]) ~ :not([hidden]) {
+          margin-top: calc(-#{$value} * (1 - var(--tw-space-y-reverse)));
+          margin-bottom: calc(-#{$value} * var(--tw-space-y-reverse));
         }
       }
       x*/
@@ -151,20 +131,20 @@ $SpaceBetween: (
   @if $isUsingCustomValues {
     /*x
     @mixin \-space-x-($v) {
-      $tw-dummy-space-x-value: -$v !global; // update value when using reverse
+       --tw-space-x-reverse: 0;
   
-      > * ~ * {
-        margin-left: -$v * (1 - $tw-space-x-reverse);
-        margin-right: -$v * $tw-space-x-reverse;
+      > :not([hidden]) ~ :not([hidden]) {
+        margin-left: calc(-$v * (1 - var(--tw-space-x-reverse)));
+        margin-right: calc(-$v * var(--tw-space-x-reverse));
       }
     }
   
     @mixin \-space-y-($v) {
-      $tw-dummy-space-y-value: -$v !global; // update value when using reverse
+       --tw-space-y-reverse: 0;
   
-      > * ~ * {
-        margin-top: -$v * (1 - $tw-space-y-reverse);
-        margin-bottom: -$v * $tw-space-y-reverse;
+      > :not([hidden]) ~ :not([hidden]) {
+        margin-top: calc(-$v * (1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(-$v * var(--tw-space-y-reverse));
       }
     }
     x*/
