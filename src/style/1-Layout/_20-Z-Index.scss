@@ -10,7 +10,7 @@ $Z-Index: (
   "z-auto": auto,
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   @each $key, $value in $Z-Index {
     /*x
     @mixin #{$key} {
@@ -20,7 +20,7 @@ $Z-Index: (
   }
 }
 
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin z-($v) {
     z-index: $v;
@@ -28,8 +28,8 @@ $Z-Index: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     @each $key, $value in $Z-Index {
       /*x
       @mixin \-#{$key} {
@@ -39,7 +39,7 @@ $Z-Index: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-z-($v) {
       z-index: -$v;

@@ -18,7 +18,7 @@ $Order: (
   "order-none": 0,
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   @each $key, $value in $Order {
     /*x
     @mixin #{$key} {
@@ -27,7 +27,7 @@ $Order: (
     x*/
   }
 }
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin order-($v) {
     order: $v;
@@ -35,8 +35,8 @@ $Order: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     @each $key, $value in $Order {
       /*x
       @mixin \-#{$key} {
@@ -46,7 +46,7 @@ $Order: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-order-($v) {
       order: -$v;

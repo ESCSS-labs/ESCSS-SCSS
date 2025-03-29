@@ -13,7 +13,7 @@ $Scale: (
   "150": 1.5,
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   @each $key, $value in $Scale {
     /*x
     @mixin scale-#{$key} {
@@ -35,7 +35,7 @@ $Scale: (
   }
 }
 
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin scale-($v) {
     $tw-scale-x: $v !global;
@@ -55,8 +55,8 @@ $Scale: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     @each $key, $value in $Scale {
       /*x
       @mixin \-scale-#{$key} {
@@ -78,7 +78,7 @@ $Scale: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-scale-($v) {
       $tw-scale-x: -$v !global;

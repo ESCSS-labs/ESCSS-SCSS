@@ -38,7 +38,7 @@ $SpaceBetween: (
   "96": "$spacing-96",
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   /*x
   @mixin space-x-reverse {
     $tw-space-x-reverse: 1 !global;
@@ -82,7 +82,7 @@ $SpaceBetween: (
   }
 }
 
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin space-x-($v) {
     $tw-dummy-space-x-value: $v !global; // update value when using reverse
@@ -104,8 +104,8 @@ $SpaceBetween: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     /*x
       @mixin \-space-x-reverse {
         $tw-space-x-reverse: 1 !global;
@@ -148,7 +148,7 @@ $SpaceBetween: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-space-x-($v) {
       $tw-dummy-space-x-value: -$v !global; // update value when using reverse

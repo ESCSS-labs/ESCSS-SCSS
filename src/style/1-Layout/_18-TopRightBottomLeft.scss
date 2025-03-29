@@ -46,7 +46,7 @@ $TopRightBottomLeft: (
   "full": 100%,
 );
 
-@if $isBasic {
+@if $isBasicUsage {
   @each $key, $value in $TopRightBottomLeft {
     /*x
     @mixin inset-#{$key} {
@@ -90,7 +90,7 @@ $TopRightBottomLeft: (
   }
 }
 
-@if $isArbitrary {
+@if $isUsingCustomValues {
   /*x
   @mixin inset-($v) {
     inset: $v;
@@ -132,8 +132,8 @@ $TopRightBottomLeft: (
   x*/
 }
 
-@if $isNegative {
-  @if $isBasic {
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
     @each $key, $value in $TopRightBottomLeft {
       /*x
       @mixin \-inset-#{$key} {
@@ -177,7 +177,7 @@ $TopRightBottomLeft: (
     }
   }
 
-  @if $isArbitrary {
+  @if $isUsingCustomValues {
     /*x
     @mixin \-inset-($v) {
       inset: -$v;
