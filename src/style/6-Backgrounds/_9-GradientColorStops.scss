@@ -339,24 +339,29 @@ $GradientColorStops-position: (
   @if $group-from {
     /*x
     @mixin from-inherit {
-      background-image: inherit !important;
+      --tw-gradient-from: inherit var(--tw-gradient-from-position);
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     }
 
     @mixin from-current {
-      $tw-gradient-from: currentColor !global;
-      background-image: _l-g();
+      --tw-gradient-from: currentColor var(--tw-gradient-from-position);
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     }
 
     @mixin from-transparent {
-      $tw-gradient-from: transparent !global;
-      background-image: _l-g();
+      --tw-gradient-from: transparent var(--tw-gradient-from-position);
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     }
     x*/
     @each $key, $value in $GradientColorStops-color {
       /*x
       @mixin from-#{$key}($v: 1) {
-        $tw-gradient-from: _c(#{$value}, $v) !global;
-        background-image: _l-g();
+        --tw-gradient-from: #/*x{_c(#{$value}, $v)} var(--tw-gradient-from-position);
+        --tw-gradient-to: transparent var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
       }
       x*/
     }
@@ -364,8 +369,7 @@ $GradientColorStops-position: (
     @each $key, $value in $GradientColorStops-position {
       /*x
       @mixin from-#{$key} {
-        $tw-gradient-from-position: #{$value} !global;
-        background-image: _l-g();
+        --tw-gradient-from-position: #{$value};
       }
       x*/
     }
@@ -374,24 +378,25 @@ $GradientColorStops-position: (
   @if $group-via {
     /*x
     @mixin via-inherit {
-      background-image: inherit !important;
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), inherit var(--tw-gradient-via-position), var(--tw-gradient-to);
     }
 
     @mixin via-current {
-      $tw-gradient-via: currentColor !global;
-      background-image: _l-g();
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), currentColor var(--tw-gradient-via-position), var(--tw-gradient-to);
     }
 
     @mixin via-transparent {
-      $tw-gradient-via: transparent !global;
-      background-image: _l-g();
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to);
     }
     x*/
     @each $key, $value in $GradientColorStops-color {
       /*x
       @mixin via-#{$key}($v: 1) {
-        $tw-gradient-via: _c(#{$value}, $v) !global;
-        background-image: _l-g();
+        --tw-gradient-to: transparent var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), #/*x{_c(#{$value}, $v)} var(--tw-gradient-via-position), var(--tw-gradient-to);
       }
       x*/
     }
@@ -399,8 +404,7 @@ $GradientColorStops-position: (
     @each $key, $value in $GradientColorStops-position {
       /*x
       @mixin via-#{$key} {
-        $tw-gradient-via-position: #{$value} !global;
-        background-image: _l-g();
+        --tw-gradient-via-position: #{$value};
       }
       x*/
     }
@@ -409,24 +413,21 @@ $GradientColorStops-position: (
   @if $group-to {
     /*x
     @mixin to-inherit {
-      background-image: inherit !important;
+      --tw-gradient-to: inherit var(--tw-gradient-to-position);
     }
 
     @mixin to-current {
-      $tw-gradient-to: currentColor !global;
-      background-image: _l-g();
+      --tw-gradient-to: currentColor var(--tw-gradient-to-position);
     }
 
     @mixin to-transparent {
-      $tw-gradient-to: transparent !global;
-      background-image: _l-g();
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
     }
     x*/
     @each $key, $value in $GradientColorStops-color {
       /*x
       @mixin to-#{$key}($v: 1) {
-        $tw-gradient-to: _c(#{$value}, $v) !global;
-        background-image: _l-g();
+        --tw-gradient-to: #/*x{_c(#{$value}, $v)} var(--tw-gradient-to-position);
       }
       x*/
     }
@@ -434,8 +435,7 @@ $GradientColorStops-position: (
     @each $key, $value in $GradientColorStops-position {
       /*x
       @mixin to-#{$key} {
-        $tw-gradient-to-position: #{$value} !global;
-        background-image: _l-g();
+        --tw-gradient-to-position: #{$value};
       }
       x*/
     }
@@ -446,20 +446,9 @@ $GradientColorStops-position: (
   @if $group-from {
     /*x
     @mixin from-($v) {
-      @if list.index(inherit, $v) {
-        // to match same behavior as tailwind
-        background-image: inherit !important; 
-      }
-
-      @else if meta.type-of($v)==color or list.index(currentColor, $v) {
-        $tw-gradient-from: $v !global;
-        background-image: _l-g();
-      }
-
-      @else {
-        $tw-gradient-from-position: $v !global;
-        background-image: _l-g();
-      }
+      --tw-gradient-from: #/*x{$v} var(--tw-gradient-from-position);
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     }
     x*/
   }
@@ -467,20 +456,8 @@ $GradientColorStops-position: (
   @if $group-via {
     /*x
     @mixin via-($v) {
-      @if list.index(inherit, $v) {
-        // to match same behavior as tailwind
-        background-image: inherit !important; 
-      }
-
-      @else if meta.type-of($v)==color or list.index(currentColor, $v) {
-        $tw-gradient-via: $v !global;
-        background-image: _l-g();
-      }
-
-      @else {
-        $tw-gradient-via-position: $v !global;
-        background-image: _l-g();
-      }
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), #/*x{$v} var(--tw-gradient-via-position), var(--tw-gradient-to);
     }
     x*/
   }
@@ -488,20 +465,7 @@ $GradientColorStops-position: (
   @if $group-to {
     /*x
     @mixin to-($v) {
-      @if list.index(inherit, $v) {
-        // to match same behavior as tailwind
-        background-image: inherit !important; 
-      }
-
-      @else if meta.type-of($v)==color or list.index(currentColor, $v) {
-        $tw-gradient-to: $v !global;
-        background-image: _l-g();
-      }
-
-      @else {
-        $tw-gradient-to-position: $v !global;
-        background-image: _l-g();
-      }
+      --tw-gradient-to: #/*x{$v} var(--tw-gradient-to-position);
     }
     x*/
   }
