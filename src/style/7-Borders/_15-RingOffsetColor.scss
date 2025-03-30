@@ -310,25 +310,21 @@ $RingOffsetColor: (
 @if $isBasicUsage {
   /*x
   @mixin ring-offset-inherit {
-    $tw-ring-offset-color: inherit !global;
-    box-shadow: _b-s();
+    --tw-ring-offset-color: inherit;
   }
 
   @mixin ring-offset-current {
-    $tw-ring-offset-color: currentColor !global;
-    box-shadow: _b-s();
+    --tw-ring-offset-color: currentColor;
   }
 
   @mixin ring-offset-transparent {
-    $tw-ring-offset-color: transparent !global;
-    box-shadow: _b-s();
+    --tw-ring-offset-color: transparent;
   }
   x*/
   @each $key, $value in $RingOffsetColor {
     /*x
     @mixin ring-offset-#{$key}($v: 1) {
-      $tw-ring-offset-color: _c(#{$value}, $v) !global;
-      box-shadow: _b-s();
+      --tw-ring-offset-color: #/*x{_c(#{$value}, $v)};
     }
     x*/
   }
@@ -338,18 +334,12 @@ $RingOffsetColor: (
   /*x
   @mixin ring-offset-($v) {
     @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      $tw-ring-offset-color: $v !global;
+      --tw-ring-offset-color: #{$v};
     }
 
     @else {
-      @if $tw-mismatch--ring-offset-width {
-        @error ("「 ring-offset-* 」should come before「 ring-* 」to match Tailwind's order.");
-      }
-
-      $tw-ring-offset-width: $v !global;
+      --tw-ring-offset-width: #{$value};
     }
-
-    box-shadow: _b-s();
   }
   x*/
 }

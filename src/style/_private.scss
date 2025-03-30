@@ -8,28 +8,6 @@
   @return color.change($token, $alpha: $v);
 }
 
-// _b-s :box-shadow
-@function _b-s() {
-  $tw-ring-offset-shadow: $tw-ring-inset 0 0 0 $tw-ring-offset-width $tw-ring-offset-color;
-  $tw-ring-shadow: $tw-ring-inset 0 0 0 $tw-dummy-ring-width $tw-ring-color;
-  $tw-shadow: null;
-
-  @if list.index(shadow md lg xl, $tw-dummy-shadow-token) {
-    $tw-shadow: list.nth($tw-dummy-shadow-width, 1) $tw-shadow-color,
-      list.nth($tw-dummy-shadow-width, 2) $tw-shadow-color;
-  }
-
-  @else if $tw-dummy-shadow-token ==inner {
-    $tw-shadow: inset $tw-dummy-shadow-width $tw-shadow-color;
-  }
-
-  @else {
-    $tw-shadow: $tw-dummy-shadow-width $tw-shadow-color;
-  }
-
-  @return $tw-ring-offset-shadow, $tw-ring-shadow, $tw-shadow;
-}
-
 // _t :transform
 @function _t() {
   @return translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
