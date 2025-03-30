@@ -41,29 +41,31 @@ $SpaceBetween: (
 @if $isBasicUsage {
   /*x
   @mixin space-x-reverse {
-    --tw-space-x-reverse: 1;
+    > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-x-reverse: 1 !important;
+    }
   }
 
   @mixin space-y-reverse {
-    --tw-space-y-reverse: 1;
+    > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 1 !important;
+    }
   }
   x*/
 
   @each $key, $value in $SpaceBetween {
     /*x
     @mixin space-x-#{$key} {
-      --tw-space-x-reverse: 0;
-
       > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
         margin-left: calc(#{$value} * (1 - var(--tw-space-x-reverse)));
         margin-right: calc(#{$value} * var(--tw-space-x-reverse));
       }
     }
 
     @mixin space-y-#{$key} {
-     --tw-space-y-reverse: 0;
-
       > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
         margin-top: calc(#{$value} * (1 - var(--tw-space-y-reverse)));
         margin-bottom: calc(#{$value} * var(--tw-space-y-reverse));
       }
@@ -75,18 +77,16 @@ $SpaceBetween: (
 @if $isUsingCustomValues {
   /*x
   @mixin space-x-($v) {
-    --tw-space-x-reverse: 0;
-
     > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
       margin-left: calc($v * (1 - var(--tw-space-x-reverse)));
       margin-right: calc($v * var(--tw-space-x-reverse));
     }
   }
 
   @mixin space-y-($v) {
-    --tw-space-y-reverse: 0;
-
     > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
       margin-top: calc($v * (1 - var(--tw-space-y-reverse)));
       margin-bottom: calc($v * var(--tw-space-y-reverse));
     }
@@ -98,28 +98,30 @@ $SpaceBetween: (
   @if $isBasicUsage {
     /*x
       @mixin \-space-x-reverse {
-        --tw-space-x-reverse: 1;
+        > :not([hidden]) ~ :not([hidden]) {
+          --tw-space-x-reverse: 1 !important;
+        }
       }
   
       @mixin \-space-y-reverse {
-        --tw-space-y-reverse: 1;
+        > :not([hidden]) ~ :not([hidden]) {
+          --tw-space-y-reverse: 1 !important;
+        }
       }
     x*/
     @each $key, $value in $SpaceBetween {
       /*x
       @mixin \-space-x-#{$key} {
-        --tw-space-x-reverse: 0;
-  
         > :not([hidden]) ~ :not([hidden]) {
+          --tw-space-x-reverse: 0;
           margin-left: calc(-#/*x{#{$value}} * (1 - var(--tw-space-x-reverse)));
           margin-right: calc(-#/*x{#{$value}} * var(--tw-space-x-reverse));
         }
       }
   
       @mixin \-space-y-#{$key} {
-        --tw-space-y-reverse: 0;
-  
         > :not([hidden]) ~ :not([hidden]) {
+          --tw-space-y-reverse: 0;
           margin-top: calc(-#/*x{#{$value}} * (1 - var(--tw-space-y-reverse)));
           margin-bottom: calc(-#/*x{#{$value}} * var(--tw-space-y-reverse));
         }
@@ -131,18 +133,16 @@ $SpaceBetween: (
   @if $isUsingCustomValues {
     /*x
     @mixin \-space-x-($v) {
-       --tw-space-x-reverse: 0;
-  
       > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
         margin-left: calc(-#/*x{$v} * (1 - var(--tw-space-x-reverse)));
         margin-right: calc(-#/*x{$v} * var(--tw-space-x-reverse));
       }
     }
   
     @mixin \-space-y-($v) {
-       --tw-space-y-reverse: 0;
-  
       > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
         margin-top: calc(-#/*x{$v} * (1 - var(--tw-space-y-reverse)));
         margin-bottom: calc(-#/*x{$v} * var(--tw-space-y-reverse));
       }
