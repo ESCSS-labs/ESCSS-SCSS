@@ -309,30 +309,26 @@ $BoxShadowColor: (
 
 @if $isBasicUsage {
   /*x
-  @mixin shadow-inherit {
-    $tw-mismatch--shadow-color: true !global;
-    $tw-shadow-color: inherit !global;
-    box-shadow: _b-s();
+  @mixin shadow-inherit {    
+    --tw-shadow-color: inherit;
+    --tw-shadow: var(--tw-shadow-colored);
   }
 
   @mixin shadow-current {
-    $tw-mismatch--shadow-color: true !global;
-    $tw-shadow-color: currentColor !global;
-    box-shadow: _b-s();
+    --tw-shadow-color: currentColor;
+    --tw-shadow: var(--tw-shadow-colored);
   }
 
   @mixin shadow-transparent {
-    $tw-mismatch--shadow-color: true !global;
-    $tw-shadow-color: transparent !global;
-    box-shadow: _b-s();
+    --tw-shadow-color: transparent;
+    --tw-shadow: var(--tw-shadow-colored);
   }
   x*/
   @each $key, $value in $BoxShadowColor {
     /*x
     @mixin shadow-#{$key}($v: 1) {
-      $tw-mismatch--shadow-color: true !global;
-      $tw-shadow-color: _c(#{$value}, $v) !global;
-      box-shadow: _b-s();
+      --tw-shadow-color: #/*x{_c(#{$value}, $v)};
+      --tw-shadow: var(--tw-shadow-colored);
     }
     x*/
   }
@@ -342,29 +338,18 @@ $BoxShadowColor: (
   /*x
   @mixin shadow-($v) {
     @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      $tw-mismatch--shadow-color: true !global;
-      $tw-shadow-color: $v !global;
+      --tw-shadow-color: #{$v};
+      --tw-shadow: var(--tw-shadow-colored);
     }
 
-    // arbitrary shadow e.g shadow-(inset 0px 0px 5px 10px red)
+    // arbitrary shadow e.g shadow-(0 35px 60px -15px rgba(0,0,0,0.3))
     @else if meta.type-of($v)==list {
-      @if $tw-mismatch--shadow-color {
-        @error ("e.g.「 shadow-(0px 0px 5px 10px red) 」should come before「 shadow-sky-500 」to match Tailwind's order.");
-      }
+        --tw-shadow: #{$v};
+        --tw-shadow-colored: #{list.set-nth($v, -1, #{''})};
 
-      $tw-dummy-shadow-token: arbitrary !global;
-      $tw-shadow-color: list.nth($v, -1) !global; // red
-
-      @if list.nth($v, 1)==inset {
-        $tw-dummy-shadow-width: list.set-nth($v, -1, #/*x{""}) !global; // inset 0px 0px 5px 10px
-      }
-
-      @else {
-        $tw-dummy-shadow-width: list.set-nth($v, -1, #/*x{""}) !global; // inset 0px 0px 5px 10px
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
       }
     }
-
-    box-shadow: _b-s();
   }
   x*/
 }
