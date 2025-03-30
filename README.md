@@ -78,7 +78,6 @@ $XXL: 0px;
     }
 
     // Reset some tailwind variables. If you're feeling lazy, you can use it in every ID/Class (recommended).
-    
   }
   ```
 
@@ -94,7 +93,6 @@ $XXL: 0px;
   }
 
   // Reset some tailwind variables. If you're feeling lazy, you can use it in every ID/Class (recommended).
-  
 }
 ```
 
@@ -113,8 +111,6 @@ $XXL: 0px;
     background: green;
     @include divide-green-50;
   }
-
-  
 }
 
 // ❌
@@ -122,8 +118,6 @@ $XXL: 0px;
   @include space-x-8;
   background: red; // warning
   @include divide-x-8;
-
-  
 }
 
 #Demo-2 {
@@ -135,8 +129,6 @@ $XXL: 0px;
     @include divide-green-50;
     background: green; // warning
   }
-
-  
 }
 
 #Demo-3 {
@@ -150,7 +142,6 @@ $XXL: 0px;
   }
 
   background: green; // warning
-  
 }
 ```
 
