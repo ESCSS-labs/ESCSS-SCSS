@@ -78,7 +78,7 @@ $XXL: 0px;
     }
 
     // Reset some tailwind variables. If you're feeling lazy, you can use it in every ID/Class (recommended).
-    @include utils_reset;
+    
   }
   ```
 
@@ -94,7 +94,7 @@ $XXL: 0px;
   }
 
   // Reset some tailwind variables. If you're feeling lazy, you can use it in every ID/Class (recommended).
-  @include utils_reset;
+  
 }
 ```
 
@@ -114,7 +114,7 @@ $XXL: 0px;
     @include divide-green-50;
   }
 
-  @include utils_reset;
+  
 }
 
 // ❌
@@ -123,7 +123,7 @@ $XXL: 0px;
   background: red; // warning
   @include divide-x-8;
 
-  @include utils_reset;
+  
 }
 
 #Demo-2 {
@@ -136,7 +136,7 @@ $XXL: 0px;
     background: green; // warning
   }
 
-  @include utils_reset;
+  
 }
 
 #Demo-3 {
@@ -150,7 +150,7 @@ $XXL: 0px;
   }
 
   background: green; // warning
-  @include utils_reset;
+  
 }
 ```
 
@@ -214,11 +214,3 @@ Yes. The original intention of the design was to use ESCSS-SCSS to assist the pr
 ### The Advantages of Compatibility with Tailwind
 
 When used in conjunction with Tailwind, you gain the rapid development advantages of Tailwind while also benefiting from the encapsulation of SCSS and the timeless nature of native CSS. This achieves an excellent balance in maintainability and development efficiency.
-
-### Is it necessary to use `@include utils_reset`?
-
-For resetting the variables of Tailwind, you may wonder why not use native CSS var to solve it, so that you don’t have to manually reset it every time. This is mainly based on the following considerations:
-
-- Smaller file size: Using var actually increases the file size, which also indirectly determines the file size of the project; using Sass's variable system is more in line with minimizing the file size.
-- Integration: To avoid confusing users, usually the project itself has its own CSS variable system (var).
-- Indirect indicators: It is recommended that each style be reset using `@include utils_reset`, which can query the usage of your style.
