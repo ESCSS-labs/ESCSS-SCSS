@@ -1,40 +1,23 @@
-@use "sass:list";
-@use "../setting" as *;
+@mixin snap-none {
+  scroll-snap-type: none;
+}
 
-$ScrollSnapType: (
-  "snap-none": none,
-  "snap-x": x "$tw-scroll-snap-strictness",
-  "snap-y": y "$tw-scroll-snap-strictness",
-  "snap-both": both "$tw-scroll-snap-strictness",
-  "snap-mandatory": mandatory,
-  "snap-proximity": proximity,
-);
+@mixin snap-x {
+  scroll-snap-type: x var(--tw-scroll-snap-strictness);
+}
 
-@if $isBasicUsage {
-  @each $key, $value in $ScrollSnapType {
-    @if list.index("snap-none", $key) {
-      /*x
-      @mixin #{$key} {
-        scroll-snap-type: #{$value};
-      }
-      x*/
-    } @else if list.index("snap-x" "snap-y" "snap-both", $key) {
-      /*x
-      @mixin #{$key} {
-        $tw-mismatch--snap: true !global;
-        scroll-snap-type: #{$value};
-      }
-      x*/
-    } @else if list.index("snap-mandatory" "snap-proximity", $key) {
-      /*x
-      @mixin #{$key} {
-        @if $tw-mismatch--snap {
-          @error ("「 snap-mandatory/proximity 」should come before「 snap-x/y/both 」to match Tailwind's order.");
-        }
+@mixin snap-y {
+  scroll-snap-type: y var(--tw-scroll-snap-strictness);
+}
 
-        $tw-scroll-snap-strictness: #{$value} !global;
-      }
-      x*/
-    }
-  }
+@mixin snap-both {
+  scroll-snap-type: both var(--tw-scroll-snap-strictness);
+}
+
+@mixin snap-mandatory {
+  --tw-scroll-snap-strictness: mandatory;
+}
+
+@mixin snap-proximity {
+  --tw-scroll-snap-strictness: proximity;
 }
