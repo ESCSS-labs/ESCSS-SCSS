@@ -9,7 +9,7 @@ $Invert: (
   @each $key, $value in $Invert {
     /*x
     @mixin #{$key} {
-      $tw-invert: #{$value} !global;
+      --tw-invert: #{$value};
       filter: _f();
     }
     x*/
@@ -19,7 +19,7 @@ $Invert: (
 @if $isUsingCustomValues {
   /*x
   @mixin invert-($v) {
-    $tw-invert: invert($v) !global;
+    --tw-invert: #/*x{invert($v)};
     filter: _f();
   }
   x*/

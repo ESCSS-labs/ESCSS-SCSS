@@ -17,7 +17,7 @@ $DropShadow: (
   @each $key, $value in $DropShadow {
     /*x
     @mixin #{$key} {
-      $tw-drop-shadow: #{$value} !global;
+      --tw-drop-shadow: #{$value};
       filter: _f();
     }
     x*/
@@ -27,7 +27,7 @@ $DropShadow: (
 @if $isUsingCustomValues {
   /*x
   @mixin drop-shadow-($v) {
-    $tw-drop-shadow: drop-shadow($v) !global;
+    --tw-drop-shadow: #/*x{drop-shadow($v)};
     filter: _f();
   }
   x*/

@@ -12,7 +12,7 @@ $BackdropSaturate: (
   @each $key, $value in $BackdropSaturate {
     /*x
     @mixin #{$key} {
-      $tw-backdrop-saturate: #{$value} !global;
+      --tw-backdrop-saturate: #{$value};
       backdrop-filter: _b-f();
     }
     x*/
@@ -22,7 +22,7 @@ $BackdropSaturate: (
 @if $isUsingCustomValues {
   /*x
   @mixin backdrop-saturate-($v) {
-    $tw-backdrop-saturate: saturate($v) !global;
+    --tw-backdrop-saturate: #/*x{saturate($v)};
     backdrop-filter: _b-f();
   }
   x*/
