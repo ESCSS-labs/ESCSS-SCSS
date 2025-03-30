@@ -13,7 +13,7 @@ $BackdropHueRotate: (
   @each $key, $value in $BackdropHueRotate {
     /*x
     @mixin #{$key} {
-      $tw-backdrop-hue-rotate: hue-rotate(#{$value}) !global;
+      --tw-backdrop-hue-rotate: #{hue-rotate($value)};
       backdrop-filter: _b-f();
     }
     x*/
@@ -23,7 +23,7 @@ $BackdropHueRotate: (
 @if $isUsingCustomValues {
   /*x
   @mixin backdrop-hue-rotate-($v) {
-    $tw-backdrop-hue-rotate: hue-rotate($v) !global;
+    --tw-backdrop-hue-rotate: #/*x{hue-rotate($v)};
     backdrop-filter: _b-f();
   }
   x*/
@@ -34,7 +34,7 @@ $BackdropHueRotate: (
     @each $key, $value in $BackdropHueRotate {
       /*x
       @mixin \-#{$key} {
-        $tw-backdrop-hue-rotate: hue-rotate(-#{$value}) !global;
+        --tw-backdrop-hue-rotate: #{hue-rotate(-$value)};
         backdrop-filter: _b-f();
       }
       x*/
@@ -44,7 +44,7 @@ $BackdropHueRotate: (
   @if $isUsingCustomValues {
     /*x
     @mixin \-backdrop-hue-rotate-($v) {
-      $tw-backdrop-hue-rotate: hue-rotate(-$v) !global;
+      --tw-backdrop-hue-rotate: #/*x{hue-rotate(-$v)};
       backdrop-filter: _b-f();
     }
     x*/

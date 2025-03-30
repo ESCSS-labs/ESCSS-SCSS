@@ -12,7 +12,7 @@ $Saturate: (
   @each $key, $value in $Saturate {
     /*x
     @mixin #{$key} {
-      $tw-saturate: #{$value} !global;
+      --tw-saturate: #{$value};
       filter: _f();
     }
     x*/
@@ -22,7 +22,7 @@ $Saturate: (
 @if $isUsingCustomValues {
   /*x
   @mixin saturate-($v) {
-    $tw-saturate: saturate($v) !global;
+    --tw-saturate: #/*x{saturate($v)};
     filter: _f();
   }
   x*/

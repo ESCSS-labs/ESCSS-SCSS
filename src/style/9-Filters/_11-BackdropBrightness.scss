@@ -18,7 +18,7 @@ $BackdropBrightness: (
   @each $key, $value in $BackdropBrightness {
     /*x
     @mixin #{$key} {
-      $tw-backdrop-brightness: #{$value} !global;
+      --tw-backdrop-brightness: #{$value};
       backdrop-filter: _b-f();
     }
     x*/
@@ -28,7 +28,7 @@ $BackdropBrightness: (
 @if $isUsingCustomValues {
   /*x
   @mixin backdrop-brightness-($v) {
-    $tw-backdrop-brightness: brightness($v) !global;
+    --tw-backdrop-brightness: #/*x{brightness($v)};
     backdrop-filter: _b-f();
   }
   x*/

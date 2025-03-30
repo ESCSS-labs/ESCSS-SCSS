@@ -18,7 +18,7 @@ $Brightness: (
   @each $key, $value in $Brightness {
     /*x
     @mixin #{$key} {
-      $tw-brightness: #{$value} !global;
+      --tw-brightness: #{$value};
       filter: _f();
     }
     x*/
@@ -28,7 +28,7 @@ $Brightness: (
 @if $isUsingCustomValues {
   /*x
   @mixin brightness-($v) {
-    $tw-brightness: brightness($v) !global;
+    --tw-brightness: #/*x{brightness($v)};
     filter: _f();
   }
   x*/

@@ -9,7 +9,7 @@ $Grayscale: (
   @each $key, $value in $Grayscale {
     /*x
     @mixin #{$key} {
-      $tw-grayscale: #{$value} !global;
+      --tw-grayscale: #{$value};
       filter: _f();
     }
     x*/
@@ -19,7 +19,7 @@ $Grayscale: (
 @if $isUsingCustomValues {
   /*x
   @mixin grayscale-($v) {
-    $tw-grayscale: grayscale($v) !global;
+    --tw-grayscale: #/*x{grayscale($v)};
     filter: _f();
   }
   x*/

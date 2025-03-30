@@ -13,7 +13,7 @@ $HueRotate: (
   @each $key, $value in $HueRotate {
     /*x
     @mixin #{$key} {
-      $tw-hue-rotate: hue-rotate(#{$value}) !global;
+      --tw-hue-rotate: #{hue-rotate($value)};
       filter: _f();
     }
     x*/
@@ -22,7 +22,7 @@ $HueRotate: (
 @if $isUsingCustomValues {
   /*x
   @mixin hue-rotate-($v) {
-    $tw-hue-rotate: hue-rotate($v) !global;
+    --tw-hue-rotate:  #/*x{hue-rotate($v)};
     filter: _f();
   }
   x*/
@@ -33,7 +33,7 @@ $HueRotate: (
     @each $key, $value in $HueRotate {
       /*x
       @mixin \-#{$key} {
-        $tw-hue-rotate: hue-rotate(-#{$value}) !global;
+        --tw-hue-rotate: #{hue-rotate(-$value)};
         filter: _f();
       }
       x*/
@@ -43,7 +43,7 @@ $HueRotate: (
   @if $isUsingCustomValues {
     /*x
     @mixin \-hue-rotate-($v) {
-      $tw-hue-rotate: hue-rotate(-$v) !global;
+      --tw-hue-rotate: #/*x{hue-rotate(-$v)};
       filter: _f();
     }
     x*/

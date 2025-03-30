@@ -14,7 +14,7 @@ $Contrast: (
   @each $key, $value in $Contrast {
     /*x
     @mixin #{$key} {
-      $tw-contrast: #{$value} !global;
+      --tw-contrast: #{$value};
       filter: _f();
     }
     x*/
@@ -24,7 +24,7 @@ $Contrast: (
 @if $isUsingCustomValues {
   /*x
   @mixin contrast-($v) {
-    $tw-contrast: contrast($v) !global;
+    --tw-contrast: #/*x{contrast($v)};
     filter: _f();
   }
   x*/

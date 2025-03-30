@@ -14,7 +14,7 @@ $BackdropContrast: (
   @each $key, $value in $BackdropContrast {
     /*x
     @mixin #{$key} {
-      $tw-backdrop-contrast: #{$value} !global;
+      --tw-backdrop-contrast: #{$value};
       backdrop-filter: _b-f();
     }
     x*/
@@ -24,7 +24,7 @@ $BackdropContrast: (
 @if $isUsingCustomValues {
   /*x
   @mixin backdrop-contrast-($v) {
-    $tw-backdrop-contrast: contrast($v) !global;
+    --tw-backdrop-contrast: #/*x{contrast($v)};
     backdrop-filter: _b-f();
   }
   x*/
