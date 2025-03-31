@@ -328,7 +328,7 @@ $BoxShadowColor: (
     /*x
     @mixin shadow-#{$key}($v: 1) {
       --tw-shadow-color: #/*x{_c(#{$value}, $v)};
-      --tw-shadow: var(--tw-shadow-colored);
+      --tw-shadow: var(--tw-shadow-colored) !important;
     }
     x*/
   }
@@ -339,13 +339,13 @@ $BoxShadowColor: (
   @mixin shadow-($v) {
     @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
       --tw-shadow-color: #/*x{$v};
-      --tw-shadow: var(--tw-shadow-colored);
+      --tw-shadow: var(--tw-shadow-colored) !important;
     }
 
     // arbitrary shadow e.g shadow-(0 35px 60px -15px rgba(0,0,0,0.3))
     @else if meta.type-of($v)==list {
       --tw-shadow: #/*x{$v};
-      --tw-shadow-colored: #/*x{list.set-nth($v, -1, '')};
+      --tw-shadow-colored: #/*x{list.set-nth($v, -1, '')} var(--tw-shadow-color);
 
       box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     }
