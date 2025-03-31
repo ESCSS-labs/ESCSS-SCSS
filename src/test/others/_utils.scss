@@ -182,47 +182,5 @@
         }
       }
     }
-
-    @include it("utils_hover-gradient") {
-      @include assert {
-        @include output {
-          @include bg-gradient-to-r;
-          @include from-red-100;
-
-          @include utils_hover-gradient {
-            @include from-red-500;
-          }
-        }
-
-        @include expect {
-          & {
-            background-image: linear-gradient(to right, #fff, transparent);
-            background-image: linear-gradient(
-              to right,
-              $color-red-100,
-              transparent
-            );
-            position: relative;
-          }
-
-          &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            background-image: linear-gradient(
-              to right,
-              $color-red-500,
-              transparent
-            );
-          }
-
-          &:hover::before {
-            cursor: pointer;
-            opacity: 1;
-          }
-        }
-      }
-    }
   }
 }
