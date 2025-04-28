@@ -1,26 +1,64 @@
 ![logo](https://github.com/ESCSS-labs/ESCSS/blob/main/assets/logo.png)
 
-# Language
-
-- [中文](./README-zh.md)
-
-# Quick Links
-
-- [What is ESCSS-SCSS](#what-is-escss-scss)
-- [Usage](#usage)
-- [Installation](#installation)
-- [Q&A](#qa)
-
 ## What is ESCSS-SCSS?
 
-ESCSS-SCSS takes the full potential of CSS and Tailwind in SCSS.
+ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind — ensuring your CSS stack stays modern and future-proof.
+
+## Installation
+
+### Requirements
+
+- sass >= v1.23.0
+- vite (if >= v5.4.0, Recommended sass-embedded faster) 
+
+### Copy file
+
+- `_awaken.scss` from the `download/` directory
+
+### Install extension for auto-complete
+
+- SCSS IntelliSense
+
+### Installing
+
+```bash
+npm add -D sass-embedded
+```
+
+```bash
+yarn add -D sass-embedded
+```
+
+```bash
+pnpm add -D sass-embedded
+```
+
+```bash
+bun add -D sass-embedded
+```
+
+### Config
+
+```js
+//  vite.config.js
+export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+        additionalData: `@use '/assets/scss/_awaken.scss' as *;`,
+      },
+    },
+  },
+});
+```
+
 
 ## Usage
 
 ### Set your project's breakpoints.
 
 ```scss
-// _awaken.scss
 $SM: 0px;
 $MD: 0px;
 $LG: 0px;
@@ -28,73 +66,53 @@ $XL: 0px;
 $XXL: 0px;
 ```
 
-### Same as Tailwind
-
-- Support: basic / arbitrary / media / dark mode utilities.
-- Performance: Some mixins require `\`, `()` to reduce file size.
-
+### Tailwind API
   ```scss
   #Demo {
-    @include \-m-1\/2; // -m-1/2
-    @include m-1\/2; // m-1/2
-    @include m-(20px); // m-[20px]
-    @include border-rose-500; // same
-    @include border-x-(
-      $color-rose-500
-    ); // border-x-rose-500, border-x/y/s/e/t/r/b/l-($color)
-    @include bg-rose-500; // same
-    @include bg-rose-500(25%); // bg-rose-500/[25%]
-    @include bg-rose-500(0.25); // bg-rose-500/25
-    @include bg-(length 200px 100px); // bg-[length:200px_100px]
+    // -m-1/2
+    @include \-m-1\/2;
+    
+    // m-1/2
+    @include m-1\/2; 
 
-    // Media: sm、md、lg、xl、\2xl
+    // m-[20px]
+    @include m-(20px); 
+
+    // same
+    @include border-rose-500; 
+
+    // performance concern
+    // border-x-rose-500, border-x/y/s/e/t/r/b/l-($color)
+    @include border-x-($color-rose-500);
+    
+    // same
+    @include bg-rose-500; 
+
+    // bg-rose-500/[25%]
+    @include bg-rose-500(25%); 
+
+    // bg-rose-500/25
+    @include bg-rose-500(0.25); 
+
+    // bg-[length:200px_100px]
+    @include bg-(length 200px 100px); 
+
+    // Media: sm、md、lg、xl、\2xl、dark
     @include sm {
       color: black;
-      @include bg-rose-500;
     }
 
     @include \2xl {
-      color: black;
       @include bg-rose-500;
     }
 
-    // Media: sm、md、lg、xl、\2xl
-    @include sm {
-      color: black;
-      @include bg-rose-500;
-    }
-
-    @include \2xl {
-      color: black;
-      @include bg-rose-500;
-    }
-
-    // Dark Mode: Combines selector and media queries (unlike Tailwind)
-    //  - selector strategy: Add a '--dark' class to the html/body/top level, and toggle the class using JavaScript.
-    //  - media strategy: Automatically handled for you when using the @include dark. Only be triggered if the user has set their browser to dark mode.
     @include dark {
       color: black;
       @include bg-rose-500;
     }
-
-    // Reset some tailwind variables. If you're feeling lazy, you can use it in every ID/Class (recommended).
   }
   ```
 
-### Same as CSS
-
-```scss
-#Demo {
-  background: red;
-  @include bg-green-50; // override red
-
-  &:hover {
-    color: red;
-  }
-
-  // Reset some tailwind variables. If you're feeling lazy, you can use it in every ID/Class (recommended).
-}
-```
 
 ### Notes
 
@@ -144,64 +162,3 @@ $XXL: 0px;
   background: green; // warning
 }
 ```
-
-### Type @include utils to show more API
-
-- Install 'SCSS IntelliSense' extension in VSCode
-
-## Installation
-
-### Requirements
-
-- sass >= v1.23.0
-- vite (if >= v5.4.0, use sass-embedded)
-
-### Copy `_awaken.scss` from the `product/` directory
-
-### Installing library in Your Project
-
-```bash
-npm add -D sass-embedded
-```
-
-```bash
-yarn add -D sass-embedded
-```
-
-```bash
-pnpm add -D sass-embedded
-```
-
-```bash
-bun add -D sass-embedded
-```
-
-### Setting Up in `vite.config.js`
-
-```js
-//  vite.config.js
-export default defineConfig({
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: "modern-compiler",
-        additionalData: `@use '/assets/styles/_awaken.scss' as *;`,
-      },
-    },
-  },
-});
-```
-
-## Q&A
-
-### Why are the default values of breakpoints($SM、$MD..) set to 0px?
-
-Each project has its own unique breakpoint, so setting 0 as the default value also means triggering [AGPL-3.0, §13](https://www.gnu.org/licenses/agpl-3.0.en.html), I think it is reasonable to get paid for your own labor.
-
-### Can I transition my project from the old version to the new version?
-
-Yes. The original intention of the design was to use ESCSS-SCSS to assist the project's Sass & Tailwind transition to the latest version. I followed the specifications of Sass and Tailwind to ensure a smooth transition.
-
-### The Advantages of Compatibility with Tailwind
-
-When used in conjunction with Tailwind, you gain the rapid development advantages of Tailwind while also benefiting from the encapsulation of SCSS and the timeless nature of native CSS. This achieves an excellent balance in maintainability and development efficiency.
