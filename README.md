@@ -9,11 +9,11 @@ ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind — ensu
 ### Requirements
 
 - sass >= v1.23.0
-- vite (if >= v5.4.0, Recommended sass-embedded faster) 
+- vite (if >= v5.4.0, Recommended sass-embedded faster)
 
 ### Copy file
 
-- `_awaken.scss` from the `download/` directory
+- copy `_awaken.scss` from the `download` directory
 
 ### Install extension for auto-complete
 
@@ -37,8 +37,6 @@ pnpm add -D sass-embedded
 bun add -D sass-embedded
 ```
 
-### Config
-
 ```js
 //  vite.config.js
 export default defineConfig({
@@ -53,10 +51,9 @@ export default defineConfig({
 });
 ```
 
-
 ## Usage
 
-### Set your project's breakpoints.
+### Configure breakpoints for your project
 
 ```scss
 $SM: 0px;
@@ -67,52 +64,52 @@ $XXL: 0px;
 ```
 
 ### Tailwind API
-  ```scss
-  #Demo {
-    // -m-1/2
-    @include \-m-1\/2;
-    
-    // m-1/2
-    @include m-1\/2; 
 
-    // m-[20px]
-    @include m-(20px); 
+```scss
+#Demo {
+  // -m-1/2
+  @include \-m-1\/2;
 
-    // same
-    @include border-rose-500; 
+  // m-1/2
+  @include m-1\/2;
 
-    // performance concern
-    // border-x-rose-500, border-x/y/s/e/t/r/b/l-($color)
-    @include border-x-($color-rose-500);
-    
-    // same
-    @include bg-rose-500; 
+  // m-[20px]
+  @include m-(20px);
 
-    // bg-rose-500/[25%]
-    @include bg-rose-500(25%); 
+  // same
+  @include border-rose-500;
 
-    // bg-rose-500/25
-    @include bg-rose-500(0.25); 
+  // performance concern
+  // border-x-rose-500 --> border-x/y/s/e/t/r/b/l-($color)
+  @include border-x-($color-rose-500);
 
-    // bg-[length:200px_100px]
-    @include bg-(length 200px 100px); 
+  // same
+  @include bg-rose-500;
 
-    // Media: sm、md、lg、xl、\2xl、dark
-    @include sm {
-      color: black;
-    }
+  // bg-rose-500/[25%]
+  @include bg-rose-500(25%);
 
-    @include \2xl {
-      @include bg-rose-500;
-    }
+  // bg-rose-500/25
+  @include bg-rose-500(0.25);
 
-    @include dark {
-      color: black;
-      @include bg-rose-500;
-    }
+  // bg-[length:200px_100px]
+  @include bg-(length 200px 100px);
+
+  // Media: sm、md、lg、xl、\2xl、dark
+  @include sm {
+    color: black;
   }
-  ```
 
+  @include \2xl {
+    @include bg-rose-500;
+  }
+
+  @include dark {
+    color: black;
+    @include bg-rose-500;
+  }
+}
+```
 
 ### Notes
 
