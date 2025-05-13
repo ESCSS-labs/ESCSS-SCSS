@@ -8,68 +8,46 @@ $Animation: (
   "animate-bounce": "$animate-bounce",
 );
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(0);
+    animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
 @if $isBasicUsage {
   @each $key, $value in $Animation {
-    @if $key == "animate-none" {
-      /*x
-      @mixin #{$key} {
-        animation: #{$value};
-      }
-      x*/
-    } @else if $key == "animate-spin" {
-      /*x
-      @mixin #{$key} {
-        animation: #{$value};
-        @keyframes spin {
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      }
-      x*/
-    } @else if $key == "animate-ping" {
-      /*x
-      @mixin #{$key} {
-        animation: #{$value};
-        @keyframes ping {
-          75%,
-          100% {
-            transform: scale(2);
-            opacity: 0;
-          }
-        }
-      }
-      x*/
-    } @else if $key == "animate-pulse" {
-      /*x
-      @mixin #{$key} {
-        animation: #{$value};
-        @keyframes pulse {
-          50% {
-            opacity: 0.5;
-          }
-        }
-      }
-      x*/
-    } @else if $key == "animate-bounce" {
-      /*x
-      @mixin #{$key} {
-        animation: #{$value};
-        @keyframes bounce {
-          0%,
-          100% {
-            transform: translateY(-25%);
-            animate-timing-function: cubic-bezier(0.8, 0, 1, 1);
-          }
-
-          50% {
-            transform: translateY(0);
-            animate-timing-function: cubic-bezier(0, 0, 0.2, 1);
-          }
-        }
-      }
-      x*/
+    /*x
+    @mixin #{$key} {
+      animation: #{$value};
     }
+    x*/
   }
 }
 
