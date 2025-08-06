@@ -9,7 +9,6 @@ ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind — ensu
 ### Requirements
 
 - sass >= v1.23.0
-- vite (if >= v5.4.0, Recommended sass-embedded faster)
 
 ### Copy file
 
@@ -22,19 +21,19 @@ ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind — ensu
 ### Installing
 
 ```bash
-npm add -D sass-embedded
+npm add -D sass
 ```
 
 ```bash
-yarn add -D sass-embedded
+yarn add -D sass
 ```
 
 ```bash
-pnpm add -D sass-embedded
+pnpm add -D sass
 ```
 
 ```bash
-bun add -D sass-embedded
+bun add -D sass
 ```
 
 ```js
@@ -43,8 +42,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: "modern-compiler",
-        additionalData: `@use '/assets/scss/_awaken.scss' as *;`,
+        additionalData: `@use '/your path' as *;`,
       },
     },
   },
