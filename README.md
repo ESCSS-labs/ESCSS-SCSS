@@ -2,7 +2,7 @@
 
 ## What is ESCSS-SCSS?
 
-ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind — ensuring your CSS stack stays modern and future-proof.
+ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind(v4) — ensuring your CSS stack stays modern and future-proof.
 
 ## Installation
 
