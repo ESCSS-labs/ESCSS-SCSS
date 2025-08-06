@@ -61,7 +61,7 @@ $XL: 0px;
 $XXL: 0px;
 ```
 
-### Tailwind API
+### The different from Tailwind API
 
 ```scss
 #Demo {
@@ -74,26 +74,19 @@ $XXL: 0px;
   // m-[20px]
   @include m-(20px);
 
-  // same
-  @include border-rose-500;
-
-  // performance concern
-  // border-x-rose-500 --> border-x/y/s/e/t/r/b/l-($color)
+  // performance concern: border-x/y/s/e/t/r/b/l-($color)
   @include border-x-($color-rose-500);
 
-  // same
-  @include bg-rose-500;
-
-  // bg-rose-500/[25%]
+  // performance concern: bg-rose-500/[25%]
   @include bg-rose-500(25%);
 
-  // bg-rose-500/25
+  // performance concern: bg-rose-500/25
   @include bg-rose-500(0.25);
 
   // bg-[length:200px_100px]
   @include bg-(length 200px 100px);
 
-  // Media: sm、md、lg、xl、\2xl、dark
+  // sm、md、lg、xl、\2xl、dark
   @include sm {
     color: black;
   }
@@ -111,7 +104,7 @@ $XXL: 0px;
 
 ### Notes
 
-- `space-*` and `divide-*` need to comply with [Breaking Change: Mixed Declarations](https://sass-lang.com/documentation/breaking-changes/mixed-decls/) to avoid conflicts.
+- Set `@include` in the bottom to avoid conflicts from [Breaking Change: Mixed Declarations](https://sass-lang.com/documentation/breaking-changes/mixed-decls/) (`space-*` and `divide-*`)
 
 ```scss
 // ✅
