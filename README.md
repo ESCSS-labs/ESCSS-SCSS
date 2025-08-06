@@ -12,7 +12,7 @@ ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind — ensu
 
 ### Copy file
 
-- copy `_awaken.scss` from the `download` directory
+- copy `_style.scss` from the `download` directory
 
 ### Install extension for auto-complete
 

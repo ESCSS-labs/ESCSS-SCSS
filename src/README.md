@@ -1,6 +1,6 @@
 ## file structure
 
-style/test
+src/test
 ├── 1.Layout  
 │ ├── AspectRatio.scss  
 │ ├── BoxDecorationBreak.scss  
