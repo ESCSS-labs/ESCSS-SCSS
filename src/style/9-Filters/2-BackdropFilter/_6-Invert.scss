@@ -1,12 +1,12 @@
 @use "../../setting" as *;
 
-$BackdropGrayscale: (
-  "backdrop-grayscale-0": grayscale(0),
-  "backdrop-grayscale": grayscale(100%),
+$BackdropInvert: (
+  "backdrop-invert": invert(100%),
+  "backdrop-invert-0": invert(0),
 );
 
 @if $isBasicUsage {
-  @each $key, $value in $BackdropGrayscale {
+  @each $key, $value in $BackdropInvert {
     /*x
     @mixin #{$key} {
       --tw-backdrop-invert: #{$value};
@@ -18,8 +18,8 @@ $BackdropGrayscale: (
 
 @if $isUsingCustomValues {
   /*x
-  @mixin backdrop-grayscale-($v) {
-    --tw-backdrop-grayscale: #/*x{grayscale($v)};
+  @mixin backdrop-invert-($v) {
+    --tw-backdrop-invert: #/*x{invert($v)};
     backdrop-filter: _b-f();
   }
   x*/

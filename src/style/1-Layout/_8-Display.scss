@@ -1,11 +1,15 @@
 @use "../setting" as *;
 
 $Display: (
-  "flex": flex,
+  "inline": inline,
   "block": block,
   "inline-block": inline-block,
-  "inline": inline,
+  "flow-root": flow-root,
+  "flex": flex,
   "inline-flex": inline-flex,
+  "grid": grid,
+  "inline-grid": inline-grid,
+  "contents": contents,
   "table": table,
   "inline-table": inline-table,
   "table-caption": table-caption,
@@ -16,10 +20,6 @@ $Display: (
   "table-header-group": table-header-group,
   "table-row-group": table-row-group,
   "table-row": table-row,
-  "flow-root": flow-root,
-  "grid": grid,
-  "inline-grid": inline-grid,
-  "contents": contents,
   "list-item": list-item,
   "hidden": none,
 );
@@ -32,4 +32,29 @@ $Display: (
     }
     x*/
   }
+
+  /*x
+  @mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  @mixin not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+  x*/
 }

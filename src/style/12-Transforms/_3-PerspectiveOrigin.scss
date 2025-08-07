@@ -1,0 +1,31 @@
+@use "../setting" as *;
+
+$PerspectiveOrigin: (
+  "perspective-origin-center": center,
+  "perspective-origin-top": top,
+  "perspective-origin-top-right": top right,
+  "perspective-origin-right": right,
+  "perspective-origin-bottom-right": bottom right,
+  "perspective-origin-bottom": bottom,
+  "perspective-origin-bottom-left": bottom left,
+  "perspective-origin-left": left,
+  "perspective-origin-top-left": top left,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $PerspectiveOrigin {
+    /*x
+    @mixin #{$key} {
+      perspective-origin: #{$value};
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin perspective-origin-($v) {
+    perspective-origin: $v;
+  }
+  x*/
+}

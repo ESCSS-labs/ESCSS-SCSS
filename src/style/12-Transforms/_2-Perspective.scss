@@ -1,0 +1,28 @@
+@use "../setting" as *;
+
+$Perspective: (
+  "perspective-dramatic": 100px,
+  "perspective-near": 300px,
+  "perspective-normal": 500px,
+  "perspective-midrange": 800px,
+  "perspective-distant": 1200px,
+  "perspective-none": none,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $Perspective {
+    /*x
+    @mixin #{$key} {
+      perspective: #{$value};
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin perspective-($v) {
+    perspective: $v;
+  }
+  x*/
+}

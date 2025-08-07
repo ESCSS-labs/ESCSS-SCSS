@@ -1,0 +1,27 @@
+@use "../setting" as *;
+
+$Transform: (
+  "transform-none": none,
+  "transform-gpu": translateZ(0) var(--tw-rotate-x) var(--tw-rotate-y)
+    var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y),
+  "transform-cpu": var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z)
+    var(--tw-skew-x) var(--tw-skew-y),
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $Transform {
+    /*x
+    @mixin #{$key} {
+      transform: #{$value};
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin transform-($v) {
+    transform: $v;
+  }
+  x*/
+}

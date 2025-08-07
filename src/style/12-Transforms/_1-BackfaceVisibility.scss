@@ -1,0 +1,16 @@
+@use "../setting" as *;
+
+$BackfaceVisibility: (
+  "backface-hidden": hidden,
+  "backface-visible": visible,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $BackfaceVisibility {
+    /*x
+    @mixin #{$key} {
+      backface-visibility: #{$value};
+    }
+    x*/
+  }
+}

@@ -1,0 +1,31 @@
+@use "../setting" as *;
+
+$MaskPosition: (
+  "mask-top-left": top left,
+  "mask-top": top,
+  "mask-top-right": top right,
+  "mask-left": left,
+  "mask-center": center,
+  "mask-right": right,
+  "mask-bottom-left": bottom left,
+  "mask-bottom": bottom,
+  "mask-bottom-right": bottom right,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $MaskPosition {
+    /*x
+    @mixin #{$key} {
+      mask-position: #{$value};
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin mask-position-($v) {
+    mask-position: $v;
+  }
+  x*/
+}

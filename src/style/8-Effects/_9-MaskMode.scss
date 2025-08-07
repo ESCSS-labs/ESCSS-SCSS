@@ -1,0 +1,17 @@
+@use "../setting" as *;
+
+$MaskMode: (
+  "mask-alpha": alpha,
+  "mask-luminance": luminance,
+  "mask-match": match-source,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $MaskMode {
+    /*x
+    @mixin #{$key} {
+      mask-mode: #{$value};
+    }
+    x*/
+  }
+}

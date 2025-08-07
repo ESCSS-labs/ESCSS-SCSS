@@ -1,45 +1,30 @@
-// 1st property: outline
-// 2nd property: outline-offset
-// 3rd property: outline-style
-@use "sass:list";
 @use "../setting" as *;
 
-$OutlineStyle: (
-  "outline-none": (
-    (2px solid transparent),
-    2px,
-    "null",
-  ),
-  "outline": (
-    "null",
-    "null",
-    solid,
-  ),
-  "outline-dashed": (
-    "null",
-    "null",
-    dashed,
-  ),
-  "outline-dotted": (
-    "null",
-    "null",
-    dotted,
-  ),
-  "outline-double": (
-    "null",
-    "null",
-    double,
-  ),
-);
-
 @if $isBasicUsage {
-  @each $key, $value in $OutlineStyle {
-    /*x
-    @mixin #{$key} {
-      outline: #{list.nth($value, 1)};
-      outline-offset: #{list.nth($value, 2)};
-      outline-style: #{list.nth($value, 3)};
-    }
-    x*/
+  /*x
+  @mixin outline-solid {
+    outline-style: solid;
   }
+  
+  @mixin outline-dashed {
+    outline-style: dashed;
+  }
+
+  @mixin outline-dotted {
+    outline-style: dotted;
+  }
+
+  @mixin outline-double {
+    outline-style: double;
+  }
+
+  @mixin outline-none {
+    outline-style: none;
+  }
+
+  @mixin outline-hidden {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  x*/
 }

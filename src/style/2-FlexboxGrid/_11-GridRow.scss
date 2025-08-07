@@ -1,7 +1,6 @@
 @use "../setting" as *;
 
-$GridRowStartEnd: (
-  "row-auto": auto,
+$GridRow: (
   "row-span-1": span 1 / span 1,
   "row-span-2": span 2 / span 2,
   "row-span-3": span 3 / span 3,
@@ -17,7 +16,7 @@ $GridRowStartEnd: (
   "row-span-full": "#/*x{1 / -1}",
 );
 
-$GridRowStartEnd-start: (
+$GridRow-start: (
   "row-start-1": 1,
   "row-start-2": 2,
   "row-start-3": 3,
@@ -34,7 +33,7 @@ $GridRowStartEnd-start: (
   "row-start-auto": auto,
 );
 
-$GridRowStartEnd-end: (
+$GridRow-end: (
   "row-end-1": 1,
   "row-end-2": 2,
   "row-end-3": 3,
@@ -52,7 +51,7 @@ $GridRowStartEnd-end: (
 );
 
 @if $isBasicUsage {
-  @each $key, $value in $GridRowStartEnd {
+  @each $key, $value in $GridRow {
     /*x
     @mixin #{$key} {
       grid-row: #{$value};
@@ -60,7 +59,7 @@ $GridRowStartEnd-end: (
     x*/
   }
 
-  @each $key, $value in $GridRowStartEnd-start {
+  @each $key, $value in $GridRow-start {
     /*x
     @mixin #{$key} {
       grid-row-start: #{$value};
@@ -68,7 +67,7 @@ $GridRowStartEnd-end: (
     x*/
   }
 
-  @each $key, $value in $GridRowStartEnd-end {
+  @each $key, $value in $GridRow-end {
     /*x
     @mixin #{$key} {
       grid-row-end: #{$value};

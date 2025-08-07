@@ -1,33 +1,16 @@
-// 1st property: overflow-wrap
-// 2nd property: word-break
-@use "sass:list";
 @use "../setting" as *;
 
 $WordBreak: (
-  "break-normal": (
-    normal,
-    normal,
-  ),
-  "break-words": (
-    break-word,
-    "null",
-  ),
-  "break-all": (
-    "null",
-    break-all,
-  ),
-  "break-keep": (
-    "null",
-    keep-all,
-  ),
+  "break-normal": normal,
+  "break-all": break-all,
+  "break-keep": keep-all,
 );
 
 @if $isBasicUsage {
   @each $key, $value in $WordBreak {
     /*x
-    @mixin #{$key} {
-      overflow-wrap: #{list.nth($value, 1)};
-      word-break: #{list.nth($value, 2)};
+    @mixin #{$key}{
+      word-break: #{$value};
     }
     x*/
   }

@@ -1,35 +1,19 @@
-// 1st property: overflow
-// 2nd property: text-overflow
-// 3rd property: white-space
-@use "sass:list";
 @use "../setting" as *;
 
-$TextOverflow: (
-  "truncate": (
-    hidden,
-    ellipsis,
-    nowrap,
-  ),
-  "text-ellipsis": (
-    "null",
-    ellipsis,
-    "null",
-  ),
-  "text-clip": (
-    "null",
-    clip,
-    "null",
-  ),
-);
-
 @if $isBasicUsage {
-  @each $key, $value in $TextOverflow {
-    /*x 
-    @mixin #{$key} {
-      overflow: #{list.nth($value, 1)};
-      text-overflow: #{list.nth($value, 2)};
-      white-space: #{list.nth($value, 3)};
-    }
-    x*/
+  /*x
+  @mixin truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
+  
+  @mixin text-ellipsis {
+    text-overflow: ellipsis;
+  }
+	
+  @mixin text-clip {
+    text-overflow: clip;
+  }
+  x*/
 }

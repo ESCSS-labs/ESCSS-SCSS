@@ -1,0 +1,20 @@
+@use "../setting" as *;
+
+$ColorScheme: (
+  "scheme-normal": normal,
+  "scheme-dark": dark,
+  "scheme-light": light,
+  "scheme-light-dark": light dark,
+  "scheme-only-dark": only dark,
+  "scheme-only-light": only light,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $ColorScheme {
+    /*x
+    @mixin #{$key} {
+      color-scheme: #{$value};
+    }
+    x*/
+  }
+}

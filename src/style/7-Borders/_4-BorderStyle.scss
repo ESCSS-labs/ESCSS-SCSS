@@ -9,11 +9,29 @@ $BorderStyle: (
   "border-none": none,
 );
 
+$DivideStyle: (
+  "divide-solid": solid,
+  "divide-dashed": dashed,
+  "divide-dotted": dotted,
+  "divide-double": double,
+  "divide-none": none,
+);
+
 @if $isBasicUsage {
   @each $key, $value in $BorderStyle {
     /*x
     @mixin #{$key}{
       border-style: #{$value};
+    }
+    x*/
+  }
+
+  @each $key, $value in $DivideStyle {
+    /*x
+    @mixin #{$key}{
+      & > :not(:last-child) {
+        border-style: #{$value};
+      }
     }
     x*/
   }

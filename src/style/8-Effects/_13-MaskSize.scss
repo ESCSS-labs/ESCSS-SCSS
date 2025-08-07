@@ -1,0 +1,25 @@
+@use "../setting" as *;
+
+$MaskSize: (
+  "mask-auto": auto,
+  "mask-cover": cover,
+  "mask-contain": contain,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $MaskSize {
+    /*x
+    @mixin #{$key} {
+      mask-size: #{$value};
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin mask-size-($v) {
+    mask-size: $v;
+  }
+  x*/
+}

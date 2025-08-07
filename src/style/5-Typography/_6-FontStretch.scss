@@ -1,0 +1,32 @@
+@use "sass:meta";
+@use "../setting" as *;
+
+$FontStretch: (
+  "font-stretch-ultra-condensed": ultra-condensed,
+  "font-stretch-extra-condensed": extra-condensed,
+  "font-stretch-condensed": condensed,
+  "font-stretch-semi-condensed": semi-condensed,
+  "font-stretch-normal": normal,
+  "font-stretch-semi-expanded": semi-expanded,
+  "font-stretch-expanded": expanded,
+  "font-stretch-extra-expanded": extra-expanded,
+  "font-stretch-ultra-expanded": ultra-expanded,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $FontStretch {
+    /*x
+    @mixin #{$key} {
+     font-stretch: #{$value};
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin font-stretch-($v) {
+    font-stretch: $v;
+  }
+  x*/
+}

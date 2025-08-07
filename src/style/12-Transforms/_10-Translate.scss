@@ -2,7 +2,6 @@
 
 $Translate: (
   "0": "$spacing-0",
-  "px": "$spacing-px",
   "0_5": "$spacing-0_5",
   "1": "$spacing-1",
   "1_5": "$spacing-1_5",
@@ -43,11 +42,18 @@ $Translate: (
   "2\\/4": 50%,
   "3\\/4": 75%,
   "full": 100%,
+  "px": 1px,
 );
 
 @if $isBasicUsage {
   @each $key, $value in $Translate {
     /*x
+    @mixin translate-#{$key} {
+      --tw-translate-x: #/*x{#{$value}};
+      --tw-translate-y: #/*x{#{$value}};
+      transform: _t();
+    }
+
     @mixin translate-x-#{$key} {
       --tw-translate-x: #/*x{#{$value}};
       transform: _t();
@@ -61,24 +67,16 @@ $Translate: (
   }
 }
 
-@if $isUsingCustomValues {
-  /*x
-  @mixin translate-x-($v) {
-    --tw-translate-x: #/*x{$v};
-    transform: _t();
-  }
-
-  @mixin translate-y-($v) {
-    --tw-translate-y: #/*x{$v};
-    transform: _t();
-  }
-  x*/
-}
-
 @if $isUsingNegativeValues {
   @if $isBasicUsage {
     @each $key, $value in $Translate {
       /*x
+      @mixin \-translate-#{$key} {
+        --tw-translate-x: #/*x{-#{$value}};
+        --tw-translate-y: #/*x{-#{$value}};
+        transform: _t();
+      }
+
       @mixin \-translate-x-#{$key} {
         --tw-translate-x: #/*x{-#{$value}};
         transform: _t();
@@ -94,6 +92,12 @@ $Translate: (
 
   @if $isUsingCustomValues {
     /*x
+    @mixin \-translate-#{$v} {
+      --tw-translate-x: -#/*x{$v};
+      --tw-translate-y: -#/*x{$v};
+      transform: _t();
+    }
+
     @mixin \-translate-x-($v) {
       --tw-translate-x: -#/*x{$v};
       transform: _t();
@@ -105,4 +109,24 @@ $Translate: (
     }
     x*/
   }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin translate-($v) {
+    --tw-translate-x: #/*x{$v};
+    --tw-translate-y: #/*x{$v};
+    transform: _t();
+  }
+
+  @mixin translate-x-($v) {
+    --tw-translate-x: #/*x{$v};
+    transform: _t();
+  }
+
+  @mixin translate-y-($v) {
+    --tw-translate-y: #/*x{$v};
+    transform: _t();
+  }
+  x*/
 }

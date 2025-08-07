@@ -2,15 +2,15 @@
 @use "../setting" as *;
 
 $BackgroundsPosition: (
-  "bg-bottom": bottom,
-  "bg-center": center,
-  "bg-left": left,
-  "bg-left-bottom": left bottom,
-  "bg-left-top": left top,
-  "bg-right": right,
-  "bg-right-bottom": right bottom,
-  "bg-right-top": right top,
+  "bg-top-left": top left,
   "bg-top": top,
+  "bg-top-right": top right,
+  "bg-left": left,
+  "bg-center": center,
+  "bg-right": right,
+  "bg-bottom-left": bottom left,
+  "bg-bottom": bottom,
+  "bg-bottom-right": bottom right,
 );
 
 @if $isBasicUsage {
@@ -21,4 +21,12 @@ $BackgroundsPosition: (
     }
     x*/
   }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin bg-position-#{$key} {
+    background-position: #{$value};
+  }
+  x*/
 }

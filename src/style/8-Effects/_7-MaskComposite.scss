@@ -1,0 +1,18 @@
+@use "../setting" as *;
+
+$MaskComposite: (
+  "mask-add": add,
+  "mask-subtract": subtract,
+  "mask-intersect": intersect,
+  "mask-exclude": exclude,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $MaskComposite {
+    /*x
+    @mixin #{$key} {
+      mask-composite: #{$value};
+    }
+    x*/
+  }
+}
