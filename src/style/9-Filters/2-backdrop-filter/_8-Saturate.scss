@@ -1,0 +1,29 @@
+@use "../../setting" as *;
+
+$BackdropSaturate: (
+  "backdrop-saturate-0": saturate(0),
+  "backdrop-saturate-50": saturate(0.5),
+  "backdrop-saturate-100": saturate(1),
+  "backdrop-saturate-150": saturate(1.5),
+  "backdrop-saturate-200": saturate(2),
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $BackdropSaturate {
+    /*x
+    @mixin #{$key} {
+      --tw-backdrop-saturate: #{$value};
+      backdrop-filter: _b-f();
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin backdrop-saturate-($v) {
+    --tw-backdrop-saturate: #/*x{saturate($v)};
+    backdrop-filter: _b-f();
+  }
+  x*/
+}

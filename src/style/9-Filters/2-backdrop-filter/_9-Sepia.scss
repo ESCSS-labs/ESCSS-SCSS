@@ -1,0 +1,26 @@
+@use "../../setting" as *;
+
+$BackdropSepia: (
+  "backdrop-sepia-0": sepia(0),
+  "backdrop-sepia": sepia(100%),
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $BackdropSepia {
+    /*x
+    @mixin #{$key} {
+      --tw-backdrop-sepia: #{$value};
+      backdrop-filter: _b-f();
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin backdrop-sepia-($v) {
+    --tw-backdrop-sepia: #/*x{sepia($v)};
+    backdrop-filter: _b-f();
+  }
+  x*/
+}

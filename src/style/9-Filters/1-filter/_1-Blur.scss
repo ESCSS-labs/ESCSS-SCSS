@@ -1,0 +1,41 @@
+@use "../../setting" as *;
+
+$Blur: (
+  "blur-none": blur(0),
+  "blur-sm": "blur($blur-sm)",
+  "blur": "blur($blur)",
+  "blur-md": "blur($blur-md)",
+  "blur-lg": "blur($blur-lg)",
+  "blur-xl": "blur($blur-xl)",
+  "blur-2xl": "blur($blur-2xl)",
+  "blur-3xl": "blur($blur-3xl)",
+);
+
+@if $isBasicUsage {
+  /*x
+    @mixin filter {
+      filter: _f();
+    }
+
+    @mixin filter-none {
+      filter: none;
+    }
+  x*/
+  @each $key, $value in $Blur {
+    /*x
+    @mixin #{$key} {
+      --tw-blur: #/*x{#{$value}};
+      filter: _f();
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin blur-($v) {
+    --tw-blur: #/*x{blur($v)};
+    filter: _f();
+  }
+  x*/
+}

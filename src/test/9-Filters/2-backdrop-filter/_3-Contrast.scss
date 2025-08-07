@@ -1,0 +1,106 @@
+@use "true" as *;
+@use "../../style" as *;
+
+@include describe("9-Filters") {
+  @include describe("12-Backdrop Contrast") {
+    @include describe("Basic") {
+      @include it("backdrop-contrast-0") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-0;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(0);
+          }
+        }
+      }
+
+      @include it("backdrop-contrast-50") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-50;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(0.5);
+          }
+        }
+      }
+
+      @include it("backdrop-contrast-75") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-75;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(0.75);
+          }
+        }
+      }
+
+      @include it("backdrop-contrast-100") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-100;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(1);
+          }
+        }
+      }
+
+      @include it("backdrop-contrast-125") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-125;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(1.25);
+          }
+        }
+      }
+
+      @include it("backdrop-contrast-150") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-150;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(1.5);
+          }
+        }
+      }
+
+      @include it("backdrop-contrast-200") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-200;
+          }
+
+          @include expect {
+            backdrop-filter: contrast(2);
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("backdrop-contrast-(.25)") {
+        @include assert {
+          @include output {
+            @include backdrop-contrast-(0.25);
+          }
+
+          @include expect {
+            backdrop-filter: contrast(0.25);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@use "../../setting" as *;
+
+$Invert: (
+  "invert-0": invert(0),
+  "invert": invert(100%),
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $Invert {
+    /*x
+    @mixin #{$key} {
+      --tw-invert: #{$value};
+      filter: _f();
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin invert-($v) {
+    --tw-invert: #/*x{invert($v)};
+    filter: _f();
+  }
+  x*/
+}

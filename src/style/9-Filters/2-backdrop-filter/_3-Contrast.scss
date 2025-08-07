@@ -1,0 +1,31 @@
+@use "../../setting" as *;
+
+$BackdropContrast: (
+  "backdrop-contrast-0": contrast(0),
+  "backdrop-contrast-50": contrast(0.5),
+  "backdrop-contrast-75": contrast(0.75),
+  "backdrop-contrast-100": contrast(1),
+  "backdrop-contrast-125": contrast(1.25),
+  "backdrop-contrast-150": contrast(1.5),
+  "backdrop-contrast-200": contrast(2),
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $BackdropContrast {
+    /*x
+    @mixin #{$key} {
+      --tw-backdrop-contrast: #{$value};
+      backdrop-filter: _b-f();
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin backdrop-contrast-($v) {
+    --tw-backdrop-contrast: #/*x{contrast($v)};
+    backdrop-filter: _b-f();
+  }
+  x*/
+}

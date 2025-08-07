@@ -1,0 +1,46 @@
+@use "true" as *;
+@use "../../style" as *;
+
+@include describe("9-Filters") {
+  @include describe("7-Invert") {
+    @include describe("Basic") {
+      @include it("invert-0") {
+        @include assert {
+          @include output {
+            @include invert-0;
+          }
+
+          @include expect {
+            filter: invert(0);
+          }
+        }
+      }
+
+      @include it("invert") {
+        @include assert {
+          @include output {
+            @include invert;
+          }
+
+          @include expect {
+            filter: invert(100%);
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("invert-(.25)") {
+        @include assert {
+          @include output {
+            @include invert-(0.25);
+          }
+
+          @include expect {
+            filter: invert(0.25);
+          }
+        }
+      }
+    }
+  }
+}

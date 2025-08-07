@@ -1,0 +1,51 @@
+@use "../../setting" as *;
+
+$HueRotate: (
+  "hue-rotate-0": 0deg,
+  "hue-rotate-15": 15deg,
+  "hue-rotate-30": 30deg,
+  "hue-rotate-60": 60deg,
+  "hue-rotate-90": 90deg,
+  "hue-rotate-180": 180deg,
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $HueRotate {
+    /*x
+    @mixin #{$key} {
+      --tw-hue-rotate: #{hue-rotate($value)};
+      filter: _f();
+    }
+    x*/
+  }
+}
+@if $isUsingCustomValues {
+  /*x
+  @mixin hue-rotate-($v) {
+    --tw-hue-rotate:  #/*x{hue-rotate($v)};
+    filter: _f();
+  }
+  x*/
+}
+
+@if $isUsingNegativeValues {
+  @if $isBasicUsage {
+    @each $key, $value in $HueRotate {
+      /*x
+      @mixin \-#{$key} {
+        --tw-hue-rotate: #{hue-rotate(-$value)};
+        filter: _f();
+      }
+      x*/
+    }
+  }
+
+  @if $isUsingCustomValues {
+    /*x
+    @mixin \-hue-rotate-($v) {
+      --tw-hue-rotate: #/*x{hue-rotate(-$v)};
+      filter: _f();
+    }
+    x*/
+  }
+}

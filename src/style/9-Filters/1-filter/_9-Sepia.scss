@@ -1,0 +1,26 @@
+@use "../../setting" as *;
+
+$Sepia: (
+  "sepia-0": sepia(0),
+  "sepia": sepia(100%),
+);
+
+@if $isBasicUsage {
+  @each $key, $value in $Sepia {
+    /*x
+    @mixin #{$key} {
+      --tw-sepia: #{$value};
+      filter: #{$value};
+    }
+    x*/
+  }
+}
+
+@if $isUsingCustomValues {
+  /*x
+  @mixin sepia-($v) {
+    --tw-sepia: #/*x{sepia($v)};
+    filter: _f();
+  }
+  x*/
+}

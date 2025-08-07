@@ -1,0 +1,46 @@
+@use "true" as *;
+@use "../../style" as *;
+
+@include describe("9-Filters") {
+  @include describe("13-Backdrop Grayscale") {
+    @include describe("Basic") {
+      @include it("backdrop-grayscale-0") {
+        @include assert {
+          @include output {
+            @include backdrop-grayscale-0;
+          }
+
+          @include expect {
+            backdrop-filter: grayscale(0);
+          }
+        }
+      }
+
+      @include it("backdrop-grayscale") {
+        @include assert {
+          @include output {
+            @include backdrop-grayscale;
+          }
+
+          @include expect {
+            backdrop-filter: grayscale(100%);
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("backdrop-grayscale-(.5)") {
+        @include assert {
+          @include output {
+            @include backdrop-grayscale-(0.5);
+          }
+
+          @include expect {
+            backdrop-filter: grayscale(0.5);
+          }
+        }
+      }
+    }
+  }
+}
