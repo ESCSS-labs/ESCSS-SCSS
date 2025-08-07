@@ -86,8 +86,12 @@ $XXL: 0px;
   // bg-[length:200px_100px]
   @include bg-(length 200px 100px);
 
-  // sm、md、lg、xl、\2xl、dark
+  // (max-)sm、md、lg、xl、\2xl、dark
   @include sm {
+    color: black;
+  }
+
+  @include max-sm {
     color: black;
   }
 
@@ -95,9 +99,13 @@ $XXL: 0px;
     @include bg-rose-500;
   }
 
+  @include max-2xl {
+    @include bg-rose-500;
+  }
+
+  // Set `.dark` class in top level to enable dark mode
   @include dark {
     color: black;
-    @include bg-rose-500;
   }
 }
 ```
