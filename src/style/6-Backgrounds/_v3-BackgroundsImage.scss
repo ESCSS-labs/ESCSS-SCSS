@@ -1,7 +1,7 @@
 // arbitrary utility same as  @mixin bg-($v)
 @use "../setting" as *;
 
-$BackgroundsImage: (
+$BackgroundsImage-v3: (
   "bg-none": none,
   "bg-gradient-to-t": linear-gradient(to top, var(--tw-gradient-stops)),
   "bg-gradient-to-tr": linear-gradient(to top right, var(--tw-gradient-stops)),
@@ -17,7 +17,7 @@ $BackgroundsImage: (
 );
 
 @if $isBasicUsage {
-  @each $key, $value in $BackgroundsImage {
+  @each $key, $value in $BackgroundsImage-v3 {
     /*x
     @mixin #{$key} {
       background-image: #{$value};

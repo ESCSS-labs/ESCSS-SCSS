@@ -2,120 +2,52 @@
 @use "../setting" as *;
 
 $BorderWidth: (
-  "0": "$spacing-0",
-  "0_5": "$spacing-0_5",
-  "1": "$spacing-1",
-  "1_5": "$spacing-1_5",
-  "2": "$spacing-2",
-  "2_5": "$spacing-2_5",
-  "3": "$spacing-3",
-  "3_5": "$spacing-3_5",
-  "4": "$spacing-4",
-  "5": "$spacing-5",
-  "6": "$spacing-6",
-  "7": "$spacing-7",
-  "8": "$spacing-8",
-  "9": "$spacing-9",
-  "10": "$spacing-10",
-  "11": "$spacing-11",
-  "12": "$spacing-12",
-  "14": "$spacing-14",
-  "16": "$spacing-16",
-  "20": "$spacing-20",
-  "24": "$spacing-24",
-  "28": "$spacing-28",
-  "32": "$spacing-32",
-  "36": "$spacing-36",
-  "40": "$spacing-40",
-  "44": "$spacing-44",
-  "48": "$spacing-48",
-  "52": "$spacing-52",
-  "56": "$spacing-56",
-  "60": "$spacing-60",
-  "64": "$spacing-64",
-  "72": "$spacing-72",
-  "80": "$spacing-80",
-  "96": "$spacing-96",
+  "-0": 0px,
+  null: 1px,
+  "-2": 2px,
+  "-4": 4px,
+  "-8": 8px,
+
 );
 
 @if $isBasicUsage {
-  /*x
-    @mixin border {
-      border-width: 1px;
-    }
-
-    @mixin border-x {
-      border-left-width: 1px;
-      border-right-width: 1px;
-    }
-
-    @mixin border-y {
-      border-top-width: 1px;
-      border-bottom-width: 1px;
-    }
-
-    @mixin border-s {
-      border-inline-start-width: 1px;
-    }
-
-    @mixin border-e {
-      border-inline-end-width: 1px;
-    }
-
-    @mixin border-t {
-      border-top-width: 1px;
-    }
-
-    @mixin border-r {
-      border-right-width: 1px;
-    }
-
-    @mixin border-b {
-      border-bottom-width: 1px;
-    }
-
-    @mixin border-l {
-      border-left-width: 1px;
-    }
-    x*/
-
   @each $key, $value in $BorderWidth {
     /*x
-    @mixin border-#{$key} {
+    @mixin border#{$key} {
       border-width: #{$value};
     }
 
-    @mixin border-x-#{$key} {
+    @mixin border-x#{$key} {
       border-left-width: #{$value};
       border-right-width: #{$value};
     }
 
-    @mixin border-y-#{$key} {
+    @mixin border-y#{$key} {
       border-top-width: #{$value};
       border-bottom-width: #{$value};
     }
 
-    @mixin border-s-#{$key} {
+    @mixin border-s#{$key} {
       border-inline-start-width: #{$value};
     }
 
-    @mixin border-e-#{$key} {
+    @mixin border-e#{$key} {
       border-inline-end-width: #{$value};
     }
 
-    @mixin border-t-#{$key} {
+    @mixin border-t#{$key} {
       border-top-width: #{$value};
     }
 
-    @mixin border-r-#{$key} {
+    @mixin border-r#{$key} {
       border-right-width: #{$value};
     }
 
-    @mixin border-b-#{$key} {
+    @mixin border-b#{$key} {
       border-bottom-width: #{$value};
     }
 
-    @mixin border-l-#{$key} {
+    @mixin border-l#{$key} {
       border-left-width: #{$value};
     }
     x*/
