@@ -103,7 +103,7 @@ $XXL: 0px;
     @include bg-rose-500;
   }
 
-  // Set `.dark` class in top level to enable dark mode
+  // Set `.--dark` class on the top level to enable dark mode
   @include dark {
     color: black;
   }
