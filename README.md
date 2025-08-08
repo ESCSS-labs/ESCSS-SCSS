@@ -77,6 +77,9 @@ $XXL: 0px;
   // m-[20px]
   @include m-(20px);
 
+  // from-25%
+  @include from-25\%;
+
   // performance concern: border-x/y/s/e/t/r/b/l-($color)
   @include border-x-($color-rose-500);
 
