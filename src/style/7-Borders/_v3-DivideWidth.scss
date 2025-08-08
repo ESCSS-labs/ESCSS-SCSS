@@ -11,13 +11,13 @@ $DivideWidth: (
 @if $isBasicUsage {
   /*x
   @mixin divide-x-reverse {
-    > :not([hidden]) ~ :not([hidden]) {
+    :where(& > :not(:last-child)) {
       --tw-divide-x-reverse: 1 !important;
     }
   }
 
   @mixin divide-y-reverse {
-    > :not([hidden]) ~ :not([hidden]) {
+    :where(& > :not(:last-child)) {
       --tw-divide-y-reverse: 1 !important;
     }
   }
@@ -25,7 +25,7 @@ $DivideWidth: (
   @each $key, $value in $DivideWidth {
     /*x
     @mixin divide-x#{$key} {
-      > :not([hidden]) ~ :not([hidden]) {
+      :where(& > :not(:last-child)) {
         --tw-divide-x-reverse: 0;
         border-right-width: calc(#{$value} * var(--tw-divide-x-reverse));
         border-left-width: calc(#{$value} * (1 - var(--tw-divide-x-reverse)));
@@ -33,7 +33,7 @@ $DivideWidth: (
     }
 
     @mixin divide-y#{$key} {
-      > :not([hidden]) ~ :not([hidden]) {
+      :where(& > :not(:last-child)) {
         --tw-divide-y-reverse: 0;
         border-top-width: calc(#{$value} * (1 - var(--tw-divide-y-reverse)));
         border-bottom-width: calc(#{$value} * var(--tw-divide-y-reverse));
@@ -46,7 +46,7 @@ $DivideWidth: (
 @if $isUsingCustomValues {
   /*x
   @mixin divide-x-($v, $isReverse: false) {
-    > :not([hidden]) ~ :not([hidden]) {
+    :where(& > :not(:last-child)) {
       --tw-divide-x-reverse: 0;
       border-right-width: calc($v * var(--tw-divide-x-reverse));
       border-left-width: calc($v * (1 - var(--tw-divide-x-reverse)));
@@ -54,7 +54,7 @@ $DivideWidth: (
   }
 
   @mixin divide-y-($v, $isReverse: false) {
-    > :not([hidden]) ~ :not([hidden]) {
+    :where(& > :not(:last-child)) {
       --tw-divide-y-reverse: 0;
       border-top-width: calc($v * (1 - var(--tw-divide-y-reverse)));
       border-bottom-width: calc($v * var(--tw-divide-y-reverse));

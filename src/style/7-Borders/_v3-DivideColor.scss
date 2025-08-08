@@ -303,19 +303,19 @@ $DivideColor: (
 @if $isBasicUsage {
   /*x
   @mixin divide-inherit {
-    > :not([hidden]) ~ :not([hidden]) {  
+    :where(& > :not(:last-child)) {  
     border-color: inherit;
     }
   }
 
   @mixin divide-current {
-    > :not([hidden]) ~ :not([hidden]) {  
+    :where(& > :not(:last-child)) {  
     border-color: currentColor;
     }
   }
 
   @mixin divide-transparent {
-    > :not([hidden]) ~ :not([hidden]) {  
+    :where(& > :not(:last-child)) {  
     border-color: transparent;
     }
   }
@@ -323,7 +323,7 @@ $DivideColor: (
   @each $key, $value in $DivideColor {
     /*x
     @mixin divide-#{$key}($v: 1) {
-      > :not([hidden]) ~ :not([hidden]) {  
+      :where(& > :not(:last-child)) {  
       border-color: _c(#{$value}, $v);
       }
     }
@@ -334,7 +334,7 @@ $DivideColor: (
 @if $isUsingCustomValues {
   /*x
   @mixin divide-($v) {
-    > :not([hidden]) ~ :not([hidden]) {
+    :where(& > :not(:last-child)) {
       border-color: $v;
     }
   }
