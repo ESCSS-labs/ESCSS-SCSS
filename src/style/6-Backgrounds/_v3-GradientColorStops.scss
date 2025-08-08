@@ -334,28 +334,28 @@ $GradientColorStops-position: (
   @if $group-from {
     /*x
     @mixin from-inherit {
-      --tw-gradient-from: inherit var(--tw-gradient-from-position);
-      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-from: inherit var(--tw-gradient-from-position,);
+      --tw-gradient-to: transparent var(--tw-gradient-to-position,);
       --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     }
 
     @mixin from-current {
-      --tw-gradient-from: currentColor var(--tw-gradient-from-position);
-      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-from: currentColor var(--tw-gradient-from-position,);
+      --tw-gradient-to: transparent var(--tw-gradient-to-position,);
       --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     }
 
     @mixin from-transparent {
-      --tw-gradient-from: transparent var(--tw-gradient-from-position);
-      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-from: transparent var(--tw-gradient-from-position,);
+      --tw-gradient-to: transparent var(--tw-gradient-to-position,);
       --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     }
     x*/
     @each $key, $value in $GradientColorStops-color {
       /*x
       @mixin from-#{$key}($v: 1) {
-        --tw-gradient-from: #/*x{_c(#{$value}, $v)} var(--tw-gradient-from-position);
-        --tw-gradient-to: transparent var(--tw-gradient-to-position);
+        --tw-gradient-from: #/*x{_c(#{$value}, $v)} var(--tw-gradient-from-position,);
+        --tw-gradient-to: transparent var(--tw-gradient-to-position,);
         --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
       }
       x*/
@@ -373,25 +373,25 @@ $GradientColorStops-position: (
   @if $group-via {
     /*x
     @mixin via-inherit {
-      --tw-gradient-to: transparent var(--tw-gradient-to-position);
-      --tw-gradient-stops: var(--tw-gradient-from), inherit var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+      --tw-gradient-to: transparent var(--tw-gradient-to-position,);
+      --tw-gradient-stops: var(--tw-gradient-from), inherit var(--tw-gradient-via-position,), var(--tw-gradient-to) !important;
     }
 
     @mixin via-current {
-      --tw-gradient-to: transparent var(--tw-gradient-to-position);
-      --tw-gradient-stops: var(--tw-gradient-from), currentColor var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+      --tw-gradient-to: transparent var(--tw-gradient-to-position,);
+      --tw-gradient-stops: var(--tw-gradient-from), currentColor var(--tw-gradient-via-position,), var(--tw-gradient-to) !important;
     }
 
     @mixin via-transparent {
-      --tw-gradient-to: transparent var(--tw-gradient-to-position);
-      --tw-gradient-stops: var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+      --tw-gradient-to: transparent var(--tw-gradient-to-position,);
+      --tw-gradient-stops: var(--tw-gradient-from), transparent var(--tw-gradient-via-position,), var(--tw-gradient-to) !important;
     }
     x*/
     @each $key, $value in $GradientColorStops-color {
       /*x
       @mixin via-#{$key}($v: 1) {
-        --tw-gradient-to: transparent var(--tw-gradient-to-position);
-        --tw-gradient-stops: var(--tw-gradient-from), #/*x{_c(#{$value}, $v)} var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+        --tw-gradient-to: transparent var(--tw-gradient-to-position,);
+        --tw-gradient-stops: var(--tw-gradient-from), #/*x{_c(#{$value}, $v)} var(--tw-gradient-via-position,), var(--tw-gradient-to) !important;
       }
       x*/
     }
@@ -408,21 +408,21 @@ $GradientColorStops-position: (
   @if $group-to {
     /*x
     @mixin to-inherit {
-      --tw-gradient-to: inherit var(--tw-gradient-to-position) !important;
+      --tw-gradient-to: inherit var(--tw-gradient-to-position,) !important;
     }
 
     @mixin to-current {
-      --tw-gradient-to: currentColor var(--tw-gradient-to-position) !important;
+      --tw-gradient-to: currentColor var(--tw-gradient-to-position,) !important;
     }
 
     @mixin to-transparent {
-      --tw-gradient-to: transparent var(--tw-gradient-to-position) !important;
+      --tw-gradient-to: transparent var(--tw-gradient-to-position,) !important;
     }
     x*/
     @each $key, $value in $GradientColorStops-color {
       /*x
       @mixin to-#{$key}($v: 1) {
-        --tw-gradient-to: #/*x{_c(#{$value}, $v)} var(--tw-gradient-to-position) !important;
+        --tw-gradient-to: #/*x{_c(#{$value}, $v)} var(--tw-gradient-to-position,) !important;
       }
       x*/
     }
@@ -441,8 +441,8 @@ $GradientColorStops-position: (
   @if $group-from {
     /*x
     @mixin from-($v) {
-      --tw-gradient-from: #/*x{$v} var(--tw-gradient-from-position);
-      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      --tw-gradient-from: #/*x{$v} var(--tw-gradient-from-position,);
+      --tw-gradient-to: transparent var(--tw-gradient-to-position,);
       --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     }
     x*/
@@ -451,8 +451,8 @@ $GradientColorStops-position: (
   @if $group-via {
     /*x
     @mixin via-($v) {
-      --tw-gradient-to: transparent var(--tw-gradient-to-position);
-      --tw-gradient-stops: var(--tw-gradient-from), #/*x{$v} var(--tw-gradient-via-position), var(--tw-gradient-to);
+      --tw-gradient-to: transparent var(--tw-gradient-to-position,);
+      --tw-gradient-stops: var(--tw-gradient-from), #/*x{$v} var(--tw-gradient-via-position,), var(--tw-gradient-to);
     }
     x*/
   }
@@ -460,7 +460,7 @@ $GradientColorStops-position: (
   @if $group-to {
     /*x
     @mixin to-($v) {
-      --tw-gradient-to: #/*x{$v} var(--tw-gradient-to-position);
+      --tw-gradient-to: #/*x{$v} var(--tw-gradient-to-position,);
     }
     x*/
   }
