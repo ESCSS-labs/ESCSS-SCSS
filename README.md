@@ -71,6 +71,9 @@ $XXL: 0px;
   // m-1/2
   @include m-1\/2;
 
+  // m-1.5
+  @include m-1\.5;
+
   // m-[20px]
   @include m-(20px);
 
