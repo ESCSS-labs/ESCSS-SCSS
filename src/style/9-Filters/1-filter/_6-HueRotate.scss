@@ -9,7 +9,7 @@ $HueRotate: (
   "hue-rotate-180": 180deg,
 );
 
-@if $isBasicUsage {
+@if $QuickReference {
   @each $key, $value in $HueRotate {
     /*x
     @mixin #{$key} {
@@ -20,8 +20,8 @@ $HueRotate: (
   }
 }
 
-@if $isUsingNegativeValues {
-  @if $isBasicUsage {
+@if $UsingNegativeValues {
+  @if $QuickReference {
     @each $key, $value in $HueRotate {
       /*x
       @mixin \-#{$key} {
@@ -32,7 +32,7 @@ $HueRotate: (
     }
   }
 
-  @if $isUsingCustomValues {
+  @if $UsingACustomValue {
     /*x
     @mixin \-hue-rotate-($v) {
       --tw-hue-rotate: #/*x{hue-rotate(-$v)};
@@ -42,7 +42,7 @@ $HueRotate: (
   }
 }
 
-@if $isUsingCustomValues {
+@if $UsingACustomValue {
   /*x
   @mixin hue-rotate-($v) {
     --tw-hue-rotate:  #/*x{hue-rotate($v)};

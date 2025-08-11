@@ -13,7 +13,7 @@ $Scale: (
   "150": 1.5,
 );
 
-@if $isBasicUsage {
+@if $QuickReference {
   /*x
   @mixin scale-none {
     scale: none;
@@ -41,28 +41,8 @@ $Scale: (
   }
 }
 
-@if $isUsingCustomValues {
-  /*x
-  @mixin scale-($v) {
-    --tw-scale-x: #/*x{$v};
-    --tw-scale-y: #/*x{$v};
-    transform: _t();
-  }
-
-  @mixin scale-x-($v) {
-    --tw-scale-x: #/*x{$v};
-    transform: _t();
-  }
-
-  @mixin scale-y-($v) {
-    --tw-scale-y: #/*x{$v};
-    transform: _t();
-  }
-  x*/
-}
-
-@if $isUsingNegativeValues {
-  @if $isBasicUsage {
+@if $UsingNegativeValues {
+  @if $QuickReference {
     @each $key, $value in $Scale {
       /*x
       @mixin \-scale-#{$key} {
@@ -84,7 +64,7 @@ $Scale: (
     }
   }
 
-  @if $isUsingCustomValues {
+  @if $UsingACustomValue {
     /*x
     @mixin \-scale-($v) {
       --tw-scale-x: -#/*x{$v};
@@ -104,3 +84,24 @@ $Scale: (
     x*/
   }
 }
+
+@if $UsingACustomValue {
+  /*x
+  @mixin scale-($v) {
+    --tw-scale-x: #/*x{$v};
+    --tw-scale-y: #/*x{$v};
+    transform: _t();
+  }
+
+  @mixin scale-x-($v) {
+    --tw-scale-x: #/*x{$v};
+    transform: _t();
+  }
+
+  @mixin scale-y-($v) {
+    --tw-scale-y: #/*x{$v};
+    transform: _t();
+  }
+  x*/
+}
+

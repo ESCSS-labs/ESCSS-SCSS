@@ -9,7 +9,7 @@ $BackdropHueRotate: (
   "backdrop-hue-rotate-180": 180deg,
 );
 
-@if $isBasicUsage {
+@if $QuickReference {
   @each $key, $value in $BackdropHueRotate {
     /*x
     @mixin #{$key} {
@@ -20,17 +20,8 @@ $BackdropHueRotate: (
   }
 }
 
-@if $isUsingCustomValues {
-  /*x
-  @mixin backdrop-hue-rotate-($v) {
-    --tw-backdrop-hue-rotate: #/*x{hue-rotate($v)};
-    backdrop-filter: _b-f();
-  }
-  x*/
-}
-
-@if $isUsingNegativeValues {
-  @if $isBasicUsage {
+@if $UsingNegativeValues {
+  @if $QuickReference {
     @each $key, $value in $BackdropHueRotate {
       /*x
       @mixin \-#{$key} {
@@ -41,7 +32,7 @@ $BackdropHueRotate: (
     }
   }
 
-  @if $isUsingCustomValues {
+  @if $UsingACustomValue {
     /*x
     @mixin \-backdrop-hue-rotate-($v) {
       --tw-backdrop-hue-rotate: #/*x{hue-rotate(-$v)};
@@ -49,4 +40,13 @@ $BackdropHueRotate: (
     }
     x*/
   }
+}
+
+@if $UsingACustomValue {
+  /*x
+  @mixin backdrop-hue-rotate-($v) {
+    --tw-backdrop-hue-rotate: #/*x{hue-rotate($v)};
+    backdrop-filter: _b-f();
+  }
+  x*/
 }

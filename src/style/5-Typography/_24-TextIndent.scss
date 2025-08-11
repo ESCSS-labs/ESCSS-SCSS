@@ -38,7 +38,7 @@ $TextIndent: (
   "px": 1px,
 );
 
-@if $isBasicUsage {
+@if $QuickReference {
   @each $key, $value in $TextIndent {
     /*x
     @mixin indent-#{$key} {
@@ -48,8 +48,8 @@ $TextIndent: (
   }
 }
 
-@if $isUsingNegativeValues {
-  @if $isBasicUsage {
+@if $UsingNegativeValues {
+  @if $QuickReference {
     @each $key, $value in $TextIndent {
       /*x
       @mixin \-indent-#{$key} {
@@ -59,7 +59,7 @@ $TextIndent: (
     }
   }
 
-  @if $isUsingCustomValues {
+  @if $UsingACustomValue {
     /*x
     @mixin \-indent-($v) {
       text-indent: -$v;
@@ -68,7 +68,7 @@ $TextIndent: (
   }
 }
 
-@if $isUsingCustomValues {
+@if $UsingACustomValue {
   /*x
   @mixin indent-($v) {
     text-indent: $v;

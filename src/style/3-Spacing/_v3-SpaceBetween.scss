@@ -38,7 +38,7 @@ $SpaceBetween: (
   "96": "$spacing-96",
 );
 
-@if $isBasicUsage {
+@if $QuickReference {
   /*x
   @mixin space-x-reverse {
     :where(& > :not(:last-child)) {
@@ -74,28 +74,8 @@ $SpaceBetween: (
   }
 }
 
-@if $isUsingCustomValues {
-  /*x
-  @mixin space-x-($v) {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-left: calc($v * (1 - var(--tw-space-x-reverse)));
-      margin-right: calc($v * var(--tw-space-x-reverse));
-    }
-  }
-
-  @mixin space-y-($v) {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc($v * (1 - var(--tw-space-y-reverse)));
-      margin-bottom: calc($v * var(--tw-space-y-reverse));
-    }
-  }
-  x*/
-}
-
-@if $isUsingNegativeValues {
-  @if $isBasicUsage {
+@if $UsingNegativeValues {
+  @if $QuickReference {
     /*x
       @mixin \-space-x-reverse {
         :where(& > :not(:last-child)) {
@@ -130,7 +110,7 @@ $SpaceBetween: (
     }
   }
 
-  @if $isUsingCustomValues {
+  @if $UsingACustomValue {
     /*x
     @mixin \-space-x-($v) {
       :where(& > :not(:last-child)) {
@@ -150,3 +130,24 @@ $SpaceBetween: (
     x*/
   }
 }
+
+@if $UsingACustomValue {
+  /*x
+  @mixin space-x-($v) {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-left: calc($v * (1 - var(--tw-space-x-reverse)));
+      margin-right: calc($v * var(--tw-space-x-reverse));
+    }
+  }
+
+  @mixin space-y-($v) {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc($v * (1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc($v * var(--tw-space-y-reverse));
+    }
+  }
+  x*/
+}
+

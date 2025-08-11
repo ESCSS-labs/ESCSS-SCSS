@@ -9,7 +9,7 @@ $LetterSpacing: (
   "tracking-widest": "$tracking-widest",
 );
 
-@if $isBasicUsage {
+@if $QuickReference {
   @each $key, $value in $LetterSpacing {
     /*x
     @mixin #{$key} {
@@ -19,8 +19,8 @@ $LetterSpacing: (
   }
 }
 
-@if $isUsingNegativeValues {
-  @if $isBasicUsage {
+@if $UsingNegativeValues {
+  @if $QuickReference {
     @each $key, $value in $LetterSpacing {
       /*x
       @mixin \-#{$key} {
@@ -30,7 +30,7 @@ $LetterSpacing: (
     }
   }
 
-  @if $isUsingCustomValues {
+  @if $UsingACustomValue {
     /*x
     @mixin \-tracking-($v) {
       letter-spacing: -$v;
@@ -39,7 +39,7 @@ $LetterSpacing: (
   }
 }
 
-@if $isUsingCustomValues {
+@if $UsingACustomValue {
   /*x
   @mixin tracking-($v) {
     letter-spacing: $v;

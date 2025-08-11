@@ -45,7 +45,7 @@ $Translate: (
   "px": 1px,
 );
 
-@if $isBasicUsage {
+@if $QuickReference {
   @each $key, $value in $Translate {
     /*x
     @mixin translate-#{$key} {
@@ -67,8 +67,8 @@ $Translate: (
   }
 }
 
-@if $isUsingNegativeValues {
-  @if $isBasicUsage {
+@if $UsingNegativeValues {
+  @if $QuickReference {
     @each $key, $value in $Translate {
       /*x
       @mixin \-translate-#{$key} {
@@ -90,7 +90,7 @@ $Translate: (
     }
   }
 
-  @if $isUsingCustomValues {
+  @if $UsingACustomValue {
     /*x
     @mixin \-translate-($v) {
       --tw-translate-x: -#/*x{$v};
@@ -111,7 +111,7 @@ $Translate: (
   }
 }
 
-@if $isUsingCustomValues {
+@if $UsingACustomValue {
   /*x
   @mixin translate-($v) {
     --tw-translate-x: #/*x{$v};
