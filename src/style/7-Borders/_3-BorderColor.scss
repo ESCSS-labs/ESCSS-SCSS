@@ -339,25 +339,21 @@ $BorderColor: (
 
   @mixin border-x-($v) {
     @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      border-left-color: $v;
-      border-right-color: $v;
+      border-inline-color: $v;
     }
 
     @else {
-      border-left-width: $v;
-      border-right-width: $v;
+      border-inline-width: $v;
     }
   }
 
   @mixin border-y-($v) {
     @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      border-top-color: $v;
-      border-bottom-color: $v;
+      border-block-color: $v;
     }
 
     @else {
-      border-top-width: $v;
-      border-bottom-width: $v;
+      border-block-width: $v;
     }
   }
 

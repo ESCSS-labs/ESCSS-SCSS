@@ -27,8 +27,8 @@ $DivideWidth: (
     @mixin divide-x#{$key} {
       :where(& > :not(:last-child)) {
         --tw-divide-x-reverse: 0;
-        border-right-width: calc(#{$value} * var(--tw-divide-x-reverse));
-        border-left-width: calc(#{$value} * (1 - var(--tw-divide-x-reverse)));
+        border-inline-start-width: calc(#{$value} * var(--tw-divide-x-reverse));
+        border-inline-end-width: calc(#{$value} * (1 - var(--tw-divide-x-reverse)));
       }
     }
 
@@ -48,8 +48,8 @@ $DivideWidth: (
   @mixin divide-x-($v, $isReverse: false) {
     :where(& > :not(:last-child)) {
       --tw-divide-x-reverse: 0;
-      border-right-width: calc($v * var(--tw-divide-x-reverse));
-      border-left-width: calc($v * (1 - var(--tw-divide-x-reverse)));
+      border-inline-start-width: calc($v * var(--tw-divide-x-reverse));
+      border-inline-end-width: calc($v * (1 - var(--tw-divide-x-reverse)));
     }
   }
 
