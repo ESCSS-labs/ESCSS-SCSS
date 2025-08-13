@@ -2,9 +2,9 @@
 
 $TransitionTimingFunction: (
   "ease-linear": linear,
-  "ease-in": "$ease-in",
-  "ease-out": "$ease-out",
-  "ease-in-out": "$ease-in-out",
+  "ease-in": cubic-bezier(0.4, 0, 1, 1),
+  "ease-out": cubic-bezier(0, 0, 0.2, 1),
+  "ease-in-out": cubic-bezier(0.4, 0, 0.2, 1),
   "ease-initial": initial,
 );
 
@@ -12,6 +12,7 @@ $TransitionTimingFunction: (
   @each $key, $value in $TransitionTimingFunction {
     /*x
     @mixin #{$key} {
+      --tw-ease: #{$value};
       transition-timing-function: #{$value};
     }
     x*/
@@ -21,6 +22,7 @@ $TransitionTimingFunction: (
 @if $UsingACustomValue {
   /*x
   @mixin ease-($v) {
+    --tw-ease: $v;
     transition-timing-function: $v;
   }
   x*/
