@@ -1,5 +1,4 @@
 /*x
-// _c :color
 @function _c($token, $v) {
   @if $token ==null {
     @error "custom variable $name* is null";
@@ -8,17 +7,30 @@
   @return color.change($token, $alpha: $v);
 }
 
-// _t :transform
-@function _t() {
+@function _s-xyz() {
+  @return var(--tw-scale-x,) var(--tw-scale-y,);
+}
+
+@function _s-xyz() {
+  @return var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
+}
+
+@function _r-xyz_s-xy() {
   @return var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
 }
 
-// _f :filter
+@function _t-xy() {
+  @return  var(--tw-translate-x) var(--tw-translate-y);
+}
+
+@function _t-xyz() {
+  @return  var(--tw-translate-x) var(--tw-translate-y) var(--tw-translate-z);
+}
+
 @function _f() {
   @return var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
 }
 
-// _b-f :backdrop-filter
 @function _b-f() {
   @return var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)
 }

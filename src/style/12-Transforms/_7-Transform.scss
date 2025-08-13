@@ -1,21 +1,19 @@
 @use "../setting" as *;
 
-$Transform: (
-  "transform-none": none,
-  "transform-gpu": translateZ(0) var(--tw-rotate-x) var(--tw-rotate-y)
-    var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y),
-  "transform-cpu": var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z)
-    var(--tw-skew-x) var(--tw-skew-y),
-);
-
 @if $QuickReference {
-  @each $key, $value in $Transform {
-    /*x
-    @mixin #{$key} {
-      transform: #{$value};
-    }
-    x*/
+  /*x
+  @mixin transform-none {
+    transform: none;
   }
+
+  @mixin transform-gpu {
+    transform: translateZ(0) _r-xyz_s-xy();
+  }
+
+  @mixin transform-cpu {
+    transform: _r-xyz_s-xy();
+  }
+  x*/
 }
 
 @if $UsingACustomValue {

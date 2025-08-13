@@ -46,22 +46,33 @@ $Translate: (
 );
 
 @if $QuickReference {
+  /*x
+  @mixin translate-none {
+    translate: none;
+  }
+  x*/
+
   @each $key, $value in $Translate {
     /*x
     @mixin translate-#{$key} {
       --tw-translate-x: #/*x{#{$value}};
       --tw-translate-y: #/*x{#{$value}};
-      transform: _t();
+      translate: _t-xy();
     }
 
     @mixin translate-x-#{$key} {
-      --tw-translate-x: #/*x{#{$value}};
-      transform: _t();
+      --tw-translate-x: #/*x{#{$value}} !important;
+      translate: _t-xy();
     }
 
     @mixin translate-y-#{$key} {
-      --tw-translate-y: #/*x{#{$value}};
-      transform: _t();
+      --tw-translate-y: #/*x{#{$value}} !important;
+      translate: _t-xy();
+    }
+
+    @mixin translate-z-#{$key} {
+      --tw-translate-z: #/*x{#{$value}} !important;
+      translate: _t-xyz();
     }
     x*/
   }
@@ -72,19 +83,24 @@ $Translate: (
     @each $key, $value in $Translate {
       /*x
       @mixin \-translate-#{$key} {
-        --tw-translate-x: #/*x{-#{$value}};
-        --tw-translate-y: #/*x{-#{$value}};
-        transform: _t();
+        --tw-translate-x: #/*x{#{-$value}};
+        --tw-translate-y: #/*x{#{-$value}};
+        translate: _t-xy();
       }
 
       @mixin \-translate-x-#{$key} {
-        --tw-translate-x: #/*x{-#{$value}};
-        transform: _t();
+        --tw-translate-x: #/*x{#{-$value}} !important;
+        translate: _t-xy();
       }
-  
+
       @mixin \-translate-y-#{$key} {
-        --tw-translate-y: #/*x{-#{$value}};
-        transform: _t();
+        --tw-translate-y: #/*x{#{-$value}} !important;
+        translate: _t-xy();
+      }
+
+      @mixin \-translate-z-#{$key} {
+        --tw-translate-z: #/*x{#{-$value}} !important;
+        translate: _t-xyz();
       }
       x*/
     }
@@ -92,20 +108,25 @@ $Translate: (
 
   @if $UsingACustomValue {
     /*x
-    @mixin \-translate-($v) {
-      --tw-translate-x: -#/*x{$v};
-      --tw-translate-y: -#/*x{$v};
-      transform: _t();
+    @mixin \-translate-($v)} {
+      --tw-translate-x: -$v;
+      --tw-translate-y: -$v;
+      translate: _t-xy();
     }
 
-    @mixin \-translate-x-($v) {
-      --tw-translate-x: -#/*x{$v};
-      transform: _t();
+    @mixin \-translate-x-($v)} {
+      --tw-translate-x: -$v !important;
+      translate: _t-xy();
     }
-  
-    @mixin \-translate-y-($v) {
-      --tw-translate-y: -#/*x{$v};
-      transform: _t();
+
+    @mixin \-translate-y-($v)} {
+      --tw-translate-y: -$v !important;
+      translate: _t-xy();
+    }
+
+    @mixin \-translate-z-($v)} {
+      --tw-translate-z: -$v !important;
+      translate: _t-xyz();
     }
     x*/
   }
@@ -113,20 +134,25 @@ $Translate: (
 
 @if $UsingACustomValue {
   /*x
-  @mixin translate-($v) {
-    --tw-translate-x: #/*x{$v};
-    --tw-translate-y: #/*x{$v};
-    transform: _t();
+  @mixin translate-($v)} {
+    --tw-translate-x: $v;
+    --tw-translate-y: $v;
+    translate: _t-xy();
   }
 
-  @mixin translate-x-($v) {
-    --tw-translate-x: #/*x{$v};
-    transform: _t();
+  @mixin translate-x-($v)} {
+    --tw-translate-x: $v !important;
+    translate: _t-xy();
   }
 
-  @mixin translate-y-($v) {
-    --tw-translate-y: #/*x{$v};
-    transform: _t();
+  @mixin translate-y-($v)} {
+    --tw-translate-y: $v !important;
+    translate: _t-xy();
+  }
+
+  @mixin translate-z-($v)} {
+    --tw-translate-z: $v !important;
+    translate: _t-xyz();
   }
   x*/
 }
