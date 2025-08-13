@@ -9,16 +9,23 @@ $Skew: (
   "12": 12deg,
 );
 
+
 @if $QuickReference {
   @each $key, $value in $Skew {
     /*x
+    @mixin skew-#{$key} {
+      --tw-skew-x: #{skewX($value)};
+      --tw-skew-y: #{skewY($value)};
+      transform: _t();
+    }
+
     @mixin skew-x-#{$key} {
-      --tw-skew-x: #{$value};
+      --tw-skew-x: #{skewX($value)} !important;
       transform: _t();
     }
 
     @mixin skew-y-#{$key} {
-      --tw-skew-y: #{$value};
+      --tw-skew-y: #{skewY($value)} !important;
       transform: _t();
     }
     x*/
@@ -29,13 +36,19 @@ $Skew: (
   @if $QuickReference {
     @each $key, $value in $Skew {
       /*x
-      @mixin \-skew-x-#{$key} {
-        --tw-skew-x: -#{$value};
+      @mixin \-skew-#{$key} {
+        --tw-skew-x: #{skewX(-$value)};
+        --tw-skew-y: #{skewY(-$value)};
         transform: _t();
       }
-  
+
+      @mixin \-skew-x-#{$key} {
+        --tw-skew-x: #{skewX(-$value)} !important;
+        transform: _t();
+      }
+
       @mixin \-skew-y-#{$key} {
-        --tw-skew-y: -#{$value};
+        --tw-skew-y: #{skewY(-$value)} !important;
         transform: _t();
       }
       x*/
@@ -44,13 +57,19 @@ $Skew: (
 
   @if $UsingACustomValue {
     /*x
+    @mixin \-skew-($v) {
+      --tw-skew-x: skewX(-$v);
+      --tw-skew-y: skewY(-$v);
+      transform: _t();
+    }
+
     @mixin \-skew-x-($v) {
-      --tw-skew-x: -#/*x{$v};
+      --tw-skew-x: skewX(-$v) !important;
       transform: _t();
     }
   
     @mixin \-skew-y-($v) {
-      --tw-skew-y: -#/*x{$v};
+      --tw-skew-y: skewY(-$v) !important;
       transform: _t();
     }
     x*/
@@ -59,13 +78,19 @@ $Skew: (
 
 @if $UsingACustomValue {
   /*x
+  @mixin skew-($v) {
+    --tw-skew-x: skewX($v);
+    --tw-skew-y: skewY($v);
+    transform: _t();
+  }
+
   @mixin skew-x-($v) {
-    --tw-skew-x: #/*x{$v};
+    --tw-skew-x: skewX($v) !important;
     transform: _t();
   }
 
   @mixin skew-y-($v) {
-    --tw-skew-y: #/*x{$v};
+    --tw-skew-y: skewY($v) !important;
     transform: _t();
   }
   x*/

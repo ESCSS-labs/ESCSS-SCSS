@@ -1,35 +1,92 @@
 @use "../setting" as *;
 
 $Rotate: (
-  "rotate-0": 0deg,
-  "rotate-1": 1deg,
-  "rotate-2": 2deg,
-  "rotate-3": 3deg,
-  "rotate-6": 6deg,
-  "rotate-12": 12deg,
-  "rotate-45": 45deg,
-  "rotate-90": 90deg,
-  "rotate-180": 180deg,
+  "0": 0deg,
+  "1": 1deg,
+  "2": 2deg,
+  "3": 3deg,
+  "6": 6deg,
+  "12": 12deg,
+  "45": 45deg,
+  "90": 90deg,
+  "180": 180deg,
 );
 
 @if $QuickReference {
   /*x
-  @mixin rotate-none {
+  .rotate-none {
     rotate: none;
   }
   x*/
 
   @each $key, $value in $Rotate {
     /*x
-    @mixin #{$key} {
-      --tw-rotate: #{$value};
+    @mixin rotate-#{$key} {
+      rotate: #{$value};
+    }
+      
+    @mixin rotate-x-#{$key} {
+      --tw-rotate-x: #{rotateX($value)};
+      transform: _t();
+    }
+
+    @mixin rotate-y-#{$key} {
+      --tw-rotate-y: #{rotateY($value)};
+      transform: _t();
+    }
+
+    @mixin rotate-z-#{$key} {
+      --tw-rotate-z: #{rotateZ($value)};
       transform: _t();
     }
     x*/
+  }
+}
 
+@if $UsingNegativeValues {
+  @if $QuickReference {
+    @each $key, $value in $Rotate {
+      /*x
+      @mixin \-rotate-#{$key} {
+        rotate: #{-$value};
+      }
+
+      @mixin \-rotate-x-#{$key} {
+        --tw-rotate-x: #{rotateX(-$value)};
+        transform: _t();
+      }
+
+      @mixin \-rotate-y-#{$key} {
+        --tw-rotate-y: #{rotateY(-$value)};
+        transform: _t();
+      }
+
+      @mixin \-rotate-z-#{$key} {
+        --tw-rotate-z: #{rotateZ(-$value)};
+        transform: _t();
+      }
+      x*/
+    }
+  }
+
+  @if $UsingACustomValue {
     /*x
-    @mixin \-#{$key} {
-      --tw-rotate: -#{$value};
+    @mixin \-rotate-($v) {
+      rotate: -$v;
+    }
+
+    @mixin \-rotate-x-($v) {
+      --tw-rotate-x: rotateX(-$v);
+      transform: _t();
+    }
+
+    @mixin \-rotate-y-($v) {
+      --tw-rotate-y: rotateY(-$v);
+      transform: _t();
+    }
+
+    @mixin \-rotate-z-($v) {
+      --tw-rotate-z: rotateZ(-$v);
       transform: _t();
     }
     x*/
@@ -39,14 +96,21 @@ $Rotate: (
 @if $UsingACustomValue {
   /*x
   @mixin rotate-($v) {
-    --tw-rotate: #/*x{$v};
+    rotate: $v;
+  }
+
+  @mixin rotate-x-($v) {
+    --tw-rotate-x: rotateX($v);
     transform: _t();
   }
-  x*/
 
-  /*x
-  @mixin \-rotate-($v) {
-    --tw-rotate: -#/*x{$v};
+  @mixin rotate-y-($v) {
+    --tw-rotate-y: rotateY($v);
+    transform: _t();
+  }
+
+  @mixin rotate-z-($v) {
+    --tw-rotate-z: rotateZ($v);
     transform: _t();
   }
   x*/
