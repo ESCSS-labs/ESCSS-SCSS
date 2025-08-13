@@ -42,15 +42,19 @@ $BorderSpacing: (
   @each $key, $value in $BorderSpacing {
     /*x
     @mixin border-spacing-#{$key} {
-      border-spacing: (#{$value}) (#{$value});
+      --tw-border-spacing-x: #{$value};
+      --tw-border-spacing-y: #{$value};
+      border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
     }
 
     @mixin border-spacing-x-#{$key} {
-      border-spacing: (#{$value}) 0;
+      --tw-border-spacing-x: #{$value} !important;
+      border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
     }
 
     @mixin border-spacing-y-#{$key} {
-      border-spacing: 0 (#{$value});
+      --tw-border-spacing-y: #{$value} !important;
+      border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
     }
     x*/
   }
@@ -59,15 +63,19 @@ $BorderSpacing: (
 @if $UsingACustomValue {
   /*x
   @mixin border-spacing-($v) {
-    border-spacing: $v $v;
+    --tw-border-spacing-x: #{$value};
+    --tw-border-spacing-y: #{$value};
+    border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
   }
 
   @mixin border-spacing-x-($v) {
-    border-spacing: $v 0;
+    --tw-border-spacing-x: #{$value} !important;
+    border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
   }
 
   @mixin border-spacing-y-($v) {
-    border-spacing: 0 $v;
+    --tw-border-spacing-y: #{$value} !important;
+    border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
   }
   x*/
 }
