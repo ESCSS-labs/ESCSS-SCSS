@@ -1,32 +1,24 @@
 @use "../../setting" as *;
 
 $BackdropBlur: (
+  "backdrop-blur-xs": blur(4px),
+  "backdrop-blur-sm": blur(8px),
+  "backdrop-blur-md": blur(12px),
+  "backdrop-blur-lg": blur(16px),
+  "backdrop-blur-xl": blur(24px),
+  "backdrop-blur-2xl": blur(40px),
+  "backdrop-blur-3xl": blur(64px),
   "backdrop-blur-none": blur(0),
-  "backdrop-blur-sm": "blur($blur-sm)",
-  "backdrop-blur": "blur($blur)",
-  "backdrop-blur-md": "blur($blur-md)",
-  "backdrop-blur-lg": "blur($blur-lg)",
-  "backdrop-blur-xl": "blur($blur-xl)",
-  "backdrop-blur-2xl": "blur($blur-2xl)",
-  "backdrop-blur-3xl": "blur($blur-3xl)",
+  // v3 api
+  "backdrop-blur": blur(8px),
 );
 
 @if $QuickReference {
-  /*x
-    @mixin backdrop-filter {
-      -webkit-backdrop-filter: _b-f();
-      backdrop-filter: _b-f();
-    }
-
-    @mixin backdrop-filter-none {
-      -webkit-backdrop-filter: none;
-      backdrop-filter: none;
-    }
-    x*/
   @each $key, $value in $BackdropBlur {
     /*x
     @mixin #{$key} {
-      --tw-backdrop-blur: #/*x{#{$value}};
+      --tw-backdrop-blur: #{$value};
+      -webkit-backdrop-filter: _b-f();
       backdrop-filter: _b-f();
     }
     x*/
@@ -37,6 +29,7 @@ $BackdropBlur: (
   /*x
   @mixin backdrop-blur-($v) {
     --tw-backdrop-blur: #/*x{blur($v)};
+    -webkit-backdrop-filter: _b-f();
     backdrop-filter: _b-f();
   }
   x*/

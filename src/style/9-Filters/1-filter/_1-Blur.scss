@@ -1,26 +1,23 @@
 @use "../../setting" as *;
 
 $Blur: (
+  "blur-xs": blur(4px),
+  "blur-sm": blur(8px),
+  "blur-md": blur(12px),
+  "blur-lg": blur(16px),
+  "blur-xl": blur(24px),
+  "blur-2xl": blur(40px),
+  "blur-3xl": blur(64px),
   "blur-none": blur(0),
-  "blur-sm": "blur($blur-sm)",
-  "blur": "blur($blur)",
-  "blur-md": "blur($blur-md)",
-  "blur-lg": "blur($blur-lg)",
-  "blur-xl": "blur($blur-xl)",
-  "blur-2xl": "blur($blur-2xl)",
-  "blur-3xl": "blur($blur-3xl)",
+  // v3 api
+  "blur": blur(8px),
 );
 
 @if $QuickReference {
-  /*x
-  @mixin filter {
-    filter: _f();
-  }
-  x*/
   @each $key, $value in $Blur {
     /*x
     @mixin #{$key} {
-      --tw-blur: #/*x{#{$value}};
+      --tw-blur: #{$value};
       filter: _f();
     }
     x*/
