@@ -35,11 +35,62 @@ $Margin: (
   "72": "$spacing-72",
   "80": "$spacing-80",
   "96": "$spacing-96",
-  "auto": auto,
-  "px": "$spacing-px",
+  "px": 1px,
 );
 
 @if $QuickReference {
+  /*x
+  @mixin space-x-reverse {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 1 !important;
+    }
+  }
+
+  @mixin space-y-reverse {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 1 !important;
+    }
+  }
+
+  @mixin m-auto {
+    margin: auto;
+  }
+
+  @mixin mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @mixin my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  @mixin ms-auto {
+    margin-inline-start: auto;
+  }
+
+  @mixin me-auto {
+    margin-inline-end: auto;
+  }
+
+  @mixin mt-auto {
+    margin-top: auto;
+  }
+
+  @mixin mr-auto {
+    margin-right: auto;
+  }
+
+  @mixin mb-auto {
+    margin-bottom: auto;
+  }
+
+  @mixin ml-auto {
+    margin-left: auto;
+  }
+  x*/
+
   @each $key, $value in $Margin {
     /*x
     @mixin m-#{$key} {
@@ -78,6 +129,22 @@ $Margin: (
 
     @mixin ml-#{$key} {
       margin-left: #{$value};
+    }
+
+    @mixin space-x-#{$key} {
+      :where(& > :not(:last-child)) {
+        --tw-space-x-reverse: 0;
+        margin-inline-start: calc(#{$value} * var(--tw-space-x-reverse));
+        margin-inline-end: calc(#{$value} * calc(1 - var(--tw-space-x-reverse)));
+      }
+    }
+
+    @mixin space-y-#{$key} {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(#{$value} * var(--tw-space-y-reverse));
+        margin-block-end: calc(#{$value} * calc(1 - var(--tw-space-y-reverse)));
+      }
     }
     x*/
   }
@@ -124,6 +191,22 @@ $Margin: (
       @mixin \-ml-#{$key} {
         margin-left: -#{$value};
       }
+
+      @mixin \-space-x-#{$key} {
+        :where(& > :not(:last-child)) {
+          --tw-space-x-reverse: 0;
+          margin-inline-start: calc(#{-$value} * var(--tw-space-x-reverse));
+          margin-inline-end: calc(#{-$value} * calc(1 - var(--tw-space-x-reverse)));
+        }
+      }
+
+      @mixin \-space-y-#{$key} {
+        :where(& > :not(:last-child)) {
+          --tw-space-y-reverse: 0;
+          margin-block-start: calc(#{-$value} * var(--tw-space-y-reverse));
+          margin-block-end: calc(#{-$value} * calc(1 - var(--tw-space-y-reverse)));
+        }
+      }
       x*/
     }
   }
@@ -167,6 +250,22 @@ $Margin: (
     @mixin \-ml-($v) {
       margin-left: -$v;
     }
+
+    @mixin \-space-x-($v) {
+      :where(& > :not(:last-child)) {
+        --tw-space-x-reverse: 0;
+        margin-inline-start: calc(#/*x{-$v} * var(--tw-space-x-reverse));
+        margin-inline-end: calc(#/*x{-$v} * calc(1 - var(--tw-space-x-reverse)));
+      }
+    }
+  
+    @mixin \-space-y-($v) {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(#/*x{-$v} * var(--tw-space-y-reverse));
+        margin-block-end: calc(#/*x{-$v} * calc(1 - var(--tw-space-y-reverse)));
+      }
+    }
     x*/
   }
 }
@@ -209,6 +308,22 @@ $Margin: (
 
   @mixin ml-($v) {
     margin-left: $v;
+  }
+
+  @mixin space-x-($v) {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc($v * var(--tw-space-x-reverse));
+      margin-inline-end: calc($v * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+
+  @mixin space-y-($v) {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc($v * var(--tw-space-y-reverse));
+      margin-block-end: calc($v * calc(1 - var(--tw-space-y-reverse)));
+    }
   }
   x*/
 }
