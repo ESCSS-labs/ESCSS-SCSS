@@ -1,3 +1,4 @@
+// TODO: performance check
 @use "sass:meta";
 @use "sass:list";
 @use "../setting" as *;
@@ -308,18 +309,154 @@ $BorderColor: (
     border-color: inherit;
   }
 
-  @mixin border-current {
-    border-color: currentColor;
+  @mixin border-x-inherit {
+    border-inline-color: inherit;
   }
+
+  @mixin border-y-inherit {
+    border-block-color: inherit;
+  }
+
+  @mixin border-s-inherit {
+    border-inline-start-color: inherit;
+  }
+
+  @mixin border-e-inherit {
+    border-inline-end-color: inherit;
+  }
+
+  @mixin border-t-inherit {
+    border-top-color: inherit;
+  }
+
+  @mixin border-r-inherit {
+    border-right-color: inherit;
+  }
+
+  @mixin border-l-inherit {
+    border-left-color: inherit;
+  }
+
+  @mixin divide-inherit {
+    :where(& > :not(:last-child)) {
+      border-color: inherit;
+    }
+  }
+
+  @mixin border-current {
+    border-color: current;
+  }
+
+  @mixin border-x-current {
+    border-inline-color: current;
+  }
+
+  @mixin border-y-current {
+    border-block-color: current;
+  }
+
+  @mixin border-s-current {
+    border-inline-start-color: current;
+  }
+
+  @mixin border-e-current {
+    border-inline-end-color: current;
+  }
+
+  @mixin border-t-current {
+    border-top-color: current;
+  }
+
+  @mixin border-r-current {
+    border-right-color: current;
+  }
+
+  @mixin border-l-current {
+    border-left-color: current;
+  }
+
+  @mixin divide-current {
+    :where(& > :not(:last-child)) {
+      border-color: current;
+    }
+  } 
 
   @mixin border-transparent {
     border-color: transparent;
   }
+
+  @mixin border-x-transparent {
+    border-inline-color: transparent;
+  }
+
+  @mixin border-y-transparent {
+    border-block-color: transparent;
+  }
+
+  @mixin border-s-transparent {
+    border-inline-start-color: transparent;
+  }
+
+  @mixin border-e-transparent {
+    border-inline-end-color: transparent;
+  }
+
+  @mixin border-t-transparent {
+    border-top-color: transparent;
+  }
+
+  @mixin border-r-transparent {
+    border-right-color: transparent;
+  }
+
+  @mixin border-l-transparent {
+    border-left-color: transparent;
+  }
+
+  @mixin divide-transparent {
+    :where(& > :not(:last-child)) {
+      border-color: transparent;
+    }
+  } 
   x*/
   @each $key, $value in $BorderColor {
     /*x
     @mixin border-#{$key}($v: 1) {
       border-color: _c(#{$value}, $v);
+    }
+
+    @mixin border-x-#{$key}($v: 1) {
+      border-inline-color: _c(#{$value}, $v);
+    }
+
+    @mixin border-y-#{$key}($v: 1) {
+      border-block-color: _c(#{$value}, $v);
+    }
+
+    @mixin border-s-#{$key}($v: 1) {
+      border-inline-start-color: _c(#{$value}, $v);
+    }
+
+    @mixin border-e-#{$key}($v: 1) {
+      border-inline-end-color: _c(#{$value}, $v);
+    }
+
+    @mixin border-t-#{$key}($v: 1) {
+      border-top-color: _c(#{$value}, $v);
+    }
+
+    @mixin border-r-#{$key}($v: 1) {
+      border-right-color: _c(#{$value}, $v);
+    }
+
+    @mixin border-l-#{$key}($v: 1) {
+      border-left-color: _c(#{$value}, $v);
+    }
+
+    @mixin divide-#{$key}($v: 1) {
+      :where(& > :not(:last-child)) {
+        border-color: _c(#{$value}, $v);
+      }
     }
     x*/
   }
@@ -333,6 +470,7 @@ $BorderColor: (
     }
 
     @else {
+      border-style: var(--tw-border-style);
       border-width: $v;
     }
   }
@@ -343,6 +481,7 @@ $BorderColor: (
     }
 
     @else {
+      border-inline-style: var(--tw-border-style);
       border-inline-width: $v;
     }
   }
@@ -353,6 +492,7 @@ $BorderColor: (
     }
 
     @else {
+      border-block-style: var(--tw-border-style);
       border-block-width: $v;
     }
   }
@@ -363,6 +503,7 @@ $BorderColor: (
     }
 
     @else {
+      border-inline-start-style: var(--tw-border-style);
       border-inline-start-width: $v;
     }
   }
@@ -373,6 +514,7 @@ $BorderColor: (
     }
 
     @else {
+      border-inline-end-style: var(--tw-border-style);
       border-inline-end-width: $v;
     }
   }
@@ -383,6 +525,7 @@ $BorderColor: (
     }
 
     @else {
+      border-top-style: var(--tw-border-style);
       border-top-width: $v;
     }
   }
@@ -393,6 +536,7 @@ $BorderColor: (
     }
 
     @else {
+      border-right-style: var(--tw-border-style);
       border-right-width: $v;
     }
   }
@@ -403,6 +547,7 @@ $BorderColor: (
     }
 
     @else {
+      border-bottom-style: var(--tw-border-style);
       border-bottom-width: $v;
     }
   }
@@ -413,7 +558,14 @@ $BorderColor: (
     }
 
     @else {
+      border-left-style: var(--tw-border-style);
       border-left-width: $v;
+    }
+  }
+
+  @mixin divide-($v) {
+    :where(& > :not(:last-child)) {
+      border-color: $v;
     }
   }
   x*/

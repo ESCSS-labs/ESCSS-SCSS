@@ -2,53 +2,175 @@
 @use "../setting" as *;
 
 $BorderWidth: (
-  "-0": 0px,
-  null: 1px,
-  "-2": 2px,
-  "-4": 4px,
-  "-8": 8px,
+  "0": 0px,
+  "2": 2px,
+  "4": 4px,
+  "8": 8px,
 );
 
 @if $QuickReference {
+  /*x
+  @mixin divide-x-reverse {
+    :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+  }
+
+  @mixin divide-y-reverse {
+    :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
+  }
+
+  @mixin border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+
+  @mixin border-x {
+    border-inline-style: var(--tw-border-style);
+    border-inline-width: 1px;
+  }
+
+  @mixin border-y {
+    border-block-style: var(--tw-border-style);
+    border-block-width: 1px;
+  }
+
+  @mixin border-s {
+    border-inline-start-style: var(--tw-border-style);
+    border-inline-start-width: 1px;
+  }
+
+  @mixin border-e {
+    border-inline-end-style: var(--tw-border-style);
+    border-inline-end-width: 1px;
+  }
+
+  @mixin border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+
+  @mixin border-r {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 1px;
+  }
+
+  @mixin border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+
+  @mixin border-l {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 1px;
+  }
+
+  @mixin divide-x {
+    :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(1px * var(--tw-divide-x-reverse));
+      border-inline-end-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+    }
+  }
+    
+  @mixin divide-y {
+    :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-bottom-style: var(--tw-border-style);
+      border-top-style: var(--tw-border-style);
+      border-top-width: calc(1px * var(--tw-divide-y-reverse));
+      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+    }
+  }
+  x*/
+
   @each $key, $value in $BorderWidth {
     /*x
-    @mixin border#{$key} {
-      border-width: #{$value};
+    @mixin border-x-#{$key} {
+      border-inline-style: var(--tw-border-style);
+      border-inline-width: #{$value};
     }
 
-    @mixin border-x#{$key} {
-      border-left-width: #{$value};
-      border-right-width: #{$value};
+    @mixin border-y-#{$key} {
+      border-block-style: var(--tw-border-style);
+      border-block-width: #{$value};
     }
 
-    @mixin border-y#{$key} {
-      border-top-width: #{$value};
-      border-bottom-width: #{$value};
-    }
-
-    @mixin border-s#{$key} {
+    @mixin border-s-#{$key} {
+      border-inline-start-style: var(--tw-border-style);
       border-inline-start-width: #{$value};
     }
 
-    @mixin border-e#{$key} {
+    @mixin border-e-#{$key} {
+      border-inline-end-style: var(--tw-border-style);
       border-inline-end-width: #{$value};
     }
 
-    @mixin border-t#{$key} {
+    @mixin border-t-#{$key} {
+      border-top-style: var(--tw-border-style);
       border-top-width: #{$value};
     }
 
-    @mixin border-r#{$key} {
+    @mixin border-r-#{$key} {
+      border-right-style: var(--tw-border-style);
       border-right-width: #{$value};
     }
 
-    @mixin border-b#{$key} {
+    @mixin border-b-#{$key} {
+      border-bottom-style: var(--tw-border-style);
       border-bottom-width: #{$value};
     }
 
-    @mixin border-l#{$key} {
+    @mixin border-l-#{$key} {
+      border-left-style: var(--tw-border-style);
       border-left-width: #{$value};
+    }
+
+    @mixin divide-x-#{$key} {
+      :where(& > :not(:last-child)) {
+        --tw-divide-x-reverse: 0;
+        border-inline-style: var(--tw-border-style);
+        border-inline-start-width: calc(#{$value} * var(--tw-divide-x-reverse));
+        border-inline-end-width: calc(#{$value} * calc(1 - var(--tw-divide-x-reverse)));
+      }
+    }
+      
+    @mixin divide-y-#{$key} {
+      :where(& > :not(:last-child)) {
+        --tw-divide-y-reverse: 0;
+        border-bottom-style: var(--tw-border-style);
+        border-top-style: var(--tw-border-style);
+        border-top-width: calc(#{$value} * var(--tw-divide-y-reverse));
+        border-bottom-width: calc(#{$value} * calc(1 - var(--tw-divide-y-reverse)));
+      }
     }
     x*/
   }
 }
+
+@if $UsingACustomValue {
+  /*x
+  @mixin divide-x-($v) {
+    :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc($v * var(--tw-divide-x-reverse));
+      border-inline-end-width: calc($v * calc(1 - var(--tw-divide-x-reverse)));
+    }
+  }
+
+  @mixin divide-y-($v) {
+    :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-bottom-style: var(--tw-border-style);
+      border-top-style: var(--tw-border-style);
+      border-top-width: calc($v * var(--tw-divide-y-reverse));
+      border-bottom-width: calc($v * calc(1 - var(--tw-divide-y-reverse)));
+    }
+  }
+  x*/
+}
+
