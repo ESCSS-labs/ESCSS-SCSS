@@ -1,12 +1,14 @@
+// TODO: redundant css property
+
 @use "../setting" as *;
 
 $LetterSpacing: (
-  "tracking-tighter": "$tracking-tighter",
-  "tracking-tight": "$tracking-tight",
-  "tracking-normal": "$tracking-normal",
-  "tracking-wide": "$tracking-wide",
-  "tracking-wider": "$tracking-wider",
-  "tracking-widest": "$tracking-widest",
+  "tracking-tighter": -0.05em,
+  "tracking-tight": -0.025em,
+  "tracking-normal": 0em,
+  "tracking-wide": 0.025em,
+  "tracking-wider": 0.05em,
+  "tracking-widest": 0.1em,
 );
 
 @if $QuickReference {
@@ -24,7 +26,7 @@ $LetterSpacing: (
     @each $key, $value in $LetterSpacing {
       /*x
       @mixin \-#{$key} {
-        letter-spacing: -#{$value};
+        letter-spacing: #{-$value};
       }
       x*/
     }
