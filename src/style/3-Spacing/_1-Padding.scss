@@ -35,7 +35,7 @@ $Padding: (
   "72": "$spacing-72",
   "80": "$spacing-80",
   "96": "$spacing-96",
-  "px": "$spacing-px",
+  "px": 1px,
 );
 
 @if $QuickReference {
@@ -46,13 +46,11 @@ $Padding: (
     }
 
     @mixin px-#{$key} {
-      padding-left: #{$value};
-      padding-right: #{$value};
+      padding-inline: #{$value};
     }
 
     @mixin py-#{$key} {
-      padding-top: #{$value};
-      padding-bottom: #{$value};
+      padding-block: #{$value};
     }
 
     @mixin ps-#{$key} {
@@ -89,13 +87,11 @@ $Padding: (
   }
 
   @mixin px-($v) {
-    padding-left: $v;
-    padding-right: $v;
+    padding-inline: $v;
   }
 
   @mixin py-($v) {
-    padding-top: $v;
-    padding-bottom: $v;
+    padding-block: $v;
   }
 
   @mixin ps-($v) {
