@@ -1,11 +1,9 @@
-// arbitrary utility same as @mixin text-($v)
-
 // performance improve: use custom utility instead
 @use "sass:list";
 @use "../setting" as *;
 
 // _2-FontSize
-$FontSizeV3: (
+$v3-FontSize: (
   "text-xs": (0.75rem, var(--tw-leading, calc(1 / 0.75))),
   "text-sm": (0.875rem, var(--tw-leading, calc(1.25 / 0.875))),
   "text-base": (1rem, var(--tw-leading, calc(1.5 / 1))),
@@ -22,7 +20,7 @@ $FontSizeV3: (
 );
 
 @if $QuickReference {
-  @each $key, $value in $FontSizeV3 {
+  @each $key, $value in $v3-FontSize {
     /*x
     @mixin #{$key}\/3 {
       font-size: #{list.nth($value, 1)};
