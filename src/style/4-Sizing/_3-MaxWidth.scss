@@ -74,7 +74,7 @@ $MaxWidth: (
   "5xl": "$container-5xl",
   "6xl": "$container-6xl",
   "7xl": "$container-7xl",
-  "max-w-none": none,
+  "none": none,
   "px": 1px,
   "full": 100%,
   "dvw": 100dvw,
@@ -88,14 +88,25 @@ $MaxWidth: (
   "max": max-content,
   "fit": fit-content,
   "prose": 65ch,
-  "screen-sm": 640px,
-  "screen-md": 768px,
-  "screen-lg": 1024px,
-  "screen-xl": 1280px,
-  "screen-2xl": 1536px,
+  "screen-sm": "$SM",
+  "screen-md": "$MD",
+  "screen-lg": "$LG",
+  "screen-xl": "$XL",
+  "screen-2xl": "$XXL",
 );
 
 @if $QuickReference {
+  /*x
+  @mixin container {
+    width: 100%;
+    @media (min-width: $SM) { max-width: $SM;}
+    @media (min-width: $MD) { max-width: $MD;}
+    @media (min-width: $LG) { max-width: $LG;}
+    @media (min-width: $XL) { max-width: $XL;}
+    @media (min-width: $XXL) { max-width: $XXL;}
+  }
+  x*/
+
   @each $key, $value in $MaxWidth {
     /*x
     @mixin max-w-#{$key} {
@@ -103,17 +114,6 @@ $MaxWidth: (
     }
     x*/
   }
-
-  /*x
-  @mixin container {
-    width: 100%;
-    @media (min-width: 40rem) { max-width: 40rem; }
-    @media (min-width: 48rem) { max-width: 48rem; }
-    @media (min-width: 64rem) { max-width: 64rem; }
-    @media (min-width: 80rem) { max-width: 80rem; }
-    @media (min-width: 96rem) { max-width: 96rem; }
-  }
-  x*/
 }
 
 @if $UsingACustomValue {
