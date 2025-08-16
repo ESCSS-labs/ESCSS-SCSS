@@ -13,8 +13,8 @@ $Order: (
   "order-10": 10,
   "order-11": 11,
   "order-12": 12,
-  "order-first": calc(-infinity),
-  "order-last": calc(infinity),
+  "order-first": -9999,
+  "order-last": 9999,
   "order-none": 0,
 );
 
@@ -33,7 +33,7 @@ $Order: (
     @each $key, $value in $Order {
       /*x
       @mixin \-#{$key} {
-        order: -#{$value};
+        order: #{-$value};
       }
       x*/
     }
