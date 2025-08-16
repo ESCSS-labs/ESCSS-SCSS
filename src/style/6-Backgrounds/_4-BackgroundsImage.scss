@@ -1,4 +1,5 @@
 // arbitrary utility same as  @mixin bg-($v)
+
 @use "../setting" as *;
 
 $BackgroundsImage: (
@@ -11,6 +12,20 @@ $BackgroundsImage: (
   "bg-linear-to-l": to left,
   "bg-linear-to-tl": to top left,
 );
+
+// TODO: 
+// when color changed, relate to deg
+// --tw-gradient-position: v3 -> in srgb, v4 -> in oklab
+// $v3-BackgroundsImage: (
+//   "bg-linear-to-t": to top,
+//   "bg-linear-to-tr": to top right,
+//   "bg-linear-to-r": to right,
+//   "bg-linear-to-br": to bottom right,
+//   "bg-linear-to-b": to bottom,
+//   "bg-linear-to-bl": to bottom left,
+//   "bg-linear-to-l": to left,
+//   "bg-linear-to-tl": to top left,
+// );
 
 $BackgroundsImageLinear: (
   "bg-linear-0": 0deg,
@@ -396,20 +411,12 @@ $BackgroundsImagePercentage: (
   @mixin bg-none {
     background-image: none;
   }
-
-  @mixin bg-radial {
-    --tw-gradient-position: in oklab;
-    background-image: radial-gradient(var(--tw-gradient-stops));
-  }
   x*/
 
   @each $key, $value in $BackgroundsImage {
     /*x
     @mixin #{$key} {
-      --tw-gradient-position: #{$value};
-      @supports (background-image: linear-gradient(in lab, red, red)) {
-        --tw-gradient-position: #{$value} in oklab;
-      }
+      --tw-gradient-position: #{$value} in oklab;
       background-image: linear-gradient(var(--tw-gradient-stops));
     }
     x*/
@@ -418,14 +425,18 @@ $BackgroundsImagePercentage: (
   @each $key, $value in $BackgroundsImageLinear {
     /*x
     @mixin #{$key} {
-      --tw-gradient-position: #{$value};
-      @supports (background-image: linear-gradient(in lab, red, red)) {
-        --tw-gradient-position: #{$value} in oklab;
-      }
+      --tw-gradient-position: #{$value} in oklab;
       background-image: linear-gradient(var(--tw-gradient-stops));
     }
     x*/
   }
+
+  /*x
+  @mixin bg-radial {
+    --tw-gradient-position: in oklab;
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+  x*/
 
   @each $key, $value in $BackgroundsImageConic {
     /*x
@@ -489,26 +500,17 @@ $BackgroundsImagePercentage: (
     /*x
     @mixin from-#{key}($v: 1) {
       --tw-gradient-from: _c(#{$value}, $v);
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-gradient-from: color-mix(in oklab, _c(#{$value}, $v), transparent);
-      }
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     }
 
     @mixin via-#{key}($v: 1) {
-      --tw-gradient-via: color-mix(in srgb, _c(#{$value}, $v), transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-gradient-via: color-mix(in oklab, _c(#{$value}, $v), transparent);
-      }
+      --tw-gradient-via: _c(#{$value}, $v);
       --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
       --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
       
     @mixin to-#{key}($v: 1) {
-      --tw-gradient-to: color-mix(in srgb, _c(#{$value}, $v), transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-gradient-to: color-mix(in oklab, _c(#{$value}, $v), transparent);
-      }
+      --tw-gradient-to: _c(#{$value}, $v);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     }
     x*/
