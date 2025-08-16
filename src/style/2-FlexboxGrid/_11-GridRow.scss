@@ -1,6 +1,6 @@
 @use "../setting" as *;
 
-$GridRow: (
+$GridRowSpan: (
   "row-span-1": span 1 / span 1,
   "row-span-2": span 2 / span 2,
   "row-span-3": span 3 / span 3,
@@ -13,10 +13,10 @@ $GridRow: (
   "row-span-10": span 10 / span 10,
   "row-span-11": span 11 / span 11,
   "row-span-12": span 12 / span 12,
-  "row-span-full": "#/*x{1 / -1}",
+  "row-span-full": #{1 / -1},
 );
 
-$GridRow-start: (
+$GridRowStart: (
   "row-start-1": 1,
   "row-start-2": 2,
   "row-start-3": 3,
@@ -31,9 +31,22 @@ $GridRow-start: (
   "row-start-12": 12,
   "row-start-13": 13,
   "row-start-auto": auto,
+  "\\-row-start-1": -1,
+  "\\-row-start-2": -2,
+  "\\-row-start-3": -3,
+  "\\-row-start-4": -4,
+  "\\-row-start-5": -5,
+  "\\-row-start-6": -6,
+  "\\-row-start-7": -7,
+  "\\-row-start-8": -8,
+  "\\-row-start-9": -9,
+  "\\-row-start-10": -10,
+  "\\-row-start-11": -11,
+  "\\-row-start-12": -12,
+  "\\-row-start-13": -13,
 );
 
-$GridRow-end: (
+$GridRowEnd: (
   "row-end-1": 1,
   "row-end-2": 2,
   "row-end-3": 3,
@@ -48,9 +61,75 @@ $GridRow-end: (
   "row-end-12": 12,
   "row-end-13": 13,
   "row-end-auto": auto,
+  "\\-row-end-1": -1,
+  "\\-row-end-2": -2,
+  "\\-row-end-3": -3,
+  "\\-row-end-4": -4,
+  "\\-row-end-5": -5,
+  "\\-row-end-6": -6,
+  "\\-row-end-7": -7,
+  "\\-row-end-8": -8,
+  "\\-row-end-9": -9,
+  "\\-row-end-10": -10,
+  "\\-row-end-11": -11,
+  "\\-row-end-12": -12,
+  "\\-row-end-13": -13,
 );
 
+$GridRow: (
+  "row-1": 1,
+  "row-2": 2,
+  "row-3": 3,
+  "row-4": 4,
+  "row-5": 5,
+  "row-6": 6,
+  "row-7": 7,
+  "row-8": 8,
+  "row-9": 9,
+  "row-10": 10,
+  "row-11": 11,
+  "row-12": 12,
+  "row-auto": auto,
+  "\\-row-1": -1,
+  "\\-row-2": -2,
+  "\\-row-3": -3,
+  "\\-row-4": -4,
+  "\\-row-5": -5,
+  "\\-row-6": -6,
+  "\\-row-7": -7,
+  "\\-row-8": -8,
+  "\\-row-9": -9,
+  "\\-row-10": -10,
+  "\\-row-11": -11,
+  "\\-row-12": -12,
+);
+
+
 @if $QuickReference {
+  @each $key, $value in $GridRowSpan {
+    /*x
+    @mixin #{$key} {
+      grid-row: span #{$value} / span #{$value};
+    }
+    x*/
+  }
+
+  @each $key, $value in $GridRowStart {
+    /*x
+    @mixin #{$key} {
+      grid-row-start: #{$value};
+    }
+    x*/
+  }
+
+  @each $key, $value in $GridRowEnd {
+    /*x
+    @mixin #{$key} {
+      grid-row-end: #{$value};
+    }
+    x*/
+  }
+
   @each $key, $value in $GridRow {
     /*x
     @mixin #{$key} {
@@ -59,27 +138,12 @@ $GridRow-end: (
     x*/
   }
 
-  @each $key, $value in $GridRow-start {
-    /*x
-    @mixin #{$key} {
-      grid-row-start: #{$value};
-    }
-    x*/
-  }
-
-  @each $key, $value in $GridRow-end {
-    /*x
-    @mixin #{$key} {
-      grid-row-end: #{$value};
-    }
-    x*/
-  }
 }
 
 @if $UsingACustomValue {
   /*x
-  @mixin row-($v) {
-    grid-row: $v;
+  @mixin row-span-($v) {
+    grid-row: span $v / span $v;
   }
 
   @mixin row-start-($v) {
@@ -88,6 +152,10 @@ $GridRow-end: (
 
   @mixin row-end-($v) {
     grid-row-end: $v;
+  }
+
+  @mixin row-($v) {
+    grid-row: $v;
   }
   x*/
 }
