@@ -2,7 +2,11 @@
 
 $BackdropGrayscale: (
   "backdrop-grayscale": grayscale(100%),
-  "backdrop-grayscale-0": grayscale(0),
+  "backdrop-grayscale-0": grayscale(0%),
+  "backdrop-grayscale-25": grayscale(25%),
+  "backdrop-grayscale-50": grayscale(50%),
+  "backdrop-grayscale-75": grayscale(75%),
+  "backdrop-grayscale-100": grayscale(100%),
 );
 
 @if $QuickReference {
@@ -10,7 +14,6 @@ $BackdropGrayscale: (
     /*x
     @mixin #{$key} {
       --tw-backdrop-invert: #{$value};
-      -webkit-backdrop-filter: _bf();
       backdrop-filter: _bf();
     }
     x*/
@@ -20,8 +23,7 @@ $BackdropGrayscale: (
 @if $UsingACustomValue {
   /*x
   @mixin backdrop-grayscale-($v) {
-    --tw-backdrop-grayscale: #/*x{grayscale($v)};
-    -webkit-backdrop-filter: _bf();
+    --tw-backdrop-grayscale: grayscale(#/*x{$v});
     backdrop-filter: _bf();
   }
   x*/
