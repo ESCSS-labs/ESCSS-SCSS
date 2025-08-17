@@ -1,19 +1,32 @@
 // arbitrary utility same as @mixin outline-($v)
 @use "../setting" as *;
 
+$OutlineNull: (
+  null: 1px,
+);
+
 $OutlineWidth: (
-  "outline": 1px,
-  "outline-0": 0px,
-  "outline-1": 1px,
-  "outline-2": 2px,
-  "outline-4": 4px,
-  "outline-8": 8px,
+  "0": 0px,
+  "1": 1px,
+  "2": 2px,
+  "4": 4px,
+  "8": 8px,
 );
 
 @if $QuickReference {
+  @each $key, $value in $OutlineNull {
+    /*x
+    @mixin outline#{$key} {
+      outline-style: var(--tw-outline-style);
+      outline-width: #{$value};
+    }
+    x*/
+  }
+
   @each $key, $value in $OutlineWidth {
     /*x
-    @mixin #{$key} {
+    @mixin outline-#{$key} {
+      outline-style: var(--tw-outline-style);
       outline-width: #{$value};
     }
     x*/
