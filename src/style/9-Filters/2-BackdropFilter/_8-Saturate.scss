@@ -1,11 +1,11 @@
 @use "../../setting" as *;
 
 $BackdropSaturate: (
-  "backdrop-saturate-0": saturate(0),
-  "backdrop-saturate-50": saturate(0.5),
-  "backdrop-saturate-100": saturate(1),
-  "backdrop-saturate-150": saturate(1.5),
-  "backdrop-saturate-200": saturate(2),
+  "backdrop-saturate-0": saturate(0%),
+  "backdrop-saturate-50": saturate(50%),
+  "backdrop-saturate-100": saturate(100%),
+  "backdrop-saturate-150": saturate(150%),
+  "backdrop-saturate-200": saturate(200%),
 );
 
 @if $QuickReference {
@@ -13,7 +13,6 @@ $BackdropSaturate: (
     /*x
     @mixin #{$key} {
       --tw-backdrop-saturate: #{$value};
-      -webkit-backdrop-filter: _bf();
       backdrop-filter: _bf();
     }
     x*/
@@ -23,8 +22,7 @@ $BackdropSaturate: (
 @if $UsingACustomValue {
   /*x
   @mixin backdrop-saturate-($v) {
-    --tw-backdrop-saturate: #/*x{saturate($v)};
-    -webkit-backdrop-filter: _bf();
+    --tw-backdrop-saturate: saturate(#/*x{$v});
     backdrop-filter: _bf();
   }
   x*/
