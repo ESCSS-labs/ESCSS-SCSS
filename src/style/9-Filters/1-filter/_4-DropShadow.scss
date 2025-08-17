@@ -3,6 +3,16 @@
 @use "../../setting" as *;
 
 $DropShadow: (
+  "drop-shadow-xs": (drop-shadow(0 1px 1px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.05))), drop-shadow(var(--drop-shadow-xs))),
+  "drop-shadow-sm": (drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.15))), drop-shadow(var(--drop-shadow-sm))),
+  "drop-shadow-md": (drop-shadow(0 3px 3px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.12))), drop-shadow(var(--drop-shadow-md))),
+  "drop-shadow-xl": (drop-shadow(0 9px 7px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.1))), drop-shadow(var(--drop-shadow-xl))),
+  "drop-shadow-lg": (drop-shadow(0 4px 4px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.15))), drop-shadow(var(--drop-shadow-lg))),
+  "drop-shadow-2xl": (drop-shadow(0 25px 25px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.15))), drop-shadow(var(--drop-shadow-2xl))),
+  "drop-shadow-none": (null, null),
+);
+
+$DropShadowColor: (
   "name1-50": "$name1-50",
   "name1-100": "$name1-100",
   "name1-200": "$name1-200",
@@ -303,51 +313,16 @@ $DropShadow: (
 );
 
 @if $QuickReference {
-  // drop-shadow
-  /*x
-  @mixin drop-shadow {
-    --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.1))) drop-shadow(0 1px 1px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.06)));
-    --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
-    filter: _f();
+  @each $key, $value in $DropShadow {
+    /*x
+    @mixin #{$key} {
+      --tw-drop-shadow-size: #{list.nth($value, 1)};
+      --tw-drop-shadow: #{list.nth($value, 2)};
+      filter: _f();
+    }
+    x*/
   }
 
-  @mixin drop-shadow-xs {
-    --tw-drop-shadow-size: drop-shadow(0 1px 1px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.05)));
-    --tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
-    filter: _f();
-  }
-
-  @mixin drop-shadow-sm {
-    --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.15)));
-    --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.15));
-    filter: _f();
-  }
-
-  @mixin drop-shadow-md {
-    --tw-drop-shadow-size: drop-shadow(0 3px 3px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.12)));
-    --tw-drop-shadow: drop-shadow(0 3px 3px rgb(0 0 0 / 0.12));
-    filter: _f();
-  }
-  
-  @mixin drop-shadow-lg {
-    --tw-drop-shadow-size: drop-shadow(0 4px 4px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.15)));
-    --tw-drop-shadow: drop-shadow(0 4px 4px rgb(0 0 0 / 0.15));
-    filter: _f();
-  }
-
-  @mixin drop-shadow-xl {
-    --tw-drop-shadow-size: drop-shadow(0 9px 7px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.1)));
-    --tw-drop-shadow: drop-shadow(0 9px 7px rgb(0 0 0 / 0.1));
-    filter: _f();
-  }
-
-  @mixin drop-shadow-none {
-    --tw-drop-shadow: ;
-    filter: _f();
-  }
-  x*/
-  
-  // drop-shadow-color
   /*x
   @mixin drop-shadow-inherit {
     --tw-drop-shadow-color: inherit;
@@ -356,27 +331,18 @@ $DropShadow: (
 
   @mixin drop-shadow-current {
     --tw-drop-shadow-color: currentColor;
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-drop-shadow-color: color-mix(in oklab, currentColor, transparent);
-    }
     --tw-drop-shadow: var(--tw-drop-shadow-size) !important;
   }
 
   @mixin drop-shadow-transparent {
     --tw-drop-shadow-color: transparent;
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-drop-shadow-color: color-mix(in oklab, transparent, transparent);
-    }
     --tw-drop-shadow: var(--tw-drop-shadow-size) !important;
   }
   x*/
-  @each $key, $value in $DropShadow {
+  @each $key, $value in $DropShadowColor {
     /*x
     @mixin drop-shadow-#{$key}($v: 1) {
       --tw-drop-shadow-color: _c(#{$value}, $v);
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-drop-shadow-color: color-mix(in oklab, _c(#{$value}, $v), transparent);
-      }
       --tw-drop-shadow: var(--tw-drop-shadow-size) !important;
     }
     x*/
@@ -388,14 +354,11 @@ $DropShadow: (
   @mixin drop-shadow-($v) {
     @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
       --tw-drop-shadow-color: $v;
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-drop-shadow-color: color-mix(in oklab, $v, transparent);
-      }
       --tw-drop-shadow: var(--tw-drop-shadow-size) !important;
     }
 
     @else {
-      --tw-drop-shadow: #/*x{drop-shadow($v)};
+      --tw-drop-shadow: drop-shadow(#/*x{$v});
       filter: _f();
     }
   }
