@@ -1,29 +1,19 @@
 @use "../../setting" as *;
 
 $BackdropHueRotate: (
-  "backdrop-hue-rotate-0": hue-rotate(0deg),
-  "backdrop-hue-rotate-15": hue-rotate(15deg),
-  "backdrop-hue-rotate-30": hue-rotate(30deg),
-  "backdrop-hue-rotate-60": hue-rotate(60deg),
-  "backdrop-hue-rotate-90": hue-rotate(90deg),
-  "backdrop-hue-rotate-180": hue-rotate(180deg),
-);
-
-$NegativeBackdropHueRotate: (
-  "\\-backdrop-hue-rotate-0": hue-rotate(0deg),
-  "\\-backdrop-hue-rotate-15": hue-rotate(-15deg),
-  "\\-backdrop-hue-rotate-30": hue-rotate(-30deg),
-  "\\-backdrop-hue-rotate-60": hue-rotate(-60deg),
-  "\\-backdrop-hue-rotate-90": hue-rotate(-90deg),
-  "\\-backdrop-hue-rotate-180": hue-rotate(-180deg),
+  "backdrop-hue-rotate-0": 0deg,
+  "backdrop-hue-rotate-15": 15deg,
+  "backdrop-hue-rotate-30": 30deg,
+  "backdrop-hue-rotate-60": 60deg,
+  "backdrop-hue-rotate-90": 90deg,
+  "backdrop-hue-rotate-180": 180deg,
 );
 
 @if $QuickReference {
   @each $key, $value in $BackdropHueRotate {
     /*x
     @mixin #{$key} {
-      --tw-backdrop-hue-rotate: #{$value};
-      -webkit-backdrop-filter: _bf();
+      --tw-backdrop-hue-rotate: hue-rotate(#{$value});
       backdrop-filter: _bf();
     }
     x*/
@@ -34,9 +24,8 @@ $NegativeBackdropHueRotate: (
   @if $QuickReference {
     @each $key, $value in $NegativeBackdropHueRotate {
       /*x
-      @mixin #{$key} {
-        --tw-backdrop-hue-rotate: #{$value};
-        -webkit-backdrop-filter: _bf();
+      @mixin \-#{$key} {
+        --tw-backdrop-hue-rotate: hue-rotate(#{-$value});
         backdrop-filter: _bf();
       }
       x*/
@@ -46,8 +35,7 @@ $NegativeBackdropHueRotate: (
   @if $UsingACustomValue {
     /*x
     @mixin \-backdrop-hue-rotate-($v) {
-      --tw-backdrop-hue-rotate: #/*x{hue-rotate(-$v)};
-      -webkit-backdrop-filter: _bf();
+      --tw-backdrop-hue-rotate: hue-rotate(#/*x{-$v});
       backdrop-filter: _bf();
     }
     x*/
@@ -57,8 +45,7 @@ $NegativeBackdropHueRotate: (
 @if $UsingACustomValue {
   /*x
   @mixin backdrop-hue-rotate-($v) {
-    --tw-backdrop-hue-rotate: #/*x{hue-rotate($v)};
-    -webkit-backdrop-filter: _bf();
+    --tw-backdrop-hue-rotate: hue-rotate(#/*x{$v});
     backdrop-filter: _bf();
   }
   x*/
