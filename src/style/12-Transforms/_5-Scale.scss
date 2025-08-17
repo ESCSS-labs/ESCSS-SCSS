@@ -56,24 +56,24 @@ $Scale: (
     @each $key, $value in $Scale {
       /*x
       @mixin \-scale-#{$key} {
-        --tw-scale-x: #{-$value};
-        --tw-scale-y: #{-$value};
-        --tw-scale-z: #{-$value};
+        --tw-scale-x: -#{$value};
+        --tw-scale-y: -#{$value};
+        --tw-scale-z: -#{$value};
         scale: _s-xy();
       }
 
       @mixin \-scale-x-#{$key} {
-        --tw-scale-x: #{-$value} !important;
+        --tw-scale-x: -#{$value} !important;
         scale: _s-xy();
       }
 
       @mixin \-scale-y-#{$key} {
-        --tw-scale-y: #{-$value} !important;
+        --tw-scale-y: -#{$value} !important;
         scale: _s-xy();
       }
 
       @mixin \-scale-z-#{$key} {
-        --tw-scale-z: #{-$value} !important;
+        --tw-scale-z: -#{$value} !important;
         scale: _s-xyz();
       }
       x*/
@@ -83,7 +83,7 @@ $Scale: (
   @if $UsingACustomValue {
     /*x
     @mixin \-scale-($v) {
-      scale: #{-$v};
+      scale: -$v;
     }
 
     @mixin \-scale-x-($v) {
