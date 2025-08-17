@@ -1,17 +1,17 @@
 @use "../../setting" as *;
 
 $BackdropBrightness: (
-  "backdrop-brightness-0": brightness(0),
-  "backdrop-brightness-50": brightness(0.5),
-  "backdrop-brightness-75": brightness(0.75),
-  "backdrop-brightness-90": brightness(0.9),
-  "backdrop-brightness-95": brightness(0.95),
-  "backdrop-brightness-100": brightness(1),
-  "backdrop-brightness-105": brightness(1.05),
-  "backdrop-brightness-110": brightness(1.1),
-  "backdrop-brightness-125": brightness(1.25),
-  "backdrop-brightness-150": brightness(1.5),
-  "backdrop-brightness-200": brightness(2),
+  "backdrop-brightness-0": brightness(0%),
+  "backdrop-brightness-50": brightness(50%),
+  "backdrop-brightness-75": brightness(75%),
+  "backdrop-brightness-90": brightness(90%),
+  "backdrop-brightness-95": brightness(95%),
+  "backdrop-brightness-100": brightness(100%),
+  "backdrop-brightness-105": brightness(105%),
+  "backdrop-brightness-110": brightness(110%),
+  "backdrop-brightness-125": brightness(125%),
+  "backdrop-brightness-150": brightness(150%),
+  "backdrop-brightness-200": brightness(200%),
 );
 
 @if $QuickReference {
@@ -19,7 +19,6 @@ $BackdropBrightness: (
     /*x
     @mixin #{$key} {
       --tw-backdrop-brightness: #{$value};
-      -webkit-backdrop-filter: _bf();
       backdrop-filter: _bf();
     }
     x*/
@@ -29,8 +28,7 @@ $BackdropBrightness: (
 @if $UsingACustomValue {
   /*x
   @mixin backdrop-brightness-($v) {
-    --tw-backdrop-brightness: #/*x{brightness($v)};
-    -webkit-backdrop-filter: _bf();
+    --tw-backdrop-brightness: brightness(#/*x{$v});
     backdrop-filter: _bf();
   }
   x*/
