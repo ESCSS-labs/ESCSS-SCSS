@@ -4,24 +4,26 @@ $v3-BorderSpacing: (
   "px": 1px,
 );
 
-@if $QuickReference {
-  @each $key, $value in $v3-BorderSpacing {
-    /*x
-    @mixin border-spacing-#{$key} {
-      --tw-border-spacing-x: #{$value};
-      --tw-border-spacing-y: #{$value};
-      border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
-    }
+@if $V3-compatibility {
+  @if $QuickReference {
+    @each $key, $value in $v3-BorderSpacing {
+      /*x
+      @mixin border-spacing-#{$key} {
+        --tw-border-spacing-x: #{$value};
+        --tw-border-spacing-y: #{$value};
+        border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
+      }
 
-    @mixin border-spacing-x-#{$key} {
-      --tw-border-spacing-x: #{$value} !important;
-      border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
-    }
+      @mixin border-spacing-x-#{$key} {
+        --tw-border-spacing-x: #{$value} !important;
+        border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
+      }
 
-    @mixin border-spacing-y-#{$key} {
-      --tw-border-spacing-y: #{$value} !important;
-      border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
+      @mixin border-spacing-y-#{$key} {
+        --tw-border-spacing-y: #{$value} !important;
+        border-spacing: var(--tw-border-spacing-x,) var(--tw-border-spacing-y,);
+      }
+      x*/
     }
-    x*/
   }
 }

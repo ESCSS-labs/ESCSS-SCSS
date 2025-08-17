@@ -9,13 +9,15 @@ $v3-LineHeight: (
   "loose": 2,
 );
 
-@if $QuickReference {
-  @each $key, $value in $v3-LineHeight {
-    /*x
-    @mixin leading-#{$key} {
-      --tw-leading: #{$value};
-      line-height: #{$value};
+@if $V3-compatibility {
+  @if $QuickReference {
+    @each $key, $value in $v3-LineHeight {
+      /*x
+      @mixin leading-#{$key} {
+        --tw-leading: #{$value};
+        line-height: #{$value};
+      }
+      x*/
     }
-    x*/
   }
 }

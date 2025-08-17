@@ -4,13 +4,15 @@ $v3-BackdropBlur: (
   "backdrop-blur": blur(8px),
 );
 
-@if $QuickReference {
-  @each $key, $value in $v3-BackdropBlur {
-    /*x
-    @mixin #{$key} {
-      --tw-backdrop-blur: #{$value};
-      backdrop-filter: _bf();
+@if $V3-compatibility {
+  @if $QuickReference {
+    @each $key, $value in $v3-BackdropBlur {
+      /*x
+      @mixin #{$key} {
+        --tw-backdrop-blur: #{$value};
+        backdrop-filter: _bf();
+      }
+      x*/
     }
-    x*/
   }
 }

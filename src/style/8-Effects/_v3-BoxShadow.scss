@@ -317,72 +317,74 @@ $v3-BoxShadowColor: (
   "rose-950": "$color-rose-950",
 );
 
-@if $QuickReference {
-  /*x
-  @mixin ring-inset {
-    --tw-ring-inset: inset;
-  }
-  x*/
-  @each $key, $value in $v3-RingWidth {
+@if $V3-compatibility {
+  @if $QuickReference {
     /*x
-    @mixin #{$key} {
-      --tw-ring-shadow: #{$value};
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    @mixin ring-inset {
+      --tw-ring-inset: inset;
+    }
+    x*/
+    @each $key, $value in $v3-RingWidth {
+      /*x
+      @mixin #{$key} {
+        --tw-ring-shadow: #{$value};
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+      x*/
+    }
+
+    @each $key, $value in $v3-BoxShadow {
+      /*x
+      @mixin #{$key}	{
+        --tw-shadow: #{$value};
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+      x*/
+    }
+
+    @each $key, $value in $v3-RingOffsetWidth {
+      /*x
+      @mixin #{$key} {
+        --tw-ring-offset-width: #{$value};
+        --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+      }
+      x*/
+    }
+
+    /*x
+    @mixin ring-offset-inherit {
+      --tw-ring-offset-color: inherit;
+    }
+
+    @mixin ring-offset-current {
+      --tw-ring-offset-color: currentColor;
+    }
+
+    @mixin ring-offset-transparent {
+      --tw-ring-offset-color: transparent;
+    }
+    x*/
+    @each $key, $value in $v3-BoxShadowColor {
+      /*x
+      @mixin ring-offset-#{$key}($v: 1) {
+        --tw-ring-offset-color: #/*x{_c(#{$value}, $v)};
+      }
+      x*/
+    }
+  }
+
+  @if $UsingACustomValue {
+    /*x
+    @mixin ring-offset-($v) {
+      @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+        --tw-ring-offset-color: $v;
+      }
+
+      @else {
+        --tw-ring-offset-width: $v;
+        --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+      }
     }
     x*/
   }
-
-  @each $key, $value in $v3-BoxShadow {
-    /*x
-    @mixin #{$key}	{
-      --tw-shadow: #{$value};
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-    x*/
-  }
-
-  @each $key, $value in $v3-RingOffsetWidth {
-    /*x
-    @mixin #{$key} {
-      --tw-ring-offset-width: #{$value};
-      --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    }
-    x*/
-  }
-
-  /*x
-  @mixin ring-offset-inherit {
-    --tw-ring-offset-color: inherit;
-  }
-
-  @mixin ring-offset-current {
-    --tw-ring-offset-color: currentColor;
-  }
-
-  @mixin ring-offset-transparent {
-    --tw-ring-offset-color: transparent;
-  }
-  x*/
-  @each $key, $value in $v3-BoxShadowColor {
-    /*x
-    @mixin ring-offset-#{$key}($v: 1) {
-      --tw-ring-offset-color: #/*x{_c(#{$value}, $v)};
-    }
-    x*/
-  }
-}
-
-@if $UsingACustomValue {
-  /*x
-  @mixin ring-offset-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
-      --tw-ring-offset-color: $v;
-    }
-
-    @else {
-      --tw-ring-offset-width: $v;
-      --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    }
-  }
-  x*/
 }

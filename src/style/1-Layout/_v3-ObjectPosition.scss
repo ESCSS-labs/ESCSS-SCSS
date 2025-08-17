@@ -7,12 +7,15 @@ $v3-ObjectPosition: (
   "object-right-top": right top,
 );
 
-@if $QuickReference {
-  @each $key, $value in $v3-ObjectPosition {
-    /*x
-    @mixin #{$key} {
-      object-position: #{$value};
+@if $V3-compatibility {
+  @if $QuickReference {
+    @each $key, $value in $v3-ObjectPosition {
+      /*x
+      @mixin #{$key} {
+        object-position: #{$value};
+      }
+      x*/
     }
-    x*/
   }
 }
+
