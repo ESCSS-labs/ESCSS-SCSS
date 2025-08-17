@@ -334,11 +334,9 @@ $BackgroundsColor: (
       background-color: $v;
     }
 
-    // TODO: remove this bg-size-($v) instead
     // list (length)
     @else if list.nth($v, 1)==length {
-      // remove the background-size token "length"
-      background-size: list.set-nth($v, 1, #/*x{''});
+      @error "use (v4 api) bg-size-(200px 100px) instead of bg-[length:200px_100px]";
     }
 
     // list、number、string(top、right、left、center)
