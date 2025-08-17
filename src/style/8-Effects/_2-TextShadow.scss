@@ -326,25 +326,16 @@ $TextShadowColor: (
 
   @mixin text-shadow-current {
     --tw-text-shadow-color: currentcolor;
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-text-shadow-color: color-mix(in oklab, currentcolor, transparent);
-    }
   }
 
   @mixin text-shadow-transparent {
     --tw-text-shadow-color: transparent;
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-text-shadow-color: color-mix(in oklab, transparent, transparent);
-    }
   }
   x*/
   @each $key, $value in $TextShadowColor {
     /*x
     @mixin text-shadow-#{$key}($v: 1) {
       --tw-text-shadow-color: #/*x{_c(#{$value}, $v)};
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-text-shadow-color: color-mix(in oklab, #/*x{_c(#{$value}, $v)}, transparent);
-      }
     }
     x*/
   }
@@ -355,9 +346,6 @@ $TextShadowColor: (
   @mixin shadow-($v) {
     @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
       --tw-text-shadow-color: $v;
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-text-shadow-color: color-mix(in oklab, $v, transparent);
-      }
     }
 
     @else if meta.type-of($v)==list {
