@@ -2,7 +2,11 @@
 
 $BackdropInvert: (
   "backdrop-invert": invert(100%),
-  "backdrop-invert-0": invert(0),
+  "backdrop-invert-0": invert(0%),
+  "backdrop-invert-25": invert(25%),
+  "backdrop-invert-50": invert(50%),
+  "backdrop-invert-75": invert(75%),
+  "backdrop-invert-100": invert(100%),
 );
 
 @if $QuickReference {
@@ -10,7 +14,6 @@ $BackdropInvert: (
     /*x
     @mixin #{$key} {
       --tw-backdrop-invert: #{$value};
-      -webkit-backdrop-filter: _bf();
       backdrop-filter: _bf();
     }
     x*/
@@ -20,8 +23,7 @@ $BackdropInvert: (
 @if $UsingACustomValue {
   /*x
   @mixin backdrop-invert-($v) {
-    --tw-backdrop-invert: #/*x{invert($v)};
-    -webkit-backdrop-filter: _bf();
+    --tw-backdrop-invert: invert(#/*X{$v});
     backdrop-filter: _bf();
   }
   x*/
