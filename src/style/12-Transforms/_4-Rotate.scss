@@ -1,5 +1,9 @@
 @use "../setting" as *;
 
+$RotateNone: (
+  "none": none,
+);
+
 $Rotate: (
   "0": 0deg,
   "1": 1deg,
@@ -13,11 +17,13 @@ $Rotate: (
 );
 
 @if $QuickReference {
-  /*x
-  .rotate-none {
-    rotate: none;
+  @each $key, $value in $RotateNone {
+    /*x
+    @mixin rotate-#{$key} {
+      rotate: #{$value};
+    }
+    x*/
   }
-  x*/
 
   @each $key, $value in $Rotate {
     /*x
@@ -26,17 +32,17 @@ $Rotate: (
     }
       
     @mixin rotate-x-#{$key} {
-      --tw-rotate-x: #{rotateX($value)} !important;
+      --tw-rotate-x: rotateX(#{$value}) !important;
       transform: _r-xyz_s-xy();
     }
 
     @mixin rotate-y-#{$key} {
-      --tw-rotate-y: #{rotateY($value)} !important;
+      --tw-rotate-y: rotateY(#{$value}) !important;
       transform: _r-xyz_s-xy();
     }
 
     @mixin rotate-z-#{$key} {
-      --tw-rotate-z: #{rotateZ($value)} !important;
+      --tw-rotate-z: rotateZ(#{$value}) !important;
       transform: _r-xyz_s-xy();
     }
     x*/
@@ -50,19 +56,19 @@ $Rotate: (
       @mixin \-rotate-#{$key} {
         rotate: #{-$value};
       }
-
+        
       @mixin \-rotate-x-#{$key} {
-        --tw-rotate-x: #{rotateX(-$value)} !important;
+        --tw-rotate-x: rotateX(#{-$value}) !important;
         transform: _r-xyz_s-xy();
       }
 
       @mixin \-rotate-y-#{$key} {
-        --tw-rotate-y: #{rotateY(-$value)} !important;
+        --tw-rotate-y: rotateY(#{-$value}) !important;
         transform: _r-xyz_s-xy();
       }
 
       @mixin \-rotate-z-#{$key} {
-        --tw-rotate-z: #{rotateZ(-$value)} !important;
+        --tw-rotate-z: rotateZ(#{-$value}) !important;
         transform: _r-xyz_s-xy();
       }
       x*/
@@ -72,21 +78,21 @@ $Rotate: (
   @if $UsingACustomValue {
     /*x
     @mixin \-rotate-($v) {
-      rotate: -$v;
+      rotate: #{-$v};
     }
 
     @mixin \-rotate-x-($v) {
-      --tw-rotate-x: rotateX(-$v) !important;
+      --tw-rotate-x: rotateX(#/*x{-$v}) !important;
       transform: _r-xyz_s-xy();
     }
 
     @mixin \-rotate-y-($v) {
-      --tw-rotate-y: rotateY(-$v) !important;
+      --tw-rotate-y: rotateY(#/*x{-$v}) !important;
       transform: _r-xyz_s-xy();
     }
 
     @mixin \-rotate-z-($v) {
-      --tw-rotate-z: rotateZ(-$v) !important;
+      --tw-rotate-z: rotateZ(#/*x{-$v}) !important;
       transform: _r-xyz_s-xy();
     }
     x*/
@@ -96,21 +102,21 @@ $Rotate: (
 @if $UsingACustomValue {
   /*x
   @mixin rotate-($v) {
-    rotate: $v;
+    rotate: #{$v};
   }
 
   @mixin rotate-x-($v) {
-    --tw-rotate-x: rotateX($v) !important;
+    --tw-rotate-x: rotateX(#/*x{$v}) !important;
     transform: _r-xyz_s-xy();
   }
 
   @mixin rotate-y-($v) {
-    --tw-rotate-y: rotateY($v) !important;
+    --tw-rotate-y: rotateY(#/*x{$v}) !important;
     transform: _r-xyz_s-xy();
   }
 
   @mixin rotate-z-($v) {
-    --tw-rotate-z: rotateZ($v) !important;
+    --tw-rotate-z: rotateZ(#/*x{$v}) !important;
     transform: _r-xyz_s-xy();
   }
   x*/
