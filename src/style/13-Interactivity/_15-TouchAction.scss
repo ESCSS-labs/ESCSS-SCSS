@@ -1,24 +1,52 @@
 @use "../setting" as *;
 
-$TouchAction: (
-  "touch-auto": auto,
-  "touch-none": none,
-  "touch-pan-x": pan-x,
-  "touch-pan-left": pan-left,
-  "touch-pan-right": pan-right,
-  "touch-pan-y": pan-y,
-  "touch-pan-up": pan-up,
-  "touch-pan-down": pan-down,
-  "touch-pinch-zoom": pinch-zoom,
-  "touch-manipulation": manipulation,
-);
-
 @if $QuickReference {
-  @each $key, $value in $TouchAction {
-    /*x
-    @mixin #{$key} {
-      touch-action: #{$value};
-    }
-    x*/
+  /*x
+  @mixin touch-pan-left {
+    --tw-pan-x: pan-left;
+    touch-action: var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,);
   }
+
+  @mixin touch-pan-right {
+    --tw-pan-x: pan-right;
+    touch-action: var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,);
+  }
+
+  @mixin touch-pan-x {
+    --tw-pan-x: pan-x;
+    touch-action: var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,);
+  }
+
+  @mixin touch-pan-down {
+    --tw-pan-y: pan-down;
+    touch-action: var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,);
+  }
+
+  @mixin touch-pan-up {
+    --tw-pan-y: pan-up;
+    touch-action: var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,);
+  }
+
+  @mixin touch-pan-y {
+    --tw-pan-y: pan-y;
+    touch-action: var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,);
+  }
+
+  @mixin touch-pinch-zoom {
+    --tw-pinch-zoom: pinch-zoom;
+    touch-action: var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,);
+  }
+
+  @mixin touch-auto {
+    touch-action: auto;
+  }
+
+  @mixin touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  @mixin touch-none {
+    touch-action: none;
+  }
+  x*/
 }
