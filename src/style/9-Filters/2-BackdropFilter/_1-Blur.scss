@@ -8,9 +8,7 @@ $BackdropBlur: (
   "backdrop-blur-xl": blur(24px),
   "backdrop-blur-2xl": blur(40px),
   "backdrop-blur-3xl": blur(64px),
-  "backdrop-blur-none": blur(0),
-  // v3 api
-  "backdrop-blur": blur(8px),
+  "backdrop-blur-none": null,
 );
 
 @if $QuickReference {
@@ -18,7 +16,6 @@ $BackdropBlur: (
     /*x
     @mixin #{$key} {
       --tw-backdrop-blur: #{$value};
-      -webkit-backdrop-filter: _bf();
       backdrop-filter: _bf();
     }
     x*/
@@ -28,8 +25,7 @@ $BackdropBlur: (
 @if $UsingACustomValue {
   /*x
   @mixin backdrop-blur-($v) {
-    --tw-backdrop-blur: #/*x{blur($v)};
-    -webkit-backdrop-filter: _bf();
+    --tw-backdrop-blur: blur(#/*x{$v});
     backdrop-filter: _bf();
   }
   x*/
