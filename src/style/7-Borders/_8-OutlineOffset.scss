@@ -1,18 +1,39 @@
 @use "../setting" as *;
 
 $OutlineOffset: (
-  "outline-offset-0": 0px,
-  "outline-offset-1": 1px,
-  "outline-offset-2": 2px,
-  "outline-offset-4": 4px,
-  "outline-offset-8": 8px,
+  "0": 0px,
+  "1": 1px,
+  "2": 2px,
+  "4": 4px,
+  "8": 8px,
 );
 
 @if $QuickReference {
   @each $key, $value in $OutlineOffset {
     /*x
-    @mixin #{$key} {
+    @mixin outline-offset-#{$key} {
       outline-offset: #{$value};
+    }
+    x*/
+  }
+}
+
+
+@if $UsingNegativeValues {
+  @if $QuickReference {
+    @each $key, $value in $OutlineOffset {
+      /*x
+      @mixin \-outline-offset-#{$key} {
+        outline-offset: #{-$value};
+      }
+      x*/
+    }
+  }
+
+  @if $UsingACustomValue {
+    /*x
+    @mixin \-outline-offset-($v) {
+      outline-offset: -$v;
     }
     x*/
   }
