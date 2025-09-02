@@ -1,8 +1,8 @@
 ![logo](https://github.com/ESCSS-labs/ESCSS/blob/main/assets/logo.png)
 
-## What is ESCSS-SCSS?
+## Why ESCSS-SCSS?
 
-ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind(v4) — ensuring your CSS stack stays modern and future-proof.
+No more CSS style wars. It allows CSS, SCSS, and Tailwind developers to work together harmoniously on the same project, enabling seamless collaboration.
 
 ## Installation
 
@@ -12,9 +12,9 @@ ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind(v4) — 
 
 ### Copy file
 
-- copy `_style.scss` from the `download` directory
+- copy `src/test/_style.scss`
 
-### Install extension for auto-complete
+### Install VSCode extension for auto-complete
 
 - SCSS IntelliSense
 
@@ -24,25 +24,13 @@ ESCSS-SCSS is built on SCSS and supports both standard CSS and Tailwind(v4) — 
 npm add -D sass
 ```
 
-```bash
-yarn add -D sass
-```
-
-```bash
-pnpm add -D sass
-```
-
-```bash
-bun add -D sass
-```
-
 ```js
 //  vite.config.js
 export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use '/your path' as *;`,
+        additionalData: `@use '/path' as *;`,
       },
     },
   },
@@ -61,39 +49,32 @@ $XL: 0px;
 $XXL: 0px;
 ```
 
-### The different from Tailwind API
+### Note
 
 ```scss
 #Demo {
-  // -m-1/2
-  @include \-m-1\/2;
+  // invalid name use `\` instead
+  @include m-0\.5; // tailwind: m-0.5
+  @include \-m-1\/2; // tailwind: -m-1/2
+  @include from-50\%; // tailwind: from-50%
 
-  // m-1/2
-  @include m-1\/2;
+  // custom value use `()` instead
+  @include m-(99px); // tailwind: m-[99px]
 
-  // m-1.5
-  @include m-1\.5;
+  // for performance: border-x/y/s/e/t/r/b/l-($color)
+  @include border-x-(#fff); // tailwind: border-x-[#fff]
+  @include border-y-($color-red-500); // tailwind: border-y-red-500
 
-  // m-[20px]
-  @include m-(20px);
+  // for performance: opacity
+  @include bg-red-500(50%); // tailwind: bg-red-500/50%
+  @include bg-red-500(0.5); // tailwind: bg-red-500/0.5
 
-  // from-25%
-  @include from-25\%;
-
-  // performance concern: border-x/y/s/e/t/r/b/l-($color)
-  @include border-x-($color-rose-500);
-
-  // performance concern: bg-rose-500/[25%]
-  @include bg-rose-500(25%);
-
-  // performance concern: bg-rose-500/25
-  @include bg-rose-500(0.25);
-
-  // bg-[length:200px_100px]
-  @include bg-(length 200px 100px);
-
-  // (max-)sm、md、lg、xl、\2xl、dark
+  // breakpoints: (max-)sm、md、lg、xl、\2xl
   @include sm {
+    color: black;
+  }
+
+  @include \2xl {
     color: black;
   }
 
@@ -101,66 +82,13 @@ $XXL: 0px;
     color: black;
   }
 
-  @include \2xl {
-    @include bg-rose-500;
-  }
-
   @include max-2xl {
-    @include bg-rose-500;
+    color: black;
   }
 
-  // Set `.--dark` class on the top level to enable dark mode
+  // dark mode: add `.--dark` class on the root element to enable
   @include dark {
     color: black;
   }
-}
-```
-
-### Notes
-
-- Set `@include` in the bottom to avoid conflicts from [Breaking Change: Mixed Declarations](https://sass-lang.com/documentation/breaking-changes/mixed-decls/) (`space-*` and `divide-*`)
-
-```scss
-// ✅
-#Demo {
-  background: red;
-  @include space-x-8;
-  @include divide-x-8;
-
-  @include sm {
-    background: green;
-    @include divide-green-50;
-  }
-}
-
-// ❌
-#Demo-1 {
-  @include space-x-8;
-  background: red; // warning
-  @include divide-x-8;
-}
-
-#Demo-2 {
-  background: red;
-  @include space-x-8;
-  @include divide-x-8;
-
-  @include sm {
-    @include divide-green-50;
-    background: green; // warning
-  }
-}
-
-#Demo-3 {
-  background: red;
-  @include bg-orange-500;
-  @include bg-amber-500;
-
-  @include sm {
-    background: green;
-    @include divide-green-50;
-  }
-
-  background: green; // warning
 }
 ```
