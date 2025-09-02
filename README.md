@@ -4,6 +4,10 @@
 
 No more CSS style wars. It allows CSS, SCSS, and Tailwind developers to work together harmoniously on the same project, enabling seamless collaboration.
 
+
+https://github.com/user-attachments/assets/55f57c4e-07e4-495b-8832-fbd19eb037aa
+
+
 ## Installation
 
 ### Requirements
@@ -14,9 +18,9 @@ No more CSS style wars. It allows CSS, SCSS, and Tailwind developers to work tog
 
 - copy `src/test/_style.scss`
 
-### Install VSCode extension for auto-complete
+### Install VSCode extension `SCSS IntelliSense` for auto-complete
 
-- SCSS IntelliSense
+https://github.com/user-attachments/assets/0d458ded-e782-4bab-84a3-147babe83768
 
 ### Installing
 
