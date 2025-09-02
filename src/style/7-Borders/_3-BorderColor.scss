@@ -1,4 +1,4 @@
-// TODO: performance check
+// TODO: Use custom values instead of performance
 @use "sass:meta";
 @use "sass:list";
 @use "../setting" as *;
@@ -425,34 +425,6 @@ $BorderColor: (
       border-color: _c(#{$value}, $v);
     }
 
-    @mixin border-x-#{$key}($v: 1) {
-      border-inline-color: _c(#{$value}, $v);
-    }
-
-    @mixin border-y-#{$key}($v: 1) {
-      border-block-color: _c(#{$value}, $v);
-    }
-
-    @mixin border-s-#{$key}($v: 1) {
-      border-inline-start-color: _c(#{$value}, $v);
-    }
-
-    @mixin border-e-#{$key}($v: 1) {
-      border-inline-end-color: _c(#{$value}, $v);
-    }
-
-    @mixin border-t-#{$key}($v: 1) {
-      border-top-color: _c(#{$value}, $v);
-    }
-
-    @mixin border-r-#{$key}($v: 1) {
-      border-right-color: _c(#{$value}, $v);
-    }
-
-    @mixin border-l-#{$key}($v: 1) {
-      border-left-color: _c(#{$value}, $v);
-    }
-
     @mixin divide-#{$key}($v: 1) {
       :where(& > :not(:last-child)) {
         border-color: _c(#{$value}, $v);
@@ -460,6 +432,48 @@ $BorderColor: (
     }
     x*/
   }
+
+  // @each $key, $value in $BorderColor {
+  //   /*x
+  //   @mixin border-#{$key}($v: 1) {
+  //     border-color: _c(#{$value}, $v);
+  //   }
+
+  //   @mixin border-x-#{$key}($v: 1) {
+  //     border-inline-color: _c(#{$value}, $v);
+  //   }
+
+  //   @mixin border-y-#{$key}($v: 1) {
+  //     border-block-color: _c(#{$value}, $v);
+  //   }
+
+  //   @mixin border-s-#{$key}($v: 1) {
+  //     border-inline-start-color: _c(#{$value}, $v);
+  //   }
+
+  //   @mixin border-e-#{$key}($v: 1) {
+  //     border-inline-end-color: _c(#{$value}, $v);
+  //   }
+
+  //   @mixin border-t-#{$key}($v: 1) {
+  //     border-top-color: _c(#{$value}, $v);
+  //   }
+
+  //   @mixin border-r-#{$key}($v: 1) {
+  //     border-right-color: _c(#{$value}, $v);
+  //   }
+
+  //   @mixin border-l-#{$key}($v: 1) {
+  //     border-left-color: _c(#{$value}, $v);
+  //   }
+
+  //   @mixin divide-#{$key}($v: 1) {
+  //     :where(& > :not(:last-child)) {
+  //       border-color: _c(#{$value}, $v);
+  //     }
+  //   }
+  //   x*/
+  // }
 }
 
 @if $UsingACustomValue {
