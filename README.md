@@ -4,9 +4,7 @@
 
 No more CSS style wars. It allows CSS, SCSS, and Tailwind developers to work together harmoniously on the same project, enabling seamless collaboration.
 
-
 https://github.com/user-attachments/assets/55f57c4e-07e4-495b-8832-fbd19eb037aa
-
 
 ## Installation
 
