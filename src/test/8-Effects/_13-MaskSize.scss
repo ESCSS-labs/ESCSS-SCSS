@@ -1,0 +1,44 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("13-MaskSize") {
+    @include describe("Basic") {
+      @include it("mask-auto") {
+        @include assert {
+          @include output {
+            @include mask-auto;
+          }
+
+          @include expect {
+            mask-size: auto;
+          }
+        }
+      }
+
+      @include it("mask-cover") {
+        @include assert {
+          @include output {
+            @include mask-cover;
+          }
+
+          @include expect {
+            mask-size: cover;
+          }
+        }
+      }
+
+      @include it("mask-contain") {
+        @include assert {
+          @include output {
+            @include mask-contain;
+          }
+
+          @include expect {
+            mask-size: contain;
+          }
+        }
+      }
+    }
+  }
+}

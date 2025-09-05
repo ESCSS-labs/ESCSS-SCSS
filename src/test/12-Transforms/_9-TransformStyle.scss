@@ -1,0 +1,32 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("12-Transforms") {
+  @include describe("9-TransformStyle") {
+    @include describe("Basic") {
+      @include it("transform-3d") {
+        @include assert {
+          @include output {
+            @include transform-3d;
+          }
+
+          @include expect {
+            transform-style: preserve-3d;
+          }
+        }
+      }
+
+      @include it("transform-flat") {
+        @include assert {
+          @include output {
+            @include transform-flat;
+          }
+
+          @include expect {
+            transform-style: flat;
+          }
+        }
+      }
+    }
+  }
+}

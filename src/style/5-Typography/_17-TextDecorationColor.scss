@@ -1,5 +1,4 @@
 @use "sass:meta";
-@use "sass:list";
 @use "../setting" as *;
 
 $TextDecorationColor: (
@@ -309,7 +308,7 @@ $TextDecorationColor: (
   }
 
   @mixin decoration-current {
-    text-decoration-color: currentColor;
+    text-decoration-color: currentcolor;
   }
 
   @mixin decoration-transparent {
@@ -328,7 +327,7 @@ $TextDecorationColor: (
 @if $UsingACustomValue {
   /*x
   @mixin decoration-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+    @if meta.type-of($v)==color {
       text-decoration-color: $v;
     }
 

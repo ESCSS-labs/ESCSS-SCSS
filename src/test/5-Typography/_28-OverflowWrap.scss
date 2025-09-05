@@ -1,0 +1,44 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("5-Typography") {
+  @include describe("28-OverflowWrap") {
+    @include describe("Basic") {
+      @include it("wrap-break-word") {
+        @include assert {
+          @include output {
+            @include wrap-break-word;
+          }
+
+          @include expect {
+            overflow-wrap: break-word;
+          }
+        }
+      }
+
+      @include it("wrap-anywhere") {
+        @include assert {
+          @include output {
+            @include wrap-anywhere;
+          }
+
+          @include expect {
+            overflow-wrap: anywhere;
+          }
+        }
+      }
+
+      @include it("wrap-normal") {
+        @include assert {
+          @include output {
+            @include wrap-normal;
+          }
+
+          @include expect {
+            overflow-wrap: normal;
+          }
+        }
+      }
+    }
+  }
+}

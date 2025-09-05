@@ -2,7 +2,7 @@
 @use "../style" as *;
 
 @include describe("12-Transforms") {
-  @include describe("2-Rotate") {
+  @include describe("4-Rotate") {
     @include describe("Positive") {
       @include describe("Hardware acceleration") {
         @include it("transform-none") {
@@ -20,16 +20,12 @@
         @include it("transform-cpu") {
           @include assert {
             @include output {
-              @include translate-x-96;
               @include transform-cpu;
             }
 
             @include expect {
-              transform: translate(24rem, 0) rotate(0deg) skewX(0deg)
-                skewY(0deg) scaleX(1) scaleY(1);
-
-              transform: translate(24rem, 0) rotate(0deg) skewX(0deg)
-                skewY(0deg) scaleX(1) scaleY(1);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -37,16 +33,12 @@
         @include it("transform-gpu") {
           @include assert {
             @include output {
-              @include translate-x-96;
               @include transform-gpu;
             }
 
             @include expect {
-              transform: translate(24rem, 0) rotate(0deg) skewX(0deg)
-                skewY(0deg) scaleX(1) scaleY(1);
-
-              transform: translate3d(24rem, 0, 0) rotate(0deg) skewX(0deg)
-                skewY(0deg) scaleX(1) scaleY(1);
+              transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -60,8 +52,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 0deg;
             }
           }
         }
@@ -73,8 +64,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(1deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 1deg;
             }
           }
         }
@@ -86,8 +76,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(2deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 2deg;
             }
           }
         }
@@ -99,8 +88,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(3deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 3deg;
             }
           }
         }
@@ -112,8 +100,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(6deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 6deg;
             }
           }
         }
@@ -125,8 +112,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(12deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 12deg;
             }
           }
         }
@@ -138,8 +124,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(45deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 45deg;
             }
           }
         }
@@ -151,8 +136,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(90deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 90deg;
             }
           }
         }
@@ -164,8 +148,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(180deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 180deg;
             }
           }
         }
@@ -179,8 +162,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(17deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 17deg;
             }
           }
         }
@@ -196,8 +178,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: 0deg;
             }
           }
         }
@@ -209,8 +190,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-1deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: -1deg;
             }
           }
         }
@@ -222,8 +202,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-2deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: -2deg;
             }
           }
         }
@@ -235,8 +214,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-3deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: -3deg;
             }
           }
         }
@@ -248,8 +226,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-6deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: -6deg;
             }
           }
         }
@@ -261,8 +238,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-12deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: -12deg;
             }
           }
         }
@@ -274,8 +250,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-45deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: -45deg;
             }
           }
         }
@@ -287,8 +262,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-90deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: -90deg;
             }
           }
         }
@@ -300,8 +274,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-180deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: -180deg;
             }
           }
         }
@@ -315,8 +288,7 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(-17deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              rotate: -17deg;
             }
           }
         }

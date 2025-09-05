@@ -1,0 +1,130 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("5-Typography") {
+  @include describe("6-FontStretch") {
+    @include describe("Basic") {
+      @include it("font-stretch-ultra-condensed") {
+        @include assert {
+          @include output {
+            @include font-stretch-ultra-condensed;
+          }
+
+          @include expect {
+            font-stretch: ultra-condensed;
+          }
+        }
+      }
+
+      @include it("font-stretch-extra-condensed") {
+        @include assert {
+          @include output {
+            @include font-stretch-extra-condensed;
+          }
+
+          @include expect {
+            font-stretch: extra-condensed;
+          }
+        }
+      }
+
+      @include it("font-stretch-condensed") {
+        @include assert {
+          @include output {
+            @include font-stretch-condensed;
+          }
+
+          @include expect {
+            font-stretch: condensed;
+          }
+        }
+      }
+
+      @include it("font-stretch-semi-condensed") {
+        @include assert {
+          @include output {
+            @include font-stretch-semi-condensed;
+          }
+
+          @include expect {
+            font-stretch: semi-condensed;
+          }
+        }
+      }
+
+      @include it("font-stretch-normal") {
+        @include assert {
+          @include output {
+            @include font-stretch-normal;
+          }
+
+          @include expect {
+            font-stretch: normal;
+          }
+        }
+      }
+
+      @include it("font-stretch-semi-expanded") {
+        @include assert {
+          @include output {
+            @include font-stretch-semi-expanded;
+          }
+
+          @include expect {
+            font-stretch: semi-expanded;
+          }
+        }
+      }
+
+      @include it("font-stretch-expanded") {
+        @include assert {
+          @include output {
+            @include font-stretch-expanded;
+          }
+
+          @include expect {
+            font-stretch: expanded;
+          }
+        }
+      }
+
+      @include it("font-stretch-extra-expanded") {
+        @include assert {
+          @include output {
+            @include font-stretch-extra-expanded;
+          }
+
+          @include expect {
+            font-stretch: extra-expanded;
+          }
+        }
+      }
+
+      @include it("font-stretch-ultra-expanded") {
+        @include assert {
+          @include output {
+            @include font-stretch-ultra-expanded;
+          }
+
+          @include expect {
+            font-stretch: ultra-expanded;
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("font-stretch-(1px)") {
+        @include assert {
+          @include output {
+            @include font-stretch-(1px);
+          }
+
+          @include expect {
+            font-stretch: 1px;
+          }
+        }
+      }
+    }
+  }
+}

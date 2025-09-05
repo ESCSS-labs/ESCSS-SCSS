@@ -11,6 +11,7 @@
           }
 
           @include expect {
+            --tw-border-style: solid;
             border-style: solid;
           }
         }
@@ -23,6 +24,7 @@
           }
 
           @include expect {
+            --tw-border-style: dashed;
             border-style: dashed;
           }
         }
@@ -35,6 +37,7 @@
           }
 
           @include expect {
+            --tw-border-style: dotted;
             border-style: dotted;
           }
         }
@@ -47,6 +50,7 @@
           }
 
           @include expect {
+            --tw-border-style: double;
             border-style: double;
           }
         }
@@ -59,6 +63,7 @@
           }
 
           @include expect {
+            --tw-border-style: hidden;
             border-style: hidden;
           }
         }
@@ -71,7 +76,83 @@
           }
 
           @include expect {
+            --tw-border-style: none;
             border-style: none;
+          }
+        }
+      }
+
+      @include it("divide-solid") {
+        @include assert {
+          @include output {
+            @include divide-solid;
+          }
+
+          @include expect {
+            :where(& > :not(:last-child)) {
+              --tw-border-style: solid;
+              border-style: solid;
+            }
+          }
+        }
+      }
+
+      @include it("divide-dashed") {
+        @include assert {
+          @include output {
+            @include divide-dashed;
+          }
+
+          @include expect {
+            :where(& > :not(:last-child)) {
+              --tw-border-style: dashed;
+              border-style: dashed;
+            }
+          }
+        }
+      }
+
+      @include it("divide-dotted") {
+        @include assert {
+          @include output {
+            @include divide-dotted;
+          }
+
+          @include expect {
+            :where(& > :not(:last-child)) {
+              --tw-border-style: dotted;
+              border-style: dotted;
+            }
+          }
+        }
+      }
+
+      @include it("divide-double") {
+        @include assert {
+          @include output {
+            @include divide-double;
+          }
+
+          @include expect {
+            :where(& > :not(:last-child)) {
+              --tw-border-style: double;
+              border-style: double;
+            }
+          }
+        }
+      }
+
+      @include it("divide-none") {
+        @include assert {
+          @include output {
+            @include divide-none;
+          }
+
+          @include expect {
+            :where(& > :not(:last-child)) {
+              --tw-border-style: none;
+              border-style: none;
+            }
           }
         }
       }

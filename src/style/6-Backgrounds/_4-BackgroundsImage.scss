@@ -535,7 +535,7 @@ $BackgroundsImagePercentage: (
   }
 
   @mixin from-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+    @if meta.type-of($v)==color {
       --tw-gradient-from: #/*x{$v};
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position,), var(--tw-gradient-from,) var(--tw-gradient-from-position,), var(--tw-gradient-to, transparent) var(--tw-gradient-to-position,));
     }
@@ -546,7 +546,7 @@ $BackgroundsImagePercentage: (
   }
 
   @mixin via-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+    @if meta.type-of($v)==color {
       --tw-gradient-via: #/*x{$v};
       --tw-gradient-via-stops: var(--tw-gradient-position,), var(--tw-gradient-from,) var(--tw-gradient-from-position,), var(--tw-gradient-via,) var(--tw-gradient-via-position,), var(--tw-gradient-to, transparent) var(--tw-gradient-to-position,);
       --tw-gradient-stops: var(--tw-gradient-via-stops);
@@ -558,7 +558,7 @@ $BackgroundsImagePercentage: (
   }
 
   @mixin to-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+    @if meta.type-of($v)==color {
       --tw-gradient-to: #/*x{$v};
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position,), var(--tw-gradient-from,) var(--tw-gradient-from-position,), var(--tw-gradient-to,) var(--tw-gradient-to-position,));
     }

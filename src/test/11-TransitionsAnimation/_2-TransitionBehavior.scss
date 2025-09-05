@@ -1,0 +1,32 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("11-Transitions & Animation") {
+  @include describe("2-Transition Behavior") {
+    @include describe("Basic") {
+      @include it("transition-normal") {
+        @include assert {
+          @include output {
+            @include transition-normal;
+          }
+
+          @include expect {
+            transition-behavior: normal;
+          }
+        }
+      }
+
+      @include it("transition-discrete") {
+        @include assert {
+          @include output {
+            @include transition-discrete;
+          }
+
+          @include expect {
+            transition-behavior: allow-discrete;
+          }
+        }
+      }
+    }
+  }
+}

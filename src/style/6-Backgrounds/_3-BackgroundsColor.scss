@@ -309,7 +309,7 @@ $BackgroundsColor: (
   }
 
   @mixin bg-current {
-    background-color: currentColor;
+    background-color: currentcolor;
   }
 
   @mixin bg-transparent {
@@ -328,23 +328,18 @@ $BackgroundsColor: (
 @if $UsingACustomValue {
   /*x
   @mixin bg-($v) {
-    // Filtering by type
-    // color
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+    @if meta.type-of($v)==color {
       background-color: $v;
     }
 
-    // list (length)
     @else if list.nth($v, 1)==length {
-      @error "use (v4 api) bg-size-(200px 100px) instead of bg-[length:200px_100px]";
+      @error "[v4 api] use @include bg-size-(200px 100px) instead of bg-[length:200px_100px]";
     }
 
-    // list、number、string(top、right、left、center)
     @else if list.index(top right bottom left center, $v) or meta.type-of($v)==number or meta.type-of($v)==list {
-      background-position: $v;
+      @error "[v4 api] use @include bg-position-(center top 1rem) instead of bg-[center_top_1rem]";
     }
 
-    // string 
     @else {
       background-image: $v;
     }

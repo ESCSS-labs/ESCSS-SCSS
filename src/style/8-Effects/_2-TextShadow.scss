@@ -355,12 +355,12 @@ $TextShadowColor: (
 
 @if $UsingACustomValue {
   /*x
-  @mixin shadow-($v) {
-    @if meta.type-of($v)==color or list.index(inherit currentColor transparent, $v) {
+  @mixin text-shadow-($v) {
+    @if meta.type-of($v)==color {
       --tw-text-shadow-color: #/*x{$v};
     }
 
-    @else if meta.type-of($v)==list {
+    @else {
       text-shadow: $v;
     }
   }

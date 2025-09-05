@@ -1,0 +1,94 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("12-Transforms") {
+  @include describe("2-Perspective") {
+    @include describe("Basic") {
+      @include it("perspective-dramatic") {
+        @include assert {
+          @include output {
+            @include perspective-dramatic;
+          }
+
+          @include expect {
+            perspective: 100px;
+          }
+        }
+      }
+
+      @include it("perspective-near") {
+        @include assert {
+          @include output {
+            @include perspective-near;
+          }
+
+          @include expect {
+            perspective: 300px;
+          }
+        }
+      }
+
+      @include it("perspective-normal") {
+        @include assert {
+          @include output {
+            @include perspective-normal;
+          }
+
+          @include expect {
+            perspective: 500px;
+          }
+        }
+      }
+
+      @include it("perspective-midrange") {
+        @include assert {
+          @include output {
+            @include perspective-midrange;
+          }
+
+          @include expect {
+            perspective: 800px;
+          }
+        }
+      }
+
+      @include it("perspective-distant") {
+        @include assert {
+          @include output {
+            @include perspective-distant;
+          }
+
+          @include expect {
+            perspective: 1200px;
+          }
+        }
+      }
+
+      @include it("perspective-none") {
+        @include assert {
+          @include output {
+            @include perspective-none;
+          }
+
+          @include expect {
+            perspective: none;
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("perspective-(10px)") {
+        @include assert {
+          @include output {
+            @include perspective-(10px);
+          }
+
+          @include expect {
+            perspective: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 @use "../style" as *;
 
 @include describe("12-Transforms") {
-  @include describe("1-Scale") {
+  @include describe("5-Scale") {
     @include describe("Positive") {
       @include describe("Basic") {
         @include it("scale-0") {
@@ -12,8 +12,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0) scaleY(0);
+              --tw-scale-x: 0%;
+              --tw-scale-y: 0%;
+              --tw-scale-z: 0%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -25,8 +27,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0) scaleY(1);
+              --tw-scale-x: 0% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -38,8 +40,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(0);
+              --tw-scale-y: 0% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-0") {
+          @include assert {
+            @include output {
+              @include scale-z-0;
+            }
+
+            @include expect {
+              --tw-scale-z: 0% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -51,8 +66,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0.5) scaleY(0.5);
+              --tw-scale-x: 50%;
+              --tw-scale-y: 50%;
+              --tw-scale-z: 50%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -64,8 +81,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0.5) scaleY(1);
+              --tw-scale-x: 50% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -77,8 +94,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(0.5);
+              --tw-scale-y: 50% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-50") {
+          @include assert {
+            @include output {
+              @include scale-z-50;
+            }
+
+            @include expect {
+              --tw-scale-z: 50% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -90,8 +120,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0.75) scaleY(0.75);
+              --tw-scale-x: 75%;
+              --tw-scale-y: 75%;
+              --tw-scale-z: 75%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -103,8 +135,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0.75) scaleY(1);
+              --tw-scale-x: 75% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -116,8 +148,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(0.75);
+              --tw-scale-y: 75% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-75") {
+          @include assert {
+            @include output {
+              @include scale-z-75;
+            }
+
+            @include expect {
+              --tw-scale-z: 75% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -129,8 +174,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0.9) scaleY(0.9);
+              --tw-scale-x: 90%;
+              --tw-scale-y: 90%;
+              --tw-scale-z: 90%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -142,8 +189,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0.9) scaleY(1);
+              --tw-scale-x: 90% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -155,8 +202,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(0.9);
+              --tw-scale-y: 90% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-90") {
+          @include assert {
+            @include output {
+              @include scale-z-90;
+            }
+
+            @include expect {
+              --tw-scale-z: 90% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -168,8 +228,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0.95) scaleY(0.95);
+              --tw-scale-x: 95%;
+              --tw-scale-y: 95%;
+              --tw-scale-z: 95%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -181,8 +243,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0.95) scaleY(1);
+              --tw-scale-x: 95% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -194,8 +256,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(0.95);
+              --tw-scale-y: 95% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-95") {
+          @include assert {
+            @include output {
+              @include scale-z-95;
+            }
+
+            @include expect {
+              --tw-scale-z: 95% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -207,8 +282,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-scale-x: 100%;
+              --tw-scale-y: 100%;
+              --tw-scale-z: 100%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -220,8 +297,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-scale-x: 100% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -233,8 +310,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-scale-y: 100% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-100") {
+          @include assert {
+            @include output {
+              @include scale-z-100;
+            }
+
+            @include expect {
+              --tw-scale-z: 100% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -246,8 +336,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.05) scaleY(1.05);
+              --tw-scale-x: 105%;
+              --tw-scale-y: 105%;
+              --tw-scale-z: 105%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -259,8 +351,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.05) scaleY(1);
+              --tw-scale-x: 105% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -272,8 +364,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1.05);
+              --tw-scale-y: 105% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-105") {
+          @include assert {
+            @include output {
+              @include scale-z-105;
+            }
+
+            @include expect {
+              --tw-scale-z: 105% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -285,8 +390,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.1) scaleY(1.1);
+              --tw-scale-x: 110%;
+              --tw-scale-y: 110%;
+              --tw-scale-z: 110%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -298,8 +405,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.1) scaleY(1);
+              --tw-scale-x: 110% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -311,8 +418,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1.1);
+              --tw-scale-y: 110% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-110") {
+          @include assert {
+            @include output {
+              @include scale-z-110;
+            }
+
+            @include expect {
+              --tw-scale-z: 110% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -324,8 +444,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.25) scaleY(1.25);
+              --tw-scale-x: 125%;
+              --tw-scale-y: 125%;
+              --tw-scale-z: 125%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -337,8 +459,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.25) scaleY(1);
+              --tw-scale-x: 125% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -350,8 +472,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1.25);
+              --tw-scale-y: 125% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-125") {
+          @include assert {
+            @include output {
+              @include scale-z-125;
+            }
+
+            @include expect {
+              --tw-scale-z: 125% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -363,8 +498,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.5) scaleY(1.5);
+              --tw-scale-x: 150%;
+              --tw-scale-y: 150%;
+              --tw-scale-z: 150%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -376,8 +513,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.5) scaleY(1);
+              --tw-scale-x: 150% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -389,8 +526,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1.5);
+              --tw-scale-y: 150% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-150") {
+          @include assert {
+            @include output {
+              @include scale-z-150;
+            }
+
+            @include expect {
+              --tw-scale-z: 150% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -404,8 +554,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.7) scaleY(1.7);
+              --tw-scale-x: 1.7;
+              --tw-scale-y: 1.7;
+              --tw-scale-z: 1.7;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -417,8 +569,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1.7) scaleY(1);
+              --tw-scale-x: 1.7 !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -430,8 +582,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1.7);
+              --tw-scale-y: 1.7 !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("scale-z-(1.7)") {
+          @include assert {
+            @include output {
+              @include scale-z-(1.7);
+            }
+
+            @include expect {
+              --tw-scale-z: 1.7 !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -447,8 +612,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0) scaleY(0);
+              --tw-scale-x: 0%;
+              --tw-scale-y: 0%;
+              --tw-scale-z: 0%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -460,8 +627,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(0) scaleY(1);
+              --tw-scale-x: 0% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -473,8 +640,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(0);
+              --tw-scale-y: 0% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-0") {
+          @include assert {
+            @include output {
+              @include \-scale-z-0;
+            }
+
+            @include expect {
+              --tw-scale-z: 0% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -486,8 +666,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-0.5) scaleY(-0.5);
+              --tw-scale-x: -50%;
+              --tw-scale-y: -50%;
+              --tw-scale-z: -50%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -499,8 +681,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-0.5) scaleY(1);
+              --tw-scale-x: -50% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -512,8 +694,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-0.5);
+              --tw-scale-y: -50% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-50") {
+          @include assert {
+            @include output {
+              @include \-scale-z-50;
+            }
+
+            @include expect {
+              --tw-scale-z: -50% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -525,8 +720,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-0.75) scaleY(-0.75);
+              --tw-scale-x: -75%;
+              --tw-scale-y: -75%;
+              --tw-scale-z: -75%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -538,8 +735,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-0.75) scaleY(1);
+              --tw-scale-x: -75% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -551,8 +748,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-0.75);
+              --tw-scale-y: -75% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-75") {
+          @include assert {
+            @include output {
+              @include \-scale-z-75;
+            }
+
+            @include expect {
+              --tw-scale-z: -75% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -564,8 +774,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-0.9) scaleY(-0.9);
+              --tw-scale-x: -90%;
+              --tw-scale-y: -90%;
+              --tw-scale-z: -90%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -577,8 +789,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-0.9) scaleY(1);
+              --tw-scale-x: -90% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -590,8 +802,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-0.9);
+              --tw-scale-y: -90% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-90") {
+          @include assert {
+            @include output {
+              @include \-scale-z-90;
+            }
+
+            @include expect {
+              --tw-scale-z: -90% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -603,8 +828,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-0.95) scaleY(-0.95);
+              --tw-scale-x: -95%;
+              --tw-scale-y: -95%;
+              --tw-scale-z: -95%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -616,8 +843,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-0.95) scaleY(1);
+              --tw-scale-x: -95% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -629,8 +856,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-0.95);
+              --tw-scale-y: -95% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-95") {
+          @include assert {
+            @include output {
+              @include \-scale-z-95;
+            }
+
+            @include expect {
+              --tw-scale-z: -95% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -642,8 +882,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1) scaleY(-1);
+              --tw-scale-x: -100%;
+              --tw-scale-y: -100%;
+              --tw-scale-z: -100%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -655,8 +897,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1) scaleY(1);
+              --tw-scale-x: -100% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -668,8 +910,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-1);
+              --tw-scale-y: -100% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-100") {
+          @include assert {
+            @include output {
+              @include \-scale-z-100;
+            }
+
+            @include expect {
+              --tw-scale-z: -100% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -681,8 +936,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.05) scaleY(-1.05);
+              --tw-scale-x: -105%;
+              --tw-scale-y: -105%;
+              --tw-scale-z: -105%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -694,8 +951,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.05) scaleY(1);
+              --tw-scale-x: -105% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -707,8 +964,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-1.05);
+              --tw-scale-y: -105% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-105") {
+          @include assert {
+            @include output {
+              @include \-scale-z-105;
+            }
+
+            @include expect {
+              --tw-scale-z: -105% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -720,8 +990,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.1) scaleY(-1.1);
+              --tw-scale-x: -110%;
+              --tw-scale-y: -110%;
+              --tw-scale-z: -110%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -733,8 +1005,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.1) scaleY(1);
+              --tw-scale-x: -110% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -746,8 +1018,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-1.1);
+              --tw-scale-y: -110% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-110") {
+          @include assert {
+            @include output {
+              @include \-scale-z-110;
+            }
+
+            @include expect {
+              --tw-scale-z: -110% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -759,8 +1044,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.25) scaleY(-1.25);
+              --tw-scale-x: -125%;
+              --tw-scale-y: -125%;
+              --tw-scale-z: -125%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -772,8 +1059,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.25) scaleY(1);
+              --tw-scale-x: -125% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -785,8 +1072,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-1.25);
+              --tw-scale-y: -125% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-125") {
+          @include assert {
+            @include output {
+              @include \-scale-z-125;
+            }
+
+            @include expect {
+              --tw-scale-z: -125% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -798,8 +1098,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.5) scaleY(-1.5);
+              --tw-scale-x: -150%;
+              --tw-scale-y: -150%;
+              --tw-scale-z: -150%;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -811,8 +1113,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.5) scaleY(1);
+              --tw-scale-x: -150% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -824,8 +1126,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-1.5);
+              --tw-scale-y: -150% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-150") {
+          @include assert {
+            @include output {
+              @include \-scale-z-150;
+            }
+
+            @include expect {
+              --tw-scale-z: -150% !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }
@@ -839,8 +1154,10 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.7) scaleY(-1.7);
+              --tw-scale-x: -1.7;
+              --tw-scale-y: -1.7;
+              --tw-scale-z: -1.7;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -852,8 +1169,8 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(-1.7) scaleY(1);
+              --tw-scale-x: -1.7 !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
             }
           }
         }
@@ -865,8 +1182,21 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(-1.7);
+              --tw-scale-y: -1.7 !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,);
+            }
+          }
+        }
+
+        @include it("-scale-z-(1.7)") {
+          @include assert {
+            @include output {
+              @include \-scale-z-(1.7);
+            }
+
+            @include expect {
+              --tw-scale-z: -1.7 !important;
+              scale: var(--tw-scale-x,) var(--tw-scale-y,) var(--tw-scale-z,);
             }
           }
         }

@@ -2,9 +2,24 @@
 @use "../style" as *;
 
 @include describe("12-Transforms") {
-  @include describe("4-Skew") {
+  @include describe("6-Skew") {
     @include describe("Positive") {
       @include describe("Basic") {
+        @include it("skew-0") {
+          @include assert {
+            @include output {
+              @include skew-0;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(0deg);
+              --tw-skew-y: skewY(0deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
         @include it("skew-x-0") {
           @include assert {
             @include output {
@@ -12,8 +27,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(0deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -25,8 +41,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(0deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("skew-1") {
+          @include assert {
+            @include output {
+              @include skew-1;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(1deg);
+              --tw-skew-y: skewY(1deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -38,8 +70,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(1deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(1deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -51,8 +84,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(1deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(1deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("skew-2") {
+          @include assert {
+            @include output {
+              @include skew-2;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(2deg);
+              --tw-skew-y: skewY(2deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -64,8 +113,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(2deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(2deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -77,8 +127,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(2deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(2deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("skew-3") {
+          @include assert {
+            @include output {
+              @include skew-3;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(3deg);
+              --tw-skew-y: skewY(3deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -90,8 +156,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(3deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(3deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -103,8 +170,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(3deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(3deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("skew-6") {
+          @include assert {
+            @include output {
+              @include skew-6;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(6deg);
+              --tw-skew-y: skewY(6deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -116,8 +199,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(6deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(6deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -129,8 +213,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(6deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(6deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("skew-12") {
+          @include assert {
+            @include output {
+              @include skew-12;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(12deg);
+              --tw-skew-y: skewY(12deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -142,8 +242,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(12deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(12deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -155,14 +256,30 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(12deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(12deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
       }
 
       @include describe("Custom") {
+        @include it("skew-(17deg)") {
+          @include assert {
+            @include output {
+              @include skew-(17deg);
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(17deg);
+              --tw-skew-y: skewY(17deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
         @include it("skew-x-(17deg)") {
           @include assert {
             @include output {
@@ -170,8 +287,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(17deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(17deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -183,8 +301,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(17deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(17deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -193,6 +312,21 @@
 
     @include describe("Negative") {
       @include describe("Basic") {
+        @include it("-skew-0") {
+          @include assert {
+            @include output {
+              @include \-skew-0;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(0deg);
+              --tw-skew-y: skewY(0deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
         @include it("-skew-x-0") {
           @include assert {
             @include output {
@@ -200,8 +334,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(0deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -213,8 +348,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(0deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("-skew-1") {
+          @include assert {
+            @include output {
+              @include \-skew-1;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(-1deg);
+              --tw-skew-y: skewY(-1deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -226,8 +377,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(-1deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(-1deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -239,8 +391,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-1deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(-1deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("-skew-2") {
+          @include assert {
+            @include output {
+              @include \-skew-2;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(-2deg);
+              --tw-skew-y: skewY(-2deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -252,8 +420,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(-2deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(-2deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -265,8 +434,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-2deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(-2deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("-skew-3") {
+          @include assert {
+            @include output {
+              @include \-skew-3;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(-3deg);
+              --tw-skew-y: skewY(-3deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -278,8 +463,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(-3deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(-3deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -291,8 +477,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-3deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(-3deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("-skew-6") {
+          @include assert {
+            @include output {
+              @include \-skew-6;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(-6deg);
+              --tw-skew-y: skewY(-6deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -304,8 +506,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(-6deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(-6deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -317,8 +520,24 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-6deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(-6deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
+        @include it("-skew-12") {
+          @include assert {
+            @include output {
+              @include \-skew-12;
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(-12deg);
+              --tw-skew-y: skewY(-12deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -330,8 +549,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(-12deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(-12deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -343,14 +563,30 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-12deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(-12deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
       }
 
       @include describe("Custom") {
+        @include it("-skew-(17deg)") {
+          @include assert {
+            @include output {
+              @include \-skew-(17deg);
+            }
+
+            @include expect {
+              --tw-skew-x: skewX(-17deg);
+              --tw-skew-y: skewY(-17deg);
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+            }
+          }
+        }
+
         @include it("-skew-x-(17deg)") {
           @include assert {
             @include output {
@@ -358,8 +594,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(-17deg) skewY(0deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-x: skewX(-17deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }
@@ -371,8 +608,9 @@
             }
 
             @include expect {
-              transform: translate(0, 0) rotate(0deg) skewX(0deg) skewY(-17deg)
-                scaleX(1) scaleY(1);
+              --tw-skew-y: skewY(-17deg) !important;
+              transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+                var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
             }
           }
         }

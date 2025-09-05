@@ -2,7 +2,7 @@
 @use "../style" as *;
 
 @include describe("1-Layout") {
-  @include describe("9-Display") {
+  @include describe("8-Display") {
     @include describe("Basic") {
       @include it("block") {
         @include assert {
@@ -252,6 +252,45 @@
 
           @include expect {
             display: none;
+          }
+        }
+      }
+
+      @include it("sr-only") {
+        @include assert {
+          @include output {
+            @include sr-only;
+          }
+
+          @include expect {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+          }
+        }
+      }
+
+      @include it("not-sr-only") {
+        @include assert {
+          @include output {
+            @include not-sr-only;
+          }
+
+          @include expect {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
           }
         }
       }

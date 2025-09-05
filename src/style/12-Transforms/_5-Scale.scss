@@ -83,7 +83,10 @@ $Scale: (
   @if $UsingACustomValue {
     /*x
     @mixin \-scale-($v) {
-      scale: -$v;
+      --tw-scale-x: #/*x{-$v};
+      --tw-scale-y: #/*x{-$v};
+      --tw-scale-z: #/*x{-$v};
+      scale: _s-xy();
     }
 
     @mixin \-scale-x-($v) {
@@ -107,7 +110,10 @@ $Scale: (
 @if $UsingACustomValue {
   /*x
   @mixin scale-($v) {
-    scale: $v;
+    --tw-scale-x: #/*x{$v};
+    --tw-scale-y: #/*x{$v};
+    --tw-scale-z: #/*x{$v};
+    scale: _s-xy();
   }
 
   @mixin scale-x-($v) {

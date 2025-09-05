@@ -1,0 +1,32 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("12-Transforms") {
+  @include describe("1-BackfaceVisibility") {
+    @include describe("Basic") {
+      @include it("backface-hidden") {
+        @include assert {
+          @include output {
+            @include backface-hidden;
+          }
+
+          @include expect {
+            backface-visibility: hidden;
+          }
+        }
+      }
+
+      @include it("backface-visible") {
+        @include assert {
+          @include output {
+            @include backface-visible;
+          }
+
+          @include expect {
+            backface-visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,6 +3,154 @@
 
 @include describe("8-Effects") {
   @include describe("1-Box Shadow") {
+    @include describe("v3") {
+      @include describe("Basic") {
+        @include it("ring-offset-inherit") {
+          @include assert {
+            @include output {
+              @include ring-offset-inherit;
+            }
+
+            @include expect {
+              --tw-ring-offset-color: inherit;
+            }
+          }
+        }
+
+        @include it("ring-offset-current") {
+          @include assert {
+            @include output {
+              @include ring-offset-current;
+            }
+
+            @include expect {
+              --tw-ring-offset-color: currentcolor;
+            }
+          }
+        }
+
+        @include it("ring-offset-transparent") {
+          @include assert {
+            @include output {
+              @include ring-offset-transparent;
+            }
+
+            @include expect {
+              --tw-ring-offset-color: transparent;
+            }
+          }
+        }
+
+        @include it("ring-offset-black") {
+          @include assert {
+            @include output {
+              @include ring-offset-black;
+            }
+
+            @include expect {
+              --tw-ring-offset-color: black;
+            }
+          }
+        }
+
+        @include it("ring-offset-black(0.11)") {
+          @include assert {
+            @include output {
+              @include ring-offset-black(0.11);
+            }
+
+            @include expect {
+              --tw-ring-offset-color: rgba(0, 0, 0, 0.11);
+            }
+          }
+        }
+
+        @include it("ring-offset-0") {
+          @include assert {
+            @include output {
+              @include ring-offset-0;
+            }
+
+            @include expect {
+              --tw-ring-offset-width: 0px;
+              --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0
+                var(--tw-ring-offset-width,) var(--tw-ring-offset-color,);
+            }
+          }
+        }
+
+        @include it("ring-offset-1") {
+          @include assert {
+            @include output {
+              @include ring-offset-1;
+            }
+
+            @include expect {
+              --tw-ring-offset-width: 1px;
+              --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0
+                var(--tw-ring-offset-width,) var(--tw-ring-offset-color,);
+            }
+          }
+        }
+
+        @include it("ring-offset-2") {
+          @include assert {
+            @include output {
+              @include ring-offset-2;
+            }
+
+            @include expect {
+              --tw-ring-offset-width: 2px;
+              --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0
+                var(--tw-ring-offset-width,) var(--tw-ring-offset-color,);
+            }
+          }
+        }
+
+        @include it("ring-offset-4") {
+          @include assert {
+            @include output {
+              @include ring-offset-4;
+            }
+
+            @include expect {
+              --tw-ring-offset-width: 4px;
+              --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0
+                var(--tw-ring-offset-width,) var(--tw-ring-offset-color,);
+            }
+          }
+        }
+
+        @include it("ring-offset-8") {
+          @include assert {
+            @include output {
+              @include ring-offset-8;
+            }
+
+            @include expect {
+              --tw-ring-offset-width: 8px;
+              --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0
+                var(--tw-ring-offset-width,) var(--tw-ring-offset-color,);
+            }
+          }
+        }
+      }
+
+      @include describe("Custom") {
+        @include it("ring-offset-(#50d71e)") {
+          @include assert {
+            @include output {
+              @include ring-offset-(#50d71e);
+            }
+
+            @include expect {
+              --tw-ring-offset-color: #50d71e;
+            }
+          }
+        }
+      }
+    }
+
     @include describe("Basic") {
       @include it("shadow-sm") {
         @include assert {
@@ -11,10 +159,15 @@
           }
 
           @include expect {
+            --tw-shadow:
+              0 1px 3px 0 var(--tw-shadow-color, rgba(0, 0, 0, 0.1)),
+              0 1px 2px -1px var(--tw-shadow-color, rgba(0, 0, 0, 0.1));
             box-shadow:
-              0 0 0 0 #fff,
-              0 0 0 0 rgba(59, 130, 246, 0.5),
-              0 1px 2px 0 rgb(0 0 0 / 0.05);
+              var(--tw-inset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-inset-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-shadow, 0 0 rgba(0, 0, 0, 0));
           }
         }
       }
@@ -26,11 +179,15 @@
           }
 
           @include expect {
+            --tw-shadow:
+              0 1px 3px 0 var(--tw-shadow-color, rgba(0, 0, 0, 0.1)),
+              0 1px 2px -1px var(--tw-shadow-color, rgba(0, 0, 0, 0.1));
             box-shadow:
-              0 0 0 0 #fff,
-              0 0 0 0 rgba(59, 130, 246, 0.5),
-              0 1px 3px 0 rgb(0 0 0 / 0.1),
-              0 1px 2px -1px rgb(0 0 0 / 0.1);
+              var(--tw-inset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-inset-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-shadow, 0 0 rgba(0, 0, 0, 0));
           }
         }
       }
@@ -42,11 +199,15 @@
           }
 
           @include expect {
+            --tw-shadow:
+              0 4px 6px -1px var(--tw-shadow-color, rgba(0, 0, 0, 0.1)),
+              0 2px 4px -2px var(--tw-shadow-color, rgba(0, 0, 0, 0.1));
             box-shadow:
-              0 0 0 0 #fff,
-              0 0 0 0 rgba(59, 130, 246, 0.5),
-              0 4px 6px -1px rgb(0 0 0 / 0.1),
-              0 2px 4px -2px rgb(0 0 0 / 0.1);
+              var(--tw-inset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-inset-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-shadow, 0 0 rgba(0, 0, 0, 0));
           }
         }
       }
@@ -58,11 +219,15 @@
           }
 
           @include expect {
+            --tw-shadow:
+              0 10px 15px -3px var(--tw-shadow-color, rgba(0, 0, 0, 0.1)),
+              0 4px 6px -4px var(--tw-shadow-color, rgba(0, 0, 0, 0.1));
             box-shadow:
-              0 0 0 0 #fff,
-              0 0 0 0 rgba(59, 130, 246, 0.5),
-              0 10px 15px -3px rgb(0 0 0 / 0.1),
-              0 4px 6px -4px rgb(0 0 0 / 0.1);
+              var(--tw-inset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-inset-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-shadow, 0 0 rgba(0, 0, 0, 0));
           }
         }
       }
@@ -74,41 +239,15 @@
           }
 
           @include expect {
+            --tw-shadow:
+              0 20px 25px -5px var(--tw-shadow-color, rgba(0, 0, 0, 0.1)),
+              0 8px 10px -6px var(--tw-shadow-color, rgba(0, 0, 0, 0.1));
             box-shadow:
-              0 0 0 0 #fff,
-              0 0 0 0 rgba(59, 130, 246, 0.5),
-              0 20px 25px -5px rgb(0 0 0 / 0.1),
-              0 8px 10px -6px rgb(0 0 0 / 0.1);
-          }
-        }
-      }
-
-      @include it("shadow-2xl") {
-        @include assert {
-          @include output {
-            @include shadow-2xl;
-          }
-
-          @include expect {
-            box-shadow:
-              0 0 0 0 #fff,
-              0 0 0 0 rgba(59, 130, 246, 0.5),
-              0 25px 50px -12px rgba(0, 0, 0, 0.25);
-          }
-        }
-      }
-
-      @include it("shadow-inner") {
-        @include assert {
-          @include output {
-            @include shadow-inner;
-          }
-
-          @include expect {
-            box-shadow:
-              0 0 0 0 #fff,
-              0 0 0 0 rgba(59, 130, 246, 0.5),
-              inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+              var(--tw-inset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-inset-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-shadow, 0 0 rgba(0, 0, 0, 0));
           }
         }
       }
@@ -120,10 +259,133 @@
           }
 
           @include expect {
+            --tw-shadow: 0 0 rgba(0, 0, 0, 0);
             box-shadow:
-              0 0 0 0 #fff,
-              0 0 0 0 rgba(59, 130, 246, 0.5),
-              0 0 0 0 #fff;
+              var(--tw-inset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-inset-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-shadow, 0 0 rgba(0, 0, 0, 0));
+          }
+        }
+      }
+
+      @include it("ring-inherit") {
+        @include assert {
+          @include output {
+            @include ring-inherit;
+          }
+
+          @include expect {
+            --tw-ring-color: inherit;
+          }
+        }
+      }
+
+      @include it("ring-current") {
+        @include assert {
+          @include output {
+            @include ring-current;
+          }
+
+          @include expect {
+            --tw-ring-color: currentcolor;
+          }
+        }
+      }
+
+      @include it("ring-transparent") {
+        @include assert {
+          @include output {
+            @include ring-transparent;
+          }
+
+          @include expect {
+            --tw-ring-color: transparent;
+          }
+        }
+      }
+
+      @include it("ring-black") {
+        @include assert {
+          @include output {
+            @include ring-black;
+          }
+
+          @include expect {
+            --tw-ring-color: black;
+          }
+        }
+      }
+
+      @include it("ring-black(0.11)") {
+        @include assert {
+          @include output {
+            @include ring-black(0.11);
+          }
+
+          @include expect {
+            --tw-ring-color: rgba(0, 0, 0, 0.11);
+          }
+        }
+      }
+
+      @include it("shadow-inherit") {
+        @include assert {
+          @include output {
+            @include shadow-inherit;
+          }
+
+          @include expect {
+            --tw-shadow-color: inherit;
+          }
+        }
+      }
+
+      @include it("shadow-current") {
+        @include assert {
+          @include output {
+            @include shadow-current;
+          }
+
+          @include expect {
+            --tw-shadow-color: currentcolor;
+          }
+        }
+      }
+
+      @include it("shadow-transparent") {
+        @include assert {
+          @include output {
+            @include shadow-transparent;
+          }
+
+          @include expect {
+            --tw-shadow-color: transparent;
+          }
+        }
+      }
+
+      @include it("shadow-black") {
+        @include assert {
+          @include output {
+            @include shadow-black;
+          }
+
+          @include expect {
+            --tw-shadow-color: black;
+          }
+        }
+      }
+
+      @include it("shadow-black(0.11)") {
+        @include assert {
+          @include output {
+            @include shadow-black(0.11);
+          }
+
+          @include expect {
+            --tw-shadow-color: rgba(0, 0, 0, 0.11);
           }
         }
       }
@@ -137,10 +399,37 @@
           }
 
           @include expect {
+            --tw-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
             box-shadow:
-              0 0 0 0 #fff,
-              0 0 0 0 rgba(59, 130, 246, 0.5),
-              0 35px 60px -15px rgba(0, 0, 0, 0.3);
+              var(--tw-inset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-inset-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)),
+              var(--tw-shadow, 0 0 rgba(0, 0, 0, 0));
+          }
+        }
+      }
+
+      @include it("shadow-(#50d71e)") {
+        @include assert {
+          @include output {
+            @include shadow-(#50d71e);
+          }
+
+          @include expect {
+            --tw-shadow-color: #50d71e;
+          }
+        }
+      }
+
+      @include it("ring-(red)") {
+        @include assert {
+          @include output {
+            @include ring-(red);
+          }
+
+          @include expect {
+            --tw-ring-color: red;
           }
         }
       }

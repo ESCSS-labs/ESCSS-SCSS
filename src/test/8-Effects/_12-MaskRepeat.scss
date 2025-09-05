@@ -1,0 +1,80 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("12-MaskRepeat") {
+    @include describe("Basic") {
+      @include it("mask-repeat") {
+        @include assert {
+          @include output {
+            @include mask-repeat;
+          }
+
+          @include expect {
+            mask-repeat: repeat;
+          }
+        }
+      }
+
+      @include it("mask-no-repeat") {
+        @include assert {
+          @include output {
+            @include mask-no-repeat;
+          }
+
+          @include expect {
+            mask-repeat: no-repeat;
+          }
+        }
+      }
+
+      @include it("mask-repeat-x") {
+        @include assert {
+          @include output {
+            @include mask-repeat-x;
+          }
+
+          @include expect {
+            mask-repeat: repeat-x;
+          }
+        }
+      }
+
+      @include it("mask-repeat-y") {
+        @include assert {
+          @include output {
+            @include mask-repeat-y;
+          }
+
+          @include expect {
+            mask-repeat: repeat-y;
+          }
+        }
+      }
+
+      @include it("mask-repeat-space") {
+        @include assert {
+          @include output {
+            @include mask-repeat-space;
+          }
+
+          @include expect {
+            mask-repeat: space;
+          }
+        }
+      }
+
+      @include it("mask-repeat-round") {
+        @include assert {
+          @include output {
+            @include mask-repeat-round;
+          }
+
+          @include expect {
+            mask-repeat: round;
+          }
+        }
+      }
+    }
+  }
+}

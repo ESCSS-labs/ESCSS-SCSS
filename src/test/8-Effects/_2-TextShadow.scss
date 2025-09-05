@@ -1,0 +1,117 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("2-Text Shadow") {
+    @include describe("Basic") {
+      @include it("text-shadow-2xs") {
+        @include assert {
+          @include output {
+            @include text-shadow-2xs;
+          }
+
+          @include expect {
+            text-shadow: 0px 1px 0px
+              var(--tw-text-shadow-color, rgba(0, 0, 0, 0.15));
+          }
+        }
+      }
+
+      @include it("text-shadow-xs") {
+        @include assert {
+          @include output {
+            @include text-shadow-xs;
+          }
+
+          @include expect {
+            text-shadow: 0px 1px 1px
+              var(--tw-text-shadow-color, rgba(0, 0, 0, 0.2));
+          }
+        }
+      }
+
+      @include it("text-shadow-sm") {
+        @include assert {
+          @include output {
+            @include text-shadow-sm;
+          }
+
+          @include expect {
+            text-shadow:
+              0px 1px 0px var(--tw-text-shadow-color, rgba(0, 0, 0, 0.075)),
+              0px 1px 1px var(--tw-text-shadow-color, rgba(0, 0, 0, 0.075)),
+              0px 2px 2px var(--tw-text-shadow-color, rgba(0, 0, 0, 0.075));
+          }
+        }
+      }
+
+      @include it("text-shadow-md") {
+        @include assert {
+          @include output {
+            @include text-shadow-md;
+          }
+
+          @include expect {
+            text-shadow:
+              0px 1px 1px var(--tw-text-shadow-color, rgba(0, 0, 0, 0.1)),
+              0px 1px 2px var(--tw-text-shadow-color, rgba(0, 0, 0, 0.1)),
+              0px 2px 4px var(--tw-text-shadow-color, rgba(0, 0, 0, 0.1));
+          }
+        }
+      }
+
+      @include it("text-shadow-lg") {
+        @include assert {
+          @include output {
+            @include text-shadow-lg;
+          }
+
+          @include expect {
+            text-shadow:
+              0px 1px 2px var(--tw-text-shadow-color, rgba(0, 0, 0, 0.1)),
+              0px 3px 2px var(--tw-text-shadow-color, rgba(0, 0, 0, 0.1)),
+              0px 4px 8px var(--tw-text-shadow-color, rgba(0, 0, 0, 0.1));
+          }
+        }
+      }
+
+      @include it("text-shadow-none") {
+        @include assert {
+          @include output {
+            @include text-shadow-none;
+          }
+
+          @include expect {
+            text-shadow: none;
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("text-shadow-(red)") {
+        @include assert {
+          @include output {
+            @include text-shadow-(red);
+          }
+
+          @include expect {
+            --tw-text-shadow-color: red;
+          }
+        }
+      }
+
+      @include it("text-shadow-(0 35px 60px -15px rgba(0,0,0,0.3)") {
+        @include assert {
+          @include output {
+            @include text-shadow-(0 35px 60px -15px rgba(0, 0, 0, 0.3));
+          }
+
+          @include expect {
+            text-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+}

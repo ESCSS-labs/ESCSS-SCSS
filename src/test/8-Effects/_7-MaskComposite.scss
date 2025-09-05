@@ -1,0 +1,56 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("7-MaskComposite") {
+    @include describe("Basic") {
+      @include it("mask-add") {
+        @include assert {
+          @include output {
+            @include mask-add;
+          }
+
+          @include expect {
+            mask-composite: add;
+          }
+        }
+      }
+
+      @include it("mask-subtract") {
+        @include assert {
+          @include output {
+            @include mask-subtract;
+          }
+
+          @include expect {
+            mask-composite: subtract;
+          }
+        }
+      }
+
+      @include it("mask-intersect") {
+        @include assert {
+          @include output {
+            @include mask-intersect;
+          }
+
+          @include expect {
+            mask-composite: intersect;
+          }
+        }
+      }
+
+      @include it("mask-exclude") {
+        @include assert {
+          @include output {
+            @include mask-exclude;
+          }
+
+          @include expect {
+            mask-composite: exclude;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 @use "../style" as *;
 
 @include describe("13-Interactivity") {
-  @include describe("13-Touch Action") {
+  @include describe("15-Touch Action") {
     @include describe("Basic") {
       @include it("touch-auto") {
         @include assert {
@@ -35,7 +35,9 @@
           }
 
           @include expect {
-            touch-action: pan-x;
+            --tw-pan-x: pan-x;
+            touch-action: var(--tw-pan-x,) var(--tw-pan-y,)
+              var(--tw-pinch-zoom,);
           }
         }
       }
@@ -47,7 +49,9 @@
           }
 
           @include expect {
-            touch-action: pan-left;
+            --tw-pan-x: pan-left;
+            touch-action: var(--tw-pan-x,) var(--tw-pan-y,)
+              var(--tw-pinch-zoom,);
           }
         }
       }
@@ -59,7 +63,9 @@
           }
 
           @include expect {
-            touch-action: pan-right;
+            --tw-pan-x: pan-right;
+            touch-action: var(--tw-pan-x,) var(--tw-pan-y,)
+              var(--tw-pinch-zoom,);
           }
         }
       }
@@ -71,7 +77,9 @@
           }
 
           @include expect {
-            touch-action: pan-y;
+            --tw-pan-y: pan-y;
+            touch-action: var(--tw-pan-x,) var(--tw-pan-y,)
+              var(--tw-pinch-zoom,);
           }
         }
       }
@@ -83,7 +91,9 @@
           }
 
           @include expect {
-            touch-action: pan-up;
+            --tw-pan-y: pan-up;
+            touch-action: var(--tw-pan-x,) var(--tw-pan-y,)
+              var(--tw-pinch-zoom,);
           }
         }
       }
@@ -95,7 +105,9 @@
           }
 
           @include expect {
-            touch-action: pan-down;
+            --tw-pan-y: pan-down;
+            touch-action: var(--tw-pan-x,) var(--tw-pan-y,)
+              var(--tw-pinch-zoom,);
           }
         }
       }
@@ -107,7 +119,9 @@
           }
 
           @include expect {
-            touch-action: pinch-zoom;
+            --tw-pinch-zoom: pinch-zoom;
+            touch-action: var(--tw-pan-x,) var(--tw-pan-y,)
+              var(--tw-pinch-zoom,);
           }
         }
       }

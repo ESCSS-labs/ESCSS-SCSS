@@ -1,0 +1,236 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("8-MaskImage") {
+    @include describe("Basic") {
+      @include it("mask-none") {
+        @include assert {
+          @include output {
+            @include mask-none;
+          }
+
+          @include expect {
+            mask-image: none;
+          }
+        }
+      }
+
+      @include it("mask-linear-1") {
+        @include assert {
+          @include output {
+            @include mask-linear-1;
+          }
+
+          @include expect {
+            mask-image:
+              var(--tw-mask-linear), var(--tw-mask-radial), var(--tw-mask-conic);
+            mask-composite: intersect;
+            --tw-mask-linear: linear-gradient(
+              var(--tw-mask-linear-stops, var(--tw-mask-linear-position))
+            );
+            --tw-mask-linear-position: 1deg;
+          }
+        }
+      }
+
+      @include it("-mask-linear-1") {
+        @include assert {
+          @include output {
+            @include \-mask-linear-1;
+          }
+
+          @include expect {
+            mask-image:
+              var(--tw-mask-linear), var(--tw-mask-radial), var(--tw-mask-conic);
+            mask-composite: intersect;
+            --tw-mask-linear: linear-gradient(
+              var(--tw-mask-linear-stops, var(--tw-mask-linear-position))
+            );
+            --tw-mask-linear-position: -1deg;
+          }
+        }
+      }
+
+      @include it("mask-circle") {
+        @include assert {
+          @include output {
+            @include mask-circle;
+          }
+
+          @include expect {
+            --tw-mask-radial-shape: circle;
+          }
+        }
+      }
+
+      @include it("mask-ellipse") {
+        @include assert {
+          @include output {
+            @include mask-ellipse;
+          }
+
+          @include expect {
+            --tw-mask-radial-shape: ellipse;
+          }
+        }
+      }
+
+      @include it("mask-radial-closest-corner") {
+        @include assert {
+          @include output {
+            @include mask-radial-closest-corner;
+          }
+
+          @include expect {
+            --tw-mask-radial-size: closest-corner;
+          }
+        }
+      }
+
+      @include it("mask-radial-closest-side") {
+        @include assert {
+          @include output {
+            @include mask-radial-closest-side;
+          }
+
+          @include expect {
+            --tw-mask-radial-size: closest-side;
+          }
+        }
+      }
+
+      @include it("mask-radial-farthest-corner") {
+        @include assert {
+          @include output {
+            @include mask-radial-farthest-corner;
+          }
+
+          @include expect {
+            --tw-mask-radial-size: farthest-corner;
+          }
+        }
+      }
+
+      @include it("mask-radial-farthest-side") {
+        @include assert {
+          @include output {
+            @include mask-radial-farthest-side;
+          }
+
+          @include expect {
+            --tw-mask-radial-size: farthest-side;
+          }
+        }
+      }
+
+      @include it("mask-radial-at-top-left") {
+        @include assert {
+          @include output {
+            @include mask-radial-at-top-left;
+          }
+
+          @include expect {
+            --tw-mask-radial-position: top left;
+          }
+        }
+      }
+
+      @include it("mask-radial-at-top") {
+        @include assert {
+          @include output {
+            @include mask-radial-at-top;
+          }
+
+          @include expect {
+            --tw-mask-radial-position: top;
+          }
+        }
+      }
+
+      @include it("mask-radial-at-top-right") {
+        @include assert {
+          @include output {
+            @include mask-radial-at-top-right;
+          }
+
+          @include expect {
+            --tw-mask-radial-position: top right;
+          }
+        }
+      }
+
+      @include it("mask-radial-at-left") {
+        @include assert {
+          @include output {
+            @include mask-radial-at-left;
+          }
+
+          @include expect {
+            --tw-mask-radial-position: left;
+          }
+        }
+      }
+
+      @include it("mask-radial-at-center") {
+        @include assert {
+          @include output {
+            @include mask-radial-at-center;
+          }
+
+          @include expect {
+            --tw-mask-radial-position: center;
+          }
+        }
+      }
+
+      @include it("mask-radial-at-right") {
+        @include assert {
+          @include output {
+            @include mask-radial-at-right;
+          }
+
+          @include expect {
+            --tw-mask-radial-position: right;
+          }
+        }
+      }
+
+      @include it("mask-radial-at-bottom-left") {
+        @include assert {
+          @include output {
+            @include mask-radial-at-bottom-left;
+          }
+
+          @include expect {
+            --tw-mask-radial-position: bottom left;
+          }
+        }
+      }
+
+      @include it("mask-radial-at-bottom") {
+        @include assert {
+          @include output {
+            @include mask-radial-at-bottom;
+          }
+
+          @include expect {
+            --tw-mask-radial-position: bottom;
+          }
+        }
+      }
+
+      @include it("mask-radial-at-bottom-right") {
+        @include assert {
+          @include output {
+            @include mask-radial-at-bottom-right;
+          }
+
+          @include expect {
+            --tw-mask-radial-position: bottom right;
+          }
+        }
+      }
+    }
+  }
+}

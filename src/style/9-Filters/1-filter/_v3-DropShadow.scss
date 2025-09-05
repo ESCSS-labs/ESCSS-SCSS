@@ -1,26 +1,13 @@
-@use "sass:meta";
-@use "sass:list";
 @use "../../setting" as *;
-
-$v3-DropShadow: (
-  "drop-shadow": (
-    drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.1)))
-      drop-shadow(0 1px 1px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.06))),
-    drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
-      drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)),
-  ),
-);
 
 @if $V3-compatibility {
   @if $QuickReference {
-    @each $key, $value in $v3-DropShadow {
-      /*x
-      @mixin #{$key} {
-        --tw-drop-shadow-size: #{list.nth($value, 1)};
-        --tw-drop-shadow: #{list.nth($value, 2)};
-        filter: _f();
-      }
-      x*/
+    /*x
+    @mixin drop-shadow {
+      --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgba(0, 0, 0, 0.1))) drop-shadow(0 1px 1px var(--tw-drop-shadow-color, rgba(0, 0, 0, 0.06)));
+      --tw-drop-shadow: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
+      filter: _f();
     }
+    x*/
   }
 }

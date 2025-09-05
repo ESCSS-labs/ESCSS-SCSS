@@ -1,0 +1,32 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("14-MaskType") {
+    @include describe("Basic") {
+      @include it("mask-type-alpha") {
+        @include assert {
+          @include output {
+            @include mask-type-alpha;
+          }
+
+          @include expect {
+            mask-type: alpha;
+          }
+        }
+      }
+
+      @include it("mask-type-luminance") {
+        @include assert {
+          @include output {
+            @include mask-type-luminance;
+          }
+
+          @include expect {
+            mask-type: luminance;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,20 +2,8 @@
 @use "../style" as *;
 
 @include describe("6-Backgrounds") {
-  @include describe("8-Background Image") {
-    @include describe("Basic") {
-      @include it("bg-none") {
-        @include assert {
-          @include output {
-            @include bg-none;
-          }
-
-          @include expect {
-            background-image: none;
-          }
-        }
-      }
-
+  @include describe("4-Background Image") {
+    @include describe("v3") {
       @include it("bg-gradient-to-t") {
         @include assert {
           @include output {
@@ -23,7 +11,8 @@
           }
 
           @include expect {
-            background-image: linear-gradient(to top, var(--tw-gradient-stops));
+            --tw-gradient-position: to top;
+            background-image: linear-gradient(var(--tw-gradient-stops));
           }
         }
       }
@@ -35,10 +24,8 @@
           }
 
           @include expect {
-            background-image: linear-gradient(
-              to top right,
-              var(--tw-gradient-stops)
-            );
+            --tw-gradient-position: to top right;
+            background-image: linear-gradient(var(--tw-gradient-stops));
           }
         }
       }
@@ -50,10 +37,8 @@
           }
 
           @include expect {
-            background-image: linear-gradient(
-              to right,
-              var(--tw-gradient-stops)
-            );
+            --tw-gradient-position: to right;
+            background-image: linear-gradient(var(--tw-gradient-stops));
           }
         }
       }
@@ -65,10 +50,8 @@
           }
 
           @include expect {
-            background-image: linear-gradient(
-              to bottom right,
-              var(--tw-gradient-stops)
-            );
+            --tw-gradient-position: to bottom right;
+            background-image: linear-gradient(var(--tw-gradient-stops));
           }
         }
       }
@@ -80,10 +63,8 @@
           }
 
           @include expect {
-            background-image: linear-gradient(
-              to bottom,
-              var(--tw-gradient-stops)
-            );
+            --tw-gradient-position: to bottom;
+            background-image: linear-gradient(var(--tw-gradient-stops));
           }
         }
       }
@@ -95,10 +76,8 @@
           }
 
           @include expect {
-            background-image: linear-gradient(
-              to bottom left,
-              var(--tw-gradient-stops)
-            );
+            --tw-gradient-position: to bottom left;
+            background-image: linear-gradient(var(--tw-gradient-stops));
           }
         }
       }
@@ -110,10 +89,8 @@
           }
 
           @include expect {
-            background-image: linear-gradient(
-              to left,
-              var(--tw-gradient-stops)
-            );
+            --tw-gradient-position: to left;
+            background-image: linear-gradient(var(--tw-gradient-stops));
           }
         }
       }
@@ -125,10 +102,988 @@
           }
 
           @include expect {
-            background-image: linear-gradient(
-              to top left,
-              var(--tw-gradient-stops)
-            );
+            --tw-gradient-position: to top left;
+            background-image: linear-gradient(var(--tw-gradient-stops));
+          }
+        }
+      }
+    }
+
+    @include describe("Basic") {
+      @include describe("Direction") {
+        @include it("bg-none") {
+          @include assert {
+            @include output {
+              @include bg-none;
+            }
+
+            @include expect {
+              background-image: none;
+            }
+          }
+        }
+
+        @include it("bg-linear-to-t") {
+          @include assert {
+            @include output {
+              @include bg-linear-to-t;
+            }
+
+            @include expect {
+              --tw-gradient-position: to top;
+              background-image: linear-gradient(var(--tw-gradient-stops));
+            }
+          }
+        }
+
+        @include it("bg-linear-to-tr") {
+          @include assert {
+            @include output {
+              @include bg-linear-to-tr;
+            }
+
+            @include expect {
+              --tw-gradient-position: to top right;
+              background-image: linear-gradient(var(--tw-gradient-stops));
+            }
+          }
+        }
+
+        @include it("bg-linear-to-r") {
+          @include assert {
+            @include output {
+              @include bg-linear-to-r;
+            }
+
+            @include expect {
+              --tw-gradient-position: to right;
+              background-image: linear-gradient(var(--tw-gradient-stops));
+            }
+          }
+        }
+
+        @include it("bg-linear-to-br") {
+          @include assert {
+            @include output {
+              @include bg-linear-to-br;
+            }
+
+            @include expect {
+              --tw-gradient-position: to bottom right;
+              background-image: linear-gradient(var(--tw-gradient-stops));
+            }
+          }
+        }
+
+        @include it("bg-linear-to-b") {
+          @include assert {
+            @include output {
+              @include bg-linear-to-b;
+            }
+
+            @include expect {
+              --tw-gradient-position: to bottom;
+              background-image: linear-gradient(var(--tw-gradient-stops));
+            }
+          }
+        }
+
+        @include it("bg-linear-to-bl") {
+          @include assert {
+            @include output {
+              @include bg-linear-to-bl;
+            }
+
+            @include expect {
+              --tw-gradient-position: to bottom left;
+              background-image: linear-gradient(var(--tw-gradient-stops));
+            }
+          }
+        }
+
+        @include it("bg-linear-to-l") {
+          @include assert {
+            @include output {
+              @include bg-linear-to-l;
+            }
+
+            @include expect {
+              --tw-gradient-position: to left;
+              background-image: linear-gradient(var(--tw-gradient-stops));
+            }
+          }
+        }
+
+        @include it("bg-linear-to-tl") {
+          @include assert {
+            @include output {
+              @include bg-linear-to-tl;
+            }
+
+            @include expect {
+              --tw-gradient-position: to top left;
+              background-image: linear-gradient(var(--tw-gradient-stops));
+            }
+          }
+        }
+      }
+
+      @include describe("group-from") {
+        @include describe("position") {
+          @include it("from-0\%") {
+            @include assert {
+              @include output {
+                @include from-0\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 0%;
+              }
+            }
+          }
+
+          @include it("from-5\%") {
+            @include assert {
+              @include output {
+                @include from-5\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 5%;
+              }
+            }
+          }
+
+          @include it("from-10\%") {
+            @include assert {
+              @include output {
+                @include from-10\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 10%;
+              }
+            }
+          }
+
+          @include it("from-15\%") {
+            @include assert {
+              @include output {
+                @include from-15\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 15%;
+              }
+            }
+          }
+
+          @include it("from-20\%") {
+            @include assert {
+              @include output {
+                @include from-20\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 20%;
+              }
+            }
+          }
+
+          @include it("from-25\%") {
+            @include assert {
+              @include output {
+                @include from-25\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 25%;
+              }
+            }
+          }
+
+          @include it("from-30\%") {
+            @include assert {
+              @include output {
+                @include from-30\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 30%;
+              }
+            }
+          }
+
+          @include it("from-35\%") {
+            @include assert {
+              @include output {
+                @include from-35\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 35%;
+              }
+            }
+          }
+
+          @include it("from-40\%") {
+            @include assert {
+              @include output {
+                @include from-40\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 40%;
+              }
+            }
+          }
+
+          @include it("from-45\%") {
+            @include assert {
+              @include output {
+                @include from-45\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 45%;
+              }
+            }
+          }
+
+          @include it("from-50\%") {
+            @include assert {
+              @include output {
+                @include from-50\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 50%;
+              }
+            }
+          }
+
+          @include it("from-55\%") {
+            @include assert {
+              @include output {
+                @include from-55\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 55%;
+              }
+            }
+          }
+
+          @include it("from-60\%") {
+            @include assert {
+              @include output {
+                @include from-60\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 60%;
+              }
+            }
+          }
+
+          @include it("from-65\%") {
+            @include assert {
+              @include output {
+                @include from-65\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 65%;
+              }
+            }
+          }
+
+          @include it("from-70\%") {
+            @include assert {
+              @include output {
+                @include from-70\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 70%;
+              }
+            }
+          }
+
+          @include it("from-75\%") {
+            @include assert {
+              @include output {
+                @include from-75\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 75%;
+              }
+            }
+          }
+
+          @include it("from-80\%") {
+            @include assert {
+              @include output {
+                @include from-80\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 80%;
+              }
+            }
+          }
+
+          @include it("from-85\%") {
+            @include assert {
+              @include output {
+                @include from-85\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 85%;
+              }
+            }
+          }
+
+          @include it("from-90\%") {
+            @include assert {
+              @include output {
+                @include from-90\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 90%;
+              }
+            }
+          }
+
+          @include it("from-95\%") {
+            @include assert {
+              @include output {
+                @include from-95\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 95%;
+              }
+            }
+          }
+
+          @include it("from-100\%") {
+            @include assert {
+              @include output {
+                @include from-100\%;
+              }
+
+              @include expect {
+                --tw-gradient-from-position: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe("group-via") {
+        @include describe("position") {
+          @include it("via-0\%") {
+            @include assert {
+              @include output {
+                @include via-0\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 0%;
+              }
+            }
+          }
+
+          @include it("via-5\%") {
+            @include assert {
+              @include output {
+                @include via-5\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 5%;
+              }
+            }
+          }
+
+          @include it("via-10\%") {
+            @include assert {
+              @include output {
+                @include via-10\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 10%;
+              }
+            }
+          }
+
+          @include it("via-15\%") {
+            @include assert {
+              @include output {
+                @include via-15\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 15%;
+              }
+            }
+          }
+
+          @include it("via-20\%") {
+            @include assert {
+              @include output {
+                @include via-20\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 20%;
+              }
+            }
+          }
+
+          @include it("via-25\%") {
+            @include assert {
+              @include output {
+                @include via-25\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 25%;
+              }
+            }
+          }
+
+          @include it("via-30\%") {
+            @include assert {
+              @include output {
+                @include via-30\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 30%;
+              }
+            }
+          }
+
+          @include it("via-35\%") {
+            @include assert {
+              @include output {
+                @include via-35\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 35%;
+              }
+            }
+          }
+
+          @include it("via-40\%") {
+            @include assert {
+              @include output {
+                @include via-40\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 40%;
+              }
+            }
+          }
+
+          @include it("via-45\%") {
+            @include assert {
+              @include output {
+                @include via-45\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 45%;
+              }
+            }
+          }
+
+          @include it("via-50\%") {
+            @include assert {
+              @include output {
+                @include via-50\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 50%;
+              }
+            }
+          }
+
+          @include it("via-55\%") {
+            @include assert {
+              @include output {
+                @include via-55\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 55%;
+              }
+            }
+          }
+
+          @include it("via-60\%") {
+            @include assert {
+              @include output {
+                @include via-60\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 60%;
+              }
+            }
+          }
+
+          @include it("via-65\%") {
+            @include assert {
+              @include output {
+                @include via-65\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 65%;
+              }
+            }
+          }
+
+          @include it("via-70\%") {
+            @include assert {
+              @include output {
+                @include via-70\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 70%;
+              }
+            }
+          }
+
+          @include it("via-75\%") {
+            @include assert {
+              @include output {
+                @include via-75\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 75%;
+              }
+            }
+          }
+
+          @include it("via-80\%") {
+            @include assert {
+              @include output {
+                @include via-80\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 80%;
+              }
+            }
+          }
+
+          @include it("via-85\%") {
+            @include assert {
+              @include output {
+                @include via-85\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 85%;
+              }
+            }
+          }
+
+          @include it("via-90\%") {
+            @include assert {
+              @include output {
+                @include via-90\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 90%;
+              }
+            }
+          }
+
+          @include it("via-95\%") {
+            @include assert {
+              @include output {
+                @include via-95\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 95%;
+              }
+            }
+          }
+
+          @include it("via-100\%") {
+            @include assert {
+              @include output {
+                @include via-100\%;
+              }
+
+              @include expect {
+                --tw-gradient-via-position: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      @include describe("group-to") {
+        @include describe("color") {
+          @include it("to-inherit") {
+            @include assert {
+              @include output {
+                @include to-inherit;
+              }
+
+              @include expect {
+                --tw-gradient-to: inherit;
+                --tw-gradient-stops: var(
+                  --tw-gradient-via-stops,
+                  var(--tw-gradient-position,),
+                  var(--tw-gradient-from,) var(--tw-gradient-from-position,),
+                  var(--tw-gradient-to,) var(--tw-gradient-to-position,)
+                );
+              }
+            }
+          }
+
+          @include it("to-current") {
+            @include assert {
+              @include output {
+                @include to-current;
+              }
+
+              @include expect {
+                --tw-gradient-to: currentcolor;
+                --tw-gradient-stops: var(
+                  --tw-gradient-via-stops,
+                  var(--tw-gradient-position,),
+                  var(--tw-gradient-from,) var(--tw-gradient-from-position,),
+                  var(--tw-gradient-to,) var(--tw-gradient-to-position,)
+                );
+              }
+            }
+          }
+
+          @include it("to-transparent") {
+            @include assert {
+              @include output {
+                @include to-transparent;
+              }
+
+              @include expect {
+                --tw-gradient-to: transparent;
+                --tw-gradient-stops: var(
+                  --tw-gradient-via-stops,
+                  var(--tw-gradient-position,),
+                  var(--tw-gradient-from,) var(--tw-gradient-from-position,),
+                  var(--tw-gradient-to,) var(--tw-gradient-to-position,)
+                );
+              }
+            }
+          }
+
+          @include it("to-black") {
+            @include assert {
+              @include output {
+                @include to-black;
+              }
+
+              @include expect {
+                --tw-gradient-to: black;
+                --tw-gradient-stops: var(
+                  --tw-gradient-via-stops,
+                  var(--tw-gradient-position,),
+                  var(--tw-gradient-from,) var(--tw-gradient-from-position,),
+                  var(--tw-gradient-to,) var(--tw-gradient-to-position,)
+                );
+              }
+            }
+          }
+
+          @include it("to-black(0.11)") {
+            @include assert {
+              @include output {
+                @include to-black(0.11);
+              }
+
+              @include expect {
+                --tw-gradient-to: rgba(0, 0, 0, 0.11);
+                --tw-gradient-stops: var(
+                  --tw-gradient-via-stops,
+                  var(--tw-gradient-position,),
+                  var(--tw-gradient-from,) var(--tw-gradient-from-position,),
+                  var(--tw-gradient-to,) var(--tw-gradient-to-position,)
+                );
+              }
+            }
+          }
+        }
+
+        @include describe("position") {
+          @include it("to-0\%") {
+            @include assert {
+              @include output {
+                @include to-0\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 0%;
+              }
+            }
+          }
+
+          @include it("to-5\%") {
+            @include assert {
+              @include output {
+                @include to-5\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 5%;
+              }
+            }
+          }
+
+          @include it("to-10\%") {
+            @include assert {
+              @include output {
+                @include to-10\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 10%;
+              }
+            }
+          }
+
+          @include it("to-15\%") {
+            @include assert {
+              @include output {
+                @include to-15\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 15%;
+              }
+            }
+          }
+
+          @include it("to-20\%") {
+            @include assert {
+              @include output {
+                @include to-20\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 20%;
+              }
+            }
+          }
+
+          @include it("to-25\%") {
+            @include assert {
+              @include output {
+                @include to-25\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 25%;
+              }
+            }
+          }
+
+          @include it("to-30\%") {
+            @include assert {
+              @include output {
+                @include to-30\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 30%;
+              }
+            }
+          }
+
+          @include it("to-35\%") {
+            @include assert {
+              @include output {
+                @include to-35\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 35%;
+              }
+            }
+          }
+
+          @include it("to-40\%") {
+            @include assert {
+              @include output {
+                @include to-40\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 40%;
+              }
+            }
+          }
+
+          @include it("to-45\%") {
+            @include assert {
+              @include output {
+                @include to-45\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 45%;
+              }
+            }
+          }
+
+          @include it("to-50\%") {
+            @include assert {
+              @include output {
+                @include to-50\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 50%;
+              }
+            }
+          }
+
+          @include it("to-55\%") {
+            @include assert {
+              @include output {
+                @include to-55\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 55%;
+              }
+            }
+          }
+
+          @include it("to-60\%") {
+            @include assert {
+              @include output {
+                @include to-60\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 60%;
+              }
+            }
+          }
+
+          @include it("to-65\%") {
+            @include assert {
+              @include output {
+                @include to-65\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 65%;
+              }
+            }
+          }
+
+          @include it("to-70\%") {
+            @include assert {
+              @include output {
+                @include to-70\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 70%;
+              }
+            }
+          }
+
+          @include it("to-75\%") {
+            @include assert {
+              @include output {
+                @include to-75\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 75%;
+              }
+            }
+          }
+
+          @include it("to-80\%") {
+            @include assert {
+              @include output {
+                @include to-80\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 80%;
+              }
+            }
+          }
+
+          @include it("to-85\%") {
+            @include assert {
+              @include output {
+                @include to-85\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 85%;
+              }
+            }
+          }
+
+          @include it("to-90\%") {
+            @include assert {
+              @include output {
+                @include to-90\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 90%;
+              }
+            }
+          }
+
+          @include it("to-95\%") {
+            @include assert {
+              @include output {
+                @include to-95\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 95%;
+              }
+            }
+          }
+
+          @include it("to-100\%") {
+            @include assert {
+              @include output {
+                @include to-100\%;
+              }
+
+              @include expect {
+                --tw-gradient-to-position: 100%;
+              }
+            }
           }
         }
       }
@@ -143,6 +1098,135 @@
 
           @include expect {
             background-image: url("/img/hero-pattern.svg");
+          }
+        }
+      }
+
+      @include it("bg-linear-(10px)") {
+        @include assert {
+          @include output {
+            @include bg-linear-(10px);
+          }
+
+          @include expect {
+            --tw-gradient-position: 10px;
+            background-image: linear-gradient(var(--tw-gradient-stops, 10px));
+          }
+        }
+      }
+
+      @include it("bg-radial-(10px)") {
+        @include assert {
+          @include output {
+            @include bg-radial-(10px);
+          }
+
+          @include expect {
+            --tw-gradient-position: 10px;
+            background-image: radial-gradient(var(--tw-gradient-stops, 10px));
+          }
+        }
+      }
+
+      @include it("bg-conic-(10px)") {
+        @include assert {
+          @include output {
+            @include bg-conic-(10px);
+          }
+
+          @include expect {
+            --tw-gradient-position: 10px;
+            background-image: conic-gradient(var(--tw-gradient-stops, 10px));
+          }
+        }
+      }
+
+      @include it("from-(#243c5a)") {
+        @include assert {
+          @include output {
+            @include from-(#243c5a);
+          }
+
+          @include expect {
+            --tw-gradient-from: #243c5a;
+            --tw-gradient-stops: var(
+              --tw-gradient-via-stops,
+              var(--tw-gradient-position,),
+              var(--tw-gradient-from,) var(--tw-gradient-from-position,),
+              var(--tw-gradient-to, transparent) var(--tw-gradient-to-position,)
+            );
+          }
+        }
+      }
+
+      @include it("from-(10px)") {
+        @include assert {
+          @include output {
+            @include from-(10px);
+          }
+
+          @include expect {
+            --tw-gradient-from-position: 10px;
+          }
+        }
+      }
+
+      @include it("via-(#243c5a)") {
+        @include assert {
+          @include output {
+            @include via-(#243c5a);
+          }
+
+          @include expect {
+            --tw-gradient-via: #243c5a;
+            --tw-gradient-via-stops:
+              var(--tw-gradient-position,),
+              var(--tw-gradient-from,) var(--tw-gradient-from-position,),
+              var(--tw-gradient-via,) var(--tw-gradient-via-position,),
+              var(--tw-gradient-to, transparent) var(--tw-gradient-to-position,);
+            --tw-gradient-stops: var(--tw-gradient-via-stops);
+          }
+        }
+      }
+
+      @include it("via-(10px)") {
+        @include assert {
+          @include output {
+            @include via-(10px);
+          }
+
+          @include expect {
+            --tw-gradient-via-position: 10px;
+          }
+        }
+      }
+
+      @include it("to-(#243c5a)") {
+        @include assert {
+          @include output {
+            @include to-(#243c5a);
+          }
+
+          @include expect {
+            --tw-gradient-to: #243c5a;
+            --tw-gradient-stops: var(
+              --tw-gradient-via-stops,
+              var(--tw-gradient-position,),
+              var(--tw-gradient-from,) var(--tw-gradient-from-position,),
+              var(--tw-gradient-to,) var(--tw-gradient-to-position,)
+            );
+          }
+        }
+      }
+
+      @include it("to-(10px)") {
+        @include assert {
+          @include output {
+            @include to-(10px);
+          }
+
+          @include expect {
+            --tw-gradient-to-position: 10px;
           }
         }
       }

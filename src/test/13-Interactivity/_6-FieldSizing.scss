@@ -1,0 +1,32 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("13-Interactivity") {
+  @include describe("6-FieldSizing") {
+    @include describe("Basic") {
+      @include it("field-sizing-fixed") {
+        @include assert {
+          @include output {
+            @include field-sizing-fixed;
+          }
+
+          @include expect {
+            field-sizing: fixed;
+          }
+        }
+      }
+
+      @include it("field-sizing-content") {
+        @include assert {
+          @include output {
+            @include field-sizing-content;
+          }
+
+          @include expect {
+            field-sizing: content;
+          }
+        }
+      }
+    }
+  }
+}

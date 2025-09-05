@@ -1,0 +1,60 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("12-Transforms") {
+  @include describe("7-Transform") {
+    @include describe("Basic") {
+      @include it("transform-none") {
+        @include assert {
+          @include output {
+            @include transform-none;
+          }
+
+          @include expect {
+            transform: none;
+          }
+        }
+      }
+
+      @include it("transform-gpu") {
+        @include assert {
+          @include output {
+            @include transform-gpu;
+          }
+
+          @include expect {
+            transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+              var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+          }
+        }
+      }
+
+      @include it("transform-cpu") {
+        @include assert {
+          @include output {
+            @include transform-cpu;
+          }
+
+          @include expect {
+            transform: var(--tw-rotate-x,) var(--tw-rotate-y,)
+              var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+          }
+        }
+      }
+    }
+
+    @include describe("Custom") {
+      @include it("transform-(10px)") {
+        @include assert {
+          @include output {
+            @include transform-(10px);
+          }
+
+          @include expect {
+            transform: 10px;
+          }
+        }
+      }
+    }
+  }
+}

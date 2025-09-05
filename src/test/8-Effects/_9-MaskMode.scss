@@ -1,0 +1,44 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("9-MaskMode") {
+    @include describe("Basic") {
+      @include it("mask-alpha") {
+        @include assert {
+          @include output {
+            @include mask-alpha;
+          }
+
+          @include expect {
+            mask-mode: alpha;
+          }
+        }
+      }
+
+      @include it("mask-luminance") {
+        @include assert {
+          @include output {
+            @include mask-luminance;
+          }
+
+          @include expect {
+            mask-mode: luminance;
+          }
+        }
+      }
+
+      @include it("mask-match") {
+        @include assert {
+          @include output {
+            @include mask-match;
+          }
+
+          @include expect {
+            mask-mode: match-source;
+          }
+        }
+      }
+    }
+  }
+}

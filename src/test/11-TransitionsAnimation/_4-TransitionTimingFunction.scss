@@ -2,7 +2,7 @@
 @use "../style" as *;
 
 @include describe("11-Transitions & Animation") {
-  @include describe("3-Transition Timing Function") {
+  @include describe("4-Transition Timing Function") {
     @include describe("Basic") {
       @include it("ease-linear") {
         @include assert {
@@ -11,6 +11,7 @@
           }
 
           @include expect {
+            --tw-ease: linear;
             transition-timing-function: linear;
           }
         }
@@ -23,6 +24,7 @@
           }
 
           @include expect {
+            --tw-ease: cubic-bezier(0.4, 0, 1, 1);
             transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
           }
         }
@@ -35,6 +37,7 @@
           }
 
           @include expect {
+            --tw-ease: cubic-bezier(0, 0, 0.2, 1);
             transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
           }
         }
@@ -47,6 +50,7 @@
           }
 
           @include expect {
+            --tw-ease: cubic-bezier(0.4, 0, 0.2, 1);
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           }
         }
@@ -61,6 +65,7 @@
           }
 
           @include expect {
+            --tw-ease: cubic-bezier(0.95, 0.05, 0.795, 0.035);
             transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
           }
         }

@@ -1,0 +1,80 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("10-MaskOrigin") {
+    @include describe("Basic") {
+      @include it("mask-origin-border") {
+        @include assert {
+          @include output {
+            @include mask-origin-border;
+          }
+
+          @include expect {
+            mask-origin: border-box;
+          }
+        }
+      }
+
+      @include it("mask-origin-padding") {
+        @include assert {
+          @include output {
+            @include mask-origin-padding;
+          }
+
+          @include expect {
+            mask-origin: padding-box;
+          }
+        }
+      }
+
+      @include it("mask-origin-content") {
+        @include assert {
+          @include output {
+            @include mask-origin-content;
+          }
+
+          @include expect {
+            mask-origin: content-box;
+          }
+        }
+      }
+
+      @include it("mask-origin-fill") {
+        @include assert {
+          @include output {
+            @include mask-origin-fill;
+          }
+
+          @include expect {
+            mask-origin: fill-box;
+          }
+        }
+      }
+
+      @include it("mask-origin-stroke") {
+        @include assert {
+          @include output {
+            @include mask-origin-stroke;
+          }
+
+          @include expect {
+            mask-origin: stroke-box;
+          }
+        }
+      }
+
+      @include it("mask-origin-view") {
+        @include assert {
+          @include output {
+            @include mask-origin-view;
+          }
+
+          @include expect {
+            mask-origin: view-box;
+          }
+        }
+      }
+    }
+  }
+}

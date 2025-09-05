@@ -1,0 +1,116 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("11-MaskPosition") {
+    @include describe("Basic") {
+      @include it("mask-top-left") {
+        @include assert {
+          @include output {
+            @include mask-top-left;
+          }
+
+          @include expect {
+            mask-position: top left;
+          }
+        }
+      }
+
+      @include it("mask-top") {
+        @include assert {
+          @include output {
+            @include mask-top;
+          }
+
+          @include expect {
+            mask-position: top;
+          }
+        }
+      }
+
+      @include it("mask-top-right") {
+        @include assert {
+          @include output {
+            @include mask-top-right;
+          }
+
+          @include expect {
+            mask-position: top right;
+          }
+        }
+      }
+
+      @include it("mask-left") {
+        @include assert {
+          @include output {
+            @include mask-left;
+          }
+
+          @include expect {
+            mask-position: left;
+          }
+        }
+      }
+
+      @include it("mask-center") {
+        @include assert {
+          @include output {
+            @include mask-center;
+          }
+
+          @include expect {
+            mask-position: center;
+          }
+        }
+      }
+
+      @include it("mask-right") {
+        @include assert {
+          @include output {
+            @include mask-right;
+          }
+
+          @include expect {
+            mask-position: right;
+          }
+        }
+      }
+
+      @include it("mask-bottom-left") {
+        @include assert {
+          @include output {
+            @include mask-bottom-left;
+          }
+
+          @include expect {
+            mask-position: bottom left;
+          }
+        }
+      }
+
+      @include it("mask-bottom") {
+        @include assert {
+          @include output {
+            @include mask-bottom;
+          }
+
+          @include expect {
+            mask-position: bottom;
+          }
+        }
+      }
+
+      @include it("mask-right") {
+        @include assert {
+          @include output {
+            @include mask-right;
+          }
+
+          @include expect {
+            mask-position: right;
+          }
+        }
+      }
+    }
+  }
+}

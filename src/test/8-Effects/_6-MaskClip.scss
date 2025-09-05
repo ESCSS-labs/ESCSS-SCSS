@@ -1,0 +1,92 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("8-Effects") {
+  @include describe("6-MaskClip") {
+    @include describe("Basic") {
+      @include it("mask-clip-border") {
+        @include assert {
+          @include output {
+            @include mask-clip-border;
+          }
+
+          @include expect {
+            mask-clip: border-box;
+          }
+        }
+      }
+
+      @include it("mask-clip-padding") {
+        @include assert {
+          @include output {
+            @include mask-clip-padding;
+          }
+
+          @include expect {
+            mask-clip: padding-box;
+          }
+        }
+      }
+
+      @include it("mask-clip-content") {
+        @include assert {
+          @include output {
+            @include mask-clip-content;
+          }
+
+          @include expect {
+            mask-clip: content-box;
+          }
+        }
+      }
+
+      @include it("mask-clip-fill") {
+        @include assert {
+          @include output {
+            @include mask-clip-fill;
+          }
+
+          @include expect {
+            mask-clip: fill-box;
+          }
+        }
+      }
+
+      @include it("mask-clip-stroke") {
+        @include assert {
+          @include output {
+            @include mask-clip-stroke;
+          }
+
+          @include expect {
+            mask-clip: stroke-box;
+          }
+        }
+      }
+
+      @include it("mask-clip-view") {
+        @include assert {
+          @include output {
+            @include mask-clip-view;
+          }
+
+          @include expect {
+            mask-clip: view-box;
+          }
+        }
+      }
+
+      @include it("mask-no-clip") {
+        @include assert {
+          @include output {
+            @include mask-no-clip;
+          }
+
+          @include expect {
+            mask-clip: no-clip;
+          }
+        }
+      }
+    }
+  }
+}

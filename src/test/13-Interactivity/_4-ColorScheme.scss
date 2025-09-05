@@ -1,0 +1,80 @@
+@use "true" as *;
+@use "../style" as *;
+
+@include describe("13-Interactivity") {
+  @include describe("4-ColorScheme") {
+    @include describe("Basic") {
+      @include it("scheme-normal") {
+        @include assert {
+          @include output {
+            @include scheme-normal;
+          }
+
+          @include expect {
+            color-scheme: normal;
+          }
+        }
+      }
+
+      @include it("scheme-dark") {
+        @include assert {
+          @include output {
+            @include scheme-dark;
+          }
+
+          @include expect {
+            color-scheme: dark;
+          }
+        }
+      }
+
+      @include it("scheme-light") {
+        @include assert {
+          @include output {
+            @include scheme-light;
+          }
+
+          @include expect {
+            color-scheme: light;
+          }
+        }
+      }
+
+      @include it("scheme-light-dark") {
+        @include assert {
+          @include output {
+            @include scheme-light-dark;
+          }
+
+          @include expect {
+            color-scheme: light dark;
+          }
+        }
+      }
+
+      @include it("scheme-only-dark") {
+        @include assert {
+          @include output {
+            @include scheme-only-dark;
+          }
+
+          @include expect {
+            color-scheme: only dark;
+          }
+        }
+      }
+
+      @include it("scheme-only-light") {
+        @include assert {
+          @include output {
+            @include scheme-only-light;
+          }
+
+          @include expect {
+            color-scheme: only light;
+          }
+        }
+      }
+    }
+  }
+}
