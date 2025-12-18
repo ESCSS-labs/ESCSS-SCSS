@@ -1,6 +1,6 @@
-## file structure
+## File structure
 
-src/test
+src/style
 ├── 1.Layout  
 │ ├── AspectRatio.scss  
 │ ├── BoxDecorationBreak.scss  
@@ -12,31 +12,13 @@ src/test
 
 [Same as Tailwind web](https://tailwindcss.com/docs/aspect-ratio)
 
-### style file - generate SCSS file
-
-- For categorizing mixins within @if, I need the mixin to be commented out.
-
-### test file - testing SCSS before use
-
-- Run all test cases.
-
-```shell
-  git clone https://github.com/ESCSS-labs/ESCSS-SCSS.git
-  cd ESCSS-SCSS
-  bun install
-  bun test
-```
-
 ## How to generate SCSS file?
 
-### 1. Use 'Live Sass Compiler'(Extension) to generate index.css (src/style/index.css)
+### 1. Use 'Live Sass Compiler'(VSCode Extension) to generate css file in `src/style/index.css`
+### 2. Use `Search` to remove `/*x` and `x*/` in index.css
 
-### 2. Use SEARCH feature(VSCode) to remove below in index.css
+## How to test scss file?
 
-```
-/*x and x*/
-```
-
-### 3. Rename your index.css
-
-### 4. Ready to serve!
+### 1. Copy from `src/style/index.css`
+### 2. Past content to `src/test/_escss.scss`
+### 3. Run `bun test` to test all cases
