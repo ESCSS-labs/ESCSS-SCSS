@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/55f57c4e-07e4-495b-8832-fbd19eb037aa
 
 ### Copy file
 
-- copy `src/test/_style.scss`
+- copy `src/test/_escss.scss`
 
 ### Install VSCode extension `SCSS IntelliSense` for auto-complete
 
